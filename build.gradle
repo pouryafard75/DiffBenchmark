@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+}
+
+group 'ca.concordia'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+            srcDir 'src-test'
+        }
+        resources {
+            srcDir 'res'
+        }
+    }
+    test {
+        java {
+            srcDir 'src-test'
+        }
+    }
+}
+
+
+dependencies {
+//
+    implementation 'com.github.tsantalis:refactoring-miner:2.3.2-SNAPSHOT'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    implementation 'com.github.gumtreediff:core:3.0.0'
+    implementation 'it.unimi.dsi:fastutil:8.3.1'
+    implementation 'com.sparkjava:spark-core:2.9.1'
+    implementation('org.rendersnake:rendersnake:1.9.0') {
+        exclude group: 'javax.servlet', module: 'servlet-api'
+    }
+
+}
+
+test {
+    useJUnitPlatform()
+}

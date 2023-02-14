@@ -1,4 +1,4 @@
-package rm.webdiff;
+package gui.webdiff;
 
 import org.rendersnake.DocType;
 import org.rendersnake.HtmlCanvas;

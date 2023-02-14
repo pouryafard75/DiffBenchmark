@@ -1,14 +1,13 @@
-package rm;
+package gui;
 
 
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
-import rm.utils.URLHelper;
-import rm.webdiff.WebDiff;
+import gui.utils.URLHelper;
+import gui.webdiff.WebDiff;
 
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.Set;
 
 /* Created by pourya on 2022-12-26 9:30 p.m. */

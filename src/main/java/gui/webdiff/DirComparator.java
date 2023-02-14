@@ -1,4 +1,4 @@
-package rm.webdiff;
+package gui.webdiff;
 
 import com.github.gumtreediff.utils.Pair;
 import org.refactoringminer.astDiff.actions.ASTDiff;

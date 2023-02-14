@@ -1,4 +1,4 @@
-package rm.webdiff;
+package gui.webdiff;
 
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.rendersnake.DocType;

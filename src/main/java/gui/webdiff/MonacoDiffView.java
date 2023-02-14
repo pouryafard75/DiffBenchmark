@@ -1,4 +1,4 @@
-package rm.webdiff;
+package gui.webdiff;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ExtendedTreeClassifier;

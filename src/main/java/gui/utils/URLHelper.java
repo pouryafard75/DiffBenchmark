@@ -1,4 +1,4 @@
-package rm.utils;
+package gui.utils;
 
 /* Created by pourya on 2022-12-30 11:35 a.m. */
 public class URLHelper{

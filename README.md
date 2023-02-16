@@ -37,7 +37,8 @@ String repo = URLHelper.getRepo(url);
 String commit = URLHelper.getCommit(url);
 
 GitService gitService = new GitServiceImpl();
-String pathToClonedRepository = "/tmp/JetBrains/intellij-community";
+String projectName = repo.substring(repo.lastIndexOf("/") + 1, repo.length() - 4);
+String pathToClonedRepository = "tmp/" + projectName;
 Repository repository = gitService.cloneIfNotExists(pathToClonedRepository, repo);
 
 Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);

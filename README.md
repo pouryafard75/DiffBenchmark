@@ -26,11 +26,11 @@ This will create the `com.github.tsantalis:refactoring-miner:2.3.2-SNAPSHOT` dep
 
 # Usage guidelines
 
-You simply need to execute [Run.java](https://github.com/pouryafard75/DiffBenchmark/blob/master/src/main/java/gui/Run.java)
-
 There are 3 different ways you can execute DiffBenchmark:
 
 ## With a locally cloned git repository
+
+Execute [RunWithLocallyClonedRepository.java](https://github.com/pouryafard75/DiffBenchmark/blob/master/src/main/java/gui/RunWithLocallyClonedRepository.java)
 ```java
 String url = "https://github.com/JetBrains/intellij-community/commit/7ed3f273ab0caf0337c22f0b721d51829bb0c877";
 String repo = URLHelper.getRepo(url);
@@ -56,6 +56,8 @@ new WebDiff(astDiffs).run();
 ## With all information fetched directly from GitHub
 To use the following API, please provide a valid OAuth token in the `github-oauth.properties` file.
 You can generate an OAuth token in GitHub `Settings` -> `Developer settings` -> `Personal access tokens`.
+
+Execute [RunWithGitHubAPI.java](https://github.com/pouryafard75/DiffBenchmark/blob/master/src/main/java/gui/RunWithGitHubAPI.java)
 ```java
 String url = "https://github.com/JetBrains/intellij-community/commit/7ed3f273ab0caf0337c22f0b721d51829bb0c877";
 String repo = URLHelper.getRepo(url);

@@ -45,9 +45,12 @@ Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(reposi
 new WebDiff(astDiffs).run();
 ```
 ## With two directories containing Java source code
+
+Execute [RunWithTwoDirectories.java](https://github.com/pouryafard75/DiffBenchmark/blob/master/src/main/java/gui/RunWithTwoDirectories.java)
 ```java
-String folder1 = "/tmp/v1/";
-String folder2 = "/tmp/v2/";
+final String projectRoot = System.getProperty("user.dir");
+String folder1 = projectRoot + "/tmp/v1/";
+String folder2 = projectRoot + "/tmp/v2/";
 
 Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(folder1),Path.of(folder2));
 new WebDiff(astDiffs).run();

@@ -26,7 +26,7 @@ This will create the `com.github.tsantalis:refactoring-miner:2.3.2-SNAPSHOT` dep
 
 # Usage guidelines
 
-You simply need to execute [Run.java](https://github.com/pouryafard75/DiffBenchmark/blob/master/src/main/java/rm/Run.java)
+You simply need to execute [Run.java](https://github.com/pouryafard75/DiffBenchmark/blob/master/src/main/java/gui/Run.java)
 
 There are 3 different ways you can execute DiffBenchmark:
 

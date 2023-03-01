@@ -184,8 +184,8 @@ public class OracleMaker {
                 AbstractMapping abstractMapping = new AbstractMapping(
                         mapping.getFirstPos(), mapping.getFirstEndPos(),
                         mapping.getSecondPos(), mapping.getSecondEndPos(),
-                        srcContent.substring(mapping.getFirstPos(), mapping.getFirstEndPos()),
-                        dstContent.substring(mapping.getSecondPos(), mapping.getSecondEndPos()),
+                        getString(srcMethod, srcContent,mapping.getFirstPos(),mapping.getFirstEndPos(),mapping.getFirstType()),
+                        getString(dstMethod, dstContent,mapping.getSecondPos(),mapping.getSecondEndPos(),mapping.getSecondType()),
                         mapping.getFirstType(),
                         mapping.getSecondType());
                 ret.add(abstractMapping);
@@ -193,6 +193,22 @@ public class OracleMaker {
         }
         return ret;
 
+    }
+
+    private String getString(Tree tree, String content, int start, int end, String type) {
+        switch (type)
+        {
+            case Constants.BLOCK:
+                return "{...}";
+            case Constants.IF_STATEMENT:
+                Tree founded = getTreeBetweenPositions(tree, start, end, type);
+                Tree child = founded.getChild(0);
+                return content.substring(start,child.getEndPos()) + ")";
+            case Constants.FOR_STATEMENT:
+
+            case Constants.TRY_STATEMENT:
+        }
+        return content.substring(start, end);
     }
 
     private boolean subsumes(Tree input, int pos, int endPos) {
@@ -261,14 +277,14 @@ public class OracleMaker {
         result.addAll(makeForMethods());
     }
 
-    public void write() {
+    public void write(String foldername) {
         //TODO: make files and ...
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         DefaultPrettyPrinter printer = new DefaultPrettyPrinter().withObjectIndenter(new DefaultIndenter("    ", "\n"));
         try {
             String out = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
             out = prettify(out);
-            FileUtils.writeStringToFile(new File(srcPath.replace(".java",".json")), out);
+            FileUtils.writeStringToFile(new File(foldername + srcPath.replace(".java",".json")), out);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

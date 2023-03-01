@@ -22,22 +22,22 @@ public class Benchmark {
         for (ASTDiff astDiff : astDiffs) {
             OracleMaker rm = new OracleMaker(astDiff.src.getRoot(), astDiff.dst.getRoot(), MappingExportModel.exportModelList(astDiff.getMultiMappings()), astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.getSrcContents(), astDiff.getDstContents());
             rm.make();
-            rm.write("out/RM/");
+            rm.write("output/RM/");
 
             MappingStore match = new CompositeMatchers.ClassicGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot());
             OracleMaker gt = new OracleMaker(astDiff.src.getRoot(), astDiff.dst.getRoot(), MappingExportModel.exportModelList(match), astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.getSrcContents(), astDiff.getDstContents());
             gt.make();
-            gt.write("out/GT/");
+            gt.write("output/GT/");
 
             Set<Mapping> ijmDiff = DiffUtils.IJMDiff(astDiff.getSrcContents(), astDiff.getDstContents());
             OracleMaker ijm = new OracleMaker(astDiff.src.getRoot(), astDiff.dst.getRoot(), MappingExportModel.exportModelList(ijmDiff), astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.getSrcContents(), astDiff.getDstContents());
             ijm.make();
-            ijm.write("out/IJM/");
+            ijm.write("output/IJM/");
 
             Set<Mapping> mtdiff = DiffUtils.MTDiff(astDiff.getSrcContents(), astDiff.getDstContents());
             OracleMaker mtd = new OracleMaker(astDiff.src.getRoot(), astDiff.dst.getRoot(), MappingExportModel.exportModelList(mtdiff), astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.getSrcContents(), astDiff.getDstContents());
             ijm.make();
-            ijm.write("out/MTD/");
+            ijm.write("output/MTD/");
 
         }
     }

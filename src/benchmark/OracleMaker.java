@@ -196,17 +196,38 @@ public class OracleMaker {
     }
 
     private String getString(Tree tree, String content, int start, int end, String type) {
+        Tree founded = getTreeBetweenPositions(tree, start, end, type);
+        int endoff = tree.getEndPos();
+        Tree prevChild = tree;
+        boolean _flag = false;
         switch (type)
         {
             case Constants.BLOCK:
                 return "{...}";
             case Constants.IF_STATEMENT:
-                Tree founded = getTreeBetweenPositions(tree, start, end, type);
+
                 Tree child = founded.getChild(0);
                 return content.substring(start,child.getEndPos()) + ")";
+            case Constants.ENHANCED_FOR_STATEMENT:
             case Constants.FOR_STATEMENT:
-
+            case Constants.WHILE_STATEMENT:
+                endoff = founded.getEndPos();
+                for (Tree foundedChild : founded.getChildren()) {
+                    if (foundedChild.getType().name.equals(Constants.BLOCK))
+                    {
+                       endoff = prevChild.getEndPos();
+                       _flag = true;
+                       break;
+                    }
+                    prevChild = foundedChild;
+                }
+                String ret = content.substring(start, endoff);
+                if (_flag) ret += ")";
+                return ret;
             case Constants.TRY_STATEMENT:
+                return "try{...}";
+            case Constants.DO_STATEMENT:
+                return "do{...}";
         }
         return content.substring(start, end);
     }

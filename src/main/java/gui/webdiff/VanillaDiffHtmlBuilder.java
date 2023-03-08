@@ -1,5 +1,8 @@
 package gui.webdiff;
 
+import antlr.collections.AST;
+import com.github.gumtreediff.actions.Diff;
+import com.github.gumtreediff.actions.TreeClassifier;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.utils.SequenceAlgorithms;
@@ -42,104 +45,159 @@ public final class VanillaDiffHtmlBuilder {
 
     private String dstContent;
 
-    private ASTDiff diff;
+    private Diff input;
 
-    public VanillaDiffHtmlBuilder(String srcContent, String dstContent, ASTDiff diff) {
+    public VanillaDiffHtmlBuilder(String srcContent, String dstContent, Diff diff) {
         this.srcContent = srcContent;
         this.dstContent = dstContent;
-        this.diff = diff;
+        this.input = diff;
     }
 
     public void produce() throws IOException {
-        ExtendedTreeClassifier c = (ExtendedTreeClassifier)diff.createRootNodesClassifier();
-        Object2IntMap<Tree> mappingIds = new Object2IntOpenHashMap<>();
-
-        int uId = 1;
-        int mId = 1;
-
+        TagIndex rtags = new TagIndex();
         TagIndex ltags = new TagIndex();
+        if (input instanceof ASTDiff) {
+            ASTDiff diff = (ASTDiff) input;
+            ExtendedTreeClassifier c = (ExtendedTreeClassifier) diff.createRootNodesClassifier();
+            Object2IntMap<Tree> mappingIds = new Object2IntOpenHashMap<>();
 
-        for (Tree t: diff.src.getRoot().preOrder()) {
-            if (c.getMovedSrcs().contains(t)) {
-                mappingIds.put(diff.getMultiMappings().getDsts(t).iterator().next(), mId);
-                ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                ltags.addTags(t.getPos(), String.format(
-                                SRC_MV_SPAN, "token mv", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
-            }
-            if (c.getUpdatedSrcs().contains(t)) {
-                mappingIds.put(diff.getMultiMappings().getDsts(t).iterator().next(), mId);
-                ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                ltags.addTags(t.getPos(), String.format(
-                                SRC_MV_SPAN, "token upd", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
-                List<int[]> hunks = SequenceAlgorithms.hunks(t.getLabel(), diff.getMultiMappings().getDsts(t).iterator().next().getLabel());
-                for (int[] hunk: hunks)
-                    ltags.addTags(t.getPos() + hunk[0], UPD_SPAN, t.getPos() + hunk[1], END_SPAN);
+            int uId = 1;
+            int mId = 1;
 
-            }
-            if (c.getDeletedSrcs().contains(t)) {
-                ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                ltags.addTags(t.getPos(), String.format(
-                                ADD_DEL_SPAN, "token del", tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
-            }
-            if (c.getMultiMapSrc().containsKey(t)) {
-                if (!srcMM.contains(t)) {
-                    int gid = ((MultiMove) (c.getMultiMapSrc().get(t))).getGroupId();
+
+            for (Tree t : diff.src.getRoot().preOrder()) {
+                if (c.getMovedSrcs().contains(t)) {
+                    mappingIds.put(diff.getMultiMappings().getDsts(t).iterator().next(), mId);
                     ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                    boolean updated = ((MultiMove) (c.getMultiMapSrc().get(t))).isUpdated();
-                    String htmlClass = "token mm";
-                    if (updated) htmlClass += " updOnTop";
                     ltags.addTags(t.getPos(), String.format(
-                        MM_SPAN, htmlClass, gid,  tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
-                    srcMM.add(t);
+                            SRC_MV_SPAN, "token mv", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
+                }
+                if (c.getUpdatedSrcs().contains(t)) {
+                    mappingIds.put(diff.getMultiMappings().getDsts(t).iterator().next(), mId);
+                    ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    ltags.addTags(t.getPos(), String.format(
+                            SRC_MV_SPAN, "token upd", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
+                    List<int[]> hunks = SequenceAlgorithms.hunks(t.getLabel(), diff.getMultiMappings().getDsts(t).iterator().next().getLabel());
+                    for (int[] hunk : hunks)
+                        ltags.addTags(t.getPos() + hunk[0], UPD_SPAN, t.getPos() + hunk[1], END_SPAN);
+
+                }
+                if (c.getDeletedSrcs().contains(t)) {
+                    ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    ltags.addTags(t.getPos(), String.format(
+                            ADD_DEL_SPAN, "token del", tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
+                }
+                if (c.getMultiMapSrc().containsKey(t)) {
+                    if (!srcMM.contains(t)) {
+                        int gid = ((MultiMove) (c.getMultiMapSrc().get(t))).getGroupId();
+                        ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                        boolean updated = ((MultiMove) (c.getMultiMapSrc().get(t))).isUpdated();
+                        String htmlClass = "token mm";
+                        if (updated) htmlClass += " updOnTop";
+                        ltags.addTags(t.getPos(), String.format(
+                                MM_SPAN, htmlClass, gid, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
+                        srcMM.add(t);
+                    }
+                }
+                if (c.getSrcMoveOutTreeMap().containsKey(t)) {
+                    ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    ltags.addTags(t.getPos(), String.format(
+                            MoveOut_SPAN, "token moveOut", c.getSrcMoveOutTreeMap().get(t).toString()), t.getEndPos(), END_SPAN);
                 }
             }
-            if (c.getSrcMoveOutTreeMap().containsKey(t))
-            {
-                ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                ltags.addTags(t.getPos(), String.format(
-                        MoveOut_SPAN, "token moveOut",c.getSrcMoveOutTreeMap().get(t).toString()), t.getEndPos(), END_SPAN);
+            for (Tree t : diff.dst.getRoot().preOrder()) {
+                if (c.getMovedDsts().contains(t)) {
+                    int dId = mappingIds.getInt(t);
+                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    rtags.addTags(t.getPos(), String.format(
+                            DST_MV_SPAN, "token mv", dId, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
+                }
+                if (c.getUpdatedDsts().contains(t)) {
+                    int dId = mappingIds.getInt(t);
+                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    rtags.addTags(t.getPos(), String.format(
+                            DST_MV_SPAN, "token upd", dId, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
+                    List<int[]> hunks = SequenceAlgorithms.hunks(diff.getMultiMappings().getSrcs(t).iterator().next().getLabel(), t.getLabel());
+                    for (int[] hunk : hunks)
+                        rtags.addTags(t.getPos() + hunk[2], UPD_SPAN, t.getPos() + hunk[3], END_SPAN);
+                }
+                if (c.getInsertedDsts().contains(t)) {
+                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    rtags.addTags(t.getPos(), String.format(
+                            ADD_DEL_SPAN, "token add", tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
+                }
+                if (c.getMultiMapDst().containsKey(t)) {
+                    if (!dstMM.contains(t)) {
+                        int gid = ((MultiMove) (c.getMultiMapDst().get(t))).getGroupId();
+                        boolean updated = ((MultiMove) (c.getMultiMapDst().get(t))).isUpdated();
+                        rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                        String htmlClass = "token mm";
+                        if (updated) htmlClass += " updOnTop";
+                        rtags.addTags(t.getPos(), String.format(
+                                MM_SPAN, htmlClass, gid, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
+                        dstMM.add(t);
+                    }
+                }
+                if (c.getDstMoveInTreeMap().containsKey(t)) {
+                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    rtags.addTags(t.getPos(), String.format(
+                            MoveIn_SPAN, "token moveIn", c.getDstMoveInTreeMap().get(t).toString()), t.getEndPos(), END_SPAN);
+                }
             }
         }
+        else{
+            Diff diff = input;
+            TreeClassifier c = diff.createRootNodesClassifier();
+            Object2IntMap<Tree> mappingIds = new Object2IntOpenHashMap<>();
 
-        TagIndex rtags = new TagIndex();
-        for (Tree t: diff.dst.getRoot().preOrder()) {
-            if (c.getMovedDsts().contains(t)) {
-                int dId = mappingIds.getInt(t);
-                rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                rtags.addTags(t.getPos(), String.format(
-                                DST_MV_SPAN, "token mv", dId, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
-            }
-            if (c.getUpdatedDsts().contains(t)) {
-                int dId = mappingIds.getInt(t);
-                rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                rtags.addTags(t.getPos(), String.format(
-                                DST_MV_SPAN, "token upd", dId, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
-                List<int[]> hunks = SequenceAlgorithms.hunks(diff.getMultiMappings().getSrcs(t).iterator().next().getLabel(), t.getLabel());
-                for (int[] hunk: hunks)
-                    rtags.addTags(t.getPos() + hunk[2], UPD_SPAN, t.getPos() + hunk[3], END_SPAN);
-            }
-            if (c.getInsertedDsts().contains(t)) {
-                rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                rtags.addTags(t.getPos(), String.format(
-                                ADD_DEL_SPAN, "token add", tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
-            }
-            if (c.getMultiMapDst().containsKey(t)) {
-                if (!dstMM.contains(t)) {
-                    int gid = ((MultiMove) (c.getMultiMapDst().get(t))).getGroupId();
-                    boolean updated = ((MultiMove) (c.getMultiMapDst().get(t))).isUpdated();
-                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                    String htmlClass = "token mm";
-                    if (updated) htmlClass += " updOnTop";
-                    rtags.addTags(t.getPos(), String.format(
-                            MM_SPAN, htmlClass, gid,  tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
-                    dstMM.add(t);
+            int uId = 1;
+            int mId = 1;
+
+            for (Tree t: diff.src.getRoot().preOrder()) {
+                if (c.getMovedSrcs().contains(t)) {
+                    mappingIds.put(diff.mappings.getDstForSrc(t), mId);
+                    ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    ltags.addTags(t.getPos(), String.format(
+                            SRC_MV_SPAN, "token mv", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
+                }
+                if (c.getUpdatedSrcs().contains(t)) {
+                    mappingIds.put(diff.mappings.getDstForSrc(t), mId);
+                    ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    ltags.addTags(t.getPos(), String.format(
+                            SRC_MV_SPAN, "token upd", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
+                    List<int[]> hunks = SequenceAlgorithms.hunks(t.getLabel(), diff.mappings.getDstForSrc(t).getLabel());
+                    for (int[] hunk: hunks)
+                        ltags.addTags(t.getPos() + hunk[0], UPD_SPAN, t.getPos() + hunk[1], END_SPAN);
+
+                }
+                if (c.getDeletedSrcs().contains(t)) {
+                    ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    ltags.addTags(t.getPos(), String.format(
+                            ADD_DEL_SPAN, "token del", tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
                 }
             }
-            if (c.getDstMoveInTreeMap().containsKey(t))
-            {
-                rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
-                rtags.addTags(t.getPos(), String.format(
-                        MoveIn_SPAN, "token moveIn",c.getDstMoveInTreeMap().get(t).toString()), t.getEndPos(), END_SPAN);
+
+            for (Tree t: diff.dst.getRoot().preOrder()) {
+                if (c.getMovedDsts().contains(t)) {
+                    int dId = mappingIds.getInt(t);
+                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    rtags.addTags(t.getPos(), String.format(
+                            DST_MV_SPAN, "token mv", dId, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
+                }
+                if (c.getUpdatedDsts().contains(t)) {
+                    int dId = mappingIds.getInt(t);
+                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    rtags.addTags(t.getPos(), String.format(
+                            DST_MV_SPAN, "token upd", dId, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
+                    List<int[]> hunks = SequenceAlgorithms.hunks(diff.mappings.getSrcForDst(t).getLabel(), t.getLabel());
+                    for (int[] hunk: hunks)
+                        rtags.addTags(t.getPos() + hunk[2], UPD_SPAN, t.getPos() + hunk[3], END_SPAN);
+                }
+                if (c.getInsertedDsts().contains(t)) {
+                    rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
+                    rtags.addTags(t.getPos(), String.format(
+                            ADD_DEL_SPAN, "token add", tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
+                }
             }
         }
 

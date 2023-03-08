@@ -1,5 +1,6 @@
 package gui.webdiff;
 
+import com.github.gumtreediff.actions.Diff;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.rendersnake.DocType;
 import org.rendersnake.HtmlCanvas;
@@ -19,7 +20,7 @@ public class VanillaDiffView implements Renderable {
     private String dstFileName;
     private boolean dump;
 
-    public VanillaDiffView(String srcFileName, String dstFileName, String srcFileContent, String dstFileContent, ASTDiff diff, boolean dump) throws IOException {
+    public VanillaDiffView(String srcFileName, String dstFileName, String srcFileContent, String dstFileContent, Diff diff, boolean dump) throws IOException {
         this.srcFileName = srcFileName;
         this.dstFileName = dstFileName;
         this.dump = dump;

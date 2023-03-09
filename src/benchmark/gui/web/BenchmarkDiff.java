@@ -20,7 +20,7 @@ import static spark.Spark.*;
 
 ;
 
-public class CompDiff  {
+public class BenchmarkDiff {
     public static final String JQUERY_JS_URL = "https://code.jquery.com/jquery-3.4.1.min.js";
     public static final String BOOTSTRAP_CSS_URL = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
     public static final String BOOTSTRAP_JS_URL = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js";
@@ -33,7 +33,7 @@ public class CompDiff  {
     public Set<Diff> mtdiff;
 
 
-    public CompDiff(Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd) {
+    public BenchmarkDiff(Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd) {
         this.rmDiff = rm;
         this.gtgDiff = gtg;
         this.gtsDiff = gts;
@@ -59,7 +59,7 @@ public class CompDiff  {
             return "";
         });
         get("/list", (request, response) -> {
-            Renderable view = new CompDirectoryDiffView(comperator);
+            Renderable view = new BenchmarkDirectoryDiffView(comperator);
             return render(view);
         });
         get("/RMD/:id", (request, response) -> {

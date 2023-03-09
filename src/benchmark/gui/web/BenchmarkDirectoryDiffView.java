@@ -12,10 +12,10 @@ import java.util.Set;
 
 import static org.rendersnake.HtmlAttributesFactory.*;
 
-public class CompDirectoryDiffView implements Renderable {
+public class BenchmarkDirectoryDiffView implements Renderable {
     private final DirComparator comperator;
 
-    public CompDirectoryDiffView(DirComparator comperator) {
+    public BenchmarkDirectoryDiffView(DirComparator comperator) {
         this.comperator = comperator;
 
     }

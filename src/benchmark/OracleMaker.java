@@ -235,19 +235,6 @@ public class OracleMaker {
     private boolean subsumes(Tree input, int pos, int endPos) {
         return input.getPos() <= pos && input.getEndPos() >= endPos;
     }
-
-    private boolean isMapped(Tree input) {
-        List<MappingExportModel> result = mappings.stream().filter(model ->
-                model.getFirstPos() == input.getPos()
-                        && model.getFirstEndPos() == input.getEndPos()
-                        && model.getFirstType().equals(input.getType().name)
-        ).toList();
-        if (result.size() == 0) return false;
-        return true;
-
-    }
-
-
     private String findEnclosingClassName(Tree srcMethod) {
         Tree desired = TreeUtilFunctions.getParentUntilType(srcMethod, Constants.TYPE_DECLARATION);
         if (desired == null) return "";

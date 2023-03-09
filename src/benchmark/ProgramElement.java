@@ -1,13 +1,9 @@
 package benchmark;
-
-import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 /* Created by pourya on 2023-02-08 2:42 a.m. */
 public class ProgramElement implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 0L;
     private String element;
     private String className;
     private String fileName;

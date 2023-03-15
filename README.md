@@ -18,11 +18,11 @@ First, clone the [RefactoringMiner](https://github.com/tsantalis/RefactoringMine
 
 Next, edit file `build.gradle` in the root folder of the RefactoringMiner repository, and change the version to
 ```
-version = "2.3.2-SNAPSHOT"
+version = "2.4.0-SNAPSHOT"
 ```
 
 Run command `gradle publishToMavenLocal` in the root folder of the RefactoringMiner repository.
-This will create the `com.github.tsantalis:refactoring-miner:2.3.2-SNAPSHOT` dependency to your local Maven repository.
+This will create the `com.github.tsantalis:refactoring-miner:2.4.0-SNAPSHOT` dependency to your local Maven repository.
 
 # Usage guidelines
 

@@ -22,6 +22,8 @@ public class WebDiff  {
     public static final String BOOTSTRAP_JS_URL = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js";
     public static final int port = 6789;
 
+    private final String toolName = "RefactoringMiner";
+
     public Set<ASTDiff> diffs;
 
 
@@ -53,7 +55,7 @@ public class WebDiff  {
         get("/vanilla-diff/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView(astDiff.getSrcPath(),astDiff.getDstPath(),
+            Renderable view = new VanillaDiffView(toolName, astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, false);
             return render(view);
         });

@@ -65,7 +65,7 @@ public class BenchmarkDiff {
         get("/RMD/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView(astDiff.getSrcPath(),astDiff.getDstPath(),
+            Renderable view = new VanillaDiffView("RefactoringMiner", astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, false);
             return render(view);
         });
@@ -80,7 +80,7 @@ public class BenchmarkDiff {
                 diff = iterator.next();
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView(astDiff.getSrcPath(),astDiff.getDstPath(),
+            Renderable view = new VanillaDiffView("GumTree-Greedy", astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
             return render(view);
         });
@@ -95,7 +95,7 @@ public class BenchmarkDiff {
                 diff = iterator.next();
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView(astDiff.getSrcPath(),astDiff.getDstPath(),
+            Renderable view = new VanillaDiffView("GumTree-Simple", astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
             return render(view);
         });
@@ -110,7 +110,7 @@ public class BenchmarkDiff {
                 diff = iterator.next();
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView(astDiff.getSrcPath(),astDiff.getDstPath(),
+            Renderable view = new VanillaDiffView("IJM", astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
             return render(view);
         });
@@ -126,7 +126,7 @@ public class BenchmarkDiff {
                 diff = iterator.next();
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView(astDiff.getSrcPath(),astDiff.getDstPath(),
+            Renderable view = new VanillaDiffView("MtDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
             return render(view);
         });

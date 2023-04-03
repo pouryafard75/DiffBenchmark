@@ -5,17 +5,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.gumtreediff.matchers.*;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
-import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 /* Created by pourya on 2023-02-08 3:00 a.m. */
-public class Compare {
+public class Make {
     public static void main(String[] args) throws IOException {
         String jsonFile = "cases.json";
         ObjectMapper mapper = new ObjectMapper();

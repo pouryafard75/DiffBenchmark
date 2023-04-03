@@ -42,7 +42,36 @@ public class OracleMaker {
         result = new ArrayList<>();
     }
 
-    private String generateMethodSignature(Tree methodDeclaration) {
+    public static String generateFieldSignature(Tree fieldDeclration) {
+        StringBuilder sb = new StringBuilder();
+        outer:
+        for (Tree child : fieldDeclration.getChildren()) {
+            if (child.getType().name.equals(Constants.VARIABLE_DECLARATION_FRAGMENT))
+                for (Tree childChild : child.getChildren()) {
+                    if (childChild.getType().name.equals(Constants.SIMPLE_NAME)) {
+                        sb.append(childChild.getLabel());
+                        break outer;
+                    }
+                }
+        }
+        return sb.toString();
+    }
+    public static String generateClassSignature(Tree typeDeclaration) {
+        StringBuilder sb = new StringBuilder();
+        for (Tree child : typeDeclaration.getChildren()) {
+            if (child.getType().name.equals(Constants.TYPE_DECLARATION_KIND))
+            {
+                sb.append(child.getLabel()).append(" : ");
+            }
+            if (child.getType().name.equals(Constants.SIMPLE_NAME))
+            {
+                sb.append(child.getLabel());
+                break;
+            }
+        }
+        return sb.toString();
+    }
+    public static String generateMethodSignature(Tree methodDeclaration) {
         StringBuilder sb = new StringBuilder();
         List<Tree> children = methodDeclaration.getChildren();
         String returnType = null;
@@ -78,14 +107,16 @@ public class OracleMaker {
                         name = child2.getLabel();
                     }
                 }
-                if ((name.endsWith("s") || name.endsWith("List")) && i == children.size() - 2 && children.get(i + 1).getType().name.equals("Block") &&
-                        !type.endsWith("[]") && !type.contains("List") && !type.contains("Collection") && !type.contains("Iterable") && !type.contains("Set") && !type.contains("Iterator") && !type.contains("Array") &&
-                        !type.endsWith("s") && !type.toLowerCase().contains(name.toLowerCase()) &&
-                        !name.endsWith("ss") && !type.equals("boolean") && !type.equals("int")) {
-                    //hack for varargs
-                    sb.append(name + " " + type + "...");
-                } else {
-                    sb.append(name + " " + type);
+                if (name != null && type != null) {
+                    if ((name.endsWith("s") || name.endsWith("List")) && i == children.size() - 2 && children.get(i + 1).getType().name.equals("Block") &&
+                            !type.endsWith("[]") && !type.contains("List") && !type.contains("Collection") && !type.contains("Iterable") && !type.contains("Set") && !type.contains("Iterator") && !type.contains("Array") &&
+                            !type.endsWith("s") && !type.toLowerCase().contains(name.toLowerCase()) &&
+                            !name.endsWith("ss") && !type.equals("boolean") && !type.equals("int")) {
+                        //hack for varargs
+                        sb.append(name + " " + type + "...");
+                    } else {
+                        sb.append(name + " " + type);
+                    }
                 }
                 if (i < children.size() - 1 && children.get(i + 1).getType().name.equals("SingleVariableDeclaration")) {
                     sb.append(",").append(" ");
@@ -108,7 +139,7 @@ public class OracleMaker {
         return sb.toString();
     }
 
-    private boolean isTypeNode(Tree child) {
+    private static boolean isTypeNode(Tree child) {
         return child.getType().name.equals("SimpleType") ||
                 child.getType().name.equals("PrimitiveType") ||
                 child.getType().name.equals("QualifiedType") ||
@@ -195,7 +226,7 @@ public class OracleMaker {
 
     }
 
-    private String getString(Tree tree, String content, int start, int end, String type) {
+    public static String getString(Tree tree, String content, int start, int end, String type) {
         Tree founded = getTreeBetweenPositions(tree, start, end, type);
         int endoff = tree.getEndPos();
         Tree prevChild = tree;
@@ -250,7 +281,7 @@ public class OracleMaker {
         }
         return null;
     }
-    public boolean isStatement(String type){
+    public static boolean isStatement(String type){
         switch (type){
             case Constants.ASSERT_STATEMENT: //Leaf
             case Constants.BLOCK: // Composite

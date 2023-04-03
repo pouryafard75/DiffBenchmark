@@ -1,0 +1,60 @@
+{
+  "matchedElements" : [ {
+    "left" : "class : JarBinaryRules",
+    "right" : "class : JarBinaryRules",
+    "info" : "TypeDeclaration[941-1988]:TypeDeclaration[888-1935]"
+  }, {
+    "left" : "package configureJarBinaries(jvmLibrary , buildDir ) : void",
+    "right" : "package configureJarBinaries(jvmLibrary , buildDir ) : void",
+    "info" : "MethodDeclaration[1033-1986]:MethodDeclaration[980-1933]"
+  }, {
+    "left" : "public execute(jarBinary ) : void",
+    "right" : "public execute(jarBinary ) : void",
+    "info" : "MethodDeclaration[1380-1968]:MethodDeclaration[1327-1915]"
+  } ],
+  "mappings" : [ {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1138-1986]:Block[1085-1933]"
+  }, {
+    "left" : "final File binariesDir = new File(buildDir, \"jars\");",
+    "right" : "final File binariesDir = new File(buildDir, \"jars\");",
+    "info" : "VariableDeclarationStatement[1148-1200]:VariableDeclarationStatement[1095-1147]"
+  }, {
+    "left" : "final File classesDir = new File(buildDir, \"classes\");",
+    "right" : "final File classesDir = new File(buildDir, \"classes\");",
+    "info" : "VariableDeclarationStatement[1209-1263]:VariableDeclarationStatement[1156-1210]"
+  }, {
+    "left" : "jvmLibrary.getBinaries().withType(JarBinarySpec.class).beforeEach(new Action<JarBinarySpec>() {\n            @Override\n            public void execute(JarBinarySpec jarBinary) {\n                JarBinarySpecInternal jarBinaryInternal = (JarBinarySpecInternal) jarBinary;\n                ((JarBinarySpecInternal) jarBinary).setBaseName(jvmLibrary.getName());\n\n                File outputDir = new File(classesDir, jarBinary.getName());\n                jarBinary.setClassesDir(outputDir);\n                jarBinary.setResourcesDir(outputDir);\n                jarBinary.setJarFile(new File(binariesDir, String.format(\"%s/%s.jar\", jarBinary.getName(), jarBinaryInternal.getBaseName())));\n            }\n        });",
+    "right" : "jvmLibrary.getBinaries().withType(JarBinarySpec.class).beforeEach(new Action<JarBinarySpec>() {\n            @Override\n            public void execute(JarBinarySpec jarBinary) {\n                JarBinarySpecInternal jarBinaryInternal = (JarBinarySpecInternal) jarBinary;\n                ((JarBinarySpecInternal) jarBinary).setBaseName(jvmLibrary.getName());\n\n                File outputDir = new File(classesDir, jarBinary.getName());\n                jarBinary.setClassesDir(outputDir);\n                jarBinary.setResourcesDir(outputDir);\n                jarBinary.setJarFile(new File(binariesDir, String.format(\"%s/%s.jar\", jarBinary.getName(), jarBinaryInternal.getBaseName())));\n            }\n        });",
+    "info" : "ExpressionStatement[1272-1980]:ExpressionStatement[1219-1927]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1447-1968]:Block[1394-1915]"
+  }, {
+    "left" : "JarBinarySpecInternal jarBinaryInternal = (JarBinarySpecInternal) jarBinary;",
+    "right" : "JarBinarySpecInternal jarBinaryInternal = (JarBinarySpecInternal) jarBinary;",
+    "info" : "VariableDeclarationStatement[1465-1541]:VariableDeclarationStatement[1412-1488]"
+  }, {
+    "left" : "((JarBinarySpecInternal) jarBinary).setBaseName(jvmLibrary.getName());",
+    "right" : "((JarBinarySpecInternal) jarBinary).setBaseName(jvmLibrary.getName());",
+    "info" : "ExpressionStatement[1558-1628]:ExpressionStatement[1505-1575]"
+  }, {
+    "left" : "File outputDir = new File(classesDir, jarBinary.getName());",
+    "right" : "File outputDir = new File(classesDir, jarBinary.getName());",
+    "info" : "VariableDeclarationStatement[1646-1705]:VariableDeclarationStatement[1593-1652]"
+  }, {
+    "left" : "jarBinary.setClassesDir(outputDir);",
+    "right" : "jarBinary.setClassesDir(outputDir);",
+    "info" : "ExpressionStatement[1722-1757]:ExpressionStatement[1669-1704]"
+  }, {
+    "left" : "jarBinary.setResourcesDir(outputDir);",
+    "right" : "jarBinary.setResourcesDir(outputDir);",
+    "info" : "ExpressionStatement[1774-1811]:ExpressionStatement[1721-1758]"
+  }, {
+    "left" : "jarBinary.setJarFile(new File(binariesDir, String.format(\"%s/%s.jar\", jarBinary.getName(), jarBinaryInternal.getBaseName())));",
+    "right" : "jarBinary.setJarFile(new File(binariesDir, String.format(\"%s/%s.jar\", jarBinary.getName(), jarBinaryInternal.getBaseName())));",
+    "info" : "ExpressionStatement[1828-1954]:ExpressionStatement[1775-1901]"
+  } ]
+}

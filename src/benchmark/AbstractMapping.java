@@ -1,6 +1,7 @@
 package benchmark;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.github.gumtreediff.matchers.Mapping;
 
 import java.io.Serializable;
 
@@ -25,6 +26,18 @@ public class AbstractMapping implements Serializable {
         this.right = right;
         this.leftType = leftType;
         this.rightType = rightType;
+        info = makeInfo();
+    }
+
+    public AbstractMapping(Mapping mapping, String srcString, String dstString) {
+        this.leftOffset = mapping.first.getPos();
+        this.leftEndOffset = mapping.first.getEndPos();
+        this.rightOffset = mapping.second.getPos();
+        this.rightEndOffset = mapping.second.getEndPos();;
+        this.left = srcString;
+        this.right = dstString;
+        this.leftType = mapping.first.getType().name;
+        this.rightType = mapping.second.getType().name;;
         info = makeInfo();
     }
 

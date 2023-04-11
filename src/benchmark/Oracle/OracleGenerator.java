@@ -1,7 +1,6 @@
 package benchmark.Oracle;
 
 import benchmark.AbstractMapping;
-import benchmark.ProgramElement;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,7 +11,6 @@ import org.apache.commons.io.FileUtils;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.matchers.Constants;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
-import org.refactoringminer.astDiff.utils.MappingExportModel;
 
 import java.io.File;
 import java.io.IOException;
@@ -187,13 +185,24 @@ public class OracleGenerator {
         DefaultPrettyPrinter printer = new DefaultPrettyPrinter().withObjectIndenter(new DefaultIndenter("    ", "\n"));
         try {
             String out = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
-
-            String replaced = srcPath.replace("/", ".").replace(".java", ".json");
-            String repoReplaced = repo.replace("https://github.com/","").replace(".git","").replace("/",".");
-            FileUtils.writeStringToFile(new File(folderName + repoReplaced + "/" + commit + "/" + replaced), out);
+            FileUtils.writeStringToFile(new File(getFinalPath(folderName, srcPath, commit, repo)), out);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String getFinalPath(String folderName, String fileName, String commit, String repo) {
+        String replacedFileName = replaceFileName(fileName);
+        String repoReplaced = repoFolder(repo);
+        return folderName + repoReplaced + "/" + commit + "/" + replacedFileName;
+    }
+
+    public static String replaceFileName(String srcPath) {
+        return srcPath.replace("/", ".").replace(".java", ".json");
+    }
+
+    public static String repoFolder(String repo) {
+        return repo.replace("https://github.com/", "").replace(".git", "").replace("/", ".");
     }
 }
 

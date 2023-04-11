@@ -4,17 +4,20 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.gumtreediff.matchers.Mapping;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /* Created by pourya on 2023-02-08 2:48 a.m. */
 public class AbstractMapping implements Serializable {
     @JsonIgnore
-    final int leftOffset,leftEndOffset,rightOffset,rightEndOffset;
+    int leftOffset,leftEndOffset,rightOffset,rightEndOffset;
 //    @JsonIgnore
-    final String left,right;
+    String left,right;
     @JsonIgnore
-    final String leftType,rightType;
+    String leftType,rightType;
 
     String info;
+
+    public AbstractMapping(){}
 
 
     public AbstractMapping(int leftOffset, int leftEndOffset, int rightOffset, int rightEndOffset, String left, String right, String leftType, String rightType) {
@@ -92,5 +95,18 @@ public class AbstractMapping implements Serializable {
 
     public void setInfo(String info) {
         this.info = info;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AbstractMapping that = (AbstractMapping) o;
+        return Objects.equals(info, that.info);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(info);
     }
 }

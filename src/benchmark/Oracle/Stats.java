@@ -1,11 +1,10 @@
 package benchmark.Oracle;
 
 public class Stats {
-    int TP;
-    int FP;
-    int FN;
-
-    int TN = 0;
+    private final int TP;
+    private final int FP;
+    private final int FN;
+    private final int TN = 0;
 
     public Stats(int TP, int FP, int FN) {
         this.TP = TP;
@@ -23,5 +22,21 @@ public class Stats {
 
     public float calcRecall() {
         return ((float) (TP)) / ((float) (TP + FN));
+    }
+
+    public int getTP() {
+        return TP;
+    }
+
+    public int getFP() {
+        return FP;
+    }
+
+    public int getFN() {
+        return FN;
+    }
+
+    public int getTN() {
+        return TN;
     }
 }

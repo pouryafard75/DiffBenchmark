@@ -16,17 +16,13 @@ public class MetricComputer {
 
     private final HumanReadableDiff godDiff;
     private final HumanReadableDiff toolDiff;
-    private int numberOfIgnoredMappings;
-
-    private int numberOfIgnoredElements;
 
     public MetricComputer(HumanReadableDiff godDiff, HumanReadableDiff toolDiff) {
         this.godDiff = godDiff;
         this.toolDiff = toolDiff;
 
     }
-
-    private Stats makeStats(List<AbstractMapping> godList, List<AbstractMapping> toolList, int ignores) {
+    private Stats makeStats(List<AbstractMapping> godList, List<AbstractMapping> toolList) {
         int TP = 0;
         int FP = 0;
         int FN = 0;
@@ -40,38 +36,17 @@ public class MetricComputer {
             if (!godList.contains(mapping))
                 FP += 1;
         }
-        if (TP > ignores)
-            TP = TP - ignores;
+//        if (TP > ignores)
+//            TP = TP - ignores;
         return new Stats(TP, FP, FN);
     }
 
     public Stats programElementStats(){
-        return makeStats(godDiff.matchedElements,toolDiff.matchedElements,numberOfIgnoredElements);
+        return makeStats(godDiff.matchedElements,toolDiff.matchedElements);
     }
     public Stats mappingStats(){
-        return makeStats(godDiff.mappings,toolDiff.mappings,numberOfIgnoredMappings);
+        return makeStats(godDiff.mappings,toolDiff.mappings);
     }
 
-    public void advance(Tree src, Tree dst, ExtendedMultiMappingStore mappings)
-    {
-        for (Mapping mapping : mappings) {
-            if (mapping.first.getType().name.equals(Constants.METHOD_DECLARATION))
-            {
-                Tree srcFinalParent = TreeUtilFunctions.getParentUntilType(mapping.first, "CompilationUnit");
-                Tree dstFinalParent = TreeUtilFunctions.getParentUntilType(mapping.second, "CompilationUnit");
-                if (!srcFinalParent.equals(src) || !dstFinalParent.equals(dst)) continue;
-                if (mapping.first.isIsomorphicTo(mapping.second))
-                {
-                    numberOfIgnoredElements += 1;
-                    List<Tree> descendants = mapping.first.getDescendants();
-                    for (Tree descendant : descendants) {
-                        if (isStatement(descendant.getType().name))
-                            numberOfIgnoredMappings += 1;
-                    }
-                }
-            }
-        }
-        System.out.println();
-    }
 }
 

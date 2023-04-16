@@ -1,5 +1,7 @@
 package benchmark.Oracle;
 
+import gui.utils.URLHelper;
+
 import java.io.Serializable;
 
 public class CaseInfo implements Serializable {
@@ -9,6 +11,10 @@ public class CaseInfo implements Serializable {
     public CaseInfo(String repo, String commit) {
         this.repo = repo;
         this.commit = commit;
+    }
+    public CaseInfo(String url) {
+        this.repo = URLHelper.getRepo(url);
+        this.commit = URLHelper.getCommit(url);
     }
 
     public CaseInfo() {
@@ -36,5 +42,9 @@ public class CaseInfo implements Serializable {
         CaseInfo second = (CaseInfo) obj;
         return second.getRepo().equals(this.getRepo()) &&
                 second.getCommit().equals(this.getCommit());
+    }
+
+    public String makeURL() {
+        return this.repo.replace(".git","") + "/commit/" + this.commit;
     }
 }

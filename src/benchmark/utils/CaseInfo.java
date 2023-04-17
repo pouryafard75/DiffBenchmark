@@ -1,6 +1,6 @@
 package benchmark.utils;
 
-import gui.utils.URLHelper;
+import org.refactoringminer.astDiff.utils.URLHelper;
 
 import java.io.Serializable;
 

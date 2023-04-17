@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import static benchmark.oracle.utils.generators.BenchmarkOracleGenerator.makeOutputs;
+import static benchmark.oracle.utils.generators.BenchmarkOracleGenerator.writeToFiles;
 
 /* Created by pourya on 2023-04-17 7:45 p.m. */
 public class MakeOracle {
@@ -24,7 +24,7 @@ public class MakeOracle {
         for (CaseInfo info : infos) {
             String repo = info.getRepo();
             String commit = info.getCommit();
-            makeOutputs(repo, commit);
+            writeToFiles(repo, commit);
         }
     }
 

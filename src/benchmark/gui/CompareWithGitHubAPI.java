@@ -4,27 +4,14 @@ import benchmark.gui.web.BenchmarkDiff;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
-import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.matchers.CompositeMatchers;
-import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
-import com.github.gumtreediff.tree.Tree;
-import com.github.gumtreediff.tree.TreeContext;
-import gui.utils.DiffUtils;
-import gui.utils.URLHelper;
-import org.refactoringminer.api.RefactoringMinerTimedOutException;
 import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.matchers.Constants;
-import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
+import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
-import java.io.IOException;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
-
-import static gui.utils.DiffUtils.changeAPI;
-import static gui.utils.DiffUtils.myMethod;
 
 /* Created by pourya on 2022-12-26 9:30 p.m. */
 public class CompareWithGitHubAPI {

@@ -1,10 +1,10 @@
 package gui;
 
-import gui.utils.URLHelper;
 import gui.webdiff.WebDiff;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
 

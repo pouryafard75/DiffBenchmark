@@ -1,22 +1,15 @@
 package benchmark.oracle.utils.generators;
 
-import benchmark.utils.CaseInfo;
-import benchmark.oracle.utils.generators.HumanReadableDiffGenerator;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.gumtreediff.matchers.*;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
 import java.util.Set;
 
 /* Created by pourya on 2023-02-08 3:00 a.m. */
 public class BenchmarkOracleGenerator {
-    public static void makeOutputs(String repo, String commit) {
+    public static void writeToFiles(String repo, String commit) {
         Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
         for (ASTDiff astDiff : astDiffs) {
             HumanReadableDiffGenerator rmHD = new HumanReadableDiffGenerator(repo, commit, astDiff);

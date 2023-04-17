@@ -48,53 +48,55 @@ public class CompareWithGitHubAPI {
             actions = new SimplifiedChawatheScriptGenerator().computeActions(match);
             diff = new Diff(astDiff.src, astDiff.dst, match, actions);
             GTS_astDiff.add(diff);
+
+            //TODO: Fix the issue with IJM & MTDiff
             //
-            MappingStore ijmMappings = null;
-            boolean _seen = false;
-            for (Mapping mapping : DiffUtils.IJMDiff(astDiff.getSrcContents(), astDiff.getDstContents())) {
-                if (!_seen)
-                {
-                    Tree srcRoot = TreeUtilFunctions.getParentUntilType(mapping.first, "CompilationUnit");
-                    Tree dstRoot = TreeUtilFunctions.getParentUntilType(mapping.second, "CompilationUnit");
-                    _seen = true;
-                    ijmMappings = new MappingStore(srcRoot,dstRoot);
-                }
-                ijmMappings.addMapping(mapping.first,mapping.second);
-            }
-            if (!_seen)
-                ijmMappings = new MappingStore(astDiff.src.getRoot(),astDiff.dst.getRoot());
-            actions = new SimplifiedChawatheScriptGenerator().computeActions(ijmMappings);
-            EditScript modifiedEditScript = new EditScript();
-            for (Action action : actions) {
-                if (!action.getNode().getType().name.equals(Constants.SIMPLE_NAME))
-                    modifiedEditScript.add(action);
-            }
-            TreeContext srcTC = new TreeContext();
-            srcTC.setRoot(ijmMappings.src);
-            TreeContext dstTC = new TreeContext();
-            dstTC.setRoot(ijmMappings.dst);
-            IJM_astDiff.add(new Diff(srcTC,dstTC,ijmMappings, modifiedEditScript));
-            //
-            MappingStore mtdiffmappings = null;
-            _seen = false;
-            for (Mapping mapping : DiffUtils.MTDiff(astDiff.getSrcContents(), astDiff.getDstContents())) {
-                if (!_seen)
-                {
-                    Tree srcRoot = TreeUtilFunctions.getParentUntilType(mapping.first, "CompilationUnit");
-                    Tree dstRoot = TreeUtilFunctions.getParentUntilType(mapping.second, "CompilationUnit");
-                    _seen = true;
-                    mtdiffmappings = new MappingStore(srcRoot,dstRoot);
-                }
-                mtdiffmappings.addMapping(mapping.first,mapping.second);
-            }
-            if (!_seen)
-                mtdiffmappings = new MappingStore(astDiff.src.getRoot(),astDiff.dst.getRoot());
-            actions = new SimplifiedChawatheScriptGenerator().computeActions(mtdiffmappings);
-            srcTC = new TreeContext();
-            srcTC.setRoot(mtdiffmappings.src);
-            dstTC = new TreeContext();
-            dstTC.setRoot(mtdiffmappings.dst);
-            MTD_astDiff.add(new Diff(srcTC,dstTC,mtdiffmappings, actions));
+//            MappingStore ijmMappings = null;
+//            boolean _seen = false;
+//            for (Mapping mapping : DiffUtils.IJMDiff(astDiff.getSrcContents(), astDiff.getDstContents())) {
+//                if (!_seen)
+//                {
+//                    Tree srcRoot = TreeUtilFunctions.getParentUntilType(mapping.first, "CompilationUnit");
+//                    Tree dstRoot = TreeUtilFunctions.getParentUntilType(mapping.second, "CompilationUnit");
+//                    _seen = true;
+//                    ijmMappings = new MappingStore(srcRoot,dstRoot);
+//                }
+//                ijmMappings.addMapping(mapping.first,mapping.second);
+//            }
+//            if (!_seen)
+//                ijmMappings = new MappingStore(astDiff.src.getRoot(),astDiff.dst.getRoot());
+//            actions = new SimplifiedChawatheScriptGenerator().computeActions(ijmMappings);
+//            EditScript modifiedEditScript = new EditScript();
+//            for (Action action : actions) {
+//                if (!action.getNode().getType().name.equals(Constants.SIMPLE_NAME))
+//                    modifiedEditScript.add(action);
+//            }
+//            TreeContext srcTC = new TreeContext();
+//            srcTC.setRoot(ijmMappings.src);
+//            TreeContext dstTC = new TreeContext();
+//            dstTC.setRoot(ijmMappings.dst);
+//            IJM_astDiff.add(new Diff(srcTC,dstTC,ijmMappings, modifiedEditScript));
+//            //
+//            MappingStore mtdiffmappings = null;
+//            _seen = false;
+//            for (Mapping mapping : DiffUtils.MTDiff(astDiff.getSrcContents(), astDiff.getDstContents())) {
+//                if (!_seen)
+//                {
+//                    Tree srcRoot = TreeUtilFunctions.getParentUntilType(mapping.first, "CompilationUnit");
+//                    Tree dstRoot = TreeUtilFunctions.getParentUntilType(mapping.second, "CompilationUnit");
+//                    _seen = true;
+//                    mtdiffmappings = new MappingStore(srcRoot,dstRoot);
+//                }
+//                mtdiffmappings.addMapping(mapping.first,mapping.second);
+//            }
+//            if (!_seen)
+//                mtdiffmappings = new MappingStore(astDiff.src.getRoot(),astDiff.dst.getRoot());
+//            actions = new SimplifiedChawatheScriptGenerator().computeActions(mtdiffmappings);
+//            srcTC = new TreeContext();
+//            srcTC.setRoot(mtdiffmappings.src);
+//            dstTC = new TreeContext();
+//            dstTC.setRoot(mtdiffmappings.dst);
+//            MTD_astDiff.add(new Diff(srcTC,dstTC,mtdiffmappings, actions));
             //
         }
         new BenchmarkDiff(RM_astDiff,GTG_astDiff,GTS_astDiff,IJM_astDiff,MTD_astDiff).run();

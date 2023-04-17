@@ -24,7 +24,7 @@ import static benchmark.oracle.utils.generators.GeneratorUtils.*;
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.*;
 
 /* Created by pourya on 2023-04-02 9:24 p.m. */
-public class OracleGenerator {
+public class HumanReadableDiffGenerator {
     private final String repo;
     private final String commit;
     private final Tree src;
@@ -40,7 +40,7 @@ public class OracleGenerator {
             .thenComparing(AbstractMapping::getRightOffset)
             .thenComparing(AbstractMapping::getLeftEndOffset)
             .thenComparing(AbstractMapping::getRightEndOffset);
-    public OracleGenerator(String repo, String commit, ASTDiff astDiff) {
+    public HumanReadableDiffGenerator(String repo, String commit, ASTDiff astDiff) {
         this.repo = repo;
         this.commit = commit;
         this.src = astDiff.src.getRoot();

@@ -1,9 +1,9 @@
-package benchmark.oracle;
+package benchmark.metrics.computers;
 
-import benchmark.oracle.utils.CaseInfo;
-import benchmark.oracle.utils.DiffFileStats;
-import benchmark.oracle.utils.DiffIgnore;
-import benchmark.oracle.utils.DiffStats;
+import benchmark.utils.CaseInfo;
+import benchmark.metrics.models.DiffComparisonResult;
+import benchmark.metrics.models.DiffIgnore;
+import benchmark.metrics.models.DiffStats;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.jgit.lib.Repository;
@@ -11,8 +11,10 @@ import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
+import benchmark.oracle.models.HumanReadableDiff;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,11 +22,11 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static benchmark.oracle.OracleGenerator.replaceFileName;
-import static benchmark.oracle.OracleGenerator.repoFolder;
+import static benchmark.utils.PathResoslver.replaceFileName;
+import static benchmark.utils.PathResoslver.repoFolder;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
-public class BenchmarkMetrics {
+public class BenchmarkMetricsComputer {
     private static final String GOD_PATH = "output/GOD/";
     private static final String RMD_PATH =  "output/RMD/";
     private static final String GTG_PATH = "output/GTG/";
@@ -37,7 +39,7 @@ public class BenchmarkMetrics {
     private static List<CaseInfo> infos;
     private static Map<CaseInfo, Set<ASTDiff>> diffs = new LinkedHashMap<>();
 
-    public BenchmarkMetrics() throws Exception {
+    public BenchmarkMetricsComputer() throws Exception {
         populateTools();
         fetchCases();
         runRMLocally();
@@ -76,16 +78,16 @@ public class BenchmarkMetrics {
 
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public List<DiffFileStats> generateBenchmarkStats() throws IOException {
+    public List<DiffComparisonResult> generateBenchmarkStats() throws IOException {
 
-        List<DiffFileStats> benchmarkStats = new ArrayList<>();
+        List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
         for (CaseInfo info : infos) {
             String folderPath = exportedFolderPathByCaseInfo(info);
             String godFullFolderPath = GOD_PATH + folderPath;
             Path dir = Paths.get(godFullFolderPath);
             Files.walk(dir).filter(path -> path.toFile().isFile()).forEach(path ->
                     {
-                        DiffFileStats diffFileStats = new DiffFileStats(info, path.getFileName().toString());
+                        DiffComparisonResult diffComparisonResult = new DiffComparisonResult(info, path.getFileName().toString());
                         String godFullPath = path.toString();
                         HumanReadableDiff godHRD;
 
@@ -112,28 +114,68 @@ public class BenchmarkMetrics {
                             }
 
                             DiffStats diffStats = compareHumanReadableDiffs(godHRD, toolHRD);
-                            diffFileStats.putStats(entry.getKey(), diffStats);
+                            diffComparisonResult.putStats(entry.getKey(), diffStats);
                         }
                         DiffIgnore diffIgnore = new DiffIgnore(astDiff.src.getRoot(), astDiff.dst.getRoot(), astDiff.getMultiMappings());
                         diffIgnore.run();
-                        diffFileStats.setIgnore(diffIgnore);
-                        benchmarkStats.add(diffFileStats);
+                        diffComparisonResult.setIgnore(diffIgnore);
+                        benchmarkStats.add(diffComparisonResult);
                     });
         }
         return benchmarkStats;
     }
 
     private static DiffStats compareHumanReadableDiffs(HumanReadableDiff godDiff, HumanReadableDiff toolDiff) {
-        MetricComputer metricComputer = new MetricComputer(godDiff, toolDiff);
-        return new DiffStats(metricComputer.programElementStats(), metricComputer.mappingStats());
+        DiffMetricsComputer diffMetricsComputer = new DiffMetricsComputer(godDiff, toolDiff);
+        return new DiffStats(diffMetricsComputer.programElementStats(), diffMetricsComputer.mappingStats());
     }
-//    private static DiffStats compareHumanReadableDiffs(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, Tree src, Tree dst, ExtendedMultiMappingStore extendedMultiMappingStore) {
-//        MetricComputer metricComputer = new MetricComputer(godDiff, toolDiff);
-//        metricComputer.advance(src,dst,extendedMultiMappingStore);
-//        return new DiffStats(metricComputer.programElementStats(), metricComputer.mappingStats(),metricComputer.getNumberOfIgnoredElements(),metricComputer.getNumberOfIgnoredMappings());
-//    }
 
     private static String exportedFolderPathByCaseInfo(CaseInfo info) {
         return repoFolder(info.getRepo()) +  "/" + info.getCommit();
+    }
+
+    public static void writeStatsToCSV(List<DiffComparisonResult> stats, String[] activeTools) throws IOException {
+        FileWriter writer = new FileWriter("stats.csv");
+        String[] toolNames = activeTools;
+        writer.append("url,srcFileName,ignoredMappings,ignoredElements,");
+        for (String toolName : toolNames) {
+            toolName = "";
+            writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN,");
+            writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN,");
+//            writer.append(toolName).append("_ELEMENTS_TP_ORIGINAL,").append(toolName).append("_ELEMENTS_TP_REFINED,").append(toolName).append("_ELEMENTS_FP,").append(toolName).append("_ELEMENTS_FN,");
+        }
+        writer.append("\n");
+        for (DiffComparisonResult stat : stats) {
+            writer.append(stat.getCaseInfo().makeURL());
+            writer.append(",");
+            writer.append(stat.getSrcFileName());
+            writer.append(",");
+            writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredMappings()));
+            writer.append(",");
+            writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredElements()));
+            writer.append(",");
+            for (String toolName : toolNames) {
+                DiffStats tool = stat.getDiffStatsList().get(toolName);
+                writer.append(String.valueOf(tool.getAbstractMappingStats().getTP()));
+                writer.append(",");
+                writer.append(String.valueOf(tool.getAbstractMappingStats().getTP() - stat.getIgnore().getNumberOfIgnoredMappings()));
+                writer.append(",");
+                writer.append(String.valueOf(tool.getAbstractMappingStats().getFP()));
+                writer.append(",");
+                writer.append(String.valueOf(tool.getAbstractMappingStats().getFN()));
+                writer.append(",");
+                writer.append(String.valueOf(tool.getProgramElementStats().getTP()));
+                writer.append(",");
+                writer.append(String.valueOf(tool.getProgramElementStats().getTP() - stat.getIgnore().getNumberOfIgnoredElements()));
+                writer.append(",");
+                writer.append(String.valueOf(tool.getProgramElementStats().getFP()));
+                writer.append(",");
+                writer.append(String.valueOf(tool.getProgramElementStats().getFN()));
+                writer.append(",");
+            }
+            writer.append("\n");
+        }
+        writer.flush();
+        writer.close();
     }
 }

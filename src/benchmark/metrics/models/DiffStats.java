@@ -1,6 +1,4 @@
-package benchmark.oracle.utils;
-
-import benchmark.oracle.Stats;
+package benchmark.metrics.models;
 
 /* Created by pourya on 2023-04-16 2:42 a.m. */
 public class DiffStats {

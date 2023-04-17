@@ -1,14 +1,17 @@
-package benchmark.oracle;
+package benchmark.metrics.computers;
+import benchmark.metrics.models.Stats;
+import benchmark.oracle.models.AbstractMapping;
+import benchmark.oracle.models.HumanReadableDiff;
 
 import java.util.List;
 
 /* Created by pourya on 2023-04-03 3:53 a.m. */
-public class MetricComputer {
+public class DiffMetricsComputer {
 
     private final HumanReadableDiff godDiff;
     private final HumanReadableDiff toolDiff;
 
-    public MetricComputer(HumanReadableDiff godDiff, HumanReadableDiff toolDiff) {
+    public DiffMetricsComputer(HumanReadableDiff godDiff, HumanReadableDiff toolDiff) {
         this.godDiff = godDiff;
         this.toolDiff = toolDiff;
 
@@ -33,10 +36,10 @@ public class MetricComputer {
     }
 
     public Stats programElementStats(){
-        return makeStats(godDiff.matchedElements,toolDiff.matchedElements);
+        return makeStats(godDiff.getMatchedElements(),toolDiff.getMatchedElements());
     }
     public Stats mappingStats(){
-        return makeStats(godDiff.mappings,toolDiff.mappings);
+        return makeStats(godDiff.getMappings(),toolDiff.getMappings());
     }
 
 }

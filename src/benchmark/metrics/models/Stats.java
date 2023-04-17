@@ -1,4 +1,4 @@
-package benchmark.oracle;
+package benchmark.metrics.models;
 
 public class Stats {
     private final int TP;

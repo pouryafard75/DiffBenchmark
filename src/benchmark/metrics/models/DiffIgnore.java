@@ -1,4 +1,4 @@
-package benchmark.oracle.utils;
+package benchmark.metrics.models;
 
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
@@ -12,7 +12,6 @@ import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.isStatement;
 
 /* Created by pourya on 2023-04-16 5:07 a.m. */
 public class DiffIgnore {
-
     private final Tree src;
     private final Tree dst;
     private final ExtendedMultiMappingStore multiMappings;

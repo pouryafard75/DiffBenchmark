@@ -1,4 +1,4 @@
-package benchmark.oracle.utils;
+package benchmark.utils;
 
 import gui.utils.URLHelper;
 

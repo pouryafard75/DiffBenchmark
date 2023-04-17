@@ -1,4 +1,4 @@
-package benchmark.oracle.utils;
+package benchmark.oracle.utils.generators;
 
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.matchers.Constants;
@@ -6,7 +6,7 @@ import org.refactoringminer.astDiff.matchers.Constants;
 import java.util.List;
 
 /* Created by pourya on 2023-04-17 6:45 p.m. */
-public class BenchmarkUtils {
+public class GeneratorUtils {
     public static String generateFieldSignature(Tree fieldDeclration) {
         StringBuilder sb = new StringBuilder();
         outer:

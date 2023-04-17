@@ -1,7 +1,7 @@
-package benchmark.oracle.runners;
+package benchmark.oracle;
 
-import benchmark.oracle.utils.CaseInfo;
-import benchmark.oracle.OracleGenerator;
+import benchmark.utils.CaseInfo;
+import benchmark.oracle.utils.generators.OracleGenerator;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.gumtreediff.matchers.*;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 /* Created by pourya on 2023-02-08 3:00 a.m. */
-public class MakeToolsOuput {
+public class GenerateToolsHRD {
     public static void main(String[] args) throws IOException {
         String jsonFile = "cases.json";
         ObjectMapper mapper = new ObjectMapper();
@@ -39,14 +39,14 @@ public class MakeToolsOuput {
             OracleGenerator rmHD = new OracleGenerator(repo, commit, astDiff);
             rmHD.make();
             rmHD.write("output/RM/");
-            OracleGenerator gtgHD = oracleGenFromMatch(new CompositeMatchers.ClassicGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff);
+            OracleGenerator gtgHD = oracleGeneratorFromMappingStore(new CompositeMatchers.ClassicGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff);
             gtgHD.write("output/GTG/");
-            OracleGenerator gtsHD = oracleGenFromMatch(new CompositeMatchers.SimpleGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff);
+            OracleGenerator gtsHD = oracleGeneratorFromMappingStore(new CompositeMatchers.SimpleGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff);
             gtsHD.write("output/GTS/");
         }
     }
 
-    private static OracleGenerator oracleGenFromMatch(MappingStore match, String repo, String commit, ASTDiff astDiff) {
+    private static OracleGenerator oracleGeneratorFromMappingStore(MappingStore match, String repo, String commit, ASTDiff astDiff) {
         ExtendedMultiMappingStore GTG_mappingStore = new ExtendedMultiMappingStore(astDiff.src.getRoot(), astDiff.dst.getRoot());
         GTG_mappingStore.add(match);
         ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, GTG_mappingStore);

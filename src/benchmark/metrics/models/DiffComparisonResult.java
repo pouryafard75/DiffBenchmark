@@ -1,16 +1,18 @@
-package benchmark.oracle.utils;
+package benchmark.metrics.models;
+
+import benchmark.utils.CaseInfo;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /* Created by pourya on 2023-04-03 4:47 a.m. */
-public class DiffFileStats {
+public class DiffComparisonResult {
     final CaseInfo caseInfo;
     final String srcFileName;
     final Map<String, DiffStats> diffStatsList = new LinkedHashMap<>();
     private DiffIgnore ignore = null;
 
-    public DiffFileStats(CaseInfo caseInfo, String srcFileName) {
+    public DiffComparisonResult(CaseInfo caseInfo, String srcFileName) {
         this.caseInfo = caseInfo;
         this.srcFileName = srcFileName;
     }

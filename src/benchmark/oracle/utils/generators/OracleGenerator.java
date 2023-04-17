@@ -1,5 +1,8 @@
-package benchmark.oracle;
+package benchmark.oracle.utils.generators;
 
+import benchmark.oracle.models.AbstractMapping;
+import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.utils.PathResoslver;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,12 +16,11 @@ import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static benchmark.oracle.utils.BenchmarkUtils.*;
+import static benchmark.oracle.utils.generators.GeneratorUtils.*;
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.*;
 
 /* Created by pourya on 2023-04-02 9:24 p.m. */
@@ -124,7 +126,7 @@ public class OracleGenerator {
 
         abstractMappingList.sort(abstractMappingComparator);
 
-        result.mappings = abstractMappingList;
+        result.setMappings(abstractMappingList);
     }
 
     private boolean isPartOfJavadoc(Tree srcSubTree) {
@@ -183,56 +185,10 @@ public class OracleGenerator {
         DefaultPrettyPrinter printer = new DefaultPrettyPrinter().withObjectIndenter(new DefaultIndenter("    ", "\n"));
         try {
             String out = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
-            FileUtils.writeStringToFile(new File(getFinalPath(folderName, srcPath, commit, repo)), out);
+            FileUtils.writeStringToFile(new File(PathResoslver.getFinalPath(folderName, srcPath, commit, repo)), out);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static String getFinalPath(String folderName, String fileName, String commit, String repo) {
-        String replacedFileName = replaceFileName(fileName);
-        String repoReplaced = repoFolder(repo);
-        return folderName + repoReplaced + "/" + commit + "/" + replacedFileName;
-    }
-
-    public static String replaceFileName(String srcPath) {
-        return srcPath.replace("/", ".").replace(".java", ".json");
-    }
-
-    public static String repoFolder(String repo) {
-        return repo.replace("https://github.com/", "").replace(".git", "").replace("/", ".");
-    }
-}
-
-class HumanReadableDiff implements Serializable
-{
-    List<AbstractMapping> matchedElements;
-    List<AbstractMapping> mappings;
-
-    public HumanReadableDiff(List<AbstractMapping> matchedElements, List<AbstractMapping> mappings) {
-        this.matchedElements = matchedElements;
-        this.mappings = mappings;
-    }
-
-    public HumanReadableDiff() {
-        
-    }
-
-    public List<AbstractMapping> getMatchedElements() {
-
-        return matchedElements;
-    }
-
-    public void setMatchedElements(List<AbstractMapping> matchedElements) {
-        this.matchedElements = matchedElements;
-    }
-
-    public List<AbstractMapping> getMappings() {
-        return mappings;
-    }
-
-    public void setMappings(List<AbstractMapping> mappings) {
-        this.mappings = mappings;
     }
 }
 

@@ -1,4 +1,8 @@
-package benchmark.oracle;
+package benchmark.oracle.runners;
+
+import benchmark.oracle.BenchmarkMetrics;
+import benchmark.oracle.utils.DiffFileStats;
+import benchmark.oracle.utils.DiffStats;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,16 +30,16 @@ public class MetricsToCSV {
         }
         writer.append("\n");
         for (DiffFileStats stat : stats) {
-            writer.append(stat.caseInfo.makeURL());
+            writer.append(stat.getCaseInfo().makeURL());
             writer.append(",");
-            writer.append(stat.srcFileName);
+            writer.append(stat.getSrcFileName());
             writer.append(",");
             writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredMappings()));
             writer.append(",");
             writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredElements()));
             writer.append(",");
             for (String toolName : toolNames) {
-                DiffStats tool = stat.diffStatsList.get(toolName);
+                DiffStats tool = stat.getDiffStatsList().get(toolName);
                 writer.append(String.valueOf(tool.getAbstractMappingStats().getTP()));
                 writer.append(",");
                 writer.append(String.valueOf(tool.getAbstractMappingStats().getTP() - stat.getIgnore().getNumberOfIgnoredMappings()));

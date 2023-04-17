@@ -1,4 +1,4 @@
-package benchmark.oracle;
+package benchmark.oracle.utils;
 
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;

@@ -1,5 +1,7 @@
-package benchmark.oracle;
+package benchmark.oracle.runners;
 
+import benchmark.oracle.utils.CaseInfo;
+import benchmark.oracle.OracleGenerator;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.gumtreediff.matchers.*;
@@ -13,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 /* Created by pourya on 2023-02-08 3:00 a.m. */
-public class Make {
+public class MakeToolsOuput {
     public static void main(String[] args) throws IOException {
         String jsonFile = "cases.json";
         ObjectMapper mapper = new ObjectMapper();
@@ -25,8 +27,8 @@ public class Make {
 //        makeToolOutputs(repo,commit);
 
         for (CaseInfo info : infos) {
-            String repo = info.repo;
-            String commit = info.commit;
+            String repo = info.getRepo();
+            String commit = info.getCommit();
             makeToolOutputs(repo, commit);
         }
     }

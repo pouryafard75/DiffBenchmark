@@ -1,4 +1,4 @@
-package benchmark.oracle;
+package benchmark.oracle.utils;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,12 +7,24 @@ import java.util.Map;
 public class DiffFileStats {
     final CaseInfo caseInfo;
     final String srcFileName;
-    final Map<String,DiffStats> diffStatsList = new LinkedHashMap<>();
+    final Map<String, DiffStats> diffStatsList = new LinkedHashMap<>();
     private DiffIgnore ignore = null;
 
     public DiffFileStats(CaseInfo caseInfo, String srcFileName) {
         this.caseInfo = caseInfo;
         this.srcFileName = srcFileName;
+    }
+
+    public CaseInfo getCaseInfo() {
+        return caseInfo;
+    }
+
+    public Map<String, DiffStats> getDiffStatsList() {
+        return diffStatsList;
+    }
+
+    public String getSrcFileName() {
+        return srcFileName;
     }
 
     public void setIgnore(DiffIgnore ignore) {

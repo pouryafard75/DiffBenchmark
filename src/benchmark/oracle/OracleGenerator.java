@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static benchmark.oracle.BenchmarkUtils.*;
+import static benchmark.oracle.utils.BenchmarkUtils.*;
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.*;
 
 /* Created by pourya on 2023-04-02 9:24 p.m. */

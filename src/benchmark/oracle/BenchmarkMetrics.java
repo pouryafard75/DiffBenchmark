@@ -1,5 +1,9 @@
 package benchmark.oracle;
 
+import benchmark.oracle.utils.CaseInfo;
+import benchmark.oracle.utils.DiffFileStats;
+import benchmark.oracle.utils.DiffIgnore;
+import benchmark.oracle.utils.DiffStats;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.jgit.lib.Repository;
@@ -130,6 +134,6 @@ public class BenchmarkMetrics {
 //    }
 
     private static String exportedFolderPathByCaseInfo(CaseInfo info) {
-        return repoFolder(info.getRepo()) +  "/" + info.commit;
+        return repoFolder(info.getRepo()) +  "/" + info.getCommit();
     }
 }

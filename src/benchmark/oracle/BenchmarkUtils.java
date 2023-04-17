@@ -1,4 +1,4 @@
-package benchmark.Oracle;
+package benchmark.oracle;
 
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.matchers.Constants;

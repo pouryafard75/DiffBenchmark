@@ -1,4 +1,4 @@
-package benchmark.Oracle;
+package benchmark.oracle;
 
 import java.io.FileWriter;
 import java.io.IOException;

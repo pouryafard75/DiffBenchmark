@@ -1,4 +1,4 @@
-package benchmark.Oracle;
+package benchmark.oracle;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,8 +16,8 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static benchmark.Oracle.OracleGenerator.replaceFileName;
-import static benchmark.Oracle.OracleGenerator.repoFolder;
+import static benchmark.oracle.OracleGenerator.replaceFileName;
+import static benchmark.oracle.OracleGenerator.repoFolder;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetrics {

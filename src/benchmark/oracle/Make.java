@@ -1,4 +1,4 @@
-package benchmark.Oracle;
+package benchmark.oracle;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

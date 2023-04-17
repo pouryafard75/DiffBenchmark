@@ -1,6 +1,4 @@
-package benchmark.Oracle;
-
-import java.util.List;
+package benchmark.oracle;
 
 /* Created by pourya on 2023-04-16 2:42 a.m. */
 public class DiffStats {

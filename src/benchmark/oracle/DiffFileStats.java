@@ -1,4 +1,4 @@
-package benchmark.Oracle;
+package benchmark.oracle;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

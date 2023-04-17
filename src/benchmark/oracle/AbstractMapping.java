@@ -1,4 +1,4 @@
-package benchmark.Oracle;
+package benchmark.oracle;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.gumtreediff.matchers.Mapping;

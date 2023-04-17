@@ -112,8 +112,7 @@ public class BenchmarkMetrics {
                         }
                         DiffIgnore diffIgnore = new DiffIgnore(astDiff.src.getRoot(), astDiff.dst.getRoot(), astDiff.getMultiMappings());
                         diffIgnore.run();
-                        diffFileStats.setElements_to_be_ignored(diffIgnore.getNumberOfIgnoredElements());
-                        diffFileStats.setMappings_to_be_ignored(diffIgnore.getNumberOfIgnoredMappings());
+                        diffFileStats.setIgnore(diffIgnore);
                         benchmarkStats.add(diffFileStats);
                     });
         }

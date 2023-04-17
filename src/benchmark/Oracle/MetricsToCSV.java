@@ -30,15 +30,15 @@ public class MetricsToCSV {
             writer.append(",");
             writer.append(stat.srcFileName);
             writer.append(",");
-            writer.append(String.valueOf(stat.getMappings_to_be_ignored()));
+            writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredMappings()));
             writer.append(",");
-            writer.append(String.valueOf(stat.getElements_to_be_ignored()));
+            writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredElements()));
             writer.append(",");
             for (String toolName : toolNames) {
                 DiffStats tool = stat.diffStatsList.get(toolName);
                 writer.append(String.valueOf(tool.getAbstractMappingStats().getTP()));
                 writer.append(",");
-                writer.append(String.valueOf(tool.getAbstractMappingStats().getTP() - stat.getMappings_to_be_ignored()));
+                writer.append(String.valueOf(tool.getAbstractMappingStats().getTP() - stat.getIgnore().getNumberOfIgnoredMappings()));
                 writer.append(",");
                 writer.append(String.valueOf(tool.getAbstractMappingStats().getFP()));
                 writer.append(",");
@@ -46,7 +46,7 @@ public class MetricsToCSV {
                 writer.append(",");
                 writer.append(String.valueOf(tool.getProgramElementStats().getTP()));
                 writer.append(",");
-                writer.append(String.valueOf(tool.getProgramElementStats().getTP() - stat.getElements_to_be_ignored()));
+                writer.append(String.valueOf(tool.getProgramElementStats().getTP() - stat.getIgnore().getNumberOfIgnoredElements()));
                 writer.append(",");
                 writer.append(String.valueOf(tool.getProgramElementStats().getFP()));
                 writer.append(",");

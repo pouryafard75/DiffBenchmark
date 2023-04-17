@@ -28,7 +28,7 @@ public class BenchmarkMetrics {
     private static final String IJM_PATH = "output/IJM/";
     private static final String MTD_PATH = "output/MTD/";
     private static final String casesPath = "cases.json";
-    private final String REPOS = "/Users/pourya/IdeaProjects/RM-ASTDiff/tmp1";
+    private final String REPOS = "/Users/pourya/IdeaProjects/RM-ASTDiff/tmp1"; //TODO: Modify this based on your local path
     private static Map<String, String> toolPathMap = new LinkedHashMap<>();
     private static List<CaseInfo> infos;
     private static Map<CaseInfo, Set<ASTDiff>> diffs = new LinkedHashMap<>();

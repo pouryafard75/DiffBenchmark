@@ -1,15 +1,6 @@
 package benchmark.Oracle;
 
-import benchmark.AbstractMapping;
-import com.github.gumtreediff.matchers.Mapping;
-import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.matchers.Constants;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
-import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
-
 import java.util.List;
-
-import static benchmark.OracleMaker.isStatement;
 
 /* Created by pourya on 2023-04-03 3:53 a.m. */
 public class MetricComputer {

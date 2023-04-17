@@ -8,7 +8,7 @@ import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
 import java.util.List;
 
-import static benchmark.OracleMaker.isStatement;
+import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.isStatement;
 
 /* Created by pourya on 2023-04-16 5:07 a.m. */
 public class DiffIgnore {

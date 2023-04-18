@@ -121,6 +121,12 @@ public class HumanReadableDiffGenerator {
                     String dstString = getString(second, dstContent);
                     abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
                 }
+                else if (!first.getLabel().equals(second.getLabel()))
+                {
+                    String srcString = getString(first, srcContent);
+                    String dstString = getString(second, dstContent);
+                    abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
+                }
             }
         }
 

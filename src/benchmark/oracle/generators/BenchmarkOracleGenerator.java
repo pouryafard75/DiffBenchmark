@@ -1,4 +1,4 @@
-package benchmark.oracle.utils.generators;
+package benchmark.oracle.generators;
 
 import com.github.gumtreediff.matchers.*;
 import org.refactoringminer.astDiff.actions.ASTDiff;

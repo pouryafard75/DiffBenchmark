@@ -1,4 +1,4 @@
-package benchmark.oracle.utils.generators;
+package benchmark.oracle.generators;
 
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static benchmark.oracle.utils.generators.GeneratorUtils.*;
+import static benchmark.oracle.generators.GeneratorUtils.*;
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.*;
 
 /* Created by pourya on 2023-04-02 9:24 p.m. */

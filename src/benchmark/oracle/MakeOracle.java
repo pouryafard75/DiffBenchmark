@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
-import static benchmark.oracle.utils.generators.BenchmarkOracleGenerator.writeToFiles;
+import static benchmark.oracle.generators.BenchmarkOracleGenerator.writeToFiles;
 
 /* Created by pourya on 2023-04-17 7:45 p.m. */
 public class MakeOracle {

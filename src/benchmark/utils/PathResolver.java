@@ -2,7 +2,6 @@ package benchmark.utils;
 
 /* Created by pourya on 2023-04-17 7:29 p.m. */
 public class PathResolver {
-
     public static String getFinalPath(String folderName, String fileName, String commit, String repo) {
         String replacedFileName = replaceFileName(fileName);
         String repoReplaced = repoFolder(repo);

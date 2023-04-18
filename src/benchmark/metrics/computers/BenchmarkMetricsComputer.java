@@ -22,39 +22,20 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static benchmark.utils.Configuration.*;
 import static benchmark.utils.PathResolver.replaceFileName;
 import static benchmark.utils.PathResolver.repoFolder;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {
-    private static final String GOD_PATH = "output/GOD/";
-    private static final String RMD_PATH =  "output/RMD/";
-    private static final String GTG_PATH = "output/GTG/";
-    private static final String GTS_PATH = "output/GTS/";
-    private static final String IJM_PATH = "output/IJM/";
-    private static final String MTD_PATH = "output/MTD/";
-    private static final String casesPath = "cases.json";
-    private final String REPOS = "/Users/pourya/IdeaProjects/RM-ASTDiff/tmp1"; //TODO: Modify this based on your local path
-    private static Map<String, String> toolPathMap = new LinkedHashMap<>();
+
     private static List<CaseInfo> infos;
     private static Map<CaseInfo, Set<ASTDiff>> diffs = new LinkedHashMap<>();
 
     public BenchmarkMetricsComputer() throws Exception {
-        populateTools();
         fetchCases();
         runRMLocally();
     }
-
-    private static void populateTools() {
-//        toolPathMap.put("GOD", GOD_PATH);
-        toolPathMap.put("RMD", RMD_PATH);
-        toolPathMap.put("GTG", GTG_PATH);
-        toolPathMap.put("GTS", GTS_PATH);
-//        toolPathMap.put("IJM", IJM_PATH);
-//        toolPathMap.put("MTD", MTD_PATH);
-        System.out.println("Finished populating tools...");
-    }
-
     public String[] getActiveTools(){
         return toolPathMap.keySet().toArray(new String[0]);
     }

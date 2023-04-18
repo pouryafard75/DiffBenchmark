@@ -2,8 +2,10 @@ package benchmark.metrics.computers;
 import benchmark.metrics.models.Stats;
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.utils.CaseInfo;
 
 import java.util.List;
+import java.util.Set;
 
 /* Created by pourya on 2023-04-03 3:53 a.m. */
 public class DiffMetricsComputer {
@@ -16,7 +18,7 @@ public class DiffMetricsComputer {
         this.toolDiff = toolDiff;
 
     }
-    private Stats makeStats(List<AbstractMapping> godList, List<AbstractMapping> toolList) {
+    private Stats makeStats(Set<AbstractMapping> godList, Set<AbstractMapping> toolList) {
         int TP = 0;
         int FP = 0;
         int FN = 0;

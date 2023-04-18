@@ -5,9 +5,7 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 /* Created by pourya on 2023-04-17 7:45 p.m. */

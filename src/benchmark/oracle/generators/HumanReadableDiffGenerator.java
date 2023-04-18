@@ -16,9 +16,7 @@ import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 import static benchmark.oracle.generators.GeneratorUtils.*;
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.*;
@@ -36,7 +34,7 @@ public class HumanReadableDiffGenerator {
     private final String dstContent;
     public HumanReadableDiff result;
 
-    Comparator<AbstractMapping> abstractMappingComparator = Comparator.comparing(AbstractMapping::getLeftOffset)
+    Comparator<AbstractMapping> customComparator = Comparator.comparing(AbstractMapping::getLeftOffset)
             .thenComparing(AbstractMapping::getRightOffset)
             .thenComparing(AbstractMapping::getLeftEndOffset)
             .thenComparing(AbstractMapping::getRightEndOffset);
@@ -64,28 +62,27 @@ public class HumanReadableDiffGenerator {
     }
 
     private void populateMatchedProgramElements() {
-        List<AbstractMapping> matchedProgramElements = new ArrayList<>();
+        Set<AbstractMapping> matchedProgramElementsSet= new TreeSet<>(customComparator);
         for (Mapping mapping : mappings) {
             String firstType = mapping.first.getType().name;
             switch (firstType)
             {
                 case Constants.TYPE_DECLARATION:
-                    matchedProgramElements.add(new AbstractMapping(mapping,generateClassSignature(mapping.first),generateClassSignature(mapping.second)));
+                    matchedProgramElementsSet.add(new AbstractMapping(mapping,generateClassSignature(mapping.first),generateClassSignature(mapping.second)));
                     break;
                 case Constants.METHOD_DECLARATION:
-                    matchedProgramElements.add(new AbstractMapping(mapping,generateMethodSignature(mapping.first),generateMethodSignature(mapping.second)));
+                    matchedProgramElementsSet.add(new AbstractMapping(mapping,generateMethodSignature(mapping.first),generateMethodSignature(mapping.second)));
                     break;
                 case Constants.FIELD_DECLARATION:
-                    matchedProgramElements.add(new AbstractMapping(mapping,generateFieldSignature(mapping.first),generateFieldSignature(mapping.second)));
+                    matchedProgramElementsSet.add(new AbstractMapping(mapping,generateFieldSignature(mapping.first),generateFieldSignature(mapping.second)));
                     break;
             }
         }
-        matchedProgramElements.sort(abstractMappingComparator);
-        result.setMatchedElements(matchedProgramElements);
+        result.setMatchedElements(matchedProgramElementsSet);
     }
 
     private void populateAbstractMappingList() {
-        List<AbstractMapping> abstractMappingList = new ArrayList<>();
+        Set<AbstractMapping> abstractMappingSet = new TreeSet<>(customComparator);
         for (Mapping mapping : mappings) {
             if (mapping.first.getParent() != null & mapping.second.getParents() != null)
             {
@@ -101,7 +98,7 @@ public class HumanReadableDiffGenerator {
             if (isPartOfJavadoc(first)) continue;
             if (isStatement(first.getType().name))
             {
-                addToList(mapping, second, first, abstractMappingList);
+                addToSet(mapping, second, first, abstractMappingSet);
             }
             else{
                 if (first.getParent() == null || second.getParent() == null) continue;
@@ -109,31 +106,28 @@ public class HumanReadableDiffGenerator {
                 Tree secondParent = second.getParent();
                 if (mappings.getDsts(firstParent) == null)
                 {
-                    // TODO: 2023-04-02 9:24 p.m. check this
-                    addToList(mapping, second, first, abstractMappingList);
+                    // Destination's parent is not mapped
+                    addToSet(mapping, second, first, abstractMappingSet);
                 }
                 else if (!mappings.getDsts(firstParent).contains(secondParent))
                 {
                     /*Parents are not mapped*/
-                    addToList(mapping, second, first, abstractMappingList);
+                    addToSet(mapping, second, first, abstractMappingSet);
                 }
                 else if (!first.getLabel().equals(second.getLabel()))
                 {
                     /*Update case*/
-                    addToList(mapping, second, first, abstractMappingList);
+                    addToSet(mapping, second, first, abstractMappingSet);
                 }
             }
         }
-
-        abstractMappingList.sort(abstractMappingComparator);
-
-        result.setMappings(abstractMappingList);
+        result.setMappings(abstractMappingSet);
     }
 
-    private void addToList(Mapping mapping, Tree second, Tree first, List<AbstractMapping> abstractMappingList) {
+    private void addToSet(Mapping mapping, Tree second, Tree first, Set<AbstractMapping> abstractMappingSet) {
         String srcString = getString(first, srcContent);
         String dstString = getString(second, dstContent);
-        abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
+        abstractMappingSet.add(new AbstractMapping(mapping,srcString,dstString));
     }
 
     private boolean isPartOfJavadoc(Tree srcSubTree) {

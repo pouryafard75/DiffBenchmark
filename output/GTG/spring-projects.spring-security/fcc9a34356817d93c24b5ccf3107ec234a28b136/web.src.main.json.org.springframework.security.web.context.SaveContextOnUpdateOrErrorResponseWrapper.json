@@ -53,45 +53,9 @@
     "info" : "MethodDeclaration[6260-6450]:MethodDeclaration[4154-4351]"
   } ],
   "mappings" : [ {
-    "left" : "Base class for response wrappers which encapsulate the logic for storing a security context and which store the",
-    "right" : "Base class for response wrappers which encapsulate the logic for storing a security",
-    "info" : "TextElement[1115-1226]:TextElement[937-1020]"
-  }, {
-    "left" : "<code>SecurityContext</code> when a <code>sendError()</code>, <code>sendRedirect</code>,",
-    "right" : "<code>sendError()</code>, <code>sendRedirect</code>,",
-    "info" : "TextElement[1230-1318]:TextElement[1091-1143]"
-  }, {
-    "left" : "<code>getOutputStream().close()</code>, <code>getOutputStream().flush()</code>, <code>getWriter().close()</code>, or",
-    "right" : "<code>getOutputStream().close()</code>, <code>getOutputStream().flush()</code>,",
-    "info" : "TextElement[1322-1438]:TextElement[1147-1226]"
-  }, {
-    "left" : "<code>getWriter().flush()</code> happens on the same thread that this",
-    "right" : "<code>getWriter().close()</code>, or <code>getWriter().flush()</code> happens on the",
-    "info" : "TextElement[1442-1511]:TextElement[1230-1314]"
-  }, {
-    "left" : " was created. See issue SEC-398 and SEC-2005.",
-    "right" : "See issue SEC-398 and SEC-2005.",
-    "info" : "TextElement[1564-1609]:TextElement[1406-1437]"
-  }, {
     "left" : "HttpServletResponseWrapper",
     "right" : "OnCommittedResponseWrapper",
     "info" : "SimpleName[1934-1960]:SimpleName[1770-1796]"
-  }, {
-    "left" : "/**\n     * @param response              the response to be wrapped\n     * @param disableUrlRewriting   turns the URL encoding methods into null operations, preventing the use\n     *                              of URL rewriting to add the session identifier as a URL parameter.\n     */",
-    "right" : "/**\n     * @param response the response to be wrapped\n     * @param disableUrlRewriting turns the URL encoding methods into null operations,\n     * preventing the use of URL rewriting to add the session identifier as a URL\n     * parameter.\n     */",
-    "info" : "Javadoc[2196-2481]:Javadoc[1980-2228]"
-  }, {
-    "left" : "              the response to be wrapped",
-    "right" : " the response to be wrapped",
-    "info" : "TextElement[2222-2262]:TextElement[2006-2033]"
-  }, {
-    "left" : "   turns the URL encoding methods into null operations, preventing the use",
-    "right" : " turns the URL encoding methods into null operations,",
-    "info" : "TextElement[2296-2370]:TextElement[2067-2120]"
-  }, {
-    "left" : "of URL rewriting to add the session identifier as a URL parameter.",
-    "right" : "preventing the use of URL rewriting to add the session identifier as a URL",
-    "info" : "TextElement[2407-2473]:TextElement[2128-2202]"
   }, {
     "left" : "public",
     "right" : "public",
@@ -121,30 +85,6 @@
     "right" : "this.disableUrlRewriting = disableUrlRewriting;",
     "info" : "ExpressionStatement[2629-2676]:ExpressionStatement[2388-2435]"
   }, {
-    "left" : "/**\n     * Invoke this method to disable automatic saving of the\n     * {@link SecurityContext} when the {@link HttpServletResponse} is\n     * committed. This can be useful in the event that Async Web Requests are\n     * made which may no longer contain the {@link SecurityContext} on it.\n     */",
-    "right" : "/**\n     * Invoke this method to disable automatic saving of the {@link SecurityContext} when\n     * the {@link HttpServletResponse} is committed. This can be useful in the event that\n     * Async Web Requests are made which may no longer contain the {@link SecurityContext}\n     * on it.\n     */",
-    "info" : "Javadoc[2688-2984]:Javadoc[2447-2743]"
-  }, {
-    "left" : "Invoke this method to disable automatic saving of the",
-    "right" : "Invoke this method to disable automatic saving of the ",
-    "info" : "TextElement[2699-2752]:TextElement[2458-2512]"
-  }, {
-    "left" : " when the ",
-    "right" : " when",
-    "info" : "TextElement[2783-2793]:TextElement[2535-2540]"
-  }, {
-    "left" : "committed. This can be useful in the event that Async Web Requests are",
-    "right" : " is committed. This can be useful in the event that",
-    "info" : "TextElement[2831-2901]:TextElement[2579-2630]"
-  }, {
-    "left" : "made which may no longer contain the ",
-    "right" : "Async Web Requests are made which may no longer contain the ",
-    "info" : "TextElement[2909-2946]:TextElement[2638-2698]"
-  }, {
-    "left" : " on it.",
-    "right" : "on it.",
-    "info" : "TextElement[2969-2976]:TextElement[2729-2735]"
-  }, {
     "left" : "public",
     "right" : "public",
     "info" : "Modifier[2989-2995]:Modifier[2748-2754]"
@@ -169,10 +109,6 @@
     "right" : "disableOnResponseCommitted",
     "info" : "SimpleName[3049-3079]:SimpleName[2803-2829]"
   }, {
-    "left" : "/**\n     * Implements the logic for storing the security context.\n     *\n     * @param context the <tt>SecurityContext</tt> instance to store\n     */",
-    "right" : "/**\n     * Implements the logic for storing the security context.\n     *\n     * @param context the <tt>SecurityContext</tt> instance to store\n     */",
-    "info" : "Javadoc[3099-3248]:Javadoc[2844-2993]"
-  }, {
     "left" : "protected",
     "right" : "protected",
     "info" : "Modifier[3253-3262]:Modifier[2998-3007]"
@@ -196,18 +132,6 @@
     "left" : "@Override",
     "right" : "@Override",
     "info" : "MarkerAnnotation[4857-4866]:MarkerAnnotation[3272-3281]"
-  }, {
-    "left" : "/**\n     * Calls <code>saveContext()</code> with the current contents of the\n     * <tt>SecurityContextHolder</tt> as long as\n     * {@link #disableSaveOnResponseCommitted()()} was not invoked.\n     */",
-    "right" : "/**\n     * Calls <code>saveContext()</code> with the current contents of the\n     * <tt>SecurityContextHolder</tt> as long as {@link #disableSaveOnResponseCommitted()\n     * ()} was not invoked.\n     */",
-    "info" : "Javadoc[4983-5184]:Javadoc[3065-3267]"
-  }, {
-    "left" : "<tt>SecurityContextHolder</tt> as long as",
-    "right" : "<tt>SecurityContextHolder</tt> as long as ",
-    "info" : "TextElement[5067-5108]:TextElement[3149-3191]"
-  }, {
-    "left" : " #disableSaveOnResponseCommitted()()",
-    "right" : "()",
-    "info" : "TextElement[5122-5158]:TextElement[3239-3241]"
   }, {
     "left" : "private",
     "right" : "protected",
@@ -408,14 +332,6 @@
     "left" : "return super.encodeURL(url);",
     "right" : "return super.encodeURL(url);",
     "info" : "ReturnStatement[6220-6248]:ReturnStatement[4114-4142]"
-  }, {
-    "left" : "/**\n     * Tells if the response wrapper has called <code>saveContext()</code> because of this wrapper.\n     */",
-    "right" : "/**\n     * Tells if the response wrapper has called <code>saveContext()</code> because of this\n     * wrapper.\n     */",
-    "info" : "Javadoc[6260-6371]:Javadoc[4154-4272]"
-  }, {
-    "left" : "Tells if the response wrapper has called <code>saveContext()</code> because of this wrapper.",
-    "right" : "Tells if the response wrapper has called <code>saveContext()</code> because of this",
-    "info" : "TextElement[6271-6363]:TextElement[4165-4248]"
   }, {
     "left" : "public",
     "right" : "public",

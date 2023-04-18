@@ -113,10 +113,6 @@
     "right" : "mLRUCache.put(blockMeta.getBlockId(), UNUSED_MAP_VALUE);",
     "info" : "ExpressionStatement[2885-2941]:ExpressionStatement[2885-2941]"
   }, {
-    "left" : "/**\n   * @return a StorageDirView in the range of location that already has availableBytes larger than\n   *         bytesToBeAvailable, otherwise null\n   */",
-    "right" : "/**\n   * @return a StorageDirView in the range of location that already has availableBytes larger than\n   *         bytesToBeAvailable, otherwise null\n   */",
-    "info" : "Javadoc[2973-3129]:Javadoc[2973-3129]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[3132-3139]:Modifier[3132-3139]"
@@ -232,10 +228,6 @@
     "left" : "return (dirView.getAvailableBytes() >= bytesToBeAvailable) ? dirView : null;",
     "right" : "return (dirView.getAvailableBytes() >= bytesToBeAvailable) ? dirView : null;",
     "info" : "ReturnStatement[4053-4129]:ReturnStatement[4053-4129]"
-  }, {
-    "left" : "/**\n   * A recursive implementation of cascading LRU eviction.\n   *\n   * It will try to free space in next tier view to transfer blocks there, if the next tier view\n   * does not have enough free space to hold the blocks, the next next tier view will be tried and\n   * so on until the bottom tier is reached, if blocks can not even be transferred to the bottom\n   * tier, they will be evicted, otherwise, only blocks to be freed in the bottom tier will be\n   * evicted.\n   *\n   * this method is only used in {@link #freeSpace(long, tachyon.worker.block.BlockStoreLocation)}\n   *\n   * @param bytesToBeAvailable bytes to be available after eviction\n   * @param location target location to evict blocks from\n   * @param plan the plan to be recursively updated, is empty when first called in\n   *        {@link #freeSpace(long, tachyon.worker.block.BlockStoreLocation)}\n   * @return the first StorageDirView in the range of location to evict/move bytes from, or null if\n   *         there is no plan\n   */",
-    "right" : "/**\n   * A recursive implementation of cascading LRU eviction.\n   *\n   * It will try to free space in next tier view to transfer blocks there, if the next tier view\n   * does not have enough free space to hold the blocks, the next next tier view will be tried and\n   * so on until the bottom tier is reached, if blocks can not even be transferred to the bottom\n   * tier, they will be evicted, otherwise, only blocks to be freed in the bottom tier will be\n   * evicted.\n   *\n   * this method is only used in {@link #freeSpaceWithView}\n   *\n   * @param bytesToBeAvailable bytes to be available after eviction\n   * @param location target location to evict blocks from\n   * @param plan the plan to be recursively updated, is empty when first called in\n   *        {@link #freeSpaceWithView}\n   * @return the first StorageDirView in the range of location to evict/move bytes from, or null if\n   *         there is no plan\n   */",
-    "info" : "Javadoc[4137-5138]:Javadoc[4137-5060]"
   }, {
     "left" : "private",
     "right" : "private",

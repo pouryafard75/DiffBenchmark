@@ -4553,10 +4553,6 @@
     "right" : "mWakefulnessChanging = false;",
     "info" : "ExpressionStatement[59548-59577]:ExpressionStatement[59548-59577]"
   }, {
-    "left" : "/**\n     * Updates the global power state based on dirty bits recorded in mDirty.\n     *\n     * This is the main function that performs power state transitions.\n     * We centralize them here so that we can recompute the power state completely\n     * each time something important changes, and ensure that we do it the same\n     * way each time.  The point is to gather all of the transition logic here.\n     */",
-    "right" : "/**\n     * Updates the global power state based on dirty bits recorded in mDirty.\n     *\n     * This is the main function that performs power state transitions.\n     * We centralize them here so that we can recompute the power state completely\n     * each time something important changes, and ensure that we do it the same\n     * way each time.  The point is to gather all of the transition logic here.\n     */",
-    "info" : "Javadoc[59599-60010]:Javadoc[59599-60010]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[60015-60022]:Modifier[60015-60022]"
@@ -4700,10 +4696,6 @@
     "left" : "Trace.traceEnd(Trace.TRACE_TAG_POWER);",
     "right" : "Trace.traceEnd(Trace.TRACE_TAG_POWER);",
     "info" : "ExpressionStatement[61890-61928]:ExpressionStatement[61890-61928]"
-  }, {
-    "left" : "/**\n     * Updates the value of mIsPowered.\n     * Sets DIRTY_IS_POWERED if a change occurred.\n     */",
-    "right" : "/**\n     * Updates the value of mIsPowered.\n     * Sets DIRTY_IS_POWERED if a change occurred.\n     */",
-    "info" : "Javadoc[61950-62052]:Javadoc[61950-62052]"
   }, {
     "left" : "private",
     "right" : "private",
@@ -4965,10 +4957,6 @@
     "right" : "return true;",
     "info" : "ReturnStatement[66244-66256]:ReturnStatement[66244-66256]"
   }, {
-    "left" : "/**\n     * Updates the value of mStayOn.\n     * Sets DIRTY_STAY_ON if a change occurred.\n     */",
-    "right" : "/**\n     * Updates the value of mStayOn.\n     * Sets DIRTY_STAY_ON if a change occurred.\n     */",
-    "info" : "Javadoc[66268-66364]:Javadoc[66268-66364]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[66369-66376]:Modifier[66369-66376]"
@@ -5032,10 +5020,6 @@
     "left" : "mDirty |= DIRTY_STAY_ON;",
     "right" : "mDirty |= DIRTY_STAY_ON;",
     "info" : "ExpressionStatement[66880-66904]:ExpressionStatement[66880-66904]"
-  }, {
-    "left" : "/**\n     * Updates the value of mWakeLockSummary to summarize the state of all active wake locks.\n     * Note that most wake-locks are ignored when the system is asleep.\n     *\n     * This function must have no other side-effects.\n     */",
-    "right" : "/**\n     * Updates the value of mWakeLockSummary to summarize the state of all active wake locks.\n     * Note that most wake-locks are ignored when the system is asleep.\n     *\n     * This function must have no other side-effects.\n     */",
-    "info" : "Javadoc[66940-67178]:Javadoc[66940-67178]"
   }, {
     "left" : "@SuppressWarnings(\"deprecation\")",
     "right" : "@SuppressWarnings(\"deprecation\")",
@@ -5244,10 +5228,6 @@
     "left" : "Slog.d(TAG, \"updateWakeLockSummaryLocked: mWakefulness=\"\n                        + PowerManagerInternal.wakefulnessToString(mWakefulness)\n                        + \", mWakeLockSummary=0x\" + Integer.toHexString(mWakeLockSummary));",
     "right" : "Slog.d(TAG, \"updateWakeLockSummaryLocked: mWakefulness=\"\n                        + PowerManagerInternal.wakefulnessToString(mWakefulness)\n                        + \", mWakeLockSummary=0x\" + Integer.toHexString(mWakeLockSummary));",
     "info" : "ExpressionStatement[69763-69992]:ExpressionStatement[69763-69992]"
-  }, {
-    "left" : "/**\n     * Updates the value of mUserActivitySummary to summarize the user requested\n     * state of the system such as whether the screen should be bright or dim.\n     * Note that user activity is ignored when the system is asleep.\n     *\n     * This function must have no other side-effects.\n     */",
-    "right" : "/**\n     * Updates the value of mUserActivitySummary to summarize the user requested\n     * state of the system such as whether the screen should be bright or dim.\n     * Note that user activity is ignored when the system is asleep.\n     *\n     * This function must have no other side-effects.\n     */",
-    "info" : "Javadoc[70028-70329]:Javadoc[70028-70329]"
   }, {
     "left" : "private",
     "right" : "private",
@@ -5597,10 +5577,6 @@
     "right" : "Slog.d(TAG, \"updateUserActivitySummaryLocked: mWakefulness=\"\n                        + PowerManagerInternal.wakefulnessToString(mWakefulness)\n                        + \", mUserActivitySummary=0x\" + Integer.toHexString(mUserActivitySummary)\n                        + \", nextTimeout=\" + TimeUtils.formatUptime(nextTimeout));",
     "info" : "ExpressionStatement[75274-75596]:ExpressionStatement[75274-75596]"
   }, {
-    "left" : "/**\n     * Called when a user activity timeout has occurred.\n     * Simply indicates that something about user activity has changed so that the new\n     * state can be recomputed when the power state is updated.\n     *\n     * This function must have no other side-effects besides setting the dirty\n     * bit and calling update power state.  Wakefulness transitions are handled elsewhere.\n     */",
-    "right" : "/**\n     * Called when a user activity timeout has occurred.\n     * Simply indicates that something about user activity has changed so that the new\n     * state can be recomputed when the power state is updated.\n     *\n     * This function must have no other side-effects besides setting the dirty\n     * bit and calling update power state.  Wakefulness transitions are handled elsewhere.\n     */",
-    "info" : "Javadoc[75632-76028]:Javadoc[75632-76028]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[76033-76040]:Modifier[76033-76040]"
@@ -5769,10 +5745,6 @@
     "right" : "return Math.min(mMaximumScreenDimDurationConfig,\n                (int)(screenOffTimeout * mMaximumScreenDimRatioConfig));",
     "info" : "ReturnStatement[77243-77364]:ReturnStatement[77243-77364]"
   }, {
-    "left" : "/**\n     * Updates the wakefulness of the device.\n     *\n     * This is the function that decides whether the device should start dreaming\n     * based on the current wake locks and user activity state.  It may modify mDirty\n     * if the wakefulness changes.\n     *\n     * Returns true if the wakefulness changed and we need to restart power state calculation.\n     */",
-    "right" : "/**\n     * Updates the wakefulness of the device.\n     *\n     * This is the function that decides whether the device should start dreaming\n     * based on the current wake locks and user activity state.  It may modify mDirty\n     * if the wakefulness changes.\n     *\n     * Returns true if the wakefulness changed and we need to restart power state calculation.\n     */",
-    "info" : "Javadoc[77376-77745]:Javadoc[77376-77745]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[77750-77757]:Modifier[77750-77757]"
@@ -5853,10 +5825,6 @@
     "right" : "return changed;",
     "info" : "ReturnStatement[78663-78678]:ReturnStatement[78663-78678]"
   }, {
-    "left" : "/**\n     * Returns true if the device should automatically nap and start dreaming when the user\n     * activity timeout has expired and it's bedtime.\n     */",
-    "right" : "/**\n     * Returns true if the device should automatically nap and start dreaming when the user\n     * activity timeout has expired and it's bedtime.\n     */",
-    "info" : "Javadoc[78690-78847]:Javadoc[78690-78847]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[78852-78859]:Modifier[78852-78859]"
@@ -5876,10 +5844,6 @@
     "left" : "return mDreamsActivateOnSleepSetting\n                || (mDreamsActivateOnDockSetting\n                        && mDockState != Intent.EXTRA_DOCK_STATE_UNDOCKED);",
     "right" : "return mDreamsActivateOnSleepSetting\n                || (mDreamsActivateOnDockSetting\n                        && mDockState != Intent.EXTRA_DOCK_STATE_UNDOCKED);",
     "info" : "ReturnStatement[78905-79066]:ReturnStatement[78905-79066]"
-  }, {
-    "left" : "/**\n     * Returns true if the device should go to sleep now.\n     * Also used when exiting a dream to determine whether we should go back\n     * to being fully awake or else go to sleep for good.\n     */",
-    "right" : "/**\n     * Returns true if the device should go to sleep now.\n     * Also used when exiting a dream to determine whether we should go back\n     * to being fully awake or else go to sleep for good.\n     */",
-    "info" : "Javadoc[79078-79282]:Javadoc[79078-79282]"
   }, {
     "left" : "private",
     "right" : "private",
@@ -5901,10 +5865,6 @@
     "right" : "return mBootCompleted && !isBeingKeptAwakeLocked();",
     "info" : "ReturnStatement[79336-79387]:ReturnStatement[79336-79387]"
   }, {
-    "left" : "/**\n     * Returns true if the device is being kept awake by a wake lock, user activity\n     * or the stay on while powered setting.  We also keep the phone awake when\n     * the proximity sensor returns a positive result so that the device does not\n     * lock while in a phone call.  This function only controls whether the device\n     * will go to sleep or dream which is independent of whether it will be allowed\n     * to suspend.\n     */",
-    "right" : "/**\n     * Returns true if the device is being kept awake by a wake lock, user activity\n     * or the stay on while powered setting.  We also keep the phone awake when\n     * the proximity sensor returns a positive result so that the device does not\n     * lock while in a phone call.  This function only controls whether the device\n     * will go to sleep or dream which is independent of whether it will be allowed\n     * to suspend.\n     */",
-    "info" : "Javadoc[79399-79842]:Javadoc[79399-79842]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[79847-79854]:Modifier[79847-79854]"
@@ -5924,10 +5884,6 @@
     "left" : "return mStayOn\n                || mProximityPositive\n                || (mWakeLockSummary & WAKE_LOCK_STAY_AWAKE) != 0\n                || (mUserActivitySummary & (USER_ACTIVITY_SCREEN_BRIGHT\n                        | USER_ACTIVITY_SCREEN_DIM)) != 0\n                || mScreenBrightnessBoostInProgress;",
     "right" : "return mStayOn\n                || mProximityPositive\n                || (mWakeLockSummary & WAKE_LOCK_STAY_AWAKE) != 0\n                || (mUserActivitySummary & (USER_ACTIVITY_SCREEN_BRIGHT\n                        | USER_ACTIVITY_SCREEN_DIM)) != 0\n                || mScreenBrightnessBoostInProgress;",
     "info" : "ReturnStatement[79898-80199]:ReturnStatement[79898-80199]"
-  }, {
-    "left" : "/**\n     * Determines whether to post a message to the sandman to update the dream state.\n     */",
-    "right" : "/**\n     * Determines whether to post a message to the sandman to update the dream state.\n     */",
-    "info" : "Javadoc[80211-80308]:Javadoc[80211-80308]"
   }, {
     "left" : "private",
     "right" : "private",
@@ -6012,10 +5968,6 @@
     "left" : "mHandler.sendMessage(msg);",
     "right" : "mHandler.sendMessage(msg);",
     "info" : "ExpressionStatement[81084-81110]:ExpressionStatement[81084-81110]"
-  }, {
-    "left" : "/**\n     * Called when the device enters or exits a dreaming or dozing state.\n     *\n     * We do this asynchronously because we must call out of the power manager to start\n     * the dream and we don't want to hold our lock while doing so.  There is a risk that\n     * the device will wake or go to sleep in the meantime so we have to handle that case.\n     */",
-    "right" : "/**\n     * Called when the device enters or exits a dreaming or dozing state.\n     *\n     * We do this asynchronously because we must call out of the power manager to start\n     * the dream and we don't want to hold our lock while doing so.  There is a risk that\n     * the device will wake or go to sleep in the meantime so we have to handle that case.\n     */",
-    "info" : "Javadoc[81132-81493]:Javadoc[81132-81493]"
   }, {
     "left" : "private",
     "right" : "private",
@@ -6277,10 +6229,6 @@
     "right" : "mDreamManager.stopDream(false /*immediate*/);",
     "info" : "ExpressionStatement[85530-85575]:ExpressionStatement[85530-85575]"
   }, {
-    "left" : "/**\n     * Returns true if the device is allowed to dream in its current state.\n     */",
-    "right" : "/**\n     * Returns true if the device is allowed to dream in its current state.\n     */",
-    "info" : "Javadoc[85597-85684]:Javadoc[85597-85684]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[85689-85696]:Modifier[85689-85696]"
@@ -6357,10 +6305,6 @@
     "right" : "return true;",
     "info" : "ReturnStatement[86781-86793]:ReturnStatement[86781-86793]"
   }, {
-    "left" : "/**\n     * Returns true if the device is allowed to doze in its current state.\n     */",
-    "right" : "/**\n     * Returns true if the device is allowed to doze in its current state.\n     */",
-    "info" : "Javadoc[86805-86891]:Javadoc[86805-86891]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[86896-86903]:Modifier[86896-86903]"
@@ -6380,10 +6324,6 @@
     "left" : "return mWakefulness == WAKEFULNESS_DOZING;",
     "right" : "return mWakefulness == WAKEFULNESS_DOZING;",
     "info" : "ReturnStatement[86938-86980]:ReturnStatement[86938-86980]"
-  }, {
-    "left" : "/**\n     * Updates the display power state asynchronously.\n     * When the update is finished, mDisplayReady will be set to true.  The display\n     * controller posts a message to tell us when the actual display power state\n     * has been updated so we come back here to double-check and finish up.\n     *\n     * This function recalculates the display power state each time.\n     *\n     * @return True if the display became ready.\n     */",
-    "right" : "/**\n     * Updates the display power state asynchronously.\n     * When the update is finished, mDisplayReady will be set to true.  The display\n     * controller posts a message to tell us when the actual display power state\n     * has been updated so we come back here to double-check and finish up.\n     *\n     * This function recalculates the display power state each time.\n     *\n     * @return True if the display became ready.\n     */",
-    "info" : "Javadoc[86992-87431]:Javadoc[86992-87431]"
   }, {
     "left" : "private",
     "right" : "private",
@@ -7137,10 +7077,6 @@
     "right" : "return (mWakeLockSummary & WAKE_LOCK_PROXIMITY_SCREEN_OFF) != 0;",
     "info" : "ReturnStatement[96852-96916]:ReturnStatement[96852-96916]"
   }, {
-    "left" : "/**\n     * Updates the suspend blocker that keeps the CPU alive.\n     *\n     * This function must have no other side-effects.\n     */",
-    "right" : "/**\n     * Updates the suspend blocker that keeps the CPU alive.\n     *\n     * This function must have no other side-effects.\n     */",
-    "info" : "Javadoc[96928-97061]:Javadoc[96928-97061]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[97066-97073]:Modifier[97066-97073]"
@@ -7280,10 +7216,6 @@
     "left" : "setHalAutoSuspendModeLocked(true);",
     "right" : "setHalAutoSuspendModeLocked(true);",
     "info" : "ExpressionStatement[99633-99667]:ExpressionStatement[99633-99667]"
-  }, {
-    "left" : "/**\n     * Return true if we must keep a suspend blocker active on behalf of the display.\n     * We do so if the screen is on or is in transition between states.\n     */",
-    "right" : "/**\n     * Return true if we must keep a suspend blocker active on behalf of the display.\n     * We do so if the screen is on or is in transition between states.\n     */",
-    "info" : "Javadoc[99689-99858]:Javadoc[99689-99858]"
   }, {
     "left" : "private",
     "right" : "private",
@@ -8113,10 +8045,6 @@
     "right" : "updatePowerStateLocked();",
     "info" : "ExpressionStatement[106789-106814]:ExpressionStatement[106789-106814]"
   }, {
-    "left" : "/**\n     * Called when a screen brightness boost timeout has occurred.\n     *\n     * This function must have no other side-effects besides setting the dirty\n     * bit and calling update power state.\n     */",
-    "right" : "/**\n     * Called when a screen brightness boost timeout has occurred.\n     *\n     * This function must have no other side-effects besides setting the dirty\n     * bit and calling update power state.\n     */",
-    "info" : "Javadoc[106836-107043]:Javadoc[106836-107043]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[107048-107055]:Modifier[107048-107055]"
@@ -8437,10 +8365,6 @@
     "right" : "nativeSendPowerHint(hintId, data);",
     "info" : "ExpressionStatement[109713-109747]:ExpressionStatement[109713-109747]"
   }, {
-    "left" : "/**\n     * Low-level function turn the device off immediately, without trying\n     * to be clean.  Most people should use {@link ShutdownThread} for a clean shutdown.\n     */",
-    "right" : "/**\n     * Low-level function turn the device off immediately, without trying\n     * to be clean.  Most people should use {@link ShutdownThread} for a clean shutdown.\n     */",
-    "info" : "Javadoc[109759-109933]:Javadoc[109759-109933]"
-  }, {
     "left" : "public",
     "right" : "public",
     "info" : "Modifier[109938-109944]:Modifier[109938-109944]"
@@ -8464,10 +8388,6 @@
     "left" : "SystemProperties.set(\"sys.powerctl\", \"shutdown\");",
     "right" : "SystemProperties.set(\"sys.powerctl\", \"shutdown\");",
     "info" : "ExpressionStatement[109986-110035]:ExpressionStatement[109986-110035]"
-  }, {
-    "left" : "/**\n     * Low-level function to reboot the device. On success, this\n     * function doesn't return. If more than 20 seconds passes from\n     * the time a reboot is requested (120 seconds for reboot to\n     * recovery), this method returns.\n     *\n     * @param reason code to pass to the kernel (e.g. \"recovery\"), or null.\n     */",
-    "right" : "/**\n     * Low-level function to reboot the device. On success, this\n     * function doesn't return. If more than 20 seconds passes from\n     * the time a reboot is requested (120 seconds for reboot to\n     * recovery), this method returns.\n     *\n     * @param reason code to pass to the kernel (e.g. \"recovery\"), or null.\n     */",
-    "info" : "Javadoc[110047-110378]:Javadoc[110047-110378]"
   }, {
     "left" : "public",
     "right" : "public",
@@ -10961,10 +10881,6 @@
     "right" : "mFnLight.turnOff();",
     "info" : "ExpressionStatement[138250-138269]:ExpressionStatement[138393-138412]"
   }, {
-    "left" : "/**\n         * @hide\n         */",
-    "right" : "/**\n         * @hide\n         */",
-    "info" : "Javadoc[138303-138335]:Javadoc[138446-138478]"
-  }, {
     "left" : "private",
     "right" : "private",
     "info" : "Modifier[138344-138351]:Modifier[138487-138494]"
@@ -11737,10 +11653,6 @@
     "right" : "return mPerformanceManager.getPowerProfile();",
     "info" : "ReturnStatement[145109-145154]:ReturnStatement[145404-145449]"
   }, {
-    "left" : "/**\n         * Boost the CPU\n         * @param duration Duration to boost the CPU for, in milliseconds.\n         * @hide\n         */",
-    "right" : "/**\n         * Boost the CPU\n         * @param duration Duration to boost the CPU for, in milliseconds.\n         * @hide\n         */",
-    "info" : "Javadoc[145174-145306]:Javadoc[145469-145601]"
-  }, {
     "left" : "@Override",
     "right" : "@Override",
     "info" : "MarkerAnnotation[145315-145324]:MarkerAnnotation[145610-145619]"
@@ -11825,10 +11737,6 @@
     "right" : "mPerformanceManager.activityResumed(componentName);",
     "info" : "ExpressionStatement[145935-145986]:ExpressionStatement[146230-146281]"
   }, {
-    "left" : "/**\n         * Reboots the device.\n         *\n         * @param confirm If true, shows a reboot confirmation dialog.\n         * @param reason The reason for the reboot, or null if none.\n         * @param wait If true, this call waits for the reboot to complete and does not return.\n         */",
-    "right" : "/**\n         * Reboots the device.\n         *\n         * @param confirm If true, shows a reboot confirmation dialog.\n         * @param reason The reason for the reboot, or null if none.\n         * @param wait If true, this call waits for the reboot to complete and does not return.\n         */",
-    "info" : "Javadoc[146006-146299]:Javadoc[146301-146594]"
-  }, {
     "left" : "@Override",
     "right" : "@Override",
     "info" : "MarkerAnnotation[146308-146317]:MarkerAnnotation[146603-146612]"
@@ -11901,10 +11809,6 @@
     "right" : "Binder.restoreCallingIdentity(ident);",
     "info" : "ExpressionStatement[146874-146911]:ExpressionStatement[147169-147206]"
   }, {
-    "left" : "/**\n         * Shuts down the device.\n         *\n         * @param confirm If true, shows a shutdown confirmation dialog.\n         * @param wait If true, this call waits for the shutdown to complete and does not return.\n         */",
-    "right" : "/**\n         * Shuts down the device.\n         *\n         * @param confirm If true, shows a shutdown confirmation dialog.\n         * @param wait If true, this call waits for the shutdown to complete and does not return.\n         */",
-    "info" : "Javadoc[146945-147176]:Javadoc[147240-147471]"
-  }, {
     "left" : "@Override",
     "right" : "@Override",
     "info" : "MarkerAnnotation[147185-147194]:MarkerAnnotation[147480-147489]"
@@ -11961,10 +11865,6 @@
     "right" : "Binder.restoreCallingIdentity(ident);",
     "info" : "ExpressionStatement[147557-147594]:ExpressionStatement[147852-147889]"
   }, {
-    "left" : "/**\n         * Crash the runtime (causing a complete restart of the Android framework).\n         * Requires REBOOT permission.  Mostly for testing.  Should not return.\n         */",
-    "right" : "/**\n         * Crash the runtime (causing a complete restart of the Android framework).\n         * Requires REBOOT permission.  Mostly for testing.  Should not return.\n         */",
-    "info" : "Javadoc[147628-147807]:Javadoc[147923-148102]"
-  }, {
     "left" : "@Override",
     "right" : "@Override",
     "info" : "MarkerAnnotation[147816-147825]:MarkerAnnotation[148111-148120]"
@@ -12016,10 +11916,6 @@
     "left" : "Binder.restoreCallingIdentity(ident);",
     "right" : "Binder.restoreCallingIdentity(ident);",
     "info" : "ExpressionStatement[148141-148178]:ExpressionStatement[148436-148473]"
-  }, {
-    "left" : "/**\n         * Set the setting that determines whether the device stays on when plugged in.\n         * The argument is a bit string, with each bit specifying a power source that,\n         * when the device is connected to that source, causes the device to stay on.\n         * See {@link android.os.BatteryManager} for the list of power sources that\n         * can be specified. Current values include\n         * {@link android.os.BatteryManager#BATTERY_PLUGGED_AC}\n         * and {@link android.os.BatteryManager#BATTERY_PLUGGED_USB}\n         *\n         * Used by \"adb shell svc power stayon ...\"\n         *\n         * @param val an {@code int} containing the bits that specify which power sources\n         * should cause the device to stay on.\n         */",
-    "right" : "/**\n         * Set the setting that determines whether the device stays on when plugged in.\n         * The argument is a bit string, with each bit specifying a power source that,\n         * when the device is connected to that source, causes the device to stay on.\n         * See {@link android.os.BatteryManager} for the list of power sources that\n         * can be specified. Current values include\n         * {@link android.os.BatteryManager#BATTERY_PLUGGED_AC}\n         * and {@link android.os.BatteryManager#BATTERY_PLUGGED_USB}\n         *\n         * Used by \"adb shell svc power stayon ...\"\n         *\n         * @param val an {@code int} containing the bits that specify which power sources\n         * should cause the device to stay on.\n         */",
-    "info" : "Javadoc[148212-148968]:Javadoc[148507-149263]"
   }, {
     "left" : "@Override",
     "right" : "@Override",
@@ -12073,10 +11969,6 @@
     "right" : "Binder.restoreCallingIdentity(ident);",
     "info" : "ExpressionStatement[149342-149379]:ExpressionStatement[149637-149674]"
   }, {
-    "left" : "/**\n         * Used by the settings application and brightness control widgets to\n         * temporarily override the current screen brightness setting so that the\n         * user can observe the effect of an intended settings change without applying\n         * it immediately.\n         *\n         * The override will be canceled when the setting value is next updated.\n         *\n         * @param brightness The overridden brightness.\n         *\n         * @see android.provider.Settings.System#SCREEN_BRIGHTNESS\n         */",
-    "right" : "/**\n         * Used by the settings application and brightness control widgets to\n         * temporarily override the current screen brightness setting so that the\n         * user can observe the effect of an intended settings change without applying\n         * it immediately.\n         *\n         * The override will be canceled when the setting value is next updated.\n         *\n         * @param brightness The overridden brightness.\n         *\n         * @see android.provider.Settings.System#SCREEN_BRIGHTNESS\n         */",
-    "info" : "Javadoc[149413-149939]:Javadoc[149708-150234]"
-  }, {
     "left" : "@Override",
     "right" : "@Override",
     "info" : "MarkerAnnotation[149948-149957]:MarkerAnnotation[150243-150252]"
@@ -12129,10 +12021,6 @@
     "right" : "Binder.restoreCallingIdentity(ident);",
     "info" : "ExpressionStatement[150379-150416]:ExpressionStatement[150674-150711]"
   }, {
-    "left" : "/**\n         * Used by the settings application and brightness control widgets to\n         * temporarily override the current screen auto-brightness adjustment setting so that the\n         * user can observe the effect of an intended settings change without applying\n         * it immediately.\n         *\n         * The override will be canceled when the setting value is next updated.\n         *\n         * @param adj The overridden brightness, or Float.NaN to disable the override.\n         *\n         * @see android.provider.Settings.System#SCREEN_AUTO_BRIGHTNESS_ADJ\n         */",
-    "right" : "/**\n         * Used by the settings application and brightness control widgets to\n         * temporarily override the current screen auto-brightness adjustment setting so that the\n         * user can observe the effect of an intended settings change without applying\n         * it immediately.\n         *\n         * The override will be canceled when the setting value is next updated.\n         *\n         * @param adj The overridden brightness, or Float.NaN to disable the override.\n         *\n         * @see android.provider.Settings.System#SCREEN_AUTO_BRIGHTNESS_ADJ\n         */",
-    "info" : "Javadoc[150450-151032]:Javadoc[150745-151327]"
-  }, {
     "left" : "@Override",
     "right" : "@Override",
     "info" : "MarkerAnnotation[151041-151050]:MarkerAnnotation[151336-151345]"
@@ -12184,10 +12072,6 @@
     "left" : "Binder.restoreCallingIdentity(ident);",
     "right" : "Binder.restoreCallingIdentity(ident);",
     "info" : "ExpressionStatement[151488-151525]:ExpressionStatement[151783-151820]"
-  }, {
-    "left" : "/**\n         * Used by the phone application to make the attention LED flash when ringing.\n         */",
-    "right" : "/**\n         * Used by the phone application to make the attention LED flash when ringing.\n         */",
-    "info" : "Javadoc[151559-151661]:Javadoc[151854-151956]"
   }, {
     "left" : "@Override",
     "right" : "@Override",

@@ -119,10 +119,14 @@ public class BenchmarkMetricsComputer {
         FileWriter writer = new FileWriter("stats.csv");
         String[] toolNames = activeTools;
         writer.append("url,srcFileName,ignoredMappings,ignoredElements,");
+        int index = 0;
         for (String toolName : toolNames) {
+            index += 1;
             toolName = "";
             writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN,");
-            writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN,");
+            writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN");
+            if (index != toolNames.length)
+                writer.append(",");
 //            writer.append(toolName).append("_ELEMENTS_TP_ORIGINAL,").append(toolName).append("_ELEMENTS_TP_REFINED,").append(toolName).append("_ELEMENTS_FP,").append(toolName).append("_ELEMENTS_FN,");
         }
         writer.append("\n");
@@ -135,7 +139,9 @@ public class BenchmarkMetricsComputer {
             writer.append(",");
             writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredElements()));
             writer.append(",");
+            index = 0;
             for (String toolName : toolNames) {
+                index ++;
                 DiffStats tool = stat.getDiffStatsList().get(toolName);
                 writer.append(String.valueOf(tool.getAbstractMappingStats().getTP()));
                 writer.append(",");
@@ -152,7 +158,8 @@ public class BenchmarkMetricsComputer {
                 writer.append(String.valueOf(tool.getProgramElementStats().getFP()));
                 writer.append(",");
                 writer.append(String.valueOf(tool.getProgramElementStats().getFN()));
-                writer.append(",");
+                if (index != toolNames.length)
+                    writer.append(",");
             }
             writer.append("\n");
         }

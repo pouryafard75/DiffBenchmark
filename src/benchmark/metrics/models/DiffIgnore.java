@@ -6,8 +6,11 @@ import org.refactoringminer.astDiff.matchers.Constants;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
+import static benchmark.oracle.generators.HumanReadableDiffGenerator.getMethodSignatureMappings;
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.isStatement;
 
 /* Created by pourya on 2023-04-16 5:07 a.m. */
@@ -56,8 +59,18 @@ public class DiffIgnore {
                         if (isStatement(descendant.getType().name))
                             _ignoredMappings += 1;
                     }
+                    _ignoredMappings += NumberOfMethodSignatureIgnoresForIsomorphic(mapping);
                 }
             }
         }
+    }
+    private static int NumberOfMethodSignatureIgnoresForIsomorphic(Mapping mapping) {
+        int result = 0;
+        for (Tree child : mapping.first.getChildren()) {
+            if (child.getType().name.equals(Constants.BLOCK)) continue;
+            if (child.getType().name.equals("JavaDoc")) continue;
+            result += 1;
+        }
+        return result;
     }
 }

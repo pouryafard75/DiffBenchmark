@@ -98,7 +98,7 @@ public class HumanReadableDiffGenerator {
             if (isPartOfJavadoc(first)) continue;
             if (isStatement(first.getType().name))
             {
-                addToSet(mapping, second, first, abstractMappingSet);
+                addToSet(mapping, abstractMappingSet, srcContent, dstContent);
             }
             else{
                 if (first.getParent() == null || second.getParent() == null) continue;
@@ -107,29 +107,57 @@ public class HumanReadableDiffGenerator {
                 if (mappings.getDsts(firstParent) == null)
                 {
                     // Destination's parent is not mapped
-                    addToSet(mapping, second, first, abstractMappingSet);
+                    addToSet(mapping, abstractMappingSet, srcContent, dstContent);
                 }
                 else if (!mappings.getDsts(firstParent).contains(secondParent))
                 {
                     /*Parents are not mapped*/
-                    addToSet(mapping, second, first, abstractMappingSet);
+                    addToSet(mapping, abstractMappingSet, srcContent, dstContent);
                 }
                 else if (!first.getLabel().equals(second.getLabel()))
                 {
                     /*Update case*/
-                    addToSet(mapping, second, first, abstractMappingSet);
+                    addToSet(mapping, abstractMappingSet, srcContent, dstContent);
                 }
             }
+
+            if (first.getType().name.equals(Constants.METHOD_DECLARATION))
+            {
+                for (Mapping methodSignatureMapping : getMethodSignatureMappings(mapping, mappings)) {
+                    addToSet(methodSignatureMapping, abstractMappingSet, srcContent, dstContent);
+                }
+            }
+            //TODO: Most likely we need to do the same thing from the other side as well (method signatures)
         }
         result.setMappings(abstractMappingSet);
     }
 
-    private void addToSet(Mapping mapping, Tree second, Tree first, Set<AbstractMapping> abstractMappingSet) {
-        String srcString = getString(first, srcContent);
-        String dstString = getString(second, dstContent);
-        abstractMappingSet.add(new AbstractMapping(mapping,srcString,dstString));
+    public static Set<Mapping> getMethodSignatureMappings(Mapping mapping, ExtendedMultiMappingStore mappings) {
+        Set<Mapping> abstractMappingSet = new LinkedHashSet<>();
+        for (Tree child : mapping.first.getChildren()) {
+            if (child.getType().name.equals(Constants.BLOCK)) break;
+            Set<Tree> dsts = mappings.getDsts(child);
+            if (dsts == null) continue;
+            for (Tree mappedDst : dsts) {
+                abstractMappingSet.add(new Mapping(child, mappedDst));
+            }
+        }
+        return abstractMappingSet;
     }
 
+    private void addToSet(Mapping mapping, Set<AbstractMapping> abstractMappingSet, String srcContent, String dstContent) {
+        AbstractMapping abstractMapping = getAbstractMapping(mapping, srcContent, dstContent);
+        addToSet(abstractMapping,abstractMappingSet);
+    }
+
+    private void addToSet(AbstractMapping abstractMapping, Set<AbstractMapping> abstractMappingSet) {
+        abstractMappingSet.add(abstractMapping);
+    }
+    private static AbstractMapping getAbstractMapping(Mapping mapping, String srcContent, String dstContent) {
+        String srcString = getString(mapping.first, srcContent);
+        String dstString = getString(mapping.second, dstContent);
+        return new AbstractMapping(mapping, srcString, dstString);
+    }
     private boolean isPartOfJavadoc(Tree srcSubTree) {
         if (srcSubTree.getType().name.equals("JavaDoc"))
             return true;

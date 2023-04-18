@@ -2,10 +2,6 @@ package benchmark.metrics;
 
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
 import benchmark.metrics.models.DiffComparisonResult;
-import benchmark.metrics.models.DiffStats;
-
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.List;
 
 import static benchmark.metrics.computers.BenchmarkMetricsComputer.writeStatsToCSV;

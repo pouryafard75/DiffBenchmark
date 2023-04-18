@@ -32,10 +32,10 @@ public class BenchmarkHumanReadableDiffGenerator {
             HumanReadableDiffGenerator refactoringMinerHDG = new HumanReadableDiffGenerator(repo, commit, astDiff);
             refactoringMinerHDG.make();
             refactoringMinerHDG.write(Configuration.RMD_PATH);
-            HumanReadableDiffGenerator gtgHD = oracleGeneratorFromMappingStore(new CompositeMatchers.ClassicGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff);
-            gtgHD.write(Configuration.GTG_PATH);
-            HumanReadableDiffGenerator gtsHD = oracleGeneratorFromMappingStore(new CompositeMatchers.SimpleGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff);
-            gtsHD.write(Configuration.GTS_PATH);
+
+            oracleGeneratorFromMappingStore(new CompositeMatchers.ClassicGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff).write(Configuration.GTG_PATH);
+            oracleGeneratorFromMappingStore(new CompositeMatchers.SimpleGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff).write(Configuration.GTS_PATH);
+
             //TODO: make IJM and MTDiff work + check the active tools
         }
     }

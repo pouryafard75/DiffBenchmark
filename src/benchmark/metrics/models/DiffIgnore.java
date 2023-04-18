@@ -1,5 +1,6 @@
 package benchmark.metrics.models;
 
+import benchmark.utils.AdditionalASTConstants;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.matchers.Constants;
@@ -48,8 +49,8 @@ public class DiffIgnore {
                         continue;
                     }
                 }
-                Tree srcFinalParent = TreeUtilFunctions.getParentUntilType(mapping.first, "CompilationUnit");
-                Tree dstFinalParent = TreeUtilFunctions.getParentUntilType(mapping.second, "CompilationUnit");
+                Tree srcFinalParent = TreeUtilFunctions.getParentUntilType(mapping.first, AdditionalASTConstants.COMPILATION_UNIT);
+                Tree dstFinalParent = TreeUtilFunctions.getParentUntilType(mapping.second, AdditionalASTConstants.COMPILATION_UNIT);
                 if (!srcFinalParent.equals(src) || !dstFinalParent.equals(dst)) continue;
                 if (mapping.first.isIsomorphicTo(mapping.second))
                 {
@@ -68,7 +69,7 @@ public class DiffIgnore {
         int result = 0;
         for (Tree child : mapping.first.getChildren()) {
             if (child.getType().name.equals(Constants.BLOCK)) continue;
-            if (child.getType().name.equals("JavaDoc")) continue;
+            if (child.getType().name.equals(AdditionalASTConstants.JAVA_DOC)) continue;
             result += 1;
         }
         return result;

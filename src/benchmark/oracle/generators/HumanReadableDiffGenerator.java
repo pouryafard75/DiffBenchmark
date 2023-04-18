@@ -2,6 +2,7 @@ package benchmark.oracle.generators;
 
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.utils.AdditionalASTConstants;
 import benchmark.utils.PathResolver;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -135,7 +136,8 @@ public class HumanReadableDiffGenerator {
     public static Set<Mapping> getMethodSignatureMappings(Mapping mapping, ExtendedMultiMappingStore mappings) {
         Set<Mapping> abstractMappingSet = new LinkedHashSet<>();
         for (Tree child : mapping.first.getChildren()) {
-            if (child.getType().name.equals(Constants.BLOCK)) break;
+            if (child.getType().name.equals(Constants.BLOCK)) continue;
+            if (child.getType().name.equals(AdditionalASTConstants.JAVA_DOC)) continue;
             Set<Tree> dsts = mappings.getDsts(child);
             if (dsts == null) continue;
             for (Tree mappedDst : dsts) {
@@ -159,7 +161,7 @@ public class HumanReadableDiffGenerator {
         return new AbstractMapping(mapping, srcString, dstString);
     }
     private boolean isPartOfJavadoc(Tree srcSubTree) {
-        if (srcSubTree.getType().name.equals("JavaDoc"))
+        if (srcSubTree.getType().name.equals(AdditionalASTConstants.JAVA_DOC))
             return true;
         if (srcSubTree.getParent() == null) return false;
         return isPartOfJavadoc(srcSubTree.getParent());

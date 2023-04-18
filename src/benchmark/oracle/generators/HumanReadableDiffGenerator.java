@@ -101,9 +101,7 @@ public class HumanReadableDiffGenerator {
             if (isPartOfJavadoc(first)) continue;
             if (isStatement(first.getType().name))
             {
-                String srcString = getString(first, srcContent);
-                String dstString = getString(second, dstContent);
-                abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
+                addToList(mapping, second, first, abstractMappingList);
             }
             else{
                 if (first.getParent() == null || second.getParent() == null) continue;
@@ -111,21 +109,18 @@ public class HumanReadableDiffGenerator {
                 Tree secondParent = second.getParent();
                 if (mappings.getDsts(firstParent) == null)
                 {
-                    String srcString = getString(first, srcContent);
-                    String dstString = getString(second, dstContent);
-                    abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
+                    // TODO: 2023-04-02 9:24 p.m. check this
+                    addToList(mapping, second, first, abstractMappingList);
                 }
                 else if (!mappings.getDsts(firstParent).contains(secondParent))
                 {
-                    String srcString = getString(first, srcContent);
-                    String dstString = getString(second, dstContent);
-                    abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
+                    /*Parents are not mapped*/
+                    addToList(mapping, second, first, abstractMappingList);
                 }
                 else if (!first.getLabel().equals(second.getLabel()))
                 {
-                    String srcString = getString(first, srcContent);
-                    String dstString = getString(second, dstContent);
-                    abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
+                    /*Update case*/
+                    addToList(mapping, second, first, abstractMappingList);
                 }
             }
         }
@@ -133,6 +128,12 @@ public class HumanReadableDiffGenerator {
         abstractMappingList.sort(abstractMappingComparator);
 
         result.setMappings(abstractMappingList);
+    }
+
+    private void addToList(Mapping mapping, Tree second, Tree first, List<AbstractMapping> abstractMappingList) {
+        String srcString = getString(first, srcContent);
+        String dstString = getString(second, dstContent);
+        abstractMappingList.add(new AbstractMapping(mapping,srcString,dstString));
     }
 
     private boolean isPartOfJavadoc(Tree srcSubTree) {

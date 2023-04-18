@@ -116,7 +116,7 @@ public class BenchmarkMetricsComputer {
     }
 
     public static void writeStatsToCSV(List<DiffComparisonResult> stats, String[] activeTools) throws IOException {
-        FileWriter writer = new FileWriter("stats.csv");
+        FileWriter writer = new FileWriter(STATS_CSV);
         String[] toolNames = activeTools;
         writer.append("url,srcFileName,ignoredMappings,ignoredElements,");
         int index = 0;

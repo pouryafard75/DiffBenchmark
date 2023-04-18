@@ -14,6 +14,7 @@ public class Configuration {
     public static final String MTD_PATH = OUTPUT_FOLDER + "MTD/";
     public static final String casesPath = "cases.json";
     public static final String REPOS = "/Users/pourya/IdeaProjects/RM-ASTDiff/tmp1"; //TODO: Modify this based on your local path
+    public static final String STATS_CSV = "stats.csv";
     public static Map<String, String> toolPathMap = new LinkedHashMap<>();
 
     static{

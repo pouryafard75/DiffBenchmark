@@ -405,6 +405,10 @@
     "right" : "final String name = getBaseName();",
     "info" : "VariableDeclarationStatement[4942-4976]:VariableDeclarationStatement[6155-6189]"
   }, {
+    "left" : "final Set<String> fileNames = ContainerUtil.map2Set(myLocalesModel.getItems(), new Function<Locale, String>() {\n      @Override\n      public String fun(Locale locale) {\n        return locale == PropertiesUtil.DEFAULT_LOCALE ? (name + \".properties\") : (name + \"_\" + locale.toString() + \".properties\");\n      }\n    });",
+    "right" : "final Set<String> fileNames = getFileNamesToCreate();",
+    "info" : "VariableDeclarationStatement[4981-5297]:VariableDeclarationStatement[5556-5609]"
+  }, {
     "left" : "ContainerUtil.map2Set(myLocalesModel.getItems(), new Function<Locale, String>() {\n      @Override\n      public String fun(Locale locale) {\n        return locale == PropertiesUtil.DEFAULT_LOCALE ? (name + \".properties\") : (name + \"_\" + locale.toString() + \".properties\");\n      }\n    })",
     "right" : "ContainerUtil.map2Set(myLocalesModel.getItems(), new Function<Locale, String>() {\n      @Override\n      public String fun(Locale locale) {\n        return locale == PropertiesUtil.DEFAULT_LOCALE ? (name + \".properties\") : (name + \"_\" + locale.toString() + \".properties\");\n      }\n    })",
     "info" : "MethodInvocation[5011-5296]:MethodInvocation[6201-6486]"

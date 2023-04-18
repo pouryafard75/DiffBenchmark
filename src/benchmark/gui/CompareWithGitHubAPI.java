@@ -1,6 +1,7 @@
 package benchmark.gui;
 
 import benchmark.gui.web.BenchmarkWebDiff;
+import benchmark.gui.web.BenchmarkWebDiffFactory;
 import benchmark.oracle.generators.changeAPI.IJM;
 import benchmark.oracle.generators.changeAPI.MTDiff;
 import com.github.gumtreediff.actions.Diff;
@@ -21,21 +22,7 @@ import static benchmark.utils.Helpers.diffByGumTree;
 public class CompareWithGitHubAPI {
     public static void main(String[] args) throws Exception {
         String url = "https://github.com/spring-projects/spring-boot/commit/cb98ee25ff52bf97faebe3f45cdef0ced9b4416e";
-        String repo = URLHelper.getRepo(url);
-        String commit = URLHelper.getCommit(url);
-        Set<ASTDiff> RM_astDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
-        Set<Diff> GTG_astDiff = new LinkedHashSet<>();
-        Set<Diff> GTS_astDiff = new LinkedHashSet<>();
-        Set<Diff> IJM_astDiff = new LinkedHashSet<>();
-        Set<Diff> MTD_astDiff = new LinkedHashSet<>();
-        for (ASTDiff astDiff : RM_astDiff) {
-            GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
-            GTS_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.SimpleGumtree()));
-//            TODO: Fix the issue with IJM & MTDiff
-//            IJM_astDiff.add(new IJM(astDiff).diff());
-//            MTD_astDiff.add(new MTDiff(astDiff).diff());
-        }
-        new BenchmarkWebDiff(RM_astDiff, GTG_astDiff, GTS_astDiff, IJM_astDiff, MTD_astDiff).run();
-
+        BenchmarkWebDiff benchmarkWebDiff = BenchmarkWebDiffFactory.withURL(url);
+        benchmarkWebDiff.run();
     }
 }

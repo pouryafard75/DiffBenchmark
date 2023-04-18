@@ -34,7 +34,7 @@ public class HumanReadableDiffGenerator {
     private final String dstContent;
     public HumanReadableDiff result;
 
-    Comparator<AbstractMapping> customComparator = Comparator.comparing(AbstractMapping::getLeftOffset)
+    Comparator<AbstractMapping> abstractMappingComparator = Comparator.comparing(AbstractMapping::getLeftOffset)
             .thenComparing(AbstractMapping::getRightOffset)
             .thenComparing(AbstractMapping::getLeftEndOffset)
             .thenComparing(AbstractMapping::getRightEndOffset);
@@ -62,7 +62,7 @@ public class HumanReadableDiffGenerator {
     }
 
     private void populateMatchedProgramElements() {
-        Set<AbstractMapping> matchedProgramElementsSet= new TreeSet<>(customComparator);
+        Set<AbstractMapping> matchedProgramElementsSet= new TreeSet<>(abstractMappingComparator);
         for (Mapping mapping : mappings) {
             String firstType = mapping.first.getType().name;
             switch (firstType)
@@ -82,7 +82,7 @@ public class HumanReadableDiffGenerator {
     }
 
     private void populateAbstractMappingList() {
-        Set<AbstractMapping> abstractMappingSet = new TreeSet<>(customComparator);
+        Set<AbstractMapping> abstractMappingSet = new TreeSet<>(abstractMappingComparator);
         for (Mapping mapping : mappings) {
             if (mapping.first.getParent() != null & mapping.second.getParents() != null)
             {

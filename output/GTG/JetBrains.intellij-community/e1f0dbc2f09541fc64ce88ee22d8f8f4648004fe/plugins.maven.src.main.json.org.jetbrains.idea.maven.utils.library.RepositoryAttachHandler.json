@@ -243,10 +243,6 @@
   }, {
     "left" : "NewLibraryConfiguration",
     "right" : "List",
-    "info" : "SimpleName[5778-5801]:SimpleName[6649-6653]"
-  }, {
-    "left" : "NewLibraryConfiguration",
-    "right" : "List",
     "info" : "SimpleType[5778-5801]:SimpleType[6649-6653]"
   }, {
     "left" : "resolveLibrary(project, coord, extraTypes, repositories, new Processor<List<MavenArtifact>>() {\n      public boolean process(final List<MavenArtifact> artifacts) {\n        if (!artifacts.isEmpty()) {\n          AccessToken accessToken = WriteAction.start();\n          try {\n            final List<OrderRoot> roots = createRoots(artifacts, copyTo);\n            result.set(new NewLibraryConfiguration(coord, RepositoryLibraryType.getInstance(), new RepositoryLibraryProperties(coord)) {\n              @Override\n              public void addRoots(@NotNull LibraryEditor editor) {\n                editor.addRoots(roots);\n              }\n            });\n          }\n          finally {\n            accessToken.finish();\n          }\n          notifyArtifactsDownloaded(project, artifacts);\n        }\n        return true;\n      }\n    });",

@@ -225,6 +225,14 @@
     "info" : "MethodDeclaration[20635-21119]:MethodDeclaration[20750-21227]"
   } ],
   "mappings" : [ {
+    "left" : "uk.co.real_logic.aeron.command.ControlProtocolEvents.ADD_PUBLICATION",
+    "right" : "uk.co.real_logic.aeron.command.ControlProtocolEvents",
+    "info" : "QualifiedName[1944-2012]:QualifiedName[1894-1946]"
+  }, {
+    "left" : "uk.co.real_logic.aeron.command.ControlProtocolEvents.REMOVE_PUBLICATION",
+    "right" : "uk.co.real_logic.aeron.command.ControlProtocolEvents",
+    "info" : "QualifiedName[2028-2099]:QualifiedName[1894-1946]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4929-5156]:Block[4778-5005]"
@@ -437,6 +445,10 @@
     "right" : "driverConductor.doWork();",
     "info" : "ExpressionStatement[9473-9498]:ExpressionStatement[9626-9651]"
   }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[9508-9526]:SimpleName[9661-9672]"
+  }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + PUBLICATION_LINGER_NS * 2);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + PUBLICATION_LINGER_NS * 2);",
     "info" : "ExpressionStatement[9508-9617]:ExpressionStatement[9661-9763]"
@@ -488,6 +500,10 @@
     "left" : "driverConductor.doWork();",
     "right" : "driverConductor.doWork();",
     "info" : "ExpressionStatement[10402-10427]:ExpressionStatement[10548-10573]"
+  }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[10437-10455]:SimpleName[10583-10594]"
   }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS * 2 + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS * 2 + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
@@ -717,6 +733,10 @@
     "right" : "driverConductor.doWork();",
     "info" : "ExpressionStatement[15473-15498]:ExpressionStatement[15887-15912]"
   }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[15557-15575]:SimpleName[16185-16196]"
+  }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
     "info" : "ExpressionStatement[15557-15666]:ExpressionStatement[16185-16287]"
@@ -737,6 +757,10 @@
     "right" : "driverConductor.doWork();",
     "info" : "ExpressionStatement[15994-16019]:ExpressionStatement[16636-16661]"
   }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[16078-16096]:SimpleName[16934-16945]"
+  }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS / 2);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS / 2);",
     "info" : "ExpressionStatement[16078-16163]:ExpressionStatement[16934-17012]"
@@ -745,6 +769,10 @@
     "right" : "writeKeepaliveClientMessage();",
     "info" : "ExpressionStatement[16173-16203]:ExpressionStatement[17022-17052]"
   }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[16213-16231]:SimpleName[17062-17073]"
+  }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
     "info" : "ExpressionStatement[16213-16301]:ExpressionStatement[17062-17143]"
@@ -752,6 +780,10 @@
     "left" : "writeKeepaliveClientMessage();",
     "right" : "writeKeepaliveClientMessage();",
     "info" : "ExpressionStatement[16311-16341]:ExpressionStatement[17153-17183]"
+  }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[16351-16369]:SimpleName[17193-17204]"
   }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
@@ -780,6 +812,10 @@
     "left" : "driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000))",
     "right" : "driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000))",
     "info" : "MethodInvocation[16783-16860]:MethodInvocation[17665-17742]"
+  }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[16872-16890]:SimpleName[17893-17904]"
   }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
@@ -813,6 +849,10 @@
     "right" : "driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000))",
     "info" : "MethodInvocation[17392-17469]:MethodInvocation[18511-18588]"
   }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[17517-17535]:SimpleName[18739-18750]"
+  }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS);",
     "info" : "ExpressionStatement[17517-17598]:ExpressionStatement[18739-18813]"
@@ -821,6 +861,10 @@
     "right" : "writeKeepaliveClientMessage();",
     "info" : "ExpressionStatement[17608-17638]:ExpressionStatement[18823-18853]"
   }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[17648-17666]:SimpleName[18863-18874]"
+  }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
     "info" : "ExpressionStatement[17648-17736]:ExpressionStatement[18863-18944]"
@@ -828,6 +872,10 @@
     "left" : "writeKeepaliveClientMessage();",
     "right" : "writeKeepaliveClientMessage();",
     "info" : "ExpressionStatement[17746-17776]:ExpressionStatement[18954-18984]"
+  }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[17786-17804]:SimpleName[18994-19005]"
   }, {
     "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
     "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
@@ -857,6 +905,14 @@
     "right" : "verify(receiverProxy).addSubscription(eq(receiveChannelEndpoint), eq(STREAM_ID_1));",
     "info" : "ExpressionStatement[18260-18322]:ExpressionStatement[18646-18729]"
   }, {
+    "left" : "any",
+    "right" : "eq",
+    "info" : "SimpleName[18298-18301]:SimpleName[17838-17840]"
+  }, {
+    "left" : "any",
+    "right" : "eq",
+    "info" : "SimpleName[18298-18301]:SimpleName[18684-18686]"
+  }, {
     "left" : "verify(senderProxy, times).removePublication(any());",
     "right" : "verify(senderProxy, never()).removePublication(any());",
     "info" : "ExpressionStatement[18415-18467]:ExpressionStatement[14824-14878]"
@@ -868,6 +924,14 @@
     "left" : "verify(senderProxy, times).removePublication(any());",
     "right" : "verify(senderProxy, never()).removePublication(eq(publication));",
     "info" : "ExpressionStatement[18415-18467]:ExpressionStatement[17281-17345]"
+  }, {
+    "left" : "any",
+    "right" : "eq",
+    "info" : "SimpleName[18460-18463]:SimpleName[16335-16337]"
+  }, {
+    "left" : "any",
+    "right" : "eq",
+    "info" : "SimpleName[18460-18463]:SimpleName[17328-17330]"
   }, {
     "left" : "verify(mockConductorLogger).logException(any());",
     "right" : "verify(mockConductorLogger).logException(any());",
@@ -1004,6 +1068,10 @@
     "left" : "fromClientCommands.write(ControlProtocolEvents.CLIENT_KEEPALIVE, writeBuffer, 0, CorrelatedMessageFlyweight.LENGTH);",
     "right" : "fromClientCommands.write(ControlProtocolEvents.CLIENT_KEEPALIVE, writeBuffer, 0, CorrelatedMessageFlyweight.LENGTH);",
     "info" : "ExpressionStatement[20507-20623]:ExpressionStatement[20622-20738]"
+  }, {
+    "left" : "processTimersUntil",
+    "right" : "doWorkUntil",
+    "info" : "SimpleName[20648-20666]:SimpleName[20763-20774]"
   }, {
     "left" : "{}",
     "right" : "{}",

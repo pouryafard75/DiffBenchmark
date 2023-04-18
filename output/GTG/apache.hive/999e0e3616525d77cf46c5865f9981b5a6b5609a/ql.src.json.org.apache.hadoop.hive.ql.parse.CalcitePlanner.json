@@ -1957,6 +1957,10 @@
     "right" : "hepPlanner.setRoot(rootRel);",
     "info" : "ExpressionStatement[35716-35744]:ExpressionStatement[35528-35556]"
   }, {
+    "left" : "hepPgmBldr",
+    "right" : "calciteOptimizedPlan",
+    "info" : "SimpleName[35880-35890]:SimpleName[35880-35900]"
+  }, {
     "left" : "hepPgmBldr = new HepProgramBuilder().addMatchOrder(HepMatchOrder.BOTTOM_UP);",
     "right" : "calciteOptimizedPlan = hepPlan(calciteOptimizedPlan, false, mdProvider.getMetadataProvider(),\n              HepMatchOrder.BOTTOM_UP, HiveJoinCommuteRule.INSTANCE);",
     "info" : "ExpressionStatement[35880-35956]:ExpressionStatement[35880-36043]"
@@ -2017,6 +2021,10 @@
     "right" : "{}",
     "info" : "Block[37032-39018]:Block[36470-37971]"
   }, {
+    "left" : "hepPgmBldr",
+    "right" : "calciteOptimizedPlan",
+    "info" : "SimpleName[37263-37273]:SimpleName[36546-36566]"
+  }, {
     "left" : "hepPgmBldr = hepPgmBldr.addRuleCollection(ImmutableList.of(\n                HiveJoinProjectTransposeRule.BOTH_PROJECT,\n                HiveJoinToMultiJoinRule.INSTANCE,\n                HiveProjectMergeRule.INSTANCE));",
     "right" : "calciteOptimizedPlan = hepPlan(calciteOptimizedPlan, true, mdProvider.getMetadataProvider(),\n                HepMatchOrder.BOTTOM_UP, HiveJoinProjectTransposeRule.BOTH_PROJECT,\n                HiveJoinToMultiJoinRule.INSTANCE, HiveProjectMergeRule.INSTANCE);",
     "info" : "ExpressionStatement[37263-37480]:ExpressionStatement[36546-36804]"
@@ -2032,6 +2040,10 @@
     "left" : "ImmutableList",
     "right" : "mdProvider",
     "info" : "METHOD_INVOCATION_RECEIVER[37305-37318]:METHOD_INVOCATION_RECEIVER[36605-36615]"
+  }, {
+    "left" : "ImmutableList",
+    "right" : "mdProvider",
+    "info" : "SimpleName[37305-37318]:SimpleName[36605-36615]"
   }, {
     "left" : "of",
     "right" : "getMetadataProvider",
@@ -2073,21 +2085,41 @@
     "right" : "calciteOptimizedPlan",
     "info" : "SimpleName[38722-38732]:SimpleName[37408-37428]"
   }, {
+    "left" : "hepPlanner",
+    "right" : "mdProvider",
+    "info" : "SimpleName[38762-38772]:SimpleName[37437-37447]"
+  }, {
     "left" : "hepPlanner.registerMetadataProviders(list)",
     "right" : "mdProvider.getMetadataProvider()",
     "info" : "MethodInvocation[38762-38804]:MethodInvocation[37437-37469]"
+  }, {
+    "left" : "registerMetadataProviders",
+    "right" : "getMetadataProvider",
+    "info" : "SimpleName[38773-38798]:SimpleName[37448-37467]"
   }, {
     "left" : "new CachingRelMetadataProvider(chainedProvider, hepPlanner)",
     "right" : "new ProjectMergeRule(false, HiveProject.DEFAULT_PROJECT_FACTORY)",
     "info" : "ClassInstanceCreation[38842-38901]:ClassInstanceCreation[37556-37620]"
   }, {
+    "left" : "CachingRelMetadataProvider",
+    "right" : "ProjectMergeRule",
+    "info" : "SimpleName[38846-38872]:SimpleName[37560-37576]"
+  }, {
     "left" : "calciteOptimizedPlan = hepPlanner.findBestExp();",
     "right" : "calciteOptimizedPlan = hepPlan(calciteOptimizedPlan, false, mdProvider.getMetadataProvider(),\n                HepMatchOrder.BOTTOM_UP, HiveInsertExchange4JoinRule.EXCHANGE_BELOW_JOIN,\n                HiveInsertExchange4JoinRule.EXCHANGE_BELOW_MULTIJOIN);",
     "info" : "ExpressionStatement[38962-39010]:ExpressionStatement[37709-37963]"
   }, {
+    "left" : "hepPlanner",
+    "right" : "mdProvider",
+    "info" : "SimpleName[38985-38995]:SimpleName[37769-37779]"
+  }, {
     "left" : "hepPlanner.findBestExp()",
     "right" : "mdProvider.getMetadataProvider()",
     "info" : "MethodInvocation[38985-39009]:MethodInvocation[37769-37801]"
+  }, {
+    "left" : "findBestExp",
+    "right" : "getMetadataProvider",
+    "info" : "SimpleName[38996-39007]:SimpleName[37780-37799]"
   }, {
     "left" : "if (LOG.isDebugEnabled() && !conf.getBoolVar(ConfVars.HIVE_IN_TEST))",
     "right" : "if (LOG.isDebugEnabled() && !conf.getBoolVar(ConfVars.HIVE_IN_TEST))",

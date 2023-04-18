@@ -145,6 +145,22 @@
     "right" : "printWriter.write(response.getBody());",
     "info" : "ExpressionStatement[2821-2859]:ExpressionStatement[3639-3677]"
   }, {
+    "left" : "RenderRequest",
+    "right" : "PortletRequest",
+    "info" : "SimpleName[2905-2918]:SimpleName[4060-4074]"
+  }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[2919-2932]:SimpleName[4075-4089]"
+  }, {
+    "left" : "RenderResponse",
+    "right" : "PortletResponse",
+    "info" : "SimpleName[2934-2948]:SimpleName[4091-4106]"
+  }, {
+    "left" : "renderResponse",
+    "right" : "portletResponse",
+    "info" : "SimpleName[2949-2963]:SimpleName[4107-4122]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3014-3593]:Block[4173-4755]"
@@ -152,6 +168,10 @@
     "left" : "String currentURL = PortalUtil.getCurrentURL(renderRequest);",
     "right" : "String currentURL = PortalUtil.getCurrentURL(portletRequest);",
     "info" : "VariableDeclarationStatement[3019-3079]:VariableDeclarationStatement[4178-4239]"
+  }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[3064-3077]:SimpleName[4223-4237]"
   }, {
     "left" : "oAuthRequest.addQuerystringParameter(\"remoteURL\", currentURL);",
     "right" : "oAuthRequest.addQuerystringParameter(\"remoteURL\", currentURL);",
@@ -161,9 +181,17 @@
     "right" : "oAuthRequest.addQuerystringParameter(\n\t\t\t\"remotePortletNamespace\", portletResponse.getNamespace());",
     "info" : "ExpressionStatement[3149-3247]:ExpressionStatement[4309-4408]"
   }, {
+    "left" : "renderResponse",
+    "right" : "portletResponse",
+    "info" : "SimpleName[3216-3230]:SimpleName[4376-4391]"
+  }, {
     "left" : "Map<String, String[]> parameterMap = renderRequest.getParameterMap();",
     "right" : "Map<String, String[]> parameterMap = portletRequest.getParameterMap();",
     "info" : "VariableDeclarationStatement[3251-3320]:VariableDeclarationStatement[4412-4482]"
+  }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[3288-3301]:SimpleName[4449-4463]"
   }, {
     "left" : "for (Map.Entry<String, String[]> entry : parameterMap.entrySet())",
     "right" : "for (Map.Entry<String, String[]> entry : parameterMap.entrySet())",

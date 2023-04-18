@@ -81,6 +81,10 @@
     "right" : "return StringPool.BLANK;",
     "info" : "ReturnStatement[2054-2078]:ReturnStatement[3248-3272]"
   }, {
+    "left" : "remoteRender",
+    "right" : "getGetOAuthRequest",
+    "info" : "SimpleName[2099-2111]:SimpleName[2603-2621]"
+  }, {
     "left" : "RenderRequest renderRequest",
     "right" : "RenderRequest renderRequest",
     "info" : "SingleVariableDeclaration[2116-2143]:SingleVariableDeclaration[3310-3337]"
@@ -97,6 +101,10 @@
     "right" : "ThemeDisplay themeDisplay = (ThemeDisplay)portletRequest.getAttribute(\n\t\t\tWebKeys.THEME_DISPLAY);",
     "info" : "VariableDeclarationStatement[2200-2296]:VariableDeclarationStatement[2872-2969]"
   }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[2242-2255]:SimpleName[2914-2928]"
+  }, {
     "left" : "OAuthRequest oAuthRequest = new OAuthRequest(\n\t\t\tVerb.GET, getRemotePortletURL());",
     "right" : "OAuthRequest oAuthRequest = new OAuthRequest(\n\t\t\tVerb.GET, getRemotePortletURL());",
     "info" : "VariableDeclarationStatement[2300-2382]:VariableDeclarationStatement[2714-2796]"
@@ -104,6 +112,14 @@
     "left" : "setRequestParameters(renderRequest, renderResponse, oAuthRequest);",
     "right" : "setRequestParameters(portletRequest, portletResponse, oAuthRequest);",
     "info" : "ExpressionStatement[2386-2452]:ExpressionStatement[2800-2868]"
+  }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[2407-2420]:SimpleName[2821-2835]"
+  }, {
+    "left" : "renderResponse",
+    "right" : "portletResponse",
+    "info" : "SimpleName[2422-2436]:SimpleName[2837-2852]"
   }, {
     "left" : "Token token = OAuthUtil.getAccessToken(themeDisplay.getUser());",
     "right" : "Token token = OAuthUtil.getAccessToken(themeDisplay.getUser());",
@@ -141,6 +157,22 @@
     "right" : "printWriter.write(response.getBody());",
     "info" : "ExpressionStatement[2821-2859]:ExpressionStatement[3639-3677]"
   }, {
+    "left" : "RenderRequest",
+    "right" : "PortletRequest",
+    "info" : "SimpleName[2905-2918]:SimpleName[4060-4074]"
+  }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[2919-2932]:SimpleName[4075-4089]"
+  }, {
+    "left" : "RenderResponse",
+    "right" : "PortletResponse",
+    "info" : "SimpleName[2934-2948]:SimpleName[4091-4106]"
+  }, {
+    "left" : "renderResponse",
+    "right" : "portletResponse",
+    "info" : "SimpleName[2949-2963]:SimpleName[4107-4122]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3014-3593]:Block[4173-4755]"
@@ -148,6 +180,10 @@
     "left" : "String currentURL = PortalUtil.getCurrentURL(renderRequest);",
     "right" : "String currentURL = PortalUtil.getCurrentURL(portletRequest);",
     "info" : "VariableDeclarationStatement[3019-3079]:VariableDeclarationStatement[4178-4239]"
+  }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[3064-3077]:SimpleName[4223-4237]"
   }, {
     "left" : "oAuthRequest.addQuerystringParameter(\"remoteURL\", currentURL);",
     "right" : "oAuthRequest.addQuerystringParameter(\"remoteURL\", currentURL);",
@@ -160,6 +196,10 @@
     "left" : "Map<String, String[]> parameterMap = renderRequest.getParameterMap();",
     "right" : "Map<String, String[]> parameterMap = portletRequest.getParameterMap();",
     "info" : "VariableDeclarationStatement[3251-3320]:VariableDeclarationStatement[4412-4482]"
+  }, {
+    "left" : "renderRequest",
+    "right" : "portletRequest",
+    "info" : "SimpleName[3288-3301]:SimpleName[4449-4463]"
   }, {
     "left" : "for (Map.Entry<String, String[]> entry : parameterMap.entrySet())",
     "right" : "for (Map.Entry<String, String[]> entry : parameterMap.entrySet())",

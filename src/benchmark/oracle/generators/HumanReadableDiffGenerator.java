@@ -2,7 +2,7 @@ package benchmark.oracle.generators;
 
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.utils.PathResoslver;
+import benchmark.utils.PathResolver;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -185,7 +185,7 @@ public class HumanReadableDiffGenerator {
         DefaultPrettyPrinter printer = new DefaultPrettyPrinter().withObjectIndenter(new DefaultIndenter("    ", "\n"));
         try {
             String out = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
-            FileUtils.writeStringToFile(new File(PathResoslver.getFinalPath(folderName, srcPath, commit, repo)), out);
+            FileUtils.writeStringToFile(new File(PathResolver.getFinalPath(folderName, srcPath, commit, repo)), out);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

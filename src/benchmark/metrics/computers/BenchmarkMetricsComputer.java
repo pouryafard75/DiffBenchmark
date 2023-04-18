@@ -22,8 +22,8 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static benchmark.utils.PathResoslver.replaceFileName;
-import static benchmark.utils.PathResoslver.repoFolder;
+import static benchmark.utils.PathResolver.replaceFileName;
+import static benchmark.utils.PathResolver.repoFolder;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {

@@ -12,7 +12,7 @@ import java.util.List;
 
 /* Created by pourya on 2023-04-17 7:45 p.m. */
 public class MakeToolsOutput {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         BenchmarkHumanReadableDiffGenerator benchmarkHumanReadableDiffGenerator = new BenchmarkHumanReadableDiffGenerator();
         ObjectMapper mapper = new ObjectMapper();
         List<CaseInfo> infos = mapper.readValue(new File(Configuration.casesPath), new TypeReference<List<CaseInfo>>(){});

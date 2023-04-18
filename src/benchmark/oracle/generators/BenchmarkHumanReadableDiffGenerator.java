@@ -3,25 +3,31 @@ package benchmark.oracle.generators;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration;
 import com.github.gumtreediff.matchers.*;
+import org.eclipse.jgit.lib.Repository;
+import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
+import org.refactoringminer.util.GitServiceImpl;
 
 import java.util.Set;
+
+import static benchmark.utils.Configuration.REPOS;
 
 /* Created by pourya on 2023-02-08 3:00 a.m. */
 public class BenchmarkHumanReadableDiffGenerator {
     public BenchmarkHumanReadableDiffGenerator(){
 
     }
-    public void writeToFiles(CaseInfo info)
-    {
+    public void writeToFiles(CaseInfo info) throws Exception {
         String repo = info.getRepo();
         String commit = info.getCommit();
         this.writeToFiles(repo, commit);
     }
-    private void writeToFiles(String repo, String commit) {
-        Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
+    private void writeToFiles(String repo, String commit) throws Exception {
+        GitService gitService = new GitServiceImpl();String repoFolder = repo.substring(repo.lastIndexOf("/"), repo.indexOf(".git"));
+        Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, repo);
+        Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
         for (ASTDiff astDiff : astDiffs) {
             HumanReadableDiffGenerator refactoringMinerHDG = new HumanReadableDiffGenerator(repo, commit, astDiff);
             refactoringMinerHDG.make();

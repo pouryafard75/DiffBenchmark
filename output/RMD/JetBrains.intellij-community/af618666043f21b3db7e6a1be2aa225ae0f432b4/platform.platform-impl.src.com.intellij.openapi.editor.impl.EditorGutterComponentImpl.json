@@ -633,6 +633,26 @@
     "info" : "MethodDeclaration[62048-62234]:MethodDeclaration[62285-62471]"
   } ],
   "mappings" : [ {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[3810-3819]:MarkerAnnotation[3810-3819]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3824-3830]:Modifier[3824-3830]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[3831-3834]:PrimitiveType[3831-3834]"
+  }, {
+    "left" : "execute",
+    "right" : "execute",
+    "info" : "SimpleName[3835-3842]:SimpleName[3835-3842]"
+  }, {
+    "left" : "int value",
+    "right" : "int value",
+    "info" : "SingleVariableDeclaration[3843-3852]:SingleVariableDeclaration[3843-3852]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3854-3881]:Block[3854-3881]"
@@ -640,6 +660,22 @@
     "left" : "return value;",
     "right" : "return value;",
     "info" : "ReturnStatement[3862-3875]:ReturnStatement[3862-3875]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[5223-5253]:SingleMemberAnnotation[5223-5253]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5256-5262]:Modifier[5256-5262]"
+  }, {
+    "left" : "EditorGutterComponentImpl",
+    "right" : "EditorGutterComponentImpl",
+    "info" : "SimpleName[5263-5288]:SimpleName[5263-5288]"
+  }, {
+    "left" : "EditorImpl editor",
+    "right" : "EditorImpl editor",
+    "info" : "SingleVariableDeclaration[5289-5306]:SingleVariableDeclaration[5289-5306]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -673,6 +709,22 @@
     "right" : "myAnchorsDisplayStrategy = new FoldingAnchorsOverlayStrategy(editor);",
     "info" : "ExpressionStatement[5488-5557]:ExpressionStatement[5488-5557]"
   }, {
+    "left" : "@SuppressWarnings({\"ConstantConditions\"})",
+    "right" : "@SuppressWarnings({\"ConstantConditions\"})",
+    "info" : "SingleMemberAnnotation[5565-5606]:SingleMemberAnnotation[5565-5606]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[5609-5616]:Modifier[5609-5616]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[5617-5621]:PrimitiveType[5617-5621]"
+  }, {
+    "left" : "installDnD",
+    "right" : "installDnD",
+    "info" : "SimpleName[5622-5632]:SimpleName[5622-5632]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[5635-6935]:Block[5635-6935]"
@@ -680,6 +732,26 @@
     "left" : "DnDSupport.createBuilder(this)\n      .setBeanProvider(new Function<DnDActionInfo, DnDDragStartBean>() {\n        @Override\n        public DnDDragStartBean fun(DnDActionInfo info) {\n          final GutterMark renderer = getGutterRenderer(info.getPoint());\n          return renderer != null && (info.isCopy() || info.isMove()) ? new DnDDragStartBean(renderer) : null;\n        }\n      })\n      .setDropHandler(new DnDDropHandler() {\n        @Override\n        public void drop(DnDEvent e) {\n          final Object attachedObject = e.getAttachedObject();\n          if (attachedObject instanceof GutterIconRenderer) {\n            final GutterDraggableObject draggableObject = ((GutterIconRenderer)attachedObject).getDraggableObject();\n            if (draggableObject != null) {\n              final int line = convertPointToLineNumber(e.getPoint());\n              if (line != -1) {\n                draggableObject.copy(line, myEditor.getVirtualFile());\n              }\n            }\n          }\n        }\n      })\n      .setImageProvider(new NullableFunction<DnDActionInfo, DnDImage>() {\n        @Override\n        public DnDImage fun(DnDActionInfo info) {\n          return new DnDImage(IconUtil.toImage(scaleIcon(getGutterRenderer(info.getPoint()).getIcon())));\n        }\n      })\n      .install();",
     "right" : "DnDSupport.createBuilder(this)\n      .setBeanProvider(new Function<DnDActionInfo, DnDDragStartBean>() {\n        @Override\n        public DnDDragStartBean fun(DnDActionInfo info) {\n          final GutterMark renderer = getGutterRenderer(info.getPoint());\n          return renderer != null && (info.isCopy() || info.isMove()) ? new DnDDragStartBean(renderer) : null;\n        }\n      })\n      .setDropHandler(new DnDDropHandler() {\n        @Override\n        public void drop(DnDEvent e) {\n          final Object attachedObject = e.getAttachedObject();\n          if (attachedObject instanceof GutterIconRenderer) {\n            final GutterDraggableObject draggableObject = ((GutterIconRenderer)attachedObject).getDraggableObject();\n            if (draggableObject != null) {\n              final int line = convertPointToLineNumber(e.getPoint());\n              if (line != -1) {\n                draggableObject.copy(line, myEditor.getVirtualFile());\n              }\n            }\n          }\n        }\n      })\n      .setImageProvider(new NullableFunction<DnDActionInfo, DnDImage>() {\n        @Override\n        public DnDImage fun(DnDActionInfo info) {\n          return new DnDImage(IconUtil.toImage(scaleIcon(getGutterRenderer(info.getPoint()).getIcon())));\n        }\n      })\n      .install();",
     "info" : "ExpressionStatement[5641-6931]:ExpressionStatement[5641-6931]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5753-5762]:MarkerAnnotation[5753-5762]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5771-5777]:Modifier[5771-5777]"
+  }, {
+    "left" : "DnDDragStartBean",
+    "right" : "DnDDragStartBean",
+    "info" : "SimpleType[5778-5794]:SimpleType[5778-5794]"
+  }, {
+    "left" : "fun",
+    "right" : "fun",
+    "info" : "SimpleName[5795-5798]:SimpleName[5795-5798]"
+  }, {
+    "left" : "DnDActionInfo info",
+    "right" : "DnDActionInfo info",
+    "info" : "SingleVariableDeclaration[5799-5817]:SingleVariableDeclaration[5799-5817]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -692,6 +764,26 @@
     "left" : "return renderer != null && (info.isCopy() || info.isMove()) ? new DnDDragStartBean(renderer) : null;",
     "right" : "return renderer != null && (info.isCopy() || info.isMove()) ? new DnDDragStartBean(renderer) : null;",
     "info" : "ReturnStatement[5905-6005]:ReturnStatement[5905-6005]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6078-6087]:MarkerAnnotation[6078-6087]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6096-6102]:Modifier[6096-6102]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6103-6107]:PrimitiveType[6103-6107]"
+  }, {
+    "left" : "drop",
+    "right" : "drop",
+    "info" : "SimpleName[6108-6112]:SimpleName[6108-6112]"
+  }, {
+    "left" : "DnDEvent e",
+    "right" : "DnDEvent e",
+    "info" : "SingleVariableDeclaration[6113-6123]:SingleVariableDeclaration[6113-6123]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -737,6 +829,26 @@
     "right" : "draggableObject.copy(line, myEditor.getVirtualFile());",
     "info" : "ExpressionStatement[6531-6585]:ExpressionStatement[6531-6585]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6729-6738]:MarkerAnnotation[6729-6738]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6747-6753]:Modifier[6747-6753]"
+  }, {
+    "left" : "DnDImage",
+    "right" : "DnDImage",
+    "info" : "SimpleType[6754-6762]:SimpleType[6754-6762]"
+  }, {
+    "left" : "fun",
+    "right" : "fun",
+    "info" : "SimpleName[6763-6766]:SimpleName[6763-6766]"
+  }, {
+    "left" : "DnDActionInfo info",
+    "right" : "DnDActionInfo info",
+    "info" : "SingleVariableDeclaration[6767-6785]:SingleVariableDeclaration[6767-6785]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6787-6904]:Block[6787-6904]"
@@ -745,6 +857,18 @@
     "right" : "return new DnDImage(IconUtil.toImage(scaleIcon(getGutterRenderer(info.getPoint()).getIcon())));",
     "info" : "ReturnStatement[6799-6894]:ReturnStatement[6799-6894]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[6939-6946]:Modifier[6939-6946]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6947-6951]:PrimitiveType[6947-6951]"
+  }, {
+    "left" : "fireResized",
+    "right" : "fireResized",
+    "info" : "SimpleName[6952-6963]:SimpleName[6952-6963]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6966-7058]:Block[6966-7058]"
@@ -752,6 +876,22 @@
     "left" : "processComponentEvent(new ComponentEvent(this, ComponentEvent.COMPONENT_RESIZED));",
     "right" : "processComponentEvent(new ComponentEvent(this, ComponentEvent.COMPONENT_RESIZED));",
     "info" : "ExpressionStatement[6972-7054]:ExpressionStatement[6972-7054]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7062-7071]:MarkerAnnotation[7062-7071]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7074-7080]:Modifier[7074-7080]"
+  }, {
+    "left" : "Dimension",
+    "right" : "Dimension",
+    "info" : "SimpleType[7081-7090]:SimpleType[7081-7090]"
+  }, {
+    "left" : "getPreferredSize",
+    "right" : "getPreferredSize",
+    "info" : "SimpleName[7091-7107]:SimpleName[7091-7107]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -765,6 +905,26 @@
     "right" : "return new Dimension(w, myEditor.getPreferredHeight());",
     "info" : "ReturnStatement[7272-7327]:ReturnStatement[7272-7327]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7335-7344]:MarkerAnnotation[7335-7344]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[7347-7356]:Modifier[7347-7356]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7357-7361]:PrimitiveType[7357-7361]"
+  }, {
+    "left" : "setUI",
+    "right" : "setUI",
+    "info" : "SimpleName[7362-7367]:SimpleName[7362-7367]"
+  }, {
+    "left" : "ComponentUI newUI",
+    "right" : "ComponentUI newUI",
+    "info" : "SingleVariableDeclaration[7368-7385]:SingleVariableDeclaration[7368-7385]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[7387-7438]:Block[7387-7438]"
@@ -776,6 +936,22 @@
     "left" : "reinitSettings();",
     "right" : "reinitSettings();",
     "info" : "ExpressionStatement[7417-7434]:ExpressionStatement[7417-7434]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7442-7451]:MarkerAnnotation[7442-7451]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7454-7460]:Modifier[7454-7460]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7461-7465]:PrimitiveType[7461-7465]"
+  }, {
+    "left" : "updateUI",
+    "right" : "updateUI",
+    "info" : "SimpleName[7466-7474]:SimpleName[7466-7474]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -789,6 +965,18 @@
     "right" : "reinitSettings();",
     "info" : "ExpressionStatement[7505-7522]:ExpressionStatement[7505-7522]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7530-7536]:Modifier[7530-7536]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7537-7541]:PrimitiveType[7537-7541]"
+  }, {
+    "left" : "reinitSettings",
+    "right" : "reinitSettings",
+    "info" : "SimpleName[7542-7556]:SimpleName[7542-7556]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[7559-7603]:Block[7559-7603]"
@@ -800,6 +988,26 @@
     "left" : "repaint();",
     "right" : "repaint();",
     "info" : "ExpressionStatement[7589-7599]:ExpressionStatement[7589-7599]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7607-7616]:MarkerAnnotation[7607-7616]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7619-7625]:Modifier[7619-7625]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7626-7630]:PrimitiveType[7626-7630]"
+  }, {
+    "left" : "paint",
+    "right" : "paint",
+    "info" : "SimpleName[7631-7636]:SimpleName[7631-7636]"
+  }, {
+    "left" : "Graphics g_",
+    "right" : "Graphics g_",
+    "info" : "SingleVariableDeclaration[7637-7648]:SingleVariableDeclaration[7637-7648]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -957,6 +1165,30 @@
     "right" : "((ApplicationImpl)ApplicationManager.getApplication()).editorPaintFinish();",
     "info" : "ExpressionStatement[9468-9543]:ExpressionStatement[9468-9543]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[9557-9564]:Modifier[9557-9564]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[9565-9569]:PrimitiveType[9565-9569]"
+  }, {
+    "left" : "paintEditorBackgrounds",
+    "right" : "paintEditorBackgrounds",
+    "info" : "SimpleName[9570-9592]:SimpleName[9570-9592]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[9593-9603]:SingleVariableDeclaration[9593-9603]"
+  }, {
+    "left" : "int firstVisibleOffset",
+    "right" : "int firstVisibleOffset",
+    "info" : "SingleVariableDeclaration[9605-9627]:SingleVariableDeclaration[9605-9627]"
+  }, {
+    "left" : "int lastVisibleOffset",
+    "right" : "int lastVisibleOffset",
+    "info" : "SingleVariableDeclaration[9629-9650]:SingleVariableDeclaration[9629-9650]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[9652-10890]:Block[9652-10890]"
@@ -1029,6 +1261,46 @@
     "right" : "state.advance();",
     "info" : "ExpressionStatement[10856-10872]:ExpressionStatement[10856-10872]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[10896-10903]:Modifier[10896-10903]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[10904-10908]:PrimitiveType[10904-10908]"
+  }, {
+    "left" : "drawEditorBackgroundForRange",
+    "right" : "drawEditorBackgroundForRange",
+    "info" : "SimpleName[10909-10937]:SimpleName[10909-10937]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[10938-10948]:SingleVariableDeclaration[10938-10948]"
+  }, {
+    "left" : "int startOffset",
+    "right" : "int startOffset",
+    "info" : "SingleVariableDeclaration[10950-10965]:SingleVariableDeclaration[10950-10965]"
+  }, {
+    "left" : "int endOffset",
+    "right" : "int endOffset",
+    "info" : "SingleVariableDeclaration[10967-10980]:SingleVariableDeclaration[10967-10980]"
+  }, {
+    "left" : "TextAttributes attributes",
+    "right" : "TextAttributes attributes",
+    "info" : "SingleVariableDeclaration[10982-11007]:SingleVariableDeclaration[10982-11007]"
+  }, {
+    "left" : "Color defaultBackgroundColor",
+    "right" : "Color defaultBackgroundColor",
+    "info" : "SingleVariableDeclaration[11053-11081]:SingleVariableDeclaration[11053-11081]"
+  }, {
+    "left" : "Color defaultForegroundColor",
+    "right" : "Color defaultForegroundColor",
+    "info" : "SingleVariableDeclaration[11083-11111]:SingleVariableDeclaration[11083-11111]"
+  }, {
+    "left" : "int startX",
+    "right" : "int startX",
+    "info" : "SingleVariableDeclaration[11113-11123]:SingleVariableDeclaration[11113-11123]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[11125-11933]:Block[11125-11933]"
@@ -1081,6 +1353,46 @@
     "right" : "drawEditorLineBackgroundRect(g, attributes, line, defaultBackgroundColor, defaultForegroundColor, startX,\n                                     myEditor.visibleLineToY(line));",
     "info" : "ExpressionStatement[11741-11915]:ExpressionStatement[11741-11915]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[11937-11944]:Modifier[11937-11944]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[11945-11949]:PrimitiveType[11945-11949]"
+  }, {
+    "left" : "drawEditorLineBackgroundRect",
+    "right" : "drawEditorLineBackgroundRect",
+    "info" : "SimpleName[11950-11978]:SimpleName[11950-11978]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[11979-11989]:SingleVariableDeclaration[11979-11989]"
+  }, {
+    "left" : "TextAttributes attributes",
+    "right" : "TextAttributes attributes",
+    "info" : "SingleVariableDeclaration[12035-12060]:SingleVariableDeclaration[12035-12060]"
+  }, {
+    "left" : "int visualLine",
+    "right" : "int visualLine",
+    "info" : "SingleVariableDeclaration[12106-12120]:SingleVariableDeclaration[12106-12120]"
+  }, {
+    "left" : "Color defaultBackgroundColor",
+    "right" : "Color defaultBackgroundColor",
+    "info" : "SingleVariableDeclaration[12166-12194]:SingleVariableDeclaration[12166-12194]"
+  }, {
+    "left" : "Color defaultForegroundColor",
+    "right" : "Color defaultForegroundColor",
+    "info" : "SingleVariableDeclaration[12240-12268]:SingleVariableDeclaration[12240-12268]"
+  }, {
+    "left" : "int startX",
+    "right" : "int startX",
+    "info" : "SingleVariableDeclaration[12314-12324]:SingleVariableDeclaration[12314-12324]"
+  }, {
+    "left" : "int startY",
+    "right" : "int startY",
+    "info" : "SingleVariableDeclaration[12370-12380]:SingleVariableDeclaration[12370-12380]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[12382-12792]:Block[12382-12792]"
@@ -1120,6 +1432,22 @@
     "left" : "g.fillRect(startX, startY, getWidth() - startX, myEditor.getLineHeight());",
     "right" : "g.fillRect(startX, startY, getWidth() - startX, myEditor.getLineHeight());",
     "info" : "ExpressionStatement[12708-12782]:ExpressionStatement[12708-12782]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[12796-12803]:Modifier[12796-12803]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12804-12808]:PrimitiveType[12804-12808]"
+  }, {
+    "left" : "processClose",
+    "right" : "processClose",
+    "info" : "SimpleName[12809-12821]:SimpleName[12809-12821]"
+  }, {
+    "left" : "final MouseEvent e",
+    "right" : "final MouseEvent e",
+    "info" : "SingleVariableDeclaration[12822-12840]:SingleVariableDeclaration[12822-12840]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1181,6 +1509,30 @@
     "right" : "x += size + GAP_BETWEEN_ANNOTATIONS;",
     "info" : "ExpressionStatement[13688-13724]:ExpressionStatement[13688-13724]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[13738-13745]:Modifier[13738-13745]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[13746-13750]:PrimitiveType[13746-13750]"
+  }, {
+    "left" : "paintAnnotationsBackground",
+    "right" : "paintAnnotationsBackground",
+    "info" : "SimpleName[13751-13777]:SimpleName[13751-13777]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[13778-13788]:SingleVariableDeclaration[13778-13788]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[13790-13804]:SingleVariableDeclaration[13790-13804]"
+  }, {
+    "left" : "Color backgroundColor",
+    "right" : "Color backgroundColor",
+    "info" : "SingleVariableDeclaration[13806-13827]:SingleVariableDeclaration[13806-13827]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[13829-13977]:Block[13829-13977]"
@@ -1200,6 +1552,26 @@
     "left" : "paintBackground(g, clip, getAnnotationsAreaOffset(), w, backgroundColor);",
     "right" : "paintBackground(g, clip, getAnnotationsAreaOffset(), w, backgroundColor);",
     "info" : "ExpressionStatement[13900-13973]:ExpressionStatement[13900-13973]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[13981-13988]:Modifier[13981-13988]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[13989-13993]:PrimitiveType[13989-13993]"
+  }, {
+    "left" : "paintAnnotations",
+    "right" : "paintAnnotations",
+    "info" : "SimpleName[13994-14010]:SimpleName[13994-14010]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[14011-14021]:SingleVariableDeclaration[14011-14021]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[14023-14037]:SingleVariableDeclaration[14023-14037]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1345,6 +1717,34 @@
     "right" : "x += annotationSize;",
     "info" : "ExpressionStatement[15774-15794]:ExpressionStatement[15774-15794]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[15808-15815]:Modifier[15808-15815]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[15816-15820]:PrimitiveType[15816-15820]"
+  }, {
+    "left" : "paintFoldingTree",
+    "right" : "paintFoldingTree",
+    "info" : "SimpleName[15821-15837]:SimpleName[15821-15837]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[15838-15848]:SingleVariableDeclaration[15838-15848]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[15850-15864]:SingleVariableDeclaration[15850-15864]"
+  }, {
+    "left" : "int firstVisibleOffset",
+    "right" : "int firstVisibleOffset",
+    "info" : "SingleVariableDeclaration[15866-15888]:SingleVariableDeclaration[15866-15888]"
+  }, {
+    "left" : "int lastVisibleOffset",
+    "right" : "int lastVisibleOffset",
+    "info" : "SingleVariableDeclaration[15890-15911]:SingleVariableDeclaration[15890-15911]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[15913-16045]:Block[15913-16045]"
@@ -1360,6 +1760,30 @@
     "left" : "doPaintFoldingTree((Graphics2D)g, clip, firstVisibleOffset, lastVisibleOffset);",
     "right" : "doPaintFoldingTree((Graphics2D)g, clip, firstVisibleOffset, lastVisibleOffset);",
     "info" : "ExpressionStatement[15956-16035]:ExpressionStatement[15956-16035]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[16049-16056]:Modifier[16049-16056]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16057-16061]:PrimitiveType[16057-16061]"
+  }, {
+    "left" : "paintLineMarkersBackground",
+    "right" : "paintLineMarkersBackground",
+    "info" : "SimpleName[16062-16088]:SimpleName[16062-16088]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[16089-16099]:SingleVariableDeclaration[16089-16099]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[16101-16115]:SingleVariableDeclaration[16101-16115]"
+  }, {
+    "left" : "Color bgColor",
+    "right" : "Color bgColor",
+    "info" : "SingleVariableDeclaration[16117-16130]:SingleVariableDeclaration[16117-16130]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1377,6 +1801,30 @@
     "right" : "paintBackground(g, clip, getLineMarkerAreaOffset(), getLineMarkerAreaWidth(), bgColor);",
     "info" : "ExpressionStatement[16172-16259]:ExpressionStatement[16172-16259]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[16273-16280]:Modifier[16273-16280]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16281-16285]:PrimitiveType[16281-16285]"
+  }, {
+    "left" : "paintLineMarkers",
+    "right" : "paintLineMarkers",
+    "info" : "SimpleName[16286-16302]:SimpleName[16286-16302]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[16303-16313]:SingleVariableDeclaration[16303-16313]"
+  }, {
+    "left" : "int firstVisibleOffset",
+    "right" : "int firstVisibleOffset",
+    "info" : "SingleVariableDeclaration[16315-16337]:SingleVariableDeclaration[16315-16337]"
+  }, {
+    "left" : "int lastVisibleOffset",
+    "right" : "int lastVisibleOffset",
+    "info" : "SingleVariableDeclaration[16339-16360]:SingleVariableDeclaration[16339-16360]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[16362-16475]:Block[16362-16475]"
@@ -1393,6 +1841,38 @@
     "right" : "paintGutterRenderers(g, firstVisibleOffset, lastVisibleOffset);",
     "info" : "ExpressionStatement[16402-16465]:ExpressionStatement[16402-16465]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[16479-16486]:Modifier[16479-16486]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16487-16491]:PrimitiveType[16487-16491]"
+  }, {
+    "left" : "paintBackground",
+    "right" : "paintBackground",
+    "info" : "SimpleName[16492-16507]:SimpleName[16492-16507]"
+  }, {
+    "left" : "final Graphics g",
+    "right" : "final Graphics g",
+    "info" : "SingleVariableDeclaration[16508-16524]:SingleVariableDeclaration[16508-16524]"
+  }, {
+    "left" : "final Rectangle clip",
+    "right" : "final Rectangle clip",
+    "info" : "SingleVariableDeclaration[16557-16577]:SingleVariableDeclaration[16557-16577]"
+  }, {
+    "left" : "final int x",
+    "right" : "final int x",
+    "info" : "SingleVariableDeclaration[16610-16621]:SingleVariableDeclaration[16610-16621]"
+  }, {
+    "left" : "final int width",
+    "right" : "final int width",
+    "info" : "SingleVariableDeclaration[16654-16669]:SingleVariableDeclaration[16654-16669]"
+  }, {
+    "left" : "Color background",
+    "right" : "Color background",
+    "info" : "SingleVariableDeclaration[16702-16718]:SingleVariableDeclaration[16702-16718]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[16720-16843]:Block[16720-16843]"
@@ -1408,6 +1888,30 @@
     "left" : "paintCaretRowBackground(g, x, width);",
     "right" : "paintCaretRowBackground(g, x, width);",
     "info" : "ExpressionStatement[16802-16839]:ExpressionStatement[16802-16839]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[16847-16854]:Modifier[16847-16854]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16855-16859]:PrimitiveType[16855-16859]"
+  }, {
+    "left" : "paintCaretRowBackground",
+    "right" : "paintCaretRowBackground",
+    "info" : "SimpleName[16860-16883]:SimpleName[16860-16883]"
+  }, {
+    "left" : "final Graphics g",
+    "right" : "final Graphics g",
+    "info" : "SingleVariableDeclaration[16884-16900]:SingleVariableDeclaration[16884-16900]"
+  }, {
+    "left" : "final int x",
+    "right" : "final int x",
+    "info" : "SingleVariableDeclaration[16902-16913]:SingleVariableDeclaration[16902-16913]"
+  }, {
+    "left" : "final int width",
+    "right" : "final int width",
+    "info" : "SingleVariableDeclaration[16915-16930]:SingleVariableDeclaration[16915-16930]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1449,6 +1953,26 @@
     "right" : "g.fillRect(x, caretPoint.y, width, myEditor.getLineHeight());",
     "info" : "ExpressionStatement[17310-17371]:ExpressionStatement[17310-17371]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[17385-17392]:Modifier[17385-17392]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17393-17397]:PrimitiveType[17393-17397]"
+  }, {
+    "left" : "paintLineNumbers",
+    "right" : "paintLineNumbers",
+    "info" : "SimpleName[17398-17414]:SimpleName[17398-17414]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[17415-17425]:SingleVariableDeclaration[17415-17425]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[17427-17441]:SingleVariableDeclaration[17427-17441]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17443-17795]:Block[17443-17795]"
@@ -1481,6 +2005,30 @@
     "right" : "doPaintLineNumbers(g, clip, offset + myAdditionalLineNumberAreaWidth, myAdditionalLineNumberConvertor);",
     "info" : "ExpressionStatement[17674-17777]:ExpressionStatement[17674-17777]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[17799-17806]:Modifier[17799-17806]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17807-17811]:PrimitiveType[17807-17811]"
+  }, {
+    "left" : "paintLineNumbersBackground",
+    "right" : "paintLineNumbersBackground",
+    "info" : "SimpleName[17812-17838]:SimpleName[17812-17838]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[17839-17849]:SingleVariableDeclaration[17839-17849]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[17851-17865]:SingleVariableDeclaration[17851-17865]"
+  }, {
+    "left" : "Color bgColor",
+    "right" : "Color bgColor",
+    "info" : "SingleVariableDeclaration[17867-17880]:SingleVariableDeclaration[17867-17880]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17882-18019]:Block[17882-18019]"
@@ -1496,6 +2044,22 @@
     "left" : "paintBackground(g, clip, getLineNumberAreaOffset(), getLineNumberAreaWidth(), bgColor);",
     "right" : "paintBackground(g, clip, getLineNumberAreaOffset(), getLineNumberAreaWidth(), bgColor);",
     "info" : "ExpressionStatement[17922-18009]:ExpressionStatement[17922-18009]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[18023-18032]:MarkerAnnotation[18023-18032]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18035-18041]:Modifier[18035-18041]"
+  }, {
+    "left" : "Color",
+    "right" : "Color",
+    "info" : "SimpleType[18042-18047]:SimpleType[18042-18047]"
+  }, {
+    "left" : "getBackground",
+    "right" : "getBackground",
+    "info" : "SimpleName[18048-18061]:SimpleName[18048-18061]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1520,6 +2084,34 @@
     "left" : "return color != null ? color : EditorColors.GUTTER_BACKGROUND.getDefaultColor();",
     "right" : "return color != null ? color : EditorColors.GUTTER_BACKGROUND.getDefaultColor();",
     "info" : "ReturnStatement[18275-18355]:ReturnStatement[18275-18355]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[18363-18370]:Modifier[18363-18370]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[18371-18375]:PrimitiveType[18371-18375]"
+  }, {
+    "left" : "doPaintLineNumbers",
+    "right" : "doPaintLineNumbers",
+    "info" : "SimpleName[18376-18394]:SimpleName[18376-18394]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[18395-18405]:SingleVariableDeclaration[18395-18405]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[18407-18421]:SingleVariableDeclaration[18407-18421]"
+  }, {
+    "left" : "int offset",
+    "right" : "int offset",
+    "info" : "SingleVariableDeclaration[18423-18433]:SingleVariableDeclaration[18423-18433]"
+  }, {
+    "left" : "@NotNull TIntFunction convertor",
+    "right" : "@NotNull TIntFunction convertor",
+    "info" : "SingleVariableDeclaration[18435-18466]:SingleVariableDeclaration[18435-18466]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1685,6 +2277,18 @@
     "right" : "g2.setTransform(old);",
     "info" : "ExpressionStatement[20461-20482]:ExpressionStatement[20461-20482]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[20490-20497]:Modifier[20490-20497]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[20498-20501]:PrimitiveType[20498-20501]"
+  }, {
+    "left" : "endLineNumber",
+    "right" : "endLineNumber",
+    "info" : "SimpleName[20502-20515]:SimpleName[20502-20515]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[20518-20590]:Block[20518-20590]"
@@ -1693,6 +2297,30 @@
     "right" : "return Math.max(0, myEditor.getDocument().getLineCount() - 1);",
     "info" : "ReturnStatement[20524-20586]:ReturnStatement[20524-20586]"
   }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[20594-20603]:MarkerAnnotation[20594-20603]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[20606-20615]:MarkerAnnotation[20606-20615]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[20618-20624]:Modifier[20618-20624]"
+  }, {
+    "left" : "Object",
+    "right" : "Object",
+    "info" : "SimpleType[20625-20631]:SimpleType[20625-20631]"
+  }, {
+    "left" : "getData",
+    "right" : "getData",
+    "info" : "SimpleName[20632-20639]:SimpleName[20632-20639]"
+  }, {
+    "left" : "@NonNls String dataId",
+    "right" : "@NonNls String dataId",
+    "info" : "SingleVariableDeclaration[20640-20661]:SingleVariableDeclaration[20640-20661]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[20663-20722]:Block[20663-20722]"
@@ -1700,6 +2328,42 @@
     "left" : "return EditorGutter.KEY.is(dataId) ? this : null;",
     "right" : "return EditorGutter.KEY.is(dataId) ? this : null;",
     "info" : "ReturnStatement[20669-20718]:ReturnStatement[20669-20718]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[20776-20780]:PrimitiveType[20776-20780]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[20781-20788]:SimpleName[20781-20788]"
+  }, {
+    "left" : "@NotNull RangeHighlighter highlighter",
+    "right" : "@NotNull RangeHighlighter highlighter",
+    "info" : "SingleVariableDeclaration[20789-20826]:SingleVariableDeclaration[20789-20826]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[20836-20843]:Modifier[20836-20843]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[20844-20848]:PrimitiveType[20844-20848]"
+  }, {
+    "left" : "processRangeHighlighters",
+    "right" : "processRangeHighlighters",
+    "info" : "SimpleName[20849-20873]:SimpleName[20849-20873]"
+  }, {
+    "left" : "int startOffset",
+    "right" : "int startOffset",
+    "info" : "SingleVariableDeclaration[20874-20889]:SingleVariableDeclaration[20874-20889]"
+  }, {
+    "left" : "int endOffset",
+    "right" : "int endOffset",
+    "info" : "SingleVariableDeclaration[20891-20904]:SingleVariableDeclaration[20891-20904]"
+  }, {
+    "left" : "@NotNull RangeHighlighterProcessor processor",
+    "right" : "@NotNull RangeHighlighterProcessor processor",
+    "info" : "SingleVariableDeclaration[20906-20950]:SingleVariableDeclaration[20906-20950]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1929,6 +2593,30 @@
     "right" : "editorHighlighters.dispose();",
     "info" : "ExpressionStatement[23593-23622]:ExpressionStatement[23593-23622]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[23636-23643]:Modifier[23636-23643]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[23644-23650]:Modifier[23644-23650]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[23651-23658]:PrimitiveType[23651-23658]"
+  }, {
+    "left" : "less",
+    "right" : "less",
+    "info" : "SimpleName[23659-23663]:SimpleName[23659-23663]"
+  }, {
+    "left" : "RangeHighlighter h1",
+    "right" : "RangeHighlighter h1",
+    "info" : "SingleVariableDeclaration[23664-23683]:SingleVariableDeclaration[23664-23683]"
+  }, {
+    "left" : "RangeHighlighter h2",
+    "right" : "RangeHighlighter h2",
+    "info" : "SingleVariableDeclaration[23685-23704]:SingleVariableDeclaration[23685-23704]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[23706-23795]:Block[23706-23795]"
@@ -1936,6 +2624,22 @@
     "left" : "return h1 != null && (h2 == null || h1.getStartOffset() < h2.getStartOffset());",
     "right" : "return h1 != null && (h2 == null || h1.getStartOffset() < h2.getStartOffset());",
     "info" : "ReturnStatement[23712-23791]:ReturnStatement[23712-23791]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[23799-23808]:MarkerAnnotation[23799-23808]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[23811-23817]:Modifier[23811-23817]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[23818-23822]:PrimitiveType[23818-23822]"
+  }, {
+    "left" : "revalidateMarkup",
+    "right" : "revalidateMarkup",
+    "info" : "SimpleName[23823-23839]:SimpleName[23823-23839]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1945,6 +2649,18 @@
     "right" : "updateSize();",
     "info" : "ExpressionStatement[23848-23861]:ExpressionStatement[23848-23861]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[23869-23875]:Modifier[23869-23875]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[23876-23880]:PrimitiveType[23876-23880]"
+  }, {
+    "left" : "updateSize",
+    "right" : "updateSize",
+    "info" : "SimpleName[23881-23891]:SimpleName[23881-23891]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[23894-23922]:Block[23894-23922]"
@@ -1952,6 +2668,18 @@
     "left" : "updateSize(false);",
     "right" : "updateSize(false);",
     "info" : "ExpressionStatement[23900-23918]:ExpressionStatement[23900-23918]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[23926-23930]:PrimitiveType[23926-23930]"
+  }, {
+    "left" : "updateSize",
+    "right" : "updateSize",
+    "info" : "SimpleName[23931-23941]:SimpleName[23931-23941]"
+  }, {
+    "left" : "boolean onLayout",
+    "right" : "boolean onLayout",
+    "info" : "SingleVariableDeclaration[23942-23958]:SingleVariableDeclaration[23942-23958]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1981,6 +2709,22 @@
     "right" : "repaint();",
     "info" : "ExpressionStatement[24090-24100]:ExpressionStatement[24090-24100]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[24108-24115]:Modifier[24108-24115]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[24116-24120]:PrimitiveType[24116-24120]"
+  }, {
+    "left" : "updateSizeInner",
+    "right" : "updateSizeInner",
+    "info" : "SimpleName[24121-24136]:SimpleName[24121-24136]"
+  }, {
+    "left" : "boolean onLayout",
+    "right" : "boolean onLayout",
+    "info" : "SingleVariableDeclaration[24137-24153]:SingleVariableDeclaration[24137-24153]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[24155-24307]:Block[24155-24307]"
@@ -2009,6 +2753,18 @@
     "right" : "calcAnnotationExtraSize();",
     "info" : "ExpressionStatement[24277-24303]:ExpressionStatement[24277-24303]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[24311-24318]:Modifier[24311-24318]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[24319-24322]:PrimitiveType[24319-24322]"
+  }, {
+    "left" : "sizeHash",
+    "right" : "sizeHash",
+    "info" : "SimpleName[24323-24331]:SimpleName[24323-24331]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[24334-24561]:Block[24334-24561]"
@@ -2032,6 +2788,18 @@
     "left" : "return result;",
     "right" : "return result;",
     "info" : "ReturnStatement[24543-24557]:ReturnStatement[24543-24557]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[24565-24572]:Modifier[24565-24572]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[24573-24577]:PrimitiveType[24573-24577]"
+  }, {
+    "left" : "calcAnnotationsSize",
+    "right" : "calcAnnotationsSize",
+    "info" : "SimpleName[24578-24597]:SimpleName[24578-24597]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2104,6 +2872,18 @@
     "left" : "myTextAnnotationGuttersSize += gutterSize;",
     "right" : "myTextAnnotationGuttersSize += gutterSize;",
     "info" : "ExpressionStatement[25322-25364]:ExpressionStatement[25322-25364]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[25378-25385]:Modifier[25378-25385]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[25386-25390]:PrimitiveType[25386-25390]"
+  }, {
+    "left" : "calcAnnotationExtraSize",
+    "right" : "calcAnnotationExtraSize",
+    "info" : "SimpleName[25391-25414]:SimpleName[25391-25414]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2189,6 +2969,18 @@
     "right" : "myTextAnnotationExtraSize = Math.max(0, centeredSize - myTextAnnotationGuttersSize);",
     "info" : "ExpressionStatement[26421-26505]:ExpressionStatement[26421-26505]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[26591-26598]:Modifier[26591-26598]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[26599-26603]:PrimitiveType[26599-26603]"
+  }, {
+    "left" : "calcIconAreaWidth",
+    "right" : "calcIconAreaWidth",
+    "info" : "SimpleName[26604-26621]:SimpleName[26604-26621]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[26624-28344]:Block[26624-28344]"
@@ -2200,6 +2992,26 @@
     "left" : "processRangeHighlighters(0, myEditor.getDocument().getTextLength(), new RangeHighlighterProcessor() {\n      @Override\n      public void process(@NotNull RangeHighlighter highlighter) {\n        GutterMark renderer = highlighter.getGutterIconRenderer();\n        if (renderer == null) {\n          return;\n        }\n        if (!isHighlighterVisible(highlighter)) {\n          return;\n        }\n        int lineStartOffset = EditorUtil.getNotFoldedLineStartOffset(myEditor, highlighter.getStartOffset());\n        int line = myEditor.getDocument().getLineNumber(lineStartOffset);\n        List<GutterMark> renderers = myLineToGutterRenderers.get(line);\n        if (renderers == null) {\n          renderers = new SmartList<GutterMark>();\n          myLineToGutterRenderers.put(line, renderers);\n        }\n\n        if (renderers.size() < 5) { // Don't allow more than 5 icons per line\n          renderers.add(renderer);\n        }\n      }\n    });",
     "right" : "processRangeHighlighters(0, myEditor.getDocument().getTextLength(), new RangeHighlighterProcessor() {\n      @Override\n      public void process(@NotNull RangeHighlighter highlighter) {\n        GutterMark renderer = highlighter.getGutterIconRenderer();\n        if (renderer == null) {\n          return;\n        }\n        if (!isHighlighterVisible(highlighter)) {\n          return;\n        }\n        int lineStartOffset = EditorUtil.getNotFoldedLineStartOffset(myEditor, highlighter.getStartOffset());\n        int line = myEditor.getDocument().getLineNumber(lineStartOffset);\n        List<GutterMark> renderers = myLineToGutterRenderers.get(line);\n        if (renderers == null) {\n          renderers = new SmartList<GutterMark>();\n          myLineToGutterRenderers.put(line, renderers);\n        }\n\n        if (renderers.size() < 5) { // Don't allow more than 5 icons per line\n          renderers.add(renderer);\n        }\n      }\n    });",
     "info" : "ExpressionStatement[26704-27639]:ExpressionStatement[26704-27639]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[26812-26821]:MarkerAnnotation[26812-26821]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[26828-26834]:Modifier[26828-26834]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[26835-26839]:PrimitiveType[26835-26839]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[26840-26847]:SimpleName[26840-26847]"
+  }, {
+    "left" : "@NotNull RangeHighlighter highlighter",
+    "right" : "@NotNull RangeHighlighter highlighter",
+    "info" : "SingleVariableDeclaration[26848-26885]:SingleVariableDeclaration[26848-26885]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2281,6 +3093,26 @@
     "right" : "myLineToGutterRenderers.forEachValue(new TObjectProcedure<List<GutterMark>>() {\n      @Override\n      public boolean execute(List<GutterMark> renderers) {\n        int width = 1;\n        for (int i = 0; i < renderers.size(); i++) {\n          GutterMark renderer = renderers.get(i);\n          width += scaleIcon(renderer.getIcon()).getIconWidth();\n          if (i > 0) width += GAP_BETWEEN_ICONS;\n        }\n        if (myIconsAreaWidth < width) {\n          myIconsAreaWidth = width + 1;\n        }\n        return true;\n      }\n    });",
     "info" : "ExpressionStatement[27692-28223]:ExpressionStatement[27692-28223]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[27778-27787]:MarkerAnnotation[27778-27787]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[27794-27800]:Modifier[27794-27800]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[27801-27808]:PrimitiveType[27801-27808]"
+  }, {
+    "left" : "execute",
+    "right" : "execute",
+    "info" : "SimpleName[27809-27816]:SimpleName[27809-27816]"
+  }, {
+    "left" : "List<GutterMark> renderers",
+    "right" : "List<GutterMark> renderers",
+    "info" : "SingleVariableDeclaration[27817-27843]:SingleVariableDeclaration[27817-27843]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[27845-28215]:Block[27845-28215]"
@@ -2333,6 +3165,22 @@
     "right" : "myLineMarkerAreaWidth = myIconsAreaWidth + GAP_BETWEEN_ICONS_AND_FREE_PAINTERS_AREA + FREE_PAINTERS_AREA_WIDTH;",
     "info" : "ExpressionStatement[28229-28340]:ExpressionStatement[28229-28340]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[28348-28355]:Modifier[28348-28355]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[28356-28363]:PrimitiveType[28356-28363]"
+  }, {
+    "left" : "isHighlighterVisible",
+    "right" : "isHighlighterVisible",
+    "info" : "SimpleName[28364-28384]:SimpleName[28364-28384]"
+  }, {
+    "left" : "RangeHighlighter highlighter",
+    "right" : "RangeHighlighter highlighter",
+    "info" : "SingleVariableDeclaration[28385-28413]:SingleVariableDeclaration[28385-28413]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[28415-28988]:Block[28415-28988]"
@@ -2352,6 +3200,30 @@
     "left" : "return foldRegion == null || foldRegion.getEndOffset() < endOffset;",
     "right" : "return foldRegion == null || foldRegion.getEndOffset() < endOffset;",
     "info" : "ReturnStatement[28917-28984]:ReturnStatement[28917-28984]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[28992-28999]:Modifier[28992-28999]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[29000-29004]:PrimitiveType[29000-29004]"
+  }, {
+    "left" : "paintGutterRenderers",
+    "right" : "paintGutterRenderers",
+    "info" : "SimpleName[29005-29025]:SimpleName[29005-29025]"
+  }, {
+    "left" : "final Graphics g",
+    "right" : "final Graphics g",
+    "info" : "SingleVariableDeclaration[29026-29042]:SingleVariableDeclaration[29026-29042]"
+  }, {
+    "left" : "int firstVisibleOffset",
+    "right" : "int firstVisibleOffset",
+    "info" : "SingleVariableDeclaration[29044-29066]:SingleVariableDeclaration[29044-29066]"
+  }, {
+    "left" : "int lastVisibleOffset",
+    "right" : "int lastVisibleOffset",
+    "info" : "SingleVariableDeclaration[29068-29089]:SingleVariableDeclaration[29068-29089]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2381,6 +3253,26 @@
     "right" : "processRangeHighlighters(firstVisibleOffset, lastVisibleOffset, new RangeHighlighterProcessor() {\n        @Override\n        public void process(@NotNull RangeHighlighter highlighter) {\n          paintLineMarkerRenderer(highlighter, g);\n        }\n      });",
     "info" : "ExpressionStatement[29310-29565]:ExpressionStatement[29310-29565]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[29416-29425]:MarkerAnnotation[29416-29425]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[29434-29440]:Modifier[29434-29440]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[29441-29445]:PrimitiveType[29441-29445]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[29446-29453]:SimpleName[29446-29453]"
+  }, {
+    "left" : "@NotNull RangeHighlighter highlighter",
+    "right" : "@NotNull RangeHighlighter highlighter",
+    "info" : "SingleVariableDeclaration[29454-29491]:SingleVariableDeclaration[29454-29491]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[29493-29555]:Block[29493-29555]"
@@ -2408,6 +3300,30 @@
     "left" : "paintIcons(firstVisibleLine, lastVisibleLine, g);",
     "right" : "paintIcons(firstVisibleLine, lastVisibleLine, g);",
     "info" : "ExpressionStatement[29831-29880]:ExpressionStatement[29831-29880]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[29888-29895]:Modifier[29888-29895]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[29896-29900]:PrimitiveType[29896-29900]"
+  }, {
+    "left" : "paintIcons",
+    "right" : "paintIcons",
+    "info" : "SimpleName[29901-29911]:SimpleName[29901-29911]"
+  }, {
+    "left" : "final int firstVisibleLine",
+    "right" : "final int firstVisibleLine",
+    "info" : "SingleVariableDeclaration[29912-29938]:SingleVariableDeclaration[29912-29938]"
+  }, {
+    "left" : "final int lastVisibleLine",
+    "right" : "final int lastVisibleLine",
+    "info" : "SingleVariableDeclaration[29940-29965]:SingleVariableDeclaration[29940-29965]"
+  }, {
+    "left" : "final Graphics g",
+    "right" : "final Graphics g",
+    "info" : "SingleVariableDeclaration[29967-29983]:SingleVariableDeclaration[29967-29983]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2437,6 +3353,30 @@
     "right" : "paintIconRow(line, renderers, g);",
     "info" : "ExpressionStatement[30169-30202]:ExpressionStatement[30169-30202]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[30224-30231]:Modifier[30224-30231]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[30232-30236]:PrimitiveType[30232-30236]"
+  }, {
+    "left" : "paintIconRow",
+    "right" : "paintIconRow",
+    "info" : "SimpleName[30237-30249]:SimpleName[30237-30249]"
+  }, {
+    "left" : "int line",
+    "right" : "int line",
+    "info" : "SingleVariableDeclaration[30250-30258]:SingleVariableDeclaration[30250-30258]"
+  }, {
+    "left" : "List<GutterMark> row",
+    "right" : "List<GutterMark> row",
+    "info" : "SingleVariableDeclaration[30260-30280]:SingleVariableDeclaration[30260-30280]"
+  }, {
+    "left" : "final Graphics g",
+    "right" : "final Graphics g",
+    "info" : "SingleVariableDeclaration[30282-30298]:SingleVariableDeclaration[30282-30298]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[30300-30587]:Block[30300-30587]"
@@ -2444,6 +3384,34 @@
     "left" : "processIconsRow(line, row, new LineGutterIconRendererProcessor() {\n      @Override\n      public void process(int x, int y, GutterMark renderer) {\n        Icon icon = scaleIcon(renderer.getIcon());\n        icon.paintIcon(EditorGutterComponentImpl.this, g, x, y);\n      }\n    });",
     "right" : "processIconsRow(line, row, new LineGutterIconRendererProcessor() {\n      @Override\n      public void process(int x, int y, GutterMark renderer) {\n        Icon icon = scaleIcon(renderer.getIcon());\n        icon.paintIcon(EditorGutterComponentImpl.this, g, x, y);\n      }\n    });",
     "info" : "ExpressionStatement[30306-30583]:ExpressionStatement[30306-30583]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[30379-30388]:MarkerAnnotation[30379-30388]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[30395-30401]:Modifier[30395-30401]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[30402-30406]:PrimitiveType[30402-30406]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[30407-30414]:SimpleName[30407-30414]"
+  }, {
+    "left" : "int x",
+    "right" : "int x",
+    "info" : "SingleVariableDeclaration[30415-30420]:SingleVariableDeclaration[30415-30420]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[30422-30427]:SingleVariableDeclaration[30422-30427]"
+  }, {
+    "left" : "GutterMark renderer",
+    "right" : "GutterMark renderer",
+    "info" : "SingleVariableDeclaration[30429-30448]:SingleVariableDeclaration[30429-30448]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2456,6 +3424,26 @@
     "left" : "icon.paintIcon(EditorGutterComponentImpl.this, g, x, y);",
     "right" : "icon.paintIcon(EditorGutterComponentImpl.this, g, x, y);",
     "info" : "ExpressionStatement[30511-30567]:ExpressionStatement[30511-30567]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[30591-30598]:Modifier[30591-30598]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[30599-30603]:PrimitiveType[30599-30603]"
+  }, {
+    "left" : "paintLineMarkerRenderer",
+    "right" : "paintLineMarkerRenderer",
+    "info" : "SimpleName[30604-30627]:SimpleName[30604-30627]"
+  }, {
+    "left" : "RangeHighlighter highlighter",
+    "right" : "RangeHighlighter highlighter",
+    "info" : "SingleVariableDeclaration[30628-30656]:SingleVariableDeclaration[30628-30656]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[30658-30668]:SingleVariableDeclaration[30658-30668]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2484,6 +3472,26 @@
     "left" : "lineMarkerRenderer.paint(myEditor, g, rectangle);",
     "right" : "lineMarkerRenderer.paint(myEditor, g, rectangle);",
     "info" : "ExpressionStatement[30903-30952]:ExpressionStatement[30903-30952]"
+  }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[30966-30975]:MarkerAnnotation[30966-30975]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[30978-30985]:Modifier[30978-30985]"
+  }, {
+    "left" : "Rectangle",
+    "right" : "Rectangle",
+    "info" : "SimpleType[30986-30995]:SimpleType[30986-30995]"
+  }, {
+    "left" : "getLineRendererRectangle",
+    "right" : "getLineRendererRectangle",
+    "info" : "SimpleName[30996-31020]:SimpleName[30996-31020]"
+  }, {
+    "left" : "RangeHighlighter highlighter",
+    "right" : "RangeHighlighter highlighter",
+    "info" : "SingleVariableDeclaration[31021-31049]:SingleVariableDeclaration[31021-31049]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2569,6 +3577,42 @@
     "right" : "return new Rectangle(x, startY, w, height);",
     "info" : "ReturnStatement[32369-32412]:ReturnStatement[32369-32412]"
   }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[32476-32480]:PrimitiveType[32476-32480]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[32481-32488]:SimpleName[32481-32488]"
+  }, {
+    "left" : "int x",
+    "right" : "int x",
+    "info" : "SingleVariableDeclaration[32489-32494]:SingleVariableDeclaration[32489-32494]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[32496-32501]:SingleVariableDeclaration[32496-32501]"
+  }, {
+    "left" : "GutterMark renderer",
+    "right" : "GutterMark renderer",
+    "info" : "SingleVariableDeclaration[32503-32522]:SingleVariableDeclaration[32503-32522]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[32532-32539]:Modifier[32532-32539]"
+  }, {
+    "left" : "Icon",
+    "right" : "Icon",
+    "info" : "SimpleType[32540-32544]:SimpleType[32540-32544]"
+  }, {
+    "left" : "scaleIcon",
+    "right" : "scaleIcon",
+    "info" : "SimpleName[32545-32554]:SimpleName[32545-32554]"
+  }, {
+    "left" : "Icon icon",
+    "right" : "Icon icon",
+    "info" : "SingleVariableDeclaration[32555-32564]:SingleVariableDeclaration[32555-32564]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[32566-32732]:Block[32566-32732]"
@@ -2588,6 +3632,30 @@
     "left" : "return icon;",
     "right" : "return icon;",
     "info" : "ReturnStatement[32716-32728]:ReturnStatement[32716-32728]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[32736-32743]:Modifier[32736-32743]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[32744-32748]:PrimitiveType[32744-32748]"
+  }, {
+    "left" : "processIconsRow",
+    "right" : "processIconsRow",
+    "info" : "SimpleName[32749-32764]:SimpleName[32749-32764]"
+  }, {
+    "left" : "int line",
+    "right" : "int line",
+    "info" : "SingleVariableDeclaration[32765-32773]:SingleVariableDeclaration[32765-32773]"
+  }, {
+    "left" : "List<GutterMark> row",
+    "right" : "List<GutterMark> row",
+    "info" : "SingleVariableDeclaration[32775-32795]:SingleVariableDeclaration[32775-32795]"
+  }, {
+    "left" : "LineGutterIconRendererProcessor processor",
+    "right" : "LineGutterIconRendererProcessor processor",
+    "info" : "SingleVariableDeclaration[32797-32838]:SingleVariableDeclaration[32797-32838]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2745,6 +3813,22 @@
     "right" : "x += icon.getIconWidth() + GAP_BETWEEN_ICONS;",
     "info" : "ExpressionStatement[34508-34553]:ExpressionStatement[34508-34553]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[34585-34592]:Modifier[34585-34592]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[34593-34596]:PrimitiveType[34593-34596]"
+  }, {
+    "left" : "getTextAlignmentShift",
+    "right" : "getTextAlignmentShift",
+    "info" : "SimpleName[34597-34618]:SimpleName[34597-34618]"
+  }, {
+    "left" : "Icon icon",
+    "right" : "Icon icon",
+    "info" : "SingleVariableDeclaration[34619-34628]:SingleVariableDeclaration[34619-34628]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[34630-34700]:Block[34630-34700]"
@@ -2752,6 +3836,26 @@
     "left" : "return (myEditor.getLineHeight() - icon.getIconHeight()) /2;",
     "right" : "return (myEditor.getLineHeight() - icon.getIconHeight()) /2;",
     "info" : "ReturnStatement[34636-34696]:ReturnStatement[34636-34696]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[34704-34713]:MarkerAnnotation[34704-34713]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[34716-34722]:Modifier[34716-34722]"
+  }, {
+    "left" : "Color",
+    "right" : "Color",
+    "info" : "SimpleType[34723-34728]:SimpleType[34723-34728]"
+  }, {
+    "left" : "getOutlineColor",
+    "right" : "getOutlineColor",
+    "info" : "SimpleName[34729-34744]:SimpleName[34729-34744]"
+  }, {
+    "left" : "boolean isActive",
+    "right" : "boolean isActive",
+    "info" : "SingleVariableDeclaration[34745-34761]:SingleVariableDeclaration[34745-34761]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2769,6 +3873,26 @@
     "right" : "return color != null ? color : JBColor.black;",
     "info" : "ReturnStatement[34927-34972]:ReturnStatement[34927-34972]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[34980-34989]:MarkerAnnotation[34980-34989]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[34992-34998]:Modifier[34992-34998]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[34999-35003]:PrimitiveType[34999-35003]"
+  }, {
+    "left" : "registerTextAnnotation",
+    "right" : "registerTextAnnotation",
+    "info" : "SimpleName[35004-35026]:SimpleName[35004-35026]"
+  }, {
+    "left" : "@NotNull TextAnnotationGutterProvider provider",
+    "right" : "@NotNull TextAnnotationGutterProvider provider",
+    "info" : "SingleVariableDeclaration[35027-35073]:SingleVariableDeclaration[35027-35073]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[35075-35181]:Block[35075-35181]"
@@ -2784,6 +3908,30 @@
     "left" : "updateSize();",
     "right" : "updateSize();",
     "info" : "ExpressionStatement[35164-35177]:ExpressionStatement[35164-35177]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[35185-35194]:MarkerAnnotation[35185-35194]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[35197-35203]:Modifier[35197-35203]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[35204-35208]:PrimitiveType[35204-35208]"
+  }, {
+    "left" : "registerTextAnnotation",
+    "right" : "registerTextAnnotation",
+    "info" : "SimpleName[35209-35231]:SimpleName[35209-35231]"
+  }, {
+    "left" : "@NotNull TextAnnotationGutterProvider provider",
+    "right" : "@NotNull TextAnnotationGutterProvider provider",
+    "info" : "SingleVariableDeclaration[35232-35278]:SingleVariableDeclaration[35232-35278]"
+  }, {
+    "left" : "@NotNull EditorGutterAction action",
+    "right" : "@NotNull EditorGutterAction action",
+    "info" : "SingleVariableDeclaration[35280-35314]:SingleVariableDeclaration[35280-35314]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2804,6 +3952,34 @@
     "left" : "updateSize();",
     "right" : "updateSize();",
     "info" : "ExpressionStatement[35453-35466]:ExpressionStatement[35453-35466]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[35474-35481]:Modifier[35474-35481]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[35482-35486]:PrimitiveType[35482-35486]"
+  }, {
+    "left" : "doPaintFoldingTree",
+    "right" : "doPaintFoldingTree",
+    "info" : "SimpleName[35487-35505]:SimpleName[35487-35505]"
+  }, {
+    "left" : "final Graphics2D g",
+    "right" : "final Graphics2D g",
+    "info" : "SingleVariableDeclaration[35506-35524]:SingleVariableDeclaration[35506-35524]"
+  }, {
+    "left" : "final Rectangle clip",
+    "right" : "final Rectangle clip",
+    "info" : "SingleVariableDeclaration[35526-35546]:SingleVariableDeclaration[35526-35546]"
+  }, {
+    "left" : "int firstVisibleOffset",
+    "right" : "int firstVisibleOffset",
+    "info" : "SingleVariableDeclaration[35548-35570]:SingleVariableDeclaration[35548-35570]"
+  }, {
+    "left" : "int lastVisibleOffset",
+    "right" : "int lastVisibleOffset",
+    "info" : "SingleVariableDeclaration[35572-35593]:SingleVariableDeclaration[35572-35593]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2833,6 +4009,30 @@
     "right" : "drawAnchor(width, clip, g, anchorX, anchor.visualLine, anchor.type, anchor.foldRegion == myActiveFoldRegion);",
     "info" : "ExpressionStatement[35929-36038]:ExpressionStatement[35929-36038]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[36052-36059]:Modifier[36052-36059]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[36060-36064]:PrimitiveType[36060-36064]"
+  }, {
+    "left" : "paintFoldingBackground",
+    "right" : "paintFoldingBackground",
+    "info" : "SimpleName[36065-36087]:SimpleName[36065-36087]"
+  }, {
+    "left" : "Graphics g",
+    "right" : "Graphics g",
+    "info" : "SingleVariableDeclaration[36088-36098]:SingleVariableDeclaration[36088-36098]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[36100-36114]:SingleVariableDeclaration[36100-36114]"
+  }, {
+    "left" : "Color bgColor",
+    "right" : "Color bgColor",
+    "info" : "SingleVariableDeclaration[36116-36129]:SingleVariableDeclaration[36116-36129]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[36131-36450]:Block[36131-36450]"
@@ -2856,6 +4056,26 @@
     "left" : "paintCaretRowBackground(g, lineX, getFoldingAnchorWidth());",
     "right" : "paintCaretRowBackground(g, lineX, getFoldingAnchorWidth());",
     "info" : "ExpressionStatement[36387-36446]:ExpressionStatement[36387-36446]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[36454-36461]:Modifier[36454-36461]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[36462-36466]:PrimitiveType[36462-36466]"
+  }, {
+    "left" : "paintFoldingLines",
+    "right" : "paintFoldingLines",
+    "info" : "SimpleName[36467-36484]:SimpleName[36467-36484]"
+  }, {
+    "left" : "final Graphics2D g",
+    "right" : "final Graphics2D g",
+    "info" : "SingleVariableDeclaration[36485-36503]:SingleVariableDeclaration[36485-36503]"
+  }, {
+    "left" : "final Rectangle clip",
+    "right" : "final Rectangle clip",
+    "info" : "SingleVariableDeclaration[36505-36525]:SingleVariableDeclaration[36505-36525]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2941,6 +4161,22 @@
     "right" : "UIUtil.drawLine(g, lineX, startY, lineX, endY);",
     "info" : "ExpressionStatement[37516-37563]:ExpressionStatement[37516-37563]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[37585-37594]:MarkerAnnotation[37585-37594]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[37597-37603]:Modifier[37597-37603]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[37604-37607]:PrimitiveType[37604-37607]"
+  }, {
+    "left" : "getWhitespaceSeparatorOffset",
+    "right" : "getWhitespaceSeparatorOffset",
+    "info" : "SimpleName[37608-37636]:SimpleName[37608-37636]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[37639-37709]:Block[37639-37709]"
@@ -2948,6 +4184,22 @@
     "left" : "return getFoldingAreaOffset() + getFoldingAnchorWidth() / 2;",
     "right" : "return getFoldingAreaOffset() + getFoldingAnchorWidth() / 2;",
     "info" : "ReturnStatement[37645-37705]:ReturnStatement[37645-37705]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[37713-37719]:Modifier[37713-37719]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[37720-37724]:PrimitiveType[37720-37724]"
+  }, {
+    "left" : "setActiveFoldRegion",
+    "right" : "setActiveFoldRegion",
+    "info" : "SimpleName[37725-37744]:SimpleName[37725-37744]"
+  }, {
+    "left" : "FoldRegion activeFoldRegion",
+    "right" : "FoldRegion activeFoldRegion",
+    "info" : "SingleVariableDeclaration[37745-37772]:SingleVariableDeclaration[37745-37772]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2969,6 +4221,22 @@
     "right" : "repaint();",
     "info" : "ExpressionStatement[37877-37887]:ExpressionStatement[37877-37887]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[37901-37907]:Modifier[37901-37907]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[37908-37911]:PrimitiveType[37908-37911]"
+  }, {
+    "left" : "getHeadCenterY",
+    "right" : "getHeadCenterY",
+    "info" : "SimpleName[37912-37926]:SimpleName[37912-37926]"
+  }, {
+    "left" : "FoldRegion foldRange",
+    "right" : "FoldRegion foldRange",
+    "info" : "SingleVariableDeclaration[37927-37947]:SingleVariableDeclaration[37927-37947]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[37949-38183]:Block[37949-38183]"
@@ -2984,6 +4252,46 @@
     "left" : "return myEditor.visibleLineToY(foldStart) + myEditor.getLineHeight() - myEditor.getDescent() - width / 2;",
     "right" : "return myEditor.visibleLineToY(foldStart) + myEditor.getLineHeight() - myEditor.getDescent() - width / 2;",
     "info" : "ReturnStatement[38074-38179]:ReturnStatement[38074-38179]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[38187-38194]:Modifier[38187-38194]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[38195-38199]:PrimitiveType[38195-38199]"
+  }, {
+    "left" : "drawAnchor",
+    "right" : "drawAnchor",
+    "info" : "SimpleName[38200-38210]:SimpleName[38200-38210]"
+  }, {
+    "left" : "int width",
+    "right" : "int width",
+    "info" : "SingleVariableDeclaration[38211-38220]:SingleVariableDeclaration[38211-38220]"
+  }, {
+    "left" : "Rectangle clip",
+    "right" : "Rectangle clip",
+    "info" : "SingleVariableDeclaration[38222-38236]:SingleVariableDeclaration[38222-38236]"
+  }, {
+    "left" : "Graphics2D g",
+    "right" : "Graphics2D g",
+    "info" : "SingleVariableDeclaration[38238-38250]:SingleVariableDeclaration[38238-38250]"
+  }, {
+    "left" : "int anchorX",
+    "right" : "int anchorX",
+    "info" : "SingleVariableDeclaration[38252-38263]:SingleVariableDeclaration[38252-38263]"
+  }, {
+    "left" : "int visualLine",
+    "right" : "int visualLine",
+    "info" : "SingleVariableDeclaration[38265-38279]:SingleVariableDeclaration[38265-38279]"
+  }, {
+    "left" : "DisplayedFoldingAnchor.Type type",
+    "right" : "DisplayedFoldingAnchor.Type type",
+    "info" : "SingleVariableDeclaration[38307-38339]:SingleVariableDeclaration[38307-38339]"
+  }, {
+    "left" : "boolean active",
+    "right" : "boolean active",
+    "info" : "SingleVariableDeclaration[38341-38355]:SingleVariableDeclaration[38341-38355]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3077,6 +4385,22 @@
     "right" : "break;",
     "info" : "BreakStatement[39328-39334]:BreakStatement[39328-39334]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[39348-39355]:Modifier[39348-39355]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[39356-39359]:PrimitiveType[39356-39359]"
+  }, {
+    "left" : "getEndOffset",
+    "right" : "getEndOffset",
+    "info" : "SimpleName[39360-39372]:SimpleName[39360-39372]"
+  }, {
+    "left" : "FoldRegion foldRange",
+    "right" : "FoldRegion foldRange",
+    "info" : "SingleVariableDeclaration[39373-39393]:SingleVariableDeclaration[39373-39393]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[39395-39601]:Block[39395-39601]"
@@ -3092,6 +4416,46 @@
     "left" : "return group == null ? foldRange.getEndOffset() : myEditor.getFoldingModel().getEndOffset(group);",
     "right" : "return group == null ? foldRange.getEndOffset() : myEditor.getFoldingModel().getEndOffset(group);",
     "info" : "ReturnStatement[39500-39597]:ReturnStatement[39500-39597]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[39605-39612]:Modifier[39605-39612]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[39613-39617]:PrimitiveType[39613-39617]"
+  }, {
+    "left" : "drawDirectedBox",
+    "right" : "drawDirectedBox",
+    "info" : "SimpleName[39618-39633]:SimpleName[39618-39633]"
+  }, {
+    "left" : "Graphics2D g",
+    "right" : "Graphics2D g",
+    "info" : "SingleVariableDeclaration[39634-39646]:SingleVariableDeclaration[39634-39646]"
+  }, {
+    "left" : "int anchorX",
+    "right" : "int anchorX",
+    "info" : "SingleVariableDeclaration[39679-39690]:SingleVariableDeclaration[39679-39690]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[39723-39728]:SingleVariableDeclaration[39723-39728]"
+  }, {
+    "left" : "int width",
+    "right" : "int width",
+    "info" : "SingleVariableDeclaration[39761-39770]:SingleVariableDeclaration[39761-39770]"
+  }, {
+    "left" : "int height",
+    "right" : "int height",
+    "info" : "SingleVariableDeclaration[39803-39813]:SingleVariableDeclaration[39803-39813]"
+  }, {
+    "left" : "int baseHeight",
+    "right" : "int baseHeight",
+    "info" : "SingleVariableDeclaration[39846-39860]:SingleVariableDeclaration[39846-39860]"
+  }, {
+    "left" : "boolean active",
+    "right" : "boolean active",
+    "info" : "SingleVariableDeclaration[39893-39907]:SingleVariableDeclaration[39893-39907]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3165,6 +4529,38 @@
     "right" : "g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, antialiasing);",
     "info" : "ExpressionStatement[40786-40852]:ExpressionStatement[40786-40852]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[40866-40873]:Modifier[40866-40873]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[40874-40878]:PrimitiveType[40874-40878]"
+  }, {
+    "left" : "drawSquareWithPlus",
+    "right" : "drawSquareWithPlus",
+    "info" : "SimpleName[40879-40897]:SimpleName[40879-40897]"
+  }, {
+    "left" : "Graphics2D g",
+    "right" : "Graphics2D g",
+    "info" : "SingleVariableDeclaration[40898-40910]:SingleVariableDeclaration[40898-40910]"
+  }, {
+    "left" : "int anchorX",
+    "right" : "int anchorX",
+    "info" : "SingleVariableDeclaration[40946-40957]:SingleVariableDeclaration[40946-40957]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[40993-40998]:SingleVariableDeclaration[40993-40998]"
+  }, {
+    "left" : "int width",
+    "right" : "int width",
+    "info" : "SingleVariableDeclaration[41034-41043]:SingleVariableDeclaration[41034-41043]"
+  }, {
+    "left" : "boolean active",
+    "right" : "boolean active",
+    "info" : "SingleVariableDeclaration[41079-41093]:SingleVariableDeclaration[41079-41093]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[41095-41282]:Block[41095-41282]"
@@ -3180,6 +4576,42 @@
     "left" : "UIUtil.drawLine(g, anchorX + width / 2, y + off, anchorX + width / 2, y + width - off);",
     "right" : "UIUtil.drawLine(g, anchorX + width / 2, y + off, anchorX + width / 2, y + width - off);",
     "info" : "ExpressionStatement[41191-41278]:ExpressionStatement[41191-41278]"
+  }, {
+    "left" : "@SuppressWarnings(\"SuspiciousNameCombination\")",
+    "right" : "@SuppressWarnings(\"SuspiciousNameCombination\")",
+    "info" : "SingleMemberAnnotation[41286-41332]:SingleMemberAnnotation[41286-41332]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[41335-41342]:Modifier[41335-41342]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[41343-41347]:PrimitiveType[41343-41347]"
+  }, {
+    "left" : "drawSquareWithMinus",
+    "right" : "drawSquareWithMinus",
+    "info" : "SimpleName[41348-41367]:SimpleName[41348-41367]"
+  }, {
+    "left" : "Graphics2D g",
+    "right" : "Graphics2D g",
+    "info" : "SingleVariableDeclaration[41368-41380]:SingleVariableDeclaration[41368-41380]"
+  }, {
+    "left" : "int anchorX",
+    "right" : "int anchorX",
+    "info" : "SingleVariableDeclaration[41417-41428]:SingleVariableDeclaration[41417-41428]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[41465-41470]:SingleVariableDeclaration[41465-41470]"
+  }, {
+    "left" : "int width",
+    "right" : "int width",
+    "info" : "SingleVariableDeclaration[41507-41516]:SingleVariableDeclaration[41507-41516]"
+  }, {
+    "left" : "boolean active",
+    "right" : "boolean active",
+    "info" : "SingleVariableDeclaration[41553-41567]:SingleVariableDeclaration[41553-41567]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3217,6 +4649,18 @@
     "right" : "UIUtil.drawLine(g, anchorX + off, y + width / 2, anchorX + width - off, y + width / 2);",
     "info" : "ExpressionStatement[41852-41939]:ExpressionStatement[41852-41939]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[41947-41954]:Modifier[41947-41954]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[41955-41958]:PrimitiveType[41955-41958]"
+  }, {
+    "left" : "getFoldingAnchorWidth",
+    "right" : "getFoldingAnchorWidth",
+    "info" : "SimpleName[41959-41980]:SimpleName[41959-41980]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[41983-42074]:Block[41983-42074]"
@@ -3225,6 +4669,18 @@
     "right" : "return Math.min(JBUI.scale(4), myEditor.getLineHeight() / 2 - JBUI.scale(2)) * 2;",
     "info" : "ReturnStatement[41989-42070]:ReturnStatement[41989-42070]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42078-42084]:Modifier[42078-42084]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[42085-42088]:PrimitiveType[42085-42088]"
+  }, {
+    "left" : "getFoldingAreaOffset",
+    "right" : "getFoldingAreaOffset",
+    "info" : "SimpleName[42089-42109]:SimpleName[42089-42109]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[42112-42182]:Block[42112-42182]"
@@ -3232,6 +4688,18 @@
     "left" : "return getLineMarkerAreaOffset() + getLineMarkerAreaWidth();",
     "right" : "return getLineMarkerAreaOffset() + getLineMarkerAreaWidth();",
     "info" : "ReturnStatement[42118-42178]:ReturnStatement[42118-42178]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42186-42192]:Modifier[42186-42192]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[42193-42196]:PrimitiveType[42193-42196]"
+  }, {
+    "left" : "getFoldingAreaWidth",
+    "right" : "getFoldingAreaWidth",
+    "info" : "SimpleName[42197-42216]:SimpleName[42197-42216]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3245,6 +4713,18 @@
     "right" : "return JBUI.scale(width);",
     "info" : "ReturnStatement[42345-42370]:ReturnStatement[42345-42370]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42378-42384]:Modifier[42378-42384]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[42385-42392]:PrimitiveType[42385-42392]"
+  }, {
+    "left" : "isRealEditor",
+    "right" : "isRealEditor",
+    "info" : "SimpleName[42393-42405]:SimpleName[42393-42405]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[42408-42463]:Block[42408-42463]"
@@ -3252,6 +4732,22 @@
     "left" : "return EditorUtil.isRealFileEditor(myEditor);",
     "right" : "return EditorUtil.isRealFileEditor(myEditor);",
     "info" : "ReturnStatement[42414-42459]:ReturnStatement[42414-42459]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[42467-42476]:MarkerAnnotation[42467-42476]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42479-42485]:Modifier[42479-42485]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[42486-42493]:PrimitiveType[42486-42493]"
+  }, {
+    "left" : "isLineMarkersShown",
+    "right" : "isLineMarkersShown",
+    "info" : "SimpleName[42494-42512]:SimpleName[42494-42512]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3261,6 +4757,18 @@
     "right" : "return myEditor.getSettings().isLineMarkerAreaShown();",
     "info" : "ReturnStatement[42521-42575]:ReturnStatement[42521-42575]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42583-42589]:Modifier[42583-42589]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[42590-42597]:PrimitiveType[42590-42597]"
+  }, {
+    "left" : "isLineNumbersShown",
+    "right" : "isLineNumbersShown",
+    "info" : "SimpleName[42598-42616]:SimpleName[42598-42616]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[42619-42680]:Block[42619-42680]"
@@ -3268,6 +4776,22 @@
     "left" : "return myEditor.getSettings().isLineNumbersShown();",
     "right" : "return myEditor.getSettings().isLineNumbersShown();",
     "info" : "ReturnStatement[42625-42676]:ReturnStatement[42625-42676]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[42684-42693]:MarkerAnnotation[42684-42693]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42696-42702]:Modifier[42696-42702]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[42703-42710]:PrimitiveType[42703-42710]"
+  }, {
+    "left" : "isAnnotationsShown",
+    "right" : "isAnnotationsShown",
+    "info" : "SimpleName[42711-42729]:SimpleName[42711-42729]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3277,6 +4801,22 @@
     "right" : "return !myTextAnnotationGutters.isEmpty();",
     "info" : "ReturnStatement[42738-42780]:ReturnStatement[42738-42780]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[42788-42797]:MarkerAnnotation[42788-42797]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42800-42806]:Modifier[42800-42806]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[42807-42814]:PrimitiveType[42807-42814]"
+  }, {
+    "left" : "isFoldingOutlineShown",
+    "right" : "isFoldingOutlineShown",
+    "info" : "SimpleName[42815-42836]:SimpleName[42815-42836]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[42839-43010]:Block[42839-43010]"
@@ -3284,6 +4824,18 @@
     "left" : "return myEditor.getSettings().isFoldingOutlineShown() &&\n           myEditor.getFoldingModel().isFoldingEnabled() &&\n           !myEditor.isInPresentationMode();",
     "right" : "return myEditor.getSettings().isFoldingOutlineShown() &&\n           myEditor.getFoldingModel().isFoldingEnabled() &&\n           !myEditor.isInPresentationMode();",
     "info" : "ReturnStatement[42845-43006]:ReturnStatement[42845-43006]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[43014-43020]:Modifier[43014-43020]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[43021-43024]:PrimitiveType[43021-43024]"
+  }, {
+    "left" : "getLineNumberAreaWidth",
+    "right" : "getLineNumberAreaWidth",
+    "info" : "SimpleName[43025-43047]:SimpleName[43025-43047]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3293,6 +4845,18 @@
     "right" : "return isLineNumbersShown() ? myLineNumberAreaWidth + myAdditionalLineNumberAreaWidth : 0;",
     "info" : "ReturnStatement[43056-43146]:ReturnStatement[43056-43146]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[43154-43160]:Modifier[43154-43160]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[43161-43164]:PrimitiveType[43161-43164]"
+  }, {
+    "left" : "getLineMarkerAreaWidth",
+    "right" : "getLineMarkerAreaWidth",
+    "info" : "SimpleName[43165-43187]:SimpleName[43165-43187]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[43190-43256]:Block[43190-43256]"
@@ -3301,6 +4865,22 @@
     "right" : "return isLineMarkersShown() ? myLineMarkerAreaWidth : 0;",
     "info" : "ReturnStatement[43196-43252]:ReturnStatement[43196-43252]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[43260-43266]:Modifier[43260-43266]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[43267-43271]:PrimitiveType[43267-43271]"
+  }, {
+    "left" : "setLineNumberAreaWidthFunction",
+    "right" : "setLineNumberAreaWidthFunction",
+    "info" : "SimpleName[43272-43302]:SimpleName[43272-43302]"
+  }, {
+    "left" : "@NotNull TIntFunction calculator",
+    "right" : "@NotNull TIntFunction calculator",
+    "info" : "SingleVariableDeclaration[43303-43335]:SingleVariableDeclaration[43303-43335]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[43337-43390]:Block[43337-43390]"
@@ -3308,6 +4888,18 @@
     "left" : "myLineNumberAreaWidthFunction = calculator;",
     "right" : "myLineNumberAreaWidthFunction = calculator;",
     "info" : "ExpressionStatement[43343-43386]:ExpressionStatement[43343-43386]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[43394-43401]:Modifier[43394-43401]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[43402-43406]:PrimitiveType[43402-43406]"
+  }, {
+    "left" : "calcLineNumberAreaWidth",
+    "right" : "calcLineNumberAreaWidth",
+    "info" : "SimpleName[43407-43430]:SimpleName[43407-43430]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3349,6 +4941,22 @@
     "right" : "myAdditionalLineNumberAreaWidth = myLineNumberAreaWidthFunction.execute(maxAdditionalLineNumber)\n                                        + GAP_BEFORE_LINE_NUMBERS + GAP_AFTER_LINE_NUMBERS;",
     "info" : "ExpressionStatement[43900-44088]:ExpressionStatement[43900-44088]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[44102-44109]:Modifier[44102-44109]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[44110-44113]:PrimitiveType[44110-44113]"
+  }, {
+    "left" : "getMaxLineNumber",
+    "right" : "getMaxLineNumber",
+    "info" : "SimpleName[44114-44130]:SimpleName[44114-44130]"
+  }, {
+    "left" : "@NotNull TIntFunction convertor",
+    "right" : "@NotNull TIntFunction convertor",
+    "info" : "SingleVariableDeclaration[44131-44162]:SingleVariableDeclaration[44131-44162]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[44164-44335]:Block[44164-44335]"
@@ -3380,6 +4988,26 @@
     "left" : "return 0;",
     "right" : "return 0;",
     "info" : "ReturnStatement[44322-44331]:ReturnStatement[44322-44331]"
+  }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[44339-44348]:MarkerAnnotation[44339-44348]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[44351-44357]:Modifier[44351-44357]"
+  }, {
+    "left" : "EditorMouseEventArea",
+    "right" : "EditorMouseEventArea",
+    "info" : "SimpleType[44358-44378]:SimpleType[44358-44378]"
+  }, {
+    "left" : "getEditorMouseAreaByOffset",
+    "right" : "getEditorMouseAreaByOffset",
+    "info" : "SimpleName[44379-44405]:SimpleName[44379-44405]"
+  }, {
+    "left" : "int offset",
+    "right" : "int offset",
+    "info" : "SingleVariableDeclaration[44406-44416]:SingleVariableDeclaration[44406-44416]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3453,6 +5081,22 @@
     "right" : "return null;",
     "info" : "ReturnStatement[45058-45070]:ReturnStatement[45058-45070]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45078-45084]:Modifier[45078-45084]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[45085-45091]:Modifier[45085-45091]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[45092-45095]:PrimitiveType[45092-45095]"
+  }, {
+    "left" : "getLineNumberAreaOffset",
+    "right" : "getLineNumberAreaOffset",
+    "info" : "SimpleName[45096-45119]:SimpleName[45096-45119]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[45122-45141]:Block[45122-45141]"
@@ -3460,6 +5104,18 @@
     "left" : "return 0;",
     "right" : "return 0;",
     "info" : "ReturnStatement[45128-45137]:ReturnStatement[45128-45137]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45145-45151]:Modifier[45145-45151]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[45152-45155]:PrimitiveType[45152-45155]"
+  }, {
+    "left" : "getAnnotationsAreaOffset",
+    "right" : "getAnnotationsAreaOffset",
+    "info" : "SimpleName[45156-45180]:SimpleName[45156-45180]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3469,6 +5125,18 @@
     "right" : "return getLineNumberAreaOffset() + getLineNumberAreaWidth();",
     "info" : "ReturnStatement[45189-45249]:ReturnStatement[45189-45249]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45257-45263]:Modifier[45257-45263]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[45264-45267]:PrimitiveType[45264-45267]"
+  }, {
+    "left" : "getAnnotationsAreaWidth",
+    "right" : "getAnnotationsAreaWidth",
+    "info" : "SimpleName[45268-45291]:SimpleName[45268-45291]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[45294-45339]:Block[45294-45339]"
@@ -3476,6 +5144,18 @@
     "left" : "return myTextAnnotationGuttersSize;",
     "right" : "return myTextAnnotationGuttersSize;",
     "info" : "ReturnStatement[45300-45335]:ReturnStatement[45300-45335]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45343-45349]:Modifier[45343-45349]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[45350-45353]:PrimitiveType[45350-45353]"
+  }, {
+    "left" : "getAnnotationsAreaWidthEx",
+    "right" : "getAnnotationsAreaWidthEx",
+    "info" : "SimpleName[45354-45379]:SimpleName[45354-45379]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3485,6 +5165,22 @@
     "right" : "return myTextAnnotationGuttersSize + myTextAnnotationExtraSize;",
     "info" : "ReturnStatement[45388-45451]:ReturnStatement[45388-45451]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[45459-45468]:MarkerAnnotation[45459-45468]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45471-45477]:Modifier[45471-45477]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[45478-45481]:PrimitiveType[45478-45481]"
+  }, {
+    "left" : "getLineMarkerAreaOffset",
+    "right" : "getLineMarkerAreaOffset",
+    "info" : "SimpleName[45482-45505]:SimpleName[45482-45505]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[45508-45582]:Block[45508-45582]"
@@ -3492,6 +5188,22 @@
     "left" : "return getAnnotationsAreaOffset() + getAnnotationsAreaWidthEx();",
     "right" : "return getAnnotationsAreaOffset() + getAnnotationsAreaWidthEx();",
     "info" : "ReturnStatement[45514-45578]:ReturnStatement[45514-45578]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[45586-45595]:MarkerAnnotation[45586-45595]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45598-45604]:Modifier[45598-45604]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[45605-45608]:PrimitiveType[45605-45608]"
+  }, {
+    "left" : "getLineMarkerFreePaintersAreaOffset",
+    "right" : "getLineMarkerFreePaintersAreaOffset",
+    "info" : "SimpleName[45609-45644]:SimpleName[45609-45644]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3501,6 +5213,22 @@
     "right" : "return getLineMarkerAreaOffset() + myIconsAreaWidth + GAP_BETWEEN_ICONS_AND_FREE_PAINTERS_AREA;",
     "info" : "ReturnStatement[45653-45748]:ReturnStatement[45653-45748]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[45758-45767]:MarkerAnnotation[45758-45767]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45770-45776]:Modifier[45770-45776]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[45777-45780]:PrimitiveType[45777-45780]"
+  }, {
+    "left" : "getIconsAreaWidth",
+    "right" : "getIconsAreaWidth",
+    "info" : "SimpleName[45781-45798]:SimpleName[45781-45798]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[45801-45835]:Block[45801-45835]"
@@ -3509,6 +5237,18 @@
     "right" : "return myIconsAreaWidth;",
     "info" : "ReturnStatement[45807-45831]:ReturnStatement[45807-45831]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[45839-45846]:Modifier[45839-45846]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[45847-45854]:PrimitiveType[45847-45854]"
+  }, {
+    "left" : "isMirrored",
+    "right" : "isMirrored",
+    "info" : "SimpleName[45855-45865]:SimpleName[45855-45865]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[45868-45965]:Block[45868-45965]"
@@ -3516,6 +5256,34 @@
     "left" : "return myEditor.getVerticalScrollbarOrientation() != EditorEx.VERTICAL_SCROLLBAR_RIGHT;",
     "right" : "return myEditor.getVerticalScrollbarOrientation() != EditorEx.VERTICAL_SCROLLBAR_RIGHT;",
     "info" : "ReturnStatement[45874-45961]:ReturnStatement[45874-45961]"
+  }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[45969-45978]:MarkerAnnotation[45969-45978]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[45981-45990]:MarkerAnnotation[45981-45990]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45993-45999]:Modifier[45993-45999]"
+  }, {
+    "left" : "FoldRegion",
+    "right" : "FoldRegion",
+    "info" : "SimpleType[46000-46010]:SimpleType[46000-46010]"
+  }, {
+    "left" : "findFoldingAnchorAt",
+    "right" : "findFoldingAnchorAt",
+    "info" : "SimpleName[46011-46030]:SimpleName[46011-46030]"
+  }, {
+    "left" : "int x",
+    "right" : "int x",
+    "info" : "SingleVariableDeclaration[46031-46036]:SingleVariableDeclaration[46031-46036]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[46038-46043]:SingleVariableDeclaration[46038-46043]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3569,6 +5337,34 @@
     "right" : "return null;",
     "info" : "ReturnStatement[46850-46862]:ReturnStatement[46850-46862]"
   }, {
+    "left" : "@SuppressWarnings(\"SuspiciousNameCombination\")",
+    "right" : "@SuppressWarnings(\"SuspiciousNameCombination\")",
+    "info" : "SingleMemberAnnotation[46870-46916]:SingleMemberAnnotation[46870-46916]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[46919-46926]:Modifier[46919-46926]"
+  }, {
+    "left" : "Rectangle",
+    "right" : "Rectangle",
+    "info" : "SimpleType[46927-46936]:SimpleType[46927-46936]"
+  }, {
+    "left" : "rectangleByFoldOffset",
+    "right" : "rectangleByFoldOffset",
+    "info" : "SimpleName[46937-46958]:SimpleName[46937-46958]"
+  }, {
+    "left" : "int foldStart",
+    "right" : "int foldStart",
+    "info" : "SingleVariableDeclaration[46959-46972]:SingleVariableDeclaration[46959-46972]"
+  }, {
+    "left" : "int anchorWidth",
+    "right" : "int anchorWidth",
+    "info" : "SingleVariableDeclaration[46974-46989]:SingleVariableDeclaration[46974-46989]"
+  }, {
+    "left" : "int anchorX",
+    "right" : "int anchorX",
+    "info" : "SingleVariableDeclaration[46991-47002]:SingleVariableDeclaration[46991-47002]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[47004-47216]:Block[47004-47216]"
@@ -3581,6 +5377,26 @@
     "right" : "return new Rectangle(anchorX, anchorY, anchorWidth, anchorWidth);",
     "info" : "ReturnStatement[47147-47212]:ReturnStatement[47147-47212]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[47220-47229]:MarkerAnnotation[47220-47229]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[47232-47238]:Modifier[47232-47238]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[47239-47243]:PrimitiveType[47239-47243]"
+  }, {
+    "left" : "mouseDragged",
+    "right" : "mouseDragged",
+    "info" : "SimpleName[47244-47256]:SimpleName[47244-47256]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[47257-47269]:SingleVariableDeclaration[47257-47269]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[47271-47330]:Block[47271-47330]"
@@ -3588,6 +5404,26 @@
     "left" : "TooltipController.getInstance().cancelTooltips();",
     "right" : "TooltipController.getInstance().cancelTooltips();",
     "info" : "ExpressionStatement[47277-47326]:ExpressionStatement[47277-47326]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[47334-47343]:MarkerAnnotation[47334-47343]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[47346-47352]:Modifier[47346-47352]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[47353-47357]:PrimitiveType[47353-47357]"
+  }, {
+    "left" : "mouseMoved",
+    "right" : "mouseMoved",
+    "info" : "SimpleName[47358-47368]:SimpleName[47358-47368]"
+  }, {
+    "left" : "final MouseEvent e",
+    "right" : "final MouseEvent e",
+    "info" : "SingleVariableDeclaration[47369-47387]:SingleVariableDeclaration[47369-47387]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3713,6 +5549,34 @@
     "right" : "processIconsRow(line, row, new LineGutterIconRendererProcessor() {\n          @Override\n          public void process(int x, int y, GutterMark r) {\n            xPos.put(x, r);\n            if (renderer == r && r != null) {\n              currentPos[0] = x;\n              Icon icon = scaleIcon(r.getIcon());\n              t.set(new Point(x + icon.getIconWidth() / 2, y + icon.getIconHeight() / 2));\n            }\n          }\n        });",
     "info" : "ExpressionStatement[48646-49078]:ExpressionStatement[48646-49078]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[48723-48732]:MarkerAnnotation[48723-48732]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[48743-48749]:Modifier[48743-48749]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[48750-48754]:PrimitiveType[48750-48754]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[48755-48762]:SimpleName[48755-48762]"
+  }, {
+    "left" : "int x",
+    "right" : "int x",
+    "info" : "SingleVariableDeclaration[48763-48768]:SingleVariableDeclaration[48763-48768]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[48770-48775]:SingleVariableDeclaration[48770-48775]"
+  }, {
+    "left" : "GutterMark r",
+    "right" : "GutterMark r",
+    "info" : "SingleVariableDeclaration[48777-48789]:SingleVariableDeclaration[48777-48789]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[48791-49066]:Block[48791-49066]"
@@ -3776,6 +5640,18 @@
     "left" : "controller.cancelTooltip(GUTTER_TOOLTIP_GROUP, e, false);",
     "right" : "controller.cancelTooltip(GUTTER_TOOLTIP_GROUP, e, false);",
     "info" : "ExpressionStatement[49733-49790]:ExpressionStatement[49733-49790]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[49804-49808]:PrimitiveType[49804-49808]"
+  }, {
+    "left" : "validateMousePointer",
+    "right" : "validateMousePointer",
+    "info" : "SimpleName[49809-49829]:SimpleName[49809-49829]"
+  }, {
+    "left" : "@NotNull MouseEvent e",
+    "right" : "@NotNull MouseEvent e",
+    "info" : "SingleVariableDeclaration[49830-49851]:SingleVariableDeclaration[49830-49851]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3897,6 +5773,26 @@
     "right" : "setCursor(cursor);",
     "info" : "ExpressionStatement[51000-51018]:ExpressionStatement[51000-51018]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[51026-51035]:MarkerAnnotation[51026-51035]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[51038-51044]:Modifier[51038-51044]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[51045-51049]:PrimitiveType[51045-51049]"
+  }, {
+    "left" : "mouseClicked",
+    "right" : "mouseClicked",
+    "info" : "SimpleName[51050-51062]:SimpleName[51050-51062]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[51063-51075]:SingleVariableDeclaration[51063-51075]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[51077-51140]:Block[51077-51140]"
@@ -3912,6 +5808,22 @@
     "left" : "invokePopup(e);",
     "right" : "invokePopup(e);",
     "info" : "ExpressionStatement[51115-51130]:ExpressionStatement[51115-51130]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[51144-51151]:Modifier[51144-51151]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[51152-51156]:PrimitiveType[51152-51156]"
+  }, {
+    "left" : "fireEventToTextAnnotationListeners",
+    "right" : "fireEventToTextAnnotationListeners",
+    "info" : "SimpleName[51157-51191]:SimpleName[51157-51191]"
+  }, {
+    "left" : "final MouseEvent e",
+    "right" : "final MouseEvent e",
+    "info" : "SingleVariableDeclaration[51192-51210]:SingleVariableDeclaration[51192-51210]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3969,6 +5881,22 @@
     "right" : "myProviderToListener.get(provider).doAction(line);",
     "info" : "ExpressionStatement[51726-51776]:ExpressionStatement[51726-51776]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[51809-51816]:Modifier[51809-51816]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[51817-51820]:PrimitiveType[51817-51820]"
+  }, {
+    "left" : "getLineNumAtPoint",
+    "right" : "getLineNumAtPoint",
+    "info" : "SimpleName[51821-51838]:SimpleName[51821-51838]"
+  }, {
+    "left" : "final Point clickPoint",
+    "right" : "final Point clickPoint",
+    "info" : "SingleVariableDeclaration[51839-51861]:SingleVariableDeclaration[51839-51861]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[51863-51936]:Block[51863-51936]"
@@ -3976,6 +5904,26 @@
     "left" : "return EditorUtil.yPositionToLogicalLine(myEditor, clickPoint);",
     "right" : "return EditorUtil.yPositionToLogicalLine(myEditor, clickPoint);",
     "info" : "ReturnStatement[51869-51932]:ReturnStatement[51869-51932]"
+  }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[51940-51949]:MarkerAnnotation[51940-51949]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[51952-51959]:Modifier[51952-51959]"
+  }, {
+    "left" : "TextAnnotationGutterProvider",
+    "right" : "TextAnnotationGutterProvider",
+    "info" : "SimpleType[51960-51988]:SimpleType[51960-51988]"
+  }, {
+    "left" : "getProviderAtPoint",
+    "right" : "getProviderAtPoint",
+    "info" : "SimpleName[51989-52007]:SimpleName[51989-52007]"
+  }, {
+    "left" : "final Point clickPoint",
+    "right" : "final Point clickPoint",
+    "info" : "SingleVariableDeclaration[52008-52030]:SingleVariableDeclaration[52008-52030]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4017,6 +5965,26 @@
     "right" : "return null;",
     "info" : "ReturnStatement[52330-52342]:ReturnStatement[52330-52342]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[52350-52359]:MarkerAnnotation[52350-52359]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[52362-52368]:Modifier[52362-52368]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[52369-52373]:PrimitiveType[52369-52373]"
+  }, {
+    "left" : "mousePressed",
+    "right" : "mousePressed",
+    "info" : "SimpleName[52374-52386]:SimpleName[52374-52386]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[52387-52399]:SingleVariableDeclaration[52387-52399]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[52401-52548]:Block[52401-52548]"
@@ -4045,6 +6013,22 @@
     "right" : "processClose(e);",
     "info" : "ExpressionStatement[52522-52538]:ExpressionStatement[52522-52538]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[52552-52559]:Modifier[52552-52559]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[52560-52567]:PrimitiveType[52560-52567]"
+  }, {
+    "left" : "isPopupAction",
+    "right" : "isPopupAction",
+    "info" : "SimpleName[52568-52581]:SimpleName[52568-52581]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[52582-52594]:SingleVariableDeclaration[52582-52594]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[52596-52765]:Block[52596-52833]"
@@ -4060,6 +6044,26 @@
     "left" : "renderer != null",
     "right" : "renderer != null",
     "info" : "InfixExpression[52665-52681]:InfixExpression[52665-52681]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[52769-52778]:MarkerAnnotation[52837-52846]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[52781-52787]:Modifier[52849-52855]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[52788-52792]:PrimitiveType[52856-52860]"
+  }, {
+    "left" : "mouseReleased",
+    "right" : "mouseReleased",
+    "info" : "SimpleName[52793-52806]:SimpleName[52861-52874]"
+  }, {
+    "left" : "final MouseEvent e",
+    "right" : "final MouseEvent e",
+    "info" : "SingleVariableDeclaration[52807-52825]:SingleVariableDeclaration[52875-52893]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4173,6 +6177,26 @@
     "right" : "fireEventToTextAnnotationListeners(e);",
     "info" : "ExpressionStatement[54062-54100]:ExpressionStatement[54084-54122]"
   }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[54122-54131]:MarkerAnnotation[54359-54368]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[54134-54141]:Modifier[54371-54378]"
+  }, {
+    "left" : "ActiveGutterRenderer",
+    "right" : "ActiveGutterRenderer",
+    "info" : "SimpleType[54142-54162]:SimpleType[54379-54399]"
+  }, {
+    "left" : "getActiveRendererByMouseEvent",
+    "right" : "getActiveRendererByMouseEvent",
+    "info" : "SimpleName[54163-54192]:SimpleName[54400-54429]"
+  }, {
+    "left" : "final MouseEvent e",
+    "right" : "final MouseEvent e",
+    "info" : "SingleVariableDeclaration[54193-54211]:SingleVariableDeclaration[54430-54448]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[54213-55719]:Block[54450-55956]"
@@ -4220,6 +6244,26 @@
     "left" : "processRangeHighlighters(firstVisibleOffset, lastVisibleOffset, new RangeHighlighterProcessor() {\n      @Override\n      public void process(@NotNull RangeHighlighter highlighter) {\n        if (gutterRenderer[0] != null) return;\n        Rectangle rectangle = getLineRendererRectangle(highlighter);\n        if (rectangle == null) return;\n\n        int startY = rectangle.y;\n        int endY = startY + rectangle.height;\n        if (startY == endY) {\n          endY += myEditor.getLineHeight();\n        }\n\n        if (startY < e.getY() && e.getY() <= endY) {\n          final LineMarkerRenderer renderer = highlighter.getLineMarkerRenderer();\n          if (renderer instanceof ActiveGutterRenderer && ((ActiveGutterRenderer)renderer).canDoAction(e)) {\n            gutterRenderer[0] = (ActiveGutterRenderer)renderer;\n          }\n        }\n      }\n    });",
     "right" : "processRangeHighlighters(firstVisibleOffset, lastVisibleOffset, new RangeHighlighterProcessor() {\n      @Override\n      public void process(@NotNull RangeHighlighter highlighter) {\n        if (gutterRenderer[0] != null) return;\n        Rectangle rectangle = getLineRendererRectangle(highlighter);\n        if (rectangle == null) return;\n\n        int startY = rectangle.y;\n        int endY = startY + rectangle.height;\n        if (startY == endY) {\n          endY += myEditor.getLineHeight();\n        }\n\n        if (startY < e.getY() && e.getY() <= endY) {\n          final LineMarkerRenderer renderer = highlighter.getLineMarkerRenderer();\n          if (renderer instanceof ActiveGutterRenderer && ((ActiveGutterRenderer)renderer).canDoAction(e)) {\n            gutterRenderer[0] = (ActiveGutterRenderer)renderer;\n          }\n        }\n      }\n    });",
     "info" : "ExpressionStatement[54837-55685]:ExpressionStatement[55074-55922]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[54941-54950]:MarkerAnnotation[55178-55187]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[54957-54963]:Modifier[55194-55200]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[54964-54968]:PrimitiveType[55201-55205]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[54969-54976]:SimpleName[55206-55213]"
+  }, {
+    "left" : "@NotNull RangeHighlighter highlighter",
+    "right" : "@NotNull RangeHighlighter highlighter",
+    "info" : "SingleVariableDeclaration[54977-55014]:SingleVariableDeclaration[55214-55251]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4293,6 +6337,22 @@
     "right" : "return gutterRenderer[0];",
     "info" : "ReturnStatement[55690-55715]:ReturnStatement[55927-55952]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[55723-55732]:MarkerAnnotation[55960-55969]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[55735-55741]:Modifier[55972-55978]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[55742-55746]:PrimitiveType[55979-55983]"
+  }, {
+    "left" : "closeAllAnnotations",
+    "right" : "closeAllAnnotations",
+    "info" : "SimpleName[55747-55766]:SimpleName[55984-56003]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[55769-55911]:Block[56006-56148]"
@@ -4313,6 +6373,18 @@
     "right" : "revalidateSizes();",
     "info" : "ExpressionStatement[55889-55907]:ExpressionStatement[56126-56144]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[55915-55922]:Modifier[56152-56159]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[55923-55927]:PrimitiveType[56160-56164]"
+  }, {
+    "left" : "revalidateSizes",
+    "right" : "revalidateSizes",
+    "info" : "SimpleName[55928-55943]:SimpleName[56165-56180]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[55946-56101]:Block[56183-56338]"
@@ -4329,6 +6401,14 @@
     "right" : "updateSize();",
     "info" : "ExpressionStatement[56084-56097]:ExpressionStatement[56321-56334]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[56172-56178]:Modifier[56409-56415]"
+  }, {
+    "left" : "CloseAnnotationsAction",
+    "right" : "CloseAnnotationsAction",
+    "info" : "SimpleName[56179-56201]:SimpleName[56416-56438]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[56204-56286]:Block[56441-56523]"
@@ -4337,6 +6417,26 @@
     "right" : "super(EditorBundle.message(\"close.editor.annotations.action.name\"));",
     "info" : "SuperConstructorInvocation[56212-56280]:SuperConstructorInvocation[56449-56517]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[56292-56301]:MarkerAnnotation[56529-56538]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[56306-56312]:Modifier[56543-56549]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[56313-56317]:PrimitiveType[56550-56554]"
+  }, {
+    "left" : "actionPerformed",
+    "right" : "actionPerformed",
+    "info" : "SimpleName[56318-56333]:SimpleName[56555-56570]"
+  }, {
+    "left" : "@NotNull AnActionEvent e",
+    "right" : "@NotNull AnActionEvent e",
+    "info" : "SingleVariableDeclaration[56334-56358]:SingleVariableDeclaration[56571-56595]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[56360-56396]:Block[56597-56633]"
@@ -4344,6 +6444,30 @@
     "left" : "closeAllAnnotations();",
     "right" : "closeAllAnnotations();",
     "info" : "ExpressionStatement[56368-56390]:ExpressionStatement[56605-56627]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[56404-56413]:MarkerAnnotation[56641-56650]"
+  }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[56416-56425]:MarkerAnnotation[56653-56662]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[56428-56434]:Modifier[56665-56671]"
+  }, {
+    "left" : "Point",
+    "right" : "Point",
+    "info" : "SimpleType[56435-56440]:SimpleType[56672-56677]"
+  }, {
+    "left" : "getPoint",
+    "right" : "getPoint",
+    "info" : "SimpleName[56441-56449]:SimpleName[56678-56686]"
+  }, {
+    "left" : "final GutterIconRenderer renderer",
+    "right" : "final GutterIconRenderer renderer",
+    "info" : "SingleVariableDeclaration[56450-56483]:SingleVariableDeclaration[56687-56720]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4364,6 +6488,34 @@
     "left" : "processIconsRow(line, myLineToGutterRenderers.get(line), new LineGutterIconRendererProcessor() {\n        @Override\n        public void process(int x, int y, GutterMark r) {\n          if (result.isNull() && r.equals(renderer)) {\n            result.set(new Point(x, y));\n          }\n        }\n      });",
     "right" : "processIconsRow(line, myLineToGutterRenderers.get(line), new LineGutterIconRendererProcessor() {\n        @Override\n        public void process(int x, int y, GutterMark r) {\n          if (result.isNull() && r.equals(renderer)) {\n            result.set(new Point(x, y));\n          }\n        }\n      });",
     "info" : "ExpressionStatement[56591-56891]:ExpressionStatement[56828-57128]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[56696-56705]:MarkerAnnotation[56933-56942]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[56714-56720]:Modifier[56951-56957]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[56721-56725]:PrimitiveType[56958-56962]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[56726-56733]:SimpleName[56963-56970]"
+  }, {
+    "left" : "int x",
+    "right" : "int x",
+    "info" : "SingleVariableDeclaration[56734-56739]:SingleVariableDeclaration[56971-56976]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[56741-56746]:SingleVariableDeclaration[56978-56983]"
+  }, {
+    "left" : "GutterMark r",
+    "right" : "GutterMark r",
+    "info" : "SingleVariableDeclaration[56748-56760]:SingleVariableDeclaration[56985-56997]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4397,6 +6549,26 @@
     "right" : "return null;",
     "info" : "ReturnStatement[56970-56982]:ReturnStatement[57207-57219]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[56990-56999]:MarkerAnnotation[57227-57236]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[57002-57008]:Modifier[57239-57245]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[57009-57013]:PrimitiveType[57246-57250]"
+  }, {
+    "left" : "setLineNumberConvertor",
+    "right" : "setLineNumberConvertor",
+    "info" : "SimpleName[57014-57036]:SimpleName[57251-57273]"
+  }, {
+    "left" : "@NotNull TIntFunction lineNumberConvertor",
+    "right" : "@NotNull TIntFunction lineNumberConvertor",
+    "info" : "SingleVariableDeclaration[57037-57078]:SingleVariableDeclaration[57274-57315]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[57080-57140]:Block[57317-57377]"
@@ -4404,6 +6576,30 @@
     "left" : "setLineNumberConvertor(lineNumberConvertor, null);",
     "right" : "setLineNumberConvertor(lineNumberConvertor, null);",
     "info" : "ExpressionStatement[57086-57136]:ExpressionStatement[57323-57373]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[57144-57153]:MarkerAnnotation[57381-57390]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[57156-57162]:Modifier[57393-57399]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[57163-57167]:PrimitiveType[57400-57404]"
+  }, {
+    "left" : "setLineNumberConvertor",
+    "right" : "setLineNumberConvertor",
+    "info" : "SimpleName[57168-57190]:SimpleName[57405-57427]"
+  }, {
+    "left" : "@NotNull TIntFunction lineNumberConvertor1",
+    "right" : "@NotNull TIntFunction lineNumberConvertor1",
+    "info" : "SingleVariableDeclaration[57191-57233]:SingleVariableDeclaration[57428-57470]"
+  }, {
+    "left" : "@Nullable TIntFunction lineNumberConvertor2",
+    "right" : "@Nullable TIntFunction lineNumberConvertor2",
+    "info" : "SingleVariableDeclaration[57235-57278]:SingleVariableDeclaration[57472-57515]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4417,6 +6613,26 @@
     "right" : "myAdditionalLineNumberConvertor = lineNumberConvertor2;",
     "info" : "ExpressionStatement[57336-57391]:ExpressionStatement[57573-57628]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[57399-57408]:MarkerAnnotation[57636-57645]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[57411-57417]:Modifier[57648-57654]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[57418-57422]:PrimitiveType[57655-57659]"
+  }, {
+    "left" : "setShowDefaultGutterPopup",
+    "right" : "setShowDefaultGutterPopup",
+    "info" : "SimpleName[57423-57448]:SimpleName[57660-57685]"
+  }, {
+    "left" : "boolean show",
+    "right" : "boolean show",
+    "info" : "SingleVariableDeclaration[57449-57461]:SingleVariableDeclaration[57686-57698]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[57463-57505]:Block[57700-57742]"
@@ -4425,6 +6641,26 @@
     "right" : "myShowDefaultGutterPopup = show;",
     "info" : "ExpressionStatement[57469-57501]:ExpressionStatement[57706-57738]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[57509-57518]:MarkerAnnotation[57746-57755]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[57521-57527]:Modifier[57758-57764]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[57528-57532]:PrimitiveType[57765-57769]"
+  }, {
+    "left" : "setPaintBackground",
+    "right" : "setPaintBackground",
+    "info" : "SimpleName[57533-57551]:SimpleName[57770-57788]"
+  }, {
+    "left" : "boolean value",
+    "right" : "boolean value",
+    "info" : "SingleVariableDeclaration[57552-57565]:SingleVariableDeclaration[57789-57802]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[57567-57603]:Block[57804-57840]"
@@ -4432,6 +6668,22 @@
     "left" : "myPaintBackground = value;",
     "right" : "myPaintBackground = value;",
     "info" : "ExpressionStatement[57573-57599]:ExpressionStatement[57810-57836]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[57607-57614]:Modifier[57844-57851]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[57615-57619]:PrimitiveType[57852-57856]"
+  }, {
+    "left" : "invokePopup",
+    "right" : "invokePopup",
+    "info" : "SimpleName[57620-57631]:SimpleName[57857-57868]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[57632-57644]:SingleVariableDeclaration[57869-57881]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4625,9 +6877,49 @@
     "right" : "e.consume();",
     "info" : "ExpressionStatement[60241-60253]:ExpressionStatement[60478-60490]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[60275-60284]:MarkerAnnotation[60512-60521]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[60287-60293]:Modifier[60524-60530]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[60294-60298]:PrimitiveType[60531-60535]"
+  }, {
+    "left" : "mouseEntered",
+    "right" : "mouseEntered",
+    "info" : "SimpleName[60299-60311]:SimpleName[60536-60548]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[60312-60324]:SingleVariableDeclaration[60549-60561]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[60326-60331]:Block[60563-60568]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[60335-60344]:MarkerAnnotation[60572-60581]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[60347-60353]:Modifier[60584-60590]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[60354-60358]:PrimitiveType[60591-60595]"
+  }, {
+    "left" : "mouseExited",
+    "right" : "mouseExited",
+    "info" : "SimpleName[60359-60370]:SimpleName[60596-60607]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[60371-60383]:SingleVariableDeclaration[60608-60620]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4636,6 +6928,22 @@
     "left" : "TooltipController.getInstance().cancelTooltip(GUTTER_TOOLTIP_GROUP, e, false);",
     "right" : "TooltipController.getInstance().cancelTooltip(GUTTER_TOOLTIP_GROUP, e, false);",
     "info" : "ExpressionStatement[60391-60469]:ExpressionStatement[60628-60706]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[60477-60484]:Modifier[60714-60721]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[60485-60488]:PrimitiveType[60722-60725]"
+  }, {
+    "left" : "convertPointToLineNumber",
+    "right" : "convertPointToLineNumber",
+    "info" : "SimpleName[60489-60513]:SimpleName[60726-60750]"
+  }, {
+    "left" : "final Point p",
+    "right" : "final Point p",
+    "info" : "SingleVariableDeclaration[60514-60527]:SingleVariableDeclaration[60751-60764]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4685,6 +6993,26 @@
     "right" : "return line;",
     "info" : "ReturnStatement[61008-61020]:ReturnStatement[61245-61257]"
   }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[61028-61037]:MarkerAnnotation[61265-61274]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[61040-61047]:Modifier[61277-61284]"
+  }, {
+    "left" : "GutterMark",
+    "right" : "GutterMark",
+    "info" : "SimpleType[61048-61058]:SimpleType[61285-61295]"
+  }, {
+    "left" : "getGutterRenderer",
+    "right" : "getGutterRenderer",
+    "info" : "SimpleName[61059-61076]:SimpleName[61296-61313]"
+  }, {
+    "left" : "final Point p",
+    "right" : "final Point p",
+    "info" : "SingleVariableDeclaration[61077-61090]:SingleVariableDeclaration[61314-61327]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[61092-61798]:Block[61329-62035]"
@@ -4725,6 +7053,34 @@
     "right" : "processIconsRow(line, renderers, new LineGutterIconRendererProcessor() {\n      @Override\n      public void process(int x, int y, GutterMark renderer) {\n        final int ex = convertX((int)p.getX());\n        Icon icon = scaleIcon(renderer.getIcon());\n        // Do not check y to extend the area where users could click\n        if (x <= ex && ex <= x + icon.getIconWidth()) {\n          result[0] = renderer;\n        }\n      }\n    });",
     "info" : "ExpressionStatement[61338-61771]:ExpressionStatement[61575-62008]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[61417-61426]:MarkerAnnotation[61654-61663]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[61433-61439]:Modifier[61670-61676]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[61440-61444]:PrimitiveType[61677-61681]"
+  }, {
+    "left" : "process",
+    "right" : "process",
+    "info" : "SimpleName[61445-61452]:SimpleName[61682-61689]"
+  }, {
+    "left" : "int x",
+    "right" : "int x",
+    "info" : "SingleVariableDeclaration[61453-61458]:SingleVariableDeclaration[61690-61695]"
+  }, {
+    "left" : "int y",
+    "right" : "int y",
+    "info" : "SingleVariableDeclaration[61460-61465]:SingleVariableDeclaration[61697-61702]"
+  }, {
+    "left" : "GutterMark renderer",
+    "right" : "GutterMark renderer",
+    "info" : "SingleVariableDeclaration[61467-61486]:SingleVariableDeclaration[61704-61723]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[61488-61763]:Block[61725-62000]"
@@ -4753,6 +7109,26 @@
     "right" : "return result[0];",
     "info" : "ReturnStatement[61777-61794]:ReturnStatement[62014-62031]"
   }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[61802-61811]:MarkerAnnotation[62039-62048]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[61814-61821]:Modifier[62051-62058]"
+  }, {
+    "left" : "GutterIconRenderer",
+    "right" : "GutterIconRenderer",
+    "info" : "SimpleType[61822-61840]:SimpleType[62059-62077]"
+  }, {
+    "left" : "getGutterRenderer",
+    "right" : "getGutterRenderer",
+    "info" : "SimpleName[61841-61858]:SimpleName[62078-62095]"
+  }, {
+    "left" : "final MouseEvent e",
+    "right" : "final MouseEvent e",
+    "info" : "SingleVariableDeclaration[61859-61877]:SingleVariableDeclaration[62096-62114]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[61879-61948]:Block[62116-62185]"
@@ -4760,6 +7136,22 @@
     "left" : "return (GutterIconRenderer)getGutterRenderer(e.getPoint());",
     "right" : "return (GutterIconRenderer)getGutterRenderer(e.getPoint());",
     "info" : "ReturnStatement[61885-61944]:ReturnStatement[62122-62181]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[61952-61958]:Modifier[62189-62195]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[61959-61962]:PrimitiveType[62196-62199]"
+  }, {
+    "left" : "convertX",
+    "right" : "convertX",
+    "info" : "SimpleName[61963-61971]:SimpleName[62200-62208]"
+  }, {
+    "left" : "int x",
+    "right" : "int x",
+    "info" : "SingleVariableDeclaration[61972-61977]:SingleVariableDeclaration[62209-62214]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4776,6 +7168,18 @@
     "left" : "return getWidth() - x;",
     "right" : "return getWidth() - x;",
     "info" : "ReturnStatement[62018-62040]:ReturnStatement[62255-62277]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[62048-62054]:Modifier[62285-62291]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[62055-62059]:PrimitiveType[62292-62296]"
+  }, {
+    "left" : "dispose",
+    "right" : "dispose",
+    "info" : "SimpleName[62060-62067]:SimpleName[62297-62304]"
   }, {
     "left" : "{}",
     "right" : "{}",

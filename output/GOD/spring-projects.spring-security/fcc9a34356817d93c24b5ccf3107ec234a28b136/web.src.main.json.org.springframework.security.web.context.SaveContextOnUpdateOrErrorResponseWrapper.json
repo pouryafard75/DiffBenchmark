@@ -361,6 +361,10 @@
     "right" : "OnCommittedResponseWrapper",
     "info" : "SimpleName[1934-1960]:SimpleName[1770-1796]"
   }, {
+    "left" : "/**\n     * @param response              the response to be wrapped\n     * @param disableUrlRewriting   turns the URL encoding methods into null operations, preventing the use\n     *                              of URL rewriting to add the session identifier as a URL parameter.\n     */",
+    "right" : "/**\n     * @param response the response to be wrapped\n     * @param disableUrlRewriting turns the URL encoding methods into null operations,\n     * preventing the use of URL rewriting to add the session identifier as a URL\n     * parameter.\n     */",
+    "info" : "Javadoc[2196-2481]:Javadoc[1980-2228]"
+  }, {
     "left" : "              the response to be wrapped",
     "right" : " the response to be wrapped",
     "info" : "TextElement[2222-2262]:TextElement[2006-2033]"
@@ -373,6 +377,22 @@
     "right" : "preventing the use of URL rewriting to add the session identifier as a URL",
     "info" : "TextElement[2407-2473]:TextElement[2128-2202]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2486-2492]:Modifier[2233-2239]"
+  }, {
+    "left" : "SaveContextOnUpdateOrErrorResponseWrapper",
+    "right" : "SaveContextOnUpdateOrErrorResponseWrapper",
+    "info" : "SimpleName[2493-2534]:SimpleName[2240-2281]"
+  }, {
+    "left" : "HttpServletResponse response",
+    "right" : "HttpServletResponse response",
+    "info" : "SingleVariableDeclaration[2535-2563]:SingleVariableDeclaration[2282-2310]"
+  }, {
+    "left" : "boolean disableUrlRewriting",
+    "right" : "boolean disableUrlRewriting",
+    "info" : "SingleVariableDeclaration[2565-2592]:SingleVariableDeclaration[2324-2351]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2594-2682]:Block[2353-2441]"
@@ -384,6 +404,10 @@
     "left" : "this.disableUrlRewriting = disableUrlRewriting;",
     "right" : "this.disableUrlRewriting = disableUrlRewriting;",
     "info" : "ExpressionStatement[2629-2676]:ExpressionStatement[2388-2435]"
+  }, {
+    "left" : "/**\n     * Invoke this method to disable automatic saving of the\n     * {@link SecurityContext} when the {@link HttpServletResponse} is\n     * committed. This can be useful in the event that Async Web Requests are\n     * made which may no longer contain the {@link SecurityContext} on it.\n     */",
+    "right" : "/**\n     * Invoke this method to disable automatic saving of the {@link SecurityContext} when\n     * the {@link HttpServletResponse} is committed. This can be useful in the event that\n     * Async Web Requests are made which may no longer contain the {@link SecurityContext}\n     * on it.\n     */",
+    "info" : "Javadoc[2688-2984]:Javadoc[2447-2743]"
   }, {
     "left" : "Invoke this method to disable automatic saving of the",
     "right" : "Invoke this method to disable automatic saving of the ",
@@ -409,9 +433,69 @@
     "right" : "on it.",
     "info" : "TextElement[2969-2976]:TextElement[2729-2735]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2989-2995]:Modifier[2748-2754]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2996-3000]:PrimitiveType[2755-2759]"
+  }, {
+    "left" : "disableSaveOnResponseCommitted",
+    "right" : "disableSaveOnResponseCommitted",
+    "info" : "SimpleName[3001-3031]:SimpleName[2760-2790]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3034-3093]:Block[2793-2838]"
+  }, {
+    "left" : "/**\n     * Implements the logic for storing the security context.\n     *\n     * @param context the <tt>SecurityContext</tt> instance to store\n     */",
+    "right" : "/**\n     * Implements the logic for storing the security context.\n     *\n     * @param context the <tt>SecurityContext</tt> instance to store\n     */",
+    "info" : "Javadoc[3099-3248]:Javadoc[2844-2993]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3253-3262]:Modifier[2998-3007]"
+  }, {
+    "left" : "abstract",
+    "right" : "abstract",
+    "info" : "Modifier[3263-3271]:Modifier[3008-3016]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3272-3276]:PrimitiveType[3017-3021]"
+  }, {
+    "left" : "saveContext",
+    "right" : "saveContext",
+    "info" : "SimpleName[3277-3288]:SimpleName[3022-3033]"
+  }, {
+    "left" : "SecurityContext context",
+    "right" : "SecurityContext context",
+    "info" : "SingleVariableDeclaration[3289-3312]:SingleVariableDeclaration[3034-3057]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5528-5537]:MarkerAnnotation[3422-3431]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5542-5548]:Modifier[3436-3442]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5549-5554]:Modifier[3443-3448]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5555-5561]:SimpleType[3449-3455]"
+  }, {
+    "left" : "encodeRedirectUrl",
+    "right" : "encodeRedirectUrl",
+    "info" : "SimpleName[5562-5579]:SimpleName[3456-3473]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[5580-5590]:SingleVariableDeclaration[3474-3484]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -433,6 +517,30 @@
     "right" : "return super.encodeRedirectUrl(url);",
     "info" : "ReturnStatement[5671-5707]:ReturnStatement[3565-3601]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5719-5728]:MarkerAnnotation[3613-3622]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5733-5739]:Modifier[3627-3633]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5740-5745]:Modifier[3634-3639]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5746-5752]:SimpleType[3640-3646]"
+  }, {
+    "left" : "encodeRedirectURL",
+    "right" : "encodeRedirectURL",
+    "info" : "SimpleName[5753-5770]:SimpleName[3647-3664]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[5771-5781]:SingleVariableDeclaration[3665-3675]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[5783-5904]:Block[3677-3798]"
@@ -452,6 +560,30 @@
     "left" : "return super.encodeRedirectURL(url);",
     "right" : "return super.encodeRedirectURL(url);",
     "info" : "ReturnStatement[5862-5898]:ReturnStatement[3756-3792]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5910-5919]:MarkerAnnotation[3804-3813]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5924-5930]:Modifier[3818-3824]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5931-5936]:Modifier[3825-3830]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5937-5943]:SimpleType[3831-3837]"
+  }, {
+    "left" : "encodeUrl",
+    "right" : "encodeUrl",
+    "info" : "SimpleName[5944-5953]:SimpleName[3838-3847]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[5954-5964]:SingleVariableDeclaration[3848-3858]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -473,6 +605,30 @@
     "right" : "return super.encodeUrl(url);",
     "info" : "ReturnStatement[6045-6073]:ReturnStatement[3939-3967]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6085-6094]:MarkerAnnotation[3979-3988]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6099-6105]:Modifier[3993-3999]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[6106-6111]:Modifier[4000-4005]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[6112-6118]:SimpleType[4006-4012]"
+  }, {
+    "left" : "encodeURL",
+    "right" : "encodeURL",
+    "info" : "SimpleName[6119-6128]:SimpleName[4013-4022]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[6129-6139]:SingleVariableDeclaration[4023-4033]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6141-6254]:Block[4035-4148]"
@@ -492,6 +648,22 @@
     "left" : "return super.encodeURL(url);",
     "right" : "return super.encodeURL(url);",
     "info" : "ReturnStatement[6220-6248]:ReturnStatement[4114-4142]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6376-6382]:Modifier[4277-4283]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[6383-6388]:Modifier[4284-4289]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[6389-6396]:PrimitiveType[4290-4297]"
+  }, {
+    "left" : "isContextSaved",
+    "right" : "isContextSaved",
+    "info" : "SimpleName[6397-6411]:SimpleName[4298-4312]"
   }, {
     "left" : "{}",
     "right" : "{}",

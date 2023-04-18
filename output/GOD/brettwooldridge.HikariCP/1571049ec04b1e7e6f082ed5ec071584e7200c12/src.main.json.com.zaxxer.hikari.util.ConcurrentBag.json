@@ -129,6 +129,22 @@
     "info" : "MethodDeclaration[11487-12219]:MethodDeclaration[11945-12677]"
   } ],
   "mappings" : [ {
+    "left" : "/**\n    * Construct a ConcurrentBag with the specified listener.\n    *\n    * @param listener the IBagStateListener to attach to this bag\n    */",
+    "right" : "/**\n    * Construct a ConcurrentBag with the specified listener.\n    *\n    * @param listener the IBagStateListener to attach to this bag\n    */",
+    "info" : "Javadoc[2705-2848]:Javadoc[3163-3306]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2852-2858]:Modifier[3310-3316]"
+  }, {
+    "left" : "ConcurrentBag",
+    "right" : "ConcurrentBag",
+    "info" : "SimpleName[2859-2872]:SimpleName[3317-3330]"
+  }, {
+    "left" : "IBagStateListener listener",
+    "right" : "IBagStateListener listener",
+    "info" : "SingleVariableDeclaration[2873-2899]:SingleVariableDeclaration[3331-3357]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2904-3444]:Block[3362-3902]"
@@ -169,6 +185,22 @@
     "right" : "this.threadList = new ThreadLocal<List>() {\n            @Override\n            protected List initialValue()\n            {\n               return new FastList<>(IConcurrentBagEntry.class, 16);\n            }\n         };",
     "info" : "ExpressionStatement[3215-3431]:ExpressionStatement[3673-3889]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[3271-3280]:MarkerAnnotation[3729-3738]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3293-3302]:Modifier[3751-3760]"
+  }, {
+    "left" : "List",
+    "right" : "List",
+    "info" : "SimpleType[3303-3307]:SimpleType[3761-3765]"
+  }, {
+    "left" : "initialValue",
+    "right" : "initialValue",
+    "info" : "SimpleName[3308-3320]:SimpleName[3766-3778]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3335-3419]:Block[3793-3877]"
@@ -176,6 +208,38 @@
     "left" : "return new FastList<>(IConcurrentBagEntry.class, 16);",
     "right" : "return new FastList<>(IConcurrentBagEntry.class, 16);",
     "info" : "ReturnStatement[3352-3405]:ReturnStatement[3810-3863]"
+  }, {
+    "left" : "/**\n    * The method will borrow a BagEntry from the bag, blocking for the\n    * specified timeout if none are available.\n    * \n    * @param timeout how long to wait before giving up, in units of unit\n    * @param timeUnit a <code>TimeUnit</code> determining how to interpret the timeout parameter\n    * @return a borrowed instance from the bag or null if a timeout occurs\n    * @throws InterruptedException if interrupted while waiting\n    */",
+    "right" : "/**\n    * The method will borrow a BagEntry from the bag, blocking for the\n    * specified timeout if none are available.\n    * \n    * @param timeout how long to wait before giving up, in units of unit\n    * @param timeUnit a <code>TimeUnit</code> determining how to interpret the timeout parameter\n    * @return a borrowed instance from the bag or null if a timeout occurs\n    * @throws InterruptedException if interrupted while waiting\n    */",
+    "info" : "Javadoc[3449-3893]:Javadoc[3907-4351]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[3897-3927]:SingleMemberAnnotation[4355-4385]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3931-3937]:Modifier[4389-4395]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "SimpleType[3938-3939]:SimpleType[4396-4397]"
+  }, {
+    "left" : "borrow",
+    "right" : "borrow",
+    "info" : "SimpleName[3940-3946]:SimpleName[4398-4404]"
+  }, {
+    "left" : "long timeout",
+    "right" : "long timeout",
+    "info" : "SingleVariableDeclaration[3947-3959]:SingleVariableDeclaration[4405-4417]"
+  }, {
+    "left" : "final TimeUnit timeUnit",
+    "right" : "final TimeUnit timeUnit",
+    "info" : "SingleVariableDeclaration[3961-3984]:SingleVariableDeclaration[4419-4442]"
+  }, {
+    "left" : "InterruptedException",
+    "right" : "InterruptedException",
+    "info" : "SimpleType[3993-4013]:SimpleType[4451-4471]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -313,6 +377,30 @@
     "right" : "return null;",
     "info" : "ReturnStatement[5573-5585]:ReturnStatement[6031-6043]"
   }, {
+    "left" : "/**\n    * This method will return a borrowed object to the bag.  Objects\n    * that are borrowed from the bag but never \"requited\" will result\n    * in a memory leak.\n    *\n    * @param bagEntry the value to return to the bag\n    * @throws NullPointerException if value is null\n    * @throws IllegalStateException if the requited value was not borrowed from the bag\n    */",
+    "right" : "/**\n    * This method will return a borrowed object to the bag.  Objects\n    * that are borrowed from the bag but never \"requited\" will result\n    * in a memory leak.\n    *\n    * @param bagEntry the value to return to the bag\n    * @throws NullPointerException if value is null\n    * @throws IllegalStateException if the requited value was not borrowed from the bag\n    */",
+    "info" : "Javadoc[5595-5967]:Javadoc[6053-6425]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[5971-6001]:SingleMemberAnnotation[6429-6459]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6005-6011]:Modifier[6463-6469]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6012-6016]:PrimitiveType[6470-6474]"
+  }, {
+    "left" : "requite",
+    "right" : "requite",
+    "info" : "SimpleName[6017-6024]:SimpleName[6475-6482]"
+  }, {
+    "left" : "final T bagEntry",
+    "right" : "final T bagEntry",
+    "info" : "SingleVariableDeclaration[6025-6041]:SingleVariableDeclaration[6483-6499]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6046-6493]:Block[6504-6951]"
@@ -353,6 +441,26 @@
     "right" : "LOGGER.warn(\"Attempt to remove an object from the bag that does not exist: {}\", bagEntry);",
     "info" : "ExpressionStatement[6390-6480]:ExpressionStatement[6848-6938]"
   }, {
+    "left" : "/**\n    * Add a new object to the bag for others to borrow.\n    *\n    * @param bagEntry an object to add to the bag\n    */",
+    "right" : "/**\n    * Add a new object to the bag for others to borrow.\n    *\n    * @param bagEntry an object to add to the bag\n    */",
+    "info" : "Javadoc[6498-6620]:Javadoc[6956-7078]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6624-6630]:Modifier[7082-7088]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6631-6635]:PrimitiveType[7089-7093]"
+  }, {
+    "left" : "add",
+    "right" : "add",
+    "info" : "SimpleName[6636-6639]:SimpleName[7094-7097]"
+  }, {
+    "left" : "final T bagEntry",
+    "right" : "final T bagEntry",
+    "info" : "SingleVariableDeclaration[6640-6656]:SingleVariableDeclaration[7098-7114]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6661-6919]:Block[7119-7377]"
@@ -380,6 +488,26 @@
     "left" : "synchronizer.signal();",
     "right" : "synchronizer.signal();",
     "info" : "ExpressionStatement[6892-6914]:ExpressionStatement[7350-7372]"
+  }, {
+    "left" : "/**\n    * Remove a value from the bag.  This method should only be called\n    * with objects obtained by <code>borrow(long, TimeUnit)</code> or <code>reserve(T)</code>\n    *\n    * @param bagEntry the value to remove\n    * @return true if the entry was removed, false otherwise\n    * @throws IllegalStateException if an attempt is made to remove an object\n    *         from the bag that was not borrowed or reserved first\n    */",
+    "right" : "/**\n    * Remove a value from the bag.  This method should only be called\n    * with objects obtained by <code>borrow(long, TimeUnit)</code> or <code>reserve(T)</code>\n    *\n    * @param bagEntry the value to remove\n    * @return true if the entry was removed, false otherwise\n    * @throws IllegalStateException if an attempt is made to remove an object\n    *         from the bag that was not borrowed or reserved first\n    */",
+    "info" : "Javadoc[6924-7352]:Javadoc[7382-7810]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7356-7362]:Modifier[7814-7820]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[7363-7370]:PrimitiveType[7821-7828]"
+  }, {
+    "left" : "remove",
+    "right" : "remove",
+    "info" : "SimpleName[7371-7377]:SimpleName[7829-7835]"
+  }, {
+    "left" : "final T bagEntry",
+    "right" : "final T bagEntry",
+    "info" : "SingleVariableDeclaration[7378-7394]:SingleVariableDeclaration[7836-7852]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -421,6 +549,26 @@
     "right" : "return removed;",
     "info" : "ReturnStatement[7904-7919]:ReturnStatement[8362-8377]"
   }, {
+    "left" : "/**\n    * Close the bag to further adds.\n    */",
+    "right" : "/**\n    * Close the bag to further adds.\n    */",
+    "info" : "Javadoc[7929-7976]:Javadoc[8387-8434]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7980-7989]:MarkerAnnotation[8438-8447]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7993-7999]:Modifier[8451-8457]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[8000-8004]:PrimitiveType[8458-8462]"
+  }, {
+    "left" : "close",
+    "right" : "close",
+    "info" : "SimpleName[8005-8010]:SimpleName[8463-8468]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[8016-8043]:Block[8474-8501]"
@@ -428,6 +576,26 @@
     "left" : "closed = true;",
     "right" : "closed = true;",
     "info" : "ExpressionStatement[8024-8038]:ExpressionStatement[8482-8496]"
+  }, {
+    "left" : "/**\n    * This method provides a \"snapshot\" in time of the BagEntry\n    * items in the bag in the specified state.  It does not \"lock\"\n    * or reserve items in any way.  Call <code>reserve(T)</code>\n    * on items in list before performing any action on them.\n    *\n    * @param state one of the {@link IConcurrentBagEntry} states\n    * @return a possibly empty list of objects having the state specified\n    */",
+    "right" : "/**\n    * This method provides a \"snapshot\" in time of the BagEntry\n    * items in the bag in the specified state.  It does not \"lock\"\n    * or reserve items in any way.  Call <code>reserve(T)</code>\n    * on items in list before performing any action on them.\n    *\n    * @param state one of the {@link IConcurrentBagEntry} states\n    * @return a possibly empty list of objects having the state specified\n    */",
+    "info" : "Javadoc[8048-8460]:Javadoc[8506-8918]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[8464-8470]:Modifier[8922-8928]"
+  }, {
+    "left" : "List<T>",
+    "right" : "List<T>",
+    "info" : "ParameterizedType[8471-8478]:ParameterizedType[8929-8936]"
+  }, {
+    "left" : "values",
+    "right" : "values",
+    "info" : "SimpleName[8479-8485]:SimpleName[8937-8943]"
+  }, {
+    "left" : "final int state",
+    "right" : "final int state",
+    "info" : "SingleVariableDeclaration[8486-8501]:SingleVariableDeclaration[8944-8959]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -461,6 +629,26 @@
     "right" : "return list;",
     "info" : "ReturnStatement[8729-8741]:ReturnStatement[9187-9199]"
   }, {
+    "left" : "/**\n    * This method provides a \"snapshot\" in time of the bag items.  It\n    * does not \"lock\" or reserve items in any way.  Call <code>reserve(T)</code>\n    * on items in the list, or understand the concurrency implications of\n    * modifying items, before performing any action on them.\n    *\n    * @return a possibly empty list of (all) bag items\n    */",
+    "right" : "/**\n    * This method provides a \"snapshot\" in time of the bag items.  It\n    * does not \"lock\" or reserve items in any way.  Call <code>reserve(T)</code>\n    * on items in the list, or understand the concurrency implications of\n    * modifying items, before performing any action on them.\n    *\n    * @return a possibly empty list of (all) bag items\n    */",
+    "info" : "Javadoc[8751-9108]:Javadoc[9209-9566]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[9112-9142]:SingleMemberAnnotation[9570-9600]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[9146-9152]:Modifier[9604-9610]"
+  }, {
+    "left" : "List<T>",
+    "right" : "List<T>",
+    "info" : "ParameterizedType[9153-9160]:ParameterizedType[9611-9618]"
+  }, {
+    "left" : "values",
+    "right" : "values",
+    "info" : "SimpleName[9161-9167]:SimpleName[9619-9625]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[9173-9222]:Block[9631-9680]"
@@ -469,6 +657,26 @@
     "right" : "return (List<T>) sharedList.clone();",
     "info" : "ReturnStatement[9181-9217]:ReturnStatement[9639-9675]"
   }, {
+    "left" : "/**\n    * The method is used to make an item in the bag \"unavailable\" for\n    * borrowing.  It is primarily used when wanting to operate on items\n    * returned by the <code>values(int)</code> method.  Items that are\n    * reserved can be removed from the bag via <code>remove(T)</code>\n    * without the need to unreserve them.  Items that are not removed\n    * from the bag can be make available for borrowing again by calling\n    * the <code>unreserve(T)</code> method.\n    *\n    * @param bagEntry the item to reserve\n    * @return true if the item was able to be reserved, false otherwise\n    */",
+    "right" : "/**\n    * The method is used to make an item in the bag \"unavailable\" for\n    * borrowing.  It is primarily used when wanting to operate on items\n    * returned by the <code>values(int)</code> method.  Items that are\n    * reserved can be removed from the bag via <code>remove(T)</code>\n    * without the need to unreserve them.  Items that are not removed\n    * from the bag can be make available for borrowing again by calling\n    * the <code>unreserve(T)</code> method.\n    *\n    * @param bagEntry the item to reserve\n    * @return true if the item was able to be reserved, false otherwise\n    */",
+    "info" : "Javadoc[9227-9826]:Javadoc[9685-10284]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[9830-9836]:Modifier[10288-10294]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[9837-9844]:PrimitiveType[10295-10302]"
+  }, {
+    "left" : "reserve",
+    "right" : "reserve",
+    "info" : "SimpleName[9845-9852]:SimpleName[10303-10310]"
+  }, {
+    "left" : "final T bagEntry",
+    "right" : "final T bagEntry",
+    "info" : "SingleVariableDeclaration[9853-9869]:SingleVariableDeclaration[10311-10327]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[9874-9959]:Block[10332-10417]"
@@ -476,6 +684,26 @@
     "left" : "return bagEntry.state().compareAndSet(STATE_NOT_IN_USE, STATE_RESERVED);",
     "right" : "return bagEntry.state().compareAndSet(STATE_NOT_IN_USE, STATE_RESERVED);",
     "info" : "ReturnStatement[9882-9954]:ReturnStatement[10340-10412]"
+  }, {
+    "left" : "/**\n    * This method is used to make an item reserved via <code>reserve(T)</code>\n    * available again for borrowing.\n    *\n    * @param bagEntry the item to unreserve\n    */",
+    "right" : "/**\n    * This method is used to make an item reserved via <code>reserve(T)</code>\n    * available again for borrowing.\n    *\n    * @param bagEntry the item to unreserve\n    */",
+    "info" : "Javadoc[9964-10140]:Javadoc[10422-10598]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10144-10150]:Modifier[10602-10608]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[10151-10155]:PrimitiveType[10609-10613]"
+  }, {
+    "left" : "unreserve",
+    "right" : "unreserve",
+    "info" : "SimpleName[10156-10165]:SimpleName[10614-10623]"
+  }, {
+    "left" : "final T bagEntry",
+    "right" : "final T bagEntry",
+    "info" : "SingleVariableDeclaration[10166-10182]:SingleVariableDeclaration[10624-10640]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -501,6 +729,22 @@
     "right" : "LOGGER.warn(\"Attempt to relinquish an object to the bag that was not reserved: {}\", bagEntry);",
     "info" : "ExpressionStatement[10329-10423]:ExpressionStatement[10787-10881]"
   }, {
+    "left" : "/**\n    * Get the number of threads pending (waiting) for an item from the\n    * bag to become available.\n    *\n    * @return the number of threads waiting for items from the bag\n    */",
+    "right" : "/**\n    * Get the number of threads pending (waiting) for an item from the\n    * bag to become available.\n    *\n    * @return the number of threads waiting for items from the bag\n    */",
+    "info" : "Javadoc[10441-10626]:Javadoc[10899-11084]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10630-10636]:Modifier[11088-11094]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[10637-10640]:PrimitiveType[11095-11098]"
+  }, {
+    "left" : "getPendingQueue",
+    "right" : "getPendingQueue",
+    "info" : "SimpleName[10641-10656]:SimpleName[11099-11114]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[10662-10712]:Block[11120-11170]"
@@ -508,6 +752,26 @@
     "left" : "return synchronizer.getQueueLength();",
     "right" : "return synchronizer.getQueueLength();",
     "info" : "ReturnStatement[10670-10707]:ReturnStatement[11128-11165]"
+  }, {
+    "left" : "/**\n    * Get a count of the number of items in the specified state at the time of this call.\n    *\n    * @param state the state of the items to count\n    * @return a count of how many items in the bag are in the specified state\n    */",
+    "right" : "/**\n    * Get a count of the number of items in the specified state at the time of this call.\n    *\n    * @param state the state of the items to count\n    * @return a count of how many items in the bag are in the specified state\n    */",
+    "info" : "Javadoc[10717-10952]:Javadoc[11175-11410]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10956-10962]:Modifier[11414-11420]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[10963-10966]:PrimitiveType[11421-11424]"
+  }, {
+    "left" : "getCount",
+    "right" : "getCount",
+    "info" : "SimpleName[10967-10975]:SimpleName[11425-11433]"
+  }, {
+    "left" : "final int state",
+    "right" : "final int state",
+    "info" : "SingleVariableDeclaration[10976-10991]:SingleVariableDeclaration[11434-11449]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -541,6 +805,22 @@
     "right" : "return count;",
     "info" : "ReturnStatement[11159-11172]:ReturnStatement[11617-11630]"
   }, {
+    "left" : "/**\n    * Get the total number of items in the bag.\n    *\n    * @return the number of items in the bag \n    */",
+    "right" : "/**\n    * Get the total number of items in the bag.\n    *\n    * @return the number of items in the bag \n    */",
+    "info" : "Javadoc[11182-11292]:Javadoc[11640-11750]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11296-11302]:Modifier[11754-11760]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[11303-11306]:PrimitiveType[11761-11764]"
+  }, {
+    "left" : "size",
+    "right" : "size",
+    "info" : "SimpleName[11307-11311]:SimpleName[11765-11769]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[11317-11355]:Block[11775-11813]"
@@ -548,6 +828,18 @@
     "left" : "return sharedList.size();",
     "right" : "return sharedList.size();",
     "info" : "ReturnStatement[11325-11350]:ReturnStatement[11783-11808]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11360-11366]:Modifier[11818-11824]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[11367-11371]:PrimitiveType[11825-11829]"
+  }, {
+    "left" : "dumpState",
+    "right" : "dumpState",
+    "info" : "SimpleName[11372-11381]:SimpleName[11830-11839]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -564,6 +856,22 @@
     "left" : "LOGGER.info(bagEntry.toString());",
     "right" : "LOGGER.info(bagEntry.toString());",
     "info" : "ExpressionStatement[11436-11469]:ExpressionStatement[11894-11927]"
+  }, {
+    "left" : "/**\n    * Determine whether to use WeakReferences based on whether there is a\n    * custom ClassLoader implementation sitting between this class and the\n    * System ClassLoader.\n    *\n    * @return true if we should use WeakReferences in our ThreadLocals, false otherwise\n    */",
+    "right" : "/**\n    * Determine whether to use WeakReferences based on whether there is a\n    * custom ClassLoader implementation sitting between this class and the\n    * System ClassLoader.\n    *\n    * @return true if we should use WeakReferences in our ThreadLocals, false otherwise\n    */",
+    "info" : "Javadoc[11487-11766]:Javadoc[11945-12224]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[11770-11777]:Modifier[12228-12235]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[11778-11785]:PrimitiveType[12236-12243]"
+  }, {
+    "left" : "useWeakThreadLocals",
+    "right" : "useWeakThreadLocals",
+    "info" : "SimpleName[11786-11805]:SimpleName[12244-12263]"
   }, {
     "left" : "{}",
     "right" : "{}",

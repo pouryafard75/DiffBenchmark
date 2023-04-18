@@ -117,6 +117,38 @@
     "info" : "MethodDeclaration[24903-25567]:MethodDeclaration[24773-25391]"
   } ],
   "mappings" : [ {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6138-6147]:MarkerAnnotation[6213-6222]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6149-6155]:Modifier[6224-6230]"
+  }, {
+    "left" : "PigStats",
+    "right" : "PigStats",
+    "info" : "SimpleType[6156-6164]:SimpleType[6231-6239]"
+  }, {
+    "left" : "launchPig",
+    "right" : "launchPig",
+    "info" : "SimpleName[6165-6174]:SimpleName[6240-6249]"
+  }, {
+    "left" : "PhysicalPlan physicalPlan",
+    "right" : "PhysicalPlan physicalPlan",
+    "info" : "SingleVariableDeclaration[6175-6200]:SingleVariableDeclaration[6250-6275]"
+  }, {
+    "left" : "String grpName",
+    "right" : "String grpName",
+    "info" : "SingleVariableDeclaration[6202-6216]:SingleVariableDeclaration[6277-6291]"
+  }, {
+    "left" : "PigContext pigContext",
+    "right" : "PigContext pigContext",
+    "info" : "SingleVariableDeclaration[6221-6242]:SingleVariableDeclaration[6296-6317]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[6251-6260]:SimpleType[6326-6335]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6261-9287]:Block[6336-9149]"
@@ -317,6 +349,30 @@
     "right" : "return sparkStats;",
     "info" : "ReturnStatement[9266-9284]:ReturnStatement[9128-9146]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[9293-9300]:Modifier[9155-9162]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[9301-9305]:PrimitiveType[9163-9167]"
+  }, {
+    "left" : "optimize",
+    "right" : "optimize",
+    "info" : "SimpleName[9306-9314]:SimpleName[9168-9176]"
+  }, {
+    "left" : "PigContext pc",
+    "right" : "PigContext pc",
+    "info" : "SingleVariableDeclaration[9315-9328]:SingleVariableDeclaration[9177-9190]"
+  }, {
+    "left" : "SparkOperPlan plan",
+    "right" : "SparkOperPlan plan",
+    "info" : "SingleVariableDeclaration[9330-9348]:SingleVariableDeclaration[9192-9210]"
+  }, {
+    "left" : "VisitorException",
+    "right" : "VisitorException",
+    "info" : "SimpleType[9357-9373]:SimpleType[9219-9235]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[9374-9924]:Block[9236-9786]"
@@ -361,6 +417,26 @@
     "right" : "accum.visit();",
     "info" : "ExpressionStatement[9894-9908]:ExpressionStatement[9756-9770]"
   }, {
+    "left" : "/**\n\t * In Spark, currently only async actions return job id. There is no async\n\t * equivalent of actions like saveAsNewAPIHadoopFile()\n\t * \n\t * The only other way to get a job id is to register a \"job group ID\" with\n\t * the spark context and request all job ids corresponding to that job group\n\t * via getJobIdsForGroup.\n\t * \n\t * However getJobIdsForGroup does not guarantee the order of the elements in\n\t * it's result.\n\t * \n\t * This method simply returns the previously unseen job ids.\n\t * \n\t * @param seenJobIDs\n\t *            job ids in the job group that are already seen\n\t * @return Spark job ids not seen before\n\t */",
+    "right" : "/**\n\t * In Spark, currently only async actions return job id. There is no async\n\t * equivalent of actions like saveAsNewAPIHadoopFile()\n\t * \n\t * The only other way to get a job id is to register a \"job group ID\" with\n\t * the spark context and request all job ids corresponding to that job group\n\t * via getJobIdsForGroup.\n\t * \n\t * However getJobIdsForGroup does not guarantee the order of the elements in\n\t * it's result.\n\t * \n\t * This method simply returns the previously unseen job ids.\n\t * \n\t * @param seenJobIDs\n\t *            job ids in the job group that are already seen\n\t * @return Spark job ids not seen before\n\t */",
+    "info" : "Javadoc[9927-10551]:Javadoc[9789-10413]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[10553-10560]:Modifier[10415-10422]"
+  }, {
+    "left" : "List<Integer>",
+    "right" : "List<Integer>",
+    "info" : "ParameterizedType[10561-10574]:ParameterizedType[10423-10436]"
+  }, {
+    "left" : "getJobIDs",
+    "right" : "getJobIDs",
+    "info" : "SimpleName[10575-10584]:SimpleName[10437-10446]"
+  }, {
+    "left" : "Set<Integer> seenJobIDs",
+    "right" : "Set<Integer> seenJobIDs",
+    "info" : "SingleVariableDeclaration[10585-10608]:SingleVariableDeclaration[10447-10470]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[10610-11126]:Block[10472-10988]"
@@ -396,6 +472,18 @@
     "left" : "return unseenJobIDs;",
     "right" : "return unseenJobIDs;",
     "info" : "ReturnStatement[11103-11123]:ReturnStatement[10965-10985]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[11129-11136]:Modifier[10991-10998]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[11137-11141]:PrimitiveType[10999-11003]"
+  }, {
+    "left" : "cleanUpSparkJob",
+    "right" : "cleanUpSparkJob",
+    "info" : "SimpleName[11142-11157]:SimpleName[11004-11019]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -497,9 +585,21 @@
     "right" : "LOG.info(String.format(\"delete cache file result: %b\",\n\t\t\t\t\t\t\t\tdeleteFile.delete()));",
     "info" : "ExpressionStatement[12125-12210]:ExpressionStatement[11987-12072]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[12238-12245]:Modifier[12100-12107]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12246-12250]:PrimitiveType[12108-12112]"
+  }, {
     "left" : "startSparkJob",
     "right" : "addFilesToSparkJob",
     "info" : "SimpleName[12251-12264]:SimpleName[12113-12131]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[12274-12285]:SimpleType[12141-12152]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -528,6 +628,26 @@
     "left" : "cacheFiles(cacheFiles);",
     "right" : "cacheFiles(cacheFiles);",
     "info" : "ExpressionStatement[12535-12558]:ExpressionStatement[12406-12429]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[12566-12573]:Modifier[12436-12443]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12574-12578]:PrimitiveType[12444-12448]"
+  }, {
+    "left" : "shipFiles",
+    "right" : "shipFiles",
+    "info" : "SimpleName[12579-12588]:SimpleName[12449-12458]"
+  }, {
+    "left" : "String shipFiles",
+    "right" : "String shipFiles",
+    "info" : "SingleVariableDeclaration[12589-12605]:SingleVariableDeclaration[12459-12475]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[12617-12628]:SimpleType[12487-12498]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -568,6 +688,26 @@
     "left" : "addJarToSparkJobWorkingDirectory(shipFile,shipFile.getName());",
     "right" : "addJarToSparkJobWorkingDirectory(shipFile,shipFile.getName());",
     "info" : "ExpressionStatement[12851-12913]:ExpressionStatement[12721-12783]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[12934-12941]:Modifier[12804-12811]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12942-12946]:PrimitiveType[12812-12816]"
+  }, {
+    "left" : "cacheFiles",
+    "right" : "cacheFiles",
+    "info" : "SimpleName[12947-12957]:SimpleName[12817-12827]"
+  }, {
+    "left" : "String cacheFiles",
+    "right" : "String cacheFiles",
+    "info" : "SingleVariableDeclaration[12958-12975]:SingleVariableDeclaration[12828-12845]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[12984-12995]:SimpleType[12854-12865]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -628,6 +768,30 @@
     "left" : "addJarToSparkJobWorkingDirectory(tmpFile, fileName);",
     "right" : "addJarToSparkJobWorkingDirectory(tmpFile, fileName);",
     "info" : "ExpressionStatement[13552-13604]:ExpressionStatement[13422-13474]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[13622-13629]:Modifier[13492-13499]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[13630-13634]:PrimitiveType[13500-13504]"
+  }, {
+    "left" : "addJarToSparkJobWorkingDirectory",
+    "right" : "addJarToSparkJobWorkingDirectory",
+    "info" : "SimpleName[13635-13667]:SimpleName[13505-13537]"
+  }, {
+    "left" : "File jarFile",
+    "right" : "File jarFile",
+    "info" : "SingleVariableDeclaration[13668-13680]:SingleVariableDeclaration[13538-13550]"
+  }, {
+    "left" : "String jarName",
+    "right" : "String jarName",
+    "info" : "SingleVariableDeclaration[13682-13696]:SingleVariableDeclaration[13552-13566]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[13705-13716]:SimpleType[13575-13586]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -701,6 +865,22 @@
     "right" : "sparkContext.addFile(jarFile.toURI().toURL()\n                    .toExternalForm());",
     "info" : "ExpressionStatement[14746-14830]:ExpressionStatement[14616-14700]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[14849-14856]:Modifier[14719-14726]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[14857-14863]:SimpleType[14727-14733]"
+  }, {
+    "left" : "extractFileName",
+    "right" : "extractFileName",
+    "info" : "SimpleName[14864-14879]:SimpleName[14734-14749]"
+  }, {
+    "left" : "String cacheFileUrl",
+    "right" : "String cacheFileUrl",
+    "info" : "SingleVariableDeclaration[14880-14899]:SingleVariableDeclaration[14750-14769]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[14901-15240]:Block[14771-15110]"
@@ -736,6 +916,22 @@
     "left" : "return fileName;",
     "right" : "return fileName;",
     "info" : "ReturnStatement[15217-15233]:ReturnStatement[15087-15103]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[15243-15250]:Modifier[15113-15120]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[15251-15257]:SimpleType[15121-15127]"
+  }, {
+    "left" : "extractFileUrl",
+    "right" : "extractFileUrl",
+    "info" : "SimpleName[15258-15272]:SimpleName[15128-15142]"
+  }, {
+    "left" : "String cacheFileUrl",
+    "right" : "String cacheFileUrl",
+    "info" : "SingleVariableDeclaration[15273-15292]:SingleVariableDeclaration[15143-15162]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -773,6 +969,38 @@
     "right" : "return fileName;",
     "info" : "ReturnStatement[15610-15626]:ReturnStatement[15480-15496]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[15636-15643]:Modifier[15506-15513]"
+  }, {
+    "left" : "SparkOperPlan",
+    "right" : "SparkOperPlan",
+    "info" : "SimpleType[15644-15657]:SimpleType[15514-15527]"
+  }, {
+    "left" : "compile",
+    "right" : "compile",
+    "info" : "SimpleName[15658-15665]:SimpleName[15528-15535]"
+  }, {
+    "left" : "PhysicalPlan physicalPlan",
+    "right" : "PhysicalPlan physicalPlan",
+    "info" : "SingleVariableDeclaration[15666-15691]:SingleVariableDeclaration[15536-15561]"
+  }, {
+    "left" : "PigContext pigContext",
+    "right" : "PigContext pigContext",
+    "info" : "SingleVariableDeclaration[15696-15717]:SingleVariableDeclaration[15566-15587]"
+  }, {
+    "left" : "PlanException",
+    "right" : "PlanException",
+    "info" : "SimpleType[15726-15739]:SimpleType[15596-15609]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[15741-15752]:SimpleType[15611-15622]"
+  }, {
+    "left" : "VisitorException",
+    "right" : "VisitorException",
+    "info" : "SimpleType[15757-15773]:SimpleType[15627-15643]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[15774-16157]:Block[15644-16027]"
@@ -804,6 +1032,30 @@
     "left" : "return sparkPlan;",
     "right" : "return sparkPlan;",
     "info" : "ReturnStatement[16137-16154]:ReturnStatement[16007-16024]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[16160-16167]:Modifier[16030-16037]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[16168-16174]:Modifier[16038-16044]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16175-16179]:PrimitiveType[16045-16049]"
+  }, {
+    "left" : "startSparkIfNeeded",
+    "right" : "startSparkIfNeeded",
+    "info" : "SimpleName[16180-16198]:SimpleName[16050-16068]"
+  }, {
+    "left" : "PigContext pc",
+    "right" : "PigContext pc",
+    "info" : "SingleVariableDeclaration[16199-16212]:SingleVariableDeclaration[16069-16082]"
+  }, {
+    "left" : "PigException",
+    "right" : "PigException",
+    "info" : "SimpleType[16221-16233]:SimpleType[16091-16103]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -917,6 +1169,18 @@
     "right" : "sparkContext.sc().addSparkListener(jobMetricsListener);",
     "info" : "ExpressionStatement[17428-17483]:ExpressionStatement[17298-17353]"
   }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[17568-17574]:Modifier[17438-17444]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17575-17579]:PrimitiveType[17445-17449]"
+  }, {
+    "left" : "stopSpark",
+    "right" : "stopSpark",
+    "info" : "SimpleName[17580-17589]:SimpleName[17450-17459]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17592-17678]:Block[17462-17548]"
@@ -936,6 +1200,42 @@
     "left" : "sparkContext = null;",
     "right" : "sparkContext = null;",
     "info" : "ExpressionStatement[17651-17671]:ExpressionStatement[17521-17541]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[17681-17688]:Modifier[17551-17558]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17689-17693]:PrimitiveType[17559-17563]"
+  }, {
+    "left" : "sparkPlanToRDD",
+    "right" : "sparkPlanToRDD",
+    "info" : "SimpleName[17694-17708]:SimpleName[17564-17578]"
+  }, {
+    "left" : "SparkOperPlan sparkPlan",
+    "right" : "SparkOperPlan sparkPlan",
+    "info" : "SingleVariableDeclaration[17709-17732]:SingleVariableDeclaration[17579-17602]"
+  }, {
+    "left" : "Map<Class<? extends PhysicalOperator>, RDDConverter> convertMap",
+    "right" : "Map<Class<? extends PhysicalOperator>, RDDConverter> convertMap",
+    "info" : "SingleVariableDeclaration[17737-17800]:SingleVariableDeclaration[17607-17670]"
+  }, {
+    "left" : "SparkPigStats sparkStats",
+    "right" : "SparkPigStats sparkStats",
+    "info" : "SingleVariableDeclaration[17805-17829]:SingleVariableDeclaration[17675-17699]"
+  }, {
+    "left" : "JobConf jobConf",
+    "right" : "JobConf jobConf",
+    "info" : "SingleVariableDeclaration[17831-17846]:SingleVariableDeclaration[17701-17716]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[17858-17869]:SimpleType[17728-17739]"
+  }, {
+    "left" : "InterruptedException",
+    "right" : "InterruptedException",
+    "info" : "SimpleType[17871-17891]:SimpleType[17741-17761]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1001,6 +1301,26 @@
     "right" : "sparkOperToRDD(sparkPlan, leaf, sparkOpToRdds,\n\t\t\t\t\tphysicalOpToRdds, convertMap, seenJobIDs, sparkStats,\n\t\t\t\t\tjobConf);",
     "info" : "ExpressionStatement[18440-18560]:ExpressionStatement[18310-18430]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[18573-18580]:Modifier[18443-18450]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[18581-18585]:PrimitiveType[18451-18455]"
+  }, {
+    "left" : "addUDFJarsToSparkJobWorkingDirectory",
+    "right" : "addUDFJarsToSparkJobWorkingDirectory",
+    "info" : "SimpleName[18586-18622]:SimpleName[18456-18492]"
+  }, {
+    "left" : "SparkOperator leaf",
+    "right" : "SparkOperator leaf",
+    "info" : "SingleVariableDeclaration[18623-18641]:SingleVariableDeclaration[18493-18511]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[18650-18661]:SimpleType[18520-18531]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[18662-19077]:Block[18532-18947]"
@@ -1044,6 +1364,58 @@
     "left" : "addJarToSparkJobWorkingDirectory(jarFile, jarFile.getName());",
     "right" : "addJarToSparkJobWorkingDirectory(jarFile, jarFile.getName());",
     "info" : "ExpressionStatement[18968-19029]:ExpressionStatement[18838-18899]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[19083-19090]:Modifier[18953-18960]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[19091-19095]:PrimitiveType[18961-18965]"
+  }, {
+    "left" : "sparkOperToRDD",
+    "right" : "sparkOperToRDD",
+    "info" : "SimpleName[19096-19110]:SimpleName[18966-18980]"
+  }, {
+    "left" : "SparkOperPlan sparkPlan",
+    "right" : "SparkOperPlan sparkPlan",
+    "info" : "SingleVariableDeclaration[19111-19134]:SingleVariableDeclaration[18981-19004]"
+  }, {
+    "left" : "SparkOperator sparkOperator",
+    "right" : "SparkOperator sparkOperator",
+    "info" : "SingleVariableDeclaration[19139-19166]:SingleVariableDeclaration[19009-19036]"
+  }, {
+    "left" : "Map<OperatorKey, RDD<Tuple>> sparkOpRdds",
+    "right" : "Map<OperatorKey, RDD<Tuple>> sparkOpRdds",
+    "info" : "SingleVariableDeclaration[19171-19211]:SingleVariableDeclaration[19041-19081]"
+  }, {
+    "left" : "Map<OperatorKey, RDD<Tuple>> physicalOpRdds",
+    "right" : "Map<OperatorKey, RDD<Tuple>> physicalOpRdds",
+    "info" : "SingleVariableDeclaration[19216-19259]:SingleVariableDeclaration[19086-19129]"
+  }, {
+    "left" : "Map<Class<? extends PhysicalOperator>, RDDConverter> convertMap",
+    "right" : "Map<Class<? extends PhysicalOperator>, RDDConverter> convertMap",
+    "info" : "SingleVariableDeclaration[19264-19327]:SingleVariableDeclaration[19134-19197]"
+  }, {
+    "left" : "Set<Integer> seenJobIDs",
+    "right" : "Set<Integer> seenJobIDs",
+    "info" : "SingleVariableDeclaration[19332-19355]:SingleVariableDeclaration[19202-19225]"
+  }, {
+    "left" : "SparkPigStats sparkStats",
+    "right" : "SparkPigStats sparkStats",
+    "info" : "SingleVariableDeclaration[19357-19381]:SingleVariableDeclaration[19227-19251]"
+  }, {
+    "left" : "JobConf conf",
+    "right" : "JobConf conf",
+    "info" : "SingleVariableDeclaration[19383-19395]:SingleVariableDeclaration[19253-19265]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[19407-19418]:SimpleType[19277-19288]"
+  }, {
+    "left" : "InterruptedException",
+    "right" : "InterruptedException",
+    "info" : "SimpleType[19420-19440]:SimpleType[19290-19310]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1217,6 +1589,42 @@
     "right" : "LOG.info(String\n\t\t\t\t\t.format(String.format(\"sparkOperator:{} does not have POStore or\" +\n\t\t\t\t\t\t\t\t\t\" sparkOperator has more than 1 POStore. {} is the size of POStore.\"),\n\t\t\t\t\t\t\tsparkOperator.name(), poStores.size()));",
     "info" : "ExpressionStatement[21662-21878]:ExpressionStatement[21532-21748]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[21888-21895]:Modifier[21758-21765]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[21896-21900]:PrimitiveType[21766-21770]"
+  }, {
+    "left" : "physicalToRDD",
+    "right" : "physicalToRDD",
+    "info" : "SimpleName[21901-21914]:SimpleName[21771-21784]"
+  }, {
+    "left" : "PhysicalPlan plan",
+    "right" : "PhysicalPlan plan",
+    "info" : "SingleVariableDeclaration[21915-21932]:SingleVariableDeclaration[21785-21802]"
+  }, {
+    "left" : "PhysicalOperator physicalOperator",
+    "right" : "PhysicalOperator physicalOperator",
+    "info" : "SingleVariableDeclaration[21937-21970]:SingleVariableDeclaration[21807-21840]"
+  }, {
+    "left" : "Map<OperatorKey, RDD<Tuple>> rdds",
+    "right" : "Map<OperatorKey, RDD<Tuple>> rdds",
+    "info" : "SingleVariableDeclaration[21975-22008]:SingleVariableDeclaration[21845-21878]"
+  }, {
+    "left" : "List<RDD<Tuple>> rddsFromPredeSparkOper",
+    "right" : "List<RDD<Tuple>> rddsFromPredeSparkOper",
+    "info" : "SingleVariableDeclaration[22013-22052]:SingleVariableDeclaration[21883-21922]"
+  }, {
+    "left" : "Map<Class<? extends PhysicalOperator>, RDDConverter> convertMap",
+    "right" : "Map<Class<? extends PhysicalOperator>, RDDConverter> convertMap",
+    "info" : "SingleVariableDeclaration[22057-22120]:SingleVariableDeclaration[21927-21990]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[22132-22143]:SimpleType[22002-22013]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[22144-23478]:Block[22014-23348]"
@@ -1325,6 +1733,46 @@
     "right" : "rdds.put(physicalOperator.getOperatorKey(), nextRDD);",
     "info" : "ExpressionStatement[23422-23475]:ExpressionStatement[23292-23345]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[23481-23490]:MarkerAnnotation[23351-23360]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[23492-23498]:Modifier[23362-23368]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[23499-23503]:PrimitiveType[23369-23373]"
+  }, {
+    "left" : "explain",
+    "right" : "explain",
+    "info" : "SimpleName[23504-23511]:SimpleName[23374-23381]"
+  }, {
+    "left" : "PhysicalPlan pp",
+    "right" : "PhysicalPlan pp",
+    "info" : "SingleVariableDeclaration[23512-23527]:SingleVariableDeclaration[23382-23397]"
+  }, {
+    "left" : "PigContext pc",
+    "right" : "PigContext pc",
+    "info" : "SingleVariableDeclaration[23529-23542]:SingleVariableDeclaration[23399-23412]"
+  }, {
+    "left" : "PrintStream ps",
+    "right" : "PrintStream ps",
+    "info" : "SingleVariableDeclaration[23544-23558]:SingleVariableDeclaration[23414-23428]"
+  }, {
+    "left" : "String format",
+    "right" : "String format",
+    "info" : "SingleVariableDeclaration[23563-23576]:SingleVariableDeclaration[23433-23446]"
+  }, {
+    "left" : "boolean verbose",
+    "right" : "boolean verbose",
+    "info" : "SingleVariableDeclaration[23578-23593]:SingleVariableDeclaration[23448-23463]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[23602-23613]:SimpleType[23472-23483]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[23614-23706]:Block[23484-23576]"
@@ -1336,6 +1784,38 @@
     "left" : "explain(sparkPlan, ps, format, verbose);",
     "right" : "explain(sparkPlan, ps, format, verbose);",
     "info" : "ExpressionStatement[23663-23703]:ExpressionStatement[23533-23573]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[23709-23716]:Modifier[23579-23586]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[23717-23721]:PrimitiveType[23587-23591]"
+  }, {
+    "left" : "explain",
+    "right" : "explain",
+    "info" : "SimpleName[23722-23729]:SimpleName[23592-23599]"
+  }, {
+    "left" : "SparkOperPlan sparkPlan",
+    "right" : "SparkOperPlan sparkPlan",
+    "info" : "SingleVariableDeclaration[23730-23753]:SingleVariableDeclaration[23600-23623]"
+  }, {
+    "left" : "PrintStream ps",
+    "right" : "PrintStream ps",
+    "info" : "SingleVariableDeclaration[23755-23769]:SingleVariableDeclaration[23625-23639]"
+  }, {
+    "left" : "String format",
+    "right" : "String format",
+    "info" : "SingleVariableDeclaration[23776-23789]:SingleVariableDeclaration[23646-23659]"
+  }, {
+    "left" : "boolean verbose",
+    "right" : "boolean verbose",
+    "info" : "SingleVariableDeclaration[23791-23806]:SingleVariableDeclaration[23661-23676]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[23819-23830]:SimpleType[23689-23700]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1429,13 +1909,77 @@
     "right" : "throw new IOException(\n\t\t\t\t\t\"Non-text output of explain is not supported.\");",
     "info" : "ThrowStatement[24578-24654]:ThrowStatement[24448-24524]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[24664-24673]:MarkerAnnotation[24534-24543]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[24675-24681]:Modifier[24545-24551]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[24682-24686]:PrimitiveType[24552-24556]"
+  }, {
+    "left" : "kill",
+    "right" : "kill",
+    "info" : "SimpleName[24687-24691]:SimpleName[24557-24561]"
+  }, {
+    "left" : "BackendException",
+    "right" : "BackendException",
+    "info" : "SimpleType[24701-24717]:SimpleType[24571-24587]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[24718-24760]:Block[24588-24630]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[24763-24772]:MarkerAnnotation[24633-24642]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[24774-24780]:Modifier[24644-24650]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[24781-24785]:PrimitiveType[24651-24655]"
+  }, {
+    "left" : "killJob",
+    "right" : "killJob",
+    "info" : "SimpleName[24786-24793]:SimpleName[24656-24663]"
+  }, {
+    "left" : "String jobID",
+    "right" : "String jobID",
+    "info" : "SingleVariableDeclaration[24794-24806]:SingleVariableDeclaration[24664-24676]"
+  }, {
+    "left" : "Configuration conf",
+    "right" : "Configuration conf",
+    "info" : "SingleVariableDeclaration[24808-24826]:SingleVariableDeclaration[24678-24696]"
+  }, {
+    "left" : "BackendException",
+    "right" : "BackendException",
+    "info" : "SimpleType[24838-24854]:SimpleType[24708-24724]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[24855-24897]:Block[24725-24767]"
+  }, {
+    "left" : "/**\n     * We store the value of udf.import.list in PigContext#properties.getProperty(\"spark.udf.import.list\") in spark mode.\n     * Later we will use PigContext#properties.getProperty(\"spark.udf.import.list\")in PigContext#writeObject.\n     * we don't save this value in PigContext#properties.getProperty(\"udf.import.list\")\n     * because this will cause OOM problem(detailed see PIG-4295).\n     * @param pigContext\n     */",
+    "right" : "/**\n     * We store the value of udf.import.list in PigContext#properties.getProperty(\"spark.udf.import.list\") in spark mode.\n     * Later we will use PigContext#properties.getProperty(\"spark.udf.import.list\")in PigContext#writeObject.\n     * we don't save this value in PigContext#properties.getProperty(\"udf.import.list\")\n     * because this will cause OOM problem(detailed see PIG-4295).\n     */",
+    "info" : "Javadoc[24903-25326]:Javadoc[24773-25171]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[25331-25338]:Modifier[25176-25183]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[25339-25343]:PrimitiveType[25184-25188]"
+  }, {
+    "left" : "saveUdfImportList",
+    "right" : "saveUdfImportList",
+    "info" : "SimpleName[25344-25361]:SimpleName[25189-25206]"
   }, {
     "left" : "{}",
     "right" : "{}",

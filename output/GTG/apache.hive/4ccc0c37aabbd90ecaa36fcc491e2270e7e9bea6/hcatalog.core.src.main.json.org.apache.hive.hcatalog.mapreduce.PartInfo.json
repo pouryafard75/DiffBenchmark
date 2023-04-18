@@ -109,6 +109,42 @@
     "info" : "MethodDeclaration[5756-8236]:MethodDeclaration[6120-8453]"
   } ],
   "mappings" : [ {
+    "left" : "/**\n   * Instantiates a new hcat partition info.\n   * @param partitionSchema the partition schema\n   * @param storageHandler the storage handler\n   * @param location the location\n   * @param hcatProperties hcat-specific properties at the partition\n   * @param jobProperties the job properties\n   * @param tableInfo the table information\n   */",
+    "right" : "/**\n   * Instantiates a new hcat partition info.\n   * @param partitionSchema the partition schema\n   * @param storageHandler the storage handler\n   * @param location the location\n   * @param hcatProperties hcat-specific properties at the partition\n   * @param jobProperties the job properties\n   * @param tableInfo the table information\n   */",
+    "info" : "Javadoc[2323-2665]:Javadoc[2323-2665]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2668-2674]:Modifier[2668-2674]"
+  }, {
+    "left" : "PartInfo",
+    "right" : "PartInfo",
+    "info" : "SimpleName[2675-2683]:SimpleName[2675-2683]"
+  }, {
+    "left" : "HCatSchema partitionSchema",
+    "right" : "HCatSchema partitionSchema",
+    "info" : "SingleVariableDeclaration[2684-2710]:SingleVariableDeclaration[2684-2710]"
+  }, {
+    "left" : "HiveStorageHandler storageHandler",
+    "right" : "HiveStorageHandler storageHandler",
+    "info" : "SingleVariableDeclaration[2712-2745]:SingleVariableDeclaration[2712-2745]"
+  }, {
+    "left" : "String location",
+    "right" : "String location",
+    "info" : "SingleVariableDeclaration[2757-2772]:SingleVariableDeclaration[2757-2772]"
+  }, {
+    "left" : "Properties hcatProperties",
+    "right" : "Properties hcatProperties",
+    "info" : "SingleVariableDeclaration[2774-2799]:SingleVariableDeclaration[2774-2799]"
+  }, {
+    "left" : "Map<String, String> jobProperties",
+    "right" : "Map<String, String> jobProperties",
+    "info" : "SingleVariableDeclaration[2811-2844]:SingleVariableDeclaration[2811-2844]"
+  }, {
+    "left" : "HCatTableInfo tableInfo",
+    "right" : "HCatTableInfo tableInfo",
+    "info" : "SingleVariableDeclaration[2846-2869]:SingleVariableDeclaration[2846-2869]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2871-3367]:Block[2871-3367]"
@@ -149,6 +185,22 @@
     "right" : "this.outputFormatClassName = storageHandler.getOutputFormatClass().getName();",
     "info" : "ExpressionStatement[3286-3363]:ExpressionStatement[3286-3363]"
   }, {
+    "left" : "/**\n   * Gets the value of partitionSchema.\n   * @return the partitionSchema\n   */",
+    "right" : "/**\n   * Gets the value of partitionSchema.\n   * @return the partitionSchema\n   */",
+    "info" : "Javadoc[3371-3453]:Javadoc[3371-3453]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3456-3462]:Modifier[3456-3462]"
+  }, {
+    "left" : "HCatSchema",
+    "right" : "HCatSchema",
+    "info" : "SimpleType[3463-3473]:SimpleType[3463-3473]"
+  }, {
+    "left" : "getPartitionSchema",
+    "right" : "getPartitionSchema",
+    "info" : "SimpleName[3474-3492]:SimpleName[3474-3492]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3495-3528]:Block[3495-3528]"
@@ -156,6 +208,22 @@
     "left" : "return partitionSchema;",
     "right" : "return partitionSchema;",
     "info" : "ReturnStatement[3501-3524]:ReturnStatement[3501-3524]"
+  }, {
+    "left" : "/**\n   * @return the storage handler class name\n   */",
+    "right" : "/**\n   * @return the storage handler class name\n   */",
+    "info" : "Javadoc[3532-3585]:Javadoc[3532-3585]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3588-3594]:Modifier[3588-3594]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[3595-3601]:SimpleType[3595-3601]"
+  }, {
+    "left" : "getStorageHandlerClassName",
+    "right" : "getStorageHandlerClassName",
+    "info" : "SimpleName[3602-3628]:SimpleName[3602-3628]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -165,6 +233,22 @@
     "right" : "return storageHandlerClassName;",
     "info" : "ReturnStatement[3637-3668]:ReturnStatement[3637-3668]"
   }, {
+    "left" : "/**\n   * @return the inputFormatClassName\n   */",
+    "right" : "/**\n   * @return the inputFormatClassName\n   */",
+    "info" : "Javadoc[3676-3723]:Javadoc[3676-3723]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3726-3732]:Modifier[3726-3732]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[3733-3739]:SimpleType[3733-3739]"
+  }, {
+    "left" : "getInputFormatClassName",
+    "right" : "getInputFormatClassName",
+    "info" : "SimpleName[3740-3763]:SimpleName[3740-3763]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3766-3804]:Block[3766-3804]"
@@ -172,6 +256,22 @@
     "left" : "return inputFormatClassName;",
     "right" : "return inputFormatClassName;",
     "info" : "ReturnStatement[3772-3800]:ReturnStatement[3772-3800]"
+  }, {
+    "left" : "/**\n   * @return the outputFormatClassName\n   */",
+    "right" : "/**\n   * @return the outputFormatClassName\n   */",
+    "info" : "Javadoc[3808-3856]:Javadoc[3808-3856]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3859-3865]:Modifier[3859-3865]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[3866-3872]:SimpleType[3866-3872]"
+  }, {
+    "left" : "getOutputFormatClassName",
+    "right" : "getOutputFormatClassName",
+    "info" : "SimpleName[3873-3897]:SimpleName[3873-3897]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -181,6 +281,22 @@
     "right" : "return outputFormatClassName;",
     "info" : "ReturnStatement[3906-3935]:ReturnStatement[3906-3935]"
   }, {
+    "left" : "/**\n   * @return the serdeClassName\n   */",
+    "right" : "/**\n   * @return the serdeClassName\n   */",
+    "info" : "Javadoc[3943-3984]:Javadoc[3943-3984]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3987-3993]:Modifier[3987-3993]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[3994-4000]:SimpleType[3994-4000]"
+  }, {
+    "left" : "getSerdeClassName",
+    "right" : "getSerdeClassName",
+    "info" : "SimpleName[4001-4018]:SimpleName[4001-4018]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4021-4053]:Block[4021-4053]"
@@ -188,6 +304,22 @@
     "left" : "return serdeClassName;",
     "right" : "return serdeClassName;",
     "info" : "ReturnStatement[4027-4049]:ReturnStatement[4027-4049]"
+  }, {
+    "left" : "/**\n   * Gets the input storage handler properties.\n   * @return HCat-specific properties set at the partition\n   */",
+    "right" : "/**\n   * Gets the input storage handler properties.\n   * @return HCat-specific properties set at the partition\n   */",
+    "info" : "Javadoc[4057-4173]:Javadoc[4057-4173]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4176-4182]:Modifier[4176-4182]"
+  }, {
+    "left" : "Properties",
+    "right" : "Properties",
+    "info" : "SimpleType[4183-4193]:SimpleType[4183-4193]"
+  }, {
+    "left" : "getInputStorageHandlerProperties",
+    "right" : "getInputStorageHandlerProperties",
+    "info" : "SimpleName[4194-4226]:SimpleName[4194-4226]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -197,6 +329,22 @@
     "right" : "return hcatProperties;",
     "info" : "ReturnStatement[4235-4257]:ReturnStatement[4235-4257]"
   }, {
+    "left" : "/**\n   * Gets the value of location.\n   * @return the location\n   */",
+    "right" : "/**\n   * Gets the value of location.\n   * @return the location\n   */",
+    "info" : "Javadoc[4265-4333]:Javadoc[4265-4333]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4336-4342]:Modifier[4336-4342]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[4343-4349]:SimpleType[4343-4349]"
+  }, {
+    "left" : "getLocation",
+    "right" : "getLocation",
+    "info" : "SimpleName[4350-4361]:SimpleName[4350-4361]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4364-4390]:Block[4364-4390]"
@@ -204,6 +352,26 @@
     "left" : "return location;",
     "right" : "return location;",
     "info" : "ReturnStatement[4370-4386]:ReturnStatement[4370-4386]"
+  }, {
+    "left" : "/**\n   * Sets the partition values.\n   * @param partitionValues the new partition values\n   */",
+    "right" : "/**\n   * Sets the partition values.\n   * @param partitionValues the new partition values\n   */",
+    "info" : "Javadoc[4394-4488]:Javadoc[4394-4488]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4491-4497]:Modifier[4491-4497]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[4498-4502]:PrimitiveType[4498-4502]"
+  }, {
+    "left" : "setPartitionValues",
+    "right" : "setPartitionValues",
+    "info" : "SimpleName[4503-4521]:SimpleName[4503-4521]"
+  }, {
+    "left" : "Map<String, String> partitionValues",
+    "right" : "Map<String, String> partitionValues",
+    "info" : "SingleVariableDeclaration[4522-4557]:SingleVariableDeclaration[4522-4557]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -213,6 +381,22 @@
     "right" : "this.partitionValues = partitionValues;",
     "info" : "ExpressionStatement[4565-4604]:ExpressionStatement[4565-4604]"
   }, {
+    "left" : "/**\n   * Gets the partition values.\n   * @return the partition values\n   */",
+    "right" : "/**\n   * Gets the partition values.\n   * @return the partition values\n   */",
+    "info" : "Javadoc[4612-4687]:Javadoc[4612-4687]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4690-4696]:Modifier[4690-4696]"
+  }, {
+    "left" : "Map<String, String>",
+    "right" : "Map<String, String>",
+    "info" : "ParameterizedType[4697-4716]:ParameterizedType[4697-4716]"
+  }, {
+    "left" : "getPartitionValues",
+    "right" : "getPartitionValues",
+    "info" : "SimpleName[4717-4735]:SimpleName[4717-4735]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4738-4771]:Block[4738-4771]"
@@ -220,6 +404,22 @@
     "left" : "return partitionValues;",
     "right" : "return partitionValues;",
     "info" : "ReturnStatement[4744-4767]:ReturnStatement[4744-4767]"
+  }, {
+    "left" : "/**\n   * Gets the job properties.\n   * @return a map of the job properties\n   */",
+    "right" : "/**\n   * Gets the job properties.\n   * @return a map of the job properties\n   */",
+    "info" : "Javadoc[4775-4855]:Javadoc[4775-4855]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4858-4864]:Modifier[4858-4864]"
+  }, {
+    "left" : "Map<String, String>",
+    "right" : "Map<String, String>",
+    "info" : "ParameterizedType[4865-4884]:ParameterizedType[4865-4884]"
+  }, {
+    "left" : "getJobProperties",
+    "right" : "getJobProperties",
+    "info" : "SimpleName[4885-4901]:SimpleName[4885-4901]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -229,6 +429,22 @@
     "right" : "return jobProperties;",
     "info" : "ReturnStatement[4910-4931]:ReturnStatement[4910-4931]"
   }, {
+    "left" : "/**\n   * Gets the HCatalog table information.\n   * @return the table information\n   */",
+    "right" : "/**\n   * Gets the HCatalog table information.\n   * @return the table information\n   */",
+    "info" : "Javadoc[4939-5025]:Javadoc[4939-5025]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5028-5034]:Modifier[5028-5034]"
+  }, {
+    "left" : "HCatTableInfo",
+    "right" : "HCatTableInfo",
+    "info" : "SimpleType[5035-5048]:SimpleType[5035-5048]"
+  }, {
+    "left" : "getTableInfo",
+    "right" : "getTableInfo",
+    "info" : "SimpleName[5049-5061]:SimpleName[5049-5061]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[5064-5091]:Block[5064-5091]"
@@ -236,6 +452,10 @@
     "left" : "return tableInfo;",
     "right" : "return tableInfo;",
     "info" : "ReturnStatement[5070-5087]:ReturnStatement[5070-5087]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[5095-5099]:PrimitiveType[5433-5437]"
   }, {
     "left" : "setTableInfo",
     "right" : "restoreLocalInfoFromTableInfo",
@@ -313,9 +533,21 @@
     "right" : "serdeClassName = tableInfo.getStorerInfo().getSerdeClass();",
     "info" : "ExpressionStatement[5683-5742]:ExpressionStatement[6047-6106]"
   }, {
+    "left" : "/**\n   * Serialization method. Suppresses serialization of redundant information that's already\n   * available from TableInfo.\n   */",
+    "right" : "/**\n   * Finds commonalities with TableInfo, and suppresses (nulls) fields if they are identical\n   */",
+    "info" : "Javadoc[5756-5888]:Javadoc[6120-6222]"
+  }, {
     "left" : "available from TableInfo.",
     "right" : "Finds commonalities with TableInfo, and suppresses (nulls) fields if they are identical",
     "info" : "TextElement[5857-5882]:TextElement[6129-6216]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[5891-5898]:Modifier[6225-6232]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[5899-5903]:PrimitiveType[6233-6237]"
   }, {
     "left" : "writeObject",
     "right" : "dedupWithTableInfo",

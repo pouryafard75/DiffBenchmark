@@ -497,6 +497,22 @@
     "info" : "MethodDeclaration[91337-91765]:MethodDeclaration[92197-92625]"
   } ],
   "mappings" : [ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2822-2828]:Modifier[2822-2828]"
+  }, {
+    "left" : "PeerListenerRegistration",
+    "right" : "PeerListenerRegistration",
+    "info" : "SimpleName[2829-2853]:SimpleName[2829-2853]"
+  }, {
+    "left" : "PeerEventListener listener",
+    "right" : "PeerEventListener listener",
+    "info" : "SingleVariableDeclaration[2854-2880]:SingleVariableDeclaration[2854-2880]"
+  }, {
+    "left" : "Executor executor",
+    "right" : "Executor executor",
+    "info" : "SingleVariableDeclaration[2882-2899]:SingleVariableDeclaration[2882-2899]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2901-2951]:Block[2901-2951]"
@@ -504,6 +520,26 @@
     "left" : "super(listener, executor);",
     "right" : "super(listener, executor);",
     "info" : "SuperConstructorInvocation[2915-2941]:SuperConstructorInvocation[2915-2941]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2961-2967]:Modifier[2961-2967]"
+  }, {
+    "left" : "PeerListenerRegistration",
+    "right" : "PeerListenerRegistration",
+    "info" : "SimpleName[2968-2992]:SimpleName[2968-2992]"
+  }, {
+    "left" : "PeerEventListener listener",
+    "right" : "PeerEventListener listener",
+    "info" : "SingleVariableDeclaration[2993-3019]:SingleVariableDeclaration[2993-3019]"
+  }, {
+    "left" : "Executor executor",
+    "right" : "Executor executor",
+    "info" : "SingleVariableDeclaration[3021-3038]:SingleVariableDeclaration[3021-3038]"
+  }, {
+    "left" : "boolean callOnDisconnect",
+    "right" : "boolean callOnDisconnect",
+    "info" : "SingleVariableDeclaration[3040-3064]:SingleVariableDeclaration[3040-3064]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -517,6 +553,34 @@
     "right" : "this.callOnDisconnect = callOnDisconnect;",
     "info" : "ExpressionStatement[3118-3159]:ExpressionStatement[3118-3159]"
   }, {
+    "left" : "/**\n     * <p>Construct a peer that reads/writes from the given block chain.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "right" : "/**\n     * <p>Construct a peer that reads/writes from the given block chain.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "info" : "Javadoc[9446-10224]:Javadoc[9446-10224]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10229-10235]:Modifier[10229-10235]"
+  }, {
+    "left" : "Peer",
+    "right" : "Peer",
+    "info" : "SimpleName[10236-10240]:SimpleName[10236-10240]"
+  }, {
+    "left" : "NetworkParameters params",
+    "right" : "NetworkParameters params",
+    "info" : "SingleVariableDeclaration[10241-10265]:SingleVariableDeclaration[10241-10265]"
+  }, {
+    "left" : "VersionMessage ver",
+    "right" : "VersionMessage ver",
+    "info" : "SingleVariableDeclaration[10267-10285]:SingleVariableDeclaration[10267-10285]"
+  }, {
+    "left" : "@Nullable AbstractBlockChain chain",
+    "right" : "@Nullable AbstractBlockChain chain",
+    "info" : "SingleVariableDeclaration[10287-10321]:SingleVariableDeclaration[10287-10321]"
+  }, {
+    "left" : "PeerAddress remoteAddress",
+    "right" : "PeerAddress remoteAddress",
+    "info" : "SingleVariableDeclaration[10323-10348]:SingleVariableDeclaration[10323-10348]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[10350-10406]:Block[10350-10406]"
@@ -525,6 +589,34 @@
     "right" : "this(params, ver, remoteAddress, chain);",
     "info" : "ConstructorInvocation[10360-10400]:ConstructorInvocation[10360-10400]"
   }, {
+    "left" : "/**\n     * <p>Construct a peer that reads/writes from the given block chain. Transactions stored in a {@link org.bitcoinj.core.TxConfidenceTable}\n     * will have their confidence levels updated when a peer announces it, to reflect the greater likelyhood that\n     * the transaction is valid.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "right" : "/**\n     * <p>Construct a peer that reads/writes from the given block chain. Transactions stored in a {@link org.bitcoinj.core.TxConfidenceTable}\n     * will have their confidence levels updated when a peer announces it, to reflect the greater likelyhood that\n     * the transaction is valid.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "info" : "Javadoc[10412-11406]:Javadoc[10412-11406]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11411-11417]:Modifier[11411-11417]"
+  }, {
+    "left" : "Peer",
+    "right" : "Peer",
+    "info" : "SimpleName[11418-11422]:SimpleName[11418-11422]"
+  }, {
+    "left" : "NetworkParameters params",
+    "right" : "NetworkParameters params",
+    "info" : "SingleVariableDeclaration[11423-11447]:SingleVariableDeclaration[11423-11447]"
+  }, {
+    "left" : "VersionMessage ver",
+    "right" : "VersionMessage ver",
+    "info" : "SingleVariableDeclaration[11449-11467]:SingleVariableDeclaration[11449-11467]"
+  }, {
+    "left" : "PeerAddress remoteAddress",
+    "right" : "PeerAddress remoteAddress",
+    "info" : "SingleVariableDeclaration[11469-11494]:SingleVariableDeclaration[11469-11494]"
+  }, {
+    "left" : "@Nullable AbstractBlockChain chain",
+    "right" : "@Nullable AbstractBlockChain chain",
+    "info" : "SingleVariableDeclaration[11512-11546]:SingleVariableDeclaration[11512-11546]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[11548-11610]:Block[11548-11610]"
@@ -532,6 +624,38 @@
     "left" : "this(params, ver, remoteAddress, chain, true);",
     "right" : "this(params, ver, remoteAddress, chain, true);",
     "info" : "ConstructorInvocation[11558-11604]:ConstructorInvocation[11558-11604]"
+  }, {
+    "left" : "/**\n     * <p>Construct a peer that reads/writes from the given block chain. Transactions stored in a {@link org.bitcoinj.core.TxConfidenceTable}\n     * will have their confidence levels updated when a peer announces it, to reflect the greater likelyhood that\n     * the transaction is valid.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "right" : "/**\n     * <p>Construct a peer that reads/writes from the given block chain. Transactions stored in a {@link org.bitcoinj.core.TxConfidenceTable}\n     * will have their confidence levels updated when a peer announces it, to reflect the greater likelyhood that\n     * the transaction is valid.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "info" : "Javadoc[11616-12610]:Javadoc[11616-12610]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[12615-12621]:Modifier[12615-12621]"
+  }, {
+    "left" : "Peer",
+    "right" : "Peer",
+    "info" : "SimpleName[12622-12626]:SimpleName[12622-12626]"
+  }, {
+    "left" : "NetworkParameters params",
+    "right" : "NetworkParameters params",
+    "info" : "SingleVariableDeclaration[12627-12651]:SingleVariableDeclaration[12627-12651]"
+  }, {
+    "left" : "VersionMessage ver",
+    "right" : "VersionMessage ver",
+    "info" : "SingleVariableDeclaration[12653-12671]:SingleVariableDeclaration[12653-12671]"
+  }, {
+    "left" : "PeerAddress remoteAddress",
+    "right" : "PeerAddress remoteAddress",
+    "info" : "SingleVariableDeclaration[12673-12698]:SingleVariableDeclaration[12673-12698]"
+  }, {
+    "left" : "@Nullable AbstractBlockChain chain",
+    "right" : "@Nullable AbstractBlockChain chain",
+    "info" : "SingleVariableDeclaration[12716-12750]:SingleVariableDeclaration[12716-12750]"
+  }, {
+    "left" : "boolean downloadTxDependencies",
+    "right" : "boolean downloadTxDependencies",
+    "info" : "SingleVariableDeclaration[12752-12782]:SingleVariableDeclaration[12752-12782]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -593,6 +717,38 @@
     "right" : "this.context = Context.get();",
     "info" : "ExpressionStatement[13608-13637]:ExpressionStatement[13608-13637]"
   }, {
+    "left" : "/**\n     * <p>Construct a peer that reads/writes from the given chain. Automatically creates a VersionMessage for you from\n     * the given software name/version strings, which should be something like \"MySimpleTool\", \"1.0\" and which will tell\n     * the remote node to relay transaction inv messages before it has received a filter.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "right" : "/**\n     * <p>Construct a peer that reads/writes from the given chain. Automatically creates a VersionMessage for you from\n     * the given software name/version strings, which should be something like \"MySimpleTool\", \"1.0\" and which will tell\n     * the remote node to relay transaction inv messages before it has received a filter.</p>\n     *\n     * <p>Note that this does <b>NOT</b> make a connection to the given remoteAddress, it only creates a handler for a\n     * connection. If you want to create a one-off connection, create a Peer and pass it to\n     * {@link org.bitcoinj.net.NioClientManager#openConnection(java.net.SocketAddress, org.bitcoinj.net.StreamParser)}\n     * or\n     * {@link org.bitcoinj.net.NioClient#NioClient(java.net.SocketAddress, org.bitcoinj.net.StreamParser, int)}.</p>\n     *\n     * <p>The remoteAddress provided should match the remote address of the peer which is being connected to, and is\n     * used to keep track of which peers relayed transactions and offer more descriptive logging.</p>\n     */",
+    "info" : "Javadoc[13649-14684]:Javadoc[13649-14684]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[14689-14695]:Modifier[14689-14695]"
+  }, {
+    "left" : "Peer",
+    "right" : "Peer",
+    "info" : "SimpleName[14696-14700]:SimpleName[14696-14700]"
+  }, {
+    "left" : "NetworkParameters params",
+    "right" : "NetworkParameters params",
+    "info" : "SingleVariableDeclaration[14701-14725]:SingleVariableDeclaration[14701-14725]"
+  }, {
+    "left" : "AbstractBlockChain blockChain",
+    "right" : "AbstractBlockChain blockChain",
+    "info" : "SingleVariableDeclaration[14727-14756]:SingleVariableDeclaration[14727-14756]"
+  }, {
+    "left" : "PeerAddress peerAddress",
+    "right" : "PeerAddress peerAddress",
+    "info" : "SingleVariableDeclaration[14758-14781]:SingleVariableDeclaration[14758-14781]"
+  }, {
+    "left" : "String thisSoftwareName",
+    "right" : "String thisSoftwareName",
+    "info" : "SingleVariableDeclaration[14783-14806]:SingleVariableDeclaration[14783-14806]"
+  }, {
+    "left" : "String thisSoftwareVersion",
+    "right" : "String thisSoftwareVersion",
+    "info" : "SingleVariableDeclaration[14808-14834]:SingleVariableDeclaration[14808-14834]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[14836-15040]:Block[14836-15040]"
@@ -605,6 +761,26 @@
     "right" : "this.versionMessage.appendToSubVer(thisSoftwareName, thisSoftwareVersion, null);",
     "info" : "ExpressionStatement[14954-15034]:ExpressionStatement[14954-15034]"
   }, {
+    "left" : "/**\n     * Registers the given object as an event listener that will be invoked on the user thread. Note that listeners\n     * added this way will <b>not</b> receive {@link PeerEventListener#getData(Peer, GetDataMessage)} or\n     * {@link PeerEventListener#onPreMessageReceived(Peer, Message)} calls because those require that the listener\n     * be added using {@link Threading#SAME_THREAD}, which requires the other addListener form.\n     */",
+    "right" : "/**\n     * Registers the given object as an event listener that will be invoked on the user thread. Note that listeners\n     * added this way will <b>not</b> receive {@link PeerEventListener#getData(Peer, GetDataMessage)} or\n     * {@link PeerEventListener#onPreMessageReceived(Peer, Message)} calls because those require that the listener\n     * be added using {@link Threading#SAME_THREAD}, which requires the other addListener form.\n     */",
+    "info" : "Javadoc[15046-15489]:Javadoc[15046-15489]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[15494-15500]:Modifier[15494-15500]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[15501-15505]:PrimitiveType[15501-15505]"
+  }, {
+    "left" : "addEventListener",
+    "right" : "addEventListener",
+    "info" : "SimpleName[15506-15522]:SimpleName[15506-15522]"
+  }, {
+    "left" : "PeerEventListener listener",
+    "right" : "PeerEventListener listener",
+    "info" : "SingleVariableDeclaration[15523-15549]:SingleVariableDeclaration[15523-15549]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[15551-15617]:Block[15551-15617]"
@@ -612,6 +788,30 @@
     "left" : "addEventListener(listener, Threading.USER_THREAD);",
     "right" : "addEventListener(listener, Threading.USER_THREAD);",
     "info" : "ExpressionStatement[15561-15611]:ExpressionStatement[15561-15611]"
+  }, {
+    "left" : "/**\n     * Registers the given object as an event listener that will be invoked by the given executor. Note that listeners\n     * added using any other executor than {@link Threading#SAME_THREAD} will <b>not</b> receive\n     * {@link PeerEventListener#getData(Peer, GetDataMessage)} or\n     * {@link PeerEventListener#onPreMessageReceived(Peer, Message)} calls because this class is not willing to cross\n     * threads in order to get the results of those hook methods.\n     */",
+    "right" : "/**\n     * Registers the given object as an event listener that will be invoked by the given executor. Note that listeners\n     * added using any other executor than {@link Threading#SAME_THREAD} will <b>not</b> receive\n     * {@link PeerEventListener#getData(Peer, GetDataMessage)} or\n     * {@link PeerEventListener#onPreMessageReceived(Peer, Message)} calls because this class is not willing to cross\n     * threads in order to get the results of those hook methods.\n     */",
+    "info" : "Javadoc[15623-16100]:Javadoc[15623-16100]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[16105-16111]:Modifier[16105-16111]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16112-16116]:PrimitiveType[16112-16116]"
+  }, {
+    "left" : "addEventListener",
+    "right" : "addEventListener",
+    "info" : "SimpleName[16117-16133]:SimpleName[16117-16133]"
+  }, {
+    "left" : "PeerEventListener listener",
+    "right" : "PeerEventListener listener",
+    "info" : "SingleVariableDeclaration[16134-16160]:SingleVariableDeclaration[16134-16160]"
+  }, {
+    "left" : "Executor executor",
+    "right" : "Executor executor",
+    "info" : "SingleVariableDeclaration[16162-16179]:SingleVariableDeclaration[16162-16179]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -621,6 +821,22 @@
     "right" : "eventListeners.add(new PeerListenerRegistration(listener, executor));",
     "info" : "ExpressionStatement[16191-16260]:ExpressionStatement[16191-16260]"
   }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16315-16319]:PrimitiveType[16315-16319]"
+  }, {
+    "left" : "addEventListenerWithoutOnDisconnect",
+    "right" : "addEventListenerWithoutOnDisconnect",
+    "info" : "SimpleName[16320-16355]:SimpleName[16320-16355]"
+  }, {
+    "left" : "PeerEventListener listener",
+    "right" : "PeerEventListener listener",
+    "info" : "SingleVariableDeclaration[16356-16382]:SingleVariableDeclaration[16356-16382]"
+  }, {
+    "left" : "Executor executor",
+    "right" : "Executor executor",
+    "info" : "SingleVariableDeclaration[16384-16401]:SingleVariableDeclaration[16384-16401]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[16403-16495]:Block[16403-16495]"
@@ -629,6 +845,22 @@
     "right" : "eventListeners.add(new PeerListenerRegistration(listener, executor, false));",
     "info" : "ExpressionStatement[16413-16489]:ExpressionStatement[16413-16489]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[16501-16507]:Modifier[16501-16507]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[16508-16515]:PrimitiveType[16508-16515]"
+  }, {
+    "left" : "removeEventListener",
+    "right" : "removeEventListener",
+    "info" : "SimpleName[16516-16535]:SimpleName[16516-16535]"
+  }, {
+    "left" : "PeerEventListener listener",
+    "right" : "PeerEventListener listener",
+    "info" : "SingleVariableDeclaration[16536-16562]:SingleVariableDeclaration[16536-16562]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[16564-16649]:Block[16564-16649]"
@@ -636,6 +868,22 @@
     "left" : "return ListenerRegistration.removeFromList(listener, eventListeners);",
     "right" : "return ListenerRegistration.removeFromList(listener, eventListeners);",
     "info" : "ReturnStatement[16574-16643]:ReturnStatement[16574-16643]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[16655-16664]:MarkerAnnotation[16655-16664]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[16669-16675]:Modifier[16669-16675]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[16676-16682]:SimpleType[16676-16682]"
+  }, {
+    "left" : "toString",
+    "right" : "toString",
+    "info" : "SimpleName[16683-16691]:SimpleName[16683-16691]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -648,6 +896,22 @@
     "left" : "return addr == null ? \"Peer()\" : addr.toString();",
     "right" : "return addr == null ? \"Peer()\" : addr.toString();",
     "info" : "ReturnStatement[16811-16860]:ReturnStatement[16811-16860]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[16872-16881]:MarkerAnnotation[16872-16881]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[16886-16895]:Modifier[16886-16895]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[16896-16900]:PrimitiveType[16896-16900]"
+  }, {
+    "left" : "timeoutOccurred",
+    "right" : "timeoutOccurred",
+    "info" : "SimpleName[16901-16916]:SimpleName[16901-16916]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -669,6 +933,22 @@
     "right" : "connectionClosed();",
     "info" : "ExpressionStatement[17012-17031]:ExpressionStatement[17012-17031]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[17150-17159]:MarkerAnnotation[17150-17159]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17164-17170]:Modifier[17164-17170]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17171-17175]:PrimitiveType[17171-17175]"
+  }, {
+    "left" : "connectionClosed",
+    "right" : "connectionClosed",
+    "info" : "SimpleName[17176-17192]:SimpleName[17176-17192]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17195-17591]:Block[17195-17591]"
@@ -689,6 +969,22 @@
     "right" : "registration.executor.execute(new Runnable() {\n                    @Override\n                    public void run() {\n                        registration.listener.onPeerDisconnected(Peer.this, 0);\n                    }\n                });",
     "info" : "ExpressionStatement[17337-17575]:ExpressionStatement[17337-17575]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[17404-17413]:MarkerAnnotation[17404-17413]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17434-17440]:Modifier[17434-17440]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17441-17445]:PrimitiveType[17441-17445]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[17446-17449]:SimpleName[17446-17449]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17452-17555]:Block[17452-17555]"
@@ -696,6 +992,22 @@
     "left" : "registration.listener.onPeerDisconnected(Peer.this, 0);",
     "right" : "registration.listener.onPeerDisconnected(Peer.this, 0);",
     "info" : "ExpressionStatement[17478-17533]:ExpressionStatement[17478-17533]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[17597-17606]:MarkerAnnotation[17597-17606]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17611-17617]:Modifier[17611-17617]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17618-17622]:PrimitiveType[17618-17622]"
+  }, {
+    "left" : "connectionOpened",
+    "right" : "connectionOpened",
+    "info" : "SimpleName[17623-17639]:SimpleName[17623-17639]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -717,6 +1029,22 @@
     "right" : "connectionOpenFuture.set(this);",
     "info" : "ExpressionStatement[18030-18061]:ExpressionStatement[18030-18061]"
   }, {
+    "left" : "/**\n     * Provides a ListenableFuture that can be used to wait for the socket to connect.  A socket connection does not\n     * mean that protocol handshake has occurred.\n     */",
+    "right" : "/**\n     * Provides a ListenableFuture that can be used to wait for the socket to connect.  A socket connection does not\n     * mean that protocol handshake has occurred.\n     */",
+    "info" : "Javadoc[18263-18441]:Javadoc[18263-18441]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18446-18452]:Modifier[18446-18452]"
+  }, {
+    "left" : "ListenableFuture<Peer>",
+    "right" : "ListenableFuture<Peer>",
+    "info" : "ParameterizedType[18453-18475]:ParameterizedType[18453-18475]"
+  }, {
+    "left" : "getConnectionOpenFuture",
+    "right" : "getConnectionOpenFuture",
+    "info" : "SimpleName[18476-18499]:SimpleName[18476-18499]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[18502-18546]:Block[18502-18546]"
@@ -725,6 +1053,18 @@
     "right" : "return connectionOpenFuture;",
     "info" : "ReturnStatement[18512-18540]:ReturnStatement[18512-18540]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18552-18558]:Modifier[18552-18558]"
+  }, {
+    "left" : "ListenableFuture<Peer>",
+    "right" : "ListenableFuture<Peer>",
+    "info" : "ParameterizedType[18559-18581]:ParameterizedType[18559-18581]"
+  }, {
+    "left" : "getVersionHandshakeFuture",
+    "right" : "getVersionHandshakeFuture",
+    "info" : "SimpleName[18582-18607]:SimpleName[18582-18607]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[18610-18656]:Block[18610-18656]"
@@ -732,6 +1072,30 @@
     "left" : "return versionHandshakeFuture;",
     "right" : "return versionHandshakeFuture;",
     "info" : "ReturnStatement[18620-18650]:ReturnStatement[18620-18650]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[18662-18671]:MarkerAnnotation[18662-18671]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[18676-18685]:Modifier[18676-18685]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[18686-18690]:PrimitiveType[18686-18690]"
+  }, {
+    "left" : "processMessage",
+    "right" : "processMessage",
+    "info" : "SimpleName[18691-18705]:SimpleName[18691-18705]"
+  }, {
+    "left" : "Message m",
+    "right" : "Message m",
+    "info" : "SingleVariableDeclaration[18706-18715]:SingleVariableDeclaration[18706-18715]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[18724-18733]:SimpleType[18724-18733]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -989,6 +1353,22 @@
     "right" : "registration.executor.execute(new Runnable() {\n                    @Override\n                    public void run() {\n                        registration.listener.onPeerConnected(Peer.this, 1);\n                    }\n                });",
     "info" : "ExpressionStatement[21877-22112]:ExpressionStatement[21877-22112]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[21944-21953]:MarkerAnnotation[21944-21953]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[21974-21980]:Modifier[21974-21980]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[21981-21985]:PrimitiveType[21981-21985]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[21986-21989]:SimpleName[21986-21989]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[21992-22092]:Block[21992-22092]"
@@ -1049,6 +1429,22 @@
     "right" : "log.warn(\"{}: Received unhandled message: {}\", this, m);",
     "info" : "ExpressionStatement[22884-22940]:ExpressionStatement[22884-22940]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[22962-22969]:Modifier[22962-22969]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[22970-22974]:PrimitiveType[22970-22974]"
+  }, {
+    "left" : "processUTXOMessage",
+    "right" : "processUTXOMessage",
+    "info" : "SimpleName[22975-22993]:SimpleName[22975-22993]"
+  }, {
+    "left" : "UTXOsMessage m",
+    "right" : "UTXOsMessage m",
+    "info" : "SingleVariableDeclaration[22994-23008]:SingleVariableDeclaration[22994-23008]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[23010-23309]:Block[23010-23309]"
@@ -1093,6 +1489,22 @@
     "right" : "future.set(m);",
     "info" : "ExpressionStatement[23289-23303]:ExpressionStatement[23289-23303]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[23315-23322]:Modifier[23315-23322]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[23323-23327]:PrimitiveType[23323-23327]"
+  }, {
+    "left" : "processAddressMessage",
+    "right" : "processAddressMessage",
+    "info" : "SimpleName[23328-23349]:SimpleName[23328-23349]"
+  }, {
+    "left" : "AddressMessage m",
+    "right" : "AddressMessage m",
+    "info" : "SingleVariableDeclaration[23350-23366]:SingleVariableDeclaration[23350-23366]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[23368-23639]:Block[23368-23639]"
@@ -1124,6 +1536,26 @@
     "left" : "future.set(m);",
     "right" : "future.set(m);",
     "info" : "ExpressionStatement[23619-23633]:ExpressionStatement[23619-23633]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[23645-23652]:Modifier[23645-23652]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[23653-23657]:PrimitiveType[23653-23657]"
+  }, {
+    "left" : "processVersionMessage",
+    "right" : "processVersionMessage",
+    "info" : "SimpleName[23658-23679]:SimpleName[23658-23679]"
+  }, {
+    "left" : "VersionMessage m",
+    "right" : "VersionMessage m",
+    "info" : "SingleVariableDeclaration[23680-23696]:SingleVariableDeclaration[23680-23696]"
+  }, {
+    "left" : "ProtocolException",
+    "right" : "ProtocolException",
+    "info" : "SimpleType[23705-23722]:SimpleType[23705-23722]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1177,6 +1609,22 @@
     "right" : "versionHandshakeFuture.set(this);",
     "info" : "ExpressionStatement[25323-25356]:ExpressionStatement[25323-25356]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[25368-25375]:Modifier[25368-25375]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[25376-25380]:PrimitiveType[25376-25380]"
+  }, {
+    "left" : "startFilteredBlock",
+    "right" : "startFilteredBlock",
+    "info" : "SimpleName[25381-25399]:SimpleName[25381-25399]"
+  }, {
+    "left" : "FilteredBlock m",
+    "right" : "FilteredBlock m",
+    "info" : "SingleVariableDeclaration[25400-25415]:SingleVariableDeclaration[25400-25415]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[25417-26359]:Block[25417-26359]"
@@ -1200,6 +1648,22 @@
     "left" : "sendMessage(vBloomFilter);",
     "right" : "sendMessage(vBloomFilter);",
     "info" : "ExpressionStatement[26317-26343]:ExpressionStatement[26317-26343]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[26365-26372]:Modifier[26365-26372]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[26373-26377]:PrimitiveType[26373-26377]"
+  }, {
+    "left" : "processNotFoundMessage",
+    "right" : "processNotFoundMessage",
+    "info" : "SimpleName[26378-26400]:SimpleName[26378-26400]"
+  }, {
+    "left" : "NotFoundMessage m",
+    "right" : "NotFoundMessage m",
+    "info" : "SingleVariableDeclaration[26401-26418]:SingleVariableDeclaration[26401-26418]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1245,6 +1709,22 @@
     "right" : "break;",
     "info" : "BreakStatement[27256-27262]:BreakStatement[27256-27262]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[27316-27323]:Modifier[27316-27323]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[27324-27328]:PrimitiveType[27324-27328]"
+  }, {
+    "left" : "processAlert",
+    "right" : "processAlert",
+    "info" : "SimpleName[27329-27341]:SimpleName[27329-27341]"
+  }, {
+    "left" : "AlertMessage m",
+    "right" : "AlertMessage m",
+    "info" : "SingleVariableDeclaration[27342-27356]:SingleVariableDeclaration[27342-27356]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[27358-28056]:Block[27358-28056]"
@@ -1284,6 +1764,26 @@
     "left" : "log.error(\"Failed to check signature: bug in platform libraries?\", t);",
     "right" : "log.error(\"Failed to check signature: bug in platform libraries?\", t);",
     "info" : "ExpressionStatement[27970-28040]:ExpressionStatement[27970-28040]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[28062-28069]:Modifier[28062-28069]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[28070-28074]:PrimitiveType[28070-28074]"
+  }, {
+    "left" : "processHeaders",
+    "right" : "processHeaders",
+    "info" : "SimpleName[28075-28089]:SimpleName[28075-28089]"
+  }, {
+    "left" : "HeadersMessage m",
+    "right" : "HeadersMessage m",
+    "info" : "SingleVariableDeclaration[28090-28106]:SingleVariableDeclaration[28090-28106]"
+  }, {
+    "left" : "ProtocolException",
+    "right" : "ProtocolException",
+    "info" : "SimpleType[28115-28132]:SimpleType[28115-28132]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1509,6 +2009,22 @@
     "right" : "throw new RuntimeException(e);",
     "info" : "ThrowStatement[32222-32252]:ThrowStatement[32222-32252]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[32274-32281]:Modifier[32274-32281]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[32282-32286]:PrimitiveType[32282-32286]"
+  }, {
+    "left" : "processGetData",
+    "right" : "processGetData",
+    "info" : "SimpleName[32287-32301]:SimpleName[32287-32301]"
+  }, {
+    "left" : "GetDataMessage getdata",
+    "right" : "GetDataMessage getdata",
+    "info" : "SingleVariableDeclaration[32302-32324]:SingleVariableDeclaration[32302-32324]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[32326-33073]:Block[32326-33073]"
@@ -1580,6 +2096,26 @@
     "left" : "sendMessage(item);",
     "right" : "sendMessage(item);",
     "info" : "ExpressionStatement[33039-33057]:ExpressionStatement[33039-33057]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[33079-33086]:Modifier[33079-33086]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[33087-33091]:PrimitiveType[33087-33091]"
+  }, {
+    "left" : "processTransaction",
+    "right" : "processTransaction",
+    "info" : "SimpleName[33092-33110]:SimpleName[33092-33110]"
+  }, {
+    "left" : "final Transaction tx",
+    "right" : "final Transaction tx",
+    "info" : "SingleVariableDeclaration[33111-33131]:SingleVariableDeclaration[33111-33131]"
+  }, {
+    "left" : "VerificationException",
+    "right" : "VerificationException",
+    "info" : "SimpleType[33140-33161]:SimpleType[33140-33161]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1693,6 +2229,26 @@
     "right" : "Futures.addCallback(downloadDependencies(tx), new FutureCallback<List<Transaction>>() {\n                                @Override\n                                public void onSuccess(List<Transaction> dependencies) {\n                                    try {\n                                        log.info(\"{}: Dependency download complete!\", getAddress());\n                                        wallet.receivePending(tx, dependencies);\n                                    } catch (VerificationException e) {\n                                        log.error(\"{}: Wallet failed to process pending transaction {}\", getAddress(), tx.getHash());\n                                        log.error(\"Error was: \", e);\n                                        // Not much more we can do at this point.\n                                    }\n                                }\n\n                                @Override\n                                public void onFailure(Throwable throwable) {\n                                    log.error(\"Could not download dependencies of tx {}\", tx.getHashAsString());\n                                    log.error(\"Error was: \", throwable);\n                                    // Not much more we can do at this point.\n                                }\n                            });",
     "info" : "ExpressionStatement[36588-37908]:ExpressionStatement[36588-37908]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[36708-36717]:MarkerAnnotation[36708-36717]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[36750-36756]:Modifier[36750-36756]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[36757-36761]:PrimitiveType[36757-36761]"
+  }, {
+    "left" : "onSuccess",
+    "right" : "onSuccess",
+    "info" : "SimpleName[36762-36771]:SimpleName[36762-36771]"
+  }, {
+    "left" : "List<Transaction> dependencies",
+    "right" : "List<Transaction> dependencies",
+    "info" : "SingleVariableDeclaration[36772-36802]:SingleVariableDeclaration[36772-36802]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[36804-37458]:Block[36804-37458]"
@@ -1724,6 +2280,26 @@
     "left" : "log.error(\"Error was: \", e);",
     "right" : "log.error(\"Error was: \", e);",
     "info" : "ExpressionStatement[37276-37304]:ExpressionStatement[37276-37304]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[37492-37501]:MarkerAnnotation[37492-37501]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[37534-37540]:Modifier[37534-37540]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[37541-37545]:PrimitiveType[37541-37545]"
+  }, {
+    "left" : "onFailure",
+    "right" : "onFailure",
+    "info" : "SimpleName[37546-37555]:SimpleName[37546-37555]"
+  }, {
+    "left" : "Throwable throwable",
+    "right" : "Throwable throwable",
+    "info" : "SingleVariableDeclaration[37556-37575]:SingleVariableDeclaration[37556-37575]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1773,6 +2349,22 @@
     "right" : "registration.executor.execute(new Runnable() {\n                @Override\n                public void run() {\n                    registration.listener.onTransaction(Peer.this, tx);\n                }\n            });",
     "info" : "ExpressionStatement[38661-38875]:ExpressionStatement[38661-38875]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[38724-38733]:MarkerAnnotation[38724-38733]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[38750-38756]:Modifier[38750-38756]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[38757-38761]:PrimitiveType[38757-38761]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[38762-38765]:SimpleName[38762-38765]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[38768-38859]:Block[38768-38859]"
@@ -1780,6 +2372,26 @@
     "left" : "registration.listener.onTransaction(Peer.this, tx);",
     "right" : "registration.listener.onTransaction(Peer.this, tx);",
     "info" : "ExpressionStatement[38790-38841]:ExpressionStatement[38790-38841]"
+  }, {
+    "left" : "/**\n     * <p>Returns a future that wraps a list of all transactions that the given transaction depends on, recursively.\n     * Only transactions in peers memory pools are included; the recursion stops at transactions that are in the\n     * current best chain. So it doesn't make much sense to provide a tx that was already in the best chain and\n     * a precondition checks this.</p>\n     *\n     * <p>For example, if tx has 2 inputs that connect to transactions A and B, and transaction B is unconfirmed and\n     * has one input connecting to transaction C that is unconfirmed, and transaction C connects to transaction D\n     * that is in the chain, then this method will return either {B, C} or {C, B}. No ordering is guaranteed.</p>\n     *\n     * <p>This method is useful for apps that want to learn about how long an unconfirmed transaction might take\n     * to confirm, by checking for unexpectedly time locked transactions, unusually deep dependency trees or fee-paying\n     * transactions that depend on unconfirmed free transactions.</p>\n     *\n     * <p>Note that dependencies downloaded this way will not trigger the onTransaction method of event listeners.</p>\n     */",
+    "right" : "/**\n     * <p>Returns a future that wraps a list of all transactions that the given transaction depends on, recursively.\n     * Only transactions in peers memory pools are included; the recursion stops at transactions that are in the\n     * current best chain. So it doesn't make much sense to provide a tx that was already in the best chain and\n     * a precondition checks this.</p>\n     *\n     * <p>For example, if tx has 2 inputs that connect to transactions A and B, and transaction B is unconfirmed and\n     * has one input connecting to transaction C that is unconfirmed, and transaction C connects to transaction D\n     * that is in the chain, then this method will return either {B, C} or {C, B}. No ordering is guaranteed.</p>\n     *\n     * <p>This method is useful for apps that want to learn about how long an unconfirmed transaction might take\n     * to confirm, by checking for unexpectedly time locked transactions, unusually deep dependency trees or fee-paying\n     * transactions that depend on unconfirmed free transactions.</p>\n     *\n     * <p>Note that dependencies downloaded this way will not trigger the onTransaction method of event listeners.</p>\n     */",
+    "info" : "Javadoc[38897-40077]:Javadoc[38897-40077]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[40082-40088]:Modifier[40082-40088]"
+  }, {
+    "left" : "ListenableFuture<List<Transaction>>",
+    "right" : "ListenableFuture<List<Transaction>>",
+    "info" : "ParameterizedType[40089-40124]:ParameterizedType[40089-40124]"
+  }, {
+    "left" : "downloadDependencies",
+    "right" : "downloadDependencies",
+    "info" : "SimpleName[40125-40145]:SimpleName[40125-40145]"
+  }, {
+    "left" : "Transaction tx",
+    "right" : "Transaction tx",
+    "info" : "SingleVariableDeclaration[40146-40160]:SingleVariableDeclaration[40146-40160]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1813,6 +2425,26 @@
     "right" : "Futures.addCallback(future, new FutureCallback<Object>() {\n            @Override\n            public void onSuccess(Object ignored) {\n                resultFuture.set(results);\n            }\n\n            @Override\n            public void onFailure(Throwable throwable) {\n                resultFuture.setException(throwable);\n            }\n        });",
     "info" : "ExpressionStatement[40844-41193]:ExpressionStatement[40844-41193]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[40915-40924]:MarkerAnnotation[40915-40924]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[40937-40943]:Modifier[40937-40943]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[40944-40948]:PrimitiveType[40944-40948]"
+  }, {
+    "left" : "onSuccess",
+    "right" : "onSuccess",
+    "info" : "SimpleName[40949-40958]:SimpleName[40949-40958]"
+  }, {
+    "left" : "Object ignored",
+    "right" : "Object ignored",
+    "info" : "SingleVariableDeclaration[40959-40973]:SingleVariableDeclaration[40959-40973]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[40975-41033]:Block[40975-41033]"
@@ -1820,6 +2452,26 @@
     "left" : "resultFuture.set(results);",
     "right" : "resultFuture.set(results);",
     "info" : "ExpressionStatement[40993-41019]:ExpressionStatement[40993-41019]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[41047-41056]:MarkerAnnotation[41047-41056]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[41069-41075]:Modifier[41069-41075]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[41076-41080]:PrimitiveType[41076-41080]"
+  }, {
+    "left" : "onFailure",
+    "right" : "onFailure",
+    "info" : "SimpleName[41081-41090]:SimpleName[41081-41090]"
+  }, {
+    "left" : "Throwable throwable",
+    "right" : "Throwable throwable",
+    "info" : "SingleVariableDeclaration[41091-41110]:SingleVariableDeclaration[41091-41110]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1832,6 +2484,30 @@
     "left" : "return resultFuture;",
     "right" : "return resultFuture;",
     "info" : "ReturnStatement[41202-41222]:ReturnStatement[41202-41222]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[41349-41356]:Modifier[41349-41356]"
+  }, {
+    "left" : "ListenableFuture<Object>",
+    "right" : "ListenableFuture<Object>",
+    "info" : "ParameterizedType[41357-41381]:ParameterizedType[41357-41381]"
+  }, {
+    "left" : "downloadDependenciesInternal",
+    "right" : "downloadDependenciesInternal",
+    "info" : "SimpleName[41382-41410]:SimpleName[41382-41410]"
+  }, {
+    "left" : "final Transaction tx",
+    "right" : "final Transaction tx",
+    "info" : "SingleVariableDeclaration[41411-41431]:SingleVariableDeclaration[41411-41431]"
+  }, {
+    "left" : "final Object marker",
+    "right" : "final Object marker",
+    "info" : "SingleVariableDeclaration[41499-41518]:SingleVariableDeclaration[41499-41518]"
+  }, {
+    "left" : "final List<Transaction> results",
+    "right" : "final List<Transaction> results",
+    "info" : "SingleVariableDeclaration[41586-41617]:SingleVariableDeclaration[41586-41617]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1929,6 +2605,26 @@
     "right" : "Futures.addCallback(successful, new FutureCallback<List<Transaction>>() {\n                @Override\n                public void onSuccess(List<Transaction> transactions) {\n                    // Once all transactions either were received, or we know there are no more to come ...\n                    // Note that transactions will contain \"null\" for any positions that weren't successful.\n                    List<ListenableFuture<Object>> childFutures = Lists.newLinkedList();\n                    for (Transaction tx : transactions) {\n                        if (tx == null) continue;\n                        log.info(\"{}: Downloaded dependency of {}: {}\", getAddress(), rootTxHash, tx.getHashAsString());\n                        results.add(tx);\n                        // Now recurse into the dependencies of this transaction too.\n                        childFutures.add(downloadDependenciesInternal(tx, marker, results));\n                    }\n                    if (childFutures.size() == 0) {\n                        // Short-circuit: we're at the bottom of this part of the tree.\n                        resultFuture.set(marker);\n                    } else {\n                        // There are some children to download. Wait until it's done (and their children and their\n                        // children...) to inform the caller that we're finished.\n                        Futures.addCallback(Futures.successfulAsList(childFutures), new FutureCallback<List<Object>>() {\n                            @Override\n                            public void onSuccess(List<Object> objects) {\n                                resultFuture.set(marker);\n                            }\n\n                            @Override\n                            public void onFailure(Throwable throwable) {\n                                resultFuture.setException(throwable);\n                            }\n                        });\n                    }\n                }\n\n                @Override\n                public void onFailure(Throwable throwable) {\n                    resultFuture.setException(throwable);\n                }\n            });",
     "info" : "ExpressionStatement[43269-45414]:ExpressionStatement[43269-45414]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[43359-43368]:MarkerAnnotation[43359-43368]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[43385-43391]:Modifier[43385-43391]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[43392-43396]:PrimitiveType[43392-43396]"
+  }, {
+    "left" : "onSuccess",
+    "right" : "onSuccess",
+    "info" : "SimpleName[43397-43406]:SimpleName[43397-43406]"
+  }, {
+    "left" : "List<Transaction> transactions",
+    "right" : "List<Transaction> transactions",
+    "info" : "SingleVariableDeclaration[43407-43437]:SingleVariableDeclaration[43407-43437]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[43439-45234]:Block[43439-45234]"
@@ -1985,6 +2681,26 @@
     "right" : "Futures.addCallback(Futures.successfulAsList(childFutures), new FutureCallback<List<Object>>() {\n                            @Override\n                            public void onSuccess(List<Object> objects) {\n                                resultFuture.set(marker);\n                            }\n\n                            @Override\n                            public void onFailure(Throwable throwable) {\n                                resultFuture.setException(throwable);\n                            }\n                        });",
     "info" : "ExpressionStatement[44658-45194]:ExpressionStatement[44658-45194]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[44783-44792]:MarkerAnnotation[44783-44792]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[44821-44827]:Modifier[44821-44827]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[44828-44832]:PrimitiveType[44828-44832]"
+  }, {
+    "left" : "onSuccess",
+    "right" : "onSuccess",
+    "info" : "SimpleName[44833-44842]:SimpleName[44833-44842]"
+  }, {
+    "left" : "List<Object> objects",
+    "right" : "List<Object> objects",
+    "info" : "SingleVariableDeclaration[44843-44863]:SingleVariableDeclaration[44843-44863]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[44865-44954]:Block[44865-44954]"
@@ -1993,6 +2709,26 @@
     "right" : "resultFuture.set(marker);",
     "info" : "ExpressionStatement[44899-44924]:ExpressionStatement[44899-44924]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[44984-44993]:MarkerAnnotation[44984-44993]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45022-45028]:Modifier[45022-45028]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[45029-45033]:PrimitiveType[45029-45033]"
+  }, {
+    "left" : "onFailure",
+    "right" : "onFailure",
+    "info" : "SimpleName[45034-45043]:SimpleName[45034-45043]"
+  }, {
+    "left" : "Throwable throwable",
+    "right" : "Throwable throwable",
+    "info" : "SingleVariableDeclaration[45044-45063]:SingleVariableDeclaration[45044-45063]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[45065-45166]:Block[45065-45166]"
@@ -2000,6 +2736,26 @@
     "left" : "resultFuture.setException(throwable);",
     "right" : "resultFuture.setException(throwable);",
     "info" : "ExpressionStatement[45099-45136]:ExpressionStatement[45099-45136]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[45252-45261]:MarkerAnnotation[45252-45261]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[45278-45284]:Modifier[45278-45284]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[45285-45289]:PrimitiveType[45285-45289]"
+  }, {
+    "left" : "onFailure",
+    "right" : "onFailure",
+    "info" : "SimpleName[45290-45299]:SimpleName[45290-45299]"
+  }, {
+    "left" : "Throwable throwable",
+    "right" : "Throwable throwable",
+    "info" : "SingleVariableDeclaration[45300-45319]:SingleVariableDeclaration[45300-45319]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2040,6 +2796,22 @@
     "left" : "return resultFuture;",
     "right" : "return resultFuture;",
     "info" : "ReturnStatement[45757-45777]:ReturnStatement[45757-45777]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[45789-45796]:Modifier[45789-45796]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[45797-45801]:PrimitiveType[45797-45801]"
+  }, {
+    "left" : "processBlock",
+    "right" : "processBlock",
+    "info" : "SimpleName[45802-45814]:SimpleName[45802-45814]"
+  }, {
+    "left" : "Block m",
+    "right" : "Block m",
+    "info" : "SingleVariableDeclaration[45815-45822]:SingleVariableDeclaration[45815-45822]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2184,6 +2956,22 @@
     "left" : "throw new RuntimeException(e);",
     "right" : "throw new RuntimeException(e);",
     "info" : "ThrowStatement[49259-49289]:ThrowStatement[49259-49289]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[49346-49353]:Modifier[49346-49353]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[49354-49358]:PrimitiveType[49354-49358]"
+  }, {
+    "left" : "endFilteredBlock",
+    "right" : "endFilteredBlock",
+    "info" : "SimpleName[49359-49375]:SimpleName[49359-49375]"
+  }, {
+    "left" : "FilteredBlock m",
+    "right" : "FilteredBlock m",
+    "info" : "SingleVariableDeclaration[49376-49391]:SingleVariableDeclaration[49376-49391]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2369,6 +3157,22 @@
     "right" : "throw new RuntimeException(e);",
     "info" : "ThrowStatement[56326-56356]:ThrowStatement[56326-56356]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[56378-56385]:Modifier[56378-56385]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[56386-56393]:PrimitiveType[56386-56393]"
+  }, {
+    "left" : "checkForFilterExhaustion",
+    "right" : "checkForFilterExhaustion",
+    "info" : "SimpleName[56394-56418]:SimpleName[56394-56418]"
+  }, {
+    "left" : "FilteredBlock m",
+    "right" : "FilteredBlock m",
+    "info" : "SingleVariableDeclaration[56419-56434]:SingleVariableDeclaration[56419-56434]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[56436-56615]:Block[56436-56615]"
@@ -2392,6 +3196,22 @@
     "left" : "return exhausted;",
     "right" : "return exhausted;",
     "info" : "ReturnStatement[56592-56609]:ReturnStatement[56592-56609]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[56621-56628]:Modifier[56621-56628]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[56629-56636]:PrimitiveType[56629-56636]"
+  }, {
+    "left" : "maybeHandleRequestedData",
+    "right" : "maybeHandleRequestedData",
+    "info" : "SimpleName[56637-56661]:SimpleName[56637-56661]"
+  }, {
+    "left" : "Message m",
+    "right" : "Message m",
+    "info" : "SingleVariableDeclaration[56662-56671]:SingleVariableDeclaration[56662-56671]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2437,6 +3257,26 @@
     "right" : "return found;",
     "info" : "ReturnStatement[57033-57046]:ReturnStatement[57033-57046]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[57058-57065]:Modifier[57058-57065]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[57066-57070]:PrimitiveType[57066-57070]"
+  }, {
+    "left" : "invokeOnBlocksDownloaded",
+    "right" : "invokeOnBlocksDownloaded",
+    "info" : "SimpleName[57071-57095]:SimpleName[57071-57095]"
+  }, {
+    "left" : "final Block block",
+    "right" : "final Block block",
+    "info" : "SingleVariableDeclaration[57096-57113]:SingleVariableDeclaration[57096-57113]"
+  }, {
+    "left" : "@Nullable final FilteredBlock fb",
+    "right" : "@Nullable final FilteredBlock fb",
+    "info" : "SingleVariableDeclaration[57115-57147]:SingleVariableDeclaration[57115-57147]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[57149-57996]:Block[57149-57996]"
@@ -2457,6 +3297,22 @@
     "right" : "registration.executor.execute(new Runnable() {\n                @Override\n                public void run() {\n                    registration.listener.onBlocksDownloaded(Peer.this, block, fb, blocksLeft);\n                }\n            });",
     "info" : "ExpressionStatement[57742-57980]:ExpressionStatement[57742-57980]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[57805-57814]:MarkerAnnotation[57805-57814]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[57831-57837]:Modifier[57831-57837]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[57838-57842]:PrimitiveType[57838-57842]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[57843-57846]:SimpleName[57843-57846]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[57849-57964]:Block[57849-57964]"
@@ -2464,6 +3320,22 @@
     "left" : "registration.listener.onBlocksDownloaded(Peer.this, block, fb, blocksLeft);",
     "right" : "registration.listener.onBlocksDownloaded(Peer.this, block, fb, blocksLeft);",
     "info" : "ExpressionStatement[57871-57946]:ExpressionStatement[57871-57946]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[58002-58009]:Modifier[58002-58009]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[58010-58014]:PrimitiveType[58010-58014]"
+  }, {
+    "left" : "processInv",
+    "right" : "processInv",
+    "info" : "SimpleName[58015-58025]:SimpleName[58015-58025]"
+  }, {
+    "left" : "InventoryMessage inv",
+    "right" : "InventoryMessage inv",
+    "info" : "SingleVariableDeclaration[58026-58046]:SingleVariableDeclaration[58026-58046]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2745,6 +3617,30 @@
     "right" : "sendMessage(new Ping((long) (Math.random() * Long.MAX_VALUE)));",
     "info" : "ExpressionStatement[65213-65276]:ExpressionStatement[65213-65276]"
   }, {
+    "left" : "/**\n     * Asks the connected peer for the block of the given hash, and returns a future representing the answer.\n     * If you want the block right away and don't mind waiting for it, just call .get() on the result. Your thread\n     * will block until the peer answers.\n     */",
+    "right" : "/**\n     * Asks the connected peer for the block of the given hash, and returns a future representing the answer.\n     * If you want the block right away and don't mind waiting for it, just call .get() on the result. Your thread\n     * will block until the peer answers.\n     */",
+    "info" : "Javadoc[65288-65566]:Javadoc[65288-65566]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[65571-65601]:SingleMemberAnnotation[65571-65601]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[65946-65952]:Modifier[65946-65952]"
+  }, {
+    "left" : "ListenableFuture<Block>",
+    "right" : "ListenableFuture<Block>",
+    "info" : "ParameterizedType[65953-65976]:ParameterizedType[65953-65976]"
+  }, {
+    "left" : "getBlock",
+    "right" : "getBlock",
+    "info" : "SimpleName[65977-65985]:SimpleName[65977-65985]"
+  }, {
+    "left" : "Sha256Hash blockHash",
+    "right" : "Sha256Hash blockHash",
+    "info" : "SingleVariableDeclaration[65986-66006]:SingleVariableDeclaration[65986-66006]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[66008-66258]:Block[66008-66258]"
@@ -2765,6 +3661,30 @@
     "right" : "return sendSingleGetData(getdata);",
     "info" : "ReturnStatement[66218-66252]:ReturnStatement[66218-66252]"
   }, {
+    "left" : "/**\n     * Asks the connected peer for the given transaction from its memory pool. Transactions in the chain cannot be\n     * retrieved this way because peers don't have a transaction ID to transaction-pos-on-disk index, and besides,\n     * in future many peers will delete old transaction data they don't need.\n     */",
+    "right" : "/**\n     * Asks the connected peer for the given transaction from its memory pool. Transactions in the chain cannot be\n     * retrieved this way because peers don't have a transaction ID to transaction-pos-on-disk index, and besides,\n     * in future many peers will delete old transaction data they don't need.\n     */",
+    "info" : "Javadoc[66264-66583]:Javadoc[66264-66583]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[66588-66618]:SingleMemberAnnotation[66588-66618]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[66969-66975]:Modifier[66969-66975]"
+  }, {
+    "left" : "ListenableFuture<Transaction>",
+    "right" : "ListenableFuture<Transaction>",
+    "info" : "ParameterizedType[66976-67005]:ParameterizedType[66976-67005]"
+  }, {
+    "left" : "getPeerMempoolTransaction",
+    "right" : "getPeerMempoolTransaction",
+    "info" : "SimpleName[67006-67031]:SimpleName[67006-67031]"
+  }, {
+    "left" : "Sha256Hash hash",
+    "right" : "Sha256Hash hash",
+    "info" : "SingleVariableDeclaration[67032-67047]:SingleVariableDeclaration[67032-67047]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[67049-67346]:Block[67049-67346]"
@@ -2784,6 +3704,26 @@
     "left" : "return sendSingleGetData(getdata);",
     "right" : "return sendSingleGetData(getdata);",
     "info" : "ReturnStatement[67306-67340]:ReturnStatement[67306-67340]"
+  }, {
+    "left" : "/** Sends a getdata with a single item in it. */",
+    "right" : "/** Sends a getdata with a single item in it. */",
+    "info" : "Javadoc[67352-67400]:Javadoc[67352-67400]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[67405-67412]:Modifier[67405-67412]"
+  }, {
+    "left" : "ListenableFuture",
+    "right" : "ListenableFuture",
+    "info" : "SimpleType[67413-67429]:SimpleType[67413-67429]"
+  }, {
+    "left" : "sendSingleGetData",
+    "right" : "sendSingleGetData",
+    "info" : "SimpleName[67430-67447]:SimpleName[67430-67447]"
+  }, {
+    "left" : "GetDataMessage getdata",
+    "right" : "GetDataMessage getdata",
+    "info" : "SingleVariableDeclaration[67448-67470]:SingleVariableDeclaration[67448-67470]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2817,6 +3757,22 @@
     "right" : "return req.future;",
     "info" : "ReturnStatement[67806-67824]:ReturnStatement[67806-67824]"
   }, {
+    "left" : "/** Sends a getaddr request to the peer and returns a future that completes with the answer once the peer has replied. */",
+    "right" : "/** Sends a getaddr request to the peer and returns a future that completes with the answer once the peer has replied. */",
+    "info" : "Javadoc[67836-67957]:Javadoc[67836-67957]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[67962-67968]:Modifier[67962-67968]"
+  }, {
+    "left" : "ListenableFuture<AddressMessage>",
+    "right" : "ListenableFuture<AddressMessage>",
+    "info" : "ParameterizedType[67969-68001]:ParameterizedType[67969-68001]"
+  }, {
+    "left" : "getAddr",
+    "right" : "getAddr",
+    "info" : "SimpleName[68002-68009]:SimpleName[68002-68009]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[68012-68254]:Block[68012-68254]"
@@ -2844,6 +3800,30 @@
     "left" : "return future;",
     "right" : "return future;",
     "info" : "ReturnStatement[68234-68248]:ReturnStatement[68234-68248]"
+  }, {
+    "left" : "/**\n     * When downloading the block chain, the bodies will be skipped for blocks created before the given date. Any\n     * transactions relevant to the wallet will therefore not be found, but if you know your wallet has no such\n     * transactions it doesn't matter and can save a lot of bandwidth and processing time. Note that the times of blocks\n     * isn't known until their headers are available and they are requested in chunks, so some headers may be downloaded\n     * twice using this scheme, but this optimization can still be a large win for newly created wallets.\n     *\n     * @param secondsSinceEpoch Time in seconds since the epoch or 0 to reset to always downloading block bodies.\n     */",
+    "right" : "/**\n     * When downloading the block chain, the bodies will be skipped for blocks created before the given date. Any\n     * transactions relevant to the wallet will therefore not be found, but if you know your wallet has no such\n     * transactions it doesn't matter and can save a lot of bandwidth and processing time. Note that the times of blocks\n     * isn't known until their headers are available and they are requested in chunks, so some headers may be downloaded\n     * twice using this scheme, but this optimization can still be a large win for newly created wallets.\n     *\n     * @param secondsSinceEpoch Time in seconds since the epoch or 0 to reset to always downloading block bodies.\n     */",
+    "info" : "Javadoc[68260-68966]:Javadoc[68260-68966]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[68971-68977]:Modifier[68971-68977]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[68978-68982]:PrimitiveType[68978-68982]"
+  }, {
+    "left" : "setDownloadParameters",
+    "right" : "setDownloadParameters",
+    "info" : "SimpleName[68983-69004]:SimpleName[68983-69004]"
+  }, {
+    "left" : "long secondsSinceEpoch",
+    "right" : "long secondsSinceEpoch",
+    "info" : "SingleVariableDeclaration[69005-69027]:SingleVariableDeclaration[69005-69027]"
+  }, {
+    "left" : "boolean useFilteredBlocks",
+    "right" : "boolean useFilteredBlocks",
+    "info" : "SingleVariableDeclaration[69029-69054]:SingleVariableDeclaration[69029-69054]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2905,6 +3885,26 @@
     "right" : "lock.unlock();",
     "info" : "ExpressionStatement[69779-69793]:ExpressionStatement[69779-69793]"
   }, {
+    "left" : "/**\n     * Links the given wallet to this peer. If you have multiple peers, you should use a {@link PeerGroup} to manage\n     * them and use the {@link PeerGroup#addWallet(Wallet)} method instead of registering the wallet with each peer\n     * independently, otherwise the wallet will receive duplicate notifications.\n     */",
+    "right" : "/**\n     * Links the given wallet to this peer. If you have multiple peers, you should use a {@link PeerGroup} to manage\n     * them and use the {@link PeerGroup#addWallet(Wallet)} method instead of registering the wallet with each peer\n     * independently, otherwise the wallet will receive duplicate notifications.\n     */",
+    "info" : "Javadoc[69815-70140]:Javadoc[69815-70140]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[70145-70151]:Modifier[70145-70151]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[70152-70156]:PrimitiveType[70152-70156]"
+  }, {
+    "left" : "addWallet",
+    "right" : "addWallet",
+    "info" : "SimpleName[70157-70166]:SimpleName[70157-70166]"
+  }, {
+    "left" : "Wallet wallet",
+    "right" : "Wallet wallet",
+    "info" : "SingleVariableDeclaration[70167-70180]:SingleVariableDeclaration[70167-70180]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[70182-70218]:Block[70182-70218]"
@@ -2913,6 +3913,26 @@
     "right" : "wallets.add(wallet);",
     "info" : "ExpressionStatement[70192-70212]:ExpressionStatement[70192-70212]"
   }, {
+    "left" : "/** Unlinks the given wallet from peer. See {@link Peer#addWallet(Wallet)}. */",
+    "right" : "/** Unlinks the given wallet from peer. See {@link Peer#addWallet(Wallet)}. */",
+    "info" : "Javadoc[70224-70302]:Javadoc[70224-70302]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[70307-70313]:Modifier[70307-70313]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[70314-70318]:PrimitiveType[70314-70318]"
+  }, {
+    "left" : "removeWallet",
+    "right" : "removeWallet",
+    "info" : "SimpleName[70319-70331]:SimpleName[70319-70331]"
+  }, {
+    "left" : "Wallet wallet",
+    "right" : "Wallet wallet",
+    "info" : "SingleVariableDeclaration[70332-70345]:SingleVariableDeclaration[70332-70345]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[70347-70386]:Block[70347-70386]"
@@ -2920,6 +3940,26 @@
     "left" : "wallets.remove(wallet);",
     "right" : "wallets.remove(wallet);",
     "info" : "ExpressionStatement[70357-70380]:ExpressionStatement[70357-70380]"
+  }, {
+    "left" : "@GuardedBy(\"lock\")",
+    "right" : "@GuardedBy(\"lock\")",
+    "info" : "SingleMemberAnnotation[70628-70646]:SingleMemberAnnotation[70628-70646]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[70651-70658]:Modifier[70651-70658]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[70659-70663]:PrimitiveType[70659-70663]"
+  }, {
+    "left" : "blockChainDownloadLocked",
+    "right" : "blockChainDownloadLocked",
+    "info" : "SimpleName[70664-70688]:SimpleName[70664-70688]"
+  }, {
+    "left" : "Sha256Hash toHash",
+    "right" : "Sha256Hash toHash",
+    "info" : "SingleVariableDeclaration[70689-70706]:SingleVariableDeclaration[70689-70706]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3065,6 +4105,22 @@
     "right" : "sendMessage(message);",
     "info" : "ExpressionStatement[76211-76232]:ExpressionStatement[76211-76232]"
   }, {
+    "left" : "/**\n     * Starts an asynchronous download of the block chain. The chain download is deemed to be complete once we've\n     * downloaded the same number of blocks that the peer advertised having in its version handshake message.\n     */",
+    "right" : "/**\n     * Starts an asynchronous download of the block chain. The chain download is deemed to be complete once we've\n     * downloaded the same number of blocks that the peer advertised having in its version handshake message.\n     */",
+    "info" : "Javadoc[76254-76489]:Javadoc[76254-76489]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[76494-76500]:Modifier[76494-76500]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[76501-76505]:PrimitiveType[76501-76505]"
+  }, {
+    "left" : "startBlockChainDownload",
+    "right" : "startBlockChainDownload",
+    "info" : "SimpleName[76506-76529]:SimpleName[76506-76529]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[76532-77472]:Block[76532-77472]"
@@ -3096,6 +4152,22 @@
     "left" : "registration.executor.execute(new Runnable() {\n                    @Override\n                    public void run() {\n                        registration.listener.onChainDownloadStarted(Peer.this, blocksLeft);\n                    }\n                });",
     "right" : "registration.executor.execute(new Runnable() {\n                    @Override\n                    public void run() {\n                        registration.listener.onChainDownloadStarted(Peer.this, blocksLeft);\n                    }\n                });",
     "info" : "ExpressionStatement[76918-77169]:ExpressionStatement[76918-77169]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[76985-76994]:MarkerAnnotation[76985-76994]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[77015-77021]:Modifier[77015-77021]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[77022-77026]:PrimitiveType[77022-77026]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[77027-77030]:SimpleName[77027-77030]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3129,6 +4201,18 @@
     "right" : "lock.unlock();",
     "info" : "ExpressionStatement[77428-77442]:ExpressionStatement[77428-77442]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[77826-77832]:Modifier[77826-77832]"
+  }, {
+    "left" : "PendingPing",
+    "right" : "PendingPing",
+    "info" : "SimpleName[77833-77844]:SimpleName[77833-77844]"
+  }, {
+    "left" : "long nonce",
+    "right" : "long nonce",
+    "info" : "SingleVariableDeclaration[77845-77855]:SingleVariableDeclaration[77845-77855]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[77857-78001]:Block[77857-78001]"
@@ -3144,6 +4228,18 @@
     "left" : "startTimeMsec = Utils.currentTimeMillis();",
     "right" : "startTimeMsec = Utils.currentTimeMillis();",
     "info" : "ExpressionStatement[77949-77991]:ExpressionStatement[77949-77991]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[78011-78017]:Modifier[78011-78017]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[78018-78022]:PrimitiveType[78018-78022]"
+  }, {
+    "left" : "complete",
+    "right" : "complete",
+    "info" : "SimpleName[78023-78031]:SimpleName[78023-78031]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3172,6 +4268,26 @@
     "left" : "future.set(elapsed);",
     "right" : "future.set(elapsed);",
     "info" : "ExpressionStatement[78300-78320]:ExpressionStatement[78300-78320]"
+  }, {
+    "left" : "/** Adds a ping time sample to the averaging window. */",
+    "right" : "/** Adds a ping time sample to the averaging window. */",
+    "info" : "Javadoc[78356-78411]:Javadoc[78356-78411]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[78416-78423]:Modifier[78416-78423]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[78424-78428]:PrimitiveType[78424-78428]"
+  }, {
+    "left" : "addPingTimeData",
+    "right" : "addPingTimeData",
+    "info" : "SimpleName[78429-78444]:SimpleName[78429-78444]"
+  }, {
+    "left" : "long sample",
+    "right" : "long sample",
+    "info" : "SingleVariableDeclaration[78445-78456]:SingleVariableDeclaration[78445-78456]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3225,6 +4341,26 @@
     "right" : "lastPingTimesLock.unlock();",
     "info" : "ExpressionStatement[79085-79112]:ExpressionStatement[79085-79112]"
   }, {
+    "left" : "/**\n     * Sends the peer a ping message and returns a future that will be invoked when the pong is received back.\n     * The future provides a number which is the number of milliseconds elapsed between the ping and the pong.\n     * Once the pong is received the value returned by {@link org.bitcoinj.core.Peer#getLastPingTime()} is\n     * updated.\n     * @throws ProtocolException if the peer version is too low to support measurable pings.\n     */",
+    "right" : "/**\n     * Sends the peer a ping message and returns a future that will be invoked when the pong is received back.\n     * The future provides a number which is the number of milliseconds elapsed between the ping and the pong.\n     * Once the pong is received the value returned by {@link org.bitcoinj.core.Peer#getLastPingTime()} is\n     * updated.\n     * @throws ProtocolException if the peer version is too low to support measurable pings.\n     */",
+    "info" : "Javadoc[79134-79583]:Javadoc[79134-79583]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[79588-79594]:Modifier[79588-79594]"
+  }, {
+    "left" : "ListenableFuture<Long>",
+    "right" : "ListenableFuture<Long>",
+    "info" : "ParameterizedType[79595-79617]:ParameterizedType[79595-79617]"
+  }, {
+    "left" : "ping",
+    "right" : "ping",
+    "info" : "SimpleName[79618-79622]:SimpleName[79618-79622]"
+  }, {
+    "left" : "ProtocolException",
+    "right" : "ProtocolException",
+    "info" : "SimpleType[79632-79649]:SimpleType[79632-79649]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[79650-79719]:Block[79650-79719]"
@@ -3232,6 +4368,26 @@
     "left" : "return ping((long) (Math.random() * Long.MAX_VALUE));",
     "right" : "return ping((long) (Math.random() * Long.MAX_VALUE));",
     "info" : "ReturnStatement[79660-79713]:ReturnStatement[79660-79713]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[79725-79734]:Modifier[79725-79734]"
+  }, {
+    "left" : "ListenableFuture<Long>",
+    "right" : "ListenableFuture<Long>",
+    "info" : "ParameterizedType[79735-79757]:ParameterizedType[79735-79757]"
+  }, {
+    "left" : "ping",
+    "right" : "ping",
+    "info" : "SimpleName[79758-79762]:SimpleName[79758-79762]"
+  }, {
+    "left" : "long nonce",
+    "right" : "long nonce",
+    "info" : "SingleVariableDeclaration[79763-79773]:SingleVariableDeclaration[79763-79773]"
+  }, {
+    "left" : "ProtocolException",
+    "right" : "ProtocolException",
+    "info" : "SimpleType[79782-79799]:SimpleType[79782-79799]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3264,6 +4420,22 @@
     "left" : "return pendingPing.future;",
     "right" : "return pendingPing.future;",
     "info" : "ReturnStatement[80150-80176]:ReturnStatement[80150-80176]"
+  }, {
+    "left" : "/**\n     * Returns the elapsed time of the last ping/pong cycle. If {@link org.bitcoinj.core.Peer#ping()} has never\n     * been called or we did not hear back the \"pong\" message yet, returns {@link Long#MAX_VALUE}.\n     */",
+    "right" : "/**\n     * Returns the elapsed time of the last ping/pong cycle. If {@link org.bitcoinj.core.Peer#ping()} has never\n     * been called or we did not hear back the \"pong\" message yet, returns {@link Long#MAX_VALUE}.\n     */",
+    "info" : "Javadoc[80188-80410]:Javadoc[80188-80410]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[80415-80421]:Modifier[80415-80421]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[80422-80426]:PrimitiveType[80422-80426]"
+  }, {
+    "left" : "getLastPingTime",
+    "right" : "getLastPingTime",
+    "info" : "SimpleName[80427-80442]:SimpleName[80427-80442]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3300,6 +4472,22 @@
     "left" : "lastPingTimesLock.unlock();",
     "right" : "lastPingTimesLock.unlock();",
     "info" : "ExpressionStatement[80665-80692]:ExpressionStatement[80665-80692]"
+  }, {
+    "left" : "/**\n     * Returns a moving average of the last N ping/pong cycles. If {@link org.bitcoinj.core.Peer#ping()} has never\n     * been called or we did not hear back the \"pong\" message yet, returns {@link Long#MAX_VALUE}. The moving average\n     * window is 5 buckets.\n     */",
+    "right" : "/**\n     * Returns a moving average of the last N ping/pong cycles. If {@link org.bitcoinj.core.Peer#ping()} has never\n     * been called or we did not hear back the \"pong\" message yet, returns {@link Long#MAX_VALUE}. The moving average\n     * window is 5 buckets.\n     */",
+    "info" : "Javadoc[80714-80986]:Javadoc[80714-80986]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[80991-80997]:Modifier[80991-80997]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[80998-81002]:PrimitiveType[80998-81002]"
+  }, {
+    "left" : "getPingTime",
+    "right" : "getPingTime",
+    "info" : "SimpleName[81003-81014]:SimpleName[81003-81014]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3349,6 +4537,22 @@
     "right" : "lastPingTimesLock.unlock();",
     "info" : "ExpressionStatement[81318-81345]:ExpressionStatement[81318-81345]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[81367-81374]:Modifier[81367-81374]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[81375-81379]:PrimitiveType[81375-81379]"
+  }, {
+    "left" : "processPong",
+    "right" : "processPong",
+    "info" : "SimpleName[81380-81391]:SimpleName[81380-81391]"
+  }, {
+    "left" : "Pong m",
+    "right" : "Pong m",
+    "info" : "SingleVariableDeclaration[81392-81398]:SingleVariableDeclaration[81392-81398]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[81400-81783]:Block[81400-81783]"
@@ -3381,6 +4585,22 @@
     "right" : "return;",
     "info" : "ReturnStatement[81746-81753]:ReturnStatement[81746-81753]"
   }, {
+    "left" : "/**\n     * Returns the difference between our best chain height and the peers, which can either be positive if we are\n     * behind the peer, or negative if the peer is ahead of us.\n     */",
+    "right" : "/**\n     * Returns the difference between our best chain height and the peers, which can either be positive if we are\n     * behind the peer, or negative if the peer is ahead of us.\n     */",
+    "info" : "Javadoc[81789-81978]:Javadoc[81789-81978]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[81983-81989]:Modifier[81983-81989]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[81990-81993]:PrimitiveType[81990-81993]"
+  }, {
+    "left" : "getPeerBlockHeightDifference",
+    "right" : "getPeerBlockHeightDifference",
+    "info" : "SimpleName[81994-82022]:SimpleName[81994-82022]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[82025-82699]:Block[82025-82699]"
@@ -3401,6 +4621,18 @@
     "right" : "return chainHeight - blockChain.getBestChainHeight();",
     "info" : "ReturnStatement[82640-82693]:ReturnStatement[82640-82693]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[82705-82712]:Modifier[82705-82712]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[82713-82720]:PrimitiveType[82713-82720]"
+  }, {
+    "left" : "isNotFoundMessageSupported",
+    "right" : "isNotFoundMessageSupported",
+    "info" : "SimpleName[82721-82747]:SimpleName[82721-82747]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[82750-82847]:Block[82750-82847]"
@@ -3408,6 +4640,22 @@
     "left" : "return vPeerVersionMessage.clientVersion >= NotFoundMessage.MIN_PROTOCOL_VERSION;",
     "right" : "return vPeerVersionMessage.clientVersion >= NotFoundMessage.MIN_PROTOCOL_VERSION;",
     "info" : "ReturnStatement[82760-82841]:ReturnStatement[82760-82841]"
+  }, {
+    "left" : "/**\n     * Returns true if this peer will try and download things it is sent in \"inv\" messages. Normally you only need\n     * one peer to be downloading data. Defaults to true.\n     */",
+    "right" : "/**\n     * Returns true if this peer will try and download things it is sent in \"inv\" messages. Normally you only need\n     * one peer to be downloading data. Defaults to true.\n     */",
+    "info" : "Javadoc[82853-83037]:Javadoc[82853-83037]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[83042-83048]:Modifier[83042-83048]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[83049-83056]:PrimitiveType[83049-83056]"
+  }, {
+    "left" : "getDownloadData",
+    "right" : "getDownloadData",
+    "info" : "SimpleName[83057-83072]:SimpleName[83057-83072]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3417,6 +4665,26 @@
     "right" : "return vDownloadData;",
     "info" : "ReturnStatement[83085-83106]:ReturnStatement[83085-83106]"
   }, {
+    "left" : "/**\n     * If set to false, the peer won't try and fetch blocks and transactions it hears about. Normally, only one\n     * peer should download missing blocks. Defaults to true. Changing this value from false to true may trigger\n     * a request to the remote peer for the contents of its memory pool, if Bloom filtering is active.\n     */",
+    "right" : "/**\n     * If set to false, the peer won't try and fetch blocks and transactions it hears about. Normally, only one\n     * peer should download missing blocks. Defaults to true. Changing this value from false to true may trigger\n     * a request to the remote peer for the contents of its memory pool, if Bloom filtering is active.\n     */",
+    "info" : "Javadoc[83118-83457]:Javadoc[83118-83457]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[83462-83468]:Modifier[83462-83468]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[83469-83473]:PrimitiveType[83469-83473]"
+  }, {
+    "left" : "setDownloadData",
+    "right" : "setDownloadData",
+    "info" : "SimpleName[83474-83489]:SimpleName[83474-83489]"
+  }, {
+    "left" : "boolean downloadData",
+    "right" : "boolean downloadData",
+    "info" : "SingleVariableDeclaration[83490-83510]:SingleVariableDeclaration[83490-83510]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[83512-83562]:Block[83512-83562]"
@@ -3424,6 +4692,22 @@
     "left" : "this.vDownloadData = downloadData;",
     "right" : "this.vDownloadData = downloadData;",
     "info" : "ExpressionStatement[83522-83556]:ExpressionStatement[83522-83556]"
+  }, {
+    "left" : "/** Returns version data announced by the remote peer. */",
+    "right" : "/** Returns version data announced by the remote peer. */",
+    "info" : "Javadoc[83568-83625]:Javadoc[83568-83625]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[83630-83636]:Modifier[83630-83636]"
+  }, {
+    "left" : "VersionMessage",
+    "right" : "VersionMessage",
+    "info" : "SimpleType[83637-83651]:SimpleType[83637-83651]"
+  }, {
+    "left" : "getPeerVersionMessage",
+    "right" : "getPeerVersionMessage",
+    "info" : "SimpleName[83652-83673]:SimpleName[83652-83673]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3433,6 +4717,22 @@
     "right" : "return vPeerVersionMessage;",
     "info" : "ReturnStatement[83686-83713]:ReturnStatement[83686-83713]"
   }, {
+    "left" : "/** Returns version data we announce to our remote peers. */",
+    "right" : "/** Returns version data we announce to our remote peers. */",
+    "info" : "Javadoc[83725-83785]:Javadoc[83725-83785]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[83790-83796]:Modifier[83790-83796]"
+  }, {
+    "left" : "VersionMessage",
+    "right" : "VersionMessage",
+    "info" : "SimpleType[83797-83811]:SimpleType[83797-83811]"
+  }, {
+    "left" : "getVersionMessage",
+    "right" : "getVersionMessage",
+    "info" : "SimpleName[83812-83829]:SimpleName[83812-83829]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[83832-83870]:Block[83832-83870]"
@@ -3441,6 +4741,22 @@
     "right" : "return versionMessage;",
     "info" : "ReturnStatement[83842-83864]:ReturnStatement[83842-83864]"
   }, {
+    "left" : "/**\n     * @return the height of the best chain as claimed by peer: sum of its ver announcement and blocks announced since.\n     */",
+    "right" : "/**\n     * @return the height of the best chain as claimed by peer: sum of its ver announcement and blocks announced since.\n     */",
+    "info" : "Javadoc[83876-84007]:Javadoc[83876-84007]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[84012-84018]:Modifier[84012-84018]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[84019-84023]:PrimitiveType[84019-84023]"
+  }, {
+    "left" : "getBestHeight",
+    "right" : "getBestHeight",
+    "info" : "SimpleName[84024-84037]:SimpleName[84024-84037]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[84040-84118]:Block[84040-84118]"
@@ -3448,6 +4764,26 @@
     "left" : "return vPeerVersionMessage.bestHeight + blocksAnnounced.get();",
     "right" : "return vPeerVersionMessage.bestHeight + blocksAnnounced.get();",
     "info" : "ReturnStatement[84050-84112]:ReturnStatement[84050-84112]"
+  }, {
+    "left" : "/**\n     * The minimum P2P protocol version that is accepted. If the peer speaks a protocol version lower than this, it\n     * will be disconnected.\n     * @return true if the peer was disconnected as a result\n     */",
+    "right" : "/**\n     * The minimum P2P protocol version that is accepted. If the peer speaks a protocol version lower than this, it\n     * will be disconnected.\n     * @return true if the peer was disconnected as a result\n     */",
+    "info" : "Javadoc[84124-84341]:Javadoc[84124-84341]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[84346-84352]:Modifier[84346-84352]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[84353-84360]:PrimitiveType[84353-84360]"
+  }, {
+    "left" : "setMinProtocolVersion",
+    "right" : "setMinProtocolVersion",
+    "info" : "SimpleName[84361-84382]:SimpleName[84361-84382]"
+  }, {
+    "left" : "int minProtocolVersion",
+    "right" : "int minProtocolVersion",
+    "info" : "SingleVariableDeclaration[84383-84405]:SingleVariableDeclaration[84383-84405]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3481,6 +4817,26 @@
     "right" : "return false;",
     "info" : "ReturnStatement[84702-84715]:ReturnStatement[84702-84715]"
   }, {
+    "left" : "/**\n     * <p>Sets a Bloom filter on this connection. This will cause the given {@link BloomFilter} object to be sent to the\n     * remote peer and if either a memory pool has been set using the constructor or the\n     * vDownloadData property is true, a {@link MemoryPoolMessage} is sent as well to trigger downloading of any\n     * pending transactions that may be relevant.</p>\n     *\n     * <p>The Peer does not automatically request filters from any wallets added using {@link Peer#addWallet(Wallet)}.\n     * This is to allow callers to avoid redundantly recalculating the same filter repeatedly when using multiple peers\n     * and multiple wallets together.</p>\n     *\n     * <p>Therefore, you should not use this method if your app uses a {@link PeerGroup}. It is called for you.</p>\n     *\n     * <p>If the remote peer doesn't support Bloom filtering, then this call is ignored. Once set you presently cannot\n     * unset a filter, though the underlying p2p protocol does support it.</p>\n     */",
+    "right" : "/**\n     * <p>Sets a Bloom filter on this connection. This will cause the given {@link BloomFilter} object to be sent to the\n     * remote peer and if either a memory pool has been set using the constructor or the\n     * vDownloadData property is true, a {@link MemoryPoolMessage} is sent as well to trigger downloading of any\n     * pending transactions that may be relevant.</p>\n     *\n     * <p>The Peer does not automatically request filters from any wallets added using {@link Peer#addWallet(Wallet)}.\n     * This is to allow callers to avoid redundantly recalculating the same filter repeatedly when using multiple peers\n     * and multiple wallets together.</p>\n     *\n     * <p>Therefore, you should not use this method if your app uses a {@link PeerGroup}. It is called for you.</p>\n     *\n     * <p>If the remote peer doesn't support Bloom filtering, then this call is ignored. Once set you presently cannot\n     * unset a filter, though the underlying p2p protocol does support it.</p>\n     */",
+    "info" : "Javadoc[84727-85731]:Javadoc[84727-85731]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[85736-85742]:Modifier[85736-85742]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[85743-85747]:PrimitiveType[85743-85747]"
+  }, {
+    "left" : "setBloomFilter",
+    "right" : "setBloomFilter",
+    "info" : "SimpleName[85748-85762]:SimpleName[85748-85762]"
+  }, {
+    "left" : "BloomFilter filter",
+    "right" : "BloomFilter filter",
+    "info" : "SingleVariableDeclaration[85763-85781]:SingleVariableDeclaration[85763-85781]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[85783-85828]:Block[85783-85828]"
@@ -3488,6 +4844,30 @@
     "left" : "setBloomFilter(filter, true);",
     "right" : "setBloomFilter(filter, true);",
     "info" : "ExpressionStatement[85793-85822]:ExpressionStatement[85793-85822]"
+  }, {
+    "left" : "/**\n     * <p>Sets a Bloom filter on this connection. This will cause the given {@link BloomFilter} object to be sent to the\n     * remote peer and if requested, a {@link MemoryPoolMessage} is sent as well to trigger downloading of any\n     * pending transactions that may be relevant.</p>\n     *\n     * <p>The Peer does not automatically request filters from any wallets added using {@link Peer#addWallet(Wallet)}.\n     * This is to allow callers to avoid redundantly recalculating the same filter repeatedly when using multiple peers\n     * and multiple wallets together.</p>\n     *\n     * <p>Therefore, you should not use this method if your app uses a {@link PeerGroup}. It is called for you.</p>\n     *\n     * <p>If the remote peer doesn't support Bloom filtering, then this call is ignored. Once set you presently cannot\n     * unset a filter, though the underlying p2p protocol does support it.</p>\n     */",
+    "right" : "/**\n     * <p>Sets a Bloom filter on this connection. This will cause the given {@link BloomFilter} object to be sent to the\n     * remote peer and if requested, a {@link MemoryPoolMessage} is sent as well to trigger downloading of any\n     * pending transactions that may be relevant.</p>\n     *\n     * <p>The Peer does not automatically request filters from any wallets added using {@link Peer#addWallet(Wallet)}.\n     * This is to allow callers to avoid redundantly recalculating the same filter repeatedly when using multiple peers\n     * and multiple wallets together.</p>\n     *\n     * <p>Therefore, you should not use this method if your app uses a {@link PeerGroup}. It is called for you.</p>\n     *\n     * <p>If the remote peer doesn't support Bloom filtering, then this call is ignored. Once set you presently cannot\n     * unset a filter, though the underlying p2p protocol does support it.</p>\n     */",
+    "info" : "Javadoc[85834-86747]:Javadoc[85834-86747]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[86752-86758]:Modifier[86752-86758]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[86759-86763]:PrimitiveType[86759-86763]"
+  }, {
+    "left" : "setBloomFilter",
+    "right" : "setBloomFilter",
+    "info" : "SimpleName[86764-86778]:SimpleName[86764-86778]"
+  }, {
+    "left" : "BloomFilter filter",
+    "right" : "BloomFilter filter",
+    "info" : "SingleVariableDeclaration[86779-86797]:SingleVariableDeclaration[86779-86797]"
+  }, {
+    "left" : "boolean andQueryMemPool",
+    "right" : "boolean andQueryMemPool",
+    "info" : "SingleVariableDeclaration[86799-86822]:SingleVariableDeclaration[86799-86822]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3533,6 +4913,18 @@
     "right" : "maybeRestartChainDownload();",
     "info" : "ExpressionStatement[87290-87318]:ExpressionStatement[87290-87318]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[87330-87337]:Modifier[87330-87337]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[87338-87342]:PrimitiveType[87338-87342]"
+  }, {
+    "left" : "maybeRestartChainDownload",
+    "right" : "maybeRestartChainDownload",
+    "info" : "SimpleName[87343-87368]:SimpleName[87343-87368]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[87371-88964]:Block[87371-88964]"
@@ -3576,6 +4968,22 @@
     "left" : "ping().addListener(new Runnable() {\n                @Override\n                public void run() {\n                    lock.lock();\n                    checkNotNull(awaitingFreshFilter);\n                    GetDataMessage getdata = new GetDataMessage(params);\n                    for (Sha256Hash hash : awaitingFreshFilter)\n                        getdata.addFilteredBlock(hash);\n                    awaitingFreshFilter = null;\n                    lock.unlock();\n\n                    log.info(\"Restarting chain download\");\n                    sendMessage(getdata);\n                    // TODO: This bizarre ping-after-getdata hack probably isn't necessary.\n                    // It's to ensure we know when the end of a filtered block stream of txns is, but we should just be\n                    // able to match txns with the merkleblock. Ask Matt why it's written this way.\n                    sendMessage(new Ping((long) (Math.random() * Long.MAX_VALUE)));\n                }\n            }, Threading.SAME_THREAD);",
     "right" : "ping().addListener(new Runnable() {\n                @Override\n                public void run() {\n                    lock.lock();\n                    checkNotNull(awaitingFreshFilter);\n                    GetDataMessage getdata = new GetDataMessage(params);\n                    for (Sha256Hash hash : awaitingFreshFilter)\n                        getdata.addFilteredBlock(hash);\n                    awaitingFreshFilter = null;\n                    lock.unlock();\n\n                    log.info(\"Restarting chain download\");\n                    sendMessage(getdata);\n                    // TODO: This bizarre ping-after-getdata hack probably isn't necessary.\n                    // It's to ensure we know when the end of a filtered block stream of txns is, but we should just be\n                    // able to match txns with the merkleblock. Ask Matt why it's written this way.\n                    sendMessage(new Ping((long) (Math.random() * Long.MAX_VALUE)));\n                }\n            }, Threading.SAME_THREAD);",
     "info" : "ExpressionStatement[87885-88901]:ExpressionStatement[87885-88901]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[87937-87946]:MarkerAnnotation[87937-87946]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[87963-87969]:Modifier[87963-87969]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[87970-87974]:PrimitiveType[87970-87974]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[87975-87978]:SimpleName[87975-87978]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3629,6 +5037,22 @@
     "right" : "lock.unlock();",
     "info" : "ExpressionStatement[88934-88948]:ExpressionStatement[88934-88948]"
   }, {
+    "left" : "/**\n     * Returns the last {@link BloomFilter} set by {@link Peer#setBloomFilter(BloomFilter)}. Bloom filters tell\n     * the remote node what transactions to send us, in a compact manner.\n     */",
+    "right" : "/**\n     * Returns the last {@link BloomFilter} set by {@link Peer#setBloomFilter(BloomFilter)}. Bloom filters tell\n     * the remote node what transactions to send us, in a compact manner.\n     */",
+    "info" : "Javadoc[88970-89167]:Javadoc[88970-89167]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[89172-89178]:Modifier[89172-89178]"
+  }, {
+    "left" : "BloomFilter",
+    "right" : "BloomFilter",
+    "info" : "SimpleType[89179-89190]:SimpleType[89179-89190]"
+  }, {
+    "left" : "getBloomFilter",
+    "right" : "getBloomFilter",
+    "info" : "SimpleName[89191-89205]:SimpleName[89191-89205]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[89208-89244]:Block[89208-89244]"
@@ -3636,6 +5060,26 @@
     "left" : "return vBloomFilter;",
     "right" : "return vBloomFilter;",
     "info" : "ReturnStatement[89218-89238]:ReturnStatement[89218-89238]"
+  }, {
+    "left" : "/**\n     * Sends a query to the remote peer asking for the unspent transaction outputs (UTXOs) for the given outpoints,\n     * with the memory pool included. The result should be treated only as a hint: it's possible for the returned\n     * outputs to be fictional and not exist in any transaction, and it's possible for them to be spent the moment\n     * after the query returns. <b>Most peers do not support this request. You will need to connect to Bitcoin XT\n     * peers if you want this to work.</b>\n     *\n     * @throws ProtocolException if this peer doesn't support the protocol.\n     */",
+    "right" : "/**\n     * Sends a query to the remote peer asking for the unspent transaction outputs (UTXOs) for the given outpoints,\n     * with the memory pool included. The result should be treated only as a hint: it's possible for the returned\n     * outputs to be fictional and not exist in any transaction, and it's possible for them to be spent the moment\n     * after the query returns. <b>Most peers do not support this request. You will need to connect to Bitcoin XT\n     * peers if you want this to work.</b>\n     *\n     * @throws ProtocolException if this peer doesn't support the protocol.\n     */",
+    "info" : "Javadoc[89250-89846]:Javadoc[89250-89846]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[89851-89857]:Modifier[89851-89857]"
+  }, {
+    "left" : "ListenableFuture<UTXOsMessage>",
+    "right" : "ListenableFuture<UTXOsMessage>",
+    "info" : "ParameterizedType[89858-89888]:ParameterizedType[89858-89888]"
+  }, {
+    "left" : "getUTXOs",
+    "right" : "getUTXOs",
+    "info" : "SimpleName[89889-89897]:SimpleName[89889-89897]"
+  }, {
+    "left" : "List<TransactionOutPoint> outPoints",
+    "right" : "List<TransactionOutPoint> outPoints",
+    "info" : "SingleVariableDeclaration[89898-89933]:SingleVariableDeclaration[89898-89933]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3709,6 +5153,22 @@
     "right" : "lock.unlock();",
     "info" : "ExpressionStatement[90869-90883]:ExpressionStatement[91730-91744]"
   }, {
+    "left" : "/**\n     * Returns true if this peer will use getdata/notfound messages to walk backwards through transaction dependencies\n     * before handing the transaction off to the wallet. The wallet can do risk analysis on pending/recent transactions\n     * to try and discover if a pending tx might be at risk of double spending.\n     */",
+    "right" : "/**\n     * Returns true if this peer will use getdata/notfound messages to walk backwards through transaction dependencies\n     * before handing the transaction off to the wallet. The wallet can do risk analysis on pending/recent transactions\n     * to try and discover if a pending tx might be at risk of double spending.\n     */",
+    "info" : "Javadoc[90906-91236]:Javadoc[91766-92096]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[91241-91247]:Modifier[92101-92107]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[91248-91255]:PrimitiveType[92108-92115]"
+  }, {
+    "left" : "getDownloadTxDependencies",
+    "right" : "getDownloadTxDependencies",
+    "info" : "SimpleName[91256-91281]:SimpleName[92116-92141]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[91284-91331]:Block[92144-92191]"
@@ -3716,6 +5176,26 @@
     "left" : "return vDownloadTxDependencies;",
     "right" : "return vDownloadTxDependencies;",
     "info" : "ReturnStatement[91294-91325]:ReturnStatement[92154-92185]"
+  }, {
+    "left" : "/**\n     * Sets if this peer will use getdata/notfound messages to walk backwards through transaction dependencies\n     * before handing the transaction off to the wallet. The wallet can do risk analysis on pending/recent transactions\n     * to try and discover if a pending tx might be at risk of double spending.\n     */",
+    "right" : "/**\n     * Sets if this peer will use getdata/notfound messages to walk backwards through transaction dependencies\n     * before handing the transaction off to the wallet. The wallet can do risk analysis on pending/recent transactions\n     * to try and discover if a pending tx might be at risk of double spending.\n     */",
+    "info" : "Javadoc[91337-91659]:Javadoc[92197-92519]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[91664-91670]:Modifier[92524-92530]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[91671-91675]:PrimitiveType[92531-92535]"
+  }, {
+    "left" : "setDownloadTxDependencies",
+    "right" : "setDownloadTxDependencies",
+    "info" : "SimpleName[91676-91701]:SimpleName[92536-92561]"
+  }, {
+    "left" : "boolean value",
+    "right" : "boolean value",
+    "info" : "SingleVariableDeclaration[91702-91715]:SingleVariableDeclaration[92562-92575]"
   }, {
     "left" : "{}",
     "right" : "{}",

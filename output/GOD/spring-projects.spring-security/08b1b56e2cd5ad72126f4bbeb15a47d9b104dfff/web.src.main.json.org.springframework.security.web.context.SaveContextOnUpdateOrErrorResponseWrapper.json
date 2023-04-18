@@ -341,6 +341,26 @@
     "right" : "OnCommittedResponseWrapper",
     "info" : "SimpleName[1942-1968]:SimpleName[1764-1790]"
   }, {
+    "left" : "/**\n\t * @param response the response to be wrapped\n\t * @param disableUrlRewriting turns the URL encoding methods into null operations,\n\t * preventing the use of URL rewriting to add the session identifier as a URL\n\t * parameter.\n\t */",
+    "right" : "/**\n\t * @param response the response to be wrapped\n\t * @param disableUrlRewriting turns the URL encoding methods into null operations,\n\t * preventing the use of URL rewriting to add the session identifier as a URL\n\t * parameter.\n\t */",
+    "info" : "Javadoc[2186-2419]:Javadoc[1959-2192]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2421-2427]:Modifier[2194-2200]"
+  }, {
+    "left" : "SaveContextOnUpdateOrErrorResponseWrapper",
+    "right" : "SaveContextOnUpdateOrErrorResponseWrapper",
+    "info" : "SimpleName[2428-2469]:SimpleName[2201-2242]"
+  }, {
+    "left" : "HttpServletResponse response",
+    "right" : "HttpServletResponse response",
+    "info" : "SingleVariableDeclaration[2470-2498]:SingleVariableDeclaration[2243-2271]"
+  }, {
+    "left" : "boolean disableUrlRewriting",
+    "right" : "boolean disableUrlRewriting",
+    "info" : "SingleVariableDeclaration[2503-2530]:SingleVariableDeclaration[2276-2303]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2532-2605]:Block[2305-2378]"
@@ -353,9 +373,73 @@
     "right" : "this.disableUrlRewriting = disableUrlRewriting;",
     "info" : "ExpressionStatement[2555-2602]:ExpressionStatement[2328-2375]"
   }, {
+    "left" : "/**\n\t * Invoke this method to disable automatic saving of the {@link SecurityContext} when\n\t * the {@link HttpServletResponse} is committed. This can be useful in the event that\n\t * Async Web Requests are made which may no longer contain the {@link SecurityContext}\n\t * on it.\n\t */",
+    "right" : "/**\n\t * Invoke this method to disable automatic saving of the {@link SecurityContext} when\n\t * the {@link HttpServletResponse} is committed. This can be useful in the event that\n\t * Async Web Requests are made which may no longer contain the {@link SecurityContext}\n\t * on it.\n\t */",
+    "info" : "Javadoc[2608-2889]:Javadoc[2381-2662]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2891-2897]:Modifier[2664-2670]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2898-2902]:PrimitiveType[2671-2675]"
+  }, {
+    "left" : "disableSaveOnResponseCommitted",
+    "right" : "disableSaveOnResponseCommitted",
+    "info" : "SimpleName[2903-2933]:SimpleName[2676-2706]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2936-2986]:Block[2709-2745]"
+  }, {
+    "left" : "/**\n\t * Implements the logic for storing the security context.\n\t *\n\t * @param context the <tt>SecurityContext</tt> instance to store\n\t */",
+    "right" : "/**\n\t * Implements the logic for storing the security context.\n\t *\n\t * @param context the <tt>SecurityContext</tt> instance to store\n\t */",
+    "info" : "Javadoc[2989-3126]:Javadoc[2748-2885]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3128-3137]:Modifier[2887-2896]"
+  }, {
+    "left" : "abstract",
+    "right" : "abstract",
+    "info" : "Modifier[3138-3146]:Modifier[2897-2905]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3147-3151]:PrimitiveType[2906-2910]"
+  }, {
+    "left" : "saveContext",
+    "right" : "saveContext",
+    "info" : "SimpleName[3152-3163]:SimpleName[2911-2922]"
+  }, {
+    "left" : "SecurityContext context",
+    "right" : "SecurityContext context",
+    "info" : "SingleVariableDeclaration[3164-3187]:SingleVariableDeclaration[2923-2946]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5154-5163]:MarkerAnnotation[3272-3281]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5165-5171]:Modifier[3283-3289]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5172-5177]:Modifier[3290-3295]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5178-5184]:SimpleType[3296-3302]"
+  }, {
+    "left" : "encodeRedirectUrl",
+    "right" : "encodeRedirectUrl",
+    "info" : "SimpleName[5185-5202]:SimpleName[3303-3320]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[5203-5213]:SingleVariableDeclaration[3321-3331]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -377,6 +461,30 @@
     "right" : "return super.encodeRedirectUrl(url);",
     "info" : "ReturnStatement[5267-5303]:ReturnStatement[3385-3421]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5309-5318]:MarkerAnnotation[3427-3436]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5320-5326]:Modifier[3438-3444]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5327-5332]:Modifier[3445-3450]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5333-5339]:SimpleType[3451-3457]"
+  }, {
+    "left" : "encodeRedirectURL",
+    "right" : "encodeRedirectURL",
+    "info" : "SimpleName[5340-5357]:SimpleName[3458-3475]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[5358-5368]:SingleVariableDeclaration[3476-3486]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[5370-5461]:Block[3488-3579]"
@@ -396,6 +504,30 @@
     "left" : "return super.encodeRedirectURL(url);",
     "right" : "return super.encodeRedirectURL(url);",
     "info" : "ReturnStatement[5422-5458]:ReturnStatement[3540-3576]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5464-5473]:MarkerAnnotation[3582-3591]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5475-5481]:Modifier[3593-3599]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5482-5487]:Modifier[3600-3605]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5488-5494]:SimpleType[3606-3612]"
+  }, {
+    "left" : "encodeUrl",
+    "right" : "encodeUrl",
+    "info" : "SimpleName[5495-5504]:SimpleName[3613-3622]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[5505-5515]:SingleVariableDeclaration[3623-3633]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -417,6 +549,30 @@
     "right" : "return super.encodeUrl(url);",
     "info" : "ReturnStatement[5569-5597]:ReturnStatement[3687-3715]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5603-5612]:MarkerAnnotation[3721-3730]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5614-5620]:Modifier[3732-3738]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5621-5626]:Modifier[3739-3744]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5627-5633]:SimpleType[3745-3751]"
+  }, {
+    "left" : "encodeURL",
+    "right" : "encodeURL",
+    "info" : "SimpleName[5634-5643]:SimpleName[3752-3761]"
+  }, {
+    "left" : "String url",
+    "right" : "String url",
+    "info" : "SingleVariableDeclaration[5644-5654]:SingleVariableDeclaration[3762-3772]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[5656-5739]:Block[3774-3857]"
@@ -436,6 +592,26 @@
     "left" : "return super.encodeURL(url);",
     "right" : "return super.encodeURL(url);",
     "info" : "ReturnStatement[5708-5736]:ReturnStatement[3826-3854]"
+  }, {
+    "left" : "/**\n\t * Tells if the response wrapper has called <code>saveContext()</code> because of this\n\t * wrapper.\n\t */",
+    "right" : "/**\n\t * Tells if the response wrapper has called <code>saveContext()</code> because of this\n\t * wrapper.\n\t */",
+    "info" : "Javadoc[5742-5851]:Javadoc[3860-3969]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5853-5859]:Modifier[3971-3977]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[5860-5865]:Modifier[3978-3983]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[5866-5873]:PrimitiveType[3984-3991]"
+  }, {
+    "left" : "isContextSaved",
+    "right" : "isContextSaved",
+    "info" : "SimpleName[5874-5888]:SimpleName[3992-4006]"
   }, {
     "left" : "{}",
     "right" : "{}",

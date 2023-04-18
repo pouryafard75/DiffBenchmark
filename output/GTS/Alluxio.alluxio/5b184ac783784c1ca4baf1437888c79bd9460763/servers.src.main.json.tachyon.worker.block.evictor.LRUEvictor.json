@@ -65,6 +65,18 @@
     "info" : "MethodDeclaration[11072-11181]:MethodDeclaration[9677-9786]"
   } ],
   "mappings" : [ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2479-2485]:Modifier[2479-2485]"
+  }, {
+    "left" : "LRUEvictor",
+    "right" : "LRUEvictor",
+    "info" : "SimpleName[2486-2496]:SimpleName[2486-2496]"
+  }, {
+    "left" : "BlockMetadataManagerView view",
+    "right" : "BlockMetadataManagerView view",
+    "info" : "SingleVariableDeclaration[2497-2526]:SingleVariableDeclaration[2497-2526]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2528-2969]:Block[2528-2969]"
@@ -100,6 +112,34 @@
     "left" : "mLRUCache.put(blockMeta.getBlockId(), UNUSED_MAP_VALUE);",
     "right" : "mLRUCache.put(blockMeta.getBlockId(), UNUSED_MAP_VALUE);",
     "info" : "ExpressionStatement[2885-2941]:ExpressionStatement[2885-2941]"
+  }, {
+    "left" : "/**\n   * @return a StorageDirView in the range of location that already has availableBytes larger than\n   *         bytesToBeAvailable, otherwise null\n   */",
+    "right" : "/**\n   * @return a StorageDirView in the range of location that already has availableBytes larger than\n   *         bytesToBeAvailable, otherwise null\n   */",
+    "info" : "Javadoc[2973-3129]:Javadoc[2973-3129]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[3132-3139]:Modifier[3132-3139]"
+  }, {
+    "left" : "StorageDirView",
+    "right" : "StorageDirView",
+    "info" : "SimpleType[3140-3154]:SimpleType[3140-3154]"
+  }, {
+    "left" : "selectDirWithRequestedSpace",
+    "right" : "selectDirWithRequestedSpace",
+    "info" : "SimpleName[3155-3182]:SimpleName[3155-3182]"
+  }, {
+    "left" : "long bytesToBeAvailable",
+    "right" : "long bytesToBeAvailable",
+    "info" : "SingleVariableDeclaration[3183-3206]:SingleVariableDeclaration[3183-3206]"
+  }, {
+    "left" : "BlockStoreLocation location",
+    "right" : "BlockStoreLocation location",
+    "info" : "SingleVariableDeclaration[3214-3241]:SingleVariableDeclaration[3214-3241]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[3250-3261]:SimpleType[3250-3261]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -192,6 +232,38 @@
     "left" : "return (dirView.getAvailableBytes() >= bytesToBeAvailable) ? dirView : null;",
     "right" : "return (dirView.getAvailableBytes() >= bytesToBeAvailable) ? dirView : null;",
     "info" : "ReturnStatement[4053-4129]:ReturnStatement[4053-4129]"
+  }, {
+    "left" : "/**\n   * A recursive implementation of cascading LRU eviction.\n   *\n   * It will try to free space in next tier view to transfer blocks there, if the next tier view\n   * does not have enough free space to hold the blocks, the next next tier view will be tried and\n   * so on until the bottom tier is reached, if blocks can not even be transferred to the bottom\n   * tier, they will be evicted, otherwise, only blocks to be freed in the bottom tier will be\n   * evicted.\n   *\n   * this method is only used in {@link #freeSpace(long, tachyon.worker.block.BlockStoreLocation)}\n   *\n   * @param bytesToBeAvailable bytes to be available after eviction\n   * @param location target location to evict blocks from\n   * @param plan the plan to be recursively updated, is empty when first called in\n   *        {@link #freeSpace(long, tachyon.worker.block.BlockStoreLocation)}\n   * @return the first StorageDirView in the range of location to evict/move bytes from, or null if\n   *         there is no plan\n   */",
+    "right" : "/**\n   * A recursive implementation of cascading LRU eviction.\n   *\n   * It will try to free space in next tier view to transfer blocks there, if the next tier view\n   * does not have enough free space to hold the blocks, the next next tier view will be tried and\n   * so on until the bottom tier is reached, if blocks can not even be transferred to the bottom\n   * tier, they will be evicted, otherwise, only blocks to be freed in the bottom tier will be\n   * evicted.\n   *\n   * this method is only used in {@link #freeSpaceWithView}\n   *\n   * @param bytesToBeAvailable bytes to be available after eviction\n   * @param location target location to evict blocks from\n   * @param plan the plan to be recursively updated, is empty when first called in\n   *        {@link #freeSpaceWithView}\n   * @return the first StorageDirView in the range of location to evict/move bytes from, or null if\n   *         there is no plan\n   */",
+    "info" : "Javadoc[4137-5138]:Javadoc[4137-5060]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[5141-5148]:Modifier[5063-5070]"
+  }, {
+    "left" : "StorageDirView",
+    "right" : "StorageDirView",
+    "info" : "SimpleType[5149-5163]:SimpleType[5071-5085]"
+  }, {
+    "left" : "cascadingEvict",
+    "right" : "cascadingEvict",
+    "info" : "SimpleName[5164-5178]:SimpleName[5086-5100]"
+  }, {
+    "left" : "long bytesToBeAvailable",
+    "right" : "long bytesToBeAvailable",
+    "info" : "SingleVariableDeclaration[5179-5202]:SingleVariableDeclaration[5101-5124]"
+  }, {
+    "left" : "BlockStoreLocation location",
+    "right" : "BlockStoreLocation location",
+    "info" : "SingleVariableDeclaration[5204-5231]:SingleVariableDeclaration[5126-5153]"
+  }, {
+    "left" : "EvictionPlan plan",
+    "right" : "EvictionPlan plan",
+    "info" : "SingleVariableDeclaration[5239-5256]:SingleVariableDeclaration[5161-5178]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[5265-5276]:SimpleType[5187-5198]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -389,9 +461,25 @@
     "right" : "public",
     "info" : "Modifier[9384-9391]:Modifier[7925-7931]"
   }, {
+    "left" : "EvictionPlan",
+    "right" : "EvictionPlan",
+    "info" : "SimpleType[9392-9404]:SimpleType[7932-7944]"
+  }, {
     "left" : "freeSpace",
     "right" : "freeSpaceWithView",
     "info" : "SimpleName[9405-9414]:SimpleName[7945-7962]"
+  }, {
+    "left" : "long bytesToBeAvailable",
+    "right" : "long bytesToBeAvailable",
+    "info" : "SingleVariableDeclaration[9415-9438]:SingleVariableDeclaration[7963-7986]"
+  }, {
+    "left" : "BlockStoreLocation location",
+    "right" : "BlockStoreLocation location",
+    "info" : "SingleVariableDeclaration[9440-9467]:SingleVariableDeclaration[7988-8015]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[9482-9493]:SimpleType[8061-8072]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -505,6 +593,30 @@
     "right" : "return EvictorUtils.legalCascadingPlan(bytesToBeAvailable, plan, mManagerView) ? plan : null;",
     "info" : "ReturnStatement[10499-10592]:ReturnStatement[9104-9197]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[10600-10609]:MarkerAnnotation[9205-9214]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10612-10618]:Modifier[9217-9223]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[10619-10623]:PrimitiveType[9224-9228]"
+  }, {
+    "left" : "onAccessBlock",
+    "right" : "onAccessBlock",
+    "info" : "SimpleName[10624-10637]:SimpleName[9229-9242]"
+  }, {
+    "left" : "long userId",
+    "right" : "long userId",
+    "info" : "SingleVariableDeclaration[10638-10649]:SingleVariableDeclaration[9243-9254]"
+  }, {
+    "left" : "long blockId",
+    "right" : "long blockId",
+    "info" : "SingleVariableDeclaration[10651-10663]:SingleVariableDeclaration[9256-9268]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[10665-10716]:Block[9270-9321]"
@@ -512,6 +624,34 @@
     "left" : "mLRUCache.put(blockId, UNUSED_MAP_VALUE);",
     "right" : "mLRUCache.put(blockId, UNUSED_MAP_VALUE);",
     "info" : "ExpressionStatement[10671-10712]:ExpressionStatement[9276-9317]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[10720-10729]:MarkerAnnotation[9325-9334]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10732-10738]:Modifier[9337-9343]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[10739-10743]:PrimitiveType[9344-9348]"
+  }, {
+    "left" : "onCommitBlock",
+    "right" : "onCommitBlock",
+    "info" : "SimpleName[10744-10757]:SimpleName[9349-9362]"
+  }, {
+    "left" : "long userId",
+    "right" : "long userId",
+    "info" : "SingleVariableDeclaration[10758-10769]:SingleVariableDeclaration[9363-9374]"
+  }, {
+    "left" : "long blockId",
+    "right" : "long blockId",
+    "info" : "SingleVariableDeclaration[10771-10783]:SingleVariableDeclaration[9376-9388]"
+  }, {
+    "left" : "BlockStoreLocation location",
+    "right" : "BlockStoreLocation location",
+    "info" : "SingleVariableDeclaration[10785-10812]:SingleVariableDeclaration[9390-9417]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -521,6 +661,30 @@
     "right" : "mLRUCache.put(blockId, UNUSED_MAP_VALUE);",
     "info" : "ExpressionStatement[10910-10951]:ExpressionStatement[9515-9556]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[10959-10968]:MarkerAnnotation[9564-9573]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10971-10977]:Modifier[9576-9582]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[10978-10982]:PrimitiveType[9583-9587]"
+  }, {
+    "left" : "onRemoveBlockByClient",
+    "right" : "onRemoveBlockByClient",
+    "info" : "SimpleName[10983-11004]:SimpleName[9588-9609]"
+  }, {
+    "left" : "long userId",
+    "right" : "long userId",
+    "info" : "SingleVariableDeclaration[11005-11016]:SingleVariableDeclaration[9610-9621]"
+  }, {
+    "left" : "long blockId",
+    "right" : "long blockId",
+    "info" : "SingleVariableDeclaration[11018-11030]:SingleVariableDeclaration[9623-9635]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[11032-11068]:Block[9637-9673]"
@@ -528,6 +692,30 @@
     "left" : "mLRUCache.remove(blockId);",
     "right" : "mLRUCache.remove(blockId);",
     "info" : "ExpressionStatement[11038-11064]:ExpressionStatement[9643-9669]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[11072-11081]:MarkerAnnotation[9677-9686]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11084-11090]:Modifier[9689-9695]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[11091-11095]:PrimitiveType[9696-9700]"
+  }, {
+    "left" : "onRemoveBlockByWorker",
+    "right" : "onRemoveBlockByWorker",
+    "info" : "SimpleName[11096-11117]:SimpleName[9701-9722]"
+  }, {
+    "left" : "long userId",
+    "right" : "long userId",
+    "info" : "SingleVariableDeclaration[11118-11129]:SingleVariableDeclaration[9723-9734]"
+  }, {
+    "left" : "long blockId",
+    "right" : "long blockId",
+    "info" : "SingleVariableDeclaration[11131-11143]:SingleVariableDeclaration[9736-9748]"
   }, {
     "left" : "{}",
     "right" : "{}",

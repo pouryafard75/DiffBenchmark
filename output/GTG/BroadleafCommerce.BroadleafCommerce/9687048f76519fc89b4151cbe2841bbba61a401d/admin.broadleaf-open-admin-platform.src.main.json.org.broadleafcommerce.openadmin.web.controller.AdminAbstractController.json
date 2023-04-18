@@ -169,6 +169,38 @@
     "info" : "MethodDeclaration[34040-35308]:MethodDeclaration[35317-36585]"
   } ],
   "mappings" : [ {
+    "left" : "/**\n     * Convenience method for obtaining a fully built EntityForm for the given sectionKey, sectionClassName, and id.\n     * \n     * @param sectionKey\n     * @param sectionClassName\n     * @param id\n     * @return a fully composed EntityForm\n     * @throws ServiceException\n     */",
+    "right" : "/**\n     * Convenience method for obtaining a fully built EntityForm for the given sectionKey, sectionClassName, and id.\n     * \n     * @param sectionKey\n     * @param sectionClassName\n     * @param id\n     * @return a fully composed EntityForm\n     * @throws ServiceException\n     */",
+    "info" : "Javadoc[5275-5559]:Javadoc[4742-5026]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[5564-5573]:Modifier[5031-5040]"
+  }, {
+    "left" : "EntityForm",
+    "right" : "EntityForm",
+    "info" : "SimpleType[5574-5584]:SimpleType[5041-5051]"
+  }, {
+    "left" : "getEntityForm",
+    "right" : "getEntityForm",
+    "info" : "SimpleName[5585-5598]:SimpleName[5052-5065]"
+  }, {
+    "left" : "String sectionKey",
+    "right" : "String sectionKey",
+    "info" : "SingleVariableDeclaration[5599-5616]:SingleVariableDeclaration[5066-5083]"
+  }, {
+    "left" : "String sectionClassName",
+    "right" : "String sectionClassName",
+    "info" : "SingleVariableDeclaration[5618-5641]:SingleVariableDeclaration[5085-5108]"
+  }, {
+    "left" : "String id",
+    "right" : "String id",
+    "info" : "SingleVariableDeclaration[5643-5652]:SingleVariableDeclaration[5110-5119]"
+  }, {
+    "left" : "ServiceException",
+    "right" : "ServiceException",
+    "info" : "SimpleType[5661-5677]:SimpleType[5128-5144]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[5678-6465]:Block[5145-5932]"
@@ -216,6 +248,46 @@
     "left" : "return entityForm;",
     "right" : "return entityForm;",
     "info" : "ReturnStatement[6441-6459]:ReturnStatement[5908-5926]"
+  }, {
+    "left" : "/**\n     * Returns a partial representing a dynamic form. An example of this is the dynamic fields that render\n     * on structured content, which are determined by the currently selected structured content type. This \n     * method is typically only invoked through Javascript and used to replace the current dynamic form with\n     * the one for the newly selected type.\n     * \n     * @param request\n     * @param response\n     * @param model\n     * @param pathVars\n     * @param info\n     * @return the return view path\n     * @throws Exception\n     */",
+    "right" : "/**\n     * Returns a partial representing a dynamic form. An example of this is the dynamic fields that render\n     * on structured content, which are determined by the currently selected structured content type. This \n     * method is typically only invoked through Javascript and used to replace the current dynamic form with\n     * the one for the newly selected type.\n     * \n     * @param request\n     * @param response\n     * @param model\n     * @param pathVars\n     * @param info\n     * @return the return view path\n     * @throws Exception\n     */",
+    "info" : "Javadoc[6475-7030]:Javadoc[5942-6497]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[7035-7044]:Modifier[6502-6511]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[7045-7051]:SimpleType[6512-6518]"
+  }, {
+    "left" : "getDynamicForm",
+    "right" : "getDynamicForm",
+    "info" : "SimpleName[7052-7066]:SimpleName[6519-6533]"
+  }, {
+    "left" : "HttpServletRequest request",
+    "right" : "HttpServletRequest request",
+    "info" : "SingleVariableDeclaration[7067-7093]:SingleVariableDeclaration[6534-6560]"
+  }, {
+    "left" : "HttpServletResponse response",
+    "right" : "HttpServletResponse response",
+    "info" : "SingleVariableDeclaration[7095-7123]:SingleVariableDeclaration[6562-6590]"
+  }, {
+    "left" : "Model model",
+    "right" : "Model model",
+    "info" : "SingleVariableDeclaration[7125-7136]:SingleVariableDeclaration[6592-6603]"
+  }, {
+    "left" : "Map<String, String> pathVars",
+    "right" : "Map<String, String> pathVars",
+    "info" : "SingleVariableDeclaration[7150-7178]:SingleVariableDeclaration[6617-6645]"
+  }, {
+    "left" : "DynamicEntityFormInfo info",
+    "right" : "DynamicEntityFormInfo info",
+    "info" : "SingleVariableDeclaration[7192-7218]:SingleVariableDeclaration[6659-6685]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[7227-7236]:SimpleType[6694-6703]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -269,6 +341,54 @@
     "right" : "return \"views/dynamicFormPartial\";",
     "info" : "ReturnStatement[7950-7984]:ReturnStatement[7409-7443]"
   }, {
+    "left" : "/**\n     * Convenience method for obtaining a ListGrid DTO object for a collection. Note that if no <b>criteria</b> is\n     * available, then this should be null (or empty)\n     * \n     * @param mainMetadata class metadata for the root entity that this <b>collectionProperty</b> relates to\n     * @param id foreign key from the root entity for <b>collectionProperty</b>\n     * @param collectionProperty property that this collection should be based on from the root entity\n     * @param form the criteria form model attribute\n     * @param sectionKey the current main section key\n     * @return the list grid\n     * @throws ServiceException\n     */",
+    "right" : "/**\n     * Convenience method for obtaining a ListGrid DTO object for a collection. Note that if no <b>criteria</b> is\n     * available, then this should be null (or empty)\n     * \n     * @param mainMetadata class metadata for the root entity that this <b>collectionProperty</b> relates to\n     * @param id foreign key from the root entity for <b>collectionProperty</b>\n     * @param collectionProperty property that this collection should be based on from the root entity\n     * @param form the criteria form model attribute\n     * @param sectionKey the current main section key\n     * @return the list grid\n     * @throws ServiceException\n     */",
+    "info" : "Javadoc[8127-8775]:Javadoc[7586-8234]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[8780-8789]:Modifier[8239-8248]"
+  }, {
+    "left" : "ListGrid",
+    "right" : "ListGrid",
+    "info" : "SimpleType[8790-8798]:SimpleType[8249-8257]"
+  }, {
+    "left" : "getCollectionListGrid",
+    "right" : "getCollectionListGrid",
+    "info" : "SimpleName[8799-8820]:SimpleName[8258-8279]"
+  }, {
+    "left" : "ClassMetadata mainMetadata",
+    "right" : "ClassMetadata mainMetadata",
+    "info" : "SingleVariableDeclaration[8821-8847]:SingleVariableDeclaration[8280-8306]"
+  }, {
+    "left" : "Entity entity",
+    "right" : "Entity entity",
+    "info" : "SingleVariableDeclaration[8849-8862]:SingleVariableDeclaration[8308-8321]"
+  }, {
+    "left" : "Property collectionProperty",
+    "right" : "Property collectionProperty",
+    "info" : "SingleVariableDeclaration[8864-8891]:SingleVariableDeclaration[8323-8350]"
+  }, {
+    "left" : "MultiValueMap<String, String> requestParams",
+    "right" : "MultiValueMap<String, String> requestParams",
+    "info" : "SingleVariableDeclaration[8905-8948]:SingleVariableDeclaration[8364-8407]"
+  }, {
+    "left" : "String sectionKey",
+    "right" : "String sectionKey",
+    "info" : "SingleVariableDeclaration[8950-8967]:SingleVariableDeclaration[8409-8426]"
+  }, {
+    "left" : "PersistenceResponse persistenceResponse",
+    "right" : "PersistenceResponse persistenceResponse",
+    "info" : "SingleVariableDeclaration[8969-9008]:SingleVariableDeclaration[8428-8467]"
+  }, {
+    "left" : "List<SectionCrumb> sectionCrumbs",
+    "right" : "List<SectionCrumb> sectionCrumbs",
+    "info" : "SingleVariableDeclaration[9010-9042]:SingleVariableDeclaration[8469-8501]"
+  }, {
+    "left" : "ServiceException",
+    "right" : "ServiceException",
+    "info" : "SimpleType[9063-9079]:SimpleType[8522-8538]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[9080-9961]:Block[8539-9420]"
@@ -305,6 +425,50 @@
     "right" : "return listGrid;",
     "info" : "ReturnStatement[9939-9955]:ReturnStatement[9398-9414]"
   }, {
+    "left" : "/**\n     * Convenience method for obtaining a ListGrid DTO object for a collection. Note that if no <b>criteria</b> is\n     * available, then this should be null (or empty)\n     *\n     * @param mainMetadata class metadata for the root entity that this <b>collectionProperty</b> relates to\n     * @param id foreign key from the root entity for <b>collectionProperty</b>\n     * @param collectionProperty property that this collection should be based on from the root entity\n     * @param form the criteria form model attribute\n     * @param sectionKey the current main section key\n     * @return the list grid\n     * @throws ServiceException\n     */",
+    "right" : "/**\n     * Convenience method for obtaining a ListGrid DTO object for a collection. Note that if no <b>criteria</b> is\n     * available, then this should be null (or empty)\n     *\n     * @param mainMetadata class metadata for the root entity that this <b>collectionProperty</b> relates to\n     * @param id foreign key from the root entity for <b>collectionProperty</b>\n     * @param collectionProperty property that this collection should be based on from the root entity\n     * @param form the criteria form model attribute\n     * @param sectionKey the current main section key\n     * @return the list grid\n     * @throws ServiceException\n     */",
+    "info" : "Javadoc[9967-10614]:Javadoc[9426-10073]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[10619-10628]:Modifier[10078-10087]"
+  }, {
+    "left" : "ListGrid",
+    "right" : "ListGrid",
+    "info" : "SimpleType[10629-10637]:SimpleType[10088-10096]"
+  }, {
+    "left" : "getCollectionListGrid",
+    "right" : "getCollectionListGrid",
+    "info" : "SimpleName[10638-10659]:SimpleName[10097-10118]"
+  }, {
+    "left" : "ClassMetadata mainMetadata",
+    "right" : "ClassMetadata mainMetadata",
+    "info" : "SingleVariableDeclaration[10660-10686]:SingleVariableDeclaration[10119-10145]"
+  }, {
+    "left" : "Entity entity",
+    "right" : "Entity entity",
+    "info" : "SingleVariableDeclaration[10688-10701]:SingleVariableDeclaration[10147-10160]"
+  }, {
+    "left" : "Property collectionProperty",
+    "right" : "Property collectionProperty",
+    "info" : "SingleVariableDeclaration[10703-10730]:SingleVariableDeclaration[10162-10189]"
+  }, {
+    "left" : "MultiValueMap<String, String> requestParams",
+    "right" : "MultiValueMap<String, String> requestParams",
+    "info" : "SingleVariableDeclaration[10748-10791]:SingleVariableDeclaration[10207-10250]"
+  }, {
+    "left" : "String sectionKey",
+    "right" : "String sectionKey",
+    "info" : "SingleVariableDeclaration[10793-10810]:SingleVariableDeclaration[10252-10269]"
+  }, {
+    "left" : "List<SectionCrumb> sectionCrumbs",
+    "right" : "List<SectionCrumb> sectionCrumbs",
+    "info" : "SingleVariableDeclaration[10812-10844]:SingleVariableDeclaration[10271-10303]"
+  }, {
+    "left" : "ServiceException",
+    "right" : "ServiceException",
+    "info" : "SimpleType[10869-10885]:SimpleType[10328-10344]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[10886-11021]:Block[10345-10480]"
@@ -312,6 +476,30 @@
     "left" : "return getCollectionListGrid(mainMetadata, entity, collectionProperty, requestParams, sectionKey, null, sectionCrumbs);",
     "right" : "return getCollectionListGrid(mainMetadata, entity, collectionProperty, requestParams, sectionKey, null, sectionCrumbs);",
     "info" : "ReturnStatement[10896-11015]:ReturnStatement[10355-10474]"
+  }, {
+    "left" : "/**\n     * @see #getBlankDynamicFieldTemplateForm(DynamicEntityFormInfo, EntityForm)\n     * @param info\n     * @throws ServiceException\n     */",
+    "right" : "/**\n     * @see #getBlankDynamicFieldTemplateForm(DynamicEntityFormInfo, EntityForm)\n     * @param info\n     * @throws ServiceException\n     */",
+    "info" : "Javadoc[11027-11170]:Javadoc[10486-10629]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[11175-11184]:Modifier[10634-10643]"
+  }, {
+    "left" : "EntityForm",
+    "right" : "EntityForm",
+    "info" : "SimpleType[11185-11195]:SimpleType[10644-10654]"
+  }, {
+    "left" : "getBlankDynamicFieldTemplateForm",
+    "right" : "getBlankDynamicFieldTemplateForm",
+    "info" : "SimpleName[11196-11228]:SimpleName[10655-10687]"
+  }, {
+    "left" : "DynamicEntityFormInfo info",
+    "right" : "DynamicEntityFormInfo info",
+    "info" : "SingleVariableDeclaration[11229-11255]:SingleVariableDeclaration[10688-10714]"
+  }, {
+    "left" : "ServiceException",
+    "right" : "ServiceException",
+    "info" : "SimpleType[11264-11280]:SimpleType[10723-10739]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -325,9 +513,29 @@
     "right" : "/**\n     * Convenience method for obtaining a blank dynamic field template form. For example, if the main entity form should\n     * render different fields depending on the value of a specific field in that main form itself, the \"dynamic\" fields\n     * are generated by this method. Because this is invoked when a new value is chosen, the form generated by this method\n     * will never have values set.\n     *\n     * We only add fields that are not considered Master fields\n     * \n     * @param info\n     * @return the entity form\n     * @throws ServiceException\n     */",
     "info" : "Javadoc[11355-11856]:Javadoc[12193-12765]"
   }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[11861-11870]:Modifier[13716-13725]"
+  }, {
+    "left" : "EntityForm",
+    "right" : "EntityForm",
+    "info" : "SimpleType[11871-11881]:SimpleType[13726-13736]"
+  }, {
     "left" : "getBlankDynamicFieldTemplateForm",
     "right" : "getEntityForm",
     "info" : "SimpleName[11882-11914]:SimpleName[13737-13750]"
+  }, {
+    "left" : "DynamicEntityFormInfo info",
+    "right" : "DynamicEntityFormInfo info",
+    "info" : "SingleVariableDeclaration[11915-11941]:SingleVariableDeclaration[13751-13777]"
+  }, {
+    "left" : "EntityForm dynamicFormOverride",
+    "right" : "EntityForm dynamicFormOverride",
+    "info" : "SingleVariableDeclaration[11943-11973]:SingleVariableDeclaration[13779-13809]"
+  }, {
+    "left" : "ServiceException",
+    "right" : "ServiceException",
+    "info" : "SimpleType[11995-12011]:SimpleType[13818-13834]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -420,6 +628,38 @@
     "left" : "return dynamicForm;",
     "right" : "return dynamicForm;",
     "info" : "ReturnStatement[13754-13773]:ReturnStatement[15036-15055]"
+  }, {
+    "left" : "/**\n     * Convenience method for obtaining a dynamic field template form for a particular entity. This method differs from\n     * {@link #getBlankDynamicFieldTemplateForm(DynamicEntityFormInfo)} in that it will fill out the current values for \n     * the fields in this dynamic form from the database. This method is invoked when the initial view of a page containing\n     * a dynamic form is triggered.\n     * \n     * Optionally, you can pass in a pre-existing dynamic form to this method that already has updated values. Example usage\n     * would be for after validation has failed and you do not want to lookup old values from the database again.\n     * \n     * @param info\n     * @param entityId\n     * @param dynamicForm optional dynamic form that already has values to fill out\n     * @return the entity form\n     * @throws ServiceException\n     */",
+    "right" : "/**\n     * Convenience method for obtaining a dynamic field template form for a particular entity. This method differs from\n     * {@link #getBlankDynamicFieldTemplateForm(DynamicEntityFormInfo)} in that it will fill out the current values for \n     * the fields in this dynamic form from the database. This method is invoked when the initial view of a page containing\n     * a dynamic form is triggered.\n     * \n     * Optionally, you can pass in a pre-existing dynamic form to this method that already has updated values. Example usage\n     * would be for after validation has failed and you do not want to lookup old values from the database again.\n     * \n     * @param info\n     * @param entityId\n     * @param dynamicForm optional dynamic form that already has values to fill out\n     * @return the entity form\n     * @throws ServiceException\n     */",
+    "info" : "Javadoc[13789-14645]:Javadoc[15066-15922]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[14650-14659]:Modifier[15927-15936]"
+  }, {
+    "left" : "EntityForm",
+    "right" : "EntityForm",
+    "info" : "SimpleType[14660-14670]:SimpleType[15937-15947]"
+  }, {
+    "left" : "getDynamicFieldTemplateForm",
+    "right" : "getDynamicFieldTemplateForm",
+    "info" : "SimpleName[14671-14698]:SimpleName[15948-15975]"
+  }, {
+    "left" : "DynamicEntityFormInfo info",
+    "right" : "DynamicEntityFormInfo info",
+    "info" : "SingleVariableDeclaration[14699-14725]:SingleVariableDeclaration[15976-16002]"
+  }, {
+    "left" : "String entityId",
+    "right" : "String entityId",
+    "info" : "SingleVariableDeclaration[14727-14742]:SingleVariableDeclaration[16004-16019]"
+  }, {
+    "left" : "EntityForm dynamicFormOverride",
+    "right" : "EntityForm dynamicFormOverride",
+    "info" : "SingleVariableDeclaration[14744-14774]:SingleVariableDeclaration[16021-16051]"
+  }, {
+    "left" : "ServiceException",
+    "right" : "ServiceException",
+    "info" : "SimpleType[14796-14812]:SimpleType[16073-16089]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -573,6 +813,26 @@
     "right" : "return dynamicForm;",
     "info" : "ReturnStatement[17689-17708]:ReturnStatement[18966-18985]"
   }, {
+    "left" : "/**\n     * This method will scan the entityForm for all dynamic form fields and pull them out\n     * as appropriate.\n     * \n     * @param entityForm\n     */",
+    "right" : "/**\n     * This method will scan the entityForm for all dynamic form fields and pull them out\n     * as appropriate.\n     * \n     * @param entityForm\n     */",
+    "info" : "Javadoc[17720-17877]:Javadoc[18997-19154]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[17882-17891]:Modifier[19159-19168]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17892-17896]:PrimitiveType[19169-19173]"
+  }, {
+    "left" : "extractDynamicFormFields",
+    "right" : "extractDynamicFormFields",
+    "info" : "SimpleName[17897-17921]:SimpleName[19174-19198]"
+  }, {
+    "left" : "EntityForm entityForm",
+    "right" : "EntityForm entityForm",
+    "info" : "SingleVariableDeclaration[17922-17943]:SingleVariableDeclaration[19199-19220]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17945-19413]:Block[19222-20690]"
@@ -661,6 +921,26 @@
     "right" : "dynamicForm.addField(entry.getValue());",
     "info" : "ExpressionStatement[19358-19397]:ExpressionStatement[20635-20674]"
   }, {
+    "left" : "/**\n     * This method is used to determine the current section key. For this default implementation, the sectionKey is pulled\n     * from the pathVariable, {sectionKey}, as defined by the request mapping on this controller. To support controller\n     * inheritance and allow more specialized controllers to delegate some methods to this basic controller, overridden\n     * implementations of this method could return a hardcoded value instead of reading the map\n     * \n     * @param pathVars - the map of all currently bound path variables for this request\n     * @return the sectionKey for this request\n     */",
+    "right" : "/**\n     * This method is used to determine the current section key. For this default implementation, the sectionKey is pulled\n     * from the pathVariable, {sectionKey}, as defined by the request mapping on this controller. To support controller\n     * inheritance and allow more specialized controllers to delegate some methods to this basic controller, overridden\n     * implementations of this method could return a hardcoded value instead of reading the map\n     * \n     * @param pathVars - the map of all currently bound path variables for this request\n     * @return the sectionKey for this request\n     */",
+    "info" : "Javadoc[19594-20207]:Javadoc[20871-21484]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[20212-20221]:Modifier[21489-21498]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[20222-20228]:SimpleType[21499-21505]"
+  }, {
+    "left" : "getSectionKey",
+    "right" : "getSectionKey",
+    "info" : "SimpleName[20229-20242]:SimpleName[21506-21519]"
+  }, {
+    "left" : "Map<String, String> pathVars",
+    "right" : "Map<String, String> pathVars",
+    "info" : "SingleVariableDeclaration[20243-20271]:SingleVariableDeclaration[21520-21548]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[20273-20323]:Block[21550-21600]"
@@ -668,6 +948,26 @@
     "left" : "return pathVars.get(\"sectionKey\");",
     "right" : "return pathVars.get(\"sectionKey\");",
     "info" : "ReturnStatement[20283-20317]:ReturnStatement[21560-21594]"
+  }, {
+    "left" : "/**\n     * <p>Helper method to return an array of {@link org.broadleafcommerce.openadmin.dto.FilterAndSortCriteria} based on a map of propertyName -> list of criteria\n     * value. This will also grab the sorts off of the request parameters, if any.</p>\n     * \n     * <p>The multi-valued map allows users to specify multiple criteria values per property, as well as multiple sort\n     * properties and sort directions. For multiple sort properties and sort directions, these would usually come in as\n     * request parameters like:\n     * <br />\n     * <br />\n     * ....?sortProperty=defaultSku.name&sortProperty=manufacturer&sortDirection=ASCENDING&sortDirection=DESCENDING\n     * <br />\n     * <br />\n     * This would attach criteria such that defaultSku.name was sorted ascending, and manufacturer was sorted descending</p>\n     * \n     * @param requestParams usually a {@link MultiValueMap} that has been bound by a controller to receive all of the\n     * request parameters that are not explicitly named\n     * @return the final array of {@link org.broadleafcommerce.openadmin.dto.FilterAndSortCriteria} to pass to the fetch\n     * \n     * @see {@link #getSortPropertyNames(Map)}\n     * @see {@link #getSortDirections(Map)}\n     */",
+    "right" : "/**\n     * <p>Helper method to return an array of {@link org.broadleafcommerce.openadmin.dto.FilterAndSortCriteria} based on a map of propertyName -> list of criteria\n     * value. This will also grab the sorts off of the request parameters, if any.</p>\n     * \n     * <p>The multi-valued map allows users to specify multiple criteria values per property, as well as multiple sort\n     * properties and sort directions. For multiple sort properties and sort directions, these would usually come in as\n     * request parameters like:\n     * <br />\n     * <br />\n     * ....?sortProperty=defaultSku.name&sortProperty=manufacturer&sortDirection=ASCENDING&sortDirection=DESCENDING\n     * <br />\n     * <br />\n     * This would attach criteria such that defaultSku.name was sorted ascending, and manufacturer was sorted descending</p>\n     * \n     * @param requestParams usually a {@link MultiValueMap} that has been bound by a controller to receive all of the\n     * request parameters that are not explicitly named\n     * @return the final array of {@link org.broadleafcommerce.openadmin.dto.FilterAndSortCriteria} to pass to the fetch\n     * \n     * @see {@link #getSortPropertyNames(Map)}\n     * @see {@link #getSortDirections(Map)}\n     */",
+    "info" : "Javadoc[20333-21572]:Javadoc[21610-22849]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[21577-21586]:Modifier[22854-22863]"
+  }, {
+    "left" : "FilterAndSortCriteria[]",
+    "right" : "FilterAndSortCriteria[]",
+    "info" : "ArrayType[21587-21610]:ArrayType[22864-22887]"
+  }, {
+    "left" : "getCriteria",
+    "right" : "getCriteria",
+    "info" : "SimpleName[21611-21622]:SimpleName[22888-22899]"
+  }, {
+    "left" : "Map<String, List<String>> requestParams",
+    "right" : "Map<String, List<String>> requestParams",
+    "info" : "SingleVariableDeclaration[21623-21662]:SingleVariableDeclaration[22900-22939]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -781,6 +1081,26 @@
     "right" : "Map<String, FilterAndSortCriteria> fasMap = BLCMapUtils.keyedMap(result, new TypedClosure<String, FilterAndSortCriteria>() {\n    \n                @Override\n                public String getKey(FilterAndSortCriteria value) {\n                    return value.getPropertyId();\n                }\n            });",
     "info" : "VariableDeclarationStatement[23377-23684]:VariableDeclarationStatement[24654-24961]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[23523-23532]:MarkerAnnotation[24800-24809]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[23549-23555]:Modifier[24826-24832]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[23556-23562]:SimpleType[24833-24839]"
+  }, {
+    "left" : "getKey",
+    "right" : "getKey",
+    "info" : "SimpleName[23563-23569]:SimpleName[24840-24846]"
+  }, {
+    "left" : "FilterAndSortCriteria value",
+    "right" : "FilterAndSortCriteria value",
+    "info" : "SingleVariableDeclaration[23570-23597]:SingleVariableDeclaration[24847-24874]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[23599-23668]:Block[24876-24945]"
@@ -837,6 +1157,26 @@
     "right" : "return result.toArray(new FilterAndSortCriteria[result.size()]);",
     "info" : "ReturnStatement[24513-24577]:ReturnStatement[25790-25854]"
   }, {
+    "left" : "/**\n     * Obtains the list of sort directions from the bound request parameters. Note that these should appear in the same\n     * relative order as {@link #getSortPropertyNames(Map)}\n     * \n     * @param requestParams\n     * @return\n     */",
+    "right" : "/**\n     * Obtains the list of sort directions from the bound request parameters. Note that these should appear in the same\n     * relative order as {@link #getSortPropertyNames(Map)}\n     * \n     * @param requestParams\n     * @return\n     */",
+    "info" : "Javadoc[24593-24835]:Javadoc[25870-26112]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[24840-24849]:Modifier[26117-26126]"
+  }, {
+    "left" : "List<String>",
+    "right" : "List<String>",
+    "info" : "ParameterizedType[24850-24862]:ParameterizedType[26127-26139]"
+  }, {
+    "left" : "getSortDirections",
+    "right" : "getSortDirections",
+    "info" : "SimpleName[24863-24880]:SimpleName[26140-26157]"
+  }, {
+    "left" : "Map<String, List<String>> requestParams",
+    "right" : "Map<String, List<String>> requestParams",
+    "info" : "SingleVariableDeclaration[24881-24920]:SingleVariableDeclaration[26158-26197]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[24922-25055]:Block[26199-26332]"
@@ -849,6 +1189,26 @@
     "right" : "return sortTypes;",
     "info" : "ReturnStatement[25032-25049]:ReturnStatement[26309-26326]"
   }, {
+    "left" : "/**\n     * Obtains the list of property names to sort on from the bound request parameters. Note that these should appear in the\n     * same relative order as {@link #getSortDirections(Map)}.\n     * \n     * @param requestParams\n     * @return\n     */",
+    "right" : "/**\n     * Obtains the list of property names to sort on from the bound request parameters. Note that these should appear in the\n     * same relative order as {@link #getSortDirections(Map)}.\n     * \n     * @param requestParams\n     * @return\n     */",
+    "info" : "Javadoc[25065-25315]:Javadoc[26342-26592]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[25320-25329]:Modifier[26597-26606]"
+  }, {
+    "left" : "List<String>",
+    "right" : "List<String>",
+    "info" : "ParameterizedType[25330-25342]:ParameterizedType[26607-26619]"
+  }, {
+    "left" : "getSortPropertyNames",
+    "right" : "getSortPropertyNames",
+    "info" : "SimpleName[25343-25363]:SimpleName[26620-26640]"
+  }, {
+    "left" : "Map<String, List<String>> requestParams",
+    "right" : "Map<String, List<String>> requestParams",
+    "info" : "SingleVariableDeclaration[25364-25403]:SingleVariableDeclaration[26641-26680]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[25405-25493]:Block[26682-26770]"
@@ -856,6 +1216,26 @@
     "left" : "return requestParams.get(FilterAndSortCriteria.SORT_PROPERTY_PARAMETER);",
     "right" : "return requestParams.get(FilterAndSortCriteria.SORT_PROPERTY_PARAMETER);",
     "info" : "ReturnStatement[25415-25487]:ReturnStatement[26692-26764]"
+  }, {
+    "left" : "/**\n     * Gets the fully qualified ceiling entity classname for this section. If this section is not explicitly defined in\n     * the database, will return the value passed into this function. For example, if there is a mapping from \"/myentity\" to\n     * \"com.mycompany.myentity\", both \"http://localhost/myentity\" and \"http://localhost/com.mycompany.myentity\" are valid\n     * request paths.\n     * \n     * @param sectionKey\n     * @return the className for this sectionKey if found in the database or the sectionKey if not\n     */",
+    "right" : "/**\n     * Gets the fully qualified ceiling entity classname for this section. If this section is not explicitly defined in\n     * the database, will return the value passed into this function. For example, if there is a mapping from \"/myentity\" to\n     * \"com.mycompany.myentity\", both \"http://localhost/myentity\" and \"http://localhost/com.mycompany.myentity\" are valid\n     * request paths.\n     * \n     * @param sectionKey\n     * @return the className for this sectionKey if found in the database or the sectionKey if not\n     */",
+    "info" : "Javadoc[25499-26031]:Javadoc[26776-27308]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[26036-26045]:Modifier[27313-27322]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[26046-26052]:SimpleType[27323-27329]"
+  }, {
+    "left" : "getClassNameForSection",
+    "right" : "getClassNameForSection",
+    "info" : "SimpleName[26053-26075]:SimpleName[27330-27352]"
+  }, {
+    "left" : "String sectionKey",
+    "right" : "String sectionKey",
+    "info" : "SingleVariableDeclaration[26076-26093]:SingleVariableDeclaration[27353-27370]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -889,6 +1269,26 @@
     "right" : "return (section == null) ? sectionKey : section.getCeilingEntity();",
     "info" : "ReturnStatement[26613-26680]:ReturnStatement[27890-27957]"
   }, {
+    "left" : "/**\n     * If there are certain types of entities that should not be allowed to be created, an override of this method would be\n     * able to specify that. It could also add additional types if desired.\n     * \n     * @param classTree\n     * @return a List<ClassTree> representing all potentially avaialble entity types to create\n     */",
+    "right" : "/**\n     * If there are certain types of entities that should not be allowed to be created, an override of this method would be\n     * able to specify that. It could also add additional types if desired.\n     * \n     * @param classTree\n     * @return a List<ClassTree> representing all potentially avaialble entity types to create\n     */",
+    "info" : "Javadoc[26692-27030]:Javadoc[27969-28307]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[27035-27044]:Modifier[28312-28321]"
+  }, {
+    "left" : "List<ClassTree>",
+    "right" : "List<ClassTree>",
+    "info" : "ParameterizedType[27045-27060]:ParameterizedType[28322-28337]"
+  }, {
+    "left" : "getAddEntityTypes",
+    "right" : "getAddEntityTypes",
+    "info" : "SimpleName[27061-27078]:SimpleName[28338-28355]"
+  }, {
+    "left" : "ClassTree classTree",
+    "right" : "ClassTree classTree",
+    "info" : "SingleVariableDeclaration[27079-27098]:SingleVariableDeclaration[28356-28375]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[27100-27158]:Block[28377-28435]"
@@ -896,6 +1296,22 @@
     "left" : "return classTree.getCollapsedClassTrees();",
     "right" : "return classTree.getCollapsedClassTrees();",
     "info" : "ReturnStatement[27110-27152]:ReturnStatement[28387-28429]"
+  }, {
+    "left" : "/**\n     * This method is called when attempting to add new entities that have a polymorphic tree. \n     * \n     * If this method returns null, there is no default type set for this particular entity type, and the user will be \n     * presented with a selection of possible types to utilize.\n     * \n     * If it returns a non-null value, the returned fullyQualifiedClassname will be used and will bypass the selection step.\n     * \n     * @return null if there is no default type, otherwise the default type\n     */",
+    "right" : "/**\n     * This method is called when attempting to add new entities that have a polymorphic tree. \n     * \n     * If this method returns null, there is no default type set for this particular entity type, and the user will be \n     * presented with a selection of possible types to utilize.\n     * \n     * If it returns a non-null value, the returned fullyQualifiedClassname will be used and will bypass the selection step.\n     * \n     * @return null if there is no default type, otherwise the default type\n     */",
+    "info" : "Javadoc[27164-27680]:Javadoc[28441-28957]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[27685-27694]:Modifier[28962-28971]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[27695-27701]:SimpleType[28972-28978]"
+  }, {
+    "left" : "getDefaultEntityType",
+    "right" : "getDefaultEntityType",
+    "info" : "SimpleName[27702-27722]:SimpleName[28979-28999]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -905,6 +1321,22 @@
     "right" : "return null;",
     "info" : "ReturnStatement[27735-27747]:ReturnStatement[29012-29024]"
   }, {
+    "left" : "/**\n     * This method is invoked for every request for this controller. By default, we do not want to specify a custom\n     * criteria, but specialized controllers may want to.\n     * \n     * @return the custom criteria for this section for all requests, if any\n     */",
+    "right" : "/**\n     * This method is invoked for every request for this controller. By default, we do not want to specify a custom\n     * criteria, but specialized controllers may want to.\n     * \n     * @return the custom criteria for this section for all requests, if any\n     */",
+    "info" : "Javadoc[27763-28033]:Javadoc[29040-29310]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[28038-28047]:Modifier[29315-29324]"
+  }, {
+    "left" : "String[]",
+    "right" : "String[]",
+    "info" : "ArrayType[28048-28056]:ArrayType[29325-29333]"
+  }, {
+    "left" : "getSectionCustomCriteria",
+    "right" : "getSectionCustomCriteria",
+    "info" : "SimpleName[28057-28081]:SimpleName[29334-29358]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[28084-28112]:Block[29361-29389]"
@@ -913,17 +1345,113 @@
     "right" : "return null;",
     "info" : "ReturnStatement[28094-28106]:ReturnStatement[29371-29383]"
   }, {
+    "left" : "/**\n     * @deprecated in favor of {@link #attachSectionSpecificInfo(PersistencePackageRequest, Map)}\n     */",
+    "right" : "/**\n     * @deprecated in favor of {@link #attachSectionSpecificInfo(PersistencePackageRequest, Map)}\n     */",
+    "info" : "Javadoc[28122-28231]:Javadoc[29399-29508]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[28236-28247]:MarkerAnnotation[29513-29524]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[28252-28261]:Modifier[29529-29538]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[28262-28266]:PrimitiveType[29539-29543]"
+  }, {
+    "left" : "attachSectionSpecificInfo",
+    "right" : "attachSectionSpecificInfo",
+    "info" : "SimpleName[28267-28292]:SimpleName[29544-29569]"
+  }, {
+    "left" : "PersistencePackageRequest ppr",
+    "right" : "PersistencePackageRequest ppr",
+    "info" : "SingleVariableDeclaration[28293-28322]:SingleVariableDeclaration[29570-29599]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[28324-28340]:Block[29601-29617]"
+  }, {
+    "left" : "/**\n     * This method is invoked whenever an assembled EntityForm is rendered. This typically occurs when viewing an entity\n     * in the admin or viewing an error state on a POST for that entity.\n     * \n     * @param entityForm\n     */",
+    "right" : "/**\n     * This method is invoked whenever an assembled EntityForm is rendered. This typically occurs when viewing an entity\n     * in the admin or viewing an error state on a POST for that entity.\n     * \n     * @param entityForm\n     */",
+    "info" : "Javadoc[28350-28588]:Javadoc[29627-29865]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[28593-28602]:Modifier[29870-29879]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[28603-28607]:PrimitiveType[29880-29884]"
+  }, {
+    "left" : "modifyEntityForm",
+    "right" : "modifyEntityForm",
+    "info" : "SimpleName[28608-28624]:SimpleName[29885-29901]"
+  }, {
+    "left" : "EntityForm entityForm",
+    "right" : "EntityForm entityForm",
+    "info" : "SingleVariableDeclaration[28625-28646]:SingleVariableDeclaration[29902-29923]"
+  }, {
+    "left" : "Map<String, String> pathVars",
+    "right" : "Map<String, String> pathVars",
+    "info" : "SingleVariableDeclaration[28648-28676]:SingleVariableDeclaration[29925-29953]"
   }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[28678-28694]:Block[29955-29971]"
   }, {
+    "left" : "/**\n     * This method is invoked whenever an assembled EntityForm is rendered for the add entity screen.\n     * \n     * @param entityForm\n     */",
+    "right" : "/**\n     * This method is invoked whenever an assembled EntityForm is rendered for the add entity screen.\n     * \n     * @param entityForm\n     */",
+    "info" : "Javadoc[28700-28846]:Javadoc[29977-30123]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[28851-28860]:Modifier[30128-30137]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[28861-28865]:PrimitiveType[30138-30142]"
+  }, {
+    "left" : "modifyAddEntityForm",
+    "right" : "modifyAddEntityForm",
+    "info" : "SimpleName[28866-28885]:SimpleName[30143-30162]"
+  }, {
+    "left" : "EntityForm entityForm",
+    "right" : "EntityForm entityForm",
+    "info" : "SingleVariableDeclaration[28886-28907]:SingleVariableDeclaration[30163-30184]"
+  }, {
+    "left" : "Map<String, String> pathVars",
+    "right" : "Map<String, String> pathVars",
+    "info" : "SingleVariableDeclaration[28909-28937]:SingleVariableDeclaration[30186-30214]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[28939-28955]:Block[30216-30232]"
+  }, {
+    "left" : "/**\n     * A hook method that is invoked every time the {@link #getSectionPersistencePackageRequest(String)} method is invoked.\n     * This allows specialized controllers to hook into every request and manipulate the persistence package request as\n     * desired.\n     * \n     * @param ppr\n     */",
+    "right" : "/**\n     * A hook method that is invoked every time the {@link #getSectionPersistencePackageRequest(String)} method is invoked.\n     * This allows specialized controllers to hook into every request and manipulate the persistence package request as\n     * desired.\n     * \n     * @param ppr\n     */",
+    "info" : "Javadoc[28961-29258]:Javadoc[30238-30535]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[29263-29272]:Modifier[30540-30549]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[29273-29277]:PrimitiveType[30550-30554]"
+  }, {
+    "left" : "attachSectionSpecificInfo",
+    "right" : "attachSectionSpecificInfo",
+    "info" : "SimpleName[29278-29303]:SimpleName[30555-30580]"
+  }, {
+    "left" : "PersistencePackageRequest ppr",
+    "right" : "PersistencePackageRequest ppr",
+    "info" : "SingleVariableDeclaration[29304-29333]:SingleVariableDeclaration[30581-30610]"
+  }, {
+    "left" : "Map<String, String> pathVars",
+    "right" : "Map<String, String> pathVars",
+    "info" : "SingleVariableDeclaration[29335-29363]:SingleVariableDeclaration[30612-30640]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -932,6 +1460,26 @@
     "left" : "attachSectionSpecificInfo(ppr);",
     "right" : "attachSectionSpecificInfo(ppr);",
     "info" : "ExpressionStatement[29375-29406]:ExpressionStatement[30652-30683]"
+  }, {
+    "left" : "/**\n     * Obtains the requested start index parameter\n     * \n     * @param requestParams\n     * @return\n     */",
+    "right" : "/**\n     * Obtains the requested start index parameter\n     * \n     * @param requestParams\n     * @return\n     */",
+    "info" : "Javadoc[29418-29531]:Javadoc[30695-30808]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[29536-29545]:Modifier[30813-30822]"
+  }, {
+    "left" : "Integer",
+    "right" : "Integer",
+    "info" : "SimpleType[29546-29553]:SimpleType[30823-30830]"
+  }, {
+    "left" : "getStartIndex",
+    "right" : "getStartIndex",
+    "info" : "SimpleName[29554-29567]:SimpleName[30831-30844]"
+  }, {
+    "left" : "Map<String, List<String>> requestParams",
+    "right" : "Map<String, List<String>> requestParams",
+    "info" : "SingleVariableDeclaration[29568-29607]:SingleVariableDeclaration[30845-30884]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -957,6 +1505,26 @@
     "right" : "return CollectionUtils.isEmpty(startIndex) ? null : Integer.parseInt(startIndex.get(0));",
     "info" : "ReturnStatement[29825-29913]:ReturnStatement[31102-31190]"
   }, {
+    "left" : "/**\n     * Obtains the requested max index parameter\n     * \n     * @param requestParams\n     * @return\n     */",
+    "right" : "/**\n     * Obtains the requested max index parameter\n     * \n     * @param requestParams\n     * @return\n     */",
+    "info" : "Javadoc[29929-30040]:Javadoc[31206-31317]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[30045-30054]:Modifier[31322-31331]"
+  }, {
+    "left" : "Integer",
+    "right" : "Integer",
+    "info" : "SimpleType[30055-30062]:SimpleType[31332-31339]"
+  }, {
+    "left" : "getMaxIndex",
+    "right" : "getMaxIndex",
+    "info" : "SimpleName[30063-30074]:SimpleName[31340-31351]"
+  }, {
+    "left" : "Map<String, List<String>> requestParams",
+    "right" : "Map<String, List<String>> requestParams",
+    "info" : "SingleVariableDeclaration[30075-30114]:SingleVariableDeclaration[31352-31391]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[30116-30418]:Block[31393-31695]"
@@ -980,6 +1548,30 @@
     "left" : "return CollectionUtils.isEmpty(maxIndex) ? null : Integer.parseInt(maxIndex.get(0));",
     "right" : "return CollectionUtils.isEmpty(maxIndex) ? null : Integer.parseInt(maxIndex.get(0));",
     "info" : "ReturnStatement[30328-30412]:ReturnStatement[31605-31689]"
+  }, {
+    "left" : "/**\n     * Attributes to add to the model on every request\n     * \n     * @param model\n     * @param sectionKey\n     */",
+    "right" : "/**\n     * Attributes to add to the model on every request\n     * \n     * @param model\n     * @param sectionKey\n     */",
+    "info" : "Javadoc[30529-30648]:Javadoc[31806-31925]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[30653-30662]:Modifier[31930-31939]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[30663-30667]:PrimitiveType[31940-31944]"
+  }, {
+    "left" : "setModelAttributes",
+    "right" : "setModelAttributes",
+    "info" : "SimpleName[30668-30686]:SimpleName[31945-31963]"
+  }, {
+    "left" : "Model model",
+    "right" : "Model model",
+    "info" : "SingleVariableDeclaration[30687-30698]:SingleVariableDeclaration[31964-31975]"
+  }, {
+    "left" : "String sectionKey",
+    "right" : "String sectionKey",
+    "info" : "SingleVariableDeclaration[30700-30717]:SingleVariableDeclaration[31977-31994]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1013,6 +1605,34 @@
     "right" : "extensionManager.getProxy().setAdditionalModelAttributes(model, sectionKey);",
     "info" : "ExpressionStatement[31102-31178]:ExpressionStatement[32379-32455]"
   }, {
+    "left" : "/**\n     * @deprecated in favor of {@link #getSectionPersistencePackageRequest(String, List, Map)}\n     */",
+    "right" : "/**\n     * @deprecated in favor of {@link #getSectionPersistencePackageRequest(String, List, Map)}\n     */",
+    "info" : "Javadoc[31190-31296]:Javadoc[32467-32573]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[31301-31312]:MarkerAnnotation[32578-32589]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[31317-31326]:Modifier[32594-32603]"
+  }, {
+    "left" : "PersistencePackageRequest",
+    "right" : "PersistencePackageRequest",
+    "info" : "SimpleType[31327-31352]:SimpleType[32604-32629]"
+  }, {
+    "left" : "getSectionPersistencePackageRequest",
+    "right" : "getSectionPersistencePackageRequest",
+    "info" : "SimpleName[31353-31388]:SimpleName[32630-32665]"
+  }, {
+    "left" : "String sectionClassName",
+    "right" : "String sectionClassName",
+    "info" : "SingleVariableDeclaration[31389-31412]:SingleVariableDeclaration[32666-32689]"
+  }, {
+    "left" : "List<SectionCrumb> sectionCrumbs",
+    "right" : "List<SectionCrumb> sectionCrumbs",
+    "info" : "SingleVariableDeclaration[31414-31446]:SingleVariableDeclaration[32691-32723]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[31448-31546]:Block[32725-32823]"
@@ -1020,6 +1640,34 @@
     "left" : "return getSectionPersistencePackageRequest(sectionClassName, sectionCrumbs, null);",
     "right" : "return getSectionPersistencePackageRequest(sectionClassName, sectionCrumbs, null);",
     "info" : "ReturnStatement[31458-31540]:ReturnStatement[32735-32817]"
+  }, {
+    "left" : "/**\n     * Returns a PersistencePackageRequest for the given sectionClassName. Will also invoke the \n     * {@link #getSectionCustomCriteria()} and {@link #attachSectionSpecificInfo(PersistencePackageRequest)} to allow\n     * specialized controllers to manipulate the request for every action in this controller.\n     * \n     * @param sectionClassName\n     * @param sectionCrumbs\n     * @param pathVars\n     * @return\n     */",
+    "right" : "/**\n     * Returns a PersistencePackageRequest for the given sectionClassName. Will also invoke the \n     * {@link #getSectionCustomCriteria()} and {@link #attachSectionSpecificInfo(PersistencePackageRequest)} to allow\n     * specialized controllers to manipulate the request for every action in this controller.\n     * \n     * @param sectionClassName\n     * @param sectionCrumbs\n     * @param pathVars\n     * @return\n     */",
+    "info" : "Javadoc[31552-31977]:Javadoc[32829-33254]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[31982-31991]:Modifier[33259-33268]"
+  }, {
+    "left" : "PersistencePackageRequest",
+    "right" : "PersistencePackageRequest",
+    "info" : "SimpleType[31992-32017]:SimpleType[33269-33294]"
+  }, {
+    "left" : "getSectionPersistencePackageRequest",
+    "right" : "getSectionPersistencePackageRequest",
+    "info" : "SimpleName[32018-32053]:SimpleName[33295-33330]"
+  }, {
+    "left" : "String sectionClassName",
+    "right" : "String sectionClassName",
+    "info" : "SingleVariableDeclaration[32054-32077]:SingleVariableDeclaration[33331-33354]"
+  }, {
+    "left" : "List<SectionCrumb> sectionCrumbs",
+    "right" : "List<SectionCrumb> sectionCrumbs",
+    "info" : "SingleVariableDeclaration[32092-32124]:SingleVariableDeclaration[33369-33401]"
+  }, {
+    "left" : "Map<String, String> pathVars",
+    "right" : "Map<String, String> pathVars",
+    "info" : "SingleVariableDeclaration[32126-32154]:SingleVariableDeclaration[33403-33431]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1037,6 +1685,38 @@
     "right" : "return ppr;",
     "info" : "ReturnStatement[32480-32491]:ReturnStatement[33757-33768]"
   }, {
+    "left" : "/**\n     * @deprecated in favor of {@link #getSectionPersistencePackageRequest(String, MultiValueMap, List, Map)}\n     */",
+    "right" : "/**\n     * @deprecated in favor of {@link #getSectionPersistencePackageRequest(String, MultiValueMap, List, Map)}\n     */",
+    "info" : "Javadoc[32503-32624]:Javadoc[33780-33901]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[32629-32640]:MarkerAnnotation[33906-33917]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[32645-32654]:Modifier[33922-33931]"
+  }, {
+    "left" : "PersistencePackageRequest",
+    "right" : "PersistencePackageRequest",
+    "info" : "SimpleType[32655-32680]:SimpleType[33932-33957]"
+  }, {
+    "left" : "getSectionPersistencePackageRequest",
+    "right" : "getSectionPersistencePackageRequest",
+    "info" : "SimpleName[32681-32716]:SimpleName[33958-33993]"
+  }, {
+    "left" : "String sectionClassName",
+    "right" : "String sectionClassName",
+    "info" : "SingleVariableDeclaration[32717-32740]:SingleVariableDeclaration[33994-34017]"
+  }, {
+    "left" : "MultiValueMap<String, String> requestParams",
+    "right" : "MultiValueMap<String, String> requestParams",
+    "info" : "SingleVariableDeclaration[32755-32798]:SingleVariableDeclaration[34032-34075]"
+  }, {
+    "left" : "List<SectionCrumb> sectionCrumbs",
+    "right" : "List<SectionCrumb> sectionCrumbs",
+    "info" : "SingleVariableDeclaration[32800-32832]:SingleVariableDeclaration[34077-34109]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[32834-32947]:Block[34111-34224]"
@@ -1044,6 +1724,38 @@
     "left" : "return getSectionPersistencePackageRequest(sectionClassName, requestParams, sectionCrumbs, null);",
     "right" : "return getSectionPersistencePackageRequest(sectionClassName, requestParams, sectionCrumbs, null);",
     "info" : "ReturnStatement[32844-32941]:ReturnStatement[34121-34218]"
+  }, {
+    "left" : "/**\n     * Returns the result of a call to {@link #getSectionPersistencePackageRequest(String)} with the additional filter\n     * and sort criteria attached.\n     * \n     * @param sectionClassName\n     * @param filterAndSortCriteria\n     * @return the PersistencePacakageRequest\n     */",
+    "right" : "/**\n     * Returns the result of a call to {@link #getSectionPersistencePackageRequest(String)} with the additional filter\n     * and sort criteria attached.\n     * \n     * @param sectionClassName\n     * @param filterAndSortCriteria\n     * @return the PersistencePacakageRequest\n     */",
+    "info" : "Javadoc[32953-33239]:Javadoc[34230-34516]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[33244-33253]:Modifier[34521-34530]"
+  }, {
+    "left" : "PersistencePackageRequest",
+    "right" : "PersistencePackageRequest",
+    "info" : "SimpleType[33254-33279]:SimpleType[34531-34556]"
+  }, {
+    "left" : "getSectionPersistencePackageRequest",
+    "right" : "getSectionPersistencePackageRequest",
+    "info" : "SimpleName[33280-33315]:SimpleName[34557-34592]"
+  }, {
+    "left" : "String sectionClassName",
+    "right" : "String sectionClassName",
+    "info" : "SingleVariableDeclaration[33316-33339]:SingleVariableDeclaration[34593-34616]"
+  }, {
+    "left" : "MultiValueMap<String, String> requestParams",
+    "right" : "MultiValueMap<String, String> requestParams",
+    "info" : "SingleVariableDeclaration[33354-33397]:SingleVariableDeclaration[34631-34674]"
+  }, {
+    "left" : "List<SectionCrumb> sectionCrumbs",
+    "right" : "List<SectionCrumb> sectionCrumbs",
+    "info" : "SingleVariableDeclaration[33399-33431]:SingleVariableDeclaration[34676-34708]"
+  }, {
+    "left" : "Map<String, String> pathVars",
+    "right" : "Map<String, String> pathVars",
+    "info" : "SingleVariableDeclaration[33433-33461]:SingleVariableDeclaration[34710-34738]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1064,6 +1776,30 @@
     "left" : "return ppr;",
     "right" : "return ppr;",
     "info" : "ReturnStatement[34017-34028]:ReturnStatement[35294-35305]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[34040-34049]:Modifier[35317-35326]"
+  }, {
+    "left" : "List<SectionCrumb>",
+    "right" : "List<SectionCrumb>",
+    "info" : "ParameterizedType[34050-34068]:ParameterizedType[35327-35345]"
+  }, {
+    "left" : "getSectionCrumbs",
+    "right" : "getSectionCrumbs",
+    "info" : "SimpleName[34069-34085]:SimpleName[35346-35362]"
+  }, {
+    "left" : "HttpServletRequest request",
+    "right" : "HttpServletRequest request",
+    "info" : "SingleVariableDeclaration[34086-34112]:SingleVariableDeclaration[35363-35389]"
+  }, {
+    "left" : "String currentSection",
+    "right" : "String currentSection",
+    "info" : "SingleVariableDeclaration[34114-34135]:SingleVariableDeclaration[35391-35412]"
+  }, {
+    "left" : "String currentSectionId",
+    "right" : "String currentSectionId",
+    "info" : "SingleVariableDeclaration[34137-34160]:SingleVariableDeclaration[35414-35437]"
   }, {
     "left" : "{}",
     "right" : "{}",

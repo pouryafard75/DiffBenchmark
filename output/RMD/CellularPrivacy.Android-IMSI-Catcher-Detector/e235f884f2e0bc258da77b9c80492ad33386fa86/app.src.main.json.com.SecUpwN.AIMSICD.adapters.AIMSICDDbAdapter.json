@@ -249,6 +249,22 @@
     "info" : "MethodDeclaration[71505-72907]:MethodDeclaration[62647-64049]"
   } ],
   "mappings" : [ {
+    "left" : "/**\n     * Description:\n     *              These tables are the ones that can be individually backed-up or restored in\n     *              the backupDB() and restoreDB(). That's why the pre-loaded tables are NOT\n     *              backed up, nor restored. They are:\n     *                      TABLE_DEFAULT_MCC\n     *                      TABLE_DET_FLAGS\n     *                      TABLE_DBE_CAPAB\n     *                      TABLE_SECTORTYPE\n     *\n     * @param context   Tables that can be used in:  backupDB() and restoreDB()\n     */",
+    "right" : "/**\n     * Description:\n     *              These tables are the ones that can be individually backed-up or restored in\n     *              the backupDB() and restoreDB(). That's why the pre-loaded tables are NOT\n     *              backed up, nor restored. They are:\n     *                      TABLE_DEFAULT_MCC\n     *                      TABLE_DET_FLAGS\n     *                      TABLE_DBE_CAPAB\n     *                      TABLE_SECTORTYPE\n     *\n     * @param context   Tables that can be used in:  backupDB() and restoreDB()\n     */",
+    "info" : "Javadoc[6476-7017]:Javadoc[6476-7017]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7022-7028]:Modifier[7022-7028]"
+  }, {
+    "left" : "AIMSICDDbAdapter",
+    "right" : "AIMSICDDbAdapter",
+    "info" : "SimpleName[7029-7045]:SimpleName[7029-7045]"
+  }, {
+    "left" : "Context context",
+    "right" : "Context context",
+    "info" : "SingleVariableDeclaration[7046-7061]:SingleVariableDeclaration[7046-7061]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[7063-7704]:Block[7063-7704]"
@@ -269,6 +285,22 @@
     "right" : "mTables = new String[]{\n                //  Old...\n                LOCATION_TABLE,\n                CELL_TABLE,\n                OPENCELLID_TABLE,\n                SILENT_SMS_TABLE,\n                //  New...\n                //TABLE_DBE_IMPORT,\n                //TABLE_DBI_BTS,\n                //TABLE_DBI_MEASURE,\n                TABLE_EVENTLOG,\n                //TABLE_SILENTSMS,\n                //TABLE_CMEASURES\n        };",
     "info" : "ExpressionStatement[7275-7698]:ExpressionStatement[7275-7698]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7710-7716]:Modifier[7710-7716]"
+  }, {
+    "left" : "AIMSICDDbAdapter",
+    "right" : "AIMSICDDbAdapter",
+    "info" : "SimpleType[7717-7733]:SimpleType[7717-7733]"
+  }, {
+    "left" : "open",
+    "right" : "open",
+    "info" : "SimpleName[7734-7738]:SimpleName[7734-7738]"
+  }, {
+    "left" : "SQLException",
+    "right" : "SQLException",
+    "info" : "SimpleType[7748-7760]:SimpleType[7748-7760]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[7761-7836]:Block[7761-7836]"
@@ -281,6 +313,18 @@
     "right" : "return this;",
     "info" : "ReturnStatement[7818-7830]:ReturnStatement[7818-7830]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7842-7848]:Modifier[7842-7848]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7849-7853]:PrimitiveType[7849-7853]"
+  }, {
+    "left" : "close",
+    "right" : "close",
+    "info" : "SimpleName[7854-7859]:SimpleName[7854-7859]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[7862-7896]:Block[7862-7896]"
@@ -288,6 +332,22 @@
     "left" : "mDbHelper.close();",
     "right" : "mDbHelper.close();",
     "info" : "ExpressionStatement[7872-7890]:ExpressionStatement[7872-7890]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[8102-8108]:Modifier[8102-8108]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[8109-8113]:PrimitiveType[8109-8113]"
+  }, {
+    "left" : "insertSilentSms",
+    "right" : "insertSilentSms",
+    "info" : "SimpleName[8114-8129]:SimpleName[8114-8129]"
+  }, {
+    "left" : "Bundle bundle",
+    "right" : "Bundle bundle",
+    "info" : "SingleVariableDeclaration[8130-8143]:SingleVariableDeclaration[8130-8143]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -320,6 +380,74 @@
     "left" : "return mDb.insert(SILENT_SMS_TABLE, null, smsValues);",
     "right" : "return mDb.insert(SILENT_SMS_TABLE, null, smsValues);",
     "info" : "ReturnStatement[8641-8694]:ReturnStatement[8641-8694]"
+  }, {
+    "left" : "/**\n     * Inserts (API?) Cell Details into Database (cellinfo) TABLE_DBI_BTS:DBi_bts/measure\n     *\n     * @return row id or -1 if error\n     *\n     * TODO: This should become TABLE_DBI_BTS: DBi_bts | measure\n     *\n     */",
+    "right" : "/**\n     * Inserts (API?) Cell Details into Database (cellinfo) TABLE_DBI_BTS:DBi_bts/measure\n     *\n     * @return row id or -1 if error\n     *\n     * TODO: This should become TABLE_DBI_BTS: DBi_bts | measure\n     *\n     */",
+    "info" : "Javadoc[8706-8930]:Javadoc[8706-8930]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[8935-8941]:Modifier[8935-8941]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[8942-8946]:PrimitiveType[8942-8946]"
+  }, {
+    "left" : "insertCell",
+    "right" : "insertCell",
+    "info" : "SimpleName[8947-8957]:SimpleName[8947-8957]"
+  }, {
+    "left" : "int lac",
+    "right" : "int lac",
+    "info" : "SingleVariableDeclaration[8959-8966]:SingleVariableDeclaration[8959-8966]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[8996-9006]:SingleVariableDeclaration[8996-9006]"
+  }, {
+    "left" : "int netType",
+    "right" : "int netType",
+    "info" : "SingleVariableDeclaration[9036-9047]:SingleVariableDeclaration[9036-9047]"
+  }, {
+    "left" : "double latitude",
+    "right" : "double latitude",
+    "info" : "SingleVariableDeclaration[9077-9092]:SingleVariableDeclaration[9077-9092]"
+  }, {
+    "left" : "double longitude",
+    "right" : "double longitude",
+    "info" : "SingleVariableDeclaration[9122-9138]:SingleVariableDeclaration[9122-9138]"
+  }, {
+    "left" : "int signalInfo",
+    "right" : "int signalInfo",
+    "info" : "SingleVariableDeclaration[9168-9182]:SingleVariableDeclaration[9168-9182]"
+  }, {
+    "left" : "int mcc",
+    "right" : "int mcc",
+    "info" : "SingleVariableDeclaration[9212-9219]:SingleVariableDeclaration[9212-9219]"
+  }, {
+    "left" : "int mnc",
+    "right" : "int mnc",
+    "info" : "SingleVariableDeclaration[9249-9256]:SingleVariableDeclaration[9249-9256]"
+  }, {
+    "left" : "double accuracy",
+    "right" : "double accuracy",
+    "info" : "SingleVariableDeclaration[9286-9301]:SingleVariableDeclaration[9286-9301]"
+  }, {
+    "left" : "double speed",
+    "right" : "double speed",
+    "info" : "SingleVariableDeclaration[9331-9343]:SingleVariableDeclaration[9331-9343]"
+  }, {
+    "left" : "double direction",
+    "right" : "double direction",
+    "info" : "SingleVariableDeclaration[9373-9389]:SingleVariableDeclaration[9373-9389]"
+  }, {
+    "left" : "String networkType",
+    "right" : "String networkType",
+    "info" : "SingleVariableDeclaration[9419-9437]:SingleVariableDeclaration[9419-9437]"
+  }, {
+    "left" : "long measurementTaken",
+    "right" : "long measurementTaken",
+    "info" : "SingleVariableDeclaration[9467-9488]:SingleVariableDeclaration[9467-9488]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -421,6 +549,26 @@
     "right" : "return 0;",
     "info" : "ReturnStatement[10863-10872]:ReturnStatement[10863-10872]"
   }, {
+    "left" : "/**\n     *  Description:    Inserts (API?) Cell Details into TABLE_DBI_BTS:DBi_bts/measure (cellinfo)\n     *\n     *  Issues:         See insertOpenCell() below...\n     *\n     * @return row id or -1 if error\n     *\n     * TODO:    This should become TABLE_DBI_BTS: DBi_bts | measure\n     *          and we might wanna rename \"insertCell\" to \"addMeasurement\" ??\n     *\n     */",
+    "right" : "/**\n     *  Description:    Inserts (API?) Cell Details into TABLE_DBI_BTS:DBi_bts/measure (cellinfo)\n     *\n     *  Issues:         See insertOpenCell() below...\n     *\n     * @return row id or -1 if error\n     *\n     * TODO:    This should become TABLE_DBI_BTS: DBi_bts | measure\n     *          and we might wanna rename \"insertCell\" to \"addMeasurement\" ??\n     *\n     */",
+    "info" : "Javadoc[10884-11258]:Javadoc[10884-11258]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11263-11269]:Modifier[11263-11269]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[11270-11274]:PrimitiveType[11270-11274]"
+  }, {
+    "left" : "insertCell",
+    "right" : "insertCell",
+    "info" : "SimpleName[11275-11285]:SimpleName[11275-11285]"
+  }, {
+    "left" : "Cell cell",
+    "right" : "Cell cell",
+    "info" : "SingleVariableDeclaration[11286-11295]:SingleVariableDeclaration[11286-11295]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[11297-12905]:Block[11297-12905]"
@@ -517,6 +665,62 @@
     "right" : "return 0;",
     "info" : "ReturnStatement[12890-12899]:ReturnStatement[12890-12899]"
   }, {
+    "left" : "/**\n     *  Description:    This method is used to insert and populate the downloaded or previously\n     *                  backed up OCID details into the DBe_import (opencellid) database table.\n     *                  It also prevents adding multiple entries of the same cell-id, when OCID\n     *                  downloads are repeated.\n     *\n     *  Issues:     [ ] None, but see GH issue #303 for a smarter OCID download handler.\n     *\n     *  Notes:       a) Move to:  CellTracker.java  see:\n     *                  https://github.com/SecUpwN/Android-IMSI-Catcher-Detector/issues/290#issuecomment-72303486\n     *               b) OCID CellID is of the \"long form\" (>65535) when available...\n     *               c) is also used to where CSV data is populating the opencellid table.\n     *\n     * @return row id or -1 if error\n     *\n     */",
+    "right" : "/**\n     *  Description:    This method is used to insert and populate the downloaded or previously\n     *                  backed up OCID details into the DBe_import (opencellid) database table.\n     *                  It also prevents adding multiple entries of the same cell-id, when OCID\n     *                  downloads are repeated.\n     *\n     *  Issues:     [ ] None, but see GH issue #303 for a smarter OCID download handler.\n     *\n     *  Notes:       a) Move to:  CellTracker.java  see:\n     *                  https://github.com/SecUpwN/Android-IMSI-Catcher-Detector/issues/290#issuecomment-72303486\n     *               b) OCID CellID is of the \"long form\" (>65535) when available...\n     *               c) is also used to where CSV data is populating the opencellid table.\n     *\n     * @return row id or -1 if error\n     *\n     */",
+    "info" : "Javadoc[12911-13759]:Javadoc[12911-13759]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[13765-13769]:PrimitiveType[13765-13769]"
+  }, {
+    "left" : "insertOpenCell",
+    "right" : "insertOpenCell",
+    "info" : "SimpleName[13770-13784]:SimpleName[13770-13784]"
+  }, {
+    "left" : "double latitude",
+    "right" : "double latitude",
+    "info" : "SingleVariableDeclaration[13785-13800]:SingleVariableDeclaration[13785-13800]"
+  }, {
+    "left" : "double longitude",
+    "right" : "double longitude",
+    "info" : "SingleVariableDeclaration[13826-13842]:SingleVariableDeclaration[13826-13842]"
+  }, {
+    "left" : "int mcc",
+    "right" : "int mcc",
+    "info" : "SingleVariableDeclaration[13868-13875]:SingleVariableDeclaration[13868-13875]"
+  }, {
+    "left" : "int mnc",
+    "right" : "int mnc",
+    "info" : "SingleVariableDeclaration[13901-13908]:SingleVariableDeclaration[13901-13908]"
+  }, {
+    "left" : "int lac",
+    "right" : "int lac",
+    "info" : "SingleVariableDeclaration[13934-13941]:SingleVariableDeclaration[13934-13941]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[13967-13977]:SingleVariableDeclaration[13967-13977]"
+  }, {
+    "left" : "int avgSigStr",
+    "right" : "int avgSigStr",
+    "info" : "SingleVariableDeclaration[14003-14016]:SingleVariableDeclaration[14003-14016]"
+  }, {
+    "left" : "int range",
+    "right" : "int range",
+    "info" : "SingleVariableDeclaration[14042-14051]:SingleVariableDeclaration[14042-14051]"
+  }, {
+    "left" : "int samples",
+    "right" : "int samples",
+    "info" : "SingleVariableDeclaration[14089-14100]:SingleVariableDeclaration[14089-14100]"
+  }, {
+    "left" : "int isGPSexact",
+    "right" : "int isGPSexact",
+    "info" : "SingleVariableDeclaration[14126-14140]:SingleVariableDeclaration[14126-14140]"
+  }, {
+    "left" : "String RAT",
+    "right" : "String RAT",
+    "info" : "SingleVariableDeclaration[14173-14183]:SingleVariableDeclaration[14173-14183]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[14249-14574]:Block[14249-14574]"
@@ -524,6 +728,66 @@
     "left" : "return insertOpenCell(\n                latitude,\n                longitude,\n                mcc,\n                mnc,\n                lac,\n                cellID,\n                avgSigStr,\n                range,\n                samples,\n                isGPSexact,\n                RAT,\n                true);",
     "right" : "return insertOpenCell(\n                latitude,\n                longitude,\n                mcc,\n                mnc,\n                lac,\n                cellID,\n                avgSigStr,\n                range,\n                samples,\n                isGPSexact,\n                RAT,\n                true);",
     "info" : "ReturnStatement[14259-14568]:ReturnStatement[14259-14568]"
+  }, {
+    "left" : "/**\n     *  Description:    This method is used to insert and populate the downloaded or previously\n     *                  backed up OCID details into the DBe_import (opencellid) database table.\n     *                  It also prevents adding multiple entries of the same cell-id, when OCID\n     *                  downloads are repeated.\n     *\n     *  Issues:     [ ] None, but see GH issue #303 for a smarter OCID download handler.\n     *\n     *  Notes:       a) Move to:  CellTracker.java  see:\n     *                  https://github.com/SecUpwN/Android-IMSI-Catcher-Detector/issues/290#issuecomment-72303486\n     *               b) OCID CellID is of the \"long form\" (>65535) when available...\n     *               c) is also used to where CSV data is populating the opencellid table.\n     *\n     * @return row id or -1 if error\n     *\n     */",
+    "right" : "/**\n     *  Description:    This method is used to insert and populate the downloaded or previously\n     *                  backed up OCID details into the DBe_import (opencellid) database table.\n     *                  It also prevents adding multiple entries of the same cell-id, when OCID\n     *                  downloads are repeated.\n     *\n     *  Issues:     [ ] None, but see GH issue #303 for a smarter OCID download handler.\n     *\n     *  Notes:       a) Move to:  CellTracker.java  see:\n     *                  https://github.com/SecUpwN/Android-IMSI-Catcher-Detector/issues/290#issuecomment-72303486\n     *               b) OCID CellID is of the \"long form\" (>65535) when available...\n     *               c) is also used to where CSV data is populating the opencellid table.\n     *\n     * @return row id or -1 if error\n     *\n     */",
+    "info" : "Javadoc[14580-15428]:Javadoc[14580-15428]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[15433-15437]:PrimitiveType[15433-15437]"
+  }, {
+    "left" : "insertOpenCell",
+    "right" : "insertOpenCell",
+    "info" : "SimpleName[15438-15452]:SimpleName[15438-15452]"
+  }, {
+    "left" : "double latitude",
+    "right" : "double latitude",
+    "info" : "SingleVariableDeclaration[15453-15468]:SingleVariableDeclaration[15453-15468]"
+  }, {
+    "left" : "double longitude",
+    "right" : "double longitude",
+    "info" : "SingleVariableDeclaration[15494-15510]:SingleVariableDeclaration[15494-15510]"
+  }, {
+    "left" : "int mcc",
+    "right" : "int mcc",
+    "info" : "SingleVariableDeclaration[15536-15543]:SingleVariableDeclaration[15536-15543]"
+  }, {
+    "left" : "int mnc",
+    "right" : "int mnc",
+    "info" : "SingleVariableDeclaration[15569-15576]:SingleVariableDeclaration[15569-15576]"
+  }, {
+    "left" : "int lac",
+    "right" : "int lac",
+    "info" : "SingleVariableDeclaration[15602-15609]:SingleVariableDeclaration[15602-15609]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[15635-15645]:SingleVariableDeclaration[15635-15645]"
+  }, {
+    "left" : "int avgSigStr",
+    "right" : "int avgSigStr",
+    "info" : "SingleVariableDeclaration[15671-15684]:SingleVariableDeclaration[15671-15684]"
+  }, {
+    "left" : "int range",
+    "right" : "int range",
+    "info" : "SingleVariableDeclaration[15710-15719]:SingleVariableDeclaration[15710-15719]"
+  }, {
+    "left" : "int samples",
+    "right" : "int samples",
+    "info" : "SingleVariableDeclaration[15757-15768]:SingleVariableDeclaration[15757-15768]"
+  }, {
+    "left" : "int isGPSexact",
+    "right" : "int isGPSexact",
+    "info" : "SingleVariableDeclaration[15794-15808]:SingleVariableDeclaration[15794-15808]"
+  }, {
+    "left" : "String RAT",
+    "right" : "String RAT",
+    "info" : "SingleVariableDeclaration[15841-15851]:SingleVariableDeclaration[15841-15851]"
+  }, {
+    "left" : "boolean isNeedCheckExists",
+    "right" : "boolean isNeedCheckExists",
+    "info" : "SingleVariableDeclaration[15936-15961]:SingleVariableDeclaration[15936-15961]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -601,6 +865,50 @@
     "right" : "return mDb.insert(OPENCELLID_TABLE, null, cellIDValues);",
     "info" : "ReturnStatement[17431-17487]:ReturnStatement[17431-17487]"
   }, {
+    "left" : "/**\n     * Inserts API location details into the measurement Database (locationinfo)\n     *\n     * @return row id or -1 if error\n     *\n     * TODO: TABLE_DBI_MEASURE:DBi_measure\n     */",
+    "right" : "/**\n     * Inserts API location details into the measurement Database (locationinfo)\n     *\n     * @return row id or -1 if error\n     *\n     * TODO: TABLE_DBI_MEASURE:DBi_measure\n     */",
+    "info" : "Javadoc[17509-17695]:Javadoc[17509-17695]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17700-17706]:Modifier[17700-17706]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[17707-17711]:PrimitiveType[17707-17711]"
+  }, {
+    "left" : "insertLocation",
+    "right" : "insertLocation",
+    "info" : "SimpleName[17712-17726]:SimpleName[17712-17726]"
+  }, {
+    "left" : "int lac",
+    "right" : "int lac",
+    "info" : "SingleVariableDeclaration[17728-17735]:SingleVariableDeclaration[17728-17735]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[17769-17779]:SingleVariableDeclaration[17769-17779]"
+  }, {
+    "left" : "int netType",
+    "right" : "int netType",
+    "info" : "SingleVariableDeclaration[17813-17824]:SingleVariableDeclaration[17813-17824]"
+  }, {
+    "left" : "double latitude",
+    "right" : "double latitude",
+    "info" : "SingleVariableDeclaration[17858-17873]:SingleVariableDeclaration[17858-17873]"
+  }, {
+    "left" : "double longitude",
+    "right" : "double longitude",
+    "info" : "SingleVariableDeclaration[17907-17923]:SingleVariableDeclaration[17907-17923]"
+  }, {
+    "left" : "int signalInfo",
+    "right" : "int signalInfo",
+    "info" : "SingleVariableDeclaration[17957-17971]:SingleVariableDeclaration[17957-17971]"
+  }, {
+    "left" : "String cellInfo",
+    "right" : "String cellInfo",
+    "info" : "SingleVariableDeclaration[18005-18020]:SingleVariableDeclaration[18005-18020]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[18055-19145]:Block[18055-19145]"
@@ -669,6 +977,26 @@
     "right" : "return 0;",
     "info" : "ReturnStatement[19130-19139]:ReturnStatement[19130-19139]"
   }, {
+    "left" : "/**\n     * Delete cell info - for use in tests\n     *\n     * @param cellId    This method deletes a cell with CID from CELL_TABLE\n     * @return result of deleting that CID\n     *\n     */",
+    "right" : "/**\n     * Delete cell info - for use in tests\n     *\n     * @param cellId    This method deletes a cell with CID from CELL_TABLE\n     * @return result of deleting that CID\n     *\n     */",
+    "info" : "Javadoc[19151-19338]:Javadoc[19151-19338]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[19343-19349]:Modifier[19343-19349]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[19350-19353]:PrimitiveType[19350-19353]"
+  }, {
+    "left" : "deleteCell",
+    "right" : "deleteCell",
+    "info" : "SimpleName[19354-19364]:SimpleName[19354-19364]"
+  }, {
+    "left" : "int cellId",
+    "right" : "int cellId",
+    "info" : "SingleVariableDeclaration[19365-19375]:SingleVariableDeclaration[19365-19375]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[19377-19533]:Block[19377-19533]"
@@ -680,6 +1008,54 @@
     "left" : "return mDb.delete(CELL_TABLE, \"CellID = ?\", new String[]{ String.valueOf(cellId) });",
     "right" : "return mDb.delete(CELL_TABLE, \"CellID = ?\", new String[]{ String.valueOf(cellId) });",
     "info" : "ReturnStatement[19443-19527]:ReturnStatement[19443-19527]"
+  }, {
+    "left" : "/**\n     * Description:     Inserts log data into the EventLog table\n     *\n     * Notes:           Table item order:\n     *                  time,LAC,CID,PSC,gpsd_lat,gpsd_lon,gpsd_accu,DF_id,DF_desc\n     *\n     * @return row id or -1 if error\n     */",
+    "right" : "/**\n     * Description:     Inserts log data into the EventLog table\n     *\n     * Notes:           Table item order:\n     *                  time,LAC,CID,PSC,gpsd_lat,gpsd_lon,gpsd_accu,DF_id,DF_desc\n     *\n     * @return row id or -1 if error\n     */",
+    "info" : "Javadoc[19539-19791]:Javadoc[19539-19791]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[19797-19803]:Modifier[19797-19803]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[19804-19808]:PrimitiveType[19804-19808]"
+  }, {
+    "left" : "insertDetection",
+    "right" : "insertDetection",
+    "info" : "SimpleName[19809-19824]:SimpleName[19809-19824]"
+  }, {
+    "left" : "int LAC",
+    "right" : "int LAC",
+    "info" : "SingleVariableDeclaration[19871-19878]:SingleVariableDeclaration[19871-19878]"
+  }, {
+    "left" : "int CID",
+    "right" : "int CID",
+    "info" : "SingleVariableDeclaration[19913-19920]:SingleVariableDeclaration[19913-19920]"
+  }, {
+    "left" : "int PSC",
+    "right" : "int PSC",
+    "info" : "SingleVariableDeclaration[19955-19962]:SingleVariableDeclaration[19955-19962]"
+  }, {
+    "left" : "double latitude",
+    "right" : "double latitude",
+    "info" : "SingleVariableDeclaration[19997-20012]:SingleVariableDeclaration[19997-20012]"
+  }, {
+    "left" : "double longitude",
+    "right" : "double longitude",
+    "info" : "SingleVariableDeclaration[20047-20063]:SingleVariableDeclaration[20047-20063]"
+  }, {
+    "left" : "double accu",
+    "right" : "double accu",
+    "info" : "SingleVariableDeclaration[20098-20109]:SingleVariableDeclaration[20098-20109]"
+  }, {
+    "left" : "int DF_id",
+    "right" : "int DF_id",
+    "info" : "SingleVariableDeclaration[20144-20153]:SingleVariableDeclaration[20144-20153]"
+  }, {
+    "left" : "String DF_description",
+    "right" : "String DF_description",
+    "info" : "SingleVariableDeclaration[20188-20209]:SingleVariableDeclaration[20188-20209]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -729,6 +1105,22 @@
     "right" : "return mDb.insert(TABLE_EVENTLOG, null, detectionValues);",
     "info" : "ReturnStatement[20916-20973]:ReturnStatement[20916-20973]"
   }, {
+    "left" : "/**\n     * Returns all EventLog DB items\n     */",
+    "right" : "/**\n     * Returns all EventLog DB items\n     */",
+    "info" : "Javadoc[22422-22470]:Javadoc[22422-22470]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[22475-22481]:Modifier[22475-22481]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[22482-22488]:SimpleType[22482-22488]"
+  }, {
+    "left" : "getEventLogData",
+    "right" : "getEventLogData",
+    "info" : "SimpleName[22489-22504]:SimpleName[22489-22504]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[22507-22726]:Block[22507-22726]"
@@ -736,6 +1128,22 @@
     "left" : "return mDb.query(TABLE_EVENTLOG,\n                new String[]{\"time\", \"LAC\", \"CID\", \"PSC\", \"gpsd_lat\",\"gpsd_lon\", \"gpsd_accu\", \"DF_id\", \"DF_desc\"},\n                null, null, null, null, null\n        );",
     "right" : "return mDb.query(TABLE_EVENTLOG,\n                new String[]{\"time\", \"LAC\", \"CID\", \"PSC\", \"gpsd_lat\",\"gpsd_lon\", \"gpsd_accu\", \"DF_id\", \"DF_desc\"},\n                null, null, null, null, null\n        );",
     "info" : "ReturnStatement[22517-22720]:ReturnStatement[22517-22720]"
+  }, {
+    "left" : "/**\n     * Returns Silent SMS database (silentsms) contents\n     */",
+    "right" : "/**\n     * Returns Silent SMS database (silentsms) contents\n     */",
+    "info" : "Javadoc[22833-22900]:Javadoc[22833-22900]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[22905-22911]:Modifier[22905-22911]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[22912-22918]:SimpleType[22912-22918]"
+  }, {
+    "left" : "getSilentSmsData",
+    "right" : "getSilentSmsData",
+    "info" : "SimpleName[22919-22935]:SimpleName[22919-22935]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -745,6 +1153,22 @@
     "right" : "return mDb.query(SILENT_SMS_TABLE,\n                new String[]{\"Address\", \"Display\", \"Class\", \"ServiceCtr\", \"Message\", \"Timestamp\"},\n                null, null, null, null, COLUMN_ID + \" DESC\"\n        );",
     "info" : "ReturnStatement[22948-23152]:ReturnStatement[22948-23152]"
   }, {
+    "left" : "/**\n     * Returns Cell Information (DBi_bts) database contents\n     */",
+    "right" : "/**\n     * Returns Cell Information (DBi_bts) database contents\n     */",
+    "info" : "Javadoc[23164-23235]:Javadoc[23164-23235]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[23240-23246]:Modifier[23240-23246]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[23247-23253]:SimpleType[23247-23253]"
+  }, {
+    "left" : "getCellData",
+    "right" : "getCellData",
+    "info" : "SimpleName[23254-23265]:SimpleName[23254-23265]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[23268-23519]:Block[23268-23519]"
@@ -752,6 +1176,22 @@
     "left" : "return mDb.query( CELL_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\", \"Mcc\", \"Mnc\",\n                        \"Accuracy\", \"Speed\", \"Direction\"},\n                null, null, null, null, null\n        );",
     "right" : "return mDb.query( CELL_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\", \"Mcc\", \"Mnc\",\n                        \"Accuracy\", \"Speed\", \"Direction\"},\n                null, null, null, null, null\n        );",
     "info" : "ReturnStatement[23278-23513]:ReturnStatement[23278-23513]"
+  }, {
+    "left" : "/**\n     * Returns Cell Information for contribution to the OpenCellID project\n     *\n     * Function:    Return a list of all rows in cellinfo table where OCID_SUBMITTED is not 1.\n     *\n     * Todo:        Change column name from OCID_SUBMITTED to isSubmitted\n     */",
+    "right" : "/**\n     * Returns Cell Information for contribution to the OpenCellID project\n     *\n     * Function:    Return a list of all rows in cellinfo table where OCID_SUBMITTED is not 1.\n     *\n     * Todo:        Change column name from OCID_SUBMITTED to isSubmitted\n     */",
+    "info" : "Javadoc[23525-23794]:Javadoc[23525-23794]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[23799-23805]:Modifier[23799-23805]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[23806-23812]:SimpleType[23806-23812]"
+  }, {
+    "left" : "getOPCIDSubmitData",
+    "right" : "getOPCIDSubmitData",
+    "info" : "SimpleName[23813-23831]:SimpleName[23813-23831]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -761,6 +1201,22 @@
     "right" : "return mDb.query( CELL_TABLE,\n                new String[]{\"Mcc\", \"Mnc\", \"Lac\", \"CellID\", \"Lng\", \"Lat\", \"Signal\", \"Timestamp\",\n                        \"Accuracy\", \"Speed\", \"Direction\", \"NetworkType\"}, \"OCID_SUBMITTED <> 1\",\n                null, null, null, null\n        );",
     "info" : "ReturnStatement[23844-24117]:ReturnStatement[23844-24117]"
   }, {
+    "left" : "/**\n     * Returns Location Information (DBi_meas) database contents\n     */",
+    "right" : "/**\n     * Returns Location Information (DBi_meas) database contents\n     */",
+    "info" : "Javadoc[24129-24205]:Javadoc[24129-24205]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[24210-24216]:Modifier[24210-24216]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[24217-24223]:SimpleType[24217-24223]"
+  }, {
+    "left" : "getLocationData",
+    "right" : "getLocationData",
+    "info" : "SimpleName[24224-24239]:SimpleName[24224-24239]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[24242-24425]:Block[24242-24425]"
@@ -768,6 +1224,22 @@
     "left" : "return mDb.query( LOCATION_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\"},\n                null, null, null, null, null\n        );",
     "right" : "return mDb.query( LOCATION_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\"},\n                null, null, null, null, null\n        );",
     "info" : "ReturnStatement[24252-24419]:ReturnStatement[24252-24419]"
+  }, {
+    "left" : "/**\n     * Returns OpenCellID (DBe_import) database contents\n     *\n     * TODO:    Need to implement new items!!\n     * URGENT:  Maybe not so urgent, but need looking after, since we added items.\n     *\n     * Used in:\n     *          DbViewerFragment.java\n     *          MapViewerOsmDroid.java\n     *\n     *\n     */",
+    "right" : "/**\n     * Returns OpenCellID (DBe_import) database contents\n     *\n     * TODO:    Need to implement new items!!\n     * URGENT:  Maybe not so urgent, but need looking after, since we added items.\n     *\n     * Used in:\n     *          DbViewerFragment.java\n     *          MapViewerOsmDroid.java\n     *\n     *\n     */",
+    "info" : "Javadoc[24431-24749]:Javadoc[24431-24749]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[24754-24760]:Modifier[24754-24760]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[24761-24767]:SimpleType[24761-24767]"
+  }, {
+    "left" : "getOpenCellIDData",
+    "right" : "getOpenCellIDData",
+    "info" : "SimpleName[24768-24785]:SimpleName[24768-24785]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -777,6 +1249,22 @@
     "right" : "return mDb.query( OPENCELLID_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Mcc\", \"Mnc\", \"Lat\", \"Lng\", \"AvgSigStr\", \"Samples\"},\n                // avg_range, rej_cause, Type\n                null, null, null, null, null\n        );",
     "info" : "ReturnStatement[24798-25034]:ReturnStatement[24798-25034]"
   }, {
+    "left" : "/**\n     * Returns Default MCC Locations (defaultlocation) database contents\n     */",
+    "right" : "/**\n     * Returns Default MCC Locations (defaultlocation) database contents\n     */",
+    "info" : "Javadoc[25046-25130]:Javadoc[25046-25130]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[25135-25141]:Modifier[25135-25141]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[25142-25148]:SimpleType[25142-25148]"
+  }, {
+    "left" : "getDefaultMccLocationData",
+    "right" : "getDefaultMccLocationData",
+    "info" : "SimpleName[25149-25174]:SimpleName[25149-25174]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[25177-25322]:Block[25177-25322]"
@@ -784,6 +1272,34 @@
     "left" : "return mDb.query( TABLE_DEFAULT_MCC,\n                new String[]{\"Country\", \"Mcc\", \"Lat\", \"Lng\"}, null, null, null, null, null);",
     "right" : "return mDb.query( TABLE_DEFAULT_MCC,\n                new String[]{\"Country\", \"Mcc\", \"Lat\", \"Lng\"}, null, null, null, null, null);",
     "info" : "ReturnStatement[25187-25316]:ReturnStatement[25187-25316]"
+  }, {
+    "left" : "/**\n     *  Description:    This checks if a cell with a given (CID,Lat,Lon,Signal) already exists\n     *                  in the \"locationinfo\" (DBi_measure) database.\n     *\n     *  Used:           insertLocation()\n     *\n     *  Notes:          a) seem excessive to select on lat,lon and signal...\n     */",
+    "right" : "/**\n     *  Description:    This checks if a cell with a given (CID,Lat,Lon,Signal) already exists\n     *                  in the \"locationinfo\" (DBi_measure) database.\n     *\n     *  Used:           insertLocation()\n     *\n     *  Notes:          a) seem excessive to select on lat,lon and signal...\n     */",
+    "info" : "Javadoc[25516-25824]:Javadoc[25516-25824]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[25829-25836]:PrimitiveType[25829-25836]"
+  }, {
+    "left" : "locationExists",
+    "right" : "locationExists",
+    "info" : "SimpleName[25837-25851]:SimpleName[25837-25851]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[25852-25862]:SingleVariableDeclaration[25852-25862]"
+  }, {
+    "left" : "double lat",
+    "right" : "double lat",
+    "info" : "SingleVariableDeclaration[25864-25874]:SingleVariableDeclaration[25864-25874]"
+  }, {
+    "left" : "double lng",
+    "right" : "double lng",
+    "info" : "SingleVariableDeclaration[25876-25886]:SingleVariableDeclaration[25876-25886]"
+  }, {
+    "left" : "int signal",
+    "right" : "int signal",
+    "info" : "SingleVariableDeclaration[25888-25898]:SingleVariableDeclaration[25888-25898]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -805,6 +1321,22 @@
     "right" : "return exists;",
     "info" : "ReturnStatement[26211-26225]:ReturnStatement[26211-26225]"
   }, {
+    "left" : "/**\n     *  Description:    This checks if a cell with a given CID already exists\n     *                  in the \"cellinfo\" (DBi_bts) database.\n     */",
+    "right" : "/**\n     *  Description:    This checks if a cell with a given CID already exists\n     *                  in the \"cellinfo\" (DBi_bts) database.\n     */",
+    "info" : "Javadoc[26237-26388]:Javadoc[26237-26388]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[26393-26400]:PrimitiveType[26393-26400]"
+  }, {
+    "left" : "cellExists",
+    "right" : "cellExists",
+    "info" : "SimpleName[26401-26411]:SimpleName[26401-26411]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[26412-26422]:SingleVariableDeclaration[26412-26422]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[26424-26742]:Block[26424-26742]"
@@ -825,6 +1357,26 @@
     "right" : "return exists;",
     "info" : "ReturnStatement[26722-26736]:ReturnStatement[26722-26736]"
   }, {
+    "left" : "/**\n     *  Description:    This checks if a cell with a given CID already exists\n     *                  in the \"opencellid\" (DBe_import) database.\n     */",
+    "right" : "/**\n     *  Description:    This checks if a cell with a given CID already exists\n     *                  in the \"opencellid\" (DBe_import) database.\n     */",
+    "info" : "Javadoc[26748-26904]:Javadoc[26748-26904]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[26909-26915]:Modifier[26909-26915]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[26916-26923]:PrimitiveType[26916-26923]"
+  }, {
+    "left" : "openCellExists",
+    "right" : "openCellExists",
+    "info" : "SimpleName[26924-26938]:SimpleName[26924-26938]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[26939-26949]:SingleVariableDeclaration[26939-26949]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[26951-27278]:Block[26951-27278]"
@@ -844,6 +1396,26 @@
     "left" : "return exists;",
     "right" : "return exists;",
     "info" : "ReturnStatement[27258-27272]:ReturnStatement[27258-27272]"
+  }, {
+    "left" : "/**\n     *  Description:    This take a \"Cell\" bundle (from API) as input and uses its CID to check\n     *                  in the DBi_measure (?) if there is already an associated LAC. It then\n     *                  compares the API LAC to that of the DBi_Measure LAC.\n     *\n     *  Issues:     [ ] We should make all detections outside of AIMSICDDbAdapter.java in a\n     *                  separate module as described in the diagram in GH issue #215.\n     *                  https://github.com/SecUpwN/Android-IMSI-Catcher-Detector/issues/215\n     *                  where it is referred to as \"Detection Module\" (DET)...\n     *\n     *              [ ] Seem we're querying too much, when we only need items: 1,3,4,8,11\n     *                  (Try to avoid over query to improve performance.)\n     *\n     *              [ ]  V V V V\n     *\n     *              This is using the LAC found by API and comparing to LAC found from a previous\n     *              measurement in the \"DBi_measure\". This is NOT depending on \"DBe_import\".\n     *              This works for now...but we probably should consider populating \"DBi_measure\"\n     *              as soon as the API gets a new LAC. Then the detection can be done by SQL,\n     *              and by just comparing last 2 LAC entries for same CID.\n     *\n     *\n     */",
+    "right" : "/**\n     *  Description:    This take a \"Cell\" bundle (from API) as input and uses its CID to check\n     *                  in the DBi_measure (?) if there is already an associated LAC. It then\n     *                  compares the API LAC to that of the DBi_Measure LAC.\n     *\n     *  Issues:     [ ] We should make all detections outside of AIMSICDDbAdapter.java in a\n     *                  separate module as described in the diagram in GH issue #215.\n     *                  https://github.com/SecUpwN/Android-IMSI-Catcher-Detector/issues/215\n     *                  where it is referred to as \"Detection Module\" (DET)...\n     *\n     *              [ ] Seem we're querying too much, when we only need items: 1,3,4,8,11\n     *                  (Try to avoid over query to improve performance.)\n     *\n     *              [ ]  V V V V\n     *\n     *              This is using the LAC found by API and comparing to LAC found from a previous\n     *              measurement in the \"DBi_measure\". This is NOT depending on \"DBe_import\".\n     *              This works for now...but we probably should consider populating \"DBi_measure\"\n     *              as soon as the API gets a new LAC. Then the detection can be done by SQL,\n     *              and by just comparing last 2 LAC entries for same CID.\n     *\n     *\n     */",
+    "info" : "Javadoc[27284-28608]:Javadoc[27284-28608]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[28613-28619]:Modifier[28613-28619]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[28620-28627]:PrimitiveType[28620-28627]"
+  }, {
+    "left" : "checkLAC",
+    "right" : "checkLAC",
+    "info" : "SimpleName[28628-28636]:SimpleName[28628-28636]"
+  }, {
+    "left" : "Cell cell",
+    "right" : "Cell cell",
+    "info" : "SingleVariableDeclaration[28637-28646]:SingleVariableDeclaration[28637-28646]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -901,6 +1473,22 @@
     "right" : "return true;",
     "info" : "ReturnStatement[30302-30314]:ReturnStatement[30302-30314]"
   }, {
+    "left" : "/**\n     * Updates Cell (cellinfo) records to indicate OpenCellID contribution has been made\n     * TODO: This should be done on TABLE_DBI_MEASURE::DBi_measure:isSubmitted\n     *\n     */",
+    "right" : "/**\n     * Updates Cell (cellinfo) records to indicate OpenCellID contribution has been made\n     * TODO: This should be done on TABLE_DBI_MEASURE::DBi_measure:isSubmitted\n     *\n     */",
+    "info" : "Javadoc[30326-30512]:Javadoc[30326-30512]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[30517-30523]:Modifier[30517-30523]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[30524-30528]:PrimitiveType[30524-30528]"
+  }, {
+    "left" : "ocidProcessed",
+    "right" : "ocidProcessed",
+    "info" : "SimpleName[30529-30542]:SimpleName[30529-30542]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[30545-30767]:Block[30545-30767]"
@@ -916,6 +1504,22 @@
     "left" : "mDb.update(CELL_TABLE, ocidValues, \"OCID_SUBMITTED<>?\", new String[]{\"1\"});",
     "right" : "mDb.update(CELL_TABLE, ocidValues, \"OCID_SUBMITTED<>?\", new String[]{\"1\"});",
     "info" : "ExpressionStatement[30671-30746]:ExpressionStatement[30671-30746]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[30773-30779]:Modifier[30773-30779]"
+  }, {
+    "left" : "double[]",
+    "right" : "double[]",
+    "info" : "ArrayType[30780-30788]:ArrayType[30780-30788]"
+  }, {
+    "left" : "getDefaultLocation",
+    "right" : "getDefaultLocation",
+    "info" : "SimpleName[30789-30807]:SimpleName[30789-30807]"
+  }, {
+    "left" : "int mcc",
+    "right" : "int mcc",
+    "info" : "SingleVariableDeclaration[30808-30815]:SingleVariableDeclaration[30808-30815]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -965,6 +1569,22 @@
     "right" : "return loc;",
     "info" : "ReturnStatement[31242-31253]:ReturnStatement[31242-31253]"
   }, {
+    "left" : "/**\n     *  Description:    Remove all but the last row, unless its CID is invalid...\n     *\n     *  Note:           Q: What is this used for?\n     *                  A: It used in the SignalStrengthTracker\n     */",
+    "right" : "/**\n     *  Description:    Remove all but the last row, unless its CID is invalid...\n     *\n     *  Note:           Q: What is this used for?\n     *                  A: It used in the SignalStrengthTracker\n     */",
+    "info" : "Javadoc[31265-31479]:Javadoc[31265-31479]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[31484-31490]:Modifier[31484-31490]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[31491-31495]:PrimitiveType[31491-31495]"
+  }, {
+    "left" : "cleanseCellTable",
+    "right" : "cleanseCellTable",
+    "info" : "SimpleName[31496-31512]:SimpleName[31496-31512]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[31515-31929]:Block[31515-31929]"
@@ -976,6 +1596,22 @@
     "left" : "mDb.execSQL(\"DELETE FROM \" + CELL_TABLE + \" WHERE CellID = \" + Integer.MAX_VALUE + \" OR CellID = -1\");",
     "right" : "mDb.execSQL(\"DELETE FROM \" + CELL_TABLE + \" WHERE CellID = \" + Integer.MAX_VALUE + \" OR CellID = -1\");",
     "info" : "ExpressionStatement[31821-31923]:ExpressionStatement[31821-31923]"
+  }, {
+    "left" : "/**\n     * Description:     Prepares the CSV file used to upload new data to the OCID server.\n     *\n     * Note:            Q: Where is this?\n     *                  A: It is wherever your device has mounted its SDCard.\n     *                     For example, in:  /data/media/0/AIMSICD/OpenCellID\n     */",
+    "right" : "/**\n     * Description:     Prepares the CSV file used to upload new data to the OCID server.\n     *\n     * Note:            Q: Where is this?\n     *                  A: It is wherever your device has mounted its SDCard.\n     *                     For example, in:  /data/media/0/AIMSICD/OpenCellID\n     */",
+    "info" : "Javadoc[31935-32241]:Javadoc[31935-32241]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[32246-32252]:Modifier[32246-32252]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[32253-32260]:PrimitiveType[32253-32260]"
+  }, {
+    "left" : "prepareOpenCellUploadData",
+    "right" : "prepareOpenCellUploadData",
+    "info" : "SimpleName[32261-32286]:SimpleName[32261-32286]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1157,6 +1793,26 @@
     "right" : "AIMSICD.mProgressBar.setProgress(0);",
     "info" : "ExpressionStatement[34080-34116]:ExpressionStatement[34080-34116]"
   }, {
+    "left" : "/**\n     * Description:     Populates the Default MCC Location table using the CSV file found in the\n     *                  application ASSETS folder\n     *\n     * Issues:      [ ] Because the table loading insert procedure is using named columns to\n     *                  populate the table with CSV data, the indexing of Lat/Lng is reversed.\n     *\n     */",
+    "right" : "/**\n     * Description:     Populates the Default MCC Location table using the CSV file found in the\n     *                  application ASSETS folder\n     *\n     * Issues:      [ ] Because the table loading insert procedure is using named columns to\n     *                  populate the table with CSV data, the indexing of Lat/Lng is reversed.\n     *\n     */",
+    "info" : "Javadoc[34138-34498]:Javadoc[34138-34498]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[34503-34510]:Modifier[34503-34510]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[34511-34515]:PrimitiveType[34511-34515]"
+  }, {
+    "left" : "populateDefaultMCC",
+    "right" : "populateDefaultMCC",
+    "info" : "SimpleName[34516-34534]:SimpleName[34516-34534]"
+  }, {
+    "left" : "SQLiteDatabase db",
+    "right" : "SQLiteDatabase db",
+    "info" : "SingleVariableDeclaration[34535-34552]:SingleVariableDeclaration[34535-34552]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[34554-36001]:Block[34554-36001]"
@@ -1272,6 +1928,22 @@
     "left" : "Log.e(TAG, mTAG + \": Error populating Default MCC Data: \" + e);",
     "right" : "Log.e(TAG, mTAG + \": Error populating Default MCC Data: \" + e);",
     "info" : "ExpressionStatement[35922-35985]:ExpressionStatement[35922-35985]"
+  }, {
+    "left" : "/**\n     *  Description:    Parses the downloaded CSV from OpenCellID and uses it to populate\n     *                  \"DBe_import\" aka. the \"opencellid\" table.\n     *\n     *\n     *  Dependency:     RequestTask.java :: onPostExecute()\n     *                  insertOpenCell()\n     *  Issues:\n     *\n     *          [ ]     Progress bar is not shown or is the operation too quick to be seen?\n     *          [ ]     Why are we only populating 8 items out of 19?\n     *                  From downloaded OCID CSV file:  (19 items)\n     *\n     *  NOTES:\n     *\n     *              a)  We do not include \"rej_cause\" in backups.\n     *              b)\n     *\n     *   # head -2 opencellid.csv\n     *   lat,lon,mcc,mnc,lac,cellid,averageSignalStrength,range,samples,changeable,radio,rnc,cid,psc,tac,pci,sid,nid,bid\n     *   54.63376,25.160243,246,3,20,1294,0,-1,1,1,GSM,,,,,,,,\n     *\n     *  Unfortunately there are 2 important missing items in the OCID CSV file:\n     *   - \"time_first\"\n     *   - \"time_last\"\n     *\n     *   In addition the OCID data often contain unexplained negative values for one or both of:\n     *    - \"samples\"\n     *    - \"range\"\n     *\n     *   TODO:  Also we should probably change this function name from:\n     *          \"updateOpenCellID\" to \"populateDBe_import\"\n     */",
+    "right" : "/**\n     *  Description:    Parses the downloaded CSV from OpenCellID and uses it to populate\n     *                  \"DBe_import\" aka. the \"opencellid\" table.\n     *\n     *\n     *  Dependency:     RequestTask.java :: onPostExecute()\n     *                  insertOpenCell()\n     *  Issues:\n     *\n     *          [ ]     Progress bar is not shown or is the operation too quick to be seen?\n     *          [ ]     Why are we only populating 8 items out of 19?\n     *                  From downloaded OCID CSV file:  (19 items)\n     *\n     *  NOTES:\n     *\n     *              a)  We do not include \"rej_cause\" in backups.\n     *              b)\n     *\n     *   # head -2 opencellid.csv\n     *   lat,lon,mcc,mnc,lac,cellid,averageSignalStrength,range,samples,changeable,radio,rnc,cid,psc,tac,pci,sid,nid,bid\n     *   54.63376,25.160243,246,3,20,1294,0,-1,1,1,GSM,,,,,,,,\n     *\n     *  Unfortunately there are 2 important missing items in the OCID CSV file:\n     *   - \"time_first\"\n     *   - \"time_last\"\n     *\n     *   In addition the OCID data often contain unexplained negative values for one or both of:\n     *    - \"samples\"\n     *    - \"range\"\n     *\n     *   TODO:  Also we should probably change this function name from:\n     *          \"updateOpenCellID\" to \"populateDBe_import\"\n     */",
+    "info" : "Javadoc[36007-37302]:Javadoc[36007-37302]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[37307-37313]:Modifier[37307-37313]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[37314-37321]:PrimitiveType[37314-37321]"
+  }, {
+    "left" : "updateOpenCellID",
+    "right" : "updateOpenCellID",
+    "info" : "SimpleName[37322-37338]:SimpleName[37322-37338]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1436,6 +2108,22 @@
     "left" : "AIMSICD.mProgressBar.setProgress(0);",
     "right" : "AIMSICD.mProgressBar.setProgress(0);",
     "info" : "ExpressionStatement[41919-41955]:ExpressionStatement[41919-41955]"
+  }, {
+    "left" : "/**\n     *  Description:    Imports a previously exported CSV file into the database\n     *\n     *  Used:           ??\n     *\n     *  Issues:\n     *              [ ] CELL_TABLE items are missing or corrupt\n     *              [ ]\n     *\n     *  Exported CSV format: TODO:\n     *\n     *  Notes:      1) Restoring the DB can be done from a monolithic SQLite3 DB by (check!):\n     *                  # sqlite3 aimsicd.db <aimsicd.dump\n     *\n     *\n     */",
+    "right" : "/**\n     *  Description:    Imports a previously exported CSV file into the database\n     *\n     *  Used:           ??\n     *\n     *  Issues:\n     *              [ ] CELL_TABLE items are missing or corrupt\n     *              [ ]\n     *\n     *  Exported CSV format: TODO:\n     *\n     *  Notes:      1) Restoring the DB can be done from a monolithic SQLite3 DB by (check!):\n     *                  # sqlite3 aimsicd.db <aimsicd.dump\n     *\n     *\n     */",
+    "info" : "Javadoc[42213-42666]:Javadoc[42213-42666]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[42671-42677]:Modifier[42671-42677]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[42678-42685]:PrimitiveType[42678-42685]"
+  }, {
+    "left" : "restoreDB",
+    "right" : "restoreDB",
+    "info" : "SimpleName[42686-42695]:SimpleName[42686-42695]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1625,6 +2313,22 @@
     "right" : "AIMSICD.mProgressBar.setProgress(0);",
     "info" : "ExpressionStatement[48554-48590]:ExpressionStatement[48554-48590]"
   }, {
+    "left" : "/**\n     *  Description:    Dumps the entire aimsicd.db to a dump file called \"aimsicd_dump.db\".\n     *\n     *  Requires:       root + SQLite3 binary\n     *\n     *  Dev Status:     INCOMPLETE !!  Either fix or do not try to use..\n     *\n     *  Template:       DebugLogs.java\n     *\n     *  TODO:       [ ] Change backup from using CSV files to/also using a complete SQLite dump\n     *\n     *  Notes:  1) We probably also need to test if we have the sqlite3 binary. (See Busybox checking code.)\n     *          2) Apparently pipes doesn't work from Java... No idea why, as they appear to work\n     *              in the AtCommandFragment.java... for checking for /dev/ files.\n     *          3) We can use either \".dump\" or \".backup\", but \"dump\" makes an SQL file,\n     *             whereas \"backup\" make a binary SQLite DB.\n     *\n     *            a) # sqlite3 aimsicd.db '.dump' | gzip -c >aimsicd.dump.gz\n     *               execString = \"/system/xbin/sqlite3 \" + dir + \"aimsicd.db '.dump' | gzip -c >\" + file;\n     *            b) execString = \"/system/xbin/sqlite3 \" + aimdir + \"aimsicd.db '.dump' >\" + file;\n     *            c) execString = \"/system/xbin/sqlite3 \" + aimdir + \"aimsicd.db '.backup \" +file + \"'\";\n     *\n     *          4) To re-import use:\n     *             # zcat aimsicd.dump.gz | sqlite3 aimsicd.db\n     *\n     */",
+    "right" : "/**\n     *  Description:    Dumps the entire aimsicd.db to a dump file called \"aimsicd_dump.db\".\n     *\n     *  Requires:       root + SQLite3 binary\n     *\n     *  Dev Status:     INCOMPLETE !!  Either fix or do not try to use..\n     *\n     *  Template:       DebugLogs.java\n     *\n     *  TODO:       [ ] Change backup from using CSV files to/also using a complete SQLite dump\n     *\n     *  Notes:  1) We probably also need to test if we have the sqlite3 binary. (See Busybox checking code.)\n     *          2) Apparently pipes doesn't work from Java... No idea why, as they appear to work\n     *              in the AtCommandFragment.java... for checking for /dev/ files.\n     *          3) We can use either \".dump\" or \".backup\", but \"dump\" makes an SQL file,\n     *             whereas \"backup\" make a binary SQLite DB.\n     *\n     *            a) # sqlite3 aimsicd.db '.dump' | gzip -c >aimsicd.dump.gz\n     *               execString = \"/system/xbin/sqlite3 \" + dir + \"aimsicd.db '.dump' | gzip -c >\" + file;\n     *            b) execString = \"/system/xbin/sqlite3 \" + aimdir + \"aimsicd.db '.dump' >\" + file;\n     *            c) execString = \"/system/xbin/sqlite3 \" + aimdir + \"aimsicd.db '.backup \" +file + \"'\";\n     *\n     *          4) To re-import use:\n     *             # zcat aimsicd.dump.gz | sqlite3 aimsicd.db\n     *\n     */",
+    "info" : "Javadoc[48613-49956]:Javadoc[48613-49956]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[49961-49968]:Modifier[49961-49968]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[49969-49973]:PrimitiveType[49969-49973]"
+  }, {
+    "left" : "dumpDB",
+    "right" : "dumpDB",
+    "info" : "SimpleName[49974-49980]:SimpleName[49974-49980]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[49984-50974]:Block[49984-50974]"
@@ -1672,6 +2376,22 @@
     "left" : "Log.i(TAG, mTAG + \":dumpDB() Database dumped to: \" + file);",
     "right" : "Log.i(TAG, mTAG + \":dumpDB() Database dumped to: \" + file);",
     "info" : "ExpressionStatement[50908-50967]:ExpressionStatement[50908-50967]"
+  }, {
+    "left" : "/**\n     *  Description:    Backup the database tables to CSV files (or monolithic dump file)\n     *\n     *  Depends:        On the Boolean MONO_DB_DUMP to indicate if we want to try to\n     *                  dump a monolithic DB using the rooted shell + sqlite3 binary\n     *                  method above.\n     *\n     * @return boolean indicating backup outcome\n     */",
+    "right" : "/**\n     *  Description:    Backup the database tables to CSV files (or monolithic dump file)\n     *\n     *  Depends:        On the Boolean MONO_DB_DUMP to indicate if we want to try to\n     *                  dump a monolithic DB using the rooted shell + sqlite3 binary\n     *                  method above.\n     *\n     * @return boolean indicating backup outcome\n     */",
+    "info" : "Javadoc[50981-51353]:Javadoc[50981-51353]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[51358-51364]:Modifier[51358-51364]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[51365-51372]:PrimitiveType[51365-51372]"
+  }, {
+    "left" : "backupDB",
+    "right" : "backupDB",
+    "info" : "SimpleName[51373-51381]:SimpleName[51373-51381]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1724,6 +2444,26 @@
     "left" : "return false;",
     "right" : "return false;",
     "info" : "ReturnStatement[51691-51704]:ReturnStatement[51691-51704]"
+  }, {
+    "left" : "/**\n     *  Description:    Exports the database tables to CSV files\n     *\n     *  Issues:     We should consider having a better file selector here, so that\n     *              the user can select his own location for storing the backup files.\n     *\n     * @param tableName String representing table name to export\n     */",
+    "right" : "/**\n     *  Description:    Exports the database tables to CSV files\n     *\n     *  Issues:     We should consider having a better file selector here, so that\n     *              the user can select his own location for storing the backup files.\n     *\n     * @param tableName String representing table name to export\n     */",
+    "info" : "Javadoc[51726-52051]:Javadoc[51726-52051]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[52056-52063]:Modifier[52056-52063]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[52064-52068]:PrimitiveType[52064-52068]"
+  }, {
+    "left" : "backup",
+    "right" : "backup",
+    "info" : "SimpleName[52069-52075]:SimpleName[52069-52075]"
+  }, {
+    "left" : "String tableName",
+    "right" : "String tableName",
+    "info" : "SingleVariableDeclaration[52076-52092]:SingleVariableDeclaration[52076-52092]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1857,6 +2597,22 @@
     "right" : "Log.i(TAG, mTAG + \": Database Export complete.\");",
     "info" : "ExpressionStatement[53427-53476]:ExpressionStatement[53427-53476]"
   }, {
+    "left" : "/**\n     *  What:           This is the DBe_import data consistency check\n     *\n     *  Description:    This method checks each imported BTS data for consistency\n     *                  and correctness according to general 3GPP LAC/CID/RAT rules\n     *                  and according to the app settings:\n     *\n     *                  tf_settings         (currently hard-coded)\n     *                  min_gps_precision   (currently hard-coded)\n     *\n     *                  So there are really two steps in this procedure:\n     *                  a) Remove bad BTSs from DBe_import\n     *                  b) Mark unsafe BTSs in the DBe_import with \"rej_cause\" value.\n     *\n     *                  See:    #253    http://tinyurl.com/lybrfxb\n     *                          #203    http://tinyurl.com/mzgjdcz\n     *\n     *                  We filter:\n     *\n     *  Used:\n     *                  RequestTask.java :: onPostExecute()\n     *\n     *  Issues:\n     *\n     *          [x] OPENCELLID_TABLE doesn't have a \"Net\" entry!\n     *          [x] OPENCELLID_TABLE doesn't have a \"Range\" entry!\n     *\n     *          [ ] Look into \"long CID\" and \"Short CID\" for UMTS/LTE...\n     *              http://wiki.opencellid.org/wiki/FAQ\n     *\n     *              The formula for the long cell ID is as follows:\n     *                  Long CID = 65536 * RNC + CID\n     *\n     *              If you have the Long CID, you can get RNC and CID in the following way:\n     *                  RNC = Long CID / 65536 (integer division)\n     *                  CID = Long CID mod 65536 (modulo operation)\n     *\n     *  ChangeLog:\n     *          2015-01-29  E:V:A   Added\n     *\n     *  TODO:   (1) Implement some kind of counter, to count how many cells was removed.\n     *  TODO:   (2) Better description of what was removed.\n     *  TODO:   (3) Give a return value for success/failure\n     *  TODO:   (4) Implement the \"rej_cause\" check and UPDATE table.\n     */",
+    "right" : "/**\n     *  What:           This is the DBe_import data consistency check\n     *\n     *  Description:    This method checks each imported BTS data for consistency\n     *                  and correctness according to general 3GPP LAC/CID/RAT rules\n     *                  and according to the app settings:\n     *\n     *                  tf_settings         (currently hard-coded)\n     *                  min_gps_precision   (currently hard-coded)\n     *\n     *                  So there are really two steps in this procedure:\n     *                  a) Remove bad BTSs from DBe_import\n     *                  b) Mark unsafe BTSs in the DBe_import with \"rej_cause\" value.\n     *\n     *                  See:    #253    http://tinyurl.com/lybrfxb\n     *                          #203    http://tinyurl.com/mzgjdcz\n     *\n     *                  We filter:\n     *\n     *  Used:\n     *                  RequestTask.java :: onPostExecute()\n     *\n     *  Issues:\n     *\n     *          [x] OPENCELLID_TABLE doesn't have a \"Net\" entry!\n     *          [x] OPENCELLID_TABLE doesn't have a \"Range\" entry!\n     *\n     *          [ ] Look into \"long CID\" and \"Short CID\" for UMTS/LTE...\n     *              http://wiki.opencellid.org/wiki/FAQ\n     *\n     *              The formula for the long cell ID is as follows:\n     *                  Long CID = 65536 * RNC + CID\n     *\n     *              If you have the Long CID, you can get RNC and CID in the following way:\n     *                  RNC = Long CID / 65536 (integer division)\n     *                  CID = Long CID mod 65536 (modulo operation)\n     *\n     *  ChangeLog:\n     *          2015-01-29  E:V:A   Added\n     *\n     *  TODO:   (1) Implement some kind of counter, to count how many cells was removed.\n     *  TODO:   (2) Better description of what was removed.\n     *  TODO:   (3) Give a return value for success/failure\n     *  TODO:   (4) Implement the \"rej_cause\" check and UPDATE table.\n     */",
+    "info" : "Javadoc[53689-55645]:Javadoc[53689-55645]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[55724-55730]:Modifier[55724-55730]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[55731-55735]:PrimitiveType[55731-55735]"
+  }, {
+    "left" : "checkDBe",
+    "right" : "checkDBe",
+    "info" : "SimpleName[55736-55744]:SimpleName[55736-55744]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[55747-58868]:Block[55747-58868]"
@@ -1921,6 +2677,22 @@
     "right" : "Log.i(TAG, mTAG + \":checkDBe() Deleted BTS entries from DBe_import table with bad LAC/CID...\");",
     "info" : "ExpressionStatement[58057-58152]:ExpressionStatement[58057-58152]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[59101-59107]:Modifier[59101-59107]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[59108-59112]:PrimitiveType[59108-59112]"
+  }, {
+    "left" : "cleanseCellStrengthTables",
+    "right" : "cleanseCellStrengthTables",
+    "info" : "SimpleName[59113-59138]:SimpleName[59113-59138]"
+  }, {
+    "left" : "long maxTime",
+    "right" : "long maxTime",
+    "info" : "SingleVariableDeclaration[59139-59151]:SingleVariableDeclaration[59139-59151]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[59153-59347]:Block[59153-59347]"
@@ -1932,6 +2704,30 @@
     "left" : "mDb.execSQL(\"DELETE FROM \" + CELL_SIGNAL_TABLE + \" WHERE timestamp < \" + maxTime);",
     "right" : "mDb.execSQL(\"DELETE FROM \" + CELL_SIGNAL_TABLE + \" WHERE timestamp < \" + maxTime);",
     "info" : "ExpressionStatement[59259-59341]:ExpressionStatement[59259-59341]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[59353-59359]:Modifier[59353-59359]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[59360-59364]:PrimitiveType[59360-59364]"
+  }, {
+    "left" : "addSignalStrength",
+    "right" : "addSignalStrength",
+    "info" : "SimpleName[59365-59382]:SimpleName[59365-59382]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[59384-59394]:SingleVariableDeclaration[59384-59394]"
+  }, {
+    "left" : "int signal",
+    "right" : "int signal",
+    "info" : "SingleVariableDeclaration[59396-59406]:SingleVariableDeclaration[59396-59406]"
+  }, {
+    "left" : "Long timestamp",
+    "right" : "Long timestamp",
+    "info" : "SingleVariableDeclaration[59408-59422]:SingleVariableDeclaration[59408-59422]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1957,6 +2753,22 @@
     "right" : "mDb.insert(CELL_SIGNAL_TABLE, null, row);",
     "info" : "ExpressionStatement[59595-59636]:ExpressionStatement[59595-59636]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[59648-59654]:Modifier[59648-59654]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[59655-59658]:PrimitiveType[59655-59658]"
+  }, {
+    "left" : "countSignalMeasurements",
+    "right" : "countSignalMeasurements",
+    "info" : "SimpleName[59659-59682]:SimpleName[59659-59682]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[59683-59693]:SingleVariableDeclaration[59683-59693]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[59695-59930]:Block[59695-59930]"
@@ -1980,6 +2792,22 @@
     "left" : "return lAnswer;",
     "right" : "return lAnswer;",
     "info" : "ReturnStatement[59909-59924]:ReturnStatement[59909-59924]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[59936-59942]:Modifier[59936-59942]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[59943-59946]:PrimitiveType[59943-59946]"
+  }, {
+    "left" : "getAverageSignalStrength",
+    "right" : "getAverageSignalStrength",
+    "info" : "SimpleName[59947-59971]:SimpleName[59947-59971]"
+  }, {
+    "left" : "int cellID",
+    "right" : "int cellID",
+    "info" : "SingleVariableDeclaration[59972-59982]:SingleVariableDeclaration[59972-59982]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2005,6 +2833,18 @@
     "right" : "return lAnswer;",
     "info" : "ReturnStatement[60196-60211]:ReturnStatement[60196-60211]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[60223-60229]:Modifier[60223-60229]"
+  }, {
+    "left" : "Cursor",
+    "right" : "Cursor",
+    "info" : "SimpleType[60230-60236]:SimpleType[60230-60236]"
+  }, {
+    "left" : "getSignalStrengthMeasurementData",
+    "right" : "getSignalStrengthMeasurementData",
+    "info" : "SimpleName[60237-60269]:SimpleName[60237-60269]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[60272-60413]:Block[60272-60413]"
@@ -2013,6 +2853,14 @@
     "right" : "return mDb.rawQuery(\"SELECT cellID, signal, timestamp FROM \" + CELL_SIGNAL_TABLE +\" ORDER BY timestamp DESC\", new String[0]);",
     "info" : "ReturnStatement[60282-60407]:ReturnStatement[60282-60407]"
   }, {
+    "left" : "DbHelper",
+    "right" : "DbHelper",
+    "info" : "SimpleName[61276-61284]:SimpleName[61276-61284]"
+  }, {
+    "left" : "Context context",
+    "right" : "Context context",
+    "info" : "SingleVariableDeclaration[61285-61300]:SingleVariableDeclaration[61285-61300]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[61302-61374]:Block[61302-61374]"
@@ -2020,6 +2868,26 @@
     "left" : "super(context, DB_NAME, null, DATABASE_VERSION);",
     "right" : "super(context, DB_NAME, null, DATABASE_VERSION);",
     "info" : "SuperConstructorInvocation[61316-61364]:SuperConstructorInvocation[61316-61364]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[61431-61440]:MarkerAnnotation[61430-61439]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[61449-61455]:Modifier[61448-61454]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[61456-61460]:PrimitiveType[61455-61459]"
+  }, {
+    "left" : "onCreate",
+    "right" : "onCreate",
+    "info" : "SimpleName[61461-61469]:SimpleName[61460-61468]"
+  }, {
+    "left" : "SQLiteDatabase database",
+    "right" : "SQLiteDatabase database",
+    "info" : "SingleVariableDeclaration[61470-61493]:SingleVariableDeclaration[61469-61492]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2104,6 +2972,34 @@
     "left" : "populateDefaultMCC(database);",
     "right" : "populateDefaultMCC(database);",
     "info" : "ExpressionStatement[71088-71117]:ExpressionStatement[62231-62260]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[71505-71514]:MarkerAnnotation[62647-62656]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[71523-71529]:Modifier[62665-62671]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[71530-71534]:PrimitiveType[62672-62676]"
+  }, {
+    "left" : "onUpgrade",
+    "right" : "onUpgrade",
+    "info" : "SimpleName[71535-71544]:SimpleName[62677-62686]"
+  }, {
+    "left" : "SQLiteDatabase db",
+    "right" : "SQLiteDatabase db",
+    "info" : "SingleVariableDeclaration[71545-71562]:SingleVariableDeclaration[62687-62704]"
+  }, {
+    "left" : "int oldVersion",
+    "right" : "int oldVersion",
+    "info" : "SingleVariableDeclaration[71564-71578]:SingleVariableDeclaration[62706-62720]"
+  }, {
+    "left" : "int newVersion",
+    "right" : "int newVersion",
+    "info" : "SingleVariableDeclaration[71580-71594]:SingleVariableDeclaration[62722-62736]"
   }, {
     "left" : "{}",
     "right" : "{}",

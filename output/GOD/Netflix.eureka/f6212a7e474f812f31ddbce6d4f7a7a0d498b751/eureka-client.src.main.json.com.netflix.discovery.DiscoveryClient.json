@@ -485,6 +485,22 @@
     "info" : "MethodDeclaration[83687-84461]:MethodDeclaration[83666-84440]"
   } ],
   "mappings" : [ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[8643-8649]:Modifier[8643-8649]"
+  }, {
+    "left" : "DiscoveryClient",
+    "right" : "DiscoveryClient",
+    "info" : "SimpleName[8650-8665]:SimpleName[8650-8665]"
+  }, {
+    "left" : "InstanceInfo myInfo",
+    "right" : "InstanceInfo myInfo",
+    "info" : "SingleVariableDeclaration[8666-8685]:SingleVariableDeclaration[8666-8685]"
+  }, {
+    "left" : "EurekaClientConfig config",
+    "right" : "EurekaClientConfig config",
+    "info" : "SingleVariableDeclaration[8687-8712]:SingleVariableDeclaration[8687-8712]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[8714-8757]:Block[8714-8757]"
@@ -493,6 +509,26 @@
     "right" : "this(myInfo, config, null);",
     "info" : "ConstructorInvocation[8724-8751]:ConstructorInvocation[8724-8751]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[8763-8769]:Modifier[8763-8769]"
+  }, {
+    "left" : "DiscoveryClient",
+    "right" : "DiscoveryClient",
+    "info" : "SimpleName[8770-8785]:SimpleName[8770-8785]"
+  }, {
+    "left" : "InstanceInfo myInfo",
+    "right" : "InstanceInfo myInfo",
+    "info" : "SingleVariableDeclaration[8786-8805]:SingleVariableDeclaration[8786-8805]"
+  }, {
+    "left" : "EurekaClientConfig config",
+    "right" : "EurekaClientConfig config",
+    "info" : "SingleVariableDeclaration[8807-8832]:SingleVariableDeclaration[8807-8832]"
+  }, {
+    "left" : "DiscoveryClientOptionalArgs args",
+    "right" : "DiscoveryClientOptionalArgs args",
+    "info" : "SingleVariableDeclaration[8834-8866]:SingleVariableDeclaration[8834-8866]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[8868-9917]:Block[8868-9917]"
@@ -500,6 +536,22 @@
     "left" : "this(myInfo, config, args, new Provider<BackupRegistry>() {\n            @Override\n            public BackupRegistry get() {\n                String backupRegistryClassName = clientConfig.getBackupRegistryImpl();\n                if (null != backupRegistryClassName) {\n                    try {\n                        return (BackupRegistry) Class.forName(backupRegistryClassName).newInstance();\n                    } catch (InstantiationException e) {\n                        logger.error(\"Error instantiating BackupRegistry.\", e);\n                    } catch (IllegalAccessException e) {\n                        logger.error(\"Error instantiating BackupRegistry.\", e);\n                    } catch (ClassNotFoundException e) {\n                        logger.error(\"Error instantiating BackupRegistry.\", e);\n                    }\n                }\n\n                logger.warn(\"Using default backup registry implementation which does not do anything.\");\n                return new NotImplementedRegistryImpl();\n            }\n        });",
     "right" : "this(myInfo, config, args, new Provider<BackupRegistry>() {\n            @Override\n            public BackupRegistry get() {\n                String backupRegistryClassName = clientConfig.getBackupRegistryImpl();\n                if (null != backupRegistryClassName) {\n                    try {\n                        return (BackupRegistry) Class.forName(backupRegistryClassName).newInstance();\n                    } catch (InstantiationException e) {\n                        logger.error(\"Error instantiating BackupRegistry.\", e);\n                    } catch (IllegalAccessException e) {\n                        logger.error(\"Error instantiating BackupRegistry.\", e);\n                    } catch (ClassNotFoundException e) {\n                        logger.error(\"Error instantiating BackupRegistry.\", e);\n                    }\n                }\n\n                logger.warn(\"Using default backup registry implementation which does not do anything.\");\n                return new NotImplementedRegistryImpl();\n            }\n        });",
     "info" : "ConstructorInvocation[8878-9911]:ConstructorInvocation[8878-9911]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[8950-8959]:MarkerAnnotation[8950-8959]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[8972-8978]:Modifier[8972-8978]"
+  }, {
+    "left" : "BackupRegistry",
+    "right" : "BackupRegistry",
+    "info" : "SimpleType[8979-8993]:SimpleType[8979-8993]"
+  }, {
+    "left" : "get",
+    "right" : "get",
+    "info" : "SimpleName[8994-8997]:SimpleName[8994-8997]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -560,6 +612,30 @@
     "left" : "return new NotImplementedRegistryImpl();",
     "right" : "return new NotImplementedRegistryImpl();",
     "info" : "ReturnStatement[9845-9885]:ReturnStatement[9845-9885]"
+  }, {
+    "left" : "@Inject",
+    "right" : "@Inject",
+    "info" : "MarkerAnnotation[9923-9930]:MarkerAnnotation[9923-9930]"
+  }, {
+    "left" : "DiscoveryClient",
+    "right" : "DiscoveryClient",
+    "info" : "SimpleName[9935-9950]:SimpleName[9935-9950]"
+  }, {
+    "left" : "InstanceInfo myInfo",
+    "right" : "InstanceInfo myInfo",
+    "info" : "SingleVariableDeclaration[9951-9970]:SingleVariableDeclaration[9951-9970]"
+  }, {
+    "left" : "EurekaClientConfig config",
+    "right" : "EurekaClientConfig config",
+    "info" : "SingleVariableDeclaration[9972-9997]:SingleVariableDeclaration[9972-9997]"
+  }, {
+    "left" : "DiscoveryClientOptionalArgs args",
+    "right" : "DiscoveryClientOptionalArgs args",
+    "info" : "SingleVariableDeclaration[9999-10031]:SingleVariableDeclaration[9999-10031]"
+  }, {
+    "left" : "Provider<BackupRegistry> backupRegistryProvider",
+    "right" : "Provider<BackupRegistry> backupRegistryProvider",
+    "info" : "SingleVariableDeclaration[10053-10100]:SingleVariableDeclaration[10053-10100]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -833,6 +909,26 @@
     "right" : "DiscoveryManager.getInstance().setEurekaClientConfig(config);",
     "info" : "ExpressionStatement[16292-16353]:ExpressionStatement[16292-16353]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[16489-16498]:MarkerAnnotation[16489-16498]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[16503-16509]:Modifier[16503-16509]"
+  }, {
+    "left" : "Application",
+    "right" : "Application",
+    "info" : "SimpleType[16510-16521]:SimpleType[16510-16521]"
+  }, {
+    "left" : "getApplication",
+    "right" : "getApplication",
+    "info" : "SimpleName[16522-16536]:SimpleName[16522-16536]"
+  }, {
+    "left" : "String appName",
+    "right" : "String appName",
+    "info" : "SingleVariableDeclaration[16537-16551]:SingleVariableDeclaration[16537-16551]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[16553-16629]:Block[16553-16629]"
@@ -841,6 +937,22 @@
     "right" : "return getApplications().getRegisteredApplications(appName);",
     "info" : "ReturnStatement[16563-16623]:ReturnStatement[16563-16623]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[16751-16760]:MarkerAnnotation[16751-16760]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[16765-16771]:Modifier[16765-16771]"
+  }, {
+    "left" : "Applications",
+    "right" : "Applications",
+    "info" : "SimpleType[16772-16784]:SimpleType[16772-16784]"
+  }, {
+    "left" : "getApplications",
+    "right" : "getApplications",
+    "info" : "SimpleName[16785-16800]:SimpleName[16785-16800]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[16803-16848]:Block[16803-16848]"
@@ -848,6 +960,26 @@
     "left" : "return localRegionApps.get();",
     "right" : "return localRegionApps.get();",
     "info" : "ReturnStatement[16813-16842]:ReturnStatement[16813-16842]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[16854-16863]:MarkerAnnotation[16854-16863]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[16868-16874]:Modifier[16868-16874]"
+  }, {
+    "left" : "Applications",
+    "right" : "Applications",
+    "info" : "SimpleType[16875-16887]:SimpleType[16875-16887]"
+  }, {
+    "left" : "getApplicationsForARegion",
+    "right" : "getApplicationsForARegion",
+    "info" : "SimpleName[16888-16913]:SimpleName[16888-16913]"
+  }, {
+    "left" : "@Nullable String region",
+    "right" : "@Nullable String region",
+    "info" : "SingleVariableDeclaration[16914-16937]:SingleVariableDeclaration[16914-16937]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -872,6 +1004,18 @@
     "left" : "return remoteRegionVsApps.get(region);",
     "right" : "return remoteRegionVsApps.get(region);",
     "info" : "ReturnStatement[17071-17109]:ReturnStatement[17071-17109]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17131-17137]:Modifier[17131-17137]"
+  }, {
+    "left" : "Set<String>",
+    "right" : "Set<String>",
+    "info" : "ParameterizedType[17138-17149]:ParameterizedType[17138-17149]"
+  }, {
+    "left" : "getAllKnownRegions",
+    "right" : "getAllKnownRegions",
+    "info" : "SimpleName[17150-17168]:SimpleName[17150-17168]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -913,6 +1057,26 @@
     "right" : "return Collections.singleton(localRegion);",
     "info" : "ReturnStatement[17512-17554]:ReturnStatement[17512-17554]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[17702-17711]:MarkerAnnotation[17702-17711]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17716-17722]:Modifier[17716-17722]"
+  }, {
+    "left" : "List<InstanceInfo>",
+    "right" : "List<InstanceInfo>",
+    "info" : "ParameterizedType[17723-17741]:ParameterizedType[17723-17741]"
+  }, {
+    "left" : "getInstancesById",
+    "right" : "getInstancesById",
+    "info" : "SimpleName[17742-17758]:SimpleName[17742-17758]"
+  }, {
+    "left" : "String id",
+    "right" : "String id",
+    "info" : "SingleVariableDeclaration[17759-17768]:SingleVariableDeclaration[17759-17768]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17770-18161]:Block[17770-18161]"
@@ -949,6 +1113,34 @@
     "right" : "return instancesList;",
     "info" : "ReturnStatement[18134-18155]:ReturnStatement[18134-18155]"
   }, {
+    "left" : "/**\n     * Register {@link HealthCheckCallback} with the eureka client.\n     *\n     * Once registered, the eureka client will invoke the\n     * {@link HealthCheckCallback} in intervals specified by\n     * {@link EurekaClientConfig#getInstanceInfoReplicationIntervalSeconds()}.\n     *\n     * @param callback app specific healthcheck.\n     *\n     * @deprecated Use\n     */",
+    "right" : "/**\n     * Register {@link HealthCheckCallback} with the eureka client.\n     *\n     * Once registered, the eureka client will invoke the\n     * {@link HealthCheckCallback} in intervals specified by\n     * {@link EurekaClientConfig#getInstanceInfoReplicationIntervalSeconds()}.\n     *\n     * @param callback app specific healthcheck.\n     *\n     * @deprecated Use\n     */",
+    "info" : "Javadoc[18167-18537]:Javadoc[18167-18537]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[18542-18553]:MarkerAnnotation[18542-18553]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[18558-18567]:MarkerAnnotation[18558-18567]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18572-18578]:Modifier[18572-18578]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[18579-18583]:PrimitiveType[18579-18583]"
+  }, {
+    "left" : "registerHealthCheckCallback",
+    "right" : "registerHealthCheckCallback",
+    "info" : "SimpleName[18584-18611]:SimpleName[18584-18611]"
+  }, {
+    "left" : "HealthCheckCallback callback",
+    "right" : "HealthCheckCallback callback",
+    "info" : "SingleVariableDeclaration[18612-18640]:SingleVariableDeclaration[18612-18640]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[18642-18912]:Block[18642-18912]"
@@ -976,6 +1168,26 @@
     "left" : "healthCheckHandler = new HealthCheckCallbackToHandlerBridge(callback);",
     "right" : "healthCheckHandler = new HealthCheckCallbackToHandlerBridge(callback);",
     "info" : "ExpressionStatement[18826-18896]:ExpressionStatement[18826-18896]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[18918-18927]:MarkerAnnotation[18918-18927]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18932-18938]:Modifier[18932-18938]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[18939-18943]:PrimitiveType[18939-18943]"
+  }, {
+    "left" : "registerHealthCheck",
+    "right" : "registerHealthCheck",
+    "info" : "SimpleName[18944-18963]:SimpleName[18944-18963]"
+  }, {
+    "left" : "HealthCheckHandler healthCheckHandler",
+    "right" : "HealthCheckHandler healthCheckHandler",
+    "info" : "SingleVariableDeclaration[18964-19001]:SingleVariableDeclaration[18964-19001]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1005,6 +1217,34 @@
     "right" : "this.healthCheckHandler = healthCheckHandler;",
     "info" : "ExpressionStatement[19200-19245]:ExpressionStatement[19200-19245]"
   }, {
+    "left" : "/**\n     * Gets the list of instances matching the given VIP Address.\n     *\n     * @param vipAddress\n     *            - The VIP address to match the instances for.\n     * @param secure\n     *            - true if it is a secure vip address, false otherwise\n     * @return - The list of {@link InstanceInfo} objects matching the criteria\n     */",
+    "right" : "/**\n     * Gets the list of instances matching the given VIP Address.\n     *\n     * @param vipAddress\n     *            - The VIP address to match the instances for.\n     * @param secure\n     *            - true if it is a secure vip address, false otherwise\n     * @return - The list of {@link InstanceInfo} objects matching the criteria\n     */",
+    "info" : "Javadoc[19267-19613]:Javadoc[19267-19613]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[19618-19627]:MarkerAnnotation[19618-19627]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[19632-19638]:Modifier[19632-19638]"
+  }, {
+    "left" : "List<InstanceInfo>",
+    "right" : "List<InstanceInfo>",
+    "info" : "ParameterizedType[19639-19657]:ParameterizedType[19639-19657]"
+  }, {
+    "left" : "getInstancesByVipAddress",
+    "right" : "getInstancesByVipAddress",
+    "info" : "SimpleName[19658-19682]:SimpleName[19658-19682]"
+  }, {
+    "left" : "String vipAddress",
+    "right" : "String vipAddress",
+    "info" : "SingleVariableDeclaration[19683-19700]:SingleVariableDeclaration[19683-19700]"
+  }, {
+    "left" : "boolean secure",
+    "right" : "boolean secure",
+    "info" : "SingleVariableDeclaration[19702-19716]:SingleVariableDeclaration[19702-19716]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[19718-19826]:Block[19718-19826]"
@@ -1012,6 +1252,38 @@
     "left" : "return getInstancesByVipAddress(vipAddress, secure, instanceRegionChecker.getLocalRegion());",
     "right" : "return getInstancesByVipAddress(vipAddress, secure, instanceRegionChecker.getLocalRegion());",
     "info" : "ReturnStatement[19728-19820]:ReturnStatement[19728-19820]"
+  }, {
+    "left" : "/**\n     * Gets the list of instances matching the given VIP Address in the passed region.\n     *\n     * @param vipAddress - The VIP address to match the instances for.\n     * @param secure - true if it is a secure vip address, false otherwise\n     * @param region - region from which the instances are to be fetched. If <code>null</code> then local region is\n     *               assumed.\n     *\n     * @return - The list of {@link InstanceInfo} objects matching the criteria, empty list if not instances found.\n     */",
+    "right" : "/**\n     * Gets the list of instances matching the given VIP Address in the passed region.\n     *\n     * @param vipAddress - The VIP address to match the instances for.\n     * @param secure - true if it is a secure vip address, false otherwise\n     * @param region - region from which the instances are to be fetched. If <code>null</code> then local region is\n     *               assumed.\n     *\n     * @return - The list of {@link InstanceInfo} objects matching the criteria, empty list if not instances found.\n     */",
+    "info" : "Javadoc[19832-20352]:Javadoc[19832-20352]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[20357-20366]:MarkerAnnotation[20357-20366]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[20371-20377]:Modifier[20371-20377]"
+  }, {
+    "left" : "List<InstanceInfo>",
+    "right" : "List<InstanceInfo>",
+    "info" : "ParameterizedType[20378-20396]:ParameterizedType[20378-20396]"
+  }, {
+    "left" : "getInstancesByVipAddress",
+    "right" : "getInstancesByVipAddress",
+    "info" : "SimpleName[20397-20421]:SimpleName[20397-20421]"
+  }, {
+    "left" : "String vipAddress",
+    "right" : "String vipAddress",
+    "info" : "SingleVariableDeclaration[20422-20439]:SingleVariableDeclaration[20422-20439]"
+  }, {
+    "left" : "boolean secure",
+    "right" : "boolean secure",
+    "info" : "SingleVariableDeclaration[20441-20455]:SingleVariableDeclaration[20441-20455]"
+  }, {
+    "left" : "@Nullable String region",
+    "right" : "@Nullable String region",
+    "info" : "SingleVariableDeclaration[20512-20535]:SingleVariableDeclaration[20512-20535]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1088,6 +1360,38 @@
     "left" : "return applications.getInstancesBySecureVirtualHostName(vipAddress);",
     "right" : "return applications.getInstancesBySecureVirtualHostName(vipAddress);",
     "info" : "ReturnStatement[21337-21405]:ReturnStatement[21337-21405]"
+  }, {
+    "left" : "/**\n     * Gets the list of instances matching the given VIP Address and the given\n     * application name if both of them are not null. If one of them is null,\n     * then that criterion is completely ignored for matching instances.\n     *\n     * @param vipAddress\n     *            - The VIP address to match the instances for.\n     * @param appName\n     *            - The applicationName to match the instances for.\n     * @param secure\n     *            - true if it is a secure vip address, false otherwise.\n     * @return - The list of {@link InstanceInfo} objects matching the criteria.\n     */",
+    "right" : "/**\n     * Gets the list of instances matching the given VIP Address and the given\n     * application name if both of them are not null. If one of them is null,\n     * then that criterion is completely ignored for matching instances.\n     *\n     * @param vipAddress\n     *            - The VIP address to match the instances for.\n     * @param appName\n     *            - The applicationName to match the instances for.\n     * @param secure\n     *            - true if it is a secure vip address, false otherwise.\n     * @return - The list of {@link InstanceInfo} objects matching the criteria.\n     */",
+    "info" : "Javadoc[21429-22031]:Javadoc[21429-22031]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[22036-22045]:MarkerAnnotation[22036-22045]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[22050-22056]:Modifier[22050-22056]"
+  }, {
+    "left" : "List<InstanceInfo>",
+    "right" : "List<InstanceInfo>",
+    "info" : "ParameterizedType[22057-22075]:ParameterizedType[22057-22075]"
+  }, {
+    "left" : "getInstancesByVipAddressAndAppName",
+    "right" : "getInstancesByVipAddressAndAppName",
+    "info" : "SimpleName[22076-22110]:SimpleName[22076-22110]"
+  }, {
+    "left" : "String vipAddress",
+    "right" : "String vipAddress",
+    "info" : "SingleVariableDeclaration[22124-22141]:SingleVariableDeclaration[22124-22141]"
+  }, {
+    "left" : "String appName",
+    "right" : "String appName",
+    "info" : "SingleVariableDeclaration[22143-22157]:SingleVariableDeclaration[22143-22157]"
+  }, {
+    "left" : "boolean secure",
+    "right" : "boolean secure",
+    "info" : "SingleVariableDeclaration[22159-22173]:SingleVariableDeclaration[22159-22173]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1233,6 +1537,30 @@
     "right" : "return result;",
     "info" : "ReturnStatement[24071-24085]:ReturnStatement[24071-24085]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[24261-24270]:MarkerAnnotation[24261-24270]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[24275-24281]:Modifier[24275-24281]"
+  }, {
+    "left" : "InstanceInfo",
+    "right" : "InstanceInfo",
+    "info" : "SimpleType[24282-24294]:SimpleType[24282-24294]"
+  }, {
+    "left" : "getNextServerFromEureka",
+    "right" : "getNextServerFromEureka",
+    "info" : "SimpleName[24295-24318]:SimpleName[24295-24318]"
+  }, {
+    "left" : "String virtualHostname",
+    "right" : "String virtualHostname",
+    "info" : "SingleVariableDeclaration[24319-24341]:SingleVariableDeclaration[24319-24341]"
+  }, {
+    "left" : "boolean secure",
+    "right" : "boolean secure",
+    "info" : "SingleVariableDeclaration[24343-24357]:SingleVariableDeclaration[24343-24357]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[24359-24942]:Block[24359-24942]"
@@ -1264,6 +1592,30 @@
     "left" : "return instanceInfoList.get(index);",
     "right" : "return instanceInfoList.get(index);",
     "info" : "ReturnStatement[24901-24936]:ReturnStatement[24901-24936]"
+  }, {
+    "left" : "/**\n     * Get all applications registered with a specific eureka service.\n     *\n     * @param serviceUrl\n     *            - The string representation of the service url.\n     * @return - The registry information containing all applications.\n     */",
+    "right" : "/**\n     * Get all applications registered with a specific eureka service.\n     *\n     * @param serviceUrl\n     *            - The string representation of the service url.\n     * @return - The registry information containing all applications.\n     */",
+    "info" : "Javadoc[24948-25199]:Javadoc[24948-25199]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[25204-25213]:MarkerAnnotation[25204-25213]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[25218-25224]:Modifier[25218-25224]"
+  }, {
+    "left" : "Applications",
+    "right" : "Applications",
+    "info" : "SimpleType[25225-25237]:SimpleType[25225-25237]"
+  }, {
+    "left" : "getApplications",
+    "right" : "getApplications",
+    "info" : "SimpleName[25238-25253]:SimpleName[25238-25253]"
+  }, {
+    "left" : "String serviceUrl",
+    "right" : "String serviceUrl",
+    "info" : "SingleVariableDeclaration[25254-25271]:SingleVariableDeclaration[25254-25271]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1329,6 +1681,26 @@
     "right" : "return apps;",
     "info" : "ReturnStatement[25983-25995]:ReturnStatement[25983-25995]"
   }, {
+    "left" : "/**\n     * Checks to see if the eureka client registration is enabled.\n     *\n     * @param myInfo\n     *            - The instance info object\n     * @return - true, if the instance should be registered with eureka, false\n     *         otherwise\n     */",
+    "right" : "/**\n     * Checks to see if the eureka client registration is enabled.\n     *\n     * @param myInfo\n     *            - The instance info object\n     * @return - true, if the instance should be registered with eureka, false\n     *         otherwise\n     */",
+    "info" : "Javadoc[26007-26262]:Javadoc[26007-26262]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[26267-26274]:Modifier[26267-26274]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[26275-26282]:PrimitiveType[26275-26282]"
+  }, {
+    "left" : "shouldRegister",
+    "right" : "shouldRegister",
+    "info" : "SimpleName[26283-26297]:SimpleName[26283-26297]"
+  }, {
+    "left" : "InstanceInfo myInfo",
+    "right" : "InstanceInfo myInfo",
+    "info" : "SingleVariableDeclaration[26298-26317]:SingleVariableDeclaration[26298-26317]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[26319-26440]:Block[26319-26440]"
@@ -1348,6 +1720,22 @@
     "left" : "return true;",
     "right" : "return true;",
     "info" : "ReturnStatement[26422-26434]:ReturnStatement[26422-26434]"
+  }, {
+    "left" : "/**\n     * Register with the eureka service by making the appropriate REST call.\n     */",
+    "right" : "/**\n     * Register with the eureka service by making the appropriate REST call.\n     */",
+    "info" : "Javadoc[26446-26534]:Javadoc[26446-26534]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[26539-26543]:PrimitiveType[26539-26543]"
+  }, {
+    "left" : "register",
+    "right" : "register",
+    "info" : "SimpleName[26544-26552]:SimpleName[26544-26552]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[26562-26571]:SimpleType[26562-26571]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1408,6 +1796,18 @@
     "left" : "response.close();",
     "right" : "response.close();",
     "info" : "ExpressionStatement[27197-27214]:ExpressionStatement[27197-27214]"
+  }, {
+    "left" : "/**\n     * Renew with the eureka service by making the appropriate REST call\n     */",
+    "right" : "/**\n     * Renew with the eureka service by making the appropriate REST call\n     */",
+    "info" : "Javadoc[27250-27334]:Javadoc[27250-27334]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[27339-27343]:PrimitiveType[27339-27343]"
+  }, {
+    "left" : "renew",
+    "right" : "renew",
+    "info" : "SimpleName[27344-27349]:SimpleName[27344-27349]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1488,6 +1888,34 @@
     "left" : "response.close();",
     "right" : "response.close();",
     "info" : "ExpressionStatement[28145-28162]:ExpressionStatement[28145-28162]"
+  }, {
+    "left" : "/**\n     * Get the list of all eureka service urls from properties file for the eureka client to talk to.\n     *\n     * @param instanceZone The zone in which the client resides\n     * @param preferSameZone true if we have to prefer the same zone as the client, false otherwise\n     * @return The list of all eureka service urls for the eureka client to talk to\n     */",
+    "right" : "/**\n     * Get the list of all eureka service urls from properties file for the eureka client to talk to.\n     *\n     * @param instanceZone The zone in which the client resides\n     * @param preferSameZone true if we have to prefer the same zone as the client, false otherwise\n     * @return The list of all eureka service urls for the eureka client to talk to\n     */",
+    "info" : "Javadoc[28199-28567]:Javadoc[28199-28567]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[28572-28581]:MarkerAnnotation[28572-28581]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[28586-28592]:Modifier[28586-28592]"
+  }, {
+    "left" : "List<String>",
+    "right" : "List<String>",
+    "info" : "ParameterizedType[28593-28605]:ParameterizedType[28593-28605]"
+  }, {
+    "left" : "getServiceUrlsFromConfig",
+    "right" : "getServiceUrlsFromConfig",
+    "info" : "SimpleName[28606-28630]:SimpleName[28606-28630]"
+  }, {
+    "left" : "String instanceZone",
+    "right" : "String instanceZone",
+    "info" : "SingleVariableDeclaration[28631-28650]:SingleVariableDeclaration[28631-28650]"
+  }, {
+    "left" : "boolean preferSameZone",
+    "right" : "boolean preferSameZone",
+    "info" : "SingleVariableDeclaration[28652-28674]:SingleVariableDeclaration[28652-28674]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1609,6 +2037,38 @@
     "right" : "return orderedUrls;",
     "info" : "ReturnStatement[30180-30199]:ReturnStatement[30180-30199]"
   }, {
+    "left" : "/**\n     * @deprecated use {@link #getServiceUrlsFromConfig(String, boolean)} instead.\n     */",
+    "right" : "/**\n     * @deprecated use {@link #getServiceUrlsFromConfig(String, boolean)} instead.\n     */",
+    "info" : "Javadoc[30211-30305]:Javadoc[30211-30305]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[30310-30321]:MarkerAnnotation[30310-30321]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[30326-30332]:Modifier[30326-30332]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[30333-30339]:Modifier[30333-30339]"
+  }, {
+    "left" : "List<String>",
+    "right" : "List<String>",
+    "info" : "ParameterizedType[30340-30352]:ParameterizedType[30340-30352]"
+  }, {
+    "left" : "getEurekaServiceUrlsFromConfig",
+    "right" : "getEurekaServiceUrlsFromConfig",
+    "info" : "SimpleName[30353-30383]:SimpleName[30353-30383]"
+  }, {
+    "left" : "String instanceZone",
+    "right" : "String instanceZone",
+    "info" : "SingleVariableDeclaration[30384-30403]:SingleVariableDeclaration[30384-30403]"
+  }, {
+    "left" : "boolean preferSameZone",
+    "right" : "boolean preferSameZone",
+    "info" : "SingleVariableDeclaration[30405-30427]:SingleVariableDeclaration[30405-30427]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[30429-31958]:Block[30429-31958]"
@@ -1729,6 +2189,30 @@
     "right" : "return orderedUrls;",
     "info" : "ReturnStatement[31933-31952]:ReturnStatement[31933-31952]"
   }, {
+    "left" : "/**\n     * Shuts down Eureka Client. Also sends a deregistration request to the\n     * eureka server.\n     */",
+    "right" : "/**\n     * Shuts down Eureka Client. Also sends a deregistration request to the\n     * eureka server.\n     */",
+    "info" : "Javadoc[31964-32073]:Javadoc[31964-32073]"
+  }, {
+    "left" : "@PreDestroy",
+    "right" : "@PreDestroy",
+    "info" : "MarkerAnnotation[32078-32089]:MarkerAnnotation[32078-32089]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[32094-32103]:MarkerAnnotation[32094-32103]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[32108-32114]:Modifier[32108-32114]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[32115-32119]:PrimitiveType[32115-32119]"
+  }, {
+    "left" : "shutdown",
+    "right" : "shutdown",
+    "info" : "SimpleName[32120-32128]:SimpleName[32120-32128]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[32131-32645]:Block[32131-32645]"
@@ -1777,6 +2261,18 @@
     "right" : "discoveryJerseyClient.destroyResources();",
     "info" : "ExpressionStatement[32588-32629]:ExpressionStatement[32588-32629]"
   }, {
+    "left" : "/**\n     * unregister w/ the eureka service.\n     */",
+    "right" : "/**\n     * unregister w/ the eureka service.\n     */",
+    "info" : "Javadoc[32651-32703]:Javadoc[32651-32703]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[32708-32712]:PrimitiveType[32708-32712]"
+  }, {
+    "left" : "unregister",
+    "right" : "unregister",
+    "info" : "SimpleName[32713-32723]:SimpleName[32713-32723]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[32726-33336]:Block[32726-33336]"
@@ -1824,6 +2320,26 @@
     "left" : "response.close();",
     "right" : "response.close();",
     "info" : "ExpressionStatement[33289-33306]:ExpressionStatement[33289-33306]"
+  }, {
+    "left" : "/**\n     * Fetches the registry information.\n     *\n     * <p>\n     * This method tries to get only deltas after the first fetch unless there\n     * is an issue in reconciling eureka server and client registry information.\n     * </p>\n     *\n     * @param forceFullRegistryFetch Forces a full registry fetch.\n     *\n     * @return true if the registry was fetched\n     */",
+    "right" : "/**\n     * Fetches the registry information.\n     *\n     * <p>\n     * This method tries to get only deltas after the first fetch unless there\n     * is an issue in reconciling eureka server and client registry information.\n     * </p>\n     *\n     * @param forceFullRegistryFetch Forces a full registry fetch.\n     *\n     * @return true if the registry was fetched\n     */",
+    "info" : "Javadoc[33342-33713]:Javadoc[33342-33713]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[33718-33725]:Modifier[33718-33725]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[33726-33733]:PrimitiveType[33726-33733]"
+  }, {
+    "left" : "fetchRegistry",
+    "right" : "fetchRegistry",
+    "info" : "SimpleName[33734-33747]:SimpleName[33734-33747]"
+  }, {
+    "left" : "boolean forceFullRegistryFetch",
+    "right" : "boolean forceFullRegistryFetch",
+    "info" : "SingleVariableDeclaration[33748-33778]:SingleVariableDeclaration[33748-33778]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1945,6 +2461,22 @@
     "right" : "return true;",
     "info" : "ReturnStatement[35996-36008]:ReturnStatement[36206-36218]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[36020-36027]:Modifier[36230-36237]"
+  }, {
+    "left" : "synchronized",
+    "right" : "synchronized",
+    "info" : "Modifier[36028-36040]:Modifier[36238-36250]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[36041-36045]:PrimitiveType[36251-36255]"
+  }, {
+    "left" : "updateInstanceRemoteStatus",
+    "right" : "updateInstanceRemoteStatus",
+    "info" : "SimpleName[36046-36072]:SimpleName[36256-36282]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[36075-37304]:Block[36285-37283]"
@@ -2037,6 +2569,26 @@
     "right" : "lastRemoteInstanceStatus = currentRemoteInstanceStatus;",
     "info" : "ExpressionStatement[37219-37274]:ExpressionStatement[37212-37267]"
   }, {
+    "left" : "/**\n     * @return Return he current instance status as seen on the Eureka server.\n     */",
+    "right" : "/**\n     * @return Return he current instance status as seen on the Eureka server.\n     */",
+    "info" : "Javadoc[37310-37400]:Javadoc[37289-37379]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[37405-37414]:MarkerAnnotation[37384-37393]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[37419-37425]:Modifier[37398-37404]"
+  }, {
+    "left" : "InstanceInfo.InstanceStatus",
+    "right" : "InstanceInfo.InstanceStatus",
+    "info" : "SimpleType[37426-37453]:SimpleType[37405-37432]"
+  }, {
+    "left" : "getInstanceRemoteStatus",
+    "right" : "getInstanceRemoteStatus",
+    "info" : "SimpleName[37454-37477]:SimpleName[37433-37456]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[37480-37528]:Block[37459-37507]"
@@ -2044,6 +2596,22 @@
     "left" : "return lastRemoteInstanceStatus;",
     "right" : "return lastRemoteInstanceStatus;",
     "info" : "ReturnStatement[37490-37522]:ReturnStatement[37469-37501]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[37534-37541]:Modifier[37513-37520]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[37542-37548]:SimpleType[37521-37527]"
+  }, {
+    "left" : "getReconcileHashCode",
+    "right" : "getReconcileHashCode",
+    "info" : "SimpleName[37549-37569]:SimpleName[37528-37548]"
+  }, {
+    "left" : "Applications applications",
+    "right" : "Applications applications",
+    "info" : "SingleVariableDeclaration[37570-37595]:SingleVariableDeclaration[37549-37574]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2080,6 +2648,26 @@
     "left" : "return Applications.getReconcileHashCode(instanceCountMap);",
     "right" : "return Applications.getReconcileHashCode(instanceCountMap);",
     "info" : "ReturnStatement[37985-38044]:ReturnStatement[37964-38023]"
+  }, {
+    "left" : "/**\n     * Gets the full registry information from the eureka server and stores it locally.\n     * When applying the full registry, the following flow is observed:\n     *\n     * if (update generation have not advanced (due to another thread))\n     *   atomically set the registry to the new registry\n     * fi\n     *\n     * @return the full registry information.\n     * @throws Throwable\n     *             on error.\n     */",
+    "right" : "/**\n     * Gets the full registry information from the eureka server and stores it locally.\n     * When applying the full registry, the following flow is observed:\n     *\n     * if (update generation have not advanced (due to another thread))\n     *   atomically set the registry to the new registry\n     * fi\n     *\n     * @return the full registry information.\n     * @throws Throwable\n     *             on error.\n     */",
+    "info" : "Javadoc[38056-38480]:Javadoc[38035-38459]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[38485-38492]:Modifier[38464-38471]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[38493-38507]:SimpleType[38472-38486]"
+  }, {
+    "left" : "getAndStoreFullRegistry",
+    "right" : "getAndStoreFullRegistry",
+    "info" : "SimpleName[38508-38531]:SimpleName[38487-38510]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[38541-38550]:SimpleType[38520-38529]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2152,6 +2740,30 @@
     "left" : "return response;",
     "right" : "return response;",
     "info" : "ReturnStatement[39446-39462]:ReturnStatement[39425-39441]"
+  }, {
+    "left" : "/**\n     * Get the delta registry information from the eureka server and update it locally.\n     * When applying the delta, the following flow is observed:\n     *\n     * if (update generation have not advanced (due to another thread))\n     *   atomically try to: update application with the delta and get reconcileHashCode\n     *   abort entire processing otherwise\n     *   do reconciliation if reconcileHashCode clash\n     * fi\n     *\n     * @return the client response\n     * @throws Throwable on error\n     */",
+    "right" : "/**\n     * Get the delta registry information from the eureka server and update it locally.\n     * When applying the delta, the following flow is observed:\n     *\n     * if (update generation have not advanced (due to another thread))\n     *   atomically try to: update application with the delta and get reconcileHashCode\n     *   abort entire processing otherwise\n     *   do reconciliation if reconcileHashCode clash\n     * fi\n     *\n     * @return the client response\n     * @throws Throwable on error\n     */",
+    "info" : "Javadoc[39474-39987]:Javadoc[39453-39966]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[39992-39999]:Modifier[39971-39978]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[40000-40014]:SimpleType[39979-39993]"
+  }, {
+    "left" : "getAndUpdateDelta",
+    "right" : "getAndUpdateDelta",
+    "info" : "SimpleName[40015-40032]:SimpleName[39994-40011]"
+  }, {
+    "left" : "Applications applications",
+    "right" : "Applications applications",
+    "info" : "SingleVariableDeclaration[40033-40058]:SingleVariableDeclaration[40012-40037]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[40067-40076]:SimpleType[40046-40055]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2281,6 +2893,22 @@
     "right" : "return response;",
     "info" : "ReturnStatement[41748-41764]:ReturnStatement[41727-41743]"
   }, {
+    "left" : "/**\n     * Logs the total number of non-filtered instances stored locally.\n     */",
+    "right" : "/**\n     * Logs the total number of non-filtered instances stored locally.\n     */",
+    "info" : "Javadoc[41776-41858]:Javadoc[41755-41837]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[41863-41870]:Modifier[41842-41849]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[41871-41875]:PrimitiveType[41850-41854]"
+  }, {
+    "left" : "logTotalInstances",
+    "right" : "logTotalInstances",
+    "info" : "SimpleName[41876-41893]:SimpleName[41855-41872]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[41896-42205]:Block[41875-42184]"
@@ -2304,6 +2932,38 @@
     "left" : "logger.debug(\"The total number of all instances in the client now is {}\", totInstances);",
     "right" : "logger.debug(\"The total number of all instances in the client now is {}\", totInstances);",
     "info" : "ExpressionStatement[42111-42199]:ExpressionStatement[42090-42178]"
+  }, {
+    "left" : "/**\n     * Reconcile the eureka server and client registry information and logs the differences if any.\n     * When reconciling, the following flow is observed:\n     *\n     * make a remote call to the server for the full registry\n     * calculate and log differences\n     * if (update generation have not advanced (due to another thread))\n     *   atomically set the registry to the new registry\n     * fi\n     *\n     * @param response\n     *            the HTTP response after getting the full registry.\n     * @param delta\n     *            the last delta registry information received from the eureka\n     *            server.\n     * @param reconcileHashCode\n     *            the hashcode generated by the server for reconciliation.\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "right" : "/**\n     * Reconcile the eureka server and client registry information and logs the differences if any.\n     * When reconciling, the following flow is observed:\n     *\n     * make a remote call to the server for the full registry\n     * calculate and log differences\n     * if (update generation have not advanced (due to another thread))\n     *   atomically set the registry to the new registry\n     * fi\n     *\n     * @param response\n     *            the HTTP response after getting the full registry.\n     * @param delta\n     *            the last delta registry information received from the eureka\n     *            server.\n     * @param reconcileHashCode\n     *            the hashcode generated by the server for reconciliation.\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "info" : "Javadoc[42211-43069]:Javadoc[42190-43048]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[43074-43081]:Modifier[43053-43060]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[43082-43096]:SimpleType[43061-43075]"
+  }, {
+    "left" : "reconcileAndLogDifference",
+    "right" : "reconcileAndLogDifference",
+    "info" : "SimpleName[43097-43122]:SimpleName[43076-43101]"
+  }, {
+    "left" : "ClientResponse response",
+    "right" : "ClientResponse response",
+    "info" : "SingleVariableDeclaration[43123-43146]:SingleVariableDeclaration[43102-43125]"
+  }, {
+    "left" : "Applications delta",
+    "right" : "Applications delta",
+    "info" : "SingleVariableDeclaration[43201-43219]:SingleVariableDeclaration[43180-43198]"
+  }, {
+    "left" : "String reconcileHashCode",
+    "right" : "String reconcileHashCode",
+    "info" : "SingleVariableDeclaration[43221-43245]:SingleVariableDeclaration[43200-43224]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[43254-43263]:SimpleType[43233-43242]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2416,6 +3076,26 @@
     "left" : "return response;",
     "right" : "return response;",
     "info" : "ReturnStatement[45055-45071]:ReturnStatement[45034-45050]"
+  }, {
+    "left" : "/**\n     * Updates the delta information fetches from the eureka server into the\n     * local cache.\n     *\n     * @param delta\n     *            the delta information received from eureka server in the last\n     *            poll cycle.\n     */",
+    "right" : "/**\n     * Updates the delta information fetches from the eureka server into the\n     * local cache.\n     *\n     * @param delta\n     *            the delta information received from eureka server in the last\n     *            poll cycle.\n     */",
+    "info" : "Javadoc[45083-45328]:Javadoc[45062-45307]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[45333-45340]:Modifier[45312-45319]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[45341-45345]:PrimitiveType[45320-45324]"
+  }, {
+    "left" : "updateDelta",
+    "right" : "updateDelta",
+    "info" : "SimpleName[45346-45357]:SimpleName[45325-45336]"
+  }, {
+    "left" : "Applications delta",
+    "right" : "Applications delta",
+    "info" : "SingleVariableDeclaration[45358-45376]:SingleVariableDeclaration[45337-45355]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2609,6 +3289,30 @@
     "right" : "applications.shuffleInstances(clientConfig.shouldFilterOnlyUpInstances());",
     "info" : "ExpressionStatement[48461-48535]:ExpressionStatement[48440-48514]"
   }, {
+    "left" : "/**\n     * Makes remote calls with the corresponding action(register,renew etc).\n     *\n     * @param action\n     *            the action to be performed on eureka server.\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "right" : "/**\n     * Makes remote calls with the corresponding action(register,renew etc).\n     *\n     * @param action\n     *            the action to be performed on eureka server.\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "info" : "Javadoc[48557-48850]:Javadoc[48536-48829]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[48855-48862]:Modifier[48834-48841]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[48863-48877]:SimpleType[48842-48856]"
+  }, {
+    "left" : "makeRemoteCall",
+    "right" : "makeRemoteCall",
+    "info" : "SimpleName[48878-48892]:SimpleName[48857-48871]"
+  }, {
+    "left" : "Action action",
+    "right" : "Action action",
+    "info" : "SingleVariableDeclaration[48893-48906]:SingleVariableDeclaration[48872-48885]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[48915-48924]:SimpleType[48894-48903]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[48925-49317]:Block[48904-49296]"
@@ -2652,6 +3356,26 @@
     "left" : "return response;",
     "right" : "return response;",
     "info" : "ReturnStatement[49295-49311]:ReturnStatement[49274-49290]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[49323-49330]:Modifier[49302-49309]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[49331-49345]:SimpleType[49310-49324]"
+  }, {
+    "left" : "makeRemoteCallToRedirectedServer",
+    "right" : "makeRemoteCallToRedirectedServer",
+    "info" : "SimpleName[49346-49378]:SimpleName[49325-49357]"
+  }, {
+    "left" : "AtomicReference<String> lastRedirect",
+    "right" : "AtomicReference<String> lastRedirect",
+    "info" : "SingleVariableDeclaration[49379-49415]:SingleVariableDeclaration[49358-49394]"
+  }, {
+    "left" : "Action action",
+    "right" : "Action action",
+    "info" : "SingleVariableDeclaration[49417-49430]:SingleVariableDeclaration[49396-49409]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2725,6 +3449,26 @@
     "right" : "return null;",
     "info" : "ReturnStatement[50231-50243]:ReturnStatement[50210-50222]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[50255-50262]:Modifier[50234-50241]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[50263-50269]:Modifier[50242-50248]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[50270-50277]:PrimitiveType[50249-50256]"
+  }, {
+    "left" : "isQueryAction",
+    "right" : "isQueryAction",
+    "info" : "SimpleName[50278-50291]:SimpleName[50257-50270]"
+  }, {
+    "left" : "Action action",
+    "right" : "Action action",
+    "info" : "SingleVariableDeclaration[50292-50305]:SingleVariableDeclaration[50271-50284]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[50307-50389]:Block[50286-50368]"
@@ -2732,6 +3476,34 @@
     "left" : "return action == Action.Refresh || action == Action.Refresh_Delta;",
     "right" : "return action == Action.Refresh || action == Action.Refresh_Delta;",
     "info" : "ReturnStatement[50317-50383]:ReturnStatement[50296-50362]"
+  }, {
+    "left" : "/**\n     * Makes remote calls with the corresponding action(register,renew etc).\n     *\n     * @param action\n     *            the action to be performed on eureka server.\n     *\n     *            Try the fallback servers in case of problems communicating to\n     *            the primary one.\n     *\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "right" : "/**\n     * Makes remote calls with the corresponding action(register,renew etc).\n     *\n     * @param action\n     *            the action to be performed on eureka server.\n     *\n     *            Try the fallback servers in case of problems communicating to\n     *            the primary one.\n     *\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "info" : "Javadoc[50395-50817]:Javadoc[50374-50796]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[50822-50829]:Modifier[50801-50808]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[50830-50844]:SimpleType[50809-50823]"
+  }, {
+    "left" : "makeRemoteCall",
+    "right" : "makeRemoteCall",
+    "info" : "SimpleName[50845-50859]:SimpleName[50824-50838]"
+  }, {
+    "left" : "Action action",
+    "right" : "Action action",
+    "info" : "SingleVariableDeclaration[50860-50873]:SingleVariableDeclaration[50839-50852]"
+  }, {
+    "left" : "int serviceUrlIndex",
+    "right" : "int serviceUrlIndex",
+    "info" : "SingleVariableDeclaration[50875-50894]:SingleVariableDeclaration[50854-50873]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[50903-50912]:SimpleType[50882-50891]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2796,6 +3568,30 @@
     "left" : "throw t;",
     "right" : "throw t;",
     "info" : "ThrowStatement[51604-51612]:ThrowStatement[51583-51591]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[51648-51655]:Modifier[51627-51634]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[51656-51670]:SimpleType[51635-51649]"
+  }, {
+    "left" : "makeRemoteCallWithFollowRedirect",
+    "right" : "makeRemoteCallWithFollowRedirect",
+    "info" : "SimpleName[51671-51703]:SimpleName[51650-51682]"
+  }, {
+    "left" : "Action action",
+    "right" : "Action action",
+    "info" : "SingleVariableDeclaration[51704-51717]:SingleVariableDeclaration[51683-51696]"
+  }, {
+    "left" : "String serviceUrl",
+    "right" : "String serviceUrl",
+    "info" : "SingleVariableDeclaration[51719-51736]:SingleVariableDeclaration[51698-51715]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[51745-51754]:SimpleType[51724-51733]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -2885,6 +3681,26 @@
     "right" : "throw new IOException(message);",
     "info" : "ThrowStatement[52765-52796]:ThrowStatement[52744-52775]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[52808-52815]:Modifier[52787-52794]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[52816-52822]:Modifier[52795-52801]"
+  }, {
+    "left" : "URI",
+    "right" : "URI",
+    "info" : "SimpleType[52823-52826]:SimpleType[52802-52805]"
+  }, {
+    "left" : "getRedirectBaseUri",
+    "right" : "getRedirectBaseUri",
+    "info" : "SimpleName[52827-52845]:SimpleName[52806-52824]"
+  }, {
+    "left" : "URI targetUrl",
+    "right" : "URI targetUrl",
+    "info" : "SingleVariableDeclaration[52846-52859]:SingleVariableDeclaration[52825-52838]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[52861-53317]:Block[52840-53296]"
@@ -2912,6 +3728,34 @@
     "left" : "return null;",
     "right" : "return null;",
     "info" : "ReturnStatement[53299-53311]:ReturnStatement[53278-53290]"
+  }, {
+    "left" : "/**\n     * Makes remote calls with the corresponding action(register,renew etc).\n     *\n     * @param action\n     *            the action to be performed on eureka server.\n     *\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "right" : "/**\n     * Makes remote calls with the corresponding action(register,renew etc).\n     *\n     * @param action\n     *            the action to be performed on eureka server.\n     *\n     * @return ClientResponse the HTTP response object.\n     * @throws Throwable\n     *             on any error.\n     */",
+    "info" : "Javadoc[53323-53623]:Javadoc[53302-53602]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[53628-53635]:Modifier[53607-53614]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[53636-53650]:SimpleType[53615-53629]"
+  }, {
+    "left" : "makeRemoteCall",
+    "right" : "makeRemoteCall",
+    "info" : "SimpleName[53651-53665]:SimpleName[53630-53644]"
+  }, {
+    "left" : "Action action",
+    "right" : "Action action",
+    "info" : "SingleVariableDeclaration[53666-53679]:SingleVariableDeclaration[53645-53658]"
+  }, {
+    "left" : "String serviceUrl",
+    "right" : "String serviceUrl",
+    "info" : "SingleVariableDeclaration[53681-53698]:SingleVariableDeclaration[53660-53677]"
+  }, {
+    "left" : "Throwable",
+    "right" : "Throwable",
+    "info" : "SimpleType[53707-53716]:SimpleType[53686-53695]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3193,6 +4037,26 @@
     "right" : "tracer.stop();",
     "info" : "ExpressionStatement[58057-58071]:ExpressionStatement[58036-58050]"
   }, {
+    "left" : "/**\n     * Close HTTP response object and its respective resources.\n     *\n     * @param response\n     *            the HttpResponse object.\n     */",
+    "right" : "/**\n     * Close HTTP response object and its respective resources.\n     *\n     * @param response\n     *            the HttpResponse object.\n     */",
+    "info" : "Javadoc[58107-58255]:Javadoc[58086-58234]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[58260-58267]:Modifier[58239-58246]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[58268-58272]:PrimitiveType[58247-58251]"
+  }, {
+    "left" : "closeResponse",
+    "right" : "closeResponse",
+    "info" : "SimpleName[58273-58286]:SimpleName[58252-58265]"
+  }, {
+    "left" : "ClientResponse response",
+    "right" : "ClientResponse response",
+    "info" : "SingleVariableDeclaration[58287-58310]:SingleVariableDeclaration[58266-58289]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[58312-58536]:Block[58291-58515]"
@@ -3224,6 +4088,22 @@
     "left" : "logger.error(\"Cannot release response resource :\", th);",
     "right" : "logger.error(\"Cannot release response resource :\", th);",
     "info" : "ExpressionStatement[58451-58506]:ExpressionStatement[58430-58485]"
+  }, {
+    "left" : "/**\n     * Initializes all scheduled tasks.\n     */",
+    "right" : "/**\n     * Initializes all scheduled tasks.\n     */",
+    "info" : "Javadoc[58542-58593]:Javadoc[58521-58572]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[58598-58605]:Modifier[58577-58584]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[58606-58610]:PrimitiveType[58585-58589]"
+  }, {
+    "left" : "initScheduledTasks",
+    "right" : "initScheduledTasks",
+    "info" : "SimpleName[58611-58629]:SimpleName[58590-58608]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3281,6 +4161,22 @@
     "right" : "statusChangeListener = new ApplicationInfoManager.StatusChangeListener() {\n                @Override\n                public String getId() {\n                    return \"statusChangeListener\";\n                }\n\n                @Override\n                public void notify(StatusChangeEvent statusChangeEvent) {\n                    logger.info(\"Saw local status change event {}\", statusChangeEvent);\n                    instanceInfoReplicator.onDemandUpdate();\n                }\n            };",
     "info" : "ExpressionStatement[60581-61073]:ExpressionStatement[60560-61052]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[60672-60681]:MarkerAnnotation[60651-60660]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[60698-60704]:Modifier[60677-60683]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[60705-60711]:SimpleType[60684-60690]"
+  }, {
+    "left" : "getId",
+    "right" : "getId",
+    "info" : "SimpleName[60712-60717]:SimpleName[60691-60696]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[60720-60790]:Block[60699-60769]"
@@ -3288,6 +4184,26 @@
     "left" : "return \"statusChangeListener\";",
     "right" : "return \"statusChangeListener\";",
     "info" : "ReturnStatement[60742-60772]:ReturnStatement[60721-60751]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[60808-60817]:MarkerAnnotation[60787-60796]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[60834-60840]:Modifier[60813-60819]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[60841-60845]:PrimitiveType[60820-60824]"
+  }, {
+    "left" : "notify",
+    "right" : "notify",
+    "info" : "SimpleName[60846-60852]:SimpleName[60825-60831]"
+  }, {
+    "left" : "StatusChangeEvent statusChangeEvent",
+    "right" : "StatusChangeEvent statusChangeEvent",
+    "info" : "SingleVariableDeclaration[60853-60888]:SingleVariableDeclaration[60832-60867]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3325,6 +4241,18 @@
     "right" : "logger.info(\"Not registering with Eureka server per configuration\");",
     "info" : "ExpressionStatement[61398-61466]:ExpressionStatement[61377-61445]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[61488-61495]:Modifier[61467-61474]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[61496-61500]:PrimitiveType[61475-61479]"
+  }, {
+    "left" : "cancelScheduledTasks",
+    "right" : "cancelScheduledTasks",
+    "info" : "SimpleName[61501-61521]:SimpleName[61480-61500]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[61524-61748]:Block[61503-61727]"
@@ -3352,6 +4280,34 @@
     "left" : "scheduler.shutdownNow();",
     "right" : "scheduler.shutdownNow();",
     "info" : "ExpressionStatement[61718-61742]:ExpressionStatement[61697-61721]"
+  }, {
+    "left" : "/**\n     * Get the list of all eureka service urls from DNS for the eureka client to\n     * talk to. The client picks up the service url from its zone and then fails over to\n     * other zones randomly. If there are multiple servers in the same zone, the client once\n     * again picks one randomly. This way the traffic will be distributed in the case of failures.\n     *\n     * @param instanceZone The zone in which the client resides.\n     * @param preferSameZone true if we have to prefer the same zone as the client, false otherwise.\n     * @return The list of all eureka service urls for the eureka client to talk to.\n     */",
+    "right" : "/**\n     * Get the list of all eureka service urls from DNS for the eureka client to\n     * talk to. The client picks up the service url from its zone and then fails over to\n     * other zones randomly. If there are multiple servers in the same zone, the client once\n     * again picks one randomly. This way the traffic will be distributed in the case of failures.\n     *\n     * @param instanceZone The zone in which the client resides.\n     * @param preferSameZone true if we have to prefer the same zone as the client, false otherwise.\n     * @return The list of all eureka service urls for the eureka client to talk to.\n     */",
+    "info" : "Javadoc[61754-62385]:Javadoc[61733-62364]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[62390-62399]:MarkerAnnotation[62369-62378]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[62404-62410]:Modifier[62383-62389]"
+  }, {
+    "left" : "List<String>",
+    "right" : "List<String>",
+    "info" : "ParameterizedType[62411-62423]:ParameterizedType[62390-62402]"
+  }, {
+    "left" : "getServiceUrlsFromDNS",
+    "right" : "getServiceUrlsFromDNS",
+    "info" : "SimpleName[62424-62445]:SimpleName[62403-62424]"
+  }, {
+    "left" : "String instanceZone",
+    "right" : "String instanceZone",
+    "info" : "SingleVariableDeclaration[62446-62465]:SingleVariableDeclaration[62425-62444]"
+  }, {
+    "left" : "boolean preferSameZone",
+    "right" : "boolean preferSameZone",
+    "info" : "SingleVariableDeclaration[62467-62489]:SingleVariableDeclaration[62446-62468]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3581,6 +4537,26 @@
     "right" : "return serviceUrls;",
     "info" : "ReturnStatement[65938-65957]:ReturnStatement[65917-65936]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[65969-65978]:MarkerAnnotation[65948-65957]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[65983-65989]:Modifier[65962-65968]"
+  }, {
+    "left" : "List<String>",
+    "right" : "List<String>",
+    "info" : "ParameterizedType[65990-66002]:ParameterizedType[65969-65981]"
+  }, {
+    "left" : "getDiscoveryServiceUrls",
+    "right" : "getDiscoveryServiceUrls",
+    "info" : "SimpleName[66003-66026]:SimpleName[65982-66005]"
+  }, {
+    "left" : "String zone",
+    "right" : "String zone",
+    "info" : "SingleVariableDeclaration[66027-66038]:SingleVariableDeclaration[66006-66017]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[66040-66348]:Block[66019-66327]"
@@ -3605,6 +4581,34 @@
     "right" : "return getServiceUrlsFromConfig(zone, clientConfig.shouldPreferSameZoneEureka());",
     "info" : "ReturnStatement[66261-66342]:ReturnStatement[66240-66321]"
   }, {
+    "left" : "/**\n     * @deprecated see {@link com.netflix.appinfo.InstanceInfo#getZone(String[], com.netflix.appinfo.InstanceInfo)}\n     *\n     * Get the zone that a particular instance is in.\n     *\n     * @param myInfo\n     *            - The InstanceInfo object of the instance.\n     * @return - The zone in which the particular instance belongs to.\n     */",
+    "right" : "/**\n     * @deprecated see {@link com.netflix.appinfo.InstanceInfo#getZone(String[], com.netflix.appinfo.InstanceInfo)}\n     *\n     * Get the zone that a particular instance is in.\n     *\n     * @param myInfo\n     *            - The InstanceInfo object of the instance.\n     * @return - The zone in which the particular instance belongs to.\n     */",
+    "info" : "Javadoc[66413-66761]:Javadoc[66392-66740]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[66766-66777]:MarkerAnnotation[66745-66756]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[66782-66788]:Modifier[66761-66767]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[66789-66795]:Modifier[66768-66774]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[66796-66802]:SimpleType[66775-66781]"
+  }, {
+    "left" : "getZone",
+    "right" : "getZone",
+    "info" : "SimpleName[66803-66810]:SimpleName[66782-66789]"
+  }, {
+    "left" : "InstanceInfo myInfo",
+    "right" : "InstanceInfo myInfo",
+    "info" : "SingleVariableDeclaration[66811-66830]:SingleVariableDeclaration[66790-66809]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[66832-66987]:Block[66811-66966]"
@@ -3616,6 +4620,26 @@
     "left" : "return InstanceInfo.getZone(availZones, myInfo);",
     "right" : "return InstanceInfo.getZone(availZones, myInfo);",
     "info" : "ReturnStatement[66933-66981]:ReturnStatement[66912-66960]"
+  }, {
+    "left" : "/**\n     * Get the region that this particular instance is in.\n     *\n     * @return - The region in which the particular instance belongs to.\n     */",
+    "right" : "/**\n     * Get the region that this particular instance is in.\n     *\n     * @return - The region in which the particular instance belongs to.\n     */",
+    "info" : "Javadoc[66993-67143]:Javadoc[66972-67122]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[67148-67154]:Modifier[67127-67133]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[67155-67161]:Modifier[67134-67140]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[67162-67168]:SimpleType[67141-67147]"
+  }, {
+    "left" : "getRegion",
+    "right" : "getRegion",
+    "info" : "SimpleName[67169-67178]:SimpleName[67148-67157]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3644,6 +4668,26 @@
     "left" : "return region;",
     "right" : "return region;",
     "info" : "ReturnStatement[67359-67373]:ReturnStatement[67338-67352]"
+  }, {
+    "left" : "/**\n     * Get the zone based CNAMES that are bound to a region.\n     *\n     * @param region\n     *            - The region for which the zone names need to be retrieved\n     * @return - The list of CNAMES from which the zone-related information can\n     *         be retrieved\n     */",
+    "right" : "/**\n     * Get the zone based CNAMES that are bound to a region.\n     *\n     * @param region\n     *            - The region for which the zone names need to be retrieved\n     * @return - The list of CNAMES from which the zone-related information can\n     *         be retrieved\n     */",
+    "info" : "Javadoc[67385-67670]:Javadoc[67364-67649]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[67675-67681]:Modifier[67654-67660]"
+  }, {
+    "left" : "Map<String, List<String>>",
+    "right" : "Map<String, List<String>>",
+    "info" : "ParameterizedType[67682-67707]:ParameterizedType[67661-67686]"
+  }, {
+    "left" : "getZoneBasedDiscoveryUrlsFromRegion",
+    "right" : "getZoneBasedDiscoveryUrlsFromRegion",
+    "info" : "SimpleName[67708-67743]:SimpleName[67687-67722]"
+  }, {
+    "left" : "String region",
+    "right" : "String region",
+    "info" : "SingleVariableDeclaration[67757-67770]:SingleVariableDeclaration[67736-67749]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3753,6 +4797,26 @@
     "right" : "throw new RuntimeException(\"Cannot get cnames bound to the region:\"\n                    + discoveryDnsName, e);",
     "info" : "ThrowStatement[69426-69537]:ThrowStatement[69405-69516]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[69559-69566]:Modifier[69538-69545]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[69567-69573]:Modifier[69546-69552]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[69574-69581]:PrimitiveType[69553-69560]"
+  }, {
+    "left" : "isEC2Url",
+    "right" : "isEC2Url",
+    "info" : "SimpleName[69582-69590]:SimpleName[69561-69569]"
+  }, {
+    "left" : "String zoneCname",
+    "right" : "String zoneCname",
+    "info" : "SingleVariableDeclaration[69591-69607]:SingleVariableDeclaration[69570-69586]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[69609-69660]:Block[69588-69639]"
@@ -3760,6 +4824,34 @@
     "left" : "return zoneCname.startsWith(\"ec2\");",
     "right" : "return zoneCname.startsWith(\"ec2\");",
     "info" : "ReturnStatement[69619-69654]:ReturnStatement[69598-69633]"
+  }, {
+    "left" : "/**\n     * Get the list of EC2 URLs given the zone name.\n     *\n     * @param dnsName\n     *            - The dns name of the zone-specific CNAME\n     * @param type\n     *            - CNAME or EIP that needs to be retrieved\n     * @return - The list of EC2 URLs associated with the dns name\n     */",
+    "right" : "/**\n     * Get the list of EC2 URLs given the zone name.\n     *\n     * @param dnsName\n     *            - The dns name of the zone-specific CNAME\n     * @param type\n     *            - CNAME or EIP that needs to be retrieved\n     * @return - The list of EC2 URLs associated with the dns name\n     */",
+    "info" : "Javadoc[69666-69965]:Javadoc[69645-69944]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[69970-69976]:Modifier[69949-69955]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[69977-69983]:Modifier[69956-69962]"
+  }, {
+    "left" : "Set<String>",
+    "right" : "Set<String>",
+    "info" : "ParameterizedType[69984-69995]:ParameterizedType[69963-69974]"
+  }, {
+    "left" : "getEC2DiscoveryUrlsFromZone",
+    "right" : "getEC2DiscoveryUrlsFromZone",
+    "info" : "SimpleName[69996-70023]:SimpleName[69975-70002]"
+  }, {
+    "left" : "String dnsName",
+    "right" : "String dnsName",
+    "info" : "SingleVariableDeclaration[70024-70038]:SingleVariableDeclaration[70003-70017]"
+  }, {
+    "left" : "DiscoveryUrlType type",
+    "right" : "DiscoveryUrlType type",
+    "info" : "SingleVariableDeclaration[70098-70119]:SingleVariableDeclaration[70077-70098]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3889,6 +4981,38 @@
     "right" : "return eipsForZone;",
     "info" : "ReturnStatement[71568-71587]:ReturnStatement[71547-71566]"
   }, {
+    "left" : "/**\n     * Gets the zone to pick up for this instance.\n     *\n     */",
+    "right" : "/**\n     * Gets the zone to pick up for this instance.\n     *\n     */",
+    "info" : "Javadoc[71599-71668]:Javadoc[71578-71647]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[71673-71680]:Modifier[71652-71659]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[71681-71687]:Modifier[71660-71666]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[71688-71691]:PrimitiveType[71667-71670]"
+  }, {
+    "left" : "getZoneOffset",
+    "right" : "getZoneOffset",
+    "info" : "SimpleName[71692-71705]:SimpleName[71671-71684]"
+  }, {
+    "left" : "String myZone",
+    "right" : "String myZone",
+    "info" : "SingleVariableDeclaration[71706-71719]:SingleVariableDeclaration[71685-71698]"
+  }, {
+    "left" : "boolean preferSameZone",
+    "right" : "boolean preferSameZone",
+    "info" : "SingleVariableDeclaration[71721-71743]:SingleVariableDeclaration[71700-71722]"
+  }, {
+    "left" : "String[] availZones",
+    "right" : "String[] availZones",
+    "info" : "SingleVariableDeclaration[71782-71801]:SingleVariableDeclaration[71761-71780]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[71803-72281]:Block[71782-72260]"
@@ -3920,6 +5044,30 @@
     "left" : "return 0;",
     "right" : "return 0;",
     "info" : "ReturnStatement[72266-72275]:ReturnStatement[72245-72254]"
+  }, {
+    "left" : "/**\n     * Check if the http status code is a success for the given action.\n     *\n     */",
+    "right" : "/**\n     * Check if the http status code is a success for the given action.\n     *\n     */",
+    "info" : "Javadoc[72287-72377]:Javadoc[72266-72356]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[72382-72389]:Modifier[72361-72368]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[72390-72397]:PrimitiveType[72369-72376]"
+  }, {
+    "left" : "isOk",
+    "right" : "isOk",
+    "info" : "SimpleName[72398-72402]:SimpleName[72377-72381]"
+  }, {
+    "left" : "Action action",
+    "right" : "Action action",
+    "info" : "SingleVariableDeclaration[72403-72416]:SingleVariableDeclaration[72382-72395]"
+  }, {
+    "left" : "int httpStatus",
+    "right" : "int httpStatus",
+    "info" : "SingleVariableDeclaration[72418-72432]:SingleVariableDeclaration[72397-72411]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -3968,6 +5116,22 @@
     "left" : "return false;",
     "right" : "return false;",
     "info" : "ReturnStatement[72793-72806]:ReturnStatement[72772-72785]"
+  }, {
+    "left" : "/**\n     * Returns the eureka server which this eureka client communicates with.\n     *\n     * @return - The instance information that describes the eureka server.\n     */",
+    "right" : "/**\n     * Returns the eureka server which this eureka client communicates with.\n     *\n     * @return - The instance information that describes the eureka server.\n     */",
+    "info" : "Javadoc[72828-72999]:Javadoc[72807-72978]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[73004-73011]:Modifier[72983-72990]"
+  }, {
+    "left" : "InstanceInfo",
+    "right" : "InstanceInfo",
+    "info" : "SimpleType[73012-73024]:SimpleType[72991-73003]"
+  }, {
+    "left" : "getCoordinatingServer",
+    "right" : "getCoordinatingServer",
+    "info" : "SimpleName[73025-73046]:SimpleName[73004-73025]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4033,6 +5197,22 @@
     "right" : "return instanceToReturn;",
     "info" : "ReturnStatement[73645-73669]:ReturnStatement[73624-73648]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[73681-73688]:Modifier[73660-73667]"
+  }, {
+    "left" : "ClientResponse",
+    "right" : "ClientResponse",
+    "info" : "SimpleType[73689-73703]:SimpleType[73668-73682]"
+  }, {
+    "left" : "getUrl",
+    "right" : "getUrl",
+    "info" : "SimpleName[73704-73710]:SimpleName[73683-73689]"
+  }, {
+    "left" : "String fullServiceUrl",
+    "right" : "String fullServiceUrl",
+    "info" : "SingleVariableDeclaration[73711-73732]:SingleVariableDeclaration[73690-73711]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[73734-73937]:Block[73713-73916]"
@@ -4044,6 +5224,18 @@
     "left" : "return cr;",
     "right" : "return cr;",
     "info" : "ReturnStatement[73921-73931]:ReturnStatement[73900-73910]"
+  }, {
+    "left" : "/**\n     * Refresh the current local instanceInfo. Note that after a valid refresh where changes are observed, the\n     * isDirty flag on the instanceInfo is set to true\n     */",
+    "right" : "/**\n     * Refresh the current local instanceInfo. Note that after a valid refresh where changes are observed, the\n     * isDirty flag on the instanceInfo is set to true\n     */",
+    "info" : "Javadoc[73943-74120]:Javadoc[73922-74099]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[74125-74129]:PrimitiveType[74104-74108]"
+  }, {
+    "left" : "refreshInstanceInfo",
+    "right" : "refreshInstanceInfo",
+    "info" : "SimpleName[74130-74149]:SimpleName[74109-74128]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4093,6 +5285,18 @@
     "right" : "instanceInfo.setStatus(status);",
     "info" : "ExpressionStatement[74588-74619]:ExpressionStatement[74567-74598]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[74791-74797]:Modifier[74770-74776]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[74798-74802]:PrimitiveType[74777-74781]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[74803-74806]:SimpleName[74782-74785]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[74809-74841]:Block[74788-74820]"
@@ -4100,6 +5304,18 @@
     "left" : "renew();",
     "right" : "renew();",
     "info" : "ExpressionStatement[74823-74831]:ExpressionStatement[74802-74810]"
+  }, {
+    "left" : "@VisibleForTesting",
+    "right" : "@VisibleForTesting",
+    "info" : "MarkerAnnotation[74853-74871]:MarkerAnnotation[74832-74850]"
+  }, {
+    "left" : "InstanceInfoReplicator",
+    "right" : "InstanceInfoReplicator",
+    "info" : "SimpleType[74876-74898]:SimpleType[74855-74877]"
+  }, {
+    "left" : "getInstanceInfoReplicator",
+    "right" : "getInstanceInfoReplicator",
+    "info" : "SimpleName[74899-74924]:SimpleName[74878-74903]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4109,6 +5325,18 @@
     "right" : "return instanceInfoReplicator;",
     "info" : "ReturnStatement[74937-74967]:ReturnStatement[74916-74946]"
   }, {
+    "left" : "@VisibleForTesting",
+    "right" : "@VisibleForTesting",
+    "info" : "MarkerAnnotation[74979-74997]:MarkerAnnotation[74958-74976]"
+  }, {
+    "left" : "InstanceInfo",
+    "right" : "InstanceInfo",
+    "info" : "SimpleType[75002-75014]:SimpleType[74981-74993]"
+  }, {
+    "left" : "getInstanceInfo",
+    "right" : "getInstanceInfo",
+    "info" : "SimpleName[75015-75030]:SimpleName[74994-75009]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[75033-75069]:Block[75012-75048]"
@@ -4116,6 +5344,22 @@
     "left" : "return instanceInfo;",
     "right" : "return instanceInfo;",
     "info" : "ReturnStatement[75043-75063]:ReturnStatement[75022-75042]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[75075-75084]:MarkerAnnotation[75054-75063]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[75089-75095]:Modifier[75068-75074]"
+  }, {
+    "left" : "HealthCheckHandler",
+    "right" : "HealthCheckHandler",
+    "info" : "SimpleType[75096-75114]:SimpleType[75075-75093]"
+  }, {
+    "left" : "getHealthCheckHandler",
+    "right" : "getHealthCheckHandler",
+    "info" : "SimpleName[75115-75136]:SimpleName[75094-75115]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4168,6 +5412,18 @@
     "left" : "return healthCheckHandler;",
     "right" : "return healthCheckHandler;",
     "info" : "ReturnStatement[75659-75685]:ReturnStatement[75638-75664]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[75853-75859]:Modifier[75832-75838]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[75860-75864]:PrimitiveType[75839-75843]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[75865-75868]:SimpleName[75844-75847]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4325,6 +5581,22 @@
     "right" : "logger.error(\"Cannot fetch registry from server\", th);",
     "info" : "ExpressionStatement[78690-78744]:ExpressionStatement[78669-78723]"
   }, {
+    "left" : "/**\n     * Fetch the registry information from back up registry if all eureka server\n     * urls are unreachable.\n     */",
+    "right" : "/**\n     * Fetch the registry information from back up registry if all eureka server\n     * urls are unreachable.\n     */",
+    "info" : "Javadoc[78780-78901]:Javadoc[78759-78880]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[78906-78913]:Modifier[78885-78892]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[78914-78918]:PrimitiveType[78893-78897]"
+  }, {
+    "left" : "fetchRegistryFromBackup",
+    "right" : "fetchRegistryFromBackup",
+    "info" : "SimpleName[78919-78942]:SimpleName[78898-78921]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[78945-80510]:Block[78924-80489]"
@@ -4441,6 +5713,42 @@
     "right" : "logger.warn(\"Cannot fetch applications from apps although backup registry was specified\", e);",
     "info" : "ExpressionStatement[80401-80494]:ExpressionStatement[80380-80473]"
   }, {
+    "left" : "/**\n     * @deprecated Use injection to provide {@link BackupRegistry} implementation.\n     */",
+    "right" : "/**\n     * @deprecated Use injection to provide {@link BackupRegistry} implementation.\n     */",
+    "info" : "Javadoc[80516-80610]:Javadoc[80495-80589]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[80615-80626]:MarkerAnnotation[80594-80605]"
+  }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[80631-80640]:MarkerAnnotation[80610-80619]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[80645-80654]:Modifier[80624-80633]"
+  }, {
+    "left" : "BackupRegistry",
+    "right" : "BackupRegistry",
+    "info" : "SimpleType[80655-80669]:SimpleType[80634-80648]"
+  }, {
+    "left" : "newBackupRegistryInstance",
+    "right" : "newBackupRegistryInstance",
+    "info" : "SimpleName[80670-80695]:SimpleName[80649-80674]"
+  }, {
+    "left" : "ClassNotFoundException",
+    "right" : "ClassNotFoundException",
+    "info" : "SimpleType[80717-80739]:SimpleType[80696-80718]"
+  }, {
+    "left" : "IllegalAccessException",
+    "right" : "IllegalAccessException",
+    "info" : "SimpleType[80741-80763]:SimpleType[80720-80742]"
+  }, {
+    "left" : "InstantiationException",
+    "right" : "InstantiationException",
+    "info" : "SimpleType[80765-80787]:SimpleType[80744-80766]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[80788-80816]:Block[80767-80795]"
@@ -4449,6 +5757,26 @@
     "right" : "return null;",
     "info" : "ReturnStatement[80798-80810]:ReturnStatement[80777-80789]"
   }, {
+    "left" : "/**\n     * Gets the task that is responsible for fetching the eureka service Urls.\n     *\n     * @param zone\n     *            the zone in which the instance resides.\n     * @return TimerTask the task which executes periodically.\n     */",
+    "right" : "/**\n     * Gets the task that is responsible for fetching the eureka service Urls.\n     *\n     * @param zone\n     *            the zone in which the instance resides.\n     * @return TimerTask the task which executes periodically.\n     */",
+    "info" : "Javadoc[80822-81059]:Javadoc[80801-81038]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[81064-81071]:Modifier[81043-81050]"
+  }, {
+    "left" : "TimerTask",
+    "right" : "TimerTask",
+    "info" : "SimpleType[81072-81081]:SimpleType[81051-81060]"
+  }, {
+    "left" : "getServiceUrlUpdateTask",
+    "right" : "getServiceUrlUpdateTask",
+    "info" : "SimpleName[81082-81105]:SimpleName[81061-81084]"
+  }, {
+    "left" : "final String zone",
+    "right" : "final String zone",
+    "info" : "SingleVariableDeclaration[81106-81123]:SingleVariableDeclaration[81085-81102]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[81125-82171]:Block[81104-82150]"
@@ -4456,6 +5784,22 @@
     "left" : "return new TimerTask() {\n            @Override\n            public void run() {\n                try {\n                    List<String> serviceUrlList = getDiscoveryServiceUrls(zone);\n                    if (serviceUrlList.isEmpty()) {\n                        logger.warn(\"The service url list is empty\");\n                        return;\n                    }\n                    if (!serviceUrlList.equals(eurekaServiceUrls.get())) {\n                        logger.info(\n                                \"Updating the serviceUrls as they seem to have changed from {} to {} \",\n                                Arrays.toString(eurekaServiceUrls.get()\n                                        .toArray()), Arrays\n                                        .toString(serviceUrlList.toArray()));\n\n                        eurekaServiceUrls.set(serviceUrlList);\n                    }\n                } catch (Throwable e) {\n                    logger.error(\"Cannot get the eureka service urls :\", e);\n                }\n\n            }\n        };",
     "right" : "return new TimerTask() {\n            @Override\n            public void run() {\n                try {\n                    List<String> serviceUrlList = getDiscoveryServiceUrls(zone);\n                    if (serviceUrlList.isEmpty()) {\n                        logger.warn(\"The service url list is empty\");\n                        return;\n                    }\n                    if (!serviceUrlList.equals(eurekaServiceUrls.get())) {\n                        logger.info(\n                                \"Updating the serviceUrls as they seem to have changed from {} to {} \",\n                                Arrays.toString(eurekaServiceUrls.get()\n                                        .toArray()), Arrays\n                                        .toString(serviceUrlList.toArray()));\n\n                        eurekaServiceUrls.set(serviceUrlList);\n                    }\n                } catch (Throwable e) {\n                    logger.error(\"Cannot get the eureka service urls :\", e);\n                }\n\n            }\n        };",
     "info" : "ReturnStatement[81135-82165]:ReturnStatement[81114-82144]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[81172-81181]:MarkerAnnotation[81151-81160]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[81194-81200]:Modifier[81173-81179]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[81201-81205]:PrimitiveType[81180-81184]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[81206-81209]:SimpleName[81185-81188]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -4513,6 +5857,26 @@
     "right" : "logger.error(\"Cannot get the eureka service urls :\", e);",
     "info" : "ExpressionStatement[82065-82121]:ExpressionStatement[82044-82100]"
   }, {
+    "left" : "/**\n     * Gets the <em>applications</em> after filtering the applications for\n     * instances with only UP states and shuffling them.\n     *\n     * <p>\n     * The filtering depends on the option specified by the configuration\n     * {@link EurekaClientConfig#shouldFilterOnlyUpInstances()}. Shuffling helps\n     * in randomizing the applications list there by avoiding the same instances\n     * receiving traffic during start ups.\n     * </p>\n     *\n     * @param apps\n     *            The applications that needs to be filtered and shuffled.\n     * @return The applications after the filter and the shuffle.\n     */",
+    "right" : "/**\n     * Gets the <em>applications</em> after filtering the applications for\n     * instances with only UP states and shuffling them.\n     *\n     * <p>\n     * The filtering depends on the option specified by the configuration\n     * {@link EurekaClientConfig#shouldFilterOnlyUpInstances()}. Shuffling helps\n     * in randomizing the applications list there by avoiding the same instances\n     * receiving traffic during start ups.\n     * </p>\n     *\n     * @param apps\n     *            The applications that needs to be filtered and shuffled.\n     * @return The applications after the filter and the shuffle.\n     */",
+    "info" : "Javadoc[82177-82796]:Javadoc[82156-82775]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[82801-82808]:Modifier[82780-82787]"
+  }, {
+    "left" : "Applications",
+    "right" : "Applications",
+    "info" : "SimpleType[82809-82821]:SimpleType[82788-82800]"
+  }, {
+    "left" : "filterAndShuffle",
+    "right" : "filterAndShuffle",
+    "info" : "SimpleName[82822-82838]:SimpleName[82801-82817]"
+  }, {
+    "left" : "Applications apps",
+    "right" : "Applications apps",
+    "info" : "SingleVariableDeclaration[82839-82856]:SingleVariableDeclaration[82818-82835]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[82858-83565]:Block[82837-83544]"
@@ -4569,6 +5933,18 @@
     "right" : "return apps;",
     "info" : "ReturnStatement[83547-83559]:ReturnStatement[83526-83538]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[83571-83578]:Modifier[83550-83557]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[83579-83586]:PrimitiveType[83558-83565]"
+  }, {
+    "left" : "isFetchingRemoteRegionRegistries",
+    "right" : "isFetchingRemoteRegionRegistries",
+    "info" : "SimpleName[83587-83619]:SimpleName[83566-83598]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[83622-83680]:Block[83601-83659]"
@@ -4576,6 +5952,22 @@
     "left" : "return null != remoteRegionsToFetch.get();",
     "right" : "return null != remoteRegionsToFetch.get();",
     "info" : "ReturnStatement[83632-83674]:ReturnStatement[83611-83653]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[83687-83694]:Modifier[83666-83673]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[83695-83699]:PrimitiveType[83674-83678]"
+  }, {
+    "left" : "arrangeListBasedonHostname",
+    "right" : "arrangeListBasedonHostname",
+    "info" : "SimpleName[83700-83726]:SimpleName[83679-83705]"
+  }, {
+    "left" : "List<String> list",
+    "right" : "List<String> list",
+    "info" : "SingleVariableDeclaration[83727-83744]:SingleVariableDeclaration[83706-83723]"
   }, {
     "left" : "{}",
     "right" : "{}",

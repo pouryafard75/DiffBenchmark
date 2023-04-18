@@ -169,6 +169,26 @@
     "info" : "MethodDeclaration[17990-18469]:MethodDeclaration[18518-18997]"
   } ],
   "mappings" : [ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2271-2277]:Modifier[2313-2319]"
+  }, {
+    "left" : "ConfigurationDialog",
+    "right" : "ConfigurationDialog",
+    "info" : "SimpleName[2278-2297]:SimpleName[2320-2339]"
+  }, {
+    "left" : "Frame owner",
+    "right" : "Frame owner",
+    "info" : "SingleVariableDeclaration[2298-2309]:SingleVariableDeclaration[2340-2351]"
+  }, {
+    "left" : "boolean insideOffice",
+    "right" : "boolean insideOffice",
+    "info" : "SingleVariableDeclaration[2311-2331]:SingleVariableDeclaration[2353-2373]"
+  }, {
+    "left" : "Configuration config",
+    "right" : "Configuration config",
+    "info" : "SingleVariableDeclaration[2333-2353]:SingleVariableDeclaration[2375-2395]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2355-2542]:Block[2397-2584]"
@@ -192,6 +212,22 @@
     "left" : "messages = JLanguageTool.getMessageBundle();",
     "right" : "messages = JLanguageTool.getMessageBundle();",
     "info" : "ExpressionStatement[2494-2538]:ExpressionStatement[2536-2580]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[2546-2553]:Modifier[2588-2595]"
+  }, {
+    "left" : "DefaultMutableTreeNode",
+    "right" : "DefaultMutableTreeNode",
+    "info" : "SimpleType[2554-2576]:SimpleType[2596-2618]"
+  }, {
+    "left" : "createTree",
+    "right" : "createTree",
+    "info" : "SimpleName[2577-2587]:SimpleName[2619-2629]"
+  }, {
+    "left" : "List<Rule> rules",
+    "right" : "List<Rule> rules",
+    "info" : "SingleVariableDeclaration[2588-2604]:SingleVariableDeclaration[2630-2646]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -276,6 +312,22 @@
     "left" : "return root;",
     "right" : "return root;",
     "info" : "ReturnStatement[3502-3514]:ReturnStatement[3544-3556]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[3522-3529]:Modifier[3564-3571]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[3530-3537]:PrimitiveType[3572-3579]"
+  }, {
+    "left" : "getState",
+    "right" : "getState",
+    "info" : "SimpleName[3538-3546]:SimpleName[3580-3588]"
+  }, {
+    "left" : "Rule rule",
+    "right" : "Rule rule",
+    "info" : "SingleVariableDeclaration[3547-3556]:SingleVariableDeclaration[3589-3598]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -373,6 +425,26 @@
     "right" : "final ActionListener actionListener = new ActionListener() {\n      @Override\n      public void actionPerformed(@SuppressWarnings(\"unused\") ActionEvent actionEvent) {\n        dialog.setVisible(false);\n      }\n    };",
     "info" : "VariableDeclarationStatement[4530-4744]:VariableDeclarationStatement[4515-4729]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[4597-4606]:MarkerAnnotation[4582-4591]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4613-4619]:Modifier[4598-4604]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[4620-4624]:PrimitiveType[4605-4609]"
+  }, {
+    "left" : "actionPerformed",
+    "right" : "actionPerformed",
+    "info" : "SimpleName[4625-4640]:SimpleName[4610-4625]"
+  }, {
+    "left" : "@SuppressWarnings(\"unused\") ActionEvent actionEvent",
+    "right" : "@SuppressWarnings(\"unused\") ActionEvent actionEvent",
+    "info" : "SingleVariableDeclaration[4641-4692]:SingleVariableDeclaration[4626-4677]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4694-4737]:Block[4679-4722]"
@@ -432,6 +504,26 @@
     "left" : "treeModel.addTreeModelListener(new TreeModelListener() {\n\n      @Override\n      public void treeNodesChanged(TreeModelEvent e) {\n        DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getTreePath().getLastPathComponent();\n        int index = e.getChildIndices()[0];\n        node = (DefaultMutableTreeNode) node.getChildAt(index);\n        if (node instanceof RuleNode) {\n          RuleNode o = (RuleNode) node;\n          if (o.getRule().isDefaultOff()) {\n            if (o.isEnabled()) {\n              config.getEnabledRuleIds().add(o.getRule().getId());\n            } else {\n              config.getEnabledRuleIds().remove(o.getRule().getId());\n            }\n          } else {\n            if (o.isEnabled()) {\n              config.getDisabledRuleIds().remove(o.getRule().getId());\n            } else {\n              config.getDisabledRuleIds().add(o.getRule().getId());\n            }\n          }\n        }\n        if (node instanceof CategoryNode) {\n          CategoryNode o = (CategoryNode) node;\n          if (o.isEnabled()) {\n            config.getDisabledCategoryNames().remove(o.getCategory().getName());\n          } else {\n            config.getDisabledCategoryNames().add(o.getCategory().getName());\n          }\n        }\n      }\n\n      @Override\n      public void treeNodesInserted(TreeModelEvent e) {\n      }\n\n      @Override\n      public void treeNodesRemoved(TreeModelEvent e) {\n      }\n\n      @Override\n      public void treeStructureChanged(TreeModelEvent e) {\n      }\n    });",
     "right" : "treeModel.addTreeModelListener(new TreeModelListener() {\n      @Override\n      public void treeNodesChanged(TreeModelEvent e) {\n        DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getTreePath().getLastPathComponent();\n        int index = e.getChildIndices()[0];\n        node = (DefaultMutableTreeNode) node.getChildAt(index);\n        if (node instanceof RuleNode) {\n          RuleNode o = (RuleNode) node;\n          if (o.getRule().isDefaultOff()) {\n            if (o.isEnabled()) {\n              config.getEnabledRuleIds().add(o.getRule().getId());\n            } else {\n              config.getEnabledRuleIds().remove(o.getRule().getId());\n            }\n          } else {\n            if (o.isEnabled()) {\n              config.getDisabledRuleIds().remove(o.getRule().getId());\n            } else {\n              config.getDisabledRuleIds().add(o.getRule().getId());\n            }\n          }\n        }\n        if (node instanceof CategoryNode) {\n          CategoryNode o = (CategoryNode) node;\n          if (o.isEnabled()) {\n            config.getDisabledCategoryNames().remove(o.getCategory().getName());\n          } else {\n            config.getDisabledCategoryNames().add(o.getCategory().getName());\n          }\n        }\n      }\n      @Override\n      public void treeNodesInserted(TreeModelEvent e) {}\n      @Override\n      public void treeNodesRemoved(TreeModelEvent e) {}\n      @Override\n      public void treeStructureChanged(TreeModelEvent e) {}\n    });",
     "info" : "ExpressionStatement[5353-6853]:ExpressionStatement[10976-12451]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5417-5426]:MarkerAnnotation[11039-11048]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5433-5439]:Modifier[11055-11061]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[5440-5444]:PrimitiveType[11062-11066]"
+  }, {
+    "left" : "treeNodesChanged",
+    "right" : "treeNodesChanged",
+    "info" : "SimpleName[5445-5461]:SimpleName[11067-11083]"
+  }, {
+    "left" : "TreeModelEvent e",
+    "right" : "TreeModelEvent e",
+    "info" : "SingleVariableDeclaration[5462-5478]:SingleVariableDeclaration[11084-11100]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -545,13 +637,73 @@
     "right" : "config.getDisabledCategoryNames().add(o.getCategory().getName());",
     "info" : "ExpressionStatement[6505-6570]:ExpressionStatement[12127-12192]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6608-6617]:MarkerAnnotation[12229-12238]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6624-6630]:Modifier[12245-12251]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6631-6635]:PrimitiveType[12252-12256]"
+  }, {
+    "left" : "treeNodesInserted",
+    "right" : "treeNodesInserted",
+    "info" : "SimpleName[6636-6653]:SimpleName[12257-12274]"
+  }, {
+    "left" : "TreeModelEvent e",
+    "right" : "TreeModelEvent e",
+    "info" : "SingleVariableDeclaration[6654-6670]:SingleVariableDeclaration[12275-12291]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6672-6681]:Block[12293-12295]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6689-6698]:MarkerAnnotation[12302-12311]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6705-6711]:Modifier[12318-12324]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6712-6716]:PrimitiveType[12325-12329]"
+  }, {
+    "left" : "treeNodesRemoved",
+    "right" : "treeNodesRemoved",
+    "info" : "SimpleName[6717-6733]:SimpleName[12330-12346]"
+  }, {
+    "left" : "TreeModelEvent e",
+    "right" : "TreeModelEvent e",
+    "info" : "SingleVariableDeclaration[6734-6750]:SingleVariableDeclaration[12347-12363]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6752-6761]:Block[12365-12367]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6769-6778]:MarkerAnnotation[12374-12383]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6785-6791]:Modifier[12390-12396]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6792-6796]:PrimitiveType[12397-12401]"
+  }, {
+    "left" : "treeStructureChanged",
+    "right" : "treeStructureChanged",
+    "info" : "SimpleName[6797-6817]:SimpleName[12402-12422]"
+  }, {
+    "left" : "TreeModelEvent e",
+    "right" : "TreeModelEvent e",
+    "info" : "SingleVariableDeclaration[6818-6834]:SingleVariableDeclaration[12423-12439]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -608,6 +760,22 @@
     "left" : "new MouseAdapter() {\n      private void handlePopupEvent(MouseEvent e) {\n        final JTree tree = (JTree) e.getSource();\n\n        TreePath path = tree.getPathForLocation(e.getX(), e.getY());\n        if (path == null) {\n          return;\n        }\n\n        DefaultMutableTreeNode node\n                = (DefaultMutableTreeNode) path.getLastPathComponent();\n\n        TreePath[] paths = tree.getSelectionPaths();\n\n        boolean isSelected = false;\n        if (paths != null) {\n          for (TreePath selectionPath : paths) {\n            if (selectionPath.equals(path)) {\n              isSelected = true;\n            }\n          }\n        }\n        if (!isSelected) {\n          tree.setSelectionPath(path);\n        }\n        if (node.isLeaf()) {\n          JPopupMenu popup = new JPopupMenu();\n          final JMenuItem aboutRuleMenuItem = new JMenuItem(messages.getString(\"guiAboutRuleMenu\"));\n          aboutRuleMenuItem.addActionListener(new ActionListener() {\n            @Override\n            public void actionPerformed(ActionEvent actionEvent) {\n              RuleNode node = (RuleNode) tree.getSelectionPath().getLastPathComponent();\n              Rule rule = node.getRule();\n              Language lang = config.getLanguage();\n              if(lang == null) {\n                lang = Languages.getLanguageForLocale(Locale.getDefault());\n              }\n              Tools.showRuleInfoDialog(tree, messages.getString(\"guiAboutRuleTitle\"),\n                      rule.getDescription(), rule, messages,\n                      lang.getShortNameWithCountryAndVariant());\n            }\n          });\n          popup.add(aboutRuleMenuItem);\n          popup.show(tree, e.getX(), e.getY());\n        }\n      }\n\n      @Override\n      public void mousePressed(MouseEvent e) {\n        if (e.isPopupTrigger()) {\n          handlePopupEvent(e);\n        }\n      }\n\n      @Override\n      public void mouseReleased(MouseEvent e) {\n        if (e.isPopupTrigger()) {\n          handlePopupEvent(e);\n        }\n      }\n    }",
     "right" : "new MouseAdapter() {\n        private void handlePopupEvent(MouseEvent e) {\n          final JTree tree = (JTree) e.getSource();\n          TreePath path = tree.getPathForLocation(e.getX(), e.getY());\n          if (path == null) {\n            return;\n          }\n          DefaultMutableTreeNode node\n                  = (DefaultMutableTreeNode) path.getLastPathComponent();\n          TreePath[] paths = tree.getSelectionPaths();\n          boolean isSelected = false;\n          if (paths != null) {\n            for (TreePath selectionPath : paths) {\n              if (selectionPath.equals(path)) {\n                isSelected = true;\n              }\n            }\n          }\n          if (!isSelected) {\n            tree.setSelectionPath(path);\n          }\n          if (node.isLeaf()) {\n            JPopupMenu popup = new JPopupMenu();\n            final JMenuItem aboutRuleMenuItem = new JMenuItem(messages.getString(\"guiAboutRuleMenu\"));\n            aboutRuleMenuItem.addActionListener(new ActionListener() {\n              @Override\n              public void actionPerformed(ActionEvent actionEvent) {\n                RuleNode node = (RuleNode) tree.getSelectionPath().getLastPathComponent();\n                Rule rule = node.getRule();\n                Language lang = config.getLanguage();\n                if(lang == null) {\n                  lang = Languages.getLanguageForLocale(Locale.getDefault());\n                }\n                Tools.showRuleInfoDialog(tree, messages.getString(\"guiAboutRuleTitle\"),\n                        rule.getDescription(), rule, messages,\n                        lang.getShortNameWithCountryAndVariant());\n              }\n            });\n            popup.add(aboutRuleMenuItem);\n            popup.show(tree, e.getX(), e.getY());\n          }\n        }\n  \n        @Override\n        public void mousePressed(MouseEvent e) {\n          if (e.isPopupTrigger()) {\n            handlePopupEvent(e);\n          }\n        }\n  \n        @Override\n        public void mouseReleased(MouseEvent e) {\n          if (e.isPopupTrigger()) {\n            handlePopupEvent(e);\n          }\n        }\n      }",
     "info" : "ClassInstanceCreation[7376-9383]:ClassInstanceCreation[12544-14659]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[7403-7410]:Modifier[12573-12580]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7411-7415]:PrimitiveType[12581-12585]"
+  }, {
+    "left" : "handlePopupEvent",
+    "right" : "handlePopupEvent",
+    "info" : "SimpleName[7416-7432]:SimpleName[12586-12602]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[7433-7445]:SingleVariableDeclaration[12603-12615]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -705,6 +873,26 @@
     "right" : "aboutRuleMenuItem.addActionListener(new ActionListener() {\n              @Override\n              public void actionPerformed(ActionEvent actionEvent) {\n                RuleNode node = (RuleNode) tree.getSelectionPath().getLastPathComponent();\n                Rule rule = node.getRule();\n                Language lang = config.getLanguage();\n                if(lang == null) {\n                  lang = Languages.getLanguageForLocale(Locale.getDefault());\n                }\n                Tools.showRuleInfoDialog(tree, messages.getString(\"guiAboutRuleTitle\"),\n                        rule.getDescription(), rule, messages,\n                        lang.getShortNameWithCountryAndVariant());\n              }\n            });",
     "info" : "ExpressionStatement[8281-8976]:ExpressionStatement[13493-14214]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[8352-8361]:MarkerAnnotation[13566-13575]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[8374-8380]:Modifier[13590-13596]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[8381-8385]:PrimitiveType[13597-13601]"
+  }, {
+    "left" : "actionPerformed",
+    "right" : "actionPerformed",
+    "info" : "SimpleName[8386-8401]:SimpleName[13602-13617]"
+  }, {
+    "left" : "ActionEvent actionEvent",
+    "right" : "ActionEvent actionEvent",
+    "info" : "SingleVariableDeclaration[8402-8425]:SingleVariableDeclaration[13618-13641]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[8427-8962]:Block[13643-14198]"
@@ -745,6 +933,26 @@
     "right" : "popup.show(tree, e.getX(), e.getY());",
     "info" : "ExpressionStatement[9027-9064]:ExpressionStatement[14269-14306]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[9090-9099]:MarkerAnnotation[14340-14349]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[9106-9112]:Modifier[14358-14364]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[9113-9117]:PrimitiveType[14365-14369]"
+  }, {
+    "left" : "mousePressed",
+    "right" : "mousePressed",
+    "info" : "SimpleName[9118-9130]:SimpleName[14370-14382]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[9131-9143]:SingleVariableDeclaration[14383-14395]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[9145-9229]:Block[14397-14489]"
@@ -760,6 +968,26 @@
     "left" : "handlePopupEvent(e);",
     "right" : "handlePopupEvent(e);",
     "info" : "ExpressionStatement[9191-9211]:ExpressionStatement[14447-14467]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[9237-9246]:MarkerAnnotation[14501-14510]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[9253-9259]:Modifier[14519-14525]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[9260-9264]:PrimitiveType[14526-14530]"
+  }, {
+    "left" : "mouseReleased",
+    "right" : "mouseReleased",
+    "info" : "SimpleName[9265-9278]:SimpleName[14531-14544]"
+  }, {
+    "left" : "MouseEvent e",
+    "right" : "MouseEvent e",
+    "info" : "SingleVariableDeclaration[9279-9291]:SingleVariableDeclaration[14545-14557]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -808,6 +1036,26 @@
     "left" : "expandAllButton.addActionListener(new ActionListener() {\n\n      @Override\n      public void actionPerformed(ActionEvent e) {\n        TreeNode root = (TreeNode) configTree.getModel().getRoot();\n        TreePath parent = new TreePath(root);\n        for (Enumeration cat = root.children(); cat.hasMoreElements();) {\n          TreeNode n = (TreeNode) cat.nextElement();\n          TreePath child = parent.pathByAddingChild(n);\n          configTree.expandPath(child);\n        }\n      }\n    });",
     "right" : "expandAllButton.addActionListener(new ActionListener() {\n\n      @Override\n      public void actionPerformed(ActionEvent e) {\n        TreeNode root = (TreeNode) configTree.getModel().getRoot();\n        TreePath parent = new TreePath(root);\n        for (Enumeration cat = root.children(); cat.hasMoreElements();) {\n          TreeNode n = (TreeNode) cat.nextElement();\n          TreePath child = parent.pathByAddingChild(n);\n          configTree.expandPath(child);\n        }\n      }\n    });",
     "info" : "ExpressionStatement[9685-10172]:ExpressionStatement[15009-15496]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[9749-9758]:MarkerAnnotation[15073-15082]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[9765-9771]:Modifier[15089-15095]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[9772-9776]:PrimitiveType[15096-15100]"
+  }, {
+    "left" : "actionPerformed",
+    "right" : "actionPerformed",
+    "info" : "SimpleName[9777-9792]:SimpleName[15101-15116]"
+  }, {
+    "left" : "ActionEvent e",
+    "right" : "ActionEvent e",
+    "info" : "SingleVariableDeclaration[9793-9806]:SingleVariableDeclaration[15117-15130]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -860,6 +1108,26 @@
     "left" : "collapseAllButton.addActionListener(new ActionListener() {\n\n      @Override\n      public void actionPerformed(ActionEvent e) {\n        TreeNode root = (TreeNode) configTree.getModel().getRoot();\n        TreePath parent = new TreePath(root);\n        for (Enumeration categ = root.children(); categ.hasMoreElements();) {\n          TreeNode n = (TreeNode) categ.nextElement();\n          TreePath child = parent.pathByAddingChild(n);\n          configTree.collapsePath(child);\n        }\n      }\n    });",
     "right" : "collapseAllButton.addActionListener(new ActionListener() {\n\n      @Override\n      public void actionPerformed(ActionEvent e) {\n        TreeNode root = (TreeNode) configTree.getModel().getRoot();\n        TreePath parent = new TreePath(root);\n        for (Enumeration categ = root.children(); categ.hasMoreElements();) {\n          TreeNode n = (TreeNode) categ.nextElement();\n          TreePath child = parent.pathByAddingChild(n);\n          configTree.collapsePath(child);\n        }\n      }\n    });",
     "info" : "ExpressionStatement[10357-10854]:ExpressionStatement[15681-16178]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[10423-10432]:MarkerAnnotation[15747-15756]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10439-10445]:Modifier[15763-15769]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[10446-10450]:PrimitiveType[15770-15774]"
+  }, {
+    "left" : "actionPerformed",
+    "right" : "actionPerformed",
+    "info" : "SimpleName[10451-10466]:SimpleName[15775-15790]"
+  }, {
+    "left" : "ActionEvent e",
+    "right" : "ActionEvent e",
+    "info" : "SingleVariableDeclaration[10467-10480]:SingleVariableDeclaration[15791-15804]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -920,6 +1188,26 @@
     "left" : "motherTongueBox.addItemListener(new ItemListener() {\n\n      @Override\n      public void itemStateChanged(ItemEvent e) {\n        if (e.getStateChange() == ItemEvent.SELECTED) {\n          Language motherTongue;\n          if (motherTongueBox.getSelectedItem() instanceof String) {\n            motherTongue = getLanguageForLocalizedName(motherTongueBox.getSelectedItem().toString());\n          } else {\n            motherTongue = (Language) motherTongueBox.getSelectedItem();\n          }\n          config.setMotherTongue(motherTongue);\n        }\n      }\n    });",
     "right" : "motherTongueBox.addItemListener(new ItemListener() {\n\n      @Override\n      public void itemStateChanged(ItemEvent e) {\n        if (e.getStateChange() == ItemEvent.SELECTED) {\n          Language motherTongue;\n          if (motherTongueBox.getSelectedItem() instanceof String) {\n            motherTongue = getLanguageForLocalizedName(motherTongueBox.getSelectedItem().toString());\n          } else {\n            motherTongue = (Language) motherTongueBox.getSelectedItem();\n          }\n          config.setMotherTongue(motherTongue);\n        }\n      }\n    });",
     "info" : "ExpressionStatement[11205-11762]:ExpressionStatement[16637-17194]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[11265-11274]:MarkerAnnotation[16697-16706]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11281-11287]:Modifier[16713-16719]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[11288-11292]:PrimitiveType[16720-16724]"
+  }, {
+    "left" : "itemStateChanged",
+    "right" : "itemStateChanged",
+    "info" : "SimpleName[11293-11309]:SimpleName[16725-16741]"
+  }, {
+    "left" : "ItemEvent e",
+    "right" : "ItemEvent e",
+    "info" : "SingleVariableDeclaration[11310-11321]:SingleVariableDeclaration[16742-16753]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1029,6 +1317,26 @@
     "right" : "serverCheckbox.addActionListener(new ActionListener() {\n      @Override\n      public void actionPerformed(@SuppressWarnings(\"unused\") ActionEvent e) {\n        serverPortField.setEnabled(serverCheckbox.isSelected());\n        serverSettingsCheckbox.setEnabled(serverCheckbox.isSelected());\n      }\n    });",
     "info" : "ExpressionStatement[12445-12760]:ExpressionStatement[8569-8872]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[12509-12518]:MarkerAnnotation[8631-8640]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[12527-12533]:Modifier[8647-8653]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12534-12538]:PrimitiveType[8654-8658]"
+  }, {
+    "left" : "actionPerformed",
+    "right" : "actionPerformed",
+    "info" : "SimpleName[12539-12554]:SimpleName[8659-8674]"
+  }, {
+    "left" : "@SuppressWarnings(\"unused\") ActionEvent e",
+    "right" : "@SuppressWarnings(\"unused\") ActionEvent e",
+    "info" : "SingleVariableDeclaration[12555-12596]:SingleVariableDeclaration[8675-8716]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[12598-12750]:Block[8718-8864]"
@@ -1044,6 +1352,26 @@
     "left" : "serverCheckbox.addItemListener(new ItemListener() {\n\n        @Override\n        public void itemStateChanged(ItemEvent e) {\n          config.setRunServer(serverCheckbox.isSelected());\n        }\n      });",
     "right" : "serverCheckbox.addItemListener(new ItemListener() {\n      @Override\n      public void itemStateChanged(ItemEvent e) {\n        config.setRunServer(serverCheckbox.isSelected());\n      }\n    });",
     "info" : "ExpressionStatement[12767-12969]:ExpressionStatement[8877-9068]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[12828-12837]:MarkerAnnotation[8935-8944]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[12846-12852]:Modifier[8951-8957]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12853-12857]:PrimitiveType[8958-8962]"
+  }, {
+    "left" : "itemStateChanged",
+    "right" : "itemStateChanged",
+    "info" : "SimpleName[12858-12874]:SimpleName[8963-8979]"
+  }, {
+    "left" : "ItemEvent e",
+    "right" : "ItemEvent e",
+    "info" : "SingleVariableDeclaration[12875-12886]:SingleVariableDeclaration[8980-8991]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1081,6 +1409,26 @@
     "right" : "serverPortField.getDocument().addDocumentListener(new DocumentListener() {\n\n      @Override\n      public void insertUpdate(DocumentEvent e) {\n        changedUpdate(e);\n      }\n\n      @Override\n      public void removeUpdate(DocumentEvent e) {\n        changedUpdate(e);\n      }\n\n      @Override\n      public void changedUpdate(DocumentEvent e) {\n        try {\n          int serverPort = Integer.parseInt(serverPortField.getText());\n          if (serverPort > -1 && serverPort < MAX_PORT) {\n            serverPortField.setForeground(null);\n            config.setServerPort(serverPort);\n          } else {\n            serverPortField.setForeground(Color.RED);\n          }\n        } catch (NumberFormatException ex) {\n          serverPortField.setForeground(Color.RED);\n        }\n      }\n    });",
     "info" : "ExpressionStatement[13410-14247]:ExpressionStatement[9495-10286]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[13494-13503]:MarkerAnnotation[9577-9586]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[13512-13518]:Modifier[9593-9599]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[13519-13523]:PrimitiveType[9600-9604]"
+  }, {
+    "left" : "insertUpdate",
+    "right" : "insertUpdate",
+    "info" : "SimpleName[13524-13536]:SimpleName[9605-9617]"
+  }, {
+    "left" : "DocumentEvent e",
+    "right" : "DocumentEvent e",
+    "info" : "SingleVariableDeclaration[13537-13552]:SingleVariableDeclaration[9618-9633]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[13554-13593]:Block[9635-9670]"
@@ -1089,6 +1437,26 @@
     "right" : "changedUpdate(e);",
     "info" : "ExpressionStatement[13566-13583]:ExpressionStatement[9645-9662]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[13603-13612]:MarkerAnnotation[9678-9687]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[13621-13627]:Modifier[9694-9700]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[13628-13632]:PrimitiveType[9701-9705]"
+  }, {
+    "left" : "removeUpdate",
+    "right" : "removeUpdate",
+    "info" : "SimpleName[13633-13645]:SimpleName[9706-9718]"
+  }, {
+    "left" : "DocumentEvent e",
+    "right" : "DocumentEvent e",
+    "info" : "SingleVariableDeclaration[13646-13661]:SingleVariableDeclaration[9719-9734]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[13663-13702]:Block[9736-9771]"
@@ -1096,6 +1464,26 @@
     "left" : "changedUpdate(e);",
     "right" : "changedUpdate(e);",
     "info" : "ExpressionStatement[13675-13692]:ExpressionStatement[9746-9763]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[13712-13721]:MarkerAnnotation[9779-9788]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[13730-13736]:Modifier[9795-9801]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[13737-13741]:PrimitiveType[9802-9806]"
+  }, {
+    "left" : "changedUpdate",
+    "right" : "changedUpdate",
+    "info" : "SimpleName[13742-13755]:SimpleName[9807-9820]"
+  }, {
+    "left" : "DocumentEvent e",
+    "right" : "DocumentEvent e",
+    "info" : "SingleVariableDeclaration[13756-13771]:SingleVariableDeclaration[9821-9836]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1168,6 +1556,26 @@
     "left" : "serverSettingsCheckbox.addItemListener(new ItemListener() {\n        @Override\n        public void itemStateChanged(ItemEvent e) {\n          config.setUseGUIConfig(serverSettingsCheckbox.isSelected());\n        }\n      });",
     "right" : "serverSettingsCheckbox.addItemListener(new ItemListener() {\n      @Override\n      public void itemStateChanged(ItemEvent e) {\n        config.setUseGUIConfig(serverSettingsCheckbox.isSelected());\n      }\n    });",
     "info" : "ExpressionStatement[14546-14766]:ExpressionStatement[10556-10766]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[14614-14623]:MarkerAnnotation[10622-10631]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[14632-14638]:Modifier[10638-10644]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[14639-14643]:PrimitiveType[10645-10649]"
+  }, {
+    "left" : "itemStateChanged",
+    "right" : "itemStateChanged",
+    "info" : "SimpleName[14644-14660]:SimpleName[10650-10666]"
+  }, {
+    "left" : "ItemEvent e",
+    "right" : "ItemEvent e",
+    "info" : "SingleVariableDeclaration[14661-14672]:SingleVariableDeclaration[10667-10678]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1353,6 +1761,18 @@
     "right" : "dialog.setVisible(true);",
     "info" : "ExpressionStatement[16722-16746]:ExpressionStatement[8180-8204]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[16754-16761]:Modifier[17282-17289]"
+  }, {
+    "left" : "String[]",
+    "right" : "String[]",
+    "info" : "ArrayType[16762-16770]:ArrayType[17290-17298]"
+  }, {
+    "left" : "getPossibleMotherTongues",
+    "right" : "getPossibleMotherTongues",
+    "info" : "SimpleName[16771-16795]:SimpleName[17299-17323]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[16798-17084]:Block[17326-17612]"
@@ -1380,6 +1800,26 @@
     "left" : "return motherTongues.toArray(new String[motherTongues.size()]);",
     "right" : "return motherTongues.toArray(new String[motherTongues.size()]);",
     "info" : "ReturnStatement[17017-17080]:ReturnStatement[17545-17608]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[17088-17097]:MarkerAnnotation[17616-17625]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17100-17106]:Modifier[17628-17634]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17107-17111]:PrimitiveType[17635-17639]"
+  }, {
+    "left" : "actionPerformed",
+    "right" : "actionPerformed",
+    "info" : "SimpleName[17112-17127]:SimpleName[17640-17655]"
+  }, {
+    "left" : "ActionEvent e",
+    "right" : "ActionEvent e",
+    "info" : "SingleVariableDeclaration[17128-17141]:SingleVariableDeclaration[17656-17669]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1421,6 +1861,30 @@
     "right" : "dialog.setVisible(false);",
     "info" : "ExpressionStatement[17344-17369]:ExpressionStatement[17872-17897]"
   }, {
+    "left" : "/**\n   * Get the Language object for the given localized language name.\n   * \n   * @param languageName e.g. <code>English</code> or <code>German</code> (case is significant)\n   * @return a Language object or <code>null</code> if the language could not be found\n   */",
+    "right" : "/**\n   * Get the Language object for the given localized language name.\n   * \n   * @param languageName e.g. <code>English</code> or <code>German</code> (case is significant)\n   * @return a Language object or <code>null</code> if the language could not be found\n   */",
+    "info" : "Javadoc[17383-17649]:Javadoc[17911-18177]"
+  }, {
+    "left" : "@Nullable",
+    "right" : "@Nullable",
+    "info" : "MarkerAnnotation[17652-17661]:MarkerAnnotation[18180-18189]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[17664-17671]:Modifier[18192-18199]"
+  }, {
+    "left" : "Language",
+    "right" : "Language",
+    "info" : "SimpleType[17672-17680]:SimpleType[18200-18208]"
+  }, {
+    "left" : "getLanguageForLocalizedName",
+    "right" : "getLanguageForLocalizedName",
+    "info" : "SimpleName[17681-17708]:SimpleName[18209-18236]"
+  }, {
+    "left" : "final String languageName",
+    "right" : "final String languageName",
+    "info" : "SingleVariableDeclaration[17709-17734]:SingleVariableDeclaration[18237-18262]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17736-17919]:Block[18264-18447]"
@@ -1448,6 +1912,30 @@
     "left" : "return null;",
     "right" : "return null;",
     "info" : "ReturnStatement[17903-17915]:ReturnStatement[18431-18443]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[17990-17999]:MarkerAnnotation[18518-18527]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18004-18010]:Modifier[18532-18538]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[18011-18014]:PrimitiveType[18539-18542]"
+  }, {
+    "left" : "compare",
+    "right" : "compare",
+    "info" : "SimpleName[18015-18022]:SimpleName[18543-18550]"
+  }, {
+    "left" : "final Rule r1",
+    "right" : "final Rule r1",
+    "info" : "SingleVariableDeclaration[18023-18036]:SingleVariableDeclaration[18551-18564]"
+  }, {
+    "left" : "final Rule r2",
+    "right" : "final Rule r2",
+    "info" : "SingleVariableDeclaration[18038-18051]:SingleVariableDeclaration[18566-18579]"
   }, {
     "left" : "{}",
     "right" : "{}",

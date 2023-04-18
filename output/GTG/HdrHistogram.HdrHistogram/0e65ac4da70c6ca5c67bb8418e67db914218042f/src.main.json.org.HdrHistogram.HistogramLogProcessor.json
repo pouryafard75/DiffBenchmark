@@ -85,6 +85,18 @@
     "info" : "MethodDeclaration[17980-18386]:MethodDeclaration[17953-18359]"
   } ],
   "mappings" : [ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2746-2752]:Modifier[2746-2752]"
+  }, {
+    "left" : "HistogramLogProcessorConfiguration",
+    "right" : "HistogramLogProcessorConfiguration",
+    "info" : "SimpleName[2753-2787]:SimpleName[2753-2787]"
+  }, {
+    "left" : "final String[] args",
+    "right" : "final String[] args",
+    "info" : "SingleVariableDeclaration[2788-2807]:SingleVariableDeclaration[2788-2807]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2809-6354]:Block[2809-6354]"
@@ -285,6 +297,26 @@
     "right" : "System.exit(1);",
     "info" : "ExpressionStatement[6315-6330]:ExpressionStatement[6315-6330]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[6366-6373]:Modifier[6366-6373]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6374-6378]:PrimitiveType[6374-6378]"
+  }, {
+    "left" : "outputTimeRange",
+    "right" : "outputTimeRange",
+    "info" : "SimpleName[6379-6394]:SimpleName[6379-6394]"
+  }, {
+    "left" : "final PrintStream log",
+    "right" : "final PrintStream log",
+    "info" : "SingleVariableDeclaration[6395-6416]:SingleVariableDeclaration[6395-6416]"
+  }, {
+    "left" : "final String title",
+    "right" : "final String title",
+    "info" : "SingleVariableDeclaration[6418-6436]:SingleVariableDeclaration[6418-6436]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6438-6779]:Block[6438-6779]"
@@ -317,6 +349,26 @@
     "right" : "log.format(\" seconds (relative to StartTime)]\\n\");",
     "info" : "ExpressionStatement[6723-6773]:ExpressionStatement[6723-6773]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[6785-6792]:Modifier[6785-6792]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6793-6797]:PrimitiveType[6793-6797]"
+  }, {
+    "left" : "outputStartTime",
+    "right" : "outputStartTime",
+    "info" : "SimpleName[6798-6813]:SimpleName[6798-6813]"
+  }, {
+    "left" : "final PrintStream log",
+    "right" : "final PrintStream log",
+    "info" : "SingleVariableDeclaration[6814-6835]:SingleVariableDeclaration[6814-6835]"
+  }, {
+    "left" : "final Double startTime",
+    "right" : "final Double startTime",
+    "info" : "SingleVariableDeclaration[6837-6859]:SingleVariableDeclaration[6837-6859]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6861-7026]:Block[6861-7026]"
@@ -324,6 +376,26 @@
     "left" : "log.format(Locale.US, \"#[StartTime: %.3f (seconds since epoch), %s]\\n\",\n                startTime, (new Date((long) (startTime * 1000))).toString());",
     "right" : "log.format(Locale.US, \"#[StartTime: %.3f (seconds since epoch), %s]\\n\",\n                startTime, (new Date((long) (startTime * 1000))).toString());",
     "info" : "ExpressionStatement[6871-7020]:ExpressionStatement[6871-7020]"
+  }, {
+    "left" : "/**\n     * Run the log processor with the currently provided arguments.\n     */",
+    "right" : "/**\n     * Run the log processor with the currently provided arguments.\n     */",
+    "info" : "Javadoc[7032-7111]:Javadoc[7653-7732]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7116-7125]:MarkerAnnotation[7737-7746]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7130-7136]:Modifier[7751-7757]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7137-7141]:PrimitiveType[7758-7762]"
+  }, {
+    "left" : "run",
+    "right" : "run",
+    "info" : "SimpleName[7142-7145]:SimpleName[7763-7766]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -741,6 +813,26 @@
     "right" : "histogramPercentileLog.close();",
     "info" : "ExpressionStatement[16411-16442]:ExpressionStatement[16384-16415]"
   }, {
+    "left" : "/**\n     * Construct a {@link org.HdrHistogram.HistogramLogProcessor} with the given arguments\n     * (provided in command line style).\n     * <pre>\n     * [-h]                        help\n     * [-csv]                      Use CSV format for output log files\n     * [-i logFileName]            File name of Histogram Log to process (default is standard input)\n     * [-o outputFileName]         File name to output to (default is standard output)\n     *                             (will replace occurrences of %pid and %date with appropriate information)\n     * [-start rangeStartTimeSec]  The start time for the range in the file, in seconds (default 0.0)\n     * [-end rangeEndTimeSec]      The end time for the range in the file, in seconds (default is infinite)\n     * [-outputValueUnitRatio r]   The scaling factor by which to divide histogram recorded values units\n     *                             in output. [default = 1000000.0 (1 msec in nsec)]\"\n     * </pre>\n     * @param args command line arguments\n     * @throws FileNotFoundException if specified input file is not found\n     */",
+    "right" : "/**\n     * Construct a {@link org.HdrHistogram.HistogramLogProcessor} with the given arguments\n     * (provided in command line style).\n     * <pre>\n     * [-h]                        help\n     * [-csv]                      Use CSV format for output log files\n     * [-i logFileName]            File name of Histogram Log to process (default is standard input)\n     * [-o outputFileName]         File name to output to (default is standard output)\n     *                             (will replace occurrences of %pid and %date with appropriate information)\n     * [-start rangeStartTimeSec]  The start time for the range in the file, in seconds (default 0.0)\n     * [-end rangeEndTimeSec]      The end time for the range in the file, in seconds (default is infinite)\n     * [-outputValueUnitRatio r]   The scaling factor by which to divide histogram recorded values units\n     *                             in output. [default = 1000000.0 (1 msec in nsec)]\"\n     * </pre>\n     * @param args command line arguments\n     * @throws FileNotFoundException if specified input file is not found\n     */",
+    "info" : "Javadoc[16478-17573]:Javadoc[16451-17546]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17578-17584]:Modifier[17551-17557]"
+  }, {
+    "left" : "HistogramLogProcessor",
+    "right" : "HistogramLogProcessor",
+    "info" : "SimpleName[17585-17606]:SimpleName[17558-17579]"
+  }, {
+    "left" : "final String[] args",
+    "right" : "final String[] args",
+    "info" : "SingleVariableDeclaration[17607-17626]:SingleVariableDeclaration[17580-17599]"
+  }, {
+    "left" : "FileNotFoundException",
+    "right" : "FileNotFoundException",
+    "info" : "SimpleType[17635-17656]:SimpleType[17608-17629]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17657-17974]:Block[17630-17947]"
@@ -772,6 +864,30 @@
     "left" : "logReader = new HistogramLogReader(System.in);",
     "right" : "logReader = new HistogramLogReader(System.in);",
     "info" : "ExpressionStatement[17912-17958]:ExpressionStatement[17885-17931]"
+  }, {
+    "left" : "/**\n     * main() method.\n     *\n     * @param args command line arguments\n     */",
+    "right" : "/**\n     * main() method.\n     *\n     * @param args command line arguments\n     */",
+    "info" : "Javadoc[17980-18062]:Javadoc[17953-18035]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18067-18073]:Modifier[18040-18046]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[18074-18080]:Modifier[18047-18053]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[18081-18085]:PrimitiveType[18054-18058]"
+  }, {
+    "left" : "main",
+    "right" : "main",
+    "info" : "SimpleName[18086-18090]:SimpleName[18059-18063]"
+  }, {
+    "left" : "final String[] args",
+    "right" : "final String[] args",
+    "info" : "SingleVariableDeclaration[18091-18110]:SingleVariableDeclaration[18064-18083]"
   }, {
     "left" : "{}",
     "right" : "{}",

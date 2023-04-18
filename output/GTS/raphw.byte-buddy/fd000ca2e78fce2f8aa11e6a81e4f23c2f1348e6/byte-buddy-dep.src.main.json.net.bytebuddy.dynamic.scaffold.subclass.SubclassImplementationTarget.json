@@ -57,6 +57,26 @@
     "info" : "MethodDeclaration[4229-4464]:MethodDeclaration[5146-5381]"
   } ],
   "mappings" : [ {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[1009-1018]:Modifier[1146-1155]"
+  }, {
+    "left" : "SubclassImplementationTarget",
+    "right" : "SubclassImplementationTarget",
+    "info" : "SimpleName[1019-1047]:SimpleName[1156-1184]"
+  }, {
+    "left" : "TypeDescription instrumentedType",
+    "right" : "TypeDescription instrumentedType",
+    "info" : "SingleVariableDeclaration[1048-1080]:SingleVariableDeclaration[1185-1217]"
+  }, {
+    "left" : "MethodGraph.Linked methodGraph",
+    "right" : "MethodGraph.Linked methodGraph",
+    "info" : "SingleVariableDeclaration[1082-1112]:SingleVariableDeclaration[1219-1249]"
+  }, {
+    "left" : "OriginTypeIdentifier originTypeIdentifier",
+    "right" : "OriginTypeIdentifier originTypeIdentifier",
+    "info" : "SingleVariableDeclaration[1114-1155]:SingleVariableDeclaration[1251-1292]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[1157-1802]:Block[1294-1974]"
@@ -105,9 +125,17 @@
     "right" : "private",
     "info" : "Modifier[1822-1828]:Modifier[2737-2744]"
   }, {
+    "left" : "Implementation.SpecialMethodInvocation",
+    "right" : "Implementation.SpecialMethodInvocation",
+    "info" : "SimpleType[1829-1867]:SimpleType[2745-2783]"
+  }, {
     "left" : "invokeSuper",
     "right" : "invokeMethod",
     "info" : "SimpleName[1868-1879]:SimpleName[2784-2796]"
+  }, {
+    "left" : "MethodDescription.Token methodToken",
+    "right" : "MethodDescription.Token methodToken",
+    "info" : "SingleVariableDeclaration[1880-1915]:SingleVariableDeclaration[2797-2832]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -121,6 +149,22 @@
     "right" : "return methodNode.getSort().isUnique()\n                ? Implementation.SpecialMethodInvocation.Simple.of(methodNode.getRepresentative(), instrumentedType.getSuperType().asRawType())\n                : Implementation.SpecialMethodInvocation.Illegal.INSTANCE;",
     "info" : "ReturnStatement[2014-2271]:ReturnStatement[2931-3188]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[2283-2292]:MarkerAnnotation[3200-3209]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2297-2303]:Modifier[3214-3220]"
+  }, {
+    "left" : "TypeDescription",
+    "right" : "TypeDescription",
+    "info" : "SimpleType[2304-2319]:SimpleType[3221-3236]"
+  }, {
+    "left" : "getOriginType",
+    "right" : "getOriginType",
+    "info" : "SimpleName[2320-2333]:SimpleName[3237-3250]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2336-2407]:Block[3253-3324]"
@@ -128,6 +172,26 @@
     "left" : "return originTypeIdentifier.identify(instrumentedType);",
     "right" : "return originTypeIdentifier.identify(instrumentedType);",
     "info" : "ReturnStatement[2346-2401]:ReturnStatement[3263-3318]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[2765-2774]:MarkerAnnotation[3682-3691]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[2787-2796]:Modifier[3704-3713]"
+  }, {
+    "left" : "TypeDescription",
+    "right" : "TypeDescription",
+    "info" : "SimpleType[2797-2812]:SimpleType[3714-3729]"
+  }, {
+    "left" : "identify",
+    "right" : "identify",
+    "info" : "SimpleName[2813-2821]:SimpleName[3730-3738]"
+  }, {
+    "left" : "TypeDescription typeDescription",
+    "right" : "TypeDescription typeDescription",
+    "info" : "SingleVariableDeclaration[2822-2853]:SingleVariableDeclaration[3739-3770]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -137,6 +201,26 @@
     "right" : "return typeDescription.getSuperType().asRawType();",
     "info" : "ReturnStatement[2873-2923]:ReturnStatement[3790-3840]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[3075-3084]:MarkerAnnotation[3992-4001]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3097-3106]:Modifier[4014-4023]"
+  }, {
+    "left" : "TypeDescription",
+    "right" : "TypeDescription",
+    "info" : "SimpleType[3107-3122]:SimpleType[4024-4039]"
+  }, {
+    "left" : "identify",
+    "right" : "identify",
+    "info" : "SimpleName[3123-3131]:SimpleName[4040-4048]"
+  }, {
+    "left" : "TypeDescription typeDescription",
+    "right" : "TypeDescription typeDescription",
+    "info" : "SingleVariableDeclaration[3132-3163]:SingleVariableDeclaration[4049-4080]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3165-3220]:Block[4082-4137]"
@@ -144,6 +228,46 @@
     "left" : "return typeDescription;",
     "right" : "return typeDescription;",
     "info" : "ReturnStatement[3183-3206]:ReturnStatement[4100-4123]"
+  }, {
+    "left" : "/**\n         * Identifies the origin type to a given type description.\n         *\n         * @param typeDescription The type description for which an origin type should be identified.\n         * @return The origin type to the given type description.\n         */",
+    "right" : "/**\n         * Identifies the origin type to a given type description.\n         *\n         * @param typeDescription The type description for which an origin type should be identified.\n         * @return The origin type to the given type description.\n         */",
+    "info" : "Javadoc[3241-3502]:Javadoc[4158-4419]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3511-3520]:Modifier[4428-4437]"
+  }, {
+    "left" : "abstract",
+    "right" : "abstract",
+    "info" : "Modifier[3521-3529]:Modifier[4438-4446]"
+  }, {
+    "left" : "TypeDescription",
+    "right" : "TypeDescription",
+    "info" : "SimpleType[3530-3545]:SimpleType[4447-4462]"
+  }, {
+    "left" : "identify",
+    "right" : "identify",
+    "info" : "SimpleName[3546-3554]:SimpleName[4463-4471]"
+  }, {
+    "left" : "TypeDescription typeDescription",
+    "right" : "TypeDescription typeDescription",
+    "info" : "SingleVariableDeclaration[3555-3586]:SingleVariableDeclaration[4472-4503]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[3598-3607]:MarkerAnnotation[4515-4524]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3616-3622]:Modifier[4533-4539]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[3623-3629]:SimpleType[4540-4546]"
+  }, {
+    "left" : "toString",
+    "right" : "toString",
+    "info" : "SimpleName[3630-3638]:SimpleName[4547-4555]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -153,6 +277,18 @@
     "right" : "return \"SubclassImplementationTarget.OriginTypeIdentifier.\" + name();",
     "info" : "ReturnStatement[3655-3724]:ReturnStatement[4572-4641]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4088-4094]:Modifier[5005-5011]"
+  }, {
+    "left" : "Factory",
+    "right" : "Factory",
+    "info" : "SimpleName[4095-4102]:SimpleName[5012-5019]"
+  }, {
+    "left" : "OriginTypeIdentifier originTypeIdentifier",
+    "right" : "OriginTypeIdentifier originTypeIdentifier",
+    "info" : "SingleVariableDeclaration[4103-4144]:SingleVariableDeclaration[5020-5061]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4146-4219]:Block[5063-5136]"
@@ -160,6 +296,30 @@
     "left" : "this.originTypeIdentifier = originTypeIdentifier;",
     "right" : "this.originTypeIdentifier = originTypeIdentifier;",
     "info" : "ExpressionStatement[4160-4209]:ExpressionStatement[5077-5126]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[4229-4238]:MarkerAnnotation[5146-5155]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4247-4253]:Modifier[5164-5170]"
+  }, {
+    "left" : "Implementation.Target",
+    "right" : "Implementation.Target",
+    "info" : "SimpleType[4254-4275]:SimpleType[5171-5192]"
+  }, {
+    "left" : "make",
+    "right" : "make",
+    "info" : "SimpleName[4276-4280]:SimpleName[5193-5197]"
+  }, {
+    "left" : "TypeDescription instrumentedType",
+    "right" : "TypeDescription instrumentedType",
+    "info" : "SingleVariableDeclaration[4281-4313]:SingleVariableDeclaration[5198-5230]"
+  }, {
+    "left" : "MethodGraph.Linked methodGraph",
+    "right" : "MethodGraph.Linked methodGraph",
+    "info" : "SingleVariableDeclaration[4315-4345]:SingleVariableDeclaration[5232-5262]"
   }, {
     "left" : "{}",
     "right" : "{}",

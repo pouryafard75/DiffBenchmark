@@ -221,6 +221,22 @@
     "info" : "MethodDeclaration[19983-20047]:MethodDeclaration[20102-20166]"
   } ],
   "mappings" : [ {
+    "left" : "/**\n   * Constructor meant to be used with Android Emulators because a reference to the {@link IDevice}\n   * will become available if the emulator will be started. Please make sure that #setIDevice is\n   * called on the emulator.\n   * \n   * @param serial\n   */",
+    "right" : "/**\n   * Constructor meant to be used with Android Emulators because a reference to the {@link IDevice}\n   * will become available if the emulator will be started. Please make sure that #setIDevice is\n   * called on the emulator.\n   * \n   * @param serial\n   */",
+    "info" : "Javadoc[2839-3099]:Javadoc[2839-3099]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3102-3108]:Modifier[3102-3108]"
+  }, {
+    "left" : "AbstractDevice",
+    "right" : "AbstractDevice",
+    "info" : "SimpleName[3109-3123]:SimpleName[3109-3123]"
+  }, {
+    "left" : "String serial",
+    "right" : "String serial",
+    "info" : "SingleVariableDeclaration[3124-3137]:SingleVariableDeclaration[3124-3137]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3139-3170]:Block[3139-3170]"
@@ -228,6 +244,22 @@
     "left" : "this.serial = serial;",
     "right" : "this.serial = serial;",
     "info" : "ExpressionStatement[3145-3166]:ExpressionStatement[3145-3166]"
+  }, {
+    "left" : "/**\n   * Constructor mean to be used with Android Hardware devices because a reference to the\n   * {@link IDevice} will be available immediately after they are connected.\n   * \n   * @param device\n   */",
+    "right" : "/**\n   * Constructor mean to be used with Android Hardware devices because a reference to the\n   * {@link IDevice} will be available immediately after they are connected.\n   * \n   * @param device\n   */",
+    "info" : "Javadoc[3174-3375]:Javadoc[3174-3375]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3378-3384]:Modifier[3378-3384]"
+  }, {
+    "left" : "AbstractDevice",
+    "right" : "AbstractDevice",
+    "info" : "SimpleName[3385-3399]:SimpleName[3385-3399]"
+  }, {
+    "left" : "IDevice device",
+    "right" : "IDevice device",
+    "info" : "SingleVariableDeclaration[3400-3414]:SingleVariableDeclaration[3400-3414]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -241,9 +273,29 @@
     "right" : "this.serial = device.getSerialNumber();",
     "info" : "ExpressionStatement[3448-3487]:ExpressionStatement[3448-3487]"
   }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3495-3504]:Modifier[3495-3504]"
+  }, {
+    "left" : "AbstractDevice",
+    "right" : "AbstractDevice",
+    "info" : "SimpleName[3505-3519]:SimpleName[3505-3519]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3522-3524]:Block[3522-3524]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3528-3537]:Modifier[3528-3537]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[3538-3545]:PrimitiveType[3538-3545]"
+  }, {
+    "left" : "isSerialConfigured",
+    "right" : "isSerialConfigured",
+    "info" : "SimpleName[3546-3564]:SimpleName[3546-3564]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -253,6 +305,18 @@
     "right" : "return serial != null && !serial.isEmpty();",
     "info" : "ReturnStatement[3573-3616]:ReturnStatement[3573-3616]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3624-3630]:Modifier[3624-3630]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3631-3635]:PrimitiveType[3631-3635]"
+  }, {
+    "left" : "setVerbose",
+    "right" : "setVerbose",
+    "info" : "SimpleName[3636-3646]:SimpleName[3636-3646]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[3649-3686]:Block[3649-3686]"
@@ -260,6 +324,22 @@
     "left" : "log.setLevel(Level.FINEST);",
     "right" : "log.setLevel(Level.FINEST);",
     "info" : "ExpressionStatement[3655-3682]:ExpressionStatement[3655-3682]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[3690-3699]:MarkerAnnotation[3690-3699]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3702-3708]:Modifier[3702-3708]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[3709-3716]:PrimitiveType[3709-3716]"
+  }, {
+    "left" : "isDeviceReady",
+    "right" : "isDeviceReady",
+    "info" : "SimpleName[3717-3730]:SimpleName[3717-3730]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -297,6 +377,30 @@
     "right" : "return bootAnimDisplayed != null && bootAnimDisplayed.contains(\"stopped\");",
     "info" : "ReturnStatement[4036-4110]:ReturnStatement[4036-4110]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[4118-4127]:MarkerAnnotation[4118-4127]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4130-4136]:Modifier[4130-4136]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[4137-4144]:PrimitiveType[4137-4144]"
+  }, {
+    "left" : "isInstalled",
+    "right" : "isInstalled",
+    "info" : "SimpleName[4145-4156]:SimpleName[4145-4156]"
+  }, {
+    "left" : "String appBasePackage",
+    "right" : "String appBasePackage",
+    "info" : "SingleVariableDeclaration[4157-4178]:SingleVariableDeclaration[4157-4178]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[4187-4206]:SimpleType[4187-4206]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4207-4530]:Block[4207-4530]"
@@ -333,6 +437,30 @@
     "right" : "return result != null && result.contains(\"package:\" + appBasePackage);",
     "info" : "ReturnStatement[4456-4526]:ReturnStatement[4456-4526]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[4534-4543]:MarkerAnnotation[4534-4543]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4546-4552]:Modifier[4546-4552]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[4553-4560]:PrimitiveType[4553-4560]"
+  }, {
+    "left" : "isInstalled",
+    "right" : "isInstalled",
+    "info" : "SimpleName[4561-4572]:SimpleName[4561-4572]"
+  }, {
+    "left" : "AndroidApp app",
+    "right" : "AndroidApp app",
+    "info" : "SingleVariableDeclaration[4573-4587]:SingleVariableDeclaration[4573-4587]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[4596-4615]:SimpleType[4596-4615]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[4616-4667]:Block[4616-4667]"
@@ -340,6 +468,30 @@
     "left" : "return isInstalled(app.getBasePackage());",
     "right" : "return isInstalled(app.getBasePackage());",
     "info" : "ReturnStatement[4622-4663]:ReturnStatement[4622-4663]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[4671-4680]:MarkerAnnotation[4671-4680]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4683-4689]:Modifier[4683-4689]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[4690-4694]:PrimitiveType[4690-4694]"
+  }, {
+    "left" : "install",
+    "right" : "install",
+    "info" : "SimpleName[4695-4702]:SimpleName[4695-4702]"
+  }, {
+    "left" : "AndroidApp app",
+    "right" : "AndroidApp app",
+    "info" : "SingleVariableDeclaration[4703-4717]:SingleVariableDeclaration[4703-4717]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[4726-4745]:SimpleType[4726-4745]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -384,6 +536,26 @@
     "left" : "throw new AndroidSdkException(\"APK installation failed. Output:\\n\" + out);",
     "right" : "throw new AndroidSdkException(\"APK installation failed. Output:\\n\" + out);",
     "info" : "ThrowStatement[5170-5244]:ThrowStatement[5170-5244]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5258-5264]:Modifier[5258-5264]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[5265-5272]:PrimitiveType[5265-5272]"
+  }, {
+    "left" : "start",
+    "right" : "start",
+    "info" : "SimpleName[5273-5278]:SimpleName[5273-5278]"
+  }, {
+    "left" : "AndroidApp app",
+    "right" : "AndroidApp app",
+    "info" : "SingleVariableDeclaration[5279-5293]:SingleVariableDeclaration[5279-5293]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[5302-5321]:SimpleType[5302-5321]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -437,6 +609,22 @@
     "right" : "return out.contains(\"Starting: Intent\");",
     "info" : "ReturnStatement[5865-5905]:ReturnStatement[5865-5905]"
   }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[5915-5924]:Modifier[5915-5924]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5925-5931]:SimpleType[5925-5931]"
+  }, {
+    "left" : "executeCommandQuietly",
+    "right" : "executeCommandQuietly",
+    "info" : "SimpleName[5932-5953]:SimpleName[5932-5953]"
+  }, {
+    "left" : "CommandLine command",
+    "right" : "CommandLine command",
+    "info" : "SingleVariableDeclaration[5954-5973]:SingleVariableDeclaration[5954-5973]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[5975-6040]:Block[5975-6040]"
@@ -444,6 +632,26 @@
     "left" : "return executeCommandQuietly(command, COMMAND_TIMEOUT);",
     "right" : "return executeCommandQuietly(command, COMMAND_TIMEOUT);",
     "info" : "ReturnStatement[5981-6036]:ReturnStatement[5981-6036]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[6044-6053]:Modifier[6044-6053]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[6054-6060]:SimpleType[6054-6060]"
+  }, {
+    "left" : "executeCommandQuietly",
+    "right" : "executeCommandQuietly",
+    "info" : "SimpleName[6061-6082]:SimpleName[6061-6082]"
+  }, {
+    "left" : "CommandLine command",
+    "right" : "CommandLine command",
+    "info" : "SingleVariableDeclaration[6083-6102]:SingleVariableDeclaration[6083-6102]"
+  }, {
+    "left" : "long timeout",
+    "right" : "long timeout",
+    "info" : "SingleVariableDeclaration[6104-6116]:SingleVariableDeclaration[6104-6116]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -477,6 +685,30 @@
     "right" : "return \"\";",
     "info" : "ReturnStatement[6354-6364]:ReturnStatement[6354-6364]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6378-6387]:MarkerAnnotation[6378-6387]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6390-6396]:Modifier[6390-6396]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6397-6401]:PrimitiveType[6397-6401]"
+  }, {
+    "left" : "uninstall",
+    "right" : "uninstall",
+    "info" : "SimpleName[6402-6411]:SimpleName[6402-6411]"
+  }, {
+    "left" : "AndroidApp app",
+    "right" : "AndroidApp app",
+    "info" : "SingleVariableDeclaration[6412-6426]:SingleVariableDeclaration[6412-6426]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[6435-6454]:SimpleType[6435-6454]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6455-6746]:Block[6455-6746]"
@@ -509,6 +741,30 @@
     "right" : "throw new RuntimeException(ie);",
     "info" : "ThrowStatement[6705-6736]:ThrowStatement[6705-6736]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6750-6759]:MarkerAnnotation[6750-6759]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6762-6768]:Modifier[6762-6768]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6769-6773]:PrimitiveType[6769-6773]"
+  }, {
+    "left" : "clearUserData",
+    "right" : "clearUserData",
+    "info" : "SimpleName[6774-6787]:SimpleName[6774-6787]"
+  }, {
+    "left" : "AndroidApp app",
+    "right" : "AndroidApp app",
+    "info" : "SingleVariableDeclaration[6788-6802]:SingleVariableDeclaration[6788-6802]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[6811-6830]:SimpleType[6811-6830]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[6831-6956]:Block[6831-6956]"
@@ -520,6 +776,34 @@
     "left" : "executeCommandQuietly(command);",
     "right" : "executeCommandQuietly(command);",
     "info" : "ExpressionStatement[6921-6952]:ExpressionStatement[6921-6952]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[6960-6969]:MarkerAnnotation[6960-6969]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6972-6978]:Modifier[6972-6978]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[6979-6983]:PrimitiveType[6979-6983]"
+  }, {
+    "left" : "kill",
+    "right" : "kill",
+    "info" : "SimpleName[6984-6988]:SimpleName[6984-6988]"
+  }, {
+    "left" : "AndroidApp aut",
+    "right" : "AndroidApp aut",
+    "info" : "SingleVariableDeclaration[6989-7003]:SingleVariableDeclaration[6989-7003]"
+  }, {
+    "left" : "AndroidDeviceException",
+    "right" : "AndroidDeviceException",
+    "info" : "SimpleType[7012-7034]:SimpleType[7012-7034]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[7036-7055]:SimpleType[7036-7055]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -565,6 +849,18 @@
     "right" : "logcatWatchdog = null;",
     "info" : "ExpressionStatement[7358-7380]:ExpressionStatement[7358-7380]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[7394-7401]:Modifier[7394-7401]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7402-7406]:PrimitiveType[7402-7406]"
+  }, {
+    "left" : "freeSelendroidPort",
+    "right" : "freeSelendroidPort",
+    "info" : "SimpleName[7407-7425]:SimpleName[7407-7425]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[7428-7744]:Block[7428-7744]"
@@ -604,6 +900,38 @@
     "left" : "log.log(Level.WARNING, \"Could not free Selendroid port\", e);",
     "right" : "log.log(Level.WARNING, \"Could not free Selendroid port\", e);",
     "info" : "ExpressionStatement[7674-7734]:ExpressionStatement[7674-7734]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7748-7757]:MarkerAnnotation[7748-7757]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7760-7766]:Modifier[7760-7766]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7767-7771]:PrimitiveType[7767-7771]"
+  }, {
+    "left" : "startSelendroid",
+    "right" : "startSelendroid",
+    "info" : "SimpleName[7772-7787]:SimpleName[7772-7787]"
+  }, {
+    "left" : "AndroidApp aut",
+    "right" : "AndroidApp aut",
+    "info" : "SingleVariableDeclaration[7788-7802]:SingleVariableDeclaration[7788-7802]"
+  }, {
+    "left" : "int port",
+    "right" : "int port",
+    "info" : "SingleVariableDeclaration[7804-7812]:SingleVariableDeclaration[7804-7812]"
+  }, {
+    "left" : "SelendroidCapabilities capabilities",
+    "right" : "SelendroidCapabilities capabilities",
+    "info" : "SingleVariableDeclaration[7814-7849]:SingleVariableDeclaration[7814-7849]"
+  }, {
+    "left" : "AndroidSdkException",
+    "right" : "AndroidSdkException",
+    "info" : "SimpleType[7858-7877]:SimpleType[7858-7877]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -741,6 +1069,26 @@
     "right" : "startLogging();",
     "info" : "ExpressionStatement[9858-9873]:ExpressionStatement[9858-9873]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[9887-9893]:Modifier[9887-9893]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[9894-9898]:PrimitiveType[9894-9898]"
+  }, {
+    "left" : "forwardPort",
+    "right" : "forwardPort",
+    "info" : "SimpleName[9899-9910]:SimpleName[9899-9910]"
+  }, {
+    "left" : "int local",
+    "right" : "int local",
+    "info" : "SingleVariableDeclaration[9911-9920]:SingleVariableDeclaration[9911-9920]"
+  }, {
+    "left" : "int remote",
+    "right" : "int remote",
+    "info" : "SingleVariableDeclaration[9922-9932]:SingleVariableDeclaration[9922-9932]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[9934-10560]:Block[9934-10560]"
@@ -793,6 +1141,22 @@
     "right" : "throw new SelendroidException(\n          \"Could not forward port: \" + command + \"\\nList of forwarded ports:\\n\" + debugForwardList,\n          forwardException);",
     "info" : "ThrowStatement[10391-10550]:ThrowStatement[10391-10550]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[10564-10571]:Modifier[10564-10571]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[10572-10576]:PrimitiveType[10572-10576]"
+  }, {
+    "left" : "forwardSelendroidPort",
+    "right" : "forwardSelendroidPort",
+    "info" : "SimpleName[10577-10598]:SimpleName[10577-10598]"
+  }, {
+    "left" : "int port",
+    "right" : "int port",
+    "info" : "SingleVariableDeclaration[10599-10607]:SingleVariableDeclaration[10599-10607]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[10609-10643]:Block[10609-10643]"
@@ -800,6 +1164,22 @@
     "left" : "forwardPort(port, port);",
     "right" : "forwardPort(port, port);",
     "info" : "ExpressionStatement[10615-10639]:ExpressionStatement[10615-10639]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[10647-10656]:MarkerAnnotation[10647-10656]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[10659-10665]:Modifier[10659-10665]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[10666-10673]:PrimitiveType[10666-10673]"
+  }, {
+    "left" : "isSelendroidRunning",
+    "right" : "isSelendroidRunning",
+    "info" : "SimpleName[10674-10693]:SimpleName[10674-10693]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -897,6 +1277,22 @@
     "right" : "return statusCode == 200 && responseValue.contains(\"selendroid\");",
     "info" : "ReturnStatement[11652-11717]:ReturnStatement[11652-11717]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[11725-11734]:MarkerAnnotation[11725-11734]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11737-11743]:Modifier[11737-11743]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[11744-11747]:PrimitiveType[11744-11747]"
+  }, {
+    "left" : "getSelendroidsPort",
+    "right" : "getSelendroidsPort",
+    "info" : "SimpleName[11748-11766]:SimpleName[11748-11766]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[11769-11791]:Block[11769-11791]"
@@ -904,6 +1300,22 @@
     "left" : "return port;",
     "right" : "return port;",
     "info" : "ReturnStatement[11775-11787]:ReturnStatement[11775-11787]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[11795-11804]:MarkerAnnotation[11795-11804]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11807-11813]:Modifier[11807-11813]"
+  }, {
+    "left" : "List<LogEntry>",
+    "right" : "List<LogEntry>",
+    "info" : "ParameterizedType[11814-11828]:ParameterizedType[11814-11828]"
+  }, {
+    "left" : "getLogs",
+    "right" : "getLogs",
+    "info" : "SimpleName[11829-11836]:SimpleName[11829-11836]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -993,6 +1405,22 @@
     "right" : "return logs;",
     "info" : "ReturnStatement[12420-12432]:ReturnStatement[12420-12432]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[12440-12449]:MarkerAnnotation[12440-12449]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[12452-12458]:Modifier[12452-12458]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[12459-12466]:PrimitiveType[12459-12466]"
+  }, {
+    "left" : "isLoggingEnabled",
+    "right" : "isLoggingEnabled",
+    "info" : "SimpleName[12467-12483]:SimpleName[12467-12483]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[12486-12518]:Block[12486-12518]"
@@ -1001,6 +1429,26 @@
     "right" : "return loggingEnabled;",
     "info" : "ReturnStatement[12492-12514]:ReturnStatement[12492-12514]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[12522-12531]:MarkerAnnotation[12522-12531]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[12534-12540]:Modifier[12534-12540]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12541-12545]:PrimitiveType[12541-12545]"
+  }, {
+    "left" : "setLoggingEnabled",
+    "right" : "setLoggingEnabled",
+    "info" : "SimpleName[12546-12563]:SimpleName[12546-12563]"
+  }, {
+    "left" : "boolean loggingEnabled",
+    "right" : "boolean loggingEnabled",
+    "info" : "SingleVariableDeclaration[12564-12586]:SingleVariableDeclaration[12564-12586]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[12588-12635]:Block[12588-12635]"
@@ -1008,6 +1456,18 @@
     "left" : "this.loggingEnabled = loggingEnabled;",
     "right" : "this.loggingEnabled = loggingEnabled;",
     "info" : "ExpressionStatement[12594-12631]:ExpressionStatement[12594-12631]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[12639-12646]:Modifier[12639-12646]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[12647-12651]:PrimitiveType[12647-12651]"
+  }, {
+    "left" : "startLogging",
+    "right" : "startLogging",
+    "info" : "SimpleName[12652-12664]:SimpleName[12652-12664]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1065,6 +1525,22 @@
     "right" : "log.log(Level.SEVERE, e.getMessage(), e);",
     "info" : "ExpressionStatement[13356-13397]:ExpressionStatement[13356-13397]"
   }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[13411-13420]:Modifier[13411-13420]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[13421-13427]:SimpleType[13421-13427]"
+  }, {
+    "left" : "getProp",
+    "right" : "getProp",
+    "info" : "SimpleName[13428-13435]:SimpleName[13428-13435]"
+  }, {
+    "left" : "String key",
+    "right" : "String key",
+    "info" : "SingleVariableDeclaration[13436-13446]:SingleVariableDeclaration[13436-13446]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[13448-13640]:Block[13448-13640]"
@@ -1080,6 +1556,30 @@
     "left" : "return prop == null ? \"\" : prop.replace(\"\\r\", \"\").replace(\"\\n\", \"\");",
     "right" : "return prop == null ? \"\" : prop.replace(\"\\r\", \"\").replace(\"\\n\", \"\");",
     "info" : "ReturnStatement[13568-13636]:ReturnStatement[13568-13636]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[13644-13653]:Modifier[13644-13653]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[13654-13660]:Modifier[13654-13660]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[13661-13667]:SimpleType[13661-13667]"
+  }, {
+    "left" : "extractValue",
+    "right" : "extractValue",
+    "info" : "SimpleName[13668-13680]:SimpleName[13668-13680]"
+  }, {
+    "left" : "String regex",
+    "right" : "String regex",
+    "info" : "SingleVariableDeclaration[13681-13693]:SingleVariableDeclaration[13681-13693]"
+  }, {
+    "left" : "String output",
+    "right" : "String output",
+    "info" : "SingleVariableDeclaration[13695-13708]:SingleVariableDeclaration[13695-13708]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1108,6 +1608,22 @@
     "left" : "return \"\";",
     "right" : "return \"\";",
     "info" : "ReturnStatement[13892-13902]:ReturnStatement[13892-13902]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[13910-13916]:Modifier[13910-13916]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[13917-13924]:PrimitiveType[13917-13924]"
+  }, {
+    "left" : "screenSizeMatches",
+    "right" : "screenSizeMatches",
+    "info" : "SimpleName[13925-13942]:SimpleName[13925-13942]"
+  }, {
+    "left" : "String requestedScreenSize",
+    "right" : "String requestedScreenSize",
+    "info" : "SingleVariableDeclaration[13943-13969]:SingleVariableDeclaration[13943-13969]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1161,6 +1677,22 @@
     "right" : "return false;",
     "info" : "ReturnStatement[14524-14537]:ReturnStatement[14524-14537]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[14551-14557]:Modifier[14551-14557]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[14558-14564]:SimpleType[14558-14564]"
+  }, {
+    "left" : "runAdbCommand",
+    "right" : "runAdbCommand",
+    "info" : "SimpleName[14565-14578]:SimpleName[14565-14578]"
+  }, {
+    "left" : "String parameter",
+    "right" : "String parameter",
+    "info" : "SingleVariableDeclaration[14579-14595]:SingleVariableDeclaration[14579-14595]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[14597-14989]:Block[14597-14989]"
@@ -1208,6 +1740,22 @@
     "left" : "return commandOutput.trim();",
     "right" : "return commandOutput.trim();",
     "info" : "ReturnStatement[14957-14985]:ReturnStatement[14957-14985]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[14993-14999]:Modifier[14993-14999]"
+  }, {
+    "left" : "byte[]",
+    "right" : "byte[]",
+    "info" : "ArrayType[15000-15006]:ArrayType[15000-15006]"
+  }, {
+    "left" : "takeScreenshot",
+    "right" : "takeScreenshot",
+    "info" : "SimpleName[15007-15021]:SimpleName[15007-15021]"
+  }, {
+    "left" : "AndroidDeviceException",
+    "right" : "AndroidDeviceException",
+    "info" : "SimpleType[15031-15053]:SimpleType[15031-15053]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1409,6 +1957,26 @@
     "right" : "return raw;",
     "info" : "ReturnStatement[16796-16807]:ReturnStatement[16915-16926]"
   }, {
+    "left" : "/**\n   * Use adb to send a keyevent to the device.\n   *\n   * Full list of keys available here:\n   * http://developer.android.com/reference/android/view/KeyEvent.html\n   *\n   * @param value - Key to be sent to 'adb shell input keyevent'\n   */",
+    "right" : "/**\n   * Use adb to send a keyevent to the device.\n   *\n   * Full list of keys available here:\n   * http://developer.android.com/reference/android/view/KeyEvent.html\n   *\n   * @param value - Key to be sent to 'adb shell input keyevent'\n   */",
+    "info" : "Javadoc[16815-17056]:Javadoc[16934-17175]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17059-17065]:Modifier[17178-17184]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17066-17070]:PrimitiveType[17185-17189]"
+  }, {
+    "left" : "inputKeyevent",
+    "right" : "inputKeyevent",
+    "info" : "SimpleName[17071-17084]:SimpleName[17190-17203]"
+  }, {
+    "left" : "int value",
+    "right" : "int value",
+    "info" : "SingleVariableDeclaration[17085-17094]:SingleVariableDeclaration[17204-17213]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17096-17247]:Block[17215-17366]"
@@ -1421,6 +1989,22 @@
     "right" : "sleep(500);",
     "info" : "ExpressionStatement[17232-17243]:ExpressionStatement[17351-17362]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17251-17257]:Modifier[17370-17376]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17258-17262]:PrimitiveType[17377-17381]"
+  }, {
+    "left" : "invokeActivity",
+    "right" : "invokeActivity",
+    "info" : "SimpleName[17263-17277]:SimpleName[17382-17396]"
+  }, {
+    "left" : "String activity",
+    "right" : "String activity",
+    "info" : "SingleVariableDeclaration[17278-17293]:SingleVariableDeclaration[17397-17412]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17295-17444]:Block[17414-17563]"
@@ -1432,6 +2016,18 @@
     "left" : "sleep(500);",
     "right" : "sleep(500);",
     "info" : "ExpressionStatement[17429-17440]:ExpressionStatement[17548-17559]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[17448-17454]:Modifier[17567-17573]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[17455-17459]:PrimitiveType[17574-17578]"
+  }, {
+    "left" : "restartADB",
+    "right" : "restartADB",
+    "info" : "SimpleName[17460-17470]:SimpleName[17579-17589]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1448,6 +2044,18 @@
     "left" : "executeCommandQuietly(adbCommand(\"devices\"));",
     "right" : "executeCommandQuietly(adbCommand(\"devices\"));",
     "info" : "ExpressionStatement[17584-17629]:ExpressionStatement[17703-17748]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[17639-17646]:Modifier[17758-17765]"
+  }, {
+    "left" : "CommandLine",
+    "right" : "CommandLine",
+    "info" : "SimpleType[17647-17658]:SimpleType[17766-17777]"
+  }, {
+    "left" : "adbCommand",
+    "right" : "adbCommand",
+    "info" : "SimpleName[17659-17669]:SimpleName[17778-17788]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1477,6 +2085,22 @@
     "right" : "return command;",
     "info" : "ReturnStatement[17859-17874]:ReturnStatement[17978-17993]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[17882-17889]:Modifier[18001-18008]"
+  }, {
+    "left" : "CommandLine",
+    "right" : "CommandLine",
+    "info" : "SimpleType[17890-17901]:SimpleType[18009-18020]"
+  }, {
+    "left" : "adbCommand",
+    "right" : "adbCommand",
+    "info" : "SimpleName[17902-17912]:SimpleName[18021-18031]"
+  }, {
+    "left" : "String... args",
+    "right" : "String... args",
+    "info" : "SingleVariableDeclaration[17913-17927]:SingleVariableDeclaration[18032-18046]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[17929-18069]:Block[18048-18188]"
@@ -1501,6 +2125,18 @@
     "right" : "return command;",
     "info" : "ReturnStatement[18050-18065]:ReturnStatement[18169-18184]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18073-18079]:Modifier[18192-18198]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[18080-18086]:SimpleType[18199-18205]"
+  }, {
+    "left" : "getExternalStoragePath",
+    "right" : "getExternalStoragePath",
+    "info" : "SimpleName[18087-18109]:SimpleName[18206-18228]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[18112-18175]:Block[18231-18294]"
@@ -1508,6 +2144,22 @@
     "left" : "return runAdbCommand(\"shell echo $EXTERNAL_STORAGE\");",
     "right" : "return runAdbCommand(\"shell echo $EXTERNAL_STORAGE\");",
     "info" : "ReturnStatement[18118-18171]:ReturnStatement[18237-18290]"
+  }, {
+    "left" : "/** {@inheritdoc} */",
+    "right" : "/** {@inheritdoc} */",
+    "info" : "Javadoc[18179-18199]:Javadoc[18298-18318]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18202-18208]:Modifier[18321-18327]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[18209-18215]:SimpleType[18328-18334]"
+  }, {
+    "left" : "getCrashLog",
+    "right" : "getCrashLog",
+    "info" : "SimpleName[18216-18227]:SimpleName[18335-18346]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1552,6 +2204,22 @@
     "left" : "return \"\";",
     "right" : "return \"\";",
     "info" : "ReturnStatement[18855-18865]:ReturnStatement[18974-18984]"
+  }, {
+    "left" : "/** {@inheritDoc} */",
+    "right" : "/** {@inheritDoc} */",
+    "info" : "Javadoc[18873-18893]:Javadoc[18992-19012]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[18896-18902]:Modifier[19015-19021]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[18903-18909]:SimpleType[19022-19028]"
+  }, {
+    "left" : "listRunningThirdPartyProcesses",
+    "right" : "listRunningThirdPartyProcesses",
+    "info" : "SimpleName[18910-18940]:SimpleName[19029-19059]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1601,6 +2269,22 @@
     "right" : "return sb.toString();",
     "info" : "ReturnStatement[19361-19382]:ReturnStatement[19480-19501]"
   }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[19390-19397]:Modifier[19509-19516]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[19398-19402]:PrimitiveType[19517-19521]"
+  }, {
+    "left" : "sleep",
+    "right" : "sleep",
+    "info" : "SimpleName[19403-19408]:SimpleName[19522-19527]"
+  }, {
+    "left" : "int millis",
+    "right" : "int millis",
+    "info" : "SingleVariableDeclaration[19409-19419]:SingleVariableDeclaration[19528-19538]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[19421-19599]:Block[19540-19718]"
@@ -1628,6 +2312,26 @@
     "left" : "log.log(Level.SEVERE, e.getMessage(), e);",
     "right" : "log.log(Level.SEVERE, e.getMessage(), e);",
     "info" : "ExpressionStatement[19548-19589]:ExpressionStatement[19667-19708]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[19603-19612]:MarkerAnnotation[19722-19731]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[19615-19621]:Modifier[19734-19740]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[19622-19629]:PrimitiveType[19741-19748]"
+  }, {
+    "left" : "equals",
+    "right" : "equals",
+    "info" : "SimpleName[19630-19636]:SimpleName[19749-19755]"
+  }, {
+    "left" : "Object o",
+    "right" : "Object o",
+    "info" : "SingleVariableDeclaration[19637-19645]:SingleVariableDeclaration[19756-19764]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -1657,6 +2361,22 @@
     "right" : "return device.equals(that.device);",
     "info" : "ReturnStatement[19814-19848]:ReturnStatement[19933-19967]"
   }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[19856-19865]:MarkerAnnotation[19975-19984]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[19868-19874]:Modifier[19987-19993]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[19875-19878]:PrimitiveType[19994-19997]"
+  }, {
+    "left" : "hashCode",
+    "right" : "hashCode",
+    "info" : "SimpleName[19879-19887]:SimpleName[19998-20006]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[19890-19925]:Block[20009-20044]"
@@ -1665,6 +2385,18 @@
     "right" : "return device.hashCode();",
     "info" : "ReturnStatement[19896-19921]:ReturnStatement[20015-20040]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[19929-19935]:Modifier[20048-20054]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[19936-19942]:SimpleType[20055-20061]"
+  }, {
+    "left" : "getModel",
+    "right" : "getModel",
+    "info" : "SimpleName[19943-19951]:SimpleName[20062-20070]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[19954-19977]:Block[20073-20096]"
@@ -1672,6 +2404,18 @@
     "left" : "return model;",
     "right" : "return model;",
     "info" : "ReturnStatement[19960-19973]:ReturnStatement[20079-20092]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[19983-19989]:Modifier[20102-20108]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[19990-19996]:SimpleType[20109-20115]"
+  }, {
+    "left" : "getAPITargetType",
+    "right" : "getAPITargetType",
+    "info" : "SimpleName[19997-20013]:SimpleName[20116-20132]"
   }, {
     "left" : "{}",
     "right" : "{}",

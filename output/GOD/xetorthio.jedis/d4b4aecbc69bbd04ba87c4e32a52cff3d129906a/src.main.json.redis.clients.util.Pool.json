@@ -73,9 +73,37 @@
     "info" : "MethodDeclaration[3069-3311]:MethodDeclaration[3370-3612]"
   } ],
   "mappings" : [ {
+    "left" : "/**\n   * Using this constructor means you have to set and initialize the internalPool yourself.\n   */",
+    "right" : "/**\n   * Using this constructor means you have to set and initialize the internalPool yourself.\n   */",
+    "info" : "Javadoc[450-551]:Javadoc[450-551]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[554-560]:Modifier[554-560]"
+  }, {
+    "left" : "Pool",
+    "right" : "Pool",
+    "info" : "SimpleName[561-565]:SimpleName[561-565]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[568-573]:Block[568-573]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[577-586]:MarkerAnnotation[577-586]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[589-595]:Modifier[589-595]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[596-600]:PrimitiveType[596-600]"
+  }, {
+    "left" : "close",
+    "right" : "close",
+    "info" : "SimpleName[601-606]:SimpleName[601-606]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -85,6 +113,18 @@
     "right" : "destroy();",
     "info" : "ExpressionStatement[615-625]:ExpressionStatement[615-625]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[633-639]:Modifier[633-639]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[640-647]:PrimitiveType[640-647]"
+  }, {
+    "left" : "isClosed",
+    "right" : "isClosed",
+    "info" : "SimpleName[648-656]:SimpleName[648-656]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[659-705]:Block[659-705]"
@@ -93,6 +133,22 @@
     "right" : "return this.internalPool.isClosed();",
     "info" : "ReturnStatement[665-701]:ReturnStatement[665-701]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[709-715]:Modifier[709-715]"
+  }, {
+    "left" : "Pool",
+    "right" : "Pool",
+    "info" : "SimpleName[716-720]:SimpleName[716-720]"
+  }, {
+    "left" : "final GenericObjectPoolConfig poolConfig",
+    "right" : "final GenericObjectPoolConfig poolConfig",
+    "info" : "SingleVariableDeclaration[721-761]:SingleVariableDeclaration[721-761]"
+  }, {
+    "left" : "PooledObjectFactory<T> factory",
+    "right" : "PooledObjectFactory<T> factory",
+    "info" : "SingleVariableDeclaration[763-793]:SingleVariableDeclaration[763-793]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[795-835]:Block[795-835]"
@@ -100,6 +156,26 @@
     "left" : "initPool(poolConfig, factory);",
     "right" : "initPool(poolConfig, factory);",
     "info" : "ExpressionStatement[801-831]:ExpressionStatement[801-831]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[839-845]:Modifier[839-845]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[846-850]:PrimitiveType[846-850]"
+  }, {
+    "left" : "initPool",
+    "right" : "initPool",
+    "info" : "SimpleName[851-859]:SimpleName[851-859]"
+  }, {
+    "left" : "final GenericObjectPoolConfig poolConfig",
+    "right" : "final GenericObjectPoolConfig poolConfig",
+    "info" : "SingleVariableDeclaration[860-900]:SingleVariableDeclaration[860-900]"
+  }, {
+    "left" : "PooledObjectFactory<T> factory",
+    "right" : "PooledObjectFactory<T> factory",
+    "info" : "SingleVariableDeclaration[902-932]:SingleVariableDeclaration[902-932]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -133,6 +209,18 @@
     "right" : "this.internalPool = new GenericObjectPool<T>(factory, poolConfig);",
     "info" : "ExpressionStatement[1064-1130]:ExpressionStatement[1064-1130]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1138-1144]:Modifier[1138-1144]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "SimpleType[1145-1146]:SimpleType[1145-1146]"
+  }, {
+    "left" : "getResource",
+    "right" : "getResource",
+    "info" : "SimpleName[1147-1158]:SimpleName[1147-1158]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[1161-1339]:Block[1161-1339]"
@@ -156,6 +244,30 @@
     "left" : "throw new JedisConnectionException(\"Could not get a resource from the pool\", e);",
     "right" : "throw new JedisConnectionException(\"Could not get a resource from the pool\", e);",
     "info" : "ThrowStatement[1249-1329]:ThrowStatement[1249-1329]"
+  }, {
+    "left" : "/**\n   * @deprecated starting from Jedis 3.0 this method won't exist. Resouce cleanup should be done\n   *             using @see {@link redis.clients.jedis.Jedis#close()}\n   */",
+    "right" : "/**\n   * @deprecated starting from Jedis 3.0 this method won't exist. Resouce cleanup should be done\n   *             using @see {@link redis.clients.jedis.Jedis#close()}\n   */",
+    "info" : "Javadoc[1343-1519]:Javadoc[1343-1519]"
+  }, {
+    "left" : "@Deprecated",
+    "right" : "@Deprecated",
+    "info" : "MarkerAnnotation[1522-1533]:MarkerAnnotation[1522-1533]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1536-1542]:Modifier[1536-1542]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1543-1547]:PrimitiveType[1543-1547]"
+  }, {
+    "left" : "returnResourceObject",
+    "right" : "returnResourceObject",
+    "info" : "SimpleName[1548-1568]:SimpleName[1548-1568]"
+  }, {
+    "left" : "final T resource",
+    "right" : "final T resource",
+    "info" : "SingleVariableDeclaration[1569-1585]:SingleVariableDeclaration[1569-1585]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -193,6 +305,22 @@
     "right" : "throw new JedisException(\"Could not return the resource to the pool\", e);",
     "info" : "ThrowStatement[1724-1797]:ThrowStatement[1724-1797]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1811-1817]:Modifier[1811-1817]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1818-1822]:PrimitiveType[1818-1822]"
+  }, {
+    "left" : "returnBrokenResource",
+    "right" : "returnBrokenResource",
+    "info" : "SimpleName[1823-1843]:SimpleName[1823-1843]"
+  }, {
+    "left" : "final T resource",
+    "right" : "final T resource",
+    "info" : "SingleVariableDeclaration[1844-1860]:SingleVariableDeclaration[1844-1860]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[1862-1945]:Block[1862-1945]"
@@ -208,6 +336,22 @@
     "left" : "returnBrokenResourceObject(resource);",
     "right" : "returnBrokenResourceObject(resource);",
     "info" : "ExpressionStatement[1898-1935]:ExpressionStatement[1898-1935]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1949-1955]:Modifier[1949-1955]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1956-1960]:PrimitiveType[1956-1960]"
+  }, {
+    "left" : "returnResource",
+    "right" : "returnResource",
+    "info" : "SimpleName[1961-1975]:SimpleName[1961-1975]"
+  }, {
+    "left" : "final T resource",
+    "right" : "final T resource",
+    "info" : "SingleVariableDeclaration[1976-1992]:SingleVariableDeclaration[1976-1992]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -225,6 +369,18 @@
     "right" : "returnResourceObject(resource);",
     "info" : "ExpressionStatement[2030-2061]:ExpressionStatement[2030-2061]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2075-2081]:Modifier[2075-2081]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2082-2086]:PrimitiveType[2082-2086]"
+  }, {
+    "left" : "destroy",
+    "right" : "destroy",
+    "info" : "SimpleName[2087-2094]:SimpleName[2087-2094]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2097-2127]:Block[2097-2127]"
@@ -232,6 +388,22 @@
     "left" : "closeInternalPool();",
     "right" : "closeInternalPool();",
     "info" : "ExpressionStatement[2103-2123]:ExpressionStatement[2103-2123]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[2131-2140]:Modifier[2131-2140]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2141-2145]:PrimitiveType[2141-2145]"
+  }, {
+    "left" : "returnBrokenResourceObject",
+    "right" : "returnBrokenResourceObject",
+    "info" : "SimpleName[2146-2172]:SimpleName[2146-2172]"
+  }, {
+    "left" : "final T resource",
+    "right" : "final T resource",
+    "info" : "SingleVariableDeclaration[2173-2189]:SingleVariableDeclaration[2173-2189]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -257,6 +429,18 @@
     "right" : "throw new JedisException(\"Could not return the resource to the pool\", e);",
     "info" : "ThrowStatement[2284-2357]:ThrowStatement[2284-2357]"
   }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[2371-2380]:Modifier[2371-2380]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2381-2385]:PrimitiveType[2381-2385]"
+  }, {
+    "left" : "closeInternalPool",
+    "right" : "closeInternalPool",
+    "info" : "SimpleName[2386-2403]:SimpleName[2386-2403]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2406-2548]:Block[2406-2548]"
@@ -280,6 +464,18 @@
     "left" : "throw new JedisException(\"Could not destroy the pool\", e);",
     "right" : "throw new JedisException(\"Could not destroy the pool\", e);",
     "info" : "ThrowStatement[2480-2538]:ThrowStatement[2480-2538]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2552-2558]:Modifier[2552-2558]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[2559-2562]:PrimitiveType[2559-2562]"
+  }, {
+    "left" : "getNumActive",
+    "right" : "getNumActive",
+    "info" : "SimpleName[2563-2575]:SimpleName[2563-2575]"
   }, {
     "left" : "{}",
     "right" : "{}",
@@ -305,6 +501,18 @@
     "right" : "return this.internalPool.getNumActive();",
     "info" : "ReturnStatement[2677-2717]:ReturnStatement[2634-2674]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2725-2731]:Modifier[2682-2688]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[2732-2735]:PrimitiveType[2689-2692]"
+  }, {
+    "left" : "getNumIdle",
+    "right" : "getNumIdle",
+    "info" : "SimpleName[2736-2746]:SimpleName[2693-2703]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2749-2890]:Block[2706-2804]"
@@ -329,6 +537,18 @@
     "right" : "return this.internalPool.getNumIdle();",
     "info" : "ReturnStatement[2848-2886]:ReturnStatement[2762-2800]"
   }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2894-2900]:Modifier[2808-2814]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[2901-2904]:PrimitiveType[2815-2818]"
+  }, {
+    "left" : "getNumWaiters",
+    "right" : "getNumWaiters",
+    "info" : "SimpleName[2905-2918]:SimpleName[2819-2832]"
+  }, {
     "left" : "{}",
     "right" : "{}",
     "info" : "Block[2921-3065]:Block[2835-2936]"
@@ -352,6 +572,22 @@
     "left" : "return this.internalPool.getNumWaiters();",
     "right" : "return this.internalPool.getNumWaiters();",
     "info" : "ReturnStatement[3020-3061]:ReturnStatement[2891-2932]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3069-3075]:Modifier[3370-3376]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3076-3080]:PrimitiveType[3377-3381]"
+  }, {
+    "left" : "addObjects",
+    "right" : "addObjects",
+    "info" : "SimpleName[3081-3091]:SimpleName[3382-3392]"
+  }, {
+    "left" : "int count",
+    "right" : "int count",
+    "info" : "SingleVariableDeclaration[3092-3101]:SingleVariableDeclaration[3393-3402]"
   }, {
     "left" : "{}",
     "right" : "{}",

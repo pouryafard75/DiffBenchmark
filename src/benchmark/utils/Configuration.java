@@ -27,6 +27,6 @@ public class Configuration {
         toolPathMap.put("GTS", GTS_PATH);
 //        toolPathMap.put("IJM", IJM_PATH);
 //        toolPathMap.put("MTD", MTD_PATH);
-        System.out.println("Finished populating tools...");
+//        System.out.println("Finished populating tools...");
     }
 }

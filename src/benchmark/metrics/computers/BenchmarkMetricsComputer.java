@@ -29,11 +29,12 @@ import static benchmark.utils.PathResolver.repoFolder;
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {
 
-    private static List<CaseInfo> infos;
-    private static Map<CaseInfo, Set<ASTDiff>> diffs = new LinkedHashMap<>();
+    private final List<CaseInfo> infos;
+    private Map<CaseInfo, Set<ASTDiff>> diffs = new LinkedHashMap<>();
+    private static final ObjectMapper mapper = new ObjectMapper();
 
-    public BenchmarkMetricsComputer() throws Exception {
-        fetchCases();
+    public BenchmarkMetricsComputer(List<CaseInfo> info) throws Exception {
+        this.infos = info;
         runRMLocally();
     }
     public String[] getActiveTools(){
@@ -48,17 +49,6 @@ public class BenchmarkMetricsComputer {
             diffs.put(info, astDiffs);
         }
     }
-
-
-    private void fetchCases() throws IOException {
-        infos = mapper.readValue(new File(casesPath), new TypeReference<List<CaseInfo>>(){});
-//        infos = new ArrayList<>();
-//        infos.add(new CaseInfo("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825"));
-        System.out.println("Finished fetching cases...");
-    }
-
-    private static final ObjectMapper mapper = new ObjectMapper();
-
     public List<DiffComparisonResult> generateBenchmarkStats() throws IOException {
 
         List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
@@ -98,7 +88,6 @@ public class BenchmarkMetricsComputer {
                             diffComparisonResult.putStats(entry.getKey(), diffStats);
                         }
                         DiffIgnore diffIgnore = new DiffIgnore(astDiff.src.getRoot(), astDiff.dst.getRoot(), astDiff.getMultiMappings());
-                        diffIgnore.run();
                         diffComparisonResult.setIgnore(diffIgnore);
                         benchmarkStats.add(diffComparisonResult);
                     });

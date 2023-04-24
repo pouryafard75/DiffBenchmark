@@ -7,4 +7,5 @@ import shaded.org.eclipse.jdt.internal.compiler.impl.Constant;
 public class AdditionalASTConstants {
     public static final String COMPILATION_UNIT = "CompilationUnit";
     public static final String JAVA_DOC = "Javadoc";
+    public static final String SIMPLE_TYPE = "SimpleType";
 }

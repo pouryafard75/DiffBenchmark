@@ -30,24 +30,21 @@ public class BenchmarkHumanReadableDiffGenerator {
         Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
         for (ASTDiff astDiff : astDiffs) {
             HumanReadableDiffGenerator refactoringMinerHDG = new HumanReadableDiffGenerator(repo, commit, astDiff);
-            refactoringMinerHDG.make();
             refactoringMinerHDG.write(Configuration.RMD_PATH);
-
-            oracleGeneratorFromMappingStore(new CompositeMatchers.ClassicGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff).write(Configuration.GTG_PATH);
-            oracleGeneratorFromMappingStore(new CompositeMatchers.SimpleGumtree().match(astDiff.src.getRoot(), astDiff.dst.getRoot()), repo, commit, astDiff).write(Configuration.GTS_PATH);
-
+            makeHumanReadableDiffGeneratorFromMatcher(new CompositeMatchers.ClassicGumtree(), repo, commit, astDiff).write(Configuration.GTG_PATH);
+            makeHumanReadableDiffGeneratorFromMatcher(new CompositeMatchers.SimpleGumtree(), repo, commit, astDiff).write(Configuration.GTS_PATH);
             //TODO: make IJM and MTDiff work + check the active tools
         }
     }
 
-    private static HumanReadableDiffGenerator oracleGeneratorFromMappingStore(MappingStore match, String repo, String commit, ASTDiff astDiff) {
+    private static HumanReadableDiffGenerator makeHumanReadableDiffGeneratorFromMatcher(CompositeMatchers.CompositeMatcher matcher , String repo, String commit, ASTDiff astDiff) {
+        MappingStore match = matcher.match(astDiff.src.getRoot(), astDiff.dst.getRoot());
         ExtendedMultiMappingStore GTG_mappingStore = new ExtendedMultiMappingStore(astDiff.src.getRoot(), astDiff.dst.getRoot());
         GTG_mappingStore.add(match);
         ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, GTG_mappingStore);
+        if (diff.mappings.size() != match.size()) throw new RuntimeException("Mapping has been lost!");
         diff.setSrcContents(astDiff.getSrcContents());
         diff.setDstContents(astDiff.getDstContents());
-        HumanReadableDiffGenerator toolHD = new HumanReadableDiffGenerator(repo, commit, diff);
-        toolHD.make();
-        return toolHD;
+        return new HumanReadableDiffGenerator(repo, commit, diff);
     }
 }

@@ -62,11 +62,9 @@ $(function() {
         if ($(this).hasClass("selected")) {
             $("span.mv.token, span.token.upd").removeClass("selected");
         } else {
-            $("span.mv.token, span.token.upd").removeClass("selected");
+            $("span.mv.token, span.token.upd, span.token.mm").removeClass("selected");
             var eltId = $(this).attr("id");
             var refEltId = getMappedElement(eltId);
-            console.log(refEltId);
-            console.log($("#" + refEltId).position());
             $("#" + refEltId).addClass("selected");
             $(this).addClass("selected");
             var elmntToView = document.getElementById(refEltId);

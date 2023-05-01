@@ -18,15 +18,15 @@ public class Configuration {
     public static Map<String, String> toolPathMap = new LinkedHashMap<>();
 
     static{
+        toolPathMap.put("RMD", RMD_PATH);
         populateTools();
     }
     private static void populateTools() {
 //        toolPathMap.put("GOD", GOD_PATH);
-        toolPathMap.put("RMD", RMD_PATH);
-        toolPathMap.put("GTG", GTG_PATH);
-        toolPathMap.put("GTS", GTS_PATH);
-//        toolPathMap.put("IJM", IJM_PATH);
-//        toolPathMap.put("MTD", MTD_PATH);
+//        toolPathMap.put("GTG", GTG_PATH);
+//        toolPathMap.put("GTS", GTS_PATH);
+        toolPathMap.put("IJM", IJM_PATH);
+        toolPathMap.put("MTD", MTD_PATH);
 //        System.out.println("Finished populating tools...");
     }
 }

@@ -1,7 +1,7 @@
 package gui.webdiff;
 
 import com.github.gumtreediff.utils.Pair;
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.util.*;
 

@@ -1,6 +1,5 @@
 package gui.webdiff;
 
-import antlr.collections.AST;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.TreeClassifier;
 import com.github.gumtreediff.tree.Tree;
@@ -8,9 +7,9 @@ import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.utils.SequenceAlgorithms;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ExtendedTreeClassifier;
+import org.refactoringminer.astDiff.actions.classifiers.ExtendedTreeClassifier;
 import org.refactoringminer.astDiff.actions.model.MultiMove;
+import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -67,17 +66,17 @@ public final class VanillaDiffHtmlBuilder {
 
             for (Tree t : diff.src.getRoot().preOrder()) {
                 if (c.getMovedSrcs().contains(t)) {
-                    mappingIds.put(diff.getMultiMappings().getDsts(t).iterator().next(), mId);
+                    mappingIds.put(diff.getAllMappings().getDsts(t).iterator().next(), mId);
                     ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
                     ltags.addTags(t.getPos(), String.format(
                             SRC_MV_SPAN, "token mv", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
                 }
                 if (c.getUpdatedSrcs().contains(t)) {
-                    mappingIds.put(diff.getMultiMappings().getDsts(t).iterator().next(), mId);
+                    mappingIds.put(diff.getAllMappings().getDsts(t).iterator().next(), mId);
                     ltags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
                     ltags.addTags(t.getPos(), String.format(
                             SRC_MV_SPAN, "token upd", mId++, tooltip(diff.src, t)), t.getEndPos(), END_SPAN);
-                    List<int[]> hunks = SequenceAlgorithms.hunks(t.getLabel(), diff.getMultiMappings().getDsts(t).iterator().next().getLabel());
+                    List<int[]> hunks = SequenceAlgorithms.hunks(t.getLabel(), diff.getAllMappings().getDsts(t).iterator().next().getLabel());
                     for (int[] hunk : hunks)
                         ltags.addTags(t.getPos() + hunk[0], UPD_SPAN, t.getPos() + hunk[1], END_SPAN);
 
@@ -117,7 +116,7 @@ public final class VanillaDiffHtmlBuilder {
                     rtags.addStartTag(t.getPos(), String.format(ID_SPAN, uId++));
                     rtags.addTags(t.getPos(), String.format(
                             DST_MV_SPAN, "token upd", dId, tooltip(diff.dst, t)), t.getEndPos(), END_SPAN);
-                    List<int[]> hunks = SequenceAlgorithms.hunks(diff.getMultiMappings().getSrcs(t).iterator().next().getLabel(), t.getLabel());
+                    List<int[]> hunks = SequenceAlgorithms.hunks(diff.getAllMappings().getSrcs(t).iterator().next().getLabel(), t.getLabel());
                     for (int[] hunk : hunks)
                         rtags.addTags(t.getPos() + hunk[2], UPD_SPAN, t.getPos() + hunk[3], END_SPAN);
                 }

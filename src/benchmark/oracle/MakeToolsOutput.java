@@ -15,10 +15,10 @@ public class MakeToolsOutput {
         BenchmarkHumanReadableDiffGenerator benchmarkHumanReadableDiffGenerator = new BenchmarkHumanReadableDiffGenerator();
         ObjectMapper mapper = new ObjectMapper();
         List<CaseInfo> infos = mapper.readValue(new File(Configuration.casesPath), new TypeReference<List<CaseInfo>>(){});
-        infos = new ArrayList<>();
-        infos.add(new CaseInfo("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825"));
+//        infos = new ArrayList<>();
+//        infos.add(new CaseInfo("https://github.com/raphw/byte-buddy/commit/f1dfb66a368760e77094ac1e3860b332cf0e4eb5"));
         for (CaseInfo info : infos) {
-            benchmarkHumanReadableDiffGenerator.writeToFiles(info);
+            benchmarkHumanReadableDiffGenerator.generate(info);
         }
     }
 

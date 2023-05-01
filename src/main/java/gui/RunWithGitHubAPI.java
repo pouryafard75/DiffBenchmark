@@ -1,7 +1,7 @@
 package gui;
 
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import gui.webdiff.WebDiff;

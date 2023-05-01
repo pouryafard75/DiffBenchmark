@@ -4,11 +4,10 @@ import benchmark.utils.CaseInfo;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.models.DiffIgnore;
 import benchmark.metrics.models.DiffStats;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
 import benchmark.oracle.models.HumanReadableDiff;
@@ -87,7 +86,7 @@ public class BenchmarkMetricsComputer {
                             DiffStats diffStats = compareHumanReadableDiffs(godHRD, toolHRD);
                             diffComparisonResult.putStats(entry.getKey(), diffStats);
                         }
-                        DiffIgnore diffIgnore = new DiffIgnore(astDiff.src.getRoot(), astDiff.dst.getRoot(), astDiff.getMultiMappings());
+                        DiffIgnore diffIgnore = new DiffIgnore(astDiff.src.getRoot(), astDiff.dst.getRoot(), astDiff.getAllMappings());
                         diffComparisonResult.setIgnore(diffIgnore);
                         benchmarkStats.add(diffComparisonResult);
                     });

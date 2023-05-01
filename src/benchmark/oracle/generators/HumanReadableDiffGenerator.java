@@ -2,19 +2,17 @@ package benchmark.oracle.generators;
 
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.utils.AdditionalASTConstants;
 import benchmark.utils.PathResolver;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.github.gumtreediff.matchers.Mapping;
-import com.github.gumtreediff.tree.DefaultTree;
 import com.github.gumtreediff.tree.Tree;
 import org.apache.commons.io.FileUtils;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.matchers.Constants;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.utils.Constants;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,7 +42,7 @@ public class HumanReadableDiffGenerator {
         this.dstPath = astDiff.getDstPath();
         this.srcContent = astDiff.getSrcContents();
         this.dstContent = astDiff.getDstContents();
-        this.mappings = astDiff.getMultiMappings();
+        this.mappings = astDiff.getAllMappings();
         result = new HumanReadableDiff();
         make();
     }
@@ -135,7 +133,7 @@ public class HumanReadableDiffGenerator {
         return false;
     }
     public static boolean isPartOfJavadoc(Tree srcSubTree) {
-        if (srcSubTree.getType().name.equals(AdditionalASTConstants.JAVA_DOC))
+        if (srcSubTree.getType().name.equals(Constants.JAVA_DOC))
             return true;
         if (srcSubTree.getParent() == null) return false;
         return isPartOfJavadoc(srcSubTree.getParent());
@@ -143,8 +141,8 @@ public class HumanReadableDiffGenerator {
     public static boolean isInterFileMapping(Mapping mapping, Tree src, Tree dst) {
         if (mapping.first.getParent() != null & mapping.second.getParents() != null)
         {
-            Tree srcLast = getParentUntilType(mapping.first,AdditionalASTConstants.COMPILATION_UNIT);
-            Tree dstLast = getParentUntilType(mapping.second,AdditionalASTConstants.COMPILATION_UNIT);
+            Tree srcLast = getParentUntilType(mapping.first,Constants.COMPILATION_UNIT);
+            Tree dstLast = getParentUntilType(mapping.second,Constants.COMPILATION_UNIT);
             if (!srcLast.equals(src) || !dstLast.equals(dst))
                 return true;
         }
@@ -158,7 +156,7 @@ public class HumanReadableDiffGenerator {
             if (isPartOfJavadoc(child)) continue;
             if (child.getType().name.equals(Constants.SIMPLE_NAME))
                 _met = true;
-            if (_met && !child.getType().name.equals(AdditionalASTConstants.SIMPLE_TYPE))
+            if (_met && !child.getType().name.equals(Constants.SIMPLE_TYPE))
                 break;
             Set<Tree> dsts = mappings.getDsts(child);
             if (dsts == null) continue;

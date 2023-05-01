@@ -1,21 +1,16 @@
 package benchmark.metrics.models;
 
 import benchmark.oracle.models.AbstractMapping;
-import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.utils.AdditionalASTConstants;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.matchers.Constants;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.utils.Constants;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.Set;
 
-import static benchmark.oracle.generators.GeneratorUtils.*;
-import static benchmark.oracle.generators.GeneratorUtils.generateFieldSignature;
 import static benchmark.oracle.generators.HumanReadableDiffGenerator.*;
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.isStatement;
 
@@ -162,7 +157,7 @@ public class DiffIgnore {
         int result = 0;
         for (Tree child : mapping.first.getChildren()) {
             if (child.getType().name.equals(Constants.BLOCK)) continue;
-            if (child.getType().name.equals(AdditionalASTConstants.JAVA_DOC)) continue;
+            if (child.getType().name.equals(Constants.JAVA_DOC)) continue;
             result += 1;
         }
         return result;

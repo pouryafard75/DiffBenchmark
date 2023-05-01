@@ -2,21 +2,6 @@ package benchmark.gui;
 
 import benchmark.gui.web.BenchmarkWebDiff;
 import benchmark.gui.web.BenchmarkWebDiffFactory;
-import benchmark.oracle.generators.changeAPI.IJM;
-import benchmark.oracle.generators.changeAPI.MTDiff;
-import com.github.gumtreediff.actions.Diff;
-import com.github.gumtreediff.actions.EditScript;
-import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
-import com.github.gumtreediff.matchers.CompositeMatchers;
-import com.github.gumtreediff.matchers.MappingStore;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.utils.URLHelper;
-import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
-
-import java.util.LinkedHashSet;
-import java.util.Set;
-
-import static benchmark.utils.Helpers.diffByGumTree;
 
 /* Created by pourya on 2022-12-26 9:30 p.m. */
 public class CompareWithGitHubAPI {
@@ -27,6 +12,7 @@ public class CompareWithGitHubAPI {
         url = "https://github.com/jOOQ/jOOQ/commit/227254cf769f3e821ed1b2ef2d88c4ec6b20adea";
         url = "https://github.com/dropwizard/metrics/commit/4c6ab3d77cc67c7a91155d884077520dcf1509c6";
         url = "https://github.com/Atmosphere/atmosphere/commit/69c229b7611ff8c6a20ff2d4da917a68c1cde64a";
+        url = "https://github.com/pouryafard75/TestCases/commit/c7f965e7804a01d1b0ea382628db3875254e32f7";
         BenchmarkWebDiff benchmarkWebDiff = BenchmarkWebDiffFactory.withURL(url);
         benchmarkWebDiff.run();
     }

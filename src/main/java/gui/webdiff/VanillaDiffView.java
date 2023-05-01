@@ -1,7 +1,6 @@
 package gui.webdiff;
 
 import com.github.gumtreediff.actions.Diff;
-import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.rendersnake.DocType;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;

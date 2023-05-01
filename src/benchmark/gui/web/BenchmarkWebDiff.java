@@ -4,7 +4,7 @@ import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.utils.Pair;
 import gui.webdiff.DirComparator;
 import gui.webdiff.VanillaDiffView;
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
 import spark.Spark;

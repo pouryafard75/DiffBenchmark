@@ -1,8 +1,8 @@
 package gui.webdiff;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ExtendedTreeClassifier;
+import org.refactoringminer.astDiff.actions.classifiers.ExtendedTreeClassifier;
 import org.refactoringminer.astDiff.actions.model.MultiMove;
+import org.refactoringminer.astDiff.models.ASTDiff;
 import org.rendersnake.DocType;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
@@ -126,7 +126,7 @@ public class MonacoDiffView implements Renderable {
         b.append("[");
         for (Tree t: diff.src.getRoot().preOrder()) {
             if (c.getMovedSrcs().contains(t) || c.getUpdatedSrcs().contains(t)) {
-                Tree d = diff.getMultiMappings().getDsts(t).iterator().next();
+                Tree d = diff.getAllMappings().getDsts(t).iterator().next();
                 b.append(String.format("[%s, %s, %s, %s], ", t.getPos(), t.getEndPos(), d.getPos(), d.getEndPos()));
             }
         }

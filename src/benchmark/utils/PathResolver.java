@@ -15,4 +15,17 @@ public class PathResolver {
     public static String repoFolder(String repo) {
         return repo.replace("https://github.com/", "").replace(".git", "").replace("/", ".");
     }
+
+    public static String getAfterDir(String projectDir, String bugID) {
+        return getProperDir("before",projectDir,bugID);
+    }
+
+    public static String getBeforeDir(String projectDir, String bugID) {
+        return getProperDir("after",projectDir,bugID);
+    }
+
+    private static String getProperDir(String prefix, String projectDir, String bugID) {
+        String dir =  System.getProperty("user.dir") + "/datasets/defects4j/";
+        return dir + prefix + "/" + projectDir + "/" + bugID;
+    }
 }

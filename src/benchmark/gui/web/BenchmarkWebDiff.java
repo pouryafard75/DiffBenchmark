@@ -3,6 +3,7 @@ package benchmark.gui.web;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.utils.Pair;
 import gui.webdiff.DirComparator;
+import gui.webdiff.MonacoDiffView;
 import gui.webdiff.VanillaDiffView;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.rendersnake.HtmlCanvas;
@@ -69,6 +70,13 @@ public class BenchmarkWebDiff {
                     astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, false);
             return render(view);
         });
+        get("/RMD-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("RefactoringMiner", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, id,false);
+            return render(view);
+        });
         get("/GTG/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             int i = id;
@@ -82,6 +90,21 @@ public class BenchmarkWebDiff {
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("GumTree-Greedy", astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+            return render(view);
+        });
+        get("/GTG-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<Diff> iterator = gtgDiff.iterator();
+            Diff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("GumTree-Greedy", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
             return render(view);
         });
         get("/GTS/:id", (request, response) -> {

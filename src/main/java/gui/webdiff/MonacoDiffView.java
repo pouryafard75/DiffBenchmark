@@ -1,4 +1,7 @@
 package gui.webdiff;
+import antlr.collections.AST;
+import com.github.gumtreediff.actions.Diff;
+import com.github.gumtreediff.actions.TreeClassifier;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.actions.classifiers.ExtendedTreeClassifier;
 import org.refactoringminer.astDiff.actions.model.MultiMove;
@@ -12,14 +15,16 @@ import java.io.IOException;
 import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class MonacoDiffView implements Renderable {
+    private String toolName;
     private String srcFileName;
     private String dstFileName;
 
-    private ASTDiff diff;
+    private Diff diff;
 
     private int id;
 
-    public MonacoDiffView(String srcFileName, String dstFileName,  String srcFileContent, String dstFileContent, ASTDiff diff, int id, boolean dump) {
+    public MonacoDiffView(String toolName, String srcFileName, String dstFileName, String srcFileContent, String dstFileContent, Diff diff, int id, boolean dump) {
+        this.toolName = toolName;
         this.srcFileName = srcFileName;
         this.dstFileName = dstFileName;
         this.diff = diff;
@@ -35,7 +40,7 @@ public class MonacoDiffView implements Renderable {
             .body(class_("h-100").style("overflow: hidden;"))
                 .div(class_("container-fluid h-100"))
                     .div(class_("row"))
-                        .render(new MenuBar())
+                    .render(new MenuBar(toolName))
                     ._div()
                     .div(class_("row h-100"))
                         .div(class_("col-6 h-100"))
@@ -59,79 +64,131 @@ public class MonacoDiffView implements Renderable {
     }
 
     private String getLeftJsConfig() {
-        ExtendedTreeClassifier c = (ExtendedTreeClassifier)diff.createRootNodesClassifier();
-        StringBuilder b = new StringBuilder();
-        b.append("{");
-        b.append("url:").append("\"/left/" + id + "\"").append(",");
-        b.append("ranges: [");
-        for (Tree t: diff.src.getRoot().preOrder()) {
-            if (c.getMovedSrcs().contains(t))
-                appendRange(b, t, "moved", null);
-            if (c.getUpdatedSrcs().contains(t))
-                appendRange(b, t, "updated", null);
-            if (c.getDeletedSrcs().contains(t))
-                appendRange(b, t, "deleted", null);
-            if (c.getSrcMoveOutTreeMap().containsKey(t))
-                appendRange(b,t,"moveOut", c.getSrcMoveOutTreeMap().get(t).toString());
-            if (c.getMultiMapSrc().containsKey(t))
-            {
-                String tag = "mm";
-                boolean _isUpdated = ((MultiMove)(c.getMultiMapSrc().get(t))).isUpdated();
-                if (_isUpdated) {
-                    tag += " updOnTop";
+        if (diff instanceof ASTDiff) {
+            ExtendedTreeClassifier c = (ExtendedTreeClassifier) diff.createRootNodesClassifier();
+            StringBuilder b = new StringBuilder();
+            b.append("{");
+            b.append("url:").append("\"/left/" + id + "\"").append(",");
+            b.append("ranges: [");
+            for (Tree t : diff.src.getRoot().preOrder()) {
+                if (c.getMovedSrcs().contains(t))
+                    appendRange(b, t, "moved", null);
+                if (c.getUpdatedSrcs().contains(t))
+                    appendRange(b, t, "updated", null);
+                if (c.getDeletedSrcs().contains(t))
+                    appendRange(b, t, "deleted", null);
+                if (c.getSrcMoveOutTreeMap().containsKey(t))
+                    appendRange(b, t, "moveOut", c.getSrcMoveOutTreeMap().get(t).toString());
+                if (c.getMultiMapSrc().containsKey(t)) {
+                    String tag = "mm";
+                    boolean _isUpdated = ((MultiMove) (c.getMultiMapSrc().get(t))).isUpdated();
+                    if (_isUpdated) {
+                        tag += " updOnTop";
+                    }
+                    appendRange(b, t, tag, null);
                 }
-                appendRange(b,t,tag,null);
             }
+            b.append("]").append(",");
+            b.append("}");
+            return b.toString();
         }
-        b.append("]").append(",");
-        b.append("}");
-        return b.toString();
+        else {
+            TreeClassifier c = diff.createRootNodesClassifier();
+            StringBuilder b = new StringBuilder();
+            b.append("{");
+            b.append("url:").append("\"/left/" + id + "\"").append(",");
+            b.append("ranges: [");
+            for (Tree t: diff.src.getRoot().preOrder()) {
+                if (c.getMovedSrcs().contains(t))
+                    appendRange(b, t, "moved","");
+                if (c.getUpdatedSrcs().contains(t))
+                    appendRange(b, t, "updated","");
+                if (c.getDeletedSrcs().contains(t))
+                    appendRange(b, t, "deleted","");
+            }
+            b.append("]").append(",");
+            b.append("}");
+            return b.toString();
+        }
     }
 
     private String getRightJsConfig() {
-        ExtendedTreeClassifier c = (ExtendedTreeClassifier)diff.createRootNodesClassifier();
-        StringBuilder b = new StringBuilder();
-        b.append("{");
-        b.append("url:").append("\"/right/" + id + "\"").append(",");
-        b.append("ranges: [");
-        for (Tree t: diff.dst.getRoot().preOrder()) {
-            if (c.getMovedDsts().contains(t))
-                appendRange(b, t, "moved",null);
-            if (c.getUpdatedDsts().contains(t))
-                appendRange(b, t, "updated",null);
-            if (c.getInsertedDsts().contains(t))
-                appendRange(b, t, "inserted",null);
-            if (c.getDstMoveInTreeMap().containsKey(t))
-                appendRange(b,t,"moveIn",c.getDstMoveInTreeMap().get(t).toString());
-            if (c.getMultiMapDst().containsKey(t))
-            {
-                String tag = "mm";
-                boolean _isUpdated = ((MultiMove)(c.getMultiMapDst().get(t))).isUpdated();
-                if (_isUpdated)
-                {
-                    tag += " updOnTop";
+        if (diff instanceof ASTDiff) {
+            ExtendedTreeClassifier c = (ExtendedTreeClassifier) diff.createRootNodesClassifier();
+            StringBuilder b = new StringBuilder();
+            b.append("{");
+            b.append("url:").append("\"/right/" + id + "\"").append(",");
+            b.append("ranges: [");
+            for (Tree t : diff.dst.getRoot().preOrder()) {
+                if (c.getMovedDsts().contains(t))
+                    appendRange(b, t, "moved", null);
+                if (c.getUpdatedDsts().contains(t))
+                    appendRange(b, t, "updated", null);
+                if (c.getInsertedDsts().contains(t))
+                    appendRange(b, t, "inserted", null);
+                if (c.getDstMoveInTreeMap().containsKey(t))
+                    appendRange(b, t, "moveIn", c.getDstMoveInTreeMap().get(t).toString());
+                if (c.getMultiMapDst().containsKey(t)) {
+                    String tag = "mm";
+                    boolean _isUpdated = ((MultiMove) (c.getMultiMapDst().get(t))).isUpdated();
+                    if (_isUpdated) {
+                        tag += " updOnTop";
+                    }
+                    appendRange(b, t, tag, null);
                 }
-                appendRange(b,t,tag,null);
-            }
 
+            }
+            b.append("]").append(",");
+            b.append("}");
+            return b.toString();
         }
-        b.append("]").append(",");
-        b.append("}");
-        return b.toString();
+        else{
+            TreeClassifier c = diff.createRootNodesClassifier();
+            StringBuilder b = new StringBuilder();
+            b.append("{");
+            b.append("url:").append("\"/right/" + id + "\"").append(",");
+            b.append("ranges: [");
+            for (Tree t: diff.dst.getRoot().preOrder()) {
+                if (c.getMovedDsts().contains(t))
+                    appendRange(b, t, "moved","");
+                if (c.getUpdatedDsts().contains(t))
+                    appendRange(b, t, "updated","");
+                if (c.getInsertedDsts().contains(t))
+                    appendRange(b, t, "inserted","");
+            }
+            b.append("]").append(",");
+            b.append("}");
+            return b.toString();
+        }
     }
 
     private String getMappingsJsConfig() {
-        ExtendedTreeClassifier c = (ExtendedTreeClassifier)diff.createRootNodesClassifier();
-        StringBuilder b = new StringBuilder();
-        b.append("[");
-        for (Tree t: diff.src.getRoot().preOrder()) {
-            if (c.getMovedSrcs().contains(t) || c.getUpdatedSrcs().contains(t)) {
-                Tree d = diff.getAllMappings().getDsts(t).iterator().next();
-                b.append(String.format("[%s, %s, %s, %s], ", t.getPos(), t.getEndPos(), d.getPos(), d.getEndPos()));
+        if (diff instanceof ASTDiff) {
+            ExtendedTreeClassifier c = (ExtendedTreeClassifier) diff.createRootNodesClassifier();
+            StringBuilder b = new StringBuilder();
+            b.append("[");
+            for (Tree t : diff.src.getRoot().preOrder()) {
+                if (c.getMovedSrcs().contains(t) || c.getUpdatedSrcs().contains(t)) {
+                    Tree d = ((ASTDiff)diff).getAllMappings().getDsts(t).iterator().next();
+                    b.append(String.format("[%s, %s, %s, %s], ", t.getPos(), t.getEndPos(), d.getPos(), d.getEndPos()));
+                }
             }
+            b.append("]").append(",");
+            return b.toString();
         }
-        b.append("]").append(",");
-        return b.toString();
+        else {
+            TreeClassifier c = diff.createRootNodesClassifier();
+            StringBuilder b = new StringBuilder();
+            b.append("[");
+            for (Tree t: diff.src.getRoot().preOrder()) {
+                if (c.getMovedSrcs().contains(t) || c.getUpdatedSrcs().contains(t)) {
+                    Tree d = diff.mappings.getDstForSrc(t);
+                    b.append(String.format("[%s, %s, %s, %s], ", t.getPos(), t.getEndPos(), d.getPos(), d.getEndPos()));
+                }
+            }
+            b.append("]").append(",");
+            return b.toString();
+        }
     }
 
     private void appendRange(StringBuilder b, Tree t, String kind, String tip) {
@@ -152,11 +209,15 @@ public class MonacoDiffView implements Renderable {
     }
 
     private static class MenuBar implements Renderable {
+        private String toolName;
 
+        public MenuBar(String toolName) {
+            this.toolName = toolName;
+        }
         @Override
         public void renderOn(HtmlCanvas html) throws IOException {
             html
-            .div(class_("col")).content("Generated by RefactoringMiner")
+            .div(class_("col")).content("Generated by " + toolName)
             .div(class_("col"))
                 .div(class_("btn-toolbar justify-content-end"))
                     .div(class_("btn-group mr-2"))

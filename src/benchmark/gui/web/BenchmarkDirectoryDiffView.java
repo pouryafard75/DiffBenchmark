@@ -104,8 +104,10 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                             .div(class_("btn-group"))
                                 //TODO: integrate this with the -g option
 //                                .if_(TreeGenerators.getInstance().hasGeneratorForFile(file.first.getAbsolutePath()))
+                                    .a(class_("btn btn-primary btn-sm").href("/RMD-monaco/" + id)).content("RMD-Monaco")
                                     .a(class_("btn btn-primary btn-sm").href("/RMD/" + id)).content("RMDiff")
                                     .a(class_("btn btn-primary btn-sm").href("/GTG/" + id)).content("GTGreedy")
+                                    .a(class_("btn btn-primary btn-sm").href("/GTG-monaco/" + id)).content("GTGreedy-Monaco")
                                     .a(class_("btn btn-primary btn-sm").href("/GTS/" + id)).content("GTSimple")
                                     .a(class_("btn btn-primary btn-sm").href("/IJM/" + id)).content("IJM")
                                     .a(class_("btn btn-primary btn-sm").href("/MTD/" + id)).content("MTD")

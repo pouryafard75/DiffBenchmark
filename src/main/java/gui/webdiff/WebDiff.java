@@ -62,7 +62,7 @@ public class WebDiff  {
         get("/monaco-diff/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView(astDiff.getSrcPath(),astDiff.getDstPath(),
+            Renderable view = new MonacoDiffView(toolName,astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, id,false);
             return render(view);
         });

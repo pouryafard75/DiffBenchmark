@@ -25,7 +25,12 @@ public class PathResolver {
     }
 
     private static String getProperDir(String prefix, String projectDir, String bugID) {
-        String dir =  System.getProperty("user.dir") + "/datasets/defects4j/";
+        String dir = getDefect4jDir();
         return dir + prefix + "/" + projectDir + "/" + bugID;
+    }
+
+    public static String getDefect4jDir() {
+        String dir =  System.getProperty("user.dir") + "/datasets/defects4j/";
+        return dir;
     }
 }

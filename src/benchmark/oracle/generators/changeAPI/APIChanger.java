@@ -10,11 +10,12 @@ import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 import shaded.com.github.gumtreediff.gen.jdt.AbstractJdtTreeGenerator;
 import shaded.com.github.gumtreediff.tree.ITree;
+import org.refactoringminer.astDiff.actions.ASTDiff;
+
 
 import java.io.IOException;
 import java.util.Set;

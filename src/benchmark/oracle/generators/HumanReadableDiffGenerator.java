@@ -10,9 +10,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.apache.commons.io.FileUtils;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
-import org.refactoringminer.astDiff.utils.Constants;
+import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.matchers.Constants;
+import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+
 
 import java.io.File;
 import java.io.IOException;

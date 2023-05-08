@@ -3,8 +3,8 @@ package benchmark.metrics.models;
 import benchmark.oracle.models.AbstractMapping;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
-import org.refactoringminer.astDiff.utils.Constants;
+import org.refactoringminer.astDiff.matchers.Constants;
+import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
 import java.util.HashSet;

@@ -7,7 +7,7 @@ import benchmark.metrics.models.DiffStats;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
-import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
 import benchmark.oracle.models.HumanReadableDiff;

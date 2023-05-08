@@ -3,9 +3,10 @@ import antlr.collections.AST;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.TreeClassifier;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.actions.classifiers.ExtendedTreeClassifier;
+import org.refactoringminer.astDiff.actions.ExtendedTreeClassifier;
 import org.refactoringminer.astDiff.actions.model.MultiMove;
-import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.actions.ASTDiff;
+
 import org.rendersnake.DocType;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;

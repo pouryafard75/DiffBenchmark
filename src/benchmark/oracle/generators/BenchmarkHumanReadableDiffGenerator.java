@@ -7,8 +7,8 @@ import benchmark.utils.Configuration;
 import com.github.gumtreediff.matchers.*;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
 

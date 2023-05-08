@@ -1,7 +1,7 @@
 package benchmark.oracle.generators;
 
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.utils.Constants;
+import org.refactoringminer.astDiff.matchers.Constants;
 
 import java.util.List;
 

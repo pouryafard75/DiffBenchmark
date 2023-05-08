@@ -5,7 +5,7 @@ import benchmark.oracle.generators.changeAPI.IJM;
 import benchmark.oracle.generators.changeAPI.MTDiff;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.matchers.CompositeMatchers;
-import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 

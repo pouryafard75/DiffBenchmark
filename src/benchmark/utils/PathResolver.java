@@ -17,11 +17,11 @@ public class PathResolver {
     }
 
     public static String getAfterDir(String projectDir, String bugID) {
-        return getProperDir("before",projectDir,bugID);
+        return getProperDir("after",projectDir,bugID);
     }
 
     public static String getBeforeDir(String projectDir, String bugID) {
-        return getProperDir("after",projectDir,bugID);
+        return getProperDir("before",projectDir,bugID);
     }
 
     private static String getProperDir(String prefix, String projectDir, String bugID) {

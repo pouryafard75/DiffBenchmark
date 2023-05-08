@@ -9,8 +9,11 @@ import static benchmark.utils.PathResolver.getBeforeDir;
 public class CompareWithLocalDirectories {
     public static void main(String[] args) throws Exception {
         String projectDir = "Chart";
-        String bugID = "1";
-        BenchmarkWebDiff benchmarkWebDiff = BenchmarkWebDiffFactory.withLocallyClonedRepo(getBeforeDir(projectDir, bugID), getAfterDir(projectDir, bugID));
+        String bugID = "6";
+        // @Tsantalis This is the list bugIDs which you might want to check: [2,5,6,16,17,22]
+
+        BenchmarkWebDiff benchmarkWebDiff = BenchmarkWebDiffFactory.withLocallyClonedRepo(
+                getBeforeDir(projectDir, bugID), getAfterDir(projectDir, bugID));
         benchmarkWebDiff.run();
     }
 }

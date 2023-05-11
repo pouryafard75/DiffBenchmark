@@ -45,8 +45,8 @@ public class BenchmarkWebDiffFactory {
             GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
             GTS_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.SimpleGumtree()));
 //            TODO: Fix the issue with IJM & MTDiff
-            IJM_astDiff.add(new IJM(astDiff).diff());
-            MTD_astDiff.add(new MTDiff(astDiff).diff());
+//            IJM_astDiff.add(new IJM(astDiff).diff());
+//            MTD_astDiff.add(new MTDiff(astDiff).diff());
         }
         return new BenchmarkWebDiff(RM_astDiff, GTG_astDiff, GTS_astDiff, IJM_astDiff, MTD_astDiff);
     }

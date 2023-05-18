@@ -32,14 +32,16 @@ public class BenchmarkWebDiff {
     public Set<Diff> gtsDiff;
     public Set<Diff> ijmDiff;
     public Set<Diff> mtdiff;
+    public Set<Diff> gt2diff;
 
 
-    public BenchmarkWebDiff(Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd) {
+    public BenchmarkWebDiff(Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd, Set<Diff> gt2) {
         this.rmDiff = rm;
         this.gtgDiff = gtg;
         this.gtsDiff = gts;
         this.ijmDiff = ijm;
         this.mtdiff = mtd;
+        this.gt2diff = gt2;
     }
 
     public void run() {
@@ -122,6 +124,22 @@ public class BenchmarkWebDiff {
                     astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
             return render(view);
         });
+
+        get("/GTS-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<Diff> iterator = gtsDiff.iterator();
+            Diff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("GumTree-Simple", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+            return render(view);
+        });
         get("/IJM/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             int i = id;
@@ -138,6 +156,22 @@ public class BenchmarkWebDiff {
             return render(view);
         });
 
+        get("/IJM-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<Diff> iterator = ijmDiff.iterator();
+            Diff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("IJM", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+            return render(view);
+        });
+
         get("/MTD/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             int i = id;
@@ -151,6 +185,54 @@ public class BenchmarkWebDiff {
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("MtDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
                     astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+            return render(view);
+        });
+
+        get("/MTD-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<Diff> iterator = mtdiff.iterator();
+            Diff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("MTDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+            return render(view);
+        });
+
+        get("/GT2/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<Diff> iterator = gt2diff.iterator();
+            Diff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new VanillaDiffView("GT2", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+            return render(view);
+        });
+
+        get("/GT2-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<Diff> iterator = gt2diff.iterator();
+            Diff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("GT2", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
             return render(view);
         });
 

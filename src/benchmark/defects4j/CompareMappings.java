@@ -27,8 +27,31 @@ public class CompareMappings {
     private final static CompositeMatchers.CompositeMatcher SIMPLE = new CompositeMatchers.SimpleGumtree();
 //    private final static ObjectMapper objectMapper = new ObjectMapper();
 
-
     public static void main(String[] args) throws IOException {
+        printStats();
+    }
+    public static void printMultiMappings() throws IOException {
+        List<String> beforeDirs = getDirPathList();
+        Map<Defect4jCaseInfo, MappingIdenticalCheckResult> identicalCheckResultMap = new LinkedHashMap<>();
+//        int cc = 0;
+        for (String beforeDir : beforeDirs) {
+//            cc += 1;
+//            if (cc > 10) break;
+            String projectDir = Path.of(beforeDir).getParent().getFileName().toString();
+//            if (!projectDir.equals("JacksonXml")) continue;
+            String bugID = Path.of(beforeDir).getFileName().toString();
+            Defect4jCaseInfo defect4jCaseInfo = new Defect4jCaseInfo(projectDir, bugID);
+            String afterDir = beforeDir.replace("before", "after");
+            Set<ASTDiff> diffSet = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(beforeDir), Path.of(afterDir));
+            for (ASTDiff astDiff : diffSet) {
+                if (astDiff.getAllMappings().dstToSrcMultis().size() > 0 ) {
+                    System.out.println(beforeDir);
+                    break;
+                }
+            }
+        }
+    }
+    public static void printStats() throws IOException {
         List<String> beforeDirs = getDirPathList();
         Map<Defect4jCaseInfo,MappingIdenticalCheckResult> identicalCheckResultMap = new LinkedHashMap<>();
 //        int cc = 0;
@@ -36,6 +59,7 @@ public class CompareMappings {
 //            cc += 1;
 //            if (cc > 10) break;
             String projectDir = Path.of(beforeDir).getParent().getFileName().toString();
+            if (!projectDir.equals("Chart")) continue;
             String bugID = Path.of(beforeDir).getFileName().toString();
             Defect4jCaseInfo defect4jCaseInfo = new Defect4jCaseInfo(projectDir, bugID);
             String afterDir = beforeDir.replace("before","after");
@@ -43,9 +67,10 @@ public class CompareMappings {
             boolean _SameWithGreedy = isAllIdentical(diffSet, GREEDY);
             boolean _SameWithSimple = isAllIdentical(diffSet, SIMPLE);
             boolean _SameWithAny = _SameWithGreedy || _SameWithSimple;
-            printThisCaseStatus(beforeDir,"RM-GTG",_SameWithGreedy);
-            printThisCaseStatus(beforeDir,"RM-GTS",_SameWithSimple);
-            printThisCaseStatus(beforeDir,"RM-ANY",_SameWithAny);
+//            printThisCaseStatus(beforeDir,"RM-GTG",_SameWithGreedy);
+//            printThisCaseStatus(beforeDir,"RM-GTS",_SameWithSimple);
+            if (!_SameWithAny)
+                printThisCaseStatus(beforeDir,"RM-ANY",_SameWithAny);
             identicalCheckResultMap.put(defect4jCaseInfo,
                     new MappingIdenticalCheckResult(_SameWithGreedy,
                             _SameWithSimple,

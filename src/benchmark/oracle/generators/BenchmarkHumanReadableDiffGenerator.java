@@ -50,24 +50,24 @@ public class BenchmarkHumanReadableDiffGenerator {
                     gtsHDG.write(Configuration.GTS_PATH);
                 }
                 //----------------------------------\\
-                if (Configuration.toolPathMap.containsKey("IJM")) {
-                    HumanReadableDiffGenerator ijmHDG =
-                            new HumanReadableDiffGenerator(repo, commit, new IJM(astDiff).makeASTDiff());
-                    ijmHDG.write(Configuration.IJM_PATH);
-                }
-                //----------------------------------\\
-                if (Configuration.toolPathMap.containsKey("MTD")) {
-                    HumanReadableDiffGenerator mtdHDG =
-                            new HumanReadableDiffGenerator(repo, commit, new MTDiff(astDiff).makeASTDiff());
-                    mtdHDG.write(Configuration.MTD_PATH);
-                }
+//                if (Configuration.toolPathMap.containsKey("IJM")) {
+//                    HumanReadableDiffGenerator ijmHDG =
+//                            new HumanReadableDiffGenerator(repo, commit, new IJM(astDiff).makeASTDiff());
+//                    ijmHDG.write(Configuration.IJM_PATH);
+//                }
+//                //----------------------------------\\
+//                if (Configuration.toolPathMap.containsKey("MTD")) {
+//                    HumanReadableDiffGenerator mtdHDG =
+//                            new HumanReadableDiffGenerator(repo, commit, new MTDiff(astDiff).makeASTDiff());
+//                    mtdHDG.write(Configuration.MTD_PATH);
+//                }
                 succeed = true;
             }
-            catch (APIChangerException apiChangerException)
-            {
-//                System.out.println(apiChangerException.getMessage());
-                succeed = false;
-            }
+//            catch (APIChangerException apiChangerException)
+//            {
+////                System.out.println(apiChangerException.getMessage());
+//                succeed = false;
+//            }
             finally {
                 StringBuilder msg = new StringBuilder();
                 if (succeed)

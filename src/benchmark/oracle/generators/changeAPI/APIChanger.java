@@ -6,19 +6,20 @@ import benchmark.oracle.generators.APIChangerException;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
-import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
-import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
-import shaded.com.github.gumtreediff.gen.jdt.AbstractJdtTreeGenerator;
-import shaded.com.github.gumtreediff.tree.ITree;
 import org.refactoringminer.astDiff.actions.ASTDiff;
-
+import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import shaded.com.github.gumtreediff.gen.jdt.AbstractJdtTreeGenerator;
+import shaded.com.github.gumtreediff.matchers.Mapping;
+import shaded.com.github.gumtreediff.matchers.Matcher;
+import shaded.com.github.gumtreediff.tree.ITree;
 
 import java.io.IOException;
-import java.util.Set;
+
+import static benchmark.oracle.generators.changeAPI.Utils.findMirror;
+import static benchmark.oracle.generators.changeAPI.Utils.mirrorTree;
 
 /* Created by pourya on 2023-04-17 8:10 p.m. */
 public abstract class APIChanger {
@@ -26,7 +27,7 @@ public abstract class APIChanger {
     APIChanger(ASTDiff rm_astDiff){
         this.rm_astDiff = rm_astDiff;
     }
-    public Set<shaded.com.github.gumtreediff.matchers.Mapping> makeMappings() throws IOException {
+    public Matcher makeMappings() throws IOException {
         AbstractJdtTreeGenerator gen = new OptimizedJdtTreeGenerator();
         String srcContents = this.rm_astDiff.getSrcContents();
         String dstContents = this.rm_astDiff.getDstContents();
@@ -34,40 +35,36 @@ public abstract class APIChanger {
         ITree dstTC = gen.generateFromString(dstContents).getRoot();
         shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(getMatcherType()).createMatcher(srcTC, dstTC);
         m.match();
-        return m.getMappingSet();
+        return m;
 //        return Utils.convert(m.getMappingSet(), srcContents, dstContents);
     }
 
     public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();
-    public Diff diff() throws IOException, APIChangerException {
-        boolean _seen = false;
-        EditScript actions;
-        TreeContext dstTC;
-        TreeContext srcTC;
-        MappingStore mappingStore = null;
-        Set<Mapping> convertedMappings = Utils.convert(makeMappings(), this.rm_astDiff.getSrcContents(), this.rm_astDiff.getDstContents());
-        for (Mapping mapping : convertedMappings) {
-            if (!_seen) {
-                Tree srcRoot = TreeUtilFunctions.getParentUntilType(mapping.first, "CompilationUnit");
-                Tree dstRoot = TreeUtilFunctions.getParentUntilType(mapping.second, "CompilationUnit");
-                _seen = true;
-                mappingStore = new MappingStore(srcRoot, dstRoot);
-            }
-            mappingStore.addMapping(mapping.first, mapping.second);
+    public Diff diff() throws Exception {
+        Matcher m = makeMappings();
+        Tree srcMirror = mirrorTree(m.getSrc());
+        Tree dstMirror = mirrorTree(m.getDst());
+
+        TreeContext srcTC = new TreeContext();
+        srcTC.setRoot(srcMirror);
+        TreeContext dstTC = new TreeContext();
+        dstTC.setRoot(dstMirror);
+
+        MappingStore mappingStore = new MappingStore(srcMirror,dstMirror);
+        for (Mapping mapping : m.getMappings()) {
+            mappingStore.addMapping(findMirror(mapping.first,srcMirror),findMirror(mapping.second,dstMirror));
         }
-        if (!_seen)
-            mappingStore = new MappingStore(this.rm_astDiff.src.getRoot(), this.rm_astDiff.dst.getRoot());
-        actions = new SimplifiedChawatheScriptGenerator().computeActions(mappingStore);
-        srcTC = new TreeContext();
-        srcTC.setRoot(mappingStore.src);
-        dstTC = new TreeContext();
-        dstTC.setRoot(mappingStore.dst);
-        return new Diff(srcTC, dstTC, mappingStore, actions);
+//        List<Action> iActions = new ActionGenerator(m.getSrc(), m.getDst(), m.getMappings()).generate();
+//        EditScript editScript = new EditScript();
+//        for (Action iAction : iActions)
+//            editScript.add(mirrorAction(iAction,srcMirror,dstMirror));
+        EditScript editScript = new SimplifiedChawatheScriptGenerator().computeActions(mappingStore);
+        return new Diff(srcTC,dstTC,mappingStore,editScript);
     }
-    public ASTDiff makeASTDiff() throws IOException, APIChangerException {
-            Diff diff = this.diff();
-            ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(this.rm_astDiff.src.getRoot(), this.rm_astDiff.dst.getRoot());
-            mappings.add(diff.mappings);
-        return new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), this.rm_astDiff.src, this.rm_astDiff.dst,mappings);
+    public ASTDiff makeASTDiff() throws Exception {
+        Diff diff = this.diff();
+        ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(),diff.dst.getRoot());
+        mappings.add(diff.mappings);
+        return new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), diff.src, diff.dst, mappings);
     }
 }

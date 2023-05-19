@@ -2,7 +2,6 @@ package benchmark.oracle.generators.changeAPI;
 
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import at.aau.softwaredynamics.matchers.MatcherFactory;
-import benchmark.oracle.generators.APIChangerException;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
@@ -31,9 +30,9 @@ public abstract class APIChanger {
         AbstractJdtTreeGenerator gen = new OptimizedJdtTreeGenerator();
         String srcContents = this.rm_astDiff.getSrcContents();
         String dstContents = this.rm_astDiff.getDstContents();
-        ITree srcTC = gen.generateFromString(srcContents).getRoot();
-        ITree dstTC = gen.generateFromString(dstContents).getRoot();
-        shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(getMatcherType()).createMatcher(srcTC, dstTC);
+        ITree srcITree = gen.generateFromString(srcContents).getRoot();
+        ITree dstITree = gen.generateFromString(dstContents).getRoot();
+        shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(getMatcherType()).createMatcher(srcITree, dstITree);
         m.match();
         return m;
 //        return Utils.convert(m.getMappingSet(), srcContents, dstContents);
@@ -49,18 +48,40 @@ public abstract class APIChanger {
         srcTC.setRoot(srcMirror);
         TreeContext dstTC = new TreeContext();
         dstTC.setRoot(dstMirror);
-
         MappingStore mappingStore = new MappingStore(srcMirror,dstMirror);
-        for (Mapping mapping : m.getMappings()) {
-            mappingStore.addMapping(findMirror(mapping.first,srcMirror),findMirror(mapping.second,dstMirror));
+        EditScript editScript = new EditScript();
+        try {
+            for (Mapping mapping : m.getMappings()) {
+                Tree decision = whichTree(m, srcMirror, dstMirror, mapping.first);
+                Tree firstMirror = findMirror(mapping.first, decision);
+                Tree decision2 = whichTree(m, srcMirror, dstMirror, mapping.second);
+                Tree secondMirror = findMirror(mapping.second, decision2);
+                mappingStore.addMapping(firstMirror, secondMirror);
+            }
+            editScript = new SimplifiedChawatheScriptGenerator().computeActions(mappingStore);
         }
-//        List<Action> iActions = new ActionGenerator(m.getSrc(), m.getDst(), m.getMappings()).generate();
-//        EditScript editScript = new EditScript();
-//        for (Action iAction : iActions)
-//            editScript.add(mirrorAction(iAction,srcMirror,dstMirror));
-        EditScript editScript = new SimplifiedChawatheScriptGenerator().computeActions(mappingStore);
+        catch (Exception e)
+        {
+            System.err.println("Check this !!");
+            e.printStackTrace();
+        }
         return new Diff(srcTC,dstTC,mappingStore,editScript);
     }
+
+    private static Tree whichTree(Matcher m, Tree srcMirror, Tree dstMirror, ITree input) throws Exception {
+        ITree tempParent = input;
+        while (tempParent.getParent() != null)
+            tempParent = tempParent.getParent();
+        Tree decision;
+        if (tempParent == m.getSrc())
+            decision = srcMirror;
+        else if (tempParent == m.getDst())
+            decision = dstMirror;
+        else
+            throw new Exception("Must check");
+        return decision;
+    }
+
     public ASTDiff makeASTDiff() throws Exception {
         Diff diff = this.diff();
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(),diff.dst.getRoot());

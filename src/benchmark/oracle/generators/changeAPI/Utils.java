@@ -41,7 +41,7 @@ public class Utils {
 //            throw new APIChangerException("Failed for at least one");
 //        return output;
 //    }
-    private static Tree convertITreeToTree(Tree inpTree, ITree input) throws APIChangerException{
+    private static Tree convertITreeToTree(Tree inpTree, ITree input) throws Exception {
 //        Tree result = TreeUtilFunctions.getTreeBetweenPositions(inpTree,input.getPos(),input.getEndPos());
         List<Tree> ret = getTreesExactPosition(inpTree,input.getPos(),input.getEndPos());
         Tree result = null;
@@ -104,7 +104,7 @@ public class Utils {
         return action;
     }
 
-    public static Tree findMirror(ITree iTree, Tree fullTree) {
+    public static Tree findMirror(ITree iTree, Tree fullTree) throws Exception {
         List<Tree> treesBetweenPositions = getTreesExactPosition(fullTree, iTree.getPos(), iTree.getEndPos());
         for (Tree treeBetweenPosition : treesBetweenPositions) {
             if (treeBetweenPosition.getType().name.equals(getReplacedType(iTree)))
@@ -112,19 +112,25 @@ public class Utils {
         }
         return null;
     }
-    public static Tree mirrorTree(ITree iTree) {
+    public static Tree mirrorTree(ITree iTree) throws Exception {
         String replacedType = getReplacedType(iTree);
         DefaultTree curr = new DefaultTree(TypeSet.type(replacedType));
         curr.setLabel(iTree.getLabel());
         curr.setPos(iTree.getPos());
         curr.setLength(iTree.getLength());
         for (ITree iChild : iTree.getChildren()) {
-            curr.addChild(mirrorTree(iChild));
+            Tree childMirror = mirrorTree(iChild);
+            childMirror.setParent(curr);
+            curr.addChild(childMirror);
+
         }
         return curr;
     }
 
-    private static String getReplacedType(ITree iTree) {
-        return ASTNode.nodeClassForType(iTree.getType()).getName().replace("shaded.org.eclipse.jdt.core.dom.", "");
+    private static String getReplacedType(ITree iTree) throws Exception {
+        String replace = ASTNode.nodeClassForType(iTree.getType()).getName().replace("shaded.org.eclipse.jdt.core.dom.", "");
+        if (replace.equals(""))
+            throw new Exception("Cannot find AST-Type");
+        return replace;
     }
 }

@@ -1,0 +1,346 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "class : UnsafeAllocator",
+    "right" : "class : UnsafeAllocator",
+    "info" : "TypeDeclaration[765-3794]:TypeDeclaration[800-4351]"
+  }, {
+    "left" : "public abstract newInstance(c ) : ",
+    "right" : "public abstract newInstance(c ) : ",
+    "info" : "MethodDeclaration[942-1005]:MethodDeclaration[977-1040]"
+  }, {
+    "left" : "public create() : ",
+    "right" : "public create() : ",
+    "info" : "MethodDeclaration[1009-3550]:MethodDeclaration[1044-3684]"
+  }, {
+    "left" : "public newInstance(c ) : ",
+    "right" : "public newInstance(c ) : ",
+    "info" : "MethodDeclaration[1500-1679]:MethodDeclaration[1535-1747]"
+  }, {
+    "left" : "public newInstance(c ) : ",
+    "right" : "public newInstance(c ) : ",
+    "info" : "MethodDeclaration[2446-2633]:MethodDeclaration[2514-2734]"
+  }, {
+    "left" : "public newInstance(c ) : ",
+    "right" : "public newInstance(c ) : ",
+    "info" : "MethodDeclaration[3111-3297]:MethodDeclaration[3212-3431]"
+  }, {
+    "left" : "public newInstance(c ) : ",
+    "right" : "public newInstance(c ) : ",
+    "info" : "MethodDeclaration[3404-3539]:MethodDeclaration[3538-3673]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[900-906]:Modifier[935-941]"
+  }, {
+    "left" : "abstract",
+    "right" : "abstract",
+    "info" : "Modifier[907-915]:Modifier[942-950]"
+  }, {
+    "left" : "class",
+    "right" : "class",
+    "info" : "TYPE_DECLARATION_KIND[916-921]:TYPE_DECLARATION_KIND[951-956]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[942-948]:Modifier[977-983]"
+  }, {
+    "left" : "abstract",
+    "right" : "abstract",
+    "info" : "Modifier[949-957]:Modifier[984-992]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "TypeParameter[959-960]:TypeParameter[994-995]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "SimpleType[962-963]:SimpleType[997-998]"
+  }, {
+    "left" : "newInstance",
+    "right" : "newInstance",
+    "info" : "SimpleName[964-975]:SimpleName[999-1010]"
+  }, {
+    "left" : "Class<T> c",
+    "right" : "Class<T> c",
+    "info" : "SingleVariableDeclaration[976-986]:SingleVariableDeclaration[1011-1021]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[995-1004]:SimpleType[1030-1039]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1009-1015]:Modifier[1044-1050]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[1016-1022]:Modifier[1051-1057]"
+  }, {
+    "left" : "UnsafeAllocator",
+    "right" : "UnsafeAllocator",
+    "info" : "SimpleType[1023-1038]:SimpleType[1058-1073]"
+  }, {
+    "left" : "create",
+    "right" : "create",
+    "info" : "SimpleName[1039-1045]:SimpleName[1074-1080]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1048-3550]:Block[1083-3684]"
+  }, {
+    "left" : "try{...}",
+    "right" : "try{...}",
+    "info" : "TryStatement[1163-1728]:TryStatement[1198-1796]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1167-1694]:Block[1202-1762]"
+  }, {
+    "left" : "Class<?> unsafeClass = Class.forName(\"sun.misc.Unsafe\");",
+    "right" : "Class<?> unsafeClass = Class.forName(\"sun.misc.Unsafe\");",
+    "info" : "VariableDeclarationStatement[1175-1231]:VariableDeclarationStatement[1210-1266]"
+  }, {
+    "left" : "Field f = unsafeClass.getDeclaredField(\"theUnsafe\");",
+    "right" : "Field f = unsafeClass.getDeclaredField(\"theUnsafe\");",
+    "info" : "VariableDeclarationStatement[1238-1290]:VariableDeclarationStatement[1273-1325]"
+  }, {
+    "left" : "f.setAccessible(true);",
+    "right" : "f.setAccessible(true);",
+    "info" : "ExpressionStatement[1297-1319]:ExpressionStatement[1332-1354]"
+  }, {
+    "left" : "final Object unsafe = f.get(null);",
+    "right" : "final Object unsafe = f.get(null);",
+    "info" : "VariableDeclarationStatement[1326-1360]:VariableDeclarationStatement[1361-1395]"
+  }, {
+    "left" : "final Method allocateInstance = unsafeClass.getMethod(\"allocateInstance\", Class.class);",
+    "right" : "final Method allocateInstance = unsafeClass.getMethod(\"allocateInstance\", Class.class);",
+    "info" : "VariableDeclarationStatement[1367-1454]:VariableDeclarationStatement[1402-1489]"
+  }, {
+    "left" : "return new UnsafeAllocator() {\n        @Override\n        @SuppressWarnings(\"unchecked\")\n        public <T> T newInstance(Class<T> c) throws Exception {\n          return (T) allocateInstance.invoke(unsafe, c);\n        }\n      };",
+    "right" : "return new UnsafeAllocator() {\n        @Override\n        @SuppressWarnings(\"unchecked\")\n        public <T> T newInstance(Class<T> c) throws Exception {\n          assertInstantiable(c);\n          return (T) allocateInstance.invoke(unsafe, c);\n        }\n      };",
+    "info" : "ReturnStatement[1461-1688]:ReturnStatement[1496-1756]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[1500-1509]:MarkerAnnotation[1535-1544]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[1518-1548]:SingleMemberAnnotation[1553-1583]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1557-1563]:Modifier[1592-1598]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "TypeParameter[1565-1566]:TypeParameter[1600-1601]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "SimpleType[1568-1569]:SimpleType[1603-1604]"
+  }, {
+    "left" : "newInstance",
+    "right" : "newInstance",
+    "info" : "SimpleName[1570-1581]:SimpleName[1605-1616]"
+  }, {
+    "left" : "Class<T> c",
+    "right" : "Class<T> c",
+    "info" : "SingleVariableDeclaration[1582-1592]:SingleVariableDeclaration[1617-1627]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[1601-1610]:SimpleType[1636-1645]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1611-1679]:Block[1646-1747]"
+  }, {
+    "left" : "return (T) allocateInstance.invoke(unsafe, c);",
+    "right" : "return (T) allocateInstance.invoke(unsafe, c);",
+    "info" : "ReturnStatement[1623-1669]:ReturnStatement[1691-1737]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1721-1728]:Block[1789-1796]"
+  }, {
+    "left" : "try{...}",
+    "right" : "try{...}",
+    "info" : "TryStatement[1980-2682]:TryStatement[2048-2783]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1984-2648]:Block[2052-2749]"
+  }, {
+    "left" : "Method getConstructorId = ObjectStreamClass.class\n          .getDeclaredMethod(\"getConstructorId\", Class.class);",
+    "right" : "Method getConstructorId = ObjectStreamClass.class\n          .getDeclaredMethod(\"getConstructorId\", Class.class);",
+    "info" : "VariableDeclarationStatement[1992-2104]:VariableDeclarationStatement[2060-2172]"
+  }, {
+    "left" : "getConstructorId.setAccessible(true);",
+    "right" : "getConstructorId.setAccessible(true);",
+    "info" : "ExpressionStatement[2111-2148]:ExpressionStatement[2179-2216]"
+  }, {
+    "left" : "final int constructorId = (Integer) getConstructorId.invoke(null, Object.class);",
+    "right" : "final int constructorId = (Integer) getConstructorId.invoke(null, Object.class);",
+    "info" : "VariableDeclarationStatement[2155-2235]:VariableDeclarationStatement[2223-2303]"
+  }, {
+    "left" : "final Method newInstance = ObjectStreamClass.class\n          .getDeclaredMethod(\"newInstance\", Class.class, int.class);",
+    "right" : "final Method newInstance = ObjectStreamClass.class\n          .getDeclaredMethod(\"newInstance\", Class.class, int.class);",
+    "info" : "VariableDeclarationStatement[2242-2361]:VariableDeclarationStatement[2310-2429]"
+  }, {
+    "left" : "newInstance.setAccessible(true);",
+    "right" : "newInstance.setAccessible(true);",
+    "info" : "ExpressionStatement[2368-2400]:ExpressionStatement[2436-2468]"
+  }, {
+    "left" : "return new UnsafeAllocator() {\n        @Override\n        @SuppressWarnings(\"unchecked\")\n        public <T> T newInstance(Class<T> c) throws Exception {\n          return (T) newInstance.invoke(null, c, constructorId);\n        }\n      };",
+    "right" : "return new UnsafeAllocator() {\n        @Override\n        @SuppressWarnings(\"unchecked\")\n        public <T> T newInstance(Class<T> c) throws Exception {\n          assertInstantiable(c);\n          return (T) newInstance.invoke(null, c, constructorId);\n        }\n      };",
+    "info" : "ReturnStatement[2407-2642]:ReturnStatement[2475-2743]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[2446-2455]:MarkerAnnotation[2514-2523]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[2464-2494]:SingleMemberAnnotation[2532-2562]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2503-2509]:Modifier[2571-2577]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "TypeParameter[2511-2512]:TypeParameter[2579-2580]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "SimpleType[2514-2515]:SimpleType[2582-2583]"
+  }, {
+    "left" : "newInstance",
+    "right" : "newInstance",
+    "info" : "SimpleName[2516-2527]:SimpleName[2584-2595]"
+  }, {
+    "left" : "Class<T> c",
+    "right" : "Class<T> c",
+    "info" : "SingleVariableDeclaration[2528-2538]:SingleVariableDeclaration[2596-2606]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[2547-2556]:SimpleType[2615-2624]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2557-2633]:Block[2625-2734]"
+  }, {
+    "left" : "return (T) newInstance.invoke(null, c, constructorId);",
+    "right" : "return (T) newInstance.invoke(null, c, constructorId);",
+    "info" : "ReturnStatement[2569-2623]:ReturnStatement[2670-2724]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2675-2682]:Block[2776-2783]"
+  }, {
+    "left" : "try{...}",
+    "right" : "try{...}",
+    "info" : "TryStatement[2893-3346]:TryStatement[2994-3480]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2897-3312]:Block[2998-3446]"
+  }, {
+    "left" : "final Method newInstance = ObjectInputStream.class\n          .getDeclaredMethod(\"newInstance\", Class.class, Class.class);",
+    "right" : "final Method newInstance = ObjectInputStream.class\n          .getDeclaredMethod(\"newInstance\", Class.class, Class.class);",
+    "info" : "VariableDeclarationStatement[2905-3026]:VariableDeclarationStatement[3006-3127]"
+  }, {
+    "left" : "newInstance.setAccessible(true);",
+    "right" : "newInstance.setAccessible(true);",
+    "info" : "ExpressionStatement[3033-3065]:ExpressionStatement[3134-3166]"
+  }, {
+    "left" : "return new UnsafeAllocator() {\n        @Override\n        @SuppressWarnings(\"unchecked\")\n        public <T> T newInstance(Class<T> c) throws Exception {\n          return (T) newInstance.invoke(null, c, Object.class);\n        }\n      };",
+    "right" : "return new UnsafeAllocator() {\n        @Override\n        @SuppressWarnings(\"unchecked\")\n        public <T> T newInstance(Class<T> c) throws Exception {\n          assertInstantiable(c);\n          return (T) newInstance.invoke(null, c, Object.class);\n        }\n      };",
+    "info" : "ReturnStatement[3072-3306]:ReturnStatement[3173-3440]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[3111-3120]:MarkerAnnotation[3212-3221]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[3129-3159]:SingleMemberAnnotation[3230-3260]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3168-3174]:Modifier[3269-3275]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "TypeParameter[3176-3177]:TypeParameter[3277-3278]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "SimpleType[3179-3180]:SimpleType[3280-3281]"
+  }, {
+    "left" : "newInstance",
+    "right" : "newInstance",
+    "info" : "SimpleName[3181-3192]:SimpleName[3282-3293]"
+  }, {
+    "left" : "Class<T> c",
+    "right" : "Class<T> c",
+    "info" : "SingleVariableDeclaration[3193-3203]:SingleVariableDeclaration[3294-3304]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[3212-3221]:SimpleType[3313-3322]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3222-3297]:Block[3323-3431]"
+  }, {
+    "left" : "return (T) newInstance.invoke(null, c, Object.class);",
+    "right" : "return (T) newInstance.invoke(null, c, Object.class);",
+    "info" : "ReturnStatement[3234-3287]:ReturnStatement[3368-3421]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3339-3346]:Block[3473-3480]"
+  }, {
+    "left" : "return new UnsafeAllocator() {\n      @Override\n      public <T> T newInstance(Class<T> c) {\n        throw new UnsupportedOperationException(\"Cannot allocate \" + c);\n      }\n    };",
+    "right" : "return new UnsafeAllocator() {\n      @Override\n      public <T> T newInstance(Class<T> c) {\n        throw new UnsupportedOperationException(\"Cannot allocate \" + c);\n      }\n    };",
+    "info" : "ReturnStatement[3367-3546]:ReturnStatement[3501-3680]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[3404-3413]:MarkerAnnotation[3538-3547]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3420-3426]:Modifier[3554-3560]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "TypeParameter[3428-3429]:TypeParameter[3562-3563]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "SimpleType[3431-3432]:SimpleType[3565-3566]"
+  }, {
+    "left" : "newInstance",
+    "right" : "newInstance",
+    "info" : "SimpleName[3433-3444]:SimpleName[3567-3578]"
+  }, {
+    "left" : "Class<T> c",
+    "right" : "Class<T> c",
+    "info" : "SingleVariableDeclaration[3445-3455]:SingleVariableDeclaration[3579-3589]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3457-3539]:Block[3591-3673]"
+  }, {
+    "left" : "throw new UnsupportedOperationException(\"Cannot allocate \" + c);",
+    "right" : "throw new UnsupportedOperationException(\"Cannot allocate \" + c);",
+    "info" : "ThrowStatement[3467-3531]:ThrowStatement[3601-3665]"
+  } ]
+}

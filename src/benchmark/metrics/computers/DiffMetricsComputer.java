@@ -2,9 +2,7 @@ package benchmark.metrics.computers;
 import benchmark.metrics.models.Stats;
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.utils.CaseInfo;
 
-import java.util.List;
 import java.util.Set;
 
 /* Created by pourya on 2023-04-03 3:53 a.m. */
@@ -38,10 +36,10 @@ public class DiffMetricsComputer {
     }
 
     public Stats programElementStats(){
-        return makeStats(godDiff.getMatchedElements(),toolDiff.getMatchedElements());
+        return makeStats(godDiff.fileMappings.getMatchedElements(),toolDiff.fileMappings.getMatchedElements());
     }
     public Stats mappingStats(){
-        return makeStats(godDiff.getMappings(),toolDiff.getMappings());
+        return makeStats(godDiff.fileMappings.getMappings(),toolDiff.fileMappings.getMappings());
     }
 
 }

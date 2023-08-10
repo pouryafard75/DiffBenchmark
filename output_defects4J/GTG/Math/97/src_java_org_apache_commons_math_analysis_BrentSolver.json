@@ -1,0 +1,632 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "class : BrentSolver",
+    "right" : "class : BrentSolver",
+    "info" : "TypeDeclaration[971-10283]:TypeDeclaration[971-10716]"
+  }, {
+    "left" : "serialVersionUID",
+    "right" : "serialVersionUID",
+    "info" : "FieldDeclaration[1363-1473]:FieldDeclaration[1363-1473]"
+  }, {
+    "left" : "public BrentSolver(f )",
+    "right" : "public BrentSolver(f )",
+    "info" : "MethodDeclaration[1479-1669]:MethodDeclaration[1479-1669]"
+  }, {
+    "left" : "public solve(min double, max double, initial double) : double",
+    "right" : "public solve(min double, max double, initial double) : double",
+    "info" : "MethodDeclaration[1675-4176]:MethodDeclaration[1675-4176]"
+  }, {
+    "left" : "public solve(min double, max double) : double",
+    "right" : "public solve(min double, max double) : double",
+    "info" : "MethodDeclaration[4186-5973]:MethodDeclaration[4186-6406]"
+  }, {
+    "left" : "private solve(x0 double, y0 double, x1 double, y1 double, x2 double, y2 double) : double",
+    "right" : "private solve(x0 double, y0 double, x1 double, y1 double, x2 double, y2 double) : double",
+    "info" : "MethodDeclaration[5987-10281]:MethodDeclaration[6420-10714]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1294-1300]:Modifier[1294-1300]"
+  }, {
+    "left" : "class",
+    "right" : "class",
+    "info" : "TYPE_DECLARATION_KIND[1301-1306]:TYPE_DECLARATION_KIND[1301-1306]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1588-1594]:Modifier[1588-1594]"
+  }, {
+    "left" : "BrentSolver",
+    "right" : "BrentSolver",
+    "info" : "SimpleName[1595-1606]:SimpleName[1595-1606]"
+  }, {
+    "left" : "UnivariateRealFunction f",
+    "right" : "UnivariateRealFunction f",
+    "info" : "SingleVariableDeclaration[1607-1631]:SingleVariableDeclaration[1607-1631]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1633-1669]:Block[1633-1669]"
+  }, {
+    "left" : "super(f, 100, 1E-6);",
+    "right" : "super(f, 100, 1E-6);",
+    "info" : "SuperConstructorInvocation[1643-1663]:SuperConstructorInvocation[1643-1663]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2593-2599]:Modifier[2593-2599]"
+  }, {
+    "left" : "double",
+    "right" : "double",
+    "info" : "PrimitiveType[2600-2606]:PrimitiveType[2600-2606]"
+  }, {
+    "left" : "solve",
+    "right" : "solve",
+    "info" : "SimpleName[2607-2612]:SimpleName[2607-2612]"
+  }, {
+    "left" : "double min",
+    "right" : "double min",
+    "info" : "SingleVariableDeclaration[2613-2623]:SingleVariableDeclaration[2613-2623]"
+  }, {
+    "left" : "double max",
+    "right" : "double max",
+    "info" : "SingleVariableDeclaration[2625-2635]:SingleVariableDeclaration[2625-2635]"
+  }, {
+    "left" : "double initial",
+    "right" : "double initial",
+    "info" : "SingleVariableDeclaration[2637-2651]:SingleVariableDeclaration[2637-2651]"
+  }, {
+    "left" : "MaxIterationsExceededException",
+    "right" : "MaxIterationsExceededException",
+    "info" : "SimpleType[2668-2698]:SimpleType[2668-2698]"
+  }, {
+    "left" : "FunctionEvaluationException",
+    "right" : "FunctionEvaluationException",
+    "info" : "SimpleType[2700-2727]:SimpleType[2700-2727]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2728-4176]:Block[2728-4176]"
+  }, {
+    "left" : "if (((initial - min) * (max -initial)) < 0)",
+    "right" : "if (((initial - min) * (max -initial)) < 0)",
+    "info" : "IfStatement[2739-3004]:IfStatement[2739-3004]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2783-3004]:Block[2783-3004]"
+  }, {
+    "left" : "throw new IllegalArgumentException(\"Initial guess is not in search\" +\n                      \" interval.\" + \"  Initial: \" + initial +\n                      \"  Endpoints: [
+\" + min + \",\" + max + \"]\");",
+    "right" : "throw new IllegalArgumentException(\"Initial guess is not in search\" +\n                      \" interval.\" + \"  Initial: \" + initial +\n                      \"  Endpoints: [
+\" + min + \",\" + max + \"]\");",
+    "info" : "ThrowStatement[2797-2994]:ThrowStatement[2797-2994]"
+  }, {
+    "left" : "double yInitial = f.value(initial);",
+    "right" : "double yInitial = f.value(initial);",
+    "info" : "VariableDeclarationStatement[3071-3106]:VariableDeclarationStatement[3071-3106]"
+  }, {
+    "left" : "if (Math.abs(yInitial) <= functionValueAccuracy)",
+    "right" : "if (Math.abs(yInitial) <= functionValueAccuracy)",
+    "info" : "IfStatement[3115-3237]:IfStatement[3115-3237]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3164-3237]:Block[3164-3237]"
+  }, {
+    "left" : "setResult(initial, 0);",
+    "right" : "setResult(initial, 0);",
+    "info" : "ExpressionStatement[3178-3200]:ExpressionStatement[3178-3200]"
+  }, {
+    "left" : "return result;",
+    "right" : "return result;",
+    "info" : "ReturnStatement[3213-3227]:ReturnStatement[3213-3227]"
+  }, {
+    "left" : "double yMin = f.value(min);",
+    "right" : "double yMin = f.value(min);",
+    "info" : "VariableDeclarationStatement[3305-3332]:VariableDeclarationStatement[3305-3332]"
+  }, {
+    "left" : "if (Math.abs(yMin) <= functionValueAccuracy)",
+    "right" : "if (Math.abs(yMin) <= functionValueAccuracy)",
+    "info" : "IfStatement[3341-3456]:IfStatement[3341-3456]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3386-3456]:Block[3386-3456]"
+  }, {
+    "left" : "setResult(yMin, 0);",
+    "right" : "setResult(yMin, 0);",
+    "info" : "ExpressionStatement[3400-3419]:ExpressionStatement[3400-3419]"
+  }, {
+    "left" : "return result;",
+    "right" : "return result;",
+    "info" : "ReturnStatement[3432-3446]:ReturnStatement[3432-3446]"
+  }, {
+    "left" : "if (yInitial * yMin < 0)",
+    "right" : "if (yInitial * yMin < 0)",
+    "info" : "IfStatement[3529-3632]:IfStatement[3529-3632]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3554-3632]:Block[3554-3632]"
+  }, {
+    "left" : "return solve(min, yMin, initial, yInitial, min, yMin);",
+    "right" : "return solve(min, yMin, initial, yInitial, min, yMin);",
+    "info" : "ReturnStatement[3568-3622]:ReturnStatement[3568-3622]"
+  }, {
+    "left" : "double yMax = f.value(max);",
+    "right" : "double yMax = f.value(max);",
+    "info" : "VariableDeclarationStatement[3701-3728]:VariableDeclarationStatement[3701-3728]"
+  }, {
+    "left" : "if (Math.abs(yMax) <= functionValueAccuracy)",
+    "right" : "if (Math.abs(yMax) <= functionValueAccuracy)",
+    "info" : "IfStatement[3737-3852]:IfStatement[3737-3852]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3782-3852]:Block[3782-3852]"
+  }, {
+    "left" : "setResult(yMax, 0);",
+    "right" : "setResult(yMax, 0);",
+    "info" : "ExpressionStatement[3796-3815]:ExpressionStatement[3796-3815]"
+  }, {
+    "left" : "return result;",
+    "right" : "return result;",
+    "info" : "ReturnStatement[3828-3842]:ReturnStatement[3828-3842]"
+  }, {
+    "left" : "if (yInitial * yMax < 0)",
+    "right" : "if (yInitial * yMax < 0)",
+    "info" : "IfStatement[3925-4036]:IfStatement[3925-4036]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3950-4036]:Block[3950-4036]"
+  }, {
+    "left" : "return solve(initial, yInitial, max, yMax, initial, yInitial);",
+    "right" : "return solve(initial, yInitial, max, yMax, initial, yInitial);",
+    "info" : "ReturnStatement[3964-4026]:ReturnStatement[3964-4026]"
+  }, {
+    "left" : "return solve(min, yMin, max, yMax, initial, yInitial);",
+    "right" : "return solve(min, yMin, max, yMax, initial, yInitial);",
+    "info" : "ReturnStatement[4115-4169]:ReturnStatement[4115-4169]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4935-4941]:Modifier[4935-4941]"
+  }, {
+    "left" : "double",
+    "right" : "double",
+    "info" : "PrimitiveType[4942-4948]:PrimitiveType[4942-4948]"
+  }, {
+    "left" : "solve",
+    "right" : "solve",
+    "info" : "SimpleName[4949-4954]:SimpleName[4949-4954]"
+  }, {
+    "left" : "double min",
+    "right" : "double min",
+    "info" : "SingleVariableDeclaration[4955-4965]:SingleVariableDeclaration[4955-4965]"
+  }, {
+    "left" : "double max",
+    "right" : "double max",
+    "info" : "SingleVariableDeclaration[4967-4977]:SingleVariableDeclaration[4967-4977]"
+  }, {
+    "left" : "MaxIterationsExceededException",
+    "right" : "MaxIterationsExceededException",
+    "info" : "SimpleType[4986-5016]:SimpleType[4986-5016]"
+  }, {
+    "left" : "FunctionEvaluationException",
+    "right" : "FunctionEvaluationException",
+    "info" : "SimpleType[5027-5054]:SimpleType[5027-5054]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[5055-5973]:Block[5055-6406]"
+  }, {
+    "left" : "clearResult();",
+    "right" : "clearResult();",
+    "info" : "ExpressionStatement[5074-5088]:ExpressionStatement[5074-5088]"
+  }, {
+    "left" : "verifyInterval(min, max);",
+    "right" : "verifyInterval(min, max);",
+    "info" : "ExpressionStatement[5097-5122]:ExpressionStatement[5097-5122]"
+  }, {
+    "left" : "double ret = Double.NaN;",
+    "right" : "double ret = Double.NaN;",
+    "info" : "VariableDeclarationStatement[5140-5164]:VariableDeclarationStatement[5140-5164]"
+  }, {
+    "left" : "double yMin = f.value(min);",
+    "right" : "double yMin = f.value(min);",
+    "info" : "VariableDeclarationStatement[5182-5209]:VariableDeclarationStatement[5182-5209]"
+  }, {
+    "left" : "double yMax = f.value(max);",
+    "right" : "double yMax = f.value(max);",
+    "info" : "VariableDeclarationStatement[5218-5245]:VariableDeclarationStatement[5218-5245]"
+  }, {
+    "left" : "double sign = yMin * yMax;",
+    "right" : "double sign = yMin * yMax;",
+    "info" : "VariableDeclarationStatement[5292-5318]:VariableDeclarationStatement[5292-5318]"
+  }, {
+    "left" : "if (sign >= 0)",
+    "right" : "if (Math.abs(yMax) <= functionValueAccuracy)",
+    "info" : "IfStatement[5327-5946]:IfStatement[5539-6033]"
+  }, {
+    "left" : "sign >= 0",
+    "right" : "sign > 0",
+    "info" : "InfixExpression[5331-5340]:InfixExpression[5331-5339]"
+  }, {
+    "left" : "sign",
+    "right" : "Math",
+    "info" : "SimpleName[5331-5335]:SimpleName[5543-5547]"
+  }, {
+    "left" : ">=",
+    "right" : "<=",
+    "info" : "INFIX_EXPRESSION_OPERATOR[5336-5338]:INFIX_EXPRESSION_OPERATOR[5558-5560]"
+  }, {
+    "left" : "0",
+    "right" : "0",
+    "info" : "NumberLiteral[5339-5340]:NumberLiteral[5617-5618]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[5342-5760]:Block[5667-6033]"
+  }, {
+    "left" : "throw new IllegalArgumentException\n                (\"Function values at endpoints do not have different signs.\" +\n                        \"  Endpoints: [
+\" + min + \",\" + max + \"]\" + \n                        \"  Values: [
+\" + yMin + \",\" + yMax + \"]\");",
+    "right" : "throw new IllegalArgumentException\n                (\"Function values at endpoints do not have different signs.\" +\n                        \"  Endpoints: [
+\" + min + \",\" + max + \"]\" + \n                        \"  Values: [
+\" + yMin + \",\" + yMax + \"]\");",
+    "info" : "ThrowStatement[5503-5750]:ThrowStatement[5772-6019]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[5766-5946]:Block[6062-6199]"
+  }, {
+    "left" : "ret = solve(min, yMin, max, yMax, min, yMin);",
+    "right" : "ret = solve(min, yMin, max, yMax, min, yMin);",
+    "info" : "ExpressionStatement[5848-5893]:ExpressionStatement[6144-6189]"
+  }, {
+    "left" : "return ret;",
+    "right" : "return ret;",
+    "info" : "ReturnStatement[5956-5967]:ReturnStatement[6389-6400]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[6776-6783]:Modifier[7209-7216]"
+  }, {
+    "left" : "double",
+    "right" : "double",
+    "info" : "PrimitiveType[6784-6790]:PrimitiveType[7217-7223]"
+  }, {
+    "left" : "solve",
+    "right" : "solve",
+    "info" : "SimpleName[6791-6796]:SimpleName[7224-7229]"
+  }, {
+    "left" : "double x0",
+    "right" : "double x0",
+    "info" : "SingleVariableDeclaration[6797-6806]:SingleVariableDeclaration[7230-7239]"
+  }, {
+    "left" : "double y0",
+    "right" : "double y0",
+    "info" : "SingleVariableDeclaration[6808-6817]:SingleVariableDeclaration[7241-7250]"
+  }, {
+    "left" : "double x1",
+    "right" : "double x1",
+    "info" : "SingleVariableDeclaration[6844-6853]:SingleVariableDeclaration[7277-7286]"
+  }, {
+    "left" : "double y1",
+    "right" : "double y1",
+    "info" : "SingleVariableDeclaration[6855-6864]:SingleVariableDeclaration[7288-7297]"
+  }, {
+    "left" : "double x2",
+    "right" : "double x2",
+    "info" : "SingleVariableDeclaration[6891-6900]:SingleVariableDeclaration[7324-7333]"
+  }, {
+    "left" : "double y2",
+    "right" : "double y2",
+    "info" : "SingleVariableDeclaration[6902-6911]:SingleVariableDeclaration[7335-7344]"
+  }, {
+    "left" : "MaxIterationsExceededException",
+    "right" : "MaxIterationsExceededException",
+    "info" : "SimpleType[6924-6954]:SimpleType[7357-7387]"
+  }, {
+    "left" : "FunctionEvaluationException",
+    "right" : "FunctionEvaluationException",
+    "info" : "SimpleType[6956-6983]:SimpleType[7389-7416]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[6984-10281]:Block[7417-10714]"
+  }, {
+    "left" : "double delta = x1 - x0;",
+    "right" : "double delta = x1 - x0;",
+    "info" : "VariableDeclarationStatement[6995-7018]:VariableDeclarationStatement[7428-7451]"
+  }, {
+    "left" : "double oldDelta = delta;",
+    "right" : "double oldDelta = delta;",
+    "info" : "VariableDeclarationStatement[7027-7051]:VariableDeclarationStatement[7460-7484]"
+  }, {
+    "left" : "int i = 0;",
+    "right" : "int i = 0;",
+    "info" : "VariableDeclarationStatement[7061-7071]:VariableDeclarationStatement[7494-7504]"
+  }, {
+    "left" : "while (i < maximalIterationCount)",
+    "right" : "while (i < maximalIterationCount)",
+    "info" : "WhileStatement[7080-10202]:WhileStatement[7513-10635]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7114-10202]:Block[7547-10635]"
+  }, {
+    "left" : "if (Math.abs(y2) < Math.abs(y1))",
+    "right" : "if (Math.abs(y2) < Math.abs(y1))",
+    "info" : "IfStatement[7128-7404]:IfStatement[7561-7837]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7161-7404]:Block[7594-7837]"
+  }, {
+    "left" : "x0 = x1;",
+    "right" : "x0 = x1;",
+    "info" : "ExpressionStatement[7257-7265]:ExpressionStatement[7690-7698]"
+  }, {
+    "left" : "x1 = x2;",
+    "right" : "x1 = x2;",
+    "info" : "ExpressionStatement[7282-7290]:ExpressionStatement[7715-7723]"
+  }, {
+    "left" : "x2 = x0;",
+    "right" : "x2 = x0;",
+    "info" : "ExpressionStatement[7307-7315]:ExpressionStatement[7740-7748]"
+  }, {
+    "left" : "y0 = y1;",
+    "right" : "y0 = y1;",
+    "info" : "ExpressionStatement[7332-7340]:ExpressionStatement[7765-7773]"
+  }, {
+    "left" : "y1 = y2;",
+    "right" : "y1 = y2;",
+    "info" : "ExpressionStatement[7357-7365]:ExpressionStatement[7790-7798]"
+  }, {
+    "left" : "y2 = y0;",
+    "right" : "y2 = y0;",
+    "info" : "ExpressionStatement[7382-7390]:ExpressionStatement[7815-7823]"
+  }, {
+    "left" : "if (Math.abs(y1) <= functionValueAccuracy)",
+    "right" : "if (Math.abs(y1) <= functionValueAccuracy)",
+    "info" : "IfStatement[7417-7712]:IfStatement[7850-8145]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7460-7712]:Block[7893-8145]"
+  }, {
+    "left" : "setResult(x1, i);",
+    "right" : "setResult(x1, i);",
+    "info" : "ExpressionStatement[7650-7667]:ExpressionStatement[8083-8100]"
+  }, {
+    "left" : "return result;",
+    "right" : "return result;",
+    "info" : "ReturnStatement[7684-7698]:ReturnStatement[8117-8131]"
+  }, {
+    "left" : "double dx = (x2 - x1);",
+    "right" : "double dx = (x2 - x1);",
+    "info" : "VariableDeclarationStatement[7725-7747]:VariableDeclarationStatement[8158-8180]"
+  }, {
+    "left" : "double tolerance =\n                Math.max(relativeAccuracy * Math.abs(x1), absoluteAccuracy);",
+    "right" : "double tolerance =\n                Math.max(relativeAccuracy * Math.abs(x1), absoluteAccuracy);",
+    "info" : "VariableDeclarationStatement[7760-7855]:VariableDeclarationStatement[8193-8288]"
+  }, {
+    "left" : "if (Math.abs(dx) <= tolerance)",
+    "right" : "if (Math.abs(dx) <= tolerance)",
+    "info" : "IfStatement[7868-7979]:IfStatement[8301-8412]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7899-7979]:Block[8332-8412]"
+  }, {
+    "left" : "setResult(x1, i);",
+    "right" : "setResult(x1, i);",
+    "info" : "ExpressionStatement[7917-7934]:ExpressionStatement[8350-8367]"
+  }, {
+    "left" : "return result;",
+    "right" : "return result;",
+    "info" : "ReturnStatement[7951-7965]:ReturnStatement[8384-8398]"
+  }, {
+    "left" : "if ((Math.abs(oldDelta) < tolerance) ||\n                    (Math.abs(y0) <= Math.abs(y1)))",
+    "right" : "if ((Math.abs(oldDelta) < tolerance) ||\n                    (Math.abs(y0) <= Math.abs(y1)))",
+    "info" : "IfStatement[7992-9615]:IfStatement[8425-10048]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8084-8203]:Block[8517-8636]"
+  }, {
+    "left" : "delta = 0.5 * dx;",
+    "right" : "delta = 0.5 * dx;",
+    "info" : "ExpressionStatement[8138-8155]:ExpressionStatement[8571-8588]"
+  }, {
+    "left" : "oldDelta = delta;",
+    "right" : "oldDelta = delta;",
+    "info" : "ExpressionStatement[8172-8189]:ExpressionStatement[8605-8622]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8209-9615]:Block[8642-10048]"
+  }, {
+    "left" : "double r3 = y1 / y0;",
+    "right" : "double r3 = y1 / y0;",
+    "info" : "VariableDeclarationStatement[8227-8247]:VariableDeclarationStatement[8660-8680]"
+  }, {
+    "left" : "double p;",
+    "right" : "double p;",
+    "info" : "VariableDeclarationStatement[8264-8273]:VariableDeclarationStatement[8697-8706]"
+  }, {
+    "left" : "double p1;",
+    "right" : "double p1;",
+    "info" : "VariableDeclarationStatement[8290-8300]:VariableDeclarationStatement[8723-8733]"
+  }, {
+    "left" : "if (x0 == x2)",
+    "right" : "if (x0 == x2)",
+    "info" : "IfStatement[8506-8955]:IfStatement[8939-9388]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8520-8652]:Block[8953-9085]"
+  }, {
+    "left" : "p = dx * r3;",
+    "right" : "p = dx * r3;",
+    "info" : "ExpressionStatement[8587-8599]:ExpressionStatement[9020-9032]"
+  }, {
+    "left" : "p1 = 1.0 - r3;",
+    "right" : "p1 = 1.0 - r3;",
+    "info" : "ExpressionStatement[8620-8634]:ExpressionStatement[9053-9067]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8658-8955]:Block[9091-9388]"
+  }, {
+    "left" : "double r1 = y0 / y2;",
+    "right" : "double r1 = y0 / y2;",
+    "info" : "VariableDeclarationStatement[8736-8756]:VariableDeclarationStatement[9169-9189]"
+  }, {
+    "left" : "double r2 = y1 / y2;",
+    "right" : "double r2 = y1 / y2;",
+    "info" : "VariableDeclarationStatement[8777-8797]:VariableDeclarationStatement[9210-9230]"
+  }, {
+    "left" : "p = r3 * (dx * r1 * (r1 - r2) - (x1 - x0) * (r2 - 1.0));",
+    "right" : "p = r3 * (dx * r1 * (r1 - r2) - (x1 - x0) * (r2 - 1.0));",
+    "info" : "ExpressionStatement[8818-8874]:ExpressionStatement[9251-9307]"
+  }, {
+    "left" : "p1 = (r1 - 1.0) * (r2 - 1.0) * (r3 - 1.0);",
+    "right" : "p1 = (r1 - 1.0) * (r2 - 1.0) * (r3 - 1.0);",
+    "info" : "ExpressionStatement[8895-8937]:ExpressionStatement[9328-9370]"
+  }, {
+    "left" : "if (p > 0.0)",
+    "right" : "if (p > 0.0)",
+    "info" : "IfStatement[8972-9087]:IfStatement[9405-9520]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8985-9034]:Block[9418-9467]"
+  }, {
+    "left" : "p1 = -p1;",
+    "right" : "p1 = -p1;",
+    "info" : "ExpressionStatement[9007-9016]:ExpressionStatement[9440-9449]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9040-9087]:Block[9473-9520]"
+  }, {
+    "left" : "p = -p;",
+    "right" : "p = -p;",
+    "info" : "ExpressionStatement[9062-9069]:ExpressionStatement[9495-9502]"
+  }, {
+    "left" : "if (2.0 * p >= 1.5 * dx * p1 - Math.abs(tolerance * p1) ||\n                        p >= Math.abs(0.5 * oldDelta * p1))",
+    "right" : "if (2.0 * p >= 1.5 * dx * p1 - Math.abs(tolerance * p1) ||\n                        p >= Math.abs(0.5 * oldDelta * p1))",
+    "info" : "IfStatement[9104-9601]:IfStatement[9537-10034]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9223-9502]:Block[9656-9935]"
+  }, {
+    "left" : "delta = 0.5 * dx;",
+    "right" : "delta = 0.5 * dx;",
+    "info" : "ExpressionStatement[9429-9446]:ExpressionStatement[9862-9879]"
+  }, {
+    "left" : "oldDelta = delta;",
+    "right" : "oldDelta = delta;",
+    "info" : "ExpressionStatement[9467-9484]:ExpressionStatement[9900-9917]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9508-9601]:Block[9941-10034]"
+  }, {
+    "left" : "oldDelta = delta;",
+    "right" : "oldDelta = delta;",
+    "info" : "ExpressionStatement[9530-9547]:ExpressionStatement[9963-9980]"
+  }, {
+    "left" : "delta = p / p1;",
+    "right" : "delta = p / p1;",
+    "info" : "ExpressionStatement[9568-9583]:ExpressionStatement[10001-10016]"
+  }, {
+    "left" : "x0 = x1;",
+    "right" : "x0 = x1;",
+    "info" : "ExpressionStatement[9660-9668]:ExpressionStatement[10093-10101]"
+  }, {
+    "left" : "y0 = y1;",
+    "right" : "y0 = y1;",
+    "info" : "ExpressionStatement[9681-9689]:ExpressionStatement[10114-10122]"
+  }, {
+    "left" : "if (Math.abs(delta) > tolerance)",
+    "right" : "if (Math.abs(delta) > tolerance)",
+    "info" : "IfStatement[9736-9974]:IfStatement[10169-10407]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9769-9817]:Block[10202-10250]"
+  }, {
+    "left" : "x1 = x1 + delta;",
+    "right" : "x1 = x1 + delta;",
+    "info" : "ExpressionStatement[9787-9803]:ExpressionStatement[10220-10236]"
+  }, {
+    "left" : "if (dx > 0.0)",
+    "right" : "if (dx > 0.0)",
+    "info" : "IfStatement[9823-9974]:IfStatement[10256-10407]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9837-9895]:Block[10270-10328]"
+  }, {
+    "left" : "x1 = x1 + 0.5 * tolerance;",
+    "right" : "x1 = x1 + 0.5 * tolerance;",
+    "info" : "ExpressionStatement[9855-9881]:ExpressionStatement[10288-10314]"
+  }, {
+    "left" : "if (dx <= 0.0)",
+    "right" : "if (dx <= 0.0)",
+    "info" : "IfStatement[9901-9974]:IfStatement[10334-10407]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9916-9974]:Block[10349-10407]"
+  }, {
+    "left" : "x1 = x1 - 0.5 * tolerance;",
+    "right" : "x1 = x1 - 0.5 * tolerance;",
+    "info" : "ExpressionStatement[9934-9960]:ExpressionStatement[10367-10393]"
+  }, {
+    "left" : "y1 = f.value(x1);",
+    "right" : "y1 = f.value(x1);",
+    "info" : "ExpressionStatement[9987-10004]:ExpressionStatement[10420-10437]"
+  }, {
+    "left" : "if ((y1 > 0) == (y2 > 0))",
+    "right" : "if ((y1 > 0) == (y2 > 0))",
+    "info" : "IfStatement[10017-10175]:IfStatement[10450-10608]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[10043-10175]:Block[10476-10608]"
+  }, {
+    "left" : "x2 = x0;",
+    "right" : "x2 = x0;",
+    "info" : "ExpressionStatement[10061-10069]:ExpressionStatement[10494-10502]"
+  }, {
+    "left" : "y2 = y0;",
+    "right" : "y2 = y0;",
+    "info" : "ExpressionStatement[10086-10094]:ExpressionStatement[10519-10527]"
+  }, {
+    "left" : "delta = x1 - x0;",
+    "right" : "delta = x1 - x0;",
+    "info" : "ExpressionStatement[10111-10127]:ExpressionStatement[10544-10560]"
+  }, {
+    "left" : "oldDelta = delta;",
+    "right" : "oldDelta = delta;",
+    "info" : "ExpressionStatement[10144-10161]:ExpressionStatement[10577-10594]"
+  }, {
+    "left" : "i++;",
+    "right" : "i++;",
+    "info" : "ExpressionStatement[10188-10192]:ExpressionStatement[10621-10625]"
+  }, {
+    "left" : "throw new MaxIterationsExceededException(maximalIterationCount);",
+    "right" : "throw new MaxIterationsExceededException(maximalIterationCount);",
+    "info" : "ThrowStatement[10211-10275]:ThrowStatement[10644-10708]"
+  } ]
+}

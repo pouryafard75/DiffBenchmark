@@ -1,5 +1,6 @@
 package benchmark.oracle;
 
+import benchmark.defects4j.Defect4jCaseInfo;
 import benchmark.oracle.generators.BenchmarkHumanReadableDiffGenerator;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration;
@@ -13,10 +14,12 @@ import java.util.List;
 public class MakeToolsOutput {
     public static void main(String[] args) throws Exception {
         BenchmarkHumanReadableDiffGenerator benchmarkHumanReadableDiffGenerator = new BenchmarkHumanReadableDiffGenerator();
-        ObjectMapper mapper = new ObjectMapper();
-        List<CaseInfo> infos = mapper.readValue(new File(Configuration.casesPath), new TypeReference<List<CaseInfo>>(){});
-//        infos = new ArrayList<>();
-//        infos.add(new CaseInfo("https://github.com/raphw/byte-buddy/commit/f1dfb66a368760e77094ac1e3860b332cf0e4eb5"));
+        //Check the config file before running this
+        List<CaseInfo> infos = new ObjectMapper().readValue(new File(Configuration.casesPath), new TypeReference<List<CaseInfo>>(){});
+        infos = new ArrayList<>();
+//        infos.add(new CaseInfo("Lang", "58"));
+//        infos.add(new CaseInfo("https://github.com/brettwooldridge/HikariCP/commit/cd8c4d578a609bdd6395d3a8c49bfd19ed700dea"));
+        infos.add(new CaseInfo("https://github.com/BroadleafCommerce/BroadleafCommerce/commit/4ef35268bb96bb78b2dc698fa68e7ce763cde32e"));
         for (CaseInfo info : infos) {
             benchmarkHumanReadableDiffGenerator.generate(info);
         }

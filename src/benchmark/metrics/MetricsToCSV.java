@@ -18,8 +18,8 @@ public class MetricsToCSV {
     public static void main(String[] args) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         List<CaseInfo> infos = mapper.readValue(new File(casesPath), new TypeReference<List<CaseInfo>>(){});
-//        infos = new ArrayList<>();
-//        infos.add(new CaseInfo("https://github.com/greenrobot/greenDAO/commit/d6d9dd4365387816fda6987a4ad9b679c27e72a3"));
+
+
         BenchmarkMetricsComputer benchmarkMetricsComputer = new BenchmarkMetricsComputer(infos);
         List<DiffComparisonResult> stats = benchmarkMetricsComputer.generateBenchmarkStats();
         String[] activeTools = benchmarkMetricsComputer.getActiveTools();

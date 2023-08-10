@@ -1,0 +1,378 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[491-5355]:TypeDeclaration[491-4272]"
+  }, {
+    "left" : "private JavaSymbolName methodName;",
+    "right" : "private JavaSymbolName methodName;",
+    "info" : "FieldDeclaration[725-759]:FieldDeclaration[725-759]"
+  }, {
+    "left" : "private JavaType returnType;",
+    "right" : "private JavaType returnType;",
+    "info" : "FieldDeclaration[764-792]:FieldDeclaration[764-792]"
+  }, {
+    "left" : "public existing MethodMetadata)",
+    "right" : "public existing MethodMetadata)",
+    "info" : "MethodDeclaration[883-1041]:MethodDeclaration[798-956]"
+  }, {
+    "left" : "public MethodMetadataBuilder(final String declaredbyMetadataId) {\n        super(declaredbyMetadataId);\n    }",
+    "right" : "public MethodMetadataBuilder(final String declaredbyMetadataId) {\n        super(declaredbyMetadataId);\n    }",
+    "info" : "MethodDeclaration[1047-1155]:MethodDeclaration[962-1070]"
+  }, {
+    "left" : "/**\n     * Constructor for a method with no parameters\n     * \n     * @param declaredbyMetadataId\n     * @param modifier\n     * @param methodName\n     * @param returnType\n     * @param bodyBuilder\n     */\n    public MethodMetadataBuilder(final String declaredbyMetadataId,\n            final int modifier, final JavaSymbolName methodName,\n            final JavaType returnType,\n            final InvocableMemberBodyBuilder bodyBuilder) {\n        this(declaredbyMetadataId, modifier, methodName, returnType,\n                new ArrayList<AnnotatedJavaType>(),\n                new ArrayList<JavaSymbolName>(), bodyBuilder);\n    }",
+    "right" : "/**\n     * Constructor for a method with no parameters\n     * \n     * @param declaredbyMetadataId\n     * @param modifier\n     * @param methodName\n     * @param returnType\n     * @param bodyBuilder\n     */\n    public MethodMetadataBuilder(final String declaredbyMetadataId,\n            final int modifier, final JavaSymbolName methodName,\n            final JavaType returnType,\n            final InvocableMemberBodyBuilder bodyBuilder) {\n        this(declaredbyMetadataId, modifier, methodName, returnType,\n                new ArrayList<AnnotatedJavaType>(),\n                new ArrayList<JavaSymbolName>(), bodyBuilder);\n    }",
+    "info" : "MethodDeclaration[1161-1787]:MethodDeclaration[1076-1702]"
+  }, {
+    "left" : "/**\n     * Constructor for a method with parameters\n     * \n     * @param declaredbyMetadataId\n     * @param modifier\n     * @param methodName\n     * @param returnType\n     * @param parameterTypes\n     * @param parameterNames\n     * @param bodyBuilder\n     */\n    public MethodMetadataBuilder(final String declaredbyMetadataId,\n            final int modifier, final JavaSymbolName methodName,\n            final JavaType returnType,\n            final List<AnnotatedJavaType> parameterTypes,\n            final List<JavaSymbolName> parameterNames,\n            final InvocableMemberBodyBuilder bodyBuilder) {\n        this(declaredbyMetadataId);\n        setModifier(modifier);\n        setParameterTypes(parameterTypes);\n        setParameterNames(parameterNames);\n        init(methodName, returnType);\n        setBodyBuilder(bodyBuilder);\n    }",
+    "right" : "/**\n     * Constructor for a method with parameters\n     * \n     * @param declaredbyMetadataId\n     * @param modifier\n     * @param methodName\n     * @param returnType\n     * @param parameterTypes\n     * @param parameterNames\n     * @param bodyBuilder\n     */\n    public MethodMetadataBuilder(final String declaredbyMetadataId,\n            final int modifier, final JavaSymbolName methodName,\n            final JavaType returnType,\n            final List<AnnotatedJavaType> parameterTypes,\n            final List<JavaSymbolName> parameterNames,\n            final InvocableMemberBodyBuilder bodyBuilder) {\n        this(declaredbyMetadataId);\n        setModifier(modifier);\n        setParameterTypes(parameterTypes);\n        setParameterNames(parameterNames);\n        init(methodName, returnType);\n        setBodyBuilder(bodyBuilder);\n    }",
+    "info" : "MethodDeclaration[1793-2631]:MethodDeclaration[1708-2546]"
+  }, {
+    "left" : "public MethodMetadataBuilder(final String declaredbyMetadataId,\n            final MethodMetadata existing) {\n        super(declaredbyMetadataId, existing);\n        init(existing.getMethodName(), existing.getReturnType());\n    }",
+    "right" : "public MethodMetadataBuilder(final String declaredbyMetadataId,\n            final MethodMetadata existing) {\n        super(declaredbyMetadataId, existing);\n        init(existing.getMethodName(), existing.getReturnType());\n    }",
+    "info" : "MethodDeclaration[2637-2864]:MethodDeclaration[2552-2779]"
+  }, {
+    "left" : "public MethodMetadata build() {\n        DefaultMethodMetadata methodMetadata = new DefaultMethodMetadata(\n                getCustomData().build(), getDeclaredByMetadataId(),\n                getModifier(), buildAnnotations(), getMethodName(),\n                getReturnType(), getParameterTypes(), getParameterNames(),\n                getThrowsTypes(), getBodyBuilder().getOutput());\n\n        methodMetadata.setCommentStructure(this.commentStructure);\n        // ROO-3648: Add support to generate Generic Methods\n        methodMetadata.setGenericDefinition(this.genericDefinition);\n\n        return methodMetadata;\n    }",
+    "right" : "public MethodMetadata build() {\n        DefaultMethodMetadata methodMetadata = new DefaultMethodMetadata(\n                getCustomData().build(), getDeclaredByMetadataId(),\n                getModifier(), buildAnnotations(), getMethodName(),\n                getReturnType(), getParameterTypes(), getParameterNames(),\n                getThrowsTypes(), getBodyBuilder().getOutput());\n        \n        methodMetadata.setCommentStructure(this.getCommentStructure());\n        // ROO-3648: Add support to generate Generic Methods\n        methodMetadata.setGenericDefinition(this.getGenericDefinition());\n\n        return methodMetadata;\n    }",
+    "info" : "MethodDeclaration[2870-3487]:MethodDeclaration[2785-3420]"
+  }, {
+    "left" : "public ) : JavaSymbolName",
+    "right" : "public ) : JavaSymbolName",
+    "info" : "MethodDeclaration[3493-3565]:MethodDeclaration[3426-3498]"
+  }, {
+    "left" : "public JavaType getReturnType() {\n        return returnType;\n    }",
+    "right" : "public JavaType getReturnType() {\n        return returnType;\n    }",
+    "info" : "MethodDeclaration[3571-3637]:MethodDeclaration[3504-3570]"
+  }, {
+    "left" : "private void init(final JavaSymbolName methodName, final JavaType returnType) {\n        this.methodName = methodName;\n        this.returnType = returnType;\n    }",
+    "right" : "private void init(final JavaSymbolName methodName, final JavaType returnType) {\n        this.methodName = methodName;\n        this.returnType = returnType;\n    }",
+    "info" : "MethodDeclaration[3643-3804]:MethodDeclaration[3576-3737]"
+  }, {
+    "left" : "public void setMethodName(final JavaSymbolName methodName) {\n        this.methodName = methodName;\n    }",
+    "right" : "public void setMethodName(final JavaSymbolName methodName) {\n        this.methodName = methodName;\n    }",
+    "info" : "MethodDeclaration[3810-3914]:MethodDeclaration[3743-3847]"
+  }, {
+    "left" : "public void setReturnType(final JavaType returnType) {\n        this.returnType = returnType;\n    }",
+    "right" : "public void setReturnType(final JavaType returnType) {\n        this.returnType = returnType;\n    }",
+    "info" : "MethodDeclaration[3920-4018]:MethodDeclaration[3853-3951]"
+  }, {
+    "left" : "@Override\n    public String toString() {\n        return new ToStringBuilder(this)\n                // Append the parts of the method that make up the Java\n                // signature\n                .append(\"methodName\", methodName)\n                .append(\"parameterTypes\", getParameterTypes()).toString();\n    }",
+    "right" : "@Override\n    public String toString() {\n        return new ToStringBuilder(this)\n                // Append the parts of the method that make up the Java\n                // signature\n                .append(\"methodName\", methodName)\n                .append(\"parameterTypes\", getParameterTypes()).toString();\n    }",
+    "info" : "MethodDeclaration[5040-5353]:MethodDeclaration[3957-4270]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[606-612]:Modifier[606-612]"
+  }, {
+    "left" : "final",
+    "right" : "final",
+    "info" : "Modifier[613-618]:Modifier[613-618]"
+  }, {
+    "left" : "AbstractInvocableMemberMetadataBuilder<MethodMetadata>",
+    "right" : "AbstractInvocableMemberMetadataBuilder<MethodMetadata>",
+    "info" : "ParameterizedType[663-717]:ParameterizedType[663-717]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[883-889]:Modifier[798-804]"
+  }, {
+    "left" : "final MethodMetadata existing",
+    "right" : "final MethodMetadata existing",
+    "info" : "SingleVariableDeclaration[912-941]:SingleVariableDeclaration[827-856]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[943-1041]:Block[858-956]"
+  }, {
+    "left" : "super(existing);",
+    "right" : "super(existing);",
+    "info" : "SuperConstructorInvocation[953-969]:SuperConstructorInvocation[868-884]"
+  }, {
+    "left" : "init(existing.getMethodName(), existing.getReturnType());",
+    "right" : "init(existing.getMethodName(), existing.getReturnType());",
+    "info" : "ExpressionStatement[978-1035]:ExpressionStatement[893-950]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1047-1053]:Modifier[962-968]"
+  }, {
+    "left" : "final String declaredbyMetadataId",
+    "right" : "final String declaredbyMetadataId",
+    "info" : "SingleVariableDeclaration[1076-1109]:SingleVariableDeclaration[991-1024]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1111-1155]:Block[1026-1070]"
+  }, {
+    "left" : "super(declaredbyMetadataId);",
+    "right" : "super(declaredbyMetadataId);",
+    "info" : "SuperConstructorInvocation[1121-1149]:SuperConstructorInvocation[1036-1064]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1370-1376]:Modifier[1285-1291]"
+  }, {
+    "left" : "final String declaredbyMetadataId",
+    "right" : "final String declaredbyMetadataId",
+    "info" : "SingleVariableDeclaration[1399-1432]:SingleVariableDeclaration[1314-1347]"
+  }, {
+    "left" : "final int modifier",
+    "right" : "final int modifier",
+    "info" : "SingleVariableDeclaration[1446-1464]:SingleVariableDeclaration[1361-1379]"
+  }, {
+    "left" : "final JavaSymbolName methodName",
+    "right" : "final JavaSymbolName methodName",
+    "info" : "SingleVariableDeclaration[1466-1497]:SingleVariableDeclaration[1381-1412]"
+  }, {
+    "left" : "final JavaType returnType",
+    "right" : "final JavaType returnType",
+    "info" : "SingleVariableDeclaration[1511-1536]:SingleVariableDeclaration[1426-1451]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder",
+    "info" : "SingleVariableDeclaration[1550-1594]:SingleVariableDeclaration[1465-1509]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1596-1787]:Block[1511-1702]"
+  }, {
+    "left" : "this(declaredbyMetadataId, modifier, methodName, returnType,\n                new ArrayList<AnnotatedJavaType>(),\n                new ArrayList<JavaSymbolName>(), bodyBuilder);",
+    "right" : "this(declaredbyMetadataId, modifier, methodName, returnType,\n                new ArrayList<AnnotatedJavaType>(),\n                new ArrayList<JavaSymbolName>(), bodyBuilder);",
+    "info" : "ConstructorInvocation[1606-1781]:ConstructorInvocation[1521-1696]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2057-2063]:Modifier[1972-1978]"
+  }, {
+    "left" : "final String declaredbyMetadataId",
+    "right" : "final String declaredbyMetadataId",
+    "info" : "SingleVariableDeclaration[2086-2119]:SingleVariableDeclaration[2001-2034]"
+  }, {
+    "left" : "final int modifier",
+    "right" : "final int modifier",
+    "info" : "SingleVariableDeclaration[2133-2151]:SingleVariableDeclaration[2048-2066]"
+  }, {
+    "left" : "final JavaSymbolName methodName",
+    "right" : "final JavaSymbolName methodName",
+    "info" : "SingleVariableDeclaration[2153-2184]:SingleVariableDeclaration[2068-2099]"
+  }, {
+    "left" : "final JavaType returnType",
+    "right" : "final JavaType returnType",
+    "info" : "SingleVariableDeclaration[2198-2223]:SingleVariableDeclaration[2113-2138]"
+  }, {
+    "left" : "final List<AnnotatedJavaType> parameterTypes",
+    "right" : "final List<AnnotatedJavaType> parameterTypes",
+    "info" : "SingleVariableDeclaration[2237-2281]:SingleVariableDeclaration[2152-2196]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames",
+    "right" : "final List<JavaSymbolName> parameterNames",
+    "info" : "SingleVariableDeclaration[2295-2336]:SingleVariableDeclaration[2210-2251]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder",
+    "info" : "SingleVariableDeclaration[2350-2394]:SingleVariableDeclaration[2265-2309]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2396-2631]:Block[2311-2546]"
+  }, {
+    "left" : "this(declaredbyMetadataId);",
+    "right" : "this(declaredbyMetadataId);",
+    "info" : "ConstructorInvocation[2406-2433]:ConstructorInvocation[2321-2348]"
+  }, {
+    "left" : "setModifier(modifier);",
+    "right" : "setModifier(modifier);",
+    "info" : "ExpressionStatement[2442-2464]:ExpressionStatement[2357-2379]"
+  }, {
+    "left" : "setParameterTypes(parameterTypes);",
+    "right" : "setParameterTypes(parameterTypes);",
+    "info" : "ExpressionStatement[2473-2507]:ExpressionStatement[2388-2422]"
+  }, {
+    "left" : "setParameterNames(parameterNames);",
+    "right" : "setParameterNames(parameterNames);",
+    "info" : "ExpressionStatement[2516-2550]:ExpressionStatement[2431-2465]"
+  }, {
+    "left" : "init(methodName, returnType);",
+    "right" : "init(methodName, returnType);",
+    "info" : "ExpressionStatement[2559-2588]:ExpressionStatement[2474-2503]"
+  }, {
+    "left" : "setBodyBuilder(bodyBuilder);",
+    "right" : "setBodyBuilder(bodyBuilder);",
+    "info" : "ExpressionStatement[2597-2625]:ExpressionStatement[2512-2540]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2637-2643]:Modifier[2552-2558]"
+  }, {
+    "left" : "final String declaredbyMetadataId",
+    "right" : "final String declaredbyMetadataId",
+    "info" : "SingleVariableDeclaration[2666-2699]:SingleVariableDeclaration[2581-2614]"
+  }, {
+    "left" : "final MethodMetadata existing",
+    "right" : "final MethodMetadata existing",
+    "info" : "SingleVariableDeclaration[2713-2742]:SingleVariableDeclaration[2628-2657]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2744-2864]:Block[2659-2779]"
+  }, {
+    "left" : "super(declaredbyMetadataId, existing);",
+    "right" : "super(declaredbyMetadataId, existing);",
+    "info" : "SuperConstructorInvocation[2754-2792]:SuperConstructorInvocation[2669-2707]"
+  }, {
+    "left" : "init(existing.getMethodName(), existing.getReturnType());",
+    "right" : "init(existing.getMethodName(), existing.getReturnType());",
+    "info" : "ExpressionStatement[2801-2858]:ExpressionStatement[2716-2773]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2870-2876]:Modifier[2785-2791]"
+  }, {
+    "left" : "MethodMetadata",
+    "right" : "MethodMetadata",
+    "info" : "SimpleType[2877-2891]:SimpleType[2792-2806]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2900-3487]:Block[2815-3420]"
+  }, {
+    "left" : "DefaultMethodMetadata methodMetadata = new DefaultMethodMetadata(\n                getCustomData().build(), getDeclaredByMetadataId(),\n                getModifier(), buildAnnotations(), getMethodName(),\n                getReturnType(), getParameterTypes(), getParameterNames(),\n                getThrowsTypes(), getBodyBuilder().getOutput());",
+    "right" : "DefaultMethodMetadata methodMetadata = new DefaultMethodMetadata(\n                getCustomData().build(), getDeclaredByMetadataId(),\n                getModifier(), buildAnnotations(), getMethodName(),\n                getReturnType(), getParameterTypes(), getParameterNames(),\n                getThrowsTypes(), getBodyBuilder().getOutput());",
+    "info" : "VariableDeclarationStatement[2910-3251]:VariableDeclarationStatement[2825-3166]"
+  }, {
+    "left" : "methodMetadata.setCommentStructure(this.commentStructure);",
+    "right" : "methodMetadata.setCommentStructure(this.getCommentStructure());",
+    "info" : "ExpressionStatement[3261-3319]:ExpressionStatement[3184-3247]"
+  }, {
+    "left" : "methodMetadata.setGenericDefinition(this.genericDefinition);",
+    "right" : "methodMetadata.setGenericDefinition(this.getGenericDefinition());",
+    "info" : "ExpressionStatement[3389-3449]:ExpressionStatement[3317-3382]"
+  }, {
+    "left" : "return methodMetadata;",
+    "right" : "return methodMetadata;",
+    "info" : "ReturnStatement[3459-3481]:ReturnStatement[3392-3414]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3493-3499]:Modifier[3426-3432]"
+  }, {
+    "left" : "JavaSymbolName",
+    "right" : "JavaSymbolName",
+    "info" : "SimpleType[3500-3514]:SimpleType[3433-3447]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3531-3565]:Block[3464-3498]"
+  }, {
+    "left" : "return methodName;",
+    "right" : "return methodName;",
+    "info" : "ReturnStatement[3541-3559]:ReturnStatement[3474-3492]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3571-3577]:Modifier[3504-3510]"
+  }, {
+    "left" : "JavaType",
+    "right" : "JavaType",
+    "info" : "SimpleType[3578-3586]:SimpleType[3511-3519]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3603-3637]:Block[3536-3570]"
+  }, {
+    "left" : "return returnType;",
+    "right" : "return returnType;",
+    "info" : "ReturnStatement[3613-3631]:ReturnStatement[3546-3564]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[3643-3650]:Modifier[3576-3583]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3651-3655]:PrimitiveType[3584-3588]"
+  }, {
+    "left" : "final JavaSymbolName methodName",
+    "right" : "final JavaSymbolName methodName",
+    "info" : "SingleVariableDeclaration[3661-3692]:SingleVariableDeclaration[3594-3625]"
+  }, {
+    "left" : "final JavaType returnType",
+    "right" : "final JavaType returnType",
+    "info" : "SingleVariableDeclaration[3694-3719]:SingleVariableDeclaration[3627-3652]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3721-3804]:Block[3654-3737]"
+  }, {
+    "left" : "this.methodName = methodName;",
+    "right" : "this.methodName = methodName;",
+    "info" : "ExpressionStatement[3731-3760]:ExpressionStatement[3664-3693]"
+  }, {
+    "left" : "this.returnType = returnType;",
+    "right" : "this.returnType = returnType;",
+    "info" : "ExpressionStatement[3769-3798]:ExpressionStatement[3702-3731]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3810-3816]:Modifier[3743-3749]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3817-3821]:PrimitiveType[3750-3754]"
+  }, {
+    "left" : "final JavaSymbolName methodName",
+    "right" : "final JavaSymbolName methodName",
+    "info" : "SingleVariableDeclaration[3836-3867]:SingleVariableDeclaration[3769-3800]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3869-3914]:Block[3802-3847]"
+  }, {
+    "left" : "this.methodName = methodName;",
+    "right" : "this.methodName = methodName;",
+    "info" : "ExpressionStatement[3879-3908]:ExpressionStatement[3812-3841]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3920-3926]:Modifier[3853-3859]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3927-3931]:PrimitiveType[3860-3864]"
+  }, {
+    "left" : "final JavaType returnType",
+    "right" : "final JavaType returnType",
+    "info" : "SingleVariableDeclaration[3946-3971]:SingleVariableDeclaration[3879-3904]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3973-4018]:Block[3906-3951]"
+  }, {
+    "left" : "this.returnType = returnType;",
+    "right" : "this.returnType = returnType;",
+    "info" : "ExpressionStatement[3983-4012]:ExpressionStatement[3916-3945]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[5040-5049]:MarkerAnnotation[3957-3966]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5054-5060]:Modifier[3971-3977]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[5061-5067]:SimpleType[3978-3984]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[5079-5353]:Block[3996-4270]"
+  }, {
+    "left" : "return new ToStringBuilder(this)\n                // Append the parts of the method that make up the Java\n                // signature\n                .append(\"methodName\", methodName)\n                .append(\"parameterTypes\", getParameterTypes()).toString();",
+    "right" : "return new ToStringBuilder(this)\n                // Append the parts of the method that make up the Java\n                // signature\n                .append(\"methodName\", methodName)\n                .append(\"parameterTypes\", getParameterTypes()).toString();",
+    "info" : "ReturnStatement[5089-5347]:ReturnStatement[4006-4264]"
+  } ]
+}

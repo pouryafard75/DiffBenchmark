@@ -1,0 +1,222 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "class : LookupTranslator",
+    "right" : "class : LookupTranslator",
+    "info" : "TypeDeclaration[933-2988]:TypeDeclaration[933-2998]"
+  }, {
+    "left" : "lookupMap",
+    "right" : "lookupMap",
+    "info" : "FieldDeclaration[1087-1147]:FieldDeclaration[1087-1141]"
+  }, {
+    "left" : "shortest",
+    "right" : "shortest",
+    "info" : "FieldDeclaration[1152-1179]:FieldDeclaration[1146-1173]"
+  }, {
+    "left" : "longest",
+    "right" : "longest",
+    "info" : "FieldDeclaration[1184-1210]:FieldDeclaration[1178-1204]"
+  }, {
+    "left" : "public LookupTranslator()",
+    "right" : "public LookupTranslator()",
+    "info" : "MethodDeclaration[1216-2307]:MethodDeclaration[1210-2306]"
+  }, {
+    "left" : "public translate(input , index int, out ) : int",
+    "right" : "public translate(input , index int, out ) : int",
+    "info" : "MethodDeclaration[2313-2986]:MethodDeclaration[2312-2996]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1019-1025]:Modifier[1019-1025]"
+  }, {
+    "left" : "class",
+    "right" : "class",
+    "info" : "TYPE_DECLARATION_KIND[1026-1031]:TYPE_DECLARATION_KIND[1026-1031]"
+  }, {
+    "left" : "CharSequence",
+    "right" : "String",
+    "info" : "SimpleName[1109-1121]:SimpleName[1109-1115]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1664-1670]:Modifier[1658-1664]"
+  }, {
+    "left" : "LookupTranslator",
+    "right" : "LookupTranslator",
+    "info" : "SimpleName[1671-1687]:SimpleName[1665-1681]"
+  }, {
+    "left" : "final CharSequence[]... lookup",
+    "right" : "final CharSequence[]... lookup",
+    "info" : "SingleVariableDeclaration[1688-1718]:SingleVariableDeclaration[1682-1712]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1720-2307]:Block[1714-2306]"
+  }, {
+    "left" : "lookupMap = new HashMap<CharSequence, CharSequence>();",
+    "right" : "lookupMap = new HashMap<String, CharSequence>();",
+    "info" : "ExpressionStatement[1730-1784]:ExpressionStatement[1724-1772]"
+  }, {
+    "left" : "CharSequence",
+    "right" : "String",
+    "info" : "SimpleName[1754-1766]:SimpleName[1748-1754]"
+  }, {
+    "left" : "int _shortest = Integer.MAX_VALUE;",
+    "right" : "int _shortest = Integer.MAX_VALUE;",
+    "info" : "VariableDeclarationStatement[1793-1827]:VariableDeclarationStatement[1781-1815]"
+  }, {
+    "left" : "int _longest = 0;",
+    "right" : "int _longest = 0;",
+    "info" : "VariableDeclarationStatement[1836-1853]:VariableDeclarationStatement[1824-1841]"
+  }, {
+    "left" : "if (lookup != null)",
+    "right" : "if (lookup != null)",
+    "info" : "IfStatement[1862-2243]:IfStatement[1850-2242]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1882-2243]:Block[1870-2242]"
+  }, {
+    "left" : "for (final CharSequence[] seq : lookup)",
+    "right" : "for (final CharSequence[] seq : lookup)",
+    "info" : "EnhancedForStatement[1896-2233]:EnhancedForStatement[1884-2232]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1936-2233]:Block[1924-2232]"
+  }, {
+    "left" : "this.lookupMap.put(seq[0], seq[1]);",
+    "right" : "this.lookupMap.put(seq[0].toString(), seq[1]);",
+    "info" : "ExpressionStatement[1954-1989]:ExpressionStatement[1942-1988]"
+  }, {
+    "left" : "seq[0]",
+    "right" : "seq[0]",
+    "info" : "ArrayAccess[1973-1979]:ArrayAccess[1961-1967]"
+  }, {
+    "left" : "final int sz = seq[0].length();",
+    "right" : "final int sz = seq[0].length();",
+    "info" : "VariableDeclarationStatement[2006-2037]:VariableDeclarationStatement[2005-2036]"
+  }, {
+    "left" : "if (sz < _shortest)",
+    "right" : "if (sz < _shortest)",
+    "info" : "IfStatement[2054-2129]:IfStatement[2053-2128]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2074-2129]:Block[2073-2128]"
+  }, {
+    "left" : "_shortest = sz;",
+    "right" : "_shortest = sz;",
+    "info" : "ExpressionStatement[2096-2111]:ExpressionStatement[2095-2110]"
+  }, {
+    "left" : "if (sz > _longest)",
+    "right" : "if (sz > _longest)",
+    "info" : "IfStatement[2146-2219]:IfStatement[2145-2218]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2165-2219]:Block[2164-2218]"
+  }, {
+    "left" : "_longest = sz;",
+    "right" : "_longest = sz;",
+    "info" : "ExpressionStatement[2187-2201]:ExpressionStatement[2186-2200]"
+  }, {
+    "left" : "shortest = _shortest;",
+    "right" : "shortest = _shortest;",
+    "info" : "ExpressionStatement[2252-2273]:ExpressionStatement[2251-2272]"
+  }, {
+    "left" : "longest = _longest;",
+    "right" : "longest = _longest;",
+    "info" : "ExpressionStatement[2282-2301]:ExpressionStatement[2281-2300]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[2350-2359]:MarkerAnnotation[2349-2358]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2364-2370]:Modifier[2363-2369]"
+  }, {
+    "left" : "int",
+    "right" : "int",
+    "info" : "PrimitiveType[2371-2374]:PrimitiveType[2370-2373]"
+  }, {
+    "left" : "translate",
+    "right" : "translate",
+    "info" : "SimpleName[2375-2384]:SimpleName[2374-2383]"
+  }, {
+    "left" : "final CharSequence input",
+    "right" : "final CharSequence input",
+    "info" : "SingleVariableDeclaration[2385-2409]:SingleVariableDeclaration[2384-2408]"
+  }, {
+    "left" : "final int index",
+    "right" : "final int index",
+    "info" : "SingleVariableDeclaration[2411-2426]:SingleVariableDeclaration[2410-2425]"
+  }, {
+    "left" : "final Writer out",
+    "right" : "final Writer out",
+    "info" : "SingleVariableDeclaration[2428-2444]:SingleVariableDeclaration[2427-2443]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[2453-2464]:SimpleType[2452-2463]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2465-2986]:Block[2464-2996]"
+  }, {
+    "left" : "int max = longest;",
+    "right" : "int max = longest;",
+    "info" : "VariableDeclarationStatement[2475-2493]:VariableDeclarationStatement[2474-2492]"
+  }, {
+    "left" : "if (index + longest > input.length())",
+    "right" : "if (index + longest > input.length())",
+    "info" : "IfStatement[2502-2593]:IfStatement[2501-2592]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2540-2593]:Block[2539-2592]"
+  }, {
+    "left" : "max = input.length() - index;",
+    "right" : "max = input.length() - index;",
+    "info" : "ExpressionStatement[2554-2583]:ExpressionStatement[2553-2582]"
+  }, {
+    "left" : "for (int i = max; i >= shortest; i--)",
+    "right" : "for (int i = max; i >= shortest; i--)",
+    "info" : "ForStatement[2653-2962]:ForStatement[2652-2972]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2691-2962]:Block[2690-2972]"
+  }, {
+    "left" : "final CharSequence subSeq = input.subSequence(index, index + i);",
+    "right" : "final CharSequence subSeq = input.subSequence(index, index + i);",
+    "info" : "VariableDeclarationStatement[2705-2769]:VariableDeclarationStatement[2704-2768]"
+  }, {
+    "left" : "final CharSequence result = lookupMap.get(subSeq);",
+    "right" : "final CharSequence result = lookupMap.get(subSeq.toString());",
+    "info" : "VariableDeclarationStatement[2782-2832]:VariableDeclarationStatement[2781-2842]"
+  }, {
+    "left" : "if (result != null)",
+    "right" : "if (result != null)",
+    "info" : "IfStatement[2845-2952]:IfStatement[2855-2962]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2865-2952]:Block[2875-2962]"
+  }, {
+    "left" : "out.write(result.toString());",
+    "right" : "out.write(result.toString());",
+    "info" : "ExpressionStatement[2883-2912]:ExpressionStatement[2893-2922]"
+  }, {
+    "left" : "return i;",
+    "right" : "return i;",
+    "info" : "ReturnStatement[2929-2938]:ReturnStatement[2939-2948]"
+  }, {
+    "left" : "return 0;",
+    "right" : "return 0;",
+    "info" : "ReturnStatement[2971-2980]:ReturnStatement[2981-2990]"
+  } ]
+}

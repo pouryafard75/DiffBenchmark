@@ -1,0 +1,242 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[1357-3452]:TypeDeclaration[1356-3451]"
+  }, {
+    "left" : "private final ResultHandler<? super T> handler;",
+    "right" : "private final ResultHandler<? super T> handler;",
+    "info" : "FieldDeclaration[1550-1597]:FieldDeclaration[1549-1596]"
+  }, {
+    "left" : "ResultHandlerAdapter(ResultHandler<? super T> handler) {\n        this.handler = handler;\n    }",
+    "right" : "ResultHandlerAdapter(ResultHandler<? super T> handler) {\n        this.handler = handler;\n    }",
+    "info" : "MethodDeclaration[1603-1697]:MethodDeclaration[1602-1696]"
+  }, {
+    "left" : "public void onComplete(T result) {\n        handler.onComplete(result);\n    }",
+    "right" : "public void onComplete(T result) {\n        handler.onComplete(result);\n    }",
+    "info" : "MethodDeclaration[1703-1779]:MethodDeclaration[1702-1778]"
+  }, {
+    "left" : "public void onFailure(Throwable failure) {\n        if (failure instanceof InternalUnsupportedBuildArgumentException) {\n            handler.onFailure(new UnsupportedBuildArgumentException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure));\n        } else if (failure instanceof UnsupportedOperationConfigurationException) {\n            handler.onFailure(new UnsupportedOperationConfigurationException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure.getCause()));\n        } else if (failure instanceof GradleConnectionException) {\n            handler.onFailure((GradleConnectionException) failure);\n        } else if (failure instanceof InternalBuildCancelledException) {\n            handler.onFailure(new BuildCancelledException(connectionFailureMessage(failure), failure.getCause()));\n        } else if (failure instanceof InternalTestExecutionException) {\n            handler.onFailure(new TestExecutionException(connectionFailureMessage(failure), failure.getCause()));\n        } else if (failure instanceof BuildExceptionVersion1) {\n            handler.onFailure(new BuildException(connectionFailureMessage(failure), failure.getCause()));\n        } else if (failure instanceof ListenerNotificationException) {\n            handler.onFailure(new ListenerFailedException(connectionFailureMessage(failure), ((ListenerNotificationException) failure).getCauses()));\n        } else {\n            handler.onFailure(new GradleConnectionException(connectionFailureMessage(failure), failure));\n        }\n    }",
+    "right" : "public void onFailure(Throwable failure) {\n        if (failure instanceof InternalUnsupportedBuildArgumentException) {\n            handler.onFailure(new UnsupportedBuildArgumentException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure));\n        } else if (failure instanceof UnsupportedOperationConfigurationException) {\n            handler.onFailure(new UnsupportedOperationConfigurationException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure.getCause()));\n        } else if (failure instanceof GradleConnectionException) {\n            handler.onFailure((GradleConnectionException) failure);\n        } else if (failure instanceof InternalBuildCancelledException) {\n            handler.onFailure(new BuildCancelledException(connectionFailureMessage(failure), failure.getCause()));\n        } else if (failure instanceof InternalTestExecutionException) {\n            handler.onFailure(new TestExecutionException(connectionFailureMessage(failure), failure.getCause()));\n        } else if (failure instanceof BuildExceptionVersion1) {\n            handler.onFailure(new BuildException(connectionFailureMessage(failure), failure.getCause()));\n        } else if (failure instanceof ListenerNotificationException) {\n            handler.onFailure(new ListenerFailedException(connectionFailureMessage(failure), ((ListenerNotificationException) failure).getCauses()));\n        } else {\n            handler.onFailure(new GradleConnectionException(connectionFailureMessage(failure), failure));\n        }\n    }",
+    "info" : "MethodDeclaration[1785-3374]:MethodDeclaration[1784-3373]"
+  }, {
+    "left" : "protected abstract String connectionFailureMessage(Throwable failure);",
+    "right" : "protected abstract String connectionFailureMessage(Throwable failure);",
+    "info" : "MethodDeclaration[3380-3450]:MethodDeclaration[3379-3449]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "package org.gradle.tooling.internal.consumer;",
+    "right" : "package org.gradle.tooling.internal.consumer;",
+    "info" : "PackageDeclaration[616-661]:PackageDeclaration[616-661]"
+  }, {
+    "left" : "import org.gradle.internal.event.ListenerNotificationException;",
+    "right" : "import org.gradle.internal.event.ListenerNotificationException;",
+    "info" : "ImportDeclaration[663-726]:ImportDeclaration[663-726]"
+  }, {
+    "left" : "import org.gradle.tooling.*;",
+    "right" : "import org.gradle.tooling.*;",
+    "info" : "ImportDeclaration[727-755]:ImportDeclaration[727-755]"
+  }, {
+    "left" : "import org.gradle.tooling.exceptions.UnsupportedBuildArgumentException;",
+    "right" : "import org.gradle.tooling.exceptions.UnsupportedBuildArgumentException;",
+    "info" : "ImportDeclaration[756-827]:ImportDeclaration[756-827]"
+  }, {
+    "left" : "import org.gradle.tooling.exceptions.UnsupportedOperationConfigurationException;",
+    "right" : "import org.gradle.tooling.exceptions.UnsupportedOperationConfigurationException;",
+    "info" : "ImportDeclaration[828-908]:ImportDeclaration[828-908]"
+  }, {
+    "left" : "import org.gradle.tooling.internal.protocol.BuildExceptionVersion1;",
+    "right" : "import org.gradle.tooling.internal.protocol.BuildExceptionVersion1;",
+    "info" : "ImportDeclaration[909-976]:ImportDeclaration[909-976]"
+  }, {
+    "left" : "import org.gradle.tooling.internal.protocol.InternalBuildCancelledException;",
+    "right" : "import org.gradle.tooling.internal.protocol.InternalBuildCancelledException;",
+    "info" : "ImportDeclaration[977-1053]:ImportDeclaration[977-1053]"
+  }, {
+    "left" : "import org.gradle.tooling.internal.protocol.ResultHandlerVersion1;",
+    "right" : "import org.gradle.tooling.internal.protocol.ResultHandlerVersion1;",
+    "info" : "ImportDeclaration[1054-1120]:ImportDeclaration[1054-1120]"
+  }, {
+    "left" : "import org.gradle.tooling.internal.protocol.exceptions.InternalUnsupportedBuildArgumentException;",
+    "right" : "import org.gradle.tooling.internal.protocol.exceptions.InternalUnsupportedBuildArgumentException;",
+    "info" : "ImportDeclaration[1121-1218]:ImportDeclaration[1121-1218]"
+  }, {
+    "left" : "import org.gradle.tooling.internal.protocol.test.InternalTestExecutionException;",
+    "right" : "import org.gradle.tooling.internal.protocol.test.InternalTestExecutionException;",
+    "info" : "ImportDeclaration[1219-1299]:ImportDeclaration[1219-1299]"
+  }, {
+    "left" : "import org.gradle.tooling.tests.TestExecutionException;",
+    "right" : "import org.gradle.tooling.test.TestExecutionException;",
+    "info" : "ImportDeclaration[1300-1355]:ImportDeclaration[1300-1354]"
+  }, {
+    "left" : "abstract",
+    "right" : "abstract",
+    "info" : "Modifier[1469-1477]:Modifier[1468-1476]"
+  }, {
+    "left" : "T",
+    "right" : "T",
+    "info" : "TypeParameter[1505-1506]:TypeParameter[1504-1505]"
+  }, {
+    "left" : "ResultHandlerVersion1<T>",
+    "right" : "ResultHandlerVersion1<T>",
+    "info" : "ParameterizedType[1519-1543]:ParameterizedType[1518-1542]"
+  }, {
+    "left" : "ResultHandler<? super T> handler",
+    "right" : "ResultHandler<? super T> handler",
+    "info" : "SingleVariableDeclaration[1624-1656]:SingleVariableDeclaration[1623-1655]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1658-1697]:Block[1657-1696]"
+  }, {
+    "left" : "this.handler = handler;",
+    "right" : "this.handler = handler;",
+    "info" : "ExpressionStatement[1668-1691]:ExpressionStatement[1667-1690]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1703-1709]:Modifier[1702-1708]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1710-1714]:PrimitiveType[1709-1713]"
+  }, {
+    "left" : "T result",
+    "right" : "T result",
+    "info" : "SingleVariableDeclaration[1726-1734]:SingleVariableDeclaration[1725-1733]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1736-1779]:Block[1735-1778]"
+  }, {
+    "left" : "handler.onComplete(result);",
+    "right" : "handler.onComplete(result);",
+    "info" : "ExpressionStatement[1746-1773]:ExpressionStatement[1745-1772]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1785-1791]:Modifier[1784-1790]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1792-1796]:PrimitiveType[1791-1795]"
+  }, {
+    "left" : "Throwable failure",
+    "right" : "Throwable failure",
+    "info" : "SingleVariableDeclaration[1807-1824]:SingleVariableDeclaration[1806-1823]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1826-3374]:Block[1825-3373]"
+  }, {
+    "left" : "if (failure instanceof InternalUnsupportedBuildArgumentException)",
+    "right" : "if (failure instanceof InternalUnsupportedBuildArgumentException)",
+    "info" : "IfStatement[1836-3368]:IfStatement[1835-3367]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1902-2077]:Block[1901-2076]"
+  }, {
+    "left" : "handler.onFailure(new UnsupportedBuildArgumentException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure));",
+    "right" : "handler.onFailure(new UnsupportedBuildArgumentException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure));",
+    "info" : "ExpressionStatement[1916-2067]:ExpressionStatement[1915-2066]"
+  }, {
+    "left" : "if (failure instanceof UnsupportedOperationConfigurationException)",
+    "right" : "if (failure instanceof UnsupportedOperationConfigurationException)",
+    "info" : "IfStatement[2083-3368]:IfStatement[2082-3367]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2150-2345]:Block[2149-2344]"
+  }, {
+    "left" : "handler.onFailure(new UnsupportedOperationConfigurationException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure.getCause()));",
+    "right" : "handler.onFailure(new UnsupportedOperationConfigurationException(connectionFailureMessage(failure)\n                    + \"\\n\" + failure.getMessage(), failure.getCause()));",
+    "info" : "ExpressionStatement[2164-2335]:ExpressionStatement[2163-2334]"
+  }, {
+    "left" : "if (failure instanceof GradleConnectionException)",
+    "right" : "if (failure instanceof GradleConnectionException)",
+    "info" : "IfStatement[2351-3368]:IfStatement[2350-3367]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2401-2480]:Block[2400-2479]"
+  }, {
+    "left" : "handler.onFailure((GradleConnectionException) failure);",
+    "right" : "handler.onFailure((GradleConnectionException) failure);",
+    "info" : "ExpressionStatement[2415-2470]:ExpressionStatement[2414-2469]"
+  }, {
+    "left" : "if (failure instanceof InternalBuildCancelledException)",
+    "right" : "if (failure instanceof InternalBuildCancelledException)",
+    "info" : "IfStatement[2486-3368]:IfStatement[2485-3367]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2542-2668]:Block[2541-2667]"
+  }, {
+    "left" : "handler.onFailure(new BuildCancelledException(connectionFailureMessage(failure), failure.getCause()));",
+    "right" : "handler.onFailure(new BuildCancelledException(connectionFailureMessage(failure), failure.getCause()));",
+    "info" : "ExpressionStatement[2556-2658]:ExpressionStatement[2555-2657]"
+  }, {
+    "left" : "if (failure instanceof InternalTestExecutionException)",
+    "right" : "if (failure instanceof InternalTestExecutionException)",
+    "info" : "IfStatement[2674-3368]:IfStatement[2673-3367]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2729-2854]:Block[2728-2853]"
+  }, {
+    "left" : "handler.onFailure(new TestExecutionException(connectionFailureMessage(failure), failure.getCause()));",
+    "right" : "handler.onFailure(new TestExecutionException(connectionFailureMessage(failure), failure.getCause()));",
+    "info" : "ExpressionStatement[2743-2844]:ExpressionStatement[2742-2843]"
+  }, {
+    "left" : "if (failure instanceof BuildExceptionVersion1)",
+    "right" : "if (failure instanceof BuildExceptionVersion1)",
+    "info" : "IfStatement[2860-3368]:IfStatement[2859-3367]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2907-3024]:Block[2906-3023]"
+  }, {
+    "left" : "handler.onFailure(new BuildException(connectionFailureMessage(failure), failure.getCause()));",
+    "right" : "handler.onFailure(new BuildException(connectionFailureMessage(failure), failure.getCause()));",
+    "info" : "ExpressionStatement[2921-3014]:ExpressionStatement[2920-3013]"
+  }, {
+    "left" : "if (failure instanceof ListenerNotificationException)",
+    "right" : "if (failure instanceof ListenerNotificationException)",
+    "info" : "IfStatement[3030-3368]:IfStatement[3029-3367]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3084-3245]:Block[3083-3244]"
+  }, {
+    "left" : "handler.onFailure(new ListenerFailedException(connectionFailureMessage(failure), ((ListenerNotificationException) failure).getCauses()));",
+    "right" : "handler.onFailure(new ListenerFailedException(connectionFailureMessage(failure), ((ListenerNotificationException) failure).getCauses()));",
+    "info" : "ExpressionStatement[3098-3235]:ExpressionStatement[3097-3234]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3251-3368]:Block[3250-3367]"
+  }, {
+    "left" : "handler.onFailure(new GradleConnectionException(connectionFailureMessage(failure), failure));",
+    "right" : "handler.onFailure(new GradleConnectionException(connectionFailureMessage(failure), failure));",
+    "info" : "ExpressionStatement[3265-3358]:ExpressionStatement[3264-3357]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3380-3389]:Modifier[3379-3388]"
+  }, {
+    "left" : "abstract",
+    "right" : "abstract",
+    "info" : "Modifier[3390-3398]:Modifier[3389-3397]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[3399-3405]:SimpleType[3398-3404]"
+  }, {
+    "left" : "Throwable failure",
+    "right" : "Throwable failure",
+    "info" : "SingleVariableDeclaration[3431-3448]:SingleVariableDeclaration[3430-3447]"
+  } ]
+}

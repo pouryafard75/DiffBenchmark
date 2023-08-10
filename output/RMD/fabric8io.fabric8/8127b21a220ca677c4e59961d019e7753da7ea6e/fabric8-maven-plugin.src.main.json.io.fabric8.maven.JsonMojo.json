@@ -1587,37 +1587,9 @@
     "right" : "KubernetesListBuilder builder = new KubernetesListBuilder()\n                .addNewReplicationControllerItem()\n                .withNewMetadata()\n                .withName(KubernetesHelper.validateKubernetesId(replicationControllerName, \"fabric8.replicationController.name\"))\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withReplicas(replicaCount)\n                .withSelector(labelMap)\n                .withNewTemplate()\n                .withNewMetadata()\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withServiceAccount(serviceAccount)\n                .addNewContainer()\n                .withName(getKubernetesContainerName())\n                .withImage(getDockerImage())\n                .withImagePullPolicy(getImagePullPolicy())\n                .withEnv(getEnvironmentVariables())\n                .withPrivileged(getContainerPrivileged())\n                .withPorts(getContainerPorts())\n                .withVolumeMounts(getVolumeMounts())\n                .withLivenessProbe(getLivenessProbe())\n                .withReadinessProbe(getReadinessProbe())\n                .endContainer()\n                .withVolumes(getVolumes())\n                .endSpec()\n                .endTemplate()\n                .endSpec()\n                .endReplicationControllerItem();",
     "info" : "VariableDeclarationStatement[25589-26940]:VariableDeclarationStatement[25589-26997]"
   }, {
-    "left" : "new KubernetesListBuilder()\n                .addNewReplicationControllerItem()\n                .withNewMetadata()\n                .withName(KubernetesHelper.validateKubernetesId(replicationControllerName, \"fabric8.replicationController.name\"))\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withReplicas(replicaCount)\n                .withSelector(labelMap)\n                .withNewTemplate()\n                .withNewMetadata()\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withServiceAccount(serviceAccount)\n                .addNewContainer()\n                .withName(getKubernetesContainerName())\n                .withImage(getDockerImage())\n                .withImagePullPolicy(getImagePullPolicy())\n                .withEnv(getEnvironmentVariables())\n                .withPrivileged(getContainerPrivileged())\n                .withPorts(getContainerPorts())\n                .withVolumeMounts(getVolumeMounts())\n                .withLivenessProbe(getLivenessProbe())\n                .endContainer()\n                .withVolumes(getVolumes())\n                .endSpec()\n                .endTemplate()\n                .endSpec()\n                .endReplicationControllerItem()",
-    "right" : "new KubernetesListBuilder()\n                .addNewReplicationControllerItem()\n                .withNewMetadata()\n                .withName(KubernetesHelper.validateKubernetesId(replicationControllerName, \"fabric8.replicationController.name\"))\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withReplicas(replicaCount)\n                .withSelector(labelMap)\n                .withNewTemplate()\n                .withNewMetadata()\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withServiceAccount(serviceAccount)\n                .addNewContainer()\n                .withName(getKubernetesContainerName())\n                .withImage(getDockerImage())\n                .withImagePullPolicy(getImagePullPolicy())\n                .withEnv(getEnvironmentVariables())\n                .withPrivileged(getContainerPrivileged())\n                .withPorts(getContainerPorts())\n                .withVolumeMounts(getVolumeMounts())\n                .withLivenessProbe(getLivenessProbe())\n                .withReadinessProbe(getReadinessProbe())\n                .endContainer()\n                .withVolumes(getVolumes())\n                .endSpec()\n                .endTemplate()\n                .endSpec()",
-    "info" : "MethodInvocation[25621-26939]:MethodInvocation[25621-26948]"
-  }, {
-    "left" : "endContainer",
-    "right" : "endContainer",
-    "info" : "SimpleName[26749-26761]:SimpleName[26806-26818]"
-  }, {
-    "left" : "withVolumes",
-    "right" : "withVolumes",
-    "info" : "SimpleName[26781-26792]:SimpleName[26838-26849]"
-  }, {
-    "left" : "getVolumes()",
-    "right" : "getVolumes()",
-    "info" : "METHOD_INVOCATION_ARGUMENTS[26793-26805]:METHOD_INVOCATION_ARGUMENTS[26850-26862]"
-  }, {
-    "left" : "endSpec",
-    "right" : "endSpec",
-    "info" : "SimpleName[26824-26831]:SimpleName[26881-26888]"
-  }, {
-    "left" : "endTemplate",
-    "right" : "endTemplate",
-    "info" : "SimpleName[26851-26862]:SimpleName[26908-26919]"
-  }, {
-    "left" : "endSpec",
-    "right" : "endSpec",
-    "info" : "SimpleName[26882-26889]:SimpleName[26939-26946]"
-  }, {
-    "left" : "endReplicationControllerItem",
-    "right" : "endReplicationControllerItem",
-    "info" : "SimpleName[26909-26937]:SimpleName[26966-26994]"
+    "left" : "new KubernetesListBuilder()\n                .addNewReplicationControllerItem()\n                .withNewMetadata()\n                .withName(KubernetesHelper.validateKubernetesId(replicationControllerName, \"fabric8.replicationController.name\"))\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withReplicas(replicaCount)\n                .withSelector(labelMap)\n                .withNewTemplate()\n                .withNewMetadata()\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withServiceAccount(serviceAccount)\n                .addNewContainer()\n                .withName(getKubernetesContainerName())\n                .withImage(getDockerImage())\n                .withImagePullPolicy(getImagePullPolicy())\n                .withEnv(getEnvironmentVariables())\n                .withPrivileged(getContainerPrivileged())\n                .withPorts(getContainerPorts())\n                .withVolumeMounts(getVolumeMounts())\n                .withLivenessProbe(getLivenessProbe())",
+    "right" : "new KubernetesListBuilder()\n                .addNewReplicationControllerItem()\n                .withNewMetadata()\n                .withName(KubernetesHelper.validateKubernetesId(replicationControllerName, \"fabric8.replicationController.name\"))\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withReplicas(replicaCount)\n                .withSelector(labelMap)\n                .withNewTemplate()\n                .withNewMetadata()\n                .withLabels(labelMap)\n                .endMetadata()\n                .withNewSpec()\n                .withServiceAccount(serviceAccount)\n                .addNewContainer()\n                .withName(getKubernetesContainerName())\n                .withImage(getDockerImage())\n                .withImagePullPolicy(getImagePullPolicy())\n                .withEnv(getEnvironmentVariables())\n                .withPrivileged(getContainerPrivileged())\n                .withPorts(getContainerPorts())\n                .withVolumeMounts(getVolumeMounts())\n                .withLivenessProbe(getLivenessProbe())",
+    "info" : "MethodInvocation[25621-26731]:MethodInvocation[25621-26731]"
   }, {
     "left" : "if (serviceName != null)",
     "right" : "if (serviceName != null)",

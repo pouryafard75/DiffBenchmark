@@ -1,0 +1,2294 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[4763-42685]:TypeDeclaration[4763-42685]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[4969-5060]:FieldDeclaration[4969-5060]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[5062-5173]:FieldDeclaration[5062-5173]"
+  }, {
+    "left" : "private static final StringAttributeValue PRODUCES_HTML = new StringAttributeValue(\n\t\t\tnew JavaSymbolName(\"produces\"), \"text/html\");",
+    "right" : "private static final StringAttributeValue PRODUCES_HTML = new StringAttributeValue(\n\t\t\tnew JavaSymbolName(\"produces\"), \"text/html\");",
+    "info" : "FieldDeclaration[5175-5307]:FieldDeclaration[5175-5307]"
+  }, {
+    "left" : "private static final String PROVIDES_TYPE_STRING = WebScaffoldMetadata.class\n\t\t\t.getName();",
+    "right" : "private static final String PROVIDES_TYPE_STRING = WebScaffoldMetadata.class\n\t\t\t.getName();",
+    "info" : "FieldDeclaration[5309-5400]:FieldDeclaration[5309-5400]"
+  }, {
+    "left" : "private static final String PROVIDES_TYPE = MetadataIdentificationUtils\n\t\t\t.create(PROVIDES_TYPE_STRING);",
+    "right" : "private static final String PROVIDES_TYPE = MetadataIdentificationUtils\n\t\t\t.create(PROVIDES_TYPE_STRING);",
+    "info" : "FieldDeclaration[5402-5507]:FieldDeclaration[5402-5507]"
+  }, {
+    "left" : "private WebScaffoldAnnotationValues annotationValues;",
+    "right" : "private WebScaffoldAnnotationValues annotationValues;",
+    "info" : "FieldDeclaration[5510-5563]:FieldDeclaration[5510-5563]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[5565-5593]:FieldDeclaration[5565-5593]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[5595-5625]:FieldDeclaration[5595-5625]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[5627-5688]:FieldDeclaration[5627-5688]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[5690-5716]:FieldDeclaration[5690-5716]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[5718-5751]:FieldDeclaration[5718-5751]"
+  }, {
+    "left" : "private JavaTypeMetadataDetails javaTypeMetadataHolder;",
+    "right" : "private JavaTypeMetadataDetails javaTypeMetadataHolder;",
+    "info" : "FieldDeclaration[5753-5808]:FieldDeclaration[5753-5808]"
+  }, {
+    "left" : "private TypeLocationService typeLocationService;",
+    "right" : "private TypeLocationService typeLocationService;",
+    "info" : "FieldDeclaration[5810-5858]:FieldDeclaration[5810-5858]"
+  }, {
+    "left" : "/**\n\t * Constructor\n\t * \n\t * @param identifier\n\t * @param aspectName\n\t * @param governorPhysicalType\n\t * @param annotationValues\n\t * @param idField\n\t * @param specialDomainTypes\n\t * @param dependentTypes\n\t * @param dateTypes\n\t * @param crudAdditions\n\t * @param editableFieldTypes\n\t * @param typeLocationService\n\t */\n\tpublic WebScaffoldMetadata(\n\t\t\tfinal String identifier,\n\t\t\tfinal JavaType aspectName,\n\t\t\tfinal PhysicalTypeMetadata governorPhysicalType,\n\t\t\tfinal WebScaffoldAnnotationValues annotationValues,\n\t\t\tfinal FieldMetadata idField,\n\t\t\tfinal SortedMap<JavaType, JavaTypeMetadataDetails> specialDomainTypes,\n\t\t\tfinal List<JavaTypeMetadataDetails> dependentTypes,\n\t\t\tfinal Map<JavaSymbolName, DateTimeFormatDetails> dateTypes,\n\t\t\tfinal Map<MethodMetadataCustomDataKey, MemberTypeAdditions> crudAdditions,\n\t\t\tfinal Collection<JavaType> editableFieldTypes,\n\t\t\tTypeLocationService typeLocationService) {\n\t\tsuper(identifier, aspectName, governorPhysicalType);\n\t\tValidate.isTrue(isValid(identifier),\n\t\t\t\t\"Metadata identification string '%s' is invalid\", identifier);\n\t\tValidate.notNull(annotationValues, \"Annotation values required\");\n\t\tValidate.notNull(specialDomainTypes,\n\t\t\t\t\"Special domain types map required\");\n\t\tValidate.notNull(dependentTypes, \"Dependent types list required\");\n\t\tValidate.notNull(typeLocationService, \"TypeLocationService is required\");\n\n\t\tif (!isValid()) {\n\t\t\treturn;\n\t\t}\n\n\t\tthis.annotationValues = annotationValues;\n\t\tthis.typeLocationService = typeLocationService;\n\t\tcontrollerPath = annotationValues.getPath();\n\t\tthis.dateTypes = dateTypes;\n\t\tformBackingType = annotationValues.getFormBackingObject();\n\t\tentityName = JavaSymbolName.getReservedWordSafeName(formBackingType)\n\t\t\t\t.getSymbolName();\n\n\t\tjavaTypeMetadataHolder = specialDomainTypes.get(formBackingType);\n\n\t\tValidate.notNull(javaTypeMetadataHolder,\n\t\t\t\t\"Metadata holder required for form backing type %s\",\n\t\t\t\tformBackingType);\n\n\t\tif (javaTypeMetadataHolder.getPersistenceDetails() != null\n\t\t\t\t&& !javaTypeMetadataHolder.getPersistenceDetails()\n\t\t\t\t\t\t.getRooIdentifierFields().isEmpty()) {\n\t\t\tcompositePk = true;\n\t\t\tbuilder.addField(getField(CS_FIELD, CONVERSION_SERVICE));\n\t\t\tbuilder.addConstructor(getConstructor());\n\t\t}\n\n\t\t// \"create\" methods\n\t\tfinal MemberTypeAdditions persistMethod = crudAdditions\n\t\t\t\t.get(PERSIST_METHOD);\n\t\tif (annotationValues.isCreate() && persistMethod != null) {\n\t\t\tbuilder.addMethod(getCreateMethod(persistMethod));\n\t\t\tbuilder.addMethod(getCreateFormMethod(dependentTypes));\n\t\t\tpersistMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\tfinal MemberTypeAdditions countAllMethod = crudAdditions\n\t\t\t\t.get(COUNT_ALL_METHOD);\n\t\tfinal MemberTypeAdditions findMethod = crudAdditions.get(FIND_METHOD);\n\t\tfinal MemberTypeAdditions findAllMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_METHOD);\n\t\tfinal MemberTypeAdditions findEntriesMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_METHOD);\n\t\tfinal MemberTypeAdditions findAllSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_SORTED_METHOD);\n\t\tfinal MemberTypeAdditions findEntriesSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_SORTED_METHOD);\n\n\t\t// \"show\" method\n\t\tif (findMethod != null) {\n\t\t\tbuilder.addMethod(getShowMethod(idField, findMethod));\n\t\t\tfindMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\t// sorted \"list\" method\n\t\tif (countAllMethod != null && findAllSortedMethod != null\n\t\t\t\t&& findEntriesSortedMethod != null) {\n\t\t\tbuilder.addMethod(getListMethod(findAllSortedMethod,\n\t\t\t\t\tcountAllMethod, findEntriesSortedMethod));\n\t\t\tcountAllMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindAllSortedMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindEntriesSortedMethod.copyAdditionsTo(builder,\n\t\t\t\t\tgovernorTypeDetails);\n\t\t}\n\t\t// or \"list\" method\n\t\telse if (countAllMethod != null && findAllMethod != null\n\t\t\t\t&& findEntriesMethod != null) {\n\t\t\tbuilder.addMethod(getListMethod(findAllMethod, countAllMethod,\n\t\t\t\t\tfindEntriesMethod));\n\t\t\tcountAllMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindAllMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindEntriesMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\t// \"update\" methods\n\t\tfinal MemberTypeAdditions updateMethod = crudAdditions\n\t\t\t\t.get(MERGE_METHOD);\n\t\tif (annotationValues.isUpdate() && updateMethod != null\n\t\t\t\t&& findMethod != null) {\n\t\t\tbuilder.addMethod(getUpdateMethod(updateMethod));\n\t\t\tbuilder.addMethod(getUpdateFormMethod(idField, findMethod));\n\t\t\tupdateMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\t// \"delete\" method\n\t\tfinal MemberTypeAdditions deleteMethod = crudAdditions\n\t\t\t\t.get(REMOVE_METHOD);\n\t\tif (annotationValues.isDelete() && deleteMethod != null\n\t\t\t\t&& findMethod != null) {\n\t\t\tbuilder.addMethod(getDeleteMethod(idField, deleteMethod, findMethod));\n\t\t\tdeleteMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\tif (!dateTypes.isEmpty()) {\n\t\t\tbuilder.addMethod(getDateTimeFormatHelperMethod());\n\t\t}\n\n\t\tif (annotationValues.isCreate() || annotationValues.isUpdate()) {\n\t\t\tbuilder.addMethod(getPopulateEditFormMethod(formBackingType,\n\t\t\t\t\tspecialDomainTypes.values(), editableFieldTypes));\n\t\t\tbuilder.addMethod(getEncodeUrlPathSegmentMethod());\n\t\t}\n\n\t\titdTypeDetails = builder.build();\n\t}",
+    "right" : "/**\n\t * Constructor\n\t * \n\t * @param identifier\n\t * @param aspectName\n\t * @param governorPhysicalType\n\t * @param annotationValues\n\t * @param idField\n\t * @param specialDomainTypes\n\t * @param dependentTypes\n\t * @param dateTypes\n\t * @param crudAdditions\n\t * @param editableFieldTypes\n\t * @param typeLocationService\n\t */\n\tpublic WebScaffoldMetadata(\n\t\t\tfinal String identifier,\n\t\t\tfinal JavaType aspectName,\n\t\t\tfinal PhysicalTypeMetadata governorPhysicalType,\n\t\t\tfinal WebScaffoldAnnotationValues annotationValues,\n\t\t\tfinal FieldMetadata idField,\n\t\t\tfinal SortedMap<JavaType, JavaTypeMetadataDetails> specialDomainTypes,\n\t\t\tfinal List<JavaTypeMetadataDetails> dependentTypes,\n\t\t\tfinal Map<JavaSymbolName, DateTimeFormatDetails> dateTypes,\n\t\t\tfinal Map<MethodMetadataCustomDataKey, MemberTypeAdditions> crudAdditions,\n\t\t\tfinal Collection<JavaType> editableFieldTypes,\n\t\t\tTypeLocationService typeLocationService) {\n\t\tsuper(identifier, aspectName, governorPhysicalType);\n\t\tValidate.isTrue(isValid(identifier),\n\t\t\t\t\"Metadata identification string '%s' is invalid\", identifier);\n\t\tValidate.notNull(annotationValues, \"Annotation values required\");\n\t\tValidate.notNull(specialDomainTypes,\n\t\t\t\t\"Special domain types map required\");\n\t\tValidate.notNull(dependentTypes, \"Dependent types list required\");\n\t\tValidate.notNull(typeLocationService, \"TypeLocationService is required\");\n\n\t\tif (!isValid()) {\n\t\t\treturn;\n\t\t}\n\n\t\tthis.annotationValues = annotationValues;\n\t\tthis.typeLocationService = typeLocationService;\n\t\tcontrollerPath = annotationValues.getPath();\n\t\tthis.dateTypes = dateTypes;\n\t\tformBackingType = annotationValues.getFormBackingObject();\n\t\tentityName = JavaSymbolName.getReservedWordSafeName(formBackingType)\n\t\t\t\t.getSymbolName();\n\n\t\tjavaTypeMetadataHolder = specialDomainTypes.get(formBackingType);\n\n\t\tValidate.notNull(javaTypeMetadataHolder,\n\t\t\t\t\"Metadata holder required for form backing type %s\",\n\t\t\t\tformBackingType);\n\n\t\tif (javaTypeMetadataHolder.getPersistenceDetails() != null\n\t\t\t\t&& !javaTypeMetadataHolder.getPersistenceDetails()\n\t\t\t\t\t\t.getRooIdentifierFields().isEmpty()) {\n\t\t\tcompositePk = true;\n\t\t\tbuilder.addField(getField(CS_FIELD, CONVERSION_SERVICE));\n\t\t\tbuilder.addConstructor(getConstructor());\n\t\t}\n\n\t\t// \"create\" methods\n\t\tfinal MemberTypeAdditions persistMethod = crudAdditions\n\t\t\t\t.get(PERSIST_METHOD);\n\t\tif (annotationValues.isCreate() && persistMethod != null) {\n\t\t\tbuilder.addMethod(getCreateMethod(persistMethod));\n\t\t\tbuilder.addMethod(getCreateFormMethod(dependentTypes));\n\t\t\tpersistMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\tfinal MemberTypeAdditions countAllMethod = crudAdditions\n\t\t\t\t.get(COUNT_ALL_METHOD);\n\t\tfinal MemberTypeAdditions findMethod = crudAdditions.get(FIND_METHOD);\n\t\tfinal MemberTypeAdditions findAllMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_METHOD);\n\t\tfinal MemberTypeAdditions findEntriesMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_METHOD);\n\t\tfinal MemberTypeAdditions findAllSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_SORTED_METHOD);\n\t\tfinal MemberTypeAdditions findEntriesSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_SORTED_METHOD);\n\n\t\t// \"show\" method\n\t\tif (findMethod != null) {\n\t\t\tbuilder.addMethod(getShowMethod(idField, findMethod));\n\t\t\tfindMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\t// sorted \"list\" method\n\t\tif (countAllMethod != null && findAllSortedMethod != null\n\t\t\t\t&& findEntriesSortedMethod != null) {\n\t\t\tbuilder.addMethod(getListMethod(findAllSortedMethod,\n\t\t\t\t\tcountAllMethod, findEntriesSortedMethod));\n\t\t\tcountAllMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindAllSortedMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindEntriesSortedMethod.copyAdditionsTo(builder,\n\t\t\t\t\tgovernorTypeDetails);\n\t\t}\n\t\t// or \"list\" method\n\t\telse if (countAllMethod != null && findAllMethod != null\n\t\t\t\t&& findEntriesMethod != null) {\n\t\t\tbuilder.addMethod(getListMethod(findAllMethod, countAllMethod,\n\t\t\t\t\tfindEntriesMethod));\n\t\t\tcountAllMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindAllMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t\tfindEntriesMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\t// \"update\" methods\n\t\tfinal MemberTypeAdditions updateMethod = crudAdditions\n\t\t\t\t.get(MERGE_METHOD);\n\t\tif (annotationValues.isUpdate() && updateMethod != null\n\t\t\t\t&& findMethod != null) {\n\t\t\tbuilder.addMethod(getUpdateMethod(updateMethod));\n\t\t\tbuilder.addMethod(getUpdateFormMethod(idField, findMethod));\n\t\t\tupdateMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\t// \"delete\" method\n\t\tfinal MemberTypeAdditions deleteMethod = crudAdditions\n\t\t\t\t.get(REMOVE_METHOD);\n\t\tif (annotationValues.isDelete() && deleteMethod != null\n\t\t\t\t&& findMethod != null) {\n\t\t\tbuilder.addMethod(getDeleteMethod(idField, deleteMethod, findMethod));\n\t\t\tdeleteMethod.copyAdditionsTo(builder, governorTypeDetails);\n\t\t}\n\n\t\tif (!dateTypes.isEmpty()) {\n\t\t\tbuilder.addMethod(getDateTimeFormatHelperMethod());\n\t\t}\n\n\t\tif (annotationValues.isCreate() || annotationValues.isUpdate()) {\n\t\t\tbuilder.addMethod(getPopulateEditFormMethod(formBackingType,\n\t\t\t\t\tspecialDomainTypes.values(), editableFieldTypes));\n\t\t\tbuilder.addMethod(getEncodeUrlPathSegmentMethod());\n\t\t}\n\n\t\titdTypeDetails = builder.build();\n\t}",
+    "info" : "MethodDeclaration[5861-11082]:MethodDeclaration[5861-11082]"
+  }, {
+    "left" : "public static String createIdentifier(final JavaType javaType,\n\t\t\tfinal LogicalPath path) {\n\t\treturn PhysicalTypeIdentifierNamingUtils.createIdentifier(\n\t\t\t\tPROVIDES_TYPE_STRING, javaType, path);\n\t}",
+    "right" : "public static String createIdentifier(final JavaType javaType,\n\t\t\tfinal LogicalPath path) {\n\t\treturn PhysicalTypeIdentifierNamingUtils.createIdentifier(\n\t\t\t\tPROVIDES_TYPE_STRING, javaType, path);\n\t}",
+    "info" : "MethodDeclaration[11085-11283]:MethodDeclaration[11085-11283]"
+  }, {
+    "left" : "public metadataIdentificationString String) : JavaType",
+    "right" : "public metadataIdentificationString String) : JavaType",
+    "info" : "MethodDeclaration[11286-11481]:MethodDeclaration[11286-11481]"
+  }, {
+    "left" : "public static String getMetadataIdentiferType() {\n\t\treturn PROVIDES_TYPE;\n\t}",
+    "right" : "public static String getMetadataIdentiferType() {\n\t\treturn PROVIDES_TYPE;\n\t}",
+    "info" : "MethodDeclaration[11484-11560]:MethodDeclaration[11484-11560]"
+  }, {
+    "left" : "public metadataIdentificationString String) : LogicalPath",
+    "right" : "public metadataIdentificationString String) : LogicalPath",
+    "info" : "MethodDeclaration[11563-11752]:MethodDeclaration[11563-11752]"
+  }, {
+    "left" : "public metadataIdentificationString String) : boolean",
+    "right" : "public metadataIdentificationString String) : boolean",
+    "info" : "MethodDeclaration[11755-11940]:MethodDeclaration[11755-11940]"
+  }, {
+    "left" : "public WebScaffoldAnnotationValues getAnnotationValues() {\n\t\treturn annotationValues;\n\t}",
+    "right" : "public WebScaffoldAnnotationValues getAnnotationValues() {\n\t\treturn annotationValues;\n\t}",
+    "info" : "MethodDeclaration[11943-12031]:MethodDeclaration[11943-12031]"
+  }, {
+    "left" : "@Override\n\tpublic String toString() {\n\t\tfinal ToStringBuilder builder = new ToStringBuilder(this);\n\t\tbuilder.append(\"identifier\", getId());\n\t\tbuilder.append(\"valid\", valid);\n\t\tbuilder.append(\"aspectName\", aspectName);\n\t\tbuilder.append(\"destinationType\", destination);\n\t\tbuilder.append(\"governor\", governorPhysicalTypeMetadata.getId());\n\t\tbuilder.append(\"itdTypeDetails\", itdTypeDetails);\n\t\treturn builder.toString();\n\t}",
+    "right" : "@Override\n\tpublic String toString() {\n\t\tfinal ToStringBuilder builder = new ToStringBuilder(this);\n\t\tbuilder.append(\"identifier\", getId());\n\t\tbuilder.append(\"valid\", valid);\n\t\tbuilder.append(\"aspectName\", aspectName);\n\t\tbuilder.append(\"destinationType\", destination);\n\t\tbuilder.append(\"governor\", governorPhysicalTypeMetadata.getId());\n\t\tbuilder.append(\"itdTypeDetails\", itdTypeDetails);\n\t\treturn builder.toString();\n\t}",
+    "info" : "MethodDeclaration[12034-12453]:MethodDeclaration[12034-12453]"
+  }, {
+    "left" : "private ) : ConstructorMetadataBuilder",
+    "right" : "private ) : ConstructorMetadataBuilder",
+    "info" : "MethodDeclaration[12456-13364]:MethodDeclaration[12456-13364]"
+  }, {
+    "left" : "private dependentTypes List<JavaTypeMetadataDetails>) : MethodMetadataBuilder",
+    "right" : "private dependentTypes List<JavaTypeMetadataDetails>) : MethodMetadataBuilder",
+    "info" : "MethodDeclaration[13367-16830]:MethodDeclaration[13367-16830]"
+  }, {
+    "left" : "/**\n\t * This method returns all fields in entity that match with dependentTypes\n\t * \n\t * @param dependentTypes\n\t * @param cid\n\t */\n\tprivate List<FieldMetadata> getEntityFields(\n\t\t\tfinal List<JavaTypeMetadataDetails> dependentTypes,\n\t\t\tClassOrInterfaceTypeDetails cid) {\n\t\tList<FieldMetadata> fieldsNamesList = new ArrayList<FieldMetadata>();\n\t\t// Getting all declared fields in entity\n\t\tList<? extends FieldMetadata> fieldList = cid.getDeclaredFields();\n\t\tIterator<? extends FieldMetadata> it = fieldList.iterator();\n\t\twhile (it.hasNext()) {\n\t\t\tFieldMetadata currentField = it.next();\n\t\t\tif (typeLocationService.isInProject(currentField.getFieldType())) {\n\t\t\t\tfieldsNamesList.add(currentField);\n\t\t\t}\n\t\t}\n\n\t\treturn fieldsNamesList;\n\t}",
+    "right" : "/**\n\t * This method returns all fields in entity that match with dependentTypes\n\t * \n\t * @param dependentTypes\n\t * @param cid\n\t */\n\tprivate List<FieldMetadata> getEntityFields(\n\t\t\tfinal List<JavaTypeMetadataDetails> dependentTypes,\n\t\t\tClassOrInterfaceTypeDetails cid) {\n\t\tList<FieldMetadata> fieldsNamesList = new ArrayList<FieldMetadata>();\n\t\t// Getting all declared fields in entity\n\t\tList<? extends FieldMetadata> fieldList = cid.getDeclaredFields();\n\t\tIterator<? extends FieldMetadata> it = fieldList.iterator();\n\t\twhile (it.hasNext()) {\n\t\t\tFieldMetadata currentField = it.next();\n\t\t\tif (typeLocationService.isInProject(currentField.getFieldType())) {\n\t\t\t\tfieldsNamesList.add(currentField);\n\t\t\t}\n\t\t}\n\n\t\treturn fieldsNamesList;\n\t}",
+    "info" : "MethodDeclaration[16833-17566]:MethodDeclaration[16833-17566]"
+  }, {
+    "left" : "private MethodMetadataBuilder getCreateMethod(\n\t\t\tfinal MemberTypeAdditions persistMethod) {\n\t\tfinal JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();\n\t\tif (javaTypePersistenceMetadataHolder == null\n\t\t\t\t|| javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod() == null) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\"create\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal AnnotationMetadataBuilder validAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tVALID);\n\n\t\tfinal List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(formBackingType, validAnnotation\n\t\t\t\t\t\t.build()), new AnnotatedJavaType(BINDING_RESULT),\n\t\t\t\t\t\tnew AnnotatedJavaType(MODEL), new AnnotatedJavaType(\n\t\t\t\t\t\t\t\tHTTP_SERVLET_REQUEST));\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(entityName), new JavaSymbolName(\n\t\t\t\t\t\t\"bindingResult\"), new JavaSymbolName(\"uiModel\"),\n\t\t\t\tnew JavaSymbolName(\"httpServletRequest\"));\n\n\t\tfinal List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\trequestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"POST\"))));\n\t\trequestMappingAttributes.add(PRODUCES_HTML);\n\t\tfinal AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);\n\t\tfinal List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();\n\t\tannotations.add(requestMapping);\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder.appendFormalLine(\"if (bindingResult.hasErrors()) {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \" + entityName\n\t\t\t\t+ \");\");\n\t\tbodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/create\\\";\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"}\");\n\t\tbodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");\n\t\tbodyBuilder.appendFormalLine(persistMethod.getMethodCall() + \";\");\n\t\tbodyBuilder.appendFormalLine(\"return \\\"redirect:/\"\n\t\t\t\t+ controllerPath\n\t\t\t\t+ \"/\\\" + encodeUrlPathSegment(\"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ entityName\n\t\t\t\t+ \".\"\n\t\t\t\t+ javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod().getMethodName() + \"()\"\n\t\t\t\t+ (compositePk ? \", String.class)\" : \".toString()\")\n\t\t\t\t+ \", httpServletRequest);\");\n\n\t\tfinal MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);\n\t\tmethodBuilder.setAnnotations(annotations);\n\t\treturn methodBuilder;\n\t}",
+    "right" : "private MethodMetadataBuilder getCreateMethod(\n\t\t\tfinal MemberTypeAdditions persistMethod) {\n\t\tfinal JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();\n\t\tif (javaTypePersistenceMetadataHolder == null\n\t\t\t\t|| javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod() == null) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\"create\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal AnnotationMetadataBuilder validAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tVALID);\n\n\t\tfinal List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(formBackingType, validAnnotation\n\t\t\t\t\t\t.build()), new AnnotatedJavaType(BINDING_RESULT),\n\t\t\t\t\t\tnew AnnotatedJavaType(MODEL), new AnnotatedJavaType(\n\t\t\t\t\t\t\t\tHTTP_SERVLET_REQUEST));\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(entityName), new JavaSymbolName(\n\t\t\t\t\t\t\"bindingResult\"), new JavaSymbolName(\"uiModel\"),\n\t\t\t\tnew JavaSymbolName(\"httpServletRequest\"));\n\n\t\tfinal List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\trequestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"POST\"))));\n\t\trequestMappingAttributes.add(PRODUCES_HTML);\n\t\tfinal AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);\n\t\tfinal List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();\n\t\tannotations.add(requestMapping);\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder.appendFormalLine(\"if (bindingResult.hasErrors()) {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \" + entityName\n\t\t\t\t+ \");\");\n\t\tbodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/create\\\";\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"}\");\n\t\tbodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");\n\t\tbodyBuilder.appendFormalLine(persistMethod.getMethodCall() + \";\");\n\t\tbodyBuilder.appendFormalLine(\"return \\\"redirect:/\"\n\t\t\t\t+ controllerPath\n\t\t\t\t+ \"/\\\" + encodeUrlPathSegment(\"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ entityName\n\t\t\t\t+ \".\"\n\t\t\t\t+ javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod().getMethodName() + \"()\"\n\t\t\t\t+ (compositePk ? \", String.class)\" : \".toString()\")\n\t\t\t\t+ \", httpServletRequest);\");\n\n\t\tfinal MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);\n\t\tmethodBuilder.setAnnotations(annotations);\n\t\treturn methodBuilder;\n\t}",
+    "info" : "MethodDeclaration[17569-20424]:MethodDeclaration[17569-20424]"
+  }, {
+    "left" : "private MethodMetadataBuilder getDateTimeFormatHelperMethod() {\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"addDateTimeFormatPatterns\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal List<JavaType> parameterTypes = Arrays.asList(MODEL);\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays\n\t\t\t\t.asList(new JavaSymbolName(\"uiModel\"));\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tfor (final Entry<JavaSymbolName, DateTimeFormatDetails> javaSymbolNameDateTimeFormatDetailsEntry : dateTypes\n\t\t\t\t.entrySet()) {\n\t\t\tString pattern;\n\t\t\tif (javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern != null) {\n\t\t\t\tpattern = \"\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern\n\t\t\t\t\t\t+ \"\\\"\";\n\t\t\t} else {\n\t\t\t\tfinal JavaType dateTimeFormat = new JavaType(\n\t\t\t\t\t\t\"org.joda.time.format.DateTimeFormat\");\n\t\t\t\tpattern = getShortName(dateTimeFormat)\n\t\t\t\t\t\t+ \".patternForStyle(\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().style\n\t\t\t\t\t\t+ \"\\\", \" + getShortName(LOCALE_CONTEXT_HOLDER)\n\t\t\t\t\t\t+ \".getLocale())\";\n\t\t\t}\n\t\t\tbodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t+ entityName\n\t\t\t\t\t+ \"_\"\n\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getKey()\n\t\t\t\t\t\t\t.getSymbolName().toLowerCase() + \"_date_format\\\", \"\n\t\t\t\t\t+ pattern + \");\");\n\t\t}\n\n\t\treturn new MethodMetadataBuilder(getId(), 0, methodName,\n\t\t\t\tVOID_PRIMITIVE,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);\n\t}",
+    "right" : "private MethodMetadataBuilder getDateTimeFormatHelperMethod() {\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"addDateTimeFormatPatterns\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal List<JavaType> parameterTypes = Arrays.asList(MODEL);\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays\n\t\t\t\t.asList(new JavaSymbolName(\"uiModel\"));\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tfor (final Entry<JavaSymbolName, DateTimeFormatDetails> javaSymbolNameDateTimeFormatDetailsEntry : dateTypes\n\t\t\t\t.entrySet()) {\n\t\t\tString pattern;\n\t\t\tif (javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern != null) {\n\t\t\t\tpattern = \"\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern\n\t\t\t\t\t\t+ \"\\\"\";\n\t\t\t} else {\n\t\t\t\tfinal JavaType dateTimeFormat = new JavaType(\n\t\t\t\t\t\t\"org.joda.time.format.DateTimeFormat\");\n\t\t\t\tpattern = getShortName(dateTimeFormat)\n\t\t\t\t\t\t+ \".patternForStyle(\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().style\n\t\t\t\t\t\t+ \"\\\", \" + getShortName(LOCALE_CONTEXT_HOLDER)\n\t\t\t\t\t\t+ \".getLocale())\";\n\t\t\t}\n\t\t\tbodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t+ entityName\n\t\t\t\t\t+ \"_\"\n\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getKey()\n\t\t\t\t\t\t\t.getSymbolName().toLowerCase() + \"_date_format\\\", \"\n\t\t\t\t\t+ pattern + \");\");\n\t\t}\n\n\t\treturn new MethodMetadataBuilder(getId(), 0, methodName,\n\t\t\t\tVOID_PRIMITIVE,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);\n\t}",
+    "info" : "MethodDeclaration[20427-21961]:MethodDeclaration[20427-21961]"
+  }, {
+    "left" : "private idField FieldMetadata, deleteMethodAdditions MemberTypeAdditions, findMethod MemberTypeAdditions) : MethodMetadataBuilder",
+    "right" : "private idField FieldMetadata, deleteMethodAdditions MemberTypeAdditions, findMethod MemberTypeAdditions) : MethodMetadataBuilder",
+    "info" : "MethodDeclaration[21964-26228]:MethodDeclaration[21964-26228]"
+  }, {
+    "left" : "private MethodMetadataBuilder getEncodeUrlPathSegmentMethod() {\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"encodeUrlPathSegment\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal List<JavaType> parameterTypes = Arrays.asList(STRING,\n\t\t\t\tHTTP_SERVLET_REQUEST);\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"pathSegment\"), new JavaSymbolName(\n\t\t\t\t\t\t\"httpServletRequest\"));\n\n\t\tbuilder.getImportRegistrationResolver().addImport(\n\t\t\t\tUNSUPPORTED_ENCODING_EXCEPTION);\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"String enc = httpServletRequest.getCharacterEncoding();\");\n\t\tbodyBuilder.appendFormalLine(\"if (enc == null) {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"enc = \" + getShortName(WEB_UTILS)\n\t\t\t\t+ \".DEFAULT_CHARACTER_ENCODING;\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"}\");\n\t\tbodyBuilder.appendFormalLine(\"try {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"pathSegment = \" + getShortName(URI_UTILS)\n\t\t\t\t+ \".encodePathSegment(pathSegment, enc);\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"} catch (\"\n\t\t\t\t+ getShortName(UNSUPPORTED_ENCODING_EXCEPTION) + \" uee) {}\");\n\t\tbodyBuilder.appendFormalLine(\"return pathSegment;\");\n\n\t\treturn new MethodMetadataBuilder(getId(), 0, methodName, STRING,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);\n\t}",
+    "right" : "private MethodMetadataBuilder getEncodeUrlPathSegmentMethod() {\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"encodeUrlPathSegment\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal List<JavaType> parameterTypes = Arrays.asList(STRING,\n\t\t\t\tHTTP_SERVLET_REQUEST);\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"pathSegment\"), new JavaSymbolName(\n\t\t\t\t\t\t\"httpServletRequest\"));\n\n\t\tbuilder.getImportRegistrationResolver().addImport(\n\t\t\t\tUNSUPPORTED_ENCODING_EXCEPTION);\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"String enc = httpServletRequest.getCharacterEncoding();\");\n\t\tbodyBuilder.appendFormalLine(\"if (enc == null) {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"enc = \" + getShortName(WEB_UTILS)\n\t\t\t\t+ \".DEFAULT_CHARACTER_ENCODING;\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"}\");\n\t\tbodyBuilder.appendFormalLine(\"try {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"pathSegment = \" + getShortName(URI_UTILS)\n\t\t\t\t+ \".encodePathSegment(pathSegment, enc);\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"} catch (\"\n\t\t\t\t+ getShortName(UNSUPPORTED_ENCODING_EXCEPTION) + \" uee) {}\");\n\t\tbodyBuilder.appendFormalLine(\"return pathSegment;\");\n\n\t\treturn new MethodMetadataBuilder(getId(), 0, methodName, STRING,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);\n\t}",
+    "info" : "MethodDeclaration[26231-27757]:MethodDeclaration[26231-27757]"
+  }, {
+    "left" : "/**\n\t * Returns the metadata for the \"list\" method that this ITD introduces into\n\t * the controller.\n\t * \n\t * @param findAllAdditions\n\t * @param countAllAdditions\n\t * @param findEntriesAdditions\n\t * @return <code>null</code> if no such method is to be introduced\n\t */\n\tprivate MethodMetadataBuilder getListMethod(\n\t\t\tfinal MemberTypeAdditions findAllAdditions,\n\t\t\tfinal MemberTypeAdditions countAllAdditions,\n\t\t\tfinal MemberTypeAdditions findEntriesAdditions) {\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\"list\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal List<AnnotationAttributeValue<?>> firstResultAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tfirstResultAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"page\"));\n\t\tfirstResultAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder firstResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, firstResultAttributes);\n\n\t\tfinal List<AnnotationAttributeValue<?>> maxResultsAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tmaxResultsAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"size\"));\n\t\tmaxResultsAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder maxResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, maxResultsAttributes);\n\n\t\tfinal List<AnnotationAttributeValue<?>> sortFieldNameAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tsortFieldNameAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"sortFieldName\"));\n\t\tsortFieldNameAttributes.add(new BooleanAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder sortFieldNameAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortFieldNameAttributes);\n\n\t\tfinal List<AnnotationAttributeValue<?>> sortOrderAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tsortOrderAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"sortOrder\"));\n\t\tsortOrderAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder sortOrderAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortOrderAttributes);\n\n\t\tfinal List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(INT_OBJECT, firstResultAnnotation\n\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(INT_OBJECT, maxResultAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortFieldNameAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortOrderAnnotation\n\t\t\t\t\t\t\t\t.build()), new AnnotatedJavaType(MODEL));\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"page\"), new JavaSymbolName(\"size\"),\n\t\t\t\tnew JavaSymbolName(\"sortFieldName\"), new JavaSymbolName(\n\t\t\t\t\t\t\"sortOrder\"), new JavaSymbolName(\"uiModel\"));\n\n\t\tfinal List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\trequestMappingAttributes.add(PRODUCES_HTML);\n\t\tfinal List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();\n\t\tannotations.add(new AnnotationMetadataBuilder(REQUEST_MAPPING,\n\t\t\t\trequestMappingAttributes));\n\n\t\tfinal String plural = javaTypeMetadataHolder.getPlural().toLowerCase();\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder.appendFormalLine(\"if (page != null || size != null) {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"int sizeNo = size == null ? 10 : size.intValue();\");\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;\");\n\t\tbodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findEntriesAdditions.getMethodCall() + \");\");\n\t\tbodyBuilder.appendFormalLine(\"float nrOfPages = (float) \"\n\t\t\t\t+ countAllAdditions.getMethodCall() + \" / sizeNo;\");\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"maxPages\\\", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"} else {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findAllAdditions.getMethodCall() + \");\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"}\");\n\t\tif (!dateTypes.isEmpty()) {\n\t\t\tbodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");\n\t\t}\n\t\tbodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath + \"/list\\\";\");\n\n\t\tfinal MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);\n\t\tmethodBuilder.setAnnotations(annotations);\n\t\treturn methodBuilder;\n\t}",
+    "right" : "/**\n\t * Returns the metadata for the \"list\" method that this ITD introduces into\n\t * the controller.\n\t * \n\t * @param findAllAdditions\n\t * @param countAllAdditions\n\t * @param findEntriesAdditions\n\t * @return <code>null</code> if no such method is to be introduced\n\t */\n\tprivate MethodMetadataBuilder getListMethod(\n\t\t\tfinal MemberTypeAdditions findAllAdditions,\n\t\t\tfinal MemberTypeAdditions countAllAdditions,\n\t\t\tfinal MemberTypeAdditions findEntriesAdditions) {\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\"list\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal List<AnnotationAttributeValue<?>> firstResultAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tfirstResultAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"page\"));\n\t\tfirstResultAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder firstResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, firstResultAttributes);\n\n\t\tfinal List<AnnotationAttributeValue<?>> maxResultsAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tmaxResultsAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"size\"));\n\t\tmaxResultsAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder maxResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, maxResultsAttributes);\n\n\t\tfinal List<AnnotationAttributeValue<?>> sortFieldNameAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tsortFieldNameAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"sortFieldName\"));\n\t\tsortFieldNameAttributes.add(new BooleanAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder sortFieldNameAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortFieldNameAttributes);\n\n\t\tfinal List<AnnotationAttributeValue<?>> sortOrderAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tsortOrderAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"sortOrder\"));\n\t\tsortOrderAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));\n\t\tfinal AnnotationMetadataBuilder sortOrderAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortOrderAttributes);\n\n\t\tfinal List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(INT_OBJECT, firstResultAnnotation\n\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(INT_OBJECT, maxResultAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortFieldNameAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortOrderAnnotation\n\t\t\t\t\t\t\t\t.build()), new AnnotatedJavaType(MODEL));\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"page\"), new JavaSymbolName(\"size\"),\n\t\t\t\tnew JavaSymbolName(\"sortFieldName\"), new JavaSymbolName(\n\t\t\t\t\t\t\"sortOrder\"), new JavaSymbolName(\"uiModel\"));\n\n\t\tfinal List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\trequestMappingAttributes.add(PRODUCES_HTML);\n\t\tfinal List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();\n\t\tannotations.add(new AnnotationMetadataBuilder(REQUEST_MAPPING,\n\t\t\t\trequestMappingAttributes));\n\n\t\tfinal String plural = javaTypeMetadataHolder.getPlural().toLowerCase();\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder.appendFormalLine(\"if (page != null || size != null) {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"int sizeNo = size == null ? 10 : size.intValue();\");\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;\");\n\t\tbodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findEntriesAdditions.getMethodCall() + \");\");\n\t\tbodyBuilder.appendFormalLine(\"float nrOfPages = (float) \"\n\t\t\t\t+ countAllAdditions.getMethodCall() + \" / sizeNo;\");\n\t\tbodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"maxPages\\\", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"} else {\");\n\t\tbodyBuilder.indent();\n\t\tbodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findAllAdditions.getMethodCall() + \");\");\n\t\tbodyBuilder.indentRemove();\n\t\tbodyBuilder.appendFormalLine(\"}\");\n\t\tif (!dateTypes.isEmpty()) {\n\t\t\tbodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");\n\t\t}\n\t\tbodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath + \"/list\\\";\");\n\n\t\tfinal MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);\n\t\tmethodBuilder.setAnnotations(annotations);\n\t\treturn methodBuilder;\n\t}",
+    "info" : "MethodDeclaration[27760-32711]:MethodDeclaration[27760-32711]"
+  }, {
+    "left" : "private entity JavaType, specialDomainTypes Collection<JavaTypeMetadataDetails>, editableFieldTypes Collection<JavaType>) : MethodMetadata",
+    "right" : "private entity JavaType, specialDomainTypes Collection<JavaTypeMetadataDetails>, editableFieldTypes Collection<JavaType>) : MethodMetadata",
+    "info" : "MethodDeclaration[32714-34758]:MethodDeclaration[32714-34758]"
+  }, {
+    "left" : "private String getShortName(final JavaType type) {\n\t\treturn type.getNameIncludingTypeParameters(false,\n\t\t\t\tbuilder.getImportRegistrationResolver());\n\t}",
+    "right" : "private String getShortName(final JavaType type) {\n\t\treturn type.getNameIncludingTypeParameters(false,\n\t\t\t\tbuilder.getImportRegistrationResolver());\n\t}",
+    "info" : "MethodDeclaration[34761-34912]:MethodDeclaration[34761-34912]"
+  }, {
+    "left" : "private idField FieldMetadata, findMethod MemberTypeAdditions) : MethodMetadataBuilder",
+    "right" : "private idField FieldMetadata, findMethod MemberTypeAdditions) : MethodMetadataBuilder",
+    "info" : "MethodDeclaration[34915-37488]:MethodDeclaration[34915-37488]"
+  }, {
+    "left" : "private MethodMetadataBuilder getUpdateFormMethod(\n\t\t\tfinal FieldMetadata idField, final MemberTypeAdditions findMethod) {\n\t\tfinal JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();\n\t\tif (javaTypePersistenceMetadataHolder == null) {\n\t\t\treturn null;\n\t\t}\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\"updateForm\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal String idFieldName = idField.getFieldName().getSymbolName();\n\t\tfinal List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tattributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName));\n\t\tfinal AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);\n\n\t\tfinal List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(MODEL));\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(idFieldName), new JavaSymbolName(\"uiModel\"));\n\n\t\tfinal List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\trequestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName + \"}\"));\n\t\trequestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"params\"), \"form\"));\n\t\trequestMappingAttributes.add(PRODUCES_HTML);\n\t\tfinal AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);\n\t\tfinal List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();\n\t\tannotations.add(requestMapping);\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \"\n\t\t\t\t+ findMethod.getMethodCall() + \");\");\n\t\tbodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/update\\\";\");\n\n\t\tfinal MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);\n\t\tmethodBuilder.setAnnotations(annotations);\n\t\treturn methodBuilder;\n\t}",
+    "right" : "private MethodMetadataBuilder getUpdateFormMethod(\n\t\t\tfinal FieldMetadata idField, final MemberTypeAdditions findMethod) {\n\t\tfinal JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();\n\t\tif (javaTypePersistenceMetadataHolder == null) {\n\t\t\treturn null;\n\t\t}\n\t\tfinal JavaSymbolName methodName = new JavaSymbolName(\"updateForm\");\n\t\tif (governorHasMethodWithSameName(methodName)) {\n\t\t\treturn null;\n\t\t}\n\n\t\tfinal String idFieldName = idField.getFieldName().getSymbolName();\n\t\tfinal List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\tattributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName));\n\t\tfinal AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);\n\n\t\tfinal List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(MODEL));\n\t\tfinal List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(idFieldName), new JavaSymbolName(\"uiModel\"));\n\n\t\tfinal List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();\n\t\trequestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName + \"}\"));\n\t\trequestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"params\"), \"form\"));\n\t\trequestMappingAttributes.add(PRODUCES_HTML);\n\t\tfinal AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);\n\t\tfinal List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();\n\t\tannotations.add(requestMapping);\n\n\t\tfinal InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();\n\t\tbodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \"\n\t\t\t\t+ findMethod.getMethodCall() + \");\");\n\t\tbodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/update\\\";\");\n\n\t\tfinal MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);\n\t\tmethodBuilder.setAnnotations(annotations);\n\t\treturn methodBuilder;\n\t}",
+    "info" : "MethodDeclaration[37491-39849]:MethodDeclaration[37491-39849]"
+  }, {
+    "left" : "private updateMethod MemberTypeAdditions) : MethodMetadataBuilder",
+    "right" : "private updateMethod MemberTypeAdditions) : MethodMetadataBuilder",
+    "info" : "MethodDeclaration[39852-42683]:MethodDeclaration[39852-42683]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4878-4884]:Modifier[4878-4884]"
+  }, {
+    "left" : "AbstractItdTypeDetailsProvidingMetadataItem",
+    "right" : "AbstractItdTypeDetailsProvidingMetadataItem",
+    "info" : "SimpleType[4921-4964]:SimpleType[4921-4964]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6178-6184]:Modifier[6178-6184]"
+  }, {
+    "left" : "final String identifier",
+    "right" : "final String identifier",
+    "info" : "SingleVariableDeclaration[6209-6232]:SingleVariableDeclaration[6209-6232]"
+  }, {
+    "left" : "final JavaType aspectName",
+    "right" : "final JavaType aspectName",
+    "info" : "SingleVariableDeclaration[6237-6262]:SingleVariableDeclaration[6237-6262]"
+  }, {
+    "left" : "final PhysicalTypeMetadata governorPhysicalType",
+    "right" : "final PhysicalTypeMetadata governorPhysicalType",
+    "info" : "SingleVariableDeclaration[6267-6314]:SingleVariableDeclaration[6267-6314]"
+  }, {
+    "left" : "final WebScaffoldAnnotationValues annotationValues",
+    "right" : "final WebScaffoldAnnotationValues annotationValues",
+    "info" : "SingleVariableDeclaration[6319-6369]:SingleVariableDeclaration[6319-6369]"
+  }, {
+    "left" : "final FieldMetadata idField",
+    "right" : "final FieldMetadata idField",
+    "info" : "SingleVariableDeclaration[6374-6401]:SingleVariableDeclaration[6374-6401]"
+  }, {
+    "left" : "final SortedMap<JavaType, JavaTypeMetadataDetails> specialDomainTypes",
+    "right" : "final SortedMap<JavaType, JavaTypeMetadataDetails> specialDomainTypes",
+    "info" : "SingleVariableDeclaration[6406-6475]:SingleVariableDeclaration[6406-6475]"
+  }, {
+    "left" : "final List<JavaTypeMetadataDetails> dependentTypes",
+    "right" : "final List<JavaTypeMetadataDetails> dependentTypes",
+    "info" : "SingleVariableDeclaration[6480-6530]:SingleVariableDeclaration[6480-6530]"
+  }, {
+    "left" : "final Map<JavaSymbolName, DateTimeFormatDetails> dateTypes",
+    "right" : "final Map<JavaSymbolName, DateTimeFormatDetails> dateTypes",
+    "info" : "SingleVariableDeclaration[6535-6593]:SingleVariableDeclaration[6535-6593]"
+  }, {
+    "left" : "final Map<MethodMetadataCustomDataKey, MemberTypeAdditions> crudAdditions",
+    "right" : "final Map<MethodMetadataCustomDataKey, MemberTypeAdditions> crudAdditions",
+    "info" : "SingleVariableDeclaration[6598-6671]:SingleVariableDeclaration[6598-6671]"
+  }, {
+    "left" : "final Collection<JavaType> editableFieldTypes",
+    "right" : "final Collection<JavaType> editableFieldTypes",
+    "info" : "SingleVariableDeclaration[6676-6721]:SingleVariableDeclaration[6676-6721]"
+  }, {
+    "left" : "TypeLocationService typeLocationService",
+    "right" : "TypeLocationService typeLocationService",
+    "info" : "SingleVariableDeclaration[6726-6765]:SingleVariableDeclaration[6726-6765]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[6767-11082]:Block[6767-11082]"
+  }, {
+    "left" : "super(identifier, aspectName, governorPhysicalType);",
+    "right" : "super(identifier, aspectName, governorPhysicalType);",
+    "info" : "SuperConstructorInvocation[6771-6823]:SuperConstructorInvocation[6771-6823]"
+  }, {
+    "left" : "Validate.isTrue(isValid(identifier),\n\t\t\t\t\"Metadata identification string '%s' is invalid\", identifier);",
+    "right" : "Validate.isTrue(isValid(identifier),\n\t\t\t\t\"Metadata identification string '%s' is invalid\", identifier);",
+    "info" : "ExpressionStatement[6826-6929]:ExpressionStatement[6826-6929]"
+  }, {
+    "left" : "Validate.notNull(annotationValues, \"Annotation values required\");",
+    "right" : "Validate.notNull(annotationValues, \"Annotation values required\");",
+    "info" : "ExpressionStatement[6932-6997]:ExpressionStatement[6932-6997]"
+  }, {
+    "left" : "Validate.notNull(specialDomainTypes,\n\t\t\t\t\"Special domain types map required\");",
+    "right" : "Validate.notNull(specialDomainTypes,\n\t\t\t\t\"Special domain types map required\");",
+    "info" : "ExpressionStatement[7000-7078]:ExpressionStatement[7000-7078]"
+  }, {
+    "left" : "Validate.notNull(dependentTypes, \"Dependent types list required\");",
+    "right" : "Validate.notNull(dependentTypes, \"Dependent types list required\");",
+    "info" : "ExpressionStatement[7081-7147]:ExpressionStatement[7081-7147]"
+  }, {
+    "left" : "Validate.notNull(typeLocationService, \"TypeLocationService is required\");",
+    "right" : "Validate.notNull(typeLocationService, \"TypeLocationService is required\");",
+    "info" : "ExpressionStatement[7150-7223]:ExpressionStatement[7150-7223]"
+  }, {
+    "left" : "if (!isValid())",
+    "right" : "if (!isValid())",
+    "info" : "IfStatement[7227-7259]:IfStatement[7227-7259]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7243-7259]:Block[7243-7259]"
+  }, {
+    "left" : "return;",
+    "right" : "return;",
+    "info" : "ReturnStatement[7248-7255]:ReturnStatement[7248-7255]"
+  }, {
+    "left" : "this.annotationValues = annotationValues;",
+    "right" : "this.annotationValues = annotationValues;",
+    "info" : "ExpressionStatement[7263-7304]:ExpressionStatement[7263-7304]"
+  }, {
+    "left" : "this.typeLocationService = typeLocationService;",
+    "right" : "this.typeLocationService = typeLocationService;",
+    "info" : "ExpressionStatement[7307-7354]:ExpressionStatement[7307-7354]"
+  }, {
+    "left" : "controllerPath = annotationValues.getPath();",
+    "right" : "controllerPath = annotationValues.getPath();",
+    "info" : "ExpressionStatement[7357-7401]:ExpressionStatement[7357-7401]"
+  }, {
+    "left" : "this.dateTypes = dateTypes;",
+    "right" : "this.dateTypes = dateTypes;",
+    "info" : "ExpressionStatement[7404-7431]:ExpressionStatement[7404-7431]"
+  }, {
+    "left" : "formBackingType = annotationValues.getFormBackingObject();",
+    "right" : "formBackingType = annotationValues.getFormBackingObject();",
+    "info" : "ExpressionStatement[7434-7492]:ExpressionStatement[7434-7492]"
+  }, {
+    "left" : "entityName = JavaSymbolName.getReservedWordSafeName(formBackingType)\n\t\t\t\t.getSymbolName();",
+    "right" : "entityName = JavaSymbolName.getReservedWordSafeName(formBackingType)\n\t\t\t\t.getSymbolName();",
+    "info" : "ExpressionStatement[7495-7585]:ExpressionStatement[7495-7585]"
+  }, {
+    "left" : "javaTypeMetadataHolder = specialDomainTypes.get(formBackingType);",
+    "right" : "javaTypeMetadataHolder = specialDomainTypes.get(formBackingType);",
+    "info" : "ExpressionStatement[7589-7654]:ExpressionStatement[7589-7654]"
+  }, {
+    "left" : "Validate.notNull(javaTypeMetadataHolder,\n\t\t\t\t\"Metadata holder required for form backing type %s\",\n\t\t\t\tformBackingType);",
+    "right" : "Validate.notNull(javaTypeMetadataHolder,\n\t\t\t\t\"Metadata holder required for form backing type %s\",\n\t\t\t\tformBackingType);",
+    "info" : "ExpressionStatement[7658-7777]:ExpressionStatement[7658-7777]"
+  }, {
+    "left" : "if (javaTypeMetadataHolder.getPersistenceDetails() != null\n\t\t\t\t&& !javaTypeMetadataHolder.getPersistenceDetails()\n\t\t\t\t\t\t.getRooIdentifierFields().isEmpty())",
+    "right" : "if (javaTypeMetadataHolder.getPersistenceDetails() != null\n\t\t\t\t&& !javaTypeMetadataHolder.getPersistenceDetails()\n\t\t\t\t\t\t.getRooIdentifierFields().isEmpty())",
+    "info" : "IfStatement[7781-8072]:IfStatement[7781-8072]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7938-8072]:Block[7938-8072]"
+  }, {
+    "left" : "compositePk = true;",
+    "right" : "compositePk = true;",
+    "info" : "ExpressionStatement[7943-7962]:ExpressionStatement[7943-7962]"
+  }, {
+    "left" : "builder.addField(getField(CS_FIELD, CONVERSION_SERVICE));",
+    "right" : "builder.addField(getField(CS_FIELD, CONVERSION_SERVICE));",
+    "info" : "ExpressionStatement[7966-8023]:ExpressionStatement[7966-8023]"
+  }, {
+    "left" : "builder.addConstructor(getConstructor());",
+    "right" : "builder.addConstructor(getConstructor());",
+    "info" : "ExpressionStatement[8027-8068]:ExpressionStatement[8027-8068]"
+  }, {
+    "left" : "final MemberTypeAdditions persistMethod = crudAdditions\n\t\t\t\t.get(PERSIST_METHOD);",
+    "right" : "final MemberTypeAdditions persistMethod = crudAdditions\n\t\t\t\t.get(PERSIST_METHOD);",
+    "info" : "VariableDeclarationStatement[8098-8179]:VariableDeclarationStatement[8098-8179]"
+  }, {
+    "left" : "if (annotationValues.isCreate() && persistMethod != null)",
+    "right" : "if (annotationValues.isCreate() && persistMethod != null)",
+    "info" : "IfStatement[8182-8422]:IfStatement[8182-8422]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8240-8422]:Block[8240-8422]"
+  }, {
+    "left" : "builder.addMethod(getCreateMethod(persistMethod));",
+    "right" : "builder.addMethod(getCreateMethod(persistMethod));",
+    "info" : "ExpressionStatement[8245-8295]:ExpressionStatement[8245-8295]"
+  }, {
+    "left" : "builder.addMethod(getCreateFormMethod(dependentTypes));",
+    "right" : "builder.addMethod(getCreateFormMethod(dependentTypes));",
+    "info" : "ExpressionStatement[8299-8354]:ExpressionStatement[8299-8354]"
+  }, {
+    "left" : "persistMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "persistMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[8358-8418]:ExpressionStatement[8358-8418]"
+  }, {
+    "left" : "final MemberTypeAdditions countAllMethod = crudAdditions\n\t\t\t\t.get(COUNT_ALL_METHOD);",
+    "right" : "final MemberTypeAdditions countAllMethod = crudAdditions\n\t\t\t\t.get(COUNT_ALL_METHOD);",
+    "info" : "VariableDeclarationStatement[8426-8510]:VariableDeclarationStatement[8426-8510]"
+  }, {
+    "left" : "final MemberTypeAdditions findMethod = crudAdditions.get(FIND_METHOD);",
+    "right" : "final MemberTypeAdditions findMethod = crudAdditions.get(FIND_METHOD);",
+    "info" : "VariableDeclarationStatement[8513-8583]:VariableDeclarationStatement[8513-8583]"
+  }, {
+    "left" : "final MemberTypeAdditions findAllMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_METHOD);",
+    "right" : "final MemberTypeAdditions findAllMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_METHOD);",
+    "info" : "VariableDeclarationStatement[8586-8668]:VariableDeclarationStatement[8586-8668]"
+  }, {
+    "left" : "final MemberTypeAdditions findEntriesMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_METHOD);",
+    "right" : "final MemberTypeAdditions findEntriesMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_METHOD);",
+    "info" : "VariableDeclarationStatement[8671-8761]:VariableDeclarationStatement[8671-8761]"
+  }, {
+    "left" : "final MemberTypeAdditions findAllSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_SORTED_METHOD);",
+    "right" : "final MemberTypeAdditions findAllSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ALL_SORTED_METHOD);",
+    "info" : "VariableDeclarationStatement[8764-8859]:VariableDeclarationStatement[8764-8859]"
+  }, {
+    "left" : "final MemberTypeAdditions findEntriesSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_SORTED_METHOD);",
+    "right" : "final MemberTypeAdditions findEntriesSortedMethod = crudAdditions\n\t\t\t\t.get(FIND_ENTRIES_SORTED_METHOD);",
+    "info" : "VariableDeclarationStatement[8862-8965]:VariableDeclarationStatement[8862-8965]"
+  }, {
+    "left" : "if (findMethod != null)",
+    "right" : "if (findMethod != null)",
+    "info" : "IfStatement[8988-9136]:IfStatement[8988-9136]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9012-9136]:Block[9012-9136]"
+  }, {
+    "left" : "builder.addMethod(getShowMethod(idField, findMethod));",
+    "right" : "builder.addMethod(getShowMethod(idField, findMethod));",
+    "info" : "ExpressionStatement[9017-9071]:ExpressionStatement[9017-9071]"
+  }, {
+    "left" : "findMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "findMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[9075-9132]:ExpressionStatement[9075-9132]"
+  }, {
+    "left" : "if (countAllMethod != null && findAllSortedMethod != null\n\t\t\t\t&& findEntriesSortedMethod != null)",
+    "right" : "if (countAllMethod != null && findAllSortedMethod != null\n\t\t\t\t&& findEntriesSortedMethod != null)",
+    "info" : "IfStatement[9166-9997]:IfStatement[9166-9997]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9264-9587]:Block[9264-9587]"
+  }, {
+    "left" : "builder.addMethod(getListMethod(findAllSortedMethod,\n\t\t\t\t\tcountAllMethod, findEntriesSortedMethod));",
+    "right" : "builder.addMethod(getListMethod(findAllSortedMethod,\n\t\t\t\t\tcountAllMethod, findEntriesSortedMethod));",
+    "info" : "ExpressionStatement[9269-9369]:ExpressionStatement[9269-9369]"
+  }, {
+    "left" : "countAllMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "countAllMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[9373-9434]:ExpressionStatement[9373-9434]"
+  }, {
+    "left" : "findAllSortedMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "findAllSortedMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[9438-9504]:ExpressionStatement[9438-9504]"
+  }, {
+    "left" : "findEntriesSortedMethod.copyAdditionsTo(builder,\n\t\t\t\t\tgovernorTypeDetails);",
+    "right" : "findEntriesSortedMethod.copyAdditionsTo(builder,\n\t\t\t\t\tgovernorTypeDetails);",
+    "info" : "ExpressionStatement[9508-9583]:ExpressionStatement[9508-9583]"
+  }, {
+    "left" : "if (countAllMethod != null && findAllMethod != null\n\t\t\t\t&& findEntriesMethod != null)",
+    "right" : "if (countAllMethod != null && findAllMethod != null\n\t\t\t\t&& findEntriesMethod != null)",
+    "info" : "IfStatement[9617-9997]:IfStatement[9617-9997]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[9703-9997]:Block[9703-9997]"
+  }, {
+    "left" : "builder.addMethod(getListMethod(findAllMethod, countAllMethod,\n\t\t\t\t\tfindEntriesMethod));",
+    "right" : "builder.addMethod(getListMethod(findAllMethod, countAllMethod,\n\t\t\t\t\tfindEntriesMethod));",
+    "info" : "ExpressionStatement[9708-9796]:ExpressionStatement[9708-9796]"
+  }, {
+    "left" : "countAllMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "countAllMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[9800-9861]:ExpressionStatement[9800-9861]"
+  }, {
+    "left" : "findAllMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "findAllMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[9865-9925]:ExpressionStatement[9865-9925]"
+  }, {
+    "left" : "findEntriesMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "findEntriesMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[9929-9993]:ExpressionStatement[9929-9993]"
+  }, {
+    "left" : "final MemberTypeAdditions updateMethod = crudAdditions\n\t\t\t\t.get(MERGE_METHOD);",
+    "right" : "final MemberTypeAdditions updateMethod = crudAdditions\n\t\t\t\t.get(MERGE_METHOD);",
+    "info" : "VariableDeclarationStatement[10023-10101]:VariableDeclarationStatement[10023-10101]"
+  }, {
+    "left" : "if (annotationValues.isUpdate() && updateMethod != null\n\t\t\t\t&& findMethod != null)",
+    "right" : "if (annotationValues.isUpdate() && updateMethod != null\n\t\t\t\t&& findMethod != null)",
+    "info" : "IfStatement[10104-10372]:IfStatement[10104-10372]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[10187-10372]:Block[10187-10372]"
+  }, {
+    "left" : "builder.addMethod(getUpdateMethod(updateMethod));",
+    "right" : "builder.addMethod(getUpdateMethod(updateMethod));",
+    "info" : "ExpressionStatement[10192-10241]:ExpressionStatement[10192-10241]"
+  }, {
+    "left" : "builder.addMethod(getUpdateFormMethod(idField, findMethod));",
+    "right" : "builder.addMethod(getUpdateFormMethod(idField, findMethod));",
+    "info" : "ExpressionStatement[10245-10305]:ExpressionStatement[10245-10305]"
+  }, {
+    "left" : "updateMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "updateMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[10309-10368]:ExpressionStatement[10309-10368]"
+  }, {
+    "left" : "final MemberTypeAdditions deleteMethod = crudAdditions\n\t\t\t\t.get(REMOVE_METHOD);",
+    "right" : "final MemberTypeAdditions deleteMethod = crudAdditions\n\t\t\t\t.get(REMOVE_METHOD);",
+    "info" : "VariableDeclarationStatement[10397-10476]:VariableDeclarationStatement[10397-10476]"
+  }, {
+    "left" : "if (annotationValues.isDelete() && deleteMethod != null\n\t\t\t\t&& findMethod != null)",
+    "right" : "if (annotationValues.isDelete() && deleteMethod != null\n\t\t\t\t&& findMethod != null)",
+    "info" : "IfStatement[10479-10704]:IfStatement[10479-10704]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[10562-10704]:Block[10562-10704]"
+  }, {
+    "left" : "builder.addMethod(getDeleteMethod(idField, deleteMethod, findMethod));",
+    "right" : "builder.addMethod(getDeleteMethod(idField, deleteMethod, findMethod));",
+    "info" : "ExpressionStatement[10567-10637]:ExpressionStatement[10567-10637]"
+  }, {
+    "left" : "deleteMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "deleteMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[10641-10700]:ExpressionStatement[10641-10700]"
+  }, {
+    "left" : "if (!dateTypes.isEmpty())",
+    "right" : "if (!dateTypes.isEmpty())",
+    "info" : "IfStatement[10708-10794]:IfStatement[10708-10794]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[10734-10794]:Block[10734-10794]"
+  }, {
+    "left" : "builder.addMethod(getDateTimeFormatHelperMethod());",
+    "right" : "builder.addMethod(getDateTimeFormatHelperMethod());",
+    "info" : "ExpressionStatement[10739-10790]:ExpressionStatement[10739-10790]"
+  }, {
+    "left" : "if (annotationValues.isCreate() || annotationValues.isUpdate())",
+    "right" : "if (annotationValues.isCreate() || annotationValues.isUpdate())",
+    "info" : "IfStatement[10798-11042]:IfStatement[10798-11042]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[10862-11042]:Block[10862-11042]"
+  }, {
+    "left" : "builder.addMethod(getPopulateEditFormMethod(formBackingType,\n\t\t\t\t\tspecialDomainTypes.values(), editableFieldTypes));",
+    "right" : "builder.addMethod(getPopulateEditFormMethod(formBackingType,\n\t\t\t\t\tspecialDomainTypes.values(), editableFieldTypes));",
+    "info" : "ExpressionStatement[10867-10983]:ExpressionStatement[10867-10983]"
+  }, {
+    "left" : "builder.addMethod(getEncodeUrlPathSegmentMethod());",
+    "right" : "builder.addMethod(getEncodeUrlPathSegmentMethod());",
+    "info" : "ExpressionStatement[10987-11038]:ExpressionStatement[10987-11038]"
+  }, {
+    "left" : "itdTypeDetails = builder.build();",
+    "right" : "itdTypeDetails = builder.build();",
+    "info" : "ExpressionStatement[11046-11079]:ExpressionStatement[11046-11079]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11085-11091]:Modifier[11085-11091]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[11092-11098]:Modifier[11092-11098]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[11099-11105]:SimpleType[11099-11105]"
+  }, {
+    "left" : "final JavaType javaType",
+    "right" : "final JavaType javaType",
+    "info" : "SingleVariableDeclaration[11123-11146]:SingleVariableDeclaration[11123-11146]"
+  }, {
+    "left" : "final LogicalPath path",
+    "right" : "final LogicalPath path",
+    "info" : "SingleVariableDeclaration[11151-11173]:SingleVariableDeclaration[11151-11173]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[11175-11283]:Block[11175-11283]"
+  }, {
+    "left" : "return PhysicalTypeIdentifierNamingUtils.createIdentifier(\n\t\t\t\tPROVIDES_TYPE_STRING, javaType, path);",
+    "right" : "return PhysicalTypeIdentifierNamingUtils.createIdentifier(\n\t\t\t\tPROVIDES_TYPE_STRING, javaType, path);",
+    "info" : "ReturnStatement[11179-11280]:ReturnStatement[11179-11280]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11286-11292]:Modifier[11286-11292]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[11293-11299]:Modifier[11293-11299]"
+  }, {
+    "left" : "JavaType",
+    "right" : "JavaType",
+    "info" : "SimpleType[11300-11308]:SimpleType[11300-11308]"
+  }, {
+    "left" : "final String metadataIdentificationString",
+    "right" : "final String metadataIdentificationString",
+    "info" : "SingleVariableDeclaration[11321-11362]:SingleVariableDeclaration[11321-11362]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[11364-11481]:Block[11364-11481]"
+  }, {
+    "left" : "return PhysicalTypeIdentifierNamingUtils.getJavaType(\n\t\t\t\tPROVIDES_TYPE_STRING, metadataIdentificationString);",
+    "right" : "return PhysicalTypeIdentifierNamingUtils.getJavaType(\n\t\t\t\tPROVIDES_TYPE_STRING, metadataIdentificationString);",
+    "info" : "ReturnStatement[11368-11478]:ReturnStatement[11368-11478]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11484-11490]:Modifier[11484-11490]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[11491-11497]:Modifier[11491-11497]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[11498-11504]:SimpleType[11498-11504]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[11532-11560]:Block[11532-11560]"
+  }, {
+    "left" : "return PROVIDES_TYPE;",
+    "right" : "return PROVIDES_TYPE;",
+    "info" : "ReturnStatement[11536-11557]:ReturnStatement[11536-11557]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11563-11569]:Modifier[11563-11569]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[11570-11576]:Modifier[11570-11576]"
+  }, {
+    "left" : "LogicalPath",
+    "right" : "LogicalPath",
+    "info" : "SimpleType[11577-11588]:SimpleType[11577-11588]"
+  }, {
+    "left" : "final String metadataIdentificationString",
+    "right" : "final String metadataIdentificationString",
+    "info" : "SingleVariableDeclaration[11597-11638]:SingleVariableDeclaration[11597-11638]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[11640-11752]:Block[11640-11752]"
+  }, {
+    "left" : "return PhysicalTypeIdentifierNamingUtils.getPath(PROVIDES_TYPE_STRING,\n\t\t\t\tmetadataIdentificationString);",
+    "right" : "return PhysicalTypeIdentifierNamingUtils.getPath(PROVIDES_TYPE_STRING,\n\t\t\t\tmetadataIdentificationString);",
+    "info" : "ReturnStatement[11644-11749]:ReturnStatement[11644-11749]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11755-11761]:Modifier[11755-11761]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[11762-11768]:Modifier[11762-11768]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[11769-11776]:PrimitiveType[11769-11776]"
+  }, {
+    "left" : "final String metadataIdentificationString",
+    "right" : "final String metadataIdentificationString",
+    "info" : "SingleVariableDeclaration[11785-11826]:SingleVariableDeclaration[11785-11826]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[11828-11940]:Block[11828-11940]"
+  }, {
+    "left" : "return PhysicalTypeIdentifierNamingUtils.isValid(PROVIDES_TYPE_STRING,\n\t\t\t\tmetadataIdentificationString);",
+    "right" : "return PhysicalTypeIdentifierNamingUtils.isValid(PROVIDES_TYPE_STRING,\n\t\t\t\tmetadataIdentificationString);",
+    "info" : "ReturnStatement[11832-11937]:ReturnStatement[11832-11937]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[11943-11949]:Modifier[11943-11949]"
+  }, {
+    "left" : "WebScaffoldAnnotationValues",
+    "right" : "WebScaffoldAnnotationValues",
+    "info" : "SimpleType[11950-11977]:SimpleType[11950-11977]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[12000-12031]:Block[12000-12031]"
+  }, {
+    "left" : "return annotationValues;",
+    "right" : "return annotationValues;",
+    "info" : "ReturnStatement[12004-12028]:ReturnStatement[12004-12028]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[12034-12043]:MarkerAnnotation[12034-12043]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[12045-12051]:Modifier[12045-12051]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[12052-12058]:SimpleType[12052-12058]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[12070-12453]:Block[12070-12453]"
+  }, {
+    "left" : "final ToStringBuilder builder = new ToStringBuilder(this);",
+    "right" : "final ToStringBuilder builder = new ToStringBuilder(this);",
+    "info" : "VariableDeclarationStatement[12074-12132]:VariableDeclarationStatement[12074-12132]"
+  }, {
+    "left" : "builder.append(\"identifier\", getId());",
+    "right" : "builder.append(\"identifier\", getId());",
+    "info" : "ExpressionStatement[12135-12173]:ExpressionStatement[12135-12173]"
+  }, {
+    "left" : "builder.append(\"valid\", valid);",
+    "right" : "builder.append(\"valid\", valid);",
+    "info" : "ExpressionStatement[12176-12207]:ExpressionStatement[12176-12207]"
+  }, {
+    "left" : "builder.append(\"aspectName\", aspectName);",
+    "right" : "builder.append(\"aspectName\", aspectName);",
+    "info" : "ExpressionStatement[12210-12251]:ExpressionStatement[12210-12251]"
+  }, {
+    "left" : "builder.append(\"destinationType\", destination);",
+    "right" : "builder.append(\"destinationType\", destination);",
+    "info" : "ExpressionStatement[12254-12301]:ExpressionStatement[12254-12301]"
+  }, {
+    "left" : "builder.append(\"governor\", governorPhysicalTypeMetadata.getId());",
+    "right" : "builder.append(\"governor\", governorPhysicalTypeMetadata.getId());",
+    "info" : "ExpressionStatement[12304-12369]:ExpressionStatement[12304-12369]"
+  }, {
+    "left" : "builder.append(\"itdTypeDetails\", itdTypeDetails);",
+    "right" : "builder.append(\"itdTypeDetails\", itdTypeDetails);",
+    "info" : "ExpressionStatement[12372-12421]:ExpressionStatement[12372-12421]"
+  }, {
+    "left" : "return builder.toString();",
+    "right" : "return builder.toString();",
+    "info" : "ReturnStatement[12424-12450]:ReturnStatement[12424-12450]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[12456-12463]:Modifier[12456-12463]"
+  }, {
+    "left" : "ConstructorMetadataBuilder",
+    "right" : "ConstructorMetadataBuilder",
+    "info" : "SimpleType[12464-12490]:SimpleType[12464-12490]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[12508-13364]:Block[12508-13364]"
+  }, {
+    "left" : "final ConstructorMetadata constructor = governorTypeDetails\n\t\t\t\t.getDeclaredConstructor(Arrays.asList(CONVERSION_SERVICE));",
+    "right" : "final ConstructorMetadata constructor = governorTypeDetails\n\t\t\t\t.getDeclaredConstructor(Arrays.asList(CONVERSION_SERVICE));",
+    "info" : "VariableDeclarationStatement[12512-12635]:VariableDeclarationStatement[12512-12635]"
+  }, {
+    "left" : "if (constructor != null)",
+    "right" : "if (constructor != null)",
+    "info" : "IfStatement[12638-12684]:IfStatement[12638-12684]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[12663-12684]:Block[12663-12684]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[12668-12680]:ReturnStatement[12668-12680]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[12688-12768]:VariableDeclarationStatement[12688-12768]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"super();\");",
+    "right" : "bodyBuilder.appendFormalLine(\"super();\");",
+    "info" : "ExpressionStatement[12771-12812]:ExpressionStatement[12771-12812]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"this.\" + CS_FIELD + \" = \" + CS_FIELD\n\t\t\t\t+ \";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"this.\" + CS_FIELD + \" = \" + CS_FIELD\n\t\t\t\t+ \";\");",
+    "info" : "ExpressionStatement[12815-12893]:ExpressionStatement[12815-12893]"
+  }, {
+    "left" : "final ConstructorMetadataBuilder constructorBuilder = new ConstructorMetadataBuilder(\n\t\t\t\tgetId());",
+    "right" : "final ConstructorMetadataBuilder constructorBuilder = new ConstructorMetadataBuilder(\n\t\t\t\tgetId());",
+    "info" : "VariableDeclarationStatement[12897-12996]:VariableDeclarationStatement[12897-12996]"
+  }, {
+    "left" : "constructorBuilder.addAnnotation(new AnnotationMetadataBuilder(\n\t\t\t\tAUTOWIRED));",
+    "right" : "constructorBuilder.addAnnotation(new AnnotationMetadataBuilder(\n\t\t\t\tAUTOWIRED));",
+    "info" : "ExpressionStatement[12999-13079]:ExpressionStatement[12999-13079]"
+  }, {
+    "left" : "constructorBuilder.addParameterType(AnnotatedJavaType\n\t\t\t\t.convertFromJavaType(CONVERSION_SERVICE));",
+    "right" : "constructorBuilder.addParameterType(AnnotatedJavaType\n\t\t\t\t.convertFromJavaType(CONVERSION_SERVICE));",
+    "info" : "ExpressionStatement[13082-13182]:ExpressionStatement[13082-13182]"
+  }, {
+    "left" : "constructorBuilder.addParameterName(CS_FIELD);",
+    "right" : "constructorBuilder.addParameterName(CS_FIELD);",
+    "info" : "ExpressionStatement[13185-13231]:ExpressionStatement[13185-13231]"
+  }, {
+    "left" : "constructorBuilder.setModifier(Modifier.PUBLIC);",
+    "right" : "constructorBuilder.setModifier(Modifier.PUBLIC);",
+    "info" : "ExpressionStatement[13234-13282]:ExpressionStatement[13234-13282]"
+  }, {
+    "left" : "constructorBuilder.setBodyBuilder(bodyBuilder);",
+    "right" : "constructorBuilder.setBodyBuilder(bodyBuilder);",
+    "info" : "ExpressionStatement[13285-13332]:ExpressionStatement[13285-13332]"
+  }, {
+    "left" : "return constructorBuilder;",
+    "right" : "return constructorBuilder;",
+    "info" : "ReturnStatement[13335-13361]:ReturnStatement[13335-13361]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[13367-13374]:Modifier[13367-13374]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[13375-13396]:SimpleType[13375-13396]"
+  }, {
+    "left" : "final List<JavaTypeMetadataDetails> dependentTypes",
+    "right" : "final List<JavaTypeMetadataDetails> dependentTypes",
+    "info" : "SingleVariableDeclaration[13421-13471]:SingleVariableDeclaration[13421-13471]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[13473-16830]:Block[13473-16830]"
+  }, {
+    "left" : "ClassOrInterfaceTypeDetails cid = typeLocationService\n\t\t\t\t.getTypeDetails(formBackingType);",
+    "right" : "ClassOrInterfaceTypeDetails cid = typeLocationService\n\t\t\t\t.getTypeDetails(formBackingType);",
+    "info" : "VariableDeclarationStatement[13511-13602]:VariableDeclarationStatement[13511-13602]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"createForm\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"createForm\");",
+    "info" : "VariableDeclarationStatement[13606-13673]:VariableDeclarationStatement[13606-13673]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[13676-13744]:IfStatement[13676-13744]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[13723-13744]:Block[13723-13744]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[13728-13740]:ReturnStatement[13728-13740]"
+  }, {
+    "left" : "List<FieldMetadata> fieldNamesList = getEntityFields(dependentTypes,\n\t\t\t\tcid);",
+    "right" : "List<FieldMetadata> fieldNamesList = getEntityFields(dependentTypes,\n\t\t\t\tcid);",
+    "info" : "VariableDeclarationStatement[13748-13826]:VariableDeclarationStatement[13748-13826]"
+  }, {
+    "left" : "final List<JavaType> parameterTypes = Arrays.asList(MODEL);",
+    "right" : "final List<JavaType> parameterTypes = Arrays.asList(MODEL);",
+    "info" : "VariableDeclarationStatement[13830-13889]:VariableDeclarationStatement[13830-13889]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays\n\t\t\t\t.asList(new JavaSymbolName(\"uiModel\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays\n\t\t\t\t.asList(new JavaSymbolName(\"uiModel\"));",
+    "info" : "VariableDeclarationStatement[13892-13986]:VariableDeclarationStatement[13892-13986]"
+  }, {
+    "left" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "right" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "info" : "VariableDeclarationStatement[13990-14085]:VariableDeclarationStatement[13990-14085]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[14089-14201]:VariableDeclarationStatement[14089-14201]"
+  }, {
+    "left" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"params\"), \"form\"));",
+    "right" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"params\"), \"form\"));",
+    "info" : "ExpressionStatement[14204-14302]:ExpressionStatement[14204-14302]"
+  }, {
+    "left" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "right" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "info" : "ExpressionStatement[14305-14349]:ExpressionStatement[14305-14349]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "right" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "info" : "VariableDeclarationStatement[14352-14479]:VariableDeclarationStatement[14352-14479]"
+  }, {
+    "left" : "annotations.add(requestMapping);",
+    "right" : "annotations.add(requestMapping);",
+    "info" : "ExpressionStatement[14482-14514]:ExpressionStatement[14482-14514]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[14518-14598]:VariableDeclarationStatement[14518-14598]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, new \"\n\t\t\t\t+ getShortName(formBackingType) + \"());\");",
+    "right" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, new \"\n\t\t\t\t+ getShortName(formBackingType) + \"());\");",
+    "info" : "ExpressionStatement[14601-14709]:ExpressionStatement[14601-14709]"
+  }, {
+    "left" : "boolean listAdded = false;",
+    "right" : "boolean listAdded = false;",
+    "info" : "VariableDeclarationStatement[14712-14738]:VariableDeclarationStatement[14712-14738]"
+  }, {
+    "left" : "int fieldPosition = 0;",
+    "right" : "int fieldPosition = 0;",
+    "info" : "VariableDeclarationStatement[14741-14763]:VariableDeclarationStatement[14741-14763]"
+  }, {
+    "left" : "for (final JavaTypeMetadataDetails dependentType : dependentTypes)",
+    "right" : "for (final JavaTypeMetadataDetails dependentType : dependentTypes)",
+    "info" : "EnhancedForStatement[14766-16340]:EnhancedForStatement[14766-16340]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[14833-16340]:Block[14833-16340]"
+  }, {
+    "left" : "MemberTypeAdditions countMethod = dependentType.getPersistenceDetails().\n\t\t\t\t\tgetCountMethod();",
+    "right" : "MemberTypeAdditions countMethod = dependentType.getPersistenceDetails().\n\t\t\t\t\tgetCountMethod();",
+    "info" : "VariableDeclarationStatement[14838-14933]:VariableDeclarationStatement[14838-14933]"
+  }, {
+    "left" : "if (countMethod == null)",
+    "right" : "if (countMethod == null)",
+    "info" : "IfStatement[14937-15003]:IfStatement[14937-15003]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[14962-15003]:Block[14962-15003]"
+  }, {
+    "left" : "fieldPosition++;",
+    "right" : "fieldPosition++;",
+    "info" : "ExpressionStatement[14968-14984]:ExpressionStatement[14968-14984]"
+  }, {
+    "left" : "continue;",
+    "right" : "continue;",
+    "info" : "ContinueStatement[14989-14998]:ContinueStatement[14989-14998]"
+  }, {
+    "left" : "if (!listAdded)",
+    "right" : "if (!listAdded)",
+    "info" : "IfStatement[15007-15621]:IfStatement[15007-15621]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[15023-15621]:Block[15023-15621]"
+  }, {
+    "left" : "final JavaType stringArrayType = new JavaType(\n\t\t\t\t\t\tSTRING.getFullyQualifiedTypeName(), 1, DataType.TYPE,\n\t\t\t\t\t\tnull, null);",
+    "right" : "final JavaType stringArrayType = new JavaType(\n\t\t\t\t\t\tSTRING.getFullyQualifiedTypeName(), 1, DataType.TYPE,\n\t\t\t\t\t\tnull, null);",
+    "info" : "VariableDeclarationStatement[15029-15154]:VariableDeclarationStatement[15029-15154]"
+  }, {
+    "left" : "final JavaType listType = new JavaType(\n\t\t\t\t\t\tLIST.getFullyQualifiedTypeName(), 0, DataType.TYPE,\n\t\t\t\t\t\tnull, Arrays.asList(stringArrayType));",
+    "right" : "final JavaType listType = new JavaType(\n\t\t\t\t\t\tLIST.getFullyQualifiedTypeName(), 0, DataType.TYPE,\n\t\t\t\t\t\tnull, Arrays.asList(stringArrayType));",
+    "info" : "VariableDeclarationStatement[15160-15302]:VariableDeclarationStatement[15160-15302]"
+  }, {
+    "left" : "final JavaType arrayListType = new JavaType(\n\t\t\t\t\t\tARRAY_LIST.getFullyQualifiedTypeName(), 0,\n\t\t\t\t\t\tDataType.TYPE, null, Arrays.asList(stringArrayType));",
+    "right" : "final JavaType arrayListType = new JavaType(\n\t\t\t\t\t\tARRAY_LIST.getFullyQualifiedTypeName(), 0,\n\t\t\t\t\t\tDataType.TYPE, null, Arrays.asList(stringArrayType));",
+    "info" : "VariableDeclarationStatement[15308-15461]:VariableDeclarationStatement[15308-15461]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(getShortName(listType)\n\t\t\t\t\t\t+ \" dependencies = new \" + getShortName(arrayListType)\n\t\t\t\t\t\t+ \"();\");",
+    "right" : "bodyBuilder.appendFormalLine(getShortName(listType)\n\t\t\t\t\t\t+ \" dependencies = new \" + getShortName(arrayListType)\n\t\t\t\t\t\t+ \"();\");",
+    "info" : "ExpressionStatement[15466-15594]:ExpressionStatement[15466-15594]"
+  }, {
+    "left" : "listAdded = true;",
+    "right" : "listAdded = true;",
+    "info" : "ExpressionStatement[15599-15616]:ExpressionStatement[15599-15616]"
+  }, {
+    "left" : "builder.getImportRegistrationResolver().addImport(\n\t\t\t\t\tdependentType.getJavaType());",
+    "right" : "builder.getImportRegistrationResolver().addImport(\n\t\t\t\t\tdependentType.getJavaType());",
+    "info" : "ExpressionStatement[15625-15710]:ExpressionStatement[15625-15710]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"if (\"\n\t\t\t\t\t+ countMethod.getMethodCall() + \" == 0) {\");",
+    "right" : "bodyBuilder.appendFormalLine(\"if (\"\n\t\t\t\t\t+ countMethod.getMethodCall() + \" == 0) {\");",
+    "info" : "ExpressionStatement[15714-15799]:ExpressionStatement[15714-15799]"
+  }, {
+    "left" : "bodyBuilder.indent();",
+    "right" : "bodyBuilder.indent();",
+    "info" : "ExpressionStatement[15803-15824]:ExpressionStatement[15803-15824]"
+  }, {
+    "left" : "countMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "right" : "countMethod.copyAdditionsTo(builder, governorTypeDetails);",
+    "info" : "ExpressionStatement[15829-15887]:ExpressionStatement[15829-15887]"
+  }, {
+    "left" : "String dependentTypeName = fieldNamesList.get(fieldPosition)\n\t\t\t\t\t.getFieldName().getSymbolName();",
+    "right" : "String dependentTypeName = fieldNamesList.get(fieldPosition)\n\t\t\t\t\t.getFieldName().getSymbolName();",
+    "info" : "VariableDeclarationStatement[15989-16087]:VariableDeclarationStatement[15989-16087]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"dependencies.add(new String[] { \\\"\"\n\t\t\t\t\t+ dependentTypeName + \"\\\", \\\"\"\n\t\t\t\t\t+ dependentType.getControllerPath() + \"\\\" });\");",
+    "right" : "bodyBuilder.appendFormalLine(\"dependencies.add(new String[] { \\\"\"\n\t\t\t\t\t+ dependentTypeName + \"\\\", \\\"\"\n\t\t\t\t\t+ dependentType.getControllerPath() + \"\\\" });\");",
+    "info" : "ExpressionStatement[16091-16246]:ExpressionStatement[16091-16246]"
+  }, {
+    "left" : "bodyBuilder.indentRemove();",
+    "right" : "bodyBuilder.indentRemove();",
+    "info" : "ExpressionStatement[16250-16277]:ExpressionStatement[16250-16277]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"}\");",
+    "right" : "bodyBuilder.appendFormalLine(\"}\");",
+    "info" : "ExpressionStatement[16281-16315]:ExpressionStatement[16281-16315]"
+  }, {
+    "left" : "fieldPosition++;",
+    "right" : "fieldPosition++;",
+    "info" : "ExpressionStatement[16320-16336]:ExpressionStatement[16320-16336]"
+  }, {
+    "left" : "if (listAdded)",
+    "right" : "if (listAdded)",
+    "info" : "IfStatement[16343-16459]:IfStatement[16343-16459]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[16358-16459]:Block[16358-16459]"
+  }, {
+    "left" : "bodyBuilder\n\t\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"dependencies\\\", dependencies);\");",
+    "right" : "bodyBuilder\n\t\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"dependencies\\\", dependencies);\");",
+    "info" : "ExpressionStatement[16363-16455]:ExpressionStatement[16363-16455]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/create\\\";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/create\\\";\");",
+    "info" : "ExpressionStatement[16462-16540]:ExpressionStatement[16462-16540]"
+  }, {
+    "left" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "VariableDeclarationStatement[16544-16758]:VariableDeclarationStatement[16544-16758]"
+  }, {
+    "left" : "methodBuilder.setAnnotations(annotations);",
+    "right" : "methodBuilder.setAnnotations(annotations);",
+    "info" : "ExpressionStatement[16761-16803]:ExpressionStatement[16761-16803]"
+  }, {
+    "left" : "return methodBuilder;",
+    "right" : "return methodBuilder;",
+    "info" : "ReturnStatement[16806-16827]:ReturnStatement[16806-16827]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[16965-16972]:Modifier[16965-16972]"
+  }, {
+    "left" : "List<FieldMetadata>",
+    "right" : "List<FieldMetadata>",
+    "info" : "ParameterizedType[16973-16992]:ParameterizedType[16973-16992]"
+  }, {
+    "left" : "final List<JavaTypeMetadataDetails> dependentTypes",
+    "right" : "final List<JavaTypeMetadataDetails> dependentTypes",
+    "info" : "SingleVariableDeclaration[17013-17063]:SingleVariableDeclaration[17013-17063]"
+  }, {
+    "left" : "ClassOrInterfaceTypeDetails cid",
+    "right" : "ClassOrInterfaceTypeDetails cid",
+    "info" : "SingleVariableDeclaration[17068-17099]:SingleVariableDeclaration[17068-17099]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[17101-17566]:Block[17101-17566]"
+  }, {
+    "left" : "List<FieldMetadata> fieldsNamesList = new ArrayList<FieldMetadata>();",
+    "right" : "List<FieldMetadata> fieldsNamesList = new ArrayList<FieldMetadata>();",
+    "info" : "VariableDeclarationStatement[17105-17174]:VariableDeclarationStatement[17105-17174]"
+  }, {
+    "left" : "List<? extends FieldMetadata> fieldList = cid.getDeclaredFields();",
+    "right" : "List<? extends FieldMetadata> fieldList = cid.getDeclaredFields();",
+    "info" : "VariableDeclarationStatement[17220-17286]:VariableDeclarationStatement[17220-17286]"
+  }, {
+    "left" : "Iterator<? extends FieldMetadata> it = fieldList.iterator();",
+    "right" : "Iterator<? extends FieldMetadata> it = fieldList.iterator();",
+    "info" : "VariableDeclarationStatement[17289-17349]:VariableDeclarationStatement[17289-17349]"
+  }, {
+    "left" : "while (it.hasNext())",
+    "right" : "while (it.hasNext())",
+    "info" : "WhileStatement[17352-17536]:WhileStatement[17352-17536]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[17373-17536]:Block[17373-17536]"
+  }, {
+    "left" : "FieldMetadata currentField = it.next();",
+    "right" : "FieldMetadata currentField = it.next();",
+    "info" : "VariableDeclarationStatement[17378-17417]:VariableDeclarationStatement[17378-17417]"
+  }, {
+    "left" : "if (typeLocationService.isInProject(currentField.getFieldType()))",
+    "right" : "if (typeLocationService.isInProject(currentField.getFieldType()))",
+    "info" : "IfStatement[17421-17532]:IfStatement[17421-17532]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[17487-17532]:Block[17487-17532]"
+  }, {
+    "left" : "fieldsNamesList.add(currentField);",
+    "right" : "fieldsNamesList.add(currentField);",
+    "info" : "ExpressionStatement[17493-17527]:ExpressionStatement[17493-17527]"
+  }, {
+    "left" : "return fieldsNamesList;",
+    "right" : "return fieldsNamesList;",
+    "info" : "ReturnStatement[17540-17563]:ReturnStatement[17540-17563]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[17569-17576]:Modifier[17569-17576]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[17577-17598]:SimpleType[17577-17598]"
+  }, {
+    "left" : "final MemberTypeAdditions persistMethod",
+    "right" : "final MemberTypeAdditions persistMethod",
+    "info" : "SingleVariableDeclaration[17619-17658]:SingleVariableDeclaration[17619-17658]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[17660-20424]:Block[17660-20424]"
+  }, {
+    "left" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "right" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "info" : "VariableDeclarationStatement[17664-17793]:VariableDeclarationStatement[17664-17793]"
+  }, {
+    "left" : "if (javaTypePersistenceMetadataHolder == null\n\t\t\t\t|| javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod() == null)",
+    "right" : "if (javaTypePersistenceMetadataHolder == null\n\t\t\t\t|| javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod() == null)",
+    "info" : "IfStatement[17796-17950]:IfStatement[17796-17950]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[17929-17950]:Block[17929-17950]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[17934-17946]:ReturnStatement[17934-17946]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"create\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"create\");",
+    "info" : "VariableDeclarationStatement[17954-18017]:VariableDeclarationStatement[17954-18017]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[18020-18088]:IfStatement[18020-18088]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[18067-18088]:Block[18067-18088]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[18072-18084]:ReturnStatement[18072-18084]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder validAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tVALID);",
+    "right" : "final AnnotationMetadataBuilder validAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tVALID);",
+    "info" : "VariableDeclarationStatement[18092-18184]:VariableDeclarationStatement[18092-18184]"
+  }, {
+    "left" : "final List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(formBackingType, validAnnotation\n\t\t\t\t\t\t.build()), new AnnotatedJavaType(BINDING_RESULT),\n\t\t\t\t\t\tnew AnnotatedJavaType(MODEL), new AnnotatedJavaType(\n\t\t\t\t\t\t\t\tHTTP_SERVLET_REQUEST));",
+    "right" : "final List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(formBackingType, validAnnotation\n\t\t\t\t\t\t.build()), new AnnotatedJavaType(BINDING_RESULT),\n\t\t\t\t\t\tnew AnnotatedJavaType(MODEL), new AnnotatedJavaType(\n\t\t\t\t\t\t\t\tHTTP_SERVLET_REQUEST));",
+    "info" : "VariableDeclarationStatement[18188-18455]:VariableDeclarationStatement[18188-18455]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(entityName), new JavaSymbolName(\n\t\t\t\t\t\t\"bindingResult\"), new JavaSymbolName(\"uiModel\"),\n\t\t\t\tnew JavaSymbolName(\"httpServletRequest\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(entityName), new JavaSymbolName(\n\t\t\t\t\t\t\"bindingResult\"), new JavaSymbolName(\"uiModel\"),\n\t\t\t\tnew JavaSymbolName(\"httpServletRequest\"));",
+    "info" : "VariableDeclarationStatement[18458-18674]:VariableDeclarationStatement[18458-18674]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[18678-18790]:VariableDeclarationStatement[18678-18790]"
+  }, {
+    "left" : "requestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"POST\"))));",
+    "right" : "requestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"POST\"))));",
+    "info" : "ExpressionStatement[18793-18947]:ExpressionStatement[18793-18947]"
+  }, {
+    "left" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "right" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "info" : "ExpressionStatement[18950-18994]:ExpressionStatement[18950-18994]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "right" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "info" : "VariableDeclarationStatement[18997-19124]:VariableDeclarationStatement[18997-19124]"
+  }, {
+    "left" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "right" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "info" : "VariableDeclarationStatement[19127-19222]:VariableDeclarationStatement[19127-19222]"
+  }, {
+    "left" : "annotations.add(requestMapping);",
+    "right" : "annotations.add(requestMapping);",
+    "info" : "ExpressionStatement[19225-19257]:ExpressionStatement[19225-19257]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[19261-19341]:VariableDeclarationStatement[19261-19341]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"if (bindingResult.hasErrors()) {\");",
+    "right" : "bodyBuilder.appendFormalLine(\"if (bindingResult.hasErrors()) {\");",
+    "info" : "ExpressionStatement[19344-19409]:ExpressionStatement[19344-19409]"
+  }, {
+    "left" : "bodyBuilder.indent();",
+    "right" : "bodyBuilder.indent();",
+    "info" : "ExpressionStatement[19412-19433]:ExpressionStatement[19412-19433]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \" + entityName\n\t\t\t\t+ \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \" + entityName\n\t\t\t\t+ \");\");",
+    "info" : "ExpressionStatement[19436-19519]:ExpressionStatement[19436-19519]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/create\\\";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/create\\\";\");",
+    "info" : "ExpressionStatement[19522-19600]:ExpressionStatement[19522-19600]"
+  }, {
+    "left" : "bodyBuilder.indentRemove();",
+    "right" : "bodyBuilder.indentRemove();",
+    "info" : "ExpressionStatement[19603-19630]:ExpressionStatement[19603-19630]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"}\");",
+    "right" : "bodyBuilder.appendFormalLine(\"}\");",
+    "info" : "ExpressionStatement[19633-19667]:ExpressionStatement[19633-19667]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");",
+    "info" : "ExpressionStatement[19670-19727]:ExpressionStatement[19670-19727]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(persistMethod.getMethodCall() + \";\");",
+    "right" : "bodyBuilder.appendFormalLine(persistMethod.getMethodCall() + \";\");",
+    "info" : "ExpressionStatement[19730-19796]:ExpressionStatement[19730-19796]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"redirect:/\"\n\t\t\t\t+ controllerPath\n\t\t\t\t+ \"/\\\" + encodeUrlPathSegment(\"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ entityName\n\t\t\t\t+ \".\"\n\t\t\t\t+ javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod().getMethodName() + \"()\"\n\t\t\t\t+ (compositePk ? \", String.class)\" : \".toString()\")\n\t\t\t\t+ \", httpServletRequest);\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"redirect:/\"\n\t\t\t\t+ controllerPath\n\t\t\t\t+ \"/\\\" + encodeUrlPathSegment(\"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ entityName\n\t\t\t\t+ \".\"\n\t\t\t\t+ javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod().getMethodName() + \"()\"\n\t\t\t\t+ (compositePk ? \", String.class)\" : \".toString()\")\n\t\t\t\t+ \", httpServletRequest);\");",
+    "info" : "ExpressionStatement[19799-20178]:ExpressionStatement[19799-20178]"
+  }, {
+    "left" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "VariableDeclarationStatement[20182-20352]:VariableDeclarationStatement[20182-20352]"
+  }, {
+    "left" : "methodBuilder.setAnnotations(annotations);",
+    "right" : "methodBuilder.setAnnotations(annotations);",
+    "info" : "ExpressionStatement[20355-20397]:ExpressionStatement[20355-20397]"
+  }, {
+    "left" : "return methodBuilder;",
+    "right" : "return methodBuilder;",
+    "info" : "ReturnStatement[20400-20421]:ReturnStatement[20400-20421]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[20427-20434]:Modifier[20427-20434]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[20435-20456]:SimpleType[20435-20456]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[20489-21961]:Block[20489-21961]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"addDateTimeFormatPatterns\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"addDateTimeFormatPatterns\");",
+    "info" : "VariableDeclarationStatement[20493-20580]:VariableDeclarationStatement[20493-20580]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[20583-20651]:IfStatement[20583-20651]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[20630-20651]:Block[20630-20651]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[20635-20647]:ReturnStatement[20635-20647]"
+  }, {
+    "left" : "final List<JavaType> parameterTypes = Arrays.asList(MODEL);",
+    "right" : "final List<JavaType> parameterTypes = Arrays.asList(MODEL);",
+    "info" : "VariableDeclarationStatement[20655-20714]:VariableDeclarationStatement[20655-20714]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays\n\t\t\t\t.asList(new JavaSymbolName(\"uiModel\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays\n\t\t\t\t.asList(new JavaSymbolName(\"uiModel\"));",
+    "info" : "VariableDeclarationStatement[20717-20811]:VariableDeclarationStatement[20717-20811]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[20815-20895]:VariableDeclarationStatement[20815-20895]"
+  }, {
+    "left" : "for (final Entry<JavaSymbolName, DateTimeFormatDetails> javaSymbolNameDateTimeFormatDetailsEntry : dateTypes\n\t\t\t\t.entrySet())",
+    "right" : "for (final Entry<JavaSymbolName, DateTimeFormatDetails> javaSymbolNameDateTimeFormatDetailsEntry : dateTypes\n\t\t\t\t.entrySet())",
+    "info" : "EnhancedForStatement[20898-21784]:EnhancedForStatement[20898-21784]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[21024-21784]:Block[21024-21784]"
+  }, {
+    "left" : "String pattern;",
+    "right" : "String pattern;",
+    "info" : "VariableDeclarationStatement[21029-21044]:VariableDeclarationStatement[21029-21044]"
+  }, {
+    "left" : "if (javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern != null)",
+    "right" : "if (javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern != null)",
+    "info" : "IfStatement[21048-21553]:IfStatement[21048-21553]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[21121-21228]:Block[21121-21228]"
+  }, {
+    "left" : "pattern = \"\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern\n\t\t\t\t\t\t+ \"\\\"\";",
+    "right" : "pattern = \"\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().pattern\n\t\t\t\t\t\t+ \"\\\"\";",
+    "info" : "ExpressionStatement[21127-21223]:ExpressionStatement[21127-21223]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[21234-21553]:Block[21234-21553]"
+  }, {
+    "left" : "final JavaType dateTimeFormat = new JavaType(\n\t\t\t\t\t\t\"org.joda.time.format.DateTimeFormat\");",
+    "right" : "final JavaType dateTimeFormat = new JavaType(\n\t\t\t\t\t\t\"org.joda.time.format.DateTimeFormat\");",
+    "info" : "VariableDeclarationStatement[21240-21331]:VariableDeclarationStatement[21240-21331]"
+  }, {
+    "left" : "pattern = getShortName(dateTimeFormat)\n\t\t\t\t\t\t+ \".patternForStyle(\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().style\n\t\t\t\t\t\t+ \"\\\", \" + getShortName(LOCALE_CONTEXT_HOLDER)\n\t\t\t\t\t\t+ \".getLocale())\";",
+    "right" : "pattern = getShortName(dateTimeFormat)\n\t\t\t\t\t\t+ \".patternForStyle(\\\"\"\n\t\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getValue().style\n\t\t\t\t\t\t+ \"\\\", \" + getShortName(LOCALE_CONTEXT_HOLDER)\n\t\t\t\t\t\t+ \".getLocale())\";",
+    "info" : "ExpressionStatement[21336-21548]:ExpressionStatement[21336-21548]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t+ entityName\n\t\t\t\t\t+ \"_\"\n\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getKey()\n\t\t\t\t\t\t\t.getSymbolName().toLowerCase() + \"_date_format\\\", \"\n\t\t\t\t\t+ pattern + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t+ entityName\n\t\t\t\t\t+ \"_\"\n\t\t\t\t\t+ javaSymbolNameDateTimeFormatDetailsEntry.getKey()\n\t\t\t\t\t\t\t.getSymbolName().toLowerCase() + \"_date_format\\\", \"\n\t\t\t\t\t+ pattern + \");\");",
+    "info" : "ExpressionStatement[21557-21780]:ExpressionStatement[21557-21780]"
+  }, {
+    "left" : "return new MethodMetadataBuilder(getId(), 0, methodName,\n\t\t\t\tVOID_PRIMITIVE,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "return new MethodMetadataBuilder(getId(), 0, methodName,\n\t\t\t\tVOID_PRIMITIVE,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "ReturnStatement[21788-21958]:ReturnStatement[21788-21958]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[21964-21971]:Modifier[21964-21971]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[21972-21993]:SimpleType[21972-21993]"
+  }, {
+    "left" : "final FieldMetadata idField",
+    "right" : "final FieldMetadata idField",
+    "info" : "SingleVariableDeclaration[22010-22037]:SingleVariableDeclaration[22010-22037]"
+  }, {
+    "left" : "final MemberTypeAdditions deleteMethodAdditions",
+    "right" : "final MemberTypeAdditions deleteMethodAdditions",
+    "info" : "SingleVariableDeclaration[22042-22089]:SingleVariableDeclaration[22042-22089]"
+  }, {
+    "left" : "final MemberTypeAdditions findMethod",
+    "right" : "final MemberTypeAdditions findMethod",
+    "info" : "SingleVariableDeclaration[22094-22130]:SingleVariableDeclaration[22094-22130]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[22132-26228]:Block[22132-26228]"
+  }, {
+    "left" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "right" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "info" : "VariableDeclarationStatement[22136-22265]:VariableDeclarationStatement[22136-22265]"
+  }, {
+    "left" : "if (javaTypePersistenceMetadataHolder == null)",
+    "right" : "if (javaTypePersistenceMetadataHolder == null)",
+    "info" : "IfStatement[22268-22336]:IfStatement[22268-22336]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[22315-22336]:Block[22315-22336]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[22320-22332]:ReturnStatement[22320-22332]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"delete\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"delete\");",
+    "info" : "VariableDeclarationStatement[22339-22402]:VariableDeclarationStatement[22339-22402]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[22405-22473]:IfStatement[22405-22473]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[22452-22473]:Block[22452-22473]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[22457-22469]:ReturnStatement[22457-22469]"
+  }, {
+    "left" : "final JavaSymbolName idFieldName = idField.getFieldName();",
+    "right" : "final JavaSymbolName idFieldName = idField.getFieldName();",
+    "info" : "VariableDeclarationStatement[22477-22535]:VariableDeclarationStatement[22477-22535]"
+  }, {
+    "left" : "String fieldName = entityName;",
+    "right" : "String fieldName = entityName;",
+    "info" : "VariableDeclarationStatement[22538-22568]:VariableDeclarationStatement[22538-22568]"
+  }, {
+    "left" : "String deleteMethodCall = deleteMethodAdditions.getMethodCall();",
+    "right" : "String deleteMethodCall = deleteMethodAdditions.getMethodCall();",
+    "info" : "VariableDeclarationStatement[22571-22635]:VariableDeclarationStatement[22571-22635]"
+  }, {
+    "left" : "if (idFieldName.getSymbolName().equals(entityName))",
+    "right" : "if (idFieldName.getSymbolName().equals(entityName))",
+    "info" : "IfStatement[22638-22807]:IfStatement[22638-22807]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[22690-22807]:Block[22690-22807]"
+  }, {
+    "left" : "fieldName += \"_\";",
+    "right" : "fieldName += \"_\";",
+    "info" : "ExpressionStatement[22695-22712]:ExpressionStatement[22695-22712]"
+  }, {
+    "left" : "deleteMethodCall = fieldName + \".\"\n\t\t\t\t\t+ deleteMethodAdditions.getMethodName() + \"()\";",
+    "right" : "deleteMethodCall = fieldName + \".\"\n\t\t\t\t\t+ deleteMethodAdditions.getMethodName() + \"()\";",
+    "info" : "ExpressionStatement[22716-22803]:ExpressionStatement[22716-22803]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[22811-22909]:VariableDeclarationStatement[22811-22909]"
+  }, {
+    "left" : "attributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName.getSymbolName()));",
+    "right" : "attributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName.getSymbolName()));",
+    "info" : "ExpressionStatement[22912-23015]:ExpressionStatement[22912-23015]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);",
+    "right" : "final AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);",
+    "info" : "VariableDeclarationStatement[23018-23137]:VariableDeclarationStatement[23018-23137]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> firstResultAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> firstResultAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[23141-23250]:VariableDeclarationStatement[23141-23250]"
+  }, {
+    "left" : "firstResultAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"page\"));",
+    "right" : "firstResultAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"page\"));",
+    "info" : "ExpressionStatement[23253-23347]:ExpressionStatement[23253-23347]"
+  }, {
+    "left" : "firstResultAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "right" : "firstResultAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "info" : "ExpressionStatement[23350-23447]:ExpressionStatement[23350-23447]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder firstResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, firstResultAttributes);",
+    "right" : "final AnnotationMetadataBuilder firstResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, firstResultAttributes);",
+    "info" : "VariableDeclarationStatement[23450-23579]:VariableDeclarationStatement[23450-23579]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> maxResultsAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> maxResultsAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[23583-23691]:VariableDeclarationStatement[23583-23691]"
+  }, {
+    "left" : "maxResultsAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"size\"));",
+    "right" : "maxResultsAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"size\"));",
+    "info" : "ExpressionStatement[23694-23787]:ExpressionStatement[23694-23787]"
+  }, {
+    "left" : "maxResultsAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "right" : "maxResultsAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "info" : "ExpressionStatement[23790-23886]:ExpressionStatement[23790-23886]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder maxResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, maxResultsAttributes);",
+    "right" : "final AnnotationMetadataBuilder maxResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, maxResultsAttributes);",
+    "info" : "VariableDeclarationStatement[23889-24015]:VariableDeclarationStatement[23889-24015]"
+  }, {
+    "left" : "final List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(new JavaType(Integer.class.getName()),\n\t\t\t\t\t\tfirstResultAnnotation.build()), new AnnotatedJavaType(\n\t\t\t\t\t\tnew JavaType(Integer.class.getName()),\n\t\t\t\t\t\tmaxResultAnnotation.build()), new AnnotatedJavaType(\n\t\t\t\t\t\tMODEL));",
+    "right" : "final List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(new JavaType(Integer.class.getName()),\n\t\t\t\t\t\tfirstResultAnnotation.build()), new AnnotatedJavaType(\n\t\t\t\t\t\tnew JavaType(Integer.class.getName()),\n\t\t\t\t\t\tmaxResultAnnotation.build()), new AnnotatedJavaType(\n\t\t\t\t\t\tMODEL));",
+    "info" : "VariableDeclarationStatement[24019-24446]:VariableDeclarationStatement[24019-24446]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(idFieldName,\n\t\t\t\tnew JavaSymbolName(\"page\"), new JavaSymbolName(\"size\"),\n\t\t\t\tnew JavaSymbolName(\"uiModel\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(idFieldName,\n\t\t\t\tnew JavaSymbolName(\"page\"), new JavaSymbolName(\"size\"),\n\t\t\t\tnew JavaSymbolName(\"uiModel\"));",
+    "info" : "VariableDeclarationStatement[24449-24615]:VariableDeclarationStatement[24449-24615]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[24619-24731]:VariableDeclarationStatement[24619-24731]"
+  }, {
+    "left" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName.getSymbolName()\n\t\t\t\t\t\t+ \"}\"));",
+    "right" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName.getSymbolName()\n\t\t\t\t\t\t+ \"}\"));",
+    "info" : "ExpressionStatement[24734-24871]:ExpressionStatement[24734-24871]"
+  }, {
+    "left" : "requestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"DELETE\"))));",
+    "right" : "requestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"DELETE\"))));",
+    "info" : "ExpressionStatement[24874-25030]:ExpressionStatement[24874-25030]"
+  }, {
+    "left" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "right" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "info" : "ExpressionStatement[25033-25077]:ExpressionStatement[25033-25077]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "right" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "info" : "VariableDeclarationStatement[25080-25207]:VariableDeclarationStatement[25080-25207]"
+  }, {
+    "left" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "right" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "info" : "VariableDeclarationStatement[25211-25306]:VariableDeclarationStatement[25211-25306]"
+  }, {
+    "left" : "annotations.add(requestMapping);",
+    "right" : "annotations.add(requestMapping);",
+    "info" : "ExpressionStatement[25309-25341]:ExpressionStatement[25309-25341]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[25345-25425]:VariableDeclarationStatement[25345-25425]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(getShortName(formBackingType) + \" \"\n\t\t\t\t+ fieldName + \" = \" + findMethod.getMethodCall() + \";\");",
+    "right" : "bodyBuilder.appendFormalLine(getShortName(formBackingType) + \" \"\n\t\t\t\t+ fieldName + \" = \" + findMethod.getMethodCall() + \";\");",
+    "info" : "ExpressionStatement[25428-25553]:ExpressionStatement[25428-25553]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(deleteMethodCall + \";\");",
+    "right" : "bodyBuilder.appendFormalLine(deleteMethodCall + \";\");",
+    "info" : "ExpressionStatement[25556-25609]:ExpressionStatement[25556-25609]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");",
+    "info" : "ExpressionStatement[25612-25669]:ExpressionStatement[25612-25669]"
+  }, {
+    "left" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"page\\\", (page == null) ? \\\"1\\\" : page.toString());\");",
+    "right" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"page\\\", (page == null) ? \\\"1\\\" : page.toString());\");",
+    "info" : "ExpressionStatement[25672-25783]:ExpressionStatement[25672-25783]"
+  }, {
+    "left" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"size\\\", (size == null) ? \\\"10\\\" : size.toString());\");",
+    "right" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"size\\\", (size == null) ? \\\"10\\\" : size.toString());\");",
+    "info" : "ExpressionStatement[25786-25898]:ExpressionStatement[25786-25898]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"redirect:/\" + controllerPath\n\t\t\t\t+ \"\\\";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"redirect:/\" + controllerPath\n\t\t\t\t+ \"\\\";\");",
+    "info" : "ExpressionStatement[25901-25982]:ExpressionStatement[25901-25982]"
+  }, {
+    "left" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "VariableDeclarationStatement[25986-26156]:VariableDeclarationStatement[25986-26156]"
+  }, {
+    "left" : "methodBuilder.setAnnotations(annotations);",
+    "right" : "methodBuilder.setAnnotations(annotations);",
+    "info" : "ExpressionStatement[26159-26201]:ExpressionStatement[26159-26201]"
+  }, {
+    "left" : "return methodBuilder;",
+    "right" : "return methodBuilder;",
+    "info" : "ReturnStatement[26204-26225]:ReturnStatement[26204-26225]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[26231-26238]:Modifier[26231-26238]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[26239-26260]:SimpleType[26239-26260]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[26293-27757]:Block[26293-27757]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"encodeUrlPathSegment\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\n\t\t\t\t\"encodeUrlPathSegment\");",
+    "info" : "VariableDeclarationStatement[26297-26379]:VariableDeclarationStatement[26297-26379]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[26382-26450]:IfStatement[26382-26450]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[26429-26450]:Block[26429-26450]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[26434-26446]:ReturnStatement[26434-26446]"
+  }, {
+    "left" : "final List<JavaType> parameterTypes = Arrays.asList(STRING,\n\t\t\t\tHTTP_SERVLET_REQUEST);",
+    "right" : "final List<JavaType> parameterTypes = Arrays.asList(STRING,\n\t\t\t\tHTTP_SERVLET_REQUEST);",
+    "info" : "VariableDeclarationStatement[26454-26540]:VariableDeclarationStatement[26454-26540]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"pathSegment\"), new JavaSymbolName(\n\t\t\t\t\t\t\"httpServletRequest\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"pathSegment\"), new JavaSymbolName(\n\t\t\t\t\t\t\"httpServletRequest\"));",
+    "info" : "VariableDeclarationStatement[26543-26690]:VariableDeclarationStatement[26543-26690]"
+  }, {
+    "left" : "builder.getImportRegistrationResolver().addImport(\n\t\t\t\tUNSUPPORTED_ENCODING_EXCEPTION);",
+    "right" : "builder.getImportRegistrationResolver().addImport(\n\t\t\t\tUNSUPPORTED_ENCODING_EXCEPTION);",
+    "info" : "ExpressionStatement[26694-26781]:ExpressionStatement[26694-26781]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[26785-26865]:VariableDeclarationStatement[26785-26865]"
+  }, {
+    "left" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"String enc = httpServletRequest.getCharacterEncoding();\");",
+    "right" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"String enc = httpServletRequest.getCharacterEncoding();\");",
+    "info" : "ExpressionStatement[26868-26961]:ExpressionStatement[26868-26961]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"if (enc == null) {\");",
+    "right" : "bodyBuilder.appendFormalLine(\"if (enc == null) {\");",
+    "info" : "ExpressionStatement[26964-27015]:ExpressionStatement[26964-27015]"
+  }, {
+    "left" : "bodyBuilder.indent();",
+    "right" : "bodyBuilder.indent();",
+    "info" : "ExpressionStatement[27018-27039]:ExpressionStatement[27018-27039]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"enc = \" + getShortName(WEB_UTILS)\n\t\t\t\t+ \".DEFAULT_CHARACTER_ENCODING;\");",
+    "right" : "bodyBuilder.appendFormalLine(\"enc = \" + getShortName(WEB_UTILS)\n\t\t\t\t+ \".DEFAULT_CHARACTER_ENCODING;\");",
+    "info" : "ExpressionStatement[27042-27144]:ExpressionStatement[27042-27144]"
+  }, {
+    "left" : "bodyBuilder.indentRemove();",
+    "right" : "bodyBuilder.indentRemove();",
+    "info" : "ExpressionStatement[27147-27174]:ExpressionStatement[27147-27174]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"}\");",
+    "right" : "bodyBuilder.appendFormalLine(\"}\");",
+    "info" : "ExpressionStatement[27177-27211]:ExpressionStatement[27177-27211]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"try {\");",
+    "right" : "bodyBuilder.appendFormalLine(\"try {\");",
+    "info" : "ExpressionStatement[27214-27252]:ExpressionStatement[27214-27252]"
+  }, {
+    "left" : "bodyBuilder.indent();",
+    "right" : "bodyBuilder.indent();",
+    "info" : "ExpressionStatement[27255-27276]:ExpressionStatement[27255-27276]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"pathSegment = \" + getShortName(URI_UTILS)\n\t\t\t\t+ \".encodePathSegment(pathSegment, enc);\");",
+    "right" : "bodyBuilder.appendFormalLine(\"pathSegment = \" + getShortName(URI_UTILS)\n\t\t\t\t+ \".encodePathSegment(pathSegment, enc);\");",
+    "info" : "ExpressionStatement[27279-27398]:ExpressionStatement[27279-27398]"
+  }, {
+    "left" : "bodyBuilder.indentRemove();",
+    "right" : "bodyBuilder.indentRemove();",
+    "info" : "ExpressionStatement[27401-27428]:ExpressionStatement[27401-27428]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"} catch (\"\n\t\t\t\t+ getShortName(UNSUPPORTED_ENCODING_EXCEPTION) + \" uee) {}\");",
+    "right" : "bodyBuilder.appendFormalLine(\"} catch (\"\n\t\t\t\t+ getShortName(UNSUPPORTED_ENCODING_EXCEPTION) + \" uee) {}\");",
+    "info" : "ExpressionStatement[27431-27537]:ExpressionStatement[27431-27537]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return pathSegment;\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return pathSegment;\");",
+    "info" : "ExpressionStatement[27540-27592]:ExpressionStatement[27540-27592]"
+  }, {
+    "left" : "return new MethodMetadataBuilder(getId(), 0, methodName, STRING,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "return new MethodMetadataBuilder(getId(), 0, methodName, STRING,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "ReturnStatement[27596-27754]:ReturnStatement[27596-27754]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[28029-28036]:Modifier[28029-28036]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[28037-28058]:SimpleType[28037-28058]"
+  }, {
+    "left" : "final MemberTypeAdditions findAllAdditions",
+    "right" : "final MemberTypeAdditions findAllAdditions",
+    "info" : "SingleVariableDeclaration[28077-28119]:SingleVariableDeclaration[28077-28119]"
+  }, {
+    "left" : "final MemberTypeAdditions countAllAdditions",
+    "right" : "final MemberTypeAdditions countAllAdditions",
+    "info" : "SingleVariableDeclaration[28124-28167]:SingleVariableDeclaration[28124-28167]"
+  }, {
+    "left" : "final MemberTypeAdditions findEntriesAdditions",
+    "right" : "final MemberTypeAdditions findEntriesAdditions",
+    "info" : "SingleVariableDeclaration[28172-28218]:SingleVariableDeclaration[28172-28218]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[28220-32711]:Block[28220-32711]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"list\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"list\");",
+    "info" : "VariableDeclarationStatement[28224-28285]:VariableDeclarationStatement[28224-28285]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[28288-28356]:IfStatement[28288-28356]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[28335-28356]:Block[28335-28356]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[28340-28352]:ReturnStatement[28340-28352]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> firstResultAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> firstResultAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[28360-28469]:VariableDeclarationStatement[28360-28469]"
+  }, {
+    "left" : "firstResultAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"page\"));",
+    "right" : "firstResultAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"page\"));",
+    "info" : "ExpressionStatement[28472-28566]:ExpressionStatement[28472-28566]"
+  }, {
+    "left" : "firstResultAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "right" : "firstResultAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "info" : "ExpressionStatement[28569-28666]:ExpressionStatement[28569-28666]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder firstResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, firstResultAttributes);",
+    "right" : "final AnnotationMetadataBuilder firstResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, firstResultAttributes);",
+    "info" : "VariableDeclarationStatement[28669-28798]:VariableDeclarationStatement[28669-28798]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> maxResultsAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> maxResultsAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[28802-28910]:VariableDeclarationStatement[28802-28910]"
+  }, {
+    "left" : "maxResultsAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"size\"));",
+    "right" : "maxResultsAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"size\"));",
+    "info" : "ExpressionStatement[28913-29006]:ExpressionStatement[28913-29006]"
+  }, {
+    "left" : "maxResultsAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "right" : "maxResultsAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "info" : "ExpressionStatement[29009-29105]:ExpressionStatement[29009-29105]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder maxResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, maxResultsAttributes);",
+    "right" : "final AnnotationMetadataBuilder maxResultAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, maxResultsAttributes);",
+    "info" : "VariableDeclarationStatement[29108-29234]:VariableDeclarationStatement[29108-29234]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> sortFieldNameAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> sortFieldNameAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[29238-29349]:VariableDeclarationStatement[29238-29349]"
+  }, {
+    "left" : "sortFieldNameAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"sortFieldName\"));",
+    "right" : "sortFieldNameAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"sortFieldName\"));",
+    "info" : "ExpressionStatement[29352-29457]:ExpressionStatement[29352-29457]"
+  }, {
+    "left" : "sortFieldNameAttributes.add(new BooleanAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"required\"), false));",
+    "right" : "sortFieldNameAttributes.add(new BooleanAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"required\"), false));",
+    "info" : "ExpressionStatement[29460-29559]:ExpressionStatement[29460-29559]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder sortFieldNameAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortFieldNameAttributes);",
+    "right" : "final AnnotationMetadataBuilder sortFieldNameAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortFieldNameAttributes);",
+    "info" : "VariableDeclarationStatement[29562-29695]:VariableDeclarationStatement[29562-29695]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> sortOrderAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> sortOrderAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[29699-29806]:VariableDeclarationStatement[29699-29806]"
+  }, {
+    "left" : "sortOrderAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"sortOrder\"));",
+    "right" : "sortOrderAttributes.add(new StringAttributeValue(new JavaSymbolName(\n\t\t\t\t\"value\"), \"sortOrder\"));",
+    "info" : "ExpressionStatement[29809-29906]:ExpressionStatement[29809-29906]"
+  }, {
+    "left" : "sortOrderAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "right" : "sortOrderAttributes.add(new BooleanAttributeValue(new JavaSymbolName(\n\t\t\t\t\"required\"), false));",
+    "info" : "ExpressionStatement[29909-30004]:ExpressionStatement[29909-30004]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder sortOrderAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortOrderAttributes);",
+    "right" : "final AnnotationMetadataBuilder sortOrderAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_PARAM, sortOrderAttributes);",
+    "info" : "VariableDeclarationStatement[30007-30132]:VariableDeclarationStatement[30007-30132]"
+  }, {
+    "left" : "final List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(INT_OBJECT, firstResultAnnotation\n\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(INT_OBJECT, maxResultAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortFieldNameAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortOrderAnnotation\n\t\t\t\t\t\t\t\t.build()), new AnnotatedJavaType(MODEL));",
+    "right" : "final List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(INT_OBJECT, firstResultAnnotation\n\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(INT_OBJECT, maxResultAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortFieldNameAnnotation\n\t\t\t\t\t\t\t\t.build()),\n\t\t\t\t\t\tnew AnnotatedJavaType(STRING, sortOrderAnnotation\n\t\t\t\t\t\t\t\t.build()), new AnnotatedJavaType(MODEL));",
+    "info" : "VariableDeclarationStatement[30136-30538]:VariableDeclarationStatement[30136-30538]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"page\"), new JavaSymbolName(\"size\"),\n\t\t\t\tnew JavaSymbolName(\"sortFieldName\"), new JavaSymbolName(\n\t\t\t\t\t\t\"sortOrder\"), new JavaSymbolName(\"uiModel\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"page\"), new JavaSymbolName(\"size\"),\n\t\t\t\tnew JavaSymbolName(\"sortFieldName\"), new JavaSymbolName(\n\t\t\t\t\t\t\"sortOrder\"), new JavaSymbolName(\"uiModel\"));",
+    "info" : "VariableDeclarationStatement[30541-30772]:VariableDeclarationStatement[30541-30772]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[30776-30888]:VariableDeclarationStatement[30776-30888]"
+  }, {
+    "left" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "right" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "info" : "ExpressionStatement[30891-30935]:ExpressionStatement[30891-30935]"
+  }, {
+    "left" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "right" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "info" : "VariableDeclarationStatement[30938-31033]:VariableDeclarationStatement[30938-31033]"
+  }, {
+    "left" : "annotations.add(new AnnotationMetadataBuilder(REQUEST_MAPPING,\n\t\t\t\trequestMappingAttributes));",
+    "right" : "annotations.add(new AnnotationMetadataBuilder(REQUEST_MAPPING,\n\t\t\t\trequestMappingAttributes));",
+    "info" : "ExpressionStatement[31036-31130]:ExpressionStatement[31036-31130]"
+  }, {
+    "left" : "final String plural = javaTypeMetadataHolder.getPlural().toLowerCase();",
+    "right" : "final String plural = javaTypeMetadataHolder.getPlural().toLowerCase();",
+    "info" : "VariableDeclarationStatement[31134-31205]:VariableDeclarationStatement[31134-31205]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[31209-31289]:VariableDeclarationStatement[31209-31289]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"if (page != null || size != null) {\");",
+    "right" : "bodyBuilder.appendFormalLine(\"if (page != null || size != null) {\");",
+    "info" : "ExpressionStatement[31292-31360]:ExpressionStatement[31292-31360]"
+  }, {
+    "left" : "bodyBuilder.indent();",
+    "right" : "bodyBuilder.indent();",
+    "info" : "ExpressionStatement[31363-31384]:ExpressionStatement[31363-31384]"
+  }, {
+    "left" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"int sizeNo = size == null ? 10 : size.intValue();\");",
+    "right" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"int sizeNo = size == null ? 10 : size.intValue();\");",
+    "info" : "ExpressionStatement[31387-31474]:ExpressionStatement[31387-31474]"
+  }, {
+    "left" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;\");",
+    "right" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"final int firstResult = page == null ? 0 : (page.intValue() - 1) * sizeNo;\");",
+    "info" : "ExpressionStatement[31477-31589]:ExpressionStatement[31477-31589]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findEntriesAdditions.getMethodCall() + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findEntriesAdditions.getMethodCall() + \");\");",
+    "info" : "ExpressionStatement[31592-31716]:ExpressionStatement[31592-31716]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"float nrOfPages = (float) \"\n\t\t\t\t+ countAllAdditions.getMethodCall() + \" / sizeNo;\");",
+    "right" : "bodyBuilder.appendFormalLine(\"float nrOfPages = (float) \"\n\t\t\t\t+ countAllAdditions.getMethodCall() + \" / sizeNo;\");",
+    "info" : "ExpressionStatement[31719-31833]:ExpressionStatement[31719-31833]"
+  }, {
+    "left" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"maxPages\\\", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));\");",
+    "right" : "bodyBuilder\n\t\t\t\t.appendFormalLine(\"uiModel.addAttribute(\\\"maxPages\\\", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));\");",
+    "info" : "ExpressionStatement[31836-31996]:ExpressionStatement[31836-31996]"
+  }, {
+    "left" : "bodyBuilder.indentRemove();",
+    "right" : "bodyBuilder.indentRemove();",
+    "info" : "ExpressionStatement[31999-32026]:ExpressionStatement[31999-32026]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"} else {\");",
+    "right" : "bodyBuilder.appendFormalLine(\"} else {\");",
+    "info" : "ExpressionStatement[32029-32070]:ExpressionStatement[32029-32070]"
+  }, {
+    "left" : "bodyBuilder.indent();",
+    "right" : "bodyBuilder.indent();",
+    "info" : "ExpressionStatement[32073-32094]:ExpressionStatement[32073-32094]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findAllAdditions.getMethodCall() + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + plural\n\t\t\t\t+ \"\\\", \" + findAllAdditions.getMethodCall() + \");\");",
+    "info" : "ExpressionStatement[32097-32217]:ExpressionStatement[32097-32217]"
+  }, {
+    "left" : "bodyBuilder.indentRemove();",
+    "right" : "bodyBuilder.indentRemove();",
+    "info" : "ExpressionStatement[32220-32247]:ExpressionStatement[32220-32247]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"}\");",
+    "right" : "bodyBuilder.appendFormalLine(\"}\");",
+    "info" : "ExpressionStatement[32250-32284]:ExpressionStatement[32250-32284]"
+  }, {
+    "left" : "if (!dateTypes.isEmpty())",
+    "right" : "if (!dateTypes.isEmpty())",
+    "info" : "IfStatement[32287-32390]:IfStatement[32287-32390]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[32313-32390]:Block[32313-32390]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");",
+    "right" : "bodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");",
+    "info" : "ExpressionStatement[32318-32386]:ExpressionStatement[32318-32386]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath + \"/list\\\";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath + \"/list\\\";\");",
+    "info" : "ExpressionStatement[32393-32465]:ExpressionStatement[32393-32465]"
+  }, {
+    "left" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "VariableDeclarationStatement[32469-32639]:VariableDeclarationStatement[32469-32639]"
+  }, {
+    "left" : "methodBuilder.setAnnotations(annotations);",
+    "right" : "methodBuilder.setAnnotations(annotations);",
+    "info" : "ExpressionStatement[32642-32684]:ExpressionStatement[32642-32684]"
+  }, {
+    "left" : "return methodBuilder;",
+    "right" : "return methodBuilder;",
+    "info" : "ReturnStatement[32687-32708]:ReturnStatement[32687-32708]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[32714-32721]:Modifier[32714-32721]"
+  }, {
+    "left" : "MethodMetadata",
+    "right" : "MethodMetadata",
+    "info" : "SimpleType[32722-32736]:SimpleType[32722-32736]"
+  }, {
+    "left" : "final JavaType entity",
+    "right" : "final JavaType entity",
+    "info" : "SingleVariableDeclaration[32763-32784]:SingleVariableDeclaration[32763-32784]"
+  }, {
+    "left" : "final Collection<JavaTypeMetadataDetails> specialDomainTypes",
+    "right" : "final Collection<JavaTypeMetadataDetails> specialDomainTypes",
+    "info" : "SingleVariableDeclaration[32789-32849]:SingleVariableDeclaration[32789-32849]"
+  }, {
+    "left" : "final Collection<JavaType> editableFieldTypes",
+    "right" : "final Collection<JavaType> editableFieldTypes",
+    "info" : "SingleVariableDeclaration[32854-32899]:SingleVariableDeclaration[32854-32899]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[32901-34758]:Block[32901-34758]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"populateEditForm\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"populateEditForm\");",
+    "info" : "VariableDeclarationStatement[32905-32978]:VariableDeclarationStatement[32905-32978]"
+  }, {
+    "left" : "final JavaType[] parameterTypes = { MODEL, entity };",
+    "right" : "final JavaType[] parameterTypes = { MODEL, entity };",
+    "info" : "VariableDeclarationStatement[32981-33033]:VariableDeclarationStatement[32981-33033]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"uiModel\"), new JavaSymbolName(entityName));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(\"uiModel\"), new JavaSymbolName(entityName));",
+    "info" : "VariableDeclarationStatement[33036-33162]:VariableDeclarationStatement[33036-33162]"
+  }, {
+    "left" : "if (governorHasMethod(methodName, parameterTypes))",
+    "right" : "if (governorHasMethod(methodName, parameterTypes))",
+    "info" : "IfStatement[33165-33237]:IfStatement[33165-33237]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[33216-33237]:Block[33216-33237]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[33221-33233]:ReturnStatement[33221-33233]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[33240-33320]:VariableDeclarationStatement[33240-33320]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + entityName\n\t\t\t\t+ \"\\\", \" + entityName + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\" + entityName\n\t\t\t\t+ \"\\\", \" + entityName + \");\");",
+    "info" : "ExpressionStatement[33323-33425]:ExpressionStatement[33323-33425]"
+  }, {
+    "left" : "if (!dateTypes.isEmpty())",
+    "right" : "if (!dateTypes.isEmpty())",
+    "info" : "IfStatement[33428-33531]:IfStatement[33428-33531]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[33454-33531]:Block[33454-33531]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");",
+    "right" : "bodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");",
+    "info" : "ExpressionStatement[33459-33527]:ExpressionStatement[33459-33527]"
+  }, {
+    "left" : "if (annotationValues.isPopulateMethods())",
+    "right" : "if (annotationValues.isPopulateMethods())",
+    "info" : "IfStatement[33534-34574]:IfStatement[33534-34574]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[33576-34574]:Block[33576-34574]"
+  }, {
+    "left" : "for (final JavaTypeMetadataDetails domainType : specialDomainTypes)",
+    "right" : "for (final JavaTypeMetadataDetails domainType : specialDomainTypes)",
+    "info" : "EnhancedForStatement[33581-34570]:EnhancedForStatement[33581-34570]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[33649-34570]:Block[33649-34570]"
+  }, {
+    "left" : "if (editableFieldTypes.contains(domainType.getJavaType()))",
+    "right" : "if (editableFieldTypes.contains(domainType.getJavaType()))",
+    "info" : "IfStatement[33655-34565]:IfStatement[33655-34565]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[33714-34565]:Block[33714-34565]"
+  }, {
+    "left" : "final JavaTypePersistenceMetadataDetails persistenceDetails = domainType\n\t\t\t\t\t\t\t.getPersistenceDetails();",
+    "right" : "final JavaTypePersistenceMetadataDetails persistenceDetails = domainType\n\t\t\t\t\t\t\t.getPersistenceDetails();",
+    "info" : "VariableDeclarationStatement[33721-33826]:VariableDeclarationStatement[33721-33826]"
+  }, {
+    "left" : "final String modelAttribute = domainType.getPlural()\n\t\t\t\t\t\t\t.toLowerCase();",
+    "right" : "final String modelAttribute = domainType.getPlural()\n\t\t\t\t\t\t\t.toLowerCase();",
+    "info" : "VariableDeclarationStatement[33832-33907]:VariableDeclarationStatement[33832-33907]"
+  }, {
+    "left" : "if (persistenceDetails != null\n\t\t\t\t\t\t\t&& persistenceDetails.getFindAllMethod() != null)",
+    "right" : "if (persistenceDetails != null\n\t\t\t\t\t\t\t&& persistenceDetails.getFindAllMethod() != null)",
+    "info" : "IfStatement[33913-34559]:IfStatement[33913-34559]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[34001-34296]:Block[34001-34296]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t\t\t\t+ modelAttribute\n\t\t\t\t\t\t\t\t+ \"\\\", \"\n\t\t\t\t\t\t\t\t+ persistenceDetails.getFindAllMethod()\n\t\t\t\t\t\t\t\t\t\t.getMethodCall() + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t\t\t\t+ modelAttribute\n\t\t\t\t\t\t\t\t+ \"\\\", \"\n\t\t\t\t\t\t\t\t+ persistenceDetails.getFindAllMethod()\n\t\t\t\t\t\t\t\t\t\t.getMethodCall() + \");\");",
+    "info" : "ExpressionStatement[34009-34189]:ExpressionStatement[34009-34189]"
+  }, {
+    "left" : "persistenceDetails.getFindAllMethod().copyAdditionsTo(\n\t\t\t\t\t\t\t\tbuilder, governorTypeDetails);",
+    "right" : "persistenceDetails.getFindAllMethod().copyAdditionsTo(\n\t\t\t\t\t\t\t\tbuilder, governorTypeDetails);",
+    "info" : "ExpressionStatement[34196-34289]:ExpressionStatement[34196-34289]"
+  }, {
+    "left" : "if (domainType.isEnumType())",
+    "right" : "if (domainType.isEnumType())",
+    "info" : "IfStatement[34302-34559]:IfStatement[34302-34559]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[34331-34559]:Block[34331-34559]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t\t\t\t+ modelAttribute + \"\\\", \"\n\t\t\t\t\t\t\t\t+ getShortName(ARRAYS) + \".asList(\"\n\t\t\t\t\t\t\t\t+ getShortName(domainType.getJavaType())\n\t\t\t\t\t\t\t\t+ \".values())\" + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t\t\t\t\t+ modelAttribute + \"\\\", \"\n\t\t\t\t\t\t\t\t+ getShortName(ARRAYS) + \".asList(\"\n\t\t\t\t\t\t\t\t+ getShortName(domainType.getJavaType())\n\t\t\t\t\t\t\t\t+ \".values())\" + \");\");",
+    "info" : "ExpressionStatement[34339-34552]:ExpressionStatement[34339-34552]"
+  }, {
+    "left" : "return new MethodMetadataBuilder(getId(), 0, methodName,\n\t\t\t\tVOID_PRIMITIVE,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder).build();",
+    "right" : "return new MethodMetadataBuilder(getId(), 0, methodName,\n\t\t\t\tVOID_PRIMITIVE,\n\t\t\t\tAnnotatedJavaType.convertFromJavaTypes(parameterTypes),\n\t\t\t\tparameterNames, bodyBuilder).build();",
+    "info" : "ReturnStatement[34577-34755]:ReturnStatement[34577-34755]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[34761-34768]:Modifier[34761-34768]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[34769-34775]:SimpleType[34769-34775]"
+  }, {
+    "left" : "final JavaType type",
+    "right" : "final JavaType type",
+    "info" : "SingleVariableDeclaration[34789-34808]:SingleVariableDeclaration[34789-34808]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[34810-34912]:Block[34810-34912]"
+  }, {
+    "left" : "return type.getNameIncludingTypeParameters(false,\n\t\t\t\tbuilder.getImportRegistrationResolver());",
+    "right" : "return type.getNameIncludingTypeParameters(false,\n\t\t\t\tbuilder.getImportRegistrationResolver());",
+    "info" : "ReturnStatement[34814-34909]:ReturnStatement[34814-34909]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[34915-34922]:Modifier[34915-34922]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[34923-34944]:SimpleType[34923-34944]"
+  }, {
+    "left" : "final FieldMetadata idField",
+    "right" : "final FieldMetadata idField",
+    "info" : "SingleVariableDeclaration[34959-34986]:SingleVariableDeclaration[34959-34986]"
+  }, {
+    "left" : "final MemberTypeAdditions findMethod",
+    "right" : "final MemberTypeAdditions findMethod",
+    "info" : "SingleVariableDeclaration[34991-35027]:SingleVariableDeclaration[34991-35027]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[35029-37488]:Block[35029-37488]"
+  }, {
+    "left" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "right" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "info" : "VariableDeclarationStatement[35033-35162]:VariableDeclarationStatement[35033-35162]"
+  }, {
+    "left" : "if (javaTypePersistenceMetadataHolder == null)",
+    "right" : "if (javaTypePersistenceMetadataHolder == null)",
+    "info" : "IfStatement[35165-35233]:IfStatement[35165-35233]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[35212-35233]:Block[35212-35233]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[35217-35229]:ReturnStatement[35217-35229]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"show\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"show\");",
+    "info" : "VariableDeclarationStatement[35237-35298]:VariableDeclarationStatement[35237-35298]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[35301-35369]:IfStatement[35301-35369]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[35348-35369]:Block[35348-35369]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[35353-35365]:ReturnStatement[35353-35365]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[35373-35471]:VariableDeclarationStatement[35373-35471]"
+  }, {
+    "left" : "final String idFieldName = idField.getFieldName().getSymbolName();",
+    "right" : "final String idFieldName = idField.getFieldName().getSymbolName();",
+    "info" : "VariableDeclarationStatement[35474-35540]:VariableDeclarationStatement[35474-35540]"
+  }, {
+    "left" : "attributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName));",
+    "right" : "attributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName));",
+    "info" : "ExpressionStatement[35543-35630]:ExpressionStatement[35543-35630]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);",
+    "right" : "final AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);",
+    "info" : "VariableDeclarationStatement[35633-35752]:VariableDeclarationStatement[35633-35752]"
+  }, {
+    "left" : "final List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(MODEL));",
+    "right" : "final List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(MODEL));",
+    "info" : "VariableDeclarationStatement[35756-35973]:VariableDeclarationStatement[35756-35973]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(idFieldName), new JavaSymbolName(\"uiModel\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(idFieldName), new JavaSymbolName(\"uiModel\"));",
+    "info" : "VariableDeclarationStatement[35976-36103]:VariableDeclarationStatement[35976-36103]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[36107-36219]:VariableDeclarationStatement[36107-36219]"
+  }, {
+    "left" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName + \"}\"));",
+    "right" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName + \"}\"));",
+    "info" : "ExpressionStatement[36222-36337]:ExpressionStatement[36222-36337]"
+  }, {
+    "left" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "right" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "info" : "ExpressionStatement[36340-36384]:ExpressionStatement[36340-36384]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "right" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "info" : "VariableDeclarationStatement[36387-36514]:VariableDeclarationStatement[36387-36514]"
+  }, {
+    "left" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "right" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "info" : "VariableDeclarationStatement[36517-36612]:VariableDeclarationStatement[36517-36612]"
+  }, {
+    "left" : "annotations.add(requestMapping);",
+    "right" : "annotations.add(requestMapping);",
+    "info" : "ExpressionStatement[36615-36647]:ExpressionStatement[36615-36647]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[36651-36731]:VariableDeclarationStatement[36651-36731]"
+  }, {
+    "left" : "if (!dateTypes.isEmpty())",
+    "right" : "if (!dateTypes.isEmpty())",
+    "info" : "IfStatement[36734-36837]:IfStatement[36734-36837]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[36760-36837]:Block[36760-36837]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");",
+    "right" : "bodyBuilder.appendFormalLine(\"addDateTimeFormatPatterns(uiModel);\");",
+    "info" : "ExpressionStatement[36765-36833]:ExpressionStatement[36765-36833]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t+ entityName.toLowerCase() + \"\\\", \"\n\t\t\t\t+ findMethod.getMethodCall() + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"\"\n\t\t\t\t+ entityName.toLowerCase() + \"\\\", \"\n\t\t\t\t+ findMethod.getMethodCall() + \");\");",
+    "info" : "ExpressionStatement[36840-36976]:ExpressionStatement[36840-36976]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"itemId\\\", \"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ idFieldName + (compositePk ? \", String.class)\" : \"\") + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.addAttribute(\\\"itemId\\\", \"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ idFieldName + (compositePk ? \", String.class)\" : \"\") + \");\");",
+    "info" : "ExpressionStatement[36979-37167]:ExpressionStatement[36979-37167]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath + \"/show\\\";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath + \"/show\\\";\");",
+    "info" : "ExpressionStatement[37170-37242]:ExpressionStatement[37170-37242]"
+  }, {
+    "left" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "VariableDeclarationStatement[37246-37416]:VariableDeclarationStatement[37246-37416]"
+  }, {
+    "left" : "methodBuilder.setAnnotations(annotations);",
+    "right" : "methodBuilder.setAnnotations(annotations);",
+    "info" : "ExpressionStatement[37419-37461]:ExpressionStatement[37419-37461]"
+  }, {
+    "left" : "return methodBuilder;",
+    "right" : "return methodBuilder;",
+    "info" : "ReturnStatement[37464-37485]:ReturnStatement[37464-37485]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[37491-37498]:Modifier[37491-37498]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[37499-37520]:SimpleType[37499-37520]"
+  }, {
+    "left" : "final FieldMetadata idField",
+    "right" : "final FieldMetadata idField",
+    "info" : "SingleVariableDeclaration[37545-37572]:SingleVariableDeclaration[37545-37572]"
+  }, {
+    "left" : "final MemberTypeAdditions findMethod",
+    "right" : "final MemberTypeAdditions findMethod",
+    "info" : "SingleVariableDeclaration[37574-37610]:SingleVariableDeclaration[37574-37610]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[37612-39849]:Block[37612-39849]"
+  }, {
+    "left" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "right" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "info" : "VariableDeclarationStatement[37616-37745]:VariableDeclarationStatement[37616-37745]"
+  }, {
+    "left" : "if (javaTypePersistenceMetadataHolder == null)",
+    "right" : "if (javaTypePersistenceMetadataHolder == null)",
+    "info" : "IfStatement[37748-37816]:IfStatement[37748-37816]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[37795-37816]:Block[37795-37816]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[37800-37812]:ReturnStatement[37800-37812]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"updateForm\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"updateForm\");",
+    "info" : "VariableDeclarationStatement[37819-37886]:VariableDeclarationStatement[37819-37886]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[37889-37957]:IfStatement[37889-37957]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[37936-37957]:Block[37936-37957]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[37941-37953]:ReturnStatement[37941-37953]"
+  }, {
+    "left" : "final String idFieldName = idField.getFieldName().getSymbolName();",
+    "right" : "final String idFieldName = idField.getFieldName().getSymbolName();",
+    "info" : "VariableDeclarationStatement[37961-38027]:VariableDeclarationStatement[37961-38027]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> attributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[38030-38128]:VariableDeclarationStatement[38030-38128]"
+  }, {
+    "left" : "attributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName));",
+    "right" : "attributes.add(new StringAttributeValue(new JavaSymbolName(\"value\"),\n\t\t\t\tidFieldName));",
+    "info" : "ExpressionStatement[38131-38218]:ExpressionStatement[38131-38218]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);",
+    "right" : "final AnnotationMetadataBuilder pathVariableAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tPATH_VARIABLE, attributes);",
+    "info" : "VariableDeclarationStatement[38221-38340]:VariableDeclarationStatement[38221-38340]"
+  }, {
+    "left" : "final List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(MODEL));",
+    "right" : "final List<AnnotatedJavaType> parameterTypes = Arrays.asList(\n\t\t\t\tnew AnnotatedJavaType(javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierType(), pathVariableAnnotation.build()),\n\t\t\t\tnew AnnotatedJavaType(MODEL));",
+    "info" : "VariableDeclarationStatement[38344-38561]:VariableDeclarationStatement[38344-38561]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(idFieldName), new JavaSymbolName(\"uiModel\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(idFieldName), new JavaSymbolName(\"uiModel\"));",
+    "info" : "VariableDeclarationStatement[38564-38691]:VariableDeclarationStatement[38564-38691]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[38695-38807]:VariableDeclarationStatement[38695-38807]"
+  }, {
+    "left" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName + \"}\"));",
+    "right" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"value\"), \"/{\" + idFieldName + \"}\"));",
+    "info" : "ExpressionStatement[38810-38925]:ExpressionStatement[38810-38925]"
+  }, {
+    "left" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"params\"), \"form\"));",
+    "right" : "requestMappingAttributes.add(new StringAttributeValue(\n\t\t\t\tnew JavaSymbolName(\"params\"), \"form\"));",
+    "info" : "ExpressionStatement[38928-39026]:ExpressionStatement[38928-39026]"
+  }, {
+    "left" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "right" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "info" : "ExpressionStatement[39029-39073]:ExpressionStatement[39029-39073]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "right" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "info" : "VariableDeclarationStatement[39076-39203]:VariableDeclarationStatement[39076-39203]"
+  }, {
+    "left" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "right" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "info" : "VariableDeclarationStatement[39206-39301]:VariableDeclarationStatement[39206-39301]"
+  }, {
+    "left" : "annotations.add(requestMapping);",
+    "right" : "annotations.add(requestMapping);",
+    "info" : "ExpressionStatement[39304-39336]:ExpressionStatement[39304-39336]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[39340-39420]:VariableDeclarationStatement[39340-39420]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \"\n\t\t\t\t+ findMethod.getMethodCall() + \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \"\n\t\t\t\t+ findMethod.getMethodCall() + \");\");",
+    "info" : "ExpressionStatement[39423-39522]:ExpressionStatement[39423-39522]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/update\\\";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/update\\\";\");",
+    "info" : "ExpressionStatement[39525-39603]:ExpressionStatement[39525-39603]"
+  }, {
+    "left" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "VariableDeclarationStatement[39607-39777]:VariableDeclarationStatement[39607-39777]"
+  }, {
+    "left" : "methodBuilder.setAnnotations(annotations);",
+    "right" : "methodBuilder.setAnnotations(annotations);",
+    "info" : "ExpressionStatement[39780-39822]:ExpressionStatement[39780-39822]"
+  }, {
+    "left" : "return methodBuilder;",
+    "right" : "return methodBuilder;",
+    "info" : "ReturnStatement[39825-39846]:ReturnStatement[39825-39846]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[39852-39859]:Modifier[39852-39859]"
+  }, {
+    "left" : "MethodMetadataBuilder",
+    "right" : "MethodMetadataBuilder",
+    "info" : "SimpleType[39860-39881]:SimpleType[39860-39881]"
+  }, {
+    "left" : "final MemberTypeAdditions updateMethod",
+    "right" : "final MemberTypeAdditions updateMethod",
+    "info" : "SingleVariableDeclaration[39902-39940]:SingleVariableDeclaration[39902-39940]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[39942-42683]:Block[39942-42683]"
+  }, {
+    "left" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "right" : "final JavaTypePersistenceMetadataDetails javaTypePersistenceMetadataHolder = javaTypeMetadataHolder\n\t\t\t\t.getPersistenceDetails();",
+    "info" : "VariableDeclarationStatement[39946-40075]:VariableDeclarationStatement[39946-40075]"
+  }, {
+    "left" : "if (javaTypePersistenceMetadataHolder == null\n\t\t\t\t|| javaTypePersistenceMetadataHolder.getMergeMethod() == null)",
+    "right" : "if (javaTypePersistenceMetadataHolder == null\n\t\t\t\t|| javaTypePersistenceMetadataHolder.getMergeMethod() == null)",
+    "info" : "IfStatement[40078-40212]:IfStatement[40078-40212]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[40191-40212]:Block[40191-40212]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[40196-40208]:ReturnStatement[40196-40208]"
+  }, {
+    "left" : "final JavaSymbolName methodName = new JavaSymbolName(\"update\");",
+    "right" : "final JavaSymbolName methodName = new JavaSymbolName(\"update\");",
+    "info" : "VariableDeclarationStatement[40215-40278]:VariableDeclarationStatement[40215-40278]"
+  }, {
+    "left" : "if (governorHasMethodWithSameName(methodName))",
+    "right" : "if (governorHasMethodWithSameName(methodName))",
+    "info" : "IfStatement[40281-40349]:IfStatement[40281-40349]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[40328-40349]:Block[40328-40349]"
+  }, {
+    "left" : "return null;",
+    "right" : "return null;",
+    "info" : "ReturnStatement[40333-40345]:ReturnStatement[40333-40345]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder validAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tVALID);",
+    "right" : "final AnnotationMetadataBuilder validAnnotation = new AnnotationMetadataBuilder(\n\t\t\t\tVALID);",
+    "info" : "VariableDeclarationStatement[40353-40445]:VariableDeclarationStatement[40353-40445]"
+  }, {
+    "left" : "final List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(formBackingType, validAnnotation\n\t\t\t\t\t\t.build()), new AnnotatedJavaType(BINDING_RESULT),\n\t\t\t\t\t\tnew AnnotatedJavaType(MODEL), new AnnotatedJavaType(\n\t\t\t\t\t\t\t\tHTTP_SERVLET_REQUEST));",
+    "right" : "final List<AnnotatedJavaType> parameterTypes = Arrays\n\t\t\t\t.asList(new AnnotatedJavaType(formBackingType, validAnnotation\n\t\t\t\t\t\t.build()), new AnnotatedJavaType(BINDING_RESULT),\n\t\t\t\t\t\tnew AnnotatedJavaType(MODEL), new AnnotatedJavaType(\n\t\t\t\t\t\t\t\tHTTP_SERVLET_REQUEST));",
+    "info" : "VariableDeclarationStatement[40449-40716]:VariableDeclarationStatement[40449-40716]"
+  }, {
+    "left" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(entityName), new JavaSymbolName(\n\t\t\t\t\t\t\"bindingResult\"), new JavaSymbolName(\"uiModel\"),\n\t\t\t\tnew JavaSymbolName(\"httpServletRequest\"));",
+    "right" : "final List<JavaSymbolName> parameterNames = Arrays.asList(\n\t\t\t\tnew JavaSymbolName(entityName), new JavaSymbolName(\n\t\t\t\t\t\t\"bindingResult\"), new JavaSymbolName(\"uiModel\"),\n\t\t\t\tnew JavaSymbolName(\"httpServletRequest\"));",
+    "info" : "VariableDeclarationStatement[40719-40935]:VariableDeclarationStatement[40719-40935]"
+  }, {
+    "left" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "right" : "final List<AnnotationAttributeValue<?>> requestMappingAttributes = new ArrayList<AnnotationAttributeValue<?>>();",
+    "info" : "VariableDeclarationStatement[40939-41051]:VariableDeclarationStatement[40939-41051]"
+  }, {
+    "left" : "requestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"PUT\"))));",
+    "right" : "requestMappingAttributes.add(new EnumAttributeValue(new JavaSymbolName(\n\t\t\t\t\"method\"), new EnumDetails(REQUEST_METHOD, new JavaSymbolName(\n\t\t\t\t\"PUT\"))));",
+    "info" : "ExpressionStatement[41054-41207]:ExpressionStatement[41054-41207]"
+  }, {
+    "left" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "right" : "requestMappingAttributes.add(PRODUCES_HTML);",
+    "info" : "ExpressionStatement[41210-41254]:ExpressionStatement[41210-41254]"
+  }, {
+    "left" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "right" : "final AnnotationMetadataBuilder requestMapping = new AnnotationMetadataBuilder(\n\t\t\t\tREQUEST_MAPPING, requestMappingAttributes);",
+    "info" : "VariableDeclarationStatement[41257-41384]:VariableDeclarationStatement[41257-41384]"
+  }, {
+    "left" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "right" : "final List<AnnotationMetadataBuilder> annotations = new ArrayList<AnnotationMetadataBuilder>();",
+    "info" : "VariableDeclarationStatement[41387-41482]:VariableDeclarationStatement[41387-41482]"
+  }, {
+    "left" : "annotations.add(requestMapping);",
+    "right" : "annotations.add(requestMapping);",
+    "info" : "ExpressionStatement[41485-41517]:ExpressionStatement[41485-41517]"
+  }, {
+    "left" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "right" : "final InvocableMemberBodyBuilder bodyBuilder = new InvocableMemberBodyBuilder();",
+    "info" : "VariableDeclarationStatement[41521-41601]:VariableDeclarationStatement[41521-41601]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"if (bindingResult.hasErrors()) {\");",
+    "right" : "bodyBuilder.appendFormalLine(\"if (bindingResult.hasErrors()) {\");",
+    "info" : "ExpressionStatement[41604-41669]:ExpressionStatement[41604-41669]"
+  }, {
+    "left" : "bodyBuilder.indent();",
+    "right" : "bodyBuilder.indent();",
+    "info" : "ExpressionStatement[41672-41693]:ExpressionStatement[41672-41693]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \" + entityName\n\t\t\t\t+ \");\");",
+    "right" : "bodyBuilder.appendFormalLine(\"populateEditForm(uiModel, \" + entityName\n\t\t\t\t+ \");\");",
+    "info" : "ExpressionStatement[41696-41779]:ExpressionStatement[41696-41779]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/update\\\";\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"\" + controllerPath\n\t\t\t\t+ \"/update\\\";\");",
+    "info" : "ExpressionStatement[41782-41860]:ExpressionStatement[41782-41860]"
+  }, {
+    "left" : "bodyBuilder.indentRemove();",
+    "right" : "bodyBuilder.indentRemove();",
+    "info" : "ExpressionStatement[41863-41890]:ExpressionStatement[41863-41890]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"}\");",
+    "right" : "bodyBuilder.appendFormalLine(\"}\");",
+    "info" : "ExpressionStatement[41893-41927]:ExpressionStatement[41893-41927]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");",
+    "right" : "bodyBuilder.appendFormalLine(\"uiModel.asMap().clear();\");",
+    "info" : "ExpressionStatement[41930-41987]:ExpressionStatement[41930-41987]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(updateMethod.getMethodCall() + \";\");",
+    "right" : "bodyBuilder.appendFormalLine(updateMethod.getMethodCall() + \";\");",
+    "info" : "ExpressionStatement[41990-42055]:ExpressionStatement[41990-42055]"
+  }, {
+    "left" : "bodyBuilder.appendFormalLine(\"return \\\"redirect:/\"\n\t\t\t\t+ controllerPath\n\t\t\t\t+ \"/\\\" + encodeUrlPathSegment(\"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ entityName\n\t\t\t\t+ \".\"\n\t\t\t\t+ javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod().getMethodName() + \"()\"\n\t\t\t\t+ (compositePk ? \", String.class)\" : \".toString()\")\n\t\t\t\t+ \", httpServletRequest);\");",
+    "right" : "bodyBuilder.appendFormalLine(\"return \\\"redirect:/\"\n\t\t\t\t+ controllerPath\n\t\t\t\t+ \"/\\\" + encodeUrlPathSegment(\"\n\t\t\t\t+ (compositePk ? \"conversionService.convert(\" : \"\")\n\t\t\t\t+ entityName\n\t\t\t\t+ \".\"\n\t\t\t\t+ javaTypePersistenceMetadataHolder\n\t\t\t\t\t\t.getIdentifierAccessorMethod().getMethodName() + \"()\"\n\t\t\t\t+ (compositePk ? \", String.class)\" : \".toString()\")\n\t\t\t\t+ \", httpServletRequest);\");",
+    "info" : "ExpressionStatement[42058-42437]:ExpressionStatement[42058-42437]"
+  }, {
+    "left" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "right" : "final MethodMetadataBuilder methodBuilder = new MethodMetadataBuilder(\n\t\t\t\tgetId(), Modifier.PUBLIC, methodName, STRING, parameterTypes,\n\t\t\t\tparameterNames, bodyBuilder);",
+    "info" : "VariableDeclarationStatement[42441-42611]:VariableDeclarationStatement[42441-42611]"
+  }, {
+    "left" : "methodBuilder.setAnnotations(annotations);",
+    "right" : "methodBuilder.setAnnotations(annotations);",
+    "info" : "ExpressionStatement[42614-42656]:ExpressionStatement[42614-42656]"
+  }, {
+    "left" : "return methodBuilder;",
+    "right" : "return methodBuilder;",
+    "info" : "ReturnStatement[42659-42680]:ReturnStatement[42659-42680]"
+  } ]
+}

@@ -1,0 +1,170 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "class : ServerSelectionRttTest",
+    "right" : "class : ServerSelectionRttTest",
+    "info" : "TypeDeclaration[1128-2328]:TypeDeclaration[1121-2321]"
+  }, {
+    "left" : "definition",
+    "right" : "definition",
+    "info" : "FieldDeclaration[1200-1238]:FieldDeclaration[1193-1231]"
+  }, {
+    "left" : "public ServerSelectionRttTest(description , definition )",
+    "right" : "public ServerSelectionRttTest(description , definition )",
+    "info" : "MethodDeclaration[1244-1376]:MethodDeclaration[1237-1369]"
+  }, {
+    "left" : "public shouldPassAllOutcomes() : void",
+    "right" : "public shouldPassAllOutcomes() : void",
+    "info" : "MethodDeclaration[1382-1914]:MethodDeclaration[1375-1907]"
+  }, {
+    "left" : "public data() : ",
+    "right" : "public data() : ",
+    "info" : "MethodDeclaration[1920-2325]:MethodDeclaration[1913-2318]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "com.mongodb.JsonPoweredTestHelper",
+    "right" : "util.JsonPoweredTestHelper",
+    "info" : "QualifiedName[636-669]:QualifiedName[789-815]"
+  }, {
+    "left" : "@RunWith(Parameterized.class)",
+    "right" : "@RunWith(Parameterized.class)",
+    "info" : "SingleMemberAnnotation[1128-1157]:SingleMemberAnnotation[1121-1150]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1158-1164]:Modifier[1151-1157]"
+  }, {
+    "left" : "class",
+    "right" : "class",
+    "info" : "TYPE_DECLARATION_KIND[1165-1170]:TYPE_DECLARATION_KIND[1158-1163]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1244-1250]:Modifier[1237-1243]"
+  }, {
+    "left" : "ServerSelectionRttTest",
+    "right" : "ServerSelectionRttTest",
+    "info" : "SimpleName[1251-1273]:SimpleName[1244-1266]"
+  }, {
+    "left" : "final String description",
+    "right" : "final String description",
+    "info" : "SingleVariableDeclaration[1274-1298]:SingleVariableDeclaration[1267-1291]"
+  }, {
+    "left" : "final BsonDocument definition",
+    "right" : "final BsonDocument definition",
+    "info" : "SingleVariableDeclaration[1300-1329]:SingleVariableDeclaration[1293-1322]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1331-1376]:Block[1324-1369]"
+  }, {
+    "left" : "this.definition = definition;",
+    "right" : "this.definition = definition;",
+    "info" : "ExpressionStatement[1341-1370]:ExpressionStatement[1334-1363]"
+  }, {
+    "left" : "@Test",
+    "right" : "@Test",
+    "info" : "MarkerAnnotation[1382-1387]:MarkerAnnotation[1375-1380]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1392-1398]:Modifier[1385-1391]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1399-1403]:PrimitiveType[1392-1396]"
+  }, {
+    "left" : "shouldPassAllOutcomes",
+    "right" : "shouldPassAllOutcomes",
+    "info" : "SimpleName[1404-1425]:SimpleName[1397-1418]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1428-1914]:Block[1421-1907]"
+  }, {
+    "left" : "ExponentiallyWeightedMovingAverage subject = new ExponentiallyWeightedMovingAverage(0.2);",
+    "right" : "ExponentiallyWeightedMovingAverage subject = new ExponentiallyWeightedMovingAverage(0.2);",
+    "info" : "VariableDeclarationStatement[1438-1527]:VariableDeclarationStatement[1431-1520]"
+  }, {
+    "left" : "BsonValue current = definition.get(\"avg_rtt_ms\");",
+    "right" : "BsonValue current = definition.get(\"avg_rtt_ms\");",
+    "info" : "VariableDeclarationStatement[1537-1586]:VariableDeclarationStatement[1530-1579]"
+  }, {
+    "left" : "if (current.isNumber())",
+    "right" : "if (current.isNumber())",
+    "info" : "IfStatement[1595-1693]:IfStatement[1588-1686]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1619-1693]:Block[1612-1686]"
+  }, {
+    "left" : "subject.addSample(current.asNumber().longValue());",
+    "right" : "subject.addSample(current.asNumber().longValue());",
+    "info" : "ExpressionStatement[1633-1683]:ExpressionStatement[1626-1676]"
+  }, {
+    "left" : "subject.addSample(definition.getNumber(\"new_rtt_ms\").longValue());",
+    "right" : "subject.addSample(definition.getNumber(\"new_rtt_ms\").longValue());",
+    "info" : "ExpressionStatement[1703-1769]:ExpressionStatement[1696-1762]"
+  }, {
+    "left" : "long expected = definition.getNumber(\"new_avg_rtt\").asNumber().longValue();",
+    "right" : "long expected = definition.getNumber(\"new_avg_rtt\").asNumber().longValue();",
+    "info" : "VariableDeclarationStatement[1778-1853]:VariableDeclarationStatement[1771-1846]"
+  }, {
+    "left" : "assertEquals(subject.getAverage(), expected);",
+    "right" : "assertEquals(subject.getAverage(), expected);",
+    "info" : "ExpressionStatement[1863-1908]:ExpressionStatement[1856-1901]"
+  }, {
+    "left" : "@Parameterized.Parameters(name = \"{0}\")",
+    "right" : "@Parameterized.Parameters(name = \"{0}\")",
+    "info" : "NormalAnnotation[1920-1959]:NormalAnnotation[1913-1952]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1964-1970]:Modifier[1957-1963]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[1971-1977]:Modifier[1964-1970]"
+  }, {
+    "left" : "Collection<Object[]>",
+    "right" : "Collection<Object[]>",
+    "info" : "ParameterizedType[1978-1998]:ParameterizedType[1971-1991]"
+  }, {
+    "left" : "data",
+    "right" : "data",
+    "info" : "SimpleName[1999-2003]:SimpleName[1992-1996]"
+  }, {
+    "left" : "URISyntaxException",
+    "right" : "URISyntaxException",
+    "info" : "SimpleType[2013-2031]:SimpleType[2006-2024]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[2033-2044]:SimpleType[2026-2037]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2045-2325]:Block[2038-2318]"
+  }, {
+    "left" : "List<Object[]> data = new ArrayList<Object[]>();",
+    "right" : "List<Object[]> data = new ArrayList<Object[]>();",
+    "info" : "VariableDeclarationStatement[2055-2103]:VariableDeclarationStatement[2048-2096]"
+  }, {
+    "left" : "for (File file : JsonPoweredTestHelper.getTestFiles(\"/server-selection/rtt\"))",
+    "right" : "for (File file : JsonPoweredTestHelper.getTestFiles(\"/server-selection/rtt\"))",
+    "info" : "EnhancedForStatement[2112-2298]:EnhancedForStatement[2105-2291]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2190-2298]:Block[2183-2291]"
+  }, {
+    "left" : "data.add(new Object[]{file.getName(), JsonPoweredTestHelper.getTestDocument(file)});",
+    "right" : "data.add(new Object[]{file.getName(), JsonPoweredTestHelper.getTestDocument(file)});",
+    "info" : "ExpressionStatement[2204-2288]:ExpressionStatement[2197-2281]"
+  }, {
+    "left" : "return data;",
+    "right" : "return data;",
+    "info" : "ReturnStatement[2307-2319]:ReturnStatement[2300-2312]"
+  } ]
+}

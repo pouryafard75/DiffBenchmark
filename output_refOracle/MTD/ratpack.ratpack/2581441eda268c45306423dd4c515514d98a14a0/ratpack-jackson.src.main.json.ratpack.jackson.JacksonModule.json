@@ -1,0 +1,430 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[1295-8705]:TypeDeclaration[1406-8800]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[4405-7546]:TypeDeclaration[4500-7641]"
+  }, {
+    "left" : "private boolean prettyPrint = true;",
+    "right" : "private boolean prettyPrint = true;",
+    "info" : "FieldDeclaration[4507-4542]:FieldDeclaration[4602-4637]"
+  }, {
+    "left" : "private List<Module> modules = Lists.newLinkedList();",
+    "right" : "private List<Module> modules = Lists.newLinkedList();",
+    "info" : "FieldDeclaration[4547-4600]:FieldDeclaration[4642-4695]"
+  }, {
+    "left" : "private List<Consumer<? super ObjectMapper>> configurers = Lists.newLinkedList();",
+    "right" : "private List<Consumer<? super ObjectMapper>> configurers = Lists.newLinkedList();",
+    "info" : "FieldDeclaration[4605-4686]:FieldDeclaration[4700-4781]"
+  }, {
+    "left" : "/**\n     * Whether JSON should be pretty printed.\n     * <p>\n     * {@code true} by default.\n     *\n     * @return whether JSON should be pretty printed.\n     */\n    public boolean isPrettyPrint() {\n      return prettyPrint;\n    }",
+    "right" : "/**\n     * Whether JSON should be pretty printed.\n     * <p>\n     * {@code true} by default.\n     *\n     * @return whether JSON should be pretty printed.\n     */\n    public boolean isPrettyPrint() {\n      return prettyPrint;\n    }",
+    "info" : "MethodDeclaration[4692-4922]:MethodDeclaration[4787-5017]"
+  }, {
+    "left" : "/**\n     * Sets whether JSON should be pretty printed.\n     * <p>\n     * This value affects the {@link ObjectWriter} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param prettyPrint whether JSON should be pretty printed\n     * @return this\n     */\n    public Config prettyPrint(boolean prettyPrint) {\n      this.prettyPrint = prettyPrint;\n      return this;\n    }",
+    "right" : "/**\n     * Sets whether JSON should be pretty printed.\n     * <p>\n     * This value affects the {@link ObjectWriter} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param prettyPrint whether JSON should be pretty printed\n     * @return this\n     */\n    public Config prettyPrint(boolean prettyPrint) {\n      this.prettyPrint = prettyPrint;\n      return this;\n    }",
+    "info" : "MethodDeclaration[4928-5377]:MethodDeclaration[5023-5472]"
+  }, {
+    "left" : "/**\n     * The {@link com.fasterxml.jackson.databind.Module Jackson modules} to register with the object mapper.\n     * <p>\n     * Jackson modules extend Jackson to handle extra data types.\n     *\n     * @return the Jackson modules to register with the object mapper\n     * @see #modules(Iterable)\n     * @see #modules(Module...)\n     */\n    public List<Module> getModules() {\n      return modules;\n    }",
+    "right" : "/**\n     * The {@link com.fasterxml.jackson.databind.Module Jackson modules} to register with the object mapper.\n     * <p>\n     * Jackson modules extend Jackson to handle extra data types.\n     *\n     * @return the Jackson modules to register with the object mapper\n     * @see #modules(Iterable)\n     * @see #modules(Module...)\n     */\n    public List<Module> getModules() {\n      return modules;\n    }",
+    "info" : "MethodDeclaration[5383-5787]:MethodDeclaration[5478-5882]"
+  }, {
+    "left" : "/**\n     * Add the given modules to the modules to be registered with the created object mapper.\n     * <p>\n     * This affects the {@link ObjectMapper} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param modules the Jackson modules\n     * @return this\n     * @see #modules(Module...)\n     */\n    public Config modules(Iterable<Module> modules) {\n      this.modules.addAll(Lists.newArrayList(modules));\n      return this;\n    }",
+    "right" : "/**\n     * Add the given modules to the modules to be registered with the created object mapper.\n     * <p>\n     * This affects the {@link ObjectMapper} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param modules the Jackson modules\n     * @return this\n     * @see #modules(Module...)\n     */\n    public Config modules(Iterable<Module> modules) {\n      this.modules.addAll(Lists.newArrayList(modules));\n      return this;\n    }",
+    "info" : "MethodDeclaration[5793-6307]:MethodDeclaration[5888-6402]"
+  }, {
+    "left" : "/**\n     * Add the given modules to the modules to be registered with the created object mapper.\n     * <p>\n     * This affects the {@link ObjectMapper} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param modules the Jackson modules\n     * @return this\n     * @see #modules(Iterable)\n     */\n    public Config modules(Module... modules) {\n      return modules(Arrays.asList(modules));\n    }",
+    "right" : "/**\n     * Add the given modules to the modules to be registered with the created object mapper.\n     * <p>\n     * This affects the {@link ObjectMapper} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param modules the Jackson modules\n     * @return this\n     * @see #modules(Iterable)\n     */\n    public Config modules(Module... modules) {\n      return modules(Arrays.asList(modules));\n    }",
+    "info" : "MethodDeclaration[6313-6790]:MethodDeclaration[6408-6885]"
+  }, {
+    "left" : "/**\n     * Adds configuration actions to be executed against the object mapper created by this Guice module before it is used.\n     * <p>\n     * This method is cumulative, with configure actions being executed in order.\n     * They are executed <b>after</b> applying other relevant configuration to the mapper (e.g. registering modules).\n     * <p>\n     * This affects the {@link ObjectMapper} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param configurer configuration for the object mapper\n     * @return this\n     */\n    public Config withMapper(Consumer<? super ObjectMapper> configurer) {\n      this.configurers.add(configurer);\n      return this;\n    }",
+    "right" : "/**\n     * Adds configuration actions to be executed against the object mapper created by this Guice module before it is used.\n     * <p>\n     * This method is cumulative, with configure actions being executed in order.\n     * They are executed <b>after</b> applying other relevant configuration to the mapper (e.g. registering modules).\n     * <p>\n     * This affects the {@link ObjectMapper} instance provided by this Guice module.\n     * If this binding is overridden, calling this method may have no effect.\n     *\n     * @param configurer configuration for the object mapper\n     * @return this\n     */\n    public Config withMapper(Consumer<? super ObjectMapper> configurer) {\n      this.configurers.add(configurer);\n      return this;\n    }",
+    "info" : "MethodDeclaration[6796-7542]:MethodDeclaration[6891-7637]"
+  }, {
+    "left" : "@Override\n  protected void configure() {\n  }",
+    "right" : "@Override\n  protected void configure() {\n  }",
+    "info" : "MethodDeclaration[7550-7594]:MethodDeclaration[7645-7689]"
+  }, {
+    "left" : "@Provides\n  @Singleton\n  protected ObjectMapper objectMapper(Config config) {\n    ObjectMapper objectMapper = new ObjectMapper();\n    objectMapper.registerModules(config.getModules());\n    for (Consumer<? super ObjectMapper> configurer : config.configurers) {\n      configurer.accept(objectMapper);\n    }\n    return objectMapper;\n  }",
+    "right" : "@Provides\n  @Singleton\n  protected ObjectMapper objectMapper(Config config) {\n    ObjectMapper objectMapper = new ObjectMapper();\n    objectMapper.registerModules(config.getModules());\n    for (Consumer<? super ObjectMapper> configurer : config.configurers) {\n      configurer.accept(objectMapper);\n    }\n    return objectMapper;\n  }",
+    "info" : "MethodDeclaration[7598-7931]:MethodDeclaration[7693-8026]"
+  }, {
+    "left" : "protected objectMapper ObjectMapper, config Config) : ObjectWriter",
+    "right" : "protected objectMapper ObjectMapper, config Config) : ObjectWriter",
+    "info" : "MethodDeclaration[7935-8157]:MethodDeclaration[8030-8252]"
+  }, {
+    "left" : "@Provides\n  @Singleton\n  protected ObjectReader objectReader(ObjectMapper objectMapper) {\n    return objectMapper.reader();\n  }",
+    "right" : "@Provides\n  @Singleton\n  protected ObjectReader objectReader(ObjectMapper objectMapper) {\n    return objectMapper.reader();\n  }",
+    "info" : "MethodDeclaration[8161-8288]:MethodDeclaration[8256-8383]"
+  }, {
+    "left" : "@Provides\n  @Singleton\n  protected Renderer<JsonRender> renderer(ObjectWriter objectWriter) {\n    return Jackson.Init.renderer(objectWriter);\n  }",
+    "right" : "@Provides\n  @Singleton\n  protected Renderer<JsonRender> renderer(ObjectWriter objectWriter) {\n    return Jackson.Init.renderer(objectWriter);\n  }",
+    "info" : "MethodDeclaration[8292-8437]:MethodDeclaration[8387-8532]"
+  }, {
+    "left" : "@Provides\n  @Singleton\n  protected Parser<NullParseOpts> noOptParser() {\n    return Jackson.Init.noOptParser();\n  }",
+    "right" : "@Provides\n  @Singleton\n  protected Parser<NullParseOpts> noOptParser() {\n    return Jackson.Init.noOptParser();\n  }",
+    "info" : "MethodDeclaration[8441-8556]:MethodDeclaration[8536-8651]"
+  }, {
+    "left" : "@Provides\n  @Singleton\n  protected Parser<JsonParseOpts> parser(ObjectMapper objectMapper) {\n    return Jackson.Init.parser(objectMapper);\n  }",
+    "right" : "@Provides\n  @Singleton\n  protected Parser<JsonParseOpts> parser(ObjectMapper objectMapper) {\n    return Jackson.Init.parser(objectMapper);\n  }",
+    "info" : "MethodDeclaration[8560-8702]:MethodDeclaration[8655-8797]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "ratpack.jackson",
+    "right" : "ratpack.jackson.guice",
+    "info" : "QualifiedName[623-638]:QualifiedName[623-644]"
+  }, {
+    "left" : "@SuppressWarnings(\"UnusedDeclaration\")",
+    "right" : "@SuppressWarnings(\"UnusedDeclaration\")",
+    "info" : "SingleMemberAnnotation[4285-4323]:SingleMemberAnnotation[4380-4418]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4324-4330]:Modifier[4419-4425]"
+  }, {
+    "left" : "ConfigurableModule<JacksonModule.Config>",
+    "right" : "ConfigurableModule<JacksonModule.Config>",
+    "info" : "ParameterizedType[4359-4399]:ParameterizedType[4454-4494]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4474-4480]:Modifier[4569-4575]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[4481-4487]:Modifier[4576-4582]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[4858-4864]:Modifier[4953-4959]"
+  }, {
+    "left" : "boolean",
+    "right" : "boolean",
+    "info" : "PrimitiveType[4865-4872]:PrimitiveType[4960-4967]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[4889-4922]:Block[4984-5017]"
+  }, {
+    "left" : "return prettyPrint;",
+    "right" : "return prettyPrint;",
+    "info" : "ReturnStatement[4897-4916]:ReturnStatement[4992-5011]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5266-5272]:Modifier[5361-5367]"
+  }, {
+    "left" : "Config",
+    "right" : "Config",
+    "info" : "SimpleType[5273-5279]:SimpleType[5368-5374]"
+  }, {
+    "left" : "boolean prettyPrint",
+    "right" : "boolean prettyPrint",
+    "info" : "SingleVariableDeclaration[5292-5311]:SingleVariableDeclaration[5387-5406]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[5313-5377]:Block[5408-5472]"
+  }, {
+    "left" : "this.prettyPrint = prettyPrint;",
+    "right" : "this.prettyPrint = prettyPrint;",
+    "info" : "ExpressionStatement[5321-5352]:ExpressionStatement[5416-5447]"
+  }, {
+    "left" : "return this;",
+    "right" : "return this;",
+    "info" : "ReturnStatement[5359-5371]:ReturnStatement[5454-5466]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[5725-5731]:Modifier[5820-5826]"
+  }, {
+    "left" : "List<Module>",
+    "right" : "List<Module>",
+    "info" : "ParameterizedType[5732-5744]:ParameterizedType[5827-5839]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[5758-5787]:Block[5853-5882]"
+  }, {
+    "left" : "return modules;",
+    "right" : "return modules;",
+    "info" : "ReturnStatement[5766-5781]:ReturnStatement[5861-5876]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6177-6183]:Modifier[6272-6278]"
+  }, {
+    "left" : "Config",
+    "right" : "Config",
+    "info" : "SimpleType[6184-6190]:SimpleType[6279-6285]"
+  }, {
+    "left" : "Iterable<Module> modules",
+    "right" : "Iterable<Module> modules",
+    "info" : "SingleVariableDeclaration[6199-6223]:SingleVariableDeclaration[6294-6318]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[6225-6307]:Block[6320-6402]"
+  }, {
+    "left" : "this.modules.addAll(Lists.newArrayList(modules));",
+    "right" : "this.modules.addAll(Lists.newArrayList(modules));",
+    "info" : "ExpressionStatement[6233-6282]:ExpressionStatement[6328-6377]"
+  }, {
+    "left" : "return this;",
+    "right" : "return this;",
+    "info" : "ReturnStatement[6289-6301]:ReturnStatement[6384-6396]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[6696-6702]:Modifier[6791-6797]"
+  }, {
+    "left" : "Config",
+    "right" : "Config",
+    "info" : "SimpleType[6703-6709]:SimpleType[6798-6804]"
+  }, {
+    "left" : "Module... modules",
+    "right" : "Module... modules",
+    "info" : "SingleVariableDeclaration[6718-6735]:SingleVariableDeclaration[6813-6830]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[6737-6790]:Block[6832-6885]"
+  }, {
+    "left" : "return modules(Arrays.asList(modules));",
+    "right" : "return modules(Arrays.asList(modules));",
+    "info" : "ReturnStatement[6745-6784]:ReturnStatement[6840-6879]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[7408-7414]:Modifier[7503-7509]"
+  }, {
+    "left" : "Config",
+    "right" : "Config",
+    "info" : "SimpleType[7415-7421]:SimpleType[7510-7516]"
+  }, {
+    "left" : "Consumer<? super ObjectMapper> configurer",
+    "right" : "Consumer<? super ObjectMapper> configurer",
+    "info" : "SingleVariableDeclaration[7433-7474]:SingleVariableDeclaration[7528-7569]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7476-7542]:Block[7571-7637]"
+  }, {
+    "left" : "this.configurers.add(configurer);",
+    "right" : "this.configurers.add(configurer);",
+    "info" : "ExpressionStatement[7484-7517]:ExpressionStatement[7579-7612]"
+  }, {
+    "left" : "return this;",
+    "right" : "return this;",
+    "info" : "ReturnStatement[7524-7536]:ReturnStatement[7619-7631]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[7550-7559]:MarkerAnnotation[7645-7654]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[7562-7571]:Modifier[7657-7666]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[7572-7576]:PrimitiveType[7667-7671]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7589-7594]:Block[7684-7689]"
+  }, {
+    "left" : "@Provides",
+    "right" : "@Provides",
+    "info" : "MarkerAnnotation[7598-7607]:MarkerAnnotation[7693-7702]"
+  }, {
+    "left" : "@Singleton",
+    "right" : "@Singleton",
+    "info" : "MarkerAnnotation[7610-7620]:MarkerAnnotation[7705-7715]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[7623-7632]:Modifier[7718-7727]"
+  }, {
+    "left" : "ObjectMapper",
+    "right" : "ObjectMapper",
+    "info" : "SimpleType[7633-7645]:SimpleType[7728-7740]"
+  }, {
+    "left" : "Config config",
+    "right" : "Config config",
+    "info" : "SingleVariableDeclaration[7659-7672]:SingleVariableDeclaration[7754-7767]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7674-7931]:Block[7769-8026]"
+  }, {
+    "left" : "ObjectMapper objectMapper = new ObjectMapper();",
+    "right" : "ObjectMapper objectMapper = new ObjectMapper();",
+    "info" : "VariableDeclarationStatement[7680-7727]:VariableDeclarationStatement[7775-7822]"
+  }, {
+    "left" : "objectMapper.registerModules(config.getModules());",
+    "right" : "objectMapper.registerModules(config.getModules());",
+    "info" : "ExpressionStatement[7732-7782]:ExpressionStatement[7827-7877]"
+  }, {
+    "left" : "for (Consumer<? super ObjectMapper> configurer : config.configurers)",
+    "right" : "for (Consumer<? super ObjectMapper> configurer : config.configurers)",
+    "info" : "EnhancedForStatement[7787-7902]:EnhancedForStatement[7882-7997]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[7856-7902]:Block[7951-7997]"
+  }, {
+    "left" : "configurer.accept(objectMapper);",
+    "right" : "configurer.accept(objectMapper);",
+    "info" : "ExpressionStatement[7864-7896]:ExpressionStatement[7959-7991]"
+  }, {
+    "left" : "return objectMapper;",
+    "right" : "return objectMapper;",
+    "info" : "ReturnStatement[7907-7927]:ReturnStatement[8002-8022]"
+  }, {
+    "left" : "@Provides",
+    "right" : "@Provides",
+    "info" : "MarkerAnnotation[7935-7944]:MarkerAnnotation[8030-8039]"
+  }, {
+    "left" : "@Singleton",
+    "right" : "@Singleton",
+    "info" : "MarkerAnnotation[7947-7957]:MarkerAnnotation[8042-8052]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[7960-7969]:Modifier[8055-8064]"
+  }, {
+    "left" : "ObjectWriter",
+    "right" : "ObjectWriter",
+    "info" : "SimpleType[7970-7982]:SimpleType[8065-8077]"
+  }, {
+    "left" : "ObjectMapper objectMapper",
+    "right" : "ObjectMapper objectMapper",
+    "info" : "SingleVariableDeclaration[7996-8021]:SingleVariableDeclaration[8091-8116]"
+  }, {
+    "left" : "Config config",
+    "right" : "Config config",
+    "info" : "SingleVariableDeclaration[8023-8036]:SingleVariableDeclaration[8118-8131]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8038-8157]:Block[8133-8252]"
+  }, {
+    "left" : "return objectMapper.writer(config.isPrettyPrint() ? new DefaultPrettyPrinter() : new MinimalPrettyPrinter());",
+    "right" : "return objectMapper.writer(config.isPrettyPrint() ? new DefaultPrettyPrinter() : new MinimalPrettyPrinter());",
+    "info" : "ReturnStatement[8044-8153]:ReturnStatement[8139-8248]"
+  }, {
+    "left" : "@Provides",
+    "right" : "@Provides",
+    "info" : "MarkerAnnotation[8161-8170]:MarkerAnnotation[8256-8265]"
+  }, {
+    "left" : "@Singleton",
+    "right" : "@Singleton",
+    "info" : "MarkerAnnotation[8173-8183]:MarkerAnnotation[8268-8278]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[8186-8195]:Modifier[8281-8290]"
+  }, {
+    "left" : "ObjectReader",
+    "right" : "ObjectReader",
+    "info" : "SimpleType[8196-8208]:SimpleType[8291-8303]"
+  }, {
+    "left" : "ObjectMapper objectMapper",
+    "right" : "ObjectMapper objectMapper",
+    "info" : "SingleVariableDeclaration[8222-8247]:SingleVariableDeclaration[8317-8342]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8249-8288]:Block[8344-8383]"
+  }, {
+    "left" : "return objectMapper.reader();",
+    "right" : "return objectMapper.reader();",
+    "info" : "ReturnStatement[8255-8284]:ReturnStatement[8350-8379]"
+  }, {
+    "left" : "@Provides",
+    "right" : "@Provides",
+    "info" : "MarkerAnnotation[8292-8301]:MarkerAnnotation[8387-8396]"
+  }, {
+    "left" : "@Singleton",
+    "right" : "@Singleton",
+    "info" : "MarkerAnnotation[8304-8314]:MarkerAnnotation[8399-8409]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[8317-8326]:Modifier[8412-8421]"
+  }, {
+    "left" : "Renderer<JsonRender>",
+    "right" : "Renderer<JsonRender>",
+    "info" : "ParameterizedType[8327-8347]:ParameterizedType[8422-8442]"
+  }, {
+    "left" : "ObjectWriter objectWriter",
+    "right" : "ObjectWriter objectWriter",
+    "info" : "SingleVariableDeclaration[8357-8382]:SingleVariableDeclaration[8452-8477]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8384-8437]:Block[8479-8532]"
+  }, {
+    "left" : "return Jackson.Init.renderer(objectWriter);",
+    "right" : "return Jackson.Init.renderer(objectWriter);",
+    "info" : "ReturnStatement[8390-8433]:ReturnStatement[8485-8528]"
+  }, {
+    "left" : "@Provides",
+    "right" : "@Provides",
+    "info" : "MarkerAnnotation[8441-8450]:MarkerAnnotation[8536-8545]"
+  }, {
+    "left" : "@Singleton",
+    "right" : "@Singleton",
+    "info" : "MarkerAnnotation[8453-8463]:MarkerAnnotation[8548-8558]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[8466-8475]:Modifier[8561-8570]"
+  }, {
+    "left" : "Parser<NullParseOpts>",
+    "right" : "Parser<NullParseOpts>",
+    "info" : "ParameterizedType[8476-8497]:ParameterizedType[8571-8592]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8512-8556]:Block[8607-8651]"
+  }, {
+    "left" : "return Jackson.Init.noOptParser();",
+    "right" : "return Jackson.Init.noOptParser();",
+    "info" : "ReturnStatement[8518-8552]:ReturnStatement[8613-8647]"
+  }, {
+    "left" : "@Provides",
+    "right" : "@Provides",
+    "info" : "MarkerAnnotation[8560-8569]:MarkerAnnotation[8655-8664]"
+  }, {
+    "left" : "@Singleton",
+    "right" : "@Singleton",
+    "info" : "MarkerAnnotation[8572-8582]:MarkerAnnotation[8667-8677]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[8585-8594]:Modifier[8680-8689]"
+  }, {
+    "left" : "Parser<JsonParseOpts>",
+    "right" : "Parser<JsonParseOpts>",
+    "info" : "ParameterizedType[8595-8616]:ParameterizedType[8690-8711]"
+  }, {
+    "left" : "ObjectMapper objectMapper",
+    "right" : "ObjectMapper objectMapper",
+    "info" : "SingleVariableDeclaration[8624-8649]:SingleVariableDeclaration[8719-8744]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[8651-8702]:Block[8746-8797]"
+  }, {
+    "left" : "return Jackson.Init.parser(objectMapper);",
+    "right" : "return Jackson.Init.parser(objectMapper);",
+    "info" : "ReturnStatement[8657-8698]:ReturnStatement[8752-8793]"
+  } ]
+}

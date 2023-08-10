@@ -2,15 +2,21 @@ package benchmark.oracle.generators;
 
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.oracle.models.NecessaryMappings;
 import benchmark.utils.PathResolver;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.github.gumtreediff.actions.EditScript;
+import com.github.gumtreediff.actions.model.Action;
+import com.github.gumtreediff.actions.model.TreeAddition;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.apache.commons.io.FileUtils;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.model.MoveIn;
+import org.refactoringminer.astDiff.actions.model.MoveOut;
 import org.refactoringminer.astDiff.matchers.Constants;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 
@@ -33,6 +39,7 @@ public class HumanReadableDiffGenerator {
     private final String dstPath;
     private final String srcContent;
     private final String dstContent;
+    private final EditScript es;
     public HumanReadableDiff result;
     public HumanReadableDiffGenerator(String repo, String commit, ASTDiff astDiff) {
         this.repo = repo;
@@ -44,6 +51,7 @@ public class HumanReadableDiffGenerator {
         this.srcContent = astDiff.getSrcContents();
         this.dstContent = astDiff.getDstContents();
         this.mappings = astDiff.getAllMappings();
+        this.es = astDiff.editScript;
         result = new HumanReadableDiff();
         make();
     }
@@ -51,7 +59,7 @@ public class HumanReadableDiffGenerator {
         newPopulation();
     }
 
-    private void addAccordingly(AbstractMapping abstractMapping) {
+    private void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
         //TODO MAKE IT WORK FOR DIFFERENT TYPES
         if (!abstractMapping.getLeftType().equals(abstractMapping.getRightType()))
             return;
@@ -60,70 +68,93 @@ public class HumanReadableDiffGenerator {
         if (leftType.equals(Constants.TYPE_DECLARATION) ||
             leftType.equals(Constants.METHOD_DECLARATION) ||
             leftType.equals(Constants.FIELD_DECLARATION))
-            result.getMatchedElements().add(abstractMapping);
+            target.getMatchedElements().add(abstractMapping);
         else
-            result.getMappings().add(abstractMapping);
+            target.getMappings().add(abstractMapping);
     }
     private void newPopulation() {
+        NecessaryMappings target = null;
         for (Mapping mapping : mappings) {
-            if (isInterFileMapping(mapping,src,dst)) continue;
             if (isPartOfJavadoc(mapping)) continue;
             if (isBetweenDifferentTypes(mapping)) continue;
-//                throw new RuntimeException("Different AST TYPES!");
             String firstType = mapping.first.getType().name; //Second type definitely has the same type due to the previous check
+            if (isInterFileMapping(mapping,src,dst))
+            {
+                if (firstType.equals(Constants.TYPE_DECLARATION) ||
+                        firstType.equals(Constants.METHOD_DECLARATION) ||
+                        firstType.equals(Constants.FIELD_DECLARATION) || isStatement(firstType)) {
+                    for (Action e : es) {
+                        if (e instanceof MoveOut || e instanceof MoveIn) {
+                            if (e.getNode().toTreeString().equals(mapping.first.toTreeString()) ||
+                                    e.getNode().toTreeString().equals(mapping.second.toTreeString()) ||
+                                    ((TreeAddition) e).getParent().toTreeString().equals(mapping.first.toTreeString()) ||
+                                    ((TreeAddition) e).getParent().toTreeString().equals(mapping.second.toTreeString()))
+                            {
+                                String key = e.toString();
+                                result.interfileMappings.putIfAbsent(key, new NecessaryMappings());
+                                target = result.interfileMappings.get(key);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            else {
+                target = result.fileMappings;
+            }
             switch (firstType)
             {
                 case Constants.TYPE_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateClassSignature(mapping.first),generateClassSignature(mapping.second)));
-                    handleTypeDeclaration(mapping);
+                    addAccordingly(new AbstractMapping(mapping,generateClassSignature(mapping.first),generateClassSignature(mapping.second)), target);
+                    handleTypeDeclaration(mapping,target);
                     break;
                 case Constants.METHOD_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateMethodSignature(mapping.first),generateMethodSignature(mapping.second)));
-                    handleMethodDeclaration(mapping);
+                    addAccordingly(new AbstractMapping(mapping,generateMethodSignature(mapping.first),generateMethodSignature(mapping.second)), target);
+                    handleMethodDeclaration(mapping,target);
                     break;
                 case Constants.FIELD_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateFieldSignature(mapping.first),generateFieldSignature(mapping.second)));
-                    handleFieldDeclaration(mapping);
+                    addAccordingly(new AbstractMapping(mapping,generateFieldSignature(mapping.first),generateFieldSignature(mapping.second)), target);
+                    handleFieldDeclaration(mapping,target);
                     break;
             }
-            handleStatement(mapping);
-            handleMove(mapping);
+            handleStatement(mapping, target);
+            handleMove(mapping, target);
             //TODO MUST FIX THE ISSUE RELATED TO MULTI-MAPPINGS WITH UPDATE-MOVE ON TOP
-            handleUpdate(mapping);
+            handleUpdate(mapping, target);
         }
     }
-    private void handleUpdate(Mapping mapping) {
+    private void handleUpdate(Mapping mapping, NecessaryMappings target) {
         /*Update case*/
         if (!mapping.first.getLabel().equals(mapping.second.getLabel()))
-            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent));
+            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent), target);
     }
-    private void handleMove(Mapping mapping) {
+    private void handleMove(Mapping mapping, NecessaryMappings target) {
         if (mapping.first.getParent() == null || mapping.second.getParent() == null) return;
         Tree firstParent = mapping.first.getParent();
         Tree secondParent = mapping.second.getParent();
         if (mappings.getDsts(firstParent) == null)
             /*Source's parent is not mapped*/
-            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent));
+            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent), target);
         else if (!mappings.getDsts(firstParent).contains(secondParent))
             /*Parents are not mapped*/
-            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent));
+            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent), target);
     }
-    private void handleFieldDeclaration(Mapping mapping) {
+    private void handleFieldDeclaration(Mapping mapping, NecessaryMappings target) {
         //TODO: MUST BE IMPLEMENTED ASAP
     }
-    private void handleMethodDeclaration(Mapping mapping) {
+    private void handleMethodDeclaration(Mapping mapping, NecessaryMappings target) {
         for (Mapping signatureMapping : getMethodSignatureMappings(mapping, mappings)) {
-            addAccordingly(getAbstractMapping(signatureMapping, srcContent, dstContent));
+            addAccordingly(getAbstractMapping(signatureMapping, srcContent, dstContent), target);
         }
     }
-    private void handleTypeDeclaration(Mapping mapping) {
+    private void handleTypeDeclaration(Mapping mapping, NecessaryMappings target) {
         for (Mapping signatureMapping : getClassSignatureMappings(mapping, mappings)) {
-            addAccordingly(getAbstractMapping(signatureMapping, srcContent, dstContent));
+            addAccordingly(getAbstractMapping(signatureMapping, srcContent, dstContent), target);
         }
     }
-    private void handleStatement(Mapping mapping) {
+    private void handleStatement(Mapping mapping, NecessaryMappings target) {
         if (isStatement(mapping.first.getType().name))
-            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent));
+            addAccordingly(getAbstractMapping(mapping, srcContent, dstContent), target);
     }
     public static boolean isBetweenDifferentTypes(Mapping mapping) {
         return !mapping.first.getType().name.equals(mapping.second.getType().name);
@@ -180,9 +211,12 @@ public class HumanReadableDiffGenerator {
         }
         return abstractMappingSet;
     }
-    private static AbstractMapping getAbstractMapping(Mapping mapping, String srcContent, String dstContent) {
-        String srcString = getString(mapping.first, srcContent);
-        String dstString = getString(mapping.second, dstContent);
+    private AbstractMapping getAbstractMapping(Mapping mapping, String srcContent, String dstContent) {
+        String srcString = "",dstString = "";
+        if (!isInterFileMapping(mapping,src,dst)) {
+            srcString = getString(mapping.first, srcContent);
+            dstString = getString(mapping.second, dstContent);
+        }
         return new AbstractMapping(mapping, srcString, dstString);
     }
     public static String getString(Tree tree, String content) {

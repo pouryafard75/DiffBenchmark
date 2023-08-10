@@ -1,0 +1,266 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[2035-4050]:TypeDeclaration[2041-4056]"
+  }, {
+    "left" : "private TestRestTemplate restTemplate = new TestRestTemplate();",
+    "right" : "private TestRestTemplate restTemplate = new TestRestTemplate();",
+    "info" : "FieldDeclaration[2198-2261]:FieldDeclaration[2204-2267]"
+  }, {
+    "left" : "@Autowired\n  private RatpackServer server;",
+    "right" : "@Autowired\n  private RatpackServer server;",
+    "info" : "FieldDeclaration[2265-2307]:FieldDeclaration[2271-2313]"
+  }, {
+    "left" : "@Test\n  public void get() {\n    String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);\n    assertTrue(\"Wrong body\" + body, body.contains(\"{\"));\n    assertFalse(\"Wrong body\" + body, body.toLowerCase().contains(\"<html\"));\n  }",
+    "right" : "@Test\n  public void get() {\n    String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);\n    assertTrue(\"Wrong body\" + body, body.contains(\"{\"));\n    assertFalse(\"Wrong body\" + body, body.toLowerCase().contains(\"<html\"));\n  }",
+    "info" : "MethodDeclaration[2311-2578]:MethodDeclaration[2317-2584]"
+  }, {
+    "left" : "@Test\n  public void post() {\n    HttpHeaders headers = new HttpHeaders();\n    headers.setContentType(MediaType.APPLICATION_JSON);\n    HttpEntity<Map<String, String>> entity = new HttpEntity<Map<String, String>>(Collections.singletonMap(\"foo\", \"bar\"),\n        headers);\n    ResponseEntity<String> result = restTemplate.postForEntity(\"http://localhost:\" + server.getBindPort(), entity,\n        String.class);\n    assertEquals(HttpStatus.OK, result.getStatusCode());\n    String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);\n    assertTrue(\"Wrong body\" + body, body.contains(\"foo\"));\n  }",
+    "right" : "@Test\n  public void post() {\n    HttpHeaders headers = new HttpHeaders();\n    headers.setContentType(MediaType.APPLICATION_JSON);\n    HttpEntity<Map<String, String>> entity = new HttpEntity<Map<String, String>>(Collections.singletonMap(\"foo\", \"bar\"),\n        headers);\n    ResponseEntity<String> result = restTemplate.postForEntity(\"http://localhost:\" + server.getBindPort(), entity,\n        String.class);\n    assertEquals(HttpStatus.OK, result.getStatusCode());\n    String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);\n    assertTrue(\"Wrong body\" + body, body.contains(\"foo\"));\n  }",
+    "info" : "MethodDeclaration[2582-3211]:MethodDeclaration[2588-3217]"
+  }, {
+    "left" : "@Configuration\n  @EnableRatpack\n  @EnableAutoConfiguration\n  protected static class Application {\n\n    private Map<String, Object> map = new LinkedHashMap<String, Object>();\n\n    @Bean\n    public Action<Chain> chain() {\n      return chain -> chain.all(handler());\n    }\n\n    @SuppressWarnings(\"unchecked\")\n    @Bean\n    public Handler handler() {\n      // @formatter:off\n      return context -> context.byMethod(spec -> spec.get(() -> context.render(json(map))).post(() -> {\n        map.putAll(context.parse(fromJson(Map.class)));\n        context.render(json(map));\n      }));\n      // @formatter:on\n    }\n\n    @Bean\n    public JacksonModule jacksonGuiceModule() {\n      return new JacksonModule();\n    }\n\n    public static void main(String[] args) throws Exception {\n      SpringApplication.run(Application.class, args);\n    }\n\n  }",
+    "right" : "@Configuration\n  @EnableRatpack\n  @EnableAutoConfiguration\n  protected static class Application {\n\n    private Map<String, Object> map = new LinkedHashMap<String, Object>();\n\n    @Bean\n    public Action<Chain> chain() {\n      return chain -> chain.all(handler());\n    }\n\n    @SuppressWarnings(\"unchecked\")\n    @Bean\n    public Handler handler() {\n      // @formatter:off\n      return context -> context.byMethod(spec -> spec.get(() -> context.render(json(map))).post(() -> {\n        map.putAll(context.parse(fromJson(Map.class)));\n        context.render(json(map));\n      }));\n      // @formatter:on\n    }\n\n    @Bean\n    public JacksonModule jacksonGuiceModule() {\n      return new JacksonModule();\n    }\n\n    public static void main(String[] args) throws Exception {\n      SpringApplication.run(Application.class, args);\n    }\n\n  }",
+    "info" : "TypeDeclaration[3215-4047]:TypeDeclaration[3221-4053]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "FieldDeclaration[3318-3388]:FieldDeclaration[3324-3394]"
+  }, {
+    "left" : "public ) : Action<Chain>",
+    "right" : "public ) : Action<Chain>",
+    "info" : "MethodDeclaration[3394-3484]:MethodDeclaration[3400-3490]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")\n    @Bean\n    public Handler handler() {\n      // @formatter:off\n      return context -> context.byMethod(spec -> spec.get(() -> context.render(json(map))).post(() -> {\n        map.putAll(context.parse(fromJson(Map.class)));\n        context.render(json(map));\n      }));\n      // @formatter:on\n    }",
+    "right" : "@SuppressWarnings(\"unchecked\")\n    @Bean\n    public Handler handler() {\n      // @formatter:off\n      return context -> context.byMethod(spec -> spec.get(() -> context.render(json(map))).post(() -> {\n        map.putAll(context.parse(fromJson(Map.class)));\n        context.render(json(map));\n      }));\n      // @formatter:on\n    }",
+    "info" : "MethodDeclaration[3490-3820]:MethodDeclaration[3496-3826]"
+  }, {
+    "left" : "public ) : JacksonModule",
+    "right" : "public ) : JacksonModule",
+    "info" : "MethodDeclaration[3826-3919]:MethodDeclaration[3832-3925]"
+  }, {
+    "left" : "public args ) : void",
+    "right" : "public args ) : void",
+    "info" : "MethodDeclaration[3925-4042]:MethodDeclaration[3931-4048]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "import ratpack.jackson.JacksonModule;",
+    "right" : "import ratpack.jackson.guice.JacksonModule;",
+    "info" : "ImportDeclaration[1870-1907]:ImportDeclaration[1870-1913]"
+  }, {
+    "left" : "@RunWith(SpringJUnit4ClassRunner.class)",
+    "right" : "@RunWith(SpringJUnit4ClassRunner.class)",
+    "info" : "SingleMemberAnnotation[2035-2074]:SingleMemberAnnotation[2041-2080]"
+  }, {
+    "left" : "@SpringApplicationConfiguration(classes = Application.class)",
+    "right" : "@SpringApplicationConfiguration(classes = Application.class)",
+    "info" : "NormalAnnotation[2075-2135]:NormalAnnotation[2081-2141]"
+  }, {
+    "left" : "@IntegrationTest(\"server.port=0\")",
+    "right" : "@IntegrationTest(\"server.port=0\")",
+    "info" : "SingleMemberAnnotation[2136-2169]:SingleMemberAnnotation[2142-2175]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2170-2176]:Modifier[2176-2182]"
+  }, {
+    "left" : "@Test",
+    "right" : "@Test",
+    "info" : "MarkerAnnotation[2311-2316]:MarkerAnnotation[2317-2322]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2319-2325]:Modifier[2325-2331]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2326-2330]:PrimitiveType[2332-2336]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2337-2578]:Block[2343-2584]"
+  }, {
+    "left" : "String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);",
+    "right" : "String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);",
+    "info" : "VariableDeclarationStatement[2343-2441]:VariableDeclarationStatement[2349-2447]"
+  }, {
+    "left" : "assertTrue(\"Wrong body\" + body, body.contains(\"{\"));",
+    "right" : "assertTrue(\"Wrong body\" + body, body.contains(\"{\"));",
+    "info" : "ExpressionStatement[2446-2498]:ExpressionStatement[2452-2504]"
+  }, {
+    "left" : "assertFalse(\"Wrong body\" + body, body.toLowerCase().contains(\"<html\"));",
+    "right" : "assertFalse(\"Wrong body\" + body, body.toLowerCase().contains(\"<html\"));",
+    "info" : "ExpressionStatement[2503-2574]:ExpressionStatement[2509-2580]"
+  }, {
+    "left" : "@Test",
+    "right" : "@Test",
+    "info" : "MarkerAnnotation[2582-2587]:MarkerAnnotation[2588-2593]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2590-2596]:Modifier[2596-2602]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2597-2601]:PrimitiveType[2603-2607]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2609-3211]:Block[2615-3217]"
+  }, {
+    "left" : "HttpHeaders headers = new HttpHeaders();",
+    "right" : "HttpHeaders headers = new HttpHeaders();",
+    "info" : "VariableDeclarationStatement[2615-2655]:VariableDeclarationStatement[2621-2661]"
+  }, {
+    "left" : "headers.setContentType(MediaType.APPLICATION_JSON);",
+    "right" : "headers.setContentType(MediaType.APPLICATION_JSON);",
+    "info" : "ExpressionStatement[2660-2711]:ExpressionStatement[2666-2717]"
+  }, {
+    "left" : "HttpEntity<Map<String, String>> entity = new HttpEntity<Map<String, String>>(Collections.singletonMap(\"foo\", \"bar\"),\n        headers);",
+    "right" : "HttpEntity<Map<String, String>> entity = new HttpEntity<Map<String, String>>(Collections.singletonMap(\"foo\", \"bar\"),\n        headers);",
+    "info" : "VariableDeclarationStatement[2716-2850]:VariableDeclarationStatement[2722-2856]"
+  }, {
+    "left" : "ResponseEntity<String> result = restTemplate.postForEntity(\"http://localhost:\" + server.getBindPort(), entity,\n        String.class);",
+    "right" : "ResponseEntity<String> result = restTemplate.postForEntity(\"http://localhost:\" + server.getBindPort(), entity,\n        String.class);",
+    "info" : "VariableDeclarationStatement[2855-2988]:VariableDeclarationStatement[2861-2994]"
+  }, {
+    "left" : "assertEquals(HttpStatus.OK, result.getStatusCode());",
+    "right" : "assertEquals(HttpStatus.OK, result.getStatusCode());",
+    "info" : "ExpressionStatement[2993-3045]:ExpressionStatement[2999-3051]"
+  }, {
+    "left" : "String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);",
+    "right" : "String body = restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class);",
+    "info" : "VariableDeclarationStatement[3050-3148]:VariableDeclarationStatement[3056-3154]"
+  }, {
+    "left" : "assertTrue(\"Wrong body\" + body, body.contains(\"foo\"));",
+    "right" : "assertTrue(\"Wrong body\" + body, body.contains(\"foo\"));",
+    "info" : "ExpressionStatement[3153-3207]:ExpressionStatement[3159-3213]"
+  }, {
+    "left" : "@Configuration",
+    "right" : "@Configuration",
+    "info" : "MarkerAnnotation[3215-3229]:MarkerAnnotation[3221-3235]"
+  }, {
+    "left" : "@EnableRatpack",
+    "right" : "@EnableRatpack",
+    "info" : "MarkerAnnotation[3232-3246]:MarkerAnnotation[3238-3252]"
+  }, {
+    "left" : "@EnableAutoConfiguration",
+    "right" : "@EnableAutoConfiguration",
+    "info" : "MarkerAnnotation[3249-3273]:MarkerAnnotation[3255-3279]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3276-3285]:Modifier[3282-3291]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[3286-3292]:Modifier[3292-3298]"
+  }, {
+    "left" : "@Bean",
+    "right" : "@Bean",
+    "info" : "MarkerAnnotation[3394-3399]:MarkerAnnotation[3400-3405]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3404-3410]:Modifier[3410-3416]"
+  }, {
+    "left" : "Action<Chain>",
+    "right" : "Action<Chain>",
+    "info" : "ParameterizedType[3411-3424]:ParameterizedType[3417-3430]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3433-3484]:Block[3439-3490]"
+  }, {
+    "left" : "return chain -> chain.all(handler());",
+    "right" : "return chain -> chain.all(handler());",
+    "info" : "ReturnStatement[3441-3478]:ReturnStatement[3447-3484]"
+  }, {
+    "left" : "@SuppressWarnings(\"unchecked\")",
+    "right" : "@SuppressWarnings(\"unchecked\")",
+    "info" : "SingleMemberAnnotation[3490-3520]:SingleMemberAnnotation[3496-3526]"
+  }, {
+    "left" : "@Bean",
+    "right" : "@Bean",
+    "info" : "MarkerAnnotation[3525-3530]:MarkerAnnotation[3531-3536]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3535-3541]:Modifier[3541-3547]"
+  }, {
+    "left" : "Handler",
+    "right" : "Handler",
+    "info" : "SimpleType[3542-3549]:SimpleType[3548-3555]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3560-3820]:Block[3566-3826]"
+  }, {
+    "left" : "return context -> context.byMethod(spec -> spec.get(() -> context.render(json(map))).post(() -> {\n        map.putAll(context.parse(fromJson(Map.class)));\n        context.render(json(map));\n      }));",
+    "right" : "return context -> context.byMethod(spec -> spec.get(() -> context.render(json(map))).post(() -> {\n        map.putAll(context.parse(fromJson(Map.class)));\n        context.render(json(map));\n      }));",
+    "info" : "ReturnStatement[3592-3791]:ReturnStatement[3598-3797]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3688-3788]:Block[3694-3794]"
+  }, {
+    "left" : "map.putAll(context.parse(fromJson(Map.class)));",
+    "right" : "map.putAll(context.parse(fromJson(Map.class)));",
+    "info" : "ExpressionStatement[3698-3745]:ExpressionStatement[3704-3751]"
+  }, {
+    "left" : "context.render(json(map));",
+    "right" : "context.render(json(map));",
+    "info" : "ExpressionStatement[3754-3780]:ExpressionStatement[3760-3786]"
+  }, {
+    "left" : "@Bean",
+    "right" : "@Bean",
+    "info" : "MarkerAnnotation[3826-3831]:MarkerAnnotation[3832-3837]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3836-3842]:Modifier[3842-3848]"
+  }, {
+    "left" : "JacksonModule",
+    "right" : "JacksonModule",
+    "info" : "SimpleType[3843-3856]:SimpleType[3849-3862]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3878-3919]:Block[3884-3925]"
+  }, {
+    "left" : "return new JacksonModule();",
+    "right" : "return new JacksonModule();",
+    "info" : "ReturnStatement[3886-3913]:ReturnStatement[3892-3919]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3925-3931]:Modifier[3931-3937]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[3932-3938]:Modifier[3938-3944]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3939-3943]:PrimitiveType[3945-3949]"
+  }, {
+    "left" : "String[] args",
+    "right" : "String[] args",
+    "info" : "SingleVariableDeclaration[3949-3962]:SingleVariableDeclaration[3955-3968]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[3971-3980]:SimpleType[3977-3986]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3981-4042]:Block[3987-4048]"
+  }, {
+    "left" : "SpringApplication.run(Application.class, args);",
+    "right" : "SpringApplication.run(Application.class, args);",
+    "info" : "ExpressionStatement[3989-4036]:ExpressionStatement[3995-4042]"
+  } ]
+}

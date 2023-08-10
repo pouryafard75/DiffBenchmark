@@ -23,12 +23,13 @@ import static benchmark.utils.PathResolver.getDefect4jDir;
 /* Created by pourya on 2023-05-02 7:42 p.m. */
 public class CompareMappings {
 //    private final static org.slf4j.Logger logger = LoggerFactory.getLogger(CompareMappings.class);
-    private final static CompositeMatchers.CompositeMatcher GREEDY = new CompositeMatchers.ClassicGumtree();
-    private final static CompositeMatchers.CompositeMatcher SIMPLE = new CompositeMatchers.SimpleGumtree();
+    public final static CompositeMatchers.CompositeMatcher GREEDY = new CompositeMatchers.ClassicGumtree();
+    public final static CompositeMatchers.CompositeMatcher SIMPLE = new CompositeMatchers.SimpleGumtree();
 //    private final static ObjectMapper objectMapper = new ObjectMapper();
 
     public static void main(String[] args) throws IOException {
         printStats();
+//        printMultiMappings();
     }
     public static void printMultiMappings() throws IOException {
         List<String> beforeDirs = getDirPathList();
@@ -59,7 +60,7 @@ public class CompareMappings {
 //            cc += 1;
 //            if (cc > 10) break;
             String projectDir = Path.of(beforeDir).getParent().getFileName().toString();
-            if (!projectDir.equals("Chart")) continue;
+//            if (!projectDir.equals("Closure")) continue;
             String bugID = Path.of(beforeDir).getFileName().toString();
             Defect4jCaseInfo defect4jCaseInfo = new Defect4jCaseInfo(projectDir, bugID);
             String afterDir = beforeDir.replace("before","after");
@@ -107,7 +108,7 @@ public class CompareMappings {
         }
         return result;
     }
-    private static void printThisCaseStatus(String beforeDir, String compInfo, boolean _allIdentical) {
+    public static void printThisCaseStatus(String beforeDir, String compInfo, boolean _allIdentical) {
         String bugID = Path.of(beforeDir).getFileName().toString();
         String projectDir = Path.of(beforeDir).getParent().getFileName().toString();
 
@@ -121,7 +122,7 @@ public class CompareMappings {
         System.out.println(output);
     }
 
-    private static boolean isAllIdentical(Set<ASTDiff> diffSet, CompositeMatchers.CompositeMatcher matcher) throws JsonProcessingException {
+    public static boolean isAllIdentical(Set<ASTDiff> diffSet, CompositeMatchers.CompositeMatcher matcher) throws JsonProcessingException {
         boolean _allIdentical = true;
 //        Long end = null;
 //        Long start = null;
@@ -141,7 +142,7 @@ public class CompareMappings {
         return _allIdentical;
     }
 
-    private static List<String> getDirPathList() throws IOException {
+    public static List<String> getDirPathList() throws IOException {
         List<String> beforeDirs = new ArrayList<>();
         Files.walk(Path.of(getDefect4jDir() + "before")).filter(
                 path -> !path.toFile().isFile() && !path.endsWith("before")).forEach(path -> {

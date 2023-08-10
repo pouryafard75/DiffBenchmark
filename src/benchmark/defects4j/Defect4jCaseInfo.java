@@ -3,9 +3,10 @@ package benchmark.defects4j;
 import java.io.Serializable;
 import java.util.Objects;
 
-class Defect4jCaseInfo implements Serializable {
+public class Defect4jCaseInfo implements Serializable {
     String project;
     String id;
+    public Defect4jCaseInfo(){}
 
     public Defect4jCaseInfo(String project, String id) {
         this.project = project;

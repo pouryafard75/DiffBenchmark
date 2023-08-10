@@ -29,8 +29,12 @@ public class BenchmarkWebDiffFactory {
         return makeDiffs(RM_astDiff);
     }
     public static BenchmarkWebDiff withLocallyClonedRepo(String before, String after) throws Exception {
-        Set<ASTDiff> RM_astDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
+        Set<ASTDiff> RM_astDiff = getRmAstDiff(before, after);
         return makeDiffs(RM_astDiff);
+    }
+
+    public static Set<ASTDiff> getRmAstDiff(String before, String after) {
+        return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
     }
 
     private static BenchmarkWebDiff makeDiffs(Set<ASTDiff> RM_astDiff) throws Exception {

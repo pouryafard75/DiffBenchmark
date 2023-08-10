@@ -22,8 +22,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static benchmark.utils.Configuration.*;
-import static benchmark.utils.PathResolver.replaceFileName;
-import static benchmark.utils.PathResolver.repoFolder;
+import static benchmark.utils.PathResolver.*;
+import static benchmark.utils.PathResolver.getAfterDir;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {
@@ -42,14 +42,26 @@ public class BenchmarkMetricsComputer {
 
     private void runRMLocally() throws Exception {
         for (CaseInfo info : infos) {
-            GitService gitService = new GitServiceImpl();String repoFolder = info.getRepo().substring(info.getRepo().lastIndexOf("/"), info.getRepo().indexOf(".git"));
-            Repository repo = gitService.cloneIfNotExists(REPOS + repoFolder, info.getRepo());
-            Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, info.getCommit());
+            String repo = info.getRepo();
+            String commit = info.getCommit();
+            Set<ASTDiff> astDiffs;
+            if (repo.contains("github")) {
+                GitService gitService = new GitServiceImpl();
+                String repoFolder = repo.substring(repo.lastIndexOf("/"), repo.indexOf(".git"));
+                Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, repo);
+//                astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
+                astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit,1000);
+            }
+            else{
+                String projectDir = repo;
+                String bugID = commit;
+                astDiffs = new GitHistoryRefactoringMinerImpl().diffAtDirectories(
+                        Path.of(getBeforeDir(projectDir, bugID)), Path.of(getAfterDir(projectDir, bugID)));
+            }
             diffs.put(info, astDiffs);
         }
     }
     public List<DiffComparisonResult> generateBenchmarkStats() throws IOException {
-
         List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
         for (CaseInfo info : infos) {
             String folderPath = exportedFolderPathByCaseInfo(info);
@@ -71,7 +83,7 @@ public class BenchmarkMetricsComputer {
                         try {
                             godHRD = mapper.readValue(new File(godFullPath), HumanReadableDiff.class);
                         } catch (IOException e) {
-                            throw new RuntimeException(e);
+                            return;
                         }
                         for (Map.Entry<String, String> entry : toolPathMap.entrySet()) {
                             String toolDir = entry.getValue();
@@ -110,7 +122,8 @@ public class BenchmarkMetricsComputer {
         int index = 0;
         for (String toolName : toolNames) {
             index += 1;
-            toolName = "";
+            toolName = ""; //BE AWARE OF THIS
+//            toolName += "_";
             writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN,");
             writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN");
             if (index != toolNames.length)
@@ -148,6 +161,7 @@ public class BenchmarkMetricsComputer {
                 writer.append(String.valueOf(tool.getProgramElementStats().getFN()));
                 if (index != toolNames.length)
                     writer.append(",");
+                System.out.println("Csv generated for " + stat.getCaseInfo().makeURL());
             }
             writer.append("\n");
         }

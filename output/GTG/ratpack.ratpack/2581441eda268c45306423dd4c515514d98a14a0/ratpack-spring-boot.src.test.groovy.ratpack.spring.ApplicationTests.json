@@ -1,0 +1,306 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "class : ApplicationTests",
+    "right" : "class : ApplicationTests",
+    "info" : "TypeDeclaration[1878-3820]:TypeDeclaration[1884-3826]"
+  }, {
+    "left" : "restTemplate",
+    "right" : "restTemplate",
+    "info" : "FieldDeclaration[2066-2129]:FieldDeclaration[2072-2135]"
+  }, {
+    "left" : "server",
+    "right" : "server",
+    "info" : "FieldDeclaration[2133-2175]:FieldDeclaration[2139-2181]"
+  }, {
+    "left" : "public homePage() : void",
+    "right" : "public homePage() : void",
+    "info" : "MethodDeclaration[2179-2472]:MethodDeclaration[2185-2478]"
+  }, {
+    "left" : "public notFound() : void",
+    "right" : "public notFound() : void",
+    "info" : "MethodDeclaration[2476-2792]:MethodDeclaration[2482-2798]"
+  }, {
+    "left" : "class : Application",
+    "right" : "class : Application",
+    "info" : "TypeDeclaration[2796-3693]:TypeDeclaration[2802-3699]"
+  }, {
+    "left" : "service",
+    "right" : "service",
+    "info" : "FieldDeclaration[2931-2977]:FieldDeclaration[2937-2983]"
+  }, {
+    "left" : "public handler() : ",
+    "right" : "public handler() : ",
+    "info" : "MethodDeclaration[2983-3350]:MethodDeclaration[2989-3356]"
+  }, {
+    "left" : "public jacksonGuiceModule() : ",
+    "right" : "public jacksonGuiceModule() : ",
+    "info" : "MethodDeclaration[3356-3565]:MethodDeclaration[3362-3571]"
+  }, {
+    "left" : "public main(args ) : void",
+    "right" : "public main(args ) : void",
+    "info" : "MethodDeclaration[3571-3688]:MethodDeclaration[3577-3694]"
+  }, {
+    "left" : "class : MessageService",
+    "right" : "class : MessageService",
+    "info" : "TypeDeclaration[3697-3817]:TypeDeclaration[3703-3823]"
+  }, {
+    "left" : "public message() : ",
+    "right" : "public message() : ",
+    "info" : "MethodDeclaration[3753-3812]:MethodDeclaration[3759-3818]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "ratpack.jackson.JacksonModule",
+    "right" : "ratpack.jackson.guice.JacksonModule",
+    "info" : "QualifiedName[1713-1742]:QualifiedName[1713-1748]"
+  }, {
+    "left" : "@RunWith(SpringJUnit4ClassRunner.class)",
+    "right" : "@RunWith(SpringJUnit4ClassRunner.class)",
+    "info" : "SingleMemberAnnotation[1878-1917]:SingleMemberAnnotation[1884-1923]"
+  }, {
+    "left" : "@SpringApplicationConfiguration(classes = Application.class)",
+    "right" : "@SpringApplicationConfiguration(classes = Application.class)",
+    "info" : "NormalAnnotation[1918-1978]:NormalAnnotation[1924-1984]"
+  }, {
+    "left" : "@IntegrationTest({ \"debug=true\", \"server.port=0\" })",
+    "right" : "@IntegrationTest({ \"debug=true\", \"server.port=0\" })",
+    "info" : "SingleMemberAnnotation[1979-2030]:SingleMemberAnnotation[1985-2036]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2031-2037]:Modifier[2037-2043]"
+  }, {
+    "left" : "class",
+    "right" : "class",
+    "info" : "TYPE_DECLARATION_KIND[2038-2043]:TYPE_DECLARATION_KIND[2044-2049]"
+  }, {
+    "left" : "@Test",
+    "right" : "@Test",
+    "info" : "MarkerAnnotation[2179-2184]:MarkerAnnotation[2185-2190]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2187-2193]:Modifier[2193-2199]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2194-2198]:PrimitiveType[2200-2204]"
+  }, {
+    "left" : "homePage",
+    "right" : "homePage",
+    "info" : "SimpleName[2199-2207]:SimpleName[2205-2213]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2210-2472]:Block[2216-2478]"
+  }, {
+    "left" : "assertEquals(\n        \"{\" + System.getProperty(\"line.separator\") + \"  \\\"message\\\" : \\\"Hello World\\\"\"\n            + System.getProperty(\"line.separator\") + \"}\",\n        restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class));",
+    "right" : "assertEquals(\n        \"{\" + System.getProperty(\"line.separator\") + \"  \\\"message\\\" : \\\"Hello World\\\"\"\n            + System.getProperty(\"line.separator\") + \"}\",\n        restTemplate.getForObject(\"http://localhost:\" + server.getBindPort(), String.class));",
+    "info" : "ExpressionStatement[2216-2468]:ExpressionStatement[2222-2474]"
+  }, {
+    "left" : "@Test",
+    "right" : "@Test",
+    "info" : "MarkerAnnotation[2476-2481]:MarkerAnnotation[2482-2487]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2484-2490]:Modifier[2490-2496]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[2491-2495]:PrimitiveType[2497-2501]"
+  }, {
+    "left" : "notFound",
+    "right" : "notFound",
+    "info" : "SimpleName[2496-2504]:SimpleName[2502-2510]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2507-2792]:Block[2513-2798]"
+  }, {
+    "left" : "ResponseEntity<String> response = restTemplate.getForEntity(\"http://localhost:\" + server.getBindPort() + \"/none\",\n        String.class);",
+    "right" : "ResponseEntity<String> response = restTemplate.getForEntity(\"http://localhost:\" + server.getBindPort() + \"/none\",\n        String.class);",
+    "info" : "VariableDeclarationStatement[2513-2649]:VariableDeclarationStatement[2519-2655]"
+  }, {
+    "left" : "assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());",
+    "right" : "assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());",
+    "info" : "ExpressionStatement[2654-2715]:ExpressionStatement[2660-2721]"
+  }, {
+    "left" : "assertNull(\"Default 404 handler has null body\", response.getBody());",
+    "right" : "assertNull(\"Default 404 handler has null body\", response.getBody());",
+    "info" : "ExpressionStatement[2720-2788]:ExpressionStatement[2726-2794]"
+  }, {
+    "left" : "@Configuration",
+    "right" : "@Configuration",
+    "info" : "MarkerAnnotation[2796-2810]:MarkerAnnotation[2802-2816]"
+  }, {
+    "left" : "@EnableAutoConfiguration",
+    "right" : "@EnableAutoConfiguration",
+    "info" : "MarkerAnnotation[2813-2837]:MarkerAnnotation[2819-2843]"
+  }, {
+    "left" : "@EnableRatpack",
+    "right" : "@EnableRatpack",
+    "info" : "MarkerAnnotation[2840-2854]:MarkerAnnotation[2846-2860]"
+  }, {
+    "left" : "@Import(MessageService.class)",
+    "right" : "@Import(MessageService.class)",
+    "info" : "SingleMemberAnnotation[2857-2886]:SingleMemberAnnotation[2863-2892]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[2889-2898]:Modifier[2895-2904]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[2899-2905]:Modifier[2905-2911]"
+  }, {
+    "left" : "class",
+    "right" : "class",
+    "info" : "TYPE_DECLARATION_KIND[2906-2911]:TYPE_DECLARATION_KIND[2912-2917]"
+  }, {
+    "left" : "@Bean",
+    "right" : "@Bean",
+    "info" : "MarkerAnnotation[2983-2988]:MarkerAnnotation[2989-2994]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[2993-2999]:Modifier[2999-3005]"
+  }, {
+    "left" : "Action<Chain>",
+    "right" : "Action<Chain>",
+    "info" : "ParameterizedType[3000-3013]:ParameterizedType[3006-3019]"
+  }, {
+    "left" : "handler",
+    "right" : "handler",
+    "info" : "SimpleName[3014-3021]:SimpleName[3020-3027]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3024-3350]:Block[3030-3356]"
+  }, {
+    "left" : "return chain -> chain.get(context -> {\n        // We're not using the registry here directly but it's good to\n        // confirm that it contains our service:\n        assertNotNull(context.get(MessageService.class));\n        context.render(json(Collections.singletonMap(\"message\", service.message())));\n      });",
+    "right" : "return chain -> chain.get(context -> {\n        // We're not using the registry here directly but it's good to\n        // confirm that it contains our service:\n        assertNotNull(context.get(MessageService.class));\n        context.render(json(Collections.singletonMap(\"message\", service.message())));\n      });",
+    "info" : "ReturnStatement[3032-3344]:ReturnStatement[3038-3350]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3069-3342]:Block[3075-3348]"
+  }, {
+    "left" : "assertNotNull(context.get(MessageService.class));",
+    "right" : "assertNotNull(context.get(MessageService.class));",
+    "info" : "ExpressionStatement[3199-3248]:ExpressionStatement[3205-3254]"
+  }, {
+    "left" : "context.render(json(Collections.singletonMap(\"message\", service.message())));",
+    "right" : "context.render(json(Collections.singletonMap(\"message\", service.message())));",
+    "info" : "ExpressionStatement[3257-3334]:ExpressionStatement[3263-3340]"
+  }, {
+    "left" : "@Bean",
+    "right" : "@Bean",
+    "info" : "MarkerAnnotation[3356-3361]:MarkerAnnotation[3362-3367]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3366-3372]:Modifier[3372-3378]"
+  }, {
+    "left" : "JacksonModule",
+    "right" : "JacksonModule",
+    "info" : "SimpleType[3373-3386]:SimpleType[3379-3392]"
+  }, {
+    "left" : "jacksonGuiceModule",
+    "right" : "jacksonGuiceModule",
+    "info" : "SimpleName[3387-3405]:SimpleName[3393-3411]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3408-3565]:Block[3414-3571]"
+  }, {
+    "left" : "JacksonModule module = new JacksonModule();",
+    "right" : "JacksonModule module = new JacksonModule();",
+    "info" : "VariableDeclarationStatement[3416-3459]:VariableDeclarationStatement[3422-3465]"
+  }, {
+    "left" : "module.configure(config -> {\n        config.prettyPrint(true);\n      });",
+    "right" : "module.configure(config -> {\n        config.prettyPrint(true);\n      });",
+    "info" : "ExpressionStatement[3466-3538]:ExpressionStatement[3472-3544]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3493-3536]:Block[3499-3542]"
+  }, {
+    "left" : "config.prettyPrint(true);",
+    "right" : "config.prettyPrint(true);",
+    "info" : "ExpressionStatement[3503-3528]:ExpressionStatement[3509-3534]"
+  }, {
+    "left" : "return module;",
+    "right" : "return module;",
+    "info" : "ReturnStatement[3545-3559]:ReturnStatement[3551-3565]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3571-3577]:Modifier[3577-3583]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[3578-3584]:Modifier[3584-3590]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[3585-3589]:PrimitiveType[3591-3595]"
+  }, {
+    "left" : "main",
+    "right" : "main",
+    "info" : "SimpleName[3590-3594]:SimpleName[3596-3600]"
+  }, {
+    "left" : "String[] args",
+    "right" : "String[] args",
+    "info" : "SingleVariableDeclaration[3595-3608]:SingleVariableDeclaration[3601-3614]"
+  }, {
+    "left" : "Exception",
+    "right" : "Exception",
+    "info" : "SimpleType[3617-3626]:SimpleType[3623-3632]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3627-3688]:Block[3633-3694]"
+  }, {
+    "left" : "SpringApplication.run(Application.class, args);",
+    "right" : "SpringApplication.run(Application.class, args);",
+    "info" : "ExpressionStatement[3635-3682]:ExpressionStatement[3641-3688]"
+  }, {
+    "left" : "@Service",
+    "right" : "@Service",
+    "info" : "MarkerAnnotation[3697-3705]:MarkerAnnotation[3703-3711]"
+  }, {
+    "left" : "protected",
+    "right" : "protected",
+    "info" : "Modifier[3708-3717]:Modifier[3714-3723]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[3718-3724]:Modifier[3724-3730]"
+  }, {
+    "left" : "class",
+    "right" : "class",
+    "info" : "TYPE_DECLARATION_KIND[3725-3730]:TYPE_DECLARATION_KIND[3731-3736]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[3753-3759]:Modifier[3759-3765]"
+  }, {
+    "left" : "String",
+    "right" : "String",
+    "info" : "SimpleType[3760-3766]:SimpleType[3766-3772]"
+  }, {
+    "left" : "message",
+    "right" : "message",
+    "info" : "SimpleName[3767-3774]:SimpleName[3773-3780]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[3777-3812]:Block[3783-3818]"
+  }, {
+    "left" : "return \"Hello World\";",
+    "right" : "return \"Hello World\";",
+    "info" : "ReturnStatement[3785-3806]:ReturnStatement[3791-3812]"
+  } ]
+}

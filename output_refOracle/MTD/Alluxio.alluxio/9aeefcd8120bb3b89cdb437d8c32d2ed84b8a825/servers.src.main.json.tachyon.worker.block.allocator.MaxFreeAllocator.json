@@ -1,0 +1,234 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[1147-2728]:TypeDeclaration[1147-3235]"
+  }, {
+    "left" : "private final BlockMetadataManager mMetaManager;",
+    "right" : "private final BlockMetadataManager mMetaManager;",
+    "info" : "FieldDeclaration[1290-1338]:FieldDeclaration[1384-1432]"
+  }, {
+    "left" : "public MaxFreeAllocator(BlockMetadataManager metadata) {\n    mMetaManager = Preconditions.checkNotNull(metadata);\n  }",
+    "right" : "public MaxFreeAllocator(BlockMetadataManager metadata) {\n    mMetaManager = Preconditions.checkNotNull(metadata);\n  }",
+    "info" : "MethodDeclaration[1342-1459]:MethodDeclaration[1436-1553]"
+  }, {
+    "left" : "@Override\n  public TempBlockMeta allocateBlock(long userId, long blockId, long blockSize,\n      BlockStoreLocation location) throws IOException {\n\n    StorageDir candidateDir = null;\n    long maxFreeBytes = blockSize;\n\n    if (location.equals(BlockStoreLocation.anyTier())) {\n      for (StorageTier tier : mMetaManager.getTiers()) {\n        for (StorageDir dir : tier.getStorageDirs()) {\n          if (dir.getAvailableBytes() >= maxFreeBytes) {\n            maxFreeBytes = dir.getAvailableBytes();\n            candidateDir = dir;\n          }\n        }\n      }\n    } else if (location.equals(BlockStoreLocation.anyDirInTier(location.tierAlias()))) {\n      StorageTier tier = mMetaManager.getTier(location.tierAlias());\n      for (StorageDir dir : tier.getStorageDirs()) {\n        if (dir.getAvailableBytes() >= maxFreeBytes) {\n          maxFreeBytes = dir.getAvailableBytes();\n          candidateDir = dir;\n        }\n      }\n    } else {\n      StorageTier tier = mMetaManager.getTier(location.tierAlias());\n      StorageDir dir = tier.getDir(location.dir());\n      if (dir.getAvailableBytes() >= blockSize) {\n        candidateDir = dir;\n      }\n    }\n\n    return candidateDir != null ? new TempBlockMeta(userId, blockId, blockSize, candidateDir)\n        : null;\n  }",
+    "right" : "/**\n   * Find a directory in a tier that has max free space and is able to store the block.\n   *\n   * @param tier the storage tier\n   * @param blockSize the size of block in bytes\n   * @return the storage directory if found, null otherwise\n   */\n  private StorageDir getCandidateDirInTier(StorageTier tier, long blockSize) {\n    StorageDir candidateDir = null;\n    long maxFreeBytes = blockSize - 1;\n    for (StorageDir dir : tier.getStorageDirs()) {\n      if (dir.getAvailableBytes() > maxFreeBytes) {\n        maxFreeBytes = dir.getAvailableBytes();\n        candidateDir = dir;\n      }\n    }\n    return candidateDir;\n  }",
+    "info" : "MethodDeclaration[1463-2726]:MethodDeclaration[2612-3233]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1235-1241]:Modifier[1329-1335]"
+  }, {
+    "left" : "Allocator",
+    "right" : "Allocator",
+    "info" : "SimpleType[1276-1285]:SimpleType[1370-1379]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1342-1348]:Modifier[1436-1442]"
+  }, {
+    "left" : "BlockMetadataManager metadata",
+    "right" : "BlockMetadataManager metadata",
+    "info" : "SingleVariableDeclaration[1366-1395]:SingleVariableDeclaration[1460-1489]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1397-1459]:Block[1491-1553]"
+  }, {
+    "left" : "mMetaManager = Preconditions.checkNotNull(metadata);",
+    "right" : "mMetaManager = Preconditions.checkNotNull(metadata);",
+    "info" : "ExpressionStatement[1403-1455]:ExpressionStatement[1497-1549]"
+  }, {
+    "left" : "@Override",
+    "right" : "@Override",
+    "info" : "MarkerAnnotation[1463-1472]:MarkerAnnotation[1557-1566]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1475-1481]:Modifier[1569-1575]"
+  }, {
+    "left" : "TempBlockMeta",
+    "right" : "TempBlockMeta",
+    "info" : "SimpleType[1482-1495]:SimpleType[1576-1589]"
+  }, {
+    "left" : "long userId",
+    "right" : "long userId",
+    "info" : "SingleVariableDeclaration[1510-1521]:SingleVariableDeclaration[1604-1615]"
+  }, {
+    "left" : "long blockId",
+    "right" : "long blockId",
+    "info" : "SingleVariableDeclaration[1523-1535]:SingleVariableDeclaration[1617-1629]"
+  }, {
+    "left" : "long blockSize",
+    "right" : "long blockSize",
+    "info" : "SingleVariableDeclaration[1537-1551]:SingleVariableDeclaration[1631-1645]"
+  }, {
+    "left" : "BlockStoreLocation location",
+    "right" : "BlockStoreLocation location",
+    "info" : "SingleVariableDeclaration[1559-1586]:SingleVariableDeclaration[1653-1680]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[1595-1606]:SimpleType[1689-1700]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1607-2726]:Block[1701-2608]"
+  }, {
+    "left" : "StorageDir candidateDir = null;",
+    "right" : "StorageDir candidateDir = null;",
+    "info" : "VariableDeclarationStatement[1614-1645]:VariableDeclarationStatement[1707-1738]"
+  }, {
+    "left" : "long",
+    "right" : "long",
+    "info" : "PrimitiveType[1650-1654]:PrimitiveType[2919-2923]"
+  }, {
+    "left" : "if (location.equals(BlockStoreLocation.anyTier()))",
+    "right" : "if (location.equals(BlockStoreLocation.anyTier()))",
+    "info" : "IfStatement[1686-2611]:IfStatement[1744-2493]"
+  }, {
+    "left" : "StorageTier tier",
+    "right" : "StorageTier tier",
+    "info" : "SingleVariableDeclaration[1750-1766]:SingleVariableDeclaration[1808-1824]"
+  }, {
+    "left" : "mMetaManager.getTiers()",
+    "right" : "mMetaManager.getTiers()",
+    "info" : "MethodInvocation[1769-1792]:MethodInvocation[1827-1850]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1794-2021]:Block[1795-2054]"
+  }, {
+    "left" : "for (StorageDir dir : tier.getStorageDirs())",
+    "right" : "for (StorageTier tier : mMetaManager.getTiers())",
+    "info" : "EnhancedForStatement[1804-2013]:EnhancedForStatement[1803-2048]"
+  }, {
+    "left" : "StorageDir",
+    "right" : "StorageDir",
+    "info" : "SimpleType[1809-1819]:SimpleType[2868-2878]"
+  }, {
+    "left" : "dir",
+    "right" : "candidateDir",
+    "info" : "SimpleName[1820-1823]:SimpleName[1862-1874]"
+  }, {
+    "left" : "tier.getStorageDirs()",
+    "right" : "getCandidateDirInTier(tier, blockSize)",
+    "info" : "MethodInvocation[1826-1847]:MethodInvocation[1877-1915]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1849-2013]:Block[1852-2048]"
+  }, {
+    "left" : "if (dir.getAvailableBytes() >= maxFreeBytes)",
+    "right" : "if (candidateDir != null)",
+    "info" : "IfStatement[1861-2003]:IfStatement[1925-2040]"
+  }, {
+    "left" : "dir.getAvailableBytes() >= maxFreeBytes",
+    "right" : "candidateDir != null",
+    "info" : "InfixExpression[1865-1904]:InfixExpression[1929-1949]"
+  }, {
+    "left" : "maxFreeBytes",
+    "right" : "candidateDir",
+    "info" : "SimpleName[1892-1904]:SimpleName[1929-1941]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1906-2003]:Block[1951-2040]"
+  }, {
+    "left" : "maxFreeBytes",
+    "right" : "blockId",
+    "info" : "SimpleName[1920-1932]:SimpleName[1996-2003]"
+  }, {
+    "left" : "dir",
+    "right" : "blockSize",
+    "info" : "SimpleName[1935-1938]:SimpleName[2005-2014]"
+  }, {
+    "left" : "candidateDir",
+    "right" : "candidateDir",
+    "info" : "SimpleName[1972-1984]:SimpleName[2016-2028]"
+  }, {
+    "left" : "if (location.equals(BlockStoreLocation.anyDirInTier(location.tierAlias())))",
+    "right" : "if (location.equals(BlockStoreLocation.anyDirInTier(location.tierAlias())))",
+    "info" : "IfStatement[2033-2611]:IfStatement[2060-2493]"
+  }, {
+    "left" : "StorageTier tier = mMetaManager.getTier(location.tierAlias());",
+    "right" : "StorageTier tier = mMetaManager.getTier(location.tierAlias());",
+    "info" : "VariableDeclarationStatement[2117-2179]:VariableDeclarationStatement[2144-2206]"
+  }, {
+    "left" : "StorageDir",
+    "right" : "StorageDir",
+    "info" : "SimpleType[2191-2201]:SimpleType[2941-2951]"
+  }, {
+    "left" : "dir",
+    "right" : "dir",
+    "info" : "SimpleName[2202-2205]:SimpleName[3032-3035]"
+  }, {
+    "left" : "tier.getStorageDirs()",
+    "right" : "getCandidateDirInTier(tier, blockSize)",
+    "info" : "MethodInvocation[2208-2229]:MethodInvocation[2228-2266]"
+  }, {
+    "left" : "dir",
+    "right" : "dir",
+    "info" : "SimpleName[2245-2248]:SimpleName[3138-3141]"
+  }, {
+    "left" : "maxFreeBytes",
+    "right" : "maxFreeBytes",
+    "info" : "SimpleName[2272-2284]:SimpleName[3099-3111]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2286-2377]:Block[2136-2273]"
+  }, {
+    "left" : "maxFreeBytes = dir.getAvailableBytes();",
+    "right" : "candidateDir = getCandidateDirInTier(tier, blockSize);",
+    "info" : "ExpressionStatement[2298-2337]:ExpressionStatement[2213-2267]"
+  }, {
+    "left" : "maxFreeBytes",
+    "right" : "maxFreeBytes",
+    "info" : "SimpleName[2298-2310]:SimpleName[3123-3135]"
+  }, {
+    "left" : "dir",
+    "right" : "dir",
+    "info" : "SimpleName[2313-2316]:SimpleName[3073-3076]"
+  }, {
+    "left" : "candidateDir",
+    "right" : "candidateDir",
+    "info" : "SimpleName[2348-2360]:SimpleName[2213-2225]"
+  }, {
+    "left" : "dir",
+    "right" : "dir",
+    "info" : "SimpleName[2363-2366]:SimpleName[3186-3189]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2397-2611]:Block[2279-2493]"
+  }, {
+    "left" : "StorageTier tier = mMetaManager.getTier(location.tierAlias());",
+    "right" : "StorageTier tier = mMetaManager.getTier(location.tierAlias());",
+    "info" : "VariableDeclarationStatement[2405-2467]:VariableDeclarationStatement[2287-2349]"
+  }, {
+    "left" : "StorageDir dir = tier.getDir(location.dir());",
+    "right" : "StorageDir dir = tier.getDir(location.dir());",
+    "info" : "VariableDeclarationStatement[2474-2519]:VariableDeclarationStatement[2356-2401]"
+  }, {
+    "left" : "if (dir.getAvailableBytes() >= blockSize)",
+    "right" : "if (dir.getAvailableBytes() >= blockSize)",
+    "info" : "IfStatement[2526-2605]:IfStatement[2408-2487]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[2568-2605]:Block[2450-2487]"
+  }, {
+    "left" : "candidateDir = dir;",
+    "right" : "candidateDir = dir;",
+    "info" : "ExpressionStatement[2578-2597]:ExpressionStatement[2460-2479]"
+  }, {
+    "left" : "return candidateDir != null ? new TempBlockMeta(userId, blockId, blockSize, candidateDir)\n        : null;",
+    "right" : "return candidateDir != null ? new TempBlockMeta(userId, blockId, blockSize, candidateDir)\n        : null;",
+    "info" : "ReturnStatement[2617-2722]:ReturnStatement[2499-2604]"
+  } ]
+}

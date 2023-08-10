@@ -86,6 +86,9 @@ public abstract class APIChanger {
         Diff diff = this.diff();
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(),diff.dst.getRoot());
         mappings.add(diff.mappings);
-        return new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), diff.src, diff.dst, mappings);
+        ASTDiff astDiff = new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), diff.src, diff.dst, mappings);
+        astDiff.setSrcContents(this.rm_astDiff.getSrcContents());
+        astDiff.setDstContents(this.rm_astDiff.getDstContents());
+        return astDiff;
     }
 }

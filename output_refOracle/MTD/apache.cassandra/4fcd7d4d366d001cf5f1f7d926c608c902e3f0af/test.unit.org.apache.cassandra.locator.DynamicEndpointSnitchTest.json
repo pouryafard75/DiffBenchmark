@@ -1,0 +1,214 @@
+{
+  "matchedElements" : [
+ {
+    "left" : "private dsnitch DynamicEndpointSnitch, rounds int, hosts List<InetAddress>, scores Integer) : void",
+    "right" : "private dsnitch DynamicEndpointSnitch, rounds int, hosts List<InetAddress>, scores Integer) : void",
+    "info" : "MethodDeclaration[1244-1616]:MethodDeclaration[1189-1561]"
+  }, {
+    "left" : "public ) : void",
+    "right" : "public ) : void",
+    "info" : "MethodDeclaration[1622-4033]:MethodDeclaration[1567-3978]"
+  }, {
+    "left" : "",
+    "right" : "",
+    "info" : "TypeDeclaration[5554-6322]:TypeDeclaration[1143-3980]"
+  } ],
+  "mappings" : [
+ {
+    "left" : "import org.apache.cassandra.config.DatabaseDescriptor;",
+    "right" : "import org.apache.cassandra.service.StorageService;",
+    "info" : "ImportDeclaration[910-964]:ImportDeclaration[973-1024]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1198-1204]:Modifier[1143-1149]"
+  }, {
+    "left" : "private",
+    "right" : "private",
+    "info" : "Modifier[1244-1251]:Modifier[1189-1196]"
+  }, {
+    "left" : "static",
+    "right" : "static",
+    "info" : "Modifier[1252-1258]:Modifier[1197-1203]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1259-1263]:PrimitiveType[1204-1208]"
+  }, {
+    "left" : "DynamicEndpointSnitch dsnitch",
+    "right" : "DynamicEndpointSnitch dsnitch",
+    "info" : "SingleVariableDeclaration[1274-1303]:SingleVariableDeclaration[1219-1248]"
+  }, {
+    "left" : "int rounds",
+    "right" : "int rounds",
+    "info" : "SingleVariableDeclaration[1306-1316]:SingleVariableDeclaration[1251-1261]"
+  }, {
+    "left" : "List<InetAddress> hosts",
+    "right" : "List<InetAddress> hosts",
+    "info" : "SingleVariableDeclaration[1318-1341]:SingleVariableDeclaration[1263-1286]"
+  }, {
+    "left" : "Integer... scores",
+    "right" : "Integer... scores",
+    "info" : "SingleVariableDeclaration[1343-1360]:SingleVariableDeclaration[1288-1305]"
+  }, {
+    "left" : "InterruptedException",
+    "right" : "InterruptedException",
+    "info" : "SimpleType[1369-1389]:SimpleType[1314-1334]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1394-1616]:Block[1339-1561]"
+  }, {
+    "left" : "for (int round = 0; round < rounds; round++)",
+    "right" : "for (int round = 0; round < rounds; round++)",
+    "info" : "ForStatement[1404-1583]:ForStatement[1349-1528]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1457-1583]:Block[1402-1528]"
+  }, {
+    "left" : "for (int i = 0; i < hosts.size(); i++)\n                dsnitch.receiveTiming(hosts.get(i), scores[i]);",
+    "right" : "for (int i = 0; i < hosts.size(); i++)\n                dsnitch.receiveTiming(hosts.get(i), scores[i]);",
+    "info" : "ForStatement[1471-1573]:ForStatement[1416-1518]"
+  }, {
+    "left" : "dsnitch.receiveTiming(hosts.get(i), scores[i]);",
+    "right" : "dsnitch.receiveTiming(hosts.get(i), scores[i]);",
+    "info" : "ExpressionStatement[1526-1573]:ExpressionStatement[1471-1518]"
+  }, {
+    "left" : "Thread.sleep(150);",
+    "right" : "Thread.sleep(150);",
+    "info" : "ExpressionStatement[1592-1610]:ExpressionStatement[1537-1555]"
+  }, {
+    "left" : "@Test",
+    "right" : "@Test",
+    "info" : "MarkerAnnotation[1622-1627]:MarkerAnnotation[1567-1572]"
+  }, {
+    "left" : "public",
+    "right" : "public",
+    "info" : "Modifier[1632-1638]:Modifier[1577-1583]"
+  }, {
+    "left" : "void",
+    "right" : "void",
+    "info" : "PrimitiveType[1639-1643]:PrimitiveType[1584-1588]"
+  }, {
+    "left" : "InterruptedException",
+    "right" : "InterruptedException",
+    "info" : "SimpleType[1664-1684]:SimpleType[1609-1629]"
+  }, {
+    "left" : "IOException",
+    "right" : "IOException",
+    "info" : "SimpleType[1686-1697]:SimpleType[1631-1642]"
+  }, {
+    "left" : "ConfigurationException",
+    "right" : "ConfigurationException",
+    "info" : "SimpleType[1699-1721]:SimpleType[1644-1666]"
+  }, {
+    "left" : "{}",
+    "right" : "{}",
+    "info" : "Block[1726-4033]:Block[1671-3978]"
+  }, {
+    "left" : "StorageService.instance.initClient(0);",
+    "right" : "StorageService.instance.initClient(0);",
+    "info" : "ExpressionStatement[1820-1858]:ExpressionStatement[1765-1803]"
+  }, {
+    "left" : "SimpleSnitch ss = new SimpleSnitch();",
+    "right" : "SimpleSnitch ss = new SimpleSnitch();",
+    "info" : "VariableDeclarationStatement[1867-1904]:VariableDeclarationStatement[1812-1849]"
+  }, {
+    "left" : "DynamicEndpointSnitch dsnitch = new DynamicEndpointSnitch(ss, String.valueOf(ss.hashCode()));",
+    "right" : "DynamicEndpointSnitch dsnitch = new DynamicEndpointSnitch(ss, String.valueOf(ss.hashCode()));",
+    "info" : "VariableDeclarationStatement[1913-2006]:VariableDeclarationStatement[1858-1951]"
+  }, {
+    "left" : "InetAddress self = FBUtilities.getBroadcastAddress();",
+    "right" : "InetAddress self = FBUtilities.getBroadcastAddress();",
+    "info" : "VariableDeclarationStatement[2015-2068]:VariableDeclarationStatement[1960-2013]"
+  }, {
+    "left" : "InetAddress host1 = InetAddress.getByName(\"127.0.0.2\");",
+    "right" : "InetAddress host1 = InetAddress.getByName(\"127.0.0.2\");",
+    "info" : "VariableDeclarationStatement[2077-2132]:VariableDeclarationStatement[2022-2077]"
+  }, {
+    "left" : "InetAddress host2 = InetAddress.getByName(\"127.0.0.3\");",
+    "right" : "InetAddress host2 = InetAddress.getByName(\"127.0.0.3\");",
+    "info" : "VariableDeclarationStatement[2141-2196]:VariableDeclarationStatement[2086-2141]"
+  }, {
+    "left" : "InetAddress host3 = InetAddress.getByName(\"127.0.0.4\");",
+    "right" : "InetAddress host3 = InetAddress.getByName(\"127.0.0.4\");",
+    "info" : "VariableDeclarationStatement[2205-2260]:VariableDeclarationStatement[2150-2205]"
+  }, {
+    "left" : "List<InetAddress> hosts = Arrays.asList(host1, host2, host3);",
+    "right" : "List<InetAddress> hosts = Arrays.asList(host1, host2, host3);",
+    "info" : "VariableDeclarationStatement[2269-2330]:VariableDeclarationStatement[2214-2275]"
+  }, {
+    "left" : "setScores(dsnitch, 1, hosts, 10, 10, 10);",
+    "right" : "setScores(dsnitch, 1, hosts, 10, 10, 10);",
+    "info" : "ExpressionStatement[2379-2420]:ExpressionStatement[2324-2365]"
+  }, {
+    "left" : "List<InetAddress> order = Arrays.asList(host1, host2, host3);",
+    "right" : "List<InetAddress> order = Arrays.asList(host1, host2, host3);",
+    "info" : "VariableDeclarationStatement[2429-2490]:VariableDeclarationStatement[2374-2435]"
+  }, {
+    "left" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "right" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "info" : "ExpressionStatement[2499-2595]:ExpressionStatement[2444-2540]"
+  }, {
+    "left" : "setScores(dsnitch, 1, hosts, 20, 10, 10);",
+    "right" : "setScores(dsnitch, 1, hosts, 20, 10, 10);",
+    "info" : "ExpressionStatement[2642-2683]:ExpressionStatement[2587-2628]"
+  }, {
+    "left" : "order = Arrays.asList(host2, host3, host1);",
+    "right" : "order = Arrays.asList(host2, host3, host1);",
+    "info" : "ExpressionStatement[2692-2735]:ExpressionStatement[2637-2680]"
+  }, {
+    "left" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "right" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "info" : "ExpressionStatement[2744-2840]:ExpressionStatement[2689-2785]"
+  }, {
+    "left" : "setScores(dsnitch, 2, hosts, 15, 20, 10);",
+    "right" : "setScores(dsnitch, 2, hosts, 15, 20, 10);",
+    "info" : "ExpressionStatement[2888-2929]:ExpressionStatement[2833-2874]"
+  }, {
+    "left" : "order = Arrays.asList(host3, host1, host2);",
+    "right" : "order = Arrays.asList(host3, host1, host2);",
+    "info" : "ExpressionStatement[2938-2981]:ExpressionStatement[2883-2926]"
+  }, {
+    "left" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "right" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "info" : "ExpressionStatement[2990-3086]:ExpressionStatement[2935-3031]"
+  }, {
+    "left" : "setScores(dsnitch, 3, hosts, 10, 10, 30);",
+    "right" : "setScores(dsnitch, 3, hosts, 10, 10, 30);",
+    "info" : "ExpressionStatement[3128-3169]:ExpressionStatement[3073-3114]"
+  }, {
+    "left" : "order = Arrays.asList(host1, host2, host3);",
+    "right" : "order = Arrays.asList(host1, host2, host3);",
+    "info" : "ExpressionStatement[3178-3221]:ExpressionStatement[3123-3166]"
+  }, {
+    "left" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "right" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "info" : "ExpressionStatement[3230-3326]:ExpressionStatement[3175-3271]"
+  }, {
+    "left" : "setScores(dsnitch, 5, hosts, 10, 10, 10);",
+    "right" : "setScores(dsnitch, 5, hosts, 10, 10, 10);",
+    "info" : "ExpressionStatement[3378-3419]:ExpressionStatement[3323-3364]"
+  }, {
+    "left" : "order = Arrays.asList(host1, host2, host3);",
+    "right" : "order = Arrays.asList(host1, host2, host3);",
+    "info" : "ExpressionStatement[3428-3471]:ExpressionStatement[3373-3416]"
+  }, {
+    "left" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "right" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "info" : "ExpressionStatement[3480-3576]:ExpressionStatement[3425-3521]"
+  }, {
+    "left" : "setScores(dsnitch, 20, hosts, 10, 70, 20);",
+    "right" : "setScores(dsnitch, 20, hosts, 10, 70, 20);",
+    "info" : "ExpressionStatement[3828-3870]:ExpressionStatement[3773-3815]"
+  }, {
+    "left" : "order = Arrays.asList(host1, host3, host2);",
+    "right" : "order = Arrays.asList(host1, host3, host2);",
+    "info" : "ExpressionStatement[3879-3922]:ExpressionStatement[3824-3867]"
+  }, {
+    "left" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "right" : "assertEquals(order, dsnitch.getSortedListByProximity(self, Arrays.asList(host1, host2, host3)));",
+    "info" : "ExpressionStatement[3931-4027]:ExpressionStatement[3876-3972]"
+  } ]
+}

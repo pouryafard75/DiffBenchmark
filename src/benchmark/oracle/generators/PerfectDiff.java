@@ -48,8 +48,6 @@ public class PerfectDiff {
         }
         populateMappingsFromJson(mappings);
         ASTDiff astDiff = new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), rm_astDiff.src, rm_astDiff.dst, mappings);
-        astDiff.setSrcContents(this.rm_astDiff.getSrcContents());
-        astDiff.setDstContents(this.rm_astDiff.getDstContents());
         astDiff.computeEditScript(ptc, ctc);
         return astDiff;
     }

@@ -2,13 +2,13 @@ package gui.webdiff;
 
 import com.github.gumtreediff.utils.Pair;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
 import java.util.*;
 
 public class DirComparator {
-    private Map<String, String> fileContentsBeforeMap;
-    private Map<String, String> fileContentsAfterMap;
     private final List<ASTDiff> diffs;
+    private final ProjectASTDiff projectASTDiff;
     private Set<String> removedFilesName;
     private Set<String> addedFilesName;
     private Map<String,String> modifiedFilesName;
@@ -27,35 +27,23 @@ public class DirComparator {
     public Pair<String,String> getFileContentsPair(int id)
     {
         return new Pair<>(
-                diffs.get(id).getSrcContents(),
-                diffs.get(id).getDstContents()
+                projectASTDiff.getFileContentsBefore().get(diffs.get(id).getSrcPath()),
+                projectASTDiff.getFileContentsAfter().get(diffs.get(id).getDstPath())
         );
     }
 
-    public DirComparator(Set<ASTDiff> diffs)
+    public DirComparator(ProjectASTDiff projectASTDiff)
     {
-        this.diffs = new ArrayList<>(diffs);
-        fileContentsBeforeMap = new LinkedHashMap<>();
-        fileContentsAfterMap = new LinkedHashMap<>();
+        this.projectASTDiff = projectASTDiff;
+        this.diffs = new ArrayList<>(projectASTDiff.getDiffSet());
         modifiedFilesName = new LinkedHashMap<>();
 
-        populateNameToContentMap();
         compare();
     }
-    private void populateNameToContentMap()
-    {
-        for (ASTDiff diff : diffs) {
-            this.fileContentsBeforeMap.put(
-                    diff.getSrcPath(),diff.getSrcContents()
-            );
-            this.fileContentsAfterMap.put(
-                    diff.getDstPath(),diff.getDstContents()
-            );
-        }
-    }
+
     private void compare() {
-        Set<String> beforeFiles = fileContentsBeforeMap.keySet();
-        Set<String> afterFiles = fileContentsAfterMap.keySet();
+        Set<String> beforeFiles = projectASTDiff.getFileContentsBefore().keySet();
+        Set<String> afterFiles = projectASTDiff.getFileContentsAfter().keySet();
 
         removedFilesName = new HashSet<>(beforeFiles);
         addedFilesName = new HashSet<>(afterFiles);

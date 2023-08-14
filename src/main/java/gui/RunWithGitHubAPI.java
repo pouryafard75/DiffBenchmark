@@ -2,6 +2,7 @@ package gui;
 
 import org.refactoringminer.api.RefactoringMinerTimedOutException;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import gui.webdiff.WebDiff;
@@ -17,8 +18,8 @@ public class RunWithGitHubAPI {
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
 
-        Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
-        new WebDiff(astDiffs).run();
+        ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
+        new WebDiff(projectASTDiff).run();
 
     }
 }

@@ -43,7 +43,7 @@ public class CompareMappings {
             String bugID = Path.of(beforeDir).getFileName().toString();
             Defect4jCaseInfo defect4jCaseInfo = new Defect4jCaseInfo(projectDir, bugID);
             String afterDir = beforeDir.replace("before", "after");
-            Set<ASTDiff> diffSet = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(beforeDir), Path.of(afterDir));
+            Set<ASTDiff> diffSet = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(beforeDir), Path.of(afterDir)).getDiffSet();
             for (ASTDiff astDiff : diffSet) {
                 if (astDiff.getAllMappings().dstToSrcMultis().size() > 0 ) {
                     System.out.println(beforeDir);
@@ -64,7 +64,7 @@ public class CompareMappings {
             String bugID = Path.of(beforeDir).getFileName().toString();
             Defect4jCaseInfo defect4jCaseInfo = new Defect4jCaseInfo(projectDir, bugID);
             String afterDir = beforeDir.replace("before","after");
-            Set<ASTDiff> diffSet = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(beforeDir),Path.of(afterDir));
+            Set<ASTDiff> diffSet = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(beforeDir),Path.of(afterDir)).getDiffSet();
             boolean _SameWithGreedy = isAllIdentical(diffSet, GREEDY);
             boolean _SameWithSimple = isAllIdentical(diffSet, SIMPLE);
             boolean _SameWithAny = _SameWithGreedy || _SameWithSimple;

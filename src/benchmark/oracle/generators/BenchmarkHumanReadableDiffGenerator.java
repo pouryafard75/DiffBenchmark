@@ -11,6 +11,8 @@ import org.eclipse.jgit.revwalk.RevCommit;
 import org.eclipse.jgit.revwalk.RevWalk;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.actions.SimplifiedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
@@ -43,27 +45,26 @@ public class BenchmarkHumanReadableDiffGenerator {
     private void writeActiveTools(CaseInfo info) throws Exception {
         String repo = info.getRepo();
         String commit = info.getCommit();
+        ProjectASTDiff projectASTDiff;
         Set<ASTDiff> astDiffs;
         if (repo.contains("github")) {
             GitService gitService = new GitServiceImpl();
             String repoFolder = repo.substring(repo.lastIndexOf("/"), repo.indexOf(".git"));
             Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, repo);
 //            astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
-            astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit,100);
+            projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 100);
             populateContents(repo,commit);
-            System.out.println();
         }
         else{
             String projectDir = repo;
             String bugID = commit;
             Path beforePath = Path.of(getBeforeDir(projectDir, bugID));
             Path afterPath = Path.of(getAfterDir(projectDir, bugID));
-            astDiffs = new GitHistoryRefactoringMinerImpl().diffAtDirectories(
+            projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(
                     beforePath, afterPath);
             populateContents(beforePath.toFile(),afterPath.toFile());
-            System.out.println();
-
         }
+        astDiffs = projectASTDiff.getDiffSet();
         boolean succeed = false;
         for (ASTDiff astDiff : astDiffs) {
             try {
@@ -90,13 +91,13 @@ public class BenchmarkHumanReadableDiffGenerator {
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("IJM")) {
                     HumanReadableDiffGenerator ijmHDG =
-                            new HumanReadableDiffGenerator(repo, commit, new IJM(astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
+                            new HumanReadableDiffGenerator(repo, commit, new IJM(projectASTDiff,astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
                     ijmHDG.write(Configuration.IJM_PATH, astDiff.getSrcPath());
                 }
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("MTD")) {
                     HumanReadableDiffGenerator mtdHDG =
-                            new HumanReadableDiffGenerator(repo, commit, new MTDiff(astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
+                            new HumanReadableDiffGenerator(repo, commit, new MTDiff(projectASTDiff,astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
                     mtdHDG.write(Configuration.MTD_PATH, astDiff.getSrcPath());
                 }
                 succeed = true;
@@ -208,8 +209,6 @@ public class BenchmarkHumanReadableDiffGenerator {
         if (diff.mappings.size() != match.size())
             if (!astDiff.getSrcPath().equals("src_java_org_apache_commons_lang_math_NumberUtils.java"))
                 throw new RuntimeException("Mapping has been lost!");
-        diff.setSrcContents(astDiff.getSrcContents());
-        diff.setDstContents(astDiff.getDstContents());
         return diff;
     }
 }

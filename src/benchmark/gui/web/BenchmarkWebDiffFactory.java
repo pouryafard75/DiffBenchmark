@@ -1,21 +1,17 @@
 package benchmark.gui.web;
 
-import benchmark.oracle.generators.APIChangerException;
 import benchmark.oracle.generators.changeAPI.GT2;
 import benchmark.oracle.generators.changeAPI.IJM;
 import benchmark.oracle.generators.changeAPI.MTDiff;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.matchers.CompositeMatchers;
-import com.github.gumtreediff.matchers.heuristic.gt.AbstractSubtreeMatcher;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
-import java.io.IOException;
 import java.nio.file.Path;
-import java.util.HashMap;
 import java.util.LinkedHashSet;
-import java.util.Map;
 import java.util.Set;
 
 import static benchmark.utils.Helpers.diffByGumTree;
@@ -25,19 +21,19 @@ public class BenchmarkWebDiffFactory {
     public static BenchmarkWebDiff withURL(String url) throws Exception {
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
-        Set<ASTDiff> RM_astDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
-        return makeDiffs(RM_astDiff);
+        ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
+        return makeDiffs(projectASTDiff);
     }
     public static BenchmarkWebDiff withLocallyClonedRepo(String before, String after) throws Exception {
-        Set<ASTDiff> RM_astDiff = getRmAstDiff(before, after);
-        return makeDiffs(RM_astDiff);
+        return makeDiffs(getRmAstDiff(before, after));
     }
 
-    public static Set<ASTDiff> getRmAstDiff(String before, String after) {
+    public static ProjectASTDiff getRmAstDiff(String before, String after) {
         return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
     }
 
-    private static BenchmarkWebDiff makeDiffs(Set<ASTDiff> RM_astDiff) throws Exception {
+    private static BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM) throws Exception {
+        Set<ASTDiff> RM_astDiff = projectASTDiffByRM.getDiffSet();
         Set<Diff> GTG_astDiff = new LinkedHashSet<>();
         Set<Diff> GTS_astDiff = new LinkedHashSet<>();
         Set<Diff> IJM_astDiff = new LinkedHashSet<>();
@@ -47,10 +43,10 @@ public class BenchmarkWebDiffFactory {
             GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
             GTS_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.SimpleGumtree()));
 //            TODO: Fix the issue with IJM & MTDiff
-            IJM_astDiff.add(new IJM(astDiff).diff());
-            MTD_astDiff.add(new MTDiff(astDiff).diff());
-            GT2_astDiff.add(new GT2(astDiff).diff());
+            IJM_astDiff.add(new IJM(projectASTDiffByRM,astDiff).diff());
+            MTD_astDiff.add(new MTDiff(projectASTDiffByRM,astDiff).diff());
+            GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());
         }
-        return new BenchmarkWebDiff(RM_astDiff, GTG_astDiff, GTS_astDiff, IJM_astDiff, MTD_astDiff, GT2_astDiff);
+        return new BenchmarkWebDiff(projectASTDiffByRM, RM_astDiff, GTG_astDiff, GTS_astDiff, IJM_astDiff, MTD_astDiff, GT2_astDiff);
     }
 }

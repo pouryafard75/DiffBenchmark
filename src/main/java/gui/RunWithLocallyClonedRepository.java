@@ -4,6 +4,7 @@ import gui.webdiff.WebDiff;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
@@ -21,7 +22,7 @@ public class RunWithLocallyClonedRepository {
         String pathToClonedRepository = "tmp/" + projectName;
         Repository repository = gitService.cloneIfNotExists(pathToClonedRepository, repo);
 
-        Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
-        new WebDiff(astDiffs).run();
+        ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
+        new WebDiff(projectASTDiff).run();
     }
 }

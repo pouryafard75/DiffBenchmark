@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
 import benchmark.oracle.models.HumanReadableDiff;
@@ -31,6 +32,7 @@ public class BenchmarkMetricsComputer {
     private final List<CaseInfo> infos;
     private Map<CaseInfo, Set<ASTDiff>> diffs = new LinkedHashMap<>();
     private static final ObjectMapper mapper = new ObjectMapper();
+    private ProjectASTDiff projectASTDiff;
 
     public BenchmarkMetricsComputer(List<CaseInfo> info) throws Exception {
         this.infos = info;
@@ -50,15 +52,15 @@ public class BenchmarkMetricsComputer {
                 String repoFolder = repo.substring(repo.lastIndexOf("/"), repo.indexOf(".git"));
                 Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, repo);
 //                astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
-                astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit,1000);
+                projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
             }
             else{
                 String projectDir = repo;
                 String bugID = commit;
-                astDiffs = new GitHistoryRefactoringMinerImpl().diffAtDirectories(
+                projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(
                         Path.of(getBeforeDir(projectDir, bugID)), Path.of(getAfterDir(projectDir, bugID)));
             }
-            diffs.put(info, astDiffs);
+            diffs.put(info, projectASTDiff.getDiffSet());
         }
     }
     public List<DiffComparisonResult> generateBenchmarkStats() throws IOException {

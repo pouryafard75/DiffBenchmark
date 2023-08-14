@@ -2,6 +2,7 @@ package gui.webdiff;
 
 import com.github.gumtreediff.utils.Pair;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
 import spark.Spark;
@@ -24,15 +25,14 @@ public class WebDiff  {
 
     private final String toolName = "RefactoringMiner";
 
-    public Set<ASTDiff> diffs;
-
-
-    public WebDiff(Set<ASTDiff> diffs) {
-        this.diffs = diffs;
+    public ProjectASTDiff projectASTDiff;
+    public WebDiff(ProjectASTDiff projectASTDiff) {
+        this.projectASTDiff = projectASTDiff;
     }
 
-    public void run() {
-        DirComparator comperator = new DirComparator(diffs);
+    public void run() throws IOException {
+        DirComparator comperator = new DirComparator(projectASTDiff);
+        Runtime.getRuntime().exec(new String[]{"/bin/sh", "/Users/pourya/IdeaProjects/RM-ASTDiff/kill.sh"});
         configureSpark(comperator, this.port);
         Spark.awaitInitialization();
         System.out.println(String.format("Starting server: %s:%d.", "http://127.0.0.1", this.port));
@@ -56,14 +56,18 @@ public class WebDiff  {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView(toolName, astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, false);
             return render(view);
         });
         get("/monaco-diff/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new MonacoDiffView(toolName,astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, id,false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, id,false);
             return render(view);
         });
         get("/left/:id", (request, response) -> {

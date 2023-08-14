@@ -2,18 +2,20 @@ package gui;
 
 import gui.webdiff.WebDiff;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Set;
 
 public class RunWithTwoDirectories {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         final String projectRoot = System.getProperty("user.dir");
         String folder1 = projectRoot + "/tmp/v1/";
         String folder2 = projectRoot + "/tmp/v2/";
 
-        Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(folder1),Path.of(folder2));
-        new WebDiff(astDiffs).run();
+        ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(folder1), Path.of(folder2));
+        new WebDiff(projectASTDiff).run();
     }
 }

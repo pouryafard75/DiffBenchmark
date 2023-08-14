@@ -80,7 +80,7 @@ public class Snapshot {
             String beforeDir = getBeforeDir(projectDir,bugID);
             String afterDir = getAfterDir(projectDir,bugID);
             Set<ASTDiff> diffSet = new GitHistoryRefactoringMinerImpl().diffAtDirectories
-                    (Path.of(beforeDir), Path.of(afterDir));
+                    (Path.of(beforeDir), Path.of(afterDir)).getDiffSet();
             for (ASTDiff astDiff : diffSet) {
                 String outputDir = baseOutputPath + projectDir + "/" + bugID;
                 Files.createDirectories(Paths.get(outputDir));

@@ -72,22 +72,6 @@ public class GeneratorUtils {
                         name = child2.getLabel();
                     }
                 }
-                if (name != null && type != null) {
-                    if ((name.endsWith("s") || name.endsWith("List")) && i == children.size() - 2 && children.get(i + 1).getType().name.equals("Block") &&
-                            !type.endsWith("[]") && !type.contains("List") && !type.contains("Collection") && !type.contains("Iterable") && !type.contains("Set") && !type.contains("Iterator") && !type.contains("Array") &&
-                            !type.endsWith("s") && !type.toLowerCase().contains(name.toLowerCase()) &&
-                            !name.endsWith("ss") && !type.equals("boolean") && !type.equals("int")) {
-                        //hack for varargs
-                        sb.append(name + " " + type + "...");
-                    } else {
-                        sb.append(name + " " + type);
-                    }
-                }
-                if (i < children.size() - 1 && children.get(i + 1).getType().name.equals("SingleVariableDeclaration")) {
-                    sb.append(",").append(" ");
-                }
-            } else if (child.getType().name.equals("Block")) {
-                bodyFound = true;
             }
         }
         sb.append(")");
@@ -103,6 +87,7 @@ public class GeneratorUtils {
         }
         return sb.toString();
     }
+    private void a ( ) { }
     private static boolean isTypeNode(Tree child) {
         return child.getType().name.equals("SimpleType") ||
                 child.getType().name.equals("PrimitiveType") ||

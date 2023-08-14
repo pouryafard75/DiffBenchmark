@@ -6,6 +6,7 @@ import gui.webdiff.DirComparator;
 import gui.webdiff.MonacoDiffView;
 import gui.webdiff.VanillaDiffView;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
 import spark.Spark;
@@ -27,6 +28,7 @@ public class BenchmarkWebDiff {
     public static final String BOOTSTRAP_JS_URL = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js";
     public static final int port = 6868;
 
+    private final ProjectASTDiff projectASTDiff;
     public Set<ASTDiff> rmDiff;
     public Set<Diff> gtgDiff;
     public Set<Diff> gtsDiff;
@@ -35,7 +37,8 @@ public class BenchmarkWebDiff {
     public Set<Diff> gt2diff;
 
 
-    public BenchmarkWebDiff(Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd, Set<Diff> gt2) {
+    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd, Set<Diff> gt2) {
+        this.projectASTDiff = projectASTDiffByRM;
         this.rmDiff = rm;
         this.gtgDiff = gtg;
         this.gtsDiff = gts;
@@ -45,7 +48,7 @@ public class BenchmarkWebDiff {
     }
 
     public void run() {
-        DirComparator comperator = new DirComparator(rmDiff);
+        DirComparator comperator = new DirComparator(projectASTDiff);
         configureSpark(comperator, this.port);
         Spark.awaitInitialization();
         System.out.println(String.format("Starting server: %s:%d.", "http://127.0.0.1", this.port));
@@ -69,14 +72,18 @@ public class BenchmarkWebDiff {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("RefactoringMiner", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, false);
             return render(view);
         });
         get("/RMD-monaco/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new MonacoDiffView("RefactoringMiner", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), astDiff, id,false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, id,false);
             return render(view);
         });
         get("/GTG/:id", (request, response) -> {
@@ -91,7 +98,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("GumTree-Greedy", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, false);
             return render(view);
         });
         get("/GTG-monaco/:id", (request, response) -> {
@@ -106,7 +115,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new MonacoDiffView("GumTree-Greedy", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, id,false);
             return render(view);
         });
         get("/GTS/:id", (request, response) -> {
@@ -121,7 +132,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("GumTree-Simple", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, false);
             return render(view);
         });
 
@@ -137,7 +150,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new MonacoDiffView("GumTree-Simple", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, id,false);
             return render(view);
         });
         get("/IJM/:id", (request, response) -> {
@@ -152,7 +167,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("IJM", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, false);
             return render(view);
         });
 
@@ -168,7 +185,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new MonacoDiffView("IJM", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, id,false);
             return render(view);
         });
 
@@ -184,7 +203,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("MtDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, false);
             return render(view);
         });
 
@@ -200,7 +221,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new MonacoDiffView("MTDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, id,false);
             return render(view);
         });
 
@@ -216,7 +239,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new VanillaDiffView("GT2", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, false);
             return render(view);
         });
 
@@ -232,7 +257,9 @@ public class BenchmarkWebDiff {
             }
             ASTDiff astDiff = comperator.getASTDiff(id);
             Renderable view = new MonacoDiffView("GT2", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    astDiff.getSrcContents(), astDiff.getDstContents(), diff, id,false);
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, id,false);
             return render(view);
         });
 

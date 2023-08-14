@@ -2,6 +2,7 @@ package benchmark.others;
 
 import benchmark.defects4j.CompareMappings;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
@@ -41,7 +42,8 @@ public class Run {
         for (String url : urls) {
 //            System.out.println(url);
             i += 1;
-            Set<ASTDiff> diffSet = new GitHistoryRefactoringMinerImpl().diffAtCommit(URLHelper.getRepo(url),URLHelper.getCommit(url),1000);
+            ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(URLHelper.getRepo(url), URLHelper.getCommit(url), 1000);
+            Set<ASTDiff> diffSet = projectASTDiff.getDiffSet();
             boolean _SameWithGreedy = isAllIdentical(diffSet, GREEDY);
             boolean _SameWithSimple = isAllIdentical(diffSet, SIMPLE);
             boolean _SameWithAny = _SameWithGreedy || _SameWithSimple;

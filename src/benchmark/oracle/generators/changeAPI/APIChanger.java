@@ -9,6 +9,7 @@ import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import shaded.com.github.gumtreediff.gen.jdt.AbstractJdtTreeGenerator;
 import shaded.com.github.gumtreediff.matchers.Mapping;
@@ -22,14 +23,16 @@ import static benchmark.oracle.generators.changeAPI.Utils.mirrorTree;
 
 /* Created by pourya on 2023-04-17 8:10 p.m. */
 public abstract class APIChanger {
+    private final ProjectASTDiff projectASTDiff;
     private final ASTDiff rm_astDiff;
-    APIChanger(ASTDiff rm_astDiff){
+    APIChanger(ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff){
+        this.projectASTDiff = projectASTDiff;
         this.rm_astDiff = rm_astDiff;
     }
     public Matcher makeMappings() throws IOException {
         AbstractJdtTreeGenerator gen = new OptimizedJdtTreeGenerator();
-        String srcContents = this.rm_astDiff.getSrcContents();
-        String dstContents = this.rm_astDiff.getDstContents();
+        String srcContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getSrcPath());
+        String dstContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getDstPath());
         ITree srcITree = gen.generateFromString(srcContents).getRoot();
         ITree dstITree = gen.generateFromString(dstContents).getRoot();
         shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(getMatcherType()).createMatcher(srcITree, dstITree);
@@ -87,8 +90,6 @@ public abstract class APIChanger {
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(),diff.dst.getRoot());
         mappings.add(diff.mappings);
         ASTDiff astDiff = new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), diff.src, diff.dst, mappings);
-        astDiff.setSrcContents(this.rm_astDiff.getSrcContents());
-        astDiff.setDstContents(this.rm_astDiff.getDstContents());
         return astDiff;
     }
 }

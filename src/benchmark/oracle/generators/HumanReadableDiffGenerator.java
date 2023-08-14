@@ -14,7 +14,6 @@ import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.apache.commons.io.FileUtils;
 import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.SimplifiedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.actions.model.MoveIn;
 import org.refactoringminer.astDiff.actions.model.MoveOut;
 import org.refactoringminer.astDiff.matchers.Constants;
@@ -93,8 +92,8 @@ public class HumanReadableDiffGenerator {
                                     ((TreeAddition) e).getParent().toTreeString().equals(mapping.second.toTreeString()))
                             {
                                 String key = e.toString();
-                                result.interfileMappings.putIfAbsent(key, new NecessaryMappings());
-                                target = result.interfileMappings.get(key);
+                                result.interFileMappings.putIfAbsent(key, new NecessaryMappings());
+                                target = result.interFileMappings.get(key);
                                 if (e instanceof MoveIn)
                                 {
                                     currSrc = ((MoveIn) e).getSrcFile();
@@ -116,7 +115,7 @@ public class HumanReadableDiffGenerator {
                 }
             }
             else {
-                target = result.fileMappings;
+                target = result.intraFileMappings;
                 currSrc = astDiff.getSrcPath();
                 currDst = astDiff.getDstPath();
             }

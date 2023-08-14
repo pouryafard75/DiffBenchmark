@@ -12,11 +12,11 @@ public class HumanReadableDiff implements Serializable {
             .thenComparing(AbstractMapping::getLeftEndOffset)
             .thenComparing(AbstractMapping::getRightEndOffset);
 
-    public NecessaryMappings fileMappings;
-    public Map<String,NecessaryMappings> interfileMappings;
+    public NecessaryMappings intraFileMappings;
+    public Map<String,NecessaryMappings> interFileMappings;
 
     public HumanReadableDiff() {
-        fileMappings = new NecessaryMappings();
-        interfileMappings = new HashMap<>();
+        intraFileMappings = new NecessaryMappings();
+        interFileMappings = new HashMap<>();
     }
 }

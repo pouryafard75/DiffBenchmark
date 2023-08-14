@@ -36,10 +36,10 @@ public class DiffMetricsComputer {
     }
 
     public Stats programElementStats(){
-        return makeStats(godDiff.fileMappings.getMatchedElements(),toolDiff.fileMappings.getMatchedElements());
+        return makeStats(godDiff.intraFileMappings.getMatchedElements(),toolDiff.intraFileMappings.getMatchedElements());
     }
     public Stats mappingStats(){
-        return makeStats(godDiff.fileMappings.getMappings(),toolDiff.fileMappings.getMappings());
+        return makeStats(godDiff.intraFileMappings.getMappings(),toolDiff.intraFileMappings.getMappings());
     }
 
 }

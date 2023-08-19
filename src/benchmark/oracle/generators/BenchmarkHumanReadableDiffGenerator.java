@@ -206,7 +206,7 @@ public class BenchmarkHumanReadableDiffGenerator {
         ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(astDiff.src.getRoot(), astDiff.dst.getRoot());
         mappingStore.add(match);
         ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, mappingStore);
-        if (diff.mappings.size() != match.size())
+        if (diff.getAllMappings().size() != match.size())
             if (!astDiff.getSrcPath().equals("src_java_org_apache_commons_lang_math_NumberUtils.java"))
                 throw new RuntimeException("Mapping has been lost!");
         return diff;

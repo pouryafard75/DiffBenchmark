@@ -122,15 +122,15 @@ public class HumanReadableDiffGenerator {
             switch (firstType)
             {
                 case Constants.TYPE_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateClassSignature(mapping.first),generateClassSignature(mapping.second)), target);
+                    addAccordingly(new AbstractMapping(mapping,generateClassSignature(mapping.first,getSrcContent(currSrc)),generateClassSignature(mapping.second,getDstContent(currDst))), target);
                     handleTypeDeclaration(mapping,target,currSrc,currDst);
                     break;
                 case Constants.METHOD_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateMethodSignature(mapping.first),generateMethodSignature(mapping.second)), target);
+                    addAccordingly(new AbstractMapping(mapping,generateMethodSignature(mapping.first,getSrcContent(currSrc)),generateMethodSignature(mapping.second,getDstContent(currDst))), target);
                     handleMethodDeclaration(mapping,target,currSrc,currDst);
                     break;
                 case Constants.FIELD_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateFieldSignature(mapping.first),generateFieldSignature(mapping.second)), target);
+                    addAccordingly(new AbstractMapping(mapping,generateFieldSignature(mapping.first,getSrcContent(currSrc)),generateFieldSignature(mapping.second,getDstContent(currDst))), target);
                     handleFieldDeclaration(mapping,target,currSrc,currDst);
                     break;
             }

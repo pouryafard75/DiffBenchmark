@@ -44,7 +44,7 @@ public class GeneratorUtils {
             {
                 end = child.getPos() - 1;
             }
-            else if (child.getType().name.equals(Constants.JAVA_DOC))
+            else if (child.getType().name.equals(Constants.JAVA_DOC) || child.getType().name.contains("Annotation"))
             {
                 start = child.getPos() + child.getLength() + 1;
             }

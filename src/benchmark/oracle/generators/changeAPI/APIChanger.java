@@ -32,7 +32,7 @@ public abstract class APIChanger {
     public Matcher makeMappings() throws IOException {
         AbstractJdtTreeGenerator gen = new OptimizedJdtTreeGenerator();
         String srcContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getSrcPath());
-        String dstContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getDstPath());
+        String dstContents = projectASTDiff.getFileContentsAfter().get(rm_astDiff.getDstPath());
         ITree srcITree = gen.generateFromString(srcContents).getRoot();
         ITree dstITree = gen.generateFromString(dstContents).getRoot();
         shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(getMatcherType()).createMatcher(srcITree, dstITree);
@@ -42,6 +42,9 @@ public abstract class APIChanger {
     }
 
     public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();
+    public shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType(){
+        return new OptimizedJdtTreeGenerator();
+    }
     public Diff diff() throws Exception {
         Matcher m = makeMappings();
         Tree srcMirror = mirrorTree(m.getSrc());

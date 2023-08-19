@@ -1,6 +1,7 @@
 package benchmark.oracle.generators.changeAPI;
 
 
+import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
@@ -14,5 +15,10 @@ public class IJM extends APIChanger {
     public Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType() {
         return at.aau.softwaredynamics.matchers.JavaMatchers.IterativeJavaMatcher_V2.class;
     }
+    @Override
+    public shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType() {
+        return new OptimizedJdtTreeGenerator();
+    }
+
 
 }

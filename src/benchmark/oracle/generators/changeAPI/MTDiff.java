@@ -1,6 +1,7 @@
 package benchmark.oracle.generators.changeAPI;
 
 
+import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
@@ -13,5 +14,9 @@ public class MTDiff extends APIChanger {
     @Override
     public Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType() {
         return shaded.com.github.gumtreediff.matchers.OptimizedVersions.MtDiff.class;
+    }
+    @Override
+    public shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType() {
+        return new OptimizedJdtTreeGenerator();
     }
 }

@@ -1,5 +1,10 @@
 package benchmark.oracle.generators.changeAPI;
 
+import at.aau.softwaredynamics.gen.DocIgnoringTreeGenerator;
+import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
+import at.aau.softwaredynamics.gen.SpoonTreeGenerator;
+import com.github.gumtreediff.gen.TreeGenerator;
+import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import shaded.com.github.gumtreediff.matchers.CompositeMatchers;
@@ -13,5 +18,9 @@ public class GT2 extends APIChanger {
     @Override
     public Class<? extends Matcher> getMatcherType() {
         return CompositeMatchers.ClassicGumtree.class;
+    }
+    @Override
+    public shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType() {
+        return new OptimizedJdtTreeGenerator();
     }
 }

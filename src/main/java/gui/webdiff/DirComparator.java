@@ -53,6 +53,9 @@ public class DirComparator {
             removedFilesName.remove(diff.getSrcPath());
             addedFilesName.remove(diff.getDstPath());
         }
+        Set<String> removedBackup = new HashSet<>(removedFilesName);
+        removedFilesName.removeAll(addedFilesName);
+        addedFilesName.removeAll(removedBackup);
     }
     public ASTDiff getASTDiff(int id) {
         return diffs.get(id);

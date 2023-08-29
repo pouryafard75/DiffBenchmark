@@ -35,9 +35,10 @@ public class BenchmarkWebDiff {
     public Set<Diff> ijmDiff;
     public Set<Diff> mtdiff;
     public Set<Diff> gt2diff;
+    private final Set<ASTDiff> godDiff;
 
 
-    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd, Set<Diff> gt2) {
+    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Set<ASTDiff> rm, Set<Diff> gtg, Set<Diff> gts, Set<Diff> ijm, Set<Diff> mtd, Set<Diff> gt2, Set<ASTDiff> GOD_astDiff) {
         this.projectASTDiff = projectASTDiffByRM;
         this.rmDiff = rm;
         this.gtgDiff = gtg;
@@ -45,6 +46,7 @@ public class BenchmarkWebDiff {
         this.ijmDiff = ijm;
         this.mtdiff = mtd;
         this.gt2diff = gt2;
+        this.godDiff = GOD_astDiff;
     }
 
     public void run() {
@@ -65,7 +67,7 @@ public class BenchmarkWebDiff {
             return "";
         });
         get("/list", (request, response) -> {
-            Renderable view = new BenchmarkDirectoryDiffView(comperator);
+            Renderable view = new BenchmarkDirectoryDiffView(comperator,godDiff.size() > 0);
             return render(view);
         });
         get("/RMD/:id", (request, response) -> {
@@ -262,6 +264,40 @@ public class BenchmarkWebDiff {
                     diff, id,false);
             return render(view);
         });
+
+        get("/GOD/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<ASTDiff> iterator = godDiff.iterator();
+            ASTDiff astDiff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                astDiff = iterator.next();
+            }
+            Renderable view = new VanillaDiffView("PerfectDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, false);
+            return render(view);
+        });
+        get("/GOD-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<ASTDiff> iterator = godDiff.iterator();
+            ASTDiff astDiff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                astDiff = iterator.next();
+            }
+            Renderable view = new MonacoDiffView("PerfectDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, id,false);
+            return render(view);
+        });
+
 
 
 

@@ -69,7 +69,7 @@ public class BenchmarkHumanReadableDiffGenerator {
         for (ASTDiff astDiff : astDiffs) {
             try {
                 HumanReadableDiffGenerator perfectHDG =
-                        new HumanReadableDiffGenerator(repo, commit, new PerfectDiff(astDiff.getSrcPath(),astDiffs,repo,commit).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
+                        new HumanReadableDiffGenerator(repo, commit, new PerfectDiff(astDiff.getSrcPath(),projectASTDiff,repo,commit).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
                 perfectHDG.write(Configuration.GOD_PATH,astDiff.getSrcPath());
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("RMD")) { //This must be always active

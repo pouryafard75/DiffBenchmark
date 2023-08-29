@@ -3,10 +3,12 @@ package benchmark.oracle.generators;
 import benchmark.utils.Configuration;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.matchers.Constants;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
@@ -20,18 +22,18 @@ import java.util.Set;
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff {
     private static final String JSON_SUFFIX = ".json";
-    private final Set<ASTDiff> rm_diffSet;
     private final String repo;
     private final String commit;
+    private final ProjectASTDiff projectASTDiff;
     private ASTDiff rm_astDiff;
     private Map<String, TreeContext> ptc;
     private Map<String, TreeContext> ctc;
 
-    public PerfectDiff(String srcPath, Set<ASTDiff> rm_astDiff, String repo, String commit) {
-        this.rm_diffSet = rm_astDiff;
+    public PerfectDiff(String srcPath, ProjectASTDiff projectASTDiff, String repo, String commit) {
+        this.projectASTDiff = projectASTDiff;
         this.repo = repo;
         this.commit = commit;
-        rm_astDiff.forEach(astDiff -> {
+        projectASTDiff.getDiffSet().forEach(astDiff -> {
             if (astDiff.getSrcPath().equals(srcPath))
             {
                 this.rm_astDiff = astDiff;
@@ -42,9 +44,15 @@ public class PerfectDiff {
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(rm_astDiff.src.getRoot(),rm_astDiff.dst.getRoot());
         ptc = new HashMap<>();
         ctc = new HashMap<>();
-        for (ASTDiff diff : rm_diffSet) {
-            ptc.put(diff.getSrcPath(), diff.src);
-            ctc.put(diff.getDstPath(), diff.dst);
+        for (Map.Entry<String, String> stringStringEntry : projectASTDiff.getFileContentsBefore().entrySet()) {
+            String key = stringStringEntry.getKey();
+            String content = stringStringEntry.getValue();
+            ptc.put(key, new JdtTreeGenerator().generateFrom().string(content));
+        }
+        for (Map.Entry<String, String> stringStringEntry : projectASTDiff.getFileContentsAfter().entrySet()) {
+            String key = stringStringEntry.getKey();
+            String content = stringStringEntry.getValue();
+            ctc.put(key, new JdtTreeGenerator().generateFrom().string(content));
         }
         populateMappingsFromJson(mappings);
         ASTDiff astDiff = new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), rm_astDiff.src, rm_astDiff.dst, mappings);
@@ -58,8 +66,8 @@ public class PerfectDiff {
         Tree src = rm_astDiff.src.getRoot();
         Tree dst = rm_astDiff.dst.getRoot();
         for (MappingExportModel perfectMapping : perfectMappings) {
-            Tree srcNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(src, perfectMapping.getFirstPos(), perfectMapping.getFirstEndPos(),perfectMapping.getFirstType(), perfectMapping.getFirstParentType());
-            Tree dstNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(dst, perfectMapping.getSecondPos(), perfectMapping.getSecondEndPos(),perfectMapping.getSecondType(), perfectMapping.getSecondParentType());
+            Tree srcNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(src, perfectMapping.getFirstPos(), perfectMapping.getFirstEndPos(),perfectMapping.getFirstType(), perfectMapping.getFirstParentType(), perfectMapping.getFirstLabel());
+            Tree dstNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(dst, perfectMapping.getSecondPos(), perfectMapping.getSecondEndPos(),perfectMapping.getSecondType(), perfectMapping.getSecondParentType(), perfectMapping.getSecondLabel());
             if (srcNode == null || dstNode == null)
             {
                 if (srcNode != null || dstNode != null)
@@ -68,8 +76,9 @@ public class PerfectDiff {
                     if (srcNode == null) {
                         for (Map.Entry<String, TreeContext> stringTreeContextEntry : ptc.entrySet()) {
                             TreeContext value = stringTreeContextEntry.getValue();
-                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), perfectMapping.getFirstPos(), perfectMapping.getFirstEndPos(), perfectMapping.getFirstType(), perfectMapping.getFirstParentType());
-                            if (treeBetweenPositionsSecure != null) {
+                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), perfectMapping.getFirstPos(), perfectMapping.getFirstEndPos(), perfectMapping.getFirstType(), perfectMapping.getFirstParentType(), perfectMapping.getFirstLabel());
+                            if (treeBetweenPositionsSecure != null &&
+                                    treeBetweenPositionsSecure.getLabel().equals(perfectMapping.getFirstLabel())) {
                                 srcNode = treeBetweenPositionsSecure;
                                 break;
                             }
@@ -78,8 +87,9 @@ public class PerfectDiff {
                     else {
                         for (Map.Entry<String, TreeContext> stringTreeContextEntry : ctc.entrySet()) {
                             TreeContext value = stringTreeContextEntry.getValue();
-                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), perfectMapping.getSecondPos(), perfectMapping.getSecondEndPos(), perfectMapping.getSecondType(), perfectMapping.getSecondParentType());
-                            if (treeBetweenPositionsSecure != null) {
+                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), perfectMapping.getSecondPos(), perfectMapping.getSecondEndPos(), perfectMapping.getSecondType(), perfectMapping.getSecondParentType(), perfectMapping.getSecondLabel());
+                            if (treeBetweenPositionsSecure != null &&
+                                    treeBetweenPositionsSecure.getLabel().equals(perfectMapping.getSecondLabel())) {
                                 dstNode = treeBetweenPositionsSecure;
                                 break;
                             }

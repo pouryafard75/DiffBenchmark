@@ -14,10 +14,11 @@ import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class BenchmarkDirectoryDiffView implements Renderable {
     private final DirComparator comperator;
+    private final boolean perfectExists;
 
-    public BenchmarkDirectoryDiffView(DirComparator comperator) {
+    public BenchmarkDirectoryDiffView(DirComparator comperator, boolean perfectExists) {
         this.comperator = comperator;
-
+        this.perfectExists = perfectExists;
     }
 
     @Override
@@ -40,7 +41,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                         .span(class_("badge badge-secondary")).content(comperator.getModifiedFilesName().size())
                                     ._h4()
                                 ._div()
-                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName()), comperator.getModifiedFilesName().size() > 0)
+                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(),perfectExists), comperator.getModifiedFilesName().size() > 0)
                             ._div()
                         ._div()
                     ._div()
@@ -79,9 +80,11 @@ public class BenchmarkDirectoryDiffView implements Renderable {
 //        private List<Pair<File, File>> files;
 
         private Map<String,String> diffInfos;
+        private final boolean perfectExistence;
 
-        private ModifiedFiles(Map<String,String> diffInfos) {
+        private ModifiedFiles(Map<String,String> diffInfos, boolean perfectExists) {
             this.diffInfos = diffInfos;
+            perfectExistence = perfectExists;
         }
 
         @Override
@@ -104,6 +107,11 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                             .div(class_("btn-group"))
                                 //TODO: integrate this with the -g option
 //                                .if_(TreeGenerators.getInstance().hasGeneratorForFile(file.first.getAbsolutePath()))
+
+                                    .if_(perfectExistence)
+                                    .a(class_("btn btn-primary btn-sm").href("/GOD/" + id)).content("Perfect")
+                                    .a(class_("btn btn-primary btn-sm").href("/GOD-monaco/" + id)).content("Perfect-monaco")
+                                    ._if()
                                     .a(class_("btn btn-primary btn-sm").href("/RMD/" + id)).content("RMDiff")
                                     .a(class_("btn btn-primary btn-sm").href("/RMD-monaco/" + id)).content("RMD-monaco")
                                     .a(class_("btn btn-primary btn-sm").href("/GTG/" + id)).content("GTGreedy")

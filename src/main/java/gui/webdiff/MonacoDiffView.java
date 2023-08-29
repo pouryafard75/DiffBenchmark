@@ -205,8 +205,8 @@ public class MonacoDiffView implements Renderable {
     }
 
     private static String tooltip(Tree t) {
-        return (t.getParent() != null)
-                ? t.getParent().getType() + "/" + t.getType() : t.getType().toString();
+            return (t.getParent() != null)
+                    ? t.getParent().getType() + "/" + t.getType() + "/" + t.getPos() + "/" +  t.getEndPos() : t.getType().toString() + t.getPos() + t.getEndPos();
     }
 
     private static class MenuBar implements Renderable {

@@ -29,7 +29,7 @@ public class CompareWithLocalDirectories {
         BenchmarkWebDiff benchmarkWebDiff = null;
         try {
             benchmarkWebDiff = BenchmarkWebDiffFactory.withLocallyClonedRepo(
-                    getBeforeDir(projectDir, bugID), getAfterDir(projectDir, bugID));
+                    getBeforeDir(projectDir, bugID), getAfterDir(projectDir, bugID),projectDir,bugID);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -64,8 +64,8 @@ public class CompareWithLocalDirectories {
             throw new RuntimeException(e);
         }
         for (MappingExportModel mappingExportModel : mappingExportModelList) {
-            Tree t1 = TreeUtilFunctions.getTreeBetweenPositionsSecure(gts.src.getRoot(), mappingExportModel.getFirstPos(), mappingExportModel.getFirstEndPos(), mappingExportModel.getFirstType(),mappingExportModel.getFirstParentType());
-            Tree t2 = TreeUtilFunctions.getTreeBetweenPositionsSecure(gts.dst.getRoot(),mappingExportModel.getSecondPos(),mappingExportModel.getSecondEndPos(),mappingExportModel.getSecondType(),mappingExportModel.getSecondParentType());
+            Tree t1 = TreeUtilFunctions.getTreeBetweenPositionsSecure(gts.src.getRoot(), mappingExportModel.getFirstPos(), mappingExportModel.getFirstEndPos(), mappingExportModel.getFirstType(),mappingExportModel.getFirstParentType(),mappingExportModel.getFirstLabel());
+            Tree t2 = TreeUtilFunctions.getTreeBetweenPositionsSecure(gts.dst.getRoot(),mappingExportModel.getSecondPos(),mappingExportModel.getSecondEndPos(),mappingExportModel.getSecondType(),mappingExportModel.getSecondParentType(),mappingExportModel.getSecondLabel());
             if (t1 == null || t2 == null)
                 throw new RuntimeException("null tree");
 

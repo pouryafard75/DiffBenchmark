@@ -24,4 +24,21 @@ public class ChurnCalculatorTest {
         assertEquals(expectedAdded, churn.getLeft());
         assertEquals(expectedDeleted,churn.getRight());
     }
+    @ParameterizedTest
+    @CsvSource({
+            // CommitUrl, relativeAdded, relativeDeleted
+            "https://github.com/JetBrains/intellij-community/commit/e1f0dbc2f09541fc64ce88ee22d8f8f4648004fe, 0.040865384, 0.016431924",
+            "https://github.com/JetBrains/intellij-community/commit/a97341973c3b683d62d1422e5404ed5c7ccf45f8,0.083333336,0.011527377",
+            "https://github.com/openhab/openhab1-addons/commit/cf1efb6d27a4037cdbe5a780afa6053859a60d4a,0.57941175,0.078313254"
+
+
+    })
+    //TODO Fill the numbers
+    public void calculateRelativeAddDeleteChurnTest(String url, float relativeAdded, float relativeDeleted) {
+        ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(URLHelper.getRepo(url), URLHelper.getCommit(url), 1000);
+        Pair<Float, Float> churn = ChurnCalculator.calculateRelativeAddDeleteChurn(projectASTDiff);
+        assertEquals(relativeAdded, churn.getLeft());
+        assertEquals(relativeDeleted,churn.getRight());
+
+    }
 }

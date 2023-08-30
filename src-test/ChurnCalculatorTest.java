@@ -33,7 +33,6 @@ public class ChurnCalculatorTest {
 
 
     })
-    //TODO Fill the numbers
     public void calculateRelativeAddDeleteChurnTest(String url, float relativeAdded, float relativeDeleted) {
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(URLHelper.getRepo(url), URLHelper.getCommit(url), 1000);
         Pair<Float, Float> churn = ChurnCalculator.calculateRelativeAddDeleteChurn(projectASTDiff);

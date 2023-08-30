@@ -67,10 +67,10 @@ public class ChurnCalculator {
 
     public static Pair<Float, Float> calculateRelativeAddDeleteChurn(ProjectASTDiff projectASTDiff) {
 
-        Pair<Integer, Integer> chrun = calculateAddDeleteChurn(projectASTDiff);
+        Pair<Integer, Integer> churn = calculateAddDeleteChurn(projectASTDiff);
         Pair<Integer, Integer> size = calculateBeforeAfterSize(projectASTDiff);
         return Pair.of(
-                (float)chrun.getLeft() / (float)size.getLeft(),  ((float)chrun.getRight() / (float)size.getRight()));
+                (float)churn.getLeft() / (float)size.getLeft(),  ((float)churn.getRight() / (float)size.getRight()));
     }
 
     static Pair<Integer, Integer> addPair (Pair < Integer, Integer > p1, Pair < Integer, Integer > p2){

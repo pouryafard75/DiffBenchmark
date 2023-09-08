@@ -1,9 +1,11 @@
 package benchmark.metrics.computers;
 
+import benchmark.metrics.models.Stats;
 import benchmark.utils.CaseInfo;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.models.DiffIgnore;
 import benchmark.metrics.models.DiffStats;
+import benchmark.utils.Configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.api.GitService;
@@ -29,13 +31,16 @@ import static benchmark.utils.PathResolver.getAfterDir;
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {
 
-    private final List<CaseInfo> infos;
+    private final Set<CaseInfo> infos;
+    private final Configuration configuration;
     private Map<CaseInfo, Set<ASTDiff>> diffs = new LinkedHashMap<>();
     private static final ObjectMapper mapper = new ObjectMapper();
     private ProjectASTDiff projectASTDiff;
 
-    public BenchmarkMetricsComputer(List<CaseInfo> info) throws Exception {
-        this.infos = info;
+
+    public BenchmarkMetricsComputer(Configuration configuration) throws Exception {
+        infos = configuration.allCases;
+        this.configuration = configuration;
         runRMLocally();
     }
     public String[] getActiveTools(){
@@ -67,36 +72,41 @@ public class BenchmarkMetricsComputer {
         List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
         for (CaseInfo info : infos) {
             String folderPath = exportedFolderPathByCaseInfo(info);
-            String godFullFolderPath = GOD_PATH + folderPath;
-            Path dir = Paths.get(godFullFolderPath);
-            Files.walk(dir).filter(path -> path.toFile().isFile()).forEach(path ->
+            Path dir = Paths.get(configuration.output_folder + folderPath  + "/");
+//            Files.walk(dir).filter(path -> path.toFile().isFile()).forEach(path ->
+            final int minDepth = 1;
+            final int maxDepth = minDepth + 1;
+            Files.walk(dir,maxDepth)
+                    .filter(path-> path.toFile().isDirectory())
+                    .filter(path -> path.getNameCount() - dir.getNameCount() >= minDepth)
+                    .forEach( path ->
                     {
                         DiffComparisonResult diffComparisonResult = new DiffComparisonResult(info, path.getFileName().toString());
-                        String godFullPath = path.toString();
+                        String godFullPath = path + "/" +  GOD + ".json";
                         HumanReadableDiff godHRD;
-
+//
                         Set<ASTDiff> astDiffs = diffs.get(info);
-                        List<ASTDiff> collect = astDiffs.stream().filter(astDiff -> replaceFileName(astDiff.getSrcPath()).equals(path.getFileName().toString())).collect(Collectors.toList());
+                        List<ASTDiff> collect = astDiffs.stream().filter
+                                (astDiff -> fileNameAsFolder(astDiff.getSrcPath()).equals(path.getFileName().toString())).collect(Collectors.toList());
                         ASTDiff astDiff = null;
-                        if (collect.size() > 0)
+                        if (collect.size() == 1)
                             astDiff = collect.get(0);
                         if (astDiff == null)
                             throw new RuntimeException("ASTDiff is null!");
                         try {
                             godHRD = mapper.readValue(new File(godFullPath), HumanReadableDiff.class);
                         } catch (IOException e) {
-                            return;
+                            throw new RuntimeException(e);
                         }
                         for (Map.Entry<String, String> entry : toolPathMap.entrySet()) {
                             String toolDir = entry.getValue();
-                            String toolFullPath = godFullPath.replace(GOD_PATH, toolDir);
+                            String toolFullPath = godFullPath.replace(GOD, toolDir);
                             HumanReadableDiff toolHRD;
                             try {
                                 toolHRD = mapper.readValue(new File(toolFullPath), HumanReadableDiff.class);
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-
                             DiffStats diffStats = compareHumanReadableDiffs(godHRD, toolHRD);
                             diffComparisonResult.putStats(entry.getKey(), diffStats);
                         }
@@ -117,57 +127,57 @@ public class BenchmarkMetricsComputer {
         return repoFolder(info.getRepo()) +  "/" + info.getCommit();
     }
 
-    public static void writeStatsToCSV(List<DiffComparisonResult> stats, String[] activeTools) throws IOException {
-        FileWriter writer = new FileWriter(STATS_CSV);
-        String[] toolNames = activeTools;
-        writer.append("url,srcFileName,ignoredMappings,ignoredElements,");
-        int index = 0;
-        for (String toolName : toolNames) {
-            index += 1;
-            toolName = ""; //BE AWARE OF THIS
-//            toolName += "_";
-            writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN,");
-            writer.append(toolName).append("TP_raw,").append(toolName).append("TP,").append(toolName).append("FP,").append(toolName).append("FN");
-            if (index != toolNames.length)
-                writer.append(",");
-//            writer.append(toolName).append("_ELEMENTS_TP_ORIGINAL,").append(toolName).append("_ELEMENTS_TP_REFINED,").append(toolName).append("_ELEMENTS_FP,").append(toolName).append("_ELEMENTS_FN,");
+    public static void writeStatsToCSV2(List<DiffComparisonResult> stats, String[] activeTools) throws IOException {
+        try (FileWriter writer = new FileWriter(STATS_CSV)) {
+            writeHeader(writer, activeTools);
+            writeData(writer, stats, activeTools);
         }
-        writer.append("\n");
-        for (DiffComparisonResult stat : stats) {
-            writer.append(stat.getCaseInfo().makeURL());
-            writer.append(",");
-            writer.append(stat.getSrcFileName());
-            writer.append(",");
-            writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredMappings()));
-            writer.append(",");
-            writer.append(String.valueOf(stat.getIgnore().getNumberOfIgnoredElements()));
-            writer.append(",");
-            index = 0;
-            for (String toolName : toolNames) {
-                index ++;
-                DiffStats tool = stat.getDiffStatsList().get(toolName);
-                writer.append(String.valueOf(tool.getAbstractMappingStats().getTP()));
-                writer.append(",");
-                writer.append(String.valueOf(tool.getAbstractMappingStats().getTP() - stat.getIgnore().getNumberOfIgnoredMappings()));
-                writer.append(",");
-                writer.append(String.valueOf(tool.getAbstractMappingStats().getFP()));
-                writer.append(",");
-                writer.append(String.valueOf(tool.getAbstractMappingStats().getFN()));
-                writer.append(",");
-                writer.append(String.valueOf(tool.getProgramElementStats().getTP()));
-                writer.append(",");
-                writer.append(String.valueOf(tool.getProgramElementStats().getTP() - stat.getIgnore().getNumberOfIgnoredElements()));
-                writer.append(",");
-                writer.append(String.valueOf(tool.getProgramElementStats().getFP()));
-                writer.append(",");
-                writer.append(String.valueOf(tool.getProgramElementStats().getFN()));
-                if (index != toolNames.length)
-                    writer.append(",");
-                System.out.println("Csv generated for " + stat.getCaseInfo().makeURL());
+    }
+
+    private static void writeHeader(FileWriter writer, String[] activeTools) throws IOException {
+        StringBuilder header = new StringBuilder("url,srcFileName,ignoredMappings,ignoredElements,");
+
+            for (String toolName : activeTools) {
+                for (String criteria : new String[]{"abstractMapping", "programElement"}) {
+                    String prefixedToolName = toolName + "_";
+                    header
+                            .append(prefixedToolName).append("TP_raw_").append(criteria).append(",")
+                            .append(prefixedToolName).append("TP_").append(criteria).append(",")
+                            .append(prefixedToolName).append("FP_").append(criteria).append(",")
+                            .append(prefixedToolName).append("FN_").append(criteria).append(",");
+                }
             }
-            writer.append("\n");
+
+        header.deleteCharAt(header.length() - 1); // Remove trailing comma
+        header.append("\n");
+        writer.append(header.toString());
+    }
+
+    private static void writeData(FileWriter writer, List<DiffComparisonResult> stats, String[] activeTools) throws IOException {
+        for (DiffComparisonResult stat : stats) {
+            StringBuilder row = new StringBuilder();
+            row.append(stat.getCaseInfo().makeURL()).append(",")
+                    .append(stat.getSrcFileName()).append(",")
+                    .append(stat.getIgnore().getNumberOfIgnoredMappings()).append(",")
+                    .append(stat.getIgnore().getNumberOfIgnoredElements()).append(",");
+
+            for (String toolName : activeTools) {
+                DiffStats tool = stat.getDiffStatsList().get(toolName);
+                appendStats(row, tool.getAbstractMappingStats(), stat.getIgnore().getNumberOfIgnoredMappings());
+                appendStats(row, tool.getProgramElementStats(), stat.getIgnore().getNumberOfIgnoredElements());
+            }
+
+            row.deleteCharAt(row.length() - 1); // Remove trailing comma
+            row.append("\n");
+            writer.append(row.toString());
         }
-        writer.flush();
-        writer.close();
+    }
+
+    private static void appendStats(StringBuilder row, Stats stats, int ignore) {
+                row
+                .append(stats.getTP()).append(",")
+                .append(stats.getTP() - ignore).append(",")
+                .append(stats.getFP()).append(",")
+                .append(stats.getFN()).append(",");
     }
 }

@@ -9,6 +9,7 @@ import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
@@ -23,7 +24,7 @@ import static benchmark.utils.PathResolver.getBeforeDir;
 /* Created by pourya on 2023-05-02 5:15 p.m. */
 public class CompareWithLocalDirectories {
     static String projectDir = "Jsoup";
-    static String bugID = "50";
+    static String bugID = "75";
     public static void main(String[] args) throws IOException {
 
         BenchmarkWebDiff benchmarkWebDiff = null;
@@ -31,15 +32,15 @@ public class CompareWithLocalDirectories {
             benchmarkWebDiff = BenchmarkWebDiffFactory.withLocallyClonedRepo(
                     getBeforeDir(projectDir, bugID), getAfterDir(projectDir, bugID),projectDir,bugID);
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
-        benchmarkWebDiff.ijmDiff = loadCustomSet(benchmarkWebDiff, "_m.json");
+//        benchmarkWebDiff.ijmDiff = loadCustomSet(benchmarkWebDiff, "_m.json");
         benchmarkWebDiff.run();
-////
 //        int i = 0;
 //        for (Diff diff : benchmarkWebDiff.gtgDiff)
 //        {
-//            MappingExportModel.exportToFile(new File("gtg.json"),diff.mappings);
+//            MappingExportModel.exportToFile(new File(i + " gtg.json"),diff.mappings);
 //            i ++;
 //        }
 //////

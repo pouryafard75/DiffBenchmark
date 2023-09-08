@@ -2,14 +2,13 @@ package benchmark.utils;
 
 /* Created by pourya on 2023-04-17 7:29 p.m. */
 public class PathResolver {
-    public static String getFinalPath(String folderName, String fileName, String commit, String repo) {
-        String replacedFileName = replaceFileName(fileName);
+    public static String getCommonPath(String baseFolder, String fileName, String toolname, String commit, String repo) {
+        String replacedFileName = fileNameAsFolder(fileName);
         String repoReplaced = repoFolder(repo);
-        return folderName + repoReplaced + "/" + commit + "/" + replacedFileName;
+        return baseFolder + repoReplaced + "/" + commit + "/" + replacedFileName + "/" + toolname + ".json";
     }
-
-    public static String replaceFileName(String srcPath) {
-        return srcPath.replace("/", ".").replace(".java", ".json");
+    public static String fileNameAsFolder(String srcPath) {
+        return srcPath.replace(".java", "").replace("/", ".");
     }
 
     public static String repoFolder(String repo) {

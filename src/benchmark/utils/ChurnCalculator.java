@@ -41,11 +41,11 @@ public class ChurnCalculator {
         return Pair.of(linesAdded, linesDeleted);
     }
 
-    private static List<String> getLines(String oldContent) {
-        return oldContent.equals("") ? new ArrayList<>() : Arrays.asList(oldContent.split(lineBreak));
+    public static List<String> getLines(String content) {
+        return content.equals("") ? new ArrayList<>() : Arrays.asList(content.split(lineBreak));
     }
 
-    public static Pair<Integer,Integer> calculateAddDeleteChurn(ProjectASTDiff projectASTDiff) {
+    public static Pair<Integer,Integer> calculateAddDeleteChurn(ProjectASTDiff projectASTDiff, boolean includeAddedFiles, boolean includeRemovedFiles) {
 
         DirComparator dirComparator = new DirComparator(projectASTDiff);
         Pair<Integer, Integer> result = Pair.of(0, 0);
@@ -54,44 +54,54 @@ public class ChurnCalculator {
             String newContent = projectASTDiff.getFileContentsAfter().get(diff.getDstPath());
             result = addPair(result, calculateAddDeleteChurn(oldContent, newContent));
         }
-        for (String s : dirComparator.getAddedFilesName()) {
-            String newContent = projectASTDiff.getFileContentsAfter().get(s);
-            result = addPair(result, calculateAddDeleteChurn("", newContent));
+        if (includeAddedFiles) {
+            for (String s : dirComparator.getAddedFilesName()) {
+                String newContent = projectASTDiff.getFileContentsAfter().get(s);
+                result = addPair(result, calculateAddDeleteChurn("", newContent));
+            }
         }
-        for (String s : dirComparator.getRemovedFilesName()) {
-            String oldContent = projectASTDiff.getFileContentsBefore().get(s);
-            result = addPair(result, calculateAddDeleteChurn(oldContent, ""));
+        if (includeRemovedFiles) {
+            for (String s : dirComparator.getRemovedFilesName()) {
+                String oldContent = projectASTDiff.getFileContentsBefore().get(s);
+                result = addPair(result, calculateAddDeleteChurn(oldContent, ""));
+            }
         }
         return result;
     }
 
-    public static Pair<Float, Float> calculateRelativeAddDeleteChurn(ProjectASTDiff projectASTDiff) {
+    public static Pair<Float, Float> calculateRelativeAddDeleteChurn(ProjectASTDiff projectASTDiff, boolean includeAddedFiles, boolean includeRemovedFiles) {
 
-        Pair<Integer, Integer> churn = calculateAddDeleteChurn(projectASTDiff);
-        Pair<Integer, Integer> size = calculateBeforeAfterSize(projectASTDiff);
+        Pair<Integer, Integer> churn = calculateAddDeleteChurn(projectASTDiff,includeAddedFiles,includeRemovedFiles);
+        Pair<Integer, Integer> size = calculateAfterBeforeSize(projectASTDiff,includeAddedFiles,includeRemovedFiles);
         return Pair.of(
                 (float)churn.getLeft() / (float)size.getLeft(),  ((float)churn.getRight() / (float)size.getRight()));
     }
 
-    static Pair<Integer, Integer> addPair (Pair < Integer, Integer > p1, Pair < Integer, Integer > p2){
+    public static Pair<Integer, Integer> addPair (Pair < Integer, Integer > p1, Pair < Integer, Integer > p2){
         return Pair.of(p1.getLeft() + p2.getLeft(), p1.getRight() + p2.getRight());
     }
 
-    public static Pair<Integer, Integer> calculateBeforeAfterSize(ProjectASTDiff projectASTDiff) {
+    public static Pair<Integer, Integer> calculateAfterBeforeSize(ProjectASTDiff projectASTDiff, boolean includeAddedFiles, boolean includeRemovedFiles) {
         DirComparator dirComparator = new DirComparator(projectASTDiff);
         Pair<Integer, Integer> result = Pair.of(0, 0);
         for (ASTDiff diff : projectASTDiff.getDiffSet()) {
             String oldContent = projectASTDiff.getFileContentsBefore().get(diff.getSrcPath());
             String newContent = projectASTDiff.getFileContentsAfter().get(diff.getDstPath());
-            result = addPair(result,Pair.of(getLines(oldContent).size(), getLines(newContent).size()));
+            result = addPair(result,Pair.of(getLines(newContent).size(),getLines(oldContent).size()));
         }
-        for (String s : dirComparator.getAddedFilesName()) {
-            String newContent = projectASTDiff.getFileContentsAfter().get(s);
-            result = addPair(result,Pair.of(getLines("").size(), getLines(newContent).size()));
+        if (includeAddedFiles) {
+            for (String s : dirComparator.getAddedFilesName()) {
+                String newContent = projectASTDiff.getFileContentsAfter().get(s);
+                String oldContent = "";
+                result = addPair(result,Pair.of(getLines(newContent).size(),getLines(oldContent).size()));
+            }
         }
-        for (String s : dirComparator.getRemovedFilesName()) {
-            String oldContent = projectASTDiff.getFileContentsBefore().get(s);
-            result = addPair(result,Pair.of(getLines(oldContent).size(), getLines("").size()));
+        if (includeRemovedFiles) {
+            for (String s : dirComparator.getRemovedFilesName()) {
+                String newContent = "";
+                String oldContent = projectASTDiff.getFileContentsBefore().get(s);
+                result = addPair(result,Pair.of(getLines(newContent).size(),getLines(oldContent).size()));
+            }
         }
         return result;
     }
@@ -119,7 +129,16 @@ public class ChurnCalculator {
 
     private static Pair<Integer, Integer> singleFileRelativeChurn(String newContent, String oldContent) {
         Pair<Integer, Integer> churn = calculateAddDeleteChurn(oldContent, newContent);
-        Pair<Integer, Integer> size = Pair.of(getLines(oldContent).size(), getLines(newContent).size());
+        Pair<Integer, Integer> size = Pair.of(getLines(newContent).size(), getLines(oldContent).size());
         return Pair.of(churn.getLeft() / size.getLeft(), churn.getRight() / size.getRight());
+    }
+
+    public static void main(String[] args) {
+        String url = "https://github.com/spring-projects/spring-security/commit/fcc9a34356817d93c24b5ccf3107ec234a28b136";
+        ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(URLHelper.getRepo(url), URLHelper.getCommit(url), 1000);
+        Pair<Float, Float> res1 = calculateRelativeAddDeleteChurn(projectASTDiff, true, true);
+        Pair<Float, Float> res2 = calculateRelativeAddDeleteChurn(projectASTDiff, false, false);
+        System.out.println(res1);
+        System.out.println(res2);
     }
 }

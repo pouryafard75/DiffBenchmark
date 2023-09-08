@@ -1,6 +1,5 @@
 import benchmark.utils.ChurnCalculator;
 import org.apache.commons.lang3.tuple.Pair;
-import org.junit.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
@@ -20,22 +19,22 @@ public class ChurnCalculatorTest {
     })
     public void calculateAddDeleteChurnTest(String url, int expectedAdded, int expectedDeleted) {
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(URLHelper.getRepo(url), URLHelper.getCommit(url), 1000);
-        Pair<Integer, Integer> churn = ChurnCalculator.calculateAddDeleteChurn(projectASTDiff);
+        Pair<Integer, Integer> churn = ChurnCalculator.calculateAddDeleteChurn(projectASTDiff, true,true);
         assertEquals(expectedAdded, churn.getLeft());
         assertEquals(expectedDeleted,churn.getRight());
     }
     @ParameterizedTest
     @CsvSource({
             // CommitUrl, relativeAdded, relativeDeleted
-            "https://github.com/JetBrains/intellij-community/commit/e1f0dbc2f09541fc64ce88ee22d8f8f4648004fe, 0.040865384, 0.016431924",
-            "https://github.com/JetBrains/intellij-community/commit/a97341973c3b683d62d1422e5404ed5c7ccf45f8,0.083333336,0.011527377",
-            "https://github.com/openhab/openhab1-addons/commit/cf1efb6d27a4037cdbe5a780afa6053859a60d4a,0.57941175,0.078313254"
+            "https://github.com/JetBrains/intellij-community/commit/e1f0dbc2f09541fc64ce88ee22d8f8f4648004fe, 0.039906103, 0.016826924",
+            "https://github.com/JetBrains/intellij-community/commit/a97341973c3b683d62d1422e5404ed5c7ccf45f8,0.077809796,0.012345679",
+            "https://github.com/openhab/openhab1-addons/commit/cf1efb6d27a4037cdbe5a780afa6053859a60d4a,0.39558232,0.11470588"
 
 
     })
     public void calculateRelativeAddDeleteChurnTest(String url, float relativeAdded, float relativeDeleted) {
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(URLHelper.getRepo(url), URLHelper.getCommit(url), 1000);
-        Pair<Float, Float> churn = ChurnCalculator.calculateRelativeAddDeleteChurn(projectASTDiff);
+        Pair<Float, Float> churn = ChurnCalculator.calculateRelativeAddDeleteChurn(projectASTDiff,true,true);
         assertEquals(relativeAdded, churn.getLeft());
         assertEquals(relativeDeleted,churn.getRight());
 

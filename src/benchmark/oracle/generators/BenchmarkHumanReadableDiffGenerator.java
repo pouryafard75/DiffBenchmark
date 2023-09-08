@@ -12,7 +12,6 @@ import org.eclipse.jgit.revwalk.RevWalk;
 import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.astDiff.actions.SimplifiedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import org.refactoringminer.util.GitServiceImpl;
@@ -34,17 +33,22 @@ import static benchmark.utils.PathResolver.getBeforeDir;
 /* Created by pourya on 2023-02-08 3:00 a.m. */
 public class BenchmarkHumanReadableDiffGenerator {
 
+    private final Configuration configuration;
     private Map<String, String> fileContentsBefore;
     private Map<String, String> fileContentsCurrent;
 
-    public BenchmarkHumanReadableDiffGenerator(){
+    public BenchmarkHumanReadableDiffGenerator(Configuration current){
+        this.configuration = current;
     }
-    public void generate(CaseInfo info) throws Exception {
-        this.writeActiveTools(info);
+    public void generate() throws Exception {
+        for (CaseInfo info : configuration.allCases) {
+            this.writeActiveTools(info,configuration.output_folder);
+        }
     }
-    private void writeActiveTools(CaseInfo info) throws Exception {
+    private void writeActiveTools(CaseInfo info, String output_folder) throws Exception {
         String repo = info.getRepo();
         String commit = info.getCommit();
+        System.out.println("Started for " + repo + " " + commit);
         ProjectASTDiff projectASTDiff;
         Set<ASTDiff> astDiffs;
         if (repo.contains("github")) {
@@ -53,7 +57,8 @@ public class BenchmarkHumanReadableDiffGenerator {
             Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, repo);
 //            astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
             projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 100);
-            populateContents(repo,commit);
+            this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
+            this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
         }
         else{
             String projectDir = repo;
@@ -62,43 +67,44 @@ public class BenchmarkHumanReadableDiffGenerator {
             Path afterPath = Path.of(getAfterDir(projectDir, bugID));
             projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(
                     beforePath, afterPath);
-            populateContents(beforePath.toFile(),afterPath.toFile());
+            this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
+            this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
         }
         astDiffs = projectASTDiff.getDiffSet();
         boolean succeed = false;
         for (ASTDiff astDiff : astDiffs) {
             try {
                 HumanReadableDiffGenerator perfectHDG =
-                        new HumanReadableDiffGenerator(repo, commit, new PerfectDiff(astDiff.getSrcPath(),projectASTDiff,repo,commit).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
-                perfectHDG.write(Configuration.GOD_PATH,astDiff.getSrcPath());
+                        new HumanReadableDiffGenerator(repo, commit, new PerfectDiff(astDiff.getSrcPath(),projectASTDiff,repo,commit, configuration).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
+                perfectHDG.write(output_folder,astDiff.getSrcPath(),Configuration.GOD);
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("RMD")) { //This must be always active
                     HumanReadableDiffGenerator rmHDG = new HumanReadableDiffGenerator(repo, commit, astDiff, fileContentsBefore, fileContentsCurrent);
-                    rmHDG.write(Configuration.RMD_PATH, astDiff.getSrcPath());
+                    rmHDG.write(output_folder,astDiff.getSrcPath(),Configuration.RMD);
                 }
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("GTG")) {
                     HumanReadableDiffGenerator gtgHDG =
                             new HumanReadableDiffGenerator(repo, commit, makeASTDiffFromMatcher(new CompositeMatchers.ClassicGumtree(), astDiff), fileContentsBefore, fileContentsCurrent);
-                    gtgHDG.write(Configuration.GTG_PATH, astDiff.getSrcPath());
+                    gtgHDG.write(output_folder,astDiff.getSrcPath(),Configuration.GTG);
                 }
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("GTS")) {
                     HumanReadableDiffGenerator gtsHDG =
                             new HumanReadableDiffGenerator(repo, commit, makeASTDiffFromMatcher(new CompositeMatchers.SimpleGumtree(), astDiff), fileContentsBefore, fileContentsCurrent);
-                    gtsHDG.write(Configuration.GTS_PATH, astDiff.getSrcPath());
+                    gtsHDG.write(output_folder,astDiff.getSrcPath(),Configuration.GTS);
                 }
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("IJM")) {
                     HumanReadableDiffGenerator ijmHDG =
                             new HumanReadableDiffGenerator(repo, commit, new IJM(projectASTDiff,astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
-                    ijmHDG.write(Configuration.IJM_PATH, astDiff.getSrcPath());
+                    ijmHDG.write(output_folder,astDiff.getSrcPath(),Configuration.IJM);
                 }
                 //----------------------------------\\
                 if (Configuration.toolPathMap.containsKey("MTD")) {
                     HumanReadableDiffGenerator mtdHDG =
                             new HumanReadableDiffGenerator(repo, commit, new MTDiff(projectASTDiff,astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
-                    mtdHDG.write(Configuration.MTD_PATH, astDiff.getSrcPath());
+                    mtdHDG.write(output_folder,astDiff.getSrcPath(),Configuration.MTD);
                 }
                 succeed = true;
             }

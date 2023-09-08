@@ -113,9 +113,14 @@ public class HumanReadableDiffGenerator {
                         continue;
                     }
                 }
+                else {
+                    //TODO:
+                    continue;
+                }
             }
             else {
                 target = result.intraFileMappings;
+                _inter = false;
                 currSrc = astDiff.getSrcPath();
                 currDst = astDiff.getDstPath();
             }
@@ -292,7 +297,7 @@ public class HumanReadableDiffGenerator {
         }
         catch (Exception e)
         {
-            System.out.println("Error");
+            System.err.println("Error");
         }
         String res = "";
         try{
@@ -300,18 +305,18 @@ public class HumanReadableDiffGenerator {
         }
         catch (Exception e)
         {
-            System.out.println();
+            System.err.println("Error");
         }
         return res;
 
     }
-    public void write(String folderName, String srcPath) {
+    public void write(String output_folder, String srcPath, String fileName) {
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         DefaultPrettyPrinter printer = new DefaultPrettyPrinter().withObjectIndenter(new DefaultIndenter("    ", "\n"));
         try {
             String out = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(result);
             out = prettify(out);
-            FileUtils.writeStringToFile(new File(PathResolver.getFinalPath(folderName, srcPath, commit, repo)), out);
+            FileUtils.writeStringToFile(new File(PathResolver.getCommonPath(output_folder,srcPath,fileName,commit, repo)), out);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

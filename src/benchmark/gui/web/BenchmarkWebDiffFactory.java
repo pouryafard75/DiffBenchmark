@@ -4,6 +4,7 @@ import benchmark.oracle.generators.PerfectDiff;
 import benchmark.oracle.generators.changeAPI.GT2;
 import benchmark.oracle.generators.changeAPI.IJM;
 import benchmark.oracle.generators.changeAPI.MTDiff;
+import benchmark.utils.Configuration;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.matchers.CompositeMatchers;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -50,7 +51,7 @@ public class BenchmarkWebDiffFactory {
             GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());
             ASTDiff perfectDiff;
             try {
-                perfectDiff = new PerfectDiff(astDiff.getSrcPath(), projectASTDiffByRM, repo, commit).makeASTDiff();
+                perfectDiff = new PerfectDiff(astDiff.getSrcPath(), projectASTDiffByRM, repo, commit, Configuration.ConfigurationFactory.current()).makeASTDiff();
                 GOD_astDiff.add(perfectDiff);
             }
             catch (Exception e)

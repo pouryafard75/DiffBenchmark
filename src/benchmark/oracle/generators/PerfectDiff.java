@@ -17,7 +17,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff {
@@ -28,11 +27,13 @@ public class PerfectDiff {
     private ASTDiff rm_astDiff;
     private Map<String, TreeContext> ptc;
     private Map<String, TreeContext> ctc;
+    private final Configuration configuration;
 
-    public PerfectDiff(String srcPath, ProjectASTDiff projectASTDiff, String repo, String commit) {
+    public PerfectDiff(String srcPath, ProjectASTDiff projectASTDiff, String repo, String commit, Configuration configuration) {
         this.projectASTDiff = projectASTDiff;
         this.repo = repo;
         this.commit = commit;
+        this.configuration = configuration;
         projectASTDiff.getDiffSet().forEach(astDiff -> {
             if (astDiff.getSrcPath().equals(srcPath))
             {
@@ -105,7 +106,7 @@ public class PerfectDiff {
     }
 
     private String getFileNameBasedOnAST() {
-        String p = Configuration.perfectDiffDir + "/" + repoToFolder(repo) + "/" + commit + "/" + getFileNameFromSrcDiff(rm_astDiff.getSrcPath());
+        String p = configuration.perfectDiffDir + "/" + repoToFolder(repo) + "/" + commit + "/" + getFileNameFromSrcDiff(rm_astDiff.getSrcPath());
         File file = new File(p);
 
         return p;

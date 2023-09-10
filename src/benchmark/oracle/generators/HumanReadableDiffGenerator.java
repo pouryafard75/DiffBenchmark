@@ -3,6 +3,7 @@ package benchmark.oracle.generators;
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.oracle.models.NecessaryMappings;
+import benchmark.others.Run;
 import benchmark.utils.PathResolver;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -38,23 +39,17 @@ public class HumanReadableDiffGenerator {
     public HumanReadableDiffGenerator(String repo, String commit, ASTDiff astDiff, Map<String, String> fileContentsBefore, Map<String, String> fileContentsCurrent) throws Exception {
         this.repo = repo;
         this.commit = commit;
-//        this.src = astDiff.src.getRoot();
-//        this.dst = astDiff.dst.getRoot();
-//        this.mappings = astDiff.getAllMappings();
-//        this.es = astDiff.editScript;
         this.astDiff = astDiff;
-
         this.fileContentsBefore = fileContentsBefore;
         this.fileContentsCurrent = fileContentsCurrent;
         result = new HumanReadableDiff();
         make();
     }
-    private void make() throws Exception {
+    private void make() {
         newPopulation();
     }
 
     private void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
-        //TODO MAKE IT WORK FOR DIFFERENT TYPES
         if (!abstractMapping.getLeftType().equals(abstractMapping.getRightType()))
             return;
 //            throw new RuntimeException("Different AST TYPES!");
@@ -66,7 +61,7 @@ public class HumanReadableDiffGenerator {
         else
             target.getMappings().add(abstractMapping);
     }
-    private void newPopulation() throws Exception {
+    private void newPopulation() {
         String currSrc = "";
         String currDst = "";
         Tree src = astDiff.src.getRoot();
@@ -75,7 +70,7 @@ public class HumanReadableDiffGenerator {
         boolean _inter = false;
         for (Mapping mapping : astDiff.getAllMappings()) {
             if (isPartOfJavadoc(mapping)) continue;
-            if (isBetweenDifferentTypes(mapping)) continue;
+            if (isBetweenDifferentTypes(mapping)) throw new RuntimeException();
             String firstType = mapping.first.getType().name; //Second type definitely has the same type due to the previous check
             if (isInterFileMapping(mapping,src,dst))
             {
@@ -114,11 +109,12 @@ public class HumanReadableDiffGenerator {
                     }
                 }
                 else {
-                    //TODO:
+                    //Note: We are skipping anything except CD, MD, FD and statement for inter-files
                     continue;
                 }
             }
-            else {
+            else
+            {
                 target = result.intraFileMappings;
                 _inter = false;
                 currSrc = astDiff.getSrcPath();
@@ -127,22 +123,40 @@ public class HumanReadableDiffGenerator {
             switch (firstType)
             {
                 case Constants.TYPE_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateClassSignature(mapping.first,getSrcContent(currSrc)),generateClassSignature(mapping.second,getDstContent(currDst))), target);
-                    handleTypeDeclaration(mapping,target,currSrc,currDst);
+                    addAccordingly(
+                                new AbstractMapping(mapping,
+                                generateClassSignature(mapping.first,getSrcContent(currSrc)),
+                                generateClassSignature(mapping.second,getDstContent(currDst))),
+                            target);
+                    if (!_inter)
+                        handleTypeDeclaration(mapping,target,currSrc,currDst);
                     break;
                 case Constants.METHOD_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateMethodSignature(mapping.first,getSrcContent(currSrc)),generateMethodSignature(mapping.second,getDstContent(currDst))), target);
-                    handleMethodDeclaration(mapping,target,currSrc,currDst);
+                    addAccordingly(
+                            new AbstractMapping(
+                                mapping,
+                                generateMethodSignature(mapping.first,getSrcContent(currSrc)),
+                                generateMethodSignature(mapping.second,getDstContent(currDst))),
+                            target);
+                    if (!_inter)
+                        handleMethodDeclaration(mapping,target,currSrc,currDst);
                     break;
                 case Constants.FIELD_DECLARATION:
-                    addAccordingly(new AbstractMapping(mapping,generateFieldSignature(mapping.first,getSrcContent(currSrc)),generateFieldSignature(mapping.second,getDstContent(currDst))), target);
-                    handleFieldDeclaration(mapping,target,currSrc,currDst);
+                    addAccordingly(
+                            new AbstractMapping(
+                                mapping,generateFieldSignature(
+                                mapping.first,getSrcContent(currSrc)),
+                                generateFieldSignature(mapping.second,getDstContent(currDst))),
+                            target);
+                    if (!_inter)
+                        handleFieldDeclaration(mapping,target,currSrc,currDst);
                     break;
             }
             handleStatement(mapping, target,currSrc,currDst);
-            handleMove(mapping, target,currSrc,currDst);
-            //TODO MUST FIX THE ISSUE RELATED TO MULTI-MAPPINGS WITH UPDATE-MOVE ON TOP
-            handleUpdate(mapping, target,currSrc,currDst);
+            if (!_inter) {
+                handleMove(mapping, target, currSrc, currDst);
+                handleUpdate(mapping, target, currSrc, currDst);
+            }
         }
     }
     private void handleUpdate(Mapping mapping, NecessaryMappings target, String srcPath, String dstPath) {
@@ -170,7 +184,8 @@ public class HumanReadableDiffGenerator {
         }
     }
     private void handleTypeDeclaration(Mapping mapping, NecessaryMappings target, String srcPath, String dstPath) {
-        for (Mapping signatureMapping : getClassSignatureMappings(mapping, astDiff.getAllMappings())) {
+        Set<Mapping> classSignatureMappings = getClassSignatureMappings(mapping, astDiff.getAllMappings());
+        for (Mapping signatureMapping : classSignatureMappings) {
             addAccordingly(getAbstractMapping(signatureMapping, srcPath, dstPath), target);
         }
     }
@@ -210,12 +225,13 @@ public class HumanReadableDiffGenerator {
             if (isPartOfJavadoc(child)) continue;
             if (child.getType().name.equals(Constants.SIMPLE_NAME))
                 _met = true;
-            if (_met && !child.getType().name.equals(Constants.SIMPLE_TYPE))
+            else if (_met && !child.getType().name.equals(Constants.SIMPLE_TYPE))
                 break;
             Set<Tree> dsts = mappings.getDsts(child);
             if (dsts == null) continue;
             for (Tree mappedDst : dsts) {
-                abstractMappingSet.add(new Mapping(child, mappedDst));
+                if (sameHierarchy(mappedDst,mapping.second))
+                    abstractMappingSet.add(new Mapping(child, mappedDst));
             }
         }
         return abstractMappingSet;
@@ -228,16 +244,23 @@ public class HumanReadableDiffGenerator {
             Set<Tree> dsts = mappings.getDsts(child);
             if (dsts == null) continue;
             for (Tree mappedDst : dsts) {
-                abstractMappingSet.add(new Mapping(child, mappedDst));
+                if (sameHierarchy(mappedDst,mapping.second))
+                    abstractMappingSet.add(new Mapping(child, mappedDst));
             }
         }
         return abstractMappingSet;
+    }
+    public static boolean sameHierarchy(Tree node, Tree ancestor) {
+        if (node == ancestor) {
+            return true;
+        }
+        if (node.getParent() == null) return false;
+        return sameHierarchy(node.getParent(), ancestor);
     }
     private AbstractMapping getAbstractMapping(Mapping mapping, String srcPath, String dstPath) {
         String srcContent = getSrcContent(srcPath);
         String dstContent = getDstContent(dstPath);
         String srcString = "",dstString = "";
-//        if (!isInterFileMapping(mapping,src,dst)) { //TODO:
         if (true) {
             srcString = getString(mapping.first, srcContent);
             dstString = getString(mapping.second, dstContent);
@@ -292,23 +315,7 @@ public class HumanReadableDiffGenerator {
             case Constants.DO_STATEMENT:
                 return "do{...}";
         }
-        try{
-            content.substring(start, end);
-        }
-        catch (Exception e)
-        {
-            System.err.println("Error");
-        }
-        String res = "";
-        try{
-        res = content.substring(start, end);
-        }
-        catch (Exception e)
-        {
-            System.err.println("Error");
-        }
-        return res;
-
+        return content.substring(start, end);
     }
     public void write(String output_folder, String srcPath, String fileName) {
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);

@@ -17,8 +17,8 @@ import static benchmark.utils.Configuration.REPOS;
 /* Created by pourya on 2023-08-29 9:11 p.m. */
 public class checkNPE {
     public static void main(String[] args) throws Exception {
-        Configuration configuration = Configuration.ConfigurationFactory.current();
-        Set<CaseInfo> infos = configuration.allCases;
+        Configuration configuration = Configuration.ConfigurationFactory.getDefault();
+        Set<CaseInfo> infos = configuration.getAllCases();
         for (CaseInfo info : infos) {
             String repo = info.getRepo();
             String commit = info.getCommit();

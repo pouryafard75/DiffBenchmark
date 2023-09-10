@@ -51,7 +51,7 @@ public class BenchmarkWebDiffFactory {
             GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());
             ASTDiff perfectDiff;
             try {
-                perfectDiff = new PerfectDiff(astDiff.getSrcPath(), projectASTDiffByRM, repo, commit, Configuration.ConfigurationFactory.current()).makeASTDiff();
+                perfectDiff = new PerfectDiff(astDiff.getSrcPath(), projectASTDiffByRM, repo, commit, Configuration.ConfigurationFactory.getDefault()).makeASTDiff();
                 GOD_astDiff.add(perfectDiff);
             }
             catch (Exception e)

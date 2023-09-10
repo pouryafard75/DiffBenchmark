@@ -26,7 +26,7 @@ public class Helpers {
         EditScript actions = new SimplifiedChawatheScriptGenerator().computeActions(match);
         return new Diff(astDiff.src, astDiff.dst, match, actions);
     }
-    public static ProjectASTDiff make(String repo, String commit) throws Exception {
+    public static ProjectASTDiff runWhatever(String repo, String commit) throws Exception {
         ProjectASTDiff projectASTDiff;
         if (repo.contains("github")) {
             GitService gitService = new GitServiceImpl();

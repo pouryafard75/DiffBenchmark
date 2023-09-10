@@ -106,7 +106,7 @@ public class PerfectDiff {
     }
 
     private String getFileNameBasedOnAST() {
-        String p = configuration.perfectDiffDir + "/" + repoToFolder(repo) + "/" + commit + "/" + getFileNameFromSrcDiff(rm_astDiff.getSrcPath());
+        String p = configuration.getPerfectDiffDir() + "/" + repoToFolder(repo) + "/" + commit + "/" + getFileNameFromSrcDiff(rm_astDiff.getSrcPath());
         File file = new File(p);
 
         return p;

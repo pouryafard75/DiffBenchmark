@@ -1,5 +1,6 @@
 package benchmark.oracle.generators;
 
+import benchmark.oracle.generators.changeAPI.APIChanger;
 import benchmark.oracle.generators.changeAPI.IJM;
 import benchmark.oracle.generators.changeAPI.MTDiff;
 import benchmark.utils.CaseInfo;
@@ -27,6 +28,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static benchmark.utils.Configuration.REPOS;
+import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
 
@@ -41,180 +43,40 @@ public class BenchmarkHumanReadableDiffGenerator {
         this.configuration = current;
     }
     public void generate() throws Exception {
-        for (CaseInfo info : configuration.allCases) {
-            this.writeActiveTools(info,configuration.output_folder);
-        }
+        for (CaseInfo info : configuration.getAllCases())
+            this.writeActiveTools(info, configuration.getOutputFolder());
+        System.out.println("Finished generating human readable diffs...");
     }
     private void writeActiveTools(CaseInfo info, String output_folder) throws Exception {
         String repo = info.getRepo();
         String commit = info.getCommit();
         System.out.println("Started for " + repo + " " + commit);
-        ProjectASTDiff projectASTDiff;
-        Set<ASTDiff> astDiffs;
-        if (repo.contains("github")) {
-            GitService gitService = new GitServiceImpl();
-            String repoFolder = repo.substring(repo.lastIndexOf("/"), repo.indexOf(".git"));
-            Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, repo);
-//            astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
-            projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 100);
-            this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
-            this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
-        }
-        else{
-            String projectDir = repo;
-            String bugID = commit;
-            Path beforePath = Path.of(getBeforeDir(projectDir, bugID));
-            Path afterPath = Path.of(getAfterDir(projectDir, bugID));
-            projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(
-                    beforePath, afterPath);
-            this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
-            this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
-        }
-        astDiffs = projectASTDiff.getDiffSet();
-        boolean succeed = false;
+        ProjectASTDiff projectASTDiff = runWhatever(repo, commit);
+        this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
+        this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
+        Set<ASTDiff> astDiffs = projectASTDiff.getDiffSet();
         for (ASTDiff astDiff : astDiffs) {
-            try {
-                HumanReadableDiffGenerator perfectHDG =
-                        new HumanReadableDiffGenerator(repo, commit, new PerfectDiff(astDiff.getSrcPath(),projectASTDiff,repo,commit, configuration).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
-                perfectHDG.write(output_folder,astDiff.getSrcPath(),Configuration.GOD);
-                //----------------------------------\\
-                if (Configuration.toolPathMap.containsKey("RMD")) { //This must be always active
-                    HumanReadableDiffGenerator rmHDG = new HumanReadableDiffGenerator(repo, commit, astDiff, fileContentsBefore, fileContentsCurrent);
-                    rmHDG.write(output_folder,astDiff.getSrcPath(),Configuration.RMD);
-                }
-                //----------------------------------\\
-                if (Configuration.toolPathMap.containsKey("GTG")) {
-                    HumanReadableDiffGenerator gtgHDG =
-                            new HumanReadableDiffGenerator(repo, commit, makeASTDiffFromMatcher(new CompositeMatchers.ClassicGumtree(), astDiff), fileContentsBefore, fileContentsCurrent);
-                    gtgHDG.write(output_folder,astDiff.getSrcPath(),Configuration.GTG);
-                }
-                //----------------------------------\\
-                if (Configuration.toolPathMap.containsKey("GTS")) {
-                    HumanReadableDiffGenerator gtsHDG =
-                            new HumanReadableDiffGenerator(repo, commit, makeASTDiffFromMatcher(new CompositeMatchers.SimpleGumtree(), astDiff), fileContentsBefore, fileContentsCurrent);
-                    gtsHDG.write(output_folder,astDiff.getSrcPath(),Configuration.GTS);
-                }
-                //----------------------------------\\
-                if (Configuration.toolPathMap.containsKey("IJM")) {
-                    HumanReadableDiffGenerator ijmHDG =
-                            new HumanReadableDiffGenerator(repo, commit, new IJM(projectASTDiff,astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
-                    ijmHDG.write(output_folder,astDiff.getSrcPath(),Configuration.IJM);
-                }
-                //----------------------------------\\
-                if (Configuration.toolPathMap.containsKey("MTD")) {
-                    HumanReadableDiffGenerator mtdHDG =
-                            new HumanReadableDiffGenerator(repo, commit, new MTDiff(projectASTDiff,astDiff).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
-                    mtdHDG.write(output_folder,astDiff.getSrcPath(),Configuration.MTD);
-                }
-                succeed = true;
-            }
-//            catch (APIChangerException apiChangerException)
-//            {
-////                System.out.println(apiChangerException.getMessage());
-//                succeed = false;
-//            }
-            finally {
-                StringBuilder msg = new StringBuilder();
-                if (succeed)
-                    msg.append("Succeed");
-                else
-                    msg.append("Failed");
-                msg.append(" for ").append(new CaseInfo(repo,commit).makeURL());
-//                System.out.println(msg);
-            }
+            HumanReadableDiffGenerator perfectHDG =
+                    new HumanReadableDiffGenerator(repo, commit, new PerfectDiff(astDiff.getSrcPath(),projectASTDiff,repo,commit, configuration).makeASTDiff(), fileContentsBefore, fileContentsCurrent);
+            perfectHDG.write(output_folder,astDiff.getSrcPath(),Configuration.GOD);
             //----------------------------------\\
-
+            for (String tool : Configuration.getActiveTools()) {
+                String toolName = tool; //In case we later introduce a map from tool's name to tool's path
+                String toolPath = tool; //In case we later introduce a map from tool's name to tool's path
+                ASTDiff generated = generateBasedOnTool(tool, astDiff, projectASTDiff);
+                HumanReadableDiffGenerator humanReadableDiffGenerator = new HumanReadableDiffGenerator(repo, commit, generated, fileContentsBefore, fileContentsCurrent);
+                humanReadableDiffGenerator.write(output_folder,astDiff.getSrcPath(),toolPath);
+            }
         }
         System.out.println("Finished for " + repo + " " + commit);
     }
 
-    private void populateContents(String repo, String commitId) throws Exception {
-        GitService gitService = new GitServiceImpl();
-        String repoFolder = repo.substring(repo.lastIndexOf("/"), repo.indexOf(".git"));
-        Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, repo);
-        try (RevWalk walk = new RevWalk(repository)) {
-            RevCommit commit = walk.parseCommit(repository.resolve(commitId));
-            if (commit.getParentCount() > 0) {
-                walk.parseCommit(commit.getParent(0));
-                Set<String> filePathsBefore = new LinkedHashSet<String>();
-                Set<String> filePathsCurrent = new LinkedHashSet<String>();
-                Map<String, String> renamedFilesHint = new HashMap<String, String>();
-                gitService.fileTreeDiff(repository, commit, filePathsBefore, filePathsCurrent, renamedFilesHint);
-
-                Set<String> repositoryDirectoriesBefore = new LinkedHashSet<String>();
-                Set<String> repositoryDirectoriesCurrent = new LinkedHashSet<String>();
-                Map<String, String> fileContentsBefore = new LinkedHashMap<String, String>();
-                Map<String, String> fileContentsCurrent = new LinkedHashMap<String, String>();
-                if (!filePathsBefore.isEmpty() && !filePathsCurrent.isEmpty() && commit.getParentCount() > 0) {
-                    RevCommit parentCommit = commit.getParent(0);
-                    GitHistoryRefactoringMinerImpl.populateFileContents(repository, parentCommit, filePathsBefore, fileContentsBefore, repositoryDirectoriesBefore);
-                    GitHistoryRefactoringMinerImpl.populateFileContents(repository, commit, filePathsCurrent, fileContentsCurrent, repositoryDirectoriesCurrent);
-                }
-                this.fileContentsBefore = fileContentsBefore;
-                this.fileContentsCurrent = fileContentsCurrent;
-            }
-        }
-    }
-    private void populateContents(File previousFile, File nextFile){
-        Map<String, String> fileContentsBefore = new LinkedHashMap<String, String>();
-        Map<String, String> fileContentsCurrent = new LinkedHashMap<String, String>();
-        if(previousFile.exists() && nextFile.exists()) {
-            try {
-                if(previousFile.isDirectory() && nextFile.isDirectory()) {
-                    Set<String> repositoryDirectoriesBefore = new LinkedHashSet<String>();
-                    Set<String> repositoryDirectoriesCurrent = new LinkedHashSet<String>();
-                    populateFileContents(nextFile, getJavaFilePaths(nextFile), fileContentsCurrent, repositoryDirectoriesCurrent);
-                    populateFileContents(previousFile, getJavaFilePaths(previousFile), fileContentsBefore, repositoryDirectoriesBefore);
-
-                }
-                else if(previousFile.isFile() && nextFile.isFile()) {
-                    String previousFileName = previousFile.getName();
-                    String nextFileName = nextFile.getName();
-                    if(previousFileName.endsWith(".java") && nextFileName.endsWith(".java")) {
-                        Set<String> repositoryDirectoriesBefore = new LinkedHashSet<String>();
-                        Set<String> repositoryDirectoriesCurrent = new LinkedHashSet<String>();
-                        populateFileContents(nextFile.getParentFile(), List.of(nextFileName), fileContentsCurrent, repositoryDirectoriesCurrent);
-                        populateFileContents(previousFile.getParentFile(), List.of(previousFileName), fileContentsBefore, repositoryDirectoriesBefore);
-                    }
-                }
-            }
-            catch (Exception e) {
-            }
-        }
-        this.fileContentsBefore = fileContentsBefore;
-        this.fileContentsCurrent = fileContentsCurrent;
-    }
-    private static List<String> getJavaFilePaths(File folder) throws IOException {
-        Stream<Path> walk = Files.walk(Paths.get(folder.toURI()));
-        List<String> paths = walk.map(x -> x.toString())
-                .filter(f -> f.endsWith(".java"))
-                .map(x -> x.substring(folder.getPath().length()+1).replaceAll(systemFileSeparator, "/"))
-                .collect(Collectors.toList());
-        walk.close();
-        return paths;
-    }
-    private static void populateFileContents(File projectFolder, List<String> filePaths, Map<String, String> fileContents,	Set<String> repositoryDirectories) throws IOException {
-        for(String path : filePaths) {
-            String fullPath = projectFolder + File.separator + path.replaceAll("/", systemFileSeparator);
-            String contents = FileUtils.readFileToString(new File(fullPath));
-            fileContents.put(path, contents);
-            String directory = new String(path);
-            while(directory.contains("/")) {
-                directory = directory.substring(0, directory.lastIndexOf("/"));
-                repositoryDirectories.add(directory);
-            }
-        }
-    }
-    private static final String systemFileSeparator = Matcher.quoteReplacement(File.separator);
-
-    private static ASTDiff makeASTDiffFromMatcher(CompositeMatchers.CompositeMatcher matcher, ASTDiff astDiff) {
-        MappingStore match = matcher.match(astDiff.src.getRoot(), astDiff.dst.getRoot());
-        ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(astDiff.src.getRoot(), astDiff.dst.getRoot());
-        mappingStore.add(match);
-        ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, mappingStore);
-        if (diff.getAllMappings().size() != match.size())
-            if (!astDiff.getSrcPath().equals("src_java_org_apache_commons_lang_math_NumberUtils.java"))
-                throw new RuntimeException("Mapping has been lost!");
-        return diff;
+    private ASTDiff generateBasedOnTool(String tool, ASTDiff rm_astDiff, ProjectASTDiff projectASTDiff) throws Exception {
+        if      (tool.equals(Configuration.RMD)) return rm_astDiff;
+        else if (tool.equals(Configuration.GTG)) return APIChanger.makeASTDiffFromMatcher(new CompositeMatchers.ClassicGumtree(),rm_astDiff);
+        else if (tool.equals(Configuration.GTS)) return APIChanger.makeASTDiffFromMatcher(new CompositeMatchers.SimpleGumtree(), rm_astDiff);
+        else if (tool.equals(Configuration.IJM)) return new IJM(projectASTDiff,rm_astDiff).makeASTDiff();
+        else if (tool.equals(Configuration.MTD)) return new MTDiff(projectASTDiff,rm_astDiff).makeASTDiff();
+        else throw new RuntimeException("Tool not found!");
     }
 }

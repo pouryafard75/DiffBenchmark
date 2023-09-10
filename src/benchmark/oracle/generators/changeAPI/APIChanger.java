@@ -5,6 +5,7 @@ import at.aau.softwaredynamics.matchers.MatcherFactory;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
+import com.github.gumtreediff.matchers.CompositeMatchers;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
@@ -94,5 +95,16 @@ public abstract class APIChanger {
         mappings.add(diff.mappings);
         ASTDiff astDiff = new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), diff.src, diff.dst, mappings);
         return astDiff;
+    }
+
+    public static ASTDiff makeASTDiffFromMatcher(CompositeMatchers.CompositeMatcher matcher, ASTDiff astDiff) {
+        MappingStore match = matcher.match(astDiff.src.getRoot(), astDiff.dst.getRoot());
+        ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(astDiff.src.getRoot(), astDiff.dst.getRoot());
+        mappingStore.add(match);
+        ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, mappingStore);
+        if (diff.getAllMappings().size() != match.size())
+            if (!astDiff.getSrcPath().equals("src_java_org_apache_commons_lang_math_NumberUtils.java"))
+                throw new RuntimeException("Mapping has been lost!");
+        return diff;
     }
 }

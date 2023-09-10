@@ -1,41 +1,43 @@
 package benchmark.metrics;
 
 import benchmark.utils.CaseInfo;
-import benchmark.utils.ChurnCalculator;
 import benchmark.utils.Configuration;
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gui.webdiff.DirComparator;
+import jdk.management.jfr.ConfigurationInfo;
 import org.apache.commons.lang3.tuple.Pair;
-import org.eclipse.jgit.lib.Repository;
-import org.refactoringminer.api.GitService;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
-import org.refactoringminer.util.GitServiceImpl;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
 
 import static benchmark.utils.ChurnCalculator.*;
-import static benchmark.utils.Helpers.make;
+import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-08-30 8:54 p.m. */
 public class DatasetDetailedChurnToCSV {
     private static final boolean includeAddedAndRemovedFiles = true;
+    private static final Configuration config;
+
+    static {
+        try {
+            config = Configuration.ConfigurationFactory.getDefault();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     //url addedInModifiedFiles deletedFromModifiedFiles sizeOfModifiedFilesNew sizeOfModifiedFilesOld addedFilesSize removedFilesSize
     public static void main(String[] args) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         ArrayList<String> lines = new ArrayList<>();
         int i = 0;
         String delimiter = "\t";
-        for (CaseInfo info : Configuration.ConfigurationFactory.current().allCases) {
-            ProjectASTDiff projectASTDiff = make(info.getRepo(), info.getCommit());
+        for (CaseInfo info : config.getAllCases()) {
+            ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
 //            if (projectASTDiff.getDiffSet().size() > 2 ) continue;
             String url = info.makeURL();
             int addedInModifiedFiles = 0;

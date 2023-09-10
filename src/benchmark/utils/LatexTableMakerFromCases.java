@@ -9,7 +9,7 @@ import java.util.Set;
 public class LatexTableMakerFromCases {
     public static void main(String[] args) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        Set<CaseInfo> infos = Configuration.ConfigurationFactory.current().allCases;
+        Set<CaseInfo> infos = Configuration.ConfigurationFactory.getDefault().getAllCases();
         StringBuilder sb = new StringBuilder();
         for (CaseInfo info : infos) {
             String repo = info.getRepo();

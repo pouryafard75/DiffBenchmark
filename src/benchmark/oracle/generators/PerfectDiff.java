@@ -1,5 +1,6 @@
 package benchmark.oracle.generators;
 
+import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,16 +24,18 @@ public class PerfectDiff {
     private static final String JSON_SUFFIX = ".json";
     private final String repo;
     private final String commit;
+    private final String srcPath;
     private final ProjectASTDiff projectASTDiff;
     private ASTDiff rm_astDiff;
     private Map<String, TreeContext> ptc;
     private Map<String, TreeContext> ctc;
     private final Configuration configuration;
 
-    public PerfectDiff(String srcPath, ProjectASTDiff projectASTDiff, String repo, String commit, Configuration configuration) {
+    public PerfectDiff(ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, CaseInfo info, Configuration configuration) {
+        this.srcPath = rm_astDiff.getSrcPath();
         this.projectASTDiff = projectASTDiff;
-        this.repo = repo;
-        this.commit = commit;
+        this.repo = info.getRepo();
+        this.commit = info.getCommit();
         this.configuration = configuration;
         projectASTDiff.getDiffSet().forEach(astDiff -> {
             if (astDiff.getSrcPath().equals(srcPath))
@@ -98,7 +101,11 @@ public class PerfectDiff {
                     }
                 }
                 else{
-                    throw new Exception("bug bug bug");
+                    //TODO:
+//                    System.out.println(srcPath);
+                    System.out.println(perfectMapping);
+//                    continue;
+//                    throw new Exception("bug bug bug");
                 }
             }
             mappings.addMapping(srcNode, dstNode);

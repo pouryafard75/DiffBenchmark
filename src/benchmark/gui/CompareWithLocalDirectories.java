@@ -2,6 +2,7 @@ package benchmark.gui;
 
 import benchmark.gui.web.BenchmarkWebDiff;
 import benchmark.gui.web.BenchmarkWebDiffFactory;
+import benchmark.utils.CaseInfo;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.gumtreediff.actions.Diff;
@@ -11,6 +12,8 @@ import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.matchers.ProjectASTDiffer;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
@@ -30,7 +33,7 @@ public class CompareWithLocalDirectories {
         BenchmarkWebDiff benchmarkWebDiff = null;
         try {
             benchmarkWebDiff = BenchmarkWebDiffFactory.withLocallyClonedRepo(
-                    getBeforeDir(projectDir, bugID), getAfterDir(projectDir, bugID),projectDir,bugID);
+                    getBeforeDir(projectDir, bugID), getAfterDir(projectDir, bugID),new CaseInfo(projectDir, bugID));
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException(e);

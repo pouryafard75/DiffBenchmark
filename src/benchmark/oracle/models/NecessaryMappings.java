@@ -16,17 +16,8 @@ public class NecessaryMappings {
     public Set<AbstractMapping> getMatchedElements() {
         return matchedElements;
     }
-
-    public void setMatchedElements(Set<AbstractMapping> matchedElements) {
-        this.matchedElements = matchedElements;
-    }
-
     public Set<AbstractMapping> getMappings() {
         return mappings;
-    }
-
-    public void setMappings(Set<AbstractMapping> mappings) {
-        this.mappings = mappings;
     }
 
 }

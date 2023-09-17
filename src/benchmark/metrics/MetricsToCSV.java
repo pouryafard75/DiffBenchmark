@@ -3,6 +3,7 @@ package benchmark.metrics;
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.utils.Configuration;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.List;
 
@@ -13,5 +14,6 @@ public class MetricsToCSV {
                 Configuration.ConfigurationFactory.getDefault());
         List<DiffComparisonResult> stats = benchmarkMetricsComputer.generateBenchmarkStats();
         benchmarkMetricsComputer.writeStatsToCSV(stats);
+        ObjectMapper mapper = new ObjectMapper();
     }
 }

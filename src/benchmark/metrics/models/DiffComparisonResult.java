@@ -1,5 +1,6 @@
 package benchmark.metrics.models;
 
+import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 
 import java.util.LinkedHashMap;
@@ -10,7 +11,7 @@ public class DiffComparisonResult {
     final CaseInfo caseInfo;
     final String srcFileName;
     final Map<String, DiffStats> diffStatsList = new LinkedHashMap<>();
-    private DiffIgnore ignore = null;
+    private HumanReadableDiff ignore = null;
 
     public DiffComparisonResult(CaseInfo caseInfo, String srcFileName) {
         this.caseInfo = caseInfo;
@@ -29,11 +30,11 @@ public class DiffComparisonResult {
         return srcFileName;
     }
 
-    public void setIgnore(DiffIgnore ignore) {
+    public void setIgnore(HumanReadableDiff ignore) {
         this.ignore = ignore;
     }
 
-    public DiffIgnore getIgnore() {
+    public HumanReadableDiff getIgnore() {
         return ignore;
     }
 

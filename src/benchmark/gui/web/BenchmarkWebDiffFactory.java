@@ -4,6 +4,7 @@ import benchmark.oracle.generators.PerfectDiff;
 import benchmark.oracle.generators.changeAPI.GT2;
 import benchmark.oracle.generators.changeAPI.IJM;
 import benchmark.oracle.generators.changeAPI.MTDiff;
+import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.matchers.CompositeMatchers;
@@ -24,17 +25,18 @@ public class BenchmarkWebDiffFactory {
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
-        return makeDiffs(projectASTDiff,repo,commit);
+        return makeDiffs(projectASTDiff,new CaseInfo(repo,commit));
     }
-    public static BenchmarkWebDiff withLocallyClonedRepo(String before, String after, String repo, String commit) throws Exception {
-        return makeDiffs(getRmAstDiff(before, after), repo, commit);
+    public static BenchmarkWebDiff withLocallyClonedRepo(String before, String after, CaseInfo info) throws Exception {
+        return makeDiffs(getRmAstDiff(before, after), info);
     }
 
     public static ProjectASTDiff getRmAstDiff(String before, String after) {
         return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
     }
 
-    private static BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, String repo, String commit) throws Exception {
+    private static BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, CaseInfo info) throws Exception {
+
         Set<ASTDiff> RM_astDiff = projectASTDiffByRM.getDiffSet();
         Set<Diff> GTG_astDiff = new LinkedHashSet<>();
         Set<Diff> GTS_astDiff = new LinkedHashSet<>();
@@ -51,7 +53,9 @@ public class BenchmarkWebDiffFactory {
             GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());
             ASTDiff perfectDiff;
             try {
-                perfectDiff = new PerfectDiff(astDiff.getSrcPath(), projectASTDiffByRM, repo, commit, Configuration.ConfigurationFactory.getDefault()).makeASTDiff();
+                String repo = info.getRepo();
+                Configuration conf =  (repo.contains(".git")) ? Configuration.ConfigurationFactory.refOracle() : Configuration.ConfigurationFactory.defects4j();
+                perfectDiff = new PerfectDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff();
                 GOD_astDiff.add(perfectDiff);
             }
             catch (Exception e)

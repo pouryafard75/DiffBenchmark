@@ -31,7 +31,7 @@ public class checkNPE {
                 try {
                     projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 100);
                     for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
-                        PerfectDiff perfectDiff = new PerfectDiff(astDiff.getSrcPath(), projectASTDiff, repo, commit, configuration);
+                        PerfectDiff perfectDiff = new PerfectDiff(projectASTDiff, astDiff, info, configuration);
                         try {
                             perfectDiff.makeASTDiff();
                         }

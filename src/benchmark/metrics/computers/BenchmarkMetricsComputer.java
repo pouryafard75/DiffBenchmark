@@ -1,19 +1,15 @@
 package benchmark.metrics.computers;
 
-import benchmark.metrics.models.Stats;
-import benchmark.utils.CaseInfo;
+import antlr.collections.AST;
 import benchmark.metrics.models.DiffComparisonResult;
-import benchmark.metrics.models.DiffIgnore;
 import benchmark.metrics.models.DiffStats;
-import benchmark.utils.Configuration;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.eclipse.jgit.lib.Repository;
-import org.refactoringminer.api.GitService;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
-import org.refactoringminer.util.GitServiceImpl;
+import benchmark.metrics.models.Stats;
 import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.utils.CaseInfo;
+import benchmark.utils.Configuration;
+import benchmark.utils.ASTDiffTool;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,13 +17,12 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
-import static benchmark.utils.Configuration.*;
-import static benchmark.utils.Helpers.runWhatever;
-import static benchmark.utils.PathResolver.*;
-import static benchmark.utils.PathResolver.getAfterDir;
+import static benchmark.utils.PathResolver.repoFolder;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {
@@ -35,22 +30,20 @@ public class BenchmarkMetricsComputer {
     private final static boolean INCLUDE_INTER_FILE_MAPPINGS = true;
     private final Set<CaseInfo> infos;
     private final Configuration configuration;
-    private final Map<CaseInfo, Set<ASTDiff>> rm_astdiffs = new LinkedHashMap<>();
+//    private final Map<CaseInfo, ProjectASTDiff> rm_projectDiff = new LinkedHashMap<>();
     private static final ObjectMapper mapper = new ObjectMapper();
 
 
     public BenchmarkMetricsComputer(Configuration configuration) throws Exception {
         infos = configuration.getAllCases();
         this.configuration = configuration;
+        System.out.println("Populating RM on " + infos.size() + " cases...");
         runRMLocally();
+        System.out.println("Finished populating RM on " + infos.size() + " cases...");
     }
 
     private void runRMLocally() throws Exception {
-        for (CaseInfo info : infos)
-            rm_astdiffs.put(
-                    info,
-                    runWhatever(info.getRepo(), info.getCommit()).getDiffSet()
-            );
+        int loaded = 0;
     }
     public List<DiffComparisonResult> generateBenchmarkStats() throws IOException {
         List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
@@ -61,17 +54,12 @@ public class BenchmarkMetricsComputer {
             List<Path> paths = getPaths(dir, 1);
             for (Path path : paths) {
                 DiffComparisonResult diffComparisonResult = new DiffComparisonResult(info, path.getFileName().toString());
-                String godFullPath = path + "/" +  GOD + ".json";
-                Set<ASTDiff> astDiffs = rm_astdiffs.get(info);
-                List<ASTDiff> collected = astDiffs.stream()
-                        .filter(astDiff -> fileNameAsFolder(astDiff.getSrcPath()).equals(path.getFileName().toString()))
-                        .collect(Collectors.toList());
-                if (collected.size() != 1 || collected.get(0) == null)
-                    throw new RuntimeException("ASTDiff is null!");
-                ASTDiff astDiff = collected.get(0);
+                String godFullPath = path + "/" +  ASTDiffTool.GOD.name() + ".json";
+                mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
                 HumanReadableDiff godHRD = mapper.readValue(new File(godFullPath), HumanReadableDiff.class);
                 populateComparisonResult(diffComparisonResult, godFullPath, godHRD);
-                DiffIgnore diffIgnore = new DiffIgnore(astDiff.src.getRoot(), astDiff.dst.getRoot());
+                String ignorePath = godFullPath.replace(ASTDiffTool.GOD.name(), ASTDiffTool.TRV.name());
+                HumanReadableDiff diffIgnore =  mapper.readValue(new File(ignorePath), HumanReadableDiff.class);
                 diffComparisonResult.setIgnore(diffIgnore);
                 benchmarkStats.add(diffComparisonResult);
             }
@@ -81,11 +69,13 @@ public class BenchmarkMetricsComputer {
         return benchmarkStats;
     }
 
-    private static void populateComparisonResult(DiffComparisonResult diffComparisonResult, String godFullPath, HumanReadableDiff godHRD) throws IOException {
-        for (String tool : activeTools) {
-            String toolName = tool;
-            String toolPath = tool;
-            String toolFullPath = godFullPath.replace(GOD, toolPath);
+    private void populateComparisonResult(DiffComparisonResult diffComparisonResult, String godFullPath, HumanReadableDiff godHRD) throws IOException {
+        for (ASTDiffTool tool : this.configuration.getActiveTools()) {
+            if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
+                continue;
+            String toolName = tool.name(); //In case we later introduce a map from tool's name to tool's path
+            String toolPath = tool.name(); //In case we later introduce a map from tool's name to tool's path
+            String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
             HumanReadableDiff toolHRD;
             toolHRD = mapper.readValue(new File(toolFullPath), HumanReadableDiff.class);
             DiffStats diffStats = compareHumanReadableDiffs(godHRD, toolHRD);
@@ -112,16 +102,19 @@ public class BenchmarkMetricsComputer {
     }
 
     public void writeStatsToCSV(List<DiffComparisonResult> stats) throws IOException {
-        String[] activeTools = Configuration.getActiveTools();
+        ASTDiffTool[] activeTools = configuration.getActiveTools();
         try (FileWriter writer = new FileWriter(configuration.getOutputFolder() + configuration.getCsvDestinationFile())) {
             writeHeader(writer, activeTools);
             writeData(writer, stats, activeTools);
         }
     }
 
-    private static void writeHeader(FileWriter writer, String[] activeTools) throws IOException {
+    private static void writeHeader(FileWriter writer, ASTDiffTool[] activeTools) throws IOException {
         StringBuilder header = new StringBuilder("url,srcFileName,ignoredMappings,ignoredElements,");
-        for (String toolName : activeTools) {
+        for (ASTDiffTool tool : activeTools) {
+            if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
+                continue;
+            String toolName = tool.name();
             for (String criteria : new String[]{"abstractMapping", "programElement"}) {
                 String prefixedToolName = toolName + "_";
                 header
@@ -136,20 +129,22 @@ public class BenchmarkMetricsComputer {
         writer.append(header.toString());
     }
 
-    private static void writeData(FileWriter writer, List<DiffComparisonResult> stats, String[] activeTools) throws IOException {
+    private static void writeData(FileWriter writer, List<DiffComparisonResult> stats, ASTDiffTool[] activeTools) throws IOException {
         for (DiffComparisonResult stat : stats) {
             StringBuilder row = new StringBuilder();
             row.append(stat.getCaseInfo().makeURL()).append(",")
                     .append(stat.getSrcFileName()).append(",")
-                    .append(stat.getIgnore().getNumberOfIgnoredMappings()).append(",")
-                    .append(stat.getIgnore().getNumberOfIgnoredElements()).append(",");
+                    .append(stat.getIgnore().intraFileMappings.getMappings().size()).append(",")
+                    .append(stat.getIgnore().intraFileMappings.getMatchedElements().size()).append(",");
 
-            for (String toolName : activeTools) {
-                DiffStats tool = stat.getDiffStatsList().get(toolName);
-                appendStats(row, tool.getAbstractMappingStats(), stat.getIgnore().getNumberOfIgnoredMappings());
-                appendStats(row, tool.getProgramElementStats(), stat.getIgnore().getNumberOfIgnoredElements());
+            for (ASTDiffTool tool : activeTools) {
+                if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
+                    continue;
+                String toolName = tool.name();
+                DiffStats toolStat = stat.getDiffStatsList().get(toolName);
+                appendStats(row, toolStat.getAbstractMappingStats(), stat.getIgnore().intraFileMappings.getMappings().size());
+                appendStats(row, toolStat.getProgramElementStats(), stat.getIgnore().intraFileMappings.getMatchedElements().size());
             }
-
             row.deleteCharAt(row.length() - 1); // Remove trailing comma
             row.append("\n");
             writer.append(row.toString());

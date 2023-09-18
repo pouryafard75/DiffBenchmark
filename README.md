@@ -41,8 +41,8 @@ String projectName = repo.substring(repo.lastIndexOf("/") + 1, repo.length() - 4
 String pathToClonedRepository = "tmp/" + projectName;
 Repository repository = gitService.cloneIfNotExists(pathToClonedRepository, repo);
 
-Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
-new WebDiff(astDiffs).run();
+ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
+new WebDiff(projectASTDiff).run();
 ```
 ## With two directories containing Java source code
 
@@ -52,8 +52,8 @@ final String projectRoot = System.getProperty("user.dir");
 String folder1 = projectRoot + "/tmp/v1/";
 String folder2 = projectRoot + "/tmp/v2/";
 
-Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(folder1),Path.of(folder2));
-new WebDiff(astDiffs).run();
+ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(folder1), Path.of(folder2));
+new WebDiff(projectASTDiff).run();
 ```
 
 ## With all information fetched directly from GitHub
@@ -66,7 +66,7 @@ String url = "https://github.com/JetBrains/intellij-community/commit/7ed3f273ab0
 String repo = URLHelper.getRepo(url);
 String commit = URLHelper.getCommit(url);
 
-Set<ASTDiff> astDiffs = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
-new WebDiff(astDiffs).run();
+ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repo, commit, 1000);
+new WebDiff(projectASTDiff).run();
 ```
 

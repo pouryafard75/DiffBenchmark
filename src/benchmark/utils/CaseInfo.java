@@ -8,6 +8,7 @@ public class CaseInfo implements Serializable {
     String repo;
     String commit;
 
+
     public CaseInfo(String repo, String commit) {
         this.repo = repo;
         this.commit = commit;

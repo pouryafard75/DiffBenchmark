@@ -1,4 +1,4 @@
-import benchmark.utils.ChurnCalculator;
+import benchmark.metrics.ChurnCalculator;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -9,7 +9,6 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChurnCalculatorTest {
-
     @ParameterizedTest
     @CsvSource({
             // CommitUrl, expectedAdded, expectedDeleted

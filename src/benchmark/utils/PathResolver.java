@@ -29,7 +29,6 @@ public class PathResolver {
     }
 
     public static String getDefect4jDir() {
-        String dir =  System.getProperty("user.dir") + "/datasets/defects4j/";
-        return dir;
+        return System.getProperty("user.dir") + "/datasets/defects4j/";
     }
 }

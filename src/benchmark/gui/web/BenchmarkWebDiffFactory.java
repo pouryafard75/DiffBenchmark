@@ -1,11 +1,12 @@
 package benchmark.gui.web;
 
-import benchmark.oracle.generators.PerfectDiff;
-import benchmark.oracle.generators.changeAPI.GT2;
-import benchmark.oracle.generators.changeAPI.IJM;
-import benchmark.oracle.generators.changeAPI.MTDiff;
+import benchmark.oracle.generators.tools.runners.PerfectDiff;
+import benchmark.oracle.generators.tools.runners.GT2;
+import benchmark.oracle.generators.tools.runners.IJM;
+import benchmark.oracle.generators.tools.runners.MTDiff;
 import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration;
+import benchmark.utils.Configuration.Configuration;
+import benchmark.utils.Configuration.ConfigurationFactory;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.matchers.CompositeMatchers;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -54,7 +55,7 @@ public class BenchmarkWebDiffFactory {
             ASTDiff perfectDiff;
             try {
                 String repo = info.getRepo();
-                Configuration conf =  (repo.contains(".git")) ? Configuration.ConfigurationFactory.refOracle() : Configuration.ConfigurationFactory.defects4j();
+                Configuration conf =  (repo.contains(".git")) ? ConfigurationFactory.refOracle() : ConfigurationFactory.defects4j();
                 perfectDiff = new PerfectDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff();
                 GOD_astDiff.add(perfectDiff);
             }

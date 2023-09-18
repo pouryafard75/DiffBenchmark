@@ -1,7 +1,11 @@
 package benchmark.oracle.generators;
 
+import benchmark.oracle.generators.diff.HumanReadableDiffGenerator;
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.models.DiffToolFactory;
 import benchmark.utils.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import benchmark.utils.Configuration.Configuration;
+import benchmark.utils.Configuration.GenerationStrategy;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 

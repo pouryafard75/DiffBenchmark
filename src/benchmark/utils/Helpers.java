@@ -14,7 +14,7 @@ import org.refactoringminer.util.GitServiceImpl;
 
 import java.nio.file.Path;
 
-import static benchmark.utils.Configuration.REPOS;
+import static benchmark.utils.Configuration.Configuration.REPOS;
 import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
 

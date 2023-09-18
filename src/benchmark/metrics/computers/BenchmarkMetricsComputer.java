@@ -1,13 +1,12 @@
 package benchmark.metrics.computers;
 
-import antlr.collections.AST;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
 import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration;
-import benchmark.utils.ASTDiffTool;
+import benchmark.utils.Configuration.Configuration;
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -26,24 +25,17 @@ import static benchmark.utils.PathResolver.repoFolder;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {
-
-    private final static boolean INCLUDE_INTER_FILE_MAPPINGS = true;
+    private final boolean INCLUDE_INTER_FILE_MAPPINGS;
     private final Set<CaseInfo> infos;
     private final Configuration configuration;
 //    private final Map<CaseInfo, ProjectASTDiff> rm_projectDiff = new LinkedHashMap<>();
     private static final ObjectMapper mapper = new ObjectMapper();
 
 
-    public BenchmarkMetricsComputer(Configuration configuration) throws Exception {
+    public BenchmarkMetricsComputer(Configuration configuration, boolean includeInterFileMappings) throws Exception {
         infos = configuration.getAllCases();
         this.configuration = configuration;
-        System.out.println("Populating RM on " + infos.size() + " cases...");
-        runRMLocally();
-        System.out.println("Finished populating RM on " + infos.size() + " cases...");
-    }
-
-    private void runRMLocally() throws Exception {
-        int loaded = 0;
+        INCLUDE_INTER_FILE_MAPPINGS = includeInterFileMappings;
     }
     public List<DiffComparisonResult> generateBenchmarkStats() throws IOException {
         List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
@@ -73,12 +65,11 @@ public class BenchmarkMetricsComputer {
         for (ASTDiffTool tool : this.configuration.getActiveTools()) {
             if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
                 continue;
-            String toolName = tool.name(); //In case we later introduce a map from tool's name to tool's path
-            String toolPath = tool.name(); //In case we later introduce a map from tool's name to tool's path
+            String toolPath = tool.name();
             String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
             HumanReadableDiff toolHRD;
             toolHRD = mapper.readValue(new File(toolFullPath), HumanReadableDiff.class);
-            DiffStats diffStats = compareHumanReadableDiffs(godHRD, toolHRD);
+            DiffStats diffStats = compareHumanReadableDiffs(godHRD, toolHRD, INCLUDE_INTER_FILE_MAPPINGS);
             diffComparisonResult.putStats(toolPath, diffStats);
         }
     }
@@ -92,7 +83,7 @@ public class BenchmarkMetricsComputer {
                 .collect(Collectors.toList());
     }
 
-    private static DiffStats compareHumanReadableDiffs(HumanReadableDiff godDiff, HumanReadableDiff toolDiff) {
+    private static DiffStats compareHumanReadableDiffs(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, boolean INCLUDE_INTER_FILE_MAPPINGS) {
         DiffMetricsComputer diffMetricsComputer = new DiffMetricsComputer(godDiff, toolDiff, INCLUDE_INTER_FILE_MAPPINGS);
         return new DiffStats(diffMetricsComputer.programElementStats(), diffMetricsComputer.mappingStats());
     }
@@ -103,7 +94,11 @@ public class BenchmarkMetricsComputer {
 
     public void writeStatsToCSV(List<DiffComparisonResult> stats) throws IOException {
         ASTDiffTool[] activeTools = configuration.getActiveTools();
-        try (FileWriter writer = new FileWriter(configuration.getOutputFolder() + configuration.getCsvDestinationFile())) {
+        try (FileWriter writer = new FileWriter(configuration.getOutputFolder() +
+                (this.INCLUDE_INTER_FILE_MAPPINGS
+                ? "withInterFileMappings-"
+                : "withoutInterFileMappings-") +
+                configuration.getCsvDestinationFile())) {
             writeHeader(writer, activeTools);
             writeData(writer, stats, activeTools);
         }

@@ -1,6 +1,5 @@
 package benchmark.oracle.generators.tools.runners;
 
-import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import at.aau.softwaredynamics.matchers.MatcherFactory;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
@@ -12,7 +11,7 @@ import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
-import shaded.com.github.gumtreediff.gen.jdt.AbstractJdtTreeGenerator;
+import shaded.com.github.gumtreediff.gen.TreeGenerator;
 import shaded.com.github.gumtreediff.matchers.Mapping;
 import shaded.com.github.gumtreediff.matchers.Matcher;
 import shaded.com.github.gumtreediff.tree.ITree;
@@ -31,7 +30,7 @@ public abstract class APIChanger {
         this.rm_astDiff = rm_astDiff;
     }
     public Matcher makeMappings() throws IOException {
-        AbstractJdtTreeGenerator gen = new OptimizedJdtTreeGenerator();
+        TreeGenerator gen = getGeneratorType();
         String srcContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getSrcPath());
         String dstContents = projectASTDiff.getFileContentsAfter().get(rm_astDiff.getDstPath());
         ITree srcITree = gen.generateFromString(srcContents).getRoot();
@@ -43,9 +42,7 @@ public abstract class APIChanger {
     }
 
     public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();
-    public shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType(){
-        return new OptimizedJdtTreeGenerator();
-    }
+    public abstract shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType();
     public Diff diff() throws Exception {
         Matcher m = makeMappings();
         Tree srcMirror = mirrorTree(m.getSrc());

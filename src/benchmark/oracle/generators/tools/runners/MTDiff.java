@@ -1,9 +1,9 @@
 package benchmark.oracle.generators.tools.runners;
 
 
-import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import shaded.com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 
 
 /* Created by pourya on 2023-04-17 7:59 p.m. */
@@ -17,6 +17,6 @@ public class MTDiff extends APIChanger {
     }
     @Override
     public shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType() {
-        return new OptimizedJdtTreeGenerator();
+        return new JdtTreeGenerator();
     }
 }

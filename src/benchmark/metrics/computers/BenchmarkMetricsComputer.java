@@ -40,6 +40,7 @@ public class BenchmarkMetricsComputer {
     public List<DiffComparisonResult> generateBenchmarkStats() throws IOException {
         List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
         for (CaseInfo info : infos) {
+//            if (info.makeURL().equals("https://github.com/processing/processing/commit/acf67c8cb58d13827e14bbeeec11a66f9277015f")) continue;
             String folderPath = exportedFolderPathByCaseInfo(info);
             Path dir = Paths.get(configuration.getOutputFolder() + folderPath  + "/");
             System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());

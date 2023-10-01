@@ -24,7 +24,7 @@ public class DatasetDetailedChurnToCSV {
 
     static {
         try {
-            config = ConfigurationFactory.getDefault();
+            config = ConfigurationFactory.defects4j();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

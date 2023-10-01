@@ -6,12 +6,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedHashSet;
+import java.util.Comparator;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class ConfigurationBuilder {
     private String perfectDiffDir;
-    private Set<CaseInfo> allCases = new LinkedHashSet<>();
+    private Set<CaseInfo> allCases = new TreeSet<>(Comparator.comparing(CaseInfo::makeURL));
     private Compatibility compatibility;
     private GenerationStrategy generationStrategy;
 

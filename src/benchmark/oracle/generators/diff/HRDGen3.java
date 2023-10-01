@@ -53,7 +53,6 @@ public class HRDGen3 extends HumanReadableDiffGenerator {
                         generateEnumSignature(mapping.first,getSrcContent(mappingMetaInformation.currSrc)),
                         generateEnumSignature(mapping.second,getDstContent(mappingMetaInformation.currDst))),
                 mappingMetaInformation.target);
-//        throw new RuntimeException("Not implemented yet");
     }
 
     @Override
@@ -80,8 +79,7 @@ public class HRDGen3 extends HumanReadableDiffGenerator {
     }
 
     void addFieldDeclarationSignatureMappings(Mapping mapping, NecessaryMappings target, String srcPath, String dstPath) {
-        //TODO: MUST BE IMPLEMENTED ASAP
-        throw new RuntimeException("Not implemented yet");
+        //TODO: we might introduce this feature later
     }
     void addMethodSignatureMappings(Mapping mapping, NecessaryMappings target, String srcPath, String dstPath) {
         for (Mapping signatureMapping : getMethodSignatureMappings(mapping, getAstDiff().getAllMappings()))

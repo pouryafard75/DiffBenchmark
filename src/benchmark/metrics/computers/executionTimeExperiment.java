@@ -74,11 +74,3 @@
 //    }
 //}
 //
-//// TODO:
-//// Single program iterates through all the tools,
-//// Then run ach case 5 times, discard the first, and pick the average.
-//// Check the recent commit related to type change for imports (Revert)
-//// 9fd13eb7f4b0840786e8c4a2cd1ad48cf0516d0b
-//// Check commits which have a lot of ExtractAndMove (find cases)
-//// Report the number containing the extract and move refactoring
-//// Comment out the invocation to MappingOptimizer and check the results

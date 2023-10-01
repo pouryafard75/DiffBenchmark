@@ -33,7 +33,6 @@ public abstract class HumanReadableDiffGenerator {
     private final HumanReadableDiff result;
 
     public HumanReadableDiff getResult() {
-        //TODO: seems kay
         return result;
     }
 
@@ -62,7 +61,7 @@ public abstract class HumanReadableDiffGenerator {
     private MappingMetaInformation getMetaInformation(Mapping mapping) {
         if (isInterFileMapping(mapping, getAstDiff().src.getRoot(), getAstDiff().dst.getRoot()))
             return getMappingMetaInformationForInterFileMappings(mapping);
-        return new MappingMetaInformation(getAstDiff().getSrcPath(), getAstDiff().getDstPath(), getResult().intraFileMappings, mapping, true);
+        return new MappingMetaInformation(getAstDiff().getSrcPath(), getAstDiff().getDstPath(), getResult().intraFileMappings, mapping, false);
     }
 
     private MappingMetaInformation getMappingMetaInformationForInterFileMappings(Mapping mapping) {

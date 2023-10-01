@@ -101,11 +101,8 @@ public class PerfectDiff {
                     }
                 }
                 else{
-                    //TODO:
-//                    System.out.println(srcPath);
-                    System.out.println(perfectMapping);
+                    throw new RuntimeException(String.valueOf(perfectMapping));
 //                    continue;
-//                    throw new Exception("bug bug bug");
                 }
             }
             mappings.addMapping(srcNode, dstNode);

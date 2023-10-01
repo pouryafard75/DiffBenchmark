@@ -10,24 +10,22 @@ import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.astDiff.matchers.ProjectASTDiffer;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
 
 /* Created by pourya on 2023-05-02 5:15 p.m. */
 public class CompareWithLocalDirectories {
-    static String projectDir = "Jsoup";
-    static String bugID = "75";
+    static String projectDir = "Math";
+    static String bugID = "14";
     public static void main(String[] args) throws IOException {
 
         BenchmarkWebDiff benchmarkWebDiff = null;

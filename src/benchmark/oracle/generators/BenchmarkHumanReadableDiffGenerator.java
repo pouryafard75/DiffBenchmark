@@ -25,6 +25,7 @@ public class BenchmarkHumanReadableDiffGenerator {
     }
     public void generate() throws Exception {
         for (CaseInfo info : configuration.getAllCases()) {
+//            if (info.makeURL().equals("https://github.com/processing/processing/commit/acf67c8cb58d13827e14bbeeec11a66f9277015f")) continue;
             this.writeActiveTools(info, configuration.getOutputFolder());
         }
         System.out.println("Finished generating human readable diffs...");

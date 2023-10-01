@@ -13,7 +13,6 @@ public class GeneratorUtils {
     public static String generateClassSignature(Tree typeDeclaration, String content) {
         StringBuilder sb = new StringBuilder();
         if (typeDeclaration.getLabel().equals("")) {
-            //TODO: FIX THIS
             for (Tree child : typeDeclaration.getChildren()) {
 //                if (child.getType().name.equals(Constants.TYPE_DECLARATION_KIND)) {
 //                    sb.append(child.getLabel()).append(" : ");

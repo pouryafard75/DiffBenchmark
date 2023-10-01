@@ -16,6 +16,7 @@ public class Configuration {
 
     private String outputFolder = "output/";
     private String csvDestinationFile = "stats.csv";
+    private String name = "no-name";
 
 
     public void setOutputFolder(String outputFolder) {
@@ -24,13 +25,18 @@ public class Configuration {
             this.outputFolder += "/";
     }
 
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setCsvDestinationFile(String csvDestinationFile) {
         this.csvDestinationFile = csvDestinationFile;
     }
 
 
-
-    public static final String REPOS = "/Users/pourya/IdeaProjects/RM-ASTDiff/tmp1/"; //Note: Modify this based on your local path
 
     public GenerationStrategy getGenerationStrategy() {
         return generationStrategy;

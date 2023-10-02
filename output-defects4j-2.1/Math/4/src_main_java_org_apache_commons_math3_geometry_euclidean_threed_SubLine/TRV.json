@@ -1,0 +1,113 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final Line line;",
+      "right" : "private final Line line;",
+      "info" : "FieldDeclaration[1379-1431]:FieldDeclaration[1379-1431]"
+    }, {
+      "left" : "private final IntervalsSet remainingRegion;",
+      "right" : "private final IntervalsSet remainingRegion;",
+      "info" : "FieldDeclaration[1437-1527]:FieldDeclaration[1437-1527]"
+    }, {
+      "left" : "public SubLine(final Line line, final IntervalsSet remainingRegion)",
+      "right" : "public SubLine(final Line line, final IntervalsSet remainingRegion)",
+      "info" : "MethodDeclaration[1533-1823]:MethodDeclaration[1533-1823]"
+    }, {
+      "left" : "public SubLine(final Vector3D start, final Vector3D end)\n        throws MathIllegalArgumentException",
+      "right" : "public SubLine(final Vector3D start, final Vector3D end)\n        throws MathIllegalArgumentException",
+      "info" : "MethodDeclaration[1829-2188]:MethodDeclaration[1829-2188]"
+    }, {
+      "left" : "public SubLine(final Segment segment) throws MathIllegalArgumentException",
+      "right" : "public SubLine(final Segment segment) throws MathIllegalArgumentException",
+      "info" : "MethodDeclaration[2194-2554]:MethodDeclaration[2194-2554]"
+    }, {
+      "left" : "public List<Segment> getSegments()",
+      "right" : "public List<Segment> getSegments()",
+      "info" : "MethodDeclaration[2560-3924]:MethodDeclaration[2560-3924]"
+    }, {
+      "left" : "private static IntervalsSet buildIntervalSet(final Vector3D start, final Vector3D end)\n        throws MathIllegalArgumentException",
+      "right" : "private static IntervalsSet buildIntervalSet(final Vector3D start, final Vector3D end)\n        throws MathIllegalArgumentException",
+      "info" : "MethodDeclaration[5504-6032]:MethodDeclaration[5566-6094]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1731-1823]:Block[1731-1823]"
+    }, {
+      "left" : "this.line            = line;",
+      "right" : "this.line            = line;",
+      "info" : "ExpressionStatement[1741-1769]:ExpressionStatement[1741-1769]"
+    }, {
+      "left" : "this.remainingRegion = remainingRegion;",
+      "right" : "this.remainingRegion = remainingRegion;",
+      "info" : "ExpressionStatement[1778-1817]:ExpressionStatement[1778-1817]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2115-2188]:Block[2115-2188]"
+    }, {
+      "left" : "this(new Line(start, end), buildIntervalSet(start, end));",
+      "right" : "this(new Line(start, end), buildIntervalSet(start, end));",
+      "info" : "ConstructorInvocation[2125-2182]:ConstructorInvocation[2125-2182]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2458-2554]:Block[2458-2554]"
+    }, {
+      "left" : "this(segment.getLine(), buildIntervalSet(segment.getStart(), segment.getEnd()));",
+      "right" : "this(segment.getLine(), buildIntervalSet(segment.getStart(), segment.getEnd()));",
+      "info" : "ConstructorInvocation[2468-2548]:ConstructorInvocation[2468-2548]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3483-3924]:Block[3483-3924]"
+    }, {
+      "left" : "final List<Interval> list = remainingRegion.asList();",
+      "right" : "final List<Interval> list = remainingRegion.asList();",
+      "info" : "VariableDeclarationStatement[3494-3547]:VariableDeclarationStatement[3494-3547]"
+    }, {
+      "left" : "final List<Segment> segments = new ArrayList<Segment>();",
+      "right" : "final List<Segment> segments = new ArrayList<Segment>();",
+      "info" : "VariableDeclarationStatement[3556-3612]:VariableDeclarationStatement[3556-3612]"
+    }, {
+      "left" : "for (final Interval interval : list)",
+      "right" : "for (final Interval interval : list)",
+      "info" : "EnhancedForStatement[3622-3891]:EnhancedForStatement[3622-3891]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3659-3891]:Block[3659-3891]"
+    }, {
+      "left" : "final Vector3D start = line.toSpace(new Vector1D(interval.getInf()));",
+      "right" : "final Vector3D start = line.toSpace(new Vector1D(interval.getInf()));",
+      "info" : "VariableDeclarationStatement[3673-3742]:VariableDeclarationStatement[3673-3742]"
+    }, {
+      "left" : "final Vector3D end   = line.toSpace(new Vector1D(interval.getSup()));",
+      "right" : "final Vector3D end   = line.toSpace(new Vector1D(interval.getSup()));",
+      "info" : "VariableDeclarationStatement[3755-3824]:VariableDeclarationStatement[3755-3824]"
+    }, {
+      "left" : "segments.add(new Segment(start, end, line));",
+      "right" : "segments.add(new Segment(start, end, line));",
+      "info" : "ExpressionStatement[3837-3881]:ExpressionStatement[3837-3881]"
+    }, {
+      "left" : "return segments;",
+      "right" : "return segments;",
+      "info" : "ReturnStatement[3901-3917]:ReturnStatement[3901-3917]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5852-6032]:Block[5914-6094]"
+    }, {
+      "left" : "final Line line = new Line(start, end);",
+      "right" : "final Line line = new Line(start, end);",
+      "info" : "VariableDeclarationStatement[5862-5901]:VariableDeclarationStatement[5924-5963]"
+    }, {
+      "left" : "return new IntervalsSet(line.toSubSpace(start).getX(),\n                                line.toSubSpace(end).getX());",
+      "right" : "return new IntervalsSet(line.toSubSpace(start).getX(),\n                                line.toSubSpace(end).getX());",
+      "info" : "ReturnStatement[5910-6026]:ReturnStatement[5972-6088]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

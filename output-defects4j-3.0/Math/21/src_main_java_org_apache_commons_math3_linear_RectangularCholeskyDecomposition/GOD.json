@@ -1,0 +1,369 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "RectangularCholeskyDecomposition",
+      "right" : "RectangularCholeskyDecomposition",
+      "info" : "TypeDeclaration[894-6693]:TypeDeclaration[894-6914]"
+    }, {
+      "left" : "private final RealMatrix root;",
+      "right" : "private final RealMatrix root;",
+      "info" : "FieldDeclaration[2341-2454]:FieldDeclaration[2341-2454]"
+    }, {
+      "left" : "private int rank;",
+      "right" : "private int rank;",
+      "info" : "FieldDeclaration[2460-2540]:FieldDeclaration[2460-2540]"
+    }, {
+      "left" : "public RectangularCholeskyDecomposition(RealMatrix matrix, double small)\n        throws NonPositiveDefiniteMatrixException",
+      "right" : "public RectangularCholeskyDecomposition(RealMatrix matrix, double small)\n        throws NonPositiveDefiniteMatrixException",
+      "info" : "MethodDeclaration[2546-5978]:MethodDeclaration[2546-6199]"
+    }, {
+      "left" : "public RealMatrix getRootMatrix()",
+      "right" : "public RealMatrix getRootMatrix()",
+      "info" : "MethodDeclaration[5984-6302]:MethodDeclaration[6205-6523]"
+    }, {
+      "left" : "public int getRank()",
+      "right" : "public int getRank()",
+      "info" : "MethodDeclaration[6308-6690]:MethodDeclaration[6529-6911]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2288-2294]:Modifier[2288-2294]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2295-2300]:TYPE_DECLARATION_KIND[2295-2300]"
+    }, {
+      "left" : "RectangularCholeskyDecomposition",
+      "right" : "RectangularCholeskyDecomposition",
+      "info" : "SimpleName[2301-2333]:SimpleName[2301-2333]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2935-2941]:Modifier[2935-2941]"
+    }, {
+      "left" : "RectangularCholeskyDecomposition",
+      "right" : "RectangularCholeskyDecomposition",
+      "info" : "SimpleName[2942-2974]:SimpleName[2942-2974]"
+    }, {
+      "left" : "RealMatrix matrix",
+      "right" : "RealMatrix matrix",
+      "info" : "SingleVariableDeclaration[2975-2992]:SingleVariableDeclaration[2975-2992]"
+    }, {
+      "left" : "double small",
+      "right" : "double small",
+      "info" : "SingleVariableDeclaration[2994-3006]:SingleVariableDeclaration[2994-3006]"
+    }, {
+      "left" : "NonPositiveDefiniteMatrixException",
+      "right" : "NonPositiveDefiniteMatrixException",
+      "info" : "SimpleType[3023-3057]:SimpleType[3023-3057]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3058-5978]:Block[3058-6199]"
+    }, {
+      "left" : "final int order = matrix.getRowDimension();",
+      "right" : "final int order = matrix.getRowDimension();",
+      "info" : "VariableDeclarationStatement[3069-3112]:VariableDeclarationStatement[3069-3112]"
+    }, {
+      "left" : "final double[][] c = matrix.getData();",
+      "right" : "final double[][] c = matrix.getData();",
+      "info" : "VariableDeclarationStatement[3121-3159]:VariableDeclarationStatement[3121-3159]"
+    }, {
+      "left" : "final double[][] b = new double[order][order];",
+      "right" : "final double[][] b = new double[order][order];",
+      "info" : "VariableDeclarationStatement[3168-3214]:VariableDeclarationStatement[3168-3214]"
+    }, {
+      "left" : "int[] index = new int[order];",
+      "right" : "int[] index = new int[order];",
+      "info" : "VariableDeclarationStatement[3262-3291]:VariableDeclarationStatement[3224-3253]"
+    }, {
+      "left" : "for (int i = 0; i < order; ++i)",
+      "right" : "for (int i = 0; i < order; ++i)",
+      "info" : "ForStatement[3300-3369]:ForStatement[3262-3331]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3332-3369]:Block[3294-3331]"
+    }, {
+      "left" : "index[i] = i;",
+      "right" : "index[i] = i;",
+      "info" : "ExpressionStatement[3346-3359]:ExpressionStatement[3308-3321]"
+    }, {
+      "left" : "int r = 0;",
+      "right" : "int r = 0;",
+      "info" : "VariableDeclarationStatement[3379-3389]:VariableDeclarationStatement[3341-3351]"
+    }, {
+      "left" : "for (boolean loop = true; loop)",
+      "right" : "for (boolean loop = true; loop)",
+      "info" : "ForStatement[3398-5703]:ForStatement[3360-5924]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3431-5703]:Block[3393-5924]"
+    }, {
+      "left" : "r",
+      "right" : "r",
+      "info" : "SimpleName[3501-3502]:SimpleName[3465-3466]"
+    }, {
+      "left" : "for (int i = r + 1; i < order; ++i)",
+      "right" : "for (int i = r + 1; i < order; ++i)",
+      "info" : "ForStatement[3516-3743]:ForStatement[3480-3703]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3552-3743]:Block[3516-3703]"
+    }, {
+      "left" : "int ii  = index[i];",
+      "right" : "int ii  = index[i];",
+      "info" : "VariableDeclarationStatement[3570-3589]:VariableDeclarationStatement[3534-3553]"
+    }, {
+      "left" : "int isi = index[swap[i]];",
+      "right" : "int isr = index[swapR];",
+      "info" : "VariableDeclarationStatement[3606-3631]:VariableDeclarationStatement[3570-3593]"
+    }, {
+      "left" : "isi",
+      "right" : "isr",
+      "info" : "SimpleName[3610-3613]:SimpleName[3574-3577]"
+    }, {
+      "left" : "if (c[ii][ii] > c[isi][isi])",
+      "right" : "if (c[ii][ii] > c[isr][isr])",
+      "info" : "IfStatement[3648-3729]:IfStatement[3610-3689]"
+    }, {
+      "left" : "isi",
+      "right" : "isr",
+      "info" : "SimpleName[3666-3669]:SimpleName[3628-3631]"
+    }, {
+      "left" : "isi",
+      "right" : "isr",
+      "info" : "SimpleName[3671-3674]:SimpleName[3633-3636]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3677-3729]:Block[3639-3689]"
+    }, {
+      "left" : "swap[r] = i;",
+      "right" : "swapR = i;",
+      "info" : "ExpressionStatement[3699-3711]:ExpressionStatement[3661-3671]"
+    }, {
+      "left" : "if (swap[r] != r)",
+      "right" : "if (swapR != r)",
+      "info" : "IfStatement[3787-3937]:IfStatement[3747-4076]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3805-3937]:Block[3763-4076]"
+    }, {
+      "left" : "int tmp = index[r];",
+      "right" : "final int tmpIndex    = index[r];",
+      "info" : "VariableDeclarationStatement[3823-3842]:VariableDeclarationStatement[3781-3814]"
+    }, {
+      "left" : "tmp",
+      "right" : "tmpIndex",
+      "info" : "SimpleName[3827-3830]:SimpleName[3791-3799]"
+    }, {
+      "left" : "index[r] = index[swap[r]];",
+      "right" : "index[r]              = index[swapR];",
+      "info" : "ExpressionStatement[3859-3885]:ExpressionStatement[3831-3868]"
+    }, {
+      "left" : "index[swap[r]] = tmp;",
+      "right" : "index[swapR]          = tmpIndex;",
+      "info" : "ExpressionStatement[3902-3923]:ExpressionStatement[3885-3918]"
+    }, {
+      "left" : "tmp",
+      "right" : "tmpIndex",
+      "info" : "SimpleName[3919-3922]:SimpleName[3909-3917]"
+    }, {
+      "left" : "int ir = index[r];",
+      "right" : "int ir = index[r];",
+      "info" : "VariableDeclarationStatement[3989-4007]:VariableDeclarationStatement[4128-4146]"
+    }, {
+      "left" : "if (c[ir][ir] < small)",
+      "right" : "if (c[ir][ir] < small)",
+      "info" : "IfStatement[4020-5693]:IfStatement[4159-5914]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4043-4891]:Block[4182-5030]"
+    }, {
+      "left" : "if (r == 0)",
+      "right" : "if (r == 0)",
+      "info" : "IfStatement[4062-4181]:IfStatement[4201-4320]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4074-4181]:Block[4213-4320]"
+    }, {
+      "left" : "throw new NonPositiveDefiniteMatrixException(c[ir][ir], ir, small);",
+      "right" : "throw new NonPositiveDefiniteMatrixException(c[ir][ir], ir, small);",
+      "info" : "ThrowStatement[4096-4163]:ThrowStatement[4235-4302]"
+    }, {
+      "left" : "for (int i = r; i < order; ++i)",
+      "right" : "for (int i = r; i < order; ++i)",
+      "info" : "ForStatement[4252-4654]:ForStatement[4391-4793]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4284-4654]:Block[4423-4793]"
+    }, {
+      "left" : "if (c[index[i]][index[i]] < -small)",
+      "right" : "if (c[index[i]][index[i]] < -small)",
+      "info" : "IfStatement[4306-4636]:IfStatement[4445-4775]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4342-4636]:Block[4481-4775]"
+    }, {
+      "left" : "throw new NonPositiveDefiniteMatrixException(c[index[i]][index[i]], i, small);",
+      "right" : "throw new NonPositiveDefiniteMatrixException(c[index[i]][index[i]], i, small);",
+      "info" : "ThrowStatement[4536-4614]:ThrowStatement[4675-4753]"
+    }, {
+      "left" : "++r;",
+      "right" : "++r;",
+      "info" : "ExpressionStatement[4842-4846]:ExpressionStatement[4981-4985]"
+    }, {
+      "left" : "loop = false;",
+      "right" : "loop = false;",
+      "info" : "ExpressionStatement[4863-4876]:ExpressionStatement[5002-5015]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4897-5693]:Block[5036-5914]"
+    }, {
+      "left" : "final double sqrt = FastMath.sqrt(c[ir][ir]);",
+      "right" : "final double sqrt = FastMath.sqrt(c[ir][ir]);",
+      "info" : "VariableDeclarationStatement[4956-5001]:VariableDeclarationStatement[5095-5140]"
+    }, {
+      "left" : "b[r][r] = sqrt;",
+      "right" : "b[r][r] = sqrt;",
+      "info" : "ExpressionStatement[5018-5033]:ExpressionStatement[5157-5172]"
+    }, {
+      "left" : "final double inverse  = 1 / sqrt;",
+      "right" : "final double inverse  = 1 / sqrt;",
+      "info" : "VariableDeclarationStatement[5050-5083]:VariableDeclarationStatement[5189-5222]"
+    }, {
+      "left" : "for (int i = r + 1; i < order; ++i)",
+      "right" : "for (int i = r + 1; i < order; ++i)",
+      "info" : "ForStatement[5100-5600]:ForStatement[5294-5821]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5136-5600]:Block[5330-5821]"
+    }, {
+      "left" : "final int ii = index[i];",
+      "right" : "final int ii = index[i];",
+      "info" : "VariableDeclarationStatement[5158-5182]:VariableDeclarationStatement[5352-5376]"
+    }, {
+      "left" : "final double e = inverse * c[ii][ir];",
+      "right" : "final double e = inverse * c[ii][ir];",
+      "info" : "VariableDeclarationStatement[5203-5240]:VariableDeclarationStatement[5397-5434]"
+    }, {
+      "left" : "b[i][r] = e;",
+      "right" : "b[i][r] = e;",
+      "info" : "ExpressionStatement[5261-5273]:ExpressionStatement[5455-5467]"
+    }, {
+      "left" : "c[ii][ii] -= e * e;",
+      "right" : "c[ii][ii] -= c[ii][ir] * c[ii][ir] * inverse2;",
+      "info" : "ExpressionStatement[5294-5313]:ExpressionStatement[5488-5534]"
+    }, {
+      "left" : "for (int j = r + 1; j < i; ++j)",
+      "right" : "for (int j = r + 1; j < i; ++j)",
+      "info" : "ForStatement[5334-5582]:ForStatement[5555-5803]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5366-5582]:Block[5587-5803]"
+    }, {
+      "left" : "final int ij = index[j];",
+      "right" : "final int ij = index[j];",
+      "info" : "VariableDeclarationStatement[5392-5416]:VariableDeclarationStatement[5613-5637]"
+    }, {
+      "left" : "final double f = c[ii][ij] - e * b[j][r];",
+      "right" : "final double f = c[ii][ij] - e * b[j][r];",
+      "info" : "VariableDeclarationStatement[5441-5482]:VariableDeclarationStatement[5662-5703]"
+    }, {
+      "left" : "c[ii][ij] = f;",
+      "right" : "c[ii][ij] = f;",
+      "info" : "ExpressionStatement[5507-5521]:ExpressionStatement[5728-5742]"
+    }, {
+      "left" : "c[ij][ii] = f;",
+      "right" : "c[ij][ii] = f;",
+      "info" : "ExpressionStatement[5546-5560]:ExpressionStatement[5767-5781]"
+    }, {
+      "left" : "loop = ++r < order;",
+      "right" : "loop = ++r < order;",
+      "info" : "ExpressionStatement[5660-5679]:ExpressionStatement[5881-5900]"
+    }, {
+      "left" : "rank = r;",
+      "right" : "rank = r;",
+      "info" : "ExpressionStatement[5746-5755]:ExpressionStatement[5967-5976]"
+    }, {
+      "left" : "root = MatrixUtils.createRealMatrix(order, r);",
+      "right" : "root = MatrixUtils.createRealMatrix(order, r);",
+      "info" : "ExpressionStatement[5764-5810]:ExpressionStatement[5985-6031]"
+    }, {
+      "left" : "for (int i = 0; i < order; ++i)",
+      "right" : "for (int i = 0; i < order; ++i)",
+      "info" : "ForStatement[5819-5971]:ForStatement[6040-6192]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5851-5971]:Block[6072-6192]"
+    }, {
+      "left" : "for (int j = 0; j < r; ++j)",
+      "right" : "for (int j = 0; j < r; ++j)",
+      "info" : "ForStatement[5865-5961]:ForStatement[6086-6182]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5893-5961]:Block[6114-6182]"
+    }, {
+      "left" : "root.setEntry(index[i], j, b[i][j]);",
+      "right" : "root.setEntry(index[i], j, b[i][j]);",
+      "info" : "ExpressionStatement[5911-5947]:ExpressionStatement[6132-6168]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6240-6246]:Modifier[6461-6467]"
+    }, {
+      "left" : "RealMatrix",
+      "right" : "RealMatrix",
+      "info" : "SimpleType[6247-6257]:SimpleType[6468-6478]"
+    }, {
+      "left" : "getRootMatrix",
+      "right" : "getRootMatrix",
+      "info" : "SimpleName[6258-6271]:SimpleName[6479-6492]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6274-6302]:Block[6495-6523]"
+    }, {
+      "left" : "return root;",
+      "right" : "return root;",
+      "info" : "ReturnStatement[6284-6296]:ReturnStatement[6505-6517]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6641-6647]:Modifier[6862-6868]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[6648-6651]:PrimitiveType[6869-6872]"
+    }, {
+      "left" : "getRank",
+      "right" : "getRank",
+      "info" : "SimpleName[6652-6659]:SimpleName[6873-6880]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6662-6690]:Block[6883-6911]"
+    }, {
+      "left" : "return rank;",
+      "right" : "return rank;",
+      "info" : "ReturnStatement[6672-6684]:ReturnStatement[6893-6905]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

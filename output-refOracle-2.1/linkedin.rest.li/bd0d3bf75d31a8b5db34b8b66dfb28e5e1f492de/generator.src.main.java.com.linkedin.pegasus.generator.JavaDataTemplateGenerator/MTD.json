@@ -1,0 +1,2249 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "JavaDataTemplateGenerator",
+      "right" : "JavaDataTemplateGenerator",
+      "info" : "TypeDeclaration[3315-39845]:TypeDeclaration[3635-43225]"
+    }, {
+      "left" : "public static final Map<DataSchema, Class<?>> PredefinedJavaClasses;",
+      "right" : "public static final Map<DataSchema, Class<?>> PredefinedJavaClasses;",
+      "info" : "FieldDeclaration[3508-3772]:FieldDeclaration[3828-4092]"
+    }, {
+      "left" : "private static final int MAX_SCHEMA_FIELD_JSON_LENGTH = 32000;",
+      "right" : "private static final int MAX_SCHEMA_FIELD_JSON_LENGTH = 32000;",
+      "info" : "FieldDeclaration[4452-4514]:FieldDeclaration[4772-4834]"
+    }, {
+      "left" : "private static final Logger _log = LoggerFactory.getLogger(JavaDataTemplateGenerator.class);",
+      "right" : "private static final Logger _log = LoggerFactory.getLogger(JavaDataTemplateGenerator.class);",
+      "info" : "FieldDeclaration[4517-4609]:FieldDeclaration[4837-4929]"
+    }, {
+      "left" : "private static final String DEPRECATED_KEY = \"deprecated\";",
+      "right" : "private static final String DEPRECATED_KEY = \"deprecated\";",
+      "info" : "FieldDeclaration[4655-4713]:FieldDeclaration[4975-5033]"
+    }, {
+      "left" : "private static final String DEPRECATED_SYMBOLS_KEY = \"deprecatedSymbols\";",
+      "right" : "private static final String DEPRECATED_SYMBOLS_KEY = \"deprecatedSymbols\";",
+      "info" : "FieldDeclaration[4716-4789]:FieldDeclaration[5036-5109]"
+    }, {
+      "left" : "private final Map<ClassTemplateSpec, JDefinedClass> _definedClasses = new HashMap<ClassTemplateSpec, JDefinedClass>();",
+      "right" : "private final Map<ClassTemplateSpec, JDefinedClass> _definedClasses = new HashMap<ClassTemplateSpec, JDefinedClass>();",
+      "info" : "FieldDeclaration[4793-4911]:FieldDeclaration[5113-5231]"
+    }, {
+      "left" : "private final Map<JDefinedClass, ClassTemplateSpec> _generatedClasses = new HashMap<JDefinedClass, ClassTemplateSpec>();",
+      "right" : "private final Map<JDefinedClass, ClassTemplateSpec> _generatedClasses = new HashMap<JDefinedClass, ClassTemplateSpec>();",
+      "info" : "FieldDeclaration[4914-5034]:FieldDeclaration[5234-5354]"
+    }, {
+      "left" : "private final boolean _recordFieldAccessorWithMode;",
+      "right" : "private final boolean _recordFieldAccessorWithMode;",
+      "info" : "FieldDeclaration[5038-5089]:FieldDeclaration[5624-5675]"
+    }, {
+      "left" : "private JavaDataTemplateGenerator(String defaultPackage,\n                                    boolean recordFieldAccessorWithMode)",
+      "right" : "private JavaDataTemplateGenerator(String defaultPackage,\n                                    boolean recordFieldAccessorWithMode,\n                                    boolean recordFieldRemove,\n                                    boolean pathSpecMethods,\n                                    boolean copierMethods)",
+      "info" : "MethodDeclaration[5093-5322]:MethodDeclaration[5805-6766]"
+    }, {
+      "left" : "public JavaDataTemplateGenerator(Config config)",
+      "right" : "public JavaDataTemplateGenerator(Config config)",
+      "info" : "MethodDeclaration[5326-5469]:MethodDeclaration[6770-7027]"
+    }, {
+      "left" : "public JavaDataTemplateGenerator(String defaultPackage)",
+      "right" : "public JavaDataTemplateGenerator(String defaultPackage)",
+      "info" : "MethodDeclaration[5473-5686]:MethodDeclaration[7031-7298]"
+    }, {
+      "left" : "public Map<JDefinedClass, ClassTemplateSpec> getGeneratedClasses()",
+      "right" : "public Map<JDefinedClass, ClassTemplateSpec> getGeneratedClasses()",
+      "info" : "MethodDeclaration[5690-5794]:MethodDeclaration[7302-7406]"
+    }, {
+      "left" : "public JClass generate(ClassTemplateSpec classTemplateSpec)",
+      "right" : "public JClass generate(ClassTemplateSpec classTemplateSpec)",
+      "info" : "MethodDeclaration[5798-6928]:MethodDeclaration[7410-8540]"
+    }, {
+      "left" : "private static JInvocation dataClassArg(JInvocation inv, JClass dataClass)",
+      "right" : "private static JInvocation dataClassArg(JInvocation inv, JClass dataClass)",
+      "info" : "MethodDeclaration[6932-7111]:MethodDeclaration[8544-8723]"
+    }, {
+      "left" : "private static void generateCopierMethods(JDefinedClass templateClass)",
+      "right" : "private static void generateCopierMethods(JDefinedClass templateClass)",
+      "info" : "MethodDeclaration[7115-7292]:MethodDeclaration[8727-8904]"
+    }, {
+      "left" : "private static boolean hasNestedFields(DataSchema schema)",
+      "right" : "private static boolean hasNestedFields(DataSchema schema)",
+      "info" : "MethodDeclaration[7296-7827]:MethodDeclaration[8908-9439]"
+    }, {
+      "left" : "private static void generateConstructorWithNoArg(JDefinedClass cls, JVar schemaField, JClass newClass)",
+      "right" : "private static void generateConstructorWithNoArg(JDefinedClass cls, JVar schemaField, JClass newClass)",
+      "info" : "MethodDeclaration[7831-8094]:MethodDeclaration[9443-9706]"
+    }, {
+      "left" : "private static void generateConstructorWithNoArg(JDefinedClass cls, JClass newClass)",
+      "right" : "private static void generateConstructorWithNoArg(JDefinedClass cls, JClass newClass)",
+      "info" : "MethodDeclaration[8098-8325]:MethodDeclaration[9710-9937]"
+    }, {
+      "left" : "private static void generateConstructorWithObjectArg(JDefinedClass cls, JVar schemaField)",
+      "right" : "private static void generateConstructorWithObjectArg(JDefinedClass cls, JVar schemaField)",
+      "info" : "MethodDeclaration[8329-8627]:MethodDeclaration[9941-10239]"
+    }, {
+      "left" : "private static void generateConstructorWithArg(JDefinedClass cls, JVar schemaField, JClass paramClass)",
+      "right" : "private static void generateConstructorWithArg(JDefinedClass cls, JVar schemaField, JClass paramClass)",
+      "info" : "MethodDeclaration[8631-8940]:MethodDeclaration[10243-10552]"
+    }, {
+      "left" : "private static void generateConstructorWithArg(JDefinedClass cls, JVar schemaField, JClass paramClass, JClass elementClass, JClass dataClass)",
+      "right" : "private static void generateConstructorWithArg(JDefinedClass cls, JVar schemaField, JClass paramClass, JClass elementClass, JClass dataClass)",
+      "info" : "MethodDeclaration[8944-9384]:MethodDeclaration[10556-10996]"
+    }, {
+      "left" : "private static DataSchema schemaForArrayItemsOrMapValues(CustomInfoSpec customInfo, DataSchema schema)",
+      "right" : "private static DataSchema schemaForArrayItemsOrMapValues(CustomInfoSpec customInfo, DataSchema schema)",
+      "info" : "MethodDeclaration[9388-11018]:MethodDeclaration[11000-12630]"
+    }, {
+      "left" : "private static void overrideCopierMethod(JDefinedClass templateClass, String methodName)",
+      "right" : "private static void overrideCopierMethod(JDefinedClass templateClass, String methodName)",
+      "info" : "MethodDeclaration[11022-11411]:MethodDeclaration[12634-13023]"
+    }, {
+      "left" : "private static void setDeprecatedAnnotationAndJavadoc(DataSchema schema, JDefinedClass schemaClass)",
+      "right" : "private static void setDeprecatedAnnotationAndJavadoc(DataSchema schema, JDefinedClass schemaClass)",
+      "info" : "MethodDeclaration[11415-11631]:MethodDeclaration[13027-13243]"
+    }, {
+      "left" : "private static void setDeprecatedAnnotationAndJavadoc(JMethod method, RecordDataSchema.Field field)",
+      "right" : "private static void setDeprecatedAnnotationAndJavadoc(JMethod method, RecordDataSchema.Field field)",
+      "info" : "MethodDeclaration[11635-11840]:MethodDeclaration[13247-13452]"
+    }, {
+      "left" : "private static void setDeprecatedAnnotationAndJavadoc(EnumDataSchema enumSchema, String symbol, JEnumConstant constant)",
+      "right" : "private static void setDeprecatedAnnotationAndJavadoc(EnumDataSchema enumSchema, String symbol, JEnumConstant constant)",
+      "info" : "MethodDeclaration[11844-12348]:MethodDeclaration[13456-13960]"
+    }, {
+      "left" : "private static void setDeprecatedAnnotationAndJavadoc(Object deprecatedProp, JAnnotatable annotatable, JDocCommentable commentable)",
+      "right" : "private static void setDeprecatedAnnotationAndJavadoc(Object deprecatedProp, JAnnotatable annotatable, JDocCommentable commentable)",
+      "info" : "MethodDeclaration[12352-12955]:MethodDeclaration[13964-14567]"
+    }, {
+      "left" : "private static int getJModValue(Set<ModifierSpec> modifiers)",
+      "right" : "private static int getJModValue(Set<ModifierSpec> modifiers)",
+      "info" : "MethodDeclaration[12959-13386]:MethodDeclaration[14571-14998]"
+    }, {
+      "left" : "private static void addAccessorDoc(JMethod method, RecordDataSchema.Field field, String prefix)",
+      "right" : "private static void addAccessorDoc(JMethod method, RecordDataSchema.Field field, String prefix)",
+      "info" : "MethodDeclaration[13390-13640]:MethodDeclaration[15002-15252]"
+    }, {
+      "left" : "private JDefinedClass defineClass(ClassTemplateSpec classTemplateSpec)\n      throws JClassAlreadyExistsException",
+      "right" : "private JDefinedClass defineClass(ClassTemplateSpec classTemplateSpec)\n      throws JClassAlreadyExistsException",
+      "info" : "MethodDeclaration[13644-15022]:MethodDeclaration[15256-16634]"
+    }, {
+      "left" : "protected void generateArray(JDefinedClass arrayClass, ArrayTemplateSpec arrayDataTemplateSpec)\n      throws JClassAlreadyExistsException",
+      "right" : "protected void extendWrappingArrayBaseClass(JClass itemJClass, JDefinedClass arrayClass)",
+      "info" : "MethodDeclaration[15026-16413]:MethodDeclaration[18104-18269]"
+    }, {
+      "left" : "protected void generateEnum(JDefinedClass enumClass, EnumTemplateSpec enumSpec)",
+      "right" : "protected void generateEnum(JDefinedClass enumClass, EnumTemplateSpec enumSpec)",
+      "info" : "MethodDeclaration[16417-17357]:MethodDeclaration[18273-19213]"
+    }, {
+      "left" : "protected void generateFixed(JDefinedClass fixedClass, FixedTemplateSpec fixedSpec)",
+      "right" : "protected void generateFixed(JDefinedClass fixedClass, FixedTemplateSpec fixedSpec)",
+      "info" : "MethodDeclaration[17361-18049]:MethodDeclaration[19217-19943]"
+    }, {
+      "left" : "protected void generateMap(JDefinedClass mapClass, MapTemplateSpec mapSpec)\n      throws JClassAlreadyExistsException",
+      "right" : "protected void extendWrappingMapBaseClass(JClass valueJClass, JDefinedClass mapClass)",
+      "info" : "MethodDeclaration[18053-19309]:MethodDeclaration[21282-21441]"
+    }, {
+      "left" : "private JClass generatePrimitive(PrimitiveTemplateSpec primitiveSpec)",
+      "right" : "private JClass generatePrimitive(PrimitiveTemplateSpec primitiveSpec)",
+      "info" : "MethodDeclaration[19313-19973]:MethodDeclaration[21445-22105]"
+    }, {
+      "left" : "protected void generateRecord(JDefinedClass templateClass, RecordTemplateSpec recordSpec)\n      throws JClassAlreadyExistsException",
+      "right" : "protected void extendRecordBaseClass(JDefinedClass templateClass)",
+      "info" : "MethodDeclaration[19977-21003]:MethodDeclaration[23217-23336]"
+    }, {
+      "left" : "private void generatePathSpecMethodsForRecord(List<RecordTemplateSpec.Field> fieldSpecs, JDefinedClass templateClass)\n      throws JClassAlreadyExistsException",
+      "right" : "private void generatePathSpecMethodsForRecord(List<RecordTemplateSpec.Field> fieldSpecs, JDefinedClass templateClass)\n      throws JClassAlreadyExistsException",
+      "info" : "MethodDeclaration[21007-22426]:MethodDeclaration[23340-24759]"
+    }, {
+      "left" : "private void generateRecordFieldAccessors(JDefinedClass templateClass, RecordTemplateSpec.Field field, JClass type, JVar schemaFieldVar)",
+      "right" : "private void generateRecordFieldAccessors(JDefinedClass templateClass, RecordTemplateSpec.Field field, JClass type, JVar schemaFieldVar)",
+      "info" : "MethodDeclaration[22430-27230]:MethodDeclaration[24763-29617]"
+    }, {
+      "left" : "protected void generateTyperef(JDefinedClass typerefClass, TyperefTemplateSpec typerefSpec)",
+      "right" : "protected void generateTyperef(JDefinedClass typerefClass, TyperefTemplateSpec typerefSpec)",
+      "info" : "MethodDeclaration[27234-27745]:MethodDeclaration[29621-30132]"
+    }, {
+      "left" : "protected void generateUnion(JDefinedClass unionClass, UnionTemplateSpec unionSpec)\n      throws JClassAlreadyExistsException",
+      "right" : "protected void extendUnionBaseClass(JDefinedClass unionClass)",
+      "info" : "MethodDeclaration[27749-29345]:MethodDeclaration[31810-31921]"
+    }, {
+      "left" : "private void generateUnionMemberAccessors(JDefinedClass unionClass, DataSchema memberType, JClass memberClass, JClass dataClass, JVar schemaField)",
+      "right" : "private void generateUnionMemberAccessors(JDefinedClass unionClass, DataSchema memberType, JClass memberClass, JClass dataClass, JVar schemaField)",
+      "info" : "MethodDeclaration[29349-31436]:MethodDeclaration[31925-34012]"
+    }, {
+      "left" : "private void generatePathSpecMethodsForUnion(UnionTemplateSpec unionSpec, JDefinedClass unionClass)\n      throws JClassAlreadyExistsException",
+      "right" : "private void generatePathSpecMethodsForUnion(UnionTemplateSpec unionSpec, JDefinedClass unionClass)\n      throws JClassAlreadyExistsException",
+      "info" : "MethodDeclaration[31440-32315]:MethodDeclaration[34016-34891]"
+    }, {
+      "left" : "private void populateClassContent(ClassTemplateSpec classTemplateSpec, JDefinedClass definedClass)\n      throws JClassAlreadyExistsException",
+      "right" : "private void populateClassContent(ClassTemplateSpec classTemplateSpec, JDefinedClass definedClass)\n      throws JClassAlreadyExistsException",
+      "info" : "MethodDeclaration[32319-33835]:MethodDeclaration[34895-36411]"
+    }, {
+      "left" : "private JFieldVar generateSchemaField(JDefinedClass templateClass, DataSchema schema)",
+      "right" : "private JFieldVar generateSchemaField(JDefinedClass templateClass, DataSchema schema)",
+      "info" : "MethodDeclaration[33839-35119]:MethodDeclaration[36415-37695]"
+    }, {
+      "left" : "private void generatePathSpecMethodsForCollection(JDefinedClass templateClass, DataSchema schema, JClass childClass, String wildcardMethodName)\n      throws JClassAlreadyExistsException",
+      "right" : "private void generatePathSpecMethodsForCollection(JDefinedClass templateClass, DataSchema schema, JClass childClass, String wildcardMethodName)\n      throws JClassAlreadyExistsException",
+      "info" : "MethodDeclaration[35123-35800]:MethodDeclaration[37699-38376]"
+    }, {
+      "left" : "private JDefinedClass generatePathSpecNestedClass(JDefinedClass templateClass)\n      throws JClassAlreadyExistsException",
+      "right" : "private JDefinedClass generatePathSpecNestedClass(JDefinedClass templateClass)\n      throws JClassAlreadyExistsException",
+      "info" : "MethodDeclaration[35804-36535]:MethodDeclaration[38380-39111]"
+    }, {
+      "left" : "private void generateCustomClassInitialization(JDefinedClass templateClass, CustomInfoSpec customInfo)",
+      "right" : "private void generateCustomClassInitialization(JDefinedClass templateClass, CustomInfoSpec customInfo)",
+      "info" : "MethodDeclaration[36539-37562]:MethodDeclaration[39115-40138]"
+    }, {
+      "left" : "private void generateConstructorWithInitialCapacity(JDefinedClass cls, JClass elementClass)",
+      "right" : "private void generateConstructorWithInitialCapacity(JDefinedClass cls, JClass elementClass)",
+      "info" : "MethodDeclaration[37566-37915]:MethodDeclaration[40142-40491]"
+    }, {
+      "left" : "private void generateConstructorWithCollection(JDefinedClass cls, JClass elementClass)",
+      "right" : "private void generateConstructorWithCollection(JDefinedClass cls, JClass elementClass)",
+      "info" : "MethodDeclaration[37919-38308]:MethodDeclaration[40495-40884]"
+    }, {
+      "left" : "private void generateConstructorWithInitialCapacityAndLoadFactor(JDefinedClass cls)",
+      "right" : "private void generateConstructorWithInitialCapacityAndLoadFactor(JDefinedClass cls)",
+      "info" : "MethodDeclaration[38312-38756]:MethodDeclaration[40888-41332]"
+    }, {
+      "left" : "private void generateConstructorWithMap(JDefinedClass cls, JClass valueClass)",
+      "right" : "private void generateConstructorWithMap(JDefinedClass cls, JClass valueClass)",
+      "info" : "MethodDeclaration[38760-39151]:MethodDeclaration[41336-41727]"
+    }, {
+      "left" : "Config",
+      "right" : "Config",
+      "info" : "TypeDeclaration[39155-39843]:TypeDeclaration[41731-43223]"
+    }, {
+      "left" : "private String _defaultPackage;",
+      "right" : "private String _defaultPackage;",
+      "info" : "FieldDeclaration[39190-39221]:FieldDeclaration[41766-41797]"
+    }, {
+      "left" : "private boolean _recordFieldAccessorWithMode;",
+      "right" : "private boolean _recordFieldAccessorWithMode;",
+      "info" : "FieldDeclaration[39226-39271]:FieldDeclaration[41802-41847]"
+    }, {
+      "left" : "public Config()",
+      "right" : "public Config()",
+      "info" : "MethodDeclaration[39277-39377]:MethodDeclaration[41967-42160]"
+    }, {
+      "left" : "public void setDefaultPackage(String defaultPackage)",
+      "right" : "public void setDefaultPackage(String defaultPackage)",
+      "info" : "MethodDeclaration[39383-39487]:MethodDeclaration[42166-42270]"
+    }, {
+      "left" : "public String getDefaultPackage()",
+      "right" : "public String getDefaultPackage()",
+      "info" : "MethodDeclaration[39493-39568]:MethodDeclaration[42276-42351]"
+    }, {
+      "left" : "public void setRecordFieldAccessorWithMode(boolean recordFieldAccessorWithMode)",
+      "right" : "public void setRecordFieldAccessorWithMode(boolean recordFieldAccessorWithMode)",
+      "info" : "MethodDeclaration[39574-39731]:MethodDeclaration[42357-42514]"
+    }, {
+      "left" : "public boolean getRecordFieldAccessorWithMode()",
+      "right" : "public boolean getRecordFieldAccessorWithMode()",
+      "info" : "MethodDeclaration[39737-39839]:MethodDeclaration[42520-42622]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3784-4448]:Block[4104-4768]"
+    }, {
+      "left" : "final Class<?>[] predefinedClass = new Class<?>[] {\n        BooleanArray.class,\n        BooleanMap.class,\n        BytesArray.class,\n        BytesMap.class,\n        DoubleArray.class,\n        DoubleMap.class,\n        FloatArray.class,\n        FloatMap.class,\n        IntegerArray.class,\n        IntegerMap.class,\n        LongArray.class,\n        LongMap.class,\n        StringArray.class,\n        StringMap.class\n    };",
+      "right" : "final Class<?>[] predefinedClass = new Class<?>[] {\n        BooleanArray.class,\n        BooleanMap.class,\n        BytesArray.class,\n        BytesMap.class,\n        DoubleArray.class,\n        DoubleMap.class,\n        FloatArray.class,\n        FloatMap.class,\n        IntegerArray.class,\n        IntegerMap.class,\n        LongArray.class,\n        LongMap.class,\n        StringArray.class,\n        StringMap.class\n    };",
+      "info" : "VariableDeclarationStatement[3790-4207]:VariableDeclarationStatement[4110-4527]"
+    }, {
+      "left" : "PredefinedJavaClasses = new HashMap<DataSchema, Class<?>>();",
+      "right" : "PredefinedJavaClasses = new HashMap<DataSchema, Class<?>>();",
+      "info" : "ExpressionStatement[4213-4273]:ExpressionStatement[4533-4593]"
+    }, {
+      "left" : "for (Class<?> clazz : predefinedClass)",
+      "right" : "for (Class<?> clazz : predefinedClass)",
+      "info" : "EnhancedForStatement[4279-4444]:EnhancedForStatement[4599-4764]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4322-4444]:Block[4642-4764]"
+    }, {
+      "left" : "final DataSchema schema = DataTemplateUtil.getSchema(clazz);",
+      "right" : "final DataSchema schema = DataTemplateUtil.getSchema(clazz);",
+      "info" : "VariableDeclarationStatement[4330-4390]:VariableDeclarationStatement[4650-4710]"
+    }, {
+      "left" : "PredefinedJavaClasses.put(schema, clazz);",
+      "right" : "PredefinedJavaClasses.put(schema, clazz);",
+      "info" : "ExpressionStatement[4397-4438]:ExpressionStatement[4717-4758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5225-5322]:Block[6120-6766]"
+    }, {
+      "left" : "super(defaultPackage);",
+      "right" : "super(defaultPackage);",
+      "info" : "SuperConstructorInvocation[5231-5253]:SuperConstructorInvocation[6126-6148]"
+    }, {
+      "left" : "_recordFieldAccessorWithMode = recordFieldAccessorWithMode;",
+      "right" : "_copierMethods = copierMethods;",
+      "info" : "ExpressionStatement[5259-5318]:ExpressionStatement[6731-6762]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5376-5469]:Block[6820-7027]"
+    }, {
+      "left" : "this(config.getDefaultPackage(),\n         config.getRecordFieldAccessorWithMode());",
+      "right" : "this(config.getDefaultPackage(),\n         config.getRecordFieldAccessorWithMode(),\n         config.getRecordFieldRemove(),\n         config.getPathSpecMethods(),\n         config.getCopierMethods());",
+      "info" : "ConstructorInvocation[5382-5465]:ConstructorInvocation[6826-7023]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5649-5686]:Block[7207-7298]"
+    }, {
+      "left" : "this(defaultPackage, true);",
+      "right" : "this(defaultPackage,\n         true,\n         true,\n         true,\n         true);",
+      "info" : "ConstructorInvocation[5655-5682]:ConstructorInvocation[7213-7294]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5759-5794]:Block[7371-7406]"
+    }, {
+      "left" : "return _generatedClasses;",
+      "right" : "return _generatedClasses;",
+      "info" : "ReturnStatement[5765-5790]:ReturnStatement[7377-7402]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5860-6928]:Block[7472-8540]"
+    }, {
+      "left" : "final JClass result;",
+      "right" : "final JClass result;",
+      "info" : "VariableDeclarationStatement[5866-5886]:VariableDeclarationStatement[7478-7498]"
+    }, {
+      "left" : "if (classTemplateSpec == null)",
+      "right" : "if (classTemplateSpec == null)",
+      "info" : "IfStatement[5892-6904]:IfStatement[7504-8516]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5927-5955]:Block[7539-7567]"
+    }, {
+      "left" : "result = null;",
+      "right" : "result = null;",
+      "info" : "ExpressionStatement[5935-5949]:ExpressionStatement[7547-7561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5969-6904]:Block[7581-8516]"
+    }, {
+      "left" : "if (classTemplateSpec.getSchema() == null)",
+      "right" : "if (classTemplateSpec.getSchema() == null)",
+      "info" : "IfStatement[5977-6898]:IfStatement[7589-8510]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6026-6113]:Block[7638-7725]"
+    }, {
+      "left" : "result = getCodeModel().directClass(classTemplateSpec.getFullName());",
+      "right" : "result = getCodeModel().directClass(classTemplateSpec.getFullName());",
+      "info" : "ExpressionStatement[6036-6105]:ExpressionStatement[7648-7717]"
+    }, {
+      "left" : "if (PredefinedJavaClasses.containsKey(classTemplateSpec.getSchema()))",
+      "right" : "if (PredefinedJavaClasses.containsKey(classTemplateSpec.getSchema()))",
+      "info" : "IfStatement[6125-6898]:IfStatement[7737-8510]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6201-6363]:Block[7813-7975]"
+    }, {
+      "left" : "final Class<?> nativeJavaClass = PredefinedJavaClasses.get(classTemplateSpec.getSchema());",
+      "right" : "final Class<?> nativeJavaClass = PredefinedJavaClasses.get(classTemplateSpec.getSchema());",
+      "info" : "VariableDeclarationStatement[6211-6301]:VariableDeclarationStatement[7823-7913]"
+    }, {
+      "left" : "result = getCodeModel().ref(nativeJavaClass);",
+      "right" : "result = getCodeModel().ref(nativeJavaClass);",
+      "info" : "ExpressionStatement[6310-6355]:ExpressionStatement[7922-7967]"
+    }, {
+      "left" : "if (classTemplateSpec.getSchema().isPrimitive())",
+      "right" : "if (classTemplateSpec.getSchema().isPrimitive())",
+      "info" : "IfStatement[6375-6898]:IfStatement[7987-8510]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6430-6518]:Block[8042-8130]"
+    }, {
+      "left" : "result = generatePrimitive((PrimitiveTemplateSpec) classTemplateSpec);",
+      "right" : "result = generatePrimitive((PrimitiveTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[6440-6510]:ExpressionStatement[8052-8122]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6536-6898]:Block[8148-8510]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6546-6890]:TryStatement[8158-8502]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6558-6744]:Block[8170-8356]"
+    }, {
+      "left" : "final JDefinedClass definedClass = defineClass(classTemplateSpec);",
+      "right" : "final JDefinedClass definedClass = defineClass(classTemplateSpec);",
+      "info" : "VariableDeclarationStatement[6570-6636]:VariableDeclarationStatement[8182-8248]"
+    }, {
+      "left" : "populateClassContent(classTemplateSpec, definedClass);",
+      "right" : "populateClassContent(classTemplateSpec, definedClass);",
+      "info" : "ExpressionStatement[6647-6701]:ExpressionStatement[8259-8313]"
+    }, {
+      "left" : "result = definedClass;",
+      "right" : "result = definedClass;",
+      "info" : "ExpressionStatement[6712-6734]:ExpressionStatement[8324-8346]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6800-6890]:Block[8412-8502]"
+    }, {
+      "left" : "throw new IllegalArgumentException(classTemplateSpec.getFullName());",
+      "right" : "throw new IllegalArgumentException(classTemplateSpec.getFullName());",
+      "info" : "ThrowStatement[6812-6880]:ThrowStatement[8424-8492]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[6910-6924]:ReturnStatement[8522-8536]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7009-7111]:Block[8621-8723]"
+    }, {
+      "left" : "if (dataClass != null)",
+      "right" : "if (dataClass != null)",
+      "info" : "IfStatement[7015-7091]:IfStatement[8627-8703]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7042-7091]:Block[8654-8703]"
+    }, {
+      "left" : "inv.arg(JExpr.dotclass(dataClass));",
+      "right" : "inv.arg(JExpr.dotclass(dataClass));",
+      "info" : "ExpressionStatement[7050-7085]:ExpressionStatement[8662-8697]"
+    }, {
+      "left" : "return inv;",
+      "right" : "return inv;",
+      "info" : "ReturnStatement[7096-7107]:ReturnStatement[8708-8719]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7188-7292]:Block[8800-8904]"
+    }, {
+      "left" : "overrideCopierMethod(templateClass, \"clone\");",
+      "right" : "overrideCopierMethod(templateClass, \"clone\");",
+      "info" : "ExpressionStatement[7194-7239]:ExpressionStatement[8806-8851]"
+    }, {
+      "left" : "overrideCopierMethod(templateClass, \"copy\");",
+      "right" : "overrideCopierMethod(templateClass, \"copy\");",
+      "info" : "ExpressionStatement[7244-7288]:ExpressionStatement[8856-8900]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7356-7827]:Block[8968-9439]"
+    }, {
+      "left" : "while (true)",
+      "right" : "while (true)",
+      "info" : "WhileStatement[7362-7823]:WhileStatement[8974-9435]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7379-7823]:Block[8991-9435]"
+    }, {
+      "left" : "switch (schema.getDereferencedType())\n      {\n        case RECORD:\n          return true;\n        case UNION:\n          return true;\n        case ARRAY:\n          schema = ((ArrayDataSchema) schema.getDereferencedDataSchema()).getItems();\n          continue;\n        case MAP:\n          schema = ((MapDataSchema) schema.getDereferencedDataSchema()).getValues();\n          continue;\n        default:\n          return false;\n      }",
+      "right" : "switch (schema.getDereferencedType())\n      {\n        case RECORD:\n          return true;\n        case UNION:\n          return true;\n        case ARRAY:\n          schema = ((ArrayDataSchema) schema.getDereferencedDataSchema()).getItems();\n          continue;\n        case MAP:\n          schema = ((MapDataSchema) schema.getDereferencedDataSchema()).getValues();\n          continue;\n        default:\n          return false;\n      }",
+      "info" : "SwitchStatement[7387-7817]:SwitchStatement[8999-9429]"
+    }, {
+      "left" : "case RECORD:",
+      "right" : "case RECORD:",
+      "info" : "SwitchCase[7441-7453]:SwitchCase[9053-9065]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[7464-7476]:ReturnStatement[9076-9088]"
+    }, {
+      "left" : "case UNION:",
+      "right" : "case UNION:",
+      "info" : "SwitchCase[7485-7496]:SwitchCase[9097-9108]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[7507-7519]:ReturnStatement[9119-9131]"
+    }, {
+      "left" : "case ARRAY:",
+      "right" : "case ARRAY:",
+      "info" : "SwitchCase[7528-7539]:SwitchCase[9140-9151]"
+    }, {
+      "left" : "schema = ((ArrayDataSchema) schema.getDereferencedDataSchema()).getItems();",
+      "right" : "schema = ((ArrayDataSchema) schema.getDereferencedDataSchema()).getItems();",
+      "info" : "ExpressionStatement[7550-7625]:ExpressionStatement[9162-9237]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[7636-7645]:ContinueStatement[9248-9257]"
+    }, {
+      "left" : "case MAP:",
+      "right" : "case MAP:",
+      "info" : "SwitchCase[7654-7663]:SwitchCase[9266-9275]"
+    }, {
+      "left" : "schema = ((MapDataSchema) schema.getDereferencedDataSchema()).getValues();",
+      "right" : "schema = ((MapDataSchema) schema.getDereferencedDataSchema()).getValues();",
+      "info" : "ExpressionStatement[7674-7748]:ExpressionStatement[9286-9360]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[7759-7768]:ContinueStatement[9371-9380]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[7777-7785]:SwitchCase[9389-9397]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[7796-7809]:ReturnStatement[9408-9421]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7936-8094]:Block[9548-9706]"
+    }, {
+      "left" : "final JMethod noArgConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod noArgConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[7942-8004]:VariableDeclarationStatement[9554-9616]"
+    }, {
+      "left" : "noArgConstructor.body().invoke(SUPER).arg(JExpr._new(newClass)).arg(schemaField);",
+      "right" : "noArgConstructor.body().invoke(SUPER).arg(JExpr._new(newClass)).arg(schemaField);",
+      "info" : "ExpressionStatement[8009-8090]:ExpressionStatement[9621-9702]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8185-8325]:Block[9797-9937]"
+    }, {
+      "left" : "final JMethod noArgConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod noArgConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[8191-8253]:VariableDeclarationStatement[9803-9865]"
+    }, {
+      "left" : "noArgConstructor.body().invoke(THIS).arg(JExpr._new(newClass));",
+      "right" : "noArgConstructor.body().invoke(THIS).arg(JExpr._new(newClass));",
+      "info" : "ExpressionStatement[8258-8321]:ExpressionStatement[9870-9933]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8421-8627]:Block[10033-10239]"
+    }, {
+      "left" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[8427-8487]:VariableDeclarationStatement[10039-10099]"
+    }, {
+      "left" : "final JVar param = argConstructor.param(Object.class, \"data\");",
+      "right" : "final JVar param = argConstructor.param(Object.class, \"data\");",
+      "info" : "VariableDeclarationStatement[8492-8554]:VariableDeclarationStatement[10104-10166]"
+    }, {
+      "left" : "argConstructor.body().invoke(SUPER).arg(param).arg(schemaField);",
+      "right" : "argConstructor.body().invoke(SUPER).arg(param).arg(schemaField);",
+      "info" : "ExpressionStatement[8559-8623]:ExpressionStatement[10171-10235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8736-8940]:Block[10348-10552]"
+    }, {
+      "left" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[8742-8802]:VariableDeclarationStatement[10354-10414]"
+    }, {
+      "left" : "final JVar param = argConstructor.param(paramClass, \"data\");",
+      "right" : "final JVar param = argConstructor.param(paramClass, \"data\");",
+      "info" : "VariableDeclarationStatement[8807-8867]:VariableDeclarationStatement[10419-10479]"
+    }, {
+      "left" : "argConstructor.body().invoke(SUPER).arg(param).arg(schemaField);",
+      "right" : "argConstructor.body().invoke(SUPER).arg(param).arg(schemaField);",
+      "info" : "ExpressionStatement[8872-8936]:ExpressionStatement[10484-10548]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9088-9384]:Block[10700-10996]"
+    }, {
+      "left" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[9094-9154]:VariableDeclarationStatement[10706-10766]"
+    }, {
+      "left" : "final JVar param = argConstructor.param(paramClass, \"data\");",
+      "right" : "final JVar param = argConstructor.param(paramClass, \"data\");",
+      "info" : "VariableDeclarationStatement[9159-9219]:VariableDeclarationStatement[10771-10831]"
+    }, {
+      "left" : "final JInvocation inv = argConstructor.body().invoke(SUPER).arg(param).arg(schemaField).arg(JExpr.dotclass(elementClass));",
+      "right" : "final JInvocation inv = argConstructor.body().invoke(SUPER).arg(param).arg(schemaField).arg(JExpr.dotclass(elementClass));",
+      "info" : "VariableDeclarationStatement[9224-9346]:VariableDeclarationStatement[10836-10958]"
+    }, {
+      "left" : "dataClassArg(inv, dataClass);",
+      "right" : "dataClassArg(inv, dataClass);",
+      "info" : "ExpressionStatement[9351-9380]:ExpressionStatement[10963-10992]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10914-11018]:Block[12526-12630]"
+    }, {
+      "left" : "return customInfo != null ? customInfo.getCustomSchema() : schema.getDereferencedDataSchema();",
+      "right" : "return customInfo != null ? customInfo.getCustomSchema() : schema.getDereferencedDataSchema();",
+      "info" : "ReturnStatement[10920-11014]:ReturnStatement[12532-12626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11113-11411]:Block[12725-13023]"
+    }, {
+      "left" : "final JMethod copierMethod = templateClass.method(JMod.PUBLIC, templateClass, methodName);",
+      "right" : "final JMethod copierMethod = templateClass.method(JMod.PUBLIC, templateClass, methodName);",
+      "info" : "VariableDeclarationStatement[11119-11209]:VariableDeclarationStatement[12731-12821]"
+    }, {
+      "left" : "copierMethod.annotate(Override.class);",
+      "right" : "copierMethod.annotate(Override.class);",
+      "info" : "ExpressionStatement[11214-11252]:ExpressionStatement[12826-12864]"
+    }, {
+      "left" : "copierMethod._throws(CloneNotSupportedException.class);",
+      "right" : "copierMethod._throws(CloneNotSupportedException.class);",
+      "info" : "ExpressionStatement[11257-11312]:ExpressionStatement[12869-12924]"
+    }, {
+      "left" : "copierMethod.body()._return(JExpr.cast(templateClass, JExpr._super().invoke(methodName)));",
+      "right" : "copierMethod.body()._return(JExpr.cast(templateClass, JExpr._super().invoke(methodName)));",
+      "info" : "ExpressionStatement[11317-11407]:ExpressionStatement[12929-13019]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11517-11631]:Block[13129-13243]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(schema.getProperties().get(DEPRECATED_KEY), schemaClass, schemaClass);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(schema.getProperties().get(DEPRECATED_KEY), schemaClass, schemaClass);",
+      "info" : "ExpressionStatement[11523-11627]:ExpressionStatement[13135-13239]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11737-11840]:Block[13349-13452]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(field.getProperties().get(DEPRECATED_KEY), method, method);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(field.getProperties().get(DEPRECATED_KEY), method, method);",
+      "info" : "ExpressionStatement[11743-11836]:ExpressionStatement[13355-13448]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11966-12348]:Block[13578-13960]"
+    }, {
+      "left" : "final Object deprecatedSymbolsProp = enumSchema.getProperties().get(DEPRECATED_SYMBOLS_KEY);",
+      "right" : "final Object deprecatedSymbolsProp = enumSchema.getProperties().get(DEPRECATED_SYMBOLS_KEY);",
+      "info" : "VariableDeclarationStatement[11972-12064]:VariableDeclarationStatement[13584-13676]"
+    }, {
+      "left" : "if (deprecatedSymbolsProp instanceof DataMap)",
+      "right" : "if (deprecatedSymbolsProp instanceof DataMap)",
+      "info" : "IfStatement[12069-12344]:IfStatement[13681-13956]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12119-12344]:Block[13731-13956]"
+    }, {
+      "left" : "final DataMap deprecatedSymbols = (DataMap) deprecatedSymbolsProp;",
+      "right" : "final DataMap deprecatedSymbols = (DataMap) deprecatedSymbolsProp;",
+      "info" : "VariableDeclarationStatement[12127-12193]:VariableDeclarationStatement[13739-13805]"
+    }, {
+      "left" : "final Object deprecatedProp = deprecatedSymbols.get(symbol);",
+      "right" : "final Object deprecatedProp = deprecatedSymbols.get(symbol);",
+      "info" : "VariableDeclarationStatement[12201-12261]:VariableDeclarationStatement[13813-13873]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(deprecatedProp, constant, constant);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(deprecatedProp, constant, constant);",
+      "info" : "ExpressionStatement[12268-12338]:ExpressionStatement[13880-13950]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12486-12955]:Block[14098-14567]"
+    }, {
+      "left" : "if (Boolean.TRUE.equals(deprecatedProp) && annotatable != null)",
+      "right" : "if (Boolean.TRUE.equals(deprecatedProp) && annotatable != null)",
+      "info" : "IfStatement[12492-12951]:IfStatement[14104-14563]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12560-12613]:Block[14172-14225]"
+    }, {
+      "left" : "annotatable.annotate(Deprecated.class);",
+      "right" : "annotatable.annotate(Deprecated.class);",
+      "info" : "ExpressionStatement[12568-12607]:ExpressionStatement[14180-14219]"
+    }, {
+      "left" : "if (deprecatedProp instanceof String)",
+      "right" : "if (deprecatedProp instanceof String)",
+      "info" : "IfStatement[12623-12951]:IfStatement[14235-14563]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12665-12951]:Block[14277-14563]"
+    }, {
+      "left" : "if (commentable != null)",
+      "right" : "if (commentable != null)",
+      "info" : "IfStatement[12673-12850]:IfStatement[14285-14462]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12704-12850]:Block[14316-14462]"
+    }, {
+      "left" : "final String deprecatedReason = (String) deprecatedProp;",
+      "right" : "final String deprecatedReason = (String) deprecatedProp;",
+      "info" : "VariableDeclarationStatement[12714-12770]:VariableDeclarationStatement[14326-14382]"
+    }, {
+      "left" : "commentable.javadoc().addDeprecated().append(deprecatedReason);",
+      "right" : "commentable.javadoc().addDeprecated().append(deprecatedReason);",
+      "info" : "ExpressionStatement[12779-12842]:ExpressionStatement[14391-14454]"
+    }, {
+      "left" : "if (annotatable != null)",
+      "right" : "if (annotatable != null)",
+      "info" : "IfStatement[12857-12945]:IfStatement[14469-14557]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12888-12945]:Block[14500-14557]"
+    }, {
+      "left" : "annotatable.annotate(Deprecated.class);",
+      "right" : "annotatable.annotate(Deprecated.class);",
+      "info" : "ExpressionStatement[12898-12937]:ExpressionStatement[14510-14549]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13022-13386]:Block[14634-14998]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[13028-13382]:TryStatement[14640-14994]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13036-13212]:Block[14648-14824]"
+    }, {
+      "left" : "int value = 0;",
+      "right" : "int value = 0;",
+      "info" : "VariableDeclarationStatement[13044-13058]:VariableDeclarationStatement[14656-14670]"
+    }, {
+      "left" : "for (ModifierSpec mod : modifiers)",
+      "right" : "for (ModifierSpec mod : modifiers)",
+      "info" : "EnhancedForStatement[13065-13186]:EnhancedForStatement[14677-14798]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13106-13186]:Block[14718-14798]"
+    }, {
+      "left" : "value |= JMod.class.getDeclaredField(mod.name()).getInt(null);",
+      "right" : "value |= JMod.class.getDeclaredField(mod.name()).getInt(null);",
+      "info" : "ExpressionStatement[13116-13178]:ExpressionStatement[14728-14790]"
+    }, {
+      "left" : "return value;",
+      "right" : "return value;",
+      "info" : "ReturnStatement[13193-13206]:ReturnStatement[14805-14818]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13252-13296]:Block[14864-14908]"
+    }, {
+      "left" : "throw new RuntimeException(e);",
+      "right" : "throw new RuntimeException(e);",
+      "info" : "ThrowStatement[13260-13290]:ThrowStatement[14872-14902]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13338-13382]:Block[14950-14994]"
+    }, {
+      "left" : "throw new RuntimeException(e);",
+      "right" : "throw new RuntimeException(e);",
+      "info" : "ThrowStatement[13346-13376]:ThrowStatement[14958-14988]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13488-13640]:Block[15100-15252]"
+    }, {
+      "left" : "method.javadoc().append(prefix + \" for \" + field.getName());",
+      "right" : "method.javadoc().append(prefix + \" for \" + field.getName());",
+      "info" : "ExpressionStatement[13494-13554]:ExpressionStatement[15106-15166]"
+    }, {
+      "left" : "method.javadoc().addXdoclet(\"see Fields#\" + escapeReserved(field.getName()));",
+      "right" : "method.javadoc().addXdoclet(\"see Fields#\" + escapeReserved(field.getName()));",
+      "info" : "ExpressionStatement[13559-13636]:ExpressionStatement[15171-15248]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13759-15022]:Block[15371-16634]"
+    }, {
+      "left" : "JDefinedClass result = _definedClasses.get(classTemplateSpec);",
+      "right" : "JDefinedClass result = _definedClasses.get(classTemplateSpec);",
+      "info" : "VariableDeclarationStatement[13765-13827]:VariableDeclarationStatement[15377-15439]"
+    }, {
+      "left" : "if (result == null)",
+      "right" : "if (result == null)",
+      "info" : "IfStatement[13832-14998]:IfStatement[15444-16610]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13856-14998]:Block[15468-16610]"
+    }, {
+      "left" : "final int jmodValue = getJModValue(classTemplateSpec.getModifiers());",
+      "right" : "final int jmodValue = getJModValue(classTemplateSpec.getModifiers());",
+      "info" : "VariableDeclarationStatement[13864-13933]:VariableDeclarationStatement[15476-15545]"
+    }, {
+      "left" : "final JClassContainer container;",
+      "right" : "final JClassContainer container;",
+      "info" : "VariableDeclarationStatement[13940-13972]:VariableDeclarationStatement[15552-15584]"
+    }, {
+      "left" : "if (classTemplateSpec.getEnclosingClass() == null)",
+      "right" : "if (classTemplateSpec.getEnclosingClass() == null)",
+      "info" : "IfStatement[13979-14210]:IfStatement[15591-15822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14036-14111]:Block[15648-15723]"
+    }, {
+      "left" : "container = getPackage(classTemplateSpec.getNamespace());",
+      "right" : "container = getPackage(classTemplateSpec.getNamespace());",
+      "info" : "ExpressionStatement[14046-14103]:ExpressionStatement[15658-15715]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14129-14210]:Block[15741-15822]"
+    }, {
+      "left" : "container = defineClass(classTemplateSpec.getEnclosingClass());",
+      "right" : "container = defineClass(classTemplateSpec.getEnclosingClass());",
+      "info" : "ExpressionStatement[14139-14202]:ExpressionStatement[15751-15814]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof ArrayTemplateSpec ||\n          classTemplateSpec instanceof FixedTemplateSpec ||\n          classTemplateSpec instanceof MapTemplateSpec ||\n          classTemplateSpec instanceof RecordTemplateSpec ||\n          classTemplateSpec instanceof TyperefTemplateSpec ||\n          classTemplateSpec instanceof UnionTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof ArrayTemplateSpec ||\n          classTemplateSpec instanceof FixedTemplateSpec ||\n          classTemplateSpec instanceof MapTemplateSpec ||\n          classTemplateSpec instanceof RecordTemplateSpec ||\n          classTemplateSpec instanceof TyperefTemplateSpec ||\n          classTemplateSpec instanceof UnionTemplateSpec)",
+      "info" : "IfStatement[14218-14937]:IfStatement[15830-16549]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14577-14682]:Block[16189-16294]"
+    }, {
+      "left" : "result = container._class(jmodValue, escapeReserved(classTemplateSpec.getClassName()));",
+      "right" : "result = container._class(jmodValue, escapeReserved(classTemplateSpec.getClassName()));",
+      "info" : "ExpressionStatement[14587-14674]:ExpressionStatement[16199-16286]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof EnumTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof EnumTemplateSpec)",
+      "info" : "IfStatement[14694-14937]:IfStatement[16306-16549]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14751-14872]:Block[16363-16484]"
+    }, {
+      "left" : "result = container._class(jmodValue, escapeReserved(classTemplateSpec.getClassName()), ClassType.ENUM);",
+      "right" : "result = container._class(jmodValue, escapeReserved(classTemplateSpec.getClassName()), ClassType.ENUM);",
+      "info" : "ExpressionStatement[14761-14864]:ExpressionStatement[16373-16476]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14890-14937]:Block[16502-16549]"
+    }, {
+      "left" : "throw new RuntimeException();",
+      "right" : "throw new RuntimeException();",
+      "info" : "ThrowStatement[14900-14929]:ThrowStatement[16512-16541]"
+    }, {
+      "left" : "_definedClasses.put(classTemplateSpec, result);",
+      "right" : "_definedClasses.put(classTemplateSpec, result);",
+      "info" : "ExpressionStatement[14945-14992]:ExpressionStatement[16557-16604]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[15004-15018]:ReturnStatement[16616-16630]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15166-16413]:Block[16778-18100]"
+    }, {
+      "left" : "final JClass itemJClass = generate(arrayDataTemplateSpec.getItemClass());",
+      "right" : "final JClass itemJClass = generate(arrayDataTemplateSpec.getItemClass());",
+      "info" : "VariableDeclarationStatement[15172-15245]:VariableDeclarationStatement[16784-16857]"
+    }, {
+      "left" : "final JClass dataJClass = generate(arrayDataTemplateSpec.getItemDataClass());",
+      "right" : "final JClass dataJClass = generate(arrayDataTemplateSpec.getItemDataClass());",
+      "info" : "VariableDeclarationStatement[15250-15327]:VariableDeclarationStatement[16862-16939]"
+    }, {
+      "left" : "if (CodeUtil.isDirectType(arrayDataTemplateSpec.getSchema().getItems()))",
+      "right" : "if (CodeUtil.isDirectType(arrayDataTemplateSpec.getSchema().getItems()))",
+      "info" : "IfStatement[15333-15570]:IfStatement[16945-17179]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15410-15482]:Block[17022-17098]"
+    }, {
+      "left" : "arrayClass._extends(_directArrayClass.narrow(itemJClass));",
+      "right" : "arrayClass._extends(_directArrayBaseClass.narrow(itemJClass));",
+      "info" : "ExpressionStatement[15418-15476]:ExpressionStatement[17030-17092]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15496-15570]:Block[17112-17179]"
+    }, {
+      "left" : "arrayClass._extends(_wrappingArrayClass.narrow(itemJClass));",
+      "right" : "extendWrappingArrayBaseClass(itemJClass, arrayClass);",
+      "info" : "ExpressionStatement[15504-15564]:ExpressionStatement[17120-17173]"
+    }, {
+      "left" : "/** see {@link #schemaForArrayItemsOrMapValues} */\n    final DataSchema bareSchema = new ArrayDataSchema(schemaForArrayItemsOrMapValues(arrayDataTemplateSpec.getCustomInfo(), arrayDataTemplateSpec.getSchema().getItems()));",
+      "right" : "/** see {@link #schemaForArrayItemsOrMapValues} */\n    final DataSchema bareSchema = new ArrayDataSchema(schemaForArrayItemsOrMapValues(arrayDataTemplateSpec.getCustomInfo(), arrayDataTemplateSpec.getSchema().getItems()));",
+      "info" : "VariableDeclarationStatement[15576-15798]:VariableDeclarationStatement[17185-17407]"
+    }, {
+      "left" : "final JVar schemaField = generateSchemaField(arrayClass, bareSchema);",
+      "right" : "final JVar schemaField = generateSchemaField(arrayClass, bareSchema);",
+      "info" : "VariableDeclarationStatement[15803-15872]:VariableDeclarationStatement[17412-17481]"
+    }, {
+      "left" : "generateConstructorWithNoArg(arrayClass, _dataListClass);",
+      "right" : "generateConstructorWithNoArg(arrayClass, _dataListClass);",
+      "info" : "ExpressionStatement[15878-15935]:ExpressionStatement[17487-17544]"
+    }, {
+      "left" : "generateConstructorWithInitialCapacity(arrayClass, _dataListClass);",
+      "right" : "generateConstructorWithInitialCapacity(arrayClass, _dataListClass);",
+      "info" : "ExpressionStatement[15940-16007]:ExpressionStatement[17549-17616]"
+    }, {
+      "left" : "generateConstructorWithCollection(arrayClass, itemJClass);",
+      "right" : "generateConstructorWithCollection(arrayClass, itemJClass);",
+      "info" : "ExpressionStatement[16012-16070]:ExpressionStatement[17621-17679]"
+    }, {
+      "left" : "generateConstructorWithArg(arrayClass, schemaField, _dataListClass, itemJClass, dataJClass);",
+      "right" : "generateConstructorWithArg(arrayClass, schemaField, _dataListClass, itemJClass, dataJClass);",
+      "info" : "ExpressionStatement[16075-16167]:ExpressionStatement[17684-17776]"
+    }, {
+      "left" : "generatePathSpecMethodsForCollection(arrayClass, arrayDataTemplateSpec.getSchema(), itemJClass, \"items\");",
+      "right" : "generatePathSpecMethodsForCollection(arrayClass, arrayDataTemplateSpec.getSchema(), itemJClass, \"items\");",
+      "info" : "ExpressionStatement[16173-16278]:ExpressionStatement[17816-17921]"
+    }, {
+      "left" : "generateCustomClassInitialization(arrayClass, arrayDataTemplateSpec.getCustomInfo());",
+      "right" : "generateCustomClassInitialization(arrayClass, arrayDataTemplateSpec.getCustomInfo());",
+      "info" : "ExpressionStatement[16284-16369]:ExpressionStatement[17933-18018]"
+    }, {
+      "left" : "generateCopierMethods(arrayClass);",
+      "right" : "generateCopierMethods(arrayClass);",
+      "info" : "ExpressionStatement[16375-16409]:ExpressionStatement[18056-18090]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16499-17357]:Block[18355-19213]"
+    }, {
+      "left" : "enumClass.javadoc().append(enumSpec.getSchema().getDoc());",
+      "right" : "enumClass.javadoc().append(enumSpec.getSchema().getDoc());",
+      "info" : "ExpressionStatement[16505-16563]:ExpressionStatement[18361-18419]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(enumSpec.getSchema(), enumClass);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(enumSpec.getSchema(), enumClass);",
+      "info" : "ExpressionStatement[16569-16636]:ExpressionStatement[18425-18492]"
+    }, {
+      "left" : "generateSchemaField(enumClass, enumSpec.getSchema());",
+      "right" : "generateSchemaField(enumClass, enumSpec.getSchema());",
+      "info" : "ExpressionStatement[16642-16695]:ExpressionStatement[18498-18551]"
+    }, {
+      "left" : "for (String value : enumSpec.getSchema().getSymbols())",
+      "right" : "for (String value : enumSpec.getSchema().getSymbols())",
+      "info" : "EnhancedForStatement[16701-17294]:EnhancedForStatement[18557-19150]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16760-17294]:Block[18616-19150]"
+    }, {
+      "left" : "if (isReserved(value))",
+      "right" : "if (isReserved(value))",
+      "info" : "IfStatement[16768-16935]:IfStatement[18624-18791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16797-16935]:Block[18653-18791]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Enum contains Java reserved symbol: \" + value + \" schema: \" + enumSpec.getSchema());",
+      "right" : "throw new IllegalArgumentException(\"Enum contains Java reserved symbol: \" + value + \" schema: \" + enumSpec.getSchema());",
+      "info" : "ThrowStatement[16807-16927]:ThrowStatement[18663-18783]"
+    }, {
+      "left" : "final JEnumConstant enumConstant = enumClass.enumConstant(value);",
+      "right" : "final JEnumConstant enumConstant = enumClass.enumConstant(value);",
+      "info" : "VariableDeclarationStatement[16943-17008]:VariableDeclarationStatement[18799-18864]"
+    }, {
+      "left" : "final String enumConstantDoc = enumSpec.getSchema().getSymbolDocs().get(value);",
+      "right" : "final String enumConstantDoc = enumSpec.getSchema().getSymbolDocs().get(value);",
+      "info" : "VariableDeclarationStatement[17016-17095]:VariableDeclarationStatement[18872-18951]"
+    }, {
+      "left" : "if (enumConstantDoc != null)",
+      "right" : "if (enumConstantDoc != null)",
+      "info" : "IfStatement[17103-17203]:IfStatement[18959-19059]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17138-17203]:Block[18994-19059]"
+    }, {
+      "left" : "enumConstant.javadoc().append(enumConstantDoc);",
+      "right" : "enumConstant.javadoc().append(enumConstantDoc);",
+      "info" : "ExpressionStatement[17148-17195]:ExpressionStatement[19004-19051]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(enumSpec.getSchema(), value, enumConstant);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(enumSpec.getSchema(), value, enumConstant);",
+      "info" : "ExpressionStatement[17211-17288]:ExpressionStatement[19067-19144]"
+    }, {
+      "left" : "enumClass.enumConstant(DataTemplateUtil.UNKNOWN_ENUM);",
+      "right" : "enumClass.enumConstant(DataTemplateUtil.UNKNOWN_ENUM);",
+      "info" : "ExpressionStatement[17299-17353]:ExpressionStatement[19155-19209]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17447-18049]:Block[19303-19943]"
+    }, {
+      "left" : "fixedClass.javadoc().append(fixedSpec.getSchema().getDoc());",
+      "right" : "fixedClass.javadoc().append(fixedSpec.getSchema().getDoc());",
+      "info" : "ExpressionStatement[17453-17513]:ExpressionStatement[19309-19369]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(fixedSpec.getSchema(), fixedClass);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(fixedSpec.getSchema(), fixedClass);",
+      "info" : "ExpressionStatement[17519-17588]:ExpressionStatement[19375-19444]"
+    }, {
+      "left" : "fixedClass._extends(FixedTemplate.class);",
+      "right" : "fixedClass._extends(FixedTemplate.class);",
+      "info" : "ExpressionStatement[17594-17635]:ExpressionStatement[19450-19491]"
+    }, {
+      "left" : "final JVar schemaField = generateSchemaField(fixedClass, fixedSpec.getSchema());",
+      "right" : "final JVar schemaField = generateSchemaField(fixedClass, fixedSpec.getSchema());",
+      "info" : "VariableDeclarationStatement[17641-17721]:VariableDeclarationStatement[19497-19577]"
+    }, {
+      "left" : "final JMethod bytesConstructor = fixedClass.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod bytesConstructor = fixedClass.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[17727-17796]:VariableDeclarationStatement[19583-19652]"
+    }, {
+      "left" : "final JVar param = bytesConstructor.param(ByteString.class, \"value\");",
+      "right" : "final JVar param = bytesConstructor.param(ByteString.class, \"value\");",
+      "info" : "VariableDeclarationStatement[17801-17870]:VariableDeclarationStatement[19657-19726]"
+    }, {
+      "left" : "bytesConstructor.body().invoke(SUPER).arg(param).arg(schemaField);",
+      "right" : "bytesConstructor.body().invoke(SUPER).arg(param).arg(schemaField);",
+      "info" : "ExpressionStatement[17875-17941]:ExpressionStatement[19731-19797]"
+    }, {
+      "left" : "generateConstructorWithObjectArg(fixedClass, schemaField);",
+      "right" : "generateConstructorWithObjectArg(fixedClass, schemaField);",
+      "info" : "ExpressionStatement[17947-18005]:ExpressionStatement[19803-19861]"
+    }, {
+      "left" : "generateCopierMethods(fixedClass);",
+      "right" : "generateCopierMethods(fixedClass);",
+      "info" : "ExpressionStatement[18011-18045]:ExpressionStatement[19899-19933]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18173-19309]:Block[20067-21278]"
+    }, {
+      "left" : "final JClass valueJClass = generate(mapSpec.getValueClass());",
+      "right" : "final JClass valueJClass = generate(mapSpec.getValueClass());",
+      "info" : "VariableDeclarationStatement[18179-18240]:VariableDeclarationStatement[20073-20134]"
+    }, {
+      "left" : "final JClass dataJClass = generate(mapSpec.getValueDataClass());",
+      "right" : "final JClass dataJClass = generate(mapSpec.getValueDataClass());",
+      "info" : "VariableDeclarationStatement[18245-18309]:VariableDeclarationStatement[20139-20203]"
+    }, {
+      "left" : "if (CodeUtil.isDirectType(mapSpec.getSchema().getValues()))",
+      "right" : "if (CodeUtil.isDirectType(mapSpec.getSchema().getValues()))",
+      "info" : "IfStatement[18315-18533]:IfStatement[20209-20424]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18379-18448]:Block[20273-20346]"
+    }, {
+      "left" : "mapClass._extends(_directMapClass.narrow(valueJClass));",
+      "right" : "mapClass._extends(_directMapBaseClass.narrow(valueJClass));",
+      "info" : "ExpressionStatement[18387-18442]:ExpressionStatement[20281-20340]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18462-18533]:Block[20360-20424]"
+    }, {
+      "left" : "mapClass._extends(_wrappingMapClass.narrow(valueJClass));",
+      "right" : "extendWrappingMapBaseClass(valueJClass, mapClass);",
+      "info" : "ExpressionStatement[18470-18527]:ExpressionStatement[20368-20418]"
+    }, {
+      "left" : "final DataSchema bareSchema = new MapDataSchema(schemaForArrayItemsOrMapValues(mapSpec.getCustomInfo(), mapSpec.getSchema().getValues()));",
+      "right" : "final DataSchema bareSchema = new MapDataSchema(schemaForArrayItemsOrMapValues(mapSpec.getCustomInfo(), mapSpec.getSchema().getValues()));",
+      "info" : "VariableDeclarationStatement[18539-18677]:VariableDeclarationStatement[20430-20568]"
+    }, {
+      "left" : "final JVar schemaField = generateSchemaField(mapClass, bareSchema);",
+      "right" : "final JVar schemaField = generateSchemaField(mapClass, bareSchema);",
+      "info" : "VariableDeclarationStatement[18682-18749]:VariableDeclarationStatement[20573-20640]"
+    }, {
+      "left" : "generateConstructorWithNoArg(mapClass, _dataMapClass);",
+      "right" : "generateConstructorWithNoArg(mapClass, _dataMapClass);",
+      "info" : "ExpressionStatement[18755-18809]:ExpressionStatement[20646-20700]"
+    }, {
+      "left" : "generateConstructorWithInitialCapacity(mapClass, _dataMapClass);",
+      "right" : "generateConstructorWithInitialCapacity(mapClass, _dataMapClass);",
+      "info" : "ExpressionStatement[18814-18878]:ExpressionStatement[20705-20769]"
+    }, {
+      "left" : "generateConstructorWithInitialCapacityAndLoadFactor(mapClass);",
+      "right" : "generateConstructorWithInitialCapacityAndLoadFactor(mapClass);",
+      "info" : "ExpressionStatement[18883-18945]:ExpressionStatement[20774-20836]"
+    }, {
+      "left" : "generateConstructorWithMap(mapClass, valueJClass);",
+      "right" : "generateConstructorWithMap(mapClass, valueJClass);",
+      "info" : "ExpressionStatement[18950-19000]:ExpressionStatement[20841-20891]"
+    }, {
+      "left" : "generateConstructorWithArg(mapClass, schemaField, _dataMapClass, valueJClass, dataJClass);",
+      "right" : "generateConstructorWithArg(mapClass, schemaField, _dataMapClass, valueJClass, dataJClass);",
+      "info" : "ExpressionStatement[19005-19095]:ExpressionStatement[20896-20986]"
+    }, {
+      "left" : "generatePathSpecMethodsForCollection(mapClass, mapSpec.getSchema(), valueJClass, \"values\");",
+      "right" : "generatePathSpecMethodsForCollection(mapClass, mapSpec.getSchema(), valueJClass, \"values\");",
+      "info" : "ExpressionStatement[19101-19192]:ExpressionStatement[21026-21117]"
+    }, {
+      "left" : "generateCustomClassInitialization(mapClass, mapSpec.getCustomInfo());",
+      "right" : "generateCustomClassInitialization(mapClass, mapSpec.getCustomInfo());",
+      "info" : "ExpressionStatement[19198-19267]:ExpressionStatement[21129-21198]"
+    }, {
+      "left" : "generateCopierMethods(mapClass);",
+      "right" : "generateCopierMethods(mapClass);",
+      "info" : "ExpressionStatement[19273-19305]:ExpressionStatement[21236-21268]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19385-19973]:Block[21517-22105]"
+    }, {
+      "left" : "switch (primitiveSpec.getSchema().getType())\n    {\n      case INT:\n        return getCodeModel().INT.boxify();\n\n      case DOUBLE:\n        return getCodeModel().DOUBLE.boxify();\n\n      case BOOLEAN:\n        return getCodeModel().BOOLEAN.boxify();\n\n      case STRING:\n        return _stringClass;\n\n      case LONG:\n        return getCodeModel().LONG.boxify();\n\n      case FLOAT:\n        return getCodeModel().FLOAT.boxify();\n\n      case BYTES:\n        return _byteStringClass;\n\n      default:\n        throw new RuntimeException(\"Not supported primitive: \" + primitiveSpec);\n    }",
+      "right" : "switch (primitiveSpec.getSchema().getType())\n    {\n      case INT:\n        return getCodeModel().INT.boxify();\n\n      case DOUBLE:\n        return getCodeModel().DOUBLE.boxify();\n\n      case BOOLEAN:\n        return getCodeModel().BOOLEAN.boxify();\n\n      case STRING:\n        return _stringClass;\n\n      case LONG:\n        return getCodeModel().LONG.boxify();\n\n      case FLOAT:\n        return getCodeModel().FLOAT.boxify();\n\n      case BYTES:\n        return _byteStringClass;\n\n      default:\n        throw new RuntimeException(\"Not supported primitive: \" + primitiveSpec);\n    }",
+      "info" : "SwitchStatement[19391-19969]:SwitchStatement[21523-22101]"
+    }, {
+      "left" : "case INT:",
+      "right" : "case INT:",
+      "info" : "SwitchCase[19448-19457]:SwitchCase[21580-21589]"
+    }, {
+      "left" : "return getCodeModel().INT.boxify();",
+      "right" : "return getCodeModel().INT.boxify();",
+      "info" : "ReturnStatement[19466-19501]:ReturnStatement[21598-21633]"
+    }, {
+      "left" : "case DOUBLE:",
+      "right" : "case DOUBLE:",
+      "info" : "SwitchCase[19509-19521]:SwitchCase[21641-21653]"
+    }, {
+      "left" : "return getCodeModel().DOUBLE.boxify();",
+      "right" : "return getCodeModel().DOUBLE.boxify();",
+      "info" : "ReturnStatement[19530-19568]:ReturnStatement[21662-21700]"
+    }, {
+      "left" : "case BOOLEAN:",
+      "right" : "case BOOLEAN:",
+      "info" : "SwitchCase[19576-19589]:SwitchCase[21708-21721]"
+    }, {
+      "left" : "return getCodeModel().BOOLEAN.boxify();",
+      "right" : "return getCodeModel().BOOLEAN.boxify();",
+      "info" : "ReturnStatement[19598-19637]:ReturnStatement[21730-21769]"
+    }, {
+      "left" : "case STRING:",
+      "right" : "case STRING:",
+      "info" : "SwitchCase[19645-19657]:SwitchCase[21777-21789]"
+    }, {
+      "left" : "return _stringClass;",
+      "right" : "return _stringClass;",
+      "info" : "ReturnStatement[19666-19686]:ReturnStatement[21798-21818]"
+    }, {
+      "left" : "case LONG:",
+      "right" : "case LONG:",
+      "info" : "SwitchCase[19694-19704]:SwitchCase[21826-21836]"
+    }, {
+      "left" : "return getCodeModel().LONG.boxify();",
+      "right" : "return getCodeModel().LONG.boxify();",
+      "info" : "ReturnStatement[19713-19749]:ReturnStatement[21845-21881]"
+    }, {
+      "left" : "case FLOAT:",
+      "right" : "case FLOAT:",
+      "info" : "SwitchCase[19757-19768]:SwitchCase[21889-21900]"
+    }, {
+      "left" : "return getCodeModel().FLOAT.boxify();",
+      "right" : "return getCodeModel().FLOAT.boxify();",
+      "info" : "ReturnStatement[19777-19814]:ReturnStatement[21909-21946]"
+    }, {
+      "left" : "case BYTES:",
+      "right" : "case BYTES:",
+      "info" : "SwitchCase[19822-19833]:SwitchCase[21954-21965]"
+    }, {
+      "left" : "return _byteStringClass;",
+      "right" : "return _byteStringClass;",
+      "info" : "ReturnStatement[19842-19866]:ReturnStatement[21974-21998]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[19874-19882]:SwitchCase[22006-22014]"
+    }, {
+      "left" : "throw new RuntimeException(\"Not supported primitive: \" + primitiveSpec);",
+      "right" : "throw new RuntimeException(\"Not supported primitive: \" + primitiveSpec);",
+      "info" : "ThrowStatement[19891-19963]:ThrowStatement[22023-22095]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20111-21003]:Block[22243-23213]"
+    }, {
+      "left" : "templateClass.javadoc().append(recordSpec.getSchema().getDoc());",
+      "right" : "templateClass.javadoc().append(recordSpec.getSchema().getDoc());",
+      "info" : "ExpressionStatement[20117-20181]:ExpressionStatement[22249-22313]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(recordSpec.getSchema(), templateClass);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(recordSpec.getSchema(), templateClass);",
+      "info" : "ExpressionStatement[20187-20260]:ExpressionStatement[22319-22392]"
+    }, {
+      "left" : "templateClass._extends(_recordClass);",
+      "right" : "extendRecordBaseClass(templateClass);",
+      "info" : "ExpressionStatement[20266-20303]:ExpressionStatement[22398-22435]"
+    }, {
+      "left" : "generatePathSpecMethodsForRecord(recordSpec.getFields(), templateClass);",
+      "right" : "generatePathSpecMethodsForRecord(recordSpec.getFields(), templateClass);",
+      "info" : "ExpressionStatement[20309-20381]:ExpressionStatement[22475-22547]"
+    }, {
+      "left" : "final JFieldVar schemaFieldVar = generateSchemaField(templateClass, recordSpec.getSchema());",
+      "right" : "final JFieldVar schemaFieldVar = generateSchemaField(templateClass, recordSpec.getSchema());",
+      "info" : "VariableDeclarationStatement[20387-20479]:VariableDeclarationStatement[22559-22651]"
+    }, {
+      "left" : "generateConstructorWithNoArg(templateClass, schemaFieldVar, _dataMapClass);",
+      "right" : "generateConstructorWithNoArg(templateClass, schemaFieldVar, _dataMapClass);",
+      "info" : "ExpressionStatement[20484-20559]:ExpressionStatement[22656-22731]"
+    }, {
+      "left" : "generateConstructorWithArg(templateClass, schemaFieldVar, _dataMapClass);",
+      "right" : "generateConstructorWithArg(templateClass, schemaFieldVar, _dataMapClass);",
+      "info" : "ExpressionStatement[20564-20637]:ExpressionStatement[22736-22809]"
+    }, {
+      "left" : "for (RecordTemplateSpec.Field field : recordSpec.getFields())",
+      "right" : "for (RecordTemplateSpec.Field field : recordSpec.getFields())",
+      "info" : "EnhancedForStatement[20643-20956]:EnhancedForStatement[22815-23128]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20709-20956]:Block[22881-23128]"
+    }, {
+      "left" : "generateRecordFieldAccessors(templateClass, field, generate(field.getType()), schemaFieldVar);",
+      "right" : "generateRecordFieldAccessors(templateClass, field, generate(field.getType()), schemaFieldVar);",
+      "info" : "ExpressionStatement[20717-20811]:ExpressionStatement[22889-22983]"
+    }, {
+      "left" : "if (field.getCustomInfo() != null)",
+      "right" : "if (field.getCustomInfo() != null)",
+      "info" : "IfStatement[20819-20950]:IfStatement[22991-23122]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20860-20950]:Block[23032-23122]"
+    }, {
+      "left" : "generateCustomClassInitialization(templateClass, field.getCustomInfo());",
+      "right" : "generateCustomClassInitialization(templateClass, field.getCustomInfo());",
+      "info" : "ExpressionStatement[20870-20942]:ExpressionStatement[23042-23114]"
+    }, {
+      "left" : "generateCopierMethods(templateClass);",
+      "right" : "generateCopierMethods(templateClass);",
+      "info" : "ExpressionStatement[20962-20999]:ExpressionStatement[23166-23203]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21169-22426]:Block[23502-24759]"
+    }, {
+      "left" : "final JDefinedClass fieldsNestedClass = generatePathSpecNestedClass(templateClass);",
+      "right" : "final JDefinedClass fieldsNestedClass = generatePathSpecNestedClass(templateClass);",
+      "info" : "VariableDeclarationStatement[21175-21258]:VariableDeclarationStatement[23508-23591]"
+    }, {
+      "left" : "for (RecordTemplateSpec.Field field : fieldSpecs)",
+      "right" : "for (RecordTemplateSpec.Field field : fieldSpecs)",
+      "info" : "EnhancedForStatement[21264-22089]:EnhancedForStatement[23597-24422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21318-22089]:Block[23651-24422]"
+    }, {
+      "left" : "JClass fieldsRefType = _pathSpecClass;",
+      "right" : "JClass fieldsRefType = _pathSpecClass;",
+      "info" : "VariableDeclarationStatement[21326-21364]:VariableDeclarationStatement[23659-23697]"
+    }, {
+      "left" : "if (hasNestedFields(field.getSchemaField().getType()))",
+      "right" : "if (hasNestedFields(field.getSchemaField().getType()))",
+      "info" : "IfStatement[21371-21579]:IfStatement[23704-23912]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21432-21579]:Block[23765-23912]"
+    }, {
+      "left" : "final JClass fieldType = generate(field.getType());",
+      "right" : "final JClass fieldType = generate(field.getType());",
+      "info" : "VariableDeclarationStatement[21442-21493]:VariableDeclarationStatement[23775-23826]"
+    }, {
+      "left" : "fieldsRefType = getCodeModel().ref(fieldType.fullName() + \".Fields\");",
+      "right" : "fieldsRefType = getCodeModel().ref(fieldType.fullName() + \".Fields\");",
+      "info" : "ExpressionStatement[21502-21571]:ExpressionStatement[23835-23904]"
+    }, {
+      "left" : "final JMethod constantField = fieldsNestedClass.method(JMod.PUBLIC, fieldsRefType, escapeReserved(field.getSchemaField().getName()));",
+      "right" : "final JMethod constantField = fieldsNestedClass.method(JMod.PUBLIC, fieldsRefType, escapeReserved(field.getSchemaField().getName()));",
+      "info" : "VariableDeclarationStatement[21587-21720]:VariableDeclarationStatement[23920-24053]"
+    }, {
+      "left" : "constantField.body()._return(JExpr._new(fieldsRefType).arg(JExpr.invoke(\"getPathComponents\")).arg(field.getSchemaField().getName()));",
+      "right" : "constantField.body()._return(JExpr._new(fieldsRefType).arg(JExpr.invoke(\"getPathComponents\")).arg(field.getSchemaField().getName()));",
+      "info" : "ExpressionStatement[21727-21860]:ExpressionStatement[24060-24193]"
+    }, {
+      "left" : "if (!field.getSchemaField().getDoc().isEmpty())",
+      "right" : "if (!field.getSchemaField().getDoc().isEmpty())",
+      "info" : "IfStatement[21867-22003]:IfStatement[24200-24336]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21921-22003]:Block[24254-24336]"
+    }, {
+      "left" : "constantField.javadoc().append(field.getSchemaField().getDoc());",
+      "right" : "constantField.javadoc().append(field.getSchemaField().getDoc());",
+      "info" : "ExpressionStatement[21931-21995]:ExpressionStatement[24264-24328]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(constantField, field.getSchemaField());",
+      "right" : "setDeprecatedAnnotationAndJavadoc(constantField, field.getSchemaField());",
+      "info" : "ExpressionStatement[22010-22083]:ExpressionStatement[24343-24416]"
+    }, {
+      "left" : "final JVar staticFields = templateClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, fieldsNestedClass, \"_fields\").init(JExpr._new(fieldsNestedClass));",
+      "right" : "final JVar staticFields = templateClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, fieldsNestedClass, \"_fields\").init(JExpr._new(fieldsNestedClass));",
+      "info" : "VariableDeclarationStatement[22095-22248]:VariableDeclarationStatement[24428-24581]"
+    }, {
+      "left" : "final JMethod staticFieldsAccessor = templateClass.method(JMod.PUBLIC | JMod.STATIC, fieldsNestedClass, \"fields\");",
+      "right" : "final JMethod staticFieldsAccessor = templateClass.method(JMod.PUBLIC | JMod.STATIC, fieldsNestedClass, \"fields\");",
+      "info" : "VariableDeclarationStatement[22253-22367]:VariableDeclarationStatement[24586-24700]"
+    }, {
+      "left" : "staticFieldsAccessor.body()._return(staticFields);",
+      "right" : "staticFieldsAccessor.body()._return(staticFields);",
+      "info" : "ExpressionStatement[22372-22422]:ExpressionStatement[24705-24755]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22569-27230]:Block[24902-29617]"
+    }, {
+      "left" : "final RecordDataSchema.Field schemaField = field.getSchemaField();",
+      "right" : "final RecordDataSchema.Field schemaField = field.getSchemaField();",
+      "info" : "VariableDeclarationStatement[22575-22641]:VariableDeclarationStatement[24908-24974]"
+    }, {
+      "left" : "final DataSchema fieldSchema = schemaField.getType();",
+      "right" : "final DataSchema fieldSchema = schemaField.getType();",
+      "info" : "VariableDeclarationStatement[22646-22699]:VariableDeclarationStatement[24979-25032]"
+    }, {
+      "left" : "final boolean isDirect = CodeUtil.isDirectType(fieldSchema);",
+      "right" : "final boolean isDirect = CodeUtil.isDirectType(fieldSchema);",
+      "info" : "VariableDeclarationStatement[22704-22764]:VariableDeclarationStatement[25037-25097]"
+    }, {
+      "left" : "final String wrappedOrDirect;",
+      "right" : "final String wrappedOrDirect;",
+      "info" : "VariableDeclarationStatement[22769-22798]:VariableDeclarationStatement[25102-25131]"
+    }, {
+      "left" : "if (isDirect)",
+      "right" : "if (isDirect)",
+      "info" : "IfStatement[22803-22967]:IfStatement[25136-25300]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22821-22911]:Block[25154-25244]"
+    }, {
+      "left" : "wrappedOrDirect = (field.getCustomInfo() == null ? \"Direct\" : \"CustomType\");",
+      "right" : "wrappedOrDirect = (field.getCustomInfo() == null ? \"Direct\" : \"CustomType\");",
+      "info" : "ExpressionStatement[22829-22905]:ExpressionStatement[25162-25238]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22925-22967]:Block[25258-25300]"
+    }, {
+      "left" : "wrappedOrDirect = \"Wrapped\";",
+      "right" : "wrappedOrDirect = \"Wrapped\";",
+      "info" : "ExpressionStatement[22933-22961]:ExpressionStatement[25266-25294]"
+    }, {
+      "left" : "final String capitalizedName = CodeUtil.capitalize(schemaField.getName());",
+      "right" : "final String capitalizedName = CodeUtil.capitalize(schemaField.getName());",
+      "info" : "VariableDeclarationStatement[22972-23046]:VariableDeclarationStatement[25305-25379]"
+    }, {
+      "left" : "final String fieldFieldName = \"FIELD_\" + capitalizedName;",
+      "right" : "final String fieldFieldName = \"FIELD_\" + capitalizedName;",
+      "info" : "VariableDeclarationStatement[23052-23109]:VariableDeclarationStatement[25385-25442]"
+    }, {
+      "left" : "final JFieldVar fieldField = templateClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, RecordDataSchema.Field.class, fieldFieldName);",
+      "right" : "final JFieldVar fieldField = templateClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, RecordDataSchema.Field.class, fieldFieldName);",
+      "info" : "VariableDeclarationStatement[23114-23250]:VariableDeclarationStatement[25447-25583]"
+    }, {
+      "left" : "fieldField.init(schemaFieldVar.invoke(\"getField\").arg(schemaField.getName()));",
+      "right" : "fieldField.init(schemaFieldVar.invoke(\"getField\").arg(schemaField.getName()));",
+      "info" : "ExpressionStatement[23255-23333]:ExpressionStatement[25588-25666]"
+    }, {
+      "left" : "final JMethod has = templateClass.method(JMod.PUBLIC, getCodeModel().BOOLEAN, \"has\" + capitalizedName);",
+      "right" : "final JMethod has = templateClass.method(JMod.PUBLIC, getCodeModel().BOOLEAN, \"has\" + capitalizedName);",
+      "info" : "VariableDeclarationStatement[23367-23470]:VariableDeclarationStatement[25700-25803]"
+    }, {
+      "left" : "addAccessorDoc(has, schemaField, \"Existence checker\");",
+      "right" : "addAccessorDoc(has, schemaField, \"Existence checker\");",
+      "info" : "ExpressionStatement[23475-23529]:ExpressionStatement[25808-25862]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(has, schemaField);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(has, schemaField);",
+      "info" : "ExpressionStatement[23534-23586]:ExpressionStatement[25867-25919]"
+    }, {
+      "left" : "final JBlock hasBody = has.body();",
+      "right" : "final JBlock hasBody = has.body();",
+      "info" : "VariableDeclarationStatement[23591-23625]:VariableDeclarationStatement[25924-25958]"
+    }, {
+      "left" : "JExpression res = JExpr.invoke(\"contains\").arg(fieldField);",
+      "right" : "JExpression res = JExpr.invoke(\"contains\").arg(fieldField);",
+      "info" : "VariableDeclarationStatement[23630-23689]:VariableDeclarationStatement[25963-26022]"
+    }, {
+      "left" : "hasBody._return(res);",
+      "right" : "hasBody._return(res);",
+      "info" : "ExpressionStatement[23694-23715]:ExpressionStatement[26027-26048]"
+    }, {
+      "left" : "final String removeName = \"remove\" + capitalizedName;",
+      "right" : "final String removeName = \"remove\" + capitalizedName;",
+      "info" : "VariableDeclarationStatement[23752-23805]:VariableDeclarationStatement[26123-26176]"
+    }, {
+      "left" : "final JMethod remove = templateClass.method(JMod.PUBLIC, getCodeModel().VOID, removeName);",
+      "right" : "final JMethod remove = templateClass.method(JMod.PUBLIC, getCodeModel().VOID, removeName);",
+      "info" : "VariableDeclarationStatement[23810-23900]:VariableDeclarationStatement[26183-26273]"
+    }, {
+      "left" : "addAccessorDoc(remove, schemaField, \"Remover\");",
+      "right" : "addAccessorDoc(remove, schemaField, \"Remover\");",
+      "info" : "ExpressionStatement[23905-23952]:ExpressionStatement[26280-26327]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(remove, schemaField);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(remove, schemaField);",
+      "info" : "ExpressionStatement[23957-24012]:ExpressionStatement[26334-26389]"
+    }, {
+      "left" : "final JBlock removeBody = remove.body();",
+      "right" : "final JBlock removeBody = remove.body();",
+      "info" : "VariableDeclarationStatement[24017-24057]:VariableDeclarationStatement[26396-26436]"
+    }, {
+      "left" : "removeBody.invoke(\"remove\").arg(fieldField);",
+      "right" : "removeBody.invoke(\"remove\").arg(fieldField);",
+      "info" : "ExpressionStatement[24062-24106]:ExpressionStatement[26443-26487]"
+    }, {
+      "left" : "final String getterName = JavaCodeUtil.getGetterName(getCodeModel(), type, capitalizedName);",
+      "right" : "final String getterName = JavaCodeUtil.getGetterName(getCodeModel(), type, capitalizedName);",
+      "info" : "VariableDeclarationStatement[24112-24204]:VariableDeclarationStatement[26499-26591]"
+    }, {
+      "left" : "if (_recordFieldAccessorWithMode)",
+      "right" : "if (_recordFieldAccessorWithMode)",
+      "info" : "IfStatement[24210-24791]:IfStatement[26597-27178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24248-24791]:Block[26635-27178]"
+    }, {
+      "left" : "final JMethod getterWithMode = templateClass.method(JMod.PUBLIC, type, getterName);",
+      "right" : "final JMethod getterWithMode = templateClass.method(JMod.PUBLIC, type, getterName);",
+      "info" : "VariableDeclarationStatement[24290-24373]:VariableDeclarationStatement[26677-26760]"
+    }, {
+      "left" : "addAccessorDoc(getterWithMode, schemaField, \"Getter\");",
+      "right" : "addAccessorDoc(getterWithMode, schemaField, \"Getter\");",
+      "info" : "ExpressionStatement[24380-24434]:ExpressionStatement[26767-26821]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(getterWithMode, schemaField);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(getterWithMode, schemaField);",
+      "info" : "ExpressionStatement[24441-24504]:ExpressionStatement[26828-26891]"
+    }, {
+      "left" : "JVar modeParam = getterWithMode.param(_getModeClass, \"mode\");",
+      "right" : "JVar modeParam = getterWithMode.param(_getModeClass, \"mode\");",
+      "info" : "VariableDeclarationStatement[24511-24572]:VariableDeclarationStatement[26898-26959]"
+    }, {
+      "left" : "final JBlock getterWithModeBody = getterWithMode.body();",
+      "right" : "final JBlock getterWithModeBody = getterWithMode.body();",
+      "info" : "VariableDeclarationStatement[24579-24635]:VariableDeclarationStatement[26966-27022]"
+    }, {
+      "left" : "res = JExpr.invoke(\"obtain\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type)).arg(modeParam);",
+      "right" : "res = JExpr.invoke(\"obtain\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type)).arg(modeParam);",
+      "info" : "ExpressionStatement[24642-24746]:ExpressionStatement[27029-27133]"
+    }, {
+      "left" : "getterWithModeBody._return(res);",
+      "right" : "getterWithModeBody._return(res);",
+      "info" : "ExpressionStatement[24753-24785]:ExpressionStatement[27140-27172]"
+    }, {
+      "left" : "final JMethod getterWithoutMode = templateClass.method(JMod.PUBLIC, type, getterName);",
+      "right" : "final JMethod getterWithoutMode = templateClass.method(JMod.PUBLIC, type, getterName);",
+      "info" : "VariableDeclarationStatement[24832-24918]:VariableDeclarationStatement[27219-27305]"
+    }, {
+      "left" : "addAccessorDoc(getterWithoutMode, schemaField, \"Getter\");",
+      "right" : "addAccessorDoc(getterWithoutMode, schemaField, \"Getter\");",
+      "info" : "ExpressionStatement[24923-24980]:ExpressionStatement[27310-27367]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(getterWithoutMode, schemaField);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(getterWithoutMode, schemaField);",
+      "info" : "ExpressionStatement[24985-25051]:ExpressionStatement[27372-27438]"
+    }, {
+      "left" : "final JBlock getterWithoutModeBody = getterWithoutMode.body();",
+      "right" : "final JBlock getterWithoutModeBody = getterWithoutMode.body();",
+      "info" : "VariableDeclarationStatement[25056-25118]:VariableDeclarationStatement[27443-27505]"
+    }, {
+      "left" : "res = JExpr.invoke(\"obtain\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type)).arg(_strictGetMode);",
+      "right" : "res = JExpr.invoke(\"obtain\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type)).arg(_strictGetMode);",
+      "info" : "ExpressionStatement[25123-25232]:ExpressionStatement[27510-27619]"
+    }, {
+      "left" : "getterWithoutModeBody._return(res);",
+      "right" : "getterWithoutModeBody._return(res);",
+      "info" : "ExpressionStatement[25237-25272]:ExpressionStatement[27624-27659]"
+    }, {
+      "left" : "final JClass dataClass = generate(field.getDataClass());",
+      "right" : "final JClass dataClass = generate(field.getDataClass());",
+      "info" : "VariableDeclarationStatement[25305-25361]:VariableDeclarationStatement[27692-27748]"
+    }, {
+      "left" : "final String setterName = \"set\" + capitalizedName;",
+      "right" : "final String setterName = \"set\" + capitalizedName;",
+      "info" : "VariableDeclarationStatement[25366-25416]:VariableDeclarationStatement[27753-27803]"
+    }, {
+      "left" : "if (_recordFieldAccessorWithMode)",
+      "right" : "if (_recordFieldAccessorWithMode)",
+      "info" : "IfStatement[25422-26089]:IfStatement[27809-28476]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25460-26089]:Block[27847-28476]"
+    }, {
+      "left" : "final JMethod setterWithMode = templateClass.method(JMod.PUBLIC, templateClass, setterName);",
+      "right" : "final JMethod setterWithMode = templateClass.method(JMod.PUBLIC, templateClass, setterName);",
+      "info" : "VariableDeclarationStatement[25501-25593]:VariableDeclarationStatement[27888-27980]"
+    }, {
+      "left" : "addAccessorDoc(setterWithMode, schemaField, \"Setter\");",
+      "right" : "addAccessorDoc(setterWithMode, schemaField, \"Setter\");",
+      "info" : "ExpressionStatement[25600-25654]:ExpressionStatement[27987-28041]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(setterWithMode, schemaField);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(setterWithMode, schemaField);",
+      "info" : "ExpressionStatement[25661-25724]:ExpressionStatement[28048-28111]"
+    }, {
+      "left" : "JVar param = setterWithMode.param(type, \"value\");",
+      "right" : "JVar param = setterWithMode.param(type, \"value\");",
+      "info" : "VariableDeclarationStatement[25731-25780]:VariableDeclarationStatement[28118-28167]"
+    }, {
+      "left" : "JVar modeParam = setterWithMode.param(_setModeClass, \"mode\");",
+      "right" : "JVar modeParam = setterWithMode.param(_setModeClass, \"mode\");",
+      "info" : "VariableDeclarationStatement[25787-25848]:VariableDeclarationStatement[28174-28235]"
+    }, {
+      "left" : "JInvocation inv = setterWithMode.body().invoke(\"put\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type));",
+      "right" : "JInvocation inv = setterWithMode.body().invoke(\"put\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type));",
+      "info" : "VariableDeclarationStatement[25855-25969]:VariableDeclarationStatement[28242-28356]"
+    }, {
+      "left" : "dataClassArg(inv, dataClass).arg(param).arg(modeParam);",
+      "right" : "dataClassArg(inv, dataClass).arg(param).arg(modeParam);",
+      "info" : "ExpressionStatement[25976-26031]:ExpressionStatement[28363-28418]"
+    }, {
+      "left" : "setterWithMode.body()._return(JExpr._this());",
+      "right" : "setterWithMode.body()._return(JExpr._this());",
+      "info" : "ExpressionStatement[26038-26083]:ExpressionStatement[28425-28470]"
+    }, {
+      "left" : "final JMethod setter = templateClass.method(JMod.PUBLIC, templateClass, setterName);",
+      "right" : "final JMethod setter = templateClass.method(JMod.PUBLIC, templateClass, setterName);",
+      "info" : "VariableDeclarationStatement[26129-26213]:VariableDeclarationStatement[28516-28600]"
+    }, {
+      "left" : "addAccessorDoc(setter, schemaField, \"Setter\");",
+      "right" : "addAccessorDoc(setter, schemaField, \"Setter\");",
+      "info" : "ExpressionStatement[26218-26264]:ExpressionStatement[28605-28651]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(setter, schemaField);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(setter, schemaField);",
+      "info" : "ExpressionStatement[26269-26324]:ExpressionStatement[28656-28711]"
+    }, {
+      "left" : "JVar param = setter.param(type, \"value\");",
+      "right" : "JVar param = setter.param(type, \"value\");",
+      "info" : "VariableDeclarationStatement[26329-26370]:VariableDeclarationStatement[28716-28757]"
+    }, {
+      "left" : "JInvocation inv = setter.body().invoke(\"put\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type));",
+      "right" : "JInvocation inv = setter.body().invoke(\"put\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type));",
+      "info" : "VariableDeclarationStatement[26375-26481]:VariableDeclarationStatement[28762-28868]"
+    }, {
+      "left" : "dataClassArg(inv, dataClass).arg(param).arg(_disallowNullSetMode);",
+      "right" : "dataClassArg(inv, dataClass).arg(param).arg(_disallowNullSetMode);",
+      "info" : "ExpressionStatement[26486-26552]:ExpressionStatement[28873-28939]"
+    }, {
+      "left" : "setter.body()._return(JExpr._this());",
+      "right" : "setter.body()._return(JExpr._this());",
+      "info" : "ExpressionStatement[26557-26594]:ExpressionStatement[28944-28981]"
+    }, {
+      "left" : "if (!type.unboxify().equals(type))",
+      "right" : "if (!type.unboxify().equals(type))",
+      "info" : "IfStatement[26654-27226]:IfStatement[29041-29613]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26693-27226]:Block[29080-29613]"
+    }, {
+      "left" : "final JMethod unboxifySetter = templateClass.method(JMod.PUBLIC, templateClass, setterName);",
+      "right" : "final JMethod unboxifySetter = templateClass.method(JMod.PUBLIC, templateClass, setterName);",
+      "info" : "VariableDeclarationStatement[26701-26793]:VariableDeclarationStatement[29088-29180]"
+    }, {
+      "left" : "addAccessorDoc(unboxifySetter, schemaField, \"Setter\");",
+      "right" : "addAccessorDoc(unboxifySetter, schemaField, \"Setter\");",
+      "info" : "ExpressionStatement[26800-26854]:ExpressionStatement[29187-29241]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(unboxifySetter, schemaField);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(unboxifySetter, schemaField);",
+      "info" : "ExpressionStatement[26861-26924]:ExpressionStatement[29248-29311]"
+    }, {
+      "left" : "param = unboxifySetter.param(type.unboxify(), \"value\");",
+      "right" : "param = unboxifySetter.param(type.unboxify(), \"value\");",
+      "info" : "ExpressionStatement[26931-26986]:ExpressionStatement[29318-29373]"
+    }, {
+      "left" : "inv = unboxifySetter.body().invoke(\"put\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type));",
+      "right" : "inv = unboxifySetter.body().invoke(\"put\" + wrappedOrDirect).arg(fieldField).arg(JExpr.dotclass(type));",
+      "info" : "ExpressionStatement[26993-27095]:ExpressionStatement[29380-29482]"
+    }, {
+      "left" : "dataClassArg(inv, dataClass).arg(param).arg(_disallowNullSetMode);",
+      "right" : "dataClassArg(inv, dataClass).arg(param).arg(_disallowNullSetMode);",
+      "info" : "ExpressionStatement[27102-27168]:ExpressionStatement[29489-29555]"
+    }, {
+      "left" : "unboxifySetter.body()._return(JExpr._this());",
+      "right" : "unboxifySetter.body()._return(JExpr._this());",
+      "info" : "ExpressionStatement[27175-27220]:ExpressionStatement[29562-29607]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27328-27745]:Block[29715-30132]"
+    }, {
+      "left" : "typerefClass.javadoc().append(typerefSpec.getSchema().getDoc());",
+      "right" : "typerefClass.javadoc().append(typerefSpec.getSchema().getDoc());",
+      "info" : "ExpressionStatement[27334-27398]:ExpressionStatement[29721-29785]"
+    }, {
+      "left" : "setDeprecatedAnnotationAndJavadoc(typerefSpec.getSchema(), typerefClass);",
+      "right" : "setDeprecatedAnnotationAndJavadoc(typerefSpec.getSchema(), typerefClass);",
+      "info" : "ExpressionStatement[27404-27477]:ExpressionStatement[29791-29864]"
+    }, {
+      "left" : "typerefClass._extends(TyperefInfo.class);",
+      "right" : "typerefClass._extends(TyperefInfo.class);",
+      "info" : "ExpressionStatement[27483-27524]:ExpressionStatement[29870-29911]"
+    }, {
+      "left" : "final JVar schemaField = generateSchemaField(typerefClass, typerefSpec.getSchema());",
+      "right" : "final JVar schemaField = generateSchemaField(typerefClass, typerefSpec.getSchema());",
+      "info" : "VariableDeclarationStatement[27530-27614]:VariableDeclarationStatement[29917-30001]"
+    }, {
+      "left" : "final JMethod constructor = typerefClass.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod constructor = typerefClass.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[27620-27686]:VariableDeclarationStatement[30007-30073]"
+    }, {
+      "left" : "constructor.body().invoke(SUPER).arg(schemaField);",
+      "right" : "constructor.body().invoke(SUPER).arg(schemaField);",
+      "info" : "ExpressionStatement[27691-27741]:ExpressionStatement[30078-30128]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27877-29345]:Block[30264-31806]"
+    }, {
+      "left" : "unionClass._extends(getUnionClass());",
+      "right" : "extendUnionBaseClass(unionClass);",
+      "info" : "ExpressionStatement[27883-27920]:ExpressionStatement[30270-30303]"
+    }, {
+      "left" : "final JVar schemaField = generateSchemaField(unionClass, unionSpec.getSchema());",
+      "right" : "final JVar schemaField = generateSchemaField(unionClass, unionSpec.getSchema());",
+      "info" : "VariableDeclarationStatement[27926-28006]:VariableDeclarationStatement[30309-30389]"
+    }, {
+      "left" : "generateConstructorWithNoArg(unionClass, schemaField, _dataMapClass);",
+      "right" : "generateConstructorWithNoArg(unionClass, schemaField, _dataMapClass);",
+      "info" : "ExpressionStatement[28012-28081]:ExpressionStatement[30395-30464]"
+    }, {
+      "left" : "generateConstructorWithObjectArg(unionClass, schemaField);",
+      "right" : "generateConstructorWithObjectArg(unionClass, schemaField);",
+      "info" : "ExpressionStatement[28086-28144]:ExpressionStatement[30469-30527]"
+    }, {
+      "left" : "for (UnionTemplateSpec.Member member : unionSpec.getMembers())",
+      "right" : "for (UnionTemplateSpec.Member member : unionSpec.getMembers())",
+      "info" : "EnhancedForStatement[28150-28446]:EnhancedForStatement[30533-30829]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28217-28446]:Block[30600-30829]"
+    }, {
+      "left" : "if (member.getClassTemplateSpec() != null)",
+      "right" : "if (member.getClassTemplateSpec() != null)",
+      "info" : "IfStatement[28225-28440]:IfStatement[30608-30823]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28274-28440]:Block[30657-30823]"
+    }, {
+      "left" : "generateUnionMemberAccessors(unionClass, member.getSchema(), generate(member.getClassTemplateSpec()), generate(member.getDataClass()), schemaField);",
+      "right" : "generateUnionMemberAccessors(unionClass, member.getSchema(), generate(member.getClassTemplateSpec()), generate(member.getDataClass()), schemaField);",
+      "info" : "ExpressionStatement[28284-28432]:ExpressionStatement[30667-30815]"
+    }, {
+      "left" : "generatePathSpecMethodsForUnion(unionSpec, unionClass);",
+      "right" : "generatePathSpecMethodsForUnion(unionSpec, unionClass);",
+      "info" : "ExpressionStatement[28452-28507]:ExpressionStatement[30869-30924]"
+    }, {
+      "left" : "generateCopierMethods(unionClass);",
+      "right" : "generateCopierMethods(unionClass);",
+      "info" : "ExpressionStatement[28513-28547]:ExpressionStatement[30968-31002]"
+    }, {
+      "left" : "if (unionSpec.getTyperefClass() != null)",
+      "right" : "if (unionSpec.getTyperefClass() != null)",
+      "info" : "IfStatement[28553-29341]:IfStatement[31014-31802]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28598-29341]:Block[31059-31802]"
+    }, {
+      "left" : "final TyperefTemplateSpec typerefClassSpec = unionSpec.getTyperefClass();",
+      "right" : "final TyperefTemplateSpec typerefClassSpec = unionSpec.getTyperefClass();",
+      "info" : "VariableDeclarationStatement[28606-28679]:VariableDeclarationStatement[31067-31140]"
+    }, {
+      "left" : "final JDefinedClass typerefInfoClass = unionClass._class(getJModValue(typerefClassSpec.getModifiers()), escapeReserved(typerefClassSpec.getClassName()));",
+      "right" : "final JDefinedClass typerefInfoClass = unionClass._class(getJModValue(typerefClassSpec.getModifiers()), escapeReserved(typerefClassSpec.getClassName()));",
+      "info" : "VariableDeclarationStatement[28686-28839]:VariableDeclarationStatement[31147-31300]"
+    }, {
+      "left" : "generateTyperef(typerefInfoClass, typerefClassSpec);",
+      "right" : "generateTyperef(typerefInfoClass, typerefClassSpec);",
+      "info" : "ExpressionStatement[28846-28898]:ExpressionStatement[31307-31359]"
+    }, {
+      "left" : "final JFieldVar typerefInfoField = unionClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, TyperefInfo.class, DataTemplateUtil.TYPEREFINFO_FIELD_NAME);",
+      "right" : "final JFieldVar typerefInfoField = unionClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, TyperefInfo.class, DataTemplateUtil.TYPEREFINFO_FIELD_NAME);",
+      "info" : "VariableDeclarationStatement[28906-29059]:VariableDeclarationStatement[31367-31520]"
+    }, {
+      "left" : "typerefInfoField.init(JExpr._new(typerefInfoClass));",
+      "right" : "typerefInfoField.init(JExpr._new(typerefInfoClass));",
+      "info" : "ExpressionStatement[29066-29118]:ExpressionStatement[31527-31579]"
+    }, {
+      "left" : "unionClass._implements(HasTyperefInfo.class);",
+      "right" : "unionClass._implements(HasTyperefInfo.class);",
+      "info" : "ExpressionStatement[29126-29171]:ExpressionStatement[31587-31632]"
+    }, {
+      "left" : "final JMethod typerefInfoMethod = unionClass.method(JMod.PUBLIC, TyperefInfo.class, \"typerefInfo\");",
+      "right" : "final JMethod typerefInfoMethod = unionClass.method(JMod.PUBLIC, TyperefInfo.class, \"typerefInfo\");",
+      "info" : "VariableDeclarationStatement[29178-29277]:VariableDeclarationStatement[31639-31738]"
+    }, {
+      "left" : "typerefInfoMethod.body()._return(typerefInfoField);",
+      "right" : "typerefInfoMethod.body()._return(typerefInfoField);",
+      "info" : "ExpressionStatement[29284-29335]:ExpressionStatement[31745-31796]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29498-31436]:Block[32074-34012]"
+    }, {
+      "left" : "final boolean isDirect = CodeUtil.isDirectType(memberType);",
+      "right" : "final boolean isDirect = CodeUtil.isDirectType(memberType);",
+      "info" : "VariableDeclarationStatement[29504-29563]:VariableDeclarationStatement[32080-32139]"
+    }, {
+      "left" : "final String wrappedOrDirect = isDirect ? \"Direct\" : \"Wrapped\";",
+      "right" : "final String wrappedOrDirect = isDirect ? \"Direct\" : \"Wrapped\";",
+      "info" : "VariableDeclarationStatement[29568-29631]:VariableDeclarationStatement[32144-32207]"
+    }, {
+      "left" : "final String memberKey = memberType.getUnionMemberKey();",
+      "right" : "final String memberKey = memberType.getUnionMemberKey();",
+      "info" : "VariableDeclarationStatement[29636-29692]:VariableDeclarationStatement[32212-32268]"
+    }, {
+      "left" : "final String capitalizedName = CodeUtil.getUnionMemberName(memberType);",
+      "right" : "final String capitalizedName = CodeUtil.getUnionMemberName(memberType);",
+      "info" : "VariableDeclarationStatement[29697-29768]:VariableDeclarationStatement[32273-32344]"
+    }, {
+      "left" : "final String memberFieldName = \"MEMBER_\" + capitalizedName;",
+      "right" : "final String memberFieldName = \"MEMBER_\" + capitalizedName;",
+      "info" : "VariableDeclarationStatement[29774-29833]:VariableDeclarationStatement[32350-32409]"
+    }, {
+      "left" : "final JFieldVar memberField = unionClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, DataSchema.class, memberFieldName);",
+      "right" : "final JFieldVar memberField = unionClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, DataSchema.class, memberFieldName);",
+      "info" : "VariableDeclarationStatement[29838-29961]:VariableDeclarationStatement[32414-32537]"
+    }, {
+      "left" : "memberField.init(schemaField.invoke(\"getType\").arg(memberKey));",
+      "right" : "memberField.init(schemaField.invoke(\"getType\").arg(memberKey));",
+      "info" : "ExpressionStatement[29966-30029]:ExpressionStatement[32542-32605]"
+    }, {
+      "left" : "final String setterName = \"set\" + capitalizedName;",
+      "right" : "final String setterName = \"set\" + capitalizedName;",
+      "info" : "VariableDeclarationStatement[30034-30084]:VariableDeclarationStatement[32610-32660]"
+    }, {
+      "left" : "final JMethod createMethod = unionClass.method(JMod.PUBLIC | JMod.STATIC, unionClass, \"create\");",
+      "right" : "final JMethod createMethod = unionClass.method(JMod.PUBLIC | JMod.STATIC, unionClass, \"create\");",
+      "info" : "VariableDeclarationStatement[30116-30212]:VariableDeclarationStatement[32692-32788]"
+    }, {
+      "left" : "JVar param = createMethod.param(memberClass, \"value\");",
+      "right" : "JVar param = createMethod.param(memberClass, \"value\");",
+      "info" : "VariableDeclarationStatement[30217-30271]:VariableDeclarationStatement[32793-32847]"
+    }, {
+      "left" : "final JVar newUnionVar = createMethod.body().decl(unionClass, \"newUnion\", JExpr._new(unionClass));",
+      "right" : "final JVar newUnionVar = createMethod.body().decl(unionClass, \"newUnion\", JExpr._new(unionClass));",
+      "info" : "VariableDeclarationStatement[30276-30374]:VariableDeclarationStatement[32852-32950]"
+    }, {
+      "left" : "createMethod.body().invoke(newUnionVar, setterName).arg(param);",
+      "right" : "createMethod.body().invoke(newUnionVar, setterName).arg(param);",
+      "info" : "ExpressionStatement[30379-30442]:ExpressionStatement[32955-33018]"
+    }, {
+      "left" : "createMethod.body()._return(newUnionVar);",
+      "right" : "createMethod.body()._return(newUnionVar);",
+      "info" : "ExpressionStatement[30447-30488]:ExpressionStatement[33023-33064]"
+    }, {
+      "left" : "final JMethod is = unionClass.method(JMod.PUBLIC, getCodeModel().BOOLEAN, \"is\" + capitalizedName);",
+      "right" : "final JMethod is = unionClass.method(JMod.PUBLIC, getCodeModel().BOOLEAN, \"is\" + capitalizedName);",
+      "info" : "VariableDeclarationStatement[30513-30611]:VariableDeclarationStatement[33089-33187]"
+    }, {
+      "left" : "final JBlock isBody = is.body();",
+      "right" : "final JBlock isBody = is.body();",
+      "info" : "VariableDeclarationStatement[30616-30648]:VariableDeclarationStatement[33192-33224]"
+    }, {
+      "left" : "JExpression res = JExpr.invoke(\"memberIs\").arg(memberKey);",
+      "right" : "JExpression res = JExpr.invoke(\"memberIs\").arg(memberKey);",
+      "info" : "VariableDeclarationStatement[30653-30711]:VariableDeclarationStatement[33229-33287]"
+    }, {
+      "left" : "isBody._return(res);",
+      "right" : "isBody._return(res);",
+      "info" : "ExpressionStatement[30716-30736]:ExpressionStatement[33292-33312]"
+    }, {
+      "left" : "final String getterName = \"get\" + capitalizedName;",
+      "right" : "final String getterName = \"get\" + capitalizedName;",
+      "info" : "VariableDeclarationStatement[30765-30815]:VariableDeclarationStatement[33341-33391]"
+    }, {
+      "left" : "final JMethod getter = unionClass.method(JMod.PUBLIC, memberClass, getterName);",
+      "right" : "final JMethod getter = unionClass.method(JMod.PUBLIC, memberClass, getterName);",
+      "info" : "VariableDeclarationStatement[30820-30899]:VariableDeclarationStatement[33396-33475]"
+    }, {
+      "left" : "final JBlock getterBody = getter.body();",
+      "right" : "final JBlock getterBody = getter.body();",
+      "info" : "VariableDeclarationStatement[30904-30944]:VariableDeclarationStatement[33480-33520]"
+    }, {
+      "left" : "res = JExpr.invoke(\"obtain\" + wrappedOrDirect).arg(memberField).arg(JExpr.dotclass(memberClass)).arg(memberKey);",
+      "right" : "res = JExpr.invoke(\"obtain\" + wrappedOrDirect).arg(memberField).arg(JExpr.dotclass(memberClass)).arg(memberKey);",
+      "info" : "ExpressionStatement[30949-31061]:ExpressionStatement[33525-33637]"
+    }, {
+      "left" : "getterBody._return(res);",
+      "right" : "getterBody._return(res);",
+      "info" : "ExpressionStatement[31066-31090]:ExpressionStatement[33642-33666]"
+    }, {
+      "left" : "final JMethod setter = unionClass.method(JMod.PUBLIC, Void.TYPE, setterName);",
+      "right" : "final JMethod setter = unionClass.method(JMod.PUBLIC, Void.TYPE, setterName);",
+      "info" : "VariableDeclarationStatement[31119-31196]:VariableDeclarationStatement[33695-33772]"
+    }, {
+      "left" : "param = setter.param(memberClass, \"value\");",
+      "right" : "param = setter.param(memberClass, \"value\");",
+      "info" : "ExpressionStatement[31201-31244]:ExpressionStatement[33777-33820]"
+    }, {
+      "left" : "final JInvocation inv = setter.body().invoke(\"select\" + wrappedOrDirect).arg(memberField).arg(JExpr.dotclass(memberClass));",
+      "right" : "final JInvocation inv = setter.body().invoke(\"select\" + wrappedOrDirect).arg(memberField).arg(JExpr.dotclass(memberClass));",
+      "info" : "VariableDeclarationStatement[31249-31372]:VariableDeclarationStatement[33825-33948]"
+    }, {
+      "left" : "dataClassArg(inv, dataClass).arg(memberKey).arg(param);",
+      "right" : "dataClassArg(inv, dataClass).arg(memberKey).arg(param);",
+      "info" : "ExpressionStatement[31377-31432]:ExpressionStatement[33953-34008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31584-32315]:Block[34160-34891]"
+    }, {
+      "left" : "final JDefinedClass fieldsNestedClass = generatePathSpecNestedClass(unionClass);",
+      "right" : "final JDefinedClass fieldsNestedClass = generatePathSpecNestedClass(unionClass);",
+      "info" : "VariableDeclarationStatement[31590-31670]:VariableDeclarationStatement[34166-34246]"
+    }, {
+      "left" : "for (UnionTemplateSpec.Member member : unionSpec.getMembers())",
+      "right" : "for (UnionTemplateSpec.Member member : unionSpec.getMembers())",
+      "info" : "EnhancedForStatement[31676-32311]:EnhancedForStatement[34252-34887]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31743-32311]:Block[34319-34887]"
+    }, {
+      "left" : "JClass fieldsRefType = _pathSpecClass;",
+      "right" : "JClass fieldsRefType = _pathSpecClass;",
+      "info" : "VariableDeclarationStatement[31751-31789]:VariableDeclarationStatement[34327-34365]"
+    }, {
+      "left" : "if (hasNestedFields(member.getSchema()))",
+      "right" : "if (hasNestedFields(member.getSchema()))",
+      "info" : "IfStatement[31796-32018]:IfStatement[34372-34594]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31843-32018]:Block[34419-34594]"
+    }, {
+      "left" : "final JClass unionMemberClass = generate(member.getClassTemplateSpec());",
+      "right" : "final JClass unionMemberClass = generate(member.getClassTemplateSpec());",
+      "info" : "VariableDeclarationStatement[31853-31925]:VariableDeclarationStatement[34429-34501]"
+    }, {
+      "left" : "fieldsRefType = getCodeModel().ref(unionMemberClass.fullName() + \".Fields\");",
+      "right" : "fieldsRefType = getCodeModel().ref(unionMemberClass.fullName() + \".Fields\");",
+      "info" : "ExpressionStatement[31934-32010]:ExpressionStatement[34510-34586]"
+    }, {
+      "left" : "final JMethod accessorMethod = fieldsNestedClass.method(JMod.PUBLIC, fieldsRefType, CodeUtil.getUnionMemberName(member.getSchema()));",
+      "right" : "final JMethod accessorMethod = fieldsNestedClass.method(JMod.PUBLIC, fieldsRefType, CodeUtil.getUnionMemberName(member.getSchema()));",
+      "info" : "VariableDeclarationStatement[32025-32158]:VariableDeclarationStatement[34601-34734]"
+    }, {
+      "left" : "accessorMethod.body()._return(JExpr._new(fieldsRefType).arg(JExpr.invoke(\"getPathComponents\")).arg(member.getSchema().getUnionMemberKey()));",
+      "right" : "accessorMethod.body()._return(JExpr._new(fieldsRefType).arg(JExpr.invoke(\"getPathComponents\")).arg(member.getSchema().getUnionMemberKey()));",
+      "info" : "ExpressionStatement[32165-32305]:ExpressionStatement[34741-34881]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32462-33835]:Block[35038-36411]"
+    }, {
+      "left" : "if (!_generatedClasses.containsKey(definedClass))",
+      "right" : "if (!_generatedClasses.containsKey(definedClass))",
+      "info" : "IfStatement[32468-33831]:IfStatement[35044-36407]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32522-33831]:Block[35098-36407]"
+    }, {
+      "left" : "_generatedClasses.put(definedClass, classTemplateSpec);",
+      "right" : "_generatedClasses.put(definedClass, classTemplateSpec);",
+      "info" : "ExpressionStatement[32530-32585]:ExpressionStatement[35106-35161]"
+    }, {
+      "left" : "JavaCodeUtil.annotate(definedClass, \"Data Template\", classTemplateSpec.getLocation());",
+      "right" : "JavaCodeUtil.annotate(definedClass, \"Data Template\", classTemplateSpec.getLocation());",
+      "info" : "ExpressionStatement[32593-32679]:ExpressionStatement[35169-35255]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof ArrayTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof ArrayTemplateSpec)",
+      "info" : "IfStatement[32687-33825]:IfStatement[35263-36401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32745-32830]:Block[35321-35406]"
+    }, {
+      "left" : "generateArray(definedClass, (ArrayTemplateSpec) classTemplateSpec);",
+      "right" : "generateArray(definedClass, (ArrayTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[32755-32822]:ExpressionStatement[35331-35398]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof EnumTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof EnumTemplateSpec)",
+      "info" : "IfStatement[32842-33825]:IfStatement[35418-36401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32899-32982]:Block[35475-35558]"
+    }, {
+      "left" : "generateEnum(definedClass, (EnumTemplateSpec) classTemplateSpec);",
+      "right" : "generateEnum(definedClass, (EnumTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[32909-32974]:ExpressionStatement[35485-35550]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof FixedTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof FixedTemplateSpec)",
+      "info" : "IfStatement[32994-33825]:IfStatement[35570-36401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33052-33137]:Block[35628-35713]"
+    }, {
+      "left" : "generateFixed(definedClass, (FixedTemplateSpec) classTemplateSpec);",
+      "right" : "generateFixed(definedClass, (FixedTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[33062-33129]:ExpressionStatement[35638-35705]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof MapTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof MapTemplateSpec)",
+      "info" : "IfStatement[33149-33825]:IfStatement[35725-36401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33205-33286]:Block[35781-35862]"
+    }, {
+      "left" : "generateMap(definedClass, (MapTemplateSpec) classTemplateSpec);",
+      "right" : "generateMap(definedClass, (MapTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[33215-33278]:ExpressionStatement[35791-35854]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof RecordTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof RecordTemplateSpec)",
+      "info" : "IfStatement[33298-33825]:IfStatement[35874-36401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33357-33444]:Block[35933-36020]"
+    }, {
+      "left" : "generateRecord(definedClass, (RecordTemplateSpec) classTemplateSpec);",
+      "right" : "generateRecord(definedClass, (RecordTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[33367-33436]:ExpressionStatement[35943-36012]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof TyperefTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof TyperefTemplateSpec)",
+      "info" : "IfStatement[33456-33825]:IfStatement[36032-36401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33516-33605]:Block[36092-36181]"
+    }, {
+      "left" : "generateTyperef(definedClass, (TyperefTemplateSpec) classTemplateSpec);",
+      "right" : "generateTyperef(definedClass, (TyperefTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[33526-33597]:ExpressionStatement[36102-36173]"
+    }, {
+      "left" : "if (classTemplateSpec instanceof UnionTemplateSpec)",
+      "right" : "if (classTemplateSpec instanceof UnionTemplateSpec)",
+      "info" : "IfStatement[33617-33825]:IfStatement[36193-36401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33675-33760]:Block[36251-36336]"
+    }, {
+      "left" : "generateUnion(definedClass, (UnionTemplateSpec) classTemplateSpec);",
+      "right" : "generateUnion(definedClass, (UnionTemplateSpec) classTemplateSpec);",
+      "info" : "ExpressionStatement[33685-33752]:ExpressionStatement[36261-36328]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33778-33825]:Block[36354-36401]"
+    }, {
+      "left" : "throw new RuntimeException();",
+      "right" : "throw new RuntimeException();",
+      "info" : "ThrowStatement[33788-33817]:ThrowStatement[36364-36393]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33927-35119]:Block[36503-37695]"
+    }, {
+      "left" : "final JFieldVar schemaField = templateClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, schema.getClass(), DataTemplateUtil.SCHEMA_FIELD_NAME);",
+      "right" : "final JFieldVar schemaField = templateClass.field(JMod.PRIVATE | JMod.STATIC | JMod.FINAL, schema.getClass(), DataTemplateUtil.SCHEMA_FIELD_NAME);",
+      "info" : "VariableDeclarationStatement[33933-34079]:VariableDeclarationStatement[36509-36655]"
+    }, {
+      "left" : "final String schemaJson = SchemaToJsonEncoder.schemaToJson(schema, JsonBuilder.Pretty.COMPACT);",
+      "right" : "final String schemaJson = SchemaToJsonEncoder.schemaToJson(schema, JsonBuilder.Pretty.COMPACT);",
+      "info" : "VariableDeclarationStatement[34084-34179]:VariableDeclarationStatement[36660-36755]"
+    }, {
+      "left" : "final JInvocation parseSchemaInvocation;",
+      "right" : "final JInvocation parseSchemaInvocation;",
+      "info" : "VariableDeclarationStatement[34184-34224]:VariableDeclarationStatement[36760-36800]"
+    }, {
+      "left" : "if (schemaJson.length() < MAX_SCHEMA_FIELD_JSON_LENGTH)",
+      "right" : "if (schemaJson.length() < MAX_SCHEMA_FIELD_JSON_LENGTH)",
+      "info" : "IfStatement[34229-34993]:IfStatement[36805-37569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34289-34394]:Block[36865-36970]"
+    }, {
+      "left" : "parseSchemaInvocation = _dataTemplateUtilClass.staticInvoke(\"parseSchema\").arg(schemaJson);",
+      "right" : "parseSchemaInvocation = _dataTemplateUtilClass.staticInvoke(\"parseSchema\").arg(schemaJson);",
+      "info" : "ExpressionStatement[34297-34388]:ExpressionStatement[36873-36964]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34408-34993]:Block[36984-37569]"
+    }, {
+      "left" : "JInvocation stringBuilderInvocation = JExpr._new(_stringBuilderClass);",
+      "right" : "JInvocation stringBuilderInvocation = JExpr._new(_stringBuilderClass);",
+      "info" : "VariableDeclarationStatement[34416-34486]:VariableDeclarationStatement[36992-37062]"
+    }, {
+      "left" : "for (int index = 0; index < schemaJson.length(); index += MAX_SCHEMA_FIELD_JSON_LENGTH)",
+      "right" : "for (int index = 0; index < schemaJson.length(); index += MAX_SCHEMA_FIELD_JSON_LENGTH)",
+      "info" : "ForStatement[34493-34800]:ForStatement[37069-37376]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34587-34800]:Block[37163-37376]"
+    }, {
+      "left" : "stringBuilderInvocation = stringBuilderInvocation.\n            invoke(\"append\").\n            arg(schemaJson.substring(index, Math.min(schemaJson.length(), index + MAX_SCHEMA_FIELD_JSON_LENGTH)));",
+      "right" : "stringBuilderInvocation = stringBuilderInvocation.\n            invoke(\"append\").\n            arg(schemaJson.substring(index, Math.min(schemaJson.length(), index + MAX_SCHEMA_FIELD_JSON_LENGTH)));",
+      "info" : "ExpressionStatement[34597-34792]:ExpressionStatement[37173-37368]"
+    }, {
+      "left" : "stringBuilderInvocation = stringBuilderInvocation.invoke(\"toString\");",
+      "right" : "stringBuilderInvocation = stringBuilderInvocation.invoke(\"toString\");",
+      "info" : "ExpressionStatement[34807-34876]:ExpressionStatement[37383-37452]"
+    }, {
+      "left" : "parseSchemaInvocation = _dataTemplateUtilClass.staticInvoke(\"parseSchema\").arg(stringBuilderInvocation);",
+      "right" : "parseSchemaInvocation = _dataTemplateUtilClass.staticInvoke(\"parseSchema\").arg(stringBuilderInvocation);",
+      "info" : "ExpressionStatement[34883-34987]:ExpressionStatement[37459-37563]"
+    }, {
+      "left" : "schemaField.init(JExpr.cast(getCodeModel()._ref(schema.getClass()), parseSchemaInvocation));",
+      "right" : "schemaField.init(JExpr.cast(getCodeModel()._ref(schema.getClass()), parseSchemaInvocation));",
+      "info" : "ExpressionStatement[34998-35090]:ExpressionStatement[37574-37666]"
+    }, {
+      "left" : "return schemaField;",
+      "right" : "return schemaField;",
+      "info" : "ReturnStatement[35096-35115]:ReturnStatement[37672-37691]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35311-35800]:Block[37887-38376]"
+    }, {
+      "left" : "if (hasNestedFields(schema))",
+      "right" : "if (hasNestedFields(schema))",
+      "info" : "IfStatement[35317-35796]:IfStatement[37893-38372]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35350-35796]:Block[37926-38372]"
+    }, {
+      "left" : "final JDefinedClass fieldsNestedClass = generatePathSpecNestedClass(templateClass);",
+      "right" : "final JDefinedClass fieldsNestedClass = generatePathSpecNestedClass(templateClass);",
+      "info" : "VariableDeclarationStatement[35358-35441]:VariableDeclarationStatement[37934-38017]"
+    }, {
+      "left" : "final JClass itemsFieldType = getCodeModel().ref(childClass.fullName() + \".Fields\");",
+      "right" : "final JClass itemsFieldType = getCodeModel().ref(childClass.fullName() + \".Fields\");",
+      "info" : "VariableDeclarationStatement[35449-35533]:VariableDeclarationStatement[38025-38109]"
+    }, {
+      "left" : "final JMethod constantField = fieldsNestedClass.method(JMod.PUBLIC, itemsFieldType, wildcardMethodName);",
+      "right" : "final JMethod constantField = fieldsNestedClass.method(JMod.PUBLIC, itemsFieldType, wildcardMethodName);",
+      "info" : "VariableDeclarationStatement[35541-35645]:VariableDeclarationStatement[38117-38221]"
+    }, {
+      "left" : "constantField.body()._return(JExpr._new(itemsFieldType).arg(JExpr.invoke(\"getPathComponents\")).arg(_pathSpecClass.staticRef(\"WILDCARD\")));",
+      "right" : "constantField.body()._return(JExpr._new(itemsFieldType).arg(JExpr.invoke(\"getPathComponents\")).arg(_pathSpecClass.staticRef(\"WILDCARD\")));",
+      "info" : "ExpressionStatement[35652-35790]:ExpressionStatement[38228-38366]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35927-36535]:Block[38503-39111]"
+    }, {
+      "left" : "final JDefinedClass fieldsNestedClass = templateClass._class(JMod.PUBLIC | JMod.STATIC, \"Fields\");",
+      "right" : "final JDefinedClass fieldsNestedClass = templateClass._class(JMod.PUBLIC | JMod.STATIC, \"Fields\");",
+      "info" : "VariableDeclarationStatement[35933-36031]:VariableDeclarationStatement[38509-38607]"
+    }, {
+      "left" : "fieldsNestedClass._extends(_pathSpecClass);",
+      "right" : "fieldsNestedClass._extends(_pathSpecClass);",
+      "info" : "ExpressionStatement[36036-36079]:ExpressionStatement[38612-38655]"
+    }, {
+      "left" : "final JMethod constructor = fieldsNestedClass.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod constructor = fieldsNestedClass.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[36085-36156]:VariableDeclarationStatement[38661-38732]"
+    }, {
+      "left" : "final JClass listString = getCodeModel().ref(List.class).narrow(String.class);",
+      "right" : "final JClass listString = getCodeModel().ref(List.class).narrow(String.class);",
+      "info" : "VariableDeclarationStatement[36161-36239]:VariableDeclarationStatement[38737-38815]"
+    }, {
+      "left" : "final JVar namespace = constructor.param(listString, \"path\");",
+      "right" : "final JVar namespace = constructor.param(listString, \"path\");",
+      "info" : "VariableDeclarationStatement[36244-36305]:VariableDeclarationStatement[38820-38881]"
+    }, {
+      "left" : "final JVar name = constructor.param(String.class, \"name\");",
+      "right" : "final JVar name = constructor.param(String.class, \"name\");",
+      "info" : "VariableDeclarationStatement[36310-36368]:VariableDeclarationStatement[38886-38944]"
+    }, {
+      "left" : "constructor.body().invoke(SUPER).arg(namespace).arg(name);",
+      "right" : "constructor.body().invoke(SUPER).arg(namespace).arg(name);",
+      "info" : "ExpressionStatement[36373-36431]:ExpressionStatement[38949-39007]"
+    }, {
+      "left" : "fieldsNestedClass.constructor(JMod.PUBLIC).body().invoke(SUPER);",
+      "right" : "fieldsNestedClass.constructor(JMod.PUBLIC).body().invoke(SUPER);",
+      "info" : "ExpressionStatement[36437-36501]:ExpressionStatement[39013-39077]"
+    }, {
+      "left" : "return fieldsNestedClass;",
+      "right" : "return fieldsNestedClass;",
+      "info" : "ReturnStatement[36506-36531]:ReturnStatement[39082-39107]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36803-37562]:Block[39379-40138]"
+    }, {
+      "left" : "if (customInfo != null)",
+      "right" : "if (customInfo != null)",
+      "info" : "IfStatement[36809-37558]:IfStatement[39385-40134]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36837-37558]:Block[39413-40134]"
+    }, {
+      "left" : "final String customClassFullName = customInfo.getCustomClass().getNamespace() + \".\" + customInfo.getCustomClass().getClassName();",
+      "right" : "final String customClassFullName = customInfo.getCustomClass().getNamespace() + \".\" + customInfo.getCustomClass().getClassName();",
+      "info" : "VariableDeclarationStatement[36878-37007]:VariableDeclarationStatement[39454-39583]"
+    }, {
+      "left" : "templateClass.init().add(_customClass.staticInvoke(\"initializeCustomClass\").arg(getCodeModel().ref(customClassFullName).dotclass()));",
+      "right" : "templateClass.init().add(_customClass.staticInvoke(\"initializeCustomClass\").arg(getCodeModel().ref(customClassFullName).dotclass()));",
+      "info" : "ExpressionStatement[37014-37147]:ExpressionStatement[39590-39723]"
+    }, {
+      "left" : "if (customInfo.getCoercerClass() != null)",
+      "right" : "if (customInfo.getCoercerClass() != null)",
+      "info" : "IfStatement[37210-37552]:IfStatement[39786-40128]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37258-37552]:Block[39834-40128]"
+    }, {
+      "left" : "final String coercerClassFullName = customInfo.getCoercerClass().getNamespace() + \".\" + customInfo.getCoercerClass().getClassName();",
+      "right" : "final String coercerClassFullName = customInfo.getCoercerClass().getNamespace() + \".\" + customInfo.getCoercerClass().getClassName();",
+      "info" : "VariableDeclarationStatement[37268-37400]:VariableDeclarationStatement[39844-39976]"
+    }, {
+      "left" : "templateClass.init().add(_customClass.staticInvoke(\"initializeCoercerClass\").arg(getCodeModel().ref(coercerClassFullName).dotclass()));",
+      "right" : "templateClass.init().add(_customClass.staticInvoke(\"initializeCoercerClass\").arg(getCodeModel().ref(coercerClassFullName).dotclass()));",
+      "info" : "ExpressionStatement[37409-37544]:ExpressionStatement[39985-40120]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37660-37915]:Block[40236-40491]"
+    }, {
+      "left" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[37666-37726]:VariableDeclarationStatement[40242-40302]"
+    }, {
+      "left" : "final JVar initialCapacity = argConstructor.param(getCodeModel().INT, \"initialCapacity\");",
+      "right" : "final JVar initialCapacity = argConstructor.param(getCodeModel().INT, \"initialCapacity\");",
+      "info" : "VariableDeclarationStatement[37731-37820]:VariableDeclarationStatement[40307-40396]"
+    }, {
+      "left" : "argConstructor.body().invoke(THIS).arg(JExpr._new(elementClass).arg(initialCapacity));",
+      "right" : "argConstructor.body().invoke(THIS).arg(JExpr._new(elementClass).arg(initialCapacity));",
+      "info" : "ExpressionStatement[37825-37911]:ExpressionStatement[40401-40487]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38008-38308]:Block[40584-40884]"
+    }, {
+      "left" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[38014-38074]:VariableDeclarationStatement[40590-40650]"
+    }, {
+      "left" : "final JVar c = argConstructor.param(_collectionClass.narrow(elementClass), \"c\");",
+      "right" : "final JVar c = argConstructor.param(_collectionClass.narrow(elementClass), \"c\");",
+      "info" : "VariableDeclarationStatement[38079-38159]:VariableDeclarationStatement[40655-40735]"
+    }, {
+      "left" : "argConstructor.body().invoke(THIS).arg(JExpr._new(_dataListClass).arg(c.invoke(\"size\")));",
+      "right" : "argConstructor.body().invoke(THIS).arg(JExpr._new(_dataListClass).arg(c.invoke(\"size\")));",
+      "info" : "ExpressionStatement[38164-38253]:ExpressionStatement[40740-40829]"
+    }, {
+      "left" : "argConstructor.body().invoke(\"addAll\").arg(c);",
+      "right" : "argConstructor.body().invoke(\"addAll\").arg(c);",
+      "info" : "ExpressionStatement[38258-38304]:ExpressionStatement[40834-40880]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38398-38756]:Block[40974-41332]"
+    }, {
+      "left" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[38404-38464]:VariableDeclarationStatement[40980-41040]"
+    }, {
+      "left" : "final JVar initialCapacity = argConstructor.param(getCodeModel().INT, \"initialCapacity\");",
+      "right" : "final JVar initialCapacity = argConstructor.param(getCodeModel().INT, \"initialCapacity\");",
+      "info" : "VariableDeclarationStatement[38469-38558]:VariableDeclarationStatement[41045-41134]"
+    }, {
+      "left" : "final JVar loadFactor = argConstructor.param(getCodeModel().FLOAT, \"loadFactor\");",
+      "right" : "final JVar loadFactor = argConstructor.param(getCodeModel().FLOAT, \"loadFactor\");",
+      "info" : "VariableDeclarationStatement[38563-38644]:VariableDeclarationStatement[41139-41220]"
+    }, {
+      "left" : "argConstructor.body().invoke(THIS).arg(JExpr._new(_dataMapClass).arg(initialCapacity).arg(loadFactor));",
+      "right" : "argConstructor.body().invoke(THIS).arg(JExpr._new(_dataMapClass).arg(initialCapacity).arg(loadFactor));",
+      "info" : "ExpressionStatement[38649-38752]:ExpressionStatement[41225-41328]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38840-39151]:Block[41416-41727]"
+    }, {
+      "left" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "right" : "final JMethod argConstructor = cls.constructor(JMod.PUBLIC);",
+      "info" : "VariableDeclarationStatement[38846-38906]:VariableDeclarationStatement[41422-41482]"
+    }, {
+      "left" : "final JVar m = argConstructor.param(_mapClass.narrow(_stringClass, valueClass), \"m\");",
+      "right" : "final JVar m = argConstructor.param(_mapClass.narrow(_stringClass, valueClass), \"m\");",
+      "info" : "VariableDeclarationStatement[38911-38996]:VariableDeclarationStatement[41487-41572]"
+    }, {
+      "left" : "argConstructor.body().invoke(THIS).arg(JExpr.invoke(\"newDataMapOfSize\").arg(m.invoke(\"size\")));",
+      "right" : "argConstructor.body().invoke(THIS).arg(JExpr.invoke(\"newDataMapOfSize\").arg(m.invoke(\"size\")));",
+      "info" : "ExpressionStatement[39001-39096]:ExpressionStatement[41577-41672]"
+    }, {
+      "left" : "argConstructor.body().invoke(\"putAll\").arg(m);",
+      "right" : "argConstructor.body().invoke(\"putAll\").arg(m);",
+      "info" : "ExpressionStatement[39101-39147]:ExpressionStatement[41677-41723]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39297-39377]:Block[41987-42160]"
+    }, {
+      "left" : "_defaultPackage = null;",
+      "right" : "_defaultPackage = null;",
+      "info" : "ExpressionStatement[39305-39328]:ExpressionStatement[41995-42018]"
+    }, {
+      "left" : "_recordFieldAccessorWithMode = true;",
+      "right" : "_recordFieldAccessorWithMode = true;",
+      "info" : "ExpressionStatement[39335-39371]:ExpressionStatement[42025-42061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39440-39487]:Block[42223-42270]"
+    }, {
+      "left" : "_defaultPackage = defaultPackage;",
+      "right" : "_defaultPackage = defaultPackage;",
+      "info" : "ExpressionStatement[39448-39481]:ExpressionStatement[42231-42264]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39531-39568]:Block[42314-42351]"
+    }, {
+      "left" : "return _defaultPackage;",
+      "right" : "return _defaultPackage;",
+      "info" : "ReturnStatement[39539-39562]:ReturnStatement[42322-42345]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39658-39731]:Block[42441-42514]"
+    }, {
+      "left" : "_recordFieldAccessorWithMode = recordFieldAccessorWithMode;",
+      "right" : "_recordFieldAccessorWithMode = recordFieldAccessorWithMode;",
+      "info" : "ExpressionStatement[39666-39725]:ExpressionStatement[42449-42508]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39789-39839]:Block[42572-42622]"
+    }, {
+      "left" : "return _recordFieldAccessorWithMode;",
+      "right" : "return _recordFieldAccessorWithMode;",
+      "info" : "ReturnStatement[39797-39833]:ReturnStatement[42580-42616]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

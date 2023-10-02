@@ -1,0 +1,85 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "BlockOutStreamIntegrationTest",
+      "right" : "BlockOutStreamIntegrationTest",
+      "info" : "TypeDeclaration[1085-2695]:TypeDeclaration[1085-3562]"
+    }, {
+      "left" : "private static LocalTachyonCluster sLocalTachyonCluster = null;",
+      "right" : "private static LocalTachyonCluster sLocalTachyonCluster = null;",
+      "info" : "FieldDeclaration[1209-1272]:FieldDeclaration[1209-1272]"
+    }, {
+      "left" : "public static final void afterClass() throws Exception",
+      "right" : "public static final void afterClass() throws Exception",
+      "info" : "MethodDeclaration[1276-1383]:MethodDeclaration[1276-1383]"
+    }, {
+      "left" : "public static final void beforeClass() throws IOException",
+      "right" : "public static final void beforeClass() throws IOException",
+      "info" : "MethodDeclaration[1387-1578]:MethodDeclaration[1387-1578]"
+    }, {
+      "left" : "public void disableLocalWriteTest() throws IOException",
+      "right" : "public void disableLocalWriteTest() throws IOException",
+      "info" : "MethodDeclaration[1582-2139]:MethodDeclaration[2357-2650]"
+    }, {
+      "left" : "public void enableLocalWriteTest() throws IOException",
+      "right" : "public void enableLocalWriteTest() throws IOException",
+      "info" : "MethodDeclaration[2143-2693]:MethodDeclaration[2654-2940]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1345-1383]:Block[1345-1383]"
+    }, {
+      "left" : "sLocalTachyonCluster.stop();",
+      "right" : "sLocalTachyonCluster.stop();",
+      "info" : "ExpressionStatement[1351-1379]:ExpressionStatement[1351-1379]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1460-1578]:Block[1460-1578]"
+    }, {
+      "left" : "sLocalTachyonCluster = new LocalTachyonCluster(10000, 1000, Constants.GB);",
+      "right" : "sLocalTachyonCluster = new LocalTachyonCluster(10000, 1000, Constants.GB);",
+      "info" : "ExpressionStatement[1466-1540]:ExpressionStatement[1466-1540]"
+    }, {
+      "left" : "sLocalTachyonCluster.start();",
+      "right" : "sLocalTachyonCluster.start();",
+      "info" : "ExpressionStatement[1545-1574]:ExpressionStatement[1545-1574]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1721-2139]:Block[2496-2650]"
+    }, {
+      "left" : "BlockOutStream os = BlockOutStream.get(file, WriteType.MUST_CACHE, 0, conf);",
+      "right" : "BlockOutStream os = getBlockOutStream(\"/file_no_local_write\", false);",
+      "info" : "VariableDeclarationStatement[1984-2060]:VariableDeclarationStatement[2502-2571]"
+    }, {
+      "left" : "Assert.assertTrue(os instanceof RemoteBlockOutStream);",
+      "right" : "Assert.assertTrue(os instanceof RemoteBlockOutStream);",
+      "info" : "ExpressionStatement[2065-2119]:ExpressionStatement[2576-2630]"
+    }, {
+      "left" : "os.close();",
+      "right" : "os.close();",
+      "info" : "ExpressionStatement[2124-2135]:ExpressionStatement[2635-2646]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2280-2693]:Block[2791-2940]"
+    }, {
+      "left" : "BlockOutStream os = BlockOutStream.get(file, WriteType.MUST_CACHE, 0, conf);",
+      "right" : "BlockOutStream os = getBlockOutStream(\"/file_local_write\", true);",
+      "info" : "VariableDeclarationStatement[2539-2615]:VariableDeclarationStatement[2797-2862]"
+    }, {
+      "left" : "Assert.assertTrue(os instanceof LocalBlockOutStream);",
+      "right" : "Assert.assertTrue(os instanceof LocalBlockOutStream);",
+      "info" : "ExpressionStatement[2620-2673]:ExpressionStatement[2867-2920]"
+    }, {
+      "left" : "os.close();",
+      "right" : "os.close();",
+      "info" : "ExpressionStatement[2678-2689]:ExpressionStatement[2925-2936]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,261 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "TypeVariableName",
+      "right" : "TypeVariableName",
+      "info" : "TypeDeclaration[1191-5031]:TypeDeclaration[1245-5594]"
+    }, {
+      "left" : "public final String name;",
+      "right" : "public final String name;",
+      "info" : "FieldDeclaration[1248-1273]:FieldDeclaration[1302-1327]"
+    }, {
+      "left" : "public final List<TypeName> bounds;",
+      "right" : "public final List<TypeName> bounds;",
+      "info" : "FieldDeclaration[1276-1311]:FieldDeclaration[1330-1365]"
+    }, {
+      "left" : "private TypeVariableName(String name, List<TypeName> bounds)",
+      "right" : "private TypeVariableName(String name, List<TypeName> bounds)",
+      "info" : "MethodDeclaration[1315-1790]:MethodDeclaration[1369-1844]"
+    }, {
+      "left" : "public boolean equals(Object o)",
+      "right" : "public boolean equals(Object o)",
+      "info" : "MethodDeclaration[1794-1991]:MethodDeclaration[1848-2045]"
+    }, {
+      "left" : "public int hashCode()",
+      "right" : "public int hashCode()",
+      "info" : "MethodDeclaration[1995-2080]:MethodDeclaration[2049-2134]"
+    }, {
+      "left" : "CodeWriter emit(CodeWriter out) throws IOException",
+      "right" : "CodeWriter emit(CodeWriter out) throws IOException",
+      "info" : "MethodDeclaration[2084-2186]:MethodDeclaration[2138-2240]"
+    }, {
+      "left" : "public static TypeVariableName get(String name)",
+      "right" : "public static TypeVariableName get(String name)",
+      "info" : "MethodDeclaration[2190-2383]:MethodDeclaration[2244-2437]"
+    }, {
+      "left" : "public static TypeVariableName get(String name, TypeName... bounds)",
+      "right" : "public static TypeVariableName get(String name, TypeName... bounds)",
+      "info" : "MethodDeclaration[2387-2593]:MethodDeclaration[2441-2647]"
+    }, {
+      "left" : "public static TypeVariableName get(String name, Type... bounds)",
+      "right" : "public static TypeVariableName get(String name, Type... bounds)",
+      "info" : "MethodDeclaration[2597-2799]:MethodDeclaration[2651-2853]"
+    }, {
+      "left" : "public static TypeVariableName get(javax.lang.model.type.TypeVariable mirror)",
+      "right" : "public static TypeVariableName get(javax.lang.model.type.TypeVariable mirror)",
+      "info" : "MethodDeclaration[2803-3310]:MethodDeclaration[2857-3364]"
+    }, {
+      "left" : "// Gross things in support of Java 7 and Java 8.\n  private static List<? extends TypeMirror> typeVariableBounds(\n      javax.lang.model.type.TypeVariable typeVariable)",
+      "right" : "// Gross things in support of Java 7 and Java 8.\n  private static List<? extends TypeMirror> typeVariableBounds(\n      javax.lang.model.type.TypeVariable typeVariable)",
+      "info" : "MethodDeclaration[3314-4822]:MethodDeclaration[3368-5385]"
+    }, {
+      "left" : "public static TypeVariableName get(TypeVariable<?> type)",
+      "right" : "public static TypeVariableName get(TypeVariable<?> type)",
+      "info" : "MethodDeclaration[4826-5029]:MethodDeclaration[5389-5592]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1376-1790]:Block[1430-1844]"
+    }, {
+      "left" : "List<TypeName> boundsNoObject = new ArrayList<>(bounds);",
+      "right" : "List<TypeName> boundsNoObject = new ArrayList<>(bounds);",
+      "info" : "VariableDeclarationStatement[1442-1498]:VariableDeclarationStatement[1496-1552]"
+    }, {
+      "left" : "boundsNoObject.remove(OBJECT);",
+      "right" : "boundsNoObject.remove(OBJECT);",
+      "info" : "ExpressionStatement[1503-1533]:ExpressionStatement[1557-1587]"
+    }, {
+      "left" : "this.name = checkNotNull(name, \"name == null\");",
+      "right" : "this.name = checkNotNull(name, \"name == null\");",
+      "info" : "ExpressionStatement[1539-1586]:ExpressionStatement[1593-1640]"
+    }, {
+      "left" : "this.bounds = Collections.unmodifiableList(boundsNoObject);",
+      "right" : "this.bounds = Collections.unmodifiableList(boundsNoObject);",
+      "info" : "ExpressionStatement[1591-1650]:ExpressionStatement[1645-1704]"
+    }, {
+      "left" : "for (TypeName bound : this.bounds)",
+      "right" : "for (TypeName bound : this.bounds)",
+      "info" : "EnhancedForStatement[1656-1786]:EnhancedForStatement[1710-1840]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1691-1786]:Block[1745-1840]"
+    }, {
+      "left" : "checkArgument(!bound.isPrimitive() && bound != VOID, \"invalid bound: %s\", bound);",
+      "right" : "checkArgument(!bound.isPrimitive() && bound != VOID, \"invalid bound: %s\", bound);",
+      "info" : "ExpressionStatement[1699-1780]:ExpressionStatement[1753-1834]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1836-1991]:Block[1890-2045]"
+    }, {
+      "left" : "return o instanceof TypeVariableName\n        && ((TypeVariableName) o).name.equals(name)\n        && ((TypeVariableName) o).bounds.equals(bounds);",
+      "right" : "return o instanceof TypeVariableName\n        && ((TypeVariableName) o).name.equals(name)\n        && ((TypeVariableName) o).bounds.equals(bounds);",
+      "info" : "ReturnStatement[1842-1987]:ReturnStatement[1896-2041]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2027-2080]:Block[2081-2134]"
+    }, {
+      "left" : "return name.hashCode() ^ bounds.hashCode();",
+      "right" : "return name.hashCode() ^ bounds.hashCode();",
+      "info" : "ReturnStatement[2033-2076]:ReturnStatement[2087-2130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2145-2186]:Block[2199-2240]"
+    }, {
+      "left" : "return out.emitAndIndent(name);",
+      "right" : "return out.emitAndIndent(name);",
+      "info" : "ReturnStatement[2151-2182]:ReturnStatement[2205-2236]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2304-2383]:Block[2358-2437]"
+    }, {
+      "left" : "return new TypeVariableName(name, Collections.<TypeName>emptyList());",
+      "right" : "return new TypeVariableName(name, Collections.<TypeName>emptyList());",
+      "info" : "ReturnStatement[2310-2379]:ReturnStatement[2364-2433]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2526-2593]:Block[2580-2647]"
+    }, {
+      "left" : "return new TypeVariableName(name, Arrays.asList(bounds));",
+      "right" : "return new TypeVariableName(name, Arrays.asList(bounds));",
+      "info" : "ReturnStatement[2532-2589]:ReturnStatement[2586-2643]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2732-2799]:Block[2786-2853]"
+    }, {
+      "left" : "return new TypeVariableName(name, TypeName.list(bounds));",
+      "right" : "return new TypeVariableName(name, TypeName.list(bounds));",
+      "info" : "ReturnStatement[2738-2795]:ReturnStatement[2792-2849]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2942-3310]:Block[2996-3364]"
+    }, {
+      "left" : "String name = mirror.asElement().getSimpleName().toString();",
+      "right" : "String name = mirror.asElement().getSimpleName().toString();",
+      "info" : "VariableDeclarationStatement[2948-3008]:VariableDeclarationStatement[3002-3062]"
+    }, {
+      "left" : "List<? extends TypeMirror> boundsMirrors = typeVariableBounds(mirror);",
+      "right" : "List<? extends TypeMirror> boundsMirrors = typeVariableBounds(mirror);",
+      "info" : "VariableDeclarationStatement[3013-3083]:VariableDeclarationStatement[3067-3137]"
+    }, {
+      "left" : "List<TypeName> boundsTypeNames = new ArrayList<>();",
+      "right" : "List<TypeName> boundsTypeNames = new ArrayList<>();",
+      "info" : "VariableDeclarationStatement[3089-3140]:VariableDeclarationStatement[3143-3194]"
+    }, {
+      "left" : "for (TypeMirror typeMirror : boundsMirrors)",
+      "right" : "for (TypeMirror typeMirror : boundsMirrors)",
+      "info" : "EnhancedForStatement[3145-3249]:EnhancedForStatement[3199-3303]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3189-3249]:Block[3243-3303]"
+    }, {
+      "left" : "boundsTypeNames.add(TypeName.get(typeMirror));",
+      "right" : "boundsTypeNames.add(TypeName.get(typeMirror));",
+      "info" : "ExpressionStatement[3197-3243]:ExpressionStatement[3251-3297]"
+    }, {
+      "left" : "return new TypeVariableName(name, boundsTypeNames);",
+      "right" : "return new TypeVariableName(name, boundsTypeNames);",
+      "info" : "ReturnStatement[3255-3306]:ReturnStatement[3309-3360]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3818-4822]:Block[3872-5385]"
+    }, {
+      "left" : "TypeMirror upperBound = typeVariable.getUpperBound();",
+      "right" : "TypeMirror upperBound = typeVariable.getUpperBound();",
+      "info" : "VariableDeclarationStatement[3824-3877]:VariableDeclarationStatement[3878-3931]"
+    }, {
+      "left" : "if (\"INTERSECTION\".equals(upperBound.getKind().name()))",
+      "right" : "if (\"INTERSECTION\".equals(upperBound.getKind().name()))",
+      "info" : "IfStatement[3956-4249]:IfStatement[4010-4303]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4012-4249]:Block[4066-4303]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[4020-4243]:TryStatement[4074-4297]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4024-4174]:Block[4078-4228]"
+    }, {
+      "left" : "Method method = upperBound.getClass().getMethod(\"getBounds\");",
+      "right" : "Method method = upperBound.getClass().getMethod(\"getBounds\");",
+      "info" : "VariableDeclarationStatement[4034-4095]:VariableDeclarationStatement[4088-4149]"
+    }, {
+      "left" : "return (List<? extends TypeMirror>) method.invoke(upperBound);",
+      "right" : "return (List<? extends TypeMirror>) method.invoke(upperBound);",
+      "info" : "ReturnStatement[4104-4166]:ReturnStatement[4158-4220]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4195-4243]:Block[4249-4297]"
+    }, {
+      "left" : "throw new RuntimeException(e);",
+      "right" : "throw new RuntimeException(e);",
+      "info" : "ThrowStatement[4205-4235]:ThrowStatement[4259-4289]"
+    }, {
+      "left" : "if (upperBound.getKind() == TypeKind.DECLARED)",
+      "right" : "if (upperBound.getKind() == TypeKind.DECLARED)",
+      "info" : "IfStatement[4350-4767]:IfStatement[4404-5330]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4397-4767]:Block[4451-4821]"
+    }, {
+      "left" : "TypeElement upperBoundElement = (TypeElement) ((DeclaredType) upperBound).asElement();",
+      "right" : "TypeElement upperBoundElement = (TypeElement) ((DeclaredType) upperBound).asElement();",
+      "info" : "VariableDeclarationStatement[4405-4491]:VariableDeclarationStatement[4459-4545]"
+    }, {
+      "left" : "if (upperBoundElement.getNestingKind() == NestingKind.ANONYMOUS)",
+      "right" : "if (upperBoundElement.getNestingKind() == NestingKind.ANONYMOUS)",
+      "info" : "IfStatement[4498-4761]:IfStatement[4552-4815]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4563-4761]:Block[4617-4815]"
+    }, {
+      "left" : "List<TypeMirror> result = new ArrayList<>();",
+      "right" : "List<TypeMirror> result = new ArrayList<>();",
+      "info" : "VariableDeclarationStatement[4573-4617]:VariableDeclarationStatement[4627-4671]"
+    }, {
+      "left" : "result.add(upperBoundElement.getSuperclass());",
+      "right" : "result.add(upperBoundElement.getSuperclass());",
+      "info" : "ExpressionStatement[4626-4672]:ExpressionStatement[4680-4726]"
+    }, {
+      "left" : "result.addAll(upperBoundElement.getInterfaces());",
+      "right" : "result.addAll(upperBoundElement.getInterfaces());",
+      "info" : "ExpressionStatement[4681-4730]:ExpressionStatement[4735-4784]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[4739-4753]:ReturnStatement[4793-4807]"
+    }, {
+      "left" : "return Collections.singletonList(upperBound);",
+      "right" : "return Collections.singletonList(upperBound);",
+      "info" : "ReturnStatement[4773-4818]:ReturnStatement[5336-5381]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4942-5029]:Block[5505-5592]"
+    }, {
+      "left" : "return new TypeVariableName(type.getName(), TypeName.list(type.getBounds()));",
+      "right" : "return new TypeVariableName(type.getName(), TypeName.list(type.getBounds()));",
+      "info" : "ReturnStatement[4948-5025]:ReturnStatement[5511-5588]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,805 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "BuildMain",
+      "right" : "BuildMain",
+      "info" : "TypeDeclaration[2140-16134]:TypeDeclaration[1886-12670]"
+    }, {
+      "left" : "private static final String PRELOAD_PROJECT_PATH = \"preload.project.path\";",
+      "right" : "private static final String PRELOAD_PROJECT_PATH = \"preload.project.path\";",
+      "info" : "FieldDeclaration[2275-2349]:FieldDeclaration[2021-2095]"
+    }, {
+      "left" : "private static final String PRELOAD_CONFIG_PATH = \"preload.config.path\";",
+      "right" : "private static final String PRELOAD_CONFIG_PATH = \"preload.config.path\";",
+      "info" : "FieldDeclaration[2352-2424]:FieldDeclaration[2098-2170]"
+    }, {
+      "left" : "private static final Logger LOG;",
+      "right" : "private static final Logger LOG;",
+      "info" : "FieldDeclaration[2717-2749]:FieldDeclaration[2174-2206]"
+    }, {
+      "left" : "private static final int HOST_ARG = 0;",
+      "right" : "private static final int HOST_ARG = 0;",
+      "info" : "FieldDeclaration[2857-2895]:FieldDeclaration[2323-2361]"
+    }, {
+      "left" : "private static final int PORT_ARG = HOST_ARG + 1;",
+      "right" : "private static final int PORT_ARG = HOST_ARG + 1;",
+      "info" : "FieldDeclaration[2898-2947]:FieldDeclaration[2364-2413]"
+    }, {
+      "left" : "private static final int SESSION_ID_ARG = PORT_ARG + 1;",
+      "right" : "private static final int SESSION_ID_ARG = PORT_ARG + 1;",
+      "info" : "FieldDeclaration[2950-3005]:FieldDeclaration[2416-2471]"
+    }, {
+      "left" : "private static final int SYSTEM_DIR_ARG = SESSION_ID_ARG + 1;",
+      "right" : "private static final int SYSTEM_DIR_ARG = SESSION_ID_ARG + 1;",
+      "info" : "FieldDeclaration[3008-3069]:FieldDeclaration[2474-2535]"
+    }, {
+      "left" : "private static NioEventLoopGroup ourEventLoopGroup;",
+      "right" : "private static NioEventLoopGroup ourEventLoopGroup;",
+      "info" : "FieldDeclaration[3073-3124]:FieldDeclaration[2539-2590]"
+    }, {
+      "left" : "@Nullable \n  private static PreloadedData ourPreloadedData;",
+      "right" : "@Nullable \n  private static PreloadedData ourPreloadedData;",
+      "info" : "FieldDeclaration[3127-3186]:FieldDeclaration[2593-2652]"
+    }, {
+      "left" : "public static void main(String[] args",
+      "right" : "public static void main(String[] args",
+      "info" : "MethodDeclaration[3190-8622]:MethodDeclaration[2656-8088]"
+    }, {
+      "left" : "protected void initChannel(Channel channel) throws Exception",
+      "right" : "protected void initChannel(Channel channel) throws Exception",
+      "info" : "MethodDeclaration[4632-5100]:MethodDeclaration[4098-4566]"
+    }, {
+      "left" : "public void processMessage(BuildMessage msg)",
+      "right" : "public void processMessage(BuildMessage msg)",
+      "info" : "MethodDeclaration[6345-6463]:MethodDeclaration[5811-5929]"
+    }, {
+      "left" : "private static void printErrorAndExit(String host, int port, Throwable reason)",
+      "right" : "private static void printErrorAndExit(String host, int port, Throwable reason)",
+      "info" : "MethodDeclaration[8626-8977]:MethodDeclaration[8092-8443]"
+    }, {
+      "left" : "MyMessageHandler",
+      "right" : "MyMessageHandler",
+      "info" : "TypeDeclaration[8981-13201]:TypeDeclaration[8447-12667]"
+    }, {
+      "left" : "private final UUID mySessionId;",
+      "right" : "private final UUID mySessionId;",
+      "info" : "FieldDeclaration[9089-9120]:FieldDeclaration[8555-8586]"
+    }, {
+      "left" : "private volatile BuildSession mySession;",
+      "right" : "private volatile BuildSession mySession;",
+      "info" : "FieldDeclaration[9125-9165]:FieldDeclaration[8591-8631]"
+    }, {
+      "left" : "private MyMessageHandler(UUID sessionId)",
+      "right" : "private MyMessageHandler(UUID sessionId)",
+      "info" : "MethodDeclaration[9171-9250]:MethodDeclaration[8637-8716]"
+    }, {
+      "left" : "public void channelRead0(final ChannelHandlerContext context, CmdlineRemoteProto.Message message) throws Exception",
+      "right" : "public void channelRead0(final ChannelHandlerContext context, CmdlineRemoteProto.Message message) throws Exception",
+      "info" : "MethodDeclaration[9256-12679]:MethodDeclaration[8722-12145]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[10243-10651]:MethodDeclaration[9709-10117]"
+    }, {
+      "left" : "public void channelInactive(ChannelHandlerContext context) throws Exception",
+      "right" : "public void channelInactive(ChannelHandlerContext context) throws Exception",
+      "info" : "MethodDeclaration[12685-13197]:MethodDeclaration[12151-12663]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[12903-13164]:MethodDeclaration[12369-12630]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2759-2853]:Block[2216-2319]"
+    }, {
+      "left" : "initLoggers();",
+      "right" : "LogSetup.initLoggers();",
+      "info" : "ExpressionStatement[2765-2779]:ExpressionStatement[2222-2245]"
+    }, {
+      "left" : "LOG = Logger.getInstance(\"#org.jetbrains.jps.cmdline.BuildMain\");",
+      "right" : "LOG = Logger.getInstance(\"#org.jetbrains.jps.cmdline.BuildMain\");",
+      "info" : "ExpressionStatement[2784-2849]:ExpressionStatement[2250-2315]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3228-8622]:Block[2694-8088]"
+    }, {
+      "left" : "final long processStart = System.currentTimeMillis();",
+      "right" : "final long processStart = System.currentTimeMillis();",
+      "info" : "VariableDeclarationStatement[3234-3287]:VariableDeclarationStatement[2700-2753]"
+    }, {
+      "left" : "final String startMessage = \"Build process started. Classpath: \" + System.getProperty(\"java.class.path\");",
+      "right" : "final String startMessage = \"Build process started. Classpath: \" + System.getProperty(\"java.class.path\");",
+      "info" : "VariableDeclarationStatement[3292-3397]:VariableDeclarationStatement[2758-2863]"
+    }, {
+      "left" : "System.out.println(startMessage);",
+      "right" : "System.out.println(startMessage);",
+      "info" : "ExpressionStatement[3402-3435]:ExpressionStatement[2868-2901]"
+    }, {
+      "left" : "LOG.info(startMessage);",
+      "right" : "LOG.info(startMessage);",
+      "info" : "ExpressionStatement[3440-3463]:ExpressionStatement[2906-2929]"
+    }, {
+      "left" : "final String host = args[HOST_ARG];",
+      "right" : "final String host = args[HOST_ARG];",
+      "info" : "VariableDeclarationStatement[3473-3508]:VariableDeclarationStatement[2939-2974]"
+    }, {
+      "left" : "final int port = Integer.parseInt(args[PORT_ARG]);",
+      "right" : "final int port = Integer.parseInt(args[PORT_ARG]);",
+      "info" : "VariableDeclarationStatement[3513-3563]:VariableDeclarationStatement[2979-3029]"
+    }, {
+      "left" : "final UUID sessionId = UUID.fromString(args[SESSION_ID_ARG]);",
+      "right" : "final UUID sessionId = UUID.fromString(args[SESSION_ID_ARG]);",
+      "info" : "VariableDeclarationStatement[3568-3629]:VariableDeclarationStatement[3034-3095]"
+    }, {
+      "left" : "@SuppressWarnings(\"ConstantConditions\")\n    final File systemDir = new File(FileUtil.toCanonicalPath(args[SYSTEM_DIR_ARG]));",
+      "right" : "@SuppressWarnings(\"ConstantConditions\")\n    final File systemDir = new File(FileUtil.toCanonicalPath(args[SYSTEM_DIR_ARG]));",
+      "info" : "VariableDeclarationStatement[3634-3758]:VariableDeclarationStatement[3100-3224]"
+    }, {
+      "left" : "Utils.setSystemRoot(systemDir);",
+      "right" : "Utils.setSystemRoot(systemDir);",
+      "info" : "ExpressionStatement[3763-3794]:ExpressionStatement[3229-3260]"
+    }, {
+      "left" : "final long connectStart = System.currentTimeMillis();",
+      "right" : "final long connectStart = System.currentTimeMillis();",
+      "info" : "VariableDeclarationStatement[3800-3853]:VariableDeclarationStatement[3266-3319]"
+    }, {
+      "left" : "for (int attempt = 0; attempt < 3; attempt++)",
+      "right" : "for (int attempt = 0; attempt < 3; attempt++)",
+      "info" : "ForStatement[3894-4484]:ForStatement[3360-3950]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3940-4484]:Block[3406-3950]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3948-4478]:TryStatement[3414-3944]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3952-4062]:Block[3418-3528]"
+    }, {
+      "left" : "ourEventLoopGroup = new NioEventLoopGroup(1, SharedThreadPool.getInstance());",
+      "right" : "ourEventLoopGroup = new NioEventLoopGroup(1, SharedThreadPool.getInstance());",
+      "info" : "ExpressionStatement[3962-4039]:ExpressionStatement[3428-3505]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[4048-4054]:BreakStatement[3514-3520]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4101-4478]:Block[3567-3944]"
+    }, {
+      "left" : "if (attempt == 2)",
+      "right" : "if (attempt == 2)",
+      "info" : "IfStatement[4111-4470]:IfStatement[3577-3936]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4129-4202]:Block[3595-3668]"
+    }, {
+      "left" : "printErrorAndExit(host, port, e);",
+      "right" : "printErrorAndExit(host, port, e);",
+      "info" : "ExpressionStatement[4141-4174]:ExpressionStatement[3607-3640]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4185-4192]:ReturnStatement[3651-3658]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4216-4470]:Block[3682-3936]"
+    }, {
+      "left" : "LOG.warn(\"Cannot create event loop, attempt #\" + attempt, e);",
+      "right" : "LOG.warn(\"Cannot create event loop, attempt #\" + attempt, e);",
+      "info" : "ExpressionStatement[4228-4289]:ExpressionStatement[3694-3755]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[4300-4460]:TryStatement[3766-3926]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4304-4399]:Block[3770-3865]"
+    }, {
+      "left" : "Thread.sleep(10 * (attempt + 1));",
+      "right" : "Thread.sleep(10 * (attempt + 1));",
+      "info" : "ExpressionStatement[4354-4387]:ExpressionStatement[3820-3853]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4447-4460]:Block[3913-3926]"
+    }, {
+      "left" : "final Bootstrap bootstrap = new Bootstrap().group(ourEventLoopGroup).channel(NioSocketChannel.class).handler(new ChannelInitializer() {\n      @Override\n      protected void initChannel(Channel channel) throws Exception {\n        channel.pipeline().addLast(new ProtobufVarint32FrameDecoder(),\n                                   new ProtobufDecoder(CmdlineRemoteProto.Message.getDefaultInstance()),\n                                   new ProtobufVarint32LengthFieldPrepender(),\n                                   new ProtobufEncoder(),\n                                   new MyMessageHandler(sessionId));\n      }\n    }).option(ChannelOption.TCP_NODELAY, true).option(ChannelOption.SO_KEEPALIVE, true);",
+      "right" : "final Bootstrap bootstrap = new Bootstrap().group(ourEventLoopGroup).channel(NioSocketChannel.class).handler(new ChannelInitializer() {\n      @Override\n      protected void initChannel(Channel channel) throws Exception {\n        channel.pipeline().addLast(new ProtobufVarint32FrameDecoder(),\n                                   new ProtobufDecoder(CmdlineRemoteProto.Message.getDefaultInstance()),\n                                   new ProtobufVarint32LengthFieldPrepender(),\n                                   new ProtobufEncoder(),\n                                   new MyMessageHandler(sessionId));\n      }\n    }).option(ChannelOption.TCP_NODELAY, true).option(ChannelOption.SO_KEEPALIVE, true);",
+      "info" : "VariableDeclarationStatement[4490-5189]:VariableDeclarationStatement[3956-4655]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4709-5100]:Block[4175-4566]"
+    }, {
+      "left" : "channel.pipeline().addLast(new ProtobufVarint32FrameDecoder(),\n                                   new ProtobufDecoder(CmdlineRemoteProto.Message.getDefaultInstance()),\n                                   new ProtobufVarint32LengthFieldPrepender(),\n                                   new ProtobufEncoder(),\n                                   new MyMessageHandler(sessionId));",
+      "right" : "channel.pipeline().addLast(new ProtobufVarint32FrameDecoder(),\n                                   new ProtobufDecoder(CmdlineRemoteProto.Message.getDefaultInstance()),\n                                   new ProtobufVarint32LengthFieldPrepender(),\n                                   new ProtobufEncoder(),\n                                   new MyMessageHandler(sessionId));",
+      "info" : "ExpressionStatement[4719-5092]:ExpressionStatement[4185-4558]"
+    }, {
+      "left" : "final ChannelFuture future = bootstrap.connect(new InetSocketAddress(host, port)).awaitUninterruptibly();",
+      "right" : "final ChannelFuture future = bootstrap.connect(new InetSocketAddress(host, port)).awaitUninterruptibly();",
+      "info" : "VariableDeclarationStatement[5195-5300]:VariableDeclarationStatement[4661-4766]"
+    }, {
+      "left" : "final boolean success = future.isSuccess();",
+      "right" : "final boolean success = future.isSuccess();",
+      "info" : "VariableDeclarationStatement[5311-5354]:VariableDeclarationStatement[4777-4820]"
+    }, {
+      "left" : "if (success)",
+      "right" : "if (success)",
+      "info" : "IfStatement[5359-8618]:IfStatement[4825-8084]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5372-8548]:Block[4838-8014]"
+    }, {
+      "left" : "LOG.info(\"Connection to IDE established in \" + (System.currentTimeMillis() - connectStart) + \" ms\");",
+      "right" : "LOG.info(\"Connection to IDE established in \" + (System.currentTimeMillis() - connectStart) + \" ms\");",
+      "info" : "ExpressionStatement[5380-5480]:ExpressionStatement[4846-4946]"
+    }, {
+      "left" : "final String projectPathToPreload = System.getProperty(PRELOAD_PROJECT_PATH, null);",
+      "right" : "final String projectPathToPreload = System.getProperty(PRELOAD_PROJECT_PATH, null);",
+      "info" : "VariableDeclarationStatement[5488-5571]:VariableDeclarationStatement[4954-5037]"
+    }, {
+      "left" : "final String globalsPathToPreload = System.getProperty(PRELOAD_CONFIG_PATH, null);",
+      "right" : "final String globalsPathToPreload = System.getProperty(PRELOAD_CONFIG_PATH, null);",
+      "info" : "VariableDeclarationStatement[5578-5660]:VariableDeclarationStatement[5044-5126]"
+    }, {
+      "left" : "if (projectPathToPreload != null && globalsPathToPreload != null)",
+      "right" : "if (projectPathToPreload != null && globalsPathToPreload != null)",
+      "info" : "IfStatement[5668-8426]:IfStatement[5134-7892]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5734-8196]:Block[5200-7662]"
+    }, {
+      "left" : "final PreloadedData data = new PreloadedData();",
+      "right" : "final PreloadedData data = new PreloadedData();",
+      "info" : "VariableDeclarationStatement[5744-5791]:VariableDeclarationStatement[5210-5257]"
+    }, {
+      "left" : "ourPreloadedData = data;",
+      "right" : "ourPreloadedData = data;",
+      "info" : "ExpressionStatement[5800-5824]:ExpressionStatement[5266-5290]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[5833-8188]:TryStatement[5299-7654]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5837-7962]:Block[5303-7428]"
+    }, {
+      "left" : "FileSystemUtil.getAttributes(projectPathToPreload);",
+      "right" : "FileSystemUtil.getAttributes(projectPathToPreload);",
+      "info" : "ExpressionStatement[5849-5900]:ExpressionStatement[5315-5366]"
+    }, {
+      "left" : "final BuildRunner runner = new BuildRunner(new JpsModelLoaderImpl(projectPathToPreload, globalsPathToPreload, null));",
+      "right" : "final BuildRunner runner = new BuildRunner(new JpsModelLoaderImpl(projectPathToPreload, globalsPathToPreload, null));",
+      "info" : "VariableDeclarationStatement[5955-6072]:VariableDeclarationStatement[5421-5538]"
+    }, {
+      "left" : "data.setRunner(runner);",
+      "right" : "data.setRunner(runner);",
+      "info" : "ExpressionStatement[6083-6106]:ExpressionStatement[5549-5572]"
+    }, {
+      "left" : "final File dataStorageRoot = Utils.getDataStorageRoot(projectPathToPreload);",
+      "right" : "final File dataStorageRoot = Utils.getDataStorageRoot(projectPathToPreload);",
+      "info" : "VariableDeclarationStatement[6118-6194]:VariableDeclarationStatement[5584-5660]"
+    }, {
+      "left" : "final BuildFSState fsState = new BuildFSState(false);",
+      "right" : "final BuildFSState fsState = new BuildFSState(false);",
+      "info" : "VariableDeclarationStatement[6205-6258]:VariableDeclarationStatement[5671-5724]"
+    }, {
+      "left" : "final ProjectDescriptor pd = runner.load(new MessageHandler() {\n            @Override\n            public void processMessage(BuildMessage msg) {\n              data.addMessage(msg);\n            }\n          }, dataStorageRoot, fsState);",
+      "right" : "final ProjectDescriptor pd = runner.load(new MessageHandler() {\n            @Override\n            public void processMessage(BuildMessage msg) {\n              data.addMessage(msg);\n            }\n          }, dataStorageRoot, fsState);",
+      "info" : "VariableDeclarationStatement[6269-6503]:VariableDeclarationStatement[5735-5969]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6412-6463]:Block[5878-5929]"
+    }, {
+      "left" : "data.addMessage(msg);",
+      "right" : "data.addMessage(msg);",
+      "info" : "ExpressionStatement[6428-6449]:ExpressionStatement[5894-5915]"
+    }, {
+      "left" : "data.setProjectDescriptor(pd);",
+      "right" : "data.setProjectDescriptor(pd);",
+      "info" : "ExpressionStatement[6514-6544]:ExpressionStatement[5980-6010]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6566-7533]:TryStatement[6032-6999]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6570-7338]:Block[6036-6804]"
+    }, {
+      "left" : "final File fsStateFile = new File(dataStorageRoot, BuildSession.FS_STATE_FILE);",
+      "right" : "final File fsStateFile = new File(dataStorageRoot, BuildSession.FS_STATE_FILE);",
+      "info" : "VariableDeclarationStatement[6584-6663]:VariableDeclarationStatement[6050-6129]"
+    }, {
+      "left" : "final DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(fsStateFile)));",
+      "right" : "final DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream(fsStateFile)));",
+      "info" : "VariableDeclarationStatement[6676-6782]:VariableDeclarationStatement[6142-6248]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6795-7326]:TryStatement[6261-6792]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6799-7264]:Block[6265-6730]"
+    }, {
+      "left" : "final int version = in.readInt();",
+      "right" : "final int version = in.readInt();",
+      "info" : "VariableDeclarationStatement[6815-6848]:VariableDeclarationStatement[6281-6314]"
+    }, {
+      "left" : "if (version == BuildFSState.VERSION)",
+      "right" : "if (version == BuildFSState.VERSION)",
+      "info" : "IfStatement[6863-7250]:IfStatement[6329-6716]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6900-7250]:Block[6366-6716]"
+    }, {
+      "left" : "final long savedOrdinal = in.readLong();",
+      "right" : "final long savedOrdinal = in.readLong();",
+      "info" : "VariableDeclarationStatement[6918-6958]:VariableDeclarationStatement[6384-6424]"
+    }, {
+      "left" : "final boolean hasWorkToDo = in.readBoolean();",
+      "right" : "final boolean hasWorkToDo = in.readBoolean();",
+      "info" : "VariableDeclarationStatement[6975-7020]:VariableDeclarationStatement[6441-6486]"
+    }, {
+      "left" : "fsState.load(in, pd.getModel(), pd.getBuildRootIndex());",
+      "right" : "fsState.load(in, pd.getModel(), pd.getBuildRootIndex());",
+      "info" : "ExpressionStatement[7071-7127]:ExpressionStatement[6537-6593]"
+    }, {
+      "left" : "data.setFsEventOrdinal(savedOrdinal);",
+      "right" : "data.setFsEventOrdinal(savedOrdinal);",
+      "info" : "ExpressionStatement[7144-7181]:ExpressionStatement[6610-6647]"
+    }, {
+      "left" : "data.setHasHasWorkToDo(hasWorkToDo);",
+      "right" : "data.setHasHasWorkToDo(hasWorkToDo);",
+      "info" : "ExpressionStatement[7198-7234]:ExpressionStatement[6664-6700]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7285-7326]:Block[6751-6792]"
+    }, {
+      "left" : "in.close();",
+      "right" : "in.close();",
+      "info" : "ExpressionStatement[7301-7312]:ExpressionStatement[6767-6778]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7387-7400]:Block[6853-6866]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7433-7533]:Block[6899-6999]"
+    }, {
+      "left" : "LOG.info(\"Error pre-loading FS state\", e);",
+      "right" : "LOG.info(\"Error pre-loading FS state\", e);",
+      "info" : "ExpressionStatement[7447-7489]:ExpressionStatement[6913-6955]"
+    }, {
+      "left" : "fsState.clearAll();",
+      "right" : "fsState.clearAll();",
+      "info" : "ExpressionStatement[7502-7521]:ExpressionStatement[6968-6987]"
+    }, {
+      "left" : "final BuildTargetsState targetsState = pd.getTargetsState();",
+      "right" : "final BuildTargetsState targetsState = pd.getTargetsState();",
+      "info" : "VariableDeclarationStatement[7591-7651]:VariableDeclarationStatement[7057-7117]"
+    }, {
+      "left" : "for (BuildTarget<?> target : pd.getBuildTargetIndex().getAllTargets())",
+      "right" : "for (BuildTarget<?> target : pd.getBuildTargetIndex().getAllTargets())",
+      "info" : "EnhancedForStatement[7662-7803]:EnhancedForStatement[7128-7269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7733-7803]:Block[7199-7269]"
+    }, {
+      "left" : "targetsState.getTargetConfiguration(target);",
+      "right" : "targetsState.getTargetConfiguration(target);",
+      "info" : "ExpressionStatement[7747-7791]:ExpressionStatement[7213-7257]"
+    }, {
+      "left" : "BuilderRegistry.getInstance();",
+      "right" : "BuilderRegistry.getInstance();",
+      "info" : "ExpressionStatement[7815-7845]:ExpressionStatement[7281-7311]"
+    }, {
+      "left" : "LOG.info(\"Pre-loaded process ready in \" + (System.currentTimeMillis() - processStart) + \" ms\");",
+      "right" : "LOG.info(\"Pre-loaded process ready in \" + (System.currentTimeMillis() - processStart) + \" ms\");",
+      "info" : "ExpressionStatement[7857-7952]:ExpressionStatement[7323-7418]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7991-8188]:Block[7457-7654]"
+    }, {
+      "left" : "LOG.info(\"Failed to pre-load project \" + projectPathToPreload, e);",
+      "right" : "LOG.info(\"Failed to pre-load project \" + projectPathToPreload, e);",
+      "info" : "ExpressionStatement[8003-8069]:ExpressionStatement[7469-7535]"
+    }, {
+      "left" : "if (projectPathToPreload != null || globalsPathToPreload != null)",
+      "right" : "if (projectPathToPreload != null || globalsPathToPreload != null)",
+      "info" : "IfStatement[8208-8426]:IfStatement[7674-7892]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8273-8426]:Block[7739-7892]"
+    }, {
+      "left" : "LOG.info(\"Skipping project pre-loading step: both paths to project configuration files and path to global settings must be specified\");",
+      "right" : "LOG.info(\"Skipping project pre-loading step: both paths to project configuration files and path to global settings must be specified\");",
+      "info" : "ExpressionStatement[8283-8418]:ExpressionStatement[7749-7884]"
+    }, {
+      "left" : "future.channel().writeAndFlush(CmdlineProtoUtil.toMessage(sessionId, CmdlineProtoUtil.createParamRequest()));",
+      "right" : "future.channel().writeAndFlush(CmdlineProtoUtil.toMessage(sessionId, CmdlineProtoUtil.createParamRequest()));",
+      "info" : "ExpressionStatement[8433-8542]:ExpressionStatement[7899-8008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8558-8618]:Block[8024-8084]"
+    }, {
+      "left" : "printErrorAndExit(host, port, future.cause());",
+      "right" : "printErrorAndExit(host, port, future.cause());",
+      "info" : "ExpressionStatement[8566-8612]:ExpressionStatement[8032-8078]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8705-8977]:Block[8171-8443]"
+    }, {
+      "left" : "System.err.println(\"Error connecting to \" + host + \":\" + port + \"; reason: \" + (reason != null ? reason.getMessage() : \"unknown\"));",
+      "right" : "System.err.println(\"Error connecting to \" + host + \":\" + port + \"; reason: \" + (reason != null ? reason.getMessage() : \"unknown\"));",
+      "info" : "ExpressionStatement[8711-8842]:ExpressionStatement[8177-8308]"
+    }, {
+      "left" : "if (reason != null)",
+      "right" : "if (reason != null)",
+      "info" : "IfStatement[8847-8916]:IfStatement[8313-8382]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8867-8916]:Block[8333-8382]"
+    }, {
+      "left" : "reason.printStackTrace(System.err);",
+      "right" : "reason.printStackTrace(System.err);",
+      "info" : "ExpressionStatement[8875-8910]:ExpressionStatement[8341-8376]"
+    }, {
+      "left" : "System.err.println(\"Exiting.\");",
+      "right" : "System.err.println(\"Exiting.\");",
+      "info" : "ExpressionStatement[8921-8952]:ExpressionStatement[8387-8418]"
+    }, {
+      "left" : "System.exit(-1);",
+      "right" : "System.exit(-1);",
+      "info" : "ExpressionStatement[8957-8973]:ExpressionStatement[8423-8439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9212-9250]:Block[8678-8716]"
+    }, {
+      "left" : "mySessionId = sessionId;",
+      "right" : "mySessionId = sessionId;",
+      "info" : "ExpressionStatement[9220-9244]:ExpressionStatement[8686-8710]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9385-12679]:Block[8851-12145]"
+    }, {
+      "left" : "final CmdlineRemoteProto.Message.Type type = message.getType();",
+      "right" : "final CmdlineRemoteProto.Message.Type type = message.getType();",
+      "info" : "VariableDeclarationStatement[9393-9456]:VariableDeclarationStatement[8859-8922]"
+    }, {
+      "left" : "final Channel channel = context.channel();",
+      "right" : "final Channel channel = context.channel();",
+      "info" : "VariableDeclarationStatement[9463-9505]:VariableDeclarationStatement[8929-8971]"
+    }, {
+      "left" : "if (type == CmdlineRemoteProto.Message.Type.CONTROLLER_MESSAGE)",
+      "right" : "if (type == CmdlineRemoteProto.Message.Type.CONTROLLER_MESSAGE)",
+      "info" : "IfStatement[9513-12511]:IfStatement[8979-11977]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9577-12511]:Block[9043-11977]"
+    }, {
+      "left" : "final CmdlineRemoteProto.Message.ControllerMessage controllerMessage = message.getControllerMessage();",
+      "right" : "final CmdlineRemoteProto.Message.ControllerMessage controllerMessage = message.getControllerMessage();",
+      "info" : "VariableDeclarationStatement[9587-9689]:VariableDeclarationStatement[9053-9155]"
+    }, {
+      "left" : "switch (controllerMessage.getType()) {\n\n          case BUILD_PARAMETERS: {\n            if (mySession == null) {\n              final CmdlineRemoteProto.Message.ControllerMessage.FSEvent delta = controllerMessage.hasFsEvent()? controllerMessage.getFsEvent() : null;\n              final BuildSession session = new BuildSession(mySessionId, channel, controllerMessage.getParamsMessage(), delta, ourPreloadedData);\n              mySession = session;\n              SharedThreadPool.getInstance().executeOnPooledThread(new Runnable() {\n                @Override\n                public void run() {\n                  //noinspection finally\n                  try {\n                    try {\n                      session.run();\n                    }\n                    finally {\n                      channel.close();\n                    }\n                  }\n                  finally {\n                    System.exit(0);\n                  }\n                }\n              });\n            }\n            else {\n              LOG.info(\"Cannot start another build session because one is already running\");\n            }\n            return;\n          }\n\n          case FS_EVENT: {\n            final BuildSession session = mySession;\n            if (session != null) {\n              session.processFSEvent(controllerMessage.getFsEvent());\n            }\n            return;\n          }\n\n          case CONSTANT_SEARCH_RESULT: {\n            final BuildSession session = mySession;\n            if (session != null) {\n              session.processConstantSearchResult(controllerMessage.getConstantSearchResult());\n            }\n            return;\n          }\n\n          case CANCEL_BUILD_COMMAND: {\n            final BuildSession session = mySession;\n            if (session != null) {\n              session.cancel();\n            }\n            else {\n              LOG.info(\"Build canceled, but no build session is running. Exiting.\");\n              try {\n                final CmdlineRemoteProto.Message.BuilderMessage canceledEvent = CmdlineProtoUtil\n                  .createBuildCompletedEvent(\"build completed\", CmdlineRemoteProto.Message.BuilderMessage.BuildEvent.Status.CANCELED);\n                channel.writeAndFlush(CmdlineProtoUtil.toMessage(mySessionId, canceledEvent)).await();\n                channel.close();\n              }\n              catch (Throwable e) {\n                LOG.info(e);\n              }\n              Thread.interrupted(); // to clear 'interrupted' flag\n              final PreloadedData preloaded = ourPreloadedData;\n              final ProjectDescriptor pd = preloaded != null? preloaded.getProjectDescriptor() : null;\n              if (pd != null) {\n                pd.release();\n              }\n              System.exit(0);\n            }\n            return;\n          }\n        }",
+      "right" : "switch (controllerMessage.getType()) {\n\n          case BUILD_PARAMETERS: {\n            if (mySession == null) {\n              final CmdlineRemoteProto.Message.ControllerMessage.FSEvent delta = controllerMessage.hasFsEvent()? controllerMessage.getFsEvent() : null;\n              final BuildSession session = new BuildSession(mySessionId, channel, controllerMessage.getParamsMessage(), delta, ourPreloadedData);\n              mySession = session;\n              SharedThreadPool.getInstance().executeOnPooledThread(new Runnable() {\n                @Override\n                public void run() {\n                  //noinspection finally\n                  try {\n                    try {\n                      session.run();\n                    }\n                    finally {\n                      channel.close();\n                    }\n                  }\n                  finally {\n                    System.exit(0);\n                  }\n                }\n              });\n            }\n            else {\n              LOG.info(\"Cannot start another build session because one is already running\");\n            }\n            return;\n          }\n\n          case FS_EVENT: {\n            final BuildSession session = mySession;\n            if (session != null) {\n              session.processFSEvent(controllerMessage.getFsEvent());\n            }\n            return;\n          }\n\n          case CONSTANT_SEARCH_RESULT: {\n            final BuildSession session = mySession;\n            if (session != null) {\n              session.processConstantSearchResult(controllerMessage.getConstantSearchResult());\n            }\n            return;\n          }\n\n          case CANCEL_BUILD_COMMAND: {\n            final BuildSession session = mySession;\n            if (session != null) {\n              session.cancel();\n            }\n            else {\n              LOG.info(\"Build canceled, but no build session is running. Exiting.\");\n              try {\n                final CmdlineRemoteProto.Message.BuilderMessage canceledEvent = CmdlineProtoUtil\n                  .createBuildCompletedEvent(\"build completed\", CmdlineRemoteProto.Message.BuilderMessage.BuildEvent.Status.CANCELED);\n                channel.writeAndFlush(CmdlineProtoUtil.toMessage(mySessionId, canceledEvent)).await();\n                channel.close();\n              }\n              catch (Throwable e) {\n                LOG.info(e);\n              }\n              Thread.interrupted(); // to clear 'interrupted' flag\n              final PreloadedData preloaded = ourPreloadedData;\n              final ProjectDescriptor pd = preloaded != null? preloaded.getProjectDescriptor() : null;\n              if (pd != null) {\n                pd.release();\n              }\n              System.exit(0);\n            }\n            return;\n          }\n        }",
+      "info" : "SwitchStatement[9698-12503]:SwitchStatement[9164-11969]"
+    }, {
+      "left" : "case BUILD_PARAMETERS:",
+      "right" : "case BUILD_PARAMETERS:",
+      "info" : "SwitchCase[9748-9770]:SwitchCase[9214-9236]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9771-10841]:Block[9237-10307]"
+    }, {
+      "left" : "if (mySession == null)",
+      "right" : "if (mySession == null)",
+      "info" : "IfStatement[9785-10809]:IfStatement[9251-10275]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9808-10683]:Block[9274-10149]"
+    }, {
+      "left" : "final CmdlineRemoteProto.Message.ControllerMessage.FSEvent delta = controllerMessage.hasFsEvent()? controllerMessage.getFsEvent() : null;",
+      "right" : "final CmdlineRemoteProto.Message.ControllerMessage.FSEvent delta = controllerMessage.hasFsEvent()? controllerMessage.getFsEvent() : null;",
+      "info" : "VariableDeclarationStatement[9824-9961]:VariableDeclarationStatement[9290-9427]"
+    }, {
+      "left" : "final BuildSession session = new BuildSession(mySessionId, channel, controllerMessage.getParamsMessage(), delta, ourPreloadedData);",
+      "right" : "final BuildSession session = new BuildSession(mySessionId, channel, controllerMessage.getParamsMessage(), delta, ourPreloadedData);",
+      "info" : "VariableDeclarationStatement[9976-10107]:VariableDeclarationStatement[9442-9573]"
+    }, {
+      "left" : "mySession = session;",
+      "right" : "mySession = session;",
+      "info" : "ExpressionStatement[10122-10142]:ExpressionStatement[9588-9608]"
+    }, {
+      "left" : "SharedThreadPool.getInstance().executeOnPooledThread(new Runnable() {\n                @Override\n                public void run() {\n                  //noinspection finally\n                  try {\n                    try {\n                      session.run();\n                    }\n                    finally {\n                      channel.close();\n                    }\n                  }\n                  finally {\n                    System.exit(0);\n                  }\n                }\n              });",
+      "right" : "SharedThreadPool.getInstance().executeOnPooledThread(new Runnable() {\n                @Override\n                public void run() {\n                  //noinspection finally\n                  try {\n                    try {\n                      session.run();\n                    }\n                    finally {\n                      channel.close();\n                    }\n                  }\n                  finally {\n                    System.exit(0);\n                  }\n                }\n              });",
+      "info" : "ExpressionStatement[10157-10669]:ExpressionStatement[9623-10135]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10287-10651]:Block[9753-10117]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[10348-10633]:TryStatement[9814-10099]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10352-10549]:Block[9818-10015]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[10374-10529]:TryStatement[9840-9995]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10378-10438]:Block[9844-9904]"
+    }, {
+      "left" : "session.run();",
+      "right" : "session.run();",
+      "info" : "ExpressionStatement[10402-10416]:ExpressionStatement[9868-9882]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10467-10529]:Block[9933-9995]"
+    }, {
+      "left" : "channel.close();",
+      "right" : "channel.close();",
+      "info" : "ExpressionStatement[10491-10507]:ExpressionStatement[9957-9973]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10576-10633]:Block[10042-10099]"
+    }, {
+      "left" : "System.exit(0);",
+      "right" : "System.exit(0);",
+      "info" : "ExpressionStatement[10598-10613]:ExpressionStatement[10064-10079]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10701-10809]:Block[10167-10275]"
+    }, {
+      "left" : "LOG.info(\"Cannot start another build session because one is already running\");",
+      "right" : "LOG.info(\"Cannot start another build session because one is already running\");",
+      "info" : "ExpressionStatement[10717-10795]:ExpressionStatement[10183-10261]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10822-10829]:ReturnStatement[10288-10295]"
+    }, {
+      "left" : "case FS_EVENT:",
+      "right" : "case FS_EVENT:",
+      "info" : "SwitchCase[10853-10867]:SwitchCase[10319-10333]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10868-11072]:Block[10334-10538]"
+    }, {
+      "left" : "final BuildSession session = mySession;",
+      "right" : "final BuildSession session = mySession;",
+      "info" : "VariableDeclarationStatement[10882-10921]:VariableDeclarationStatement[10348-10387]"
+    }, {
+      "left" : "if (session != null)",
+      "right" : "if (session != null)",
+      "info" : "IfStatement[10934-11040]:IfStatement[10400-10506]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10955-11040]:Block[10421-10506]"
+    }, {
+      "left" : "session.processFSEvent(controllerMessage.getFsEvent());",
+      "right" : "session.processFSEvent(controllerMessage.getFsEvent());",
+      "info" : "ExpressionStatement[10971-11026]:ExpressionStatement[10437-10492]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11053-11060]:ReturnStatement[10519-10526]"
+    }, {
+      "left" : "case CONSTANT_SEARCH_RESULT:",
+      "right" : "case CONSTANT_SEARCH_RESULT:",
+      "info" : "SwitchCase[11084-11112]:SwitchCase[10550-10578]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11113-11343]:Block[10579-10809]"
+    }, {
+      "left" : "final BuildSession session = mySession;",
+      "right" : "final BuildSession session = mySession;",
+      "info" : "VariableDeclarationStatement[11127-11166]:VariableDeclarationStatement[10593-10632]"
+    }, {
+      "left" : "if (session != null)",
+      "right" : "if (session != null)",
+      "info" : "IfStatement[11179-11311]:IfStatement[10645-10777]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11200-11311]:Block[10666-10777]"
+    }, {
+      "left" : "session.processConstantSearchResult(controllerMessage.getConstantSearchResult());",
+      "right" : "session.processConstantSearchResult(controllerMessage.getConstantSearchResult());",
+      "info" : "ExpressionStatement[11216-11297]:ExpressionStatement[10682-10763]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11324-11331]:ReturnStatement[10790-10797]"
+    }, {
+      "left" : "case CANCEL_BUILD_COMMAND:",
+      "right" : "case CANCEL_BUILD_COMMAND:",
+      "info" : "SwitchCase[11355-11381]:SwitchCase[10821-10847]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11382-12493]:Block[10848-11959]"
+    }, {
+      "left" : "final BuildSession session = mySession;",
+      "right" : "final BuildSession session = mySession;",
+      "info" : "VariableDeclarationStatement[11396-11435]:VariableDeclarationStatement[10862-10901]"
+    }, {
+      "left" : "if (session != null)",
+      "right" : "if (session != null)",
+      "info" : "IfStatement[11448-12461]:IfStatement[10914-11927]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11469-11516]:Block[10935-10982]"
+    }, {
+      "left" : "session.cancel();",
+      "right" : "session.cancel();",
+      "info" : "ExpressionStatement[11485-11502]:ExpressionStatement[10951-10968]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11534-12461]:Block[11000-11927]"
+    }, {
+      "left" : "LOG.info(\"Build canceled, but no build session is running. Exiting.\");",
+      "right" : "LOG.info(\"Build canceled, but no build session is running. Exiting.\");",
+      "info" : "ExpressionStatement[11550-11620]:ExpressionStatement[11016-11086]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[11635-12105]:TryStatement[11101-11571]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11639-12024]:Block[11105-11490]"
+    }, {
+      "left" : "final CmdlineRemoteProto.Message.BuilderMessage canceledEvent = CmdlineProtoUtil\n                  .createBuildCompletedEvent(\"build completed\", CmdlineRemoteProto.Message.BuilderMessage.BuildEvent.Status.CANCELED);",
+      "right" : "final CmdlineRemoteProto.Message.BuilderMessage canceledEvent = CmdlineProtoUtil\n                  .createBuildCompletedEvent(\"build completed\", CmdlineRemoteProto.Message.BuilderMessage.BuildEvent.Status.CANCELED);",
+      "info" : "VariableDeclarationStatement[11657-11872]:VariableDeclarationStatement[11123-11338]"
+    }, {
+      "left" : "channel.writeAndFlush(CmdlineProtoUtil.toMessage(mySessionId, canceledEvent)).await();",
+      "right" : "channel.writeAndFlush(CmdlineProtoUtil.toMessage(mySessionId, canceledEvent)).await();",
+      "info" : "ExpressionStatement[11889-11975]:ExpressionStatement[11355-11441]"
+    }, {
+      "left" : "channel.close();",
+      "right" : "channel.close();",
+      "info" : "ExpressionStatement[11992-12008]:ExpressionStatement[11458-11474]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12059-12105]:Block[11525-11571]"
+    }, {
+      "left" : "LOG.info(e);",
+      "right" : "LOG.info(e);",
+      "info" : "ExpressionStatement[12077-12089]:ExpressionStatement[11543-11555]"
+    }, {
+      "left" : "Thread.interrupted();",
+      "right" : "Thread.interrupted();",
+      "info" : "ExpressionStatement[12120-12141]:ExpressionStatement[11586-11607]"
+    }, {
+      "left" : "final PreloadedData preloaded = ourPreloadedData;",
+      "right" : "final PreloadedData preloaded = ourPreloadedData;",
+      "info" : "VariableDeclarationStatement[12187-12236]:VariableDeclarationStatement[11653-11702]"
+    }, {
+      "left" : "final ProjectDescriptor pd = preloaded != null? preloaded.getProjectDescriptor() : null;",
+      "right" : "final ProjectDescriptor pd = preloaded != null? preloaded.getProjectDescriptor() : null;",
+      "info" : "VariableDeclarationStatement[12251-12339]:VariableDeclarationStatement[11717-11805]"
+    }, {
+      "left" : "if (pd != null)",
+      "right" : "if (pd != null)",
+      "info" : "IfStatement[12354-12417]:IfStatement[11820-11883]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12370-12417]:Block[11836-11883]"
+    }, {
+      "left" : "pd.release();",
+      "right" : "pd.release();",
+      "info" : "ExpressionStatement[12388-12401]:ExpressionStatement[11854-11867]"
+    }, {
+      "left" : "System.exit(0);",
+      "right" : "System.exit(0);",
+      "info" : "ExpressionStatement[12432-12447]:ExpressionStatement[11898-11913]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[12474-12481]:ReturnStatement[11940-11947]"
+    }, {
+      "left" : "channel.writeAndFlush(\n        CmdlineProtoUtil.toMessage(mySessionId, CmdlineProtoUtil.createFailure(\"Unsupported message type: \" + type.name(), null)));",
+      "right" : "channel.writeAndFlush(\n        CmdlineProtoUtil.toMessage(mySessionId, CmdlineProtoUtil.createFailure(\"Unsupported message type: \" + type.name(), null)));",
+      "info" : "ExpressionStatement[12519-12673]:ExpressionStatement[11985-12139]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12775-13197]:Block[12241-12663]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[12783-13191]:TryStatement[12249-12657]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12787-12836]:Block[12253-12302]"
+    }, {
+      "left" : "super.channelInactive(context);",
+      "right" : "super.channelInactive(context);",
+      "info" : "ExpressionStatement[12797-12828]:ExpressionStatement[12263-12294]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12851-13191]:Block[12317-12657]"
+    }, {
+      "left" : "new Thread(\"Shutdown thread\") {\n          @Override\n          public void run() {\n            //noinspection finally\n            try {\n              ourEventLoopGroup.shutdownGracefully(0, 15, TimeUnit.SECONDS);\n            }\n            finally {\n              System.exit(0);\n            }\n          }\n        }.start();",
+      "right" : "new Thread(\"Shutdown thread\") {\n          @Override\n          public void run() {\n            //noinspection finally\n            try {\n              ourEventLoopGroup.shutdownGracefully(0, 15, TimeUnit.SECONDS);\n            }\n            finally {\n              System.exit(0);\n            }\n          }\n        }.start();",
+      "info" : "ExpressionStatement[12861-13183]:ExpressionStatement[12327-12649]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12941-13164]:Block[12407-12630]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[12990-13152]:TryStatement[12456-12618]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12994-13086]:Block[12460-12552]"
+    }, {
+      "left" : "ourEventLoopGroup.shutdownGracefully(0, 15, TimeUnit.SECONDS);",
+      "right" : "ourEventLoopGroup.shutdownGracefully(0, 15, TimeUnit.SECONDS);",
+      "info" : "ExpressionStatement[13010-13072]:ExpressionStatement[12476-12538]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13107-13152]:Block[12573-12618]"
+    }, {
+      "left" : "System.exit(0);",
+      "right" : "System.exit(0);",
+      "info" : "ExpressionStatement[13123-13138]:ExpressionStatement[12589-12604]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

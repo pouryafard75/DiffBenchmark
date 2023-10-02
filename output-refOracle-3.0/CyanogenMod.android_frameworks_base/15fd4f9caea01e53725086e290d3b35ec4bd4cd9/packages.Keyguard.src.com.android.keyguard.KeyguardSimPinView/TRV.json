@@ -1,0 +1,1457 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final String LOG_TAG = \"KeyguardSimPinView\";",
+      "right" : "private static final String LOG_TAG = \"KeyguardSimPinView\";",
+      "info" : "FieldDeclaration[1658-1717]:FieldDeclaration[1658-1717]"
+    }, {
+      "left" : "private static final boolean DEBUG = KeyguardConstants.DEBUG;",
+      "right" : "private static final boolean DEBUG = KeyguardConstants.DEBUG;",
+      "info" : "FieldDeclaration[1722-1783]:FieldDeclaration[1722-1783]"
+    }, {
+      "left" : "public static final String TAG = \"KeyguardSimPinView\";",
+      "right" : "public static final String TAG = \"KeyguardSimPinView\";",
+      "info" : "FieldDeclaration[1788-1842]:FieldDeclaration[1788-1842]"
+    }, {
+      "left" : "private ProgressDialog mSimUnlockProgressDialog = null;",
+      "right" : "private ProgressDialog mSimUnlockProgressDialog = null;",
+      "info" : "FieldDeclaration[1848-1903]:FieldDeclaration[1848-1903]"
+    }, {
+      "left" : "private CheckSimPin mCheckSimPinThread;",
+      "right" : "private CheckSimPin mCheckSimPinThread;",
+      "info" : "FieldDeclaration[1908-1947]:FieldDeclaration[1908-1947]"
+    }, {
+      "left" : "private boolean mShowDefaultMessage = true;",
+      "right" : "private boolean mShowDefaultMessage = true;",
+      "info" : "FieldDeclaration[1952-1995]:FieldDeclaration[1952-1995]"
+    }, {
+      "left" : "private int mRemainingAttempts = -1;",
+      "right" : "private int mRemainingAttempts = -1;",
+      "info" : "FieldDeclaration[2000-2036]:FieldDeclaration[2000-2036]"
+    }, {
+      "left" : "private AlertDialog mRemainingAttemptsDialog;",
+      "right" : "private AlertDialog mRemainingAttemptsDialog;",
+      "info" : "FieldDeclaration[2041-2086]:FieldDeclaration[2041-2086]"
+    }, {
+      "left" : "KeyguardUpdateMonitor mKgUpdateMonitor;",
+      "right" : "KeyguardUpdateMonitor mKgUpdateMonitor;",
+      "info" : "FieldDeclaration[2091-2130]:FieldDeclaration[2091-2130]"
+    }, {
+      "left" : "private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;",
+      "right" : "private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;",
+      "info" : "FieldDeclaration[2135-2200]:FieldDeclaration[2135-2200]"
+    }, {
+      "left" : "private TextView mSubNameView;",
+      "right" : "private TextView mSubNameView;",
+      "info" : "FieldDeclaration[2205-2235]:FieldDeclaration[2205-2235]"
+    }, {
+      "left" : "private ImageView mSimImageView;",
+      "right" : "private ImageView mSimImageView;",
+      "info" : "FieldDeclaration[2240-2272]:FieldDeclaration[2240-2272]"
+    }, {
+      "left" : "private KeyguardUpdateMonitorCallback mUpdateCallback = new KeyguardUpdateMonitorCallback() {\n        @Override\n        public void onSubIdUpdated(int oldSubId, int newSubId) {\n            if (mSubId == oldSubId) {\n                mSubId = newSubId;\n                //subId updated, handle sub info changed.\n                handleSubInfoChange();\n            }\n        }\n\n        @Override\n        public void onSubInfoContentChanged(int subId, String column,\n                                String sValue, int iValue) {\n            if (column != null && column.equals(SubscriptionManager.DISPLAY_NAME)\n                    && mSubId == subId) {\n                //display name changed, handle sub info changed.\n                handleSubInfoChange();\n            }\n        }\n\n        @Override\n        public void onSimStateChanged(int subId, IccCardConstants.State simState) {\n            if (DEBUG) Log.d(TAG, \"onSimStateChangedUsingSubId: \" + simState + \", subId=\" + subId);\n            if (subId != mSubId) return;\n            switch (simState) {\n                case NOT_READY:\n                case ABSENT:\n                        closeKeyGuard();\n                    break;\n            }\n        }\n    };",
+      "right" : "private KeyguardUpdateMonitorCallback mUpdateCallback = new KeyguardUpdateMonitorCallback() {\n        @Override\n        public void onSubIdUpdated(int oldSubId, int newSubId) {\n            if (mSubId == oldSubId) {\n                mSubId = newSubId;\n                //subId updated, handle sub info changed.\n                handleSubInfoChange();\n            }\n        }\n\n        @Override\n        public void onSubInfoContentChanged(int subId, String column,\n                                String sValue, int iValue) {\n            if (column != null && column.equals(SubscriptionManager.DISPLAY_NAME)\n                    && mSubId == subId) {\n                //display name changed, handle sub info changed.\n                handleSubInfoChange();\n            }\n        }\n\n        @Override\n        public void onSimStateChanged(int subId, IccCardConstants.State simState) {\n            if (DEBUG) Log.d(TAG, \"onSimStateChangedUsingSubId: \" + simState + \", subId=\" + subId);\n            if (subId != mSubId) return;\n            switch (simState) {\n                case NOT_READY:\n                case ABSENT:\n                        closeKeyGuard();\n                    break;\n            }\n        }\n    };",
+      "info" : "FieldDeclaration[2278-3486]:FieldDeclaration[2278-3486]"
+    }, {
+      "left" : "public void onSubIdUpdated(int oldSubId, int newSubId)",
+      "right" : "public void onSubIdUpdated(int oldSubId, int newSubId)",
+      "info" : "MethodDeclaration[2380-2648]:MethodDeclaration[2380-2648]"
+    }, {
+      "left" : "public void onSubInfoContentChanged(int subId, String column,\n                                String sValue, int iValue)",
+      "right" : "public void onSubInfoContentChanged(int subId, String column,\n                                String sValue, int iValue)",
+      "info" : "MethodDeclaration[2658-3050]:MethodDeclaration[2658-3050]"
+    }, {
+      "left" : "public void onSimStateChanged(int subId, IccCardConstants.State simState)",
+      "right" : "public void onSimStateChanged(int subId, IccCardConstants.State simState)",
+      "info" : "MethodDeclaration[3060-3479]:MethodDeclaration[3060-3479]"
+    }, {
+      "left" : "public KeyguardSimPinView(Context context)",
+      "right" : "public KeyguardSimPinView(Context context)",
+      "info" : "MethodDeclaration[3492-3571]:MethodDeclaration[3492-3571]"
+    }, {
+      "left" : "public KeyguardSimPinView(Context context, AttributeSet attrs)",
+      "right" : "public KeyguardSimPinView(Context context, AttributeSet attrs)",
+      "info" : "MethodDeclaration[3577-3754]:MethodDeclaration[3577-3754]"
+    }, {
+      "left" : "public void resetState()",
+      "right" : "public void resetState()",
+      "info" : "MethodDeclaration[3760-3979]:MethodDeclaration[3760-3979]"
+    }, {
+      "left" : "private String getPinPasswordErrorMessage(int attemptsRemaining, boolean isDefault)",
+      "right" : "private String getPinPasswordErrorMessage(int attemptsRemaining, boolean isDefault)",
+      "info" : "MethodDeclaration[3985-4973]:MethodDeclaration[3985-4973]"
+    }, {
+      "left" : "protected boolean shouldLockout(long deadline)",
+      "right" : "protected boolean shouldLockout(long deadline)",
+      "info" : "MethodDeclaration[4979-5117]:MethodDeclaration[4979-5117]"
+    }, {
+      "left" : "protected int getPasswordTextViewId()",
+      "right" : "protected int getPasswordTextViewId()",
+      "info" : "MethodDeclaration[5123-5215]:MethodDeclaration[5123-5215]"
+    }, {
+      "left" : "protected void onFinishInflate()",
+      "right" : "protected void onFinishInflate()",
+      "info" : "MethodDeclaration[5221-5941]:MethodDeclaration[5221-5941]"
+    }, {
+      "left" : "protected void onAttachedToWindow()",
+      "right" : "protected void onAttachedToWindow()",
+      "info" : "MethodDeclaration[5947-6179]:MethodDeclaration[5947-6179]"
+    }, {
+      "left" : "protected void onDetachedFromWindow()",
+      "right" : "protected void onDetachedFromWindow()",
+      "info" : "MethodDeclaration[6185-6522]:MethodDeclaration[6185-6522]"
+    }, {
+      "left" : "public void showUsabilityHint()",
+      "right" : "public void showUsabilityHint()",
+      "info" : "MethodDeclaration[6528-6581]:MethodDeclaration[6528-6581]"
+    }, {
+      "left" : "public void onPause()",
+      "right" : "public void onPause()",
+      "info" : "MethodDeclaration[6587-6812]:MethodDeclaration[6587-6812]"
+    }, {
+      "left" : "CheckSimPin",
+      "right" : "CheckSimPin",
+      "info" : "TypeDeclaration[6818-8198]:TypeDeclaration[6818-8198]"
+    }, {
+      "left" : "private final String mPin;",
+      "right" : "private final String mPin;",
+      "info" : "FieldDeclaration[6998-7024]:FieldDeclaration[6998-7024]"
+    }, {
+      "left" : "protected CheckSimPin(String pin)",
+      "right" : "protected CheckSimPin(String pin)",
+      "info" : "MethodDeclaration[7034-7103]:MethodDeclaration[7034-7103]"
+    }, {
+      "left" : "abstract void onSimCheckResponse(final int result, final int attemptsRemaining);",
+      "right" : "abstract void onSimCheckResponse(final int result, final int attemptsRemaining);",
+      "info" : "MethodDeclaration[7113-7193]:MethodDeclaration[7113-7193]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[7203-8192]:MethodDeclaration[7203-8192]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[7708-7815]:MethodDeclaration[7708-7815]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[8023-8148]:MethodDeclaration[8023-8148]"
+    }, {
+      "left" : "private Dialog getSimUnlockProgressDialog()",
+      "right" : "private Dialog getSimUnlockProgressDialog()",
+      "info" : "MethodDeclaration[8204-8813]:MethodDeclaration[8204-8813]"
+    }, {
+      "left" : "private Dialog getPinRemainingAttemptsDialog(int remaining)",
+      "right" : "private Dialog getPinRemainingAttemptsDialog(int remaining)",
+      "info" : "MethodDeclaration[8819-9509]:MethodDeclaration[8819-9509]"
+    }, {
+      "left" : "protected void verifyPasswordAndUnlock()",
+      "right" : "protected void verifyPasswordAndUnlock()",
+      "info" : "MethodDeclaration[9819-12974]:MethodDeclaration[9895-13050]"
+    }, {
+      "left" : "void onSimCheckResponse(final int result, final int attemptsRemaining)",
+      "right" : "void onSimCheckResponse(final int result, final int attemptsRemaining)",
+      "info" : "MethodDeclaration[10410-12903]:MethodDeclaration[10486-12979]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[10549-12861]:MethodDeclaration[10625-12937]"
+    }, {
+      "left" : "public void startAppearAnimation()",
+      "right" : "public void startAppearAnimation()",
+      "info" : "MethodDeclaration[12980-13053]:MethodDeclaration[13056-13129]"
+    }, {
+      "left" : "public boolean startDisappearAnimation(Runnable finishRunnable)",
+      "right" : "public boolean startDisappearAnimation(Runnable finishRunnable)",
+      "info" : "MethodDeclaration[13059-13166]:MethodDeclaration[13135-13242]"
+    }, {
+      "left" : "private void handleSubInfoChangeIfNeeded()",
+      "right" : "private void handleSubInfoChangeIfNeeded()",
+      "info" : "MethodDeclaration[13172-13514]:MethodDeclaration[13248-13590]"
+    }, {
+      "left" : "private void handleSubInfoChange()",
+      "right" : "private void handleSubInfoChange()",
+      "info" : "MethodDeclaration[13520-14410]:MethodDeclaration[13596-14486]"
+    }, {
+      "left" : "private void showDefaultMessage()",
+      "right" : "private void showDefaultMessage()",
+      "info" : "MethodDeclaration[14416-14760]:MethodDeclaration[14492-14836]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2380-2389]:MarkerAnnotation[2380-2389]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2398-2404]:Modifier[2398-2404]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2405-2409]:PrimitiveType[2405-2409]"
+    }, {
+      "left" : "onSubIdUpdated",
+      "right" : "onSubIdUpdated",
+      "info" : "SimpleName[2410-2424]:SimpleName[2410-2424]"
+    }, {
+      "left" : "int oldSubId",
+      "right" : "int oldSubId",
+      "info" : "SingleVariableDeclaration[2425-2437]:SingleVariableDeclaration[2425-2437]"
+    }, {
+      "left" : "int newSubId",
+      "right" : "int newSubId",
+      "info" : "SingleVariableDeclaration[2439-2451]:SingleVariableDeclaration[2439-2451]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2453-2648]:Block[2453-2648]"
+    }, {
+      "left" : "if (mSubId == oldSubId)",
+      "right" : "if (mSubId == oldSubId)",
+      "info" : "IfStatement[2467-2638]:IfStatement[2467-2638]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2491-2638]:Block[2491-2638]"
+    }, {
+      "left" : "mSubId = newSubId;",
+      "right" : "mSubId = newSubId;",
+      "info" : "ExpressionStatement[2509-2527]:ExpressionStatement[2509-2527]"
+    }, {
+      "left" : "handleSubInfoChange();",
+      "right" : "handleSubInfoChange();",
+      "info" : "ExpressionStatement[2602-2624]:ExpressionStatement[2602-2624]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2658-2667]:MarkerAnnotation[2658-2667]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2676-2682]:Modifier[2676-2682]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2683-2687]:PrimitiveType[2683-2687]"
+    }, {
+      "left" : "onSubInfoContentChanged",
+      "right" : "onSubInfoContentChanged",
+      "info" : "SimpleName[2688-2711]:SimpleName[2688-2711]"
+    }, {
+      "left" : "int subId",
+      "right" : "int subId",
+      "info" : "SingleVariableDeclaration[2712-2721]:SingleVariableDeclaration[2712-2721]"
+    }, {
+      "left" : "String column",
+      "right" : "String column",
+      "info" : "SingleVariableDeclaration[2723-2736]:SingleVariableDeclaration[2723-2736]"
+    }, {
+      "left" : "String sValue",
+      "right" : "String sValue",
+      "info" : "SingleVariableDeclaration[2770-2783]:SingleVariableDeclaration[2770-2783]"
+    }, {
+      "left" : "int iValue",
+      "right" : "int iValue",
+      "info" : "SingleVariableDeclaration[2785-2795]:SingleVariableDeclaration[2785-2795]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2797-3050]:Block[2797-3050]"
+    }, {
+      "left" : "if (column != null && column.equals(SubscriptionManager.DISPLAY_NAME)\n                    && mSubId == subId)",
+      "right" : "if (column != null && column.equals(SubscriptionManager.DISPLAY_NAME)\n                    && mSubId == subId)",
+      "info" : "IfStatement[2811-3040]:IfStatement[2811-3040]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2921-3040]:Block[2921-3040]"
+    }, {
+      "left" : "handleSubInfoChange();",
+      "right" : "handleSubInfoChange();",
+      "info" : "ExpressionStatement[3004-3026]:ExpressionStatement[3004-3026]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[3060-3069]:MarkerAnnotation[3060-3069]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3078-3084]:Modifier[3078-3084]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3085-3089]:PrimitiveType[3085-3089]"
+    }, {
+      "left" : "onSimStateChanged",
+      "right" : "onSimStateChanged",
+      "info" : "SimpleName[3090-3107]:SimpleName[3090-3107]"
+    }, {
+      "left" : "int subId",
+      "right" : "int subId",
+      "info" : "SingleVariableDeclaration[3108-3117]:SingleVariableDeclaration[3108-3117]"
+    }, {
+      "left" : "IccCardConstants.State simState",
+      "right" : "IccCardConstants.State simState",
+      "info" : "SingleVariableDeclaration[3119-3150]:SingleVariableDeclaration[3119-3150]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3152-3479]:Block[3152-3479]"
+    }, {
+      "left" : "if (DEBUG)",
+      "right" : "if (DEBUG)",
+      "info" : "IfStatement[3166-3253]:IfStatement[3166-3253]"
+    }, {
+      "left" : "Log.d(TAG, \"onSimStateChangedUsingSubId: \" + simState + \", subId=\" + subId);",
+      "right" : "Log.d(TAG, \"onSimStateChangedUsingSubId: \" + simState + \", subId=\" + subId);",
+      "info" : "ExpressionStatement[3177-3253]:ExpressionStatement[3177-3253]"
+    }, {
+      "left" : "if (subId != mSubId)",
+      "right" : "if (subId != mSubId)",
+      "info" : "IfStatement[3266-3294]:IfStatement[3266-3294]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3287-3294]:ReturnStatement[3287-3294]"
+    }, {
+      "left" : "switch (simState) {\n                case NOT_READY:\n                case ABSENT:\n                        closeKeyGuard();\n                    break;\n            }",
+      "right" : "switch (simState) {\n                case NOT_READY:\n                case ABSENT:\n                        closeKeyGuard();\n                    break;\n            }",
+      "info" : "SwitchStatement[3307-3469]:SwitchStatement[3307-3469]"
+    }, {
+      "left" : "case NOT_READY:",
+      "right" : "case NOT_READY:",
+      "info" : "SwitchCase[3343-3358]:SwitchCase[3343-3358]"
+    }, {
+      "left" : "case ABSENT:",
+      "right" : "case ABSENT:",
+      "info" : "SwitchCase[3375-3387]:SwitchCase[3375-3387]"
+    }, {
+      "left" : "closeKeyGuard();",
+      "right" : "closeKeyGuard();",
+      "info" : "ExpressionStatement[3412-3428]:ExpressionStatement[3412-3428]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[3449-3455]:BreakStatement[3449-3455]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3492-3498]:Modifier[3492-3498]"
+    }, {
+      "left" : "KeyguardSimPinView",
+      "right" : "KeyguardSimPinView",
+      "info" : "SimpleName[3499-3517]:SimpleName[3499-3517]"
+    }, {
+      "left" : "Context context",
+      "right" : "Context context",
+      "info" : "SingleVariableDeclaration[3518-3533]:SingleVariableDeclaration[3518-3533]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3535-3571]:Block[3535-3571]"
+    }, {
+      "left" : "this(context, null);",
+      "right" : "this(context, null);",
+      "info" : "ConstructorInvocation[3545-3565]:ConstructorInvocation[3545-3565]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3577-3583]:Modifier[3577-3583]"
+    }, {
+      "left" : "KeyguardSimPinView",
+      "right" : "KeyguardSimPinView",
+      "info" : "SimpleName[3584-3602]:SimpleName[3584-3602]"
+    }, {
+      "left" : "Context context",
+      "right" : "Context context",
+      "info" : "SingleVariableDeclaration[3603-3618]:SingleVariableDeclaration[3603-3618]"
+    }, {
+      "left" : "AttributeSet attrs",
+      "right" : "AttributeSet attrs",
+      "info" : "SingleVariableDeclaration[3620-3638]:SingleVariableDeclaration[3620-3638]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3640-3754]:Block[3640-3754]"
+    }, {
+      "left" : "super(context, attrs);",
+      "right" : "super(context, attrs);",
+      "info" : "SuperConstructorInvocation[3650-3672]:SuperConstructorInvocation[3650-3672]"
+    }, {
+      "left" : "mKgUpdateMonitor = KeyguardUpdateMonitor.getInstance(getContext());",
+      "right" : "mKgUpdateMonitor = KeyguardUpdateMonitor.getInstance(getContext());",
+      "info" : "ExpressionStatement[3681-3748]:ExpressionStatement[3681-3748]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3760-3766]:Modifier[3760-3766]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3767-3771]:PrimitiveType[3767-3771]"
+    }, {
+      "left" : "resetState",
+      "right" : "resetState",
+      "info" : "SimpleName[3772-3782]:SimpleName[3772-3782]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3785-3979]:Block[3785-3979]"
+    }, {
+      "left" : "super.resetState();",
+      "right" : "super.resetState();",
+      "info" : "ExpressionStatement[3795-3814]:ExpressionStatement[3795-3814]"
+    }, {
+      "left" : "handleSubInfoChangeIfNeeded();",
+      "right" : "handleSubInfoChangeIfNeeded();",
+      "info" : "ExpressionStatement[3823-3853]:ExpressionStatement[3823-3853]"
+    }, {
+      "left" : "if (mShowDefaultMessage)",
+      "right" : "if (mShowDefaultMessage)",
+      "info" : "IfStatement[3862-3932]:IfStatement[3862-3932]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3887-3932]:Block[3887-3932]"
+    }, {
+      "left" : "showDefaultMessage();",
+      "right" : "showDefaultMessage();",
+      "info" : "ExpressionStatement[3901-3922]:ExpressionStatement[3901-3922]"
+    }, {
+      "left" : "mPasswordEntry.setEnabled(true);",
+      "right" : "mPasswordEntry.setEnabled(true);",
+      "info" : "ExpressionStatement[3941-3973]:ExpressionStatement[3941-3973]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3985-3992]:Modifier[3985-3992]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[3993-3999]:SimpleType[3993-3999]"
+    }, {
+      "left" : "getPinPasswordErrorMessage",
+      "right" : "getPinPasswordErrorMessage",
+      "info" : "SimpleName[4000-4026]:SimpleName[4000-4026]"
+    }, {
+      "left" : "int attemptsRemaining",
+      "right" : "int attemptsRemaining",
+      "info" : "SingleVariableDeclaration[4027-4048]:SingleVariableDeclaration[4027-4048]"
+    }, {
+      "left" : "boolean isDefault",
+      "right" : "boolean isDefault",
+      "info" : "SingleVariableDeclaration[4050-4067]:SingleVariableDeclaration[4050-4067]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4069-4973]:Block[4069-4973]"
+    }, {
+      "left" : "String displayMessage;",
+      "right" : "String displayMessage;",
+      "info" : "VariableDeclarationStatement[4079-4101]:VariableDeclarationStatement[4079-4101]"
+    }, {
+      "left" : "if (attemptsRemaining == 0)",
+      "right" : "if (attemptsRemaining == 0)",
+      "info" : "IfStatement[4111-4772]:IfStatement[4111-4772]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4139-4247]:Block[4139-4247]"
+    }, {
+      "left" : "displayMessage = getContext().getString(R.string.kg_password_wrong_pin_code_pukked);",
+      "right" : "displayMessage = getContext().getString(R.string.kg_password_wrong_pin_code_pukked);",
+      "info" : "ExpressionStatement[4153-4237]:ExpressionStatement[4153-4237]"
+    }, {
+      "left" : "if (attemptsRemaining > 0)",
+      "right" : "if (attemptsRemaining > 0)",
+      "info" : "IfStatement[4253-4772]:IfStatement[4253-4772]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4280-4571]:Block[4280-4571]"
+    }, {
+      "left" : "int msgId = isDefault ? R.plurals.kg_password_default_pin_message :\n                    R.plurals.kg_password_wrong_pin_code;",
+      "right" : "int msgId = isDefault ? R.plurals.kg_password_default_pin_message :\n                    R.plurals.kg_password_wrong_pin_code;",
+      "info" : "VariableDeclarationStatement[4294-4419]:VariableDeclarationStatement[4294-4419]"
+    }, {
+      "left" : "displayMessage = getContext().getResources()\n                    .getQuantityString(msgId, attemptsRemaining, attemptsRemaining);",
+      "right" : "displayMessage = getContext().getResources()\n                    .getQuantityString(msgId, attemptsRemaining, attemptsRemaining);",
+      "info" : "ExpressionStatement[4432-4561]:ExpressionStatement[4432-4561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4577-4772]:Block[4577-4772]"
+    }, {
+      "left" : "int msgId = isDefault ? R.string.kg_sim_pin_instructions :\n                    R.string.kg_password_pin_failed;",
+      "right" : "int msgId = isDefault ? R.string.kg_sim_pin_instructions :\n                    R.string.kg_password_pin_failed;",
+      "info" : "VariableDeclarationStatement[4591-4702]:VariableDeclarationStatement[4591-4702]"
+    }, {
+      "left" : "displayMessage = getContext().getString(msgId);",
+      "right" : "displayMessage = getContext().getString(msgId);",
+      "info" : "ExpressionStatement[4715-4762]:ExpressionStatement[4715-4762]"
+    }, {
+      "left" : "if (DEBUG)",
+      "right" : "if (DEBUG)",
+      "info" : "IfStatement[4781-4936]:IfStatement[4781-4936]"
+    }, {
+      "left" : "Log.d(LOG_TAG, \"getPinPasswordErrorMessage:\"\n                + \" attemptsRemaining=\" + attemptsRemaining + \" displayMessage=\" + displayMessage);",
+      "right" : "Log.d(LOG_TAG, \"getPinPasswordErrorMessage:\"\n                + \" attemptsRemaining=\" + attemptsRemaining + \" displayMessage=\" + displayMessage);",
+      "info" : "ExpressionStatement[4792-4936]:ExpressionStatement[4792-4936]"
+    }, {
+      "left" : "return displayMessage;",
+      "right" : "return displayMessage;",
+      "info" : "ReturnStatement[4945-4967]:ReturnStatement[4945-4967]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4979-4988]:MarkerAnnotation[4979-4988]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[4993-5002]:Modifier[4993-5002]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[5003-5010]:PrimitiveType[5003-5010]"
+    }, {
+      "left" : "shouldLockout",
+      "right" : "shouldLockout",
+      "info" : "SimpleName[5011-5024]:SimpleName[5011-5024]"
+    }, {
+      "left" : "long deadline",
+      "right" : "long deadline",
+      "info" : "SingleVariableDeclaration[5025-5038]:SingleVariableDeclaration[5025-5038]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5040-5117]:Block[5040-5117]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[5098-5111]:ReturnStatement[5098-5111]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[5123-5132]:MarkerAnnotation[5123-5132]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[5137-5146]:Modifier[5137-5146]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[5147-5150]:PrimitiveType[5147-5150]"
+    }, {
+      "left" : "getPasswordTextViewId",
+      "right" : "getPasswordTextViewId",
+      "info" : "SimpleName[5151-5172]:SimpleName[5151-5172]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5175-5215]:Block[5175-5215]"
+    }, {
+      "left" : "return R.id.simPinEntry;",
+      "right" : "return R.id.simPinEntry;",
+      "info" : "ReturnStatement[5185-5209]:ReturnStatement[5185-5209]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[5221-5230]:MarkerAnnotation[5221-5230]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[5235-5244]:Modifier[5235-5244]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5245-5249]:PrimitiveType[5245-5249]"
+    }, {
+      "left" : "onFinishInflate",
+      "right" : "onFinishInflate",
+      "info" : "SimpleName[5250-5265]:SimpleName[5250-5265]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5268-5941]:Block[5268-5941]"
+    }, {
+      "left" : "super.onFinishInflate();",
+      "right" : "super.onFinishInflate();",
+      "info" : "ExpressionStatement[5278-5302]:ExpressionStatement[5278-5302]"
+    }, {
+      "left" : "mSubNameView = (TextView) findViewById(R.id.sim_name);",
+      "right" : "mSubNameView = (TextView) findViewById(R.id.sim_name);",
+      "info" : "ExpressionStatement[5312-5366]:ExpressionStatement[5312-5366]"
+    }, {
+      "left" : "mSimImageView = (ImageView) findViewById(R.id.keyguard_sim);",
+      "right" : "mSimImageView = (ImageView) findViewById(R.id.keyguard_sim);",
+      "info" : "ExpressionStatement[5375-5435]:ExpressionStatement[5375-5435]"
+    }, {
+      "left" : "mSubId = mKgUpdateMonitor.getSimPinLockSubId();",
+      "right" : "mSubId = mKgUpdateMonitor.getSimPinLockSubId();",
+      "info" : "ExpressionStatement[5444-5491]:ExpressionStatement[5444-5491]"
+    }, {
+      "left" : "if (mKgUpdateMonitor.getNumPhones() > 1)",
+      "right" : "if (mKgUpdateMonitor.getNumPhones() > 1)",
+      "info" : "IfStatement[5500-5641]:IfStatement[5500-5641]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5541-5641]:Block[5541-5641]"
+    }, {
+      "left" : "mSubNameView.setVisibility(View.VISIBLE);",
+      "right" : "mSubNameView.setVisibility(View.VISIBLE);",
+      "info" : "ExpressionStatement[5555-5596]:ExpressionStatement[5555-5596]"
+    }, {
+      "left" : "handleSubInfoChange();",
+      "right" : "handleSubInfoChange();",
+      "info" : "ExpressionStatement[5609-5631]:ExpressionStatement[5609-5631]"
+    }, {
+      "left" : "mSecurityMessageDisplay.setTimeout(0);",
+      "right" : "mSecurityMessageDisplay.setTimeout(0);",
+      "info" : "ExpressionStatement[5651-5689]:ExpressionStatement[5651-5689]"
+    }, {
+      "left" : "if (mEcaView instanceof EmergencyCarrierArea)",
+      "right" : "if (mEcaView instanceof EmergencyCarrierArea)",
+      "info" : "IfStatement[5749-5881]:IfStatement[5749-5881]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5795-5881]:Block[5795-5881]"
+    }, {
+      "left" : "((EmergencyCarrierArea) mEcaView).setCarrierTextVisible(true);",
+      "right" : "((EmergencyCarrierArea) mEcaView).setCarrierTextVisible(true);",
+      "info" : "ExpressionStatement[5809-5871]:ExpressionStatement[5809-5871]"
+    }, {
+      "left" : "mPasswordEntry.setQuickUnlockListener(null);",
+      "right" : "mPasswordEntry.setQuickUnlockListener(null);",
+      "info" : "ExpressionStatement[5891-5935]:ExpressionStatement[5891-5935]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[5947-5956]:MarkerAnnotation[5947-5956]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[5961-5970]:Modifier[5961-5970]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5971-5975]:PrimitiveType[5971-5975]"
+    }, {
+      "left" : "onAttachedToWindow",
+      "right" : "onAttachedToWindow",
+      "info" : "SimpleName[5976-5994]:SimpleName[5976-5994]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5997-6179]:Block[5997-6179]"
+    }, {
+      "left" : "super.onAttachedToWindow();",
+      "right" : "super.onAttachedToWindow();",
+      "info" : "ExpressionStatement[6007-6034]:ExpressionStatement[6007-6034]"
+    }, {
+      "left" : "if (mShowDefaultMessage)",
+      "right" : "if (mShowDefaultMessage)",
+      "info" : "IfStatement[6043-6113]:IfStatement[6043-6113]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6068-6113]:Block[6068-6113]"
+    }, {
+      "left" : "showDefaultMessage();",
+      "right" : "showDefaultMessage();",
+      "info" : "ExpressionStatement[6082-6103]:ExpressionStatement[6082-6103]"
+    }, {
+      "left" : "mKgUpdateMonitor.registerCallback(mUpdateCallback);",
+      "right" : "mKgUpdateMonitor.registerCallback(mUpdateCallback);",
+      "info" : "ExpressionStatement[6122-6173]:ExpressionStatement[6122-6173]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6185-6194]:MarkerAnnotation[6185-6194]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[6199-6208]:Modifier[6199-6208]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6209-6213]:PrimitiveType[6209-6213]"
+    }, {
+      "left" : "onDetachedFromWindow",
+      "right" : "onDetachedFromWindow",
+      "info" : "SimpleName[6214-6234]:SimpleName[6214-6234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6237-6522]:Block[6237-6522]"
+    }, {
+      "left" : "super.onDetachedFromWindow();",
+      "right" : "super.onDetachedFromWindow();",
+      "info" : "ExpressionStatement[6247-6276]:ExpressionStatement[6247-6276]"
+    }, {
+      "left" : "mKgUpdateMonitor.removeCallback(mUpdateCallback);",
+      "right" : "mKgUpdateMonitor.removeCallback(mUpdateCallback);",
+      "info" : "ExpressionStatement[6285-6334]:ExpressionStatement[6285-6334]"
+    }, {
+      "left" : "if (mSimUnlockProgressDialog != null)",
+      "right" : "if (mSimUnlockProgressDialog != null)",
+      "info" : "IfStatement[6374-6516]:IfStatement[6374-6516]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6412-6516]:Block[6412-6516]"
+    }, {
+      "left" : "mSimUnlockProgressDialog.dismiss();",
+      "right" : "mSimUnlockProgressDialog.dismiss();",
+      "info" : "ExpressionStatement[6426-6461]:ExpressionStatement[6426-6461]"
+    }, {
+      "left" : "mSimUnlockProgressDialog = null;",
+      "right" : "mSimUnlockProgressDialog = null;",
+      "info" : "ExpressionStatement[6474-6506]:ExpressionStatement[6474-6506]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6528-6537]:MarkerAnnotation[6528-6537]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6542-6548]:Modifier[6542-6548]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6549-6553]:PrimitiveType[6549-6553]"
+    }, {
+      "left" : "showUsabilityHint",
+      "right" : "showUsabilityHint",
+      "info" : "SimpleName[6554-6571]:SimpleName[6554-6571]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6574-6581]:Block[6574-6581]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6587-6596]:MarkerAnnotation[6587-6596]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6601-6607]:Modifier[6601-6607]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6608-6612]:PrimitiveType[6608-6612]"
+    }, {
+      "left" : "onPause",
+      "right" : "onPause",
+      "info" : "SimpleName[6613-6620]:SimpleName[6613-6620]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6623-6812]:Block[6623-6812]"
+    }, {
+      "left" : "if (mSimUnlockProgressDialog != null)",
+      "right" : "if (mSimUnlockProgressDialog != null)",
+      "info" : "IfStatement[6664-6806]:IfStatement[6664-6806]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6702-6806]:Block[6702-6806]"
+    }, {
+      "left" : "mSimUnlockProgressDialog.dismiss();",
+      "right" : "mSimUnlockProgressDialog.dismiss();",
+      "info" : "ExpressionStatement[6716-6751]:ExpressionStatement[6716-6751]"
+    }, {
+      "left" : "mSimUnlockProgressDialog = null;",
+      "right" : "mSimUnlockProgressDialog = null;",
+      "info" : "ExpressionStatement[6764-6796]:ExpressionStatement[6764-6796]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6938-6945]:Modifier[6938-6945]"
+    }, {
+      "left" : "abstract",
+      "right" : "abstract",
+      "info" : "Modifier[6946-6954]:Modifier[6946-6954]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[6955-6960]:TYPE_DECLARATION_KIND[6955-6960]"
+    }, {
+      "left" : "CheckSimPin",
+      "right" : "CheckSimPin",
+      "info" : "SimpleName[6961-6972]:SimpleName[6961-6972]"
+    }, {
+      "left" : "Thread",
+      "right" : "Thread",
+      "info" : "SimpleType[6981-6987]:SimpleType[6981-6987]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[7034-7043]:Modifier[7034-7043]"
+    }, {
+      "left" : "CheckSimPin",
+      "right" : "CheckSimPin",
+      "info" : "SimpleName[7044-7055]:SimpleName[7044-7055]"
+    }, {
+      "left" : "String pin",
+      "right" : "String pin",
+      "info" : "SingleVariableDeclaration[7056-7066]:SingleVariableDeclaration[7056-7066]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7068-7103]:Block[7068-7103]"
+    }, {
+      "left" : "mPin = pin;",
+      "right" : "mPin = pin;",
+      "info" : "ExpressionStatement[7082-7093]:ExpressionStatement[7082-7093]"
+    }, {
+      "left" : "abstract",
+      "right" : "abstract",
+      "info" : "Modifier[7113-7121]:Modifier[7113-7121]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7122-7126]:PrimitiveType[7122-7126]"
+    }, {
+      "left" : "onSimCheckResponse",
+      "right" : "onSimCheckResponse",
+      "info" : "SimpleName[7127-7145]:SimpleName[7127-7145]"
+    }, {
+      "left" : "final int result",
+      "right" : "final int result",
+      "info" : "SingleVariableDeclaration[7146-7162]:SingleVariableDeclaration[7146-7162]"
+    }, {
+      "left" : "final int attemptsRemaining",
+      "right" : "final int attemptsRemaining",
+      "info" : "SingleVariableDeclaration[7164-7191]:SingleVariableDeclaration[7164-7191]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[7203-7212]:MarkerAnnotation[7203-7212]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7221-7227]:Modifier[7221-7227]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7228-7232]:PrimitiveType[7228-7232]"
+    }, {
+      "left" : "run",
+      "right" : "run",
+      "info" : "SimpleName[7233-7236]:SimpleName[7233-7236]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7239-8192]:Block[7239-8192]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[7253-8182]:TryStatement[7253-8182]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7257-7849]:Block[7257-7849]"
+    }, {
+      "left" : "Log.v(TAG, \"call supplyPinReportResultUsingSubId() mSubId = \" + mSubId);",
+      "right" : "Log.v(TAG, \"call supplyPinReportResultUsingSubId() mSubId = \" + mSubId);",
+      "info" : "ExpressionStatement[7275-7347]:ExpressionStatement[7275-7347]"
+    }, {
+      "left" : "final int[] result = ITelephony.Stub.asInterface(ServiceManager\n                    .checkService(\"phone\")).supplyPinReportResultForSubscriber(mSubId, mPin);",
+      "right" : "final int[] result = ITelephony.Stub.asInterface(ServiceManager\n                    .checkService(\"phone\")).supplyPinReportResultForSubscriber(mSubId, mPin);",
+      "info" : "VariableDeclarationStatement[7364-7521]:VariableDeclarationStatement[7364-7521]"
+    }, {
+      "left" : "Log.v(TAG, \"supplyPinReportResultUsingSubId returned: \" + result[0] +\n                        \" \" + result[1]);",
+      "right" : "Log.v(TAG, \"supplyPinReportResultUsingSubId returned: \" + result[0] +\n                        \" \" + result[1]);",
+      "info" : "ExpressionStatement[7538-7649]:ExpressionStatement[7538-7649]"
+    }, {
+      "left" : "post(new Runnable() {\n                    public void run() {\n                        onSimCheckResponse(result[0], result[1]);\n                    }\n                });",
+      "right" : "post(new Runnable() {\n                    public void run() {\n                        onSimCheckResponse(result[0], result[1]);\n                    }\n                });",
+      "info" : "ExpressionStatement[7666-7835]:ExpressionStatement[7666-7835]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7708-7714]:Modifier[7708-7714]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7715-7719]:PrimitiveType[7715-7719]"
+    }, {
+      "left" : "run",
+      "right" : "run",
+      "info" : "SimpleName[7720-7723]:SimpleName[7720-7723]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7726-7815]:Block[7726-7815]"
+    }, {
+      "left" : "onSimCheckResponse(result[0], result[1]);",
+      "right" : "onSimCheckResponse(result[0], result[1]);",
+      "info" : "ExpressionStatement[7752-7793]:ExpressionStatement[7752-7793]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7876-8182]:Block[7876-8182]"
+    }, {
+      "left" : "Log.e(TAG, \"RemoteException for supplyPinReportResultUsingSubId:\", e);",
+      "right" : "Log.e(TAG, \"RemoteException for supplyPinReportResultUsingSubId:\", e);",
+      "info" : "ExpressionStatement[7894-7964]:ExpressionStatement[7894-7964]"
+    }, {
+      "left" : "post(new Runnable() {\n                    public void run() {\n                        onSimCheckResponse(PhoneConstants.PIN_GENERAL_FAILURE, -1);\n                    }\n                });",
+      "right" : "post(new Runnable() {\n                    public void run() {\n                        onSimCheckResponse(PhoneConstants.PIN_GENERAL_FAILURE, -1);\n                    }\n                });",
+      "info" : "ExpressionStatement[7981-8168]:ExpressionStatement[7981-8168]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8023-8029]:Modifier[8023-8029]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8030-8034]:PrimitiveType[8030-8034]"
+    }, {
+      "left" : "run",
+      "right" : "run",
+      "info" : "SimpleName[8035-8038]:SimpleName[8035-8038]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8041-8148]:Block[8041-8148]"
+    }, {
+      "left" : "onSimCheckResponse(PhoneConstants.PIN_GENERAL_FAILURE, -1);",
+      "right" : "onSimCheckResponse(PhoneConstants.PIN_GENERAL_FAILURE, -1);",
+      "info" : "ExpressionStatement[8067-8126]:ExpressionStatement[8067-8126]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8204-8211]:Modifier[8204-8211]"
+    }, {
+      "left" : "Dialog",
+      "right" : "Dialog",
+      "info" : "SimpleType[8212-8218]:SimpleType[8212-8218]"
+    }, {
+      "left" : "getSimUnlockProgressDialog",
+      "right" : "getSimUnlockProgressDialog",
+      "info" : "SimpleName[8219-8245]:SimpleName[8219-8245]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8248-8813]:Block[8248-8813]"
+    }, {
+      "left" : "if (mSimUnlockProgressDialog == null)",
+      "right" : "if (mSimUnlockProgressDialog == null)",
+      "info" : "IfStatement[8258-8766]:IfStatement[8258-8766]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8296-8766]:Block[8296-8766]"
+    }, {
+      "left" : "mSimUnlockProgressDialog = new ProgressDialog(mContext);",
+      "right" : "mSimUnlockProgressDialog = new ProgressDialog(mContext);",
+      "info" : "ExpressionStatement[8310-8366]:ExpressionStatement[8310-8366]"
+    }, {
+      "left" : "mSimUnlockProgressDialog.setMessage(\n                    getContext().getString(R.string.kg_sim_unlock_progress_dialog_message));",
+      "right" : "mSimUnlockProgressDialog.setMessage(\n                    getContext().getString(R.string.kg_sim_unlock_progress_dialog_message));",
+      "info" : "ExpressionStatement[8379-8508]:ExpressionStatement[8379-8508]"
+    }, {
+      "left" : "mSimUnlockProgressDialog.setIndeterminate(true);",
+      "right" : "mSimUnlockProgressDialog.setIndeterminate(true);",
+      "info" : "ExpressionStatement[8521-8569]:ExpressionStatement[8521-8569]"
+    }, {
+      "left" : "mSimUnlockProgressDialog.setCancelable(false);",
+      "right" : "mSimUnlockProgressDialog.setCancelable(false);",
+      "info" : "ExpressionStatement[8582-8628]:ExpressionStatement[8582-8628]"
+    }, {
+      "left" : "mSimUnlockProgressDialog.getWindow().setType(\n                    WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);",
+      "right" : "mSimUnlockProgressDialog.getWindow().setType(\n                    WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);",
+      "info" : "ExpressionStatement[8641-8756]:ExpressionStatement[8641-8756]"
+    }, {
+      "left" : "return mSimUnlockProgressDialog;",
+      "right" : "return mSimUnlockProgressDialog;",
+      "info" : "ReturnStatement[8775-8807]:ReturnStatement[8775-8807]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8819-8826]:Modifier[8819-8826]"
+    }, {
+      "left" : "Dialog",
+      "right" : "Dialog",
+      "info" : "SimpleType[8827-8833]:SimpleType[8827-8833]"
+    }, {
+      "left" : "getPinRemainingAttemptsDialog",
+      "right" : "getPinRemainingAttemptsDialog",
+      "info" : "SimpleName[8834-8863]:SimpleName[8834-8863]"
+    }, {
+      "left" : "int remaining",
+      "right" : "int remaining",
+      "info" : "SingleVariableDeclaration[8864-8877]:SingleVariableDeclaration[8864-8877]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8879-9509]:Block[8879-9509]"
+    }, {
+      "left" : "String msg = getPinPasswordErrorMessage(remaining, false);",
+      "right" : "String msg = getPinPasswordErrorMessage(remaining, false);",
+      "info" : "VariableDeclarationStatement[8889-8947]:VariableDeclarationStatement[8889-8947]"
+    }, {
+      "left" : "if (mRemainingAttemptsDialog == null)",
+      "right" : "if (mRemainingAttemptsDialog == null)",
+      "info" : "IfStatement[8956-9462]:IfStatement[8956-9462]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8994-9391]:Block[8994-9391]"
+    }, {
+      "left" : "Builder builder = new AlertDialog.Builder(mContext);",
+      "right" : "Builder builder = new AlertDialog.Builder(mContext);",
+      "info" : "VariableDeclarationStatement[9008-9060]:VariableDeclarationStatement[9008-9060]"
+    }, {
+      "left" : "builder.setMessage(msg);",
+      "right" : "builder.setMessage(msg);",
+      "info" : "ExpressionStatement[9073-9097]:ExpressionStatement[9073-9097]"
+    }, {
+      "left" : "builder.setCancelable(false);",
+      "right" : "builder.setCancelable(false);",
+      "info" : "ExpressionStatement[9110-9139]:ExpressionStatement[9110-9139]"
+    }, {
+      "left" : "builder.setNeutralButton(R.string.ok, null);",
+      "right" : "builder.setNeutralButton(R.string.ok, null);",
+      "info" : "ExpressionStatement[9152-9196]:ExpressionStatement[9152-9196]"
+    }, {
+      "left" : "mRemainingAttemptsDialog = builder.create();",
+      "right" : "mRemainingAttemptsDialog = builder.create();",
+      "info" : "ExpressionStatement[9209-9253]:ExpressionStatement[9209-9253]"
+    }, {
+      "left" : "mRemainingAttemptsDialog.getWindow().setType(\n                    WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);",
+      "right" : "mRemainingAttemptsDialog.getWindow().setType(\n                    WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);",
+      "info" : "ExpressionStatement[9266-9381]:ExpressionStatement[9266-9381]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9397-9462]:Block[9397-9462]"
+    }, {
+      "left" : "mRemainingAttemptsDialog.setMessage(msg);",
+      "right" : "mRemainingAttemptsDialog.setMessage(msg);",
+      "info" : "ExpressionStatement[9411-9452]:ExpressionStatement[9411-9452]"
+    }, {
+      "left" : "return mRemainingAttemptsDialog;",
+      "right" : "return mRemainingAttemptsDialog;",
+      "info" : "ReturnStatement[9471-9503]:ReturnStatement[9471-9503]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[9819-9828]:MarkerAnnotation[9895-9904]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[9833-9842]:Modifier[9909-9918]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9843-9847]:PrimitiveType[9919-9923]"
+    }, {
+      "left" : "verifyPasswordAndUnlock",
+      "right" : "verifyPasswordAndUnlock",
+      "info" : "SimpleName[9848-9871]:SimpleName[9924-9947]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9874-12974]:Block[9950-13050]"
+    }, {
+      "left" : "String entry = mPasswordEntry.getText();",
+      "right" : "String entry = mPasswordEntry.getText();",
+      "info" : "VariableDeclarationStatement[9884-9924]:VariableDeclarationStatement[9960-10000]"
+    }, {
+      "left" : "if (entry.length() < 4)",
+      "right" : "if (entry.length() < 4)",
+      "info" : "IfStatement[9934-10227]:IfStatement[10010-10303]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9958-10227]:Block[10034-10303]"
+    }, {
+      "left" : "mSecurityMessageDisplay.setMessage(R.string.kg_invalid_sim_pin_hint, true);",
+      "right" : "mSecurityMessageDisplay.setMessage(R.string.kg_invalid_sim_pin_hint, true);",
+      "info" : "ExpressionStatement[10047-10122]:ExpressionStatement[10123-10198]"
+    }, {
+      "left" : "resetPasswordText(true);",
+      "right" : "resetPasswordText(true);",
+      "info" : "ExpressionStatement[10135-10159]:ExpressionStatement[10211-10235]"
+    }, {
+      "left" : "mCallback.userActivity();",
+      "right" : "mCallback.userActivity();",
+      "info" : "ExpressionStatement[10172-10197]:ExpressionStatement[10248-10273]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10210-10217]:ReturnStatement[10286-10293]"
+    }, {
+      "left" : "getSimUnlockProgressDialog().show();",
+      "right" : "getSimUnlockProgressDialog().show();",
+      "info" : "ExpressionStatement[10237-10273]:ExpressionStatement[10313-10349]"
+    }, {
+      "left" : "if (mCheckSimPinThread == null)",
+      "right" : "if (mCheckSimPinThread == null)",
+      "info" : "IfStatement[10283-12968]:IfStatement[10359-13044]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10315-12968]:Block[10391-13044]"
+    }, {
+      "left" : "mCheckSimPinThread = new CheckSimPin(mPasswordEntry.getText()) {\n                void onSimCheckResponse(final int result, final int attemptsRemaining) {\n                    post(new Runnable() {\n                        public void run() {\n                            mRemainingAttempts = attemptsRemaining;\n                            if (mSimUnlockProgressDialog != null) {\n                                mSimUnlockProgressDialog.hide();\n                            }\n                            if (result == PhoneConstants.PIN_RESULT_SUCCESS) {\n                                closeKeyGuard();\n                            } else {\n                                mShowDefaultMessage = false;\n                                if (result == PhoneConstants.PIN_PASSWORD_INCORRECT) {\n                                    // show message\n                                    mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                                            attemptsRemaining, false), true);\n                                    if (attemptsRemaining <= 2) {\n                                        // this is getting critical - show dialog\n                                        getPinRemainingAttemptsDialog(attemptsRemaining).show();\n                                    } else {\n                                        // show message\n                                        mSecurityMessageDisplay.setMessage(\n                                                getPinPasswordErrorMessage(\n                                                attemptsRemaining, false), true);\n                                    }\n                                } else {\n                                    // \"PIN operation failed!\" - no idea what this was and no way to\n                                    // find out. :/\n                                    mSecurityMessageDisplay.setMessage(getContext().getString(\n                                            R.string.kg_password_pin_failed), true);\n                                }\n                                if (DEBUG) Log.d(LOG_TAG, \"verifyPasswordAndUnlock \"\n                                        + \" CheckSimPin.onSimCheckResponse: \" + result\n                                        + \" attemptsRemaining=\" + attemptsRemaining);\n                                resetPasswordText(true /* animate */);\n                            }\n                            mCallback.userActivity();\n                            mCheckSimPinThread = null;\n                        }\n                    });\n                }\n            };",
+      "right" : "mCheckSimPinThread = new CheckSimPin(mPasswordEntry.getText()) {\n                void onSimCheckResponse(final int result, final int attemptsRemaining) {\n                    post(new Runnable() {\n                        public void run() {\n                            mRemainingAttempts = attemptsRemaining;\n                            if (mSimUnlockProgressDialog != null) {\n                                mSimUnlockProgressDialog.hide();\n                            }\n                            if (result == PhoneConstants.PIN_RESULT_SUCCESS) {\n                                closeKeyGuard();\n                            } else {\n                                mShowDefaultMessage = false;\n                                if (result == PhoneConstants.PIN_PASSWORD_INCORRECT) {\n                                    // show message\n                                    mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                                            attemptsRemaining, false), true);\n                                    if (attemptsRemaining <= 2) {\n                                        // this is getting critical - show dialog\n                                        getPinRemainingAttemptsDialog(attemptsRemaining).show();\n                                    } else {\n                                        // show message\n                                        mSecurityMessageDisplay.setMessage(\n                                                getPinPasswordErrorMessage(\n                                                attemptsRemaining, false), true);\n                                    }\n                                } else {\n                                    // \"PIN operation failed!\" - no idea what this was and no way to\n                                    // find out. :/\n                                    mSecurityMessageDisplay.setMessage(getContext().getString(\n                                            R.string.kg_password_pin_failed), true);\n                                }\n                                if (DEBUG) Log.d(LOG_TAG, \"verifyPasswordAndUnlock \"\n                                        + \" CheckSimPin.onSimCheckResponse: \" + result\n                                        + \" attemptsRemaining=\" + attemptsRemaining);\n                                resetPasswordText(true /* animate */);\n                            }\n                            mCallback.userActivity();\n                            mCheckSimPinThread = null;\n                        }\n                    });\n                }\n            };",
+      "info" : "ExpressionStatement[10329-12918]:ExpressionStatement[10405-12994]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10410-10414]:PrimitiveType[10486-10490]"
+    }, {
+      "left" : "onSimCheckResponse",
+      "right" : "onSimCheckResponse",
+      "info" : "SimpleName[10415-10433]:SimpleName[10491-10509]"
+    }, {
+      "left" : "final int result",
+      "right" : "final int result",
+      "info" : "SingleVariableDeclaration[10434-10450]:SingleVariableDeclaration[10510-10526]"
+    }, {
+      "left" : "final int attemptsRemaining",
+      "right" : "final int attemptsRemaining",
+      "info" : "SingleVariableDeclaration[10452-10479]:SingleVariableDeclaration[10528-10555]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10481-12903]:Block[10557-12979]"
+    }, {
+      "left" : "post(new Runnable() {\n                        public void run() {\n                            mRemainingAttempts = attemptsRemaining;\n                            if (mSimUnlockProgressDialog != null) {\n                                mSimUnlockProgressDialog.hide();\n                            }\n                            if (result == PhoneConstants.PIN_RESULT_SUCCESS) {\n                                closeKeyGuard();\n                            } else {\n                                mShowDefaultMessage = false;\n                                if (result == PhoneConstants.PIN_PASSWORD_INCORRECT) {\n                                    // show message\n                                    mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                                            attemptsRemaining, false), true);\n                                    if (attemptsRemaining <= 2) {\n                                        // this is getting critical - show dialog\n                                        getPinRemainingAttemptsDialog(attemptsRemaining).show();\n                                    } else {\n                                        // show message\n                                        mSecurityMessageDisplay.setMessage(\n                                                getPinPasswordErrorMessage(\n                                                attemptsRemaining, false), true);\n                                    }\n                                } else {\n                                    // \"PIN operation failed!\" - no idea what this was and no way to\n                                    // find out. :/\n                                    mSecurityMessageDisplay.setMessage(getContext().getString(\n                                            R.string.kg_password_pin_failed), true);\n                                }\n                                if (DEBUG) Log.d(LOG_TAG, \"verifyPasswordAndUnlock \"\n                                        + \" CheckSimPin.onSimCheckResponse: \" + result\n                                        + \" attemptsRemaining=\" + attemptsRemaining);\n                                resetPasswordText(true /* animate */);\n                            }\n                            mCallback.userActivity();\n                            mCheckSimPinThread = null;\n                        }\n                    });",
+      "right" : "post(new Runnable() {\n                        public void run() {\n                            mRemainingAttempts = attemptsRemaining;\n                            if (mSimUnlockProgressDialog != null) {\n                                mSimUnlockProgressDialog.hide();\n                            }\n                            if (result == PhoneConstants.PIN_RESULT_SUCCESS) {\n                                closeKeyGuard();\n                            } else {\n                                mShowDefaultMessage = false;\n                                if (result == PhoneConstants.PIN_PASSWORD_INCORRECT) {\n                                    // show message\n                                    mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                                            attemptsRemaining, false), true);\n                                    if (attemptsRemaining <= 2) {\n                                        // this is getting critical - show dialog\n                                        getPinRemainingAttemptsDialog(attemptsRemaining).show();\n                                    } else {\n                                        // show message\n                                        mSecurityMessageDisplay.setMessage(\n                                                getPinPasswordErrorMessage(\n                                                attemptsRemaining, false), true);\n                                    }\n                                } else {\n                                    // \"PIN operation failed!\" - no idea what this was and no way to\n                                    // find out. :/\n                                    mSecurityMessageDisplay.setMessage(getContext().getString(\n                                            R.string.kg_password_pin_failed), true);\n                                }\n                                if (DEBUG) Log.d(LOG_TAG, \"verifyPasswordAndUnlock \"\n                                        + \" CheckSimPin.onSimCheckResponse: \" + result\n                                        + \" attemptsRemaining=\" + attemptsRemaining);\n                                resetPasswordText(true /* animate */);\n                            }\n                            mCallback.userActivity();\n                            mCheckSimPinThread = null;\n                        }\n                    });",
+      "info" : "ExpressionStatement[10503-12885]:ExpressionStatement[10579-12961]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[10549-10555]:Modifier[10625-10631]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10556-10560]:PrimitiveType[10632-10636]"
+    }, {
+      "left" : "run",
+      "right" : "run",
+      "info" : "SimpleName[10561-10564]:SimpleName[10637-10640]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10567-12861]:Block[10643-12937]"
+    }, {
+      "left" : "mRemainingAttempts = attemptsRemaining;",
+      "right" : "mRemainingAttempts = attemptsRemaining;",
+      "info" : "ExpressionStatement[10597-10636]:ExpressionStatement[10673-10712]"
+    }, {
+      "left" : "if (mSimUnlockProgressDialog != null)",
+      "right" : "if (mSimUnlockProgressDialog != null)",
+      "info" : "IfStatement[10665-10799]:IfStatement[10741-10875]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10703-10799]:Block[10779-10875]"
+    }, {
+      "left" : "mSimUnlockProgressDialog.hide();",
+      "right" : "mSimUnlockProgressDialog.hide();",
+      "info" : "ExpressionStatement[10737-10769]:ExpressionStatement[10813-10845]"
+    }, {
+      "left" : "if (result == PhoneConstants.PIN_RESULT_SUCCESS)",
+      "right" : "if (result == PhoneConstants.PIN_RESULT_SUCCESS)",
+      "info" : "IfStatement[10828-12726]:IfStatement[10904-12802]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10877-10957]:Block[10953-11033]"
+    }, {
+      "left" : "closeKeyGuard();",
+      "right" : "closeKeyGuard();",
+      "info" : "ExpressionStatement[10911-10927]:ExpressionStatement[10987-11003]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10963-12726]:Block[11039-12802]"
+    }, {
+      "left" : "mShowDefaultMessage = false;",
+      "right" : "mShowDefaultMessage = false;",
+      "info" : "ExpressionStatement[10997-11025]:ExpressionStatement[11073-11101]"
+    }, {
+      "left" : "if (result == PhoneConstants.PIN_PASSWORD_INCORRECT)",
+      "right" : "if (result == PhoneConstants.PIN_PASSWORD_INCORRECT)",
+      "info" : "IfStatement[11058-12367]:IfStatement[11134-12443]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11111-11993]:Block[11187-12069]"
+    }, {
+      "left" : "mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                                            attemptsRemaining, false), true);",
+      "right" : "mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                                            attemptsRemaining, false), true);",
+      "info" : "ExpressionStatement[11201-11341]:ExpressionStatement[11277-11417]"
+    }, {
+      "left" : "if (attemptsRemaining <= 2)",
+      "right" : "if (attemptsRemaining <= 2)",
+      "info" : "IfStatement[11378-11959]:IfStatement[11454-12035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11406-11624]:Block[11482-11700]"
+    }, {
+      "left" : "getPinRemainingAttemptsDialog(attemptsRemaining).show();",
+      "right" : "getPinRemainingAttemptsDialog(attemptsRemaining).show();",
+      "info" : "ExpressionStatement[11530-11586]:ExpressionStatement[11606-11662]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11630-11959]:Block[11706-12035]"
+    }, {
+      "left" : "mSecurityMessageDisplay.setMessage(\n                                                getPinPasswordErrorMessage(\n                                                attemptsRemaining, false), true);",
+      "right" : "mSecurityMessageDisplay.setMessage(\n                                                getPinPasswordErrorMessage(\n                                                attemptsRemaining, false), true);",
+      "info" : "ExpressionStatement[11728-11921]:ExpressionStatement[11804-11997]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11999-12367]:Block[12075-12443]"
+    }, {
+      "left" : "mSecurityMessageDisplay.setMessage(getContext().getString(\n                                            R.string.kg_password_pin_failed), true);",
+      "right" : "mSecurityMessageDisplay.setMessage(getContext().getString(\n                                            R.string.kg_password_pin_failed), true);",
+      "info" : "ExpressionStatement[12190-12333]:ExpressionStatement[12266-12409]"
+    }, {
+      "left" : "if (DEBUG)",
+      "right" : "if (DEBUG)",
+      "info" : "IfStatement[12400-12625]:IfStatement[12476-12701]"
+    }, {
+      "left" : "Log.d(LOG_TAG, \"verifyPasswordAndUnlock \"\n                                        + \" CheckSimPin.onSimCheckResponse: \" + result\n                                        + \" attemptsRemaining=\" + attemptsRemaining);",
+      "right" : "Log.d(LOG_TAG, \"verifyPasswordAndUnlock \"\n                                        + \" CheckSimPin.onSimCheckResponse: \" + result\n                                        + \" attemptsRemaining=\" + attemptsRemaining);",
+      "info" : "ExpressionStatement[12411-12625]:ExpressionStatement[12487-12701]"
+    }, {
+      "left" : "resetPasswordText(true /* animate */);",
+      "right" : "resetPasswordText(true /* animate */);",
+      "info" : "ExpressionStatement[12658-12696]:ExpressionStatement[12734-12772]"
+    }, {
+      "left" : "mCallback.userActivity();",
+      "right" : "mCallback.userActivity();",
+      "info" : "ExpressionStatement[12755-12780]:ExpressionStatement[12831-12856]"
+    }, {
+      "left" : "mCheckSimPinThread = null;",
+      "right" : "mCheckSimPinThread = null;",
+      "info" : "ExpressionStatement[12809-12835]:ExpressionStatement[12885-12911]"
+    }, {
+      "left" : "mCheckSimPinThread.start();",
+      "right" : "mCheckSimPinThread.start();",
+      "info" : "ExpressionStatement[12931-12958]:ExpressionStatement[13007-13034]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[12980-12989]:MarkerAnnotation[13056-13065]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[12994-13000]:Modifier[13070-13076]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13001-13005]:PrimitiveType[13077-13081]"
+    }, {
+      "left" : "startAppearAnimation",
+      "right" : "startAppearAnimation",
+      "info" : "SimpleName[13006-13026]:SimpleName[13082-13102]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13029-13053]:Block[13105-13129]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13059-13068]:MarkerAnnotation[13135-13144]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13073-13079]:Modifier[13149-13155]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[13080-13087]:PrimitiveType[13156-13163]"
+    }, {
+      "left" : "startDisappearAnimation",
+      "right" : "startDisappearAnimation",
+      "info" : "SimpleName[13088-13111]:SimpleName[13164-13187]"
+    }, {
+      "left" : "Runnable finishRunnable",
+      "right" : "Runnable finishRunnable",
+      "info" : "SingleVariableDeclaration[13112-13135]:SingleVariableDeclaration[13188-13211]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13137-13166]:Block[13213-13242]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[13147-13160]:ReturnStatement[13223-13236]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13172-13179]:Modifier[13248-13255]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13180-13184]:PrimitiveType[13256-13260]"
+    }, {
+      "left" : "handleSubInfoChangeIfNeeded",
+      "right" : "handleSubInfoChangeIfNeeded",
+      "info" : "SimpleName[13185-13212]:SimpleName[13261-13288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13215-13514]:Block[13291-13590]"
+    }, {
+      "left" : "int subId = mKgUpdateMonitor.getSimPinLockSubId();",
+      "right" : "int subId = mKgUpdateMonitor.getSimPinLockSubId();",
+      "info" : "VariableDeclarationStatement[13225-13275]:VariableDeclarationStatement[13301-13351]"
+    }, {
+      "left" : "if (subId != mSubId && SubscriptionManager.isValidSubscriptionId(subId))",
+      "right" : "if (subId != mSubId && SubscriptionManager.isValidSubscriptionId(subId))",
+      "info" : "IfStatement[13284-13508]:IfStatement[13360-13584]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13357-13508]:Block[13433-13584]"
+    }, {
+      "left" : "mSubId = subId;",
+      "right" : "mSubId = subId;",
+      "info" : "ExpressionStatement[13371-13386]:ExpressionStatement[13447-13462]"
+    }, {
+      "left" : "handleSubInfoChange();",
+      "right" : "handleSubInfoChange();",
+      "info" : "ExpressionStatement[13399-13421]:ExpressionStatement[13475-13497]"
+    }, {
+      "left" : "mRemainingAttempts = -1;",
+      "right" : "mRemainingAttempts = -1;",
+      "info" : "ExpressionStatement[13434-13458]:ExpressionStatement[13510-13534]"
+    }, {
+      "left" : "mShowDefaultMessage = true;",
+      "right" : "mShowDefaultMessage = true;",
+      "info" : "ExpressionStatement[13471-13498]:ExpressionStatement[13547-13574]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13520-13527]:Modifier[13596-13603]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13528-13532]:PrimitiveType[13604-13608]"
+    }, {
+      "left" : "handleSubInfoChange",
+      "right" : "handleSubInfoChange",
+      "info" : "SimpleName[13533-13552]:SimpleName[13609-13628]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13555-14410]:Block[13631-14486]"
+    }, {
+      "left" : "SubscriptionInfo info =\n            SubscriptionManager.from(mContext).getActiveSubscriptionInfo(mSubId);",
+      "right" : "SubscriptionInfo info =\n            SubscriptionManager.from(mContext).getActiveSubscriptionInfo(mSubId);",
+      "info" : "VariableDeclarationStatement[13565-13670]:VariableDeclarationStatement[13641-13746]"
+    }, {
+      "left" : "CharSequence displayName = null;",
+      "right" : "CharSequence displayName = null;",
+      "info" : "VariableDeclarationStatement[13679-13711]:VariableDeclarationStatement[13755-13787]"
+    }, {
+      "left" : "if (info != null)",
+      "right" : "if (info != null)",
+      "info" : "IfStatement[13721-13799]:IfStatement[13797-13875]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13739-13799]:Block[13815-13875]"
+    }, {
+      "left" : "displayName = info.getDisplayName();",
+      "right" : "displayName = info.getDisplayName();",
+      "info" : "ExpressionStatement[13753-13789]:ExpressionStatement[13829-13865]"
+    }, {
+      "left" : "if (displayName == null)",
+      "right" : "if (displayName == null)",
+      "info" : "IfStatement[13808-13976]:IfStatement[13884-14052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13833-13976]:Block[13909-14052]"
+    }, {
+      "left" : "displayName = mContext.getString(R.string.kg_slot_name,\n                    SubscriptionManager.getSlotId(mSubId) + 1);",
+      "right" : "displayName = mContext.getString(R.string.kg_slot_name,\n                    SubscriptionManager.getSlotId(mSubId) + 1);",
+      "info" : "ExpressionStatement[13847-13966]:ExpressionStatement[13923-14042]"
+    }, {
+      "left" : "if (DEBUG)",
+      "right" : "if (DEBUG)",
+      "info" : "IfStatement[13986-14098]:IfStatement[14062-14174]"
+    }, {
+      "left" : "Log.i(TAG, \"handleSubInfoChange, mSubId=\" + mSubId +\n                \", displayName=\" + displayName);",
+      "right" : "Log.i(TAG, \"handleSubInfoChange, mSubId=\" + mSubId +\n                \", displayName=\" + displayName);",
+      "info" : "ExpressionStatement[13997-14098]:ExpressionStatement[14073-14174]"
+    }, {
+      "left" : "mSubNameView.setText(displayName);",
+      "right" : "mSubNameView.setText(displayName);",
+      "info" : "ExpressionStatement[14107-14141]:ExpressionStatement[14183-14217]"
+    }, {
+      "left" : "if (mKgUpdateMonitor.getNumPhones() > 1)",
+      "right" : "if (mKgUpdateMonitor.getNumPhones() > 1)",
+      "info" : "IfStatement[14151-14404]:IfStatement[14227-14480]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14192-14404]:Block[14268-14480]"
+    }, {
+      "left" : "final int color = info != null && info.getIconTint() != 0\n                    ? info.getIconTint() : Color.WHITE;",
+      "right" : "final int color = info != null && info.getIconTint() != 0\n                    ? info.getIconTint() : Color.WHITE;",
+      "info" : "VariableDeclarationStatement[14206-14319]:VariableDeclarationStatement[14282-14395]"
+    }, {
+      "left" : "mSimImageView.setImageTintList(ColorStateList.valueOf(color));",
+      "right" : "mSimImageView.setImageTintList(ColorStateList.valueOf(color));",
+      "info" : "ExpressionStatement[14332-14394]:ExpressionStatement[14408-14470]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[14416-14423]:Modifier[14492-14499]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14424-14428]:PrimitiveType[14500-14504]"
+    }, {
+      "left" : "showDefaultMessage",
+      "right" : "showDefaultMessage",
+      "info" : "SimpleName[14429-14447]:SimpleName[14505-14523]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14450-14760]:Block[14526-14836]"
+    }, {
+      "left" : "if (mRemainingAttempts >= 0)",
+      "right" : "if (mRemainingAttempts >= 0)",
+      "info" : "IfStatement[14460-14754]:IfStatement[14536-14830]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14489-14649]:Block[14565-14725]"
+    }, {
+      "left" : "mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                    mRemainingAttempts, true), true);",
+      "right" : "mSecurityMessageDisplay.setMessage(getPinPasswordErrorMessage(\n                    mRemainingAttempts, true), true);",
+      "info" : "ExpressionStatement[14503-14619]:ExpressionStatement[14579-14695]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[14632-14639]:ReturnStatement[14708-14715]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14655-14754]:Block[14731-14830]"
+    }, {
+      "left" : "mSecurityMessageDisplay.setMessage(R.string.kg_sim_pin_instructions, true);",
+      "right" : "mSecurityMessageDisplay.setMessage(R.string.kg_sim_pin_instructions, true);",
+      "info" : "ExpressionStatement[14669-14744]:ExpressionStatement[14745-14820]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

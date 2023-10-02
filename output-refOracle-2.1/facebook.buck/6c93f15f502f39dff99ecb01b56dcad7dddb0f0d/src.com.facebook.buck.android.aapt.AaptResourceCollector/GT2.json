@@ -1,0 +1,145 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "AaptResourceCollector",
+      "right" : "AaptResourceCollector",
+      "info" : "TypeDeclaration[1023-3001]:TypeDeclaration[1071-3297]"
+    }, {
+      "left" : "private int currentTypeId;",
+      "right" : "private int currentTypeId;",
+      "info" : "FieldDeclaration[1356-1382]:FieldDeclaration[1404-1430]"
+    }, {
+      "left" : "private final Map<RType, ResourceIdEnumerator> enumerators;",
+      "right" : "private final Map<RType, ResourceIdEnumerator> enumerators;",
+      "info" : "FieldDeclaration[1385-1444]:FieldDeclaration[1433-1492]"
+    }, {
+      "left" : "private final Set<RDotTxtEntry> resources;",
+      "right" : "private final Set<RDotTxtEntry> resources;",
+      "info" : "FieldDeclaration[1447-1489]:FieldDeclaration[1495-1537]"
+    }, {
+      "left" : "public AaptResourceCollector()",
+      "right" : "public AaptResourceCollector()",
+      "info" : "MethodDeclaration[1493-1639]:MethodDeclaration[1541-1687]"
+    }, {
+      "left" : "public void addIntResourceIfNotPresent(RType rType, String name)",
+      "right" : "ResourceIdEnumerator getEnumerator(RType rType)",
+      "info" : "MethodDeclaration[1643-2098]:MethodDeclaration[2838-3062]"
+    }, {
+      "left" : "public void addIntArrayResourceIfNotPresent(RType rType, String name, int numValues)",
+      "right" : "public void addIntArrayResourceIfNotPresent(RType rType, String name, int numValues)",
+      "info" : "MethodDeclaration[2102-2509]:MethodDeclaration[2011-2577]"
+    }, {
+      "left" : "public void addResource(RType rType, IdType idType, String name, String idValue)",
+      "right" : "public void addResource(RType rType, IdType idType, String name, String idValue)",
+      "info" : "MethodDeclaration[2513-2666]:MethodDeclaration[2581-2734]"
+    }, {
+      "left" : "public Set<RDotTxtEntry> getResources()",
+      "right" : "public Set<RDotTxtEntry> getResources()",
+      "info" : "MethodDeclaration[2670-2766]:MethodDeclaration[2738-2834]"
+    }, {
+      "left" : "ResourceIdEnumerator",
+      "right" : "ResourceIdEnumerator",
+      "info" : "TypeDeclaration[2770-2999]:TypeDeclaration[3066-3295]"
+    }, {
+      "left" : "private int currentId;",
+      "right" : "private int currentId;",
+      "info" : "FieldDeclaration[2819-2841]:FieldDeclaration[3115-3137]"
+    }, {
+      "left" : "ResourceIdEnumerator(int typeId)",
+      "right" : "ResourceIdEnumerator(int typeId)",
+      "info" : "MethodDeclaration[2847-2945]:MethodDeclaration[3143-3241]"
+    }, {
+      "left" : "int next()",
+      "right" : "int next()",
+      "info" : "MethodDeclaration[2951-2995]:MethodDeclaration[3247-3291]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1524-1639]:Block[1572-1687]"
+    }, {
+      "left" : "this.enumerators = Maps.newHashMap();",
+      "right" : "this.enumerators = Maps.newHashMap();",
+      "info" : "ExpressionStatement[1530-1567]:ExpressionStatement[1578-1615]"
+    }, {
+      "left" : "this.resources = Sets.newHashSet();",
+      "right" : "this.resources = Sets.newHashSet();",
+      "info" : "ExpressionStatement[1572-1607]:ExpressionStatement[1620-1655]"
+    }, {
+      "left" : "this.currentTypeId = 1;",
+      "right" : "this.currentTypeId = 1;",
+      "info" : "ExpressionStatement[1612-1635]:ExpressionStatement[1660-1683]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1708-2098]:Block[2886-3062]"
+    }, {
+      "left" : "if (!enumerators.containsKey(rType))",
+      "right" : "if (!enumerators.containsKey(rType))",
+      "info" : "IfStatement[1714-1831]:IfStatement[2892-3009]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1751-1831]:Block[2929-3009]"
+    }, {
+      "left" : "enumerators.put(rType, new ResourceIdEnumerator(currentTypeId++));",
+      "right" : "enumerators.put(rType, new ResourceIdEnumerator(currentTypeId++));",
+      "info" : "ExpressionStatement[1759-1825]:ExpressionStatement[2937-3003]"
+    }, {
+      "left" : "RDotTxtEntry entry = new FakeRDotTxtEntry(IdType.INT, rType, name);",
+      "right" : "RDotTxtEntry entry = new FakeRDotTxtEntry(IdType.INT, rType, name);",
+      "info" : "VariableDeclarationStatement[1837-1904]:VariableDeclarationStatement[1762-1829]"
+    }, {
+      "left" : "addResource(rType, IdType.INT, name, idValue);",
+      "right" : "addResource(rType, IdType.INT, name, idValue);",
+      "info" : "ExpressionStatement[2042-2088]:ExpressionStatement[1951-1997]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2187-2509]:Block[2096-2577]"
+    }, {
+      "left" : "String idValue = String.format(\n        \"{ %s }\",\n        Joiner.on(\",\").join(Collections.nCopies(numValues, \"0x7f000000\")));",
+      "right" : "String idValue = String.format(\n        \"{ %s }\",\n        Joiner.on(\",\").join(values.build()));",
+      "info" : "VariableDeclarationStatement[2323-2448]:VariableDeclarationStatement[2421-2516]"
+    }, {
+      "left" : "addResource(rType, IdType.INT_ARRAY, name, idValue);",
+      "right" : "addResource(rType, IdType.INT_ARRAY, name, idValue);",
+      "info" : "ExpressionStatement[2453-2505]:ExpressionStatement[2521-2573]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2594-2666]:Block[2662-2734]"
+    }, {
+      "left" : "resources.add(new RDotTxtEntry(idType, rType, name, idValue));",
+      "right" : "resources.add(new RDotTxtEntry(idType, rType, name, idValue));",
+      "info" : "ExpressionStatement[2600-2662]:ExpressionStatement[2668-2730]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2710-2766]:Block[2778-2834]"
+    }, {
+      "left" : "return Collections.unmodifiableSet(resources);",
+      "right" : "return Collections.unmodifiableSet(resources);",
+      "info" : "ReturnStatement[2716-2762]:ReturnStatement[2784-2830]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2880-2945]:Block[3176-3241]"
+    }, {
+      "left" : "this.currentId = 0x7f000000 + 0x10000 * typeId + 1;",
+      "right" : "this.currentId = 0x7f000000 + 0x10000 * typeId + 1;",
+      "info" : "ExpressionStatement[2888-2939]:ExpressionStatement[3184-3235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2962-2995]:Block[3258-3291]"
+    }, {
+      "left" : "return currentId++;",
+      "right" : "return currentId++;",
+      "info" : "ReturnStatement[2970-2989]:ReturnStatement[3266-3285]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

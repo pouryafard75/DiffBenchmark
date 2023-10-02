@@ -1,0 +1,677 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "BrentOptimizer",
+      "right" : "BrentOptimizer",
+      "info" : "TypeDeclaration[1174-8933]:TypeDeclaration[1174-8070]"
+    }, {
+      "left" : "private static final double GOLDEN_SECTION = 0.5 * (3 - Math.sqrt(5));",
+      "right" : "private static final double GOLDEN_SECTION = 0.5 * (3 - Math.sqrt(5));",
+      "info" : "FieldDeclaration[1583-1692]:FieldDeclaration[1583-1692]"
+    }, {
+      "left" : "public BrentOptimizer()",
+      "right" : "public BrentOptimizer()",
+      "info" : "MethodDeclaration[1698-1931]:MethodDeclaration[1698-1915]"
+    }, {
+      "left" : "public double optimize(final UnivariateRealFunction f, final GoalType goalType, final double min, final double max, final double startValue) throws MaxIterationsExceededException, FunctionEvaluationException",
+      "right" : "protected double doOptimize()\n        throws MaxIterationsExceededException, FunctionEvaluationException",
+      "info" : "MethodDeclaration[2189-2617]:MethodDeclaration[1921-2309]"
+    }, {
+      "left" : "private double localMin(boolean isMinim,\n                            UnivariateRealFunction f,\n                            GoalType goalType,\n                            double lo, double mid, double hi,\n                            double eps, double t)\n        throws MaxIterationsExceededException, FunctionEvaluationException",
+      "right" : "private double localMin(boolean isMinim,\n                            double lo, double mid, double hi,\n                            double eps, double t)\n        throws MaxIterationsExceededException, FunctionEvaluationException",
+      "info" : "MethodDeclaration[2902-8931]:MethodDeclaration[2315-8068]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1509-1515]:Modifier[1509-1515]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1516-1521]:TYPE_DECLARATION_KIND[1516-1521]"
+    }, {
+      "left" : "BrentOptimizer",
+      "right" : "BrentOptimizer",
+      "info" : "SimpleName[1522-1536]:SimpleName[1522-1536]"
+    }, {
+      "left" : "AbstractUnivariateRealOptimizer",
+      "right" : "AbstractUnivariateRealOptimizer",
+      "info" : "SimpleType[1545-1576]:SimpleType[1545-1576]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1741-1747]:Modifier[1741-1747]"
+    }, {
+      "left" : "BrentOptimizer",
+      "right" : "BrentOptimizer",
+      "info" : "SimpleName[1748-1762]:SimpleName[1748-1762]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1765-1931]:Block[1765-1915]"
+    }, {
+      "left" : "setMaxEvaluations(Integer.MAX_VALUE);",
+      "right" : "setMaxEvaluations(1000);",
+      "info" : "ExpressionStatement[1775-1812]:ExpressionStatement[1775-1799]"
+    }, {
+      "left" : "setMaximalIterationCount(100);",
+      "right" : "setMaximalIterationCount(100);",
+      "info" : "ExpressionStatement[1821-1851]:ExpressionStatement[1808-1838]"
+    }, {
+      "left" : "setAbsoluteAccuracy(1E-10);",
+      "right" : "setAbsoluteAccuracy(1e-11);",
+      "info" : "ExpressionStatement[1860-1887]:ExpressionStatement[1847-1874]"
+    }, {
+      "left" : "1E-10",
+      "right" : "1e-11",
+      "info" : "NumberLiteral[1880-1885]:NumberLiteral[1867-1872]"
+    }, {
+      "left" : "setRelativeAccuracy(1.0e-14);",
+      "right" : "setRelativeAccuracy(1e-9);",
+      "info" : "ExpressionStatement[1896-1925]:ExpressionStatement[1883-1909]"
+    }, {
+      "left" : "1.0e-14",
+      "right" : "1e-9",
+      "info" : "NumberLiteral[1916-1923]:NumberLiteral[1903-1907]"
+    }, {
+      "left" : "public",
+      "right" : "protected",
+      "info" : "Modifier[2189-2195]:Modifier[2005-2014]"
+    }, {
+      "left" : "double",
+      "right" : "double",
+      "info" : "PrimitiveType[2196-2202]:PrimitiveType[2015-2021]"
+    }, {
+      "left" : "optimize",
+      "right" : "doOptimize",
+      "info" : "SimpleName[2203-2211]:SimpleName[2022-2032]"
+    }, {
+      "left" : "MaxIterationsExceededException",
+      "right" : "MaxIterationsExceededException",
+      "info" : "SimpleType[2337-2367]:SimpleType[2050-2080]"
+    }, {
+      "left" : "FunctionEvaluationException",
+      "right" : "FunctionEvaluationException",
+      "info" : "SimpleType[2369-2396]:SimpleType[2082-2109]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2397-2617]:Block[2110-2309]"
+    }, {
+      "left" : "return localMin(getGoalType() == GoalType.MINIMIZE,\n                        f, goalType, min, startValue, max,\n                        getRelativeAccuracy(), getAbsoluteAccuracy());",
+      "right" : "return localMin(getGoalType() == GoalType.MINIMIZE,\n                        getMin(), getStartValue(), getMax(),\n                        getRelativeAccuracy(), getAbsoluteAccuracy());",
+      "info" : "ReturnStatement[2430-2611]:ReturnStatement[2120-2303]"
+    }, {
+      "left" : "min",
+      "right" : "getMin",
+      "info" : "SimpleName[2519-2522]:SimpleName[2196-2202]"
+    }, {
+      "left" : "startValue",
+      "right" : "getStartValue",
+      "info" : "SimpleName[2524-2534]:SimpleName[2206-2219]"
+    }, {
+      "left" : "max",
+      "right" : "getMax",
+      "info" : "SimpleName[2536-2539]:SimpleName[2223-2229]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4113-4120]:Modifier[3526-3533]"
+    }, {
+      "left" : "double",
+      "right" : "double",
+      "info" : "PrimitiveType[4121-4127]:PrimitiveType[3534-3540]"
+    }, {
+      "left" : "localMin",
+      "right" : "localMin",
+      "info" : "SimpleName[4128-4136]:SimpleName[3541-3549]"
+    }, {
+      "left" : "boolean isMinim",
+      "right" : "boolean isMinim",
+      "info" : "SingleVariableDeclaration[4137-4152]:SingleVariableDeclaration[3550-3565]"
+    }, {
+      "left" : "double lo",
+      "right" : "double lo",
+      "info" : "SingleVariableDeclaration[4283-4292]:SingleVariableDeclaration[3595-3604]"
+    }, {
+      "left" : "double mid",
+      "right" : "double mid",
+      "info" : "SingleVariableDeclaration[4294-4304]:SingleVariableDeclaration[3606-3616]"
+    }, {
+      "left" : "double hi",
+      "right" : "double hi",
+      "info" : "SingleVariableDeclaration[4306-4315]:SingleVariableDeclaration[3618-3627]"
+    }, {
+      "left" : "double eps",
+      "right" : "double eps",
+      "info" : "SingleVariableDeclaration[4345-4355]:SingleVariableDeclaration[3657-3667]"
+    }, {
+      "left" : "double t",
+      "right" : "double t",
+      "info" : "SingleVariableDeclaration[4357-4365]:SingleVariableDeclaration[3669-3677]"
+    }, {
+      "left" : "MaxIterationsExceededException",
+      "right" : "MaxIterationsExceededException",
+      "info" : "SimpleType[4382-4412]:SimpleType[3694-3724]"
+    }, {
+      "left" : "FunctionEvaluationException",
+      "right" : "FunctionEvaluationException",
+      "info" : "SimpleType[4414-4441]:SimpleType[3726-3753]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4442-8931]:Block[3754-8068]"
+    }, {
+      "left" : "if (eps <= 0)",
+      "right" : "if (eps <= 0)",
+      "info" : "IfStatement[4452-4534]:IfStatement[3764-3846]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4466-4534]:Block[3778-3846]"
+    }, {
+      "left" : "throw new NotStrictlyPositiveException(eps);",
+      "right" : "throw new NotStrictlyPositiveException(eps);",
+      "info" : "ThrowStatement[4480-4524]:ThrowStatement[3792-3836]"
+    }, {
+      "left" : "if (t <= 0)",
+      "right" : "if (t <= 0)",
+      "info" : "IfStatement[4543-4621]:IfStatement[3855-3933]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4555-4621]:Block[3867-3933]"
+    }, {
+      "left" : "throw new NotStrictlyPositiveException(t);",
+      "right" : "throw new NotStrictlyPositiveException(t);",
+      "info" : "ThrowStatement[4569-4611]:ThrowStatement[3881-3923]"
+    }, {
+      "left" : "double a, b;",
+      "right" : "double a, b;",
+      "info" : "VariableDeclarationStatement[4630-4642]:VariableDeclarationStatement[3942-3954]"
+    }, {
+      "left" : "if (lo < hi)",
+      "right" : "if (lo < hi)",
+      "info" : "IfStatement[4651-4772]:IfStatement[3963-4084]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4664-4715]:Block[3976-4027]"
+    }, {
+      "left" : "a = lo;",
+      "right" : "a = lo;",
+      "info" : "ExpressionStatement[4678-4685]:ExpressionStatement[3990-3997]"
+    }, {
+      "left" : "b = hi;",
+      "right" : "b = hi;",
+      "info" : "ExpressionStatement[4698-4705]:ExpressionStatement[4010-4017]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4721-4772]:Block[4033-4084]"
+    }, {
+      "left" : "a = hi;",
+      "right" : "a = hi;",
+      "info" : "ExpressionStatement[4735-4742]:ExpressionStatement[4047-4054]"
+    }, {
+      "left" : "b = lo;",
+      "right" : "b = lo;",
+      "info" : "ExpressionStatement[4755-4762]:ExpressionStatement[4067-4074]"
+    }, {
+      "left" : "double x = mid;",
+      "right" : "double x = mid;",
+      "info" : "VariableDeclarationStatement[4782-4797]:VariableDeclarationStatement[4094-4109]"
+    }, {
+      "left" : "double v = x;",
+      "right" : "double v = x;",
+      "info" : "VariableDeclarationStatement[4806-4819]:VariableDeclarationStatement[4118-4131]"
+    }, {
+      "left" : "double w = x;",
+      "right" : "double w = x;",
+      "info" : "VariableDeclarationStatement[4828-4841]:VariableDeclarationStatement[4140-4153]"
+    }, {
+      "left" : "double d = 0;",
+      "right" : "double d = 0;",
+      "info" : "VariableDeclarationStatement[4850-4863]:VariableDeclarationStatement[4162-4175]"
+    }, {
+      "left" : "double e = 0;",
+      "right" : "double e = 0;",
+      "info" : "VariableDeclarationStatement[4872-4885]:VariableDeclarationStatement[4184-4197]"
+    }, {
+      "left" : "double fx = computeObjectiveValue(f, x);",
+      "right" : "double fx = computeObjectiveValue(x);",
+      "info" : "VariableDeclarationStatement[4894-4934]:VariableDeclarationStatement[4206-4243]"
+    }, {
+      "left" : "if (goalType == GoalType.MAXIMIZE)",
+      "right" : "if (!isMinim)",
+      "info" : "IfStatement[4943-5011]:IfStatement[4252-4299]"
+    }, {
+      "left" : "goalType",
+      "right" : "isMinim",
+      "info" : "SimpleName[4947-4955]:SimpleName[4257-4264]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4978-5011]:Block[4266-4299]"
+    }, {
+      "left" : "fx = -fx;",
+      "right" : "fx = -fx;",
+      "info" : "ExpressionStatement[4992-5001]:ExpressionStatement[4280-4289]"
+    }, {
+      "left" : "double fv = fx;",
+      "right" : "double fv = fx;",
+      "info" : "VariableDeclarationStatement[5020-5035]:VariableDeclarationStatement[4308-4323]"
+    }, {
+      "left" : "double fw = fx;",
+      "right" : "double fw = fx;",
+      "info" : "VariableDeclarationStatement[5044-5059]:VariableDeclarationStatement[4332-4347]"
+    }, {
+      "left" : "while (count < maximalIterationCount)",
+      "right" : "while (true)",
+      "info" : "WhileStatement[5092-8852]:WhileStatement[4357-8062]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5130-8852]:Block[4370-8062]"
+    }, {
+      "left" : "double m = 0.5 * (a + b);",
+      "right" : "double m = 0.5 * (a + b);",
+      "info" : "VariableDeclarationStatement[5144-5169]:VariableDeclarationStatement[4384-4409]"
+    }, {
+      "left" : "final double tol1 = eps * Math.abs(x) + t;",
+      "right" : "final double tol1 = eps * Math.abs(x) + t;",
+      "info" : "VariableDeclarationStatement[5182-5224]:VariableDeclarationStatement[4422-4464]"
+    }, {
+      "left" : "final double tol2 = 2 * tol1;",
+      "right" : "final double tol2 = 2 * tol1;",
+      "info" : "VariableDeclarationStatement[5237-5266]:VariableDeclarationStatement[4477-4506]"
+    }, {
+      "left" : "if (Math.abs(x - m) > tol2 - 0.5 * (b - a))",
+      "right" : "if (Math.abs(x - m) > tol2 - 0.5 * (b - a))",
+      "info" : "IfStatement[5321-8821]:IfStatement[4561-8010]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5365-8678]:Block[4605-7894]"
+    }, {
+      "left" : "double p = 0;",
+      "right" : "double p = 0;",
+      "info" : "VariableDeclarationStatement[5383-5396]:VariableDeclarationStatement[4623-4636]"
+    }, {
+      "left" : "double q = 0;",
+      "right" : "double q = 0;",
+      "info" : "VariableDeclarationStatement[5413-5426]:VariableDeclarationStatement[4653-4666]"
+    }, {
+      "left" : "double r = 0;",
+      "right" : "double r = 0;",
+      "info" : "VariableDeclarationStatement[5443-5456]:VariableDeclarationStatement[4683-4696]"
+    }, {
+      "left" : "double u = 0;",
+      "right" : "double u = 0;",
+      "info" : "VariableDeclarationStatement[5473-5486]:VariableDeclarationStatement[4713-4726]"
+    }, {
+      "left" : "if (Math.abs(e) > tol1)",
+      "right" : "if (Math.abs(e) > tol1)",
+      "info" : "IfStatement[5504-7192]:IfStatement[4744-6432]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5528-6925]:Block[4768-6165]"
+    }, {
+      "left" : "r = (x - w) * (fx - fv);",
+      "right" : "r = (x - w) * (fx - fv);",
+      "info" : "ExpressionStatement[5567-5591]:ExpressionStatement[4807-4831]"
+    }, {
+      "left" : "q = (x - v) * (fx - fw);",
+      "right" : "q = (x - v) * (fx - fw);",
+      "info" : "ExpressionStatement[5612-5636]:ExpressionStatement[4852-4876]"
+    }, {
+      "left" : "p = (x - v) * q - (x - w) * r;",
+      "right" : "p = (x - v) * q - (x - w) * r;",
+      "info" : "ExpressionStatement[5657-5687]:ExpressionStatement[4897-4927]"
+    }, {
+      "left" : "q = 2 * (q - r);",
+      "right" : "q = 2 * (q - r);",
+      "info" : "ExpressionStatement[5708-5724]:ExpressionStatement[4948-4964]"
+    }, {
+      "left" : "if (q > 0)",
+      "right" : "if (q > 0)",
+      "info" : "IfStatement[5746-5873]:IfStatement[4986-5113]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5757-5812]:Block[4997-5052]"
+    }, {
+      "left" : "p = -p;",
+      "right" : "p = -p;",
+      "info" : "ExpressionStatement[5783-5790]:ExpressionStatement[5023-5030]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5818-5873]:Block[5058-5113]"
+    }, {
+      "left" : "q = -q;",
+      "right" : "q = -q;",
+      "info" : "ExpressionStatement[5844-5851]:ExpressionStatement[5084-5091]"
+    }, {
+      "left" : "r = e;",
+      "right" : "r = e;",
+      "info" : "ExpressionStatement[5895-5901]:ExpressionStatement[5135-5141]"
+    }, {
+      "left" : "e = d;",
+      "right" : "e = d;",
+      "info" : "ExpressionStatement[5922-5928]:ExpressionStatement[5162-5168]"
+    }, {
+      "left" : "if (p > q * (a - x)\n                        && p < q * (b - x)\n                        && Math.abs(p) < Math.abs(0.5 * q * r))",
+      "right" : "if (p > q * (a - x)\n                        && p < q * (b - x)\n                        && Math.abs(p) < Math.abs(0.5 * q * r))",
+      "info" : "IfStatement[5950-6907]:IfStatement[5190-6147]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6077-6608]:Block[5317-5848]"
+    }, {
+      "left" : "d = p / q;",
+      "right" : "d = p / q;",
+      "info" : "ExpressionStatement[6160-6170]:ExpressionStatement[5400-5410]"
+    }, {
+      "left" : "u = x + d;",
+      "right" : "u = x + d;",
+      "info" : "ExpressionStatement[6195-6205]:ExpressionStatement[5435-5445]"
+    }, {
+      "left" : "if (u - a < tol2\n                            || b - u < tol2)",
+      "right" : "if (u - a < tol2\n                            || b - u < tol2)",
+      "info" : "IfStatement[6303-6586]:IfStatement[5543-5826]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6365-6586]:Block[5605-5826]"
+    }, {
+      "left" : "if (x <= m)",
+      "right" : "if (x <= m)",
+      "info" : "IfStatement[6395-6560]:IfStatement[5635-5800]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6407-6480]:Block[5647-5720]"
+    }, {
+      "left" : "d = tol1;",
+      "right" : "d = tol1;",
+      "info" : "ExpressionStatement[6441-6450]:ExpressionStatement[5681-5690]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6486-6560]:Block[5726-5800]"
+    }, {
+      "left" : "d = -tol1;",
+      "right" : "d = -tol1;",
+      "info" : "ExpressionStatement[6520-6530]:ExpressionStatement[5760-5770]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6614-6907]:Block[5854-6147]"
+    }, {
+      "left" : "if (x < m)",
+      "right" : "if (x < m)",
+      "info" : "IfStatement[6688-6837]:IfStatement[5928-6077]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6699-6765]:Block[5939-6005]"
+    }, {
+      "left" : "e = b - x;",
+      "right" : "e = b - x;",
+      "info" : "ExpressionStatement[6729-6739]:ExpressionStatement[5969-5979]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6771-6837]:Block[6011-6077]"
+    }, {
+      "left" : "e = a - x;",
+      "right" : "e = a - x;",
+      "info" : "ExpressionStatement[6801-6811]:ExpressionStatement[6041-6051]"
+    }, {
+      "left" : "d = GOLDEN_SECTION * e;",
+      "right" : "d = GOLDEN_SECTION * e;",
+      "info" : "ExpressionStatement[6862-6885]:ExpressionStatement[6102-6125]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6931-7192]:Block[6171-6432]"
+    }, {
+      "left" : "if (x < m)",
+      "right" : "if (x < m)",
+      "info" : "IfStatement[6997-7130]:IfStatement[6237-6370]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7008-7066]:Block[6248-6306]"
+    }, {
+      "left" : "e = b - x;",
+      "right" : "e = b - x;",
+      "info" : "ExpressionStatement[7034-7044]:ExpressionStatement[6274-6284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7072-7130]:Block[6312-6370]"
+    }, {
+      "left" : "e = a - x;",
+      "right" : "e = a - x;",
+      "info" : "ExpressionStatement[7098-7108]:ExpressionStatement[6338-6348]"
+    }, {
+      "left" : "d = GOLDEN_SECTION * e;",
+      "right" : "d = GOLDEN_SECTION * e;",
+      "info" : "ExpressionStatement[7151-7174]:ExpressionStatement[6391-6414]"
+    }, {
+      "left" : "if (Math.abs(d) < tol1)",
+      "right" : "if (Math.abs(d) < tol1)",
+      "info" : "IfStatement[7256-7516]:IfStatement[6496-6756]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7280-7460]:Block[6520-6700]"
+    }, {
+      "left" : "if (d >= 0)",
+      "right" : "if (d >= 0)",
+      "info" : "IfStatement[7302-7442]:IfStatement[6542-6682]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7314-7375]:Block[6554-6615]"
+    }, {
+      "left" : "u = x + tol1;",
+      "right" : "u = x + tol1;",
+      "info" : "ExpressionStatement[7340-7353]:ExpressionStatement[6580-6593]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7381-7442]:Block[6621-6682]"
+    }, {
+      "left" : "u = x - tol1;",
+      "right" : "u = x - tol1;",
+      "info" : "ExpressionStatement[7407-7420]:ExpressionStatement[6647-6660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7466-7516]:Block[6706-6756]"
+    }, {
+      "left" : "u = x + d;",
+      "right" : "u = x + d;",
+      "info" : "ExpressionStatement[7488-7498]:ExpressionStatement[6728-6738]"
+    }, {
+      "left" : "double fu = computeObjectiveValue(f, u);",
+      "right" : "double fu = computeObjectiveValue(u);",
+      "info" : "VariableDeclarationStatement[7534-7574]:VariableDeclarationStatement[6774-6811]"
+    }, {
+      "left" : "if (goalType == GoalType.MAXIMIZE)",
+      "right" : "if (!isMinim)",
+      "info" : "IfStatement[7591-7675]:IfStatement[6828-6891]"
+    }, {
+      "left" : "goalType",
+      "right" : "isMinim",
+      "info" : "SimpleName[7595-7603]:SimpleName[6833-6840]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7626-7675]:Block[6842-6891]"
+    }, {
+      "left" : "fu = -fu;",
+      "right" : "fu = -fu;",
+      "info" : "ExpressionStatement[7648-7657]:ExpressionStatement[6864-6873]"
+    }, {
+      "left" : "if (fu <= fx)",
+      "right" : "if (fu <= fx)",
+      "info" : "IfStatement[7737-8664]:IfStatement[6953-7880]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7751-8084]:Block[6967-7300]"
+    }, {
+      "left" : "if (u < x)",
+      "right" : "if (u < x)",
+      "info" : "IfStatement[7773-7898]:IfStatement[6989-7114]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7784-7838]:Block[7000-7054]"
+    }, {
+      "left" : "b = x;",
+      "right" : "b = x;",
+      "info" : "ExpressionStatement[7810-7816]:ExpressionStatement[7026-7032]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7844-7898]:Block[7060-7114]"
+    }, {
+      "left" : "a = x;",
+      "right" : "a = x;",
+      "info" : "ExpressionStatement[7870-7876]:ExpressionStatement[7086-7092]"
+    }, {
+      "left" : "v = w;",
+      "right" : "v = w;",
+      "info" : "ExpressionStatement[7919-7925]:ExpressionStatement[7135-7141]"
+    }, {
+      "left" : "fv = fw;",
+      "right" : "fv = fw;",
+      "info" : "ExpressionStatement[7946-7954]:ExpressionStatement[7162-7170]"
+    }, {
+      "left" : "w = x;",
+      "right" : "w = x;",
+      "info" : "ExpressionStatement[7975-7981]:ExpressionStatement[7191-7197]"
+    }, {
+      "left" : "fw = fx;",
+      "right" : "fw = fx;",
+      "info" : "ExpressionStatement[8002-8010]:ExpressionStatement[7218-7226]"
+    }, {
+      "left" : "x = u;",
+      "right" : "x = u;",
+      "info" : "ExpressionStatement[8031-8037]:ExpressionStatement[7247-7253]"
+    }, {
+      "left" : "fx = fu;",
+      "right" : "fx = fu;",
+      "info" : "ExpressionStatement[8058-8066]:ExpressionStatement[7274-7282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8090-8664]:Block[7306-7880]"
+    }, {
+      "left" : "if (u < x)",
+      "right" : "if (u < x)",
+      "info" : "IfStatement[8112-8237]:IfStatement[7328-7453]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8123-8177]:Block[7339-7393]"
+    }, {
+      "left" : "a = u;",
+      "right" : "a = u;",
+      "info" : "ExpressionStatement[8149-8155]:ExpressionStatement[7365-7371]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8183-8237]:Block[7399-7453]"
+    }, {
+      "left" : "b = u;",
+      "right" : "b = u;",
+      "info" : "ExpressionStatement[8209-8215]:ExpressionStatement[7425-7431]"
+    }, {
+      "left" : "if (fu <= fw\n                        || w == x)",
+      "right" : "if (fu <= fw\n                        || w == x)",
+      "info" : "IfStatement[8258-8646]:IfStatement[7474-7862]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8306-8457]:Block[7522-7673]"
+    }, {
+      "left" : "v = w;",
+      "right" : "v = w;",
+      "info" : "ExpressionStatement[8332-8338]:ExpressionStatement[7548-7554]"
+    }, {
+      "left" : "fv = fw;",
+      "right" : "fv = fw;",
+      "info" : "ExpressionStatement[8363-8371]:ExpressionStatement[7579-7587]"
+    }, {
+      "left" : "w = u;",
+      "right" : "w = u;",
+      "info" : "ExpressionStatement[8396-8402]:ExpressionStatement[7612-7618]"
+    }, {
+      "left" : "fw = fu;",
+      "right" : "fw = fu;",
+      "info" : "ExpressionStatement[8427-8435]:ExpressionStatement[7643-7651]"
+    }, {
+      "left" : "if (fu <= fv\n                               || v == x\n                               || v == w)",
+      "right" : "if (fu <= fv\n                               || v == x\n                               || v == w)",
+      "info" : "IfStatement[8463-8646]:IfStatement[7679-7862]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8559-8646]:Block[7775-7862]"
+    }, {
+      "left" : "v = u;",
+      "right" : "v = u;",
+      "info" : "ExpressionStatement[8585-8591]:ExpressionStatement[7801-7807]"
+    }, {
+      "left" : "fv = fu;",
+      "right" : "fv = fu;",
+      "info" : "ExpressionStatement[8616-8624]:ExpressionStatement[7832-7840]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8684-8821]:Block[7900-8010]"
+    }, {
+      "left" : "setResult",
+      "right" : "setFunctionValue",
+      "info" : "SimpleName[8717-8726]:SimpleName[7933-7949]"
+    }, {
+      "left" : "setResult(x, (goalType == GoalType.MAXIMIZE) ? -fx : fx, count);",
+      "right" : "setFunctionValue(isMinim ? fx : -fx);",
+      "info" : "ExpressionStatement[8717-8781]:ExpressionStatement[7933-7970]"
+    }, {
+      "left" : "x",
+      "right" : "isMinim",
+      "info" : "SimpleName[8727-8728]:SimpleName[7950-7957]"
+    }, {
+      "left" : "goalType",
+      "right" : "fx",
+      "info" : "SimpleName[8731-8739]:SimpleName[7960-7962]"
+    }, {
+      "left" : "-fx",
+      "right" : "-fx",
+      "info" : "PrefixExpression[8764-8767]:PrefixExpression[7965-7968]"
+    }, {
+      "left" : "return x;",
+      "right" : "return x;",
+      "info" : "ReturnStatement[8798-8807]:ReturnStatement[7987-7996]"
+    }, {
+      "left" : "++count;",
+      "right" : "incrementIterationsCounter();",
+      "info" : "ExpressionStatement[8834-8842]:ExpressionStatement[8023-8052]"
+    }, {
+      "left" : "count",
+      "right" : "incrementIterationsCounter",
+      "info" : "SimpleName[8836-8841]:SimpleName[8023-8049]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

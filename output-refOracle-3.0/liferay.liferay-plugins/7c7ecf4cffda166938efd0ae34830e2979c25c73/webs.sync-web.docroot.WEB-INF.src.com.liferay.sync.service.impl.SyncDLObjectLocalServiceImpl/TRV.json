@@ -1,0 +1,637 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "public SyncDLObject addSyncDLObject(\n\t\t\tlong companyId, long userId, String userName, long modifiedTime,\n\t\t\tlong repositoryId, long parentFolderId, String name,\n\t\t\tString extension, String mimeType, String description,\n\t\t\tString changeLog, String extraSettings, String version,\n\t\t\tlong versionId, long size, String checksum, String event,\n\t\t\tDate lockExpirationDate, long lockUserId, String lockUserName,\n\t\t\tString type, long typePK, String typeUuid)\n\t\tthrows PortalException, SystemException",
+      "right" : "public SyncDLObject addSyncDLObject(\n\t\t\tlong companyId, long userId, String userName, long modifiedTime,\n\t\t\tlong repositoryId, long parentFolderId, String name,\n\t\t\tString extension, String mimeType, String description,\n\t\t\tString changeLog, String extraSettings, String version,\n\t\t\tlong versionId, long size, String checksum, String event,\n\t\t\tDate lockExpirationDate, long lockUserId, String lockUserName,\n\t\t\tString type, long typePK, String typeUuid)\n\t\tthrows PortalException, SystemException",
+      "info" : "MethodDeclaration[1875-6264]:MethodDeclaration[1875-6264]"
+    }, {
+      "left" : "public void deleteSyncDLObjects(String version, String type)\n\t\tthrows SystemException",
+      "right" : "public void deleteSyncDLObjects(String version, String type)\n\t\tthrows SystemException",
+      "info" : "MethodDeclaration[6267-6423]:MethodDeclaration[6267-6423]"
+    }, {
+      "left" : "public SyncDLObject fetchSyncDLObject(String type, long typePK)\n\t\tthrows SystemException",
+      "right" : "public SyncDLObject fetchSyncDLObject(String type, long typePK)\n\t\tthrows SystemException",
+      "info" : "MethodDeclaration[6426-6590]:MethodDeclaration[6426-6590]"
+    }, {
+      "left" : "public long getLatestModifiedTime() throws SystemException",
+      "right" : "public long getLatestModifiedTime() throws SystemException",
+      "info" : "MethodDeclaration[6593-7138]:MethodDeclaration[6593-7138]"
+    }, {
+      "left" : "protected boolean isDefaultRepository(long folderId)\n\t\tthrows PortalException, SystemException",
+      "right" : "protected boolean isDefaultRepository(long folderId)\n\t\tthrows PortalException, SystemException",
+      "info" : "MethodDeclaration[7141-7423]:MethodDeclaration[7320-7602]"
+    }, {
+      "left" : "private static Log _log = LogFactoryUtil.getLog(\n\t\tSyncDLObjectLocalServiceImpl.class);",
+      "right" : "private static Log _log = LogFactoryUtil.getLog(\n\t\tSyncDLObjectLocalServiceImpl.class);",
+      "info" : "FieldDeclaration[7426-7513]:FieldDeclaration[7605-7692]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[1875-1884]:MarkerAnnotation[1875-1884]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1886-1892]:Modifier[1886-1892]"
+    }, {
+      "left" : "SyncDLObject",
+      "right" : "SyncDLObject",
+      "info" : "SimpleType[1893-1905]:SimpleType[1893-1905]"
+    }, {
+      "left" : "addSyncDLObject",
+      "right" : "addSyncDLObject",
+      "info" : "SimpleName[1906-1921]:SimpleName[1906-1921]"
+    }, {
+      "left" : "long companyId",
+      "right" : "long companyId",
+      "info" : "SingleVariableDeclaration[1926-1940]:SingleVariableDeclaration[1926-1940]"
+    }, {
+      "left" : "long userId",
+      "right" : "long userId",
+      "info" : "SingleVariableDeclaration[1942-1953]:SingleVariableDeclaration[1942-1953]"
+    }, {
+      "left" : "String userName",
+      "right" : "String userName",
+      "info" : "SingleVariableDeclaration[1955-1970]:SingleVariableDeclaration[1955-1970]"
+    }, {
+      "left" : "long modifiedTime",
+      "right" : "long modifiedTime",
+      "info" : "SingleVariableDeclaration[1972-1989]:SingleVariableDeclaration[1972-1989]"
+    }, {
+      "left" : "long repositoryId",
+      "right" : "long repositoryId",
+      "info" : "SingleVariableDeclaration[1994-2011]:SingleVariableDeclaration[1994-2011]"
+    }, {
+      "left" : "long parentFolderId",
+      "right" : "long parentFolderId",
+      "info" : "SingleVariableDeclaration[2013-2032]:SingleVariableDeclaration[2013-2032]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[2034-2045]:SingleVariableDeclaration[2034-2045]"
+    }, {
+      "left" : "String extension",
+      "right" : "String extension",
+      "info" : "SingleVariableDeclaration[2050-2066]:SingleVariableDeclaration[2050-2066]"
+    }, {
+      "left" : "String mimeType",
+      "right" : "String mimeType",
+      "info" : "SingleVariableDeclaration[2068-2083]:SingleVariableDeclaration[2068-2083]"
+    }, {
+      "left" : "String description",
+      "right" : "String description",
+      "info" : "SingleVariableDeclaration[2085-2103]:SingleVariableDeclaration[2085-2103]"
+    }, {
+      "left" : "String changeLog",
+      "right" : "String changeLog",
+      "info" : "SingleVariableDeclaration[2108-2124]:SingleVariableDeclaration[2108-2124]"
+    }, {
+      "left" : "String extraSettings",
+      "right" : "String extraSettings",
+      "info" : "SingleVariableDeclaration[2126-2146]:SingleVariableDeclaration[2126-2146]"
+    }, {
+      "left" : "String version",
+      "right" : "String version",
+      "info" : "SingleVariableDeclaration[2148-2162]:SingleVariableDeclaration[2148-2162]"
+    }, {
+      "left" : "long versionId",
+      "right" : "long versionId",
+      "info" : "SingleVariableDeclaration[2167-2181]:SingleVariableDeclaration[2167-2181]"
+    }, {
+      "left" : "long size",
+      "right" : "long size",
+      "info" : "SingleVariableDeclaration[2183-2192]:SingleVariableDeclaration[2183-2192]"
+    }, {
+      "left" : "String checksum",
+      "right" : "String checksum",
+      "info" : "SingleVariableDeclaration[2194-2209]:SingleVariableDeclaration[2194-2209]"
+    }, {
+      "left" : "String event",
+      "right" : "String event",
+      "info" : "SingleVariableDeclaration[2211-2223]:SingleVariableDeclaration[2211-2223]"
+    }, {
+      "left" : "Date lockExpirationDate",
+      "right" : "Date lockExpirationDate",
+      "info" : "SingleVariableDeclaration[2228-2251]:SingleVariableDeclaration[2228-2251]"
+    }, {
+      "left" : "long lockUserId",
+      "right" : "long lockUserId",
+      "info" : "SingleVariableDeclaration[2253-2268]:SingleVariableDeclaration[2253-2268]"
+    }, {
+      "left" : "String lockUserName",
+      "right" : "String lockUserName",
+      "info" : "SingleVariableDeclaration[2270-2289]:SingleVariableDeclaration[2270-2289]"
+    }, {
+      "left" : "String type",
+      "right" : "String type",
+      "info" : "SingleVariableDeclaration[2294-2305]:SingleVariableDeclaration[2294-2305]"
+    }, {
+      "left" : "long typePK",
+      "right" : "long typePK",
+      "info" : "SingleVariableDeclaration[2307-2318]:SingleVariableDeclaration[2307-2318]"
+    }, {
+      "left" : "String typeUuid",
+      "right" : "String typeUuid",
+      "info" : "SingleVariableDeclaration[2320-2335]:SingleVariableDeclaration[2320-2335]"
+    }, {
+      "left" : "PortalException",
+      "right" : "PortalException",
+      "info" : "SimpleType[2346-2361]:SimpleType[2346-2361]"
+    }, {
+      "left" : "SystemException",
+      "right" : "SystemException",
+      "info" : "SimpleType[2363-2378]:SimpleType[2363-2378]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2379-6264]:Block[2379-6264]"
+    }, {
+      "left" : "if (!isDefaultRepository(parentFolderId))",
+      "right" : "if (!isDefaultRepository(parentFolderId))",
+      "info" : "IfStatement[2384-2447]:IfStatement[2384-2447]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2426-2447]:Block[2426-2447]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[2431-2443]:ReturnStatement[2431-2443]"
+    }, {
+      "left" : "SyncDLObject syncDLObject = syncDLObjectPersistence.fetchByT_T(\n\t\t\ttype, typePK);",
+      "right" : "SyncDLObject syncDLObject = syncDLObjectPersistence.fetchByT_T(\n\t\t\ttype, typePK);",
+      "info" : "VariableDeclarationStatement[2451-2532]:VariableDeclarationStatement[2451-2532]"
+    }, {
+      "left" : "if (syncDLObject == null)",
+      "right" : "if (syncDLObject == null)",
+      "info" : "IfStatement[2536-4306]:IfStatement[2536-4306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2562-3397]:Block[2562-3397]"
+    }, {
+      "left" : "long syncId = counterLocalService.increment();",
+      "right" : "long syncId = counterLocalService.increment();",
+      "info" : "VariableDeclarationStatement[2567-2613]:VariableDeclarationStatement[2567-2613]"
+    }, {
+      "left" : "syncDLObject = syncDLObjectPersistence.create(syncId);",
+      "right" : "syncDLObject = syncDLObjectPersistence.create(syncId);",
+      "info" : "ExpressionStatement[2618-2672]:ExpressionStatement[2618-2672]"
+    }, {
+      "left" : "syncDLObject.setCompanyId(companyId);",
+      "right" : "syncDLObject.setCompanyId(companyId);",
+      "info" : "ExpressionStatement[2677-2714]:ExpressionStatement[2677-2714]"
+    }, {
+      "left" : "syncDLObject.setCreateTime(modifiedTime);",
+      "right" : "syncDLObject.setCreateTime(modifiedTime);",
+      "info" : "ExpressionStatement[2718-2759]:ExpressionStatement[2718-2759]"
+    }, {
+      "left" : "syncDLObject.setRepositoryId(repositoryId);",
+      "right" : "syncDLObject.setRepositoryId(repositoryId);",
+      "info" : "ExpressionStatement[2763-2806]:ExpressionStatement[2763-2806]"
+    }, {
+      "left" : "syncDLObject.setType(type);",
+      "right" : "syncDLObject.setType(type);",
+      "info" : "ExpressionStatement[2810-2837]:ExpressionStatement[2810-2837]"
+    }, {
+      "left" : "syncDLObject.setTypePK(typePK);",
+      "right" : "syncDLObject.setTypePK(typePK);",
+      "info" : "ExpressionStatement[2841-2872]:ExpressionStatement[2841-2872]"
+    }, {
+      "left" : "syncDLObject.setTypeUuid(typeUuid);",
+      "right" : "syncDLObject.setTypeUuid(typeUuid);",
+      "info" : "ExpressionStatement[2876-2911]:ExpressionStatement[2876-2911]"
+    }, {
+      "left" : "if (type.equals(SyncConstants.TYPE_PRIVATE_WORKING_COPY))",
+      "right" : "if (type.equals(SyncConstants.TYPE_PRIVATE_WORKING_COPY))",
+      "info" : "IfStatement[2916-3393]:IfStatement[2916-3393]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2974-3393]:Block[2974-3393]"
+    }, {
+      "left" : "SyncDLObject approvedSyncDLObject =\n\t\t\t\t\tsyncDLObjectPersistence.fetchByT_T(\n\t\t\t\t\t\tSyncConstants.TYPE_FILE, typePK);",
+      "right" : "SyncDLObject approvedSyncDLObject =\n\t\t\t\t\tsyncDLObjectPersistence.fetchByT_T(\n\t\t\t\t\t\tSyncConstants.TYPE_FILE, typePK);",
+      "info" : "VariableDeclarationStatement[2980-3096]:VariableDeclarationStatement[2980-3096]"
+    }, {
+      "left" : "approvedSyncDLObject.setModifiedTime(modifiedTime);",
+      "right" : "approvedSyncDLObject.setModifiedTime(modifiedTime);",
+      "info" : "ExpressionStatement[3102-3153]:ExpressionStatement[3102-3153]"
+    }, {
+      "left" : "approvedSyncDLObject.setLockExpirationDate(lockExpirationDate);",
+      "right" : "approvedSyncDLObject.setLockExpirationDate(lockExpirationDate);",
+      "info" : "ExpressionStatement[3158-3221]:ExpressionStatement[3158-3221]"
+    }, {
+      "left" : "approvedSyncDLObject.setLockUserId(lockUserId);",
+      "right" : "approvedSyncDLObject.setLockUserId(lockUserId);",
+      "info" : "ExpressionStatement[3226-3273]:ExpressionStatement[3226-3273]"
+    }, {
+      "left" : "approvedSyncDLObject.setLockUserName(lockUserName);",
+      "right" : "approvedSyncDLObject.setLockUserName(lockUserName);",
+      "info" : "ExpressionStatement[3278-3329]:ExpressionStatement[3278-3329]"
+    }, {
+      "left" : "syncDLObjectPersistence.update(approvedSyncDLObject);",
+      "right" : "syncDLObjectPersistence.update(approvedSyncDLObject);",
+      "info" : "ExpressionStatement[3335-3388]:ExpressionStatement[3335-3388]"
+    }, {
+      "left" : "if (syncDLObject.getModifiedTime() >= modifiedTime)",
+      "right" : "if (syncDLObject.getModifiedTime() >= modifiedTime)",
+      "info" : "IfStatement[3405-4306]:IfStatement[3405-4306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3457-3478]:Block[3457-3478]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[3462-3474]:ReturnStatement[3462-3474]"
+    }, {
+      "left" : "if (type.equals(SyncConstants.TYPE_FILE))",
+      "right" : "if (type.equals(SyncConstants.TYPE_FILE))",
+      "info" : "IfStatement[3486-4306]:IfStatement[3486-4306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3528-3907]:Block[3528-3907]"
+    }, {
+      "left" : "SyncDLObject pwcSyncDLObject = syncDLObjectPersistence.fetchByT_T(\n\t\t\t\tSyncConstants.TYPE_PRIVATE_WORKING_COPY, typePK);",
+      "right" : "SyncDLObject pwcSyncDLObject = syncDLObjectPersistence.fetchByT_T(\n\t\t\t\tSyncConstants.TYPE_PRIVATE_WORKING_COPY, typePK);",
+      "info" : "VariableDeclarationStatement[3533-3653]:VariableDeclarationStatement[3533-3653]"
+    }, {
+      "left" : "if (pwcSyncDLObject != null)",
+      "right" : "if (pwcSyncDLObject != null)",
+      "info" : "IfStatement[3658-3903]:IfStatement[3658-3903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3687-3903]:Block[3687-3903]"
+    }, {
+      "left" : "DLFileEntry dlFileEntry =\n\t\t\t\t\tdlFileEntryLocalService.fetchDLFileEntry(typePK);",
+      "right" : "DLFileEntry dlFileEntry =\n\t\t\t\t\tdlFileEntryLocalService.fetchDLFileEntry(typePK);",
+      "info" : "VariableDeclarationStatement[3693-3773]:VariableDeclarationStatement[3693-3773]"
+    }, {
+      "left" : "if ((dlFileEntry == null) || !dlFileEntry.isCheckedOut())",
+      "right" : "if ((dlFileEntry == null) || !dlFileEntry.isCheckedOut())",
+      "info" : "IfStatement[3779-3898]:IfStatement[3779-3898]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3837-3898]:Block[3837-3898]"
+    }, {
+      "left" : "syncDLObjectPersistence.remove(pwcSyncDLObject);",
+      "right" : "syncDLObjectPersistence.remove(pwcSyncDLObject);",
+      "info" : "ExpressionStatement[3844-3892]:ExpressionStatement[3844-3892]"
+    }, {
+      "left" : "if (type.equals(SyncConstants.TYPE_PRIVATE_WORKING_COPY))",
+      "right" : "if (type.equals(SyncConstants.TYPE_PRIVATE_WORKING_COPY))",
+      "info" : "IfStatement[3915-4306]:IfStatement[3915-4306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3973-4306]:Block[3973-4306]"
+    }, {
+      "left" : "if (event.equals(SyncConstants.EVENT_RESTORE) ||\n\t\t\t\tevent.equals(SyncConstants.EVENT_TRASH))",
+      "right" : "if (event.equals(SyncConstants.EVENT_RESTORE) ||\n\t\t\t\tevent.equals(SyncConstants.EVENT_TRASH))",
+      "info" : "IfStatement[3978-4302]:IfStatement[3978-4302]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4072-4302]:Block[4072-4302]"
+    }, {
+      "left" : "SyncDLObject approvedSyncDLObject =\n\t\t\t\t\tsyncDLObjectPersistence.fetchByT_T(\n\t\t\t\t\t\tSyncConstants.TYPE_FILE, typePK);",
+      "right" : "SyncDLObject approvedSyncDLObject =\n\t\t\t\t\tsyncDLObjectPersistence.fetchByT_T(\n\t\t\t\t\t\tSyncConstants.TYPE_FILE, typePK);",
+      "info" : "VariableDeclarationStatement[4079-4195]:VariableDeclarationStatement[4079-4195]"
+    }, {
+      "left" : "approvedSyncDLObject.setEvent(event);",
+      "right" : "approvedSyncDLObject.setEvent(event);",
+      "info" : "ExpressionStatement[4201-4238]:ExpressionStatement[4201-4238]"
+    }, {
+      "left" : "syncDLObjectPersistence.update(approvedSyncDLObject);",
+      "right" : "syncDLObjectPersistence.update(approvedSyncDLObject);",
+      "info" : "ExpressionStatement[4244-4297]:ExpressionStatement[4244-4297]"
+    }, {
+      "left" : "syncDLObject.setUserId(userId);",
+      "right" : "syncDLObject.setUserId(userId);",
+      "info" : "ExpressionStatement[4310-4341]:ExpressionStatement[4310-4341]"
+    }, {
+      "left" : "syncDLObject.setUserName(userName);",
+      "right" : "syncDLObject.setUserName(userName);",
+      "info" : "ExpressionStatement[4344-4379]:ExpressionStatement[4344-4379]"
+    }, {
+      "left" : "syncDLObject.setModifiedTime(modifiedTime);",
+      "right" : "syncDLObject.setModifiedTime(modifiedTime);",
+      "info" : "ExpressionStatement[4382-4425]:ExpressionStatement[4382-4425]"
+    }, {
+      "left" : "syncDLObject.setParentFolderId(parentFolderId);",
+      "right" : "syncDLObject.setParentFolderId(parentFolderId);",
+      "info" : "ExpressionStatement[4428-4475]:ExpressionStatement[4428-4475]"
+    }, {
+      "left" : "syncDLObject.setName(name);",
+      "right" : "syncDLObject.setName(name);",
+      "info" : "ExpressionStatement[4478-4505]:ExpressionStatement[4478-4505]"
+    }, {
+      "left" : "syncDLObject.setExtension(extension);",
+      "right" : "syncDLObject.setExtension(extension);",
+      "info" : "ExpressionStatement[4508-4545]:ExpressionStatement[4508-4545]"
+    }, {
+      "left" : "syncDLObject.setMimeType(mimeType);",
+      "right" : "syncDLObject.setMimeType(mimeType);",
+      "info" : "ExpressionStatement[4548-4583]:ExpressionStatement[4548-4583]"
+    }, {
+      "left" : "syncDLObject.setDescription(description);",
+      "right" : "syncDLObject.setDescription(description);",
+      "info" : "ExpressionStatement[4586-4627]:ExpressionStatement[4586-4627]"
+    }, {
+      "left" : "syncDLObject.setChangeLog(changeLog);",
+      "right" : "syncDLObject.setChangeLog(changeLog);",
+      "info" : "ExpressionStatement[4630-4667]:ExpressionStatement[4630-4667]"
+    }, {
+      "left" : "syncDLObject.setVersion(version);",
+      "right" : "syncDLObject.setVersion(version);",
+      "info" : "ExpressionStatement[4670-4703]:ExpressionStatement[4670-4703]"
+    }, {
+      "left" : "syncDLObject.setVersionId(versionId);",
+      "right" : "syncDLObject.setVersionId(versionId);",
+      "info" : "ExpressionStatement[4706-4743]:ExpressionStatement[4706-4743]"
+    }, {
+      "left" : "syncDLObject.setSize(size);",
+      "right" : "syncDLObject.setSize(size);",
+      "info" : "ExpressionStatement[4746-4773]:ExpressionStatement[4746-4773]"
+    }, {
+      "left" : "syncDLObject.setChecksum(checksum);",
+      "right" : "syncDLObject.setChecksum(checksum);",
+      "info" : "ExpressionStatement[4776-4811]:ExpressionStatement[4776-4811]"
+    }, {
+      "left" : "syncDLObject.setEvent(event);",
+      "right" : "syncDLObject.setEvent(event);",
+      "info" : "ExpressionStatement[4814-4843]:ExpressionStatement[4814-4843]"
+    }, {
+      "left" : "syncDLObject.setLockExpirationDate(lockExpirationDate);",
+      "right" : "syncDLObject.setLockExpirationDate(lockExpirationDate);",
+      "info" : "ExpressionStatement[4846-4901]:ExpressionStatement[4846-4901]"
+    }, {
+      "left" : "syncDLObject.setLockUserId(lockUserId);",
+      "right" : "syncDLObject.setLockUserId(lockUserId);",
+      "info" : "ExpressionStatement[4904-4943]:ExpressionStatement[4904-4943]"
+    }, {
+      "left" : "syncDLObject.setLockUserName(lockUserName);",
+      "right" : "syncDLObject.setLockUserName(lockUserName);",
+      "info" : "ExpressionStatement[4946-4989]:ExpressionStatement[4946-4989]"
+    }, {
+      "left" : "syncDLObject = syncDLObjectPersistence.update(syncDLObject);",
+      "right" : "syncDLObject = syncDLObjectPersistence.update(syncDLObject);",
+      "info" : "ExpressionStatement[4993-5053]:ExpressionStatement[4993-5053]"
+    }, {
+      "left" : "if (type.equals(SyncConstants.TYPE_FILE) &&\n\t\t\tArrayUtil.contains(\n\t\t\t\tPortletPropsValues.SYNC_MAC_PACKAGE_METADATA_FILE_NAMES,\n\t\t\t\tsyncDLObject.getName()))",
+      "right" : "if (type.equals(SyncConstants.TYPE_FILE) &&\n\t\t\tArrayUtil.contains(\n\t\t\t\tPortletPropsValues.SYNC_MAC_PACKAGE_METADATA_FILE_NAMES,\n\t\t\t\tsyncDLObject.getName()))",
+      "info" : "IfStatement[5057-5938]:IfStatement[5057-5938]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5214-5938]:Block[5214-5938]"
+    }, {
+      "left" : "SyncDLObject parentFolderSyncDLObject =\n\t\t\t\tsyncDLObjectPersistence.fetchByT_T(\n\t\t\t\t\tSyncConstants.TYPE_FOLDER,\n\t\t\t\t\tsyncDLObject.getParentFolderId());",
+      "right" : "SyncDLObject parentFolderSyncDLObject =\n\t\t\t\tsyncDLObjectPersistence.fetchByT_T(\n\t\t\t\t\tSyncConstants.TYPE_FOLDER,\n\t\t\t\t\tsyncDLObject.getParentFolderId());",
+      "info" : "VariableDeclarationStatement[5220-5371]:VariableDeclarationStatement[5220-5371]"
+    }, {
+      "left" : "String parentFolderExtension = FileUtil.getExtension(\n\t\t\t\tparentFolderSyncDLObject.getName());",
+      "right" : "String parentFolderExtension = FileUtil.getExtension(\n\t\t\t\tparentFolderSyncDLObject.getName());",
+      "info" : "VariableDeclarationStatement[5376-5470]:VariableDeclarationStatement[5376-5470]"
+    }, {
+      "left" : "if (ArrayUtil.contains(\n\t\t\t\t\tPortletPropsValues.SYNC_MAC_PACKAGE_FOLDER_EXTENSIONS,\n\t\t\t\t\tparentFolderExtension))",
+      "right" : "if (ArrayUtil.contains(\n\t\t\t\t\tPortletPropsValues.SYNC_MAC_PACKAGE_FOLDER_EXTENSIONS,\n\t\t\t\t\tparentFolderExtension))",
+      "info" : "IfStatement[5475-5934]:IfStatement[5475-5934]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5588-5934]:Block[5588-5934]"
+    }, {
+      "left" : "JSONObject extraSettingsJSONObject =\n\t\t\t\t\tJSONFactoryUtil.createJSONObject(\n\t\t\t\t\t\tparentFolderSyncDLObject.getExtraSettings());",
+      "right" : "JSONObject extraSettingsJSONObject =\n\t\t\t\t\tJSONFactoryUtil.createJSONObject(\n\t\t\t\t\t\tparentFolderSyncDLObject.getExtraSettings());",
+      "info" : "VariableDeclarationStatement[5595-5722]:VariableDeclarationStatement[5595-5722]"
+    }, {
+      "left" : "extraSettingsJSONObject.put(\"macPackage\", true);",
+      "right" : "extraSettingsJSONObject.put(\"macPackage\", true);",
+      "info" : "ExpressionStatement[5728-5776]:ExpressionStatement[5728-5776]"
+    }, {
+      "left" : "parentFolderSyncDLObject.setExtraSettings(\n\t\t\t\t\textraSettingsJSONObject.toString());",
+      "right" : "parentFolderSyncDLObject.setExtraSettings(\n\t\t\t\t\textraSettingsJSONObject.toString());",
+      "info" : "ExpressionStatement[5782-5866]:ExpressionStatement[5782-5866]"
+    }, {
+      "left" : "syncDLObjectPersistence.update(parentFolderSyncDLObject);",
+      "right" : "syncDLObjectPersistence.update(parentFolderSyncDLObject);",
+      "info" : "ExpressionStatement[5872-5929]:ExpressionStatement[5872-5929]"
+    }, {
+      "left" : "if ((event.equals(SyncConstants.EVENT_DELETE) ||\n\t\t\t event.equals(SyncConstants.EVENT_TRASH)) &&\n\t\t\t!type.equals(SyncConstants.TYPE_FOLDER))",
+      "right" : "if ((event.equals(SyncConstants.EVENT_DELETE) ||\n\t\t\t event.equals(SyncConstants.EVENT_TRASH)) &&\n\t\t\t!type.equals(SyncConstants.TYPE_FOLDER))",
+      "info" : "IfStatement[5942-6237]:IfStatement[5942-6237]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6083-6237]:Block[6083-6237]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6089-6233]:TryStatement[6089-6233]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6093-6181]:Block[6093-6181]"
+    }, {
+      "left" : "syncDLFileVersionDiffLocalService.deleteSyncDLFileVersionDiffs(\n\t\t\t\t\ttypePK);",
+      "right" : "syncDLFileVersionDiffLocalService.deleteSyncDLFileVersionDiffs(\n\t\t\t\t\ttypePK);",
+      "info" : "ExpressionStatement[6099-6176]:ExpressionStatement[6099-6176]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6205-6233]:Block[6205-6233]"
+    }, {
+      "left" : "_log.error(e, e);",
+      "right" : "_log.error(e, e);",
+      "info" : "ExpressionStatement[6211-6228]:ExpressionStatement[6211-6228]"
+    }, {
+      "left" : "return syncDLObject;",
+      "right" : "return syncDLObject;",
+      "info" : "ReturnStatement[6241-6261]:ReturnStatement[6241-6261]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6267-6276]:MarkerAnnotation[6267-6276]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6278-6284]:Modifier[6278-6284]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6285-6289]:PrimitiveType[6285-6289]"
+    }, {
+      "left" : "deleteSyncDLObjects",
+      "right" : "deleteSyncDLObjects",
+      "info" : "SimpleName[6290-6309]:SimpleName[6290-6309]"
+    }, {
+      "left" : "String version",
+      "right" : "String version",
+      "info" : "SingleVariableDeclaration[6310-6324]:SingleVariableDeclaration[6310-6324]"
+    }, {
+      "left" : "String type",
+      "right" : "String type",
+      "info" : "SingleVariableDeclaration[6326-6337]:SingleVariableDeclaration[6326-6337]"
+    }, {
+      "left" : "SystemException",
+      "right" : "SystemException",
+      "info" : "SimpleType[6348-6363]:SimpleType[6348-6363]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6364-6423]:Block[6364-6423]"
+    }, {
+      "left" : "syncDLObjectPersistence.removeByV_T(version, type);",
+      "right" : "syncDLObjectPersistence.removeByV_T(version, type);",
+      "info" : "ExpressionStatement[6369-6420]:ExpressionStatement[6369-6420]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6426-6435]:MarkerAnnotation[6426-6435]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6437-6443]:Modifier[6437-6443]"
+    }, {
+      "left" : "SyncDLObject",
+      "right" : "SyncDLObject",
+      "info" : "SimpleType[6444-6456]:SimpleType[6444-6456]"
+    }, {
+      "left" : "fetchSyncDLObject",
+      "right" : "fetchSyncDLObject",
+      "info" : "SimpleName[6457-6474]:SimpleName[6457-6474]"
+    }, {
+      "left" : "String type",
+      "right" : "String type",
+      "info" : "SingleVariableDeclaration[6475-6486]:SingleVariableDeclaration[6475-6486]"
+    }, {
+      "left" : "long typePK",
+      "right" : "long typePK",
+      "info" : "SingleVariableDeclaration[6488-6499]:SingleVariableDeclaration[6488-6499]"
+    }, {
+      "left" : "SystemException",
+      "right" : "SystemException",
+      "info" : "SimpleType[6510-6525]:SimpleType[6510-6525]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6526-6590]:Block[6526-6590]"
+    }, {
+      "left" : "return syncDLObjectPersistence.fetchByT_T(type, typePK);",
+      "right" : "return syncDLObjectPersistence.fetchByT_T(type, typePK);",
+      "info" : "ReturnStatement[6531-6587]:ReturnStatement[6531-6587]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6593-6602]:MarkerAnnotation[6593-6602]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6604-6610]:Modifier[6604-6610]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[6611-6615]:PrimitiveType[6611-6615]"
+    }, {
+      "left" : "getLatestModifiedTime",
+      "right" : "getLatestModifiedTime",
+      "info" : "SimpleName[6616-6637]:SimpleName[6616-6637]"
+    }, {
+      "left" : "SystemException",
+      "right" : "SystemException",
+      "info" : "SimpleType[6647-6662]:SimpleType[6647-6662]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6663-7138]:Block[6663-7138]"
+    }, {
+      "left" : "DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(\n\t\t\tSyncDLObject.class, SyncDLObject.class.getClassLoader());",
+      "right" : "DynamicQuery dynamicQuery = DynamicQueryFactoryUtil.forClass(\n\t\t\tSyncDLObject.class, SyncDLObject.class.getClassLoader());",
+      "info" : "VariableDeclarationStatement[6667-6789]:VariableDeclarationStatement[6667-6789]"
+    }, {
+      "left" : "Projection projection = ProjectionFactoryUtil.max(\"modifiedTime\");",
+      "right" : "Projection projection = ProjectionFactoryUtil.max(\"modifiedTime\");",
+      "info" : "VariableDeclarationStatement[6793-6859]:VariableDeclarationStatement[6793-6859]"
+    }, {
+      "left" : "dynamicQuery.setProjection(projection);",
+      "right" : "dynamicQuery.setProjection(projection);",
+      "info" : "ExpressionStatement[6863-6902]:ExpressionStatement[6863-6902]"
+    }, {
+      "left" : "List<Long> modifiedTimes = syncDLObjectPersistence.findWithDynamicQuery(\n\t\t\tdynamicQuery);",
+      "right" : "List<Long> modifiedTimes = syncDLObjectPersistence.findWithDynamicQuery(\n\t\t\tdynamicQuery);",
+      "info" : "VariableDeclarationStatement[6906-6996]:VariableDeclarationStatement[6906-6996]"
+    }, {
+      "left" : "if (modifiedTimes.isEmpty() || (modifiedTimes.get(0) == 0))",
+      "right" : "if (modifiedTimes.isEmpty() || (modifiedTimes.get(0) == 0))",
+      "info" : "IfStatement[7000-7103]:IfStatement[7000-7103]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7060-7103]:Block[7060-7103]"
+    }, {
+      "left" : "return System.currentTimeMillis();",
+      "right" : "return System.currentTimeMillis();",
+      "info" : "ReturnStatement[7065-7099]:ReturnStatement[7065-7099]"
+    }, {
+      "left" : "return modifiedTimes.get(0);",
+      "right" : "return modifiedTimes.get(0);",
+      "info" : "ReturnStatement[7107-7135]:ReturnStatement[7107-7135]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[7141-7150]:Modifier[7320-7329]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[7151-7158]:PrimitiveType[7330-7337]"
+    }, {
+      "left" : "isDefaultRepository",
+      "right" : "isDefaultRepository",
+      "info" : "SimpleName[7159-7178]:SimpleName[7338-7357]"
+    }, {
+      "left" : "long folderId",
+      "right" : "long folderId",
+      "info" : "SingleVariableDeclaration[7179-7192]:SingleVariableDeclaration[7358-7371]"
+    }, {
+      "left" : "PortalException",
+      "right" : "PortalException",
+      "info" : "SimpleType[7203-7218]:SimpleType[7382-7397]"
+    }, {
+      "left" : "SystemException",
+      "right" : "SystemException",
+      "info" : "SimpleType[7220-7235]:SimpleType[7399-7414]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7236-7423]:Block[7415-7602]"
+    }, {
+      "left" : "if (folderId == DLFolderConstants.DEFAULT_PARENT_FOLDER_ID)",
+      "right" : "if (folderId == DLFolderConstants.DEFAULT_PARENT_FOLDER_ID)",
+      "info" : "IfStatement[7241-7322]:IfStatement[7420-7501]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7301-7322]:Block[7480-7501]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[7306-7318]:ReturnStatement[7485-7497]"
+    }, {
+      "left" : "Folder folder = dlAppLocalService.getFolder(folderId);",
+      "right" : "Folder folder = dlAppLocalService.getFolder(folderId);",
+      "info" : "VariableDeclarationStatement[7326-7380]:VariableDeclarationStatement[7505-7559]"
+    }, {
+      "left" : "return folder.isDefaultRepository();",
+      "right" : "return folder.isDefaultRepository();",
+      "info" : "ReturnStatement[7384-7420]:ReturnStatement[7563-7599]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

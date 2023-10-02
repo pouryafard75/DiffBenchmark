@@ -1,0 +1,345 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "WFSURIHandlerTest",
+      "right" : "WFSURIHandlerTest",
+      "info" : "TypeDeclaration[1120-6372]:TypeDeclaration[1160-6412]"
+    }, {
+      "left" : "@Rule\n    public PropertyRule aliases = PropertyRule.system(\"org.geoserver.wfs.xml.WFSURIHandler.additionalHostnames\");",
+      "right" : "@Rule\n    public PropertyRule aliases = PropertyRule.system(\"org.geoserver.wfs.xml.WFSURIHandler.additionalHostnames\");",
+      "info" : "FieldDeclaration[1162-1281]:FieldDeclaration[1202-1321]"
+    }, {
+      "left" : "InitStrategy strategy;",
+      "right" : "InitStrategy strategy;",
+      "info" : "FieldDeclaration[1291-1313]:FieldDeclaration[1331-1353]"
+    }, {
+      "left" : "private GeoServer gs;",
+      "right" : "private GeoServer gs;",
+      "info" : "FieldDeclaration[1319-1340]:FieldDeclaration[1359-1380]"
+    }, {
+      "left" : "private GeoServerInfo config;",
+      "right" : "private GeoServerInfo config;",
+      "info" : "FieldDeclaration[1346-1375]:FieldDeclaration[1386-1415]"
+    }, {
+      "left" : "public void setUp()",
+      "right" : "public void setUp()",
+      "info" : "MethodDeclaration[1385-2108]:MethodDeclaration[1425-2148]"
+    }, {
+      "left" : "public Collection<NetworkInterface> getNetworkInterfaces(",
+      "right" : "public Collection<NetworkInterface> getNetworkInterfaces(",
+      "info" : "MethodDeclaration[1707-1828]:MethodDeclaration[1747-1868]"
+    }, {
+      "left" : "public void tearDown()",
+      "right" : "public void tearDown()",
+      "info" : "MethodDeclaration[2118-2187]:MethodDeclaration[2158-2227]"
+    }, {
+      "left" : "public void testFromNetworkInterfaces()",
+      "right" : "public void testFromNetworkInterfaces()",
+      "info" : "MethodDeclaration[2197-2314]:MethodDeclaration[2237-2354]"
+    }, {
+      "left" : "public void testDefaultAliases()",
+      "right" : "public void testDefaultAliases()",
+      "info" : "MethodDeclaration[2324-2572]:MethodDeclaration[2364-2612]"
+    }, {
+      "left" : "public void testOverrideAliasesComma()",
+      "right" : "public void testOverrideAliasesComma()",
+      "info" : "MethodDeclaration[2578-2911]:MethodDeclaration[2618-2951]"
+    }, {
+      "left" : "public void testOverrideAliasesSpace()",
+      "right" : "public void testOverrideAliasesSpace()",
+      "info" : "MethodDeclaration[2917-3241]:MethodDeclaration[2957-3281]"
+    }, {
+      "left" : "protected void setProxyBase(String url)",
+      "right" : "protected void setProxyBase(String url)",
+      "info" : "MethodDeclaration[3251-3450]:MethodDeclaration[3291-3490]"
+    }, {
+      "left" : "public void testRecognizeReflexiveSimple()",
+      "right" : "public void testRecognizeReflexiveSimple()",
+      "info" : "MethodDeclaration[3460-4211]:MethodDeclaration[3500-4251]"
+    }, {
+      "left" : "public void testRecognizeReflexiveUserAliases()",
+      "right" : "public void testRecognizeReflexiveUserAliases()",
+      "info" : "MethodDeclaration[4217-5569]:MethodDeclaration[4257-5609]"
+    }, {
+      "left" : "public void testRecognizeReflexiveProxy()",
+      "right" : "public void testRecognizeReflexiveProxy()",
+      "info" : "MethodDeclaration[5575-6369]:MethodDeclaration[5615-6409]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1454-2108]:Block[1494-2148]"
+    }, {
+      "left" : "WFSURIHandler.ADDITIONAL_HOSTNAMES.clear();",
+      "right" : "WFSURIHandler.ADDITIONAL_HOSTNAMES.clear();",
+      "info" : "ExpressionStatement[1464-1507]:ExpressionStatement[1504-1547]"
+    }, {
+      "left" : "WFSURIHandler.ADDRESSES.clear();",
+      "right" : "WFSURIHandler.ADDRESSES.clear();",
+      "info" : "ExpressionStatement[1516-1548]:ExpressionStatement[1556-1588]"
+    }, {
+      "left" : "strategy = new InitStrategy() {\n            public Collection<NetworkInterface> getNetworkInterfaces(){\n                return Collections.emptyList();\n            }\n        };",
+      "right" : "strategy = new InitStrategy() {\n            public Collection<NetworkInterface> getNetworkInterfaces(){\n                return Collections.emptyList();\n            }\n        };",
+      "info" : "ExpressionStatement[1663-1839]:ExpressionStatement[1703-1879]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1765-1828]:Block[1805-1868]"
+    }, {
+      "left" : "return Collections.emptyList();",
+      "right" : "return Collections.emptyList();",
+      "info" : "ReturnStatement[1783-1814]:ReturnStatement[1823-1854]"
+    }, {
+      "left" : "gs = EasyMock.createMock(GeoServer.class);",
+      "right" : "gs = EasyMock.createMock(GeoServer.class);",
+      "info" : "ExpressionStatement[1857-1899]:ExpressionStatement[1897-1939]"
+    }, {
+      "left" : "config = EasyMock.createMock(GeoServerInfo.class);",
+      "right" : "config = EasyMock.createMock(GeoServerInfo.class);",
+      "info" : "ExpressionStatement[1908-1958]:ExpressionStatement[1948-1998]"
+    }, {
+      "left" : "expect(gs.getGlobal()).andStubReturn(config);",
+      "right" : "expect(gs.getGlobal()).andStubReturn(config);",
+      "info" : "ExpressionStatement[1967-2012]:ExpressionStatement[2007-2052]"
+    }, {
+      "left" : "expect(config.getProxyBaseUrl()).andStubReturn(null);",
+      "right" : "expect(config.getProxyBaseUrl()).andStubReturn(null);",
+      "info" : "ExpressionStatement[2021-2074]:ExpressionStatement[2061-2114]"
+    }, {
+      "left" : "replay(gs, config);",
+      "right" : "replay(gs, config);",
+      "info" : "ExpressionStatement[2083-2102]:ExpressionStatement[2123-2142]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2152-2187]:Block[2192-2227]"
+    }, {
+      "left" : "verify(gs, config);",
+      "right" : "verify(gs, config);",
+      "info" : "ExpressionStatement[2162-2181]:ExpressionStatement[2202-2221]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2259-2314]:Block[2299-2354]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2367-2572]:Block[2407-2612]"
+    }, {
+      "left" : "WFSURIHandler.init(strategy);",
+      "right" : "WFSURIHandler.init(strategy);",
+      "info" : "ExpressionStatement[2386-2415]:ExpressionStatement[2426-2455]"
+    }, {
+      "left" : "assertThat(WFSURIHandler.ADDRESSES, empty());",
+      "right" : "assertThat(WFSURIHandler.ADDRESSES, empty());",
+      "info" : "ExpressionStatement[2433-2478]:ExpressionStatement[2473-2518]"
+    }, {
+      "left" : "assertThat(WFSURIHandler.ADDITIONAL_HOSTNAMES, contains(\"localhost\"));",
+      "right" : "assertThat(WFSURIHandler.ADDITIONAL_HOSTNAMES, contains(\"localhost\"));",
+      "info" : "ExpressionStatement[2487-2557]:ExpressionStatement[2527-2597]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2627-2911]:Block[2667-2951]"
+    }, {
+      "left" : "aliases.setValue(\"foo,bar , baz\");",
+      "right" : "aliases.setValue(\"foo,bar , baz\");",
+      "info" : "ExpressionStatement[2655-2689]:ExpressionStatement[2695-2729]"
+    }, {
+      "left" : "WFSURIHandler.init(strategy);",
+      "right" : "WFSURIHandler.init(strategy);",
+      "info" : "ExpressionStatement[2707-2736]:ExpressionStatement[2747-2776]"
+    }, {
+      "left" : "assertThat(WFSURIHandler.ADDRESSES, empty());",
+      "right" : "assertThat(WFSURIHandler.ADDRESSES, empty());",
+      "info" : "ExpressionStatement[2754-2799]:ExpressionStatement[2794-2839]"
+    }, {
+      "left" : "assertThat(WFSURIHandler.ADDITIONAL_HOSTNAMES, containsInAnyOrder(\"foo\", \"bar\", \"baz\"));",
+      "right" : "assertThat(WFSURIHandler.ADDITIONAL_HOSTNAMES, containsInAnyOrder(\"foo\", \"bar\", \"baz\"));",
+      "info" : "ExpressionStatement[2808-2896]:ExpressionStatement[2848-2936]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2966-3241]:Block[3006-3281]"
+    }, {
+      "left" : "aliases.setValue(\"foo bar  baz \");",
+      "right" : "aliases.setValue(\"foo bar  baz \");",
+      "info" : "ExpressionStatement[2985-3019]:ExpressionStatement[3025-3059]"
+    }, {
+      "left" : "WFSURIHandler.init(strategy);",
+      "right" : "WFSURIHandler.init(strategy);",
+      "info" : "ExpressionStatement[3037-3066]:ExpressionStatement[3077-3106]"
+    }, {
+      "left" : "assertThat(WFSURIHandler.ADDRESSES, empty());",
+      "right" : "assertThat(WFSURIHandler.ADDRESSES, empty());",
+      "info" : "ExpressionStatement[3084-3129]:ExpressionStatement[3124-3169]"
+    }, {
+      "left" : "assertThat(WFSURIHandler.ADDITIONAL_HOSTNAMES, containsInAnyOrder(\"foo\", \"bar\", \"baz\"));",
+      "right" : "assertThat(WFSURIHandler.ADDITIONAL_HOSTNAMES, containsInAnyOrder(\"foo\", \"bar\", \"baz\"));",
+      "info" : "ExpressionStatement[3138-3226]:ExpressionStatement[3178-3266]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3328-3450]:Block[3368-3490]"
+    }, {
+      "left" : "reset(config);",
+      "right" : "reset(config);",
+      "info" : "ExpressionStatement[3338-3352]:ExpressionStatement[3378-3392]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3353-3429]:Block[3393-3469]"
+    }, {
+      "left" : "expect(config.getProxyBaseUrl()).andStubReturn(url);",
+      "right" : "expect(config.getProxyBaseUrl()).andStubReturn(url);",
+      "info" : "ExpressionStatement[3367-3419]:ExpressionStatement[3407-3459]"
+    }, {
+      "left" : "replay(config);",
+      "right" : "replay(config);",
+      "info" : "ExpressionStatement[3429-3444]:ExpressionStatement[3469-3484]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3513-4211]:Block[3553-4251]"
+    }, {
+      "left" : "WFSURIHandler.init(strategy);",
+      "right" : "WFSURIHandler.init(strategy);",
+      "info" : "ExpressionStatement[3532-3561]:ExpressionStatement[3572-3601]"
+    }, {
+      "left" : "WFSURIHandler handler = new WFSURIHandler(gs);",
+      "right" : "WFSURIHandler handler = new WFSURIHandler(gs);",
+      "info" : "VariableDeclarationStatement[3579-3625]:VariableDeclarationStatement[3619-3665]"
+    }, {
+      "left" : "final URI wrongHost = URI.createURI(\"http://example.com/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI wrongHost = URI.createURI(\"http://example.com/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[3643-3769]:VariableDeclarationStatement[3683-3809]"
+    }, {
+      "left" : "final URI notDFT = URI.createURI(\"http://localhost/geoserver/wfs?service=wfs&version=2.0.0&request=GetCapabilities\");",
+      "right" : "final URI notDFT = URI.createURI(\"http://localhost/geoserver/wfs?service=wfs&version=2.0.0&request=GetCapabilities\");",
+      "info" : "VariableDeclarationStatement[3778-3895]:VariableDeclarationStatement[3818-3935]"
+    }, {
+      "left" : "final URI localDFT = URI.createURI(\"http://localhost/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI localDFT = URI.createURI(\"http://localhost/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[3904-4027]:VariableDeclarationStatement[3944-4067]"
+    }, {
+      "left" : "assertThat(handler.canHandle(wrongHost), is(false));",
+      "right" : "assertThat(handler.canHandle(wrongHost), is(false));",
+      "info" : "ExpressionStatement[4036-4088]:ExpressionStatement[4076-4128]"
+    }, {
+      "left" : "assertThat(handler.canHandle(notDFT), is(false));",
+      "right" : "assertThat(handler.canHandle(notDFT), is(false));",
+      "info" : "ExpressionStatement[4097-4146]:ExpressionStatement[4137-4186]"
+    }, {
+      "left" : "assertThat(handler.canHandle(localDFT), is(true));",
+      "right" : "assertThat(handler.canHandle(localDFT), is(true));",
+      "info" : "ExpressionStatement[4155-4205]:ExpressionStatement[4195-4245]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4275-5569]:Block[4315-5609]"
+    }, {
+      "left" : "aliases.setValue(\"foo bar baz\");",
+      "right" : "aliases.setValue(\"foo bar baz\");",
+      "info" : "ExpressionStatement[4294-4326]:ExpressionStatement[4334-4366]"
+    }, {
+      "left" : "WFSURIHandler.init(strategy);",
+      "right" : "WFSURIHandler.init(strategy);",
+      "info" : "ExpressionStatement[4344-4373]:ExpressionStatement[4384-4413]"
+    }, {
+      "left" : "WFSURIHandler handler = new WFSURIHandler(gs);",
+      "right" : "WFSURIHandler handler = new WFSURIHandler(gs);",
+      "info" : "VariableDeclarationStatement[4391-4437]:VariableDeclarationStatement[4431-4477]"
+    }, {
+      "left" : "final URI wrongHost = URI.createURI(\"http://example.com/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI wrongHost = URI.createURI(\"http://example.com/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[4455-4581]:VariableDeclarationStatement[4495-4621]"
+    }, {
+      "left" : "final URI notDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=GetCapabilities\");",
+      "right" : "final URI notDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=GetCapabilities\");",
+      "info" : "VariableDeclarationStatement[4590-4701]:VariableDeclarationStatement[4630-4741]"
+    }, {
+      "left" : "final URI fooDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI fooDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[4710-4825]:VariableDeclarationStatement[4750-4865]"
+    }, {
+      "left" : "final URI barDFT = URI.createURI(\"http://bar/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI barDFT = URI.createURI(\"http://bar/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[4834-4949]:VariableDeclarationStatement[4874-4989]"
+    }, {
+      "left" : "final URI bazDFT = URI.createURI(\"http://baz/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI bazDFT = URI.createURI(\"http://baz/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[4958-5073]:VariableDeclarationStatement[4998-5113]"
+    }, {
+      "left" : "final URI localhostDFT = URI.createURI(\"http://localhost/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI localhostDFT = URI.createURI(\"http://localhost/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[5082-5209]:VariableDeclarationStatement[5122-5249]"
+    }, {
+      "left" : "assertThat(handler.canHandle(wrongHost), is(false));",
+      "right" : "assertThat(handler.canHandle(wrongHost), is(false));",
+      "info" : "ExpressionStatement[5218-5270]:ExpressionStatement[5258-5310]"
+    }, {
+      "left" : "assertThat(handler.canHandle(notDFT), is(false));",
+      "right" : "assertThat(handler.canHandle(notDFT), is(false));",
+      "info" : "ExpressionStatement[5279-5328]:ExpressionStatement[5319-5368]"
+    }, {
+      "left" : "assertThat(handler.canHandle(fooDFT), is(true));",
+      "right" : "assertThat(handler.canHandle(fooDFT), is(true));",
+      "info" : "ExpressionStatement[5337-5385]:ExpressionStatement[5377-5425]"
+    }, {
+      "left" : "assertThat(handler.canHandle(barDFT), is(true));",
+      "right" : "assertThat(handler.canHandle(barDFT), is(true));",
+      "info" : "ExpressionStatement[5394-5442]:ExpressionStatement[5434-5482]"
+    }, {
+      "left" : "assertThat(handler.canHandle(bazDFT), is(true));",
+      "right" : "assertThat(handler.canHandle(bazDFT), is(true));",
+      "info" : "ExpressionStatement[5451-5499]:ExpressionStatement[5491-5539]"
+    }, {
+      "left" : "assertThat(handler.canHandle(localhostDFT), is(false));",
+      "right" : "assertThat(handler.canHandle(localhostDFT), is(false));",
+      "info" : "ExpressionStatement[5508-5563]:ExpressionStatement[5548-5603]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5627-6369]:Block[5667-6409]"
+    }, {
+      "left" : "this.setProxyBase(\"http://foo/geoserver\");",
+      "right" : "this.setProxyBase(\"http://foo/geoserver\");",
+      "info" : "ExpressionStatement[5646-5688]:ExpressionStatement[5686-5728]"
+    }, {
+      "left" : "WFSURIHandler.init(strategy);",
+      "right" : "WFSURIHandler.init(strategy);",
+      "info" : "ExpressionStatement[5706-5735]:ExpressionStatement[5746-5775]"
+    }, {
+      "left" : "WFSURIHandler handler = new WFSURIHandler(gs);",
+      "right" : "WFSURIHandler handler = new WFSURIHandler(gs);",
+      "info" : "VariableDeclarationStatement[5753-5799]:VariableDeclarationStatement[5793-5839]"
+    }, {
+      "left" : "final URI wrongHost = URI.createURI(\"http://example.com/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI wrongHost = URI.createURI(\"http://example.com/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[5817-5943]:VariableDeclarationStatement[5857-5983]"
+    }, {
+      "left" : "final URI notDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=GetCapabilities\");",
+      "right" : "final URI notDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=GetCapabilities\");",
+      "info" : "VariableDeclarationStatement[5952-6063]:VariableDeclarationStatement[5992-6103]"
+    }, {
+      "left" : "final URI fooDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "right" : "final URI fooDFT = URI.createURI(\"http://foo/geoserver/wfs?service=wfs&version=2.0.0&request=DescribeFeatureType\");",
+      "info" : "VariableDeclarationStatement[6072-6187]:VariableDeclarationStatement[6112-6227]"
+    }, {
+      "left" : "assertThat(handler.canHandle(wrongHost), is(false));",
+      "right" : "assertThat(handler.canHandle(wrongHost), is(false));",
+      "info" : "ExpressionStatement[6196-6248]:ExpressionStatement[6236-6288]"
+    }, {
+      "left" : "assertThat(handler.canHandle(notDFT), is(false));",
+      "right" : "assertThat(handler.canHandle(notDFT), is(false));",
+      "info" : "ExpressionStatement[6257-6306]:ExpressionStatement[6297-6346]"
+    }, {
+      "left" : "assertThat(handler.canHandle(fooDFT), is(true));",
+      "right" : "assertThat(handler.canHandle(fooDFT), is(true));",
+      "info" : "ExpressionStatement[6315-6363]:ExpressionStatement[6355-6403]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

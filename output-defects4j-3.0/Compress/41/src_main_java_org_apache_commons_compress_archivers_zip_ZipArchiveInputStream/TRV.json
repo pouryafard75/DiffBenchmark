@@ -1,0 +1,2785 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final ZipEncoding zipEncoding;",
+      "right" : "private final ZipEncoding zipEncoding;",
+      "info" : "FieldDeclaration[2989-3098]:FieldDeclaration[2989-3098]"
+    }, {
+      "left" : "final String encoding;",
+      "right" : "final String encoding;",
+      "info" : "FieldDeclaration[3150-3172]:FieldDeclaration[3150-3172]"
+    }, {
+      "left" : "private final boolean useUnicodeExtraFields;",
+      "right" : "private final boolean useUnicodeExtraFields;",
+      "info" : "FieldDeclaration[3178-3283]:FieldDeclaration[3178-3283]"
+    }, {
+      "left" : "private final InputStream in;",
+      "right" : "private final InputStream in;",
+      "info" : "FieldDeclaration[3289-3383]:FieldDeclaration[3289-3383]"
+    }, {
+      "left" : "private final Inflater inf = new Inflater(true);",
+      "right" : "private final Inflater inf = new Inflater(true);",
+      "info" : "FieldDeclaration[3389-3488]:FieldDeclaration[3389-3488]"
+    }, {
+      "left" : "private final ByteBuffer buf = ByteBuffer.allocate(ZipArchiveOutputStream.BUFFER_SIZE);",
+      "right" : "private final ByteBuffer buf = ByteBuffer.allocate(ZipArchiveOutputStream.BUFFER_SIZE);",
+      "info" : "FieldDeclaration[3494-3637]:FieldDeclaration[3494-3637]"
+    }, {
+      "left" : "private CurrentEntry current = null;",
+      "right" : "private CurrentEntry current = null;",
+      "info" : "FieldDeclaration[3643-3730]:FieldDeclaration[3643-3730]"
+    }, {
+      "left" : "private boolean closed = false;",
+      "right" : "private boolean closed = false;",
+      "info" : "FieldDeclaration[3736-3814]:FieldDeclaration[3736-3814]"
+    }, {
+      "left" : "private boolean hitCentralDirectory = false;",
+      "right" : "private boolean hitCentralDirectory = false;",
+      "info" : "FieldDeclaration[3820-3958]:FieldDeclaration[3820-3958]"
+    }, {
+      "left" : "private ByteArrayInputStream lastStoredEntry = null;",
+      "right" : "private ByteArrayInputStream lastStoredEntry = null;",
+      "info" : "FieldDeclaration[3964-4185]:FieldDeclaration[3964-4185]"
+    }, {
+      "left" : "private boolean allowStoredEntriesWithDataDescriptor = false;",
+      "right" : "private boolean allowStoredEntriesWithDataDescriptor = false;",
+      "info" : "FieldDeclaration[4191-4342]:FieldDeclaration[4191-4342]"
+    }, {
+      "left" : "private static final int LFH_LEN = 30;",
+      "right" : "private static final int LFH_LEN = 30;",
+      "info" : "FieldDeclaration[4348-4386]:FieldDeclaration[4348-4386]"
+    }, {
+      "left" : "private static final int CFH_LEN = 46;",
+      "right" : "private static final int CFH_LEN = 46;",
+      "info" : "FieldDeclaration[4886-4924]:FieldDeclaration[4886-4924]"
+    }, {
+      "left" : "private static final long TWO_EXP_32 = ZIP64_MAGIC + 1;",
+      "right" : "private static final long TWO_EXP_32 = ZIP64_MAGIC + 1;",
+      "info" : "FieldDeclaration[5720-5775]:FieldDeclaration[5720-5775]"
+    }, {
+      "left" : "private final byte[] LFH_BUF = new byte[LFH_LEN];",
+      "right" : "private final byte[] LFH_BUF = new byte[LFH_LEN];",
+      "info" : "FieldDeclaration[5887-5936]:FieldDeclaration[5887-5936]"
+    }, {
+      "left" : "private final byte[] SKIP_BUF = new byte[1024];",
+      "right" : "private final byte[] SKIP_BUF = new byte[1024];",
+      "info" : "FieldDeclaration[5941-5988]:FieldDeclaration[5941-5988]"
+    }, {
+      "left" : "private final byte[] SHORT_BUF = new byte[SHORT];",
+      "right" : "private final byte[] SHORT_BUF = new byte[SHORT];",
+      "info" : "FieldDeclaration[5993-6042]:FieldDeclaration[5993-6042]"
+    }, {
+      "left" : "private final byte[] WORD_BUF = new byte[WORD];",
+      "right" : "private final byte[] WORD_BUF = new byte[WORD];",
+      "info" : "FieldDeclaration[6047-6094]:FieldDeclaration[6047-6094]"
+    }, {
+      "left" : "private final byte[] TWO_DWORD_BUF = new byte[2 * DWORD];",
+      "right" : "private final byte[] TWO_DWORD_BUF = new byte[2 * DWORD];",
+      "info" : "FieldDeclaration[6099-6156]:FieldDeclaration[6099-6156]"
+    }, {
+      "left" : "private int entriesRead = 0;",
+      "right" : "private int entriesRead = 0;",
+      "info" : "FieldDeclaration[6162-6190]:FieldDeclaration[6162-6190]"
+    }, {
+      "left" : "public ZipArchiveInputStream(final InputStream inputStream)",
+      "right" : "public ZipArchiveInputStream(final InputStream inputStream)",
+      "info" : "MethodDeclaration[6196-6422]:MethodDeclaration[6196-6422]"
+    }, {
+      "left" : "public ZipArchiveInputStream(final InputStream inputStream, final String encoding)",
+      "right" : "public ZipArchiveInputStream(final InputStream inputStream, final String encoding)",
+      "info" : "MethodDeclaration[6428-6806]:MethodDeclaration[6428-6806]"
+    }, {
+      "left" : "public ZipArchiveInputStream(final InputStream inputStream, final String encoding, final boolean useUnicodeExtraFields)",
+      "right" : "public ZipArchiveInputStream(final InputStream inputStream, final String encoding, final boolean useUnicodeExtraFields)",
+      "info" : "MethodDeclaration[6812-7356]:MethodDeclaration[6812-7356]"
+    }, {
+      "left" : "public ZipArchiveInputStream(final InputStream inputStream,\n                                 final String encoding,\n                                 final boolean useUnicodeExtraFields,\n                                 final boolean allowStoredEntriesWithDataDescriptor)",
+      "right" : "public ZipArchiveInputStream(final InputStream inputStream,\n                                 final String encoding,\n                                 final boolean useUnicodeExtraFields,\n                                 final boolean allowStoredEntriesWithDataDescriptor)",
+      "info" : "MethodDeclaration[7362-8535]:MethodDeclaration[7362-8535]"
+    }, {
+      "left" : "private void readFirstLocalFileHeader(final byte[] lfh) throws IOException",
+      "right" : "private void readFirstLocalFileHeader(final byte[] lfh) throws IOException",
+      "info" : "MethodDeclaration[12475-13378]:MethodDeclaration[12579-13482]"
+    }, {
+      "left" : "private void processZip64Extra(final ZipLong size, final ZipLong cSize)",
+      "right" : "private void processZip64Extra(final ZipLong size, final ZipLong cSize)",
+      "info" : "MethodDeclaration[13384-14428]:MethodDeclaration[13488-14532]"
+    }, {
+      "left" : "public ArchiveEntry getNextEntry() throws IOException",
+      "right" : "public ArchiveEntry getNextEntry() throws IOException",
+      "info" : "MethodDeclaration[14434-14543]:MethodDeclaration[14538-14647]"
+    }, {
+      "left" : "public boolean canReadEntryData(final ArchiveEntry ae)",
+      "right" : "public boolean canReadEntryData(final ArchiveEntry ae)",
+      "info" : "MethodDeclaration[14549-15094]:MethodDeclaration[14653-15198]"
+    }, {
+      "left" : "public int read(final byte[] buffer, final int offset, final int length) throws IOException",
+      "right" : "public int read(final byte[] buffer, final int offset, final int length) throws IOException",
+      "info" : "MethodDeclaration[15100-16743]:MethodDeclaration[15204-16847]"
+    }, {
+      "left" : "private int readStored(final byte[] buffer, final int offset, final int length) throws IOException",
+      "right" : "private int readStored(final byte[] buffer, final int offset, final int length) throws IOException",
+      "info" : "MethodDeclaration[16749-17899]:MethodDeclaration[16853-18003]"
+    }, {
+      "left" : "private int readDeflated(final byte[] buffer, final int offset, final int length) throws IOException",
+      "right" : "private int readDeflated(final byte[] buffer, final int offset, final int length) throws IOException",
+      "info" : "MethodDeclaration[17905-18639]:MethodDeclaration[18009-18743]"
+    }, {
+      "left" : "private int readFromInflater(final byte[] buffer, final int offset, final int length) throws IOException",
+      "right" : "private int readFromInflater(final byte[] buffer, final int offset, final int length) throws IOException",
+      "info" : "MethodDeclaration[18645-19517]:MethodDeclaration[18749-19621]"
+    }, {
+      "left" : "public void close() throws IOException",
+      "right" : "public void close() throws IOException",
+      "info" : "MethodDeclaration[19523-19754]:MethodDeclaration[19627-19858]"
+    }, {
+      "left" : "public long skip(final long value) throws IOException",
+      "right" : "public long skip(final long value) throws IOException",
+      "info" : "MethodDeclaration[19760-20875]:MethodDeclaration[19864-20979]"
+    }, {
+      "left" : "public static boolean matches(final byte[] signature, final int length)",
+      "right" : "public static boolean matches(final byte[] signature, final int length)",
+      "info" : "MethodDeclaration[20881-21756]:MethodDeclaration[20985-21860]"
+    }, {
+      "left" : "private static boolean checksig(final byte[] signature, final byte[] expected)",
+      "right" : "private static boolean checksig(final byte[] signature, final byte[] expected)",
+      "info" : "MethodDeclaration[21762-22022]:MethodDeclaration[21866-22126]"
+    }, {
+      "left" : "private void closeEntry() throws IOException",
+      "right" : "private void closeEntry() throws IOException",
+      "info" : "MethodDeclaration[22028-24242]:MethodDeclaration[22132-24346]"
+    }, {
+      "left" : "private boolean currentEntryHasOutstandingBytes()",
+      "right" : "private boolean currentEntryHasOutstandingBytes()",
+      "info" : "MethodDeclaration[24248-24733]:MethodDeclaration[24352-24837]"
+    }, {
+      "left" : "private void drainCurrentEntryData() throws IOException",
+      "right" : "private void drainCurrentEntryData() throws IOException",
+      "info" : "MethodDeclaration[24739-25391]:MethodDeclaration[24843-25495]"
+    }, {
+      "left" : "private long getBytesInflated()",
+      "right" : "private long getBytesInflated()",
+      "info" : "MethodDeclaration[25397-26423]:MethodDeclaration[25501-26527]"
+    }, {
+      "left" : "private int fill() throws IOException",
+      "right" : "private int fill() throws IOException",
+      "info" : "MethodDeclaration[26429-26791]:MethodDeclaration[26533-26895]"
+    }, {
+      "left" : "private void readFully(final byte[] b) throws IOException",
+      "right" : "private void readFully(final byte[] b) throws IOException",
+      "info" : "MethodDeclaration[26797-27016]:MethodDeclaration[26901-27120]"
+    }, {
+      "left" : "private void readDataDescriptor() throws IOException",
+      "right" : "private void readDataDescriptor() throws IOException",
+      "info" : "MethodDeclaration[27022-28637]:MethodDeclaration[27126-28741]"
+    }, {
+      "left" : "private boolean supportsDataDescriptorFor(final ZipArchiveEntry entry)",
+      "right" : "private boolean supportsDataDescriptorFor(final ZipArchiveEntry entry)",
+      "info" : "MethodDeclaration[28643-29205]:MethodDeclaration[28747-29309]"
+    }, {
+      "left" : "private void readStoredEntry() throws IOException",
+      "right" : "private void readStoredEntry() throws IOException",
+      "info" : "MethodDeclaration[29211-30928]:MethodDeclaration[29315-31032]"
+    }, {
+      "left" : "private static final byte[] LFH = ZipLong.LFH_SIG.getBytes();",
+      "right" : "private static final byte[] LFH = ZipLong.LFH_SIG.getBytes();",
+      "info" : "FieldDeclaration[30934-30995]:FieldDeclaration[31038-31099]"
+    }, {
+      "left" : "private static final byte[] CFH = ZipLong.CFH_SIG.getBytes();",
+      "right" : "private static final byte[] CFH = ZipLong.CFH_SIG.getBytes();",
+      "info" : "FieldDeclaration[31000-31061]:FieldDeclaration[31104-31165]"
+    }, {
+      "left" : "private static final byte[] DD = ZipLong.DD_SIG.getBytes();",
+      "right" : "private static final byte[] DD = ZipLong.DD_SIG.getBytes();",
+      "info" : "FieldDeclaration[31066-31125]:FieldDeclaration[31170-31229]"
+    }, {
+      "left" : "private boolean bufferContainsSignature(final ByteArrayOutputStream bos, final int offset, final int lastRead, final int expectedDDLen)\n            throws IOException",
+      "right" : "private boolean bufferContainsSignature(final ByteArrayOutputStream bos, final int offset, final int lastRead, final int expectedDDLen)\n            throws IOException",
+      "info" : "MethodDeclaration[31131-32894]:MethodDeclaration[31235-32998]"
+    }, {
+      "left" : "private int cacheBytesRead(final ByteArrayOutputStream bos, int offset, final int lastRead, final int expecteDDLen)",
+      "right" : "private int cacheBytesRead(final ByteArrayOutputStream bos, int offset, final int lastRead, final int expecteDDLen)",
+      "info" : "MethodDeclaration[32900-33775]:MethodDeclaration[33004-33879]"
+    }, {
+      "left" : "private void pushback(final byte[] buf, final int offset, final int length) throws IOException",
+      "right" : "private void pushback(final byte[] buf, final int offset, final int length) throws IOException",
+      "info" : "MethodDeclaration[33781-33980]:MethodDeclaration[33885-34084]"
+    }, {
+      "left" : "private void skipRemainderOfArchive() throws IOException",
+      "right" : "private void skipRemainderOfArchive() throws IOException",
+      "info" : "MethodDeclaration[34642-35279]:MethodDeclaration[34746-35383]"
+    }, {
+      "left" : "private void findEocdRecord() throws IOException",
+      "right" : "private void findEocdRecord() throws IOException",
+      "info" : "MethodDeclaration[35285-36591]:MethodDeclaration[35389-36695]"
+    }, {
+      "left" : "private void realSkip(final long value) throws IOException",
+      "right" : "private void realSkip(final long value) throws IOException",
+      "info" : "MethodDeclaration[36597-37358]:MethodDeclaration[36701-37462]"
+    }, {
+      "left" : "private int readOneByte() throws IOException",
+      "right" : "private int readOneByte() throws IOException",
+      "info" : "MethodDeclaration[37364-37736]:MethodDeclaration[37468-37840]"
+    }, {
+      "left" : "private boolean isFirstByteOfEocdSig(final int b)",
+      "right" : "private boolean isFirstByteOfEocdSig(final int b)",
+      "info" : "MethodDeclaration[37742-37855]:MethodDeclaration[37846-37959]"
+    }, {
+      "left" : "CurrentEntry",
+      "right" : "CurrentEntry",
+      "info" : "TypeDeclaration[37861-39160]:TypeDeclaration[37965-39264]"
+    }, {
+      "left" : "private final ZipArchiveEntry entry = new ZipArchiveEntry();",
+      "right" : "private final ZipArchiveEntry entry = new ZipArchiveEntry();",
+      "info" : "FieldDeclaration[38019-38133]:FieldDeclaration[38123-38237]"
+    }, {
+      "left" : "private boolean hasDataDescriptor;",
+      "right" : "private boolean hasDataDescriptor;",
+      "info" : "FieldDeclaration[38143-38250]:FieldDeclaration[38247-38354]"
+    }, {
+      "left" : "private boolean usesZip64;",
+      "right" : "private boolean usesZip64;",
+      "info" : "FieldDeclaration[38260-38383]:FieldDeclaration[38364-38487]"
+    }, {
+      "left" : "private long bytesRead;",
+      "right" : "private long bytesRead;",
+      "info" : "FieldDeclaration[38393-38538]:FieldDeclaration[38497-38642]"
+    }, {
+      "left" : "private long bytesReadFromStream;",
+      "right" : "private long bytesReadFromStream;",
+      "info" : "FieldDeclaration[38548-38876]:FieldDeclaration[38652-38980]"
+    }, {
+      "left" : "private final CRC32 crc = new CRC32();",
+      "right" : "private final CRC32 crc = new CRC32();",
+      "info" : "FieldDeclaration[38886-39013]:FieldDeclaration[38990-39117]"
+    }, {
+      "left" : "private InputStream in;",
+      "right" : "private InputStream in;",
+      "info" : "FieldDeclaration[39023-39154]:FieldDeclaration[39127-39258]"
+    }, {
+      "left" : "BoundedInputStream",
+      "right" : "BoundedInputStream",
+      "info" : "TypeDeclaration[39166-41450]:TypeDeclaration[39270-41554]"
+    }, {
+      "left" : "private final InputStream in;",
+      "right" : "private final InputStream in;",
+      "info" : "FieldDeclaration[39298-39367]:FieldDeclaration[39402-39471]"
+    }, {
+      "left" : "private final long max;",
+      "right" : "private final long max;",
+      "info" : "FieldDeclaration[39377-39441]:FieldDeclaration[39481-39545]"
+    }, {
+      "left" : "private long pos = 0;",
+      "right" : "private long pos = 0;",
+      "info" : "FieldDeclaration[39451-39524]:FieldDeclaration[39555-39628]"
+    }, {
+      "left" : "public BoundedInputStream(final InputStream in, final long size)",
+      "right" : "public BoundedInputStream(final InputStream in, final long size)",
+      "info" : "MethodDeclaration[39538-39946]:MethodDeclaration[39642-40050]"
+    }, {
+      "left" : "public int read() throws IOException",
+      "right" : "public int read() throws IOException",
+      "info" : "MethodDeclaration[39956-40258]:MethodDeclaration[40060-40362]"
+    }, {
+      "left" : "public int read(final byte[] b) throws IOException",
+      "right" : "public int read(final byte[] b) throws IOException",
+      "info" : "MethodDeclaration[40268-40394]:MethodDeclaration[40372-40498]"
+    }, {
+      "left" : "public int read(final byte[] b, final int off, final int len) throws IOException",
+      "right" : "public int read(final byte[] b, final int off, final int len) throws IOException",
+      "info" : "MethodDeclaration[40404-40961]:MethodDeclaration[40508-41065]"
+    }, {
+      "left" : "public long skip(final long n) throws IOException",
+      "right" : "public long skip(final long n) throws IOException",
+      "info" : "MethodDeclaration[40971-41242]:MethodDeclaration[41075-41346]"
+    }, {
+      "left" : "public int available() throws IOException",
+      "right" : "public int available() throws IOException",
+      "info" : "MethodDeclaration[41256-41444]:MethodDeclaration[41360-41548]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6304-6310]:Modifier[6304-6310]"
+    }, {
+      "left" : "ZipArchiveInputStream",
+      "right" : "ZipArchiveInputStream",
+      "info" : "SimpleName[6311-6332]:SimpleName[6311-6332]"
+    }, {
+      "left" : "final InputStream inputStream",
+      "right" : "final InputStream inputStream",
+      "info" : "SingleVariableDeclaration[6333-6362]:SingleVariableDeclaration[6333-6362]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6364-6422]:Block[6364-6422]"
+    }, {
+      "left" : "this(inputStream, ZipEncodingHelper.UTF8);",
+      "right" : "this(inputStream, ZipEncodingHelper.UTF8);",
+      "info" : "ConstructorInvocation[6374-6416]:ConstructorInvocation[6374-6416]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6673-6679]:Modifier[6673-6679]"
+    }, {
+      "left" : "ZipArchiveInputStream",
+      "right" : "ZipArchiveInputStream",
+      "info" : "SimpleName[6680-6701]:SimpleName[6680-6701]"
+    }, {
+      "left" : "final InputStream inputStream",
+      "right" : "final InputStream inputStream",
+      "info" : "SingleVariableDeclaration[6702-6731]:SingleVariableDeclaration[6702-6731]"
+    }, {
+      "left" : "final String encoding",
+      "right" : "final String encoding",
+      "info" : "SingleVariableDeclaration[6733-6754]:SingleVariableDeclaration[6733-6754]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6756-6806]:Block[6756-6806]"
+    }, {
+      "left" : "this(inputStream, encoding, true);",
+      "right" : "this(inputStream, encoding, true);",
+      "info" : "ConstructorInvocation[6766-6800]:ConstructorInvocation[6766-6800]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7162-7168]:Modifier[7162-7168]"
+    }, {
+      "left" : "ZipArchiveInputStream",
+      "right" : "ZipArchiveInputStream",
+      "info" : "SimpleName[7169-7190]:SimpleName[7169-7190]"
+    }, {
+      "left" : "final InputStream inputStream",
+      "right" : "final InputStream inputStream",
+      "info" : "SingleVariableDeclaration[7191-7220]:SingleVariableDeclaration[7191-7220]"
+    }, {
+      "left" : "final String encoding",
+      "right" : "final String encoding",
+      "info" : "SingleVariableDeclaration[7222-7243]:SingleVariableDeclaration[7222-7243]"
+    }, {
+      "left" : "final boolean useUnicodeExtraFields",
+      "right" : "final boolean useUnicodeExtraFields",
+      "info" : "SingleVariableDeclaration[7245-7280]:SingleVariableDeclaration[7245-7280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7282-7356]:Block[7282-7356]"
+    }, {
+      "left" : "this(inputStream, encoding, useUnicodeExtraFields, false);",
+      "right" : "this(inputStream, encoding, useUnicodeExtraFields, false);",
+      "info" : "ConstructorInvocation[7292-7350]:ConstructorInvocation[7292-7350]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7866-7872]:Modifier[7866-7872]"
+    }, {
+      "left" : "ZipArchiveInputStream",
+      "right" : "ZipArchiveInputStream",
+      "info" : "SimpleName[7873-7894]:SimpleName[7873-7894]"
+    }, {
+      "left" : "final InputStream inputStream",
+      "right" : "final InputStream inputStream",
+      "info" : "SingleVariableDeclaration[7895-7924]:SingleVariableDeclaration[7895-7924]"
+    }, {
+      "left" : "final String encoding",
+      "right" : "final String encoding",
+      "info" : "SingleVariableDeclaration[7959-7980]:SingleVariableDeclaration[7959-7980]"
+    }, {
+      "left" : "final boolean useUnicodeExtraFields",
+      "right" : "final boolean useUnicodeExtraFields",
+      "info" : "SingleVariableDeclaration[8015-8050]:SingleVariableDeclaration[8015-8050]"
+    }, {
+      "left" : "final boolean allowStoredEntriesWithDataDescriptor",
+      "right" : "final boolean allowStoredEntriesWithDataDescriptor",
+      "info" : "SingleVariableDeclaration[8085-8135]:SingleVariableDeclaration[8085-8135]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8137-8535]:Block[8137-8535]"
+    }, {
+      "left" : "this.encoding = encoding;",
+      "right" : "this.encoding = encoding;",
+      "info" : "ExpressionStatement[8147-8172]:ExpressionStatement[8147-8172]"
+    }, {
+      "left" : "zipEncoding = ZipEncodingHelper.getZipEncoding(encoding);",
+      "right" : "zipEncoding = ZipEncodingHelper.getZipEncoding(encoding);",
+      "info" : "ExpressionStatement[8181-8238]:ExpressionStatement[8181-8238]"
+    }, {
+      "left" : "this.useUnicodeExtraFields = useUnicodeExtraFields;",
+      "right" : "this.useUnicodeExtraFields = useUnicodeExtraFields;",
+      "info" : "ExpressionStatement[8247-8298]:ExpressionStatement[8247-8298]"
+    }, {
+      "left" : "in = new PushbackInputStream(inputStream, buf.capacity());",
+      "right" : "in = new PushbackInputStream(inputStream, buf.capacity());",
+      "info" : "ExpressionStatement[8307-8365]:ExpressionStatement[8307-8365]"
+    }, {
+      "left" : "this.allowStoredEntriesWithDataDescriptor =\n            allowStoredEntriesWithDataDescriptor;",
+      "right" : "this.allowStoredEntriesWithDataDescriptor =\n            allowStoredEntriesWithDataDescriptor;",
+      "info" : "ExpressionStatement[8374-8467]:ExpressionStatement[8374-8467]"
+    }, {
+      "left" : "buf.limit(0);",
+      "right" : "buf.limit(0);",
+      "info" : "ExpressionStatement[8516-8529]:ExpressionStatement[8516-8529]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12640-12647]:Modifier[12744-12751]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12648-12652]:PrimitiveType[12752-12756]"
+    }, {
+      "left" : "readFirstLocalFileHeader",
+      "right" : "readFirstLocalFileHeader",
+      "info" : "SimpleName[12653-12677]:SimpleName[12757-12781]"
+    }, {
+      "left" : "final byte[] lfh",
+      "right" : "final byte[] lfh",
+      "info" : "SingleVariableDeclaration[12678-12694]:SingleVariableDeclaration[12782-12798]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[12703-12714]:SimpleType[12807-12818]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12715-13378]:Block[12819-13482]"
+    }, {
+      "left" : "readFully(lfh);",
+      "right" : "readFully(lfh);",
+      "info" : "ExpressionStatement[12725-12740]:ExpressionStatement[12829-12844]"
+    }, {
+      "left" : "final ZipLong sig = new ZipLong(lfh);",
+      "right" : "final ZipLong sig = new ZipLong(lfh);",
+      "info" : "VariableDeclarationStatement[12749-12786]:VariableDeclarationStatement[12853-12890]"
+    }, {
+      "left" : "if (sig.equals(ZipLong.DD_SIG))",
+      "right" : "if (sig.equals(ZipLong.DD_SIG))",
+      "info" : "IfStatement[12795-12942]:IfStatement[12899-13046]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12827-12942]:Block[12931-13046]"
+    }, {
+      "left" : "throw new UnsupportedZipFeatureException(UnsupportedZipFeatureException.Feature.SPLITTING);",
+      "right" : "throw new UnsupportedZipFeatureException(UnsupportedZipFeatureException.Feature.SPLITTING);",
+      "info" : "ThrowStatement[12841-12932]:ThrowStatement[12945-13036]"
+    }, {
+      "left" : "if (sig.equals(ZipLong.SINGLE_SEGMENT_SPLIT_MARKER))",
+      "right" : "if (sig.equals(ZipLong.SINGLE_SEGMENT_SPLIT_MARKER))",
+      "info" : "IfStatement[12952-13372]:IfStatement[13056-13476]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13005-13372]:Block[13109-13476]"
+    }, {
+      "left" : "final byte[] missedLfhBytes = new byte[4];",
+      "right" : "final byte[] missedLfhBytes = new byte[4];",
+      "info" : "VariableDeclarationStatement[13152-13194]:VariableDeclarationStatement[13256-13298]"
+    }, {
+      "left" : "readFully(missedLfhBytes);",
+      "right" : "readFully(missedLfhBytes);",
+      "info" : "ExpressionStatement[13207-13233]:ExpressionStatement[13311-13337]"
+    }, {
+      "left" : "System.arraycopy(lfh, 4, lfh, 0, LFH_LEN - 4);",
+      "right" : "System.arraycopy(lfh, 4, lfh, 0, LFH_LEN - 4);",
+      "info" : "ExpressionStatement[13246-13292]:ExpressionStatement[13350-13396]"
+    }, {
+      "left" : "System.arraycopy(missedLfhBytes, 0, lfh, LFH_LEN - 4, 4);",
+      "right" : "System.arraycopy(missedLfhBytes, 0, lfh, LFH_LEN - 4, 4);",
+      "info" : "ExpressionStatement[13305-13362]:ExpressionStatement[13409-13466]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13569-13576]:Modifier[13673-13680]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13577-13581]:PrimitiveType[13681-13685]"
+    }, {
+      "left" : "processZip64Extra",
+      "right" : "processZip64Extra",
+      "info" : "SimpleName[13582-13599]:SimpleName[13686-13703]"
+    }, {
+      "left" : "final ZipLong size",
+      "right" : "final ZipLong size",
+      "info" : "SingleVariableDeclaration[13600-13618]:SingleVariableDeclaration[13704-13722]"
+    }, {
+      "left" : "final ZipLong cSize",
+      "right" : "final ZipLong cSize",
+      "info" : "SingleVariableDeclaration[13620-13639]:SingleVariableDeclaration[13724-13743]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13641-14428]:Block[13745-14532]"
+    }, {
+      "left" : "final Zip64ExtendedInformationExtraField z64 =\n            (Zip64ExtendedInformationExtraField) \n            current.entry.getExtraField(Zip64ExtendedInformationExtraField.HEADER_ID);",
+      "right" : "final Zip64ExtendedInformationExtraField z64 =\n            (Zip64ExtendedInformationExtraField) \n            current.entry.getExtraField(Zip64ExtendedInformationExtraField.HEADER_ID);",
+      "info" : "VariableDeclarationStatement[13651-13834]:VariableDeclarationStatement[13755-13938]"
+    }, {
+      "left" : "current.usesZip64 = z64 != null;",
+      "right" : "current.usesZip64 = z64 != null;",
+      "info" : "ExpressionStatement[13843-13875]:ExpressionStatement[13947-13979]"
+    }, {
+      "left" : "if (!current.hasDataDescriptor)",
+      "right" : "if (!current.hasDataDescriptor)",
+      "info" : "IfStatement[13884-14422]:IfStatement[13988-14526]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13916-14422]:Block[14020-14526]"
+    }, {
+      "left" : "if (z64 != null // same as current.usesZip64 but avoids NPE warning\n                    && (cSize.equals(ZipLong.ZIP64_MAGIC) || size.equals(ZipLong.ZIP64_MAGIC)))",
+      "right" : "if (z64 != null // same as current.usesZip64 but avoids NPE warning\n                    && (cSize.equals(ZipLong.ZIP64_MAGIC) || size.equals(ZipLong.ZIP64_MAGIC)))",
+      "info" : "IfStatement[13930-14412]:IfStatement[14034-14516]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14095-14268]:Block[14199-14372]"
+    }, {
+      "left" : "current.entry.setCompressedSize(z64.getCompressedSize().getLongValue());",
+      "right" : "current.entry.setCompressedSize(z64.getCompressedSize().getLongValue());",
+      "info" : "ExpressionStatement[14113-14185]:ExpressionStatement[14217-14289]"
+    }, {
+      "left" : "current.entry.setSize(z64.getSize().getLongValue());",
+      "right" : "current.entry.setSize(z64.getSize().getLongValue());",
+      "info" : "ExpressionStatement[14202-14254]:ExpressionStatement[14306-14358]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14274-14412]:Block[14378-14516]"
+    }, {
+      "left" : "current.entry.setCompressedSize(cSize.getValue());",
+      "right" : "current.entry.setCompressedSize(cSize.getValue());",
+      "info" : "ExpressionStatement[14292-14342]:ExpressionStatement[14396-14446]"
+    }, {
+      "left" : "current.entry.setSize(size.getValue());",
+      "right" : "current.entry.setSize(size.getValue());",
+      "info" : "ExpressionStatement[14359-14398]:ExpressionStatement[14463-14502]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14434-14443]:MarkerAnnotation[14538-14547]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14448-14454]:Modifier[14552-14558]"
+    }, {
+      "left" : "ArchiveEntry",
+      "right" : "ArchiveEntry",
+      "info" : "SimpleType[14455-14467]:SimpleType[14559-14571]"
+    }, {
+      "left" : "getNextEntry",
+      "right" : "getNextEntry",
+      "info" : "SimpleName[14468-14480]:SimpleName[14572-14584]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[14490-14501]:SimpleType[14594-14605]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14502-14543]:Block[14606-14647]"
+    }, {
+      "left" : "return getNextZipEntry();",
+      "right" : "return getNextZipEntry();",
+      "info" : "ReturnStatement[14512-14537]:ReturnStatement[14616-14641]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14779-14788]:MarkerAnnotation[14883-14892]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14793-14799]:Modifier[14897-14903]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[14800-14807]:PrimitiveType[14904-14911]"
+    }, {
+      "left" : "canReadEntryData",
+      "right" : "canReadEntryData",
+      "info" : "SimpleName[14808-14824]:SimpleName[14912-14928]"
+    }, {
+      "left" : "final ArchiveEntry ae",
+      "right" : "final ArchiveEntry ae",
+      "info" : "SingleVariableDeclaration[14825-14846]:SingleVariableDeclaration[14929-14950]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14848-15094]:Block[14952-15198]"
+    }, {
+      "left" : "if (ae instanceof ZipArchiveEntry)",
+      "right" : "if (ae instanceof ZipArchiveEntry)",
+      "info" : "IfStatement[14858-15066]:IfStatement[14962-15170]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14893-15066]:Block[14997-15170]"
+    }, {
+      "left" : "final ZipArchiveEntry ze = (ZipArchiveEntry) ae;",
+      "right" : "final ZipArchiveEntry ze = (ZipArchiveEntry) ae;",
+      "info" : "VariableDeclarationStatement[14907-14955]:VariableDeclarationStatement[15011-15059]"
+    }, {
+      "left" : "return ZipUtil.canHandleEntryData(ze)\n                && supportsDataDescriptorFor(ze);",
+      "right" : "return ZipUtil.canHandleEntryData(ze)\n                && supportsDataDescriptorFor(ze);",
+      "info" : "ReturnStatement[14968-15055]:ReturnStatement[15072-15159]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[15075-15088]:ReturnStatement[15179-15192]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15100-15109]:MarkerAnnotation[15204-15213]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15114-15120]:Modifier[15218-15224]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[15121-15124]:PrimitiveType[15225-15228]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[15125-15129]:SimpleName[15229-15233]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[15130-15149]:SingleVariableDeclaration[15234-15253]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[15151-15167]:SingleVariableDeclaration[15255-15271]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[15169-15185]:SingleVariableDeclaration[15273-15289]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[15194-15205]:SimpleType[15298-15309]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15206-16743]:Block[15310-16847]"
+    }, {
+      "left" : "if (closed)",
+      "right" : "if (closed)",
+      "info" : "IfStatement[15216-15298]:IfStatement[15320-15402]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15228-15298]:Block[15332-15402]"
+    }, {
+      "left" : "throw new IOException(\"The stream is closed\");",
+      "right" : "throw new IOException(\"The stream is closed\");",
+      "info" : "ThrowStatement[15242-15288]:ThrowStatement[15346-15392]"
+    }, {
+      "left" : "if (current == null)",
+      "right" : "if (current == null)",
+      "info" : "IfStatement[15308-15363]:IfStatement[15412-15467]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15329-15363]:Block[15433-15467]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[15343-15353]:ReturnStatement[15447-15457]"
+    }, {
+      "left" : "if (offset > buffer.length || length < 0 || offset < 0 || buffer.length - offset < length)",
+      "right" : "if (offset > buffer.length || length < 0 || offset < 0 || buffer.length - offset < length)",
+      "info" : "IfStatement[15422-15580]:IfStatement[15526-15684]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15513-15580]:Block[15617-15684]"
+    }, {
+      "left" : "throw new ArrayIndexOutOfBoundsException();",
+      "right" : "throw new ArrayIndexOutOfBoundsException();",
+      "info" : "ThrowStatement[15527-15570]:ThrowStatement[15631-15674]"
+    }, {
+      "left" : "ZipUtil.checkRequestedFeatures(current.entry);",
+      "right" : "ZipUtil.checkRequestedFeatures(current.entry);",
+      "info" : "ExpressionStatement[15598-15644]:ExpressionStatement[15702-15748]"
+    }, {
+      "left" : "if (!supportsDataDescriptorFor(current.entry))",
+      "right" : "if (!supportsDataDescriptorFor(current.entry))",
+      "info" : "IfStatement[15653-15856]:IfStatement[15757-15960]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15700-15856]:Block[15804-15960]"
+    }, {
+      "left" : "throw new UnsupportedZipFeatureException(UnsupportedZipFeatureException.Feature.DATA_DESCRIPTOR,\n                    current.entry);",
+      "right" : "throw new UnsupportedZipFeatureException(UnsupportedZipFeatureException.Feature.DATA_DESCRIPTOR,\n                    current.entry);",
+      "info" : "ThrowStatement[15714-15846]:ThrowStatement[15818-15950]"
+    }, {
+      "left" : "int read;",
+      "right" : "int read;",
+      "info" : "VariableDeclarationStatement[15866-15875]:VariableDeclarationStatement[15970-15979]"
+    }, {
+      "left" : "if (current.entry.getMethod() == ZipArchiveOutputStream.STORED)",
+      "right" : "if (current.entry.getMethod() == ZipArchiveOutputStream.STORED)",
+      "info" : "IfStatement[15884-16609]:IfStatement[15988-16713]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15948-16014]:Block[16052-16118]"
+    }, {
+      "left" : "read = readStored(buffer, offset, length);",
+      "right" : "read = readStored(buffer, offset, length);",
+      "info" : "ExpressionStatement[15962-16004]:ExpressionStatement[16066-16108]"
+    }, {
+      "left" : "if (current.entry.getMethod() == ZipArchiveOutputStream.DEFLATED)",
+      "right" : "if (current.entry.getMethod() == ZipArchiveOutputStream.DEFLATED)",
+      "info" : "IfStatement[16020-16609]:IfStatement[16124-16713]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16086-16154]:Block[16190-16258]"
+    }, {
+      "left" : "read = readDeflated(buffer, offset, length);",
+      "right" : "read = readDeflated(buffer, offset, length);",
+      "info" : "ExpressionStatement[16100-16144]:ExpressionStatement[16204-16248]"
+    }, {
+      "left" : "if (current.entry.getMethod() == ZipMethod.UNSHRINKING.getCode()\n                || current.entry.getMethod() == ZipMethod.IMPLODING.getCode()\n                || current.entry.getMethod() == ZipMethod.BZIP2.getCode())",
+      "right" : "if (current.entry.getMethod() == ZipMethod.UNSHRINKING.getCode()\n                || current.entry.getMethod() == ZipMethod.IMPLODING.getCode()\n                || current.entry.getMethod() == ZipMethod.BZIP2.getCode())",
+      "info" : "IfStatement[16160-16609]:IfStatement[16264-16713]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16378-16449]:Block[16482-16553]"
+    }, {
+      "left" : "read = current.in.read(buffer, offset, length);",
+      "right" : "read = current.in.read(buffer, offset, length);",
+      "info" : "ExpressionStatement[16392-16439]:ExpressionStatement[16496-16543]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16455-16609]:Block[16559-16713]"
+    }, {
+      "left" : "throw new UnsupportedZipFeatureException(ZipMethod.getMethodByCode(current.entry.getMethod()),\n                    current.entry);",
+      "right" : "throw new UnsupportedZipFeatureException(ZipMethod.getMethodByCode(current.entry.getMethod()),\n                    current.entry);",
+      "info" : "ThrowStatement[16469-16599]:ThrowStatement[16573-16703]"
+    }, {
+      "left" : "if (read >= 0)",
+      "right" : "if (read >= 0)",
+      "info" : "IfStatement[16627-16707]:IfStatement[16731-16811]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16642-16707]:Block[16746-16811]"
+    }, {
+      "left" : "current.crc.update(buffer, offset, read);",
+      "right" : "current.crc.update(buffer, offset, read);",
+      "info" : "ExpressionStatement[16656-16697]:ExpressionStatement[16760-16801]"
+    }, {
+      "left" : "return read;",
+      "right" : "return read;",
+      "info" : "ReturnStatement[16725-16737]:ReturnStatement[16829-16841]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[16815-16822]:Modifier[16919-16926]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[16823-16826]:PrimitiveType[16927-16930]"
+    }, {
+      "left" : "readStored",
+      "right" : "readStored",
+      "info" : "SimpleName[16827-16837]:SimpleName[16931-16941]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[16838-16857]:SingleVariableDeclaration[16942-16961]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[16859-16875]:SingleVariableDeclaration[16963-16979]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[16877-16893]:SingleVariableDeclaration[16981-16997]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[16902-16913]:SimpleType[17006-17017]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16914-17899]:Block[17018-18003]"
+    }, {
+      "left" : "if (current.hasDataDescriptor)",
+      "right" : "if (current.hasDataDescriptor)",
+      "info" : "IfStatement[16925-17124]:IfStatement[17029-17228]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16956-17124]:Block[17060-17228]"
+    }, {
+      "left" : "if (lastStoredEntry == null)",
+      "right" : "if (lastStoredEntry == null)",
+      "info" : "IfStatement[16970-17049]:IfStatement[17074-17153]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16999-17049]:Block[17103-17153]"
+    }, {
+      "left" : "readStoredEntry();",
+      "right" : "readStoredEntry();",
+      "info" : "ExpressionStatement[17017-17035]:ExpressionStatement[17121-17139]"
+    }, {
+      "left" : "return lastStoredEntry.read(buffer, offset, length);",
+      "right" : "return lastStoredEntry.read(buffer, offset, length);",
+      "info" : "ReturnStatement[17062-17114]:ReturnStatement[17166-17218]"
+    }, {
+      "left" : "final long csize = current.entry.getSize();",
+      "right" : "final long csize = current.entry.getSize();",
+      "info" : "VariableDeclarationStatement[17134-17177]:VariableDeclarationStatement[17238-17281]"
+    }, {
+      "left" : "if (current.bytesRead >= csize)",
+      "right" : "if (current.bytesRead >= csize)",
+      "info" : "IfStatement[17186-17252]:IfStatement[17290-17356]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17218-17252]:Block[17322-17356]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[17232-17242]:ReturnStatement[17336-17346]"
+    }, {
+      "left" : "if (buf.position() >= buf.limit())",
+      "right" : "if (buf.position() >= buf.limit())",
+      "info" : "IfStatement[17262-17548]:IfStatement[17366-17652]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17297-17548]:Block[17401-17652]"
+    }, {
+      "left" : "buf.position(0);",
+      "right" : "buf.position(0);",
+      "info" : "ExpressionStatement[17311-17327]:ExpressionStatement[17415-17431]"
+    }, {
+      "left" : "final int l = in.read(buf.array());",
+      "right" : "final int l = in.read(buf.array());",
+      "info" : "VariableDeclarationStatement[17340-17375]:VariableDeclarationStatement[17444-17479]"
+    }, {
+      "left" : "if (l == -1)",
+      "right" : "if (l == -1)",
+      "info" : "IfStatement[17388-17443]:IfStatement[17492-17547]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17401-17443]:Block[17505-17547]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[17419-17429]:ReturnStatement[17523-17533]"
+    }, {
+      "left" : "buf.limit(l);",
+      "right" : "buf.limit(l);",
+      "info" : "ExpressionStatement[17456-17469]:ExpressionStatement[17560-17573]"
+    }, {
+      "left" : "count(l);",
+      "right" : "count(l);",
+      "info" : "ExpressionStatement[17483-17492]:ExpressionStatement[17587-17596]"
+    }, {
+      "left" : "current.bytesReadFromStream += l;",
+      "right" : "current.bytesReadFromStream += l;",
+      "info" : "ExpressionStatement[17505-17538]:ExpressionStatement[17609-17642]"
+    }, {
+      "left" : "int toRead = Math.min(buf.remaining(), length);",
+      "right" : "int toRead = Math.min(buf.remaining(), length);",
+      "info" : "VariableDeclarationStatement[17558-17605]:VariableDeclarationStatement[17662-17709]"
+    }, {
+      "left" : "if ((csize - current.bytesRead) < toRead)",
+      "right" : "if ((csize - current.bytesRead) < toRead)",
+      "info" : "IfStatement[17614-17792]:IfStatement[17718-17896]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17656-17792]:Block[17760-17896]"
+    }, {
+      "left" : "toRead = (int) (csize - current.bytesRead);",
+      "right" : "toRead = (int) (csize - current.bytesRead);",
+      "info" : "ExpressionStatement[17739-17782]:ExpressionStatement[17843-17886]"
+    }, {
+      "left" : "buf.get(buffer, offset, toRead);",
+      "right" : "buf.get(buffer, offset, toRead);",
+      "info" : "ExpressionStatement[17801-17833]:ExpressionStatement[17905-17937]"
+    }, {
+      "left" : "current.bytesRead += toRead;",
+      "right" : "current.bytesRead += toRead;",
+      "info" : "ExpressionStatement[17842-17870]:ExpressionStatement[17946-17974]"
+    }, {
+      "left" : "return toRead;",
+      "right" : "return toRead;",
+      "info" : "ReturnStatement[17879-17893]:ReturnStatement[17983-17997]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17973-17980]:Modifier[18077-18084]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[17981-17984]:PrimitiveType[18085-18088]"
+    }, {
+      "left" : "readDeflated",
+      "right" : "readDeflated",
+      "info" : "SimpleName[17985-17997]:SimpleName[18089-18101]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[17998-18017]:SingleVariableDeclaration[18102-18121]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[18019-18035]:SingleVariableDeclaration[18123-18139]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[18037-18053]:SingleVariableDeclaration[18141-18157]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[18062-18073]:SimpleType[18166-18177]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18074-18639]:Block[18178-18743]"
+    }, {
+      "left" : "final int read = readFromInflater(buffer, offset, length);",
+      "right" : "final int read = readFromInflater(buffer, offset, length);",
+      "info" : "VariableDeclarationStatement[18084-18142]:VariableDeclarationStatement[18188-18246]"
+    }, {
+      "left" : "if (read <= 0)",
+      "right" : "if (read <= 0)",
+      "info" : "IfStatement[18151-18612]:IfStatement[18255-18716]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18166-18612]:Block[18270-18716]"
+    }, {
+      "left" : "if (inf.finished())",
+      "right" : "if (inf.finished())",
+      "info" : "IfStatement[18180-18602]:IfStatement[18284-18706]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18200-18242]:Block[18304-18346]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[18218-18228]:ReturnStatement[18322-18332]"
+    }, {
+      "left" : "if (inf.needsDictionary())",
+      "right" : "if (inf.needsDictionary())",
+      "info" : "IfStatement[18248-18602]:IfStatement[18352-18706]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18275-18504]:Block[18379-18608]"
+    }, {
+      "left" : "throw new ZipException(\"This archive needs a preset dictionary\"\n                                       + \" which is not supported by Commons\"\n                                       + \" Compress.\");",
+      "right" : "throw new ZipException(\"This archive needs a preset dictionary\"\n                                       + \" which is not supported by Commons\"\n                                       + \" Compress.\");",
+      "info" : "ThrowStatement[18293-18490]:ThrowStatement[18397-18594]"
+    }, {
+      "left" : "if (read == -1)",
+      "right" : "if (read == -1)",
+      "info" : "IfStatement[18510-18602]:IfStatement[18614-18706]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18526-18602]:Block[18630-18706]"
+    }, {
+      "left" : "throw new IOException(\"Truncated ZIP file\");",
+      "right" : "throw new IOException(\"Truncated ZIP file\");",
+      "info" : "ThrowStatement[18544-18588]:ThrowStatement[18648-18692]"
+    }, {
+      "left" : "return read;",
+      "right" : "return read;",
+      "info" : "ReturnStatement[18621-18633]:ReturnStatement[18725-18737]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18753-18760]:Modifier[18857-18864]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[18761-18764]:PrimitiveType[18865-18868]"
+    }, {
+      "left" : "readFromInflater",
+      "right" : "readFromInflater",
+      "info" : "SimpleName[18765-18781]:SimpleName[18869-18885]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[18782-18801]:SingleVariableDeclaration[18886-18905]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[18803-18819]:SingleVariableDeclaration[18907-18923]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[18821-18837]:SingleVariableDeclaration[18925-18941]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[18846-18857]:SimpleType[18950-18961]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18858-19517]:Block[18962-19621]"
+    }, {
+      "left" : "int read = 0;",
+      "right" : "int read = 0;",
+      "info" : "VariableDeclarationStatement[18868-18881]:VariableDeclarationStatement[18972-18985]"
+    }, {
+      "left" : "do{...}",
+      "right" : "do{...}",
+      "info" : "DoStatement[18890-19490]:DoStatement[18994-19594]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18893-19451]:Block[18997-19555]"
+    }, {
+      "left" : "if (inf.needsInput())",
+      "right" : "if (inf.needsInput())",
+      "info" : "IfStatement[18907-19214]:IfStatement[19011-19318]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18929-19214]:Block[19033-19318]"
+    }, {
+      "left" : "final int l = fill();",
+      "right" : "final int l = fill();",
+      "info" : "VariableDeclarationStatement[18947-18968]:VariableDeclarationStatement[19051-19072]"
+    }, {
+      "left" : "if (l > 0)",
+      "right" : "if (l > 0)",
+      "info" : "IfStatement[18985-19200]:IfStatement[19089-19304]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18996-19079]:Block[19100-19183]"
+    }, {
+      "left" : "current.bytesReadFromStream += buf.limit();",
+      "right" : "current.bytesReadFromStream += buf.limit();",
+      "info" : "ExpressionStatement[19018-19061]:ExpressionStatement[19122-19165]"
+    }, {
+      "left" : "if (l == -1)",
+      "right" : "if (l == -1)",
+      "info" : "IfStatement[19085-19200]:IfStatement[19189-19304]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19098-19148]:Block[19202-19252]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[19120-19130]:ReturnStatement[19224-19234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19154-19200]:Block[19258-19304]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[19176-19182]:BreakStatement[19280-19286]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[19227-19441]:TryStatement[19331-19545]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19231-19306]:Block[19335-19410]"
+    }, {
+      "left" : "read = inf.inflate(buffer, offset, length);",
+      "right" : "read = inf.inflate(buffer, offset, length);",
+      "info" : "ExpressionStatement[19249-19292]:ExpressionStatement[19353-19396]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19343-19441]:Block[19447-19545]"
+    }, {
+      "left" : "throw (IOException) new ZipException(e.getMessage()).initCause(e);",
+      "right" : "throw (IOException) new ZipException(e.getMessage()).initCause(e);",
+      "info" : "ThrowStatement[19361-19427]:ThrowStatement[19465-19531]"
+    }, {
+      "left" : "return read;",
+      "right" : "return read;",
+      "info" : "ReturnStatement[19499-19511]:ReturnStatement[19603-19615]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[19523-19532]:MarkerAnnotation[19627-19636]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[19537-19543]:Modifier[19641-19647]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[19544-19548]:PrimitiveType[19648-19652]"
+    }, {
+      "left" : "close",
+      "right" : "close",
+      "info" : "SimpleName[19549-19554]:SimpleName[19653-19658]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[19564-19575]:SimpleType[19668-19679]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19576-19754]:Block[19680-19858]"
+    }, {
+      "left" : "if (!closed)",
+      "right" : "if (!closed)",
+      "info" : "IfStatement[19586-19748]:IfStatement[19690-19852]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19599-19748]:Block[19703-19852]"
+    }, {
+      "left" : "closed = true;",
+      "right" : "closed = true;",
+      "info" : "ExpressionStatement[19613-19627]:ExpressionStatement[19717-19731]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[19640-19738]:TryStatement[19744-19842]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19644-19687]:Block[19748-19791]"
+    }, {
+      "left" : "in.close();",
+      "right" : "in.close();",
+      "info" : "ExpressionStatement[19662-19673]:ExpressionStatement[19766-19777]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19696-19738]:Block[19800-19842]"
+    }, {
+      "left" : "inf.end();",
+      "right" : "inf.end();",
+      "info" : "ExpressionStatement[19714-19724]:ExpressionStatement[19818-19828]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[20339-20348]:MarkerAnnotation[20443-20452]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[20353-20359]:Modifier[20457-20463]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[20360-20364]:PrimitiveType[20464-20468]"
+    }, {
+      "left" : "skip",
+      "right" : "skip",
+      "info" : "SimpleName[20365-20369]:SimpleName[20469-20473]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[20370-20386]:SingleVariableDeclaration[20474-20490]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[20395-20406]:SimpleType[20499-20510]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20407-20875]:Block[20511-20979]"
+    }, {
+      "left" : "if (value >= 0)",
+      "right" : "if (value >= 0)",
+      "info" : "IfStatement[20417-20823]:IfStatement[20521-20927]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20433-20823]:Block[20537-20927]"
+    }, {
+      "left" : "long skipped = 0;",
+      "right" : "long skipped = 0;",
+      "info" : "VariableDeclarationStatement[20447-20464]:VariableDeclarationStatement[20551-20568]"
+    }, {
+      "left" : "while (skipped < value)",
+      "right" : "while (skipped < value)",
+      "info" : "WhileStatement[20477-20785]:WhileStatement[20581-20889]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20501-20785]:Block[20605-20889]"
+    }, {
+      "left" : "final long rem = value - skipped;",
+      "right" : "final long rem = value - skipped;",
+      "info" : "VariableDeclarationStatement[20519-20552]:VariableDeclarationStatement[20623-20656]"
+    }, {
+      "left" : "final int x = read(SKIP_BUF, 0, (int) (SKIP_BUF.length > rem ? rem : SKIP_BUF.length));",
+      "right" : "final int x = read(SKIP_BUF, 0, (int) (SKIP_BUF.length > rem ? rem : SKIP_BUF.length));",
+      "info" : "VariableDeclarationStatement[20569-20656]:VariableDeclarationStatement[20673-20760]"
+    }, {
+      "left" : "if (x == -1)",
+      "right" : "if (x == -1)",
+      "info" : "IfStatement[20673-20741]:IfStatement[20777-20845]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20686-20741]:Block[20790-20845]"
+    }, {
+      "left" : "return skipped;",
+      "right" : "return skipped;",
+      "info" : "ReturnStatement[20708-20723]:ReturnStatement[20812-20827]"
+    }, {
+      "left" : "skipped += x;",
+      "right" : "skipped += x;",
+      "info" : "ExpressionStatement[20758-20771]:ExpressionStatement[20862-20875]"
+    }, {
+      "left" : "return skipped;",
+      "right" : "return skipped;",
+      "info" : "ReturnStatement[20798-20813]:ReturnStatement[20902-20917]"
+    }, {
+      "left" : "throw new IllegalArgumentException();",
+      "right" : "throw new IllegalArgumentException();",
+      "info" : "ThrowStatement[20832-20869]:ThrowStatement[20936-20973]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[21252-21258]:Modifier[21356-21362]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[21259-21265]:Modifier[21363-21369]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[21266-21273]:PrimitiveType[21370-21377]"
+    }, {
+      "left" : "matches",
+      "right" : "matches",
+      "info" : "SimpleName[21274-21281]:SimpleName[21378-21385]"
+    }, {
+      "left" : "final byte[] signature",
+      "right" : "final byte[] signature",
+      "info" : "SingleVariableDeclaration[21282-21304]:SingleVariableDeclaration[21386-21408]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[21306-21322]:SingleVariableDeclaration[21410-21426]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21324-21756]:Block[21428-21860]"
+    }, {
+      "left" : "if (length < ZipArchiveOutputStream.LFH_SIG.length)",
+      "right" : "if (length < ZipArchiveOutputStream.LFH_SIG.length)",
+      "info" : "IfStatement[21334-21423]:IfStatement[21438-21527]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21386-21423]:Block[21490-21527]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[21400-21413]:ReturnStatement[21504-21517]"
+    }, {
+      "left" : "return checksig(signature, ZipArchiveOutputStream.LFH_SIG) // normal file\n            || checksig(signature, ZipArchiveOutputStream.EOCD_SIG) // empty zip\n            || checksig(signature, ZipArchiveOutputStream.DD_SIG) // split zip\n            || checksig(signature, ZipLong.SINGLE_SEGMENT_SPLIT_MARKER.getBytes());",
+      "right" : "return checksig(signature, ZipArchiveOutputStream.LFH_SIG) // normal file\n            || checksig(signature, ZipArchiveOutputStream.EOCD_SIG) // empty zip\n            || checksig(signature, ZipArchiveOutputStream.DD_SIG) // split zip\n            || checksig(signature, ZipLong.SINGLE_SEGMENT_SPLIT_MARKER.getBytes());",
+      "info" : "ReturnStatement[21433-21750]:ReturnStatement[21537-21854]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[21762-21769]:Modifier[21866-21873]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[21770-21776]:Modifier[21874-21880]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[21777-21784]:PrimitiveType[21881-21888]"
+    }, {
+      "left" : "checksig",
+      "right" : "checksig",
+      "info" : "SimpleName[21785-21793]:SimpleName[21889-21897]"
+    }, {
+      "left" : "final byte[] signature",
+      "right" : "final byte[] signature",
+      "info" : "SingleVariableDeclaration[21794-21816]:SingleVariableDeclaration[21898-21920]"
+    }, {
+      "left" : "final byte[] expected",
+      "right" : "final byte[] expected",
+      "info" : "SingleVariableDeclaration[21818-21839]:SingleVariableDeclaration[21922-21943]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21841-22022]:Block[21945-22126]"
+    }, {
+      "left" : "for (int i = 0; i < expected.length; i++)",
+      "right" : "for (int i = 0; i < expected.length; i++)",
+      "info" : "ForStatement[21851-21995]:ForStatement[21955-22099]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21893-21995]:Block[21997-22099]"
+    }, {
+      "left" : "if (signature[i] != expected[i])",
+      "right" : "if (signature[i] != expected[i])",
+      "info" : "IfStatement[21907-21985]:IfStatement[22011-22089]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21940-21985]:Block[22044-22089]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[21958-21971]:ReturnStatement[22062-22075]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[22004-22016]:ReturnStatement[22108-22120]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[22904-22911]:Modifier[23008-23015]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[22912-22916]:PrimitiveType[23016-23020]"
+    }, {
+      "left" : "closeEntry",
+      "right" : "closeEntry",
+      "info" : "SimpleName[22917-22927]:SimpleName[23021-23031]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[22937-22948]:SimpleType[23041-23052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22949-24242]:Block[23053-24346]"
+    }, {
+      "left" : "if (closed)",
+      "right" : "if (closed)",
+      "info" : "IfStatement[22959-23041]:IfStatement[23063-23145]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22971-23041]:Block[23075-23145]"
+    }, {
+      "left" : "throw new IOException(\"The stream is closed\");",
+      "right" : "throw new IOException(\"The stream is closed\");",
+      "info" : "ThrowStatement[22985-23031]:ThrowStatement[23089-23135]"
+    }, {
+      "left" : "if (current == null)",
+      "right" : "if (current == null)",
+      "info" : "IfStatement[23050-23102]:IfStatement[23154-23206]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23071-23102]:Block[23175-23206]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[23085-23092]:ReturnStatement[23189-23196]"
+    }, {
+      "left" : "if (currentEntryHasOutstandingBytes())",
+      "right" : "if (currentEntryHasOutstandingBytes())",
+      "info" : "IfStatement[23155-24017]:IfStatement[23259-24121]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23194-23242]:Block[23298-23346]"
+    }, {
+      "left" : "drainCurrentEntryData();",
+      "right" : "drainCurrentEntryData();",
+      "info" : "ExpressionStatement[23208-23232]:ExpressionStatement[23312-23336]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23248-24017]:Block[23352-24121]"
+    }, {
+      "left" : "skip(Long.MAX_VALUE);",
+      "right" : "skip(Long.MAX_VALUE);",
+      "info" : "ExpressionStatement[23262-23283]:ExpressionStatement[23366-23387]"
+    }, {
+      "left" : "final long inB = current.entry.getMethod() == ZipArchiveOutputStream.DEFLATED\n                       ? getBytesInflated() : current.bytesRead;",
+      "right" : "final long inB = current.entry.getMethod() == ZipArchiveOutputStream.DEFLATED\n                       ? getBytesInflated() : current.bytesRead;",
+      "info" : "VariableDeclarationStatement[23297-23439]:VariableDeclarationStatement[23401-23543]"
+    }, {
+      "left" : "final int diff = (int) (current.bytesReadFromStream - inB);",
+      "right" : "final int diff = (int) (current.bytesReadFromStream - inB);",
+      "info" : "VariableDeclarationStatement[23559-23618]:VariableDeclarationStatement[23663-23722]"
+    }, {
+      "left" : "if (diff > 0)",
+      "right" : "if (diff > 0)",
+      "info" : "IfStatement[23675-23822]:IfStatement[23779-23926]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23689-23822]:Block[23793-23926]"
+    }, {
+      "left" : "pushback(buf.array(), buf.limit() - diff, diff);",
+      "right" : "pushback(buf.array(), buf.limit() - diff, diff);",
+      "info" : "ExpressionStatement[23707-23755]:ExpressionStatement[23811-23859]"
+    }, {
+      "left" : "current.bytesReadFromStream -= diff;",
+      "right" : "current.bytesReadFromStream -= diff;",
+      "info" : "ExpressionStatement[23772-23808]:ExpressionStatement[23876-23912]"
+    }, {
+      "left" : "if (currentEntryHasOutstandingBytes())",
+      "right" : "if (currentEntryHasOutstandingBytes())",
+      "info" : "IfStatement[23912-24007]:IfStatement[24016-24111]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23951-24007]:Block[24055-24111]"
+    }, {
+      "left" : "drainCurrentEntryData();",
+      "right" : "drainCurrentEntryData();",
+      "info" : "ExpressionStatement[23969-23993]:ExpressionStatement[24073-24097]"
+    }, {
+      "left" : "if (lastStoredEntry == null && current.hasDataDescriptor)",
+      "right" : "if (lastStoredEntry == null && current.hasDataDescriptor)",
+      "info" : "IfStatement[24027-24130]:IfStatement[24131-24234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24085-24130]:Block[24189-24234]"
+    }, {
+      "left" : "readDataDescriptor();",
+      "right" : "readDataDescriptor();",
+      "info" : "ExpressionStatement[24099-24120]:ExpressionStatement[24203-24224]"
+    }, {
+      "left" : "inf.reset();",
+      "right" : "inf.reset();",
+      "info" : "ExpressionStatement[24140-24152]:ExpressionStatement[24244-24256]"
+    }, {
+      "left" : "buf.clear().flip();",
+      "right" : "buf.clear().flip();",
+      "info" : "ExpressionStatement[24161-24180]:ExpressionStatement[24265-24284]"
+    }, {
+      "left" : "current = null;",
+      "right" : "current = null;",
+      "info" : "ExpressionStatement[24189-24204]:ExpressionStatement[24293-24308]"
+    }, {
+      "left" : "lastStoredEntry = null;",
+      "right" : "lastStoredEntry = null;",
+      "info" : "ExpressionStatement[24213-24236]:ExpressionStatement[24317-24340]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[24549-24556]:Modifier[24653-24660]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[24557-24564]:PrimitiveType[24661-24668]"
+    }, {
+      "left" : "currentEntryHasOutstandingBytes",
+      "right" : "currentEntryHasOutstandingBytes",
+      "info" : "SimpleName[24565-24596]:SimpleName[24669-24700]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24599-24733]:Block[24703-24837]"
+    }, {
+      "left" : "return current.bytesReadFromStream <= current.entry.getCompressedSize()\n                && !current.hasDataDescriptor;",
+      "right" : "return current.bytesReadFromStream <= current.entry.getCompressedSize()\n                && !current.hasDataDescriptor;",
+      "info" : "ReturnStatement[24609-24727]:ReturnStatement[24713-24831]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[24859-24866]:Modifier[24963-24970]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[24867-24871]:PrimitiveType[24971-24975]"
+    }, {
+      "left" : "drainCurrentEntryData",
+      "right" : "drainCurrentEntryData",
+      "info" : "SimpleName[24872-24893]:SimpleName[24976-24997]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[24903-24914]:SimpleType[25007-25018]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24915-25391]:Block[25019-25495]"
+    }, {
+      "left" : "long remaining = current.entry.getCompressedSize() - current.bytesReadFromStream;",
+      "right" : "long remaining = current.entry.getCompressedSize() - current.bytesReadFromStream;",
+      "info" : "VariableDeclarationStatement[24925-25006]:VariableDeclarationStatement[25029-25110]"
+    }, {
+      "left" : "while (remaining > 0)",
+      "right" : "while (remaining > 0)",
+      "info" : "WhileStatement[25015-25385]:WhileStatement[25119-25489]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25037-25385]:Block[25141-25489]"
+    }, {
+      "left" : "final long n = in.read(buf.array(), 0, (int) Math.min(buf.capacity(), remaining));",
+      "right" : "final long n = in.read(buf.array(), 0, (int) Math.min(buf.capacity(), remaining));",
+      "info" : "VariableDeclarationStatement[25051-25133]:VariableDeclarationStatement[25155-25237]"
+    }, {
+      "left" : "if (n < 0)",
+      "right" : "if (n < 0)",
+      "info" : "IfStatement[25146-25325]:IfStatement[25250-25429]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25157-25325]:Block[25261-25429]"
+    }, {
+      "left" : "throw new EOFException(\"Truncated ZIP entry: \"\n                                       + ArchiveUtils.sanitize(current.entry.getName()));",
+      "right" : "throw new EOFException(\"Truncated ZIP entry: \"\n                                       + ArchiveUtils.sanitize(current.entry.getName()));",
+      "info" : "ThrowStatement[25175-25311]:ThrowStatement[25279-25415]"
+    }, {
+      "left" : "count(n);",
+      "right" : "count(n);",
+      "info" : "ExpressionStatement[25338-25347]:ExpressionStatement[25442-25451]"
+    }, {
+      "left" : "remaining -= n;",
+      "right" : "remaining -= n;",
+      "info" : "ExpressionStatement[25360-25375]:ExpressionStatement[25464-25479]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[26139-26146]:Modifier[26243-26250]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[26147-26151]:PrimitiveType[26251-26255]"
+    }, {
+      "left" : "getBytesInflated",
+      "right" : "getBytesInflated",
+      "info" : "SimpleName[26152-26168]:SimpleName[26256-26272]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26171-26423]:Block[26275-26527]"
+    }, {
+      "left" : "long inB = inf.getBytesRead();",
+      "right" : "long inB = inf.getBytesRead();",
+      "info" : "VariableDeclarationStatement[26181-26211]:VariableDeclarationStatement[26285-26315]"
+    }, {
+      "left" : "if (current.bytesReadFromStream >= TWO_EXP_32)",
+      "right" : "if (current.bytesReadFromStream >= TWO_EXP_32)",
+      "info" : "IfStatement[26220-26397]:IfStatement[26324-26501]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26267-26397]:Block[26371-26501]"
+    }, {
+      "left" : "while (inB + TWO_EXP_32 <= current.bytesReadFromStream)",
+      "right" : "while (inB + TWO_EXP_32 <= current.bytesReadFromStream)",
+      "info" : "WhileStatement[26281-26387]:WhileStatement[26385-26491]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26337-26387]:Block[26441-26491]"
+    }, {
+      "left" : "inB += TWO_EXP_32;",
+      "right" : "inB += TWO_EXP_32;",
+      "info" : "ExpressionStatement[26355-26373]:ExpressionStatement[26459-26477]"
+    }, {
+      "left" : "return inB;",
+      "right" : "return inB;",
+      "info" : "ReturnStatement[26406-26417]:ReturnStatement[26510-26521]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[26429-26436]:Modifier[26533-26540]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[26437-26440]:PrimitiveType[26541-26544]"
+    }, {
+      "left" : "fill",
+      "right" : "fill",
+      "info" : "SimpleName[26441-26445]:SimpleName[26545-26549]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[26455-26466]:SimpleType[26559-26570]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26467-26791]:Block[26571-26895]"
+    }, {
+      "left" : "if (closed)",
+      "right" : "if (closed)",
+      "info" : "IfStatement[26477-26559]:IfStatement[26581-26663]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26489-26559]:Block[26593-26663]"
+    }, {
+      "left" : "throw new IOException(\"The stream is closed\");",
+      "right" : "throw new IOException(\"The stream is closed\");",
+      "info" : "ThrowStatement[26503-26549]:ThrowStatement[26607-26653]"
+    }, {
+      "left" : "final int length = in.read(buf.array());",
+      "right" : "final int length = in.read(buf.array());",
+      "info" : "VariableDeclarationStatement[26568-26608]:VariableDeclarationStatement[26672-26712]"
+    }, {
+      "left" : "if (length > 0)",
+      "right" : "if (length > 0)",
+      "info" : "IfStatement[26617-26762]:IfStatement[26721-26866]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26633-26762]:Block[26737-26866]"
+    }, {
+      "left" : "buf.limit(length);",
+      "right" : "buf.limit(length);",
+      "info" : "ExpressionStatement[26647-26665]:ExpressionStatement[26751-26769]"
+    }, {
+      "left" : "count(buf.limit());",
+      "right" : "count(buf.limit());",
+      "info" : "ExpressionStatement[26678-26697]:ExpressionStatement[26782-26801]"
+    }, {
+      "left" : "inf.setInput(buf.array(), 0, buf.limit());",
+      "right" : "inf.setInput(buf.array(), 0, buf.limit());",
+      "info" : "ExpressionStatement[26710-26752]:ExpressionStatement[26814-26856]"
+    }, {
+      "left" : "return length;",
+      "right" : "return length;",
+      "info" : "ReturnStatement[26771-26785]:ReturnStatement[26875-26889]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[26797-26804]:Modifier[26901-26908]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[26805-26809]:PrimitiveType[26909-26913]"
+    }, {
+      "left" : "readFully",
+      "right" : "readFully",
+      "info" : "SimpleName[26810-26819]:SimpleName[26914-26923]"
+    }, {
+      "left" : "final byte[] b",
+      "right" : "final byte[] b",
+      "info" : "SingleVariableDeclaration[26820-26834]:SingleVariableDeclaration[26924-26938]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[26843-26854]:SimpleType[26947-26958]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26855-27016]:Block[26959-27120]"
+    }, {
+      "left" : "final int count = IOUtils.readFully(in, b);",
+      "right" : "final int count = IOUtils.readFully(in, b);",
+      "info" : "VariableDeclarationStatement[26865-26908]:VariableDeclarationStatement[26969-27012]"
+    }, {
+      "left" : "count(count);",
+      "right" : "count(count);",
+      "info" : "ExpressionStatement[26917-26930]:ExpressionStatement[27021-27034]"
+    }, {
+      "left" : "if (count < b.length)",
+      "right" : "if (count < b.length)",
+      "info" : "IfStatement[26939-27010]:IfStatement[27043-27114]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26961-27010]:Block[27065-27114]"
+    }, {
+      "left" : "throw new EOFException();",
+      "right" : "throw new EOFException();",
+      "info" : "ThrowStatement[26975-27000]:ThrowStatement[27079-27104]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[27022-27029]:Modifier[27126-27133]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[27030-27034]:PrimitiveType[27134-27138]"
+    }, {
+      "left" : "readDataDescriptor",
+      "right" : "readDataDescriptor",
+      "info" : "SimpleName[27035-27053]:SimpleName[27139-27157]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[27063-27074]:SimpleType[27167-27178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27075-28637]:Block[27179-28741]"
+    }, {
+      "left" : "readFully(WORD_BUF);",
+      "right" : "readFully(WORD_BUF);",
+      "info" : "ExpressionStatement[27085-27105]:ExpressionStatement[27189-27209]"
+    }, {
+      "left" : "ZipLong val = new ZipLong(WORD_BUF);",
+      "right" : "ZipLong val = new ZipLong(WORD_BUF);",
+      "info" : "VariableDeclarationStatement[27114-27150]:VariableDeclarationStatement[27218-27254]"
+    }, {
+      "left" : "if (ZipLong.DD_SIG.equals(val))",
+      "right" : "if (ZipLong.DD_SIG.equals(val))",
+      "info" : "IfStatement[27159-27332]:IfStatement[27263-27436]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27191-27332]:Block[27295-27436]"
+    }, {
+      "left" : "readFully(WORD_BUF);",
+      "right" : "readFully(WORD_BUF);",
+      "info" : "ExpressionStatement[27261-27281]:ExpressionStatement[27365-27385]"
+    }, {
+      "left" : "val = new ZipLong(WORD_BUF);",
+      "right" : "val = new ZipLong(WORD_BUF);",
+      "info" : "ExpressionStatement[27294-27322]:ExpressionStatement[27398-27426]"
+    }, {
+      "left" : "current.entry.setCrc(val.getValue());",
+      "right" : "current.entry.setCrc(val.getValue());",
+      "info" : "ExpressionStatement[27341-27378]:ExpressionStatement[27445-27482]"
+    }, {
+      "left" : "readFully(TWO_DWORD_BUF);",
+      "right" : "readFully(TWO_DWORD_BUF);",
+      "info" : "ExpressionStatement[28027-28052]:ExpressionStatement[28131-28156]"
+    }, {
+      "left" : "final ZipLong potentialSig = new ZipLong(TWO_DWORD_BUF, DWORD);",
+      "right" : "final ZipLong potentialSig = new ZipLong(TWO_DWORD_BUF, DWORD);",
+      "info" : "VariableDeclarationStatement[28061-28124]:VariableDeclarationStatement[28165-28228]"
+    }, {
+      "left" : "if (potentialSig.equals(ZipLong.CFH_SIG) || potentialSig.equals(ZipLong.LFH_SIG))",
+      "right" : "if (potentialSig.equals(ZipLong.CFH_SIG) || potentialSig.equals(ZipLong.LFH_SIG))",
+      "info" : "IfStatement[28133-28631]:IfStatement[28237-28735]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28215-28429]:Block[28319-28533]"
+    }, {
+      "left" : "pushback(TWO_DWORD_BUF, DWORD, DWORD);",
+      "right" : "pushback(TWO_DWORD_BUF, DWORD, DWORD);",
+      "info" : "ExpressionStatement[28229-28267]:ExpressionStatement[28333-28371]"
+    }, {
+      "left" : "current.entry.setCompressedSize(ZipLong.getValue(TWO_DWORD_BUF));",
+      "right" : "current.entry.setCompressedSize(ZipLong.getValue(TWO_DWORD_BUF));",
+      "info" : "ExpressionStatement[28280-28345]:ExpressionStatement[28384-28449]"
+    }, {
+      "left" : "current.entry.setSize(ZipLong.getValue(TWO_DWORD_BUF, WORD));",
+      "right" : "current.entry.setSize(ZipLong.getValue(TWO_DWORD_BUF, WORD));",
+      "info" : "ExpressionStatement[28358-28419]:ExpressionStatement[28462-28523]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28435-28631]:Block[28539-28735]"
+    }, {
+      "left" : "current.entry.setCompressedSize(ZipEightByteInteger.getLongValue(TWO_DWORD_BUF));",
+      "right" : "current.entry.setCompressedSize(ZipEightByteInteger.getLongValue(TWO_DWORD_BUF));",
+      "info" : "ExpressionStatement[28449-28530]:ExpressionStatement[28553-28634]"
+    }, {
+      "left" : "current.entry.setSize(ZipEightByteInteger.getLongValue(TWO_DWORD_BUF, DWORD));",
+      "right" : "current.entry.setSize(ZipEightByteInteger.getLongValue(TWO_DWORD_BUF, DWORD));",
+      "info" : "ExpressionStatement[28543-28621]:ExpressionStatement[28647-28725]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[28903-28910]:Modifier[29007-29014]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[28911-28918]:PrimitiveType[29015-29022]"
+    }, {
+      "left" : "supportsDataDescriptorFor",
+      "right" : "supportsDataDescriptorFor",
+      "info" : "SimpleName[28919-28944]:SimpleName[29023-29048]"
+    }, {
+      "left" : "final ZipArchiveEntry entry",
+      "right" : "final ZipArchiveEntry entry",
+      "info" : "SingleVariableDeclaration[28945-28972]:SingleVariableDeclaration[29049-29076]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28974-29205]:Block[29078-29309]"
+    }, {
+      "left" : "return !entry.getGeneralPurposeBit().usesDataDescriptor()\n\n                || (allowStoredEntriesWithDataDescriptor && entry.getMethod() == ZipEntry.STORED)\n                || entry.getMethod() == ZipEntry.DEFLATED;",
+      "right" : "return !entry.getGeneralPurposeBit().usesDataDescriptor()\n\n                || (allowStoredEntriesWithDataDescriptor && entry.getMethod() == ZipEntry.STORED)\n                || entry.getMethod() == ZipEntry.DEFLATED;",
+      "info" : "ReturnStatement[28984-29199]:ReturnStatement[29088-29303]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[29872-29879]:Modifier[29976-29983]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[29880-29884]:PrimitiveType[29984-29988]"
+    }, {
+      "left" : "readStoredEntry",
+      "right" : "readStoredEntry",
+      "info" : "SimpleName[29885-29900]:SimpleName[29989-30004]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[29910-29921]:SimpleType[30014-30025]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29922-30928]:Block[30026-31032]"
+    }, {
+      "left" : "final ByteArrayOutputStream bos = new ByteArrayOutputStream();",
+      "right" : "final ByteArrayOutputStream bos = new ByteArrayOutputStream();",
+      "info" : "VariableDeclarationStatement[29932-29994]:VariableDeclarationStatement[30036-30098]"
+    }, {
+      "left" : "int off = 0;",
+      "right" : "int off = 0;",
+      "info" : "VariableDeclarationStatement[30003-30015]:VariableDeclarationStatement[30107-30119]"
+    }, {
+      "left" : "boolean done = false;",
+      "right" : "boolean done = false;",
+      "info" : "VariableDeclarationStatement[30024-30045]:VariableDeclarationStatement[30128-30149]"
+    }, {
+      "left" : "final int ddLen = current.usesZip64 ? WORD + 2 * DWORD : 3 * WORD;",
+      "right" : "final int ddLen = current.usesZip64 ? WORD + 2 * DWORD : 3 * WORD;",
+      "info" : "VariableDeclarationStatement[30097-30163]:VariableDeclarationStatement[30201-30267]"
+    }, {
+      "left" : "while (!done)",
+      "right" : "while (!done)",
+      "info" : "WhileStatement[30173-30822]:WhileStatement[30277-30926]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30187-30822]:Block[30291-30926]"
+    }, {
+      "left" : "final int r = in.read(buf.array(), off, ZipArchiveOutputStream.BUFFER_SIZE - off);",
+      "right" : "final int r = in.read(buf.array(), off, ZipArchiveOutputStream.BUFFER_SIZE - off);",
+      "info" : "VariableDeclarationStatement[30201-30283]:VariableDeclarationStatement[30305-30387]"
+    }, {
+      "left" : "if (r <= 0)",
+      "right" : "if (r <= 0)",
+      "info" : "IfStatement[30296-30486]:IfStatement[30400-30590]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30308-30486]:Block[30412-30590]"
+    }, {
+      "left" : "throw new IOException(\"Truncated ZIP file\");",
+      "right" : "throw new IOException(\"Truncated ZIP file\");",
+      "info" : "ThrowStatement[30428-30472]:ThrowStatement[30532-30576]"
+    }, {
+      "left" : "if (r + off < 4)",
+      "right" : "if (r + off < 4)",
+      "info" : "IfStatement[30499-30650]:IfStatement[30603-30754]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30516-30650]:Block[30620-30754]"
+    }, {
+      "left" : "off += r;",
+      "right" : "off += r;",
+      "info" : "ExpressionStatement[30601-30610]:ExpressionStatement[30705-30714]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[30627-30636]:ContinueStatement[30731-30740]"
+    }, {
+      "left" : "done = bufferContainsSignature(bos, off, r, ddLen);",
+      "right" : "done = bufferContainsSignature(bos, off, r, ddLen);",
+      "info" : "ExpressionStatement[30664-30715]:ExpressionStatement[30768-30819]"
+    }, {
+      "left" : "if (!done)",
+      "right" : "if (!done)",
+      "info" : "IfStatement[30728-30812]:IfStatement[30832-30916]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30739-30812]:Block[30843-30916]"
+    }, {
+      "left" : "off = cacheBytesRead(bos, off, r, ddLen);",
+      "right" : "off = cacheBytesRead(bos, off, r, ddLen);",
+      "info" : "ExpressionStatement[30757-30798]:ExpressionStatement[30861-30902]"
+    }, {
+      "left" : "final byte[] b = bos.toByteArray();",
+      "right" : "final byte[] b = bos.toByteArray();",
+      "info" : "VariableDeclarationStatement[30832-30867]:VariableDeclarationStatement[30936-30971]"
+    }, {
+      "left" : "lastStoredEntry = new ByteArrayInputStream(b);",
+      "right" : "lastStoredEntry = new ByteArrayInputStream(b);",
+      "info" : "ExpressionStatement[30876-30922]:ExpressionStatement[30980-31026]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[31474-31481]:Modifier[31578-31585]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[31482-31489]:PrimitiveType[31586-31593]"
+    }, {
+      "left" : "bufferContainsSignature",
+      "right" : "bufferContainsSignature",
+      "info" : "SimpleName[31490-31513]:SimpleName[31594-31617]"
+    }, {
+      "left" : "final ByteArrayOutputStream bos",
+      "right" : "final ByteArrayOutputStream bos",
+      "info" : "SingleVariableDeclaration[31514-31545]:SingleVariableDeclaration[31618-31649]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[31547-31563]:SingleVariableDeclaration[31651-31667]"
+    }, {
+      "left" : "final int lastRead",
+      "right" : "final int lastRead",
+      "info" : "SingleVariableDeclaration[31565-31583]:SingleVariableDeclaration[31669-31687]"
+    }, {
+      "left" : "final int expectedDDLen",
+      "right" : "final int expectedDDLen",
+      "info" : "SingleVariableDeclaration[31585-31608]:SingleVariableDeclaration[31689-31712]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[31629-31640]:SimpleType[31733-31744]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31641-32894]:Block[31745-32998]"
+    }, {
+      "left" : "boolean done = false;",
+      "right" : "boolean done = false;",
+      "info" : "VariableDeclarationStatement[31652-31673]:VariableDeclarationStatement[31756-31777]"
+    }, {
+      "left" : "int readTooMuch = 0;",
+      "right" : "int readTooMuch = 0;",
+      "info" : "VariableDeclarationStatement[31682-31702]:VariableDeclarationStatement[31786-31806]"
+    }, {
+      "left" : "for (int i = 0; !done && i < lastRead - 4; i++)",
+      "right" : "for (int i = 0; !done && i < lastRead - 4; i++)",
+      "info" : "ForStatement[31711-32867]:ForStatement[31815-32971]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31759-32867]:Block[31863-32971]"
+    }, {
+      "left" : "if (buf.array()[i] == LFH[0] && buf.array()[i + 1] == LFH[1])",
+      "right" : "if (buf.array()[i] == LFH[0] && buf.array()[i + 1] == LFH[1])",
+      "info" : "IfStatement[31773-32857]:IfStatement[31877-32961]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31835-32857]:Block[31939-32961]"
+    }, {
+      "left" : "if ((buf.array()[i + 2] == LFH[2] && buf.array()[i + 3] == LFH[3])\n                    || (buf.array()[i] == CFH[2] && buf.array()[i + 3] == CFH[3]))",
+      "right" : "if ((buf.array()[i + 2] == LFH[2] && buf.array()[i + 3] == LFH[3])\n                    || (buf.array()[i] == CFH[2] && buf.array()[i + 3] == CFH[3]))",
+      "info" : "IfStatement[31853-32399]:IfStatement[31957-32503]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32003-32171]:Block[32107-32275]"
+    }, {
+      "left" : "readTooMuch = offset + lastRead - i - expectedDDLen;",
+      "right" : "readTooMuch = offset + lastRead - i - expectedDDLen;",
+      "info" : "ExpressionStatement[32068-32120]:ExpressionStatement[32172-32224]"
+    }, {
+      "left" : "done = true;",
+      "right" : "done = true;",
+      "info" : "ExpressionStatement[32141-32153]:ExpressionStatement[32245-32257]"
+    }, {
+      "left" : "if (buf.array()[i + 2] == DD[2] && buf.array()[i + 3] == DD[3])",
+      "right" : "if (buf.array()[i + 2] == DD[2] && buf.array()[i + 3] == DD[3])",
+      "info" : "IfStatement[32193-32399]:IfStatement[32297-32503]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32257-32399]:Block[32361-32503]"
+    }, {
+      "left" : "readTooMuch = offset + lastRead - i;",
+      "right" : "readTooMuch = offset + lastRead - i;",
+      "info" : "ExpressionStatement[32312-32348]:ExpressionStatement[32416-32452]"
+    }, {
+      "left" : "done = true;",
+      "right" : "done = true;",
+      "info" : "ExpressionStatement[32369-32381]:ExpressionStatement[32473-32485]"
+    }, {
+      "left" : "if (done)",
+      "right" : "if (done)",
+      "info" : "IfStatement[32416-32843]:IfStatement[32520-32947]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32426-32843]:Block[32530-32947]"
+    }, {
+      "left" : "pushback(buf.array(), offset + lastRead - readTooMuch, readTooMuch);",
+      "right" : "pushback(buf.array(), offset + lastRead - readTooMuch, readTooMuch);",
+      "info" : "ExpressionStatement[32665-32733]:ExpressionStatement[32769-32837]"
+    }, {
+      "left" : "bos.write(buf.array(), 0, i);",
+      "right" : "bos.write(buf.array(), 0, i);",
+      "info" : "ExpressionStatement[32754-32783]:ExpressionStatement[32858-32887]"
+    }, {
+      "left" : "readDataDescriptor();",
+      "right" : "readDataDescriptor();",
+      "info" : "ExpressionStatement[32804-32825]:ExpressionStatement[32908-32929]"
+    }, {
+      "left" : "return done;",
+      "right" : "return done;",
+      "info" : "ReturnStatement[32876-32888]:ReturnStatement[32980-32992]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[33296-33303]:Modifier[33400-33407]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[33304-33307]:PrimitiveType[33408-33411]"
+    }, {
+      "left" : "cacheBytesRead",
+      "right" : "cacheBytesRead",
+      "info" : "SimpleName[33308-33322]:SimpleName[33412-33426]"
+    }, {
+      "left" : "final ByteArrayOutputStream bos",
+      "right" : "final ByteArrayOutputStream bos",
+      "info" : "SingleVariableDeclaration[33323-33354]:SingleVariableDeclaration[33427-33458]"
+    }, {
+      "left" : "int offset",
+      "right" : "int offset",
+      "info" : "SingleVariableDeclaration[33356-33366]:SingleVariableDeclaration[33460-33470]"
+    }, {
+      "left" : "final int lastRead",
+      "right" : "final int lastRead",
+      "info" : "SingleVariableDeclaration[33368-33386]:SingleVariableDeclaration[33472-33490]"
+    }, {
+      "left" : "final int expecteDDLen",
+      "right" : "final int expecteDDLen",
+      "info" : "SingleVariableDeclaration[33388-33410]:SingleVariableDeclaration[33492-33514]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33412-33775]:Block[33516-33879]"
+    }, {
+      "left" : "final int cacheable = offset + lastRead - expecteDDLen - 3;",
+      "right" : "final int cacheable = offset + lastRead - expecteDDLen - 3;",
+      "info" : "VariableDeclarationStatement[33422-33481]:VariableDeclarationStatement[33526-33585]"
+    }, {
+      "left" : "if (cacheable > 0)",
+      "right" : "if (cacheable > 0)",
+      "info" : "IfStatement[33490-33746]:IfStatement[33594-33850]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33509-33697]:Block[33613-33801]"
+    }, {
+      "left" : "bos.write(buf.array(), 0, cacheable);",
+      "right" : "bos.write(buf.array(), 0, cacheable);",
+      "info" : "ExpressionStatement[33523-33560]:ExpressionStatement[33627-33664]"
+    }, {
+      "left" : "System.arraycopy(buf.array(), cacheable, buf.array(), 0, expecteDDLen + 3);",
+      "right" : "System.arraycopy(buf.array(), cacheable, buf.array(), 0, expecteDDLen + 3);",
+      "info" : "ExpressionStatement[33573-33648]:ExpressionStatement[33677-33752]"
+    }, {
+      "left" : "offset = expecteDDLen + 3;",
+      "right" : "offset = expecteDDLen + 3;",
+      "info" : "ExpressionStatement[33661-33687]:ExpressionStatement[33765-33791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33703-33746]:Block[33807-33850]"
+    }, {
+      "left" : "offset += lastRead;",
+      "right" : "offset += lastRead;",
+      "info" : "ExpressionStatement[33717-33736]:ExpressionStatement[33821-33840]"
+    }, {
+      "left" : "return offset;",
+      "right" : "return offset;",
+      "info" : "ReturnStatement[33755-33769]:ReturnStatement[33859-33873]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[33781-33788]:Modifier[33885-33892]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[33789-33793]:PrimitiveType[33893-33897]"
+    }, {
+      "left" : "pushback",
+      "right" : "pushback",
+      "info" : "SimpleName[33794-33802]:SimpleName[33898-33906]"
+    }, {
+      "left" : "final byte[] buf",
+      "right" : "final byte[] buf",
+      "info" : "SingleVariableDeclaration[33803-33819]:SingleVariableDeclaration[33907-33923]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[33821-33837]:SingleVariableDeclaration[33925-33941]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[33839-33855]:SingleVariableDeclaration[33943-33959]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[33864-33875]:SimpleType[33968-33979]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33876-33980]:Block[33980-34084]"
+    }, {
+      "left" : "((PushbackInputStream) in).unread(buf, offset, length);",
+      "right" : "((PushbackInputStream) in).unread(buf, offset, length);",
+      "info" : "ExpressionStatement[33886-33941]:ExpressionStatement[33990-34045]"
+    }, {
+      "left" : "pushedBackBytes(length);",
+      "right" : "pushedBackBytes(length);",
+      "info" : "ExpressionStatement[33950-33974]:ExpressionStatement[34054-34078]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[34766-34773]:Modifier[34870-34877]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[34774-34778]:PrimitiveType[34878-34882]"
+    }, {
+      "left" : "skipRemainderOfArchive",
+      "right" : "skipRemainderOfArchive",
+      "info" : "SimpleName[34779-34801]:SimpleName[34883-34905]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[34811-34822]:SimpleType[34915-34926]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34823-35279]:Block[34927-35383]"
+    }, {
+      "left" : "realSkip(entriesRead * CFH_LEN - LFH_LEN);",
+      "right" : "realSkip(entriesRead * CFH_LEN - LFH_LEN);",
+      "info" : "ExpressionStatement[35013-35055]:ExpressionStatement[35117-35159]"
+    }, {
+      "left" : "findEocdRecord();",
+      "right" : "findEocdRecord();",
+      "info" : "ExpressionStatement[35064-35081]:ExpressionStatement[35168-35185]"
+    }, {
+      "left" : "realSkip(ZipFile.MIN_EOCD_SIZE - WORD /* signature */ - SHORT /* comment len */);",
+      "right" : "realSkip(ZipFile.MIN_EOCD_SIZE - WORD /* signature */ - SHORT /* comment len */);",
+      "info" : "ExpressionStatement[35090-35171]:ExpressionStatement[35194-35275]"
+    }, {
+      "left" : "readFully(SHORT_BUF);",
+      "right" : "readFully(SHORT_BUF);",
+      "info" : "ExpressionStatement[35180-35201]:ExpressionStatement[35284-35305]"
+    }, {
+      "left" : "realSkip(ZipShort.getValue(SHORT_BUF));",
+      "right" : "realSkip(ZipShort.getValue(SHORT_BUF));",
+      "info" : "ExpressionStatement[35234-35273]:ExpressionStatement[35338-35377]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[35410-35417]:Modifier[35514-35521]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[35418-35422]:PrimitiveType[35522-35526]"
+    }, {
+      "left" : "findEocdRecord",
+      "right" : "findEocdRecord",
+      "info" : "SimpleName[35423-35437]:SimpleName[35527-35541]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[35447-35458]:SimpleType[35551-35562]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35459-36591]:Block[35563-36695]"
+    }, {
+      "left" : "int currentByte = -1;",
+      "right" : "int currentByte = -1;",
+      "info" : "VariableDeclarationStatement[35469-35490]:VariableDeclarationStatement[35573-35594]"
+    }, {
+      "left" : "boolean skipReadCall = false;",
+      "right" : "boolean skipReadCall = false;",
+      "info" : "VariableDeclarationStatement[35499-35528]:VariableDeclarationStatement[35603-35632]"
+    }, {
+      "left" : "while (skipReadCall || (currentByte = readOneByte()) > -1)",
+      "right" : "while (skipReadCall || (currentByte = readOneByte()) > -1)",
+      "info" : "WhileStatement[35537-36585]:WhileStatement[35641-36689]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35596-36585]:Block[35700-36689]"
+    }, {
+      "left" : "skipReadCall = false;",
+      "right" : "skipReadCall = false;",
+      "info" : "ExpressionStatement[35610-35631]:ExpressionStatement[35714-35735]"
+    }, {
+      "left" : "if (!isFirstByteOfEocdSig(currentByte))",
+      "right" : "if (!isFirstByteOfEocdSig(currentByte))",
+      "info" : "IfStatement[35644-35725]:IfStatement[35748-35829]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35684-35725]:Block[35788-35829]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[35702-35711]:ContinueStatement[35806-35815]"
+    }, {
+      "left" : "currentByte = readOneByte();",
+      "right" : "currentByte = readOneByte();",
+      "info" : "ExpressionStatement[35738-35766]:ExpressionStatement[35842-35870]"
+    }, {
+      "left" : "if (currentByte != ZipArchiveOutputStream.EOCD_SIG[1])",
+      "right" : "if (currentByte != ZipArchiveOutputStream.EOCD_SIG[1])",
+      "info" : "IfStatement[35779-36027]:IfStatement[35883-36131]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35834-36027]:Block[35938-36131]"
+    }, {
+      "left" : "if (currentByte == -1)",
+      "right" : "if (currentByte == -1)",
+      "info" : "IfStatement[35852-35921]:IfStatement[35956-36025]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35875-35921]:Block[35979-36025]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[35897-35903]:BreakStatement[36001-36007]"
+    }, {
+      "left" : "skipReadCall = isFirstByteOfEocdSig(currentByte);",
+      "right" : "skipReadCall = isFirstByteOfEocdSig(currentByte);",
+      "info" : "ExpressionStatement[35938-35987]:ExpressionStatement[36042-36091]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[36004-36013]:ContinueStatement[36108-36117]"
+    }, {
+      "left" : "currentByte = readOneByte();",
+      "right" : "currentByte = readOneByte();",
+      "info" : "ExpressionStatement[36040-36068]:ExpressionStatement[36144-36172]"
+    }, {
+      "left" : "if (currentByte != ZipArchiveOutputStream.EOCD_SIG[2])",
+      "right" : "if (currentByte != ZipArchiveOutputStream.EOCD_SIG[2])",
+      "info" : "IfStatement[36081-36329]:IfStatement[36185-36433]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36136-36329]:Block[36240-36433]"
+    }, {
+      "left" : "if (currentByte == -1)",
+      "right" : "if (currentByte == -1)",
+      "info" : "IfStatement[36154-36223]:IfStatement[36258-36327]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36177-36223]:Block[36281-36327]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[36199-36205]:BreakStatement[36303-36309]"
+    }, {
+      "left" : "skipReadCall = isFirstByteOfEocdSig(currentByte);",
+      "right" : "skipReadCall = isFirstByteOfEocdSig(currentByte);",
+      "info" : "ExpressionStatement[36240-36289]:ExpressionStatement[36344-36393]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[36306-36315]:ContinueStatement[36410-36419]"
+    }, {
+      "left" : "currentByte = readOneByte();",
+      "right" : "currentByte = readOneByte();",
+      "info" : "ExpressionStatement[36342-36370]:ExpressionStatement[36446-36474]"
+    }, {
+      "left" : "if (currentByte == -1\n                || currentByte == ZipArchiveOutputStream.EOCD_SIG[3])",
+      "right" : "if (currentByte == -1\n                || currentByte == ZipArchiveOutputStream.EOCD_SIG[3])",
+      "info" : "IfStatement[36383-36513]:IfStatement[36487-36617]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36475-36513]:Block[36579-36617]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[36493-36499]:BreakStatement[36597-36603]"
+    }, {
+      "left" : "skipReadCall = isFirstByteOfEocdSig(currentByte);",
+      "right" : "skipReadCall = isFirstByteOfEocdSig(currentByte);",
+      "info" : "ExpressionStatement[36526-36575]:ExpressionStatement[36630-36679]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[36818-36825]:Modifier[36922-36929]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[36826-36830]:PrimitiveType[36930-36934]"
+    }, {
+      "left" : "realSkip",
+      "right" : "realSkip",
+      "info" : "SimpleName[36831-36839]:SimpleName[36935-36943]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[36840-36856]:SingleVariableDeclaration[36944-36960]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[36865-36876]:SimpleType[36969-36980]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36877-37358]:Block[36981-37462]"
+    }, {
+      "left" : "if (value >= 0)",
+      "right" : "if (value >= 0)",
+      "info" : "IfStatement[36887-37306]:IfStatement[36991-37410]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36903-37306]:Block[37007-37410]"
+    }, {
+      "left" : "long skipped = 0;",
+      "right" : "long skipped = 0;",
+      "info" : "VariableDeclarationStatement[36917-36934]:VariableDeclarationStatement[37021-37038]"
+    }, {
+      "left" : "while (skipped < value)",
+      "right" : "while (skipped < value)",
+      "info" : "WhileStatement[36947-37276]:WhileStatement[37051-37380]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36971-37276]:Block[37075-37380]"
+    }, {
+      "left" : "final long rem = value - skipped;",
+      "right" : "final long rem = value - skipped;",
+      "info" : "VariableDeclarationStatement[36989-37022]:VariableDeclarationStatement[37093-37126]"
+    }, {
+      "left" : "final int x = in.read(SKIP_BUF, 0, (int) (SKIP_BUF.length > rem ? rem : SKIP_BUF.length));",
+      "right" : "final int x = in.read(SKIP_BUF, 0, (int) (SKIP_BUF.length > rem ? rem : SKIP_BUF.length));",
+      "info" : "VariableDeclarationStatement[37039-37129]:VariableDeclarationStatement[37143-37233]"
+    }, {
+      "left" : "if (x == -1)",
+      "right" : "if (x == -1)",
+      "info" : "IfStatement[37146-37206]:IfStatement[37250-37310]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37159-37206]:Block[37263-37310]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[37181-37188]:ReturnStatement[37285-37292]"
+    }, {
+      "left" : "count(x);",
+      "right" : "count(x);",
+      "info" : "ExpressionStatement[37223-37232]:ExpressionStatement[37327-37336]"
+    }, {
+      "left" : "skipped += x;",
+      "right" : "skipped += x;",
+      "info" : "ExpressionStatement[37249-37262]:ExpressionStatement[37353-37366]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[37289-37296]:ReturnStatement[37393-37400]"
+    }, {
+      "left" : "throw new IllegalArgumentException();",
+      "right" : "throw new IllegalArgumentException();",
+      "info" : "ThrowStatement[37315-37352]:ThrowStatement[37419-37456]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[37578-37585]:Modifier[37682-37689]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[37586-37589]:PrimitiveType[37690-37693]"
+    }, {
+      "left" : "readOneByte",
+      "right" : "readOneByte",
+      "info" : "SimpleName[37590-37601]:SimpleName[37694-37705]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[37611-37622]:SimpleType[37715-37726]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37623-37736]:Block[37727-37840]"
+    }, {
+      "left" : "final int b = in.read();",
+      "right" : "final int b = in.read();",
+      "info" : "VariableDeclarationStatement[37633-37657]:VariableDeclarationStatement[37737-37761]"
+    }, {
+      "left" : "if (b != -1)",
+      "right" : "if (b != -1)",
+      "info" : "IfStatement[37666-37712]:IfStatement[37770-37816]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37679-37712]:Block[37783-37816]"
+    }, {
+      "left" : "count(1);",
+      "right" : "count(1);",
+      "info" : "ExpressionStatement[37693-37702]:ExpressionStatement[37797-37806]"
+    }, {
+      "left" : "return b;",
+      "right" : "return b;",
+      "info" : "ReturnStatement[37721-37730]:ReturnStatement[37825-37834]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[37742-37749]:Modifier[37846-37853]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[37750-37757]:PrimitiveType[37854-37861]"
+    }, {
+      "left" : "isFirstByteOfEocdSig",
+      "right" : "isFirstByteOfEocdSig",
+      "info" : "SimpleName[37758-37778]:SimpleName[37862-37882]"
+    }, {
+      "left" : "final int b",
+      "right" : "final int b",
+      "info" : "SingleVariableDeclaration[37779-37790]:SingleVariableDeclaration[37883-37894]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37792-37855]:Block[37896-37959]"
+    }, {
+      "left" : "return b == ZipArchiveOutputStream.EOCD_SIG[0];",
+      "right" : "return b == ZipArchiveOutputStream.EOCD_SIG[0];",
+      "info" : "ReturnStatement[37802-37849]:ReturnStatement[37906-37953]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[37968-37975]:Modifier[38072-38079]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[37976-37982]:Modifier[38080-38086]"
+    }, {
+      "left" : "final",
+      "right" : "final",
+      "info" : "Modifier[37983-37988]:Modifier[38087-38092]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[37989-37994]:TYPE_DECLARATION_KIND[38093-38098]"
+    }, {
+      "left" : "CurrentEntry",
+      "right" : "CurrentEntry",
+      "info" : "SimpleName[37995-38007]:SimpleName[38099-38111]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[39234-39241]:Modifier[39338-39345]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[39242-39247]:TYPE_DECLARATION_KIND[39346-39351]"
+    }, {
+      "left" : "BoundedInputStream",
+      "right" : "BoundedInputStream",
+      "info" : "SimpleName[39248-39266]:SimpleName[39352-39370]"
+    }, {
+      "left" : "InputStream",
+      "right" : "InputStream",
+      "info" : "SimpleType[39275-39286]:SimpleType[39379-39390]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[39815-39821]:Modifier[39919-39925]"
+    }, {
+      "left" : "BoundedInputStream",
+      "right" : "BoundedInputStream",
+      "info" : "SimpleName[39822-39840]:SimpleName[39926-39944]"
+    }, {
+      "left" : "final InputStream in",
+      "right" : "final InputStream in",
+      "info" : "SingleVariableDeclaration[39841-39861]:SingleVariableDeclaration[39945-39965]"
+    }, {
+      "left" : "final long size",
+      "right" : "final long size",
+      "info" : "SingleVariableDeclaration[39863-39878]:SingleVariableDeclaration[39967-39982]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39880-39946]:Block[39984-40050]"
+    }, {
+      "left" : "this.max = size;",
+      "right" : "this.max = size;",
+      "info" : "ExpressionStatement[39894-39910]:ExpressionStatement[39998-40014]"
+    }, {
+      "left" : "this.in = in;",
+      "right" : "this.in = in;",
+      "info" : "ExpressionStatement[39923-39936]:ExpressionStatement[40027-40040]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[39956-39965]:MarkerAnnotation[40060-40069]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[39974-39980]:Modifier[40078-40084]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[39981-39984]:PrimitiveType[40085-40088]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[39985-39989]:SimpleName[40089-40093]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[39999-40010]:SimpleType[40103-40114]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40011-40258]:Block[40115-40362]"
+    }, {
+      "left" : "if (max >= 0 && pos >= max)",
+      "right" : "if (max >= 0 && pos >= max)",
+      "info" : "IfStatement[40025-40095]:IfStatement[40129-40199]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40053-40095]:Block[40157-40199]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[40071-40081]:ReturnStatement[40175-40185]"
+    }, {
+      "left" : "final int result = in.read();",
+      "right" : "final int result = in.read();",
+      "info" : "VariableDeclarationStatement[40108-40137]:VariableDeclarationStatement[40212-40241]"
+    }, {
+      "left" : "pos++;",
+      "right" : "pos++;",
+      "info" : "ExpressionStatement[40150-40156]:ExpressionStatement[40254-40260]"
+    }, {
+      "left" : "count(1);",
+      "right" : "count(1);",
+      "info" : "ExpressionStatement[40169-40178]:ExpressionStatement[40273-40282]"
+    }, {
+      "left" : "current.bytesReadFromStream++;",
+      "right" : "current.bytesReadFromStream++;",
+      "info" : "ExpressionStatement[40191-40221]:ExpressionStatement[40295-40325]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[40234-40248]:ReturnStatement[40338-40352]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[40268-40277]:MarkerAnnotation[40372-40381]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[40286-40292]:Modifier[40390-40396]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[40293-40296]:PrimitiveType[40397-40400]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[40297-40301]:SimpleName[40401-40405]"
+    }, {
+      "left" : "final byte[] b",
+      "right" : "final byte[] b",
+      "info" : "SingleVariableDeclaration[40302-40316]:SingleVariableDeclaration[40406-40420]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[40325-40336]:SimpleType[40429-40440]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40337-40394]:Block[40441-40498]"
+    }, {
+      "left" : "return this.read(b, 0, b.length);",
+      "right" : "return this.read(b, 0, b.length);",
+      "info" : "ReturnStatement[40351-40384]:ReturnStatement[40455-40488]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[40404-40413]:MarkerAnnotation[40508-40517]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[40422-40428]:Modifier[40526-40532]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[40429-40432]:PrimitiveType[40533-40536]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[40433-40437]:SimpleName[40537-40541]"
+    }, {
+      "left" : "final byte[] b",
+      "right" : "final byte[] b",
+      "info" : "SingleVariableDeclaration[40438-40452]:SingleVariableDeclaration[40542-40556]"
+    }, {
+      "left" : "final int off",
+      "right" : "final int off",
+      "info" : "SingleVariableDeclaration[40454-40467]:SingleVariableDeclaration[40558-40571]"
+    }, {
+      "left" : "final int len",
+      "right" : "final int len",
+      "info" : "SingleVariableDeclaration[40469-40482]:SingleVariableDeclaration[40573-40586]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[40491-40502]:SimpleType[40595-40606]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40503-40961]:Block[40607-41065]"
+    }, {
+      "left" : "if (max >= 0 && pos >= max)",
+      "right" : "if (max >= 0 && pos >= max)",
+      "info" : "IfStatement[40517-40587]:IfStatement[40621-40691]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40545-40587]:Block[40649-40691]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[40563-40573]:ReturnStatement[40667-40677]"
+    }, {
+      "left" : "final long maxRead = max >= 0 ? Math.min(len, max - pos) : len;",
+      "right" : "final long maxRead = max >= 0 ? Math.min(len, max - pos) : len;",
+      "info" : "VariableDeclarationStatement[40600-40663]:VariableDeclarationStatement[40704-40767]"
+    }, {
+      "left" : "final int bytesRead = in.read(b, off, (int) maxRead);",
+      "right" : "final int bytesRead = in.read(b, off, (int) maxRead);",
+      "info" : "VariableDeclarationStatement[40676-40729]:VariableDeclarationStatement[40780-40833]"
+    }, {
+      "left" : "if (bytesRead == -1)",
+      "right" : "if (bytesRead == -1)",
+      "info" : "IfStatement[40743-40806]:IfStatement[40847-40910]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40764-40806]:Block[40868-40910]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[40782-40792]:ReturnStatement[40886-40896]"
+    }, {
+      "left" : "pos += bytesRead;",
+      "right" : "pos += bytesRead;",
+      "info" : "ExpressionStatement[40820-40837]:ExpressionStatement[40924-40941]"
+    }, {
+      "left" : "count(bytesRead);",
+      "right" : "count(bytesRead);",
+      "info" : "ExpressionStatement[40850-40867]:ExpressionStatement[40954-40971]"
+    }, {
+      "left" : "current.bytesReadFromStream += bytesRead;",
+      "right" : "current.bytesReadFromStream += bytesRead;",
+      "info" : "ExpressionStatement[40880-40921]:ExpressionStatement[40984-41025]"
+    }, {
+      "left" : "return bytesRead;",
+      "right" : "return bytesRead;",
+      "info" : "ReturnStatement[40934-40951]:ReturnStatement[41038-41055]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[40971-40980]:MarkerAnnotation[41075-41084]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[40989-40995]:Modifier[41093-41099]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[40996-41000]:PrimitiveType[41100-41104]"
+    }, {
+      "left" : "skip",
+      "right" : "skip",
+      "info" : "SimpleName[41001-41005]:SimpleName[41105-41109]"
+    }, {
+      "left" : "final long n",
+      "right" : "final long n",
+      "info" : "SingleVariableDeclaration[41006-41018]:SingleVariableDeclaration[41110-41122]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[41027-41038]:SimpleType[41131-41142]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41039-41242]:Block[41143-41346]"
+    }, {
+      "left" : "final long toSkip = max >= 0 ? Math.min(n, max - pos) : n;",
+      "right" : "final long toSkip = max >= 0 ? Math.min(n, max - pos) : n;",
+      "info" : "VariableDeclarationStatement[41053-41111]:VariableDeclarationStatement[41157-41215]"
+    }, {
+      "left" : "final long skippedBytes = in.skip(toSkip);",
+      "right" : "final long skippedBytes = in.skip(toSkip);",
+      "info" : "VariableDeclarationStatement[41124-41166]:VariableDeclarationStatement[41228-41270]"
+    }, {
+      "left" : "pos += skippedBytes;",
+      "right" : "pos += skippedBytes;",
+      "info" : "ExpressionStatement[41179-41199]:ExpressionStatement[41283-41303]"
+    }, {
+      "left" : "return skippedBytes;",
+      "right" : "return skippedBytes;",
+      "info" : "ReturnStatement[41212-41232]:ReturnStatement[41316-41336]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[41256-41265]:MarkerAnnotation[41360-41369]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[41274-41280]:Modifier[41378-41384]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[41281-41284]:PrimitiveType[41385-41388]"
+    }, {
+      "left" : "available",
+      "right" : "available",
+      "info" : "SimpleName[41285-41294]:SimpleName[41389-41398]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[41304-41315]:SimpleType[41408-41419]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41316-41444]:Block[41420-41548]"
+    }, {
+      "left" : "if (max >= 0 && pos >= max)",
+      "right" : "if (max >= 0 && pos >= max)",
+      "info" : "IfStatement[41330-41399]:IfStatement[41434-41503]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41358-41399]:Block[41462-41503]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[41376-41385]:ReturnStatement[41480-41489]"
+    }, {
+      "left" : "return in.available();",
+      "right" : "return in.available();",
+      "info" : "ReturnStatement[41412-41434]:ReturnStatement[41516-41538]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

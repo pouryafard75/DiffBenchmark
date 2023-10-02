@@ -1,0 +1,377 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "MethodPermissionsMergingProcessor",
+      "right" : "MethodPermissionsMergingProcessor",
+      "info" : "TypeDeclaration[2616-12988]:TypeDeclaration[2616-13598]"
+    }, {
+      "left" : "public MethodPermissionsMergingProcessor()",
+      "right" : "public MethodPermissionsMergingProcessor()",
+      "info" : "MethodDeclaration[3172-3268]:MethodDeclaration[3172-3268]"
+    }, {
+      "left" : "protected void handleAnnotations(final DeploymentUnit deploymentUnit, final EEApplicationClasses applicationClasses, final DeploymentReflectionIndex deploymentReflectionIndex, final Class<?> componentClass, final EJBComponentDescription description) throws DeploymentUnitProcessingException",
+      "right" : "protected void handleAnnotations(final DeploymentUnit deploymentUnit, final EEApplicationClasses applicationClasses, final DeploymentReflectionIndex deploymentReflectionIndex, final Class<?> componentClass, final EJBComponentDescription description) throws DeploymentUnitProcessingException",
+      "info" : "MethodDeclaration[3274-6214]:MethodDeclaration[3274-6214]"
+    }, {
+      "left" : "protected void handleDeploymentDescriptor(final DeploymentUnit deploymentUnit, final DeploymentReflectionIndex deploymentReflectionIndex, final Class<?> componentClass, final EJBComponentDescription componentDescription) throws DeploymentUnitProcessingException",
+      "right" : "private void handleExcludeMethods(final EJBComponentDescription componentDescription, final ExcludeListMetaData excludeList)",
+      "info" : "MethodDeclaration[6220-12431]:MethodDeclaration[11677-13041]"
+    }, {
+      "left" : "private EJBMethodSecurityAttribute mergeExistingRoles(EJBMethodSecurityAttribute ejbMethodSecurityMetaData, final EJBMethodSecurityAttribute existingRoles)",
+      "right" : "private EJBMethodSecurityAttribute mergeExistingRoles(EJBMethodSecurityAttribute ejbMethodSecurityMetaData, final EJBMethodSecurityAttribute existingRoles)",
+      "info" : "MethodDeclaration[12437-12986]:MethodDeclaration[13047-13596]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3215-3268]:Block[3215-3268]"
+    }, {
+      "left" : "super(EJBComponentDescription.class);",
+      "right" : "super(EJBComponentDescription.class);",
+      "info" : "SuperConstructorInvocation[3225-3262]:SuperConstructorInvocation[3225-3262]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3579-6214]:Block[3579-6214]"
+    }, {
+      "left" : "final RuntimeAnnotationInformation<Boolean> permitData = MethodAnnotationAggregator.runtimeAnnotationInformation(componentClass, applicationClasses, deploymentReflectionIndex, PermitAll.class);",
+      "right" : "final RuntimeAnnotationInformation<Boolean> permitData = MethodAnnotationAggregator.runtimeAnnotationInformation(componentClass, applicationClasses, deploymentReflectionIndex, PermitAll.class);",
+      "info" : "VariableDeclarationStatement[3591-3784]:VariableDeclarationStatement[3591-3784]"
+    }, {
+      "left" : "for (Map.Entry<String, List<Boolean>> entry : permitData.getClassAnnotations().entrySet())",
+      "right" : "for (Map.Entry<String, List<Boolean>> entry : permitData.getClassAnnotations().entrySet())",
+      "info" : "EnhancedForStatement[3794-4029]:EnhancedForStatement[3794-4029]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3885-4029]:Block[3885-4029]"
+    }, {
+      "left" : "description.getAnnotationMethodPermissions().setAttribute(null, entry.getKey(), EJBMethodSecurityAttribute.permitAll());",
+      "right" : "description.getAnnotationMethodPermissions().setAttribute(null, entry.getKey(), EJBMethodSecurityAttribute.permitAll());",
+      "info" : "ExpressionStatement[3899-4019]:ExpressionStatement[3899-4019]"
+    }, {
+      "left" : "for (Map.Entry<Method, List<Boolean>> entry : permitData.getMethodAnnotations().entrySet())",
+      "right" : "for (Map.Entry<Method, List<Boolean>> entry : permitData.getMethodAnnotations().entrySet())",
+      "info" : "EnhancedForStatement[4039-4418]:EnhancedForStatement[4039-4418]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4131-4418]:Block[4131-4418]"
+    }, {
+      "left" : "final Method method = entry.getKey();",
+      "right" : "final Method method = entry.getKey();",
+      "info" : "VariableDeclarationStatement[4145-4182]:VariableDeclarationStatement[4145-4182]"
+    }, {
+      "left" : "description.getAnnotationMethodPermissions().setAttribute(null, EJBMethodSecurityAttribute.permitAll(), method.getDeclaringClass().getName(), method.getName(), MethodInfoHelper.getCanonicalParameterTypes(method));",
+      "right" : "description.getAnnotationMethodPermissions().setAttribute(null, EJBMethodSecurityAttribute.permitAll(), method.getDeclaringClass().getName(), method.getName(), MethodInfoHelper.getCanonicalParameterTypes(method));",
+      "info" : "ExpressionStatement[4195-4408]:ExpressionStatement[4195-4408]"
+    }, {
+      "left" : "final RuntimeAnnotationInformation<String[]> data = MethodAnnotationAggregator.runtimeAnnotationInformation(componentClass, applicationClasses, deploymentReflectionIndex, RolesAllowed.class);",
+      "right" : "final RuntimeAnnotationInformation<String[]> data = MethodAnnotationAggregator.runtimeAnnotationInformation(componentClass, applicationClasses, deploymentReflectionIndex, RolesAllowed.class);",
+      "info" : "VariableDeclarationStatement[4428-4619]:VariableDeclarationStatement[4428-4619]"
+    }, {
+      "left" : "for (Map.Entry<String, List<String[]>> entry : data.getClassAnnotations().entrySet())",
+      "right" : "for (Map.Entry<String, List<String[]>> entry : data.getClassAnnotations().entrySet())",
+      "info" : "EnhancedForStatement[4629-4929]:EnhancedForStatement[4629-4929]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4715-4929]:Block[4715-4929]"
+    }, {
+      "left" : "description.getAnnotationMethodPermissions().setAttribute(null, entry.getKey(), EJBMethodSecurityAttribute.rolesAllowed(new HashSet<String>(Arrays.<String>asList(entry.getValue().get(0)))));",
+      "right" : "description.getAnnotationMethodPermissions().setAttribute(null, entry.getKey(), EJBMethodSecurityAttribute.rolesAllowed(new HashSet<String>(Arrays.<String>asList(entry.getValue().get(0)))));",
+      "info" : "ExpressionStatement[4729-4919]:ExpressionStatement[4729-4919]"
+    }, {
+      "left" : "for (Map.Entry<Method, List<String[]>> entry : data.getMethodAnnotations().entrySet())",
+      "right" : "for (Map.Entry<Method, List<String[]>> entry : data.getMethodAnnotations().entrySet())",
+      "info" : "EnhancedForStatement[4939-5383]:EnhancedForStatement[4939-5383]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5026-5383]:Block[5026-5383]"
+    }, {
+      "left" : "final Method method = entry.getKey();",
+      "right" : "final Method method = entry.getKey();",
+      "info" : "VariableDeclarationStatement[5040-5077]:VariableDeclarationStatement[5040-5077]"
+    }, {
+      "left" : "description.getAnnotationMethodPermissions().setAttribute(null, EJBMethodSecurityAttribute.rolesAllowed(new HashSet<String>(Arrays.<String>asList(entry.getValue().get(0)))), method.getDeclaringClass().getName(), method.getName(), MethodInfoHelper.getCanonicalParameterTypes(method));",
+      "right" : "description.getAnnotationMethodPermissions().setAttribute(null, EJBMethodSecurityAttribute.rolesAllowed(new HashSet<String>(Arrays.<String>asList(entry.getValue().get(0)))), method.getDeclaringClass().getName(), method.getName(), MethodInfoHelper.getCanonicalParameterTypes(method));",
+      "info" : "ExpressionStatement[5090-5373]:ExpressionStatement[5090-5373]"
+    }, {
+      "left" : "final RuntimeAnnotationInformation<Boolean> denyData = MethodAnnotationAggregator.runtimeAnnotationInformation(componentClass, applicationClasses, deploymentReflectionIndex, DenyAll.class);",
+      "right" : "final RuntimeAnnotationInformation<Boolean> denyData = MethodAnnotationAggregator.runtimeAnnotationInformation(componentClass, applicationClasses, deploymentReflectionIndex, DenyAll.class);",
+      "info" : "VariableDeclarationStatement[5393-5582]:VariableDeclarationStatement[5393-5582]"
+    }, {
+      "left" : "for (Map.Entry<String, List<Boolean>> entry : denyData.getClassAnnotations().entrySet())",
+      "right" : "for (Map.Entry<String, List<Boolean>> entry : denyData.getClassAnnotations().entrySet())",
+      "info" : "EnhancedForStatement[5592-5823]:EnhancedForStatement[5592-5823]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5681-5823]:Block[5681-5823]"
+    }, {
+      "left" : "description.getAnnotationMethodPermissions().setAttribute(null, entry.getKey(), EJBMethodSecurityAttribute.denyAll());",
+      "right" : "description.getAnnotationMethodPermissions().setAttribute(null, entry.getKey(), EJBMethodSecurityAttribute.denyAll());",
+      "info" : "ExpressionStatement[5695-5813]:ExpressionStatement[5695-5813]"
+    }, {
+      "left" : "for (Map.Entry<Method, List<Boolean>> entry : denyData.getMethodAnnotations().entrySet())",
+      "right" : "for (Map.Entry<Method, List<Boolean>> entry : denyData.getMethodAnnotations().entrySet())",
+      "info" : "EnhancedForStatement[5833-6208]:EnhancedForStatement[5833-6208]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5923-6208]:Block[5923-6208]"
+    }, {
+      "left" : "final Method method = entry.getKey();",
+      "right" : "final Method method = entry.getKey();",
+      "info" : "VariableDeclarationStatement[5937-5974]:VariableDeclarationStatement[5937-5974]"
+    }, {
+      "left" : "description.getAnnotationMethodPermissions().setAttribute(null, EJBMethodSecurityAttribute.denyAll(), method.getDeclaringClass().getName(), method.getName(), MethodInfoHelper.getCanonicalParameterTypes(method));",
+      "right" : "description.getAnnotationMethodPermissions().setAttribute(null, EJBMethodSecurityAttribute.denyAll(), method.getDeclaringClass().getName(), method.getName(), MethodInfoHelper.getCanonicalParameterTypes(method));",
+      "info" : "ExpressionStatement[5987-6198]:ExpressionStatement[5987-6198]"
+    }, {
+      "left" : "componentDescription.getConfigurators().add(new EjbJaccConfigurator());",
+      "right" : "componentDescription.getConfigurators().add(new EjbJaccConfigurator());",
+      "info" : "ExpressionStatement[6613-6684]:ExpressionStatement[6613-6684]"
+    }, {
+      "left" : "EjbJarMetaData ejbJarMetadata = deploymentUnit.getAttachment(EjbDeploymentAttachmentKeys.EJB_JAR_METADATA);",
+      "right" : "EjbJarMetaData ejbJarMetadata = deploymentUnit.getAttachment(EjbDeploymentAttachmentKeys.EJB_JAR_METADATA);",
+      "info" : "VariableDeclarationStatement[6882-6989]:VariableDeclarationStatement[6882-6989]"
+    }, {
+      "left" : "final AssemblyDescriptorMetaData assemblyDescriptor = ejbJarMetadata.getAssemblyDescriptor();",
+      "right" : "final AssemblyDescriptorMetaData assemblyDescriptor = ejbJarMetadata.getAssemblyDescriptor();",
+      "info" : "VariableDeclarationStatement[7040-7133]:VariableDeclarationStatement[7041-7134]"
+    }, {
+      "left" : "final ExcludeListMetaData excludeList = assemblyDescriptor.getExcludeListByEjbName(componentDescription.getEJBName());",
+      "right" : "final ExcludeListMetaData excludeList = assemblyDescriptor.getExcludeListByEjbName(componentDescription.getEJBName());",
+      "info" : "VariableDeclarationStatement[7236-7354]:VariableDeclarationStatement[7606-7724]"
+    }, {
+      "left" : "if (excludeList != null && excludeList.getMethods() != null)",
+      "right" : "if (wildCardMethodPermissions != null)",
+      "info" : "IfStatement[7371-8875]:IfStatement[8100-8252]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7432-8875]:Block[11802-13041]"
+    }, {
+      "left" : "for (final MethodMetaData method : excludeList.getMethods())",
+      "right" : "for (final MethodMetaData method : excludeList.getMethods())",
+      "info" : "EnhancedForStatement[7454-8857]:EnhancedForStatement[11812-13035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7515-8857]:Block[11873-13035]"
+    }, {
+      "left" : "final String methodName = method.getMethodName();",
+      "right" : "final String methodName = method.getMethodName();",
+      "info" : "VariableDeclarationStatement[7541-7590]:VariableDeclarationStatement[11887-11936]"
+    }, {
+      "left" : "final MethodIntf defaultMethodIntf = (componentDescription instanceof MessageDrivenComponentDescription) ? MethodIntf.MESSAGE_ENDPOINT : MethodIntf.BEAN;",
+      "right" : "final MethodIntf defaultMethodIntf = (componentDescription instanceof MessageDrivenComponentDescription) ? MethodIntf.MESSAGE_ENDPOINT : MethodIntf.BEAN;",
+      "info" : "VariableDeclarationStatement[7615-7768]:VariableDeclarationStatement[11949-12102]"
+    }, {
+      "left" : "final MethodIntf methodIntf = this.getMethodIntf(method.getMethodIntf(), defaultMethodIntf);",
+      "right" : "final MethodIntf methodIntf = this.getMethodIntf(method.getMethodIntf(), defaultMethodIntf);",
+      "info" : "VariableDeclarationStatement[7793-7885]:VariableDeclarationStatement[12115-12207]"
+    }, {
+      "left" : "if (methodName.equals(\"*\"))",
+      "right" : "if (methodName.equals(\"*\"))",
+      "info" : "IfStatement[7910-8835]:IfStatement[12220-13025]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7938-8117]:Block[12248-12403]"
+    }, {
+      "left" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, null, EJBMethodSecurityAttribute.denyAll());",
+      "right" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, null, EJBMethodSecurityAttribute.denyAll());",
+      "info" : "ExpressionStatement[7968-8091]:ExpressionStatement[12266-12389]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8123-8835]:Block[12409-13025]"
+    }, {
+      "left" : "final MethodParametersMetaData methodParams = method.getMethodParams();",
+      "right" : "final MethodParametersMetaData methodParams = method.getMethodParams();",
+      "info" : "VariableDeclarationStatement[8154-8225]:VariableDeclarationStatement[12428-12499]"
+    }, {
+      "left" : "if (methodParams == null)",
+      "right" : "if (methodParams == null)",
+      "info" : "IfStatement[8348-8809]:IfStatement[12598-13011]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8374-8567]:Block[12624-12793]"
+    }, {
+      "left" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, EJBMethodSecurityAttribute.denyAll(), methodName);",
+      "right" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, EJBMethodSecurityAttribute.denyAll(), methodName);",
+      "info" : "ExpressionStatement[8408-8537]:ExpressionStatement[12646-12775]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8573-8809]:Block[12799-13011]"
+    }, {
+      "left" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, EJBMethodSecurityAttribute.denyAll(), null, methodName, this.getMethodParams(methodParams));",
+      "right" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, EJBMethodSecurityAttribute.denyAll(), null, methodName, this.getMethodParams(methodParams));",
+      "info" : "ExpressionStatement[8608-8779]:ExpressionStatement[12822-12993]"
+    }, {
+      "left" : "final MethodPermissionsMetaData methodPermissions = assemblyDescriptor.getMethodPermissionsByEjbName(componentDescription.getEJBName());",
+      "right" : "final MethodPermissionsMetaData methodPermissions = assemblyDescriptor.getMethodPermissionsByEjbName(componentDescription.getEJBName());",
+      "info" : "VariableDeclarationStatement[8941-9077]:VariableDeclarationStatement[8327-8463]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9125-12400]:Block[8792-11671]"
+    }, {
+      "left" : "for (final MethodPermissionMetaData methodPermissionMetaData : methodPermissions)",
+      "right" : "for (final MethodPermissionMetaData methodPermissionMetaData : methodPermissions)",
+      "info" : "EnhancedForStatement[9147-12382]:EnhancedForStatement[8802-11665]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9229-12382]:Block[8884-11665]"
+    }, {
+      "left" : "final MethodsMetaData methods = methodPermissionMetaData.getMethods();",
+      "right" : "final MethodsMetaData methods = methodPermissionMetaData.getMethods();",
+      "info" : "VariableDeclarationStatement[9256-9326]:VariableDeclarationStatement[8899-8969]"
+    }, {
+      "left" : "for (final MethodMetaData method : methods)",
+      "right" : "for (final MethodMetaData method : methods)",
+      "info" : "EnhancedForStatement[9351-12360]:EnhancedForStatement[8982-11655]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9395-12360]:Block[9026-11655]"
+    }, {
+      "left" : "EJBMethodSecurityAttribute ejbMethodSecurityMetaData;",
+      "right" : "EJBMethodSecurityAttribute ejbMethodSecurityMetaData;",
+      "info" : "VariableDeclarationStatement[9425-9478]:VariableDeclarationStatement[9044-9097]"
+    }, {
+      "left" : "if (methodPermissionMetaData.isNotChecked())",
+      "right" : "if (methodPermissionMetaData.isNotChecked())",
+      "info" : "IfStatement[9686-10037]:IfStatement[9281-9584]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9731-9862]:Block[9326-9433]"
+    }, {
+      "left" : "ejbMethodSecurityMetaData = EJBMethodSecurityAttribute.permitAll();",
+      "right" : "ejbMethodSecurityMetaData = EJBMethodSecurityAttribute.permitAll();",
+      "info" : "ExpressionStatement[9765-9832]:ExpressionStatement[9348-9415]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9868-10037]:Block[9439-9584]"
+    }, {
+      "left" : "ejbMethodSecurityMetaData = EJBMethodSecurityAttribute.rolesAllowed(methodPermissionMetaData.getRoles());",
+      "right" : "ejbMethodSecurityMetaData = EJBMethodSecurityAttribute.rolesAllowed(methodPermissionMetaData.getRoles());",
+      "info" : "ExpressionStatement[9902-10007]:ExpressionStatement[9461-9566]"
+    }, {
+      "left" : "final String methodName = method.getMethodName();",
+      "right" : "final String methodName = method.getMethodName();",
+      "info" : "VariableDeclarationStatement[10066-10115]:VariableDeclarationStatement[9601-9650]"
+    }, {
+      "left" : "final MethodIntf defaultMethodIntf = (componentDescription instanceof MessageDrivenComponentDescription) ? MethodIntf.MESSAGE_ENDPOINT : MethodIntf.BEAN;",
+      "right" : "final MethodIntf defaultMethodIntf = (componentDescription instanceof MessageDrivenComponentDescription) ? MethodIntf.MESSAGE_ENDPOINT : MethodIntf.BEAN;",
+      "info" : "VariableDeclarationStatement[10144-10297]:VariableDeclarationStatement[9667-9820]"
+    }, {
+      "left" : "final MethodIntf methodIntf = this.getMethodIntf(method.getMethodIntf(), defaultMethodIntf);",
+      "right" : "final MethodIntf methodIntf = this.getMethodIntf(method.getMethodIntf(), defaultMethodIntf);",
+      "info" : "VariableDeclarationStatement[10326-10418]:VariableDeclarationStatement[9837-9929]"
+    }, {
+      "left" : "if (methodName.equals(\"*\"))",
+      "right" : "if (methodName.equals(\"*\"))",
+      "info" : "IfStatement[10447-12334]:IfStatement[9946-11641]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10475-10946]:Block[9974-10397]"
+    }, {
+      "left" : "final EJBMethodSecurityAttribute existingRoles = componentDescription.getDescriptorMethodPermissions().getAttributeStyle1(methodIntf, null);",
+      "right" : "final EJBMethodSecurityAttribute existingRoles = componentDescription.getDescriptorMethodPermissions().getAttributeStyle1(methodIntf, null);",
+      "info" : "VariableDeclarationStatement[10509-10649]:VariableDeclarationStatement[9996-10136]"
+    }, {
+      "left" : "ejbMethodSecurityMetaData = mergeExistingRoles(ejbMethodSecurityMetaData, existingRoles);",
+      "right" : "ejbMethodSecurityMetaData = mergeExistingRoles(ejbMethodSecurityMetaData, existingRoles);",
+      "info" : "ExpressionStatement[10682-10771]:ExpressionStatement[10157-10246]"
+    }, {
+      "left" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, null, ejbMethodSecurityMetaData);",
+      "right" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, null, ejbMethodSecurityMetaData);",
+      "info" : "ExpressionStatement[10804-10916]:ExpressionStatement[10267-10379]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10952-12334]:Block[10403-11641]"
+    }, {
+      "left" : "final MethodParametersMetaData methodParams = method.getMethodParams();",
+      "right" : "final MethodParametersMetaData methodParams = method.getMethodParams();",
+      "info" : "VariableDeclarationStatement[10987-11058]:VariableDeclarationStatement[10426-10497]"
+    }, {
+      "left" : "if (methodParams == null)",
+      "right" : "if (methodParams == null)",
+      "info" : "IfStatement[11189-12304]:IfStatement[10604-11623]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11215-11715]:Block[10630-11082]"
+    }, {
+      "left" : "final EJBMethodSecurityAttribute existingRoles = componentDescription.getDescriptorMethodPermissions().getAttributeStyle2(methodIntf, methodName);",
+      "right" : "final EJBMethodSecurityAttribute existingRoles = componentDescription.getDescriptorMethodPermissions().getAttributeStyle2(methodIntf, methodName);",
+      "info" : "VariableDeclarationStatement[11254-11400]:VariableDeclarationStatement[10657-10803]"
+    }, {
+      "left" : "ejbMethodSecurityMetaData = mergeExistingRoles(ejbMethodSecurityMetaData, existingRoles);",
+      "right" : "ejbMethodSecurityMetaData = mergeExistingRoles(ejbMethodSecurityMetaData, existingRoles);",
+      "info" : "ExpressionStatement[11437-11526]:ExpressionStatement[10828-10917]"
+    }, {
+      "left" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, ejbMethodSecurityMetaData, methodName);",
+      "right" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, ejbMethodSecurityMetaData, methodName);",
+      "info" : "ExpressionStatement[11563-11681]:ExpressionStatement[10942-11060]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11721-12304]:Block[11088-11623]"
+    }, {
+      "left" : "final EJBMethodSecurityAttribute existingRoles = componentDescription.getDescriptorMethodPermissions().getAttributeStyle3(methodIntf, null, methodName, this.getMethodParams(methodParams));",
+      "right" : "final EJBMethodSecurityAttribute existingRoles = componentDescription.getDescriptorMethodPermissions().getAttributeStyle3(methodIntf, null, methodName, this.getMethodParams(methodParams));",
+      "info" : "VariableDeclarationStatement[11759-11947]:VariableDeclarationStatement[11114-11302]"
+    }, {
+      "left" : "ejbMethodSecurityMetaData = mergeExistingRoles(ejbMethodSecurityMetaData, existingRoles);",
+      "right" : "ejbMethodSecurityMetaData = mergeExistingRoles(ejbMethodSecurityMetaData, existingRoles);",
+      "info" : "ExpressionStatement[11984-12073]:ExpressionStatement[11327-11416]"
+    }, {
+      "left" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, ejbMethodSecurityMetaData, null, methodName, this.getMethodParams(methodParams));",
+      "right" : "componentDescription.getDescriptorMethodPermissions().setAttribute(methodIntf, ejbMethodSecurityMetaData, null, methodName, this.getMethodParams(methodParams));",
+      "info" : "ExpressionStatement[12110-12270]:ExpressionStatement[11441-11601]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12593-12986]:Block[13203-13596]"
+    }, {
+      "left" : "if (existingRoles != null && !existingRoles.getRolesAllowed().isEmpty())",
+      "right" : "if (existingRoles != null && !existingRoles.getRolesAllowed().isEmpty())",
+      "info" : "IfStatement[12603-12938]:IfStatement[13213-13548]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12676-12938]:Block[13286-13548]"
+    }, {
+      "left" : "final Set<String> roles = new HashSet<String>(existingRoles.getRolesAllowed());",
+      "right" : "final Set<String> roles = new HashSet<String>(existingRoles.getRolesAllowed());",
+      "info" : "VariableDeclarationStatement[12690-12769]:VariableDeclarationStatement[13300-13379]"
+    }, {
+      "left" : "roles.addAll(ejbMethodSecurityMetaData.getRolesAllowed());",
+      "right" : "roles.addAll(ejbMethodSecurityMetaData.getRolesAllowed());",
+      "info" : "ExpressionStatement[12782-12840]:ExpressionStatement[13392-13450]"
+    }, {
+      "left" : "ejbMethodSecurityMetaData = EJBMethodSecurityAttribute.rolesAllowed(roles);",
+      "right" : "ejbMethodSecurityMetaData = EJBMethodSecurityAttribute.rolesAllowed(roles);",
+      "info" : "ExpressionStatement[12853-12928]:ExpressionStatement[13463-13538]"
+    }, {
+      "left" : "return ejbMethodSecurityMetaData;",
+      "right" : "return ejbMethodSecurityMetaData;",
+      "info" : "ReturnStatement[12947-12980]:ReturnStatement[13557-13590]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

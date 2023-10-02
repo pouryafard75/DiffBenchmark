@@ -1,0 +1,221 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "TreeBuilder",
+      "right" : "TreeBuilder",
+      "info" : "TypeDeclaration[191-2386]:TypeDeclaration[191-2816]"
+    }, {
+      "left" : "CharacterReader reader;",
+      "right" : "CharacterReader reader;",
+      "info" : "FieldDeclaration[259-282]:FieldDeclaration[259-282]"
+    }, {
+      "left" : "Tokeniser tokeniser;",
+      "right" : "Tokeniser tokeniser;",
+      "info" : "FieldDeclaration[287-307]:FieldDeclaration[287-307]"
+    }, {
+      "left" : "protected Document doc;",
+      "right" : "protected Document doc;",
+      "info" : "FieldDeclaration[312-335]:FieldDeclaration[312-335]"
+    }, {
+      "left" : "protected ArrayList<Element> stack;",
+      "right" : "protected ArrayList<Element> stack;",
+      "info" : "FieldDeclaration[376-411]:FieldDeclaration[376-411]"
+    }, {
+      "left" : "protected String baseUri;",
+      "right" : "protected String baseUri;",
+      "info" : "FieldDeclaration[446-471]:FieldDeclaration[446-471]"
+    }, {
+      "left" : "protected Token currentToken;",
+      "right" : "protected Token currentToken;",
+      "info" : "FieldDeclaration[523-552]:FieldDeclaration[523-552]"
+    }, {
+      "left" : "protected ParseErrorList errors;",
+      "right" : "protected ParseErrorList errors;",
+      "info" : "FieldDeclaration[606-638]:FieldDeclaration[606-638]"
+    }, {
+      "left" : "private Token.StartTag start = new Token.StartTag();",
+      "right" : "private Token.StartTag start = new Token.StartTag();",
+      "info" : "FieldDeclaration[677-729]:FieldDeclaration[677-729]"
+    }, {
+      "left" : "private Token.EndTag end  = new Token.EndTag();",
+      "right" : "private Token.EndTag end  = new Token.EndTag();",
+      "info" : "FieldDeclaration[758-805]:FieldDeclaration[758-805]"
+    }, {
+      "left" : "protected void initialiseParse(String input, String baseUri, ParseErrorList errors)",
+      "right" : "protected void initialiseParse(String input, String baseUri, ParseErrorList errors)",
+      "info" : "MethodDeclaration[811-1271]:MethodDeclaration[811-1271]"
+    }, {
+      "left" : "Document parse(String input, String baseUri)",
+      "right" : "Document parse(String input, String baseUri)",
+      "info" : "MethodDeclaration[1277-1396]:MethodDeclaration[1277-1396]"
+    }, {
+      "left" : "Document parse(String input, String baseUri, ParseErrorList errors)",
+      "right" : "Document parse(String input, String baseUri, ParseErrorList errors)",
+      "info" : "MethodDeclaration[1402-1567]:MethodDeclaration[1402-1567]"
+    }, {
+      "left" : "protected void runParser()",
+      "right" : "protected void runParser()",
+      "info" : "MethodDeclaration[1573-1814]:MethodDeclaration[1573-1814]"
+    }, {
+      "left" : "protected abstract boolean process(Token token);",
+      "right" : "protected abstract boolean process(Token token);",
+      "info" : "MethodDeclaration[1820-1868]:MethodDeclaration[1820-1868]"
+    }, {
+      "left" : "protected boolean processStartTag(String name)",
+      "right" : "protected boolean processStartTag(String name)",
+      "info" : "MethodDeclaration[1874-1978]:MethodDeclaration[1874-2119]"
+    }, {
+      "left" : "public boolean processStartTag(String name, Attributes attrs)",
+      "right" : "public boolean processStartTag(String name, Attributes attrs)",
+      "info" : "MethodDeclaration[1984-2144]:MethodDeclaration[2125-2437]"
+    }, {
+      "left" : "protected boolean processEndTag(String name)",
+      "right" : "protected boolean processEndTag(String name)",
+      "info" : "MethodDeclaration[2150-2250]:MethodDeclaration[2443-2680]"
+    }, {
+      "left" : "protected Element currentElement()",
+      "right" : "protected Element currentElement()",
+      "info" : "MethodDeclaration[2257-2384]:MethodDeclaration[2687-2814]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[895-1271]:Block[895-1271]"
+    }, {
+      "left" : "Validate.notNull(input, \"String input must not be null\");",
+      "right" : "Validate.notNull(input, \"String input must not be null\");",
+      "info" : "ExpressionStatement[905-962]:ExpressionStatement[905-962]"
+    }, {
+      "left" : "Validate.notNull(baseUri, \"BaseURI must not be null\");",
+      "right" : "Validate.notNull(baseUri, \"BaseURI must not be null\");",
+      "info" : "ExpressionStatement[971-1025]:ExpressionStatement[971-1025]"
+    }, {
+      "left" : "doc = new Document(baseUri);",
+      "right" : "doc = new Document(baseUri);",
+      "info" : "ExpressionStatement[1035-1063]:ExpressionStatement[1035-1063]"
+    }, {
+      "left" : "reader = new CharacterReader(input);",
+      "right" : "reader = new CharacterReader(input);",
+      "info" : "ExpressionStatement[1072-1108]:ExpressionStatement[1072-1108]"
+    }, {
+      "left" : "this.errors = errors;",
+      "right" : "this.errors = errors;",
+      "info" : "ExpressionStatement[1117-1138]:ExpressionStatement[1117-1138]"
+    }, {
+      "left" : "tokeniser = new Tokeniser(reader, errors);",
+      "right" : "tokeniser = new Tokeniser(reader, errors);",
+      "info" : "ExpressionStatement[1147-1189]:ExpressionStatement[1147-1189]"
+    }, {
+      "left" : "stack = new ArrayList<Element>(32);",
+      "right" : "stack = new ArrayList<Element>(32);",
+      "info" : "ExpressionStatement[1198-1233]:ExpressionStatement[1198-1233]"
+    }, {
+      "left" : "this.baseUri = baseUri;",
+      "right" : "this.baseUri = baseUri;",
+      "info" : "ExpressionStatement[1242-1265]:ExpressionStatement[1242-1265]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1322-1396]:Block[1322-1396]"
+    }, {
+      "left" : "return parse(input, baseUri, ParseErrorList.noTracking());",
+      "right" : "return parse(input, baseUri, ParseErrorList.noTracking());",
+      "info" : "ReturnStatement[1332-1390]:ReturnStatement[1332-1390]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1470-1567]:Block[1470-1567]"
+    }, {
+      "left" : "initialiseParse(input, baseUri, errors);",
+      "right" : "initialiseParse(input, baseUri, errors);",
+      "info" : "ExpressionStatement[1480-1520]:ExpressionStatement[1480-1520]"
+    }, {
+      "left" : "runParser();",
+      "right" : "runParser();",
+      "info" : "ExpressionStatement[1529-1541]:ExpressionStatement[1529-1541]"
+    }, {
+      "left" : "return doc;",
+      "right" : "return doc;",
+      "info" : "ReturnStatement[1550-1561]:ReturnStatement[1550-1561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1600-1814]:Block[1600-1814]"
+    }, {
+      "left" : "while (true)",
+      "right" : "while (true)",
+      "info" : "WhileStatement[1610-1808]:WhileStatement[1610-1808]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1623-1808]:Block[1623-1808]"
+    }, {
+      "left" : "Token token = tokeniser.read();",
+      "right" : "Token token = tokeniser.read();",
+      "info" : "VariableDeclarationStatement[1637-1668]:VariableDeclarationStatement[1637-1668]"
+    }, {
+      "left" : "process(token);",
+      "right" : "process(token);",
+      "info" : "ExpressionStatement[1681-1696]:ExpressionStatement[1681-1696]"
+    }, {
+      "left" : "token.reset();",
+      "right" : "token.reset();",
+      "info" : "ExpressionStatement[1709-1723]:ExpressionStatement[1709-1723]"
+    }, {
+      "left" : "if (token.type == Token.TokenType.EOF)",
+      "right" : "if (token.type == Token.TokenType.EOF)",
+      "info" : "IfStatement[1737-1798]:IfStatement[1737-1798]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[1792-1798]:BreakStatement[1792-1798]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1921-1978]:Block[1921-2119]"
+    }, {
+      "left" : "return process(start.reset().name(name));",
+      "right" : "return process(start.reset().name(name));",
+      "info" : "ReturnStatement[1931-1972]:ReturnStatement[2072-2113]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2046-2144]:Block[2187-2437]"
+    }, {
+      "left" : "start.reset();",
+      "right" : "start.reset();",
+      "info" : "ExpressionStatement[2056-2070]:ExpressionStatement[2349-2363]"
+    }, {
+      "left" : "start.nameAttr(name, attrs);",
+      "right" : "start.nameAttr(name, attrs);",
+      "info" : "ExpressionStatement[2079-2107]:ExpressionStatement[2372-2400]"
+    }, {
+      "left" : "return process(start);",
+      "right" : "return process(start);",
+      "info" : "ReturnStatement[2116-2138]:ReturnStatement[2409-2431]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2195-2250]:Block[2488-2680]"
+    }, {
+      "left" : "return process(end.reset().name(name));",
+      "right" : "return process(end.reset().name(name));",
+      "info" : "ReturnStatement[2205-2244]:ReturnStatement[2635-2674]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2292-2384]:Block[2722-2814]"
+    }, {
+      "left" : "int size = stack.size();",
+      "right" : "int size = stack.size();",
+      "info" : "VariableDeclarationStatement[2302-2326]:VariableDeclarationStatement[2732-2756]"
+    }, {
+      "left" : "return size > 0 ? stack.get(size-1) : null;",
+      "right" : "return size > 0 ? stack.get(size-1) : null;",
+      "info" : "ReturnStatement[2335-2378]:ReturnStatement[2765-2808]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

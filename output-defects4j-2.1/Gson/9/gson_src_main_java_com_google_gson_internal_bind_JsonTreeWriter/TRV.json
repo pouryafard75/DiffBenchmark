@@ -1,0 +1,557 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final Writer UNWRITABLE_WRITER = new Writer() {\n    @Override public void write(char[] buffer, int offset, int counter) {\n      throw new AssertionError();\n    }\n    @Override public void flush() throws IOException {\n      throw new AssertionError();\n    }\n    @Override public void close() throws IOException {\n      throw new AssertionError();\n    }\n  };",
+      "right" : "private static final Writer UNWRITABLE_WRITER = new Writer() {\n    @Override public void write(char[] buffer, int offset, int counter) {\n      throw new AssertionError();\n    }\n    @Override public void flush() throws IOException {\n      throw new AssertionError();\n    }\n    @Override public void close() throws IOException {\n      throw new AssertionError();\n    }\n  };",
+      "info" : "FieldDeclaration[1065-1436]:FieldDeclaration[1065-1436]"
+    }, {
+      "left" : "public void write(char[] buffer, int offset, int counter)",
+      "right" : "public void write(char[] buffer, int offset, int counter)",
+      "info" : "MethodDeclaration[1132-1241]:MethodDeclaration[1132-1241]"
+    }, {
+      "left" : "public void flush() throws IOException",
+      "right" : "public void flush() throws IOException",
+      "info" : "MethodDeclaration[1246-1336]:MethodDeclaration[1246-1336]"
+    }, {
+      "left" : "public void close() throws IOException",
+      "right" : "public void close() throws IOException",
+      "info" : "MethodDeclaration[1341-1431]:MethodDeclaration[1341-1431]"
+    }, {
+      "left" : "private static final JsonPrimitive SENTINEL_CLOSED = new JsonPrimitive(\"closed\");",
+      "right" : "private static final JsonPrimitive SENTINEL_CLOSED = new JsonPrimitive(\"closed\");",
+      "info" : "FieldDeclaration[1439-1618]:FieldDeclaration[1439-1618]"
+    }, {
+      "left" : "private final List<JsonElement> stack = new ArrayList<JsonElement>();",
+      "right" : "private final List<JsonElement> stack = new ArrayList<JsonElement>();",
+      "info" : "FieldDeclaration[1622-1776]:FieldDeclaration[1622-1776]"
+    }, {
+      "left" : "private String pendingName;",
+      "right" : "private String pendingName;",
+      "info" : "FieldDeclaration[1780-1908]:FieldDeclaration[1780-1908]"
+    }, {
+      "left" : "private JsonElement product = JsonNull.INSTANCE;",
+      "right" : "private JsonElement product = JsonNull.INSTANCE;",
+      "info" : "FieldDeclaration[1912-2014]:FieldDeclaration[1912-2014]"
+    }, {
+      "left" : "public JsonTreeWriter()",
+      "right" : "public JsonTreeWriter()",
+      "info" : "MethodDeclaration[2057-2116]:MethodDeclaration[2057-2116]"
+    }, {
+      "left" : "public JsonElement get()",
+      "right" : "public JsonElement get()",
+      "info" : "MethodDeclaration[2120-2360]:MethodDeclaration[2120-2360]"
+    }, {
+      "left" : "private JsonElement peek()",
+      "right" : "private JsonElement peek()",
+      "info" : "MethodDeclaration[2364-2436]:MethodDeclaration[2364-2436]"
+    }, {
+      "left" : "private void put(JsonElement value)",
+      "right" : "private void put(JsonElement value)",
+      "info" : "MethodDeclaration[2440-2953]:MethodDeclaration[2440-2953]"
+    }, {
+      "left" : "public JsonWriter beginArray() throws IOException",
+      "right" : "public JsonWriter beginArray() throws IOException",
+      "info" : "MethodDeclaration[2957-3116]:MethodDeclaration[2957-3116]"
+    }, {
+      "left" : "public JsonWriter endArray() throws IOException",
+      "right" : "public JsonWriter endArray() throws IOException",
+      "info" : "MethodDeclaration[3120-3456]:MethodDeclaration[3120-3456]"
+    }, {
+      "left" : "public JsonWriter beginObject() throws IOException",
+      "right" : "public JsonWriter beginObject() throws IOException",
+      "info" : "MethodDeclaration[3460-3625]:MethodDeclaration[3460-3625]"
+    }, {
+      "left" : "public JsonWriter endObject() throws IOException",
+      "right" : "public JsonWriter endObject() throws IOException",
+      "info" : "MethodDeclaration[3629-3967]:MethodDeclaration[3629-3967]"
+    }, {
+      "left" : "public JsonWriter name(String name) throws IOException",
+      "right" : "public JsonWriter name(String name) throws IOException",
+      "info" : "MethodDeclaration[3971-4303]:MethodDeclaration[3971-4303]"
+    }, {
+      "left" : "public JsonWriter value(String value) throws IOException",
+      "right" : "public JsonWriter value(String value) throws IOException",
+      "info" : "MethodDeclaration[4307-4488]:MethodDeclaration[4307-4488]"
+    }, {
+      "left" : "public JsonWriter nullValue() throws IOException",
+      "right" : "public JsonWriter nullValue() throws IOException",
+      "info" : "MethodDeclaration[4492-4601]:MethodDeclaration[4492-4601]"
+    }, {
+      "left" : "public JsonWriter value(boolean value) throws IOException",
+      "right" : "public JsonWriter value(boolean value) throws IOException",
+      "info" : "MethodDeclaration[4605-4730]:MethodDeclaration[4605-4730]"
+    }, {
+      "left" : "public JsonWriter value(double value) throws IOException",
+      "right" : "public JsonWriter value(double value) throws IOException",
+      "info" : "MethodDeclaration[4735-5029]:MethodDeclaration[4920-5214]"
+    }, {
+      "left" : "public JsonWriter value(long value) throws IOException",
+      "right" : "public JsonWriter value(long value) throws IOException",
+      "info" : "MethodDeclaration[5033-5155]:MethodDeclaration[5218-5340]"
+    }, {
+      "left" : "public JsonWriter value(Number value) throws IOException",
+      "right" : "public JsonWriter value(Number value) throws IOException",
+      "info" : "MethodDeclaration[5159-5560]:MethodDeclaration[5344-5745]"
+    }, {
+      "left" : "public void flush() throws IOException",
+      "right" : "public void flush() throws IOException",
+      "info" : "MethodDeclaration[5564-5618]:MethodDeclaration[5749-5803]"
+    }, {
+      "left" : "public void close() throws IOException",
+      "right" : "public void close() throws IOException",
+      "info" : "MethodDeclaration[5622-5794]:MethodDeclaration[5807-5979]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1200-1241]:Block[1200-1241]"
+    }, {
+      "left" : "throw new AssertionError();",
+      "right" : "throw new AssertionError();",
+      "info" : "ThrowStatement[1208-1235]:ThrowStatement[1208-1235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1295-1336]:Block[1295-1336]"
+    }, {
+      "left" : "throw new AssertionError();",
+      "right" : "throw new AssertionError();",
+      "info" : "ThrowStatement[1303-1330]:ThrowStatement[1303-1330]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1390-1431]:Block[1390-1431]"
+    }, {
+      "left" : "throw new AssertionError();",
+      "right" : "throw new AssertionError();",
+      "info" : "ThrowStatement[1398-1425]:ThrowStatement[1398-1425]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2081-2116]:Block[2081-2116]"
+    }, {
+      "left" : "super(UNWRITABLE_WRITER);",
+      "right" : "super(UNWRITABLE_WRITER);",
+      "info" : "SuperConstructorInvocation[2087-2112]:SuperConstructorInvocation[2087-2112]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2216-2360]:Block[2216-2360]"
+    }, {
+      "left" : "if (!stack.isEmpty())",
+      "right" : "if (!stack.isEmpty())",
+      "info" : "IfStatement[2222-2336]:IfStatement[2222-2336]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2244-2336]:Block[2244-2336]"
+    }, {
+      "left" : "throw new IllegalStateException(\"Expected one JSON element but was \" + stack);",
+      "right" : "throw new IllegalStateException(\"Expected one JSON element but was \" + stack);",
+      "info" : "ThrowStatement[2252-2330]:ThrowStatement[2252-2330]"
+    }, {
+      "left" : "return product;",
+      "right" : "return product;",
+      "info" : "ReturnStatement[2341-2356]:ReturnStatement[2341-2356]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2391-2436]:Block[2391-2436]"
+    }, {
+      "left" : "return stack.get(stack.size() - 1);",
+      "right" : "return stack.get(stack.size() - 1);",
+      "info" : "ReturnStatement[2397-2432]:ReturnStatement[2397-2432]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2476-2953]:Block[2476-2953]"
+    }, {
+      "left" : "if (pendingName != null)",
+      "right" : "if (pendingName != null)",
+      "info" : "IfStatement[2482-2949]:IfStatement[2482-2949]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2507-2693]:Block[2507-2693]"
+    }, {
+      "left" : "if (!value.isJsonNull() || getSerializeNulls())",
+      "right" : "if (!value.isJsonNull() || getSerializeNulls())",
+      "info" : "IfStatement[2515-2661]:IfStatement[2515-2661]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2563-2661]:Block[2563-2661]"
+    }, {
+      "left" : "JsonObject object = (JsonObject) peek();",
+      "right" : "JsonObject object = (JsonObject) peek();",
+      "info" : "VariableDeclarationStatement[2573-2613]:VariableDeclarationStatement[2573-2613]"
+    }, {
+      "left" : "object.add(pendingName, value);",
+      "right" : "object.add(pendingName, value);",
+      "info" : "ExpressionStatement[2622-2653]:ExpressionStatement[2622-2653]"
+    }, {
+      "left" : "pendingName = null;",
+      "right" : "pendingName = null;",
+      "info" : "ExpressionStatement[2668-2687]:ExpressionStatement[2668-2687]"
+    }, {
+      "left" : "if (stack.isEmpty())",
+      "right" : "if (stack.isEmpty())",
+      "info" : "IfStatement[2699-2949]:IfStatement[2699-2949]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2720-2750]:Block[2720-2750]"
+    }, {
+      "left" : "product = value;",
+      "right" : "product = value;",
+      "info" : "ExpressionStatement[2728-2744]:ExpressionStatement[2728-2744]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2756-2949]:Block[2756-2949]"
+    }, {
+      "left" : "JsonElement element = peek();",
+      "right" : "JsonElement element = peek();",
+      "info" : "VariableDeclarationStatement[2764-2793]:VariableDeclarationStatement[2764-2793]"
+    }, {
+      "left" : "if (element instanceof JsonArray)",
+      "right" : "if (element instanceof JsonArray)",
+      "info" : "IfStatement[2800-2943]:IfStatement[2800-2943]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2834-2885]:Block[2834-2885]"
+    }, {
+      "left" : "((JsonArray) element).add(value);",
+      "right" : "((JsonArray) element).add(value);",
+      "info" : "ExpressionStatement[2844-2877]:ExpressionStatement[2844-2877]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2891-2943]:Block[2891-2943]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[2901-2935]:ThrowStatement[2901-2935]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3017-3116]:Block[3017-3116]"
+    }, {
+      "left" : "JsonArray array = new JsonArray();",
+      "right" : "JsonArray array = new JsonArray();",
+      "info" : "VariableDeclarationStatement[3023-3057]:VariableDeclarationStatement[3023-3057]"
+    }, {
+      "left" : "put(array);",
+      "right" : "put(array);",
+      "info" : "ExpressionStatement[3062-3073]:ExpressionStatement[3062-3073]"
+    }, {
+      "left" : "stack.add(array);",
+      "right" : "stack.add(array);",
+      "info" : "ExpressionStatement[3078-3095]:ExpressionStatement[3078-3095]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[3100-3112]:ReturnStatement[3100-3112]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3178-3456]:Block[3178-3456]"
+    }, {
+      "left" : "if (stack.isEmpty() || pendingName != null)",
+      "right" : "if (stack.isEmpty() || pendingName != null)",
+      "info" : "IfStatement[3184-3276]:IfStatement[3184-3276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3228-3276]:Block[3228-3276]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[3236-3270]:ThrowStatement[3236-3270]"
+    }, {
+      "left" : "JsonElement element = peek();",
+      "right" : "JsonElement element = peek();",
+      "info" : "VariableDeclarationStatement[3281-3310]:VariableDeclarationStatement[3281-3310]"
+    }, {
+      "left" : "if (element instanceof JsonArray)",
+      "right" : "if (element instanceof JsonArray)",
+      "info" : "IfStatement[3315-3413]:IfStatement[3315-3413]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3349-3413]:Block[3349-3413]"
+    }, {
+      "left" : "stack.remove(stack.size() - 1);",
+      "right" : "stack.remove(stack.size() - 1);",
+      "info" : "ExpressionStatement[3357-3388]:ExpressionStatement[3357-3388]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[3395-3407]:ReturnStatement[3395-3407]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[3418-3452]:ThrowStatement[3418-3452]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3521-3625]:Block[3521-3625]"
+    }, {
+      "left" : "JsonObject object = new JsonObject();",
+      "right" : "JsonObject object = new JsonObject();",
+      "info" : "VariableDeclarationStatement[3527-3564]:VariableDeclarationStatement[3527-3564]"
+    }, {
+      "left" : "put(object);",
+      "right" : "put(object);",
+      "info" : "ExpressionStatement[3569-3581]:ExpressionStatement[3569-3581]"
+    }, {
+      "left" : "stack.add(object);",
+      "right" : "stack.add(object);",
+      "info" : "ExpressionStatement[3586-3604]:ExpressionStatement[3586-3604]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[3609-3621]:ReturnStatement[3609-3621]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3688-3967]:Block[3688-3967]"
+    }, {
+      "left" : "if (stack.isEmpty() || pendingName != null)",
+      "right" : "if (stack.isEmpty() || pendingName != null)",
+      "info" : "IfStatement[3694-3786]:IfStatement[3694-3786]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3738-3786]:Block[3738-3786]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[3746-3780]:ThrowStatement[3746-3780]"
+    }, {
+      "left" : "JsonElement element = peek();",
+      "right" : "JsonElement element = peek();",
+      "info" : "VariableDeclarationStatement[3791-3820]:VariableDeclarationStatement[3791-3820]"
+    }, {
+      "left" : "if (element instanceof JsonObject)",
+      "right" : "if (element instanceof JsonObject)",
+      "info" : "IfStatement[3825-3924]:IfStatement[3825-3924]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3860-3924]:Block[3860-3924]"
+    }, {
+      "left" : "stack.remove(stack.size() - 1);",
+      "right" : "stack.remove(stack.size() - 1);",
+      "info" : "ExpressionStatement[3868-3899]:ExpressionStatement[3868-3899]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[3906-3918]:ReturnStatement[3906-3918]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[3929-3963]:ThrowStatement[3929-3963]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4036-4303]:Block[4036-4303]"
+    }, {
+      "left" : "if (stack.isEmpty() || pendingName != null)",
+      "right" : "if (stack.isEmpty() || pendingName != null)",
+      "info" : "IfStatement[4042-4134]:IfStatement[4042-4134]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4086-4134]:Block[4086-4134]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[4094-4128]:ThrowStatement[4094-4128]"
+    }, {
+      "left" : "JsonElement element = peek();",
+      "right" : "JsonElement element = peek();",
+      "info" : "VariableDeclarationStatement[4139-4168]:VariableDeclarationStatement[4139-4168]"
+    }, {
+      "left" : "if (element instanceof JsonObject)",
+      "right" : "if (element instanceof JsonObject)",
+      "info" : "IfStatement[4173-4260]:IfStatement[4173-4260]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4208-4260]:Block[4208-4260]"
+    }, {
+      "left" : "pendingName = name;",
+      "right" : "pendingName = name;",
+      "info" : "ExpressionStatement[4216-4235]:ExpressionStatement[4216-4235]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[4242-4254]:ReturnStatement[4242-4254]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[4265-4299]:ThrowStatement[4265-4299]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4374-4488]:Block[4374-4488]"
+    }, {
+      "left" : "if (value == null)",
+      "right" : "if (value == null)",
+      "info" : "IfStatement[4380-4432]:IfStatement[4380-4432]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4399-4432]:Block[4399-4432]"
+    }, {
+      "left" : "return nullValue();",
+      "right" : "return nullValue();",
+      "info" : "ReturnStatement[4407-4426]:ReturnStatement[4407-4426]"
+    }, {
+      "left" : "put(new JsonPrimitive(value));",
+      "right" : "put(new JsonPrimitive(value));",
+      "info" : "ExpressionStatement[4437-4467]:ExpressionStatement[4437-4467]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[4472-4484]:ReturnStatement[4472-4484]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4551-4601]:Block[4551-4601]"
+    }, {
+      "left" : "put(JsonNull.INSTANCE);",
+      "right" : "put(JsonNull.INSTANCE);",
+      "info" : "ExpressionStatement[4557-4580]:ExpressionStatement[4557-4580]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[4585-4597]:ReturnStatement[4585-4597]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4673-4730]:Block[4673-4730]"
+    }, {
+      "left" : "put(new JsonPrimitive(value));",
+      "right" : "put(new JsonPrimitive(value));",
+      "info" : "ExpressionStatement[4679-4709]:ExpressionStatement[4679-4709]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[4714-4726]:ReturnStatement[4714-4726]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4802-5029]:Block[4987-5214]"
+    }, {
+      "left" : "if (!isLenient() && (Double.isNaN(value) || Double.isInfinite(value)))",
+      "right" : "if (!isLenient() && (Double.isNaN(value) || Double.isInfinite(value)))",
+      "info" : "IfStatement[4808-4973]:IfStatement[4993-5158]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4879-4973]:Block[5064-5158]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"JSON forbids NaN and infinities: \" + value);",
+      "right" : "throw new IllegalArgumentException(\"JSON forbids NaN and infinities: \" + value);",
+      "info" : "ThrowStatement[4887-4967]:ThrowStatement[5072-5152]"
+    }, {
+      "left" : "put(new JsonPrimitive(value));",
+      "right" : "put(new JsonPrimitive(value));",
+      "info" : "ExpressionStatement[4978-5008]:ExpressionStatement[5163-5193]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[5013-5025]:ReturnStatement[5198-5210]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5098-5155]:Block[5283-5340]"
+    }, {
+      "left" : "put(new JsonPrimitive(value));",
+      "right" : "put(new JsonPrimitive(value));",
+      "info" : "ExpressionStatement[5104-5134]:ExpressionStatement[5289-5319]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[5139-5151]:ReturnStatement[5324-5336]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5226-5560]:Block[5411-5745]"
+    }, {
+      "left" : "if (value == null)",
+      "right" : "if (value == null)",
+      "info" : "IfStatement[5232-5284]:IfStatement[5417-5469]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5251-5284]:Block[5436-5469]"
+    }, {
+      "left" : "return nullValue();",
+      "right" : "return nullValue();",
+      "info" : "ReturnStatement[5259-5278]:ReturnStatement[5444-5463]"
+    }, {
+      "left" : "if (!isLenient())",
+      "right" : "if (!isLenient())",
+      "info" : "IfStatement[5290-5503]:IfStatement[5475-5688]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5308-5503]:Block[5493-5688]"
+    }, {
+      "left" : "double d = value.doubleValue();",
+      "right" : "double d = value.doubleValue();",
+      "info" : "VariableDeclarationStatement[5316-5347]:VariableDeclarationStatement[5501-5532]"
+    }, {
+      "left" : "if (Double.isNaN(d) || Double.isInfinite(d))",
+      "right" : "if (Double.isNaN(d) || Double.isInfinite(d))",
+      "info" : "IfStatement[5354-5497]:IfStatement[5539-5682]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5399-5497]:Block[5584-5682]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"JSON forbids NaN and infinities: \" + value);",
+      "right" : "throw new IllegalArgumentException(\"JSON forbids NaN and infinities: \" + value);",
+      "info" : "ThrowStatement[5409-5489]:ThrowStatement[5594-5674]"
+    }, {
+      "left" : "put(new JsonPrimitive(value));",
+      "right" : "put(new JsonPrimitive(value));",
+      "info" : "ExpressionStatement[5509-5539]:ExpressionStatement[5694-5724]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[5544-5556]:ReturnStatement[5729-5741]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5613-5618]:Block[5798-5803]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5671-5794]:Block[5856-5979]"
+    }, {
+      "left" : "if (!stack.isEmpty())",
+      "right" : "if (!stack.isEmpty())",
+      "info" : "IfStatement[5677-5758]:IfStatement[5862-5943]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5699-5758]:Block[5884-5943]"
+    }, {
+      "left" : "throw new IOException(\"Incomplete document\");",
+      "right" : "throw new IOException(\"Incomplete document\");",
+      "info" : "ThrowStatement[5707-5752]:ThrowStatement[5892-5937]"
+    }, {
+      "left" : "stack.add(SENTINEL_CLOSED);",
+      "right" : "stack.add(SENTINEL_CLOSED);",
+      "info" : "ExpressionStatement[5763-5790]:ExpressionStatement[5948-5975]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

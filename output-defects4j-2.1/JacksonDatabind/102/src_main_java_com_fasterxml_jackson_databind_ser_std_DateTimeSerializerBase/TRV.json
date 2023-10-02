@@ -1,0 +1,217 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "protected final Boolean _useTimestamp;",
+      "right" : "protected final Boolean _useTimestamp;",
+      "info" : "FieldDeclaration[826-999]:FieldDeclaration[826-999]"
+    }, {
+      "left" : "protected final DateFormat _customFormat;",
+      "right" : "protected final DateFormat _customFormat;",
+      "info" : "FieldDeclaration[1005-1271]:FieldDeclaration[1005-1271]"
+    }, {
+      "left" : "protected final AtomicReference<DateFormat> _reusedCustomFormat;",
+      "right" : "protected final AtomicReference<DateFormat> _reusedCustomFormat;",
+      "info" : "FieldDeclaration[1277-1695]:FieldDeclaration[1277-1695]"
+    }, {
+      "left" : "protected DateTimeSerializerBase(Class<T> type,\n            Boolean useTimestamp, DateFormat customFormat)",
+      "right" : "protected DateTimeSerializerBase(Class<T> type,\n            Boolean useTimestamp, DateFormat customFormat)",
+      "info" : "MethodDeclaration[1701-2013]:MethodDeclaration[1701-2013]"
+    }, {
+      "left" : "public abstract DateTimeSerializerBase<T> withFormat(Boolean timestamp, DateFormat customFormat);",
+      "right" : "public abstract DateTimeSerializerBase<T> withFormat(Boolean timestamp, DateFormat customFormat);",
+      "info" : "MethodDeclaration[2019-2116]:MethodDeclaration[2019-2116]"
+    }, {
+      "left" : "public boolean isEmpty(SerializerProvider serializers, T value)",
+      "right" : "public boolean isEmpty(SerializerProvider serializers, T value)",
+      "info" : "MethodDeclaration[5506-5813]:MethodDeclaration[5439-5746]"
+    }, {
+      "left" : "protected abstract long _timestamp(T value);",
+      "right" : "protected abstract long _timestamp(T value);",
+      "info" : "MethodDeclaration[5819-5863]:MethodDeclaration[5752-5796]"
+    }, {
+      "left" : "public JsonNode getSchema(SerializerProvider serializers, Type typeHint)",
+      "right" : "public JsonNode getSchema(SerializerProvider serializers, Type typeHint)",
+      "info" : "MethodDeclaration[5869-6115]:MethodDeclaration[5802-6048]"
+    }, {
+      "left" : "public void acceptJsonFormatVisitor(JsonFormatVisitorWrapper visitor, JavaType typeHint) throws JsonMappingException",
+      "right" : "public void acceptJsonFormatVisitor(JsonFormatVisitorWrapper visitor, JavaType typeHint) throws JsonMappingException",
+      "info" : "MethodDeclaration[6121-6353]:MethodDeclaration[6054-6286]"
+    }, {
+      "left" : "public abstract void serialize(T value, JsonGenerator gen, SerializerProvider serializers)\n        throws IOException;",
+      "right" : "public abstract void serialize(T value, JsonGenerator gen, SerializerProvider serializers)\n        throws IOException;",
+      "info" : "MethodDeclaration[6531-6663]:MethodDeclaration[6464-6596]"
+    }, {
+      "left" : "protected boolean _asTimestamp(SerializerProvider serializers)",
+      "right" : "protected boolean _asTimestamp(SerializerProvider serializers)",
+      "info" : "MethodDeclaration[6839-7441]:MethodDeclaration[6772-7374]"
+    }, {
+      "left" : "protected void _acceptJsonFormatVisitor(JsonFormatVisitorWrapper visitor, JavaType typeHint,\n\t\tboolean asNumber) throws JsonMappingException",
+      "right" : "protected void _acceptJsonFormatVisitor(JsonFormatVisitorWrapper visitor, JavaType typeHint,\n\t\tboolean asNumber) throws JsonMappingException",
+      "info" : "MethodDeclaration[7447-7852]:MethodDeclaration[7380-7785]"
+    }, {
+      "left" : "protected void _serializeAsString(Date value, JsonGenerator g, SerializerProvider provider) throws IOException",
+      "right" : "protected void _serializeAsString(Date value, JsonGenerator g, SerializerProvider provider) throws IOException",
+      "info" : "MethodDeclaration[7858-8947]:MethodDeclaration[7791-8880]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1812-2013]:Block[1812-2013]"
+    }, {
+      "left" : "super(type);",
+      "right" : "super(type);",
+      "info" : "SuperConstructorInvocation[1822-1834]:SuperConstructorInvocation[1822-1834]"
+    }, {
+      "left" : "_useTimestamp = useTimestamp;",
+      "right" : "_useTimestamp = useTimestamp;",
+      "info" : "ExpressionStatement[1843-1872]:ExpressionStatement[1843-1872]"
+    }, {
+      "left" : "_customFormat = customFormat;",
+      "right" : "_customFormat = customFormat;",
+      "info" : "ExpressionStatement[1881-1910]:ExpressionStatement[1881-1910]"
+    }, {
+      "left" : "_reusedCustomFormat = (customFormat == null) ? null : new AtomicReference<DateFormat>();",
+      "right" : "_reusedCustomFormat = (customFormat == null) ? null : new AtomicReference<DateFormat>();",
+      "info" : "ExpressionStatement[1919-2007]:ExpressionStatement[1919-2007]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5584-5813]:Block[5517-5746]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[5794-5807]:ReturnStatement[5727-5740]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5956-6115]:Block[5889-6048]"
+    }, {
+      "left" : "return createSchemaNode(_asTimestamp(serializers) ? \"number\" : \"string\", true);",
+      "right" : "return createSchemaNode(_asTimestamp(serializers) ? \"number\" : \"string\", true);",
+      "info" : "ReturnStatement[6030-6109]:ReturnStatement[5963-6042]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6256-6353]:Block[6189-6286]"
+    }, {
+      "left" : "_acceptJsonFormatVisitor(visitor, typeHint, _asTimestamp(visitor.getProvider()));",
+      "right" : "_acceptJsonFormatVisitor(visitor, typeHint, _asTimestamp(visitor.getProvider()));",
+      "info" : "ExpressionStatement[6266-6347]:ExpressionStatement[6199-6280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6906-7441]:Block[6839-7374]"
+    }, {
+      "left" : "if (_useTimestamp != null)",
+      "right" : "if (_useTimestamp != null)",
+      "info" : "IfStatement[6916-7003]:IfStatement[6849-6936]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6943-7003]:Block[6876-6936]"
+    }, {
+      "left" : "return _useTimestamp.booleanValue();",
+      "right" : "return _useTimestamp.booleanValue();",
+      "info" : "ReturnStatement[6957-6993]:ReturnStatement[6890-6926]"
+    }, {
+      "left" : "if (_customFormat == null)",
+      "right" : "if (_customFormat == null)",
+      "info" : "IfStatement[7012-7413]:IfStatement[6945-7346]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7039-7413]:Block[6972-7346]"
+    }, {
+      "left" : "if (serializers != null)",
+      "right" : "if (serializers != null)",
+      "info" : "IfStatement[7053-7187]:IfStatement[6986-7120]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7078-7187]:Block[7011-7120]"
+    }, {
+      "left" : "return serializers.isEnabled(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);",
+      "right" : "return serializers.isEnabled(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);",
+      "info" : "ReturnStatement[7096-7173]:ReturnStatement[7029-7106]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Null SerializerProvider passed for \"+handledType().getName());",
+      "right" : "throw new IllegalArgumentException(\"Null SerializerProvider passed for \"+handledType().getName());",
+      "info" : "ThrowStatement[7305-7403]:ThrowStatement[7238-7336]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[7422-7435]:ReturnStatement[7355-7368]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7592-7852]:Block[7525-7785]"
+    }, {
+      "left" : "if (asNumber)",
+      "right" : "if (asNumber)",
+      "info" : "IfStatement[7602-7846]:IfStatement[7535-7779]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7616-7752]:Block[7549-7685]"
+    }, {
+      "left" : "visitIntFormat(visitor, typeHint,\n                    JsonParser.NumberType.LONG, JsonValueFormat.UTC_MILLISEC);",
+      "right" : "visitIntFormat(visitor, typeHint,\n                    JsonParser.NumberType.LONG, JsonValueFormat.UTC_MILLISEC);",
+      "info" : "ExpressionStatement[7630-7742]:ExpressionStatement[7563-7675]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7758-7846]:Block[7691-7779]"
+    }, {
+      "left" : "visitStringFormat(visitor, typeHint, JsonValueFormat.DATE_TIME);",
+      "right" : "visitStringFormat(visitor, typeHint, JsonValueFormat.DATE_TIME);",
+      "info" : "ExpressionStatement[7772-7836]:ExpressionStatement[7705-7769]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8007-8947]:Block[7940-8880]"
+    }, {
+      "left" : "if (_customFormat == null)",
+      "right" : "if (_customFormat == null)",
+      "info" : "IfStatement[8017-8133]:IfStatement[7950-8066]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8044-8133]:Block[7977-8066]"
+    }, {
+      "left" : "provider.defaultSerializeDateValue(value, g);",
+      "right" : "provider.defaultSerializeDateValue(value, g);",
+      "info" : "ExpressionStatement[8058-8103]:ExpressionStatement[7991-8036]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8116-8123]:ReturnStatement[8049-8056]"
+    }, {
+      "left" : "DateFormat f = _reusedCustomFormat.getAndSet(null);",
+      "right" : "DateFormat f = _reusedCustomFormat.getAndSet(null);",
+      "info" : "VariableDeclarationStatement[8711-8762]:VariableDeclarationStatement[8644-8695]"
+    }, {
+      "left" : "if (f == null)",
+      "right" : "if (f == null)",
+      "info" : "IfStatement[8771-8849]:IfStatement[8704-8782]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8786-8849]:Block[8719-8782]"
+    }, {
+      "left" : "f = (DateFormat) _customFormat.clone();",
+      "right" : "f = (DateFormat) _customFormat.clone();",
+      "info" : "ExpressionStatement[8800-8839]:ExpressionStatement[8733-8772]"
+    }, {
+      "left" : "g.writeString(f.format(value));",
+      "right" : "g.writeString(f.format(value));",
+      "info" : "ExpressionStatement[8858-8889]:ExpressionStatement[8791-8822]"
+    }, {
+      "left" : "_reusedCustomFormat.compareAndSet(null, f);",
+      "right" : "_reusedCustomFormat.compareAndSet(null, f);",
+      "info" : "ExpressionStatement[8898-8941]:ExpressionStatement[8831-8874]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

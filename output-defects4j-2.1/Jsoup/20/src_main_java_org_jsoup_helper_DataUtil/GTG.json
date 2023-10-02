@@ -1,0 +1,301 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "DataUtil",
+      "right" : "DataUtil",
+      "info" : "TypeDeclaration[269-5741]:TypeDeclaration[269-5833]"
+    }, {
+      "left" : "private static final Pattern charsetPattern = Pattern.compile(\"(?i)\\\\bcharset=\\\\s*\\\"?([^\\\\s;\\\"]*)\");",
+      "right" : "private static final Pattern charsetPattern = Pattern.compile(\"(?i)\\\\bcharset=\\\\s*\\\"?([^\\\\s;\\\"]*)\");",
+      "info" : "FieldDeclaration[356-456]:FieldDeclaration[356-456]"
+    }, {
+      "left" : "static final String defaultCharset = \"UTF-8\";",
+      "right" : "static final String defaultCharset = \"UTF-8\";",
+      "info" : "FieldDeclaration[461-506]:FieldDeclaration[461-506]"
+    }, {
+      "left" : "private static final int bufferSize = 0x20000;",
+      "right" : "private static final int bufferSize = 0x20000;",
+      "info" : "FieldDeclaration[558-604]:FieldDeclaration[558-604]"
+    }, {
+      "left" : "private DataUtil()",
+      "right" : "private DataUtil()",
+      "info" : "MethodDeclaration[620-641]:MethodDeclaration[620-641]"
+    }, {
+      "left" : "public static Document load(File in, String charsetName, String baseUri) throws IOException",
+      "right" : "public static Document load(File in, String charsetName, String baseUri) throws IOException",
+      "info" : "MethodDeclaration[647-1367]:MethodDeclaration[647-1367]"
+    }, {
+      "left" : "public static Document load(InputStream in, String charsetName, String baseUri) throws IOException",
+      "right" : "public static Document load(InputStream in, String charsetName, String baseUri) throws IOException",
+      "info" : "MethodDeclaration[1373-1933]:MethodDeclaration[1373-1933]"
+    }, {
+      "left" : "public static Document load(InputStream in, String charsetName, String baseUri, Parser parser) throws IOException",
+      "right" : "public static Document load(InputStream in, String charsetName, String baseUri, Parser parser) throws IOException",
+      "info" : "MethodDeclaration[1939-2601]:MethodDeclaration[1939-2601]"
+    }, {
+      "left" : "static Document parseByteData(ByteBuffer byteData, String charsetName, String baseUri, Parser parser)",
+      "right" : "static Document parseByteData(ByteBuffer byteData, String charsetName, String baseUri, Parser parser)",
+      "info" : "MethodDeclaration[2803-4747]:MethodDeclaration[2803-4839]"
+    }, {
+      "left" : "static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException",
+      "right" : "static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException",
+      "info" : "MethodDeclaration[4753-5234]:MethodDeclaration[4845-5326]"
+    }, {
+      "left" : "static String getCharsetFromContentType(String contentType)",
+      "right" : "static String getCharsetFromContentType(String contentType)",
+      "info" : "MethodDeclaration[5240-5729]:MethodDeclaration[5332-5821]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[639-641]:Block[639-641]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1010-1367]:Block[1010-1367]"
+    }, {
+      "left" : "FileInputStream inStream = null;",
+      "right" : "FileInputStream inStream = null;",
+      "info" : "VariableDeclarationStatement[1020-1052]:VariableDeclarationStatement[1020-1052]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[1061-1361]:TryStatement[1061-1361]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1065-1273]:Block[1065-1273]"
+    }, {
+      "left" : "inStream = new FileInputStream(in);",
+      "right" : "inStream = new FileInputStream(in);",
+      "info" : "ExpressionStatement[1079-1114]:ExpressionStatement[1079-1114]"
+    }, {
+      "left" : "ByteBuffer byteData = readToByteBuffer(inStream);",
+      "right" : "ByteBuffer byteData = readToByteBuffer(inStream);",
+      "info" : "VariableDeclarationStatement[1127-1176]:VariableDeclarationStatement[1127-1176]"
+    }, {
+      "left" : "return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());",
+      "right" : "return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());",
+      "info" : "ReturnStatement[1189-1263]:ReturnStatement[1189-1263]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1282-1361]:Block[1282-1361]"
+    }, {
+      "left" : "if (inStream != null)",
+      "right" : "if (inStream != null)",
+      "info" : "IfStatement[1296-1351]:IfStatement[1296-1351]"
+    }, {
+      "left" : "inStream.close();",
+      "right" : "inStream.close();",
+      "info" : "ExpressionStatement[1334-1351]:ExpressionStatement[1334-1351]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1791-1933]:Block[1791-1933]"
+    }, {
+      "left" : "ByteBuffer byteData = readToByteBuffer(in);",
+      "right" : "ByteBuffer byteData = readToByteBuffer(in);",
+      "info" : "VariableDeclarationStatement[1801-1844]:VariableDeclarationStatement[1801-1844]"
+    }, {
+      "left" : "return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());",
+      "right" : "return parseByteData(byteData, charsetName, baseUri, Parser.htmlParser());",
+      "info" : "ReturnStatement[1853-1927]:ReturnStatement[1853-1927]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2472-2601]:Block[2472-2601]"
+    }, {
+      "left" : "ByteBuffer byteData = readToByteBuffer(in);",
+      "right" : "ByteBuffer byteData = readToByteBuffer(in);",
+      "info" : "VariableDeclarationStatement[2482-2525]:VariableDeclarationStatement[2482-2525]"
+    }, {
+      "left" : "return parseByteData(byteData, charsetName, baseUri, parser);",
+      "right" : "return parseByteData(byteData, charsetName, baseUri, parser);",
+      "info" : "ReturnStatement[2534-2595]:ReturnStatement[2534-2595]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2905-4747]:Block[2905-4839]"
+    }, {
+      "left" : "String docData;",
+      "right" : "String docData;",
+      "info" : "VariableDeclarationStatement[2915-2930]:VariableDeclarationStatement[2915-2930]"
+    }, {
+      "left" : "Document doc = null;",
+      "right" : "Document doc = null;",
+      "info" : "VariableDeclarationStatement[2939-2959]:VariableDeclarationStatement[2939-2959]"
+    }, {
+      "left" : "if (charsetName == null)",
+      "right" : "if (charsetName == null)",
+      "info" : "IfStatement[2968-4306]:IfStatement[2968-4306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2993-4001]:Block[2993-4001]"
+    }, {
+      "left" : "docData = Charset.forName(defaultCharset).decode(byteData).toString();",
+      "right" : "docData = Charset.forName(defaultCharset).decode(byteData).toString();",
+      "info" : "ExpressionStatement[3176-3246]:ExpressionStatement[3176-3246]"
+    }, {
+      "left" : "doc = parser.parseInput(docData, baseUri);",
+      "right" : "doc = parser.parseInput(docData, baseUri);",
+      "info" : "ExpressionStatement[3259-3301]:ExpressionStatement[3259-3301]"
+    }, {
+      "left" : "Element meta = doc.select(\"meta[http-equiv=content-type], meta[charset]\").first();",
+      "right" : "Element meta = doc.select(\"meta[http-equiv=content-type], meta[charset]\").first();",
+      "info" : "VariableDeclarationStatement[3314-3396]:VariableDeclarationStatement[3314-3396]"
+    }, {
+      "left" : "if (meta != null)",
+      "right" : "if (meta != null)",
+      "info" : "IfStatement[3409-3991]:IfStatement[3409-3991]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3427-3991]:Block[3427-3991]"
+    }, {
+      "left" : "String foundCharset = meta.hasAttr(\"http-equiv\") ? getCharsetFromContentType(meta.attr(\"content\")) : meta.attr(\"charset\");",
+      "right" : "String foundCharset = meta.hasAttr(\"http-equiv\") ? getCharsetFromContentType(meta.attr(\"content\")) : meta.attr(\"charset\");",
+      "info" : "VariableDeclarationStatement[3494-3616]:VariableDeclarationStatement[3494-3616]"
+    }, {
+      "left" : "if (foundCharset != null && foundCharset.length() != 0 && !foundCharset.equals(defaultCharset))",
+      "right" : "if (foundCharset != null && foundCharset.length() != 0 && !foundCharset.equals(defaultCharset))",
+      "info" : "IfStatement[3633-3977]:IfStatement[3633-3977]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3729-3977]:Block[3729-3977]"
+    }, {
+      "left" : "charsetName = foundCharset;",
+      "right" : "charsetName = foundCharset;",
+      "info" : "ExpressionStatement[3772-3799]:ExpressionStatement[3772-3799]"
+    }, {
+      "left" : "byteData.rewind();",
+      "right" : "byteData.rewind();",
+      "info" : "ExpressionStatement[3820-3838]:ExpressionStatement[3820-3838]"
+    }, {
+      "left" : "docData = Charset.forName(foundCharset).decode(byteData).toString();",
+      "right" : "docData = Charset.forName(foundCharset).decode(byteData).toString();",
+      "info" : "ExpressionStatement[3859-3927]:ExpressionStatement[3859-3927]"
+    }, {
+      "left" : "doc = null;",
+      "right" : "doc = null;",
+      "info" : "ExpressionStatement[3948-3959]:ExpressionStatement[3948-3959]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4007-4306]:Block[4007-4306]"
+    }, {
+      "left" : "Validate.notEmpty(charsetName, \"Must set charset arg to character set of file to parse. Set to null to attempt to detect from HTML\");",
+      "right" : "Validate.notEmpty(charsetName, \"Must set charset arg to character set of file to parse. Set to null to attempt to detect from HTML\");",
+      "info" : "ExpressionStatement[4083-4216]:ExpressionStatement[4083-4216]"
+    }, {
+      "left" : "docData = Charset.forName(charsetName).decode(byteData).toString();",
+      "right" : "docData = Charset.forName(charsetName).decode(byteData).toString();",
+      "info" : "ExpressionStatement[4229-4296]:ExpressionStatement[4229-4296]"
+    }, {
+      "left" : "if (doc == null)",
+      "right" : "if (doc == null)",
+      "info" : "IfStatement[4315-4721]:IfStatement[4315-4813]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4332-4721]:Block[4332-4813]"
+    }, {
+      "left" : "doc = parser.parseInput(docData, baseUri);",
+      "right" : "doc = parser.parseInput(docData, baseUri);",
+      "info" : "ExpressionStatement[4614-4656]:ExpressionStatement[4706-4748]"
+    }, {
+      "left" : "doc.outputSettings().charset(charsetName);",
+      "right" : "doc.outputSettings().charset(charsetName);",
+      "info" : "ExpressionStatement[4669-4711]:ExpressionStatement[4761-4803]"
+    }, {
+      "left" : "return doc;",
+      "right" : "return doc;",
+      "info" : "ReturnStatement[4730-4741]:ReturnStatement[4822-4833]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4829-5234]:Block[4921-5326]"
+    }, {
+      "left" : "byte[] buffer = new byte[bufferSize];",
+      "right" : "byte[] buffer = new byte[bufferSize];",
+      "info" : "VariableDeclarationStatement[4839-4876]:VariableDeclarationStatement[4931-4968]"
+    }, {
+      "left" : "ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);",
+      "right" : "ByteArrayOutputStream outStream = new ByteArrayOutputStream(bufferSize);",
+      "info" : "VariableDeclarationStatement[4885-4957]:VariableDeclarationStatement[4977-5049]"
+    }, {
+      "left" : "int read;",
+      "right" : "int read;",
+      "info" : "VariableDeclarationStatement[4966-4975]:VariableDeclarationStatement[5058-5067]"
+    }, {
+      "left" : "while(true)",
+      "right" : "while(true)",
+      "info" : "WhileStatement[4984-5131]:WhileStatement[5076-5223]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4996-5131]:Block[5088-5223]"
+    }, {
+      "left" : "read  = inStream.read(buffer);",
+      "right" : "read  = inStream.read(buffer);",
+      "info" : "ExpressionStatement[5010-5040]:ExpressionStatement[5102-5132]"
+    }, {
+      "left" : "if (read == -1)",
+      "right" : "if (read == -1)",
+      "info" : "IfStatement[5053-5075]:IfStatement[5145-5167]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[5069-5075]:BreakStatement[5161-5167]"
+    }, {
+      "left" : "outStream.write(buffer, 0, read);",
+      "right" : "outStream.write(buffer, 0, read);",
+      "info" : "ExpressionStatement[5088-5121]:ExpressionStatement[5180-5213]"
+    }, {
+      "left" : "ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+      "right" : "ByteBuffer byteData = ByteBuffer.wrap(outStream.toByteArray());",
+      "info" : "VariableDeclarationStatement[5140-5203]:VariableDeclarationStatement[5232-5295]"
+    }, {
+      "left" : "return byteData;",
+      "right" : "return byteData;",
+      "info" : "ReturnStatement[5212-5228]:ReturnStatement[5304-5320]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5512-5729]:Block[5604-5821]"
+    }, {
+      "left" : "if (contentType == null)",
+      "right" : "if (contentType == null)",
+      "info" : "IfStatement[5522-5559]:IfStatement[5614-5651]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5547-5559]:ReturnStatement[5639-5651]"
+    }, {
+      "left" : "Matcher m = charsetPattern.matcher(contentType);",
+      "right" : "Matcher m = charsetPattern.matcher(contentType);",
+      "info" : "VariableDeclarationStatement[5568-5616]:VariableDeclarationStatement[5660-5708]"
+    }, {
+      "left" : "if (m.find())",
+      "right" : "if (m.find())",
+      "info" : "IfStatement[5625-5702]:IfStatement[5717-5794]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5639-5702]:Block[5731-5794]"
+    }, {
+      "left" : "return m.group(1).trim().toUpperCase();",
+      "right" : "return m.group(1).trim().toUpperCase();",
+      "info" : "ReturnStatement[5653-5692]:ReturnStatement[5745-5784]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5711-5723]:ReturnStatement[5803-5815]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

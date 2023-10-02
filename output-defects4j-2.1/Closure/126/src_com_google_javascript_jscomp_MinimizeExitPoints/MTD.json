@@ -1,0 +1,585 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "MinimizeExitPoints",
+      "right" : "MinimizeExitPoints",
+      "info" : "TypeDeclaration[954-10264]:TypeDeclaration[954-10113]"
+    }, {
+      "left" : "AbstractCompiler compiler;",
+      "right" : "AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[1197-1223]:FieldDeclaration[1197-1223]"
+    }, {
+      "left" : "MinimizeExitPoints(AbstractCompiler compiler)",
+      "right" : "MinimizeExitPoints(AbstractCompiler compiler)",
+      "info" : "MethodDeclaration[1227-1308]:MethodDeclaration[1227-1308]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[1312-1424]:MethodDeclaration[1312-1424]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[1428-2435]:MethodDeclaration[1428-2435]"
+    }, {
+      "left" : "void tryMinimizeExits(Node n, int exitType, String labelName)",
+      "right" : "void tryMinimizeExits(Node n, int exitType, String labelName)",
+      "info" : "MethodDeclaration[2439-6455]:MethodDeclaration[2439-6304]"
+    }, {
+      "left" : "private void tryMinimizeIfBlockExits(Node srcBlock, Node destBlock,\n      Node ifNode, int exitType, String labelName)",
+      "right" : "private void tryMinimizeIfBlockExits(Node srcBlock, Node destBlock,\n      Node ifNode, int exitType, String labelName)",
+      "info" : "MethodDeclaration[6459-8627]:MethodDeclaration[6308-8476]"
+    }, {
+      "left" : "private static boolean matchingExitNode(Node n, int type, String labelName)",
+      "right" : "private static boolean matchingExitNode(Node n, int type, String labelName)",
+      "info" : "MethodDeclaration[8631-9578]:MethodDeclaration[8480-9427]"
+    }, {
+      "left" : "private static void moveAllFollowing(\n      Node start, Node srcParent, Node destParent)",
+      "right" : "private static void moveAllFollowing(\n      Node start, Node srcParent, Node destParent)",
+      "info" : "MethodDeclaration[9582-10262]:MethodDeclaration[9431-10111]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1273-1308]:Block[1273-1308]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[1279-1304]:ExpressionStatement[1279-1304]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1369-1424]:Block[1369-1424]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, this);",
+      "right" : "NodeTraversal.traverse(compiler, root, this);",
+      "info" : "ExpressionStatement[1375-1420]:ExpressionStatement[1375-1420]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1496-2435]:Block[1496-2435]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.LABEL:\n        tryMinimizeExits(\n            n.getLastChild(), Token.BREAK, n.getFirstChild().getString());\n        break;\n\n      case Token.FOR:\n      case Token.WHILE:\n        tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);\n        break;\n\n      case Token.DO:\n        tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);\n\n        Node cond = NodeUtil.getConditionExpression(n);\n        if (NodeUtil.getImpureBooleanValue(cond) == TernaryValue.FALSE) {\n          // Normally, we wouldn't be able to optimize BREAKs inside a loop\n          // but as we know the condition will always false, we can treat them\n          // as we would a CONTINUE.\n          tryMinimizeExits(n.getFirstChild(), Token.BREAK, null);\n        }\n        break;\n\n      case Token.FUNCTION:\n        tryMinimizeExits(n.getLastChild(), Token.RETURN, null);\n        break;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.LABEL:\n        tryMinimizeExits(\n            n.getLastChild(), Token.BREAK, n.getFirstChild().getString());\n        break;\n\n      case Token.FOR:\n      case Token.WHILE:\n        tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);\n        break;\n\n      case Token.DO:\n        tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);\n\n        Node cond = NodeUtil.getConditionExpression(n);\n        if (NodeUtil.getImpureBooleanValue(cond) == TernaryValue.FALSE) {\n          // Normally, we wouldn't be able to optimize BREAKs inside a loop\n          // but as we know the condition will always false, we can treat them\n          // as we would a CONTINUE.\n          tryMinimizeExits(n.getFirstChild(), Token.BREAK, null);\n        }\n        break;\n\n      case Token.FUNCTION:\n        tryMinimizeExits(n.getLastChild(), Token.RETURN, null);\n        break;\n    }",
+      "info" : "SwitchStatement[1502-2431]:SwitchStatement[1502-2431]"
+    }, {
+      "left" : "case Token.LABEL:",
+      "right" : "case Token.LABEL:",
+      "info" : "SwitchCase[1531-1548]:SwitchCase[1531-1548]"
+    }, {
+      "left" : "tryMinimizeExits(\n            n.getLastChild(), Token.BREAK, n.getFirstChild().getString());",
+      "right" : "tryMinimizeExits(\n            n.getLastChild(), Token.BREAK, n.getFirstChild().getString());",
+      "info" : "ExpressionStatement[1557-1649]:ExpressionStatement[1557-1649]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[1658-1664]:BreakStatement[1658-1664]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[1672-1687]:SwitchCase[1672-1687]"
+    }, {
+      "left" : "case Token.WHILE:",
+      "right" : "case Token.WHILE:",
+      "info" : "SwitchCase[1694-1711]:SwitchCase[1694-1711]"
+    }, {
+      "left" : "tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);",
+      "right" : "tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);",
+      "info" : "ExpressionStatement[1720-1789]:ExpressionStatement[1720-1789]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[1798-1804]:BreakStatement[1798-1804]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[1812-1826]:SwitchCase[1812-1826]"
+    }, {
+      "left" : "tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);",
+      "right" : "tryMinimizeExits(NodeUtil.getLoopCodeBlock(n), Token.CONTINUE, null);",
+      "info" : "ExpressionStatement[1835-1904]:ExpressionStatement[1835-1904]"
+    }, {
+      "left" : "Node cond = NodeUtil.getConditionExpression(n);",
+      "right" : "Node cond = NodeUtil.getConditionExpression(n);",
+      "info" : "VariableDeclarationStatement[1914-1961]:VariableDeclarationStatement[1914-1961]"
+    }, {
+      "left" : "if (NodeUtil.getImpureBooleanValue(cond) == TernaryValue.FALSE)",
+      "right" : "if (NodeUtil.getImpureBooleanValue(cond) == TernaryValue.FALSE)",
+      "info" : "IfStatement[1970-2303]:IfStatement[1970-2303]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2034-2303]:Block[2034-2303]"
+    }, {
+      "left" : "tryMinimizeExits(n.getFirstChild(), Token.BREAK, null);",
+      "right" : "tryMinimizeExits(n.getFirstChild(), Token.BREAK, null);",
+      "info" : "ExpressionStatement[2238-2293]:ExpressionStatement[2238-2293]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[2312-2318]:BreakStatement[2312-2318]"
+    }, {
+      "left" : "case Token.FUNCTION:",
+      "right" : "case Token.FUNCTION:",
+      "info" : "SwitchCase[2326-2346]:SwitchCase[2326-2346]"
+    }, {
+      "left" : "tryMinimizeExits(n.getLastChild(), Token.RETURN, null);",
+      "right" : "tryMinimizeExits(n.getLastChild(), Token.RETURN, null);",
+      "info" : "ExpressionStatement[2355-2410]:ExpressionStatement[2355-2410]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[2419-2425]:BreakStatement[2419-2425]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3298-6455]:Block[3298-6304]"
+    }, {
+      "left" : "if (matchingExitNode(n, exitType, labelName))",
+      "right" : "if (matchingExitNode(n, exitType, labelName))",
+      "info" : "IfStatement[3328-3476]:IfStatement[3328-3476]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3374-3476]:Block[3374-3476]"
+    }, {
+      "left" : "NodeUtil.removeChild(n.getParent(), n);",
+      "right" : "NodeUtil.removeChild(n.getParent(), n);",
+      "info" : "ExpressionStatement[3382-3421]:ExpressionStatement[3382-3421]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[3428-3456]:ExpressionStatement[3428-3456]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3463-3470]:ReturnStatement[3463-3470]"
+    }, {
+      "left" : "if (n.isIf())",
+      "right" : "if (n.isIf())",
+      "info" : "IfStatement[3503-3781]:IfStatement[3503-3781]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3517-3781]:Block[3517-3781]"
+    }, {
+      "left" : "Node ifBlock = n.getFirstChild().getNext();",
+      "right" : "Node ifBlock = n.getFirstChild().getNext();",
+      "info" : "VariableDeclarationStatement[3525-3568]:VariableDeclarationStatement[3525-3568]"
+    }, {
+      "left" : "tryMinimizeExits(ifBlock, exitType, labelName);",
+      "right" : "tryMinimizeExits(ifBlock, exitType, labelName);",
+      "info" : "ExpressionStatement[3575-3622]:ExpressionStatement[3575-3622]"
+    }, {
+      "left" : "Node elseBlock = ifBlock.getNext();",
+      "right" : "Node elseBlock = ifBlock.getNext();",
+      "info" : "VariableDeclarationStatement[3629-3664]:VariableDeclarationStatement[3629-3664]"
+    }, {
+      "left" : "if (elseBlock != null)",
+      "right" : "if (elseBlock != null)",
+      "info" : "IfStatement[3671-3761]:IfStatement[3671-3761]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3694-3761]:Block[3694-3761]"
+    }, {
+      "left" : "tryMinimizeExits(elseBlock, exitType, labelName);",
+      "right" : "tryMinimizeExits(elseBlock, exitType, labelName);",
+      "info" : "ExpressionStatement[3704-3753]:ExpressionStatement[3704-3753]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3768-3775]:ReturnStatement[3768-3775]"
+    }, {
+      "left" : "Node tryBlock = n.getFirstChild();",
+      "right" : "Node tryBlock = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[3845-3879]:VariableDeclarationStatement[3845-3879]"
+    }, {
+      "left" : "tryMinimizeExits(tryBlock, exitType, labelName);",
+      "right" : "tryMinimizeExits(tryBlock, exitType, labelName);",
+      "info" : "ExpressionStatement[3886-3934]:ExpressionStatement[3886-3934]"
+    }, {
+      "left" : "Node allCatchNodes = NodeUtil.getCatchBlock(n);",
+      "right" : "Node allCatchNodes = NodeUtil.getCatchBlock(n);",
+      "info" : "VariableDeclarationStatement[3941-3988]:VariableDeclarationStatement[3941-3988]"
+    }, {
+      "left" : "if (NodeUtil.hasCatchHandler(allCatchNodes))",
+      "right" : "if (NodeUtil.hasCatchHandler(allCatchNodes))",
+      "info" : "IfStatement[3995-4287]:IfStatement[3995-4287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4040-4287]:Block[4040-4287]"
+    }, {
+      "left" : "Preconditions.checkState(allCatchNodes.hasOneChild());",
+      "right" : "Preconditions.checkState(allCatchNodes.hasOneChild());",
+      "info" : "ExpressionStatement[4050-4104]:ExpressionStatement[4050-4104]"
+    }, {
+      "left" : "Node catchNode = allCatchNodes.getFirstChild();",
+      "right" : "Node catchNode = allCatchNodes.getFirstChild();",
+      "info" : "VariableDeclarationStatement[4113-4160]:VariableDeclarationStatement[4113-4160]"
+    }, {
+      "left" : "Node catchCodeBlock = catchNode.getLastChild();",
+      "right" : "Node catchCodeBlock = catchNode.getLastChild();",
+      "info" : "VariableDeclarationStatement[4169-4216]:VariableDeclarationStatement[4169-4216]"
+    }, {
+      "left" : "tryMinimizeExits(catchCodeBlock, exitType, labelName);",
+      "right" : "tryMinimizeExits(catchCodeBlock, exitType, labelName);",
+      "info" : "ExpressionStatement[4225-4279]:ExpressionStatement[4225-4279]"
+    }, {
+      "left" : "if (NodeUtil.hasFinally(n))",
+      "right" : "if (n.isTry())",
+      "info" : "IfStatement[4499-4643]:IfStatement[3822-4498]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4527-4643]:Block[3837-4498]"
+    }, {
+      "left" : "if (n.isLabel())",
+      "right" : "if (n.isLabel())",
+      "info" : "IfStatement[4678-4801]:IfStatement[4527-4650]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4695-4801]:Block[4544-4650]"
+    }, {
+      "left" : "Node labelBlock = n.getLastChild();",
+      "right" : "Node labelBlock = n.getLastChild();",
+      "info" : "VariableDeclarationStatement[4703-4738]:VariableDeclarationStatement[4552-4587]"
+    }, {
+      "left" : "tryMinimizeExits(labelBlock, exitType, labelName);",
+      "right" : "tryMinimizeExits(labelBlock, exitType, labelName);",
+      "info" : "ExpressionStatement[4745-4795]:ExpressionStatement[4594-4644]"
+    }, {
+      "left" : "if (!n.isBlock() || n.getLastChild() == null)",
+      "right" : "if (!n.isBlock() || n.getLastChild() == null)",
+      "info" : "IfStatement[4946-5013]:IfStatement[4795-4862]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4992-5013]:Block[4841-4862]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[5000-5007]:ReturnStatement[4849-4856]"
+    }, {
+      "left" : "for (Node c : n.children())",
+      "right" : "for (Node c : n.children())",
+      "info" : "EnhancedForStatement[5291-6088]:EnhancedForStatement[5140-5937]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5319-6088]:Block[5168-5937]"
+    }, {
+      "left" : "if (c.isIf())",
+      "right" : "if (c.isIf())",
+      "info" : "IfStatement[5369-6023]:IfStatement[5218-5872]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5383-6023]:Block[5232-5872]"
+    }, {
+      "left" : "Node ifTree = c;",
+      "right" : "Node ifTree = c;",
+      "info" : "VariableDeclarationStatement[5393-5409]:VariableDeclarationStatement[5242-5258]"
+    }, {
+      "left" : "Node trueBlock, falseBlock;",
+      "right" : "Node trueBlock, falseBlock;",
+      "info" : "VariableDeclarationStatement[5418-5445]:VariableDeclarationStatement[5267-5294]"
+    }, {
+      "left" : "trueBlock = ifTree.getFirstChild().getNext();",
+      "right" : "trueBlock = ifTree.getFirstChild().getNext();",
+      "info" : "ExpressionStatement[5499-5544]:ExpressionStatement[5348-5393]"
+    }, {
+      "left" : "falseBlock = trueBlock.getNext();",
+      "right" : "falseBlock = trueBlock.getNext();",
+      "info" : "ExpressionStatement[5553-5586]:ExpressionStatement[5402-5435]"
+    }, {
+      "left" : "tryMinimizeIfBlockExits(trueBlock, falseBlock,\n            ifTree, exitType, labelName);",
+      "right" : "tryMinimizeIfBlockExits(trueBlock, falseBlock,\n            ifTree, exitType, labelName);",
+      "info" : "ExpressionStatement[5595-5683]:ExpressionStatement[5444-5532]"
+    }, {
+      "left" : "trueBlock = ifTree.getFirstChild().getNext();",
+      "right" : "trueBlock = ifTree.getFirstChild().getNext();",
+      "info" : "ExpressionStatement[5783-5828]:ExpressionStatement[5632-5677]"
+    }, {
+      "left" : "falseBlock = trueBlock.getNext();",
+      "right" : "falseBlock = trueBlock.getNext();",
+      "info" : "ExpressionStatement[5837-5870]:ExpressionStatement[5686-5719]"
+    }, {
+      "left" : "if (falseBlock != null)",
+      "right" : "if (falseBlock != null)",
+      "info" : "IfStatement[5879-6015]:IfStatement[5728-5864]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5903-6015]:Block[5752-5864]"
+    }, {
+      "left" : "tryMinimizeIfBlockExits(falseBlock, trueBlock,\n              ifTree, exitType, labelName);",
+      "right" : "tryMinimizeIfBlockExits(falseBlock, trueBlock,\n              ifTree, exitType, labelName);",
+      "info" : "ExpressionStatement[5915-6005]:ExpressionStatement[5764-5854]"
+    }, {
+      "left" : "if (c == n.getLastChild())",
+      "right" : "if (c == n.getLastChild())",
+      "info" : "IfStatement[6031-6082]:IfStatement[5880-5931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6058-6082]:Block[5907-5931]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[6068-6074]:BreakStatement[5917-5923]"
+    }, {
+      "left" : "for (Node c = n.getLastChild(); c != null; c = n.getLastChild())",
+      "right" : "for (Node c = n.getLastChild(); c != null; c = n.getLastChild())",
+      "info" : "ForStatement[6214-6451]:ForStatement[6063-6300]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6279-6451]:Block[6128-6300]"
+    }, {
+      "left" : "tryMinimizeExits(c, exitType, labelName);",
+      "right" : "tryMinimizeExits(c, exitType, labelName);",
+      "info" : "ExpressionStatement[6287-6328]:ExpressionStatement[6136-6177]"
+    }, {
+      "left" : "if (c == n.getLastChild())",
+      "right" : "if (c == n.getLastChild())",
+      "info" : "IfStatement[6394-6445]:IfStatement[6243-6294]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6421-6445]:Block[6270-6294]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[6431-6437]:BreakStatement[6280-6286]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7171-8627]:Block[7020-8476]"
+    }, {
+      "left" : "Node exitNodeParent = null;",
+      "right" : "Node exitNodeParent = null;",
+      "info" : "VariableDeclarationStatement[7177-7204]:VariableDeclarationStatement[7026-7053]"
+    }, {
+      "left" : "Node exitNode = null;",
+      "right" : "Node exitNode = null;",
+      "info" : "VariableDeclarationStatement[7209-7230]:VariableDeclarationStatement[7058-7079]"
+    }, {
+      "left" : "if (srcBlock.isBlock())",
+      "right" : "if (srcBlock.isBlock())",
+      "info" : "IfStatement[7272-7576]:IfStatement[7121-7425]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7296-7445]:Block[7145-7294]"
+    }, {
+      "left" : "if (!srcBlock.hasChildren())",
+      "right" : "if (!srcBlock.hasChildren())",
+      "info" : "IfStatement[7304-7358]:IfStatement[7153-7207]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7333-7358]:Block[7182-7207]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7343-7350]:ReturnStatement[7192-7199]"
+    }, {
+      "left" : "exitNodeParent = srcBlock;",
+      "right" : "exitNodeParent = srcBlock;",
+      "info" : "ExpressionStatement[7365-7391]:ExpressionStatement[7214-7240]"
+    }, {
+      "left" : "exitNode = exitNodeParent.getLastChild();",
+      "right" : "exitNode = exitNodeParent.getLastChild();",
+      "info" : "ExpressionStatement[7398-7439]:ExpressionStatement[7247-7288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7451-7576]:Block[7300-7425]"
+    }, {
+      "left" : "exitNodeParent = ifNode;",
+      "right" : "exitNodeParent = ifNode;",
+      "info" : "ExpressionStatement[7519-7543]:ExpressionStatement[7368-7392]"
+    }, {
+      "left" : "exitNode = srcBlock;",
+      "right" : "exitNode = srcBlock;",
+      "info" : "ExpressionStatement[7550-7570]:ExpressionStatement[7399-7419]"
+    }, {
+      "left" : "if (!matchingExitNode(exitNode, exitType, labelName))",
+      "right" : "if (!matchingExitNode(exitNode, exitType, labelName))",
+      "info" : "IfStatement[7611-7686]:IfStatement[7460-7535]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7665-7686]:Block[7514-7535]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7673-7680]:ReturnStatement[7522-7529]"
+    }, {
+      "left" : "if (ifNode.getNext() != null)",
+      "right" : "if (ifNode.getNext() != null)",
+      "info" : "IfStatement[7743-8623]:IfStatement[7592-8472]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7773-8623]:Block[7622-8472]"
+    }, {
+      "left" : "Node newDestBlock = IR.block().srcref(ifNode);",
+      "right" : "Node newDestBlock = IR.block().srcref(ifNode);",
+      "info" : "VariableDeclarationStatement[7872-7918]:VariableDeclarationStatement[7721-7767]"
+    }, {
+      "left" : "if (destBlock == null)",
+      "right" : "if (destBlock == null)",
+      "info" : "IfStatement[7925-8463]:IfStatement[7774-8312]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7948-8055]:Block[7797-7904]"
+    }, {
+      "left" : "ifNode.addChildToBack(newDestBlock);",
+      "right" : "ifNode.addChildToBack(newDestBlock);",
+      "info" : "ExpressionStatement[8011-8047]:ExpressionStatement[7860-7896]"
+    }, {
+      "left" : "if (destBlock.isEmpty())",
+      "right" : "if (destBlock.isEmpty())",
+      "info" : "IfStatement[8061-8463]:IfStatement[7910-8312]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8086-8179]:Block[7935-8028]"
+    }, {
+      "left" : "ifNode.replaceChild(destBlock, newDestBlock);",
+      "right" : "ifNode.replaceChild(destBlock, newDestBlock);",
+      "info" : "ExpressionStatement[8126-8171]:ExpressionStatement[7975-8020]"
+    }, {
+      "left" : "if (destBlock.isBlock())",
+      "right" : "if (destBlock.isBlock())",
+      "info" : "IfStatement[8185-8463]:IfStatement[8034-8312]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8210-8290]:Block[8059-8139]"
+    }, {
+      "left" : "newDestBlock = destBlock;",
+      "right" : "newDestBlock = destBlock;",
+      "info" : "ExpressionStatement[8257-8282]:ExpressionStatement[8106-8131]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8296-8463]:Block[8145-8312]"
+    }, {
+      "left" : "ifNode.replaceChild(destBlock, newDestBlock);",
+      "right" : "ifNode.replaceChild(destBlock, newDestBlock);",
+      "info" : "ExpressionStatement[8362-8407]:ExpressionStatement[8211-8256]"
+    }, {
+      "left" : "newDestBlock.addChildToBack(destBlock);",
+      "right" : "newDestBlock.addChildToBack(destBlock);",
+      "info" : "ExpressionStatement[8416-8455]:ExpressionStatement[8265-8304]"
+    }, {
+      "left" : "moveAllFollowing(ifNode, ifNode.getParent(), newDestBlock);",
+      "right" : "moveAllFollowing(ifNode, ifNode.getParent(), newDestBlock);",
+      "info" : "ExpressionStatement[8523-8582]:ExpressionStatement[8372-8431]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[8589-8617]:ExpressionStatement[8438-8466]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9191-9578]:Block[9040-9427]"
+    }, {
+      "left" : "if (n.getType() == type)",
+      "right" : "if (n.getType() == type)",
+      "info" : "IfStatement[9197-9556]:IfStatement[9046-9405]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9222-9556]:Block[9071-9405]"
+    }, {
+      "left" : "if (type == Token.RETURN)",
+      "right" : "if (type == Token.RETURN)",
+      "info" : "IfStatement[9230-9550]:IfStatement[9079-9399]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9256-9343]:Block[9105-9192]"
+    }, {
+      "left" : "return !n.hasChildren();",
+      "right" : "return !n.hasChildren();",
+      "info" : "ReturnStatement[9311-9335]:ReturnStatement[9160-9184]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9349-9550]:Block[9198-9399]"
+    }, {
+      "left" : "if (labelName == null)",
+      "right" : "if (labelName == null)",
+      "info" : "IfStatement[9359-9542]:IfStatement[9208-9391]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9382-9428]:Block[9231-9277]"
+    }, {
+      "left" : "return !n.hasChildren();",
+      "right" : "return !n.hasChildren();",
+      "info" : "ReturnStatement[9394-9418]:ReturnStatement[9243-9267]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9434-9542]:Block[9283-9391]"
+    }, {
+      "left" : "return n.hasChildren()\n            && labelName.equals(n.getFirstChild().getString());",
+      "right" : "return n.hasChildren()\n            && labelName.equals(n.getFirstChild().getString());",
+      "info" : "ReturnStatement[9446-9532]:ReturnStatement[9295-9381]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[9561-9574]:ReturnStatement[9410-9423]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9942-10262]:Block[9791-10111]"
+    }, {
+      "left" : "for (Node n = start.getNext(); n != null; n = start.getNext())",
+      "right" : "for (Node n = start.getNext(); n != null; n = start.getNext())",
+      "info" : "ForStatement[9948-10258]:ForStatement[9797-10107]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10011-10258]:Block[9860-10107]"
+    }, {
+      "left" : "boolean isFunctionDeclaration = NodeUtil.isFunctionDeclaration(n);",
+      "right" : "boolean isFunctionDeclaration = NodeUtil.isFunctionDeclaration(n);",
+      "info" : "VariableDeclarationStatement[10019-10085]:VariableDeclarationStatement[9868-9934]"
+    }, {
+      "left" : "srcParent.removeChild(n);",
+      "right" : "srcParent.removeChild(n);",
+      "info" : "ExpressionStatement[10092-10117]:ExpressionStatement[9941-9966]"
+    }, {
+      "left" : "if (isFunctionDeclaration)",
+      "right" : "if (isFunctionDeclaration)",
+      "info" : "IfStatement[10124-10252]:IfStatement[9973-10101]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10151-10199]:Block[10000-10048]"
+    }, {
+      "left" : "destParent.addChildToFront(n);",
+      "right" : "destParent.addChildToFront(n);",
+      "info" : "ExpressionStatement[10161-10191]:ExpressionStatement[10010-10040]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10205-10252]:Block[10054-10101]"
+    }, {
+      "left" : "destParent.addChildToBack(n);",
+      "right" : "destParent.addChildToBack(n);",
+      "info" : "ExpressionStatement[10215-10244]:ExpressionStatement[10064-10093]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

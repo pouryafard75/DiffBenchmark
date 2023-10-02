@@ -1,0 +1,445 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "SimplexSolver",
+      "right" : "SimplexSolver",
+      "info" : "TypeDeclaration[1091-9399]:TypeDeclaration[1091-9546]"
+    }, {
+      "left" : "private static final double DEFAULT_EPSILON = 1.0e-6;",
+      "right" : "private static final double DEFAULT_EPSILON = 1.0e-6;",
+      "info" : "FieldDeclaration[1259-1384]:FieldDeclaration[1259-1384]"
+    }, {
+      "left" : "private static final int DEFAULT_ULPS = 10;",
+      "right" : "private static final int DEFAULT_ULPS = 10;",
+      "info" : "FieldDeclaration[1390-1519]:FieldDeclaration[1390-1519]"
+    }, {
+      "left" : "private final double epsilon;",
+      "right" : "private final double epsilon;",
+      "info" : "FieldDeclaration[1525-1618]:FieldDeclaration[1525-1618]"
+    }, {
+      "left" : "private final int maxUlps;",
+      "right" : "private final int maxUlps;",
+      "info" : "FieldDeclaration[1624-1728]:FieldDeclaration[1624-1728]"
+    }, {
+      "left" : "public SimplexSolver()",
+      "right" : "public SimplexSolver()",
+      "info" : "MethodDeclaration[1734-1878]:MethodDeclaration[1734-1878]"
+    }, {
+      "left" : "public SimplexSolver(final double epsilon, final int maxUlps)",
+      "right" : "public SimplexSolver(final double epsilon, final int maxUlps)",
+      "info" : "MethodDeclaration[1884-2261]:MethodDeclaration[1884-2261]"
+    }, {
+      "left" : "private Integer getPivotColumn(SimplexTableau tableau)",
+      "right" : "private Integer getPivotColumn(SimplexTableau tableau)",
+      "info" : "MethodDeclaration[2267-3026]:MethodDeclaration[2267-3026]"
+    }, {
+      "left" : "private Integer getPivotRow(SimplexTableau tableau, final int col)",
+      "right" : "private Integer getPivotRow(SimplexTableau tableau, final int col)",
+      "info" : "MethodDeclaration[3032-6579]:MethodDeclaration[3032-6726]"
+    }, {
+      "left" : "protected void doIteration(final SimplexTableau tableau)\n        throws MaxCountExceededException, UnboundedSolutionException",
+      "right" : "protected void doIteration(final SimplexTableau tableau)\n        throws MaxCountExceededException, UnboundedSolutionException",
+      "info" : "MethodDeclaration[6585-7733]:MethodDeclaration[6732-7880]"
+    }, {
+      "left" : "protected void solvePhase1(final SimplexTableau tableau)\n        throws MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException",
+      "right" : "protected void solvePhase1(final SimplexTableau tableau)\n        throws MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException",
+      "info" : "MethodDeclaration[7739-8702]:MethodDeclaration[7886-8849]"
+    }, {
+      "left" : "public PointValuePair doOptimize()\n        throws MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException",
+      "right" : "public PointValuePair doOptimize()\n        throws MaxCountExceededException, UnboundedSolutionException, NoFeasibleSolutionException",
+      "info" : "MethodDeclaration[8708-9396]:MethodDeclaration[8855-9543]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1826-1878]:Block[1826-1878]"
+    }, {
+      "left" : "this(DEFAULT_EPSILON, DEFAULT_ULPS);",
+      "right" : "this(DEFAULT_EPSILON, DEFAULT_ULPS);",
+      "info" : "ConstructorInvocation[1836-1872]:ConstructorInvocation[1836-1872]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2190-2261]:Block[2190-2261]"
+    }, {
+      "left" : "this.epsilon = epsilon;",
+      "right" : "this.epsilon = epsilon;",
+      "info" : "ExpressionStatement[2200-2223]:ExpressionStatement[2200-2223]"
+    }, {
+      "left" : "this.maxUlps = maxUlps;",
+      "right" : "this.maxUlps = maxUlps;",
+      "info" : "ExpressionStatement[2232-2255]:ExpressionStatement[2232-2255]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2540-3026]:Block[2540-3026]"
+    }, {
+      "left" : "double minValue = 0;",
+      "right" : "double minValue = 0;",
+      "info" : "VariableDeclarationStatement[2550-2570]:VariableDeclarationStatement[2550-2570]"
+    }, {
+      "left" : "Integer minPos = null;",
+      "right" : "Integer minPos = null;",
+      "info" : "VariableDeclarationStatement[2579-2601]:VariableDeclarationStatement[2579-2601]"
+    }, {
+      "left" : "for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getWidth() - 1; i++)",
+      "right" : "for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getWidth() - 1; i++)",
+      "info" : "ForStatement[2610-2997]:ForStatement[2610-2997]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2692-2997]:Block[2692-2997]"
+    }, {
+      "left" : "final double entry = tableau.getEntry(0, i);",
+      "right" : "final double entry = tableau.getEntry(0, i);",
+      "info" : "VariableDeclarationStatement[2706-2750]:VariableDeclarationStatement[2706-2750]"
+    }, {
+      "left" : "if (entry < minValue)",
+      "right" : "if (entry < minValue)",
+      "info" : "IfStatement[2888-2987]:IfStatement[2888-2987]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2910-2987]:Block[2910-2987]"
+    }, {
+      "left" : "minValue = entry;",
+      "right" : "minValue = entry;",
+      "info" : "ExpressionStatement[2928-2945]:ExpressionStatement[2928-2945]"
+    }, {
+      "left" : "minPos = i;",
+      "right" : "minPos = i;",
+      "info" : "ExpressionStatement[2962-2973]:ExpressionStatement[2962-2973]"
+    }, {
+      "left" : "return minPos;",
+      "right" : "return minPos;",
+      "info" : "ReturnStatement[3006-3020]:ReturnStatement[3006-3020]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3394-6579]:Block[3394-6726]"
+    }, {
+      "left" : "List<Integer> minRatioPositions = new ArrayList<Integer>();",
+      "right" : "List<Integer> minRatioPositions = new ArrayList<Integer>();",
+      "info" : "VariableDeclarationStatement[3501-3560]:VariableDeclarationStatement[3501-3560]"
+    }, {
+      "left" : "double minRatio = Double.MAX_VALUE;",
+      "right" : "double minRatio = Double.MAX_VALUE;",
+      "info" : "VariableDeclarationStatement[3569-3604]:VariableDeclarationStatement[3569-3604]"
+    }, {
+      "left" : "for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++)",
+      "right" : "for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++)",
+      "info" : "ForStatement[3613-4446]:ForStatement[3613-4446]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3692-4446]:Block[3692-4446]"
+    }, {
+      "left" : "final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);",
+      "right" : "final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);",
+      "info" : "VariableDeclarationStatement[3706-3769]:VariableDeclarationStatement[3706-3769]"
+    }, {
+      "left" : "final double entry = tableau.getEntry(i, col);",
+      "right" : "final double entry = tableau.getEntry(i, col);",
+      "info" : "VariableDeclarationStatement[3782-3828]:VariableDeclarationStatement[3782-3828]"
+    }, {
+      "left" : "if (Precision.compareTo(entry, 0d, maxUlps) > 0)",
+      "right" : "if (Precision.compareTo(entry, 0d, maxUlps) > 0)",
+      "info" : "IfStatement[3842-4436]:IfStatement[3842-4436]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3891-4436]:Block[3891-4436]"
+    }, {
+      "left" : "final double ratio = rhs / entry;",
+      "right" : "final double ratio = rhs / entry;",
+      "info" : "VariableDeclarationStatement[3909-3942]:VariableDeclarationStatement[3909-3942]"
+    }, {
+      "left" : "final int cmp = Double.compare(ratio, minRatio);",
+      "right" : "final int cmp = Double.compare(ratio, minRatio);",
+      "info" : "VariableDeclarationStatement[4090-4138]:VariableDeclarationStatement[4090-4138]"
+    }, {
+      "left" : "if (cmp == 0)",
+      "right" : "if (cmp == 0)",
+      "info" : "IfStatement[4155-4422]:IfStatement[4155-4422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4169-4234]:Block[4169-4234]"
+    }, {
+      "left" : "minRatioPositions.add(i);",
+      "right" : "minRatioPositions.add(i);",
+      "info" : "ExpressionStatement[4191-4216]:ExpressionStatement[4191-4216]"
+    }, {
+      "left" : "if (cmp < 0)",
+      "right" : "if (cmp < 0)",
+      "info" : "IfStatement[4240-4422]:IfStatement[4240-4422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4253-4422]:Block[4253-4422]"
+    }, {
+      "left" : "minRatio = ratio;",
+      "right" : "minRatio = ratio;",
+      "info" : "ExpressionStatement[4275-4292]:ExpressionStatement[4275-4292]"
+    }, {
+      "left" : "minRatioPositions = new ArrayList<Integer>();",
+      "right" : "minRatioPositions = new ArrayList<Integer>();",
+      "info" : "ExpressionStatement[4313-4358]:ExpressionStatement[4313-4358]"
+    }, {
+      "left" : "minRatioPositions.add(i);",
+      "right" : "minRatioPositions.add(i);",
+      "info" : "ExpressionStatement[4379-4404]:ExpressionStatement[4379-4404]"
+    }, {
+      "left" : "if (minRatioPositions.size() == 0)",
+      "right" : "if (minRatioPositions.size() == 0)",
+      "info" : "IfStatement[4456-6532]:IfStatement[4456-6679]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4491-4527]:Block[4491-4527]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[4505-4517]:ReturnStatement[4505-4517]"
+    }, {
+      "left" : "if (minRatioPositions.size() > 1)",
+      "right" : "if (minRatioPositions.size() > 1)",
+      "info" : "IfStatement[4533-6532]:IfStatement[4533-6679]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4567-6532]:Block[4567-6679]"
+    }, {
+      "left" : "for (Integer row : minRatioPositions)",
+      "right" : "for (Integer row : minRatioPositions)",
+      "info" : "EnhancedForStatement[4764-5260]:EnhancedForStatement[4823-5319]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4802-5260]:Block[4861-5319]"
+    }, {
+      "left" : "for (int i = 0; i < tableau.getNumArtificialVariables(); i++)",
+      "right" : "for (int i = 0; i < tableau.getNumArtificialVariables(); i++)",
+      "info" : "ForStatement[4824-5242]:ForStatement[4883-5301]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4886-5242]:Block[4945-5301]"
+    }, {
+      "left" : "int column = i + tableau.getArtificialVariableOffset();",
+      "right" : "int column = i + tableau.getArtificialVariableOffset();",
+      "info" : "VariableDeclarationStatement[4912-4967]:VariableDeclarationStatement[4971-5026]"
+    }, {
+      "left" : "final double entry = tableau.getEntry(row, column);",
+      "right" : "final double entry = tableau.getEntry(row, column);",
+      "info" : "VariableDeclarationStatement[4992-5043]:VariableDeclarationStatement[5051-5102]"
+    }, {
+      "left" : "if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column)))",
+      "right" : "if (Precision.equals(entry, 1d, maxUlps) && row.equals(tableau.getBasicRow(column)))",
+      "info" : "IfStatement[5068-5220]:IfStatement[5127-5279]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5153-5220]:Block[5212-5279]"
+    }, {
+      "left" : "return row;",
+      "right" : "return row;",
+      "info" : "ReturnStatement[5183-5194]:ReturnStatement[5242-5253]"
+    }, {
+      "left" : "Integer minRow = null;",
+      "right" : "Integer minRow = null;",
+      "info" : "VariableDeclarationStatement[5922-5944]:VariableDeclarationStatement[6055-6077]"
+    }, {
+      "left" : "int minIndex = tableau.getWidth();",
+      "right" : "int minIndex = tableau.getWidth();",
+      "info" : "VariableDeclarationStatement[5961-5995]:VariableDeclarationStatement[6094-6128]"
+    }, {
+      "left" : "for (Integer row : minRatioPositions)",
+      "right" : "for (Integer row : minRatioPositions)",
+      "info" : "EnhancedForStatement[6012-6491]:EnhancedForStatement[6145-6624]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6050-6491]:Block[6183-6624]"
+    }, {
+      "left" : "int i = tableau.getNumObjectiveFunctions();",
+      "right" : "int i = tableau.getNumObjectiveFunctions();",
+      "info" : "VariableDeclarationStatement[6072-6115]:VariableDeclarationStatement[6205-6248]"
+    }, {
+      "left" : "for (; i < tableau.getWidth() - 1 && minRow != row; i++)",
+      "right" : "for (; i < tableau.getWidth() - 1 && minRow != row; i++)",
+      "info" : "ForStatement[6136-6473]:ForStatement[6269-6606]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6193-6473]:Block[6326-6606]"
+    }, {
+      "left" : "if (row == tableau.getBasicRow(i))",
+      "right" : "if (row == tableau.getBasicRow(i))",
+      "info" : "IfStatement[6219-6451]:IfStatement[6352-6584]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6254-6451]:Block[6387-6584]"
+    }, {
+      "left" : "if (i < minIndex)",
+      "right" : "if (i < minIndex)",
+      "info" : "IfStatement[6284-6425]:IfStatement[6417-6558]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6302-6425]:Block[6435-6558]"
+    }, {
+      "left" : "minIndex = i;",
+      "right" : "minIndex = i;",
+      "info" : "ExpressionStatement[6336-6349]:ExpressionStatement[6469-6482]"
+    }, {
+      "left" : "minRow = row;",
+      "right" : "minRow = row;",
+      "info" : "ExpressionStatement[6382-6395]:ExpressionStatement[6515-6528]"
+    }, {
+      "left" : "return minRow;",
+      "right" : "return minRow;",
+      "info" : "ReturnStatement[6508-6522]:ReturnStatement[6641-6655]"
+    }, {
+      "left" : "return minRatioPositions.get(0);",
+      "right" : "return minRatioPositions.get(0);",
+      "info" : "ReturnStatement[6541-6573]:ReturnStatement[6688-6720]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7033-7733]:Block[7180-7880]"
+    }, {
+      "left" : "incrementIterationsCounter();",
+      "right" : "incrementIterationsCounter();",
+      "info" : "ExpressionStatement[7044-7073]:ExpressionStatement[7191-7220]"
+    }, {
+      "left" : "Integer pivotCol = getPivotColumn(tableau);",
+      "right" : "Integer pivotCol = getPivotColumn(tableau);",
+      "info" : "VariableDeclarationStatement[7083-7126]:VariableDeclarationStatement[7230-7273]"
+    }, {
+      "left" : "Integer pivotRow = getPivotRow(tableau, pivotCol);",
+      "right" : "Integer pivotRow = getPivotRow(tableau, pivotCol);",
+      "info" : "VariableDeclarationStatement[7135-7185]:VariableDeclarationStatement[7282-7332]"
+    }, {
+      "left" : "if (pivotRow == null)",
+      "right" : "if (pivotRow == null)",
+      "info" : "IfStatement[7194-7279]:IfStatement[7341-7426]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7216-7279]:Block[7363-7426]"
+    }, {
+      "left" : "throw new UnboundedSolutionException();",
+      "right" : "throw new UnboundedSolutionException();",
+      "info" : "ThrowStatement[7230-7269]:ThrowStatement[7377-7416]"
+    }, {
+      "left" : "double pivotVal = tableau.getEntry(pivotRow, pivotCol);",
+      "right" : "double pivotVal = tableau.getEntry(pivotRow, pivotCol);",
+      "info" : "VariableDeclarationStatement[7327-7382]:VariableDeclarationStatement[7474-7529]"
+    }, {
+      "left" : "tableau.divideRow(pivotRow, pivotVal);",
+      "right" : "tableau.divideRow(pivotRow, pivotVal);",
+      "info" : "ExpressionStatement[7391-7429]:ExpressionStatement[7538-7576]"
+    }, {
+      "left" : "for (int i = 0; i < tableau.getHeight(); i++)",
+      "right" : "for (int i = 0; i < tableau.getHeight(); i++)",
+      "info" : "ForStatement[7488-7727]:ForStatement[7635-7874]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7534-7727]:Block[7681-7874]"
+    }, {
+      "left" : "if (i != pivotRow)",
+      "right" : "if (i != pivotRow)",
+      "info" : "IfStatement[7548-7717]:IfStatement[7695-7864]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7567-7717]:Block[7714-7864]"
+    }, {
+      "left" : "final double multiplier = tableau.getEntry(i, pivotCol);",
+      "right" : "final double multiplier = tableau.getEntry(i, pivotCol);",
+      "info" : "VariableDeclarationStatement[7585-7641]:VariableDeclarationStatement[7732-7788]"
+    }, {
+      "left" : "tableau.subtractRow(i, pivotRow, multiplier);",
+      "right" : "tableau.subtractRow(i, pivotRow, multiplier);",
+      "info" : "ExpressionStatement[7658-7703]:ExpressionStatement[7805-7850]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8269-8702]:Block[8416-8849]"
+    }, {
+      "left" : "if (tableau.getNumArtificialVariables() == 0)",
+      "right" : "if (tableau.getNumArtificialVariables() == 0)",
+      "info" : "IfStatement[8318-8395]:IfStatement[8465-8542]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8364-8395]:Block[8511-8542]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8378-8385]:ReturnStatement[8525-8532]"
+    }, {
+      "left" : "while (!tableau.isOptimal())",
+      "right" : "while (!tableau.isOptimal())",
+      "info" : "WhileStatement[8405-8479]:WhileStatement[8552-8626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8434-8479]:Block[8581-8626]"
+    }, {
+      "left" : "doIteration(tableau);",
+      "right" : "doIteration(tableau);",
+      "info" : "ExpressionStatement[8448-8469]:ExpressionStatement[8595-8616]"
+    }, {
+      "left" : "if (!Precision.equals(tableau.getEntry(0, tableau.getRhsOffset()), 0d, epsilon))",
+      "right" : "if (!Precision.equals(tableau.getEntry(0, tableau.getRhsOffset()), 0d, epsilon))",
+      "info" : "IfStatement[8551-8696]:IfStatement[8698-8843]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8632-8696]:Block[8779-8843]"
+    }, {
+      "left" : "throw new NoFeasibleSolutionException();",
+      "right" : "throw new NoFeasibleSolutionException();",
+      "info" : "ThrowStatement[8646-8686]:ThrowStatement[8793-8833]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8880-9396]:Block[9027-9543]"
+    }, {
+      "left" : "final SimplexTableau tableau =\n            new SimplexTableau(getFunction(),\n                               getConstraints(),\n                               getGoalType(),\n                               restrictToNonNegative(),\n                               epsilon,\n                               maxUlps);",
+      "right" : "final SimplexTableau tableau =\n            new SimplexTableau(getFunction(),\n                               getConstraints(),\n                               getGoalType(),\n                               restrictToNonNegative(),\n                               epsilon,\n                               maxUlps);",
+      "info" : "VariableDeclarationStatement[8890-9198]:VariableDeclarationStatement[9037-9345]"
+    }, {
+      "left" : "solvePhase1(tableau);",
+      "right" : "solvePhase1(tableau);",
+      "info" : "ExpressionStatement[9208-9229]:ExpressionStatement[9355-9376]"
+    }, {
+      "left" : "tableau.dropPhase1Objective();",
+      "right" : "tableau.dropPhase1Objective();",
+      "info" : "ExpressionStatement[9238-9268]:ExpressionStatement[9385-9415]"
+    }, {
+      "left" : "while (!tableau.isOptimal())",
+      "right" : "while (!tableau.isOptimal())",
+      "info" : "WhileStatement[9278-9352]:WhileStatement[9425-9499]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9307-9352]:Block[9454-9499]"
+    }, {
+      "left" : "doIteration(tableau);",
+      "right" : "doIteration(tableau);",
+      "info" : "ExpressionStatement[9321-9342]:ExpressionStatement[9468-9489]"
+    }, {
+      "left" : "return tableau.getSolution();",
+      "right" : "return tableau.getSolution();",
+      "info" : "ReturnStatement[9361-9390]:ReturnStatement[9508-9537]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

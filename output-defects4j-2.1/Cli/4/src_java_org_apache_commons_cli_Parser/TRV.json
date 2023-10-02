@@ -1,0 +1,521 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private CommandLine cmd;",
+      "right" : "private CommandLine cmd;",
+      "info" : "FieldDeclaration[1227-1283]:FieldDeclaration[1227-1283]"
+    }, {
+      "left" : "private Options options;",
+      "right" : "private Options options;",
+      "info" : "FieldDeclaration[1289-1340]:FieldDeclaration[1289-1340]"
+    }, {
+      "left" : "private List requiredOptions;",
+      "right" : "private List requiredOptions;",
+      "info" : "FieldDeclaration[1346-1419]:FieldDeclaration[1346-1419]"
+    }, {
+      "left" : "protected abstract String[] flatten(Options opts, String[] arguments, \n                                        boolean stopAtNonOption);",
+      "right" : "protected abstract String[] flatten(Options opts, String[] arguments, \n                                        boolean stopAtNonOption);",
+      "info" : "MethodDeclaration[1425-2025]:MethodDeclaration[1425-2025]"
+    }, {
+      "left" : "public CommandLine parse(Options options, String[] arguments)\n                      throws ParseException",
+      "right" : "public CommandLine parse(Options options, String[] arguments)\n                      throws ParseException",
+      "info" : "MethodDeclaration[2031-2557]:MethodDeclaration[2031-2557]"
+    }, {
+      "left" : "public CommandLine parse(Options options, String[] arguments, \n                             Properties properties)\n        throws ParseException",
+      "right" : "public CommandLine parse(Options options, String[] arguments, \n                             Properties properties)\n        throws ParseException",
+      "info" : "MethodDeclaration[2563-3224]:MethodDeclaration[2563-3224]"
+    }, {
+      "left" : "public CommandLine parse(Options options, String[] arguments, \n                             boolean stopAtNonOption)\n        throws ParseException",
+      "right" : "public CommandLine parse(Options options, String[] arguments, \n                             boolean stopAtNonOption)\n        throws ParseException",
+      "info" : "MethodDeclaration[3230-4006]:MethodDeclaration[3230-4006]"
+    }, {
+      "left" : "public CommandLine parse(Options options, String[] arguments, \n                             Properties properties, boolean stopAtNonOption)\n        throws ParseException",
+      "right" : "public CommandLine parse(Options options, String[] arguments, \n                             Properties properties, boolean stopAtNonOption)\n        throws ParseException",
+      "info" : "MethodDeclaration[4012-7249]:MethodDeclaration[4012-7249]"
+    }, {
+      "left" : "private void processProperties(Properties properties)",
+      "right" : "private void processProperties(Properties properties)",
+      "info" : "MethodDeclaration[7255-8920]:MethodDeclaration[7255-8920]"
+    }, {
+      "left" : "public void processArgs(Option opt, ListIterator iter)\n        throws ParseException",
+      "right" : "public void processArgs(Option opt, ListIterator iter)\n        throws ParseException",
+      "info" : "MethodDeclaration[9711-11057]:MethodDeclaration[9832-11178]"
+    }, {
+      "left" : "private void processOption(String arg, ListIterator iter)\n        throws ParseException",
+      "right" : "private void processOption(String arg, ListIterator iter)\n        throws ParseException",
+      "info" : "MethodDeclaration[11063-12771]:MethodDeclaration[11184-12892]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2495-2557]:Block[2495-2557]"
+    }, {
+      "left" : "return parse(options, arguments, null, false);",
+      "right" : "return parse(options, arguments, null, false);",
+      "info" : "ReturnStatement[2505-2551]:ReturnStatement[2505-2551]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3156-3224]:Block[3156-3224]"
+    }, {
+      "left" : "return parse(options, arguments, properties, false);",
+      "right" : "return parse(options, arguments, properties, false);",
+      "info" : "ReturnStatement[3166-3218]:ReturnStatement[3166-3218]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3934-4006]:Block[3934-4006]"
+    }, {
+      "left" : "return parse(options, arguments, null, stopAtNonOption);",
+      "right" : "return parse(options, arguments, null, stopAtNonOption);",
+      "info" : "ReturnStatement[3944-4000]:ReturnStatement[3944-4000]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4743-7249]:Block[4743-7249]"
+    }, {
+      "left" : "this.options = options;",
+      "right" : "this.options = options;",
+      "info" : "ExpressionStatement[4783-4806]:ExpressionStatement[4783-4806]"
+    }, {
+      "left" : "for (Iterator it = options.helpOptions().iterator(); it.hasNext())",
+      "right" : "for (Iterator it = options.helpOptions().iterator(); it.hasNext())",
+      "info" : "ForStatement[4896-5051]:ForStatement[4896-5051]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4964-5051]:Block[4964-5051]"
+    }, {
+      "left" : "Option opt = (Option) it.next();",
+      "right" : "Option opt = (Option) it.next();",
+      "info" : "VariableDeclarationStatement[4978-5010]:VariableDeclarationStatement[4978-5010]"
+    }, {
+      "left" : "opt.clearValues();",
+      "right" : "opt.clearValues();",
+      "info" : "ExpressionStatement[5023-5041]:ExpressionStatement[5023-5041]"
+    }, {
+      "left" : "requiredOptions = options.getRequiredOptions();",
+      "right" : "requiredOptions = options.getRequiredOptions();",
+      "info" : "ExpressionStatement[5061-5108]:ExpressionStatement[5061-5108]"
+    }, {
+      "left" : "cmd = new CommandLine();",
+      "right" : "cmd = new CommandLine();",
+      "info" : "ExpressionStatement[5117-5141]:ExpressionStatement[5117-5141]"
+    }, {
+      "left" : "boolean eatTheRest = false;",
+      "right" : "boolean eatTheRest = false;",
+      "info" : "VariableDeclarationStatement[5151-5178]:VariableDeclarationStatement[5151-5178]"
+    }, {
+      "left" : "if (arguments == null)",
+      "right" : "if (arguments == null)",
+      "info" : "IfStatement[5188-5269]:IfStatement[5188-5269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5219-5269]:Block[5219-5269]"
+    }, {
+      "left" : "arguments = new String[0];",
+      "right" : "arguments = new String[0];",
+      "info" : "ExpressionStatement[5233-5259]:ExpressionStatement[5233-5259]"
+    }, {
+      "left" : "List tokenList = Arrays.asList(flatten(this.options, \n                                               arguments, \n                                               stopAtNonOption));",
+      "right" : "List tokenList = Arrays.asList(flatten(this.options, \n                                               arguments, \n                                               stopAtNonOption));",
+      "info" : "VariableDeclarationStatement[5279-5457]:VariableDeclarationStatement[5279-5457]"
+    }, {
+      "left" : "ListIterator iterator = tokenList.listIterator();",
+      "right" : "ListIterator iterator = tokenList.listIterator();",
+      "info" : "VariableDeclarationStatement[5467-5516]:VariableDeclarationStatement[5467-5516]"
+    }, {
+      "left" : "while (iterator.hasNext())",
+      "right" : "while (iterator.hasNext())",
+      "info" : "WhileStatement[5566-7150]:WhileStatement[5566-7150]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5601-7150]:Block[5601-7150]"
+    }, {
+      "left" : "String t = (String) iterator.next();",
+      "right" : "String t = (String) iterator.next();",
+      "info" : "VariableDeclarationStatement[5615-5651]:VariableDeclarationStatement[5615-5651]"
+    }, {
+      "left" : "if (\"--\".equals(t))",
+      "right" : "if (\"--\".equals(t))",
+      "info" : "IfStatement[5709-6716]:IfStatement[5709-6716]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5741-5791]:Block[5741-5791]"
+    }, {
+      "left" : "eatTheRest = true;",
+      "right" : "eatTheRest = true;",
+      "info" : "ExpressionStatement[5759-5777]:ExpressionStatement[5759-5777]"
+    }, {
+      "left" : "if (\"-\".equals(t))",
+      "right" : "if (\"-\".equals(t))",
+      "info" : "IfStatement[5852-6716]:IfStatement[5852-6716]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5883-6102]:Block[5883-6102]"
+    }, {
+      "left" : "if (stopAtNonOption)",
+      "right" : "if (stopAtNonOption)",
+      "info" : "IfStatement[5901-6088]:IfStatement[5901-6088]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5938-5996]:Block[5938-5996]"
+    }, {
+      "left" : "eatTheRest = true;",
+      "right" : "eatTheRest = true;",
+      "info" : "ExpressionStatement[5960-5978]:ExpressionStatement[5960-5978]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6034-6088]:Block[6034-6088]"
+    }, {
+      "left" : "cmd.addArg(t);",
+      "right" : "cmd.addArg(t);",
+      "info" : "ExpressionStatement[6056-6070]:ExpressionStatement[6056-6070]"
+    }, {
+      "left" : "if (t.startsWith(\"-\"))",
+      "right" : "if (t.startsWith(\"-\"))",
+      "info" : "IfStatement[6159-6716]:IfStatement[6159-6716]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6194-6486]:Block[6194-6486]"
+    }, {
+      "left" : "if (stopAtNonOption && !options.hasOption(t))",
+      "right" : "if (stopAtNonOption && !options.hasOption(t))",
+      "info" : "IfStatement[6212-6472]:IfStatement[6212-6472]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6274-6367]:Block[6274-6367]"
+    }, {
+      "left" : "eatTheRest = true;",
+      "right" : "eatTheRest = true;",
+      "info" : "ExpressionStatement[6296-6314]:ExpressionStatement[6296-6314]"
+    }, {
+      "left" : "cmd.addArg(t);",
+      "right" : "cmd.addArg(t);",
+      "info" : "ExpressionStatement[6335-6349]:ExpressionStatement[6335-6349]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6405-6472]:Block[6405-6472]"
+    }, {
+      "left" : "processOption(t, iterator);",
+      "right" : "processOption(t, iterator);",
+      "info" : "ExpressionStatement[6427-6454]:ExpressionStatement[6427-6454]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6557-6716]:Block[6557-6716]"
+    }, {
+      "left" : "cmd.addArg(t);",
+      "right" : "cmd.addArg(t);",
+      "info" : "ExpressionStatement[6575-6589]:ExpressionStatement[6575-6589]"
+    }, {
+      "left" : "if (stopAtNonOption)",
+      "right" : "if (stopAtNonOption)",
+      "info" : "IfStatement[6607-6702]:IfStatement[6607-6702]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6644-6702]:Block[6644-6702]"
+    }, {
+      "left" : "eatTheRest = true;",
+      "right" : "eatTheRest = true;",
+      "info" : "ExpressionStatement[6666-6684]:ExpressionStatement[6666-6684]"
+    }, {
+      "left" : "if (eatTheRest)",
+      "right" : "if (eatTheRest)",
+      "info" : "IfStatement[6770-7140]:IfStatement[6770-7140]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6798-7140]:Block[6798-7140]"
+    }, {
+      "left" : "while (iterator.hasNext())",
+      "right" : "while (iterator.hasNext())",
+      "info" : "WhileStatement[6816-7126]:WhileStatement[6816-7126]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6859-7126]:Block[6859-7126]"
+    }, {
+      "left" : "String str = (String) iterator.next();",
+      "right" : "String str = (String) iterator.next();",
+      "info" : "VariableDeclarationStatement[6881-6919]:VariableDeclarationStatement[6881-6919]"
+    }, {
+      "left" : "if (!\"--\".equals(str))",
+      "right" : "if (!\"--\".equals(str))",
+      "info" : "IfStatement[7001-7108]:IfStatement[7001-7108]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7044-7108]:Block[7044-7108]"
+    }, {
+      "left" : "cmd.addArg(str);",
+      "right" : "cmd.addArg(str);",
+      "info" : "ExpressionStatement[7070-7086]:ExpressionStatement[7070-7086]"
+    }, {
+      "left" : "processProperties(properties);",
+      "right" : "processProperties(properties);",
+      "info" : "ExpressionStatement[7160-7190]:ExpressionStatement[7160-7190]"
+    }, {
+      "left" : "checkRequiredOptions();",
+      "right" : "checkRequiredOptions();",
+      "info" : "ExpressionStatement[7199-7222]:ExpressionStatement[7199-7222]"
+    }, {
+      "left" : "return cmd;",
+      "right" : "return cmd;",
+      "info" : "ReturnStatement[7232-7243]:ReturnStatement[7232-7243]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7493-8920]:Block[7493-8920]"
+    }, {
+      "left" : "if (properties == null)",
+      "right" : "if (properties == null)",
+      "info" : "IfStatement[7503-7566]:IfStatement[7503-7566]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7535-7566]:Block[7535-7566]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7549-7556]:ReturnStatement[7549-7556]"
+    }, {
+      "left" : "for (Enumeration e = properties.propertyNames(); e.hasMoreElements())",
+      "right" : "for (Enumeration e = properties.propertyNames(); e.hasMoreElements())",
+      "info" : "ForStatement[7576-8914]:ForStatement[7576-8914]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7655-8914]:Block[7655-8914]"
+    }, {
+      "left" : "String option = e.nextElement().toString();",
+      "right" : "String option = e.nextElement().toString();",
+      "info" : "VariableDeclarationStatement[7669-7712]:VariableDeclarationStatement[7669-7712]"
+    }, {
+      "left" : "if (!cmd.hasOption(option))",
+      "right" : "if (!cmd.hasOption(option))",
+      "info" : "IfStatement[7726-8904]:IfStatement[7726-8904]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7766-8904]:Block[7766-8904]"
+    }, {
+      "left" : "Option opt = options.getOption(option);",
+      "right" : "Option opt = options.getOption(option);",
+      "info" : "VariableDeclarationStatement[7784-7823]:VariableDeclarationStatement[7784-7823]"
+    }, {
+      "left" : "String value = properties.getProperty(option);",
+      "right" : "String value = properties.getProperty(option);",
+      "info" : "VariableDeclarationStatement[7903-7949]:VariableDeclarationStatement[7903-7949]"
+    }, {
+      "left" : "if (opt.hasArg())",
+      "right" : "if (opt.hasArg())",
+      "info" : "IfStatement[7967-8853]:IfStatement[7967-8853]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8001-8485]:Block[8001-8485]"
+    }, {
+      "left" : "if ((opt.getValues() == null)\n                        || (opt.getValues().length == 0))",
+      "right" : "if ((opt.getValues() == null)\n                        || (opt.getValues().length == 0))",
+      "info" : "IfStatement[8023-8467]:IfStatement[8023-8467]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8131-8467]:Block[8131-8467]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[8157-8445]:TryStatement[8157-8445]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8185-8261]:Block[8185-8261]"
+    }, {
+      "left" : "opt.addValue(value);",
+      "right" : "opt.addValue(value);",
+      "info" : "ExpressionStatement[8215-8235]:ExpressionStatement[8215-8235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8339-8445]:Block[8339-8445]"
+    }, {
+      "left" : "if (!(\"yes\".equalsIgnoreCase(value) \n                           || \"true\".equalsIgnoreCase(value)\n                           || \"1\".equalsIgnoreCase(value)))",
+      "right" : "if (!(\"yes\".equalsIgnoreCase(value) \n                           || \"true\".equalsIgnoreCase(value)\n                           || \"1\".equalsIgnoreCase(value)))",
+      "info" : "IfStatement[8507-8853]:IfStatement[8507-8853]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8681-8853]:Block[8681-8853]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[8829-8835]:BreakStatement[8829-8835]"
+    }, {
+      "left" : "cmd.addOption(opt);",
+      "right" : "cmd.addOption(opt);",
+      "info" : "ExpressionStatement[8871-8890]:ExpressionStatement[8871-8890]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10216-11057]:Block[10337-11178]"
+    }, {
+      "left" : "while (iter.hasNext())",
+      "right" : "while (iter.hasNext())",
+      "info" : "WhileStatement[10267-10824]:WhileStatement[10388-10945]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10298-10824]:Block[10419-10945]"
+    }, {
+      "left" : "String str = (String) iter.next();",
+      "right" : "String str = (String) iter.next();",
+      "info" : "VariableDeclarationStatement[10312-10346]:VariableDeclarationStatement[10433-10467]"
+    }, {
+      "left" : "if (options.hasOption(str) && str.startsWith(\"-\"))",
+      "right" : "if (options.hasOption(str) && str.startsWith(\"-\"))",
+      "info" : "IfStatement[10408-10542]:IfStatement[10529-10663]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10471-10542]:Block[10592-10663]"
+    }, {
+      "left" : "iter.previous();",
+      "right" : "iter.previous();",
+      "info" : "ExpressionStatement[10489-10505]:ExpressionStatement[10610-10626]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10522-10528]:BreakStatement[10643-10649]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[10585-10814]:TryStatement[10706-10935]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10601-10689]:Block[10722-10810]"
+    }, {
+      "left" : "opt.addValue( Util.stripLeadingAndTrailingQuotes(str) );",
+      "right" : "opt.addValue( Util.stripLeadingAndTrailingQuotes(str) );",
+      "info" : "ExpressionStatement[10619-10675]:ExpressionStatement[10740-10796]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10743-10814]:Block[10864-10935]"
+    }, {
+      "left" : "iter.previous();",
+      "right" : "iter.previous();",
+      "info" : "ExpressionStatement[10761-10777]:ExpressionStatement[10882-10898]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10794-10800]:BreakStatement[10915-10921]"
+    }, {
+      "left" : "if ((opt.getValues() == null) && !opt.hasOptionalArg())",
+      "right" : "if ((opt.getValues() == null) && !opt.hasOptionalArg())",
+      "info" : "IfStatement[10834-11051]:IfStatement[10955-11172]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10898-11051]:Block[11019-11172]"
+    }, {
+      "left" : "throw new MissingArgumentException(\"Missing argument for option:\"\n                                               + opt.getKey());",
+      "right" : "throw new MissingArgumentException(\"Missing argument for option:\"\n                                               + opt.getKey());",
+      "info" : "ThrowStatement[10912-11041]:ThrowStatement[11033-11162]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11558-12771]:Block[11679-12892]"
+    }, {
+      "left" : "boolean hasOption = options.hasOption(arg);",
+      "right" : "boolean hasOption = options.hasOption(arg);",
+      "info" : "VariableDeclarationStatement[11568-11611]:VariableDeclarationStatement[11689-11732]"
+    }, {
+      "left" : "if (!hasOption)",
+      "right" : "if (!hasOption)",
+      "info" : "IfStatement[11691-11859]:IfStatement[11812-11980]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11715-11859]:Block[11836-11980]"
+    }, {
+      "left" : "throw new UnrecognizedOptionException(\"Unrecognized option: \" \n                                                  + arg);",
+      "right" : "throw new UnrecognizedOptionException(\"Unrecognized option: \" \n                                                  + arg);",
+      "info" : "ThrowStatement[11729-11849]:ThrowStatement[11850-11970]"
+    }, {
+      "left" : "final Option opt = options.getOption(arg);",
+      "right" : "final Option opt = options.getOption(arg);",
+      "info" : "VariableDeclarationStatement[11922-11964]:VariableDeclarationStatement[12043-12085]"
+    }, {
+      "left" : "if (opt.isRequired())",
+      "right" : "if (opt.isRequired())",
+      "info" : "IfStatement[12079-12170]:IfStatement[12200-12291]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12109-12170]:Block[12230-12291]"
+    }, {
+      "left" : "requiredOptions.remove(opt.getKey());",
+      "right" : "requiredOptions.remove(opt.getKey());",
+      "info" : "ExpressionStatement[12123-12160]:ExpressionStatement[12244-12281]"
+    }, {
+      "left" : "if (options.getOptionGroup(opt) != null)",
+      "right" : "if (options.getOptionGroup(opt) != null)",
+      "info" : "IfStatement[12287-12557]:IfStatement[12408-12678]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12336-12557]:Block[12457-12678]"
+    }, {
+      "left" : "OptionGroup group = options.getOptionGroup(opt);",
+      "right" : "OptionGroup group = options.getOptionGroup(opt);",
+      "info" : "VariableDeclarationStatement[12350-12398]:VariableDeclarationStatement[12471-12519]"
+    }, {
+      "left" : "if (group.isRequired())",
+      "right" : "if (group.isRequired())",
+      "info" : "IfStatement[12412-12510]:IfStatement[12533-12631]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12448-12510]:Block[12569-12631]"
+    }, {
+      "left" : "requiredOptions.remove(group);",
+      "right" : "requiredOptions.remove(group);",
+      "info" : "ExpressionStatement[12466-12496]:ExpressionStatement[12587-12617]"
+    }, {
+      "left" : "group.setSelected(opt);",
+      "right" : "group.setSelected(opt);",
+      "info" : "ExpressionStatement[12524-12547]:ExpressionStatement[12645-12668]"
+    }, {
+      "left" : "if (opt.hasArg())",
+      "right" : "if (opt.hasArg())",
+      "info" : "IfStatement[12616-12689]:IfStatement[12737-12810]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12642-12689]:Block[12763-12810]"
+    }, {
+      "left" : "processArgs(opt, iter);",
+      "right" : "processArgs(opt, iter);",
+      "info" : "ExpressionStatement[12656-12679]:ExpressionStatement[12777-12800]"
+    }, {
+      "left" : "cmd.addOption(opt);",
+      "right" : "cmd.addOption(opt);",
+      "info" : "ExpressionStatement[12746-12765]:ExpressionStatement[12867-12886]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

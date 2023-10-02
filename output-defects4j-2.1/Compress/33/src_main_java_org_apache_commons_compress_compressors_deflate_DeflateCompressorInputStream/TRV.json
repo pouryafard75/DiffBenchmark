@@ -1,0 +1,113 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final InputStream in;",
+      "right" : "private final InputStream in;",
+      "info" : "FieldDeclaration[1195-1224]:FieldDeclaration[1424-1453]"
+    }, {
+      "left" : "public DeflateCompressorInputStream(InputStream inputStream)",
+      "right" : "public DeflateCompressorInputStream(InputStream inputStream)",
+      "info" : "MethodDeclaration[1230-1562]:MethodDeclaration[1459-1791]"
+    }, {
+      "left" : "public DeflateCompressorInputStream(InputStream inputStream,\n                                        DeflateParameters parameters)",
+      "right" : "public DeflateCompressorInputStream(InputStream inputStream,\n                                        DeflateParameters parameters)",
+      "info" : "MethodDeclaration[1568-2048]:MethodDeclaration[1797-2277]"
+    }, {
+      "left" : "public int read() throws IOException",
+      "right" : "public int read() throws IOException",
+      "info" : "MethodDeclaration[2058-2224]:MethodDeclaration[2287-2453]"
+    }, {
+      "left" : "public int read(byte[] buf, int off, int len) throws IOException",
+      "right" : "public int read(byte[] buf, int off, int len) throws IOException",
+      "info" : "MethodDeclaration[2230-2423]:MethodDeclaration[2459-2652]"
+    }, {
+      "left" : "public long skip(long n) throws IOException",
+      "right" : "public long skip(long n) throws IOException",
+      "info" : "MethodDeclaration[2429-2546]:MethodDeclaration[2658-2775]"
+    }, {
+      "left" : "public int available() throws IOException",
+      "right" : "public int available() throws IOException",
+      "info" : "MethodDeclaration[2552-2671]:MethodDeclaration[2781-2900]"
+    }, {
+      "left" : "public void close() throws IOException",
+      "right" : "public void close() throws IOException",
+      "info" : "MethodDeclaration[2677-2782]:MethodDeclaration[2906-3011]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1503-1562]:Block[1732-1791]"
+    }, {
+      "left" : "this(inputStream, new DeflateParameters());",
+      "right" : "this(inputStream, new DeflateParameters());",
+      "info" : "ConstructorInvocation[1513-1556]:ConstructorInvocation[1742-1785]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1946-2048]:Block[2175-2277]"
+    }, {
+      "left" : "in = new InflaterInputStream(inputStream, new Inflater(!parameters.withZlibHeader()));",
+      "right" : "in = new InflaterInputStream(inputStream, new Inflater(!parameters.withZlibHeader()));",
+      "info" : "ExpressionStatement[1956-2042]:ExpressionStatement[2185-2271]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2134-2224]:Block[2363-2453]"
+    }, {
+      "left" : "int ret = in.read();",
+      "right" : "int ret = in.read();",
+      "info" : "VariableDeclarationStatement[2144-2164]:VariableDeclarationStatement[2373-2393]"
+    }, {
+      "left" : "count(ret == -1 ? 0 : 1);",
+      "right" : "count(ret == -1 ? 0 : 1);",
+      "info" : "ExpressionStatement[2173-2198]:ExpressionStatement[2402-2427]"
+    }, {
+      "left" : "return ret;",
+      "right" : "return ret;",
+      "info" : "ReturnStatement[2207-2218]:ReturnStatement[2436-2447]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2334-2423]:Block[2563-2652]"
+    }, {
+      "left" : "int ret = in.read(buf, off, len);",
+      "right" : "int ret = in.read(buf, off, len);",
+      "info" : "VariableDeclarationStatement[2344-2377]:VariableDeclarationStatement[2573-2606]"
+    }, {
+      "left" : "count(ret);",
+      "right" : "count(ret);",
+      "info" : "ExpressionStatement[2386-2397]:ExpressionStatement[2615-2626]"
+    }, {
+      "left" : "return ret;",
+      "right" : "return ret;",
+      "info" : "ReturnStatement[2406-2417]:ReturnStatement[2635-2646]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2512-2546]:Block[2741-2775]"
+    }, {
+      "left" : "return in.skip(n);",
+      "right" : "return in.skip(n);",
+      "info" : "ReturnStatement[2522-2540]:ReturnStatement[2751-2769]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2633-2671]:Block[2862-2900]"
+    }, {
+      "left" : "return in.available();",
+      "right" : "return in.available();",
+      "info" : "ReturnStatement[2643-2665]:ReturnStatement[2872-2894]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2755-2782]:Block[2984-3011]"
+    }, {
+      "left" : "in.close();",
+      "right" : "in.close();",
+      "info" : "ExpressionStatement[2765-2776]:ExpressionStatement[2994-3005]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

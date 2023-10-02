@@ -1,0 +1,149 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ResourcePermissionModelListener",
+      "right" : "ResourcePermissionModelListener",
+      "info" : "TypeDeclaration[1111-2328]:TypeDeclaration[1195-2565]"
+    }, {
+      "left" : "public void onAfterUpdate(ResourcePermission resourcePermission)\n\t\tthrows ModelListenerException",
+      "right" : "public void onAfterUpdate(ResourcePermission resourcePermission)\n\t\tthrows ModelListenerException",
+      "info" : "MethodDeclaration[1236-2325]:MethodDeclaration[1320-2011]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1140-1146]:Modifier[1224-1230]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1147-1152]:TYPE_DECLARATION_KIND[1231-1236]"
+    }, {
+      "left" : "ResourcePermissionModelListener",
+      "right" : "ResourcePermissionModelListener",
+      "info" : "SimpleName[1153-1184]:SimpleName[1237-1268]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[1236-1245]:MarkerAnnotation[1320-1329]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1247-1253]:Modifier[1331-1337]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[1254-1258]:PrimitiveType[1338-1342]"
+    }, {
+      "left" : "onAfterUpdate",
+      "right" : "onAfterUpdate",
+      "info" : "SimpleName[1259-1272]:SimpleName[1343-1356]"
+    }, {
+      "left" : "ResourcePermission resourcePermission",
+      "right" : "ResourcePermission resourcePermission",
+      "info" : "SingleVariableDeclaration[1273-1310]:SingleVariableDeclaration[1357-1394]"
+    }, {
+      "left" : "ModelListenerException",
+      "right" : "ModelListenerException",
+      "info" : "SimpleType[1321-1343]:SimpleType[1405-1427]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1344-2325]:Block[1428-2011]"
+    }, {
+      "left" : "String modelName = resourcePermission.getName();",
+      "right" : "String modelName = resourcePermission.getName();",
+      "info" : "VariableDeclarationStatement[1349-1397]:VariableDeclarationStatement[1433-1481]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[1401-2322]:TryStatement[1485-2008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1405-2254]:Block[1489-1940]"
+    }, {
+      "left" : "if (modelName.equals(DLFileEntry.class.getName()))",
+      "right" : "if (modelName.equals(DLFileEntry.class.getName()))",
+      "info" : "IfStatement[1410-2250]:IfStatement[1518-1712]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1461-1826]:Block[1569-1611]"
+    }, {
+      "left" : "SyncDLObject syncDLObject =\n\t\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\t\tSyncConstants.TYPE_FILE,\n\t\t\t\t\t\tGetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "right" : "SyncDLObject syncDLObject =\n\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\ttype, GetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "info" : "VariableDeclarationStatement[1467-1638]:VariableDeclarationStatement[1717-1861]"
+    }, {
+      "left" : "SyncConstants.TYPE_FILE",
+      "right" : "SyncConstants.TYPE_FILE",
+      "info" : "QualifiedName[1554-1577]:QualifiedName[1582-1605]"
+    }, {
+      "left" : "if (syncDLObject == null)",
+      "right" : "if (syncDLObject != null)",
+      "info" : "IfStatement[1644-1690]:IfStatement[1866-1936]"
+    }, {
+      "left" : "==",
+      "right" : "!=",
+      "info" : "INFIX_EXPRESSION_OPERATOR[1661-1663]:INFIX_EXPRESSION_OPERATOR[1883-1885]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1670-1690]:Block[1892-1936]"
+    }, {
+      "left" : "syncDLObject.setModifiedTime(System.currentTimeMillis());",
+      "right" : "syncDLObject.setModifiedTime(System.currentTimeMillis());",
+      "info" : "ExpressionStatement[1696-1753]:ExpressionStatement[2105-2162]"
+    }, {
+      "left" : "SyncDLObjectLocalServiceUtil.updateSyncDLObject(syncDLObject);",
+      "right" : "SyncDLObjectLocalServiceUtil.updateSyncDLObject(syncDLObject);",
+      "info" : "ExpressionStatement[1759-1821]:ExpressionStatement[2166-2228]"
+    }, {
+      "left" : "if (modelName.equals(DLFolder.class.getName()))",
+      "right" : "if (modelName.equals(DLFolder.class.getName()))",
+      "info" : "IfStatement[1835-2250]:IfStatement[1620-1712]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1883-2250]:Block[1668-1712]"
+    }, {
+      "left" : "SyncDLObject syncDLObject =\n\t\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\t\tSyncConstants.TYPE_FOLDER,\n\t\t\t\t\t\tGetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "right" : "SyncDLObject syncDLObject =\n\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\ttype, GetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "info" : "VariableDeclarationStatement[1889-2062]:VariableDeclarationStatement[1717-1861]"
+    }, {
+      "left" : "SyncConstants.TYPE_FOLDER",
+      "right" : "SyncConstants.TYPE_FOLDER",
+      "info" : "QualifiedName[1976-2001]:QualifiedName[1681-1706]"
+    }, {
+      "left" : "if (syncDLObject == null)",
+      "right" : "if (syncDLObject != null)",
+      "info" : "IfStatement[2068-2114]:IfStatement[1866-1936]"
+    }, {
+      "left" : "==",
+      "right" : "!=",
+      "info" : "INFIX_EXPRESSION_OPERATOR[2085-2087]:INFIX_EXPRESSION_OPERATOR[1883-1885]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2094-2114]:Block[1892-1936]"
+    }, {
+      "left" : "syncDLObject.setModifiedTime(System.currentTimeMillis());",
+      "right" : "syncDLObject.setModifiedTime(System.currentTimeMillis());",
+      "info" : "ExpressionStatement[2120-2177]:ExpressionStatement[2105-2162]"
+    }, {
+      "left" : "SyncDLObjectLocalServiceUtil.updateSyncDLObject(syncDLObject);",
+      "right" : "SyncDLObjectLocalServiceUtil.updateSyncDLObject(syncDLObject);",
+      "info" : "ExpressionStatement[2183-2245]:ExpressionStatement[2166-2228]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2277-2322]:Block[1963-2008]"
+    }, {
+      "left" : "throw new ModelListenerException(e);",
+      "right" : "throw new ModelListenerException(e);",
+      "info" : "ThrowStatement[2282-2318]:ThrowStatement[1968-2004]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,81 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final VoltLogger m_logger = new VoltLogger(\"InternalConnectionHandler\");",
+      "right" : "private static final VoltLogger m_logger = new VoltLogger(\"InternalConnectionHandler\");",
+      "info" : "FieldDeclaration[1389-1476]:FieldDeclaration[1433-1520]"
+    }, {
+      "left" : "private final AtomicLong m_failedCount = new AtomicLong();",
+      "right" : "private final AtomicLong m_failedCount = new AtomicLong();",
+      "info" : "FieldDeclaration[1554-1612]:FieldDeclaration[1598-1656]"
+    }, {
+      "left" : "private final AtomicLong m_submitSuccessCount = new AtomicLong();",
+      "right" : "private final AtomicLong m_submitSuccessCount = new AtomicLong();",
+      "info" : "FieldDeclaration[1617-1682]:FieldDeclaration[1661-1726]"
+    }, {
+      "left" : "private final InternalClientResponseAdapter m_adapter;",
+      "right" : "private final InternalClientResponseAdapter m_adapter;",
+      "info" : "FieldDeclaration[1687-1741]:FieldDeclaration[1731-1785]"
+    }, {
+      "left" : "private static final long MAX_PENDING_TRANSACTIONS = Integer.getInteger(\"IMPORTER_MAX_PENDING_TRANSACTIONS\", 5000);",
+      "right" : "private static final long MAX_PENDING_TRANSACTIONS = Integer.getInteger(\"IMPORTER_MAX_PENDING_TRANSACTIONS\", 5000);",
+      "info" : "FieldDeclaration[1747-1862]:FieldDeclaration[1791-1906]"
+    }, {
+      "left" : "public InternalConnectionHandler(InternalClientResponseAdapter adapter)",
+      "right" : "public InternalConnectionHandler(InternalClientResponseAdapter adapter)",
+      "info" : "MethodDeclaration[1868-1976]:MethodDeclaration[1912-2020]"
+    }, {
+      "left" : "private BBContainer getBuffer(int sz)",
+      "right" : "private BBContainer getBuffer(int sz)",
+      "info" : "MethodDeclaration[2048-2143]:MethodDeclaration[2092-2187]"
+    }, {
+      "left" : "public boolean hasTable(String name)",
+      "right" : "public boolean hasTable(String name)",
+      "info" : "MethodDeclaration[2149-2398]:MethodDeclaration[2193-2442]"
+    }, {
+      "left" : "public void drain()",
+      "right" : "public void drain()",
+      "info" : "MethodDeclaration[5707-5761]:MethodDeclaration[5791-5845]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1940-1976]:Block[1984-2020]"
+    }, {
+      "left" : "m_adapter = adapter;",
+      "right" : "m_adapter = adapter;",
+      "info" : "ExpressionStatement[1950-1970]:ExpressionStatement[1994-2014]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2086-2143]:Block[2130-2187]"
+    }, {
+      "left" : "return DBBPool.allocateDirectAndPool(sz);",
+      "right" : "return DBBPool.allocateDirectAndPool(sz);",
+      "info" : "ReturnStatement[2096-2137]:ReturnStatement[2140-2181]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2283-2398]:Block[2327-2442]"
+    }, {
+      "left" : "Table table = VoltDB.instance().getCatalogContext().tables.get(name);",
+      "right" : "Table table = VoltDB.instance().getCatalogContext().tables.get(name);",
+      "info" : "VariableDeclarationStatement[2293-2362]:VariableDeclarationStatement[2337-2406]"
+    }, {
+      "left" : "return (table!=null);",
+      "right" : "return (table!=null);",
+      "info" : "ReturnStatement[2371-2392]:ReturnStatement[2415-2436]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5727-5761]:Block[5811-5845]"
+    }, {
+      "left" : "m_adapter.drain();",
+      "right" : "m_adapter.drain();",
+      "info" : "ExpressionStatement[5737-5755]:ExpressionStatement[5821-5839]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

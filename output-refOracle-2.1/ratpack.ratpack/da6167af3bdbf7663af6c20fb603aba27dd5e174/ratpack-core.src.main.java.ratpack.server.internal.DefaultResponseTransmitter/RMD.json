@@ -1,0 +1,661 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "DefaultResponseTransmitter",
+      "right" : "DefaultResponseTransmitter",
+      "info" : "TypeDeclaration[1526-8464]:TypeDeclaration[1526-8720]"
+    }, {
+      "left" : "private final static Logger LOGGER = LoggerFactory.getLogger(DefaultResponseTransmitter.class);",
+      "right" : "private final static Logger LOGGER = LoggerFactory.getLogger(DefaultResponseTransmitter.class);",
+      "info" : "FieldDeclaration[1602-1697]:FieldDeclaration[1602-1697]"
+    }, {
+      "left" : "private static final Runnable NOOP_RUNNABLE = () -> {\n  };",
+      "right" : "private static final Runnable NOOP_RUNNABLE = () -> {\n  };",
+      "info" : "FieldDeclaration[1700-1758]:FieldDeclaration[1700-1758]"
+    }, {
+      "left" : "private final AtomicBoolean transmitted;",
+      "right" : "private final AtomicBoolean transmitted;",
+      "info" : "FieldDeclaration[1762-1802]:FieldDeclaration[1762-1802]"
+    }, {
+      "left" : "private final ExecControl execControl;",
+      "right" : "private final ExecControl execControl;",
+      "info" : "FieldDeclaration[1805-1843]:FieldDeclaration[1805-1843]"
+    }, {
+      "left" : "private final Channel channel;",
+      "right" : "private final Channel channel;",
+      "info" : "FieldDeclaration[1846-1876]:FieldDeclaration[1846-1876]"
+    }, {
+      "left" : "private final FullHttpRequest nettyRequest;",
+      "right" : "private final FullHttpRequest nettyRequest;",
+      "info" : "FieldDeclaration[1879-1922]:FieldDeclaration[1879-1922]"
+    }, {
+      "left" : "private final Request ratpackRequest;",
+      "right" : "private final Request ratpackRequest;",
+      "info" : "FieldDeclaration[1925-1962]:FieldDeclaration[1925-1962]"
+    }, {
+      "left" : "private final HttpHeaders responseHeaders;",
+      "right" : "private final HttpHeaders responseHeaders;",
+      "info" : "FieldDeclaration[1965-2007]:FieldDeclaration[1965-2007]"
+    }, {
+      "left" : "private final DefaultEventController<RequestOutcome> requestOutcomeEventController;",
+      "right" : "private final DefaultEventController<RequestOutcome> requestOutcomeEventController;",
+      "info" : "FieldDeclaration[2010-2093]:FieldDeclaration[2010-2093]"
+    }, {
+      "left" : "private final boolean isKeepAlive;",
+      "right" : "private final boolean isKeepAlive;",
+      "info" : "FieldDeclaration[2096-2130]:FieldDeclaration[2096-2130]"
+    }, {
+      "left" : "private final boolean isSsl;",
+      "right" : "private final boolean isSsl;",
+      "info" : "FieldDeclaration[2133-2161]:FieldDeclaration[2133-2161]"
+    }, {
+      "left" : "private long stopTime;",
+      "right" : "private long stopTime;",
+      "info" : "FieldDeclaration[2165-2187]:FieldDeclaration[2165-2187]"
+    }, {
+      "left" : "private Runnable onWritabilityChanged = NOOP_RUNNABLE;",
+      "right" : "private Runnable onWritabilityChanged = NOOP_RUNNABLE;",
+      "info" : "FieldDeclaration[2191-2245]:FieldDeclaration[2191-2245]"
+    }, {
+      "left" : "public DefaultResponseTransmitter(AtomicBoolean transmitted, ExecControl execControl, Channel channel, FullHttpRequest nettyRequest, Request ratpackRequest, HttpHeaders responseHeaders, DefaultEventController<RequestOutcome> requestOutcomeEventController)",
+      "right" : "public DefaultResponseTransmitter(AtomicBoolean transmitted, ExecControl execControl, Channel channel, FullHttpRequest nettyRequest, Request ratpackRequest, HttpHeaders responseHeaders, DefaultEventController<RequestOutcome> requestOutcomeEventController)",
+      "info" : "MethodDeclaration[2249-2947]:MethodDeclaration[2249-2947]"
+    }, {
+      "left" : "private ChannelFuture pre(HttpResponseStatus responseStatus)",
+      "right" : "private ChannelFuture pre(HttpResponseStatus responseStatus)",
+      "info" : "MethodDeclaration[2951-3735]:MethodDeclaration[2951-3735]"
+    }, {
+      "left" : "public void transmit(HttpResponseStatus responseStatus, ByteBuf body)",
+      "right" : "public void transmit(HttpResponseStatus responseStatus, ByteBuf body)",
+      "info" : "MethodDeclaration[3739-3886]:MethodDeclaration[3739-3892]"
+    }, {
+      "left" : "private void transmit(final HttpResponseStatus responseStatus, Object body)",
+      "right" : "private void transmit(final HttpResponseStatus responseStatus, Object body, boolean sendLastHttpContent)",
+      "info" : "MethodDeclaration[3890-4227]:MethodDeclaration[3896-4389]"
+    }, {
+      "left" : "public void transmit(HttpResponseStatus status, Path file)",
+      "right" : "public void transmit(HttpResponseStatus status, Path file)",
+      "info" : "MethodDeclaration[4231-5191]:MethodDeclaration[4393-5366]"
+    }, {
+      "left" : "public Subscriber<ByteBuf> transmitter(HttpResponseStatus responseStatus)",
+      "right" : "public Subscriber<ByteBuf> transmitter(HttpResponseStatus responseStatus)",
+      "info" : "MethodDeclaration[5195-7428]:MethodDeclaration[5370-7603]"
+    }, {
+      "left" : "private Subscription subscription;",
+      "right" : "private Subscription subscription;",
+      "info" : "FieldDeclaration[5328-5362]:FieldDeclaration[5503-5537]"
+    }, {
+      "left" : "private final AtomicBoolean done = new AtomicBoolean();",
+      "right" : "private final AtomicBoolean done = new AtomicBoolean();",
+      "info" : "FieldDeclaration[5369-5424]:FieldDeclaration[5544-5599]"
+    }, {
+      "left" : "private final ChannelFutureListener cancelOnFailure = future -> {\n        if (!done.get()) {\n          if (!future.isSuccess()) {\n            cancel();\n          }\n        }\n      };",
+      "right" : "private final ChannelFutureListener cancelOnFailure = future -> {\n        if (!done.get()) {\n          if (!future.isSuccess()) {\n            cancel();\n          }\n        }\n      };",
+      "info" : "FieldDeclaration[5432-5614]:FieldDeclaration[5607-5789]"
+    }, {
+      "left" : "private void cancel()",
+      "right" : "private void cancel()",
+      "info" : "MethodDeclaration[5622-5775]:MethodDeclaration[5797-5950]"
+    }, {
+      "left" : "public void onSubscribe(Subscription subscription)",
+      "right" : "public void onSubscribe(Subscription subscription)",
+      "info" : "MethodDeclaration[5783-6639]:MethodDeclaration[5958-6814]"
+    }, {
+      "left" : "public void onNext(ByteBuf o)",
+      "right" : "public void onNext(ByteBuf o)",
+      "info" : "MethodDeclaration[6647-6957]:MethodDeclaration[6822-7132]"
+    }, {
+      "left" : "public void onError(Throwable t)",
+      "right" : "public void onError(Throwable t)",
+      "info" : "MethodDeclaration[6965-7270]:MethodDeclaration[7140-7445]"
+    }, {
+      "left" : "public void onComplete()",
+      "right" : "public void onComplete()",
+      "info" : "MethodDeclaration[7278-7417]:MethodDeclaration[7453-7592]"
+    }, {
+      "left" : "private void post(HttpResponseStatus responseStatus)",
+      "right" : "private void post(HttpResponseStatus responseStatus)",
+      "info" : "MethodDeclaration[7432-7865]:MethodDeclaration[7607-7750]"
+    }, {
+      "left" : "private void notifyListeners(final HttpResponseStatus responseStatus, ChannelFuture future)",
+      "right" : "private void notifyListeners(final HttpResponseStatus responseStatus, ChannelFuture future)",
+      "info" : "MethodDeclaration[7869-8388]:MethodDeclaration[8125-8644]"
+    }, {
+      "left" : "public void writabilityChanged()",
+      "right" : "public void writabilityChanged()",
+      "info" : "MethodDeclaration[8392-8462]:MethodDeclaration[8648-8718]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1752-1757]:Block[1752-1757]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2505-2947]:Block[2505-2947]"
+    }, {
+      "left" : "this.transmitted = transmitted;",
+      "right" : "this.transmitted = transmitted;",
+      "info" : "ExpressionStatement[2511-2542]:ExpressionStatement[2511-2542]"
+    }, {
+      "left" : "this.execControl = execControl;",
+      "right" : "this.execControl = execControl;",
+      "info" : "ExpressionStatement[2547-2578]:ExpressionStatement[2547-2578]"
+    }, {
+      "left" : "this.channel = channel;",
+      "right" : "this.channel = channel;",
+      "info" : "ExpressionStatement[2583-2606]:ExpressionStatement[2583-2606]"
+    }, {
+      "left" : "this.nettyRequest = nettyRequest.retain();",
+      "right" : "this.nettyRequest = nettyRequest.retain();",
+      "info" : "ExpressionStatement[2611-2653]:ExpressionStatement[2611-2653]"
+    }, {
+      "left" : "this.ratpackRequest = ratpackRequest;",
+      "right" : "this.ratpackRequest = ratpackRequest;",
+      "info" : "ExpressionStatement[2658-2695]:ExpressionStatement[2658-2695]"
+    }, {
+      "left" : "this.responseHeaders = responseHeaders;",
+      "right" : "this.responseHeaders = responseHeaders;",
+      "info" : "ExpressionStatement[2700-2739]:ExpressionStatement[2700-2739]"
+    }, {
+      "left" : "this.requestOutcomeEventController = requestOutcomeEventController;",
+      "right" : "this.requestOutcomeEventController = requestOutcomeEventController;",
+      "info" : "ExpressionStatement[2744-2811]:ExpressionStatement[2744-2811]"
+    }, {
+      "left" : "this.isKeepAlive = HttpHeaderUtil.isKeepAlive(nettyRequest);",
+      "right" : "this.isKeepAlive = HttpHeaderUtil.isKeepAlive(nettyRequest);",
+      "info" : "ExpressionStatement[2816-2876]:ExpressionStatement[2816-2876]"
+    }, {
+      "left" : "this.isSsl = channel.pipeline().get(SslHandler.class) != null;",
+      "right" : "this.isSsl = channel.pipeline().get(SslHandler.class) != null;",
+      "info" : "ExpressionStatement[2881-2943]:ExpressionStatement[2881-2943]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3012-3735]:Block[3012-3735]"
+    }, {
+      "left" : "if (transmitted.compareAndSet(false, true))",
+      "right" : "if (transmitted.compareAndSet(false, true))",
+      "info" : "IfStatement[3018-3731]:IfStatement[3018-3731]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3062-3549]:Block[3062-3549]"
+    }, {
+      "left" : "stopTime = System.nanoTime();",
+      "right" : "stopTime = System.nanoTime();",
+      "info" : "ExpressionStatement[3070-3099]:ExpressionStatement[3070-3099]"
+    }, {
+      "left" : "HttpResponse headersResponse = new CustomHttpResponse(responseStatus, responseHeaders);",
+      "right" : "HttpResponse headersResponse = new CustomHttpResponse(responseStatus, responseHeaders);",
+      "info" : "VariableDeclarationStatement[3107-3194]:VariableDeclarationStatement[3107-3194]"
+    }, {
+      "left" : "nettyRequest.release();",
+      "right" : "nettyRequest.release();",
+      "info" : "ExpressionStatement[3201-3224]:ExpressionStatement[3201-3224]"
+    }, {
+      "left" : "if (isKeepAlive)",
+      "right" : "if (isKeepAlive)",
+      "info" : "IfStatement[3232-3361]:IfStatement[3232-3361]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3249-3361]:Block[3249-3361]"
+    }, {
+      "left" : "headersResponse.headers().set(HttpHeaderConstants.CONNECTION, HttpHeaderConstants.KEEP_ALIVE);",
+      "right" : "headersResponse.headers().set(HttpHeaderConstants.CONNECTION, HttpHeaderConstants.KEEP_ALIVE);",
+      "info" : "ExpressionStatement[3259-3353]:ExpressionStatement[3259-3353]"
+    }, {
+      "left" : "if (channel.isOpen())",
+      "right" : "if (channel.isOpen())",
+      "info" : "IfStatement[3369-3543]:IfStatement[3369-3543]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3391-3507]:Block[3391-3507]"
+    }, {
+      "left" : "return channel.writeAndFlush(headersResponse).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);",
+      "right" : "return channel.writeAndFlush(headersResponse).addListener(ChannelFutureListener.CLOSE_ON_FAILURE);",
+      "info" : "ReturnStatement[3401-3499]:ReturnStatement[3401-3499]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3513-3543]:Block[3513-3543]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[3523-3535]:ReturnStatement[3523-3535]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3555-3731]:Block[3555-3731]"
+    }, {
+      "left" : "String msg = \"attempt at double transmission for: \" + ratpackRequest.getRawUri();",
+      "right" : "String msg = \"attempt at double transmission for: \" + ratpackRequest.getRawUri();",
+      "info" : "VariableDeclarationStatement[3563-3644]:VariableDeclarationStatement[3563-3644]"
+    }, {
+      "left" : "LOGGER.warn(msg, new DoubleTransmissionException(msg));",
+      "right" : "LOGGER.warn(msg, new DoubleTransmissionException(msg));",
+      "info" : "ExpressionStatement[3651-3706]:ExpressionStatement[3651-3706]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[3713-3725]:ReturnStatement[3713-3725]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3821-3886]:Block[3821-3892]"
+    }, {
+      "left" : "transmit(responseStatus, new DefaultHttpContent(body));",
+      "right" : "transmit(responseStatus, new DefaultHttpContent(body), true);",
+      "info" : "ExpressionStatement[3827-3882]:ExpressionStatement[3827-3888]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3966-4227]:Block[4001-4389]"
+    }, {
+      "left" : "ChannelFuture channelFuture = pre(responseStatus);",
+      "right" : "ChannelFuture channelFuture = pre(responseStatus);",
+      "info" : "VariableDeclarationStatement[3972-4022]:VariableDeclarationStatement[4007-4057]"
+    }, {
+      "left" : "if (channelFuture == null)",
+      "right" : "if (channelFuture == null)",
+      "info" : "IfStatement[4027-4075]:IfStatement[4062-4110]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4054-4075]:Block[4089-4110]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4062-4069]:ReturnStatement[4097-4104]"
+    }, {
+      "left" : "channelFuture.addListener(future -> {\n      if (channel.isOpen()) {\n        channel.write(body);\n        post(responseStatus);\n      }\n    });",
+      "right" : "channelFuture.addListener(future -> {\n      if (channel.isOpen()) {\n        if (sendLastHttpContent) {\n          channel.write(body);\n          post(responseStatus);\n        } else {\n          post(responseStatus, channel.writeAndFlush(body));\n        }\n      }\n    });",
+      "info" : "ExpressionStatement[4081-4223]:ExpressionStatement[4116-4385]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4117-4221]:Block[4152-4383]"
+    }, {
+      "left" : "if (channel.isOpen())",
+      "right" : "if (channel.isOpen())",
+      "info" : "IfStatement[4125-4215]:IfStatement[4160-4377]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4147-4215]:Block[4182-4377]"
+    }, {
+      "left" : "channel.write(body);",
+      "right" : "channel.write(body);",
+      "info" : "ExpressionStatement[4157-4177]:ExpressionStatement[4229-4249]"
+    }, {
+      "left" : "post(responseStatus);",
+      "right" : "post(responseStatus);",
+      "info" : "ExpressionStatement[4186-4207]:ExpressionStatement[4260-4281]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4302-5191]:Block[4464-5366]"
+    }, {
+      "left" : "String sizeString = responseHeaders.get(HttpHeaderConstants.CONTENT_LENGTH);",
+      "right" : "String sizeString = responseHeaders.get(HttpHeaderConstants.CONTENT_LENGTH);",
+      "info" : "VariableDeclarationStatement[4308-4384]:VariableDeclarationStatement[4470-4546]"
+    }, {
+      "left" : "long size = sizeString == null ? 0 : Long.parseLong(sizeString);",
+      "right" : "long size = sizeString == null ? 0 : Long.parseLong(sizeString);",
+      "info" : "VariableDeclarationStatement[4389-4453]:VariableDeclarationStatement[4551-4615]"
+    }, {
+      "left" : "boolean compress = !responseHeaders.contains(HttpHeaderConstants.CONTENT_ENCODING, HttpHeaderConstants.IDENTITY, true);",
+      "right" : "boolean compress = !responseHeaders.contains(HttpHeaderConstants.CONTENT_ENCODING, HttpHeaderConstants.IDENTITY, true);",
+      "info" : "VariableDeclarationStatement[4458-4577]:VariableDeclarationStatement[4620-4739]"
+    }, {
+      "left" : "responseHeaders.set(HttpHeaderConstants.CONTENT_LENGTH, size);",
+      "right" : "responseHeaders.set(HttpHeaderConstants.CONTENT_LENGTH, size);",
+      "info" : "ExpressionStatement[4583-4645]:ExpressionStatement[4745-4807]"
+    }, {
+      "left" : "if (!isSsl && !compress && file.getFileSystem().equals(FileSystems.getDefault()))",
+      "right" : "if (!isSsl && !compress && file.getFileSystem().equals(FileSystems.getDefault()))",
+      "info" : "IfStatement[4651-5187]:IfStatement[4813-5362]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4733-4983]:Block[4895-5151]"
+    }, {
+      "left" : "execControl.blocking(() -> new FileInputStream(file.toFile()).getChannel()).then(fileChannel -> {\n        FileRegion defaultFileRegion = new DefaultFileRegion(fileChannel, 0, size);\n        transmit(status, defaultFileRegion);\n      });",
+      "right" : "execControl.blocking(() -> new FileInputStream(file.toFile()).getChannel()).then(fileChannel -> {\n        FileRegion defaultFileRegion = new DefaultFileRegion(fileChannel, 0, size);\n        transmit(status, defaultFileRegion, true);\n      });",
+      "info" : "ExpressionStatement[4741-4977]:ExpressionStatement[4903-5145]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4837-4975]:Block[4999-5143]"
+    }, {
+      "left" : "FileRegion defaultFileRegion = new DefaultFileRegion(fileChannel, 0, size);",
+      "right" : "FileRegion defaultFileRegion = new DefaultFileRegion(fileChannel, 0, size);",
+      "info" : "VariableDeclarationStatement[4847-4922]:VariableDeclarationStatement[5009-5084]"
+    }, {
+      "left" : "transmit(status, defaultFileRegion);",
+      "right" : "transmit(status, defaultFileRegion, true);",
+      "info" : "ExpressionStatement[4931-4967]:ExpressionStatement[5093-5135]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4989-5187]:Block[5157-5362]"
+    }, {
+      "left" : "execControl.blocking(() ->\n          Files.newByteChannel(file)\n      ).then(fileChannel ->\n          transmit(status, new HttpChunkedInput(new ChunkedNioStream(fileChannel)))\n      );",
+      "right" : "execControl.blocking(() ->\n          Files.newByteChannel(file)\n      ).then(fileChannel ->\n          transmit(status, new HttpChunkedInput(new ChunkedNioStream(fileChannel)), false)\n      );",
+      "info" : "ExpressionStatement[4997-5181]:ExpressionStatement[5165-5356]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5281-7428]:Block[5456-7603]"
+    }, {
+      "left" : "return new Subscriber<ByteBuf>() {\n      private Subscription subscription;\n      private final AtomicBoolean done = new AtomicBoolean();\n\n      private final ChannelFutureListener cancelOnFailure = future -> {\n        if (!done.get()) {\n          if (!future.isSuccess()) {\n            cancel();\n          }\n        }\n      };\n\n      private void cancel() {\n        if (done.compareAndSet(false, true)) {\n          subscription.cancel();\n          post(responseStatus);\n        }\n      }\n\n      @Override\n      public void onSubscribe(Subscription subscription) {\n        if (subscription == null) {\n          throw new NullPointerException(\"'subscription' is null\");\n        }\n        if (this.subscription != null) {\n          subscription.cancel();\n          return;\n        }\n\n        this.subscription = subscription;\n\n        onWritabilityChanged = () -> {\n          if (channel.isWritable() && !done.get()) {\n            this.subscription.request(1);\n          }\n        };\n\n        ChannelFuture channelFuture = pre(responseStatus);\n        if (channelFuture == null) {\n          subscription.cancel();\n          notifyListeners(responseStatus, channel.close());\n        } else {\n          channelFuture.addListener(cancelOnFailure);\n          if (channel.isWritable()) {\n            this.subscription.request(1);\n          }\n        }\n      }\n\n      @Override\n      public void onNext(ByteBuf o) {\n        if (channel.isOpen()) {\n          channel.writeAndFlush(new DefaultHttpContent(o)).addListener(cancelOnFailure);\n          if (channel.isWritable()) {\n            subscription.request(1);\n          }\n        } else {\n          cancel();\n        }\n      }\n\n      @Override\n      public void onError(Throwable t) {\n        if (t == null) {\n          throw new NullPointerException(\"error is null\");\n        }\n        LOGGER.warn(\"Exception thrown transmitting stream\", t);\n        if (done.compareAndSet(false, true)) {\n          post(responseStatus);\n        }\n      }\n\n      @Override\n      public void onComplete() {\n        if (done.compareAndSet(false, true)) {\n          post(responseStatus);\n        }\n      }\n    };",
+      "right" : "return new Subscriber<ByteBuf>() {\n      private Subscription subscription;\n      private final AtomicBoolean done = new AtomicBoolean();\n\n      private final ChannelFutureListener cancelOnFailure = future -> {\n        if (!done.get()) {\n          if (!future.isSuccess()) {\n            cancel();\n          }\n        }\n      };\n\n      private void cancel() {\n        if (done.compareAndSet(false, true)) {\n          subscription.cancel();\n          post(responseStatus);\n        }\n      }\n\n      @Override\n      public void onSubscribe(Subscription subscription) {\n        if (subscription == null) {\n          throw new NullPointerException(\"'subscription' is null\");\n        }\n        if (this.subscription != null) {\n          subscription.cancel();\n          return;\n        }\n\n        this.subscription = subscription;\n\n        onWritabilityChanged = () -> {\n          if (channel.isWritable() && !done.get()) {\n            this.subscription.request(1);\n          }\n        };\n\n        ChannelFuture channelFuture = pre(responseStatus);\n        if (channelFuture == null) {\n          subscription.cancel();\n          notifyListeners(responseStatus, channel.close());\n        } else {\n          channelFuture.addListener(cancelOnFailure);\n          if (channel.isWritable()) {\n            this.subscription.request(1);\n          }\n        }\n      }\n\n      @Override\n      public void onNext(ByteBuf o) {\n        if (channel.isOpen()) {\n          channel.writeAndFlush(new DefaultHttpContent(o)).addListener(cancelOnFailure);\n          if (channel.isWritable()) {\n            subscription.request(1);\n          }\n        } else {\n          cancel();\n        }\n      }\n\n      @Override\n      public void onError(Throwable t) {\n        if (t == null) {\n          throw new NullPointerException(\"error is null\");\n        }\n        LOGGER.warn(\"Exception thrown transmitting stream\", t);\n        if (done.compareAndSet(false, true)) {\n          post(responseStatus);\n        }\n      }\n\n      @Override\n      public void onComplete() {\n        if (done.compareAndSet(false, true)) {\n          post(responseStatus);\n        }\n      }\n    };",
+      "info" : "ReturnStatement[5287-7424]:ReturnStatement[5462-7599]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5496-5613]:Block[5671-5788]"
+    }, {
+      "left" : "if (!done.get())",
+      "right" : "if (!done.get())",
+      "info" : "IfStatement[5506-5605]:IfStatement[5681-5780]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5523-5605]:Block[5698-5780]"
+    }, {
+      "left" : "if (!future.isSuccess())",
+      "right" : "if (!future.isSuccess())",
+      "info" : "IfStatement[5535-5595]:IfStatement[5710-5770]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5560-5595]:Block[5735-5770]"
+    }, {
+      "left" : "cancel();",
+      "right" : "cancel();",
+      "info" : "ExpressionStatement[5574-5583]:ExpressionStatement[5749-5758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5644-5775]:Block[5819-5950]"
+    }, {
+      "left" : "if (done.compareAndSet(false, true))",
+      "right" : "if (done.compareAndSet(false, true))",
+      "info" : "IfStatement[5654-5767]:IfStatement[5829-5942]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5691-5767]:Block[5866-5942]"
+    }, {
+      "left" : "subscription.cancel();",
+      "right" : "subscription.cancel();",
+      "info" : "ExpressionStatement[5703-5725]:ExpressionStatement[5878-5900]"
+    }, {
+      "left" : "post(responseStatus);",
+      "right" : "post(responseStatus);",
+      "info" : "ExpressionStatement[5736-5757]:ExpressionStatement[5911-5932]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5850-6639]:Block[6025-6814]"
+    }, {
+      "left" : "if (subscription == null)",
+      "right" : "if (subscription == null)",
+      "info" : "IfStatement[5860-5965]:IfStatement[6035-6140]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5886-5965]:Block[6061-6140]"
+    }, {
+      "left" : "throw new NullPointerException(\"'subscription' is null\");",
+      "right" : "throw new NullPointerException(\"'subscription' is null\");",
+      "info" : "ThrowStatement[5898-5955]:ThrowStatement[6073-6130]"
+    }, {
+      "left" : "if (this.subscription != null)",
+      "right" : "if (this.subscription != null)",
+      "info" : "IfStatement[5974-6067]:IfStatement[6149-6242]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6005-6067]:Block[6180-6242]"
+    }, {
+      "left" : "subscription.cancel();",
+      "right" : "subscription.cancel();",
+      "info" : "ExpressionStatement[6017-6039]:ExpressionStatement[6192-6214]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[6050-6057]:ReturnStatement[6225-6232]"
+    }, {
+      "left" : "this.subscription = subscription;",
+      "right" : "this.subscription = subscription;",
+      "info" : "ExpressionStatement[6077-6110]:ExpressionStatement[6252-6285]"
+    }, {
+      "left" : "onWritabilityChanged = () -> {\n          if (channel.isWritable() && !done.get()) {\n            this.subscription.request(1);\n          }\n        };",
+      "right" : "onWritabilityChanged = () -> {\n          if (channel.isWritable() && !done.get()) {\n            this.subscription.request(1);\n          }\n        };",
+      "info" : "ExpressionStatement[6120-6268]:ExpressionStatement[6295-6443]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6149-6267]:Block[6324-6442]"
+    }, {
+      "left" : "if (channel.isWritable() && !done.get())",
+      "right" : "if (channel.isWritable() && !done.get())",
+      "info" : "IfStatement[6161-6257]:IfStatement[6336-6432]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6202-6257]:Block[6377-6432]"
+    }, {
+      "left" : "this.subscription.request(1);",
+      "right" : "this.subscription.request(1);",
+      "info" : "ExpressionStatement[6216-6245]:ExpressionStatement[6391-6420]"
+    }, {
+      "left" : "ChannelFuture channelFuture = pre(responseStatus);",
+      "right" : "ChannelFuture channelFuture = pre(responseStatus);",
+      "info" : "VariableDeclarationStatement[6278-6328]:VariableDeclarationStatement[6453-6503]"
+    }, {
+      "left" : "if (channelFuture == null)",
+      "right" : "if (channelFuture == null)",
+      "info" : "IfStatement[6337-6631]:IfStatement[6512-6806]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6364-6468]:Block[6539-6643]"
+    }, {
+      "left" : "subscription.cancel();",
+      "right" : "subscription.cancel();",
+      "info" : "ExpressionStatement[6376-6398]:ExpressionStatement[6551-6573]"
+    }, {
+      "left" : "notifyListeners(responseStatus, channel.close());",
+      "right" : "notifyListeners(responseStatus, channel.close());",
+      "info" : "ExpressionStatement[6409-6458]:ExpressionStatement[6584-6633]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6474-6631]:Block[6649-6806]"
+    }, {
+      "left" : "channelFuture.addListener(cancelOnFailure);",
+      "right" : "channelFuture.addListener(cancelOnFailure);",
+      "info" : "ExpressionStatement[6486-6529]:ExpressionStatement[6661-6704]"
+    }, {
+      "left" : "if (channel.isWritable())",
+      "right" : "if (channel.isWritable())",
+      "info" : "IfStatement[6540-6621]:IfStatement[6715-6796]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6566-6621]:Block[6741-6796]"
+    }, {
+      "left" : "this.subscription.request(1);",
+      "right" : "this.subscription.request(1);",
+      "info" : "ExpressionStatement[6580-6609]:ExpressionStatement[6755-6784]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6693-6957]:Block[6868-7132]"
+    }, {
+      "left" : "if (channel.isOpen())",
+      "right" : "if (channel.isOpen())",
+      "info" : "IfStatement[6703-6949]:IfStatement[6878-7124]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6725-6912]:Block[6900-7087]"
+    }, {
+      "left" : "channel.writeAndFlush(new DefaultHttpContent(o)).addListener(cancelOnFailure);",
+      "right" : "channel.writeAndFlush(new DefaultHttpContent(o)).addListener(cancelOnFailure);",
+      "info" : "ExpressionStatement[6737-6815]:ExpressionStatement[6912-6990]"
+    }, {
+      "left" : "if (channel.isWritable())",
+      "right" : "if (channel.isWritable())",
+      "info" : "IfStatement[6826-6902]:IfStatement[7001-7077]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6852-6902]:Block[7027-7077]"
+    }, {
+      "left" : "subscription.request(1);",
+      "right" : "subscription.request(1);",
+      "info" : "ExpressionStatement[6866-6890]:ExpressionStatement[7041-7065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6918-6949]:Block[7093-7124]"
+    }, {
+      "left" : "cancel();",
+      "right" : "cancel();",
+      "info" : "ExpressionStatement[6930-6939]:ExpressionStatement[7105-7114]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7014-7270]:Block[7189-7445]"
+    }, {
+      "left" : "if (t == null)",
+      "right" : "if (t == null)",
+      "info" : "IfStatement[7024-7109]:IfStatement[7199-7284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7039-7109]:Block[7214-7284]"
+    }, {
+      "left" : "throw new NullPointerException(\"error is null\");",
+      "right" : "throw new NullPointerException(\"error is null\");",
+      "info" : "ThrowStatement[7051-7099]:ThrowStatement[7226-7274]"
+    }, {
+      "left" : "LOGGER.warn(\"Exception thrown transmitting stream\", t);",
+      "right" : "LOGGER.warn(\"Exception thrown transmitting stream\", t);",
+      "info" : "ExpressionStatement[7118-7173]:ExpressionStatement[7293-7348]"
+    }, {
+      "left" : "if (done.compareAndSet(false, true))",
+      "right" : "if (done.compareAndSet(false, true))",
+      "info" : "IfStatement[7182-7262]:IfStatement[7357-7437]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7219-7262]:Block[7394-7437]"
+    }, {
+      "left" : "post(responseStatus);",
+      "right" : "post(responseStatus);",
+      "info" : "ExpressionStatement[7231-7252]:ExpressionStatement[7406-7427]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7319-7417]:Block[7494-7592]"
+    }, {
+      "left" : "if (done.compareAndSet(false, true))",
+      "right" : "if (done.compareAndSet(false, true))",
+      "info" : "IfStatement[7329-7409]:IfStatement[7504-7584]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7366-7409]:Block[7541-7584]"
+    }, {
+      "left" : "post(responseStatus);",
+      "right" : "post(responseStatus);",
+      "info" : "ExpressionStatement[7378-7399]:ExpressionStatement[7553-7574]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7485-7865]:Block[7660-7750]"
+    }, {
+      "left" : "if (channel.isOpen())",
+      "right" : "if (channel.isOpen())",
+      "info" : "IfStatement[7491-7861]:IfStatement[7846-8117]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7513-7779]:Block[7868-8035]"
+    }, {
+      "left" : "if (!isKeepAlive)",
+      "right" : "if (!isKeepAlive)",
+      "info" : "IfStatement[7620-7715]:IfStatement[7876-7971]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7638-7715]:Block[7894-7971]"
+    }, {
+      "left" : "lastContentFuture.addListener(ChannelFutureListener.CLOSE);",
+      "right" : "lastContentFuture.addListener(ChannelFutureListener.CLOSE);",
+      "info" : "ExpressionStatement[7648-7707]:ExpressionStatement[7904-7963]"
+    }, {
+      "left" : "notifyListeners(responseStatus, lastContentFuture);",
+      "right" : "notifyListeners(responseStatus, lastContentFuture);",
+      "info" : "ExpressionStatement[7722-7773]:ExpressionStatement[7978-8029]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7785-7861]:Block[8041-8117]"
+    }, {
+      "left" : "notifyListeners(responseStatus, channel.newSucceededFuture());",
+      "right" : "notifyListeners(responseStatus, channel.newSucceededFuture());",
+      "info" : "ExpressionStatement[7793-7855]:ExpressionStatement[8049-8111]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7961-8388]:Block[8217-8644]"
+    }, {
+      "left" : "if (requestOutcomeEventController.isHasListeners())",
+      "right" : "if (requestOutcomeEventController.isHasListeners())",
+      "info" : "IfStatement[7967-8384]:IfStatement[8223-8640]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8019-8384]:Block[8275-8640]"
+    }, {
+      "left" : "future.addListener(ignore -> {\n        SentResponse sentResponse = new DefaultSentResponse(new NettyHeadersBackedHeaders(responseHeaders), new DefaultStatus(responseStatus));\n        RequestOutcome requestOutcome = new DefaultRequestOutcome(ratpackRequest, sentResponse, stopTime);\n        requestOutcomeEventController.fire(requestOutcome);\n      });",
+      "right" : "future.addListener(ignore -> {\n        SentResponse sentResponse = new DefaultSentResponse(new NettyHeadersBackedHeaders(responseHeaders), new DefaultStatus(responseStatus));\n        RequestOutcome requestOutcome = new DefaultRequestOutcome(ratpackRequest, sentResponse, stopTime);\n        requestOutcomeEventController.fire(requestOutcome);\n      });",
+      "info" : "ExpressionStatement[8027-8378]:ExpressionStatement[8283-8634]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8056-8376]:Block[8312-8632]"
+    }, {
+      "left" : "SentResponse sentResponse = new DefaultSentResponse(new NettyHeadersBackedHeaders(responseHeaders), new DefaultStatus(responseStatus));",
+      "right" : "SentResponse sentResponse = new DefaultSentResponse(new NettyHeadersBackedHeaders(responseHeaders), new DefaultStatus(responseStatus));",
+      "info" : "VariableDeclarationStatement[8066-8201]:VariableDeclarationStatement[8322-8457]"
+    }, {
+      "left" : "RequestOutcome requestOutcome = new DefaultRequestOutcome(ratpackRequest, sentResponse, stopTime);",
+      "right" : "RequestOutcome requestOutcome = new DefaultRequestOutcome(ratpackRequest, sentResponse, stopTime);",
+      "info" : "VariableDeclarationStatement[8210-8308]:VariableDeclarationStatement[8466-8564]"
+    }, {
+      "left" : "requestOutcomeEventController.fire(requestOutcome);",
+      "right" : "requestOutcomeEventController.fire(requestOutcome);",
+      "info" : "ExpressionStatement[8317-8368]:ExpressionStatement[8573-8624]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8425-8462]:Block[8681-8718]"
+    }, {
+      "left" : "onWritabilityChanged.run();",
+      "right" : "onWritabilityChanged.run();",
+      "info" : "ExpressionStatement[8431-8458]:ExpressionStatement[8687-8714]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

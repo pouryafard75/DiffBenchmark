@@ -1,0 +1,37 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CompactionsCQLTest",
+      "right" : "CompactionsCQLTest",
+      "info" : "TypeDeclaration[1055-2073]:TypeDeclaration[1149-7103]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "UntypedResultSet res = execute(\"SELECT * FROM system.compaction_history\");",
+      "right" : "UntypedResultSet res = execute(\"SELECT * FROM system.compaction_history\");",
+      "info" : "VariableDeclarationStatement[1682-1756]:VariableDeclarationStatement[6729-6803]"
+    }, {
+      "left" : "boolean minorWasTriggered = false;",
+      "right" : "boolean minorWasTriggered = false;",
+      "info" : "VariableDeclarationStatement[1765-1799]:VariableDeclarationStatement[6812-6846]"
+    }, {
+      "left" : "for (UntypedResultSet.Row r : res)",
+      "right" : "for (UntypedResultSet.Row r : res)",
+      "info" : "EnhancedForStatement[1808-2026]:EnhancedForStatement[6855-7061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1851-2026]:Block[6898-7061]"
+    }, {
+      "left" : "if (r.getString(\"keyspace_name\").equals(KEYSPACE) && r.getString(\"columnfamily_name\").equals(currentTable()))",
+      "right" : "if (r.getString(\"keyspace_name\").equals(keyspace) && r.getString(\"columnfamily_name\").equals(cf))",
+      "info" : "IfStatement[1865-2016]:IfStatement[6912-7051]"
+    }, {
+      "left" : "minorWasTriggered = true;",
+      "right" : "minorWasTriggered = true;",
+      "info" : "ExpressionStatement[1991-2016]:ExpressionStatement[7026-7051]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

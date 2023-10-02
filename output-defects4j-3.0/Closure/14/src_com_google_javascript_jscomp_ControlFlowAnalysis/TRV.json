@@ -1,0 +1,3069 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[1427-2044]:FieldDeclaration[1427-2044]"
+    }, {
+      "left" : "private ControlFlowGraph<Node> cfg;",
+      "right" : "private ControlFlowGraph<Node> cfg;",
+      "info" : "FieldDeclaration[2048-2083]:FieldDeclaration[2048-2083]"
+    }, {
+      "left" : "private Map<Node, Integer> astPosition;",
+      "right" : "private Map<Node, Integer> astPosition;",
+      "info" : "FieldDeclaration[2087-2126]:FieldDeclaration[2087-2126]"
+    }, {
+      "left" : "private Map<DiGraphNode<Node, Branch>, Integer> nodePriorities;",
+      "right" : "private Map<DiGraphNode<Node, Branch>, Integer> nodePriorities;",
+      "info" : "FieldDeclaration[2187-2250]:FieldDeclaration[2187-2250]"
+    }, {
+      "left" : "private final Comparator<DiGraphNode<Node, Branch>> priorityComparator =\n      new Comparator<DiGraphNode<Node, Branch>>() {\n    @Override\n    public int compare(\n        DiGraphNode<Node, Branch> a, DiGraphNode<Node, Branch> b) {\n      return astPosition.get(a.getValue()) - astPosition.get(b.getValue());\n    }\n  };",
+      "right" : "private final Comparator<DiGraphNode<Node, Branch>> priorityComparator =\n      new Comparator<DiGraphNode<Node, Branch>>() {\n    @Override\n    public int compare(\n        DiGraphNode<Node, Branch> a, DiGraphNode<Node, Branch> b) {\n      return astPosition.get(a.getValue()) - astPosition.get(b.getValue());\n    }\n  };",
+      "info" : "FieldDeclaration[2450-2767]:FieldDeclaration[2450-2767]"
+    }, {
+      "left" : "public int compare(\n        DiGraphNode<Node, Branch> a, DiGraphNode<Node, Branch> b)",
+      "right" : "public int compare(\n        DiGraphNode<Node, Branch> a, DiGraphNode<Node, Branch> b)",
+      "info" : "MethodDeclaration[2579-2762]:MethodDeclaration[2579-2762]"
+    }, {
+      "left" : "private int astPositionCounter;",
+      "right" : "private int astPositionCounter;",
+      "info" : "FieldDeclaration[2771-2802]:FieldDeclaration[2771-2802]"
+    }, {
+      "left" : "private int priorityCounter;",
+      "right" : "private int priorityCounter;",
+      "info" : "FieldDeclaration[2805-2833]:FieldDeclaration[2805-2833]"
+    }, {
+      "left" : "private final boolean shouldTraverseFunctions;",
+      "right" : "private final boolean shouldTraverseFunctions;",
+      "info" : "FieldDeclaration[2837-2883]:FieldDeclaration[2837-2883]"
+    }, {
+      "left" : "private final boolean edgeAnnotations;",
+      "right" : "private final boolean edgeAnnotations;",
+      "info" : "FieldDeclaration[2886-2924]:FieldDeclaration[2886-2924]"
+    }, {
+      "left" : "private Node root;",
+      "right" : "private Node root;",
+      "info" : "FieldDeclaration[3115-3133]:FieldDeclaration[3115-3133]"
+    }, {
+      "left" : "private final Deque<Node> exceptionHandler = new ArrayDeque<Node>();",
+      "right" : "private final Deque<Node> exceptionHandler = new ArrayDeque<Node>();",
+      "info" : "FieldDeclaration[3380-3448]:FieldDeclaration[3380-3448]"
+    }, {
+      "left" : "private final Multimap<Node, Node> finallyMap = HashMultimap.create();",
+      "right" : "private final Multimap<Node, Node> finallyMap = HashMultimap.create();",
+      "info" : "FieldDeclaration[4076-4146]:FieldDeclaration[4076-4146]"
+    }, {
+      "left" : "ControlFlowAnalysis(AbstractCompiler compiler,\n      boolean shouldTraverseFunctions, boolean edgeAnnotations)",
+      "right" : "ControlFlowAnalysis(AbstractCompiler compiler,\n      boolean shouldTraverseFunctions, boolean edgeAnnotations)",
+      "info" : "MethodDeclaration[4150-4694]:MethodDeclaration[4150-4694]"
+    }, {
+      "left" : "ControlFlowGraph<Node> getCfg()",
+      "right" : "ControlFlowGraph<Node> getCfg()",
+      "info" : "MethodDeclaration[4698-4751]:MethodDeclaration[4698-4751]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[4755-6491]:MethodDeclaration[4755-6491]"
+    }, {
+      "left" : "private void prioritizeFromEntryNode(DiGraphNode<Node, Branch> entry)",
+      "right" : "private void prioritizeFromEntryNode(DiGraphNode<Node, Branch> entry)",
+      "info" : "MethodDeclaration[6495-7270]:MethodDeclaration[6495-7270]"
+    }, {
+      "left" : "public boolean shouldTraverse(\n      NodeTraversal nodeTraversal, Node n, Node parent)",
+      "right" : "public boolean shouldTraverse(\n      NodeTraversal nodeTraversal, Node n, Node parent)",
+      "info" : "MethodDeclaration[7274-10028]:MethodDeclaration[7274-10028]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[10032-11354]:MethodDeclaration[10032-11354]"
+    }, {
+      "left" : "private void handleIf(Node node)",
+      "right" : "private void handleIf(Node node)",
+      "info" : "MethodDeclaration[11358-11876]:MethodDeclaration[11358-11876]"
+    }, {
+      "left" : "private void handleWhile(Node node)",
+      "right" : "private void handleWhile(Node node)",
+      "info" : "MethodDeclaration[11880-12343]:MethodDeclaration[11880-12343]"
+    }, {
+      "left" : "private void handleDo(Node node)",
+      "right" : "private void handleDo(Node node)",
+      "info" : "MethodDeclaration[12347-12791]:MethodDeclaration[12347-12791]"
+    }, {
+      "left" : "private void handleFor(Node forNode)",
+      "right" : "private void handleFor(Node forNode)",
+      "info" : "MethodDeclaration[12795-14595]:MethodDeclaration[12795-14595]"
+    }, {
+      "left" : "private void handleSwitch(Node node)",
+      "right" : "private void handleSwitch(Node node)",
+      "info" : "MethodDeclaration[14599-15331]:MethodDeclaration[14599-15331]"
+    }, {
+      "left" : "private void handleCase(Node node)",
+      "right" : "private void handleCase(Node node)",
+      "info" : "MethodDeclaration[15335-16317]:MethodDeclaration[15335-16317]"
+    }, {
+      "left" : "private void handleDefault(Node node)",
+      "right" : "private void handleDefault(Node node)",
+      "info" : "MethodDeclaration[16321-16498]:MethodDeclaration[16321-16498]"
+    }, {
+      "left" : "private void handleWith(Node node)",
+      "right" : "private void handleWith(Node node)",
+      "info" : "MethodDeclaration[16502-16742]:MethodDeclaration[16502-16742]"
+    }, {
+      "left" : "private void handleStmtList(Node node)",
+      "right" : "private void handleStmtList(Node node)",
+      "info" : "MethodDeclaration[16746-17959]:MethodDeclaration[16746-17959]"
+    }, {
+      "left" : "private void handleFunction(Node node)",
+      "right" : "private void handleFunction(Node node)",
+      "info" : "MethodDeclaration[17963-18333]:MethodDeclaration[17963-18333]"
+    }, {
+      "left" : "private void handleExpr(Node node)",
+      "right" : "private void handleExpr(Node node)",
+      "info" : "MethodDeclaration[18337-18496]:MethodDeclaration[18337-18496]"
+    }, {
+      "left" : "private void handleThrow(Node node)",
+      "right" : "private void handleThrow(Node node)",
+      "info" : "MethodDeclaration[18500-18592]:MethodDeclaration[18500-18592]"
+    }, {
+      "left" : "private void handleTry(Node node)",
+      "right" : "private void handleTry(Node node)",
+      "info" : "MethodDeclaration[18596-18694]:MethodDeclaration[18596-18694]"
+    }, {
+      "left" : "private void handleCatch(Node node)",
+      "right" : "private void handleCatch(Node node)",
+      "info" : "MethodDeclaration[18698-18797]:MethodDeclaration[18698-18797]"
+    }, {
+      "left" : "private void handleBreak(Node node)",
+      "right" : "private void handleBreak(Node node)",
+      "info" : "MethodDeclaration[18801-20630]:MethodDeclaration[18801-20630]"
+    }, {
+      "left" : "private void handleContinue(Node node)",
+      "right" : "private void handleContinue(Node node)",
+      "info" : "MethodDeclaration[20634-21772]:MethodDeclaration[20634-21772]"
+    }, {
+      "left" : "private void handleReturn(Node node)",
+      "right" : "private void handleReturn(Node node)",
+      "info" : "MethodDeclaration[21776-22573]:MethodDeclaration[21776-22573]"
+    }, {
+      "left" : "private void handleStmt(Node node)",
+      "right" : "private void handleStmt(Node node)",
+      "info" : "MethodDeclaration[22577-22777]:MethodDeclaration[22577-22777]"
+    }, {
+      "left" : "static Node computeFollowNode(Node node, ControlFlowAnalysis cfa)",
+      "right" : "static Node computeFollowNode(Node node, ControlFlowAnalysis cfa)",
+      "info" : "MethodDeclaration[22781-22899]:MethodDeclaration[22781-22899]"
+    }, {
+      "left" : "static Node computeFollowNode(Node node)",
+      "right" : "static Node computeFollowNode(Node node)",
+      "info" : "MethodDeclaration[22903-22997]:MethodDeclaration[22903-22997]"
+    }, {
+      "left" : "static Node computeFallThrough(Node n)",
+      "right" : "static Node computeFallThrough(Node n)",
+      "info" : "MethodDeclaration[27106-27721]:MethodDeclaration[27105-27720]"
+    }, {
+      "left" : "private void createEdge(Node fromNode, ControlFlowGraph.Branch branch,\n      Node toNode)",
+      "right" : "private void createEdge(Node fromNode, ControlFlowGraph.Branch branch,\n      Node toNode)",
+      "info" : "MethodDeclaration[27725-28064]:MethodDeclaration[27724-28063]"
+    }, {
+      "left" : "private void connectToPossibleExceptionHandler(Node cfgNode, Node target)",
+      "right" : "private void connectToPossibleExceptionHandler(Node cfgNode, Node target)",
+      "info" : "MethodDeclaration[28068-29248]:MethodDeclaration[28067-29247]"
+    }, {
+      "left" : "private static Node getNextSiblingOfType(Node first, int ... types)",
+      "right" : "private static Node getNextSiblingOfType(Node first, int ... types)",
+      "info" : "MethodDeclaration[29252-29591]:MethodDeclaration[29251-29590]"
+    }, {
+      "left" : "public static boolean isBreakTarget(Node target, String label)",
+      "right" : "public static boolean isBreakTarget(Node target, String label)",
+      "info" : "MethodDeclaration[29595-29902]:MethodDeclaration[29594-29901]"
+    }, {
+      "left" : "private static boolean isContinueTarget(\n      Node target, Node parent, String label)",
+      "right" : "private static boolean isContinueTarget(\n      Node target, Node parent, String label)",
+      "info" : "MethodDeclaration[29906-30213]:MethodDeclaration[29905-30212]"
+    }, {
+      "left" : "private static boolean matchLabel(Node target, String label)",
+      "right" : "private static boolean matchLabel(Node target, String label)",
+      "info" : "MethodDeclaration[30216-30646]:MethodDeclaration[30215-30645]"
+    }, {
+      "left" : "public static boolean mayThrowException(Node n)",
+      "right" : "public static boolean mayThrowException(Node n)",
+      "info" : "MethodDeclaration[30650-31293]:MethodDeclaration[30649-31292]"
+    }, {
+      "left" : "static boolean isBreakStructure(Node n, boolean labeled)",
+      "right" : "static boolean isBreakStructure(Node n, boolean labeled)",
+      "info" : "MethodDeclaration[31297-31721]:MethodDeclaration[31296-31720]"
+    }, {
+      "left" : "static boolean isContinueStructure(Node n)",
+      "right" : "static boolean isContinueStructure(Node n)",
+      "info" : "MethodDeclaration[31725-32020]:MethodDeclaration[31724-32019]"
+    }, {
+      "left" : "static Node getExceptionHandler(Node n)",
+      "right" : "static Node getExceptionHandler(Node n)",
+      "info" : "MethodDeclaration[32024-32511]:MethodDeclaration[32023-32510]"
+    }, {
+      "left" : "static Node getCatchHandlerForBlock(Node block)",
+      "right" : "static Node getCatchHandlerForBlock(Node block)",
+      "info" : "MethodDeclaration[32515-33008]:MethodDeclaration[32514-33007]"
+    }, {
+      "left" : "AstControlFlowGraph",
+      "right" : "AstControlFlowGraph",
+      "info" : "TypeDeclaration[33012-35016]:TypeDeclaration[33011-35015]"
+    }, {
+      "left" : "private final Map<DiGraphNode<Node, Branch>, Integer> priorities;",
+      "right" : "private final Map<DiGraphNode<Node, Branch>, Integer> priorities;",
+      "info" : "FieldDeclaration[33217-33282]:FieldDeclaration[33216-33281]"
+    }, {
+      "left" : "private AstControlFlowGraph(Node entry,\n        Map<DiGraphNode<Node, Branch>, Integer> priorities,\n        boolean edgeAnnotations)",
+      "right" : "private AstControlFlowGraph(Node entry,\n        Map<DiGraphNode<Node, Branch>, Integer> priorities,\n        boolean edgeAnnotations)",
+      "info" : "MethodDeclaration[33288-33755]:MethodDeclaration[33287-33754]"
+    }, {
+      "left" : "public Comparator<DiGraphNode<Node, Branch>> getOptionalNodeComparator(\n        boolean isForward)",
+      "right" : "public Comparator<DiGraphNode<Node, Branch>> getOptionalNodeComparator(\n        boolean isForward)",
+      "info" : "MethodDeclaration[33761-34689]:MethodDeclaration[33760-34688]"
+    }, {
+      "left" : "public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2)",
+      "right" : "public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2)",
+      "info" : "MethodDeclaration[34204-34385]:MethodDeclaration[34203-34384]"
+    }, {
+      "left" : "public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2)",
+      "right" : "public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2)",
+      "info" : "MethodDeclaration[34483-34664]:MethodDeclaration[34482-34663]"
+    }, {
+      "left" : "private int getPosition(DiGraphNode<Node, Branch> n)",
+      "right" : "private int getPosition(DiGraphNode<Node, Branch> n)",
+      "info" : "MethodDeclaration[34695-35012]:MethodDeclaration[34694-35011]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2579-2588]:MarkerAnnotation[2579-2588]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2593-2599]:Modifier[2593-2599]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[2600-2603]:PrimitiveType[2600-2603]"
+    }, {
+      "left" : "compare",
+      "right" : "compare",
+      "info" : "SimpleName[2604-2611]:SimpleName[2604-2611]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> a",
+      "right" : "DiGraphNode<Node, Branch> a",
+      "info" : "SingleVariableDeclaration[2621-2648]:SingleVariableDeclaration[2621-2648]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> b",
+      "right" : "DiGraphNode<Node, Branch> b",
+      "info" : "SingleVariableDeclaration[2650-2677]:SingleVariableDeclaration[2650-2677]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2679-2762]:Block[2679-2762]"
+    }, {
+      "left" : "return astPosition.get(a.getValue()) - astPosition.get(b.getValue());",
+      "right" : "return astPosition.get(a.getValue()) - astPosition.get(b.getValue());",
+      "info" : "ReturnStatement[2687-2756]:ReturnStatement[2687-2756]"
+    }, {
+      "left" : "ControlFlowAnalysis",
+      "right" : "ControlFlowAnalysis",
+      "info" : "SimpleName[4444-4463]:SimpleName[4444-4463]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[4464-4489]:SingleVariableDeclaration[4464-4489]"
+    }, {
+      "left" : "boolean shouldTraverseFunctions",
+      "right" : "boolean shouldTraverseFunctions",
+      "info" : "SingleVariableDeclaration[4497-4528]:SingleVariableDeclaration[4497-4528]"
+    }, {
+      "left" : "boolean edgeAnnotations",
+      "right" : "boolean edgeAnnotations",
+      "info" : "SingleVariableDeclaration[4530-4553]:SingleVariableDeclaration[4530-4553]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4555-4694]:Block[4555-4694]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[4561-4586]:ExpressionStatement[4561-4586]"
+    }, {
+      "left" : "this.shouldTraverseFunctions = shouldTraverseFunctions;",
+      "right" : "this.shouldTraverseFunctions = shouldTraverseFunctions;",
+      "info" : "ExpressionStatement[4591-4646]:ExpressionStatement[4591-4646]"
+    }, {
+      "left" : "this.edgeAnnotations = edgeAnnotations;",
+      "right" : "this.edgeAnnotations = edgeAnnotations;",
+      "info" : "ExpressionStatement[4651-4690]:ExpressionStatement[4651-4690]"
+    }, {
+      "left" : "ControlFlowGraph<Node>",
+      "right" : "ControlFlowGraph<Node>",
+      "info" : "ParameterizedType[4698-4720]:ParameterizedType[4698-4720]"
+    }, {
+      "left" : "getCfg",
+      "right" : "getCfg",
+      "info" : "SimpleName[4721-4727]:SimpleName[4721-4727]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4730-4751]:Block[4730-4751]"
+    }, {
+      "left" : "return cfg;",
+      "right" : "return cfg;",
+      "info" : "ReturnStatement[4736-4747]:ReturnStatement[4736-4747]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4755-4764]:MarkerAnnotation[4755-4764]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4767-4773]:Modifier[4767-4773]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4774-4778]:PrimitiveType[4774-4778]"
+    }, {
+      "left" : "process",
+      "right" : "process",
+      "info" : "SimpleName[4779-4786]:SimpleName[4779-4786]"
+    }, {
+      "left" : "Node externs",
+      "right" : "Node externs",
+      "info" : "SingleVariableDeclaration[4787-4799]:SingleVariableDeclaration[4787-4799]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[4801-4810]:SingleVariableDeclaration[4801-4810]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4812-6491]:Block[4812-6491]"
+    }, {
+      "left" : "this.root = root;",
+      "right" : "this.root = root;",
+      "info" : "ExpressionStatement[4818-4835]:ExpressionStatement[4818-4835]"
+    }, {
+      "left" : "astPositionCounter = 0;",
+      "right" : "astPositionCounter = 0;",
+      "info" : "ExpressionStatement[4840-4863]:ExpressionStatement[4840-4863]"
+    }, {
+      "left" : "astPosition = Maps.newHashMap();",
+      "right" : "astPosition = Maps.newHashMap();",
+      "info" : "ExpressionStatement[4868-4900]:ExpressionStatement[4868-4900]"
+    }, {
+      "left" : "nodePriorities = Maps.newHashMap();",
+      "right" : "nodePriorities = Maps.newHashMap();",
+      "info" : "ExpressionStatement[4905-4940]:ExpressionStatement[4905-4940]"
+    }, {
+      "left" : "cfg = new AstControlFlowGraph(computeFallThrough(root), nodePriorities,\n                                  edgeAnnotations);",
+      "right" : "cfg = new AstControlFlowGraph(computeFallThrough(root), nodePriorities,\n                                  edgeAnnotations);",
+      "info" : "ExpressionStatement[4945-5068]:ExpressionStatement[4945-5068]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, this);",
+      "right" : "NodeTraversal.traverse(compiler, root, this);",
+      "info" : "ExpressionStatement[5073-5118]:ExpressionStatement[5073-5118]"
+    }, {
+      "left" : "astPosition.put(null, ++astPositionCounter);",
+      "right" : "astPosition.put(null, ++astPositionCounter);",
+      "info" : "ExpressionStatement[5123-5167]:ExpressionStatement[5123-5167]"
+    }, {
+      "left" : "priorityCounter = 0;",
+      "right" : "priorityCounter = 0;",
+      "info" : "ExpressionStatement[5297-5317]:ExpressionStatement[5297-5317]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> entry = cfg.getEntry();",
+      "right" : "DiGraphNode<Node, Branch> entry = cfg.getEntry();",
+      "info" : "VariableDeclarationStatement[5322-5371]:VariableDeclarationStatement[5322-5371]"
+    }, {
+      "left" : "prioritizeFromEntryNode(entry);",
+      "right" : "prioritizeFromEntryNode(entry);",
+      "info" : "ExpressionStatement[5376-5407]:ExpressionStatement[5376-5407]"
+    }, {
+      "left" : "if (shouldTraverseFunctions)",
+      "right" : "if (shouldTraverseFunctions)",
+      "info" : "IfStatement[5413-5897]:IfStatement[5413-5897]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5442-5897]:Block[5442-5897]"
+    }, {
+      "left" : "for (DiGraphNode<Node, Branch> candidate : cfg.getDirectedGraphNodes())",
+      "right" : "for (DiGraphNode<Node, Branch> candidate : cfg.getDirectedGraphNodes())",
+      "info" : "EnhancedForStatement[5547-5891]:EnhancedForStatement[5547-5891]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5619-5891]:Block[5619-5891]"
+    }, {
+      "left" : "Node value = candidate.getValue();",
+      "right" : "Node value = candidate.getValue();",
+      "info" : "VariableDeclarationStatement[5629-5663]:VariableDeclarationStatement[5629-5663]"
+    }, {
+      "left" : "if (value != null && value.isFunction())",
+      "right" : "if (value != null && value.isFunction())",
+      "info" : "IfStatement[5672-5883]:IfStatement[5672-5883]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5713-5883]:Block[5713-5883]"
+    }, {
+      "left" : "Preconditions.checkState(\n              !nodePriorities.containsKey(candidate) || candidate == entry);",
+      "right" : "Preconditions.checkState(\n              !nodePriorities.containsKey(candidate) || candidate == entry);",
+      "info" : "ExpressionStatement[5725-5827]:ExpressionStatement[5725-5827]"
+    }, {
+      "left" : "prioritizeFromEntryNode(candidate);",
+      "right" : "prioritizeFromEntryNode(candidate);",
+      "info" : "ExpressionStatement[5838-5873]:ExpressionStatement[5838-5873]"
+    }, {
+      "left" : "for (DiGraphNode<Node, Branch> candidate : cfg.getDirectedGraphNodes())",
+      "right" : "for (DiGraphNode<Node, Branch> candidate : cfg.getDirectedGraphNodes())",
+      "info" : "EnhancedForStatement[6166-6363]:EnhancedForStatement[6166-6363]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6238-6363]:Block[6238-6363]"
+    }, {
+      "left" : "if (!nodePriorities.containsKey(candidate))",
+      "right" : "if (!nodePriorities.containsKey(candidate))",
+      "info" : "IfStatement[6246-6357]:IfStatement[6246-6357]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6290-6357]:Block[6290-6357]"
+    }, {
+      "left" : "nodePriorities.put(candidate, ++priorityCounter);",
+      "right" : "nodePriorities.put(candidate, ++priorityCounter);",
+      "info" : "ExpressionStatement[6300-6349]:ExpressionStatement[6300-6349]"
+    }, {
+      "left" : "nodePriorities.put(cfg.getImplicitReturn(), ++priorityCounter);",
+      "right" : "nodePriorities.put(cfg.getImplicitReturn(), ++priorityCounter);",
+      "info" : "ExpressionStatement[6424-6487]:ExpressionStatement[6424-6487]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6603-6610]:Modifier[6603-6610]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6611-6615]:PrimitiveType[6611-6615]"
+    }, {
+      "left" : "prioritizeFromEntryNode",
+      "right" : "prioritizeFromEntryNode",
+      "info" : "SimpleName[6616-6639]:SimpleName[6616-6639]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> entry",
+      "right" : "DiGraphNode<Node, Branch> entry",
+      "info" : "SingleVariableDeclaration[6640-6671]:SingleVariableDeclaration[6640-6671]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6673-7270]:Block[6673-7270]"
+    }, {
+      "left" : "PriorityQueue<DiGraphNode<Node, Branch>> worklist =\n        new PriorityQueue<DiGraphNode<Node, Branch>>(10, priorityComparator);",
+      "right" : "PriorityQueue<DiGraphNode<Node, Branch>> worklist =\n        new PriorityQueue<DiGraphNode<Node, Branch>>(10, priorityComparator);",
+      "info" : "VariableDeclarationStatement[6679-6808]:VariableDeclarationStatement[6679-6808]"
+    }, {
+      "left" : "worklist.add(entry);",
+      "right" : "worklist.add(entry);",
+      "info" : "ExpressionStatement[6813-6833]:ExpressionStatement[6813-6833]"
+    }, {
+      "left" : "while (!worklist.isEmpty())",
+      "right" : "while (!worklist.isEmpty())",
+      "info" : "WhileStatement[6839-7266]:WhileStatement[6839-7266]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6867-7266]:Block[6867-7266]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> current = worklist.remove();",
+      "right" : "DiGraphNode<Node, Branch> current = worklist.remove();",
+      "info" : "VariableDeclarationStatement[6875-6929]:VariableDeclarationStatement[6875-6929]"
+    }, {
+      "left" : "if (nodePriorities.containsKey(current))",
+      "right" : "if (nodePriorities.containsKey(current))",
+      "info" : "IfStatement[6936-7004]:IfStatement[6936-7004]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6977-7004]:Block[6977-7004]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[6987-6996]:ContinueStatement[6987-6996]"
+    }, {
+      "left" : "nodePriorities.put(current, ++priorityCounter);",
+      "right" : "nodePriorities.put(current, ++priorityCounter);",
+      "info" : "ExpressionStatement[7012-7059]:ExpressionStatement[7012-7059]"
+    }, {
+      "left" : "List<DiGraphNode<Node, Branch>> successors =\n          cfg.getDirectedSuccNodes(current);",
+      "right" : "List<DiGraphNode<Node, Branch>> successors =\n          cfg.getDirectedSuccNodes(current);",
+      "info" : "VariableDeclarationStatement[7067-7156]:VariableDeclarationStatement[7067-7156]"
+    }, {
+      "left" : "for (DiGraphNode<Node, Branch> candidate : successors)",
+      "right" : "for (DiGraphNode<Node, Branch> candidate : successors)",
+      "info" : "EnhancedForStatement[7163-7260]:EnhancedForStatement[7163-7260]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7218-7260]:Block[7218-7260]"
+    }, {
+      "left" : "worklist.add(candidate);",
+      "right" : "worklist.add(candidate);",
+      "info" : "ExpressionStatement[7228-7252]:ExpressionStatement[7228-7252]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[7274-7283]:MarkerAnnotation[7274-7283]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7286-7292]:Modifier[7286-7292]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[7293-7300]:PrimitiveType[7293-7300]"
+    }, {
+      "left" : "shouldTraverse",
+      "right" : "shouldTraverse",
+      "info" : "SimpleName[7301-7315]:SimpleName[7301-7315]"
+    }, {
+      "left" : "NodeTraversal nodeTraversal",
+      "right" : "NodeTraversal nodeTraversal",
+      "info" : "SingleVariableDeclaration[7323-7350]:SingleVariableDeclaration[7323-7350]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[7352-7358]:SingleVariableDeclaration[7352-7358]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[7360-7371]:SingleVariableDeclaration[7360-7371]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7373-10028]:Block[7373-10028]"
+    }, {
+      "left" : "astPosition.put(n, astPositionCounter++);",
+      "right" : "astPosition.put(n, astPositionCounter++);",
+      "info" : "ExpressionStatement[7379-7420]:ExpressionStatement[7379-7420]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.FUNCTION:\n        if (shouldTraverseFunctions || n == cfg.getEntry().getValue()) {\n          exceptionHandler.push(n);\n          return true;\n        }\n        return false;\n      case Token.TRY:\n        exceptionHandler.push(n);\n        return true;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.FUNCTION:\n        if (shouldTraverseFunctions || n == cfg.getEntry().getValue()) {\n          exceptionHandler.push(n);\n          return true;\n        }\n        return false;\n      case Token.TRY:\n        exceptionHandler.push(n);\n        return true;\n    }",
+      "info" : "SwitchStatement[7426-7722]:SwitchStatement[7426-7722]"
+    }, {
+      "left" : "case Token.FUNCTION:",
+      "right" : "case Token.FUNCTION:",
+      "info" : "SwitchCase[7455-7475]:SwitchCase[7455-7475]"
+    }, {
+      "left" : "if (shouldTraverseFunctions || n == cfg.getEntry().getValue())",
+      "right" : "if (shouldTraverseFunctions || n == cfg.getEntry().getValue())",
+      "info" : "IfStatement[7484-7617]:IfStatement[7484-7617]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7547-7617]:Block[7547-7617]"
+    }, {
+      "left" : "exceptionHandler.push(n);",
+      "right" : "exceptionHandler.push(n);",
+      "info" : "ExpressionStatement[7559-7584]:ExpressionStatement[7559-7584]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[7595-7607]:ReturnStatement[7595-7607]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[7626-7639]:ReturnStatement[7626-7639]"
+    }, {
+      "left" : "case Token.TRY:",
+      "right" : "case Token.TRY:",
+      "info" : "SwitchCase[7646-7661]:SwitchCase[7646-7661]"
+    }, {
+      "left" : "exceptionHandler.push(n);",
+      "right" : "exceptionHandler.push(n);",
+      "info" : "ExpressionStatement[7670-7695]:ExpressionStatement[7670-7695]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[7704-7716]:ReturnStatement[7704-7716]"
+    }, {
+      "left" : "if (parent != null)",
+      "right" : "if (parent != null)",
+      "info" : "IfStatement[8497-10007]:IfStatement[8497-10007]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8517-10007]:Block[8517-10007]"
+    }, {
+      "left" : "switch (parent.getType()) {\n        case Token.FOR:\n          // Only traverse the body of the for loop.\n          return n == parent.getLastChild();\n\n        // Skip the conditions.\n        case Token.IF:\n        case Token.WHILE:\n        case Token.WITH:\n          return n != parent.getFirstChild();\n        case Token.DO:\n          return n != parent.getFirstChild().getNext();\n        // Only traverse the body of the cases\n        case Token.SWITCH:\n        case Token.CASE:\n        case Token.CATCH:\n        case Token.LABEL:\n          return n != parent.getFirstChild();\n        case Token.FUNCTION:\n          return n == parent.getFirstChild().getNext().getNext();\n        case Token.CONTINUE:\n        case Token.BREAK:\n        case Token.EXPR_RESULT:\n        case Token.VAR:\n        case Token.RETURN:\n        case Token.THROW:\n          return false;\n        case Token.TRY:\n          /* Just before we are about to visit the second child of the TRY node,\n           * we know that we will be visiting either the CATCH or the FINALLY.\n           * In other words, we know that the post order traversal of the TRY\n           * block has been finished, no more exceptions can be caught by the\n           * handler at this TRY block and should be taken out of the stack.\n           */\n          if (n == parent.getFirstChild().getNext()) {\n            Preconditions.checkState(exceptionHandler.peek() == parent);\n            exceptionHandler.pop();\n          }\n      }",
+      "right" : "switch (parent.getType()) {\n        case Token.FOR:\n          // Only traverse the body of the for loop.\n          return n == parent.getLastChild();\n\n        // Skip the conditions.\n        case Token.IF:\n        case Token.WHILE:\n        case Token.WITH:\n          return n != parent.getFirstChild();\n        case Token.DO:\n          return n != parent.getFirstChild().getNext();\n        // Only traverse the body of the cases\n        case Token.SWITCH:\n        case Token.CASE:\n        case Token.CATCH:\n        case Token.LABEL:\n          return n != parent.getFirstChild();\n        case Token.FUNCTION:\n          return n == parent.getFirstChild().getNext().getNext();\n        case Token.CONTINUE:\n        case Token.BREAK:\n        case Token.EXPR_RESULT:\n        case Token.VAR:\n        case Token.RETURN:\n        case Token.THROW:\n          return false;\n        case Token.TRY:\n          /* Just before we are about to visit the second child of the TRY node,\n           * we know that we will be visiting either the CATCH or the FINALLY.\n           * In other words, we know that the post order traversal of the TRY\n           * block has been finished, no more exceptions can be caught by the\n           * handler at this TRY block and should be taken out of the stack.\n           */\n          if (n == parent.getFirstChild().getNext()) {\n            Preconditions.checkState(exceptionHandler.peek() == parent);\n            exceptionHandler.pop();\n          }\n      }",
+      "info" : "SwitchStatement[8525-10001]:SwitchStatement[8525-10001]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[8561-8576]:SwitchCase[8561-8576]"
+    }, {
+      "left" : "return n == parent.getLastChild();",
+      "right" : "return n == parent.getLastChild();",
+      "info" : "ReturnStatement[8640-8674]:ReturnStatement[8640-8674]"
+    }, {
+      "left" : "case Token.IF:",
+      "right" : "case Token.IF:",
+      "info" : "SwitchCase[8716-8730]:SwitchCase[8716-8730]"
+    }, {
+      "left" : "case Token.WHILE:",
+      "right" : "case Token.WHILE:",
+      "info" : "SwitchCase[8739-8756]:SwitchCase[8739-8756]"
+    }, {
+      "left" : "case Token.WITH:",
+      "right" : "case Token.WITH:",
+      "info" : "SwitchCase[8765-8781]:SwitchCase[8765-8781]"
+    }, {
+      "left" : "return n != parent.getFirstChild();",
+      "right" : "return n != parent.getFirstChild();",
+      "info" : "ReturnStatement[8792-8827]:ReturnStatement[8792-8827]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[8836-8850]:SwitchCase[8836-8850]"
+    }, {
+      "left" : "return n != parent.getFirstChild().getNext();",
+      "right" : "return n != parent.getFirstChild().getNext();",
+      "info" : "ReturnStatement[8861-8906]:ReturnStatement[8861-8906]"
+    }, {
+      "left" : "case Token.SWITCH:",
+      "right" : "case Token.SWITCH:",
+      "info" : "SwitchCase[8962-8980]:SwitchCase[8962-8980]"
+    }, {
+      "left" : "case Token.CASE:",
+      "right" : "case Token.CASE:",
+      "info" : "SwitchCase[8989-9005]:SwitchCase[8989-9005]"
+    }, {
+      "left" : "case Token.CATCH:",
+      "right" : "case Token.CATCH:",
+      "info" : "SwitchCase[9014-9031]:SwitchCase[9014-9031]"
+    }, {
+      "left" : "case Token.LABEL:",
+      "right" : "case Token.LABEL:",
+      "info" : "SwitchCase[9040-9057]:SwitchCase[9040-9057]"
+    }, {
+      "left" : "return n != parent.getFirstChild();",
+      "right" : "return n != parent.getFirstChild();",
+      "info" : "ReturnStatement[9068-9103]:ReturnStatement[9068-9103]"
+    }, {
+      "left" : "case Token.FUNCTION:",
+      "right" : "case Token.FUNCTION:",
+      "info" : "SwitchCase[9112-9132]:SwitchCase[9112-9132]"
+    }, {
+      "left" : "return n == parent.getFirstChild().getNext().getNext();",
+      "right" : "return n == parent.getFirstChild().getNext().getNext();",
+      "info" : "ReturnStatement[9143-9198]:ReturnStatement[9143-9198]"
+    }, {
+      "left" : "case Token.CONTINUE:",
+      "right" : "case Token.CONTINUE:",
+      "info" : "SwitchCase[9207-9227]:SwitchCase[9207-9227]"
+    }, {
+      "left" : "case Token.BREAK:",
+      "right" : "case Token.BREAK:",
+      "info" : "SwitchCase[9236-9253]:SwitchCase[9236-9253]"
+    }, {
+      "left" : "case Token.EXPR_RESULT:",
+      "right" : "case Token.EXPR_RESULT:",
+      "info" : "SwitchCase[9262-9285]:SwitchCase[9262-9285]"
+    }, {
+      "left" : "case Token.VAR:",
+      "right" : "case Token.VAR:",
+      "info" : "SwitchCase[9294-9309]:SwitchCase[9294-9309]"
+    }, {
+      "left" : "case Token.RETURN:",
+      "right" : "case Token.RETURN:",
+      "info" : "SwitchCase[9318-9336]:SwitchCase[9318-9336]"
+    }, {
+      "left" : "case Token.THROW:",
+      "right" : "case Token.THROW:",
+      "info" : "SwitchCase[9345-9362]:SwitchCase[9345-9362]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[9373-9386]:ReturnStatement[9373-9386]"
+    }, {
+      "left" : "case Token.TRY:",
+      "right" : "case Token.TRY:",
+      "info" : "SwitchCase[9395-9410]:SwitchCase[9395-9410]"
+    }, {
+      "left" : "if (n == parent.getFirstChild().getNext())",
+      "right" : "if (n == parent.getFirstChild().getNext())",
+      "info" : "IfStatement[9828-9993]:IfStatement[9828-9993]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9871-9993]:Block[9871-9993]"
+    }, {
+      "left" : "Preconditions.checkState(exceptionHandler.peek() == parent);",
+      "right" : "Preconditions.checkState(exceptionHandler.peek() == parent);",
+      "info" : "ExpressionStatement[9885-9945]:ExpressionStatement[9885-9945]"
+    }, {
+      "left" : "exceptionHandler.pop();",
+      "right" : "exceptionHandler.pop();",
+      "info" : "ExpressionStatement[9958-9981]:ExpressionStatement[9958-9981]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[10012-10024]:ReturnStatement[10012-10024]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[10032-10041]:MarkerAnnotation[10032-10041]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[10044-10050]:Modifier[10044-10050]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10051-10055]:PrimitiveType[10051-10055]"
+    }, {
+      "left" : "visit",
+      "right" : "visit",
+      "info" : "SimpleName[10056-10061]:SimpleName[10056-10061]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[10062-10077]:SingleVariableDeclaration[10062-10077]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[10079-10085]:SingleVariableDeclaration[10079-10085]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[10087-10098]:SingleVariableDeclaration[10087-10098]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10100-11354]:Block[10100-11354]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.IF:\n        handleIf(n);\n        return;\n      case Token.WHILE:\n        handleWhile(n);\n        return;\n      case Token.DO:\n        handleDo(n);\n        return;\n      case Token.FOR:\n        handleFor(n);\n        return;\n      case Token.SWITCH:\n        handleSwitch(n);\n        return;\n      case Token.CASE:\n        handleCase(n);\n        return;\n      case Token.DEFAULT_CASE:\n        handleDefault(n);\n        return;\n      case Token.BLOCK:\n      case Token.SCRIPT:\n        handleStmtList(n);\n        return;\n      case Token.FUNCTION:\n        handleFunction(n);\n        return;\n      case Token.EXPR_RESULT:\n        handleExpr(n);\n        return;\n      case Token.THROW:\n        handleThrow(n);\n        return;\n      case Token.TRY:\n        handleTry(n);\n        return;\n      case Token.CATCH:\n        handleCatch(n);\n        return;\n      case Token.BREAK:\n        handleBreak(n);\n        return;\n      case Token.CONTINUE:\n        handleContinue(n);\n        return;\n      case Token.RETURN:\n        handleReturn(n);\n        return;\n      case Token.WITH:\n        handleWith(n);\n        return;\n      case Token.LABEL:\n        return;\n      default:\n        handleStmt(n);\n        return;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.IF:\n        handleIf(n);\n        return;\n      case Token.WHILE:\n        handleWhile(n);\n        return;\n      case Token.DO:\n        handleDo(n);\n        return;\n      case Token.FOR:\n        handleFor(n);\n        return;\n      case Token.SWITCH:\n        handleSwitch(n);\n        return;\n      case Token.CASE:\n        handleCase(n);\n        return;\n      case Token.DEFAULT_CASE:\n        handleDefault(n);\n        return;\n      case Token.BLOCK:\n      case Token.SCRIPT:\n        handleStmtList(n);\n        return;\n      case Token.FUNCTION:\n        handleFunction(n);\n        return;\n      case Token.EXPR_RESULT:\n        handleExpr(n);\n        return;\n      case Token.THROW:\n        handleThrow(n);\n        return;\n      case Token.TRY:\n        handleTry(n);\n        return;\n      case Token.CATCH:\n        handleCatch(n);\n        return;\n      case Token.BREAK:\n        handleBreak(n);\n        return;\n      case Token.CONTINUE:\n        handleContinue(n);\n        return;\n      case Token.RETURN:\n        handleReturn(n);\n        return;\n      case Token.WITH:\n        handleWith(n);\n        return;\n      case Token.LABEL:\n        return;\n      default:\n        handleStmt(n);\n        return;\n    }",
+      "info" : "SwitchStatement[10106-11350]:SwitchStatement[10106-11350]"
+    }, {
+      "left" : "case Token.IF:",
+      "right" : "case Token.IF:",
+      "info" : "SwitchCase[10135-10149]:SwitchCase[10135-10149]"
+    }, {
+      "left" : "handleIf(n);",
+      "right" : "handleIf(n);",
+      "info" : "ExpressionStatement[10158-10170]:ExpressionStatement[10158-10170]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10179-10186]:ReturnStatement[10179-10186]"
+    }, {
+      "left" : "case Token.WHILE:",
+      "right" : "case Token.WHILE:",
+      "info" : "SwitchCase[10193-10210]:SwitchCase[10193-10210]"
+    }, {
+      "left" : "handleWhile(n);",
+      "right" : "handleWhile(n);",
+      "info" : "ExpressionStatement[10219-10234]:ExpressionStatement[10219-10234]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10243-10250]:ReturnStatement[10243-10250]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[10257-10271]:SwitchCase[10257-10271]"
+    }, {
+      "left" : "handleDo(n);",
+      "right" : "handleDo(n);",
+      "info" : "ExpressionStatement[10280-10292]:ExpressionStatement[10280-10292]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10301-10308]:ReturnStatement[10301-10308]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[10315-10330]:SwitchCase[10315-10330]"
+    }, {
+      "left" : "handleFor(n);",
+      "right" : "handleFor(n);",
+      "info" : "ExpressionStatement[10339-10352]:ExpressionStatement[10339-10352]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10361-10368]:ReturnStatement[10361-10368]"
+    }, {
+      "left" : "case Token.SWITCH:",
+      "right" : "case Token.SWITCH:",
+      "info" : "SwitchCase[10375-10393]:SwitchCase[10375-10393]"
+    }, {
+      "left" : "handleSwitch(n);",
+      "right" : "handleSwitch(n);",
+      "info" : "ExpressionStatement[10402-10418]:ExpressionStatement[10402-10418]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10427-10434]:ReturnStatement[10427-10434]"
+    }, {
+      "left" : "case Token.CASE:",
+      "right" : "case Token.CASE:",
+      "info" : "SwitchCase[10441-10457]:SwitchCase[10441-10457]"
+    }, {
+      "left" : "handleCase(n);",
+      "right" : "handleCase(n);",
+      "info" : "ExpressionStatement[10466-10480]:ExpressionStatement[10466-10480]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10489-10496]:ReturnStatement[10489-10496]"
+    }, {
+      "left" : "case Token.DEFAULT_CASE:",
+      "right" : "case Token.DEFAULT_CASE:",
+      "info" : "SwitchCase[10503-10527]:SwitchCase[10503-10527]"
+    }, {
+      "left" : "handleDefault(n);",
+      "right" : "handleDefault(n);",
+      "info" : "ExpressionStatement[10536-10553]:ExpressionStatement[10536-10553]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10562-10569]:ReturnStatement[10562-10569]"
+    }, {
+      "left" : "case Token.BLOCK:",
+      "right" : "case Token.BLOCK:",
+      "info" : "SwitchCase[10576-10593]:SwitchCase[10576-10593]"
+    }, {
+      "left" : "case Token.SCRIPT:",
+      "right" : "case Token.SCRIPT:",
+      "info" : "SwitchCase[10600-10618]:SwitchCase[10600-10618]"
+    }, {
+      "left" : "handleStmtList(n);",
+      "right" : "handleStmtList(n);",
+      "info" : "ExpressionStatement[10627-10645]:ExpressionStatement[10627-10645]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10654-10661]:ReturnStatement[10654-10661]"
+    }, {
+      "left" : "case Token.FUNCTION:",
+      "right" : "case Token.FUNCTION:",
+      "info" : "SwitchCase[10668-10688]:SwitchCase[10668-10688]"
+    }, {
+      "left" : "handleFunction(n);",
+      "right" : "handleFunction(n);",
+      "info" : "ExpressionStatement[10697-10715]:ExpressionStatement[10697-10715]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10724-10731]:ReturnStatement[10724-10731]"
+    }, {
+      "left" : "case Token.EXPR_RESULT:",
+      "right" : "case Token.EXPR_RESULT:",
+      "info" : "SwitchCase[10738-10761]:SwitchCase[10738-10761]"
+    }, {
+      "left" : "handleExpr(n);",
+      "right" : "handleExpr(n);",
+      "info" : "ExpressionStatement[10770-10784]:ExpressionStatement[10770-10784]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10793-10800]:ReturnStatement[10793-10800]"
+    }, {
+      "left" : "case Token.THROW:",
+      "right" : "case Token.THROW:",
+      "info" : "SwitchCase[10807-10824]:SwitchCase[10807-10824]"
+    }, {
+      "left" : "handleThrow(n);",
+      "right" : "handleThrow(n);",
+      "info" : "ExpressionStatement[10833-10848]:ExpressionStatement[10833-10848]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10857-10864]:ReturnStatement[10857-10864]"
+    }, {
+      "left" : "case Token.TRY:",
+      "right" : "case Token.TRY:",
+      "info" : "SwitchCase[10871-10886]:SwitchCase[10871-10886]"
+    }, {
+      "left" : "handleTry(n);",
+      "right" : "handleTry(n);",
+      "info" : "ExpressionStatement[10895-10908]:ExpressionStatement[10895-10908]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10917-10924]:ReturnStatement[10917-10924]"
+    }, {
+      "left" : "case Token.CATCH:",
+      "right" : "case Token.CATCH:",
+      "info" : "SwitchCase[10931-10948]:SwitchCase[10931-10948]"
+    }, {
+      "left" : "handleCatch(n);",
+      "right" : "handleCatch(n);",
+      "info" : "ExpressionStatement[10957-10972]:ExpressionStatement[10957-10972]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10981-10988]:ReturnStatement[10981-10988]"
+    }, {
+      "left" : "case Token.BREAK:",
+      "right" : "case Token.BREAK:",
+      "info" : "SwitchCase[10995-11012]:SwitchCase[10995-11012]"
+    }, {
+      "left" : "handleBreak(n);",
+      "right" : "handleBreak(n);",
+      "info" : "ExpressionStatement[11021-11036]:ExpressionStatement[11021-11036]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11045-11052]:ReturnStatement[11045-11052]"
+    }, {
+      "left" : "case Token.CONTINUE:",
+      "right" : "case Token.CONTINUE:",
+      "info" : "SwitchCase[11059-11079]:SwitchCase[11059-11079]"
+    }, {
+      "left" : "handleContinue(n);",
+      "right" : "handleContinue(n);",
+      "info" : "ExpressionStatement[11088-11106]:ExpressionStatement[11088-11106]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11115-11122]:ReturnStatement[11115-11122]"
+    }, {
+      "left" : "case Token.RETURN:",
+      "right" : "case Token.RETURN:",
+      "info" : "SwitchCase[11129-11147]:SwitchCase[11129-11147]"
+    }, {
+      "left" : "handleReturn(n);",
+      "right" : "handleReturn(n);",
+      "info" : "ExpressionStatement[11156-11172]:ExpressionStatement[11156-11172]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11181-11188]:ReturnStatement[11181-11188]"
+    }, {
+      "left" : "case Token.WITH:",
+      "right" : "case Token.WITH:",
+      "info" : "SwitchCase[11195-11211]:SwitchCase[11195-11211]"
+    }, {
+      "left" : "handleWith(n);",
+      "right" : "handleWith(n);",
+      "info" : "ExpressionStatement[11220-11234]:ExpressionStatement[11220-11234]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11243-11250]:ReturnStatement[11243-11250]"
+    }, {
+      "left" : "case Token.LABEL:",
+      "right" : "case Token.LABEL:",
+      "info" : "SwitchCase[11257-11274]:SwitchCase[11257-11274]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11283-11290]:ReturnStatement[11283-11290]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[11297-11305]:SwitchCase[11297-11305]"
+    }, {
+      "left" : "handleStmt(n);",
+      "right" : "handleStmt(n);",
+      "info" : "ExpressionStatement[11314-11328]:ExpressionStatement[11314-11328]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[11337-11344]:ReturnStatement[11337-11344]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11358-11365]:Modifier[11358-11365]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[11366-11370]:PrimitiveType[11366-11370]"
+    }, {
+      "left" : "handleIf",
+      "right" : "handleIf",
+      "info" : "SimpleName[11371-11379]:SimpleName[11371-11379]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[11380-11389]:SingleVariableDeclaration[11380-11389]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11391-11876]:Block[11391-11876]"
+    }, {
+      "left" : "Node thenBlock = node.getFirstChild().getNext();",
+      "right" : "Node thenBlock = node.getFirstChild().getNext();",
+      "info" : "VariableDeclarationStatement[11397-11445]:VariableDeclarationStatement[11397-11445]"
+    }, {
+      "left" : "Node elseBlock = thenBlock.getNext();",
+      "right" : "Node elseBlock = thenBlock.getNext();",
+      "info" : "VariableDeclarationStatement[11450-11487]:VariableDeclarationStatement[11450-11487]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_TRUE, computeFallThrough(thenBlock));",
+      "right" : "createEdge(node, Branch.ON_TRUE, computeFallThrough(thenBlock));",
+      "info" : "ExpressionStatement[11492-11556]:ExpressionStatement[11492-11556]"
+    }, {
+      "left" : "if (elseBlock == null)",
+      "right" : "if (elseBlock == null)",
+      "info" : "IfStatement[11562-11779]:IfStatement[11562-11779]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11585-11694]:Block[11585-11694]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_FALSE,\n          computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.ON_FALSE,\n          computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[11593-11668]:ExpressionStatement[11593-11668]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11700-11779]:Block[11700-11779]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_FALSE, computeFallThrough(elseBlock));",
+      "right" : "createEdge(node, Branch.ON_FALSE, computeFallThrough(elseBlock));",
+      "info" : "ExpressionStatement[11708-11773]:ExpressionStatement[11708-11773]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(\n        node, NodeUtil.getConditionExpression(node));",
+      "right" : "connectToPossibleExceptionHandler(\n        node, NodeUtil.getConditionExpression(node));",
+      "info" : "ExpressionStatement[11784-11872]:ExpressionStatement[11784-11872]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11880-11887]:Modifier[11880-11887]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[11888-11892]:PrimitiveType[11888-11892]"
+    }, {
+      "left" : "handleWhile",
+      "right" : "handleWhile",
+      "info" : "SimpleName[11893-11904]:SimpleName[11893-11904]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[11905-11914]:SingleVariableDeclaration[11905-11914]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11916-12343]:Block[11916-12343]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_TRUE,\n        computeFallThrough(node.getFirstChild().getNext()));",
+      "right" : "createEdge(node, Branch.ON_TRUE,\n        computeFallThrough(node.getFirstChild().getNext()));",
+      "info" : "ExpressionStatement[12001-12094]:ExpressionStatement[12001-12094]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_FALSE,\n        computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.ON_FALSE,\n        computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[12173-12246]:ExpressionStatement[12173-12246]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(\n        node, NodeUtil.getConditionExpression(node));",
+      "right" : "connectToPossibleExceptionHandler(\n        node, NodeUtil.getConditionExpression(node));",
+      "info" : "ExpressionStatement[12251-12339]:ExpressionStatement[12251-12339]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12347-12354]:Modifier[12347-12354]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12355-12359]:PrimitiveType[12355-12359]"
+    }, {
+      "left" : "handleDo",
+      "right" : "handleDo",
+      "info" : "SimpleName[12360-12368]:SimpleName[12360-12368]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[12369-12378]:SingleVariableDeclaration[12369-12378]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12380-12791]:Block[12380-12791]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_TRUE, computeFallThrough(node.getFirstChild()));",
+      "right" : "createEdge(node, Branch.ON_TRUE, computeFallThrough(node.getFirstChild()));",
+      "info" : "ExpressionStatement[12477-12552]:ExpressionStatement[12477-12552]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_FALSE,\n        computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.ON_FALSE,\n        computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[12621-12694]:ExpressionStatement[12621-12694]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(\n        node, NodeUtil.getConditionExpression(node));",
+      "right" : "connectToPossibleExceptionHandler(\n        node, NodeUtil.getConditionExpression(node));",
+      "info" : "ExpressionStatement[12699-12787]:ExpressionStatement[12699-12787]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12795-12802]:Modifier[12795-12802]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12803-12807]:PrimitiveType[12803-12807]"
+    }, {
+      "left" : "handleFor",
+      "right" : "handleFor",
+      "info" : "SimpleName[12808-12817]:SimpleName[12808-12817]"
+    }, {
+      "left" : "Node forNode",
+      "right" : "Node forNode",
+      "info" : "SingleVariableDeclaration[12818-12830]:SingleVariableDeclaration[12818-12830]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12832-14595]:Block[12832-14595]"
+    }, {
+      "left" : "if (forNode.getChildCount() == 4)",
+      "right" : "if (forNode.getChildCount() == 4)",
+      "info" : "IfStatement[12838-14591]:IfStatement[12838-14591]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12872-13975]:Block[12872-13975]"
+    }, {
+      "left" : "Node init = forNode.getFirstChild();",
+      "right" : "Node init = forNode.getFirstChild();",
+      "info" : "VariableDeclarationStatement[12929-12965]:VariableDeclarationStatement[12929-12965]"
+    }, {
+      "left" : "Node cond = init.getNext();",
+      "right" : "Node cond = init.getNext();",
+      "info" : "VariableDeclarationStatement[12972-12999]:VariableDeclarationStatement[12972-12999]"
+    }, {
+      "left" : "Node iter = cond.getNext();",
+      "right" : "Node iter = cond.getNext();",
+      "info" : "VariableDeclarationStatement[13006-13033]:VariableDeclarationStatement[13006-13033]"
+    }, {
+      "left" : "Node body = iter.getNext();",
+      "right" : "Node body = iter.getNext();",
+      "info" : "VariableDeclarationStatement[13040-13067]:VariableDeclarationStatement[13040-13067]"
+    }, {
+      "left" : "createEdge(init, Branch.UNCOND, forNode);",
+      "right" : "createEdge(init, Branch.UNCOND, forNode);",
+      "info" : "ExpressionStatement[13204-13245]:ExpressionStatement[13204-13245]"
+    }, {
+      "left" : "createEdge(forNode, Branch.ON_TRUE, computeFallThrough(body));",
+      "right" : "createEdge(forNode, Branch.ON_TRUE, computeFallThrough(body));",
+      "info" : "ExpressionStatement[13327-13389]:ExpressionStatement[13327-13389]"
+    }, {
+      "left" : "createEdge(forNode, Branch.ON_FALSE,\n          computeFollowNode(forNode, this));",
+      "right" : "createEdge(forNode, Branch.ON_FALSE,\n          computeFollowNode(forNode, this));",
+      "info" : "ExpressionStatement[13434-13515]:ExpressionStatement[13434-13515]"
+    }, {
+      "left" : "createEdge(iter, Branch.UNCOND, forNode);",
+      "right" : "createEdge(iter, Branch.UNCOND, forNode);",
+      "info" : "ExpressionStatement[13766-13807]:ExpressionStatement[13766-13807]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(init, init);",
+      "right" : "connectToPossibleExceptionHandler(init, init);",
+      "info" : "ExpressionStatement[13814-13860]:ExpressionStatement[13814-13860]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(forNode, cond);",
+      "right" : "connectToPossibleExceptionHandler(forNode, cond);",
+      "info" : "ExpressionStatement[13867-13916]:ExpressionStatement[13867-13916]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(iter, iter);",
+      "right" : "connectToPossibleExceptionHandler(iter, iter);",
+      "info" : "ExpressionStatement[13923-13969]:ExpressionStatement[13923-13969]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13981-14591]:Block[13981-14591]"
+    }, {
+      "left" : "Node item = forNode.getFirstChild();",
+      "right" : "Node item = forNode.getFirstChild();",
+      "info" : "VariableDeclarationStatement[14040-14076]:VariableDeclarationStatement[14040-14076]"
+    }, {
+      "left" : "Node collection = item.getNext();",
+      "right" : "Node collection = item.getNext();",
+      "info" : "VariableDeclarationStatement[14083-14116]:VariableDeclarationStatement[14083-14116]"
+    }, {
+      "left" : "Node body = collection.getNext();",
+      "right" : "Node body = collection.getNext();",
+      "info" : "VariableDeclarationStatement[14123-14156]:VariableDeclarationStatement[14123-14156]"
+    }, {
+      "left" : "createEdge(collection, Branch.UNCOND, forNode);",
+      "right" : "createEdge(collection, Branch.UNCOND, forNode);",
+      "info" : "ExpressionStatement[14206-14253]:ExpressionStatement[14206-14253]"
+    }, {
+      "left" : "createEdge(forNode, Branch.ON_TRUE, computeFallThrough(body));",
+      "right" : "createEdge(forNode, Branch.ON_TRUE, computeFallThrough(body));",
+      "info" : "ExpressionStatement[14335-14397]:ExpressionStatement[14335-14397]"
+    }, {
+      "left" : "createEdge(forNode, Branch.ON_FALSE,\n          computeFollowNode(forNode, this));",
+      "right" : "createEdge(forNode, Branch.ON_FALSE,\n          computeFollowNode(forNode, this));",
+      "info" : "ExpressionStatement[14442-14523]:ExpressionStatement[14442-14523]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(forNode, collection);",
+      "right" : "connectToPossibleExceptionHandler(forNode, collection);",
+      "info" : "ExpressionStatement[14530-14585]:ExpressionStatement[14530-14585]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[14599-14606]:Modifier[14599-14606]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14607-14611]:PrimitiveType[14607-14611]"
+    }, {
+      "left" : "handleSwitch",
+      "right" : "handleSwitch",
+      "info" : "SimpleName[14612-14624]:SimpleName[14612-14624]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[14625-14634]:SingleVariableDeclaration[14625-14634]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14636-15331]:Block[14636-15331]"
+    }, {
+      "left" : "Node next = getNextSiblingOfType(\n        node.getFirstChild().getNext(), Token.CASE, Token.EMPTY);",
+      "right" : "Node next = getNextSiblingOfType(\n        node.getFirstChild().getNext(), Token.CASE, Token.EMPTY);",
+      "info" : "VariableDeclarationStatement[14758-14857]:VariableDeclarationStatement[14758-14857]"
+    }, {
+      "left" : "if (next != null)",
+      "right" : "if (next != null)",
+      "info" : "IfStatement[14862-15260]:IfStatement[14862-15260]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14880-14966]:Block[14880-14966]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, next);",
+      "right" : "createEdge(node, Branch.UNCOND, next);",
+      "info" : "ExpressionStatement[14922-14960]:ExpressionStatement[14922-14960]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14972-15260]:Block[14972-15260]"
+    }, {
+      "left" : "if (node.getFirstChild().getNext() != null)",
+      "right" : "if (node.getFirstChild().getNext() != null)",
+      "info" : "IfStatement[15018-15254]:IfStatement[15018-15254]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15062-15144]:Block[15062-15144]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, node.getFirstChild().getNext());",
+      "right" : "createEdge(node, Branch.UNCOND, node.getFirstChild().getNext());",
+      "info" : "ExpressionStatement[15072-15136]:ExpressionStatement[15072-15136]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15150-15254]:Block[15150-15254]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[15183-15246]:ExpressionStatement[15183-15246]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "right" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "info" : "ExpressionStatement[15265-15327]:ExpressionStatement[15265-15327]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[15335-15342]:Modifier[15335-15342]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15343-15347]:PrimitiveType[15343-15347]"
+    }, {
+      "left" : "handleCase",
+      "right" : "handleCase",
+      "info" : "SimpleName[15348-15358]:SimpleName[15348-15358]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[15359-15368]:SingleVariableDeclaration[15359-15368]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15370-16317]:Block[15370-16317]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_TRUE,\n        node.getFirstChild().getNext());",
+      "right" : "createEdge(node, Branch.ON_TRUE,\n        node.getFirstChild().getNext());",
+      "info" : "ExpressionStatement[15457-15530]:ExpressionStatement[15457-15530]"
+    }, {
+      "left" : "Node next = getNextSiblingOfType(node.getNext(), Token.CASE);",
+      "right" : "Node next = getNextSiblingOfType(node.getNext(), Token.CASE);",
+      "info" : "VariableDeclarationStatement[15589-15650]:VariableDeclarationStatement[15589-15650]"
+    }, {
+      "left" : "if (next != null)",
+      "right" : "if (next != null)",
+      "info" : "IfStatement[15655-16246]:IfStatement[15655-16246]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15673-15790]:Block[15673-15790]"
+    }, {
+      "left" : "Preconditions.checkState(next.isCase());",
+      "right" : "Preconditions.checkState(next.isCase());",
+      "info" : "ExpressionStatement[15697-15737]:ExpressionStatement[15697-15737]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_FALSE, next);",
+      "right" : "createEdge(node, Branch.ON_FALSE, next);",
+      "info" : "ExpressionStatement[15744-15784]:ExpressionStatement[15744-15784]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15796-16246]:Block[15796-16246]"
+    }, {
+      "left" : "Node parent = node.getParent();",
+      "right" : "Node parent = node.getParent();",
+      "info" : "VariableDeclarationStatement[15861-15892]:VariableDeclarationStatement[15861-15892]"
+    }, {
+      "left" : "Node deflt = getNextSiblingOfType(\n        parent.getFirstChild().getNext(), Token.DEFAULT_CASE);",
+      "right" : "Node deflt = getNextSiblingOfType(\n        parent.getFirstChild().getNext(), Token.DEFAULT_CASE);",
+      "info" : "VariableDeclarationStatement[15899-15996]:VariableDeclarationStatement[15899-15996]"
+    }, {
+      "left" : "if (deflt != null)",
+      "right" : "if (deflt != null)",
+      "info" : "IfStatement[16003-16240]:IfStatement[16003-16240]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16022-16098]:Block[16022-16098]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_FALSE, deflt);",
+      "right" : "createEdge(node, Branch.ON_FALSE, deflt);",
+      "info" : "ExpressionStatement[16049-16090]:ExpressionStatement[16049-16090]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16104-16240]:Block[16104-16240]"
+    }, {
+      "left" : "createEdge(node, Branch.ON_FALSE, computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.ON_FALSE, computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[16167-16232]:ExpressionStatement[16167-16232]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "right" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "info" : "ExpressionStatement[16251-16313]:ExpressionStatement[16251-16313]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[16321-16328]:Modifier[16321-16328]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[16329-16333]:PrimitiveType[16329-16333]"
+    }, {
+      "left" : "handleDefault",
+      "right" : "handleDefault",
+      "info" : "SimpleName[16334-16347]:SimpleName[16334-16347]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[16348-16357]:SingleVariableDeclaration[16348-16357]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16359-16498]:Block[16359-16498]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, node.getFirstChild());",
+      "right" : "createEdge(node, Branch.UNCOND, node.getFirstChild());",
+      "info" : "ExpressionStatement[16440-16494]:ExpressionStatement[16440-16494]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[16502-16509]:Modifier[16502-16509]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[16510-16514]:PrimitiveType[16510-16514]"
+    }, {
+      "left" : "handleWith",
+      "right" : "handleWith",
+      "info" : "SimpleName[16515-16525]:SimpleName[16515-16525]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[16526-16535]:SingleVariableDeclaration[16526-16535]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16537-16742]:Block[16537-16742]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, node.getLastChild());",
+      "right" : "createEdge(node, Branch.UNCOND, node.getLastChild());",
+      "info" : "ExpressionStatement[16618-16671]:ExpressionStatement[16618-16671]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "right" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "info" : "ExpressionStatement[16676-16738]:ExpressionStatement[16676-16738]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[16746-16753]:Modifier[16746-16753]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[16754-16758]:PrimitiveType[16754-16758]"
+    }, {
+      "left" : "handleStmtList",
+      "right" : "handleStmtList",
+      "info" : "SimpleName[16759-16773]:SimpleName[16759-16773]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[16774-16783]:SingleVariableDeclaration[16774-16783]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16785-17959]:Block[16785-17959]"
+    }, {
+      "left" : "Node parent = node.getParent();",
+      "right" : "Node parent = node.getParent();",
+      "info" : "VariableDeclarationStatement[16791-16822]:VariableDeclarationStatement[16791-16822]"
+    }, {
+      "left" : "if (node.isBlock() && parent != null &&\n        parent.isTry() &&\n        NodeUtil.getCatchBlock(parent) == node &&\n        !NodeUtil.hasCatchHandler(node))",
+      "right" : "if (node.isBlock() && parent != null &&\n        parent.isTry() &&\n        NodeUtil.getCatchBlock(parent) == node &&\n        !NodeUtil.hasCatchHandler(node))",
+      "info" : "IfStatement[16901-17079]:IfStatement[16901-17079]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17058-17079]:Block[17058-17079]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[17066-17073]:ReturnStatement[17066-17073]"
+    }, {
+      "left" : "Node child = node.getFirstChild();",
+      "right" : "Node child = node.getFirstChild();",
+      "info" : "VariableDeclarationStatement[17156-17190]:VariableDeclarationStatement[17156-17190]"
+    }, {
+      "left" : "while (child != null && child.isFunction())",
+      "right" : "while (child != null && child.isFunction())",
+      "info" : "WhileStatement[17310-17392]:WhileStatement[17310-17392]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17354-17392]:Block[17354-17392]"
+    }, {
+      "left" : "child = child.getNext();",
+      "right" : "child = child.getNext();",
+      "info" : "ExpressionStatement[17362-17386]:ExpressionStatement[17362-17386]"
+    }, {
+      "left" : "if (child != null)",
+      "right" : "if (child != null)",
+      "info" : "IfStatement[17398-17573]:IfStatement[17398-17573]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17417-17490]:Block[17417-17490]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, computeFallThrough(child));",
+      "right" : "createEdge(node, Branch.UNCOND, computeFallThrough(child));",
+      "info" : "ExpressionStatement[17425-17484]:ExpressionStatement[17425-17484]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17496-17573]:Block[17496-17573]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[17504-17567]:ExpressionStatement[17504-17567]"
+    }, {
+      "left" : "if (parent != null)",
+      "right" : "if (parent != null)",
+      "info" : "IfStatement[17603-17955]:IfStatement[17603-17955]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17623-17955]:Block[17623-17955]"
+    }, {
+      "left" : "switch (parent.getType()) {\n        case Token.DEFAULT_CASE:\n        case Token.CASE:\n        case Token.TRY:\n          break;\n        default:\n          if (node.isBlock() && node.isSyntheticBlock()) {\n            createEdge(node, Branch.SYN_BLOCK, computeFollowNode(node, this));\n          }\n          break;\n      }",
+      "right" : "switch (parent.getType()) {\n        case Token.DEFAULT_CASE:\n        case Token.CASE:\n        case Token.TRY:\n          break;\n        default:\n          if (node.isBlock() && node.isSyntheticBlock()) {\n            createEdge(node, Branch.SYN_BLOCK, computeFollowNode(node, this));\n          }\n          break;\n      }",
+      "info" : "SwitchStatement[17631-17949]:SwitchStatement[17631-17949]"
+    }, {
+      "left" : "case Token.DEFAULT_CASE:",
+      "right" : "case Token.DEFAULT_CASE:",
+      "info" : "SwitchCase[17667-17691]:SwitchCase[17667-17691]"
+    }, {
+      "left" : "case Token.CASE:",
+      "right" : "case Token.CASE:",
+      "info" : "SwitchCase[17700-17716]:SwitchCase[17700-17716]"
+    }, {
+      "left" : "case Token.TRY:",
+      "right" : "case Token.TRY:",
+      "info" : "SwitchCase[17725-17740]:SwitchCase[17725-17740]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[17751-17757]:BreakStatement[17751-17757]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[17766-17774]:SwitchCase[17766-17774]"
+    }, {
+      "left" : "if (node.isBlock() && node.isSyntheticBlock())",
+      "right" : "if (node.isBlock() && node.isSyntheticBlock())",
+      "info" : "IfStatement[17785-17924]:IfStatement[17785-17924]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17832-17924]:Block[17832-17924]"
+    }, {
+      "left" : "createEdge(node, Branch.SYN_BLOCK, computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.SYN_BLOCK, computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[17846-17912]:ExpressionStatement[17846-17912]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[17935-17941]:BreakStatement[17935-17941]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17963-17970]:Modifier[17963-17970]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[17971-17975]:PrimitiveType[17971-17975]"
+    }, {
+      "left" : "handleFunction",
+      "right" : "handleFunction",
+      "info" : "SimpleName[17976-17990]:SimpleName[17976-17990]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[17991-18000]:SingleVariableDeclaration[17991-18000]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18002-18333]:Block[18002-18333]"
+    }, {
+      "left" : "Preconditions.checkState(node.getChildCount() >= 3);",
+      "right" : "Preconditions.checkState(node.getChildCount() >= 3);",
+      "info" : "ExpressionStatement[18079-18131]:ExpressionStatement[18079-18131]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND,\n        computeFallThrough(node.getFirstChild().getNext().getNext()));",
+      "right" : "createEdge(node, Branch.UNCOND,\n        computeFallThrough(node.getFirstChild().getNext().getNext()));",
+      "info" : "ExpressionStatement[18136-18238]:ExpressionStatement[18136-18238]"
+    }, {
+      "left" : "Preconditions.checkState(exceptionHandler.peek() == node);",
+      "right" : "Preconditions.checkState(exceptionHandler.peek() == node);",
+      "info" : "ExpressionStatement[18243-18301]:ExpressionStatement[18243-18301]"
+    }, {
+      "left" : "exceptionHandler.pop();",
+      "right" : "exceptionHandler.pop();",
+      "info" : "ExpressionStatement[18306-18329]:ExpressionStatement[18306-18329]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18337-18344]:Modifier[18337-18344]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18345-18349]:PrimitiveType[18345-18349]"
+    }, {
+      "left" : "handleExpr",
+      "right" : "handleExpr",
+      "info" : "SimpleName[18350-18360]:SimpleName[18350-18360]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[18361-18370]:SingleVariableDeclaration[18361-18370]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18372-18496]:Block[18372-18496]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[18378-18441]:ExpressionStatement[18378-18441]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(node, node);",
+      "right" : "connectToPossibleExceptionHandler(node, node);",
+      "info" : "ExpressionStatement[18446-18492]:ExpressionStatement[18446-18492]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18500-18507]:Modifier[18500-18507]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18508-18512]:PrimitiveType[18508-18512]"
+    }, {
+      "left" : "handleThrow",
+      "right" : "handleThrow",
+      "info" : "SimpleName[18513-18524]:SimpleName[18513-18524]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[18525-18534]:SingleVariableDeclaration[18525-18534]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18536-18592]:Block[18536-18592]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(node, node);",
+      "right" : "connectToPossibleExceptionHandler(node, node);",
+      "info" : "ExpressionStatement[18542-18588]:ExpressionStatement[18542-18588]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18596-18603]:Modifier[18596-18603]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18604-18608]:PrimitiveType[18604-18608]"
+    }, {
+      "left" : "handleTry",
+      "right" : "handleTry",
+      "info" : "SimpleName[18609-18618]:SimpleName[18609-18618]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[18619-18628]:SingleVariableDeclaration[18619-18628]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18630-18694]:Block[18630-18694]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, node.getFirstChild());",
+      "right" : "createEdge(node, Branch.UNCOND, node.getFirstChild());",
+      "info" : "ExpressionStatement[18636-18690]:ExpressionStatement[18636-18690]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18698-18705]:Modifier[18698-18705]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18706-18710]:PrimitiveType[18706-18710]"
+    }, {
+      "left" : "handleCatch",
+      "right" : "handleCatch",
+      "info" : "SimpleName[18711-18722]:SimpleName[18711-18722]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[18723-18732]:SingleVariableDeclaration[18723-18732]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18734-18797]:Block[18734-18797]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, node.getLastChild());",
+      "right" : "createEdge(node, Branch.UNCOND, node.getLastChild());",
+      "info" : "ExpressionStatement[18740-18793]:ExpressionStatement[18740-18793]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18801-18808]:Modifier[18801-18808]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18809-18813]:PrimitiveType[18809-18813]"
+    }, {
+      "left" : "handleBreak",
+      "right" : "handleBreak",
+      "info" : "SimpleName[18814-18825]:SimpleName[18814-18825]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[18826-18835]:SingleVariableDeclaration[18826-18835]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18837-20630]:Block[18837-20630]"
+    }, {
+      "left" : "String label = null;",
+      "right" : "String label = null;",
+      "info" : "VariableDeclarationStatement[18843-18863]:VariableDeclarationStatement[18843-18863]"
+    }, {
+      "left" : "if (node.hasChildren())",
+      "right" : "if (node.hasChildren())",
+      "info" : "IfStatement[18908-18987]:IfStatement[18908-18987]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18932-18987]:Block[18932-18987]"
+    }, {
+      "left" : "label = node.getFirstChild().getString();",
+      "right" : "label = node.getFirstChild().getString();",
+      "info" : "ExpressionStatement[18940-18981]:ExpressionStatement[18940-18981]"
+    }, {
+      "left" : "Node cur;",
+      "right" : "Node cur;",
+      "info" : "VariableDeclarationStatement[18992-19001]:VariableDeclarationStatement[18992-19001]"
+    }, {
+      "left" : "Node previous = null;",
+      "right" : "Node previous = null;",
+      "info" : "VariableDeclarationStatement[19006-19027]:VariableDeclarationStatement[19006-19027]"
+    }, {
+      "left" : "Node lastJump;",
+      "right" : "Node lastJump;",
+      "info" : "VariableDeclarationStatement[19032-19046]:VariableDeclarationStatement[19032-19046]"
+    }, {
+      "left" : "Node parent = node.getParent();",
+      "right" : "Node parent = node.getParent();",
+      "info" : "VariableDeclarationStatement[19051-19082]:VariableDeclarationStatement[19051-19082]"
+    }, {
+      "left" : "for (cur = node, lastJump = node;\n        !isBreakTarget(cur, label);\n        cur = parent, parent = parent.getParent())",
+      "right" : "for (cur = node, lastJump = node;\n        !isBreakTarget(cur, label);\n        cur = parent, parent = parent.getParent())",
+      "info" : "ForStatement[19641-20444]:ForStatement[19641-20444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19762-20444]:Block[19762-20444]"
+    }, {
+      "left" : "if (cur.isTry() && NodeUtil.hasFinally(cur)\n          && cur.getLastChild() != previous)",
+      "right" : "if (cur.isTry() && NodeUtil.hasFinally(cur)\n          && cur.getLastChild() != previous)",
+      "info" : "IfStatement[19770-20129]:IfStatement[19770-20129]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19859-20129]:Block[19859-20129]"
+    }, {
+      "left" : "if (lastJump == node)",
+      "right" : "if (lastJump == node)",
+      "info" : "IfStatement[19869-20097]:IfStatement[19869-20097]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19891-20004]:Block[19891-20004]"
+    }, {
+      "left" : "createEdge(lastJump, Branch.UNCOND, computeFallThrough(\n              cur.getLastChild()));",
+      "right" : "createEdge(lastJump, Branch.UNCOND, computeFallThrough(\n              cur.getLastChild()));",
+      "info" : "ExpressionStatement[19903-19994]:ExpressionStatement[19903-19994]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20010-20097]:Block[20010-20097]"
+    }, {
+      "left" : "finallyMap.put(lastJump, computeFallThrough(cur.getLastChild()));",
+      "right" : "finallyMap.put(lastJump, computeFallThrough(cur.getLastChild()));",
+      "info" : "ExpressionStatement[20022-20087]:ExpressionStatement[20022-20087]"
+    }, {
+      "left" : "lastJump = cur;",
+      "right" : "lastJump = cur;",
+      "info" : "ExpressionStatement[20106-20121]:ExpressionStatement[20106-20121]"
+    }, {
+      "left" : "if (parent == null)",
+      "right" : "if (parent == null)",
+      "info" : "IfStatement[20136-20416]:IfStatement[20136-20416]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20156-20416]:Block[20156-20416]"
+    }, {
+      "left" : "if (compiler.isIdeMode())",
+      "right" : "if (compiler.isIdeMode())",
+      "info" : "IfStatement[20166-20408]:IfStatement[20166-20408]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20192-20319]:Block[20192-20319]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[20302-20309]:ReturnStatement[20302-20309]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20325-20408]:Block[20325-20408]"
+    }, {
+      "left" : "throw new IllegalStateException(\"Cannot find break target.\");",
+      "right" : "throw new IllegalStateException(\"Cannot find break target.\");",
+      "info" : "ThrowStatement[20337-20398]:ThrowStatement[20337-20398]"
+    }, {
+      "left" : "previous = cur;",
+      "right" : "previous = cur;",
+      "info" : "ExpressionStatement[20423-20438]:ExpressionStatement[20423-20438]"
+    }, {
+      "left" : "if (lastJump == node)",
+      "right" : "if (lastJump == node)",
+      "info" : "IfStatement[20449-20626]:IfStatement[20449-20626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20471-20551]:Block[20471-20551]"
+    }, {
+      "left" : "createEdge(lastJump, Branch.UNCOND, computeFollowNode(cur, this));",
+      "right" : "createEdge(lastJump, Branch.UNCOND, computeFollowNode(cur, this));",
+      "info" : "ExpressionStatement[20479-20545]:ExpressionStatement[20479-20545]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20557-20626]:Block[20557-20626]"
+    }, {
+      "left" : "finallyMap.put(lastJump, computeFollowNode(cur, this));",
+      "right" : "finallyMap.put(lastJump, computeFollowNode(cur, this));",
+      "info" : "ExpressionStatement[20565-20620]:ExpressionStatement[20565-20620]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[20634-20641]:Modifier[20634-20641]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[20642-20646]:PrimitiveType[20642-20646]"
+    }, {
+      "left" : "handleContinue",
+      "right" : "handleContinue",
+      "info" : "SimpleName[20647-20661]:SimpleName[20647-20661]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[20662-20671]:SingleVariableDeclaration[20662-20671]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20673-21772]:Block[20673-21772]"
+    }, {
+      "left" : "String label = null;",
+      "right" : "String label = null;",
+      "info" : "VariableDeclarationStatement[20679-20699]:VariableDeclarationStatement[20679-20699]"
+    }, {
+      "left" : "if (node.hasChildren())",
+      "right" : "if (node.hasChildren())",
+      "info" : "IfStatement[20704-20783]:IfStatement[20704-20783]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20728-20783]:Block[20728-20783]"
+    }, {
+      "left" : "label = node.getFirstChild().getString();",
+      "right" : "label = node.getFirstChild().getString();",
+      "info" : "ExpressionStatement[20736-20777]:ExpressionStatement[20736-20777]"
+    }, {
+      "left" : "Node cur;",
+      "right" : "Node cur;",
+      "info" : "VariableDeclarationStatement[20788-20797]:VariableDeclarationStatement[20788-20797]"
+    }, {
+      "left" : "Node previous = null;",
+      "right" : "Node previous = null;",
+      "info" : "VariableDeclarationStatement[20802-20823]:VariableDeclarationStatement[20802-20823]"
+    }, {
+      "left" : "Node lastJump;",
+      "right" : "Node lastJump;",
+      "info" : "VariableDeclarationStatement[20828-20842]:VariableDeclarationStatement[20828-20842]"
+    }, {
+      "left" : "Node parent = node.getParent();",
+      "right" : "Node parent = node.getParent();",
+      "info" : "VariableDeclarationStatement[20912-20943]:VariableDeclarationStatement[20912-20943]"
+    }, {
+      "left" : "for (cur = node, lastJump = node;\n        !isContinueTarget(cur, parent, label);\n        cur = parent, parent = parent.getParent())",
+      "right" : "for (cur = node, lastJump = node;\n        !isContinueTarget(cur, parent, label);\n        cur = parent, parent = parent.getParent())",
+      "info" : "ForStatement[20948-21520]:ForStatement[20948-21520]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21080-21520]:Block[21080-21520]"
+    }, {
+      "left" : "if (cur.isTry() && NodeUtil.hasFinally(cur)\n          && cur.getLastChild() != previous)",
+      "right" : "if (cur.isTry() && NodeUtil.hasFinally(cur)\n          && cur.getLastChild() != previous)",
+      "info" : "IfStatement[21088-21412]:IfStatement[21088-21412]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21177-21412]:Block[21177-21412]"
+    }, {
+      "left" : "if (lastJump == node)",
+      "right" : "if (lastJump == node)",
+      "info" : "IfStatement[21187-21380]:IfStatement[21187-21380]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21209-21287]:Block[21209-21287]"
+    }, {
+      "left" : "createEdge(lastJump, Branch.UNCOND, cur.getLastChild());",
+      "right" : "createEdge(lastJump, Branch.UNCOND, cur.getLastChild());",
+      "info" : "ExpressionStatement[21221-21277]:ExpressionStatement[21221-21277]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21293-21380]:Block[21293-21380]"
+    }, {
+      "left" : "finallyMap.put(lastJump, computeFallThrough(cur.getLastChild()));",
+      "right" : "finallyMap.put(lastJump, computeFallThrough(cur.getLastChild()));",
+      "info" : "ExpressionStatement[21305-21370]:ExpressionStatement[21305-21370]"
+    }, {
+      "left" : "lastJump = cur;",
+      "right" : "lastJump = cur;",
+      "info" : "ExpressionStatement[21389-21404]:ExpressionStatement[21389-21404]"
+    }, {
+      "left" : "Preconditions.checkState(parent != null, \"Cannot find continue target.\");",
+      "right" : "Preconditions.checkState(parent != null, \"Cannot find continue target.\");",
+      "info" : "ExpressionStatement[21419-21492]:ExpressionStatement[21419-21492]"
+    }, {
+      "left" : "previous = cur;",
+      "right" : "previous = cur;",
+      "info" : "ExpressionStatement[21499-21514]:ExpressionStatement[21499-21514]"
+    }, {
+      "left" : "Node iter = cur;",
+      "right" : "Node iter = cur;",
+      "info" : "VariableDeclarationStatement[21525-21541]:VariableDeclarationStatement[21525-21541]"
+    }, {
+      "left" : "if (cur.getChildCount() == 4)",
+      "right" : "if (cur.getChildCount() == 4)",
+      "info" : "IfStatement[21546-21637]:IfStatement[21546-21637]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21576-21637]:Block[21576-21637]"
+    }, {
+      "left" : "iter = cur.getFirstChild().getNext().getNext();",
+      "right" : "iter = cur.getFirstChild().getNext().getNext();",
+      "info" : "ExpressionStatement[21584-21631]:ExpressionStatement[21584-21631]"
+    }, {
+      "left" : "if (lastJump == node)",
+      "right" : "if (lastJump == node)",
+      "info" : "IfStatement[21643-21768]:IfStatement[21643-21768]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21665-21717]:Block[21665-21717]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, iter);",
+      "right" : "createEdge(node, Branch.UNCOND, iter);",
+      "info" : "ExpressionStatement[21673-21711]:ExpressionStatement[21673-21711]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21723-21768]:Block[21723-21768]"
+    }, {
+      "left" : "finallyMap.put(lastJump, iter);",
+      "right" : "finallyMap.put(lastJump, iter);",
+      "info" : "ExpressionStatement[21731-21762]:ExpressionStatement[21731-21762]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[21776-21783]:Modifier[21776-21783]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[21784-21788]:PrimitiveType[21784-21788]"
+    }, {
+      "left" : "handleReturn",
+      "right" : "handleReturn",
+      "info" : "SimpleName[21789-21801]:SimpleName[21789-21801]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[21802-21811]:SingleVariableDeclaration[21802-21811]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21813-22573]:Block[21813-22573]"
+    }, {
+      "left" : "Node lastJump = null;",
+      "right" : "Node lastJump = null;",
+      "info" : "VariableDeclarationStatement[21819-21840]:VariableDeclarationStatement[21819-21840]"
+    }, {
+      "left" : "for (Iterator<Node> iter = exceptionHandler.iterator(); iter.hasNext())",
+      "right" : "for (Iterator<Node> iter = exceptionHandler.iterator(); iter.hasNext())",
+      "info" : "ForStatement[21845-22332]:ForStatement[21845-22332]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21918-22332]:Block[21918-22332]"
+    }, {
+      "left" : "Node curHandler = iter.next();",
+      "right" : "Node curHandler = iter.next();",
+      "info" : "VariableDeclarationStatement[21926-21956]:VariableDeclarationStatement[21926-21956]"
+    }, {
+      "left" : "if (curHandler.isFunction())",
+      "right" : "if (curHandler.isFunction())",
+      "info" : "IfStatement[21963-22016]:IfStatement[21963-22016]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21992-22016]:Block[21992-22016]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[22002-22008]:BreakStatement[22002-22008]"
+    }, {
+      "left" : "if (NodeUtil.hasFinally(curHandler))",
+      "right" : "if (NodeUtil.hasFinally(curHandler))",
+      "info" : "IfStatement[22023-22326]:IfStatement[22023-22326]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22060-22326]:Block[22060-22326]"
+    }, {
+      "left" : "if (lastJump == null)",
+      "right" : "if (lastJump == null)",
+      "info" : "IfStatement[22070-22287]:IfStatement[22070-22287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22092-22173]:Block[22092-22173]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, curHandler.getLastChild());",
+      "right" : "createEdge(node, Branch.UNCOND, curHandler.getLastChild());",
+      "info" : "ExpressionStatement[22104-22163]:ExpressionStatement[22104-22163]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22179-22287]:Block[22179-22287]"
+    }, {
+      "left" : "finallyMap.put(lastJump,\n              computeFallThrough(curHandler.getLastChild()));",
+      "right" : "finallyMap.put(lastJump,\n              computeFallThrough(curHandler.getLastChild()));",
+      "info" : "ExpressionStatement[22191-22277]:ExpressionStatement[22191-22277]"
+    }, {
+      "left" : "lastJump = curHandler;",
+      "right" : "lastJump = curHandler;",
+      "info" : "ExpressionStatement[22296-22318]:ExpressionStatement[22296-22318]"
+    }, {
+      "left" : "if (node.hasChildren())",
+      "right" : "if (node.hasChildren())",
+      "info" : "IfStatement[22338-22438]:IfStatement[22338-22438]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22362-22438]:Block[22362-22438]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "right" : "connectToPossibleExceptionHandler(node, node.getFirstChild());",
+      "info" : "ExpressionStatement[22370-22432]:ExpressionStatement[22370-22432]"
+    }, {
+      "left" : "if (lastJump == null)",
+      "right" : "if (lastJump == null)",
+      "info" : "IfStatement[22444-22569]:IfStatement[22444-22569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22466-22518]:Block[22466-22518]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, null);",
+      "right" : "createEdge(node, Branch.UNCOND, null);",
+      "info" : "ExpressionStatement[22474-22512]:ExpressionStatement[22474-22512]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22524-22569]:Block[22524-22569]"
+    }, {
+      "left" : "finallyMap.put(lastJump, null);",
+      "right" : "finallyMap.put(lastJump, null);",
+      "info" : "ExpressionStatement[22532-22563]:ExpressionStatement[22532-22563]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[22577-22584]:Modifier[22577-22584]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[22585-22589]:PrimitiveType[22585-22589]"
+    }, {
+      "left" : "handleStmt",
+      "right" : "handleStmt",
+      "info" : "SimpleName[22590-22600]:SimpleName[22590-22600]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[22601-22610]:SingleVariableDeclaration[22601-22610]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22612-22777]:Block[22612-22777]"
+    }, {
+      "left" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "right" : "createEdge(node, Branch.UNCOND, computeFollowNode(node, this));",
+      "info" : "ExpressionStatement[22659-22722]:ExpressionStatement[22659-22722]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler(node, node);",
+      "right" : "connectToPossibleExceptionHandler(node, node);",
+      "info" : "ExpressionStatement[22727-22773]:ExpressionStatement[22727-22773]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[22781-22787]:Modifier[22781-22787]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[22788-22792]:SimpleType[22788-22792]"
+    }, {
+      "left" : "computeFollowNode",
+      "right" : "computeFollowNode",
+      "info" : "SimpleName[22793-22810]:SimpleName[22793-22810]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[22811-22820]:SingleVariableDeclaration[22811-22820]"
+    }, {
+      "left" : "ControlFlowAnalysis cfa",
+      "right" : "ControlFlowAnalysis cfa",
+      "info" : "SingleVariableDeclaration[22822-22845]:SingleVariableDeclaration[22822-22845]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22847-22899]:Block[22847-22899]"
+    }, {
+      "left" : "return computeFollowNode(node, node, cfa);",
+      "right" : "return computeFollowNode(node, node, cfa);",
+      "info" : "ReturnStatement[22853-22895]:ReturnStatement[22853-22895]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[22903-22909]:Modifier[22903-22909]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[22910-22914]:SimpleType[22910-22914]"
+    }, {
+      "left" : "computeFollowNode",
+      "right" : "computeFollowNode",
+      "info" : "SimpleName[22915-22932]:SimpleName[22915-22932]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[22933-22942]:SingleVariableDeclaration[22933-22942]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22944-22997]:Block[22944-22997]"
+    }, {
+      "left" : "return computeFollowNode(node, node, null);",
+      "right" : "return computeFollowNode(node, node, null);",
+      "info" : "ReturnStatement[22950-22993]:ReturnStatement[22950-22993]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[27292-27298]:Modifier[27291-27297]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[27299-27303]:SimpleType[27298-27302]"
+    }, {
+      "left" : "computeFallThrough",
+      "right" : "computeFallThrough",
+      "info" : "SimpleName[27304-27322]:SimpleName[27303-27321]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[27323-27329]:SingleVariableDeclaration[27322-27328]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27331-27721]:Block[27330-27720]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.DO:\n        return computeFallThrough(n.getFirstChild());\n      case Token.FOR:\n        if (NodeUtil.isForIn(n)) {\n          return n.getFirstChild().getNext();\n        }\n        return computeFallThrough(n.getFirstChild());\n      case Token.LABEL:\n        return computeFallThrough(n.getLastChild());\n      default:\n        return n;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.DO:\n        return computeFallThrough(n.getFirstChild());\n      case Token.FOR:\n        if (NodeUtil.isForIn(n)) {\n          return n.getFirstChild().getNext();\n        }\n        return computeFallThrough(n.getFirstChild());\n      case Token.LABEL:\n        return computeFallThrough(n.getLastChild());\n      default:\n        return n;\n    }",
+      "info" : "SwitchStatement[27337-27717]:SwitchStatement[27336-27716]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[27366-27380]:SwitchCase[27365-27379]"
+    }, {
+      "left" : "return computeFallThrough(n.getFirstChild());",
+      "right" : "return computeFallThrough(n.getFirstChild());",
+      "info" : "ReturnStatement[27389-27434]:ReturnStatement[27388-27433]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[27441-27456]:SwitchCase[27440-27455]"
+    }, {
+      "left" : "if (NodeUtil.isForIn(n))",
+      "right" : "if (NodeUtil.isForIn(n))",
+      "info" : "IfStatement[27465-27547]:IfStatement[27464-27546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27490-27547]:Block[27489-27546]"
+    }, {
+      "left" : "return n.getFirstChild().getNext();",
+      "right" : "return n.getFirstChild().getNext();",
+      "info" : "ReturnStatement[27502-27537]:ReturnStatement[27501-27536]"
+    }, {
+      "left" : "return computeFallThrough(n.getFirstChild());",
+      "right" : "return computeFallThrough(n.getFirstChild());",
+      "info" : "ReturnStatement[27556-27601]:ReturnStatement[27555-27600]"
+    }, {
+      "left" : "case Token.LABEL:",
+      "right" : "case Token.LABEL:",
+      "info" : "SwitchCase[27608-27625]:SwitchCase[27607-27624]"
+    }, {
+      "left" : "return computeFallThrough(n.getLastChild());",
+      "right" : "return computeFallThrough(n.getLastChild());",
+      "info" : "ReturnStatement[27634-27678]:ReturnStatement[27633-27677]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[27685-27693]:SwitchCase[27684-27692]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[27702-27711]:ReturnStatement[27701-27710]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[27858-27865]:Modifier[27857-27864]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[27866-27870]:PrimitiveType[27865-27869]"
+    }, {
+      "left" : "createEdge",
+      "right" : "createEdge",
+      "info" : "SimpleName[27871-27881]:SimpleName[27870-27880]"
+    }, {
+      "left" : "Node fromNode",
+      "right" : "Node fromNode",
+      "info" : "SingleVariableDeclaration[27882-27895]:SingleVariableDeclaration[27881-27894]"
+    }, {
+      "left" : "ControlFlowGraph.Branch branch",
+      "right" : "ControlFlowGraph.Branch branch",
+      "info" : "SingleVariableDeclaration[27897-27927]:SingleVariableDeclaration[27896-27926]"
+    }, {
+      "left" : "Node toNode",
+      "right" : "Node toNode",
+      "info" : "SingleVariableDeclaration[27935-27946]:SingleVariableDeclaration[27934-27945]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27948-28064]:Block[27947-28063]"
+    }, {
+      "left" : "cfg.createNode(fromNode);",
+      "right" : "cfg.createNode(fromNode);",
+      "info" : "ExpressionStatement[27954-27979]:ExpressionStatement[27953-27978]"
+    }, {
+      "left" : "cfg.createNode(toNode);",
+      "right" : "cfg.createNode(toNode);",
+      "info" : "ExpressionStatement[27984-28007]:ExpressionStatement[27983-28006]"
+    }, {
+      "left" : "cfg.connectIfNotFound(fromNode, branch, toNode);",
+      "right" : "cfg.connectIfNotFound(fromNode, branch, toNode);",
+      "info" : "ExpressionStatement[28012-28060]:ExpressionStatement[28011-28059]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[28286-28293]:Modifier[28285-28292]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[28294-28298]:PrimitiveType[28293-28297]"
+    }, {
+      "left" : "connectToPossibleExceptionHandler",
+      "right" : "connectToPossibleExceptionHandler",
+      "info" : "SimpleName[28299-28332]:SimpleName[28298-28331]"
+    }, {
+      "left" : "Node cfgNode",
+      "right" : "Node cfgNode",
+      "info" : "SingleVariableDeclaration[28333-28345]:SingleVariableDeclaration[28332-28344]"
+    }, {
+      "left" : "Node target",
+      "right" : "Node target",
+      "info" : "SingleVariableDeclaration[28347-28358]:SingleVariableDeclaration[28346-28357]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28360-29248]:Block[28359-29247]"
+    }, {
+      "left" : "if (mayThrowException(target) && !exceptionHandler.isEmpty())",
+      "right" : "if (mayThrowException(target) && !exceptionHandler.isEmpty())",
+      "info" : "IfStatement[28366-29244]:IfStatement[28365-29243]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28428-29244]:Block[28427-29243]"
+    }, {
+      "left" : "Node lastJump = cfgNode;",
+      "right" : "Node lastJump = cfgNode;",
+      "info" : "VariableDeclarationStatement[28436-28460]:VariableDeclarationStatement[28435-28459]"
+    }, {
+      "left" : "for (Node handler : exceptionHandler)",
+      "right" : "for (Node handler : exceptionHandler)",
+      "info" : "EnhancedForStatement[28467-29238]:EnhancedForStatement[28466-29237]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28505-29238]:Block[28504-29237]"
+    }, {
+      "left" : "if (handler.isFunction())",
+      "right" : "if (handler.isFunction())",
+      "info" : "IfStatement[28515-28570]:IfStatement[28514-28569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28541-28570]:Block[28540-28569]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[28553-28560]:ReturnStatement[28552-28559]"
+    }, {
+      "left" : "Preconditions.checkState(handler.isTry());",
+      "right" : "Preconditions.checkState(handler.isTry());",
+      "info" : "ExpressionStatement[28579-28621]:ExpressionStatement[28578-28620]"
+    }, {
+      "left" : "Node catchBlock = NodeUtil.getCatchBlock(handler);",
+      "right" : "Node catchBlock = NodeUtil.getCatchBlock(handler);",
+      "info" : "VariableDeclarationStatement[28630-28680]:VariableDeclarationStatement[28629-28679]"
+    }, {
+      "left" : "if (!NodeUtil.hasCatchHandler(catchBlock))",
+      "right" : "if (!NodeUtil.hasCatchHandler(catchBlock))",
+      "info" : "IfStatement[28690-29202]:IfStatement[28689-29201]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28733-28972]:Block[28732-28971]"
+    }, {
+      "left" : "if (lastJump == cfgNode)",
+      "right" : "if (lastJump == cfgNode)",
+      "info" : "IfStatement[28772-28962]:IfStatement[28771-28961]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28797-28881]:Block[28796-28880]"
+    }, {
+      "left" : "createEdge(cfgNode, Branch.ON_EX, handler.getLastChild());",
+      "right" : "createEdge(cfgNode, Branch.ON_EX, handler.getLastChild());",
+      "info" : "ExpressionStatement[28811-28869]:ExpressionStatement[28810-28868]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28887-28962]:Block[28886-28961]"
+    }, {
+      "left" : "finallyMap.put(lastJump, handler.getLastChild());",
+      "right" : "finallyMap.put(lastJump, handler.getLastChild());",
+      "info" : "ExpressionStatement[28901-28950]:ExpressionStatement[28900-28949]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28978-29202]:Block[28977-29201]"
+    }, {
+      "left" : "if (lastJump == cfgNode)",
+      "right" : "if (lastJump == cfgNode)",
+      "info" : "IfStatement[29006-29192]:IfStatement[29005-29191]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29031-29123]:Block[29030-29122]"
+    }, {
+      "left" : "createEdge(cfgNode, Branch.ON_EX, catchBlock);",
+      "right" : "createEdge(cfgNode, Branch.ON_EX, catchBlock);",
+      "info" : "ExpressionStatement[29045-29091]:ExpressionStatement[29044-29090]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[29104-29111]:ReturnStatement[29103-29110]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29129-29192]:Block[29128-29191]"
+    }, {
+      "left" : "finallyMap.put(lastJump, catchBlock);",
+      "right" : "finallyMap.put(lastJump, catchBlock);",
+      "info" : "ExpressionStatement[29143-29180]:ExpressionStatement[29142-29179]"
+    }, {
+      "left" : "lastJump = handler;",
+      "right" : "lastJump = handler;",
+      "info" : "ExpressionStatement[29211-29230]:ExpressionStatement[29210-29229]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[29336-29343]:Modifier[29335-29342]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[29344-29350]:Modifier[29343-29349]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[29351-29355]:SimpleType[29350-29354]"
+    }, {
+      "left" : "getNextSiblingOfType",
+      "right" : "getNextSiblingOfType",
+      "info" : "SimpleName[29356-29376]:SimpleName[29355-29375]"
+    }, {
+      "left" : "Node first",
+      "right" : "Node first",
+      "info" : "SingleVariableDeclaration[29377-29387]:SingleVariableDeclaration[29376-29386]"
+    }, {
+      "left" : "int ... types",
+      "right" : "int ... types",
+      "info" : "SingleVariableDeclaration[29389-29402]:SingleVariableDeclaration[29388-29401]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29404-29591]:Block[29403-29590]"
+    }, {
+      "left" : "for (Node c = first; c != null; c = c.getNext())",
+      "right" : "for (Node c = first; c != null; c = c.getNext())",
+      "info" : "ForStatement[29410-29570]:ForStatement[29409-29569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29459-29570]:Block[29458-29569]"
+    }, {
+      "left" : "for (int type : types)",
+      "right" : "for (int type : types)",
+      "info" : "EnhancedForStatement[29467-29564]:EnhancedForStatement[29466-29563]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29490-29564]:Block[29489-29563]"
+    }, {
+      "left" : "if (c.getType() == type)",
+      "right" : "if (c.getType() == type)",
+      "info" : "IfStatement[29500-29556]:IfStatement[29499-29555]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29525-29556]:Block[29524-29555]"
+    }, {
+      "left" : "return c;",
+      "right" : "return c;",
+      "info" : "ReturnStatement[29537-29546]:ReturnStatement[29536-29545]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[29575-29587]:ReturnStatement[29574-29586]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[29735-29741]:Modifier[29734-29740]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[29742-29748]:Modifier[29741-29747]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[29749-29756]:PrimitiveType[29748-29755]"
+    }, {
+      "left" : "isBreakTarget",
+      "right" : "isBreakTarget",
+      "info" : "SimpleName[29757-29770]:SimpleName[29756-29769]"
+    }, {
+      "left" : "Node target",
+      "right" : "Node target",
+      "info" : "SingleVariableDeclaration[29771-29782]:SingleVariableDeclaration[29770-29781]"
+    }, {
+      "left" : "String label",
+      "right" : "String label",
+      "info" : "SingleVariableDeclaration[29784-29796]:SingleVariableDeclaration[29783-29795]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29798-29902]:Block[29797-29901]"
+    }, {
+      "left" : "return isBreakStructure(target, label != null) &&\n      matchLabel(target.getParent(), label);",
+      "right" : "return isBreakStructure(target, label != null) &&\n      matchLabel(target.getParent(), label);",
+      "info" : "ReturnStatement[29804-29898]:ReturnStatement[29803-29897]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[30052-30059]:Modifier[30051-30058]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[30060-30066]:Modifier[30059-30065]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[30067-30074]:PrimitiveType[30066-30073]"
+    }, {
+      "left" : "isContinueTarget",
+      "right" : "isContinueTarget",
+      "info" : "SimpleName[30075-30091]:SimpleName[30074-30090]"
+    }, {
+      "left" : "Node target",
+      "right" : "Node target",
+      "info" : "SingleVariableDeclaration[30099-30110]:SingleVariableDeclaration[30098-30109]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[30112-30123]:SingleVariableDeclaration[30111-30122]"
+    }, {
+      "left" : "String label",
+      "right" : "String label",
+      "info" : "SingleVariableDeclaration[30125-30137]:SingleVariableDeclaration[30124-30136]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30139-30213]:Block[30138-30212]"
+    }, {
+      "left" : "return isContinueStructure(target) && matchLabel(parent, label);",
+      "right" : "return isContinueStructure(target) && matchLabel(parent, label);",
+      "info" : "ReturnStatement[30145-30209]:ReturnStatement[30144-30208]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[30349-30356]:Modifier[30348-30355]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[30357-30363]:Modifier[30356-30362]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[30364-30371]:PrimitiveType[30363-30370]"
+    }, {
+      "left" : "matchLabel",
+      "right" : "matchLabel",
+      "info" : "SimpleName[30372-30382]:SimpleName[30371-30381]"
+    }, {
+      "left" : "Node target",
+      "right" : "Node target",
+      "info" : "SingleVariableDeclaration[30383-30394]:SingleVariableDeclaration[30382-30393]"
+    }, {
+      "left" : "String label",
+      "right" : "String label",
+      "info" : "SingleVariableDeclaration[30396-30408]:SingleVariableDeclaration[30395-30407]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30410-30646]:Block[30409-30645]"
+    }, {
+      "left" : "if (label == null)",
+      "right" : "if (label == null)",
+      "info" : "IfStatement[30416-30461]:IfStatement[30415-30460]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30435-30461]:Block[30434-30460]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[30443-30455]:ReturnStatement[30442-30454]"
+    }, {
+      "left" : "while (target.isLabel())",
+      "right" : "while (target.isLabel())",
+      "info" : "WhileStatement[30466-30624]:WhileStatement[30465-30623]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30491-30624]:Block[30490-30623]"
+    }, {
+      "left" : "if (target.getFirstChild().getString().equals(label))",
+      "right" : "if (target.getFirstChild().getString().equals(label))",
+      "info" : "IfStatement[30499-30583]:IfStatement[30498-30582]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30553-30583]:Block[30552-30582]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[30563-30575]:ReturnStatement[30562-30574]"
+    }, {
+      "left" : "target = target.getParent();",
+      "right" : "target = target.getParent();",
+      "info" : "ExpressionStatement[30590-30618]:ExpressionStatement[30589-30617]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[30629-30642]:ReturnStatement[30628-30641]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[30719-30725]:Modifier[30718-30724]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[30726-30732]:Modifier[30725-30731]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[30733-30740]:PrimitiveType[30732-30739]"
+    }, {
+      "left" : "mayThrowException",
+      "right" : "mayThrowException",
+      "info" : "SimpleName[30741-30758]:SimpleName[30740-30757]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[30759-30765]:SingleVariableDeclaration[30758-30764]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30767-31293]:Block[30766-31292]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.CALL:\n      case Token.GETPROP:\n      case Token.GETELEM:\n      case Token.THROW:\n      case Token.NEW:\n      case Token.ASSIGN:\n      case Token.INC:\n      case Token.DEC:\n      case Token.INSTANCEOF:\n        return true;\n      case Token.FUNCTION:\n        return false;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.CALL:\n      case Token.GETPROP:\n      case Token.GETELEM:\n      case Token.THROW:\n      case Token.NEW:\n      case Token.ASSIGN:\n      case Token.INC:\n      case Token.DEC:\n      case Token.INSTANCEOF:\n        return true;\n      case Token.FUNCTION:\n        return false;\n    }",
+      "info" : "SwitchStatement[30773-31090]:SwitchStatement[30772-31089]"
+    }, {
+      "left" : "case Token.CALL:",
+      "right" : "case Token.CALL:",
+      "info" : "SwitchCase[30802-30818]:SwitchCase[30801-30817]"
+    }, {
+      "left" : "case Token.GETPROP:",
+      "right" : "case Token.GETPROP:",
+      "info" : "SwitchCase[30825-30844]:SwitchCase[30824-30843]"
+    }, {
+      "left" : "case Token.GETELEM:",
+      "right" : "case Token.GETELEM:",
+      "info" : "SwitchCase[30851-30870]:SwitchCase[30850-30869]"
+    }, {
+      "left" : "case Token.THROW:",
+      "right" : "case Token.THROW:",
+      "info" : "SwitchCase[30877-30894]:SwitchCase[30876-30893]"
+    }, {
+      "left" : "case Token.NEW:",
+      "right" : "case Token.NEW:",
+      "info" : "SwitchCase[30901-30916]:SwitchCase[30900-30915]"
+    }, {
+      "left" : "case Token.ASSIGN:",
+      "right" : "case Token.ASSIGN:",
+      "info" : "SwitchCase[30923-30941]:SwitchCase[30922-30940]"
+    }, {
+      "left" : "case Token.INC:",
+      "right" : "case Token.INC:",
+      "info" : "SwitchCase[30948-30963]:SwitchCase[30947-30962]"
+    }, {
+      "left" : "case Token.DEC:",
+      "right" : "case Token.DEC:",
+      "info" : "SwitchCase[30970-30985]:SwitchCase[30969-30984]"
+    }, {
+      "left" : "case Token.INSTANCEOF:",
+      "right" : "case Token.INSTANCEOF:",
+      "info" : "SwitchCase[30992-31014]:SwitchCase[30991-31013]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[31023-31035]:ReturnStatement[31022-31034]"
+    }, {
+      "left" : "case Token.FUNCTION:",
+      "right" : "case Token.FUNCTION:",
+      "info" : "SwitchCase[31042-31062]:SwitchCase[31041-31061]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[31071-31084]:ReturnStatement[31070-31083]"
+    }, {
+      "left" : "for (Node c = n.getFirstChild(); c != null; c = c.getNext())",
+      "right" : "for (Node c = n.getFirstChild(); c != null; c = c.getNext())",
+      "info" : "ForStatement[31095-31271]:ForStatement[31094-31270]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31156-31271]:Block[31155-31270]"
+    }, {
+      "left" : "if (!ControlFlowGraph.isEnteringNewCfgNode(c) && mayThrowException(c))",
+      "right" : "if (!ControlFlowGraph.isEnteringNewCfgNode(c) && mayThrowException(c))",
+      "info" : "IfStatement[31164-31265]:IfStatement[31163-31264]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31235-31265]:Block[31234-31264]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[31245-31257]:ReturnStatement[31244-31256]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[31276-31289]:ReturnStatement[31275-31288]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[31385-31391]:Modifier[31384-31390]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[31392-31399]:PrimitiveType[31391-31398]"
+    }, {
+      "left" : "isBreakStructure",
+      "right" : "isBreakStructure",
+      "info" : "SimpleName[31400-31416]:SimpleName[31399-31415]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[31417-31423]:SingleVariableDeclaration[31416-31422]"
+    }, {
+      "left" : "boolean labeled",
+      "right" : "boolean labeled",
+      "info" : "SingleVariableDeclaration[31425-31440]:SingleVariableDeclaration[31424-31439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31442-31721]:Block[31441-31720]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.FOR:\n      case Token.DO:\n      case Token.WHILE:\n      case Token.SWITCH:\n        return true;\n      case Token.BLOCK:\n      case Token.IF:\n      case Token.TRY:\n        return labeled;\n      default:\n        return false;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.FOR:\n      case Token.DO:\n      case Token.WHILE:\n      case Token.SWITCH:\n        return true;\n      case Token.BLOCK:\n      case Token.IF:\n      case Token.TRY:\n        return labeled;\n      default:\n        return false;\n    }",
+      "info" : "SwitchStatement[31448-31717]:SwitchStatement[31447-31716]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[31477-31492]:SwitchCase[31476-31491]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[31499-31513]:SwitchCase[31498-31512]"
+    }, {
+      "left" : "case Token.WHILE:",
+      "right" : "case Token.WHILE:",
+      "info" : "SwitchCase[31520-31537]:SwitchCase[31519-31536]"
+    }, {
+      "left" : "case Token.SWITCH:",
+      "right" : "case Token.SWITCH:",
+      "info" : "SwitchCase[31544-31562]:SwitchCase[31543-31561]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[31571-31583]:ReturnStatement[31570-31582]"
+    }, {
+      "left" : "case Token.BLOCK:",
+      "right" : "case Token.BLOCK:",
+      "info" : "SwitchCase[31590-31607]:SwitchCase[31589-31606]"
+    }, {
+      "left" : "case Token.IF:",
+      "right" : "case Token.IF:",
+      "info" : "SwitchCase[31614-31628]:SwitchCase[31613-31627]"
+    }, {
+      "left" : "case Token.TRY:",
+      "right" : "case Token.TRY:",
+      "info" : "SwitchCase[31635-31650]:SwitchCase[31634-31649]"
+    }, {
+      "left" : "return labeled;",
+      "right" : "return labeled;",
+      "info" : "ReturnStatement[31659-31674]:ReturnStatement[31658-31673]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[31681-31689]:SwitchCase[31680-31688]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[31698-31711]:ReturnStatement[31697-31710]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[31814-31820]:Modifier[31813-31819]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[31821-31828]:PrimitiveType[31820-31827]"
+    }, {
+      "left" : "isContinueStructure",
+      "right" : "isContinueStructure",
+      "info" : "SimpleName[31829-31848]:SimpleName[31828-31847]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[31849-31855]:SingleVariableDeclaration[31848-31854]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31857-32020]:Block[31856-32019]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.FOR:\n      case Token.DO:\n      case Token.WHILE:\n        return true;\n      default:\n        return false;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.FOR:\n      case Token.DO:\n      case Token.WHILE:\n        return true;\n      default:\n        return false;\n    }",
+      "info" : "SwitchStatement[31863-32016]:SwitchStatement[31862-32015]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[31892-31907]:SwitchCase[31891-31906]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[31914-31928]:SwitchCase[31913-31927]"
+    }, {
+      "left" : "case Token.WHILE:",
+      "right" : "case Token.WHILE:",
+      "info" : "SwitchCase[31935-31952]:SwitchCase[31934-31951]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[31961-31973]:ReturnStatement[31960-31972]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[31980-31988]:SwitchCase[31979-31987]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[31997-32010]:ReturnStatement[31996-32009]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[32223-32229]:Modifier[32222-32228]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[32230-32234]:SimpleType[32229-32233]"
+    }, {
+      "left" : "getExceptionHandler",
+      "right" : "getExceptionHandler",
+      "info" : "SimpleName[32235-32254]:SimpleName[32234-32253]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[32255-32261]:SingleVariableDeclaration[32254-32260]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32263-32511]:Block[32262-32510]"
+    }, {
+      "left" : "for (Node cur = n;\n        !cur.isScript() && !cur.isFunction();\n        cur = cur.getParent())",
+      "right" : "for (Node cur = n;\n        !cur.isScript() && !cur.isFunction();\n        cur = cur.getParent())",
+      "info" : "ForStatement[32269-32490]:ForStatement[32268-32489]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32365-32490]:Block[32364-32489]"
+    }, {
+      "left" : "Node catchNode = getCatchHandlerForBlock(cur);",
+      "right" : "Node catchNode = getCatchHandlerForBlock(cur);",
+      "info" : "VariableDeclarationStatement[32373-32419]:VariableDeclarationStatement[32372-32418]"
+    }, {
+      "left" : "if (catchNode != null)",
+      "right" : "if (catchNode != null)",
+      "info" : "IfStatement[32426-32484]:IfStatement[32425-32483]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32449-32484]:Block[32448-32483]"
+    }, {
+      "left" : "return catchNode;",
+      "right" : "return catchNode;",
+      "info" : "ReturnStatement[32459-32476]:ReturnStatement[32458-32475]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[32495-32507]:ReturnStatement[32494-32506]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[32650-32656]:Modifier[32649-32655]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[32657-32661]:SimpleType[32656-32660]"
+    }, {
+      "left" : "getCatchHandlerForBlock",
+      "right" : "getCatchHandlerForBlock",
+      "info" : "SimpleName[32662-32685]:SimpleName[32661-32684]"
+    }, {
+      "left" : "Node block",
+      "right" : "Node block",
+      "info" : "SingleVariableDeclaration[32686-32696]:SingleVariableDeclaration[32685-32695]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32698-33008]:Block[32697-33007]"
+    }, {
+      "left" : "if (block.isBlock() &&\n        block.getParent().isTry() &&\n        block.getParent().getFirstChild() == block)",
+      "right" : "if (block.isBlock() &&\n        block.getParent().isTry() &&\n        block.getParent().getFirstChild() == block)",
+      "info" : "IfStatement[32704-32987]:IfStatement[32703-32986]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32816-32987]:Block[32815-32986]"
+    }, {
+      "left" : "for (Node s = block.getNext(); s != null; s = s.getNext())",
+      "right" : "for (Node s = block.getNext(); s != null; s = s.getNext())",
+      "info" : "ForStatement[32824-32981]:ForStatement[32823-32980]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32883-32981]:Block[32882-32980]"
+    }, {
+      "left" : "if (NodeUtil.hasCatchHandler(s))",
+      "right" : "if (NodeUtil.hasCatchHandler(s))",
+      "info" : "IfStatement[32893-32973]:IfStatement[32892-32972]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32926-32973]:Block[32925-32972]"
+    }, {
+      "left" : "return s.getFirstChild();",
+      "right" : "return s.getFirstChild();",
+      "info" : "ReturnStatement[32938-32963]:ReturnStatement[32937-32962]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[32992-33004]:ReturnStatement[32991-33003]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[33139-33146]:Modifier[33138-33145]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[33147-33153]:Modifier[33146-33152]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[33154-33159]:TYPE_DECLARATION_KIND[33153-33158]"
+    }, {
+      "left" : "AstControlFlowGraph",
+      "right" : "AstControlFlowGraph",
+      "info" : "SimpleName[33160-33179]:SimpleName[33159-33178]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[33503-33510]:Modifier[33502-33509]"
+    }, {
+      "left" : "AstControlFlowGraph",
+      "right" : "AstControlFlowGraph",
+      "info" : "SimpleName[33511-33530]:SimpleName[33510-33529]"
+    }, {
+      "left" : "Node entry",
+      "right" : "Node entry",
+      "info" : "SingleVariableDeclaration[33531-33541]:SingleVariableDeclaration[33530-33540]"
+    }, {
+      "left" : "Map<DiGraphNode<Node, Branch>, Integer> priorities",
+      "right" : "Map<DiGraphNode<Node, Branch>, Integer> priorities",
+      "info" : "SingleVariableDeclaration[33551-33601]:SingleVariableDeclaration[33550-33600]"
+    }, {
+      "left" : "boolean edgeAnnotations",
+      "right" : "boolean edgeAnnotations",
+      "info" : "SingleVariableDeclaration[33611-33634]:SingleVariableDeclaration[33610-33633]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33636-33755]:Block[33635-33754]"
+    }, {
+      "left" : "super(entry,\n          true /* node annotations */, edgeAnnotations);",
+      "right" : "super(entry,\n          true /* node annotations */, edgeAnnotations);",
+      "info" : "SuperConstructorInvocation[33644-33713]:SuperConstructorInvocation[33643-33712]"
+    }, {
+      "left" : "this.priorities = priorities;",
+      "right" : "this.priorities = priorities;",
+      "info" : "ExpressionStatement[33720-33749]:ExpressionStatement[33719-33748]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[33761-33770]:MarkerAnnotation[33760-33769]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[34009-34015]:Modifier[34008-34014]"
+    }, {
+      "left" : "Comparator<DiGraphNode<Node, Branch>>",
+      "right" : "Comparator<DiGraphNode<Node, Branch>>",
+      "info" : "ParameterizedType[34016-34053]:ParameterizedType[34015-34052]"
+    }, {
+      "left" : "getOptionalNodeComparator",
+      "right" : "getOptionalNodeComparator",
+      "info" : "SimpleName[34054-34079]:SimpleName[34053-34078]"
+    }, {
+      "left" : "boolean isForward",
+      "right" : "boolean isForward",
+      "info" : "SingleVariableDeclaration[34089-34106]:SingleVariableDeclaration[34088-34105]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34108-34689]:Block[34107-34688]"
+    }, {
+      "left" : "if (isForward)",
+      "right" : "if (isForward)",
+      "info" : "IfStatement[34116-34683]:IfStatement[34115-34682]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34131-34404]:Block[34130-34403]"
+    }, {
+      "left" : "return new Comparator<DiGraphNode<Node, Branch>>() {\n          @Override\n          public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2) {\n            return getPosition(n1) - getPosition(n2);\n          }\n        };",
+      "right" : "return new Comparator<DiGraphNode<Node, Branch>>() {\n          @Override\n          public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2) {\n            return getPosition(n1) - getPosition(n2);\n          }\n        };",
+      "info" : "ReturnStatement[34141-34396]:ReturnStatement[34140-34395]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[34204-34213]:MarkerAnnotation[34203-34212]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[34224-34230]:Modifier[34223-34229]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[34231-34234]:PrimitiveType[34230-34233]"
+    }, {
+      "left" : "compare",
+      "right" : "compare",
+      "info" : "SimpleName[34235-34242]:SimpleName[34234-34241]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> n1",
+      "right" : "DiGraphNode<Node, Branch> n1",
+      "info" : "SingleVariableDeclaration[34258-34286]:SingleVariableDeclaration[34257-34285]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> n2",
+      "right" : "DiGraphNode<Node, Branch> n2",
+      "info" : "SingleVariableDeclaration[34288-34316]:SingleVariableDeclaration[34287-34315]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34318-34385]:Block[34317-34384]"
+    }, {
+      "left" : "return getPosition(n1) - getPosition(n2);",
+      "right" : "return getPosition(n1) - getPosition(n2);",
+      "info" : "ReturnStatement[34332-34373]:ReturnStatement[34331-34372]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34410-34683]:Block[34409-34682]"
+    }, {
+      "left" : "return new Comparator<DiGraphNode<Node, Branch>>() {\n          @Override\n          public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2) {\n            return getPosition(n2) - getPosition(n1);\n          }\n        };",
+      "right" : "return new Comparator<DiGraphNode<Node, Branch>>() {\n          @Override\n          public int compare(\n              DiGraphNode<Node, Branch> n1, DiGraphNode<Node, Branch> n2) {\n            return getPosition(n2) - getPosition(n1);\n          }\n        };",
+      "info" : "ReturnStatement[34420-34675]:ReturnStatement[34419-34674]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[34483-34492]:MarkerAnnotation[34482-34491]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[34503-34509]:Modifier[34502-34508]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[34510-34513]:PrimitiveType[34509-34512]"
+    }, {
+      "left" : "compare",
+      "right" : "compare",
+      "info" : "SimpleName[34514-34521]:SimpleName[34513-34520]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> n1",
+      "right" : "DiGraphNode<Node, Branch> n1",
+      "info" : "SingleVariableDeclaration[34537-34565]:SingleVariableDeclaration[34536-34564]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> n2",
+      "right" : "DiGraphNode<Node, Branch> n2",
+      "info" : "SingleVariableDeclaration[34567-34595]:SingleVariableDeclaration[34566-34594]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34597-34664]:Block[34596-34663]"
+    }, {
+      "left" : "return getPosition(n2) - getPosition(n1);",
+      "right" : "return getPosition(n2) - getPosition(n1);",
+      "info" : "ReturnStatement[34611-34652]:ReturnStatement[34610-34651]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[34841-34848]:Modifier[34840-34847]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[34849-34852]:PrimitiveType[34848-34851]"
+    }, {
+      "left" : "getPosition",
+      "right" : "getPosition",
+      "info" : "SimpleName[34853-34864]:SimpleName[34852-34863]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> n",
+      "right" : "DiGraphNode<Node, Branch> n",
+      "info" : "SingleVariableDeclaration[34865-34892]:SingleVariableDeclaration[34864-34891]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34894-35012]:Block[34893-35011]"
+    }, {
+      "left" : "Integer priority = priorities.get(n);",
+      "right" : "Integer priority = priorities.get(n);",
+      "info" : "VariableDeclarationStatement[34902-34939]:VariableDeclarationStatement[34901-34938]"
+    }, {
+      "left" : "Preconditions.checkNotNull(priority);",
+      "right" : "Preconditions.checkNotNull(priority);",
+      "info" : "ExpressionStatement[34946-34983]:ExpressionStatement[34945-34982]"
+    }, {
+      "left" : "return priority;",
+      "right" : "return priority;",
+      "info" : "ReturnStatement[34990-35006]:ReturnStatement[34989-35005]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

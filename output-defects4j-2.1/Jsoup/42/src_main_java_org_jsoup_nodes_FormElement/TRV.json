@@ -1,0 +1,93 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final Elements elements = new Elements();",
+      "right" : "private final Elements elements = new Elements();",
+      "info" : "FieldDeclaration[475-524]:FieldDeclaration[475-524]"
+    }, {
+      "left" : "public FormElement(Tag tag, String baseUri, Attributes attributes)",
+      "right" : "public FormElement(Tag tag, String baseUri, Attributes attributes)",
+      "info" : "MethodDeclaration[530-841]:MethodDeclaration[530-841]"
+    }, {
+      "left" : "public Elements elements()",
+      "right" : "public Elements elements()",
+      "info" : "MethodDeclaration[847-1053]:MethodDeclaration[847-1053]"
+    }, {
+      "left" : "public FormElement addElement(Element element)",
+      "right" : "public FormElement addElement(Element element)",
+      "info" : "MethodDeclaration[1059-1318]:MethodDeclaration[1059-1318]"
+    }, {
+      "left" : "public Connection submit()",
+      "right" : "public Connection submit()",
+      "info" : "MethodDeclaration[1324-2292]:MethodDeclaration[1324-2292]"
+    }, {
+      "left" : "public boolean equals(Object o)",
+      "right" : "public boolean equals(Object o)",
+      "info" : "MethodDeclaration[4066-4151]:MethodDeclaration[4177-4262]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[793-841]:Block[793-841]"
+    }, {
+      "left" : "super(tag, baseUri, attributes);",
+      "right" : "super(tag, baseUri, attributes);",
+      "info" : "SuperConstructorInvocation[803-835]:SuperConstructorInvocation[803-835]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1021-1053]:Block[1021-1053]"
+    }, {
+      "left" : "return elements;",
+      "right" : "return elements;",
+      "info" : "ReturnStatement[1031-1047]:ReturnStatement[1031-1047]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1259-1318]:Block[1259-1318]"
+    }, {
+      "left" : "elements.add(element);",
+      "right" : "elements.add(element);",
+      "info" : "ExpressionStatement[1269-1291]:ExpressionStatement[1269-1291]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[1300-1312]:ReturnStatement[1300-1312]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1802-2292]:Block[1802-2292]"
+    }, {
+      "left" : "String action = hasAttr(\"action\") ? absUrl(\"action\") : baseUri();",
+      "right" : "String action = hasAttr(\"action\") ? absUrl(\"action\") : baseUri();",
+      "info" : "VariableDeclarationStatement[1812-1877]:VariableDeclarationStatement[1812-1877]"
+    }, {
+      "left" : "Validate.notEmpty(action, \"Could not determine a form action URL for submit. Ensure you set a base URI when parsing.\");",
+      "right" : "Validate.notEmpty(action, \"Could not determine a form action URL for submit. Ensure you set a base URI when parsing.\");",
+      "info" : "ExpressionStatement[1886-2005]:ExpressionStatement[1886-2005]"
+    }, {
+      "left" : "Connection.Method method = attr(\"method\").toUpperCase().equals(\"POST\") ?\n                Connection.Method.POST : Connection.Method.GET;",
+      "right" : "Connection.Method method = attr(\"method\").toUpperCase().equals(\"POST\") ?\n                Connection.Method.POST : Connection.Method.GET;",
+      "info" : "VariableDeclarationStatement[2014-2150]:VariableDeclarationStatement[2014-2150]"
+    }, {
+      "left" : "Connection con = Jsoup.connect(action)\n                .data(formData())\n                .method(method);",
+      "right" : "Connection con = Jsoup.connect(action)\n                .data(formData())\n                .method(method);",
+      "info" : "VariableDeclarationStatement[2160-2265]:VariableDeclarationStatement[2160-2265]"
+    }, {
+      "left" : "return con;",
+      "right" : "return con;",
+      "info" : "ReturnStatement[2275-2286]:ReturnStatement[2275-2286]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4112-4151]:Block[4223-4262]"
+    }, {
+      "left" : "return super.equals(o);",
+      "right" : "return super.equals(o);",
+      "info" : "ReturnStatement[4122-4145]:ReturnStatement[4233-4256]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

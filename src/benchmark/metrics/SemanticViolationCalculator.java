@@ -24,8 +24,8 @@ public class SemanticViolationCalculator {
         run();
     }
     public static void run() throws Exception {
-        Configuration configuration = ConfigurationFactory.refOracle();
-        ASTDiffTool[] experiment_tools = new ASTDiffTool[]{GTG,GTS,RMD};
+        Configuration configuration = ConfigurationFactory.defects4j();
+        ASTDiffTool[] experiment_tools = new ASTDiffTool[]{GTG,GTS,RMD,MTD,IJM,GT2,GOD};
 //        ASTDiffTool[] experiment_tools = new ASTDiffTool[]{RMD};
 //        ASTDiffTool[] experiment_tools = new ASTDiffTool[]{RMD};
         Map<ASTDiffTool, List<SemanticViolationRecord>> toolViolationMap = new LinkedHashMap<>();
@@ -113,7 +113,7 @@ public class SemanticViolationCalculator {
                 return false;
         }
         else if (mapping.first.getType().name.equals("SingleVariableDeclaration")) return true;
-        return true;
+        return false;
     }
 
     private static boolean contains(ASTDiff perfect, Mapping mapping) {

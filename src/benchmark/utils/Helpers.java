@@ -18,7 +18,7 @@ import static benchmark.utils.PathResolver.getBeforeDir;
 
 /* Created by pourya on 2023-04-17 8:53 p.m. */
 public class Helpers {
-    static String REPOS = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/oracle/commits";
+    public static String REPOS = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/oracle/commits";
     public static Diff diffByGumTree(ASTDiff astDiff, CompositeMatchers.CompositeMatcher matcher) {
         MappingStore match = matcher.match(astDiff.src.getRoot(), astDiff.dst.getRoot());
         EditScript actions = new SimplifiedChawatheScriptGenerator().computeActions(match);

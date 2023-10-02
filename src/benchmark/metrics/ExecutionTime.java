@@ -11,7 +11,6 @@
 //import com.github.gumtreediff.matchers.CompositeMatchers;
 //import com.github.gumtreediff.matchers.MappingStore;
 //import com.github.gumtreediff.tree.Tree;
-//import org.eclipse.jgit.lib.Repository;
 //import org.refactoringminer.api.GitService;
 //import org.refactoringminer.astDiff.actions.ASTDiff;
 //import org.refactoringminer.astDiff.actions.ProjectASTDiff;
@@ -24,6 +23,7 @@
 //import shaded.com.github.gumtreediff.tree.ITree;
 //import shaded.com.github.gumtreediff.tree.TreeContext;
 //
+//import java.io.File;
 //import java.io.FileWriter;
 //import java.io.IOException;
 //import java.io.Serializable;
@@ -33,7 +33,7 @@
 //import java.util.List;
 //import java.util.Map;
 //
-//import static benchmark.utils.Configuration.Configuration.REPOS;
+//import static benchmark.utils.Helpers.REPOS;
 //import static benchmark.utils.Helpers.runWhatever;
 //import static benchmark.utils.PathResolver.getAfterDir;
 //import static benchmark.utils.PathResolver.getBeforeDir;
@@ -45,16 +45,20 @@
 //    static Map<CaseInfo,ProjectASTDiff> resourceMap = new HashMap<>();
 //
 //    public static void main(String[] args) throws Exception {
-//        Configuration config = ConfigurationFactory.refOracle();
+//        Configuration config = ConfigurationFactory.defects4j();
 //        System.out.println("Configurations loaded.");
 //        populateResourceMap(config);
 //        System.out.println("Resource map populated.");
+////        if (true) return;
 //        List<ExeTimeRecord> result = new ArrayList<>();
 //        int completed = 0;
 //        for (CaseInfo info : config.getAllCases()) {
+//            System.out.println("Working on: " + info.makeURL());
 //            result.add(executionTimeForEachCase(info));
 //            completed++;
+//
 //            System.out.println("Completed: " + completed + " out of " + config.getAllCases().size());
+//
 //        }
 //        writeResults(result,"exeTime.csv");
 //    }
@@ -122,6 +126,7 @@
 //        IJM_time = IJM_time / (numberOfExecutions - 1);
 //        MTD_time = MTD_time / (numberOfExecutions - 1);
 //        GT2_time = GT2_time / (numberOfExecutions - 1);
+//
 //        return new ExeTimeRecord(info.makeURL(),
 //                RMD_time ,
 //                GTG_time ,
@@ -157,22 +162,20 @@
 //        return finish - start;
 //    }
 //
-////    private static long getRMTime(CaseInfo info) throws Exception {
-////        long RM_time;
-////        if (info.getRepo().contains(".git")) {
-////            GitService gitService = new GitServiceImpl();
-////            String repoFolder = info.getRepo().substring(info.getRepo().lastIndexOf("/"), info.getRepo().indexOf(".git"));
-////            Repository repository = gitService.cloneIfNotExists(REPOS + repoFolder, info.getRepo());
-////            RM_time = new GitHistoryRefactoringMinerImpl().diffTime(repository, info.getCommit());
-////        }
-////        else {
-////            Path beforePath = Path.of(getBeforeDir(info.getRepo(), info.getCommit()));
-////            Path afterPath = Path.of(getAfterDir(info.getRepo(), info.getCommit()));
-////            RM_time = new GitHistoryRefactoringMinerImpl().diffTime
-////                    (beforePath,afterPath);
-////        }
-////        return RM_time;
-////    }
+//    private static long getRMTime(CaseInfo info) throws Exception {
+//        long RM_time;
+//        if (info.getRepo().contains(".git")) {
+//            GitService gitService = new GitServiceImpl();
+//            RM_time = new GitHistoryRefactoringMinerImpl().diffTime(info.getRepo(),info.getCommit(),new File(REPOS));
+//        }
+//        else {
+//            Path beforePath = Path.of(getBeforeDir(info.getRepo(), info.getCommit()));
+//            Path afterPath = Path.of(getAfterDir(info.getRepo(), info.getCommit()));
+//            RM_time = new GitHistoryRefactoringMinerImpl().diffTime
+//                    (beforePath,afterPath);
+//        }
+//        return RM_time;
+//    }
 //
 //    private static void populateResourceMap(Configuration config) throws Exception {
 //        int loaded = 0;

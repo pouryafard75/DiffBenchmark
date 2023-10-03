@@ -32,7 +32,6 @@ public class WebDiff  {
 
     public void run() throws IOException {
         DirComparator comperator = new DirComparator(projectASTDiff);
-        Runtime.getRuntime().exec(new String[]{"/bin/sh", "/Users/pourya/IdeaProjects/RM-ASTDiff/kill.sh"});
         configureSpark(comperator, this.port);
         Spark.awaitInitialization();
         System.out.println(String.format("Starting server: %s:%d.", "http://127.0.0.1", this.port));

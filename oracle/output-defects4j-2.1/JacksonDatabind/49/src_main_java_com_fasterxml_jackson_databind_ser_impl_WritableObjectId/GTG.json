@@ -1,0 +1,145 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "WritableObjectId",
+      "right" : "WritableObjectId",
+      "info" : "TypeDeclaration[302-2398]:TypeDeclaration[302-2434]"
+    }, {
+      "left" : "public final ObjectIdGenerator<?> generator;",
+      "right" : "public final ObjectIdGenerator<?> generator;",
+      "info" : "FieldDeclaration[436-480]:FieldDeclaration[436-480]"
+    }, {
+      "left" : "public Object id;",
+      "right" : "public Object id;",
+      "info" : "FieldDeclaration[486-503]:FieldDeclaration[486-503]"
+    }, {
+      "left" : "protected boolean idWritten = false;",
+      "right" : "protected boolean idWritten = false;",
+      "info" : "FieldDeclaration[509-724]:FieldDeclaration[509-724]"
+    }, {
+      "left" : "public WritableObjectId(ObjectIdGenerator<?> generator)",
+      "right" : "public WritableObjectId(ObjectIdGenerator<?> generator)",
+      "info" : "MethodDeclaration[730-829]:MethodDeclaration[730-829]"
+    }, {
+      "left" : "public boolean writeAsId(JsonGenerator gen, SerializerProvider provider, ObjectIdWriter w) throws IOException",
+      "right" : "public boolean writeAsId(JsonGenerator gen, SerializerProvider provider, ObjectIdWriter w) throws IOException",
+      "info" : "MethodDeclaration[835-1336]:MethodDeclaration[835-1336]"
+    }, {
+      "left" : "public Object generateId(Object forPojo)",
+      "right" : "public Object generateId(Object forPojo)",
+      "info" : "MethodDeclaration[1346-1696]:MethodDeclaration[1346-1732]"
+    }, {
+      "left" : "public void writeAsField(JsonGenerator gen, SerializerProvider provider,\n            ObjectIdWriter w) throws IOException",
+      "right" : "public void writeAsField(JsonGenerator gen, SerializerProvider provider,\n            ObjectIdWriter w) throws IOException",
+      "info" : "MethodDeclaration[1702-2396]:MethodDeclaration[1738-2432]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[786-829]:Block[786-829]"
+    }, {
+      "left" : "this.generator = generator;",
+      "right" : "this.generator = generator;",
+      "info" : "ExpressionStatement[796-823]:ExpressionStatement[796-823]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[949-1336]:Block[949-1336]"
+    }, {
+      "left" : "if ((id != null) && (idWritten || w.alwaysAsId))",
+      "right" : "if ((id != null) && (idWritten || w.alwaysAsId))",
+      "info" : "IfStatement[959-1308]:IfStatement[959-1308]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1008-1308]:Block[1008-1308]"
+    }, {
+      "left" : "if (gen.canWriteObjectId())",
+      "right" : "if (gen.canWriteObjectId())",
+      "info" : "IfStatement[1094-1273]:IfStatement[1094-1273]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1122-1193]:Block[1122-1193]"
+    }, {
+      "left" : "gen.writeObjectRef(String.valueOf(id));",
+      "right" : "gen.writeObjectRef(String.valueOf(id));",
+      "info" : "ExpressionStatement[1140-1179]:ExpressionStatement[1140-1179]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1199-1273]:Block[1199-1273]"
+    }, {
+      "left" : "w.serializer.serialize(id, gen, provider);",
+      "right" : "w.serializer.serialize(id, gen, provider);",
+      "info" : "ExpressionStatement[1217-1259]:ExpressionStatement[1217-1259]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[1286-1298]:ReturnStatement[1286-1298]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[1317-1330]:ReturnStatement[1317-1330]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1387-1696]:Block[1648-1707]"
+    }, {
+      "left" : "id = generator.generateId(forPojo);",
+      "right" : "id = generator.generateId(forPojo);",
+      "info" : "ExpressionStatement[1636-1671]:ExpressionStatement[1662-1697]"
+    }, {
+      "left" : "return id;",
+      "right" : "return id;",
+      "info" : "ReturnStatement[1680-1690]:ReturnStatement[1716-1726]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1899-2396]:Block[1935-2432]"
+    }, {
+      "left" : "idWritten = true;",
+      "right" : "idWritten = true;",
+      "info" : "ExpressionStatement[1909-1926]:ExpressionStatement[1945-1962]"
+    }, {
+      "left" : "if (gen.canWriteObjectId())",
+      "right" : "if (gen.canWriteObjectId())",
+      "info" : "IfStatement[2004-2200]:IfStatement[2040-2236]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2032-2200]:Block[2068-2236]"
+    }, {
+      "left" : "gen.writeObjectId(String.valueOf(id));",
+      "right" : "gen.writeObjectId(String.valueOf(id));",
+      "info" : "ExpressionStatement[2132-2170]:ExpressionStatement[2168-2206]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[2183-2190]:ReturnStatement[2219-2226]"
+    }, {
+      "left" : "SerializableString name = w.propertyName;",
+      "right" : "SerializableString name = w.propertyName;",
+      "info" : "VariableDeclarationStatement[2218-2259]:VariableDeclarationStatement[2254-2295]"
+    }, {
+      "left" : "if (name != null)",
+      "right" : "if (name != null)",
+      "info" : "IfStatement[2268-2390]:IfStatement[2304-2426]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2286-2390]:Block[2322-2426]"
+    }, {
+      "left" : "gen.writeFieldName(name);",
+      "right" : "gen.writeFieldName(name);",
+      "info" : "ExpressionStatement[2300-2325]:ExpressionStatement[2336-2361]"
+    }, {
+      "left" : "w.serializer.serialize(id, gen, provider);",
+      "right" : "w.serializer.serialize(id, gen, provider);",
+      "info" : "ExpressionStatement[2338-2380]:ExpressionStatement[2374-2416]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

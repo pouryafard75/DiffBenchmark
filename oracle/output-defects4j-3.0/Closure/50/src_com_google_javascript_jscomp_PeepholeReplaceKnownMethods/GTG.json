@@ -1,0 +1,1965 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "PeepholeReplaceKnownMethods",
+      "right" : "PeepholeReplaceKnownMethods",
+      "info" : "TypeDeclaration[871-19877]:TypeDeclaration[871-20065]"
+    }, {
+      "left" : "private static final Locale ROOT_LOCALE = new Locale(\"\");",
+      "right" : "private static final Locale ROOT_LOCALE = new Locale(\"\");",
+      "info" : "FieldDeclaration[1061-1118]:FieldDeclaration[1061-1118]"
+    }, {
+      "left" : "Node optimizeSubtree(Node subtree)",
+      "right" : "Node optimizeSubtree(Node subtree)",
+      "info" : "MethodDeclaration[1122-1279]:MethodDeclaration[1122-1279]"
+    }, {
+      "left" : "private Node tryFoldKnownMethods(Node subtree)",
+      "right" : "private Node tryFoldKnownMethods(Node subtree)",
+      "info" : "MethodDeclaration[1283-1891]:MethodDeclaration[1283-1891]"
+    }, {
+      "left" : "private Node tryFoldKnownStringMethods(Node subtree)",
+      "right" : "private Node tryFoldKnownStringMethods(Node subtree)",
+      "info" : "MethodDeclaration[1895-3836]:MethodDeclaration[1895-3836]"
+    }, {
+      "left" : "private Node tryFoldKnownNumericMethods(Node subtree)",
+      "right" : "private Node tryFoldKnownNumericMethods(Node subtree)",
+      "info" : "MethodDeclaration[3840-4815]:MethodDeclaration[3840-4815]"
+    }, {
+      "left" : "private Node tryFoldStringToLowerCase(Node subtree, Node stringNode)",
+      "right" : "private Node tryFoldStringToLowerCase(Node subtree, Node stringNode)",
+      "info" : "MethodDeclaration[4819-5226]:MethodDeclaration[4819-5226]"
+    }, {
+      "left" : "private Node tryFoldStringToUpperCase(Node subtree, Node stringNode)",
+      "right" : "private Node tryFoldStringToUpperCase(Node subtree, Node stringNode)",
+      "info" : "MethodDeclaration[5230-5637]:MethodDeclaration[5230-5637]"
+    }, {
+      "left" : "private String normalizeNumericString(String input)",
+      "right" : "private String normalizeNumericString(String input)",
+      "info" : "MethodDeclaration[5641-6255]:MethodDeclaration[5641-6255]"
+    }, {
+      "left" : "private Node tryFoldParseNumber(\n      Node n, String functionName, Node firstArg)",
+      "right" : "private Node tryFoldParseNumber(\n      Node n, String functionName, Node firstArg)",
+      "info" : "MethodDeclaration[6259-10165]:MethodDeclaration[6259-10165]"
+    }, {
+      "left" : "private Node tryFoldStringIndexOf(\n      Node n, String functionName, Node lstringNode, Node firstArg)",
+      "right" : "private Node tryFoldStringIndexOf(\n      Node n, String functionName, Node lstringNode, Node firstArg)",
+      "info" : "MethodDeclaration[10169-11494]:MethodDeclaration[10169-11494]"
+    }, {
+      "left" : "private Node tryFoldArrayJoin(Node n)",
+      "right" : "private Node tryFoldArrayJoin(Node n)",
+      "info" : "MethodDeclaration[11498-15063]:MethodDeclaration[11498-15251]"
+    }, {
+      "left" : "private Node tryFoldStringSubstr(Node n, Node stringNode, Node arg1)",
+      "right" : "private Node tryFoldStringSubstr(Node n, Node stringNode, Node arg1)",
+      "info" : "MethodDeclaration[15067-16610]:MethodDeclaration[15255-16798]"
+    }, {
+      "left" : "private Node tryFoldStringSubstring(Node n, Node stringNode, Node arg1)",
+      "right" : "private Node tryFoldStringSubstring(Node n, Node stringNode, Node arg1)",
+      "info" : "MethodDeclaration[16614-18083]:MethodDeclaration[16802-18271]"
+    }, {
+      "left" : "private Node tryFoldStringCharAt(Node n, Node stringNode, Node arg1)",
+      "right" : "private Node tryFoldStringCharAt(Node n, Node stringNode, Node arg1)",
+      "info" : "MethodDeclaration[18087-18986]:MethodDeclaration[18275-19174]"
+    }, {
+      "left" : "private Node tryFoldStringCharCodeAt(Node n, Node stringNode, Node arg1)",
+      "right" : "private Node tryFoldStringCharCodeAt(Node n, Node stringNode, Node arg1)",
+      "info" : "MethodDeclaration[18990-19875]:MethodDeclaration[19178-20063]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "AbstractPeepholeOptimization",
+      "right" : "AbstractPeepholeOptimization",
+      "info" : "SimpleType[991-1019]:SimpleType[991-1019]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[1122-1131]:MarkerAnnotation[1122-1131]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[1134-1138]:SimpleType[1134-1138]"
+    }, {
+      "left" : "optimizeSubtree",
+      "right" : "optimizeSubtree",
+      "info" : "SimpleName[1139-1154]:SimpleName[1139-1154]"
+    }, {
+      "left" : "Node subtree",
+      "right" : "Node subtree",
+      "info" : "SingleVariableDeclaration[1155-1167]:SingleVariableDeclaration[1155-1167]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1169-1279]:Block[1169-1279]"
+    }, {
+      "left" : "if (NodeUtil.isCall(subtree))",
+      "right" : "if (NodeUtil.isCall(subtree))",
+      "info" : "IfStatement[1175-1255]:IfStatement[1175-1255]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1205-1255]:Block[1205-1255]"
+    }, {
+      "left" : "return tryFoldKnownMethods(subtree);",
+      "right" : "return tryFoldKnownMethods(subtree);",
+      "info" : "ReturnStatement[1213-1249]:ReturnStatement[1213-1249]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[1260-1275]:ReturnStatement[1260-1275]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[1283-1290]:Modifier[1283-1290]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[1291-1295]:SimpleType[1291-1295]"
+    }, {
+      "left" : "tryFoldKnownMethods",
+      "right" : "tryFoldKnownMethods",
+      "info" : "SimpleName[1296-1315]:SimpleName[1296-1315]"
+    }, {
+      "left" : "Node subtree",
+      "right" : "Node subtree",
+      "info" : "SingleVariableDeclaration[1316-1328]:SingleVariableDeclaration[1316-1328]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1330-1891]:Block[1330-1891]"
+    }, {
+      "left" : "subtree = tryFoldArrayJoin(subtree);",
+      "right" : "subtree = tryFoldArrayJoin(subtree);",
+      "info" : "ExpressionStatement[1494-1530]:ExpressionStatement[1494-1530]"
+    }, {
+      "left" : "if (subtree.getType() == Token.CALL)",
+      "right" : "if (subtree.getType() == Token.CALL)",
+      "info" : "IfStatement[1536-1866]:IfStatement[1536-1866]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1573-1866]:Block[1573-1866]"
+    }, {
+      "left" : "Node callTarget = subtree.getFirstChild();",
+      "right" : "Node callTarget = subtree.getFirstChild();",
+      "info" : "VariableDeclarationStatement[1581-1623]:VariableDeclarationStatement[1581-1623]"
+    }, {
+      "left" : "if (callTarget == null)",
+      "right" : "if (callTarget == null)",
+      "info" : "IfStatement[1630-1687]:IfStatement[1630-1687]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1654-1687]:Block[1654-1687]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[1664-1679]:ReturnStatement[1664-1679]"
+    }, {
+      "left" : "if (NodeUtil.isGet(callTarget))",
+      "right" : "if (NodeUtil.isGet(callTarget))",
+      "info" : "IfStatement[1695-1860]:IfStatement[1695-1860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1727-1790]:Block[1727-1790]"
+    }, {
+      "left" : "subtree = tryFoldKnownStringMethods(subtree);",
+      "right" : "subtree = tryFoldKnownStringMethods(subtree);",
+      "info" : "ExpressionStatement[1737-1782]:ExpressionStatement[1737-1782]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1796-1860]:Block[1796-1860]"
+    }, {
+      "left" : "subtree = tryFoldKnownNumericMethods(subtree);",
+      "right" : "subtree = tryFoldKnownNumericMethods(subtree);",
+      "info" : "ExpressionStatement[1806-1852]:ExpressionStatement[1806-1852]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[1872-1887]:ReturnStatement[1872-1887]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[1993-2000]:Modifier[1993-2000]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[2001-2005]:SimpleType[2001-2005]"
+    }, {
+      "left" : "tryFoldKnownStringMethods",
+      "right" : "tryFoldKnownStringMethods",
+      "info" : "SimpleName[2006-2031]:SimpleName[2006-2031]"
+    }, {
+      "left" : "Node subtree",
+      "right" : "Node subtree",
+      "info" : "SingleVariableDeclaration[2032-2044]:SingleVariableDeclaration[2032-2044]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2046-3836]:Block[2046-3836]"
+    }, {
+      "left" : "Preconditions.checkArgument(subtree.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(subtree.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[2052-2113]:ExpressionStatement[2052-2113]"
+    }, {
+      "left" : "Node callTarget = subtree.getFirstChild();",
+      "right" : "Node callTarget = subtree.getFirstChild();",
+      "info" : "VariableDeclarationStatement[2218-2260]:VariableDeclarationStatement[2218-2260]"
+    }, {
+      "left" : "if (callTarget == null)",
+      "right" : "if (callTarget == null)",
+      "info" : "IfStatement[2265-2318]:IfStatement[2265-2318]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2289-2318]:Block[2289-2318]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[2297-2312]:ReturnStatement[2297-2312]"
+    }, {
+      "left" : "if (!NodeUtil.isGet(callTarget))",
+      "right" : "if (!NodeUtil.isGet(callTarget))",
+      "info" : "IfStatement[2324-2386]:IfStatement[2324-2386]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2357-2386]:Block[2357-2386]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[2365-2380]:ReturnStatement[2365-2380]"
+    }, {
+      "left" : "Node stringNode = callTarget.getFirstChild();",
+      "right" : "Node stringNode = callTarget.getFirstChild();",
+      "info" : "VariableDeclarationStatement[2392-2437]:VariableDeclarationStatement[2392-2437]"
+    }, {
+      "left" : "Node functionName = stringNode.getNext();",
+      "right" : "Node functionName = stringNode.getNext();",
+      "info" : "VariableDeclarationStatement[2442-2483]:VariableDeclarationStatement[2442-2483]"
+    }, {
+      "left" : "if ((stringNode.getType() != Token.STRING) ||\n        (functionName.getType() != Token.STRING))",
+      "right" : "if ((stringNode.getType() != Token.STRING) ||\n        (functionName.getType() != Token.STRING))",
+      "info" : "IfStatement[2489-2614]:IfStatement[2489-2614]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2585-2614]:Block[2585-2614]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[2593-2608]:ReturnStatement[2593-2608]"
+    }, {
+      "left" : "String functionNameString = functionName.getString();",
+      "right" : "String functionNameString = functionName.getString();",
+      "info" : "VariableDeclarationStatement[2620-2673]:VariableDeclarationStatement[2620-2673]"
+    }, {
+      "left" : "Node firstArg = callTarget.getNext();",
+      "right" : "Node firstArg = callTarget.getNext();",
+      "info" : "VariableDeclarationStatement[2678-2715]:VariableDeclarationStatement[2678-2715]"
+    }, {
+      "left" : "if (firstArg == null)",
+      "right" : "if (firstArg == null)",
+      "info" : "IfStatement[2720-3811]:IfStatement[2720-3811]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2742-3024]:Block[2742-3024]"
+    }, {
+      "left" : "if (functionNameString.equals(\"toLowerCase\"))",
+      "right" : "if (functionNameString.equals(\"toLowerCase\"))",
+      "info" : "IfStatement[2750-2996]:IfStatement[2750-2996]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2796-2870]:Block[2796-2870]"
+    }, {
+      "left" : "subtree = tryFoldStringToLowerCase(subtree, stringNode);",
+      "right" : "subtree = tryFoldStringToLowerCase(subtree, stringNode);",
+      "info" : "ExpressionStatement[2806-2862]:ExpressionStatement[2806-2862]"
+    }, {
+      "left" : "if (functionNameString.equals(\"toUpperCase\"))",
+      "right" : "if (functionNameString.equals(\"toUpperCase\"))",
+      "info" : "IfStatement[2876-2996]:IfStatement[2876-2996]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2922-2996]:Block[2922-2996]"
+    }, {
+      "left" : "subtree = tryFoldStringToUpperCase(subtree, stringNode);",
+      "right" : "subtree = tryFoldStringToUpperCase(subtree, stringNode);",
+      "info" : "ExpressionStatement[2932-2988]:ExpressionStatement[2932-2988]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[3003-3018]:ReturnStatement[3003-3018]"
+    }, {
+      "left" : "if (NodeUtil.isImmutableValue(firstArg))",
+      "right" : "if (NodeUtil.isImmutableValue(firstArg))",
+      "info" : "IfStatement[3030-3811]:IfStatement[3030-3811]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3071-3811]:Block[3071-3811]"
+    }, {
+      "left" : "if (functionNameString.equals(\"indexOf\") ||\n          functionNameString.equals(\"lastIndexOf\"))",
+      "right" : "if (functionNameString.equals(\"indexOf\") ||\n          functionNameString.equals(\"lastIndexOf\"))",
+      "info" : "IfStatement[3079-3805]:IfStatement[3079-3805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3175-3287]:Block[3175-3287]"
+    }, {
+      "left" : "subtree = tryFoldStringIndexOf(subtree, functionNameString,\n            stringNode, firstArg);",
+      "right" : "subtree = tryFoldStringIndexOf(subtree, functionNameString,\n            stringNode, firstArg);",
+      "info" : "ExpressionStatement[3185-3279]:ExpressionStatement[3185-3279]"
+    }, {
+      "left" : "if (functionNameString.equals(\"substr\"))",
+      "right" : "if (functionNameString.equals(\"substr\"))",
+      "info" : "IfStatement[3293-3805]:IfStatement[3293-3805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3334-3413]:Block[3334-3413]"
+    }, {
+      "left" : "subtree = tryFoldStringSubstr(subtree, stringNode, firstArg);",
+      "right" : "subtree = tryFoldStringSubstr(subtree, stringNode, firstArg);",
+      "info" : "ExpressionStatement[3344-3405]:ExpressionStatement[3344-3405]"
+    }, {
+      "left" : "if (functionNameString.equals(\"substring\"))",
+      "right" : "if (functionNameString.equals(\"substring\"))",
+      "info" : "IfStatement[3419-3805]:IfStatement[3419-3805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3463-3545]:Block[3463-3545]"
+    }, {
+      "left" : "subtree = tryFoldStringSubstring(subtree, stringNode, firstArg);",
+      "right" : "subtree = tryFoldStringSubstring(subtree, stringNode, firstArg);",
+      "info" : "ExpressionStatement[3473-3537]:ExpressionStatement[3473-3537]"
+    }, {
+      "left" : "if (functionNameString.equals(\"charAt\"))",
+      "right" : "if (functionNameString.equals(\"charAt\"))",
+      "info" : "IfStatement[3551-3805]:IfStatement[3551-3805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3592-3671]:Block[3592-3671]"
+    }, {
+      "left" : "subtree = tryFoldStringCharAt(subtree, stringNode, firstArg);",
+      "right" : "subtree = tryFoldStringCharAt(subtree, stringNode, firstArg);",
+      "info" : "ExpressionStatement[3602-3663]:ExpressionStatement[3602-3663]"
+    }, {
+      "left" : "if (functionNameString.equals(\"charCodeAt\"))",
+      "right" : "if (functionNameString.equals(\"charCodeAt\"))",
+      "info" : "IfStatement[3677-3805]:IfStatement[3677-3805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3722-3805]:Block[3722-3805]"
+    }, {
+      "left" : "subtree = tryFoldStringCharCodeAt(subtree, stringNode, firstArg);",
+      "right" : "subtree = tryFoldStringCharCodeAt(subtree, stringNode, firstArg);",
+      "info" : "ExpressionStatement[3732-3797]:ExpressionStatement[3732-3797]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[3817-3832]:ReturnStatement[3817-3832]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3929-3936]:Modifier[3929-3936]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[3937-3941]:SimpleType[3937-3941]"
+    }, {
+      "left" : "tryFoldKnownNumericMethods",
+      "right" : "tryFoldKnownNumericMethods",
+      "info" : "SimpleName[3942-3968]:SimpleName[3942-3968]"
+    }, {
+      "left" : "Node subtree",
+      "right" : "Node subtree",
+      "info" : "SingleVariableDeclaration[3969-3981]:SingleVariableDeclaration[3969-3981]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3983-4815]:Block[3983-4815]"
+    }, {
+      "left" : "Preconditions.checkArgument(subtree.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(subtree.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[3989-4050]:ExpressionStatement[3989-4050]"
+    }, {
+      "left" : "if (isASTNormalized())",
+      "right" : "if (isASTNormalized())",
+      "info" : "IfStatement[4056-4791]:IfStatement[4056-4791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4079-4791]:Block[4079-4791]"
+    }, {
+      "left" : "Node callTarget = subtree.getFirstChild();",
+      "right" : "Node callTarget = subtree.getFirstChild();",
+      "info" : "VariableDeclarationStatement[4190-4232]:VariableDeclarationStatement[4190-4232]"
+    }, {
+      "left" : "if (!NodeUtil.isName(callTarget))",
+      "right" : "if (!NodeUtil.isName(callTarget))",
+      "info" : "IfStatement[4240-4307]:IfStatement[4240-4307]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4274-4307]:Block[4274-4307]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[4284-4299]:ReturnStatement[4284-4299]"
+    }, {
+      "left" : "String functionNameString = callTarget.getString();",
+      "right" : "String functionNameString = callTarget.getString();",
+      "info" : "VariableDeclarationStatement[4315-4366]:VariableDeclarationStatement[4315-4366]"
+    }, {
+      "left" : "Node firstArgument = callTarget.getNext();",
+      "right" : "Node firstArgument = callTarget.getNext();",
+      "info" : "VariableDeclarationStatement[4373-4415]:VariableDeclarationStatement[4373-4415]"
+    }, {
+      "left" : "if ((firstArgument != null) &&\n          (firstArgument.getType() == Token.STRING ||\n           firstArgument.getType() == Token.NUMBER))",
+      "right" : "if ((firstArgument != null) &&\n          (firstArgument.getType() == Token.STRING ||\n           firstArgument.getType() == Token.NUMBER))",
+      "info" : "IfStatement[4422-4785]:IfStatement[4422-4785]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4560-4785]:Block[4560-4785]"
+    }, {
+      "left" : "if (functionNameString.equals(\"parseInt\") ||\n            functionNameString.equals(\"parseFloat\"))",
+      "right" : "if (functionNameString.equals(\"parseInt\") ||\n            functionNameString.equals(\"parseFloat\"))",
+      "info" : "IfStatement[4570-4777]:IfStatement[4570-4777]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4668-4777]:Block[4668-4777]"
+    }, {
+      "left" : "subtree = tryFoldParseNumber(subtree, functionNameString,\n              firstArgument);",
+      "right" : "subtree = tryFoldParseNumber(subtree, functionNameString,\n              firstArgument);",
+      "info" : "ExpressionStatement[4680-4767]:ExpressionStatement[4680-4767]"
+    }, {
+      "left" : "return subtree;",
+      "right" : "return subtree;",
+      "info" : "ReturnStatement[4796-4811]:ReturnStatement[4796-4811]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4869-4876]:Modifier[4869-4876]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[4877-4881]:SimpleType[4877-4881]"
+    }, {
+      "left" : "tryFoldStringToLowerCase",
+      "right" : "tryFoldStringToLowerCase",
+      "info" : "SimpleName[4882-4906]:SimpleName[4882-4906]"
+    }, {
+      "left" : "Node subtree",
+      "right" : "Node subtree",
+      "info" : "SingleVariableDeclaration[4907-4919]:SingleVariableDeclaration[4907-4919]"
+    }, {
+      "left" : "Node stringNode",
+      "right" : "Node stringNode",
+      "info" : "SingleVariableDeclaration[4921-4936]:SingleVariableDeclaration[4921-4936]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4938-5226]:Block[4938-5226]"
+    }, {
+      "left" : "String lowered = stringNode.getString().toLowerCase(ROOT_LOCALE);",
+      "right" : "String lowered = stringNode.getString().toLowerCase(ROOT_LOCALE);",
+      "info" : "VariableDeclarationStatement[5001-5066]:VariableDeclarationStatement[5001-5066]"
+    }, {
+      "left" : "Node replacement = Node.newString(lowered);",
+      "right" : "Node replacement = Node.newString(lowered);",
+      "info" : "VariableDeclarationStatement[5071-5114]:VariableDeclarationStatement[5071-5114]"
+    }, {
+      "left" : "subtree.getParent().replaceChild(subtree, replacement);",
+      "right" : "subtree.getParent().replaceChild(subtree, replacement);",
+      "info" : "ExpressionStatement[5119-5174]:ExpressionStatement[5119-5174]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[5179-5198]:ExpressionStatement[5179-5198]"
+    }, {
+      "left" : "return replacement;",
+      "right" : "return replacement;",
+      "info" : "ReturnStatement[5203-5222]:ReturnStatement[5203-5222]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5280-5287]:Modifier[5280-5287]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[5288-5292]:SimpleType[5288-5292]"
+    }, {
+      "left" : "tryFoldStringToUpperCase",
+      "right" : "tryFoldStringToUpperCase",
+      "info" : "SimpleName[5293-5317]:SimpleName[5293-5317]"
+    }, {
+      "left" : "Node subtree",
+      "right" : "Node subtree",
+      "info" : "SingleVariableDeclaration[5318-5330]:SingleVariableDeclaration[5318-5330]"
+    }, {
+      "left" : "Node stringNode",
+      "right" : "Node stringNode",
+      "info" : "SingleVariableDeclaration[5332-5347]:SingleVariableDeclaration[5332-5347]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5349-5637]:Block[5349-5637]"
+    }, {
+      "left" : "String uppered = stringNode.getString().toUpperCase(ROOT_LOCALE);",
+      "right" : "String uppered = stringNode.getString().toUpperCase(ROOT_LOCALE);",
+      "info" : "VariableDeclarationStatement[5412-5477]:VariableDeclarationStatement[5412-5477]"
+    }, {
+      "left" : "Node replacement = Node.newString(uppered);",
+      "right" : "Node replacement = Node.newString(uppered);",
+      "info" : "VariableDeclarationStatement[5482-5525]:VariableDeclarationStatement[5482-5525]"
+    }, {
+      "left" : "subtree.getParent().replaceChild(subtree, replacement);",
+      "right" : "subtree.getParent().replaceChild(subtree, replacement);",
+      "info" : "ExpressionStatement[5530-5585]:ExpressionStatement[5530-5585]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[5590-5609]:ExpressionStatement[5590-5609]"
+    }, {
+      "left" : "return replacement;",
+      "right" : "return replacement;",
+      "info" : "ReturnStatement[5614-5633]:ReturnStatement[5614-5633]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5765-5772]:Modifier[5765-5772]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[5773-5779]:SimpleType[5773-5779]"
+    }, {
+      "left" : "normalizeNumericString",
+      "right" : "normalizeNumericString",
+      "info" : "SimpleName[5780-5802]:SimpleName[5780-5802]"
+    }, {
+      "left" : "String input",
+      "right" : "String input",
+      "info" : "SingleVariableDeclaration[5803-5815]:SingleVariableDeclaration[5803-5815]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5817-6255]:Block[5817-6255]"
+    }, {
+      "left" : "if (input == null || input.length() == 0)",
+      "right" : "if (input == null || input.length() == 0)",
+      "info" : "IfStatement[5823-5892]:IfStatement[5823-5892]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5865-5892]:Block[5865-5892]"
+    }, {
+      "left" : "return input;",
+      "right" : "return input;",
+      "info" : "ReturnStatement[5873-5886]:ReturnStatement[5873-5886]"
+    }, {
+      "left" : "int startIndex = 0, endIndex = input.length() - 1;",
+      "right" : "int startIndex = 0, endIndex = input.length() - 1;",
+      "info" : "VariableDeclarationStatement[5898-5948]:VariableDeclarationStatement[5898-5948]"
+    }, {
+      "left" : "while (startIndex < input.length() && input.charAt(startIndex) == '0')",
+      "right" : "while (startIndex < input.length() && input.charAt(startIndex) == '0')",
+      "info" : "WhileStatement[5953-6051]:WhileStatement[5953-6051]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6024-6051]:Block[6024-6051]"
+    }, {
+      "left" : "startIndex++;",
+      "right" : "startIndex++;",
+      "info" : "ExpressionStatement[6032-6045]:ExpressionStatement[6032-6045]"
+    }, {
+      "left" : "while (endIndex >= 0 && input.charAt(endIndex) == '0')",
+      "right" : "while (endIndex >= 0 && input.charAt(endIndex) == '0')",
+      "info" : "WhileStatement[6056-6136]:WhileStatement[6056-6136]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6111-6136]:Block[6111-6136]"
+    }, {
+      "left" : "endIndex--;",
+      "right" : "endIndex--;",
+      "info" : "ExpressionStatement[6119-6130]:ExpressionStatement[6119-6130]"
+    }, {
+      "left" : "if (startIndex >= endIndex)",
+      "right" : "if (startIndex >= endIndex)",
+      "info" : "IfStatement[6141-6196]:IfStatement[6141-6196]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6169-6196]:Block[6169-6196]"
+    }, {
+      "left" : "return input;",
+      "right" : "return input;",
+      "info" : "ReturnStatement[6177-6190]:ReturnStatement[6177-6190]"
+    }, {
+      "left" : "return input.substring(startIndex, endIndex + 1);",
+      "right" : "return input.substring(startIndex, endIndex + 1);",
+      "info" : "ReturnStatement[6202-6251]:ReturnStatement[6202-6251]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6410-6417]:Modifier[6410-6417]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[6418-6422]:SimpleType[6418-6422]"
+    }, {
+      "left" : "tryFoldParseNumber",
+      "right" : "tryFoldParseNumber",
+      "info" : "SimpleName[6423-6441]:SimpleName[6423-6441]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[6449-6455]:SingleVariableDeclaration[6449-6455]"
+    }, {
+      "left" : "String functionName",
+      "right" : "String functionName",
+      "info" : "SingleVariableDeclaration[6457-6476]:SingleVariableDeclaration[6457-6476]"
+    }, {
+      "left" : "Node firstArg",
+      "right" : "Node firstArg",
+      "info" : "SingleVariableDeclaration[6478-6491]:SingleVariableDeclaration[6478-6491]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6493-10165]:Block[6493-10165]"
+    }, {
+      "left" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[6499-6554]:ExpressionStatement[6499-6554]"
+    }, {
+      "left" : "boolean isParseInt = functionName.equals(\"parseInt\");",
+      "right" : "boolean isParseInt = functionName.equals(\"parseInt\");",
+      "info" : "VariableDeclarationStatement[6560-6613]:VariableDeclarationStatement[6560-6613]"
+    }, {
+      "left" : "Node secondArg = firstArg.getNext();",
+      "right" : "Node secondArg = firstArg.getNext();",
+      "info" : "VariableDeclarationStatement[6618-6654]:VariableDeclarationStatement[6618-6654]"
+    }, {
+      "left" : "int radix = 0;",
+      "right" : "int radix = 0;",
+      "info" : "VariableDeclarationStatement[6722-6736]:VariableDeclarationStatement[6722-6736]"
+    }, {
+      "left" : "if (secondArg != null)",
+      "right" : "if (secondArg != null)",
+      "info" : "IfStatement[6741-7257]:IfStatement[6741-7257]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6764-7257]:Block[6764-7257]"
+    }, {
+      "left" : "if (!isParseInt)",
+      "right" : "if (!isParseInt)",
+      "info" : "IfStatement[6772-6816]:IfStatement[6772-6816]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6789-6816]:Block[6789-6816]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[6799-6808]:ReturnStatement[6799-6808]"
+    }, {
+      "left" : "if ((secondArg.getNext() != null) ||\n          (secondArg.getType() != Token.NUMBER))",
+      "right" : "if ((secondArg.getNext() != null) ||\n          (secondArg.getType() != Token.NUMBER))",
+      "info" : "IfStatement[6901-7251]:IfStatement[6901-7251]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6987-7014]:Block[6987-7014]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[6997-7006]:ReturnStatement[6997-7006]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7020-7251]:Block[7020-7251]"
+    }, {
+      "left" : "double tmpRadix = secondArg.getDouble();",
+      "right" : "double tmpRadix = secondArg.getDouble();",
+      "info" : "VariableDeclarationStatement[7030-7070]:VariableDeclarationStatement[7030-7070]"
+    }, {
+      "left" : "if (tmpRadix != (int)tmpRadix)",
+      "right" : "if (tmpRadix != (int)tmpRadix)",
+      "info" : "IfStatement[7079-7129]:IfStatement[7079-7129]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[7120-7129]:ReturnStatement[7120-7129]"
+    }, {
+      "left" : "radix = (int)tmpRadix;",
+      "right" : "radix = (int)tmpRadix;",
+      "info" : "ExpressionStatement[7138-7160]:ExpressionStatement[7138-7160]"
+    }, {
+      "left" : "if (radix < 0 || radix == 1 || radix > 36)",
+      "right" : "if (radix < 0 || radix == 1 || radix > 36)",
+      "info" : "IfStatement[7169-7243]:IfStatement[7169-7243]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7212-7243]:Block[7212-7243]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[7224-7233]:ReturnStatement[7224-7233]"
+    }, {
+      "left" : "String stringVal = null;",
+      "right" : "String stringVal = null;",
+      "info" : "VariableDeclarationStatement[7304-7328]:VariableDeclarationStatement[7304-7328]"
+    }, {
+      "left" : "Double checkVal;",
+      "right" : "Double checkVal;",
+      "info" : "VariableDeclarationStatement[7333-7349]:VariableDeclarationStatement[7333-7349]"
+    }, {
+      "left" : "if (firstArg.getType() == Token.NUMBER)",
+      "right" : "if (firstArg.getType() == Token.NUMBER)",
+      "info" : "IfStatement[7354-8550]:IfStatement[7354-8550]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7394-8192]:Block[7394-8192]"
+    }, {
+      "left" : "checkVal = NodeUtil.getNumberValue(firstArg);",
+      "right" : "checkVal = NodeUtil.getNumberValue(firstArg);",
+      "info" : "ExpressionStatement[7402-7447]:ExpressionStatement[7402-7447]"
+    }, {
+      "left" : "if (!(radix == 0 || radix == 10) && isParseInt)",
+      "right" : "if (!(radix == 0 || radix == 10) && isParseInt)",
+      "info" : "IfStatement[7454-8186]:IfStatement[7454-8186]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7502-7631]:Block[7502-7631]"
+    }, {
+      "left" : "stringVal = String.valueOf(checkVal.intValue());",
+      "right" : "stringVal = String.valueOf(checkVal.intValue());",
+      "info" : "ExpressionStatement[7575-7623]:ExpressionStatement[7575-7623]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7637-8186]:Block[7637-8186]"
+    }, {
+      "left" : "Node numericNode;",
+      "right" : "Node numericNode;",
+      "info" : "VariableDeclarationStatement[7889-7906]:VariableDeclarationStatement[7889-7906]"
+    }, {
+      "left" : "if (isParseInt)",
+      "right" : "if (isParseInt)",
+      "info" : "IfStatement[7915-8070]:IfStatement[7915-8070]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7931-8003]:Block[7931-8003]"
+    }, {
+      "left" : "numericNode = Node.newNumber(checkVal.intValue());",
+      "right" : "numericNode = Node.newNumber(checkVal.intValue());",
+      "info" : "ExpressionStatement[7943-7993]:ExpressionStatement[7943-7993]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8009-8070]:Block[8009-8070]"
+    }, {
+      "left" : "numericNode = Node.newNumber(checkVal);",
+      "right" : "numericNode = Node.newNumber(checkVal);",
+      "info" : "ExpressionStatement[8021-8060]:ExpressionStatement[8021-8060]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, numericNode);",
+      "right" : "n.getParent().replaceChild(n, numericNode);",
+      "info" : "ExpressionStatement[8079-8122]:ExpressionStatement[8079-8122]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[8131-8150]:ExpressionStatement[8131-8150]"
+    }, {
+      "left" : "return numericNode;",
+      "right" : "return numericNode;",
+      "info" : "ReturnStatement[8159-8178]:ReturnStatement[8159-8178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8198-8550]:Block[8198-8550]"
+    }, {
+      "left" : "stringVal = NodeUtil.getStringValue(firstArg);",
+      "right" : "stringVal = NodeUtil.getStringValue(firstArg);",
+      "info" : "ExpressionStatement[8206-8252]:ExpressionStatement[8206-8252]"
+    }, {
+      "left" : "if (stringVal == null)",
+      "right" : "if (stringVal == null)",
+      "info" : "IfStatement[8259-8309]:IfStatement[8259-8309]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8282-8309]:Block[8282-8309]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[8292-8301]:ReturnStatement[8292-8301]"
+    }, {
+      "left" : "checkVal = NodeUtil.getStringNumberValue(stringVal);",
+      "right" : "checkVal = NodeUtil.getStringNumberValue(stringVal);",
+      "info" : "ExpressionStatement[8379-8431]:ExpressionStatement[8379-8431]"
+    }, {
+      "left" : "if (checkVal == null)",
+      "right" : "if (checkVal == null)",
+      "info" : "IfStatement[8438-8487]:IfStatement[8438-8487]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8460-8487]:Block[8460-8487]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[8470-8479]:ReturnStatement[8470-8479]"
+    }, {
+      "left" : "stringVal = NodeUtil.trimJsWhiteSpace(stringVal);",
+      "right" : "stringVal = NodeUtil.trimJsWhiteSpace(stringVal);",
+      "info" : "ExpressionStatement[8495-8544]:ExpressionStatement[8495-8544]"
+    }, {
+      "left" : "Node newNode;",
+      "right" : "Node newNode;",
+      "info" : "VariableDeclarationStatement[8556-8569]:VariableDeclarationStatement[8556-8569]"
+    }, {
+      "left" : "if (isParseInt)",
+      "right" : "if (isParseInt)",
+      "info" : "IfStatement[8574-10070]:IfStatement[8574-10070]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8590-9490]:Block[8590-9490]"
+    }, {
+      "left" : "if (radix == 0 || radix == 16)",
+      "right" : "if (radix == 0 || radix == 16)",
+      "info" : "IfStatement[8598-9288]:IfStatement[8598-9288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8629-9288]:Block[8629-9288]"
+    }, {
+      "left" : "if (stringVal.length() > 1 &&\n            stringVal.substring(0, 2).equalsIgnoreCase(\"0x\"))",
+      "right" : "if (stringVal.length() > 1 &&\n            stringVal.substring(0, 2).equalsIgnoreCase(\"0x\"))",
+      "info" : "IfStatement[8639-9280]:IfStatement[8639-9280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8731-8810]:Block[8731-8810]"
+    }, {
+      "left" : "radix = 16;",
+      "right" : "radix = 16;",
+      "info" : "ExpressionStatement[8743-8754]:ExpressionStatement[8743-8754]"
+    }, {
+      "left" : "stringVal = stringVal.substring(2);",
+      "right" : "stringVal = stringVal.substring(2);",
+      "info" : "ExpressionStatement[8765-8800]:ExpressionStatement[8765-8800]"
+    }, {
+      "left" : "if (radix == 0)",
+      "right" : "if (radix == 0)",
+      "info" : "IfStatement[8816-9280]:IfStatement[8816-9280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8832-9280]:Block[8832-9280]"
+    }, {
+      "left" : "if (!isEcmaScript5OrGreater() &&\n              stringVal.substring(0, 1).equals(\"0\"))",
+      "right" : "if (!isEcmaScript5OrGreater() &&\n              stringVal.substring(0, 1).equals(\"0\"))",
+      "info" : "IfStatement[9126-9247]:IfStatement[9126-9247]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9212-9247]:Block[9212-9247]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[9226-9235]:ReturnStatement[9226-9235]"
+    }, {
+      "left" : "radix = 10;",
+      "right" : "radix = 10;",
+      "info" : "ExpressionStatement[9259-9270]:ExpressionStatement[9259-9270]"
+    }, {
+      "left" : "int newVal = 0;",
+      "right" : "int newVal = 0;",
+      "info" : "VariableDeclarationStatement[9295-9310]:VariableDeclarationStatement[9295-9310]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[9317-9443]:TryStatement[9317-9443]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9321-9383]:Block[9321-9383]"
+    }, {
+      "left" : "newVal = Integer.parseInt(stringVal, radix);",
+      "right" : "newVal = Integer.parseInt(stringVal, radix);",
+      "info" : "ExpressionStatement[9331-9375]:ExpressionStatement[9331-9375]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9416-9443]:Block[9416-9443]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[9426-9435]:ReturnStatement[9426-9435]"
+    }, {
+      "left" : "newNode = Node.newNumber(newVal);",
+      "right" : "newNode = Node.newNumber(newVal);",
+      "info" : "ExpressionStatement[9451-9484]:ExpressionStatement[9451-9484]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9496-10070]:Block[9496-10070]"
+    }, {
+      "left" : "String normalizedNewVal = \"0\";",
+      "right" : "String normalizedNewVal = \"0\";",
+      "info" : "VariableDeclarationStatement[9504-9534]:VariableDeclarationStatement[9504-9534]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[9541-9791]:TryStatement[9541-9791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9545-9726]:Block[9545-9726]"
+    }, {
+      "left" : "double newVal = Double.parseDouble(stringVal);",
+      "right" : "double newVal = Double.parseDouble(stringVal);",
+      "info" : "VariableDeclarationStatement[9555-9601]:VariableDeclarationStatement[9555-9601]"
+    }, {
+      "left" : "newNode = Node.newNumber(newVal);",
+      "right" : "newNode = Node.newNumber(newVal);",
+      "info" : "ExpressionStatement[9610-9643]:ExpressionStatement[9610-9643]"
+    }, {
+      "left" : "normalizedNewVal = normalizeNumericString(String.valueOf(newVal));",
+      "right" : "normalizedNewVal = normalizeNumericString(String.valueOf(newVal));",
+      "info" : "ExpressionStatement[9652-9718]:ExpressionStatement[9652-9718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9764-9791]:Block[9764-9791]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[9774-9783]:ReturnStatement[9774-9783]"
+    }, {
+      "left" : "if (!normalizeNumericString(stringVal).equals(normalizedNewVal))",
+      "right" : "if (!normalizeNumericString(stringVal).equals(normalizedNewVal))",
+      "info" : "IfStatement[9972-10064]:IfStatement[9972-10064]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10037-10064]:Block[10037-10064]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[10047-10056]:ReturnStatement[10047-10056]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, newNode);",
+      "right" : "n.getParent().replaceChild(n, newNode);",
+      "info" : "ExpressionStatement[10076-10115]:ExpressionStatement[10076-10115]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[10121-10140]:ExpressionStatement[10121-10140]"
+    }, {
+      "left" : "return newNode;",
+      "right" : "return newNode;",
+      "info" : "ReturnStatement[10146-10161]:ReturnStatement[10146-10161]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10309-10316]:Modifier[10309-10316]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[10317-10321]:SimpleType[10317-10321]"
+    }, {
+      "left" : "tryFoldStringIndexOf",
+      "right" : "tryFoldStringIndexOf",
+      "info" : "SimpleName[10322-10342]:SimpleName[10322-10342]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[10350-10356]:SingleVariableDeclaration[10350-10356]"
+    }, {
+      "left" : "String functionName",
+      "right" : "String functionName",
+      "info" : "SingleVariableDeclaration[10358-10377]:SingleVariableDeclaration[10358-10377]"
+    }, {
+      "left" : "Node lstringNode",
+      "right" : "Node lstringNode",
+      "info" : "SingleVariableDeclaration[10379-10395]:SingleVariableDeclaration[10379-10395]"
+    }, {
+      "left" : "Node firstArg",
+      "right" : "Node firstArg",
+      "info" : "SingleVariableDeclaration[10397-10410]:SingleVariableDeclaration[10397-10410]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10412-11494]:Block[10412-11494]"
+    }, {
+      "left" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[10418-10473]:ExpressionStatement[10418-10473]"
+    }, {
+      "left" : "Preconditions.checkArgument(lstringNode.getType() == Token.STRING);",
+      "right" : "Preconditions.checkArgument(lstringNode.getType() == Token.STRING);",
+      "info" : "ExpressionStatement[10478-10545]:ExpressionStatement[10478-10545]"
+    }, {
+      "left" : "String lstring = NodeUtil.getStringValue(lstringNode);",
+      "right" : "String lstring = NodeUtil.getStringValue(lstringNode);",
+      "info" : "VariableDeclarationStatement[10551-10605]:VariableDeclarationStatement[10551-10605]"
+    }, {
+      "left" : "boolean isIndexOf = functionName.equals(\"indexOf\");",
+      "right" : "boolean isIndexOf = functionName.equals(\"indexOf\");",
+      "info" : "VariableDeclarationStatement[10610-10661]:VariableDeclarationStatement[10610-10661]"
+    }, {
+      "left" : "Node secondArg = firstArg.getNext();",
+      "right" : "Node secondArg = firstArg.getNext();",
+      "info" : "VariableDeclarationStatement[10666-10702]:VariableDeclarationStatement[10666-10702]"
+    }, {
+      "left" : "String searchValue = NodeUtil.getStringValue(firstArg);",
+      "right" : "String searchValue = NodeUtil.getStringValue(firstArg);",
+      "info" : "VariableDeclarationStatement[10707-10762]:VariableDeclarationStatement[10707-10762]"
+    }, {
+      "left" : "if (searchValue == null)",
+      "right" : "if (searchValue == null)",
+      "info" : "IfStatement[10810-10858]:IfStatement[10810-10858]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10835-10858]:Block[10835-10858]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[10843-10852]:ReturnStatement[10843-10852]"
+    }, {
+      "left" : "int fromIndex = isIndexOf ? 0 : lstring.length();",
+      "right" : "int fromIndex = isIndexOf ? 0 : lstring.length();",
+      "info" : "VariableDeclarationStatement[10863-10912]:VariableDeclarationStatement[10863-10912]"
+    }, {
+      "left" : "if (secondArg != null)",
+      "right" : "if (secondArg != null)",
+      "info" : "IfStatement[10917-11208]:IfStatement[10917-11208]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10940-11208]:Block[10940-11208]"
+    }, {
+      "left" : "if ((secondArg.getNext() != null) ||\n          (secondArg.getType() != Token.NUMBER))",
+      "right" : "if ((secondArg.getNext() != null) ||\n          (secondArg.getType() != Token.NUMBER))",
+      "info" : "IfStatement[11025-11202]:IfStatement[11025-11202]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11111-11138]:Block[11111-11138]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[11121-11130]:ReturnStatement[11121-11130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11144-11202]:Block[11144-11202]"
+    }, {
+      "left" : "fromIndex = (int) secondArg.getDouble();",
+      "right" : "fromIndex = (int) secondArg.getDouble();",
+      "info" : "ExpressionStatement[11154-11194]:ExpressionStatement[11154-11194]"
+    }, {
+      "left" : "int indexVal = isIndexOf ? lstring.indexOf(searchValue, fromIndex)\n                             : lstring.lastIndexOf(searchValue, fromIndex);",
+      "right" : "int indexVal = isIndexOf ? lstring.indexOf(searchValue, fromIndex)\n                             : lstring.lastIndexOf(searchValue, fromIndex);",
+      "info" : "VariableDeclarationStatement[11213-11355]:VariableDeclarationStatement[11213-11355]"
+    }, {
+      "left" : "Node newNode = Node.newNumber(indexVal);",
+      "right" : "Node newNode = Node.newNumber(indexVal);",
+      "info" : "VariableDeclarationStatement[11360-11400]:VariableDeclarationStatement[11360-11400]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, newNode);",
+      "right" : "n.getParent().replaceChild(n, newNode);",
+      "info" : "ExpressionStatement[11405-11444]:ExpressionStatement[11405-11444]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[11450-11469]:ExpressionStatement[11450-11469]"
+    }, {
+      "left" : "return newNode;",
+      "right" : "return newNode;",
+      "info" : "ReturnStatement[11475-11490]:ReturnStatement[11475-11490]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11577-11584]:Modifier[11577-11584]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[11585-11589]:SimpleType[11585-11589]"
+    }, {
+      "left" : "tryFoldArrayJoin",
+      "right" : "tryFoldArrayJoin",
+      "info" : "SimpleName[11590-11606]:SimpleName[11590-11606]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[11607-11613]:SingleVariableDeclaration[11607-11613]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11615-15063]:Block[11615-15251]"
+    }, {
+      "left" : "Node callTarget = n.getFirstChild();",
+      "right" : "Node callTarget = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[11621-11657]:VariableDeclarationStatement[11621-11657]"
+    }, {
+      "left" : "if (callTarget == null || !NodeUtil.isGetProp(callTarget))",
+      "right" : "if (callTarget == null || !NodeUtil.isGetProp(callTarget))",
+      "info" : "IfStatement[11663-11745]:IfStatement[11663-11745]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11722-11745]:Block[11722-11745]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[11730-11739]:ReturnStatement[11730-11739]"
+    }, {
+      "left" : "Node right = callTarget.getNext();",
+      "right" : "Node right = callTarget.getNext();",
+      "info" : "VariableDeclarationStatement[11751-11785]:VariableDeclarationStatement[11751-11785]"
+    }, {
+      "left" : "if (right != null)",
+      "right" : "if (right != null)",
+      "info" : "IfStatement[11790-11889]:IfStatement[11790-11916]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11809-11889]:Block[11809-11916]"
+    }, {
+      "left" : "if (!NodeUtil.isImmutableValue(right))",
+      "right" : "if (right.getNext() != null || !NodeUtil.isImmutableValue(right))",
+      "info" : "IfStatement[11817-11883]:IfStatement[11817-11910]"
+    }, {
+      "left" : "!NodeUtil.isImmutableValue(right)",
+      "right" : "!NodeUtil.isImmutableValue(right)",
+      "info" : "PrefixExpression[11821-11854]:PrefixExpression[11848-11881]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11856-11883]:Block[11883-11910]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[11866-11875]:ReturnStatement[11893-11902]"
+    }, {
+      "left" : "Node arrayNode = callTarget.getFirstChild();",
+      "right" : "Node arrayNode = callTarget.getFirstChild();",
+      "info" : "VariableDeclarationStatement[11895-11939]:VariableDeclarationStatement[11922-11966]"
+    }, {
+      "left" : "Node functionName = arrayNode.getNext();",
+      "right" : "Node functionName = arrayNode.getNext();",
+      "info" : "VariableDeclarationStatement[11944-11984]:VariableDeclarationStatement[11971-12011]"
+    }, {
+      "left" : "if ((arrayNode.getType() != Token.ARRAYLIT) ||\n        !functionName.getString().equals(\"join\"))",
+      "right" : "if ((arrayNode.getType() != Token.ARRAYLIT) ||\n        !functionName.getString().equals(\"join\"))",
+      "info" : "IfStatement[11990-12110]:IfStatement[12017-12137]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12087-12110]:Block[12114-12137]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[12095-12104]:ReturnStatement[12122-12131]"
+    }, {
+      "left" : "String joinString = (right == null) ? \",\" : NodeUtil.getStringValue(right);",
+      "right" : "String joinString = (right == null) ? \",\" : NodeUtil.getStringValue(right);",
+      "info" : "VariableDeclarationStatement[12177-12252]:VariableDeclarationStatement[12365-12440]"
+    }, {
+      "left" : "List<Node> arrayFoldedChildren = Lists.newLinkedList();",
+      "right" : "List<Node> arrayFoldedChildren = Lists.newLinkedList();",
+      "info" : "VariableDeclarationStatement[12257-12312]:VariableDeclarationStatement[12445-12500]"
+    }, {
+      "left" : "StringBuilder sb = null;",
+      "right" : "StringBuilder sb = null;",
+      "info" : "VariableDeclarationStatement[12317-12341]:VariableDeclarationStatement[12505-12529]"
+    }, {
+      "left" : "int foldedSize = 0;",
+      "right" : "int foldedSize = 0;",
+      "info" : "VariableDeclarationStatement[12346-12365]:VariableDeclarationStatement[12534-12553]"
+    }, {
+      "left" : "Node prev = null;",
+      "right" : "Node prev = null;",
+      "info" : "VariableDeclarationStatement[12370-12387]:VariableDeclarationStatement[12558-12575]"
+    }, {
+      "left" : "Node elem = arrayNode.getFirstChild();",
+      "right" : "Node elem = arrayNode.getFirstChild();",
+      "info" : "VariableDeclarationStatement[12392-12430]:VariableDeclarationStatement[12580-12618]"
+    }, {
+      "left" : "while (elem != null)",
+      "right" : "while (elem != null)",
+      "info" : "WhileStatement[12472-13211]:WhileStatement[12660-13399]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12493-13211]:Block[12681-13399]"
+    }, {
+      "left" : "if (NodeUtil.isImmutableValue(elem) || elem.getType() == Token.EMPTY)",
+      "right" : "if (NodeUtil.isImmutableValue(elem) || elem.getType() == Token.EMPTY)",
+      "info" : "IfStatement[12501-13157]:IfStatement[12689-13345]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12571-12764]:Block[12759-12952]"
+    }, {
+      "left" : "if (sb == null)",
+      "right" : "if (sb == null)",
+      "info" : "IfStatement[12581-12694]:IfStatement[12769-12882]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12597-12644]:Block[12785-12832]"
+    }, {
+      "left" : "sb = new StringBuilder();",
+      "right" : "sb = new StringBuilder();",
+      "info" : "ExpressionStatement[12609-12634]:ExpressionStatement[12797-12822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12650-12694]:Block[12838-12882]"
+    }, {
+      "left" : "sb.append(joinString);",
+      "right" : "sb.append(joinString);",
+      "info" : "ExpressionStatement[12662-12684]:ExpressionStatement[12850-12872]"
+    }, {
+      "left" : "sb.append(NodeUtil.getArrayElementStringValue(elem));",
+      "right" : "sb.append(NodeUtil.getArrayElementStringValue(elem));",
+      "info" : "ExpressionStatement[12703-12756]:ExpressionStatement[12891-12944]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12770-13157]:Block[12958-13345]"
+    }, {
+      "left" : "if (sb != null)",
+      "right" : "if (sb != null)",
+      "info" : "IfStatement[12780-13053]:IfStatement[12968-13241]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12796-13053]:Block[12984-13241]"
+    }, {
+      "left" : "Preconditions.checkNotNull(prev);",
+      "right" : "Preconditions.checkNotNull(prev);",
+      "info" : "ExpressionStatement[12808-12841]:ExpressionStatement[12996-13029]"
+    }, {
+      "left" : "foldedSize += sb.length() + 2;",
+      "right" : "foldedSize += sb.length() + 2;",
+      "info" : "ExpressionStatement[12885-12915]:ExpressionStatement[13073-13103]"
+    }, {
+      "left" : "arrayFoldedChildren.add(\n              Node.newString(sb.toString()).copyInformationFrom(prev));",
+      "right" : "arrayFoldedChildren.add(\n              Node.newString(sb.toString()).copyInformationFrom(prev));",
+      "info" : "ExpressionStatement[12926-13022]:ExpressionStatement[13114-13210]"
+    }, {
+      "left" : "sb = null;",
+      "right" : "sb = null;",
+      "info" : "ExpressionStatement[13033-13043]:ExpressionStatement[13221-13231]"
+    }, {
+      "left" : "foldedSize += InlineCostEstimator.getCost(elem);",
+      "right" : "foldedSize += InlineCostEstimator.getCost(elem);",
+      "info" : "ExpressionStatement[13062-13110]:ExpressionStatement[13250-13298]"
+    }, {
+      "left" : "arrayFoldedChildren.add(elem);",
+      "right" : "arrayFoldedChildren.add(elem);",
+      "info" : "ExpressionStatement[13119-13149]:ExpressionStatement[13307-13337]"
+    }, {
+      "left" : "prev = elem;",
+      "right" : "prev = elem;",
+      "info" : "ExpressionStatement[13164-13176]:ExpressionStatement[13352-13364]"
+    }, {
+      "left" : "elem = elem.getNext();",
+      "right" : "elem = elem.getNext();",
+      "info" : "ExpressionStatement[13183-13205]:ExpressionStatement[13371-13393]"
+    }, {
+      "left" : "if (sb != null)",
+      "right" : "if (sb != null)",
+      "info" : "IfStatement[13217-13445]:IfStatement[13405-13633]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13233-13445]:Block[13421-13633]"
+    }, {
+      "left" : "Preconditions.checkNotNull(prev);",
+      "right" : "Preconditions.checkNotNull(prev);",
+      "info" : "ExpressionStatement[13241-13274]:ExpressionStatement[13429-13462]"
+    }, {
+      "left" : "foldedSize += sb.length() + 2;",
+      "right" : "foldedSize += sb.length() + 2;",
+      "info" : "ExpressionStatement[13310-13340]:ExpressionStatement[13498-13528]"
+    }, {
+      "left" : "arrayFoldedChildren.add(\n          Node.newString(sb.toString()).copyInformationFrom(prev));",
+      "right" : "arrayFoldedChildren.add(\n          Node.newString(sb.toString()).copyInformationFrom(prev));",
+      "info" : "ExpressionStatement[13347-13439]:ExpressionStatement[13535-13627]"
+    }, {
+      "left" : "foldedSize += arrayFoldedChildren.size() - 1;",
+      "right" : "foldedSize += arrayFoldedChildren.size() - 1;",
+      "info" : "ExpressionStatement[13477-13522]:ExpressionStatement[13665-13710]"
+    }, {
+      "left" : "int originalSize = InlineCostEstimator.getCost(n);",
+      "right" : "int originalSize = InlineCostEstimator.getCost(n);",
+      "info" : "VariableDeclarationStatement[13528-13578]:VariableDeclarationStatement[13716-13766]"
+    }, {
+      "left" : "switch (arrayFoldedChildren.size()) {\n      case 0:\n        Node emptyStringNode = Node.newString(\"\");\n        n.getParent().replaceChild(n, emptyStringNode);\n        reportCodeChange();\n        return emptyStringNode;\n      case 1:\n        Node foldedStringNode = arrayFoldedChildren.remove(0);\n        if (foldedSize > originalSize) {\n          return n;\n        }\n        arrayNode.detachChildren();\n        if (foldedStringNode.getType() != Token.STRING) {\n          // If the Node is not a string literal, ensure that\n          // it is coerced to a string.\n          Node replacement = new Node(Token.ADD,\n              Node.newString(\"\").copyInformationFrom(n),\n              foldedStringNode);\n          foldedStringNode = replacement;\n        }\n        n.getParent().replaceChild(n, foldedStringNode);\n        reportCodeChange();\n        return foldedStringNode;\n      default:\n        // No folding could actually be performed.\n        if (arrayFoldedChildren.size() == arrayNode.getChildCount()) {\n          return n;\n        }\n        int kJoinOverhead = \"[].join()\".length();\n        foldedSize += kJoinOverhead;\n        foldedSize += (right != null) ? InlineCostEstimator.getCost(right) : 0;\n        if (foldedSize > originalSize) {\n          return n;\n        }\n        arrayNode.detachChildren();\n        for (Node node : arrayFoldedChildren) {\n          arrayNode.addChildToBack(node);\n        }\n        reportCodeChange();\n        break;\n    }",
+      "right" : "switch (arrayFoldedChildren.size()) {\n      case 0:\n        Node emptyStringNode = Node.newString(\"\");\n        n.getParent().replaceChild(n, emptyStringNode);\n        reportCodeChange();\n        return emptyStringNode;\n      case 1:\n        Node foldedStringNode = arrayFoldedChildren.remove(0);\n        if (foldedSize > originalSize) {\n          return n;\n        }\n        arrayNode.detachChildren();\n        if (foldedStringNode.getType() != Token.STRING) {\n          // If the Node is not a string literal, ensure that\n          // it is coerced to a string.\n          Node replacement = new Node(Token.ADD,\n              Node.newString(\"\").copyInformationFrom(n),\n              foldedStringNode);\n          foldedStringNode = replacement;\n        }\n        n.getParent().replaceChild(n, foldedStringNode);\n        reportCodeChange();\n        return foldedStringNode;\n      default:\n        // No folding could actually be performed.\n        if (arrayFoldedChildren.size() == arrayNode.getChildCount()) {\n          return n;\n        }\n        int kJoinOverhead = \"[].join()\".length();\n        foldedSize += kJoinOverhead;\n        foldedSize += (right != null) ? InlineCostEstimator.getCost(right) : 0;\n        if (foldedSize > originalSize) {\n          return n;\n        }\n        arrayNode.detachChildren();\n        for (Node node : arrayFoldedChildren) {\n          arrayNode.addChildToBack(node);\n        }\n        reportCodeChange();\n        break;\n    }",
+      "info" : "SwitchStatement[13583-15044]:SwitchStatement[13771-15232]"
+    }, {
+      "left" : "case 0:",
+      "right" : "case 0:",
+      "info" : "SwitchCase[13627-13634]:SwitchCase[13815-13822]"
+    }, {
+      "left" : "Node emptyStringNode = Node.newString(\"\");",
+      "right" : "Node emptyStringNode = Node.newString(\"\");",
+      "info" : "VariableDeclarationStatement[13643-13685]:VariableDeclarationStatement[13831-13873]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, emptyStringNode);",
+      "right" : "n.getParent().replaceChild(n, emptyStringNode);",
+      "info" : "ExpressionStatement[13694-13741]:ExpressionStatement[13882-13929]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[13750-13769]:ExpressionStatement[13938-13957]"
+    }, {
+      "left" : "return emptyStringNode;",
+      "right" : "return emptyStringNode;",
+      "info" : "ReturnStatement[13778-13801]:ReturnStatement[13966-13989]"
+    }, {
+      "left" : "case 1:",
+      "right" : "case 1:",
+      "info" : "SwitchCase[13808-13815]:SwitchCase[13996-14003]"
+    }, {
+      "left" : "Node foldedStringNode = arrayFoldedChildren.remove(0);",
+      "right" : "Node foldedStringNode = arrayFoldedChildren.remove(0);",
+      "info" : "VariableDeclarationStatement[13824-13878]:VariableDeclarationStatement[14012-14066]"
+    }, {
+      "left" : "if (foldedSize > originalSize)",
+      "right" : "if (foldedSize > originalSize)",
+      "info" : "IfStatement[13887-13949]:IfStatement[14075-14137]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13918-13949]:Block[14106-14137]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[13930-13939]:ReturnStatement[14118-14127]"
+    }, {
+      "left" : "arrayNode.detachChildren();",
+      "right" : "arrayNode.detachChildren();",
+      "info" : "ExpressionStatement[13958-13985]:ExpressionStatement[14146-14173]"
+    }, {
+      "left" : "if (foldedStringNode.getType() != Token.STRING)",
+      "right" : "if (foldedStringNode.getType() != Token.STRING)",
+      "info" : "IfStatement[13994-14336]:IfStatement[14182-14524]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14042-14336]:Block[14230-14524]"
+    }, {
+      "left" : "Node replacement = new Node(Token.ADD,\n              Node.newString(\"\").copyInformationFrom(n),\n              foldedStringNode);",
+      "right" : "Node replacement = new Node(Token.ADD,\n              Node.newString(\"\").copyInformationFrom(n),\n              foldedStringNode);",
+      "info" : "VariableDeclarationStatement[14156-14284]:VariableDeclarationStatement[14344-14472]"
+    }, {
+      "left" : "foldedStringNode = replacement;",
+      "right" : "foldedStringNode = replacement;",
+      "info" : "ExpressionStatement[14295-14326]:ExpressionStatement[14483-14514]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, foldedStringNode);",
+      "right" : "n.getParent().replaceChild(n, foldedStringNode);",
+      "info" : "ExpressionStatement[14345-14393]:ExpressionStatement[14533-14581]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[14402-14421]:ExpressionStatement[14590-14609]"
+    }, {
+      "left" : "return foldedStringNode;",
+      "right" : "return foldedStringNode;",
+      "info" : "ReturnStatement[14430-14454]:ReturnStatement[14618-14642]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[14461-14469]:SwitchCase[14649-14657]"
+    }, {
+      "left" : "if (arrayFoldedChildren.size() == arrayNode.getChildCount())",
+      "right" : "if (arrayFoldedChildren.size() == arrayNode.getChildCount())",
+      "info" : "IfStatement[14529-14621]:IfStatement[14717-14809]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14590-14621]:Block[14778-14809]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[14602-14611]:ReturnStatement[14790-14799]"
+    }, {
+      "left" : "int kJoinOverhead = \"[].join()\".length();",
+      "right" : "int kJoinOverhead = \"[].join()\".length();",
+      "info" : "VariableDeclarationStatement[14630-14671]:VariableDeclarationStatement[14818-14859]"
+    }, {
+      "left" : "foldedSize += kJoinOverhead;",
+      "right" : "foldedSize += kJoinOverhead;",
+      "info" : "ExpressionStatement[14680-14708]:ExpressionStatement[14868-14896]"
+    }, {
+      "left" : "foldedSize += (right != null) ? InlineCostEstimator.getCost(right) : 0;",
+      "right" : "foldedSize += (right != null) ? InlineCostEstimator.getCost(right) : 0;",
+      "info" : "ExpressionStatement[14717-14788]:ExpressionStatement[14905-14976]"
+    }, {
+      "left" : "if (foldedSize > originalSize)",
+      "right" : "if (foldedSize > originalSize)",
+      "info" : "IfStatement[14797-14859]:IfStatement[14985-15047]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14828-14859]:Block[15016-15047]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[14840-14849]:ReturnStatement[15028-15037]"
+    }, {
+      "left" : "arrayNode.detachChildren();",
+      "right" : "arrayNode.detachChildren();",
+      "info" : "ExpressionStatement[14868-14895]:ExpressionStatement[15056-15083]"
+    }, {
+      "left" : "for (Node node : arrayFoldedChildren)",
+      "right" : "for (Node node : arrayFoldedChildren)",
+      "info" : "EnhancedForStatement[14904-14995]:EnhancedForStatement[15092-15183]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14942-14995]:Block[15130-15183]"
+    }, {
+      "left" : "arrayNode.addChildToBack(node);",
+      "right" : "arrayNode.addChildToBack(node);",
+      "info" : "ExpressionStatement[14954-14985]:ExpressionStatement[15142-15173]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[15004-15023]:ExpressionStatement[15192-15211]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[15032-15038]:BreakStatement[15220-15226]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[15050-15059]:ReturnStatement[15238-15247]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[15123-15130]:Modifier[15311-15318]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[15131-15135]:SimpleType[15319-15323]"
+    }, {
+      "left" : "tryFoldStringSubstr",
+      "right" : "tryFoldStringSubstr",
+      "info" : "SimpleName[15136-15155]:SimpleName[15324-15343]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[15156-15162]:SingleVariableDeclaration[15344-15350]"
+    }, {
+      "left" : "Node stringNode",
+      "right" : "Node stringNode",
+      "info" : "SingleVariableDeclaration[15164-15179]:SingleVariableDeclaration[15352-15367]"
+    }, {
+      "left" : "Node arg1",
+      "right" : "Node arg1",
+      "info" : "SingleVariableDeclaration[15181-15190]:SingleVariableDeclaration[15369-15378]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15192-16610]:Block[15380-16798]"
+    }, {
+      "left" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[15198-15253]:ExpressionStatement[15386-15441]"
+    }, {
+      "left" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "right" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "info" : "ExpressionStatement[15258-15324]:ExpressionStatement[15446-15512]"
+    }, {
+      "left" : "int start, length;",
+      "right" : "int start, length;",
+      "info" : "VariableDeclarationStatement[15330-15348]:VariableDeclarationStatement[15518-15536]"
+    }, {
+      "left" : "String stringAsString = stringNode.getString();",
+      "right" : "String stringAsString = stringNode.getString();",
+      "info" : "VariableDeclarationStatement[15353-15400]:VariableDeclarationStatement[15541-15588]"
+    }, {
+      "left" : "if (arg1 != null && arg1.getType() == Token.NUMBER)",
+      "right" : "if (arg1 != null && arg1.getType() == Token.NUMBER)",
+      "info" : "IfStatement[15489-15615]:IfStatement[15677-15803]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15541-15586]:Block[15729-15774]"
+    }, {
+      "left" : "start = (int) arg1.getDouble();",
+      "right" : "start = (int) arg1.getDouble();",
+      "info" : "ExpressionStatement[15549-15580]:ExpressionStatement[15737-15768]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15592-15615]:Block[15780-15803]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[15600-15609]:ReturnStatement[15788-15797]"
+    }, {
+      "left" : "Node arg2 = arg1.getNext();",
+      "right" : "Node arg2 = arg1.getNext();",
+      "info" : "VariableDeclarationStatement[15621-15648]:VariableDeclarationStatement[15809-15836]"
+    }, {
+      "left" : "if (arg2 != null)",
+      "right" : "if (arg2 != null)",
+      "info" : "IfStatement[15653-16019]:IfStatement[15841-16207]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15671-15926]:Block[15859-16114]"
+    }, {
+      "left" : "if (arg2.getType() == Token.NUMBER)",
+      "right" : "if (arg2.getType() == Token.NUMBER)",
+      "info" : "IfStatement[15679-15798]:IfStatement[15867-15986]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15715-15765]:Block[15903-15953]"
+    }, {
+      "left" : "length = (int) arg2.getDouble();",
+      "right" : "length = (int) arg2.getDouble();",
+      "info" : "ExpressionStatement[15725-15757]:ExpressionStatement[15913-15945]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15771-15798]:Block[15959-15986]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[15781-15790]:ReturnStatement[15969-15978]"
+    }, {
+      "left" : "if (arg2.getNext() != null)",
+      "right" : "if (arg2.getNext() != null)",
+      "info" : "IfStatement[15806-15920]:IfStatement[15994-16108]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15834-15920]:Block[16022-16108]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[15903-15912]:ReturnStatement[16091-16100]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15932-16019]:Block[16120-16207]"
+    }, {
+      "left" : "length = stringAsString.length() - start;",
+      "right" : "length = stringAsString.length() - start;",
+      "info" : "ExpressionStatement[15972-16013]:ExpressionStatement[16160-16201]"
+    }, {
+      "left" : "if ((start + length) > stringAsString.length() ||\n        (length < 0) ||\n        (start < 0))",
+      "right" : "if ((start + length) > stringAsString.length() ||\n        (length < 0) ||\n        (start < 0))",
+      "info" : "IfStatement[16251-16369]:IfStatement[16439-16557]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16346-16369]:Block[16534-16557]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[16354-16363]:ReturnStatement[16542-16551]"
+    }, {
+      "left" : "String result = stringAsString.substring(start, start + length);",
+      "right" : "String result = stringAsString.substring(start, start + length);",
+      "info" : "VariableDeclarationStatement[16375-16439]:VariableDeclarationStatement[16563-16627]"
+    }, {
+      "left" : "Node resultNode = Node.newString(result);",
+      "right" : "Node resultNode = Node.newString(result);",
+      "info" : "VariableDeclarationStatement[16444-16485]:VariableDeclarationStatement[16632-16673]"
+    }, {
+      "left" : "Node parent = n.getParent();",
+      "right" : "Node parent = n.getParent();",
+      "info" : "VariableDeclarationStatement[16491-16519]:VariableDeclarationStatement[16679-16707]"
+    }, {
+      "left" : "parent.replaceChild(n, resultNode);",
+      "right" : "parent.replaceChild(n, resultNode);",
+      "info" : "ExpressionStatement[16524-16559]:ExpressionStatement[16712-16747]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[16564-16583]:ExpressionStatement[16752-16771]"
+    }, {
+      "left" : "return resultNode;",
+      "right" : "return resultNode;",
+      "info" : "ReturnStatement[16588-16606]:ReturnStatement[16776-16794]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[16673-16680]:Modifier[16861-16868]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[16681-16685]:SimpleType[16869-16873]"
+    }, {
+      "left" : "tryFoldStringSubstring",
+      "right" : "tryFoldStringSubstring",
+      "info" : "SimpleName[16686-16708]:SimpleName[16874-16896]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[16709-16715]:SingleVariableDeclaration[16897-16903]"
+    }, {
+      "left" : "Node stringNode",
+      "right" : "Node stringNode",
+      "info" : "SingleVariableDeclaration[16717-16732]:SingleVariableDeclaration[16905-16920]"
+    }, {
+      "left" : "Node arg1",
+      "right" : "Node arg1",
+      "info" : "SingleVariableDeclaration[16734-16743]:SingleVariableDeclaration[16922-16931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16745-18083]:Block[16933-18271]"
+    }, {
+      "left" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[16751-16806]:ExpressionStatement[16939-16994]"
+    }, {
+      "left" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "right" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "info" : "ExpressionStatement[16811-16877]:ExpressionStatement[16999-17065]"
+    }, {
+      "left" : "int start, end;",
+      "right" : "int start, end;",
+      "info" : "VariableDeclarationStatement[16883-16898]:VariableDeclarationStatement[17071-17086]"
+    }, {
+      "left" : "String stringAsString = stringNode.getString();",
+      "right" : "String stringAsString = stringNode.getString();",
+      "info" : "VariableDeclarationStatement[16903-16950]:VariableDeclarationStatement[17091-17138]"
+    }, {
+      "left" : "if (arg1 != null && arg1.getType() == Token.NUMBER)",
+      "right" : "if (arg1 != null && arg1.getType() == Token.NUMBER)",
+      "info" : "IfStatement[16956-17082]:IfStatement[17144-17270]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17008-17053]:Block[17196-17241]"
+    }, {
+      "left" : "start = (int) arg1.getDouble();",
+      "right" : "start = (int) arg1.getDouble();",
+      "info" : "ExpressionStatement[17016-17047]:ExpressionStatement[17204-17235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17059-17082]:Block[17247-17270]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[17067-17076]:ReturnStatement[17255-17264]"
+    }, {
+      "left" : "Node arg2 = arg1.getNext();",
+      "right" : "Node arg2 = arg1.getNext();",
+      "info" : "VariableDeclarationStatement[17088-17115]:VariableDeclarationStatement[17276-17303]"
+    }, {
+      "left" : "if (arg2 != null)",
+      "right" : "if (arg2 != null)",
+      "info" : "IfStatement[17120-17472]:IfStatement[17308-17660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17138-17390]:Block[17326-17578]"
+    }, {
+      "left" : "if (arg2.getType() == Token.NUMBER)",
+      "right" : "if (arg2.getType() == Token.NUMBER)",
+      "info" : "IfStatement[17146-17262]:IfStatement[17334-17450]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17182-17229]:Block[17370-17417]"
+    }, {
+      "left" : "end = (int) arg2.getDouble();",
+      "right" : "end = (int) arg2.getDouble();",
+      "info" : "ExpressionStatement[17192-17221]:ExpressionStatement[17380-17409]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17235-17262]:Block[17423-17450]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[17245-17254]:ReturnStatement[17433-17442]"
+    }, {
+      "left" : "if (arg2.getNext() != null)",
+      "right" : "if (arg2.getNext() != null)",
+      "info" : "IfStatement[17270-17384]:IfStatement[17458-17572]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17298-17384]:Block[17486-17572]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[17367-17376]:ReturnStatement[17555-17564]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17396-17472]:Block[17584-17660]"
+    }, {
+      "left" : "end = stringAsString.length();",
+      "right" : "end = stringAsString.length();",
+      "info" : "ExpressionStatement[17436-17466]:ExpressionStatement[17624-17654]"
+    }, {
+      "left" : "if ((end > stringAsString.length()) ||\n        (start > stringAsString.length()) ||\n        (end < 0) ||\n        (start < 0))",
+      "right" : "if ((end > stringAsString.length()) ||\n        (start > stringAsString.length()) ||\n        (end < 0) ||\n        (start < 0))",
+      "info" : "IfStatement[17704-17853]:IfStatement[17892-18041]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17830-17853]:Block[18018-18041]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[17838-17847]:ReturnStatement[18026-18035]"
+    }, {
+      "left" : "String result = stringAsString.substring(start, end);",
+      "right" : "String result = stringAsString.substring(start, end);",
+      "info" : "VariableDeclarationStatement[17859-17912]:VariableDeclarationStatement[18047-18100]"
+    }, {
+      "left" : "Node resultNode = Node.newString(result);",
+      "right" : "Node resultNode = Node.newString(result);",
+      "info" : "VariableDeclarationStatement[17917-17958]:VariableDeclarationStatement[18105-18146]"
+    }, {
+      "left" : "Node parent = n.getParent();",
+      "right" : "Node parent = n.getParent();",
+      "info" : "VariableDeclarationStatement[17964-17992]:VariableDeclarationStatement[18152-18180]"
+    }, {
+      "left" : "parent.replaceChild(n, resultNode);",
+      "right" : "parent.replaceChild(n, resultNode);",
+      "info" : "ExpressionStatement[17997-18032]:ExpressionStatement[18185-18220]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[18037-18056]:ExpressionStatement[18225-18244]"
+    }, {
+      "left" : "return resultNode;",
+      "right" : "return resultNode;",
+      "info" : "ReturnStatement[18061-18079]:ReturnStatement[18249-18267]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18143-18150]:Modifier[18331-18338]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[18151-18155]:SimpleType[18339-18343]"
+    }, {
+      "left" : "tryFoldStringCharAt",
+      "right" : "tryFoldStringCharAt",
+      "info" : "SimpleName[18156-18175]:SimpleName[18344-18363]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[18176-18182]:SingleVariableDeclaration[18364-18370]"
+    }, {
+      "left" : "Node stringNode",
+      "right" : "Node stringNode",
+      "info" : "SingleVariableDeclaration[18184-18199]:SingleVariableDeclaration[18372-18387]"
+    }, {
+      "left" : "Node arg1",
+      "right" : "Node arg1",
+      "info" : "SingleVariableDeclaration[18201-18210]:SingleVariableDeclaration[18389-18398]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18212-18986]:Block[18400-19174]"
+    }, {
+      "left" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[18218-18273]:ExpressionStatement[18406-18461]"
+    }, {
+      "left" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "right" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "info" : "ExpressionStatement[18278-18344]:ExpressionStatement[18466-18532]"
+    }, {
+      "left" : "int index;",
+      "right" : "int index;",
+      "info" : "VariableDeclarationStatement[18350-18360]:VariableDeclarationStatement[18538-18548]"
+    }, {
+      "left" : "String stringAsString = stringNode.getString();",
+      "right" : "String stringAsString = stringNode.getString();",
+      "info" : "VariableDeclarationStatement[18365-18412]:VariableDeclarationStatement[18553-18600]"
+    }, {
+      "left" : "if (arg1 != null && arg1.getType() == Token.NUMBER\n        && arg1.getNext() == null)",
+      "right" : "if (arg1 != null && arg1.getType() == Token.NUMBER\n        && arg1.getNext() == null)",
+      "info" : "IfStatement[18418-18578]:IfStatement[18606-18766]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18504-18549]:Block[18692-18737]"
+    }, {
+      "left" : "index = (int) arg1.getDouble();",
+      "right" : "index = (int) arg1.getDouble();",
+      "info" : "ExpressionStatement[18512-18543]:ExpressionStatement[18700-18731]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18555-18578]:Block[18743-18766]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[18563-18572]:ReturnStatement[18751-18760]"
+    }, {
+      "left" : "if (index < 0 || stringAsString.length() <= index)",
+      "right" : "if (index < 0 || stringAsString.length() <= index)",
+      "info" : "IfStatement[18584-18770]:IfStatement[18772-18958]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18635-18770]:Block[18823-18958]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[18755-18764]:ReturnStatement[18943-18952]"
+    }, {
+      "left" : "Node resultNode = Node.newString(\n        stringAsString.substring(index, index + 1));",
+      "right" : "Node resultNode = Node.newString(\n        stringAsString.substring(index, index + 1));",
+      "info" : "VariableDeclarationStatement[18776-18862]:VariableDeclarationStatement[18964-19050]"
+    }, {
+      "left" : "Node parent = n.getParent();",
+      "right" : "Node parent = n.getParent();",
+      "info" : "VariableDeclarationStatement[18867-18895]:VariableDeclarationStatement[19055-19083]"
+    }, {
+      "left" : "parent.replaceChild(n, resultNode);",
+      "right" : "parent.replaceChild(n, resultNode);",
+      "info" : "ExpressionStatement[18900-18935]:ExpressionStatement[19088-19123]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[18940-18959]:ExpressionStatement[19128-19147]"
+    }, {
+      "left" : "return resultNode;",
+      "right" : "return resultNode;",
+      "info" : "ReturnStatement[18964-18982]:ReturnStatement[19152-19170]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[19050-19057]:Modifier[19238-19245]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[19058-19062]:SimpleType[19246-19250]"
+    }, {
+      "left" : "tryFoldStringCharCodeAt",
+      "right" : "tryFoldStringCharCodeAt",
+      "info" : "SimpleName[19063-19086]:SimpleName[19251-19274]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[19087-19093]:SingleVariableDeclaration[19275-19281]"
+    }, {
+      "left" : "Node stringNode",
+      "right" : "Node stringNode",
+      "info" : "SingleVariableDeclaration[19095-19110]:SingleVariableDeclaration[19283-19298]"
+    }, {
+      "left" : "Node arg1",
+      "right" : "Node arg1",
+      "info" : "SingleVariableDeclaration[19112-19121]:SingleVariableDeclaration[19300-19309]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19123-19875]:Block[19311-20063]"
+    }, {
+      "left" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "right" : "Preconditions.checkArgument(n.getType() == Token.CALL);",
+      "info" : "ExpressionStatement[19129-19184]:ExpressionStatement[19317-19372]"
+    }, {
+      "left" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "right" : "Preconditions.checkArgument(stringNode.getType() == Token.STRING);",
+      "info" : "ExpressionStatement[19189-19255]:ExpressionStatement[19377-19443]"
+    }, {
+      "left" : "int index;",
+      "right" : "int index;",
+      "info" : "VariableDeclarationStatement[19261-19271]:VariableDeclarationStatement[19449-19459]"
+    }, {
+      "left" : "String stringAsString = stringNode.getString();",
+      "right" : "String stringAsString = stringNode.getString();",
+      "info" : "VariableDeclarationStatement[19276-19323]:VariableDeclarationStatement[19464-19511]"
+    }, {
+      "left" : "if (arg1 != null && arg1.getType() == Token.NUMBER\n        && arg1.getNext() == null)",
+      "right" : "if (arg1 != null && arg1.getType() == Token.NUMBER\n        && arg1.getNext() == null)",
+      "info" : "IfStatement[19329-19489]:IfStatement[19517-19677]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19415-19460]:Block[19603-19648]"
+    }, {
+      "left" : "index = (int) arg1.getDouble();",
+      "right" : "index = (int) arg1.getDouble();",
+      "info" : "ExpressionStatement[19423-19454]:ExpressionStatement[19611-19642]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19466-19489]:Block[19654-19677]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[19474-19483]:ReturnStatement[19662-19671]"
+    }, {
+      "left" : "if (index < 0 || stringAsString.length() <= index)",
+      "right" : "if (index < 0 || stringAsString.length() <= index)",
+      "info" : "IfStatement[19495-19682]:IfStatement[19683-19870]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19546-19682]:Block[19734-19870]"
+    }, {
+      "left" : "return n;",
+      "right" : "return n;",
+      "info" : "ReturnStatement[19667-19676]:ReturnStatement[19855-19864]"
+    }, {
+      "left" : "Node resultNode = Node.newNumber(stringAsString.charAt(index));",
+      "right" : "Node resultNode = Node.newNumber(stringAsString.charAt(index));",
+      "info" : "VariableDeclarationStatement[19688-19751]:VariableDeclarationStatement[19876-19939]"
+    }, {
+      "left" : "Node parent = n.getParent();",
+      "right" : "Node parent = n.getParent();",
+      "info" : "VariableDeclarationStatement[19756-19784]:VariableDeclarationStatement[19944-19972]"
+    }, {
+      "left" : "parent.replaceChild(n, resultNode);",
+      "right" : "parent.replaceChild(n, resultNode);",
+      "info" : "ExpressionStatement[19789-19824]:ExpressionStatement[19977-20012]"
+    }, {
+      "left" : "reportCodeChange();",
+      "right" : "reportCodeChange();",
+      "info" : "ExpressionStatement[19829-19848]:ExpressionStatement[20017-20036]"
+    }, {
+      "left" : "return resultNode;",
+      "right" : "return resultNode;",
+      "info" : "ReturnStatement[19853-19871]:ReturnStatement[20041-20059]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,745 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final Pattern charsetPattern = Pattern.compile(\"(?i)\\\\bcharset=\\\\s*(?:[\\\"'])?([^\\\\s,;\\\"']*)\");",
+      "right" : "private static final Pattern charsetPattern = Pattern.compile(\"(?i)\\\\bcharset=\\\\s*(?:[\\\"'])?([^\\\\s,;\\\"']*)\");",
+      "info" : "FieldDeclaration[900-1009]:FieldDeclaration[932-1041]"
+    }, {
+      "left" : "static final String defaultCharset = \"UTF-8\";",
+      "right" : "static final String defaultCharset = \"UTF-8\";",
+      "info" : "FieldDeclaration[1014-1059]:FieldDeclaration[1046-1091]"
+    }, {
+      "left" : "private static final int firstReadBufferSize = 1024 * 5;",
+      "right" : "private static final int firstReadBufferSize = 1024 * 5;",
+      "info" : "FieldDeclaration[1111-1167]:FieldDeclaration[1143-1199]"
+    }, {
+      "left" : "static final int bufferSize = 1024 * 32;",
+      "right" : "static final int bufferSize = 1024 * 32;",
+      "info" : "FieldDeclaration[1172-1212]:FieldDeclaration[1204-1244]"
+    }, {
+      "left" : "private static final char[] mimeBoundaryChars =\n            \"-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\".toCharArray();",
+      "right" : "private static final char[] mimeBoundaryChars =\n            \"-_1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\".toCharArray();",
+      "info" : "FieldDeclaration[1217-1358]:FieldDeclaration[1249-1390]"
+    }, {
+      "left" : "static final int boundaryLength = 32;",
+      "right" : "static final int boundaryLength = 32;",
+      "info" : "FieldDeclaration[1363-1400]:FieldDeclaration[1395-1432]"
+    }, {
+      "left" : "private DataUtil()",
+      "right" : "private DataUtil()",
+      "info" : "MethodDeclaration[1406-1427]:MethodDeclaration[1438-1459]"
+    }, {
+      "left" : "public static Document load(File in, String charsetName, String baseUri) throws IOException",
+      "right" : "public static Document load(File in, String charsetName, String baseUri) throws IOException",
+      "info" : "MethodDeclaration[1433-1904]:MethodDeclaration[1465-1936]"
+    }, {
+      "left" : "public static Document load(InputStream in, String charsetName, String baseUri) throws IOException",
+      "right" : "public static Document load(InputStream in, String charsetName, String baseUri) throws IOException",
+      "info" : "MethodDeclaration[1910-2415]:MethodDeclaration[1942-2447]"
+    }, {
+      "left" : "public static Document load(InputStream in, String charsetName, String baseUri, Parser parser) throws IOException",
+      "right" : "public static Document load(InputStream in, String charsetName, String baseUri, Parser parser) throws IOException",
+      "info" : "MethodDeclaration[2421-3028]:MethodDeclaration[2453-3060]"
+    }, {
+      "left" : "static void crossStreams(final InputStream in, final OutputStream out) throws IOException",
+      "right" : "static void crossStreams(final InputStream in, final OutputStream out) throws IOException",
+      "info" : "MethodDeclaration[3034-3512]:MethodDeclaration[3066-3544]"
+    }, {
+      "left" : "public static ByteBuffer readToByteBuffer(InputStream inStream, int maxSize) throws IOException",
+      "right" : "public static ByteBuffer readToByteBuffer(InputStream inStream, int maxSize) throws IOException",
+      "info" : "MethodDeclaration[7330-8170]:MethodDeclaration[7599-8439]"
+    }, {
+      "left" : "static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException",
+      "right" : "static ByteBuffer readToByteBuffer(InputStream inStream) throws IOException",
+      "info" : "MethodDeclaration[8176-8305]:MethodDeclaration[8445-8574]"
+    }, {
+      "left" : "static ByteBuffer readFileToByteBuffer(File file) throws IOException",
+      "right" : "static ByteBuffer readFileToByteBuffer(File file) throws IOException",
+      "info" : "MethodDeclaration[8311-8789]:MethodDeclaration[8580-9058]"
+    }, {
+      "left" : "static ByteBuffer emptyByteBuffer()",
+      "right" : "static ByteBuffer emptyByteBuffer()",
+      "info" : "MethodDeclaration[8795-8877]:MethodDeclaration[9064-9146]"
+    }, {
+      "left" : "static String getCharsetFromContentType(String contentType)",
+      "right" : "static String getCharsetFromContentType(String contentType)",
+      "info" : "MethodDeclaration[8883-9552]:MethodDeclaration[9152-9821]"
+    }, {
+      "left" : "private static String validateCharset(String cs)",
+      "right" : "private static String validateCharset(String cs)",
+      "info" : "MethodDeclaration[9558-10046]:MethodDeclaration[9827-10315]"
+    }, {
+      "left" : "static String mimeBoundary()",
+      "right" : "static String mimeBoundary()",
+      "info" : "MethodDeclaration[10052-10461]:MethodDeclaration[10321-10730]"
+    }, {
+      "left" : "private static BomCharset detectCharsetFromBom(final ByteBuffer byteData)",
+      "right" : "private static BomCharset detectCharsetFromBom(final ByteBuffer byteData)",
+      "info" : "MethodDeclaration[10467-11642]:MethodDeclaration[10736-11911]"
+    }, {
+      "left" : "BomCharset",
+      "right" : "BomCharset",
+      "info" : "TypeDeclaration[11648-11904]:TypeDeclaration[11917-12173]"
+    }, {
+      "left" : "private final String charset;",
+      "right" : "private final String charset;",
+      "info" : "FieldDeclaration[11690-11719]:FieldDeclaration[11959-11988]"
+    }, {
+      "left" : "private final boolean offset;",
+      "right" : "private final boolean offset;",
+      "info" : "FieldDeclaration[11728-11757]:FieldDeclaration[11997-12026]"
+    }, {
+      "left" : "public BomCharset(String charset, boolean offset)",
+      "right" : "public BomCharset(String charset, boolean offset)",
+      "info" : "MethodDeclaration[11767-11898]:MethodDeclaration[12036-12167]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[1406-1413]:Modifier[1438-1445]"
+    }, {
+      "left" : "DataUtil",
+      "right" : "DataUtil",
+      "info" : "SimpleName[1414-1422]:SimpleName[1446-1454]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1425-1427]:Block[1457-1459]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1704-1710]:Modifier[1736-1742]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[1711-1717]:Modifier[1743-1749]"
+    }, {
+      "left" : "Document",
+      "right" : "Document",
+      "info" : "SimpleType[1718-1726]:SimpleType[1750-1758]"
+    }, {
+      "left" : "load",
+      "right" : "load",
+      "info" : "SimpleName[1727-1731]:SimpleName[1759-1763]"
+    }, {
+      "left" : "File in",
+      "right" : "File in",
+      "info" : "SingleVariableDeclaration[1732-1739]:SingleVariableDeclaration[1764-1771]"
+    }, {
+      "left" : "String charsetName",
+      "right" : "String charsetName",
+      "info" : "SingleVariableDeclaration[1741-1759]:SingleVariableDeclaration[1773-1791]"
+    }, {
+      "left" : "String baseUri",
+      "right" : "String baseUri",
+      "info" : "SingleVariableDeclaration[1761-1775]:SingleVariableDeclaration[1793-1807]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[1784-1795]:SimpleType[1816-1827]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1796-1904]:Block[1828-1936]"
+    }, {
+      "left" : "return parseInputStream(new FileInputStream(in), charsetName, baseUri, Parser.htmlParser());",
+      "right" : "return parseInputStream(new FileInputStream(in), charsetName, baseUri, Parser.htmlParser());",
+      "info" : "ReturnStatement[1806-1898]:ReturnStatement[1838-1930]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2229-2235]:Modifier[2261-2267]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2236-2242]:Modifier[2268-2274]"
+    }, {
+      "left" : "Document",
+      "right" : "Document",
+      "info" : "SimpleType[2243-2251]:SimpleType[2275-2283]"
+    }, {
+      "left" : "load",
+      "right" : "load",
+      "info" : "SimpleName[2252-2256]:SimpleName[2284-2288]"
+    }, {
+      "left" : "InputStream in",
+      "right" : "InputStream in",
+      "info" : "SingleVariableDeclaration[2257-2271]:SingleVariableDeclaration[2289-2303]"
+    }, {
+      "left" : "String charsetName",
+      "right" : "String charsetName",
+      "info" : "SingleVariableDeclaration[2273-2291]:SingleVariableDeclaration[2305-2323]"
+    }, {
+      "left" : "String baseUri",
+      "right" : "String baseUri",
+      "info" : "SingleVariableDeclaration[2293-2307]:SingleVariableDeclaration[2325-2339]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[2316-2327]:SimpleType[2348-2359]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2328-2415]:Block[2360-2447]"
+    }, {
+      "left" : "return parseInputStream(in, charsetName, baseUri, Parser.htmlParser());",
+      "right" : "return parseInputStream(in, charsetName, baseUri, Parser.htmlParser());",
+      "info" : "ReturnStatement[2338-2409]:ReturnStatement[2370-2441]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2840-2846]:Modifier[2872-2878]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2847-2853]:Modifier[2879-2885]"
+    }, {
+      "left" : "Document",
+      "right" : "Document",
+      "info" : "SimpleType[2854-2862]:SimpleType[2886-2894]"
+    }, {
+      "left" : "load",
+      "right" : "load",
+      "info" : "SimpleName[2863-2867]:SimpleName[2895-2899]"
+    }, {
+      "left" : "InputStream in",
+      "right" : "InputStream in",
+      "info" : "SingleVariableDeclaration[2868-2882]:SingleVariableDeclaration[2900-2914]"
+    }, {
+      "left" : "String charsetName",
+      "right" : "String charsetName",
+      "info" : "SingleVariableDeclaration[2884-2902]:SingleVariableDeclaration[2916-2934]"
+    }, {
+      "left" : "String baseUri",
+      "right" : "String baseUri",
+      "info" : "SingleVariableDeclaration[2904-2918]:SingleVariableDeclaration[2936-2950]"
+    }, {
+      "left" : "Parser parser",
+      "right" : "Parser parser",
+      "info" : "SingleVariableDeclaration[2920-2933]:SingleVariableDeclaration[2952-2965]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[2942-2953]:SimpleType[2974-2985]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2954-3028]:Block[2986-3060]"
+    }, {
+      "left" : "return parseInputStream(in, charsetName, baseUri, parser);",
+      "right" : "return parseInputStream(in, charsetName, baseUri, parser);",
+      "info" : "ReturnStatement[2964-3022]:ReturnStatement[2996-3054]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[3249-3255]:Modifier[3281-3287]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3256-3260]:PrimitiveType[3288-3292]"
+    }, {
+      "left" : "crossStreams",
+      "right" : "crossStreams",
+      "info" : "SimpleName[3261-3273]:SimpleName[3293-3305]"
+    }, {
+      "left" : "final InputStream in",
+      "right" : "final InputStream in",
+      "info" : "SingleVariableDeclaration[3274-3294]:SingleVariableDeclaration[3306-3326]"
+    }, {
+      "left" : "final OutputStream out",
+      "right" : "final OutputStream out",
+      "info" : "SingleVariableDeclaration[3296-3318]:SingleVariableDeclaration[3328-3350]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[3327-3338]:SimpleType[3359-3370]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3339-3512]:Block[3371-3544]"
+    }, {
+      "left" : "final byte[] buffer = new byte[bufferSize];",
+      "right" : "final byte[] buffer = new byte[bufferSize];",
+      "info" : "VariableDeclarationStatement[3349-3392]:VariableDeclarationStatement[3381-3424]"
+    }, {
+      "left" : "int len;",
+      "right" : "int len;",
+      "info" : "VariableDeclarationStatement[3401-3409]:VariableDeclarationStatement[3433-3441]"
+    }, {
+      "left" : "while ((len = in.read(buffer)) != -1)",
+      "right" : "while ((len = in.read(buffer)) != -1)",
+      "info" : "WhileStatement[3418-3506]:WhileStatement[3450-3538]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3456-3506]:Block[3488-3538]"
+    }, {
+      "left" : "out.write(buffer, 0, len);",
+      "right" : "out.write(buffer, 0, len);",
+      "info" : "ExpressionStatement[3470-3496]:ExpressionStatement[3502-3528]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7828-7834]:Modifier[8097-8103]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[7835-7841]:Modifier[8104-8110]"
+    }, {
+      "left" : "ByteBuffer",
+      "right" : "ByteBuffer",
+      "info" : "SimpleType[7842-7852]:SimpleType[8111-8121]"
+    }, {
+      "left" : "readToByteBuffer",
+      "right" : "readToByteBuffer",
+      "info" : "SimpleName[7853-7869]:SimpleName[8122-8138]"
+    }, {
+      "left" : "InputStream inStream",
+      "right" : "InputStream inStream",
+      "info" : "SingleVariableDeclaration[7870-7890]:SingleVariableDeclaration[8139-8159]"
+    }, {
+      "left" : "int maxSize",
+      "right" : "int maxSize",
+      "info" : "SingleVariableDeclaration[7892-7903]:SingleVariableDeclaration[8161-8172]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[7912-7923]:SimpleType[8181-8192]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7924-8170]:Block[8193-8439]"
+    }, {
+      "left" : "Validate.isTrue(maxSize >= 0, \"maxSize must be 0 (unlimited) or larger\");",
+      "right" : "Validate.isTrue(maxSize >= 0, \"maxSize must be 0 (unlimited) or larger\");",
+      "info" : "ExpressionStatement[7934-8007]:ExpressionStatement[8203-8276]"
+    }, {
+      "left" : "final ConstrainableInputStream input = ConstrainableInputStream.wrap(inStream, bufferSize, maxSize);",
+      "right" : "final ConstrainableInputStream input = ConstrainableInputStream.wrap(inStream, bufferSize, maxSize);",
+      "info" : "VariableDeclarationStatement[8016-8116]:VariableDeclarationStatement[8285-8385]"
+    }, {
+      "left" : "return input.readToByteBuffer(maxSize);",
+      "right" : "return input.readToByteBuffer(maxSize);",
+      "info" : "ReturnStatement[8125-8164]:ReturnStatement[8394-8433]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[8176-8182]:Modifier[8445-8451]"
+    }, {
+      "left" : "ByteBuffer",
+      "right" : "ByteBuffer",
+      "info" : "SimpleType[8183-8193]:SimpleType[8452-8462]"
+    }, {
+      "left" : "readToByteBuffer",
+      "right" : "readToByteBuffer",
+      "info" : "SimpleName[8194-8210]:SimpleName[8463-8479]"
+    }, {
+      "left" : "InputStream inStream",
+      "right" : "InputStream inStream",
+      "info" : "SingleVariableDeclaration[8211-8231]:SingleVariableDeclaration[8480-8500]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[8240-8251]:SimpleType[8509-8520]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8252-8305]:Block[8521-8574]"
+    }, {
+      "left" : "return readToByteBuffer(inStream, 0);",
+      "right" : "return readToByteBuffer(inStream, 0);",
+      "info" : "ReturnStatement[8262-8299]:ReturnStatement[8531-8568]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[8311-8317]:Modifier[8580-8586]"
+    }, {
+      "left" : "ByteBuffer",
+      "right" : "ByteBuffer",
+      "info" : "SimpleType[8318-8328]:SimpleType[8587-8597]"
+    }, {
+      "left" : "readFileToByteBuffer",
+      "right" : "readFileToByteBuffer",
+      "info" : "SimpleName[8329-8349]:SimpleName[8598-8618]"
+    }, {
+      "left" : "File file",
+      "right" : "File file",
+      "info" : "SingleVariableDeclaration[8350-8359]:SingleVariableDeclaration[8619-8628]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[8368-8379]:SimpleType[8637-8648]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8380-8789]:Block[8649-9058]"
+    }, {
+      "left" : "RandomAccessFile randomAccessFile = null;",
+      "right" : "RandomAccessFile randomAccessFile = null;",
+      "info" : "VariableDeclarationStatement[8390-8431]:VariableDeclarationStatement[8659-8700]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[8440-8783]:TryStatement[8709-9052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8444-8679]:Block[8713-8948]"
+    }, {
+      "left" : "randomAccessFile = new RandomAccessFile(file, \"r\");",
+      "right" : "randomAccessFile = new RandomAccessFile(file, \"r\");",
+      "info" : "ExpressionStatement[8458-8509]:ExpressionStatement[8727-8778]"
+    }, {
+      "left" : "byte[] bytes = new byte[(int) randomAccessFile.length()];",
+      "right" : "byte[] bytes = new byte[(int) randomAccessFile.length()];",
+      "info" : "VariableDeclarationStatement[8522-8579]:VariableDeclarationStatement[8791-8848]"
+    }, {
+      "left" : "randomAccessFile.readFully(bytes);",
+      "right" : "randomAccessFile.readFully(bytes);",
+      "info" : "ExpressionStatement[8592-8626]:ExpressionStatement[8861-8895]"
+    }, {
+      "left" : "return ByteBuffer.wrap(bytes);",
+      "right" : "return ByteBuffer.wrap(bytes);",
+      "info" : "ReturnStatement[8639-8669]:ReturnStatement[8908-8938]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8688-8783]:Block[8957-9052]"
+    }, {
+      "left" : "if (randomAccessFile != null)",
+      "right" : "if (randomAccessFile != null)",
+      "info" : "IfStatement[8702-8773]:IfStatement[8971-9042]"
+    }, {
+      "left" : "randomAccessFile.close();",
+      "right" : "randomAccessFile.close();",
+      "info" : "ExpressionStatement[8748-8773]:ExpressionStatement[9017-9042]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[8795-8801]:Modifier[9064-9070]"
+    }, {
+      "left" : "ByteBuffer",
+      "right" : "ByteBuffer",
+      "info" : "SimpleType[8802-8812]:SimpleType[9071-9081]"
+    }, {
+      "left" : "emptyByteBuffer",
+      "right" : "emptyByteBuffer",
+      "info" : "SimpleName[8813-8828]:SimpleName[9082-9097]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8831-8877]:Block[9100-9146]"
+    }, {
+      "left" : "return ByteBuffer.allocate(0);",
+      "right" : "return ByteBuffer.allocate(0);",
+      "info" : "ReturnStatement[8841-8871]:ReturnStatement[9110-9140]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[9179-9185]:Modifier[9448-9454]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[9186-9192]:SimpleType[9455-9461]"
+    }, {
+      "left" : "getCharsetFromContentType",
+      "right" : "getCharsetFromContentType",
+      "info" : "SimpleName[9193-9218]:SimpleName[9462-9487]"
+    }, {
+      "left" : "String contentType",
+      "right" : "String contentType",
+      "info" : "SingleVariableDeclaration[9219-9237]:SingleVariableDeclaration[9488-9506]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9239-9552]:Block[9508-9821]"
+    }, {
+      "left" : "if (contentType == null)",
+      "right" : "if (contentType == null)",
+      "info" : "IfStatement[9249-9286]:IfStatement[9518-9555]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[9274-9286]:ReturnStatement[9543-9555]"
+    }, {
+      "left" : "Matcher m = charsetPattern.matcher(contentType);",
+      "right" : "Matcher m = charsetPattern.matcher(contentType);",
+      "info" : "VariableDeclarationStatement[9295-9343]:VariableDeclarationStatement[9564-9612]"
+    }, {
+      "left" : "if (m.find())",
+      "right" : "if (m.find())",
+      "info" : "IfStatement[9352-9525]:IfStatement[9621-9794]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9366-9525]:Block[9635-9794]"
+    }, {
+      "left" : "String charset = m.group(1).trim();",
+      "right" : "String charset = m.group(1).trim();",
+      "info" : "VariableDeclarationStatement[9380-9415]:VariableDeclarationStatement[9649-9684]"
+    }, {
+      "left" : "charset = charset.replace(\"charset=\", \"\");",
+      "right" : "charset = charset.replace(\"charset=\", \"\");",
+      "info" : "ExpressionStatement[9428-9470]:ExpressionStatement[9697-9739]"
+    }, {
+      "left" : "return validateCharset(charset);",
+      "right" : "return validateCharset(charset);",
+      "info" : "ReturnStatement[9483-9515]:ReturnStatement[9752-9784]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[9534-9546]:ReturnStatement[9803-9815]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[9558-9565]:Modifier[9827-9834]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[9566-9572]:Modifier[9835-9841]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[9573-9579]:SimpleType[9842-9848]"
+    }, {
+      "left" : "validateCharset",
+      "right" : "validateCharset",
+      "info" : "SimpleName[9580-9595]:SimpleName[9849-9864]"
+    }, {
+      "left" : "String cs",
+      "right" : "String cs",
+      "info" : "SingleVariableDeclaration[9596-9605]:SingleVariableDeclaration[9865-9874]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9607-10046]:Block[9876-10315]"
+    }, {
+      "left" : "if (cs == null || cs.length() == 0)",
+      "right" : "if (cs == null || cs.length() == 0)",
+      "info" : "IfStatement[9617-9665]:IfStatement[9886-9934]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[9653-9665]:ReturnStatement[9922-9934]"
+    }, {
+      "left" : "cs = cs.trim().replaceAll(\"[\\\"']\", \"\");",
+      "right" : "cs = cs.trim().replaceAll(\"[\\\"']\", \"\");",
+      "info" : "ExpressionStatement[9674-9713]:ExpressionStatement[9943-9982]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[9722-10019]:TryStatement[9991-10288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9726-9890]:Block[9995-10159]"
+    }, {
+      "left" : "if (Charset.isSupported(cs))",
+      "right" : "if (Charset.isSupported(cs))",
+      "info" : "IfStatement[9740-9779]:IfStatement[10009-10048]"
+    }, {
+      "left" : "return cs;",
+      "right" : "return cs;",
+      "info" : "ReturnStatement[9769-9779]:ReturnStatement[10038-10048]"
+    }, {
+      "left" : "cs = cs.toUpperCase(Locale.ENGLISH);",
+      "right" : "cs = cs.toUpperCase(Locale.ENGLISH);",
+      "info" : "ExpressionStatement[9792-9828]:ExpressionStatement[10061-10097]"
+    }, {
+      "left" : "if (Charset.isSupported(cs))",
+      "right" : "if (Charset.isSupported(cs))",
+      "info" : "IfStatement[9841-9880]:IfStatement[10110-10149]"
+    }, {
+      "left" : "return cs;",
+      "right" : "return cs;",
+      "info" : "ReturnStatement[9870-9880]:ReturnStatement[10139-10149]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9929-10019]:Block[10198-10288]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[10028-10040]:ReturnStatement[10297-10309]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[10136-10142]:Modifier[10405-10411]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[10143-10149]:SimpleType[10412-10418]"
+    }, {
+      "left" : "mimeBoundary",
+      "right" : "mimeBoundary",
+      "info" : "SimpleName[10150-10162]:SimpleName[10419-10431]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10165-10461]:Block[10434-10730]"
+    }, {
+      "left" : "final StringBuilder mime = new StringBuilder(boundaryLength);",
+      "right" : "final StringBuilder mime = new StringBuilder(boundaryLength);",
+      "info" : "VariableDeclarationStatement[10175-10236]:VariableDeclarationStatement[10444-10505]"
+    }, {
+      "left" : "final Random rand = new Random();",
+      "right" : "final Random rand = new Random();",
+      "info" : "VariableDeclarationStatement[10245-10278]:VariableDeclarationStatement[10514-10547]"
+    }, {
+      "left" : "for (int i = 0; i < boundaryLength; i++)",
+      "right" : "for (int i = 0; i < boundaryLength; i++)",
+      "info" : "ForStatement[10287-10423]:ForStatement[10556-10692]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10328-10423]:Block[10597-10692]"
+    }, {
+      "left" : "mime.append(mimeBoundaryChars[rand.nextInt(mimeBoundaryChars.length)]);",
+      "right" : "mime.append(mimeBoundaryChars[rand.nextInt(mimeBoundaryChars.length)]);",
+      "info" : "ExpressionStatement[10342-10413]:ExpressionStatement[10611-10682]"
+    }, {
+      "left" : "return mime.toString();",
+      "right" : "return mime.toString();",
+      "info" : "ReturnStatement[10432-10455]:ReturnStatement[10701-10724]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10467-10474]:Modifier[10736-10743]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[10475-10481]:Modifier[10744-10750]"
+    }, {
+      "left" : "BomCharset",
+      "right" : "BomCharset",
+      "info" : "SimpleType[10482-10492]:SimpleType[10751-10761]"
+    }, {
+      "left" : "detectCharsetFromBom",
+      "right" : "detectCharsetFromBom",
+      "info" : "SimpleName[10493-10513]:SimpleName[10762-10782]"
+    }, {
+      "left" : "final ByteBuffer byteData",
+      "right" : "final ByteBuffer byteData",
+      "info" : "SingleVariableDeclaration[10514-10539]:SingleVariableDeclaration[10783-10808]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10541-11642]:Block[10810-11911]"
+    }, {
+      "left" : "final Buffer buffer = byteData;",
+      "right" : "final Buffer buffer = byteData;",
+      "info" : "VariableDeclarationStatement[10551-10582]:VariableDeclarationStatement[10820-10851]"
+    }, {
+      "left" : "buffer.mark();",
+      "right" : "buffer.mark();",
+      "info" : "ExpressionStatement[10678-10692]:ExpressionStatement[10947-10961]"
+    }, {
+      "left" : "byte[] bom = new byte[4];",
+      "right" : "byte[] bom = new byte[4];",
+      "info" : "VariableDeclarationStatement[10701-10726]:VariableDeclarationStatement[10970-10995]"
+    }, {
+      "left" : "if (byteData.remaining() >= bom.length)",
+      "right" : "if (byteData.remaining() >= bom.length)",
+      "info" : "IfStatement[10735-10846]:IfStatement[11004-11115]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10775-10846]:Block[11044-11115]"
+    }, {
+      "left" : "byteData.get(bom);",
+      "right" : "byteData.get(bom);",
+      "info" : "ExpressionStatement[10789-10807]:ExpressionStatement[11058-11076]"
+    }, {
+      "left" : "buffer.rewind();",
+      "right" : "buffer.rewind();",
+      "info" : "ExpressionStatement[10820-10836]:ExpressionStatement[11089-11105]"
+    }, {
+      "left" : "if (bom[0] == 0x00 && bom[1] == 0x00 && bom[2] == (byte) 0xFE && bom[3] == (byte) 0xFF || // BE\n            bom[0] == (byte) 0xFF && bom[1] == (byte) 0xFE && bom[2] == 0x00 && bom[3] == 0x00)",
+      "right" : "if (bom[0] == 0x00 && bom[1] == 0x00 && bom[2] == (byte) 0xFE && bom[3] == (byte) 0xFF || // BE\n            bom[0] == (byte) 0xFF && bom[1] == (byte) 0xFE && bom[2] == 0x00 && bom[3] == 0x00)",
+      "info" : "IfStatement[10855-11615]:IfStatement[11124-11884]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11047-11150]:Block[11316-11419]"
+    }, {
+      "left" : "return new BomCharset(\"UTF-32\", false);",
+      "right" : "return new BomCharset(\"UTF-32\", false);",
+      "info" : "ReturnStatement[11067-11106]:ReturnStatement[11336-11375]"
+    }, {
+      "left" : "if (bom[0] == (byte) 0xFE && bom[1] == (byte) 0xFF || // BE\n            bom[0] == (byte) 0xFF && bom[1] == (byte) 0xFE)",
+      "right" : "if (bom[0] == (byte) 0xFE && bom[1] == (byte) 0xFF || // BE\n            bom[0] == (byte) 0xFF && bom[1] == (byte) 0xFE)",
+      "info" : "IfStatement[11156-11615]:IfStatement[11425-11884]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11276-11355]:Block[11545-11624]"
+    }, {
+      "left" : "return new BomCharset(\"UTF-16\", false);",
+      "right" : "return new BomCharset(\"UTF-16\", false);",
+      "info" : "ReturnStatement[11290-11329]:ReturnStatement[11559-11598]"
+    }, {
+      "left" : "if (bom[0] == (byte) 0xEF && bom[1] == (byte) 0xBB && bom[2] == (byte) 0xBF)",
+      "right" : "if (bom[0] == (byte) 0xEF && bom[1] == (byte) 0xBB && bom[2] == (byte) 0xBF)",
+      "info" : "IfStatement[11361-11615]:IfStatement[11630-11884]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11438-11615]:Block[11707-11884]"
+    }, {
+      "left" : "return new BomCharset(\"UTF-8\", true);",
+      "right" : "return new BomCharset(\"UTF-8\", true);",
+      "info" : "ReturnStatement[11452-11489]:ReturnStatement[11721-11758]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[11624-11636]:ReturnStatement[11893-11905]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11648-11655]:Modifier[11917-11924]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[11656-11662]:Modifier[11925-11931]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[11663-11668]:TYPE_DECLARATION_KIND[11932-11937]"
+    }, {
+      "left" : "BomCharset",
+      "right" : "BomCharset",
+      "info" : "SimpleName[11669-11679]:SimpleName[11938-11948]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11767-11773]:Modifier[12036-12042]"
+    }, {
+      "left" : "BomCharset",
+      "right" : "BomCharset",
+      "info" : "SimpleName[11774-11784]:SimpleName[12043-12053]"
+    }, {
+      "left" : "String charset",
+      "right" : "String charset",
+      "info" : "SingleVariableDeclaration[11785-11799]:SingleVariableDeclaration[12054-12068]"
+    }, {
+      "left" : "boolean offset",
+      "right" : "boolean offset",
+      "info" : "SingleVariableDeclaration[11801-11815]:SingleVariableDeclaration[12070-12084]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11817-11898]:Block[12086-12167]"
+    }, {
+      "left" : "this.charset = charset;",
+      "right" : "this.charset = charset;",
+      "info" : "ExpressionStatement[11831-11854]:ExpressionStatement[12100-12123]"
+    }, {
+      "left" : "this.offset = offset;",
+      "right" : "this.offset = offset;",
+      "info" : "ExpressionStatement[11867-11888]:ExpressionStatement[12136-12157]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

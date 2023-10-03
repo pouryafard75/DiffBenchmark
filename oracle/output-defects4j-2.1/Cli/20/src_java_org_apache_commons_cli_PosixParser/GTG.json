@@ -1,0 +1,381 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "PosixParser",
+      "right" : "PosixParser",
+      "info" : "TypeDeclaration[941-10227]:TypeDeclaration[941-10369]"
+    }, {
+      "left" : "private List tokens = new ArrayList();",
+      "right" : "private List tokens = new ArrayList();",
+      "info" : "FieldDeclaration[1216-1293]:FieldDeclaration[1216-1293]"
+    }, {
+      "left" : "private boolean eatTheRest;",
+      "right" : "private boolean eatTheRest;",
+      "info" : "FieldDeclaration[1299-1375]:FieldDeclaration[1299-1375]"
+    }, {
+      "left" : "private Option currentOption;",
+      "right" : "private Option currentOption;",
+      "info" : "FieldDeclaration[1381-1451]:FieldDeclaration[1381-1451]"
+    }, {
+      "left" : "private Options options;",
+      "right" : "private Options options;",
+      "info" : "FieldDeclaration[1457-1517]:FieldDeclaration[1457-1517]"
+    }, {
+      "left" : "private void init()",
+      "right" : "private void init()",
+      "info" : "MethodDeclaration[1523-1845]:MethodDeclaration[1523-1845]"
+    }, {
+      "left" : "protected String[] flatten(Options options, String[] arguments, boolean stopAtNonOption)",
+      "right" : "protected String[] flatten(Options options, String[] arguments, boolean stopAtNonOption)",
+      "info" : "MethodDeclaration[1851-5788]:MethodDeclaration[1851-5930]"
+    }, {
+      "left" : "private void gobble(Iterator iter)",
+      "right" : "private void gobble(Iterator iter)",
+      "info" : "MethodDeclaration[5794-6131]:MethodDeclaration[5936-6273]"
+    }, {
+      "left" : "private void process(String value)",
+      "right" : "private void process(String value)",
+      "info" : "MethodDeclaration[6137-7274]:MethodDeclaration[6279-7416]"
+    }, {
+      "left" : "private void processOptionToken(String token, boolean stopAtNonOption)",
+      "right" : "private void processOptionToken(String token, boolean stopAtNonOption)",
+      "info" : "MethodDeclaration[7280-8116]:MethodDeclaration[7422-8258]"
+    }, {
+      "left" : "protected void burstToken(String token, boolean stopAtNonOption)",
+      "right" : "protected void burstToken(String token, boolean stopAtNonOption)",
+      "info" : "MethodDeclaration[8122-10225]:MethodDeclaration[8264-10367]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1756-1845]:Block[1756-1845]"
+    }, {
+      "left" : "eatTheRest = false;",
+      "right" : "eatTheRest = false;",
+      "info" : "ExpressionStatement[1766-1785]:ExpressionStatement[1766-1785]"
+    }, {
+      "left" : "tokens.clear();",
+      "right" : "tokens.clear();",
+      "info" : "ExpressionStatement[1794-1809]:ExpressionStatement[1794-1809]"
+    }, {
+      "left" : "currentOption = null;",
+      "right" : "currentOption = null;",
+      "info" : "ExpressionStatement[1818-1839]:ExpressionStatement[1818-1839]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4071-5788]:Block[4071-5930]"
+    }, {
+      "left" : "init();",
+      "right" : "init();",
+      "info" : "ExpressionStatement[4081-4088]:ExpressionStatement[4081-4088]"
+    }, {
+      "left" : "this.options = options;",
+      "right" : "this.options = options;",
+      "info" : "ExpressionStatement[4097-4120]:ExpressionStatement[4097-4120]"
+    }, {
+      "left" : "Iterator iter = Arrays.asList(arguments).iterator();",
+      "right" : "Iterator iter = Arrays.asList(arguments).iterator();",
+      "info" : "VariableDeclarationStatement[4181-4233]:VariableDeclarationStatement[4181-4233]"
+    }, {
+      "left" : "while (iter.hasNext())",
+      "right" : "while (iter.hasNext())",
+      "info" : "WhileStatement[4286-5712]:WhileStatement[4286-5854]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4317-5712]:Block[4317-5854]"
+    }, {
+      "left" : "String token = (String) iter.next();",
+      "right" : "String token = (String) iter.next();",
+      "info" : "VariableDeclarationStatement[4378-4414]:VariableDeclarationStatement[4378-4414]"
+    }, {
+      "left" : "if (token.startsWith(\"--\"))",
+      "right" : "if (token.startsWith(\"--\"))",
+      "info" : "IfStatement[4481-5675]:IfStatement[4481-5817]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4521-4875]:Block[4521-5017]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4803-4861]:Block[4733-4788]"
+    }, {
+      "left" : "tokens.add(token);",
+      "right" : "process(token);",
+      "info" : "ExpressionStatement[4825-4843]:ExpressionStatement[4755-4770]"
+    }, {
+      "left" : "if (\"-\".equals(token))",
+      "right" : "if (\"-\".equals(token))",
+      "info" : "IfStatement[4923-5675]:IfStatement[5065-5817]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4958-5008]:Block[5100-5150]"
+    }, {
+      "left" : "tokens.add(token);",
+      "right" : "tokens.add(token);",
+      "info" : "ExpressionStatement[4976-4994]:ExpressionStatement[5118-5136]"
+    }, {
+      "left" : "if (token.startsWith(\"-\"))",
+      "right" : "if (token.startsWith(\"-\"))",
+      "info" : "IfStatement[5026-5675]:IfStatement[5168-5817]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5065-5497]:Block[5207-5639]"
+    }, {
+      "left" : "if (token.length() == 2)",
+      "right" : "if (token.length() == 2)",
+      "info" : "IfStatement[5083-5483]:IfStatement[5225-5625]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5124-5207]:Block[5266-5349]"
+    }, {
+      "left" : "processOptionToken(token, stopAtNonOption);",
+      "right" : "processOptionToken(token, stopAtNonOption);",
+      "info" : "ExpressionStatement[5146-5189]:ExpressionStatement[5288-5331]"
+    }, {
+      "left" : "if (options.hasOption(token))",
+      "right" : "if (options.hasOption(token))",
+      "info" : "IfStatement[5229-5483]:IfStatement[5371-5625]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5275-5333]:Block[5417-5475]"
+    }, {
+      "left" : "tokens.add(token);",
+      "right" : "tokens.add(token);",
+      "info" : "ExpressionStatement[5297-5315]:ExpressionStatement[5439-5457]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5408-5483]:Block[5550-5625]"
+    }, {
+      "left" : "burstToken(token, stopAtNonOption);",
+      "right" : "burstToken(token, stopAtNonOption);",
+      "info" : "ExpressionStatement[5430-5465]:ExpressionStatement[5572-5607]"
+    }, {
+      "left" : "if (stopAtNonOption)",
+      "right" : "if (stopAtNonOption)",
+      "info" : "IfStatement[5515-5675]:IfStatement[5657-5817]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5548-5595]:Block[5690-5737]"
+    }, {
+      "left" : "process(token);",
+      "right" : "process(token);",
+      "info" : "ExpressionStatement[5566-5581]:ExpressionStatement[5708-5723]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5625-5675]:Block[5767-5817]"
+    }, {
+      "left" : "tokens.add(token);",
+      "right" : "tokens.add(token);",
+      "info" : "ExpressionStatement[5643-5661]:ExpressionStatement[5785-5803]"
+    }, {
+      "left" : "gobble(iter);",
+      "right" : "gobble(iter);",
+      "info" : "ExpressionStatement[5689-5702]:ExpressionStatement[5831-5844]"
+    }, {
+      "left" : "return (String[]) tokens.toArray(new String[tokens.size()]);",
+      "right" : "return (String[]) tokens.toArray(new String[tokens.size()]);",
+      "info" : "ReturnStatement[5722-5782]:ReturnStatement[5864-5924]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5976-6131]:Block[6118-6273]"
+    }, {
+      "left" : "if (eatTheRest)",
+      "right" : "if (eatTheRest)",
+      "info" : "IfStatement[5986-6125]:IfStatement[6128-6267]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6010-6125]:Block[6152-6267]"
+    }, {
+      "left" : "while (iter.hasNext())",
+      "right" : "while (iter.hasNext())",
+      "info" : "WhileStatement[6024-6115]:WhileStatement[6166-6257]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6059-6115]:Block[6201-6257]"
+    }, {
+      "left" : "tokens.add(iter.next());",
+      "right" : "tokens.add(iter.next());",
+      "info" : "ExpressionStatement[6077-6101]:ExpressionStatement[6219-6243]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6811-7274]:Block[6953-7416]"
+    }, {
+      "left" : "if (currentOption != null && currentOption.hasArg())",
+      "right" : "if (currentOption != null && currentOption.hasArg())",
+      "info" : "IfStatement[6821-7268]:IfStatement[6963-7410]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6882-7143]:Block[7024-7285]"
+    }, {
+      "left" : "if (currentOption.hasArg())",
+      "right" : "if (currentOption.hasArg())",
+      "info" : "IfStatement[6896-7133]:IfStatement[7038-7275]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6936-7024]:Block[7078-7166]"
+    }, {
+      "left" : "tokens.add(value);",
+      "right" : "tokens.add(value);",
+      "info" : "ExpressionStatement[6954-6972]:ExpressionStatement[7096-7114]"
+    }, {
+      "left" : "currentOption = null;",
+      "right" : "currentOption = null;",
+      "info" : "ExpressionStatement[6989-7010]:ExpressionStatement[7131-7152]"
+    }, {
+      "left" : "if (currentOption.hasArgs())",
+      "right" : "if (currentOption.hasArgs())",
+      "info" : "IfStatement[7042-7133]:IfStatement[7184-7275]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7083-7133]:Block[7225-7275]"
+    }, {
+      "left" : "tokens.add(value);",
+      "right" : "tokens.add(value);",
+      "info" : "ExpressionStatement[7101-7119]:ExpressionStatement[7243-7261]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7165-7268]:Block[7307-7410]"
+    }, {
+      "left" : "eatTheRest = true;",
+      "right" : "eatTheRest = true;",
+      "info" : "ExpressionStatement[7179-7197]:ExpressionStatement[7321-7339]"
+    }, {
+      "left" : "tokens.add(\"--\");",
+      "right" : "tokens.add(\"--\");",
+      "info" : "ExpressionStatement[7210-7227]:ExpressionStatement[7352-7369]"
+    }, {
+      "left" : "tokens.add(value);",
+      "right" : "tokens.add(value);",
+      "info" : "ExpressionStatement[7240-7258]:ExpressionStatement[7382-7400]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7884-8116]:Block[8026-8258]"
+    }, {
+      "left" : "if (options.hasOption(token))",
+      "right" : "if (options.hasOption(token))",
+      "info" : "IfStatement[7894-8082]:IfStatement[8036-8224]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7932-7997]:Block[8074-8139]"
+    }, {
+      "left" : "currentOption = options.getOption(token);",
+      "right" : "currentOption = options.getOption(token);",
+      "info" : "ExpressionStatement[7946-7987]:ExpressionStatement[8088-8129]"
+    }, {
+      "left" : "if (stopAtNonOption)",
+      "right" : "if (stopAtNonOption)",
+      "info" : "IfStatement[8011-8082]:IfStatement[8153-8224]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8040-8082]:Block[8182-8224]"
+    }, {
+      "left" : "eatTheRest = true;",
+      "right" : "eatTheRest = true;",
+      "info" : "ExpressionStatement[8054-8072]:ExpressionStatement[8196-8214]"
+    }, {
+      "left" : "tokens.add(token);",
+      "right" : "tokens.add(token);",
+      "info" : "ExpressionStatement[8092-8110]:ExpressionStatement[8234-8252]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9498-10225]:Block[9640-10367]"
+    }, {
+      "left" : "for (int i = 1; i < token.length(); i++)",
+      "right" : "for (int i = 1; i < token.length(); i++)",
+      "info" : "ForStatement[9508-10219]:ForStatement[9650-10361]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9557-10219]:Block[9699-10361]"
+    }, {
+      "left" : "String ch = String.valueOf(token.charAt(i));",
+      "right" : "String ch = String.valueOf(token.charAt(i));",
+      "info" : "VariableDeclarationStatement[9571-9615]:VariableDeclarationStatement[9713-9757]"
+    }, {
+      "left" : "if (options.hasOption(ch))",
+      "right" : "if (options.hasOption(ch))",
+      "info" : "IfStatement[9629-10209]:IfStatement[9771-10351]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9668-9972]:Block[9810-10114]"
+    }, {
+      "left" : "tokens.add(\"-\" + ch);",
+      "right" : "tokens.add(\"-\" + ch);",
+      "info" : "ExpressionStatement[9686-9707]:ExpressionStatement[9828-9849]"
+    }, {
+      "left" : "currentOption = options.getOption(ch);",
+      "right" : "currentOption = options.getOption(ch);",
+      "info" : "ExpressionStatement[9724-9762]:ExpressionStatement[9866-9904]"
+    }, {
+      "left" : "if (currentOption.hasArg() && (token.length() != (i + 1)))",
+      "right" : "if (currentOption.hasArg() && (token.length() != (i + 1)))",
+      "info" : "IfStatement[9780-9958]:IfStatement[9922-10100]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9855-9958]:Block[9997-10100]"
+    }, {
+      "left" : "tokens.add(token.substring(i + 1));",
+      "right" : "tokens.add(token.substring(i + 1));",
+      "info" : "ExpressionStatement[9877-9912]:ExpressionStatement[10019-10054]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[9934-9940]:BreakStatement[10076-10082]"
+    }, {
+      "left" : "if (stopAtNonOption)",
+      "right" : "if (stopAtNonOption)",
+      "info" : "IfStatement[9990-10209]:IfStatement[10132-10351]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10023-10106]:Block[10165-10248]"
+    }, {
+      "left" : "process(token.substring(i));",
+      "right" : "process(token.substring(i));",
+      "info" : "ExpressionStatement[10041-10069]:ExpressionStatement[10183-10211]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10086-10092]:BreakStatement[10228-10234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10136-10209]:Block[10278-10351]"
+    }, {
+      "left" : "tokens.add(token);",
+      "right" : "tokens.add(token);",
+      "info" : "ExpressionStatement[10154-10172]:ExpressionStatement[10296-10314]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10189-10195]:BreakStatement[10331-10337]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

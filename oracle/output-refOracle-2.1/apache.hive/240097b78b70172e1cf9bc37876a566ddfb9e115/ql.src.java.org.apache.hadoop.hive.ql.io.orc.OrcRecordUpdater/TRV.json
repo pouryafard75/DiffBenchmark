@@ -1,0 +1,1465 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final Log LOG = LogFactory.getLog(OrcRecordUpdater.class);",
+      "right" : "private static final Log LOG = LogFactory.getLog(OrcRecordUpdater.class);",
+      "info" : "FieldDeclaration[2283-2356]:FieldDeclaration[2283-2356]"
+    }, {
+      "left" : "public static final String ACID_KEY_INDEX_NAME = \"hive.acid.key.index\";",
+      "right" : "public static final String ACID_KEY_INDEX_NAME = \"hive.acid.key.index\";",
+      "info" : "FieldDeclaration[2360-2431]:FieldDeclaration[2360-2431]"
+    }, {
+      "left" : "public static final String ACID_FORMAT = \"_orc_acid_version\";",
+      "right" : "public static final String ACID_FORMAT = \"_orc_acid_version\";",
+      "info" : "FieldDeclaration[2434-2495]:FieldDeclaration[2434-2495]"
+    }, {
+      "left" : "public static final String ACID_STATS = \"hive.acid.stats\";",
+      "right" : "public static final String ACID_STATS = \"hive.acid.stats\";",
+      "info" : "FieldDeclaration[2498-2556]:FieldDeclaration[2498-2556]"
+    }, {
+      "left" : "public static final int ORC_ACID_VERSION = 0;",
+      "right" : "public static final int ORC_ACID_VERSION = 0;",
+      "info" : "FieldDeclaration[2559-2604]:FieldDeclaration[2559-2604]"
+    }, {
+      "left" : "final static int INSERT_OPERATION = 0;",
+      "right" : "final static int INSERT_OPERATION = 0;",
+      "info" : "FieldDeclaration[2609-2647]:FieldDeclaration[2609-2647]"
+    }, {
+      "left" : "final static int UPDATE_OPERATION = 1;",
+      "right" : "final static int UPDATE_OPERATION = 1;",
+      "info" : "FieldDeclaration[2650-2688]:FieldDeclaration[2650-2688]"
+    }, {
+      "left" : "final static int DELETE_OPERATION = 2;",
+      "right" : "final static int DELETE_OPERATION = 2;",
+      "info" : "FieldDeclaration[2691-2729]:FieldDeclaration[2691-2729]"
+    }, {
+      "left" : "final static int OPERATION = 0;",
+      "right" : "final static int OPERATION = 0;",
+      "info" : "FieldDeclaration[2733-2764]:FieldDeclaration[2733-2764]"
+    }, {
+      "left" : "final static int ORIGINAL_TRANSACTION = 1;",
+      "right" : "final static int ORIGINAL_TRANSACTION = 1;",
+      "info" : "FieldDeclaration[2767-2809]:FieldDeclaration[2767-2809]"
+    }, {
+      "left" : "final static int BUCKET = 2;",
+      "right" : "final static int BUCKET = 2;",
+      "info" : "FieldDeclaration[2812-2840]:FieldDeclaration[2812-2840]"
+    }, {
+      "left" : "final static int ROW_ID = 3;",
+      "right" : "final static int ROW_ID = 3;",
+      "info" : "FieldDeclaration[2843-2871]:FieldDeclaration[2843-2871]"
+    }, {
+      "left" : "final static int CURRENT_TRANSACTION = 4;",
+      "right" : "final static int CURRENT_TRANSACTION = 4;",
+      "info" : "FieldDeclaration[2874-2915]:FieldDeclaration[2874-2915]"
+    }, {
+      "left" : "final static int ROW = 5;",
+      "right" : "final static int ROW = 5;",
+      "info" : "FieldDeclaration[2918-2943]:FieldDeclaration[2918-2943]"
+    }, {
+      "left" : "final static int FIELDS = 6;",
+      "right" : "final static int FIELDS = 6;",
+      "info" : "FieldDeclaration[2946-2974]:FieldDeclaration[2946-2974]"
+    }, {
+      "left" : "final static int DELTA_BUFFER_SIZE = 16 * 1024;",
+      "right" : "final static int DELTA_BUFFER_SIZE = 16 * 1024;",
+      "info" : "FieldDeclaration[2978-3025]:FieldDeclaration[2978-3025]"
+    }, {
+      "left" : "final static long DELTA_STRIPE_SIZE = 16 * 1024 * 1024;",
+      "right" : "final static long DELTA_STRIPE_SIZE = 16 * 1024 * 1024;",
+      "info" : "FieldDeclaration[3028-3083]:FieldDeclaration[3028-3083]"
+    }, {
+      "left" : "private static final Charset UTF8 = Charset.forName(\"UTF-8\");",
+      "right" : "private static final Charset UTF8 = Charset.forName(\"UTF-8\");",
+      "info" : "FieldDeclaration[3087-3148]:FieldDeclaration[3087-3148]"
+    }, {
+      "left" : "private final AcidOutputFormat.Options options;",
+      "right" : "private final AcidOutputFormat.Options options;",
+      "info" : "FieldDeclaration[3152-3199]:FieldDeclaration[3152-3199]"
+    }, {
+      "left" : "private final Path path;",
+      "right" : "private final Path path;",
+      "info" : "FieldDeclaration[3202-3226]:FieldDeclaration[3202-3226]"
+    }, {
+      "left" : "private final FileSystem fs;",
+      "right" : "private final FileSystem fs;",
+      "info" : "FieldDeclaration[3229-3257]:FieldDeclaration[3229-3257]"
+    }, {
+      "left" : "private Writer writer;",
+      "right" : "private Writer writer;",
+      "info" : "FieldDeclaration[3260-3282]:FieldDeclaration[3260-3282]"
+    }, {
+      "left" : "private final FSDataOutputStream flushLengths;",
+      "right" : "private final FSDataOutputStream flushLengths;",
+      "info" : "FieldDeclaration[3285-3331]:FieldDeclaration[3285-3331]"
+    }, {
+      "left" : "private final OrcStruct item;",
+      "right" : "private final OrcStruct item;",
+      "info" : "FieldDeclaration[3334-3363]:FieldDeclaration[3334-3363]"
+    }, {
+      "left" : "private final IntWritable operation = new IntWritable();",
+      "right" : "private final IntWritable operation = new IntWritable();",
+      "info" : "FieldDeclaration[3366-3422]:FieldDeclaration[3366-3422]"
+    }, {
+      "left" : "private final LongWritable currentTransaction = new LongWritable(-1);",
+      "right" : "private final LongWritable currentTransaction = new LongWritable(-1);",
+      "info" : "FieldDeclaration[3425-3494]:FieldDeclaration[3425-3494]"
+    }, {
+      "left" : "private final LongWritable originalTransaction = new LongWritable(-1);",
+      "right" : "private final LongWritable originalTransaction = new LongWritable(-1);",
+      "info" : "FieldDeclaration[3497-3567]:FieldDeclaration[3497-3567]"
+    }, {
+      "left" : "private final IntWritable bucket = new IntWritable();",
+      "right" : "private final IntWritable bucket = new IntWritable();",
+      "info" : "FieldDeclaration[3570-3623]:FieldDeclaration[3570-3623]"
+    }, {
+      "left" : "private final LongWritable rowId = new LongWritable();",
+      "right" : "private final LongWritable rowId = new LongWritable();",
+      "info" : "FieldDeclaration[3626-3680]:FieldDeclaration[3626-3680]"
+    }, {
+      "left" : "private long insertedRows = 0;",
+      "right" : "private long insertedRows = 0;",
+      "info" : "FieldDeclaration[3683-3713]:FieldDeclaration[3683-3713]"
+    }, {
+      "left" : "private long rowIdOffset = 0;",
+      "right" : "private long rowIdOffset = 0;",
+      "info" : "FieldDeclaration[3716-3745]:FieldDeclaration[3716-3745]"
+    }, {
+      "left" : "private long rowCountDelta = 0;",
+      "right" : "private long rowCountDelta = 0;",
+      "info" : "FieldDeclaration[3919-3950]:FieldDeclaration[3919-3950]"
+    }, {
+      "left" : "private final KeyIndexBuilder indexBuilder = new KeyIndexBuilder();",
+      "right" : "private final KeyIndexBuilder indexBuilder = new KeyIndexBuilder();",
+      "info" : "FieldDeclaration[3953-4020]:FieldDeclaration[3953-4020]"
+    }, {
+      "left" : "private StructField recIdField = null;",
+      "right" : "private StructField recIdField = null;",
+      "info" : "FieldDeclaration[4023-4061]:FieldDeclaration[4023-4061]"
+    }, {
+      "left" : "private StructField rowIdField = null;",
+      "right" : "private StructField rowIdField = null;",
+      "info" : "FieldDeclaration[4110-4148]:FieldDeclaration[4110-4148]"
+    }, {
+      "left" : "private StructField originalTxnField = null;",
+      "right" : "private StructField originalTxnField = null;",
+      "info" : "FieldDeclaration[4195-4239]:FieldDeclaration[4195-4239]"
+    }, {
+      "left" : "private StructObjectInspector rowInspector;",
+      "right" : "private StructObjectInspector rowInspector;",
+      "info" : "FieldDeclaration[4293-4336]:FieldDeclaration[4293-4336]"
+    }, {
+      "left" : "private StructObjectInspector recIdInspector;",
+      "right" : "private StructObjectInspector recIdInspector;",
+      "info" : "FieldDeclaration[4366-4411]:FieldDeclaration[4366-4411]"
+    }, {
+      "left" : "private LongObjectInspector rowIdInspector;",
+      "right" : "private LongObjectInspector rowIdInspector;",
+      "info" : "FieldDeclaration[4453-4496]:FieldDeclaration[4453-4496]"
+    }, {
+      "left" : "private LongObjectInspector origTxnInspector;",
+      "right" : "private LongObjectInspector origTxnInspector;",
+      "info" : "FieldDeclaration[4553-4598]:FieldDeclaration[4553-4598]"
+    }, {
+      "left" : "AcidStats",
+      "right" : "AcidStats",
+      "info" : "TypeDeclaration[4662-5263]:TypeDeclaration[4662-5263]"
+    }, {
+      "left" : "long inserts;",
+      "right" : "long inserts;",
+      "info" : "FieldDeclaration[4691-4704]:FieldDeclaration[4691-4704]"
+    }, {
+      "left" : "long updates;",
+      "right" : "long updates;",
+      "info" : "FieldDeclaration[4709-4722]:FieldDeclaration[4709-4722]"
+    }, {
+      "left" : "long deletes;",
+      "right" : "long deletes;",
+      "info" : "FieldDeclaration[4727-4740]:FieldDeclaration[4727-4740]"
+    }, {
+      "left" : "AcidStats()",
+      "right" : "AcidStats()",
+      "info" : "MethodDeclaration[4746-4782]:MethodDeclaration[4746-4782]"
+    }, {
+      "left" : "AcidStats(String serialized)",
+      "right" : "AcidStats(String serialized)",
+      "info" : "MethodDeclaration[4788-4996]:MethodDeclaration[4788-4996]"
+    }, {
+      "left" : "String serialize()",
+      "right" : "String serialize()",
+      "info" : "MethodDeclaration[5002-5259]:MethodDeclaration[5002-5259]"
+    }, {
+      "left" : "static Path getSideFile(Path main)",
+      "right" : "static Path getSideFile(Path main)",
+      "info" : "MethodDeclaration[5267-5369]:MethodDeclaration[5267-5369]"
+    }, {
+      "left" : "static int getOperation(OrcStruct struct)",
+      "right" : "static int getOperation(OrcStruct struct)",
+      "info" : "MethodDeclaration[5373-5486]:MethodDeclaration[5373-5486]"
+    }, {
+      "left" : "static long getCurrentTransaction(OrcStruct struct)",
+      "right" : "static long getCurrentTransaction(OrcStruct struct)",
+      "info" : "MethodDeclaration[5490-5624]:MethodDeclaration[5490-5624]"
+    }, {
+      "left" : "static long getOriginalTransaction(OrcStruct struct)",
+      "right" : "static long getOriginalTransaction(OrcStruct struct)",
+      "info" : "MethodDeclaration[5628-5764]:MethodDeclaration[5628-5764]"
+    }, {
+      "left" : "static int getBucket(OrcStruct struct)",
+      "right" : "static int getBucket(OrcStruct struct)",
+      "info" : "MethodDeclaration[5768-5875]:MethodDeclaration[5768-5875]"
+    }, {
+      "left" : "static long getRowId(OrcStruct struct)",
+      "right" : "static long getRowId(OrcStruct struct)",
+      "info" : "MethodDeclaration[5879-5987]:MethodDeclaration[5879-5987]"
+    }, {
+      "left" : "static OrcStruct getRow(OrcStruct struct)",
+      "right" : "static OrcStruct getRow(OrcStruct struct)",
+      "info" : "MethodDeclaration[5991-6154]:MethodDeclaration[5991-6154]"
+    }, {
+      "left" : "OrcOptions",
+      "right" : "OrcOptions",
+      "info" : "TypeDeclaration[6158-6644]:TypeDeclaration[6158-6644]"
+    }, {
+      "left" : "OrcFile.WriterOptions orcOptions = null;",
+      "right" : "OrcFile.WriterOptions orcOptions = null;",
+      "info" : "FieldDeclaration[6328-6368]:FieldDeclaration[6328-6368]"
+    }, {
+      "left" : "public OrcOptions(Configuration conf)",
+      "right" : "public OrcOptions(Configuration conf)",
+      "info" : "MethodDeclaration[6374-6438]:MethodDeclaration[6374-6438]"
+    }, {
+      "left" : "public OrcOptions orcOptions(OrcFile.WriterOptions opts)",
+      "right" : "public OrcOptions orcOptions(OrcFile.WriterOptions opts)",
+      "info" : "MethodDeclaration[6444-6557]:MethodDeclaration[6444-6557]"
+    }, {
+      "left" : "public OrcFile.WriterOptions getOrcOptions()",
+      "right" : "public OrcFile.WriterOptions getOrcOptions()",
+      "info" : "MethodDeclaration[6563-6640]:MethodDeclaration[6563-6640]"
+    }, {
+      "left" : "static StructObjectInspector createEventSchema(ObjectInspector rowInspector)",
+      "right" : "static StructObjectInspector createEventSchema(ObjectInspector rowInspector)",
+      "info" : "MethodDeclaration[6648-7826]:MethodDeclaration[6648-7826]"
+    }, {
+      "left" : "OrcRecordUpdater(Path path,\n                   AcidOutputFormat.Options options) throws IOException",
+      "right" : "OrcRecordUpdater(Path path,\n                   AcidOutputFormat.Options options) throws IOException",
+      "info" : "MethodDeclaration[8010-10031]:MethodDeclaration[7830-9851]"
+    }, {
+      "left" : "private long findRowIdOffsetForInsert() throws IOException",
+      "right" : "private long findRowIdOffsetForInsert() throws IOException",
+      "info" : "MethodDeclaration[10035-11570]:MethodDeclaration[9855-11390]"
+    }, {
+      "left" : "private ObjectInspector findRecId(ObjectInspector inspector, int rowIdColNum)",
+      "right" : "private ObjectInspector findRecId(ObjectInspector inspector, int rowIdColNum)",
+      "info" : "MethodDeclaration[11732-12914]:MethodDeclaration[11552-12734]"
+    }, {
+      "left" : "private void addEvent(int operation, long currentTransaction, long rowId, Object row)\n      throws IOException",
+      "right" : "private void addEvent(int operation, long currentTransaction, long rowId, Object row)\n      throws IOException",
+      "info" : "MethodDeclaration[12918-14049]:MethodDeclaration[12738-13869]"
+    }, {
+      "left" : "public void insert(long currentTransaction, Object row) throws IOException",
+      "right" : "public void insert(long currentTransaction, Object row) throws IOException",
+      "info" : "MethodDeclaration[14053-14502]:MethodDeclaration[13873-14322]"
+    }, {
+      "left" : "public void update(long currentTransaction, Object row) throws IOException",
+      "right" : "public void update(long currentTransaction, Object row) throws IOException",
+      "info" : "MethodDeclaration[14506-14753]:MethodDeclaration[14326-14573]"
+    }, {
+      "left" : "public void delete(long currentTransaction, Object row) throws IOException",
+      "right" : "public void delete(long currentTransaction, Object row) throws IOException",
+      "info" : "MethodDeclaration[14757-15025]:MethodDeclaration[14577-14845]"
+    }, {
+      "left" : "public void flush() throws IOException",
+      "right" : "public void flush() throws IOException",
+      "info" : "MethodDeclaration[15029-15597]:MethodDeclaration[14849-15417]"
+    }, {
+      "left" : "public void close(boolean abort) throws IOException",
+      "right" : "public void close(boolean abort) throws IOException",
+      "info" : "MethodDeclaration[15601-15950]:MethodDeclaration[15421-15770]"
+    }, {
+      "left" : "public SerDeStats getStats()",
+      "right" : "public SerDeStats getStats()",
+      "info" : "MethodDeclaration[15954-16271]:MethodDeclaration[15774-16091]"
+    }, {
+      "left" : "Writer getWriter()",
+      "right" : "Writer getWriter()",
+      "info" : "MethodDeclaration[16275-16339]:MethodDeclaration[16095-16159]"
+    }, {
+      "left" : "private static final Charset utf8 = Charset.forName(\"UTF-8\");",
+      "right" : "private static final Charset utf8 = Charset.forName(\"UTF-8\");",
+      "info" : "FieldDeclaration[16343-16404]:FieldDeclaration[16163-16224]"
+    }, {
+      "left" : "private static final CharsetDecoder utf8Decoder = utf8.newDecoder();",
+      "right" : "private static final CharsetDecoder utf8Decoder = utf8.newDecoder();",
+      "info" : "FieldDeclaration[16407-16475]:FieldDeclaration[16227-16295]"
+    }, {
+      "left" : "static RecordIdentifier[] parseKeyIndex(Reader reader)",
+      "right" : "static RecordIdentifier[] parseKeyIndex(Reader reader)",
+      "info" : "MethodDeclaration[16479-17326]:MethodDeclaration[16299-17146]"
+    }, {
+      "left" : "static AcidStats parseAcidStats(Reader reader)",
+      "right" : "static AcidStats parseAcidStats(Reader reader)",
+      "info" : "MethodDeclaration[17329-17845]:MethodDeclaration[17149-17665]"
+    }, {
+      "left" : "KeyIndexBuilder",
+      "right" : "KeyIndexBuilder",
+      "info" : "TypeDeclaration[17849-19243]:TypeDeclaration[17669-19063]"
+    }, {
+      "left" : "StringBuilder lastKey = new StringBuilder();",
+      "right" : "StringBuilder lastKey = new StringBuilder();",
+      "info" : "FieldDeclaration[17918-17962]:FieldDeclaration[17738-17782]"
+    }, {
+      "left" : "long lastTransaction;",
+      "right" : "long lastTransaction;",
+      "info" : "FieldDeclaration[17967-17988]:FieldDeclaration[17787-17808]"
+    }, {
+      "left" : "int lastBucket;",
+      "right" : "int lastBucket;",
+      "info" : "FieldDeclaration[17993-18008]:FieldDeclaration[17813-17828]"
+    }, {
+      "left" : "long lastRowId;",
+      "right" : "long lastRowId;",
+      "info" : "FieldDeclaration[18013-18028]:FieldDeclaration[17833-17848]"
+    }, {
+      "left" : "AcidStats acidStats = new AcidStats();",
+      "right" : "AcidStats acidStats = new AcidStats();",
+      "info" : "FieldDeclaration[18033-18071]:FieldDeclaration[17853-17891]"
+    }, {
+      "left" : "public void preStripeWrite(OrcFile.WriterContext context\n    ) throws IOException",
+      "right" : "public void preStripeWrite(OrcFile.WriterContext context\n    ) throws IOException",
+      "info" : "MethodDeclaration[18077-18367]:MethodDeclaration[17897-18187]"
+    }, {
+      "left" : "public void preFooterWrite(OrcFile.WriterContext context\n                               ) throws IOException",
+      "right" : "public void preFooterWrite(OrcFile.WriterContext context\n                               ) throws IOException",
+      "info" : "MethodDeclaration[18373-18711]:MethodDeclaration[18193-18531]"
+    }, {
+      "left" : "void addKey(int op, long transaction, int bucket, long rowId)",
+      "right" : "void addKey(int op, long transaction, int bucket, long rowId)",
+      "info" : "MethodDeclaration[18717-19239]:MethodDeclaration[18537-19059]"
+    }, {
+      "left" : "RecIdStrippingObjectInspector",
+      "right" : "RecIdStrippingObjectInspector",
+      "info" : "TypeDeclaration[19247-21212]:TypeDeclaration[19067-21032]"
+    }, {
+      "left" : "private StructObjectInspector wrapped;",
+      "right" : "private StructObjectInspector wrapped;",
+      "info" : "FieldDeclaration[19463-19501]:FieldDeclaration[19283-19321]"
+    }, {
+      "left" : "List<StructField> fields;",
+      "right" : "List<StructField> fields;",
+      "info" : "FieldDeclaration[19506-19531]:FieldDeclaration[19326-19351]"
+    }, {
+      "left" : "StructField recId;",
+      "right" : "StructField recId;",
+      "info" : "FieldDeclaration[19536-19554]:FieldDeclaration[19356-19374]"
+    }, {
+      "left" : "RecIdStrippingObjectInspector(ObjectInspector oi, int rowIdColNum)",
+      "right" : "RecIdStrippingObjectInspector(ObjectInspector oi, int rowIdColNum)",
+      "info" : "MethodDeclaration[19560-20253]:MethodDeclaration[19380-20073]"
+    }, {
+      "left" : "public List<? extends StructField> getAllStructFieldRefs()",
+      "right" : "public List<? extends StructField> getAllStructFieldRefs()",
+      "info" : "MethodDeclaration[20259-20360]:MethodDeclaration[20079-20180]"
+    }, {
+      "left" : "public StructField getStructFieldRef(String fieldName)",
+      "right" : "public StructField getStructFieldRef(String fieldName)",
+      "info" : "MethodDeclaration[20366-20493]:MethodDeclaration[20186-20313]"
+    }, {
+      "left" : "public Object getStructFieldData(Object data, StructField fieldRef)",
+      "right" : "public Object getStructFieldData(Object data, StructField fieldRef)",
+      "info" : "MethodDeclaration[20499-20828]:MethodDeclaration[20319-20648]"
+    }, {
+      "left" : "public List<Object> getStructFieldsDataAsList(Object data)",
+      "right" : "public List<Object> getStructFieldsDataAsList(Object data)",
+      "info" : "MethodDeclaration[20834-20968]:MethodDeclaration[20654-20788]"
+    }, {
+      "left" : "public String getTypeName()",
+      "right" : "public String getTypeName()",
+      "info" : "MethodDeclaration[20974-21059]:MethodDeclaration[20794-20879]"
+    }, {
+      "left" : "public Category getCategory()",
+      "right" : "public Category getCategory()",
+      "info" : "MethodDeclaration[21065-21152]:MethodDeclaration[20885-20972]"
+    }, {
+      "left" : "StructField getRecId()",
+      "right" : "StructField getRecId()",
+      "info" : "MethodDeclaration[21158-21208]:MethodDeclaration[20978-21028]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4758-4782]:Block[4758-4782]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4817-4996]:Block[4817-4996]"
+    }, {
+      "left" : "String[] parts = serialized.split(\",\");",
+      "right" : "String[] parts = serialized.split(\",\");",
+      "info" : "VariableDeclarationStatement[4825-4864]:VariableDeclarationStatement[4825-4864]"
+    }, {
+      "left" : "inserts = Long.parseLong(parts[0]);",
+      "right" : "inserts = Long.parseLong(parts[0]);",
+      "info" : "ExpressionStatement[4871-4906]:ExpressionStatement[4871-4906]"
+    }, {
+      "left" : "updates = Long.parseLong(parts[1]);",
+      "right" : "updates = Long.parseLong(parts[1]);",
+      "info" : "ExpressionStatement[4913-4948]:ExpressionStatement[4913-4948]"
+    }, {
+      "left" : "deletes = Long.parseLong(parts[2]);",
+      "right" : "deletes = Long.parseLong(parts[2]);",
+      "info" : "ExpressionStatement[4955-4990]:ExpressionStatement[4955-4990]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5021-5259]:Block[5021-5259]"
+    }, {
+      "left" : "StringBuilder builder = new StringBuilder();",
+      "right" : "StringBuilder builder = new StringBuilder();",
+      "info" : "VariableDeclarationStatement[5029-5073]:VariableDeclarationStatement[5029-5073]"
+    }, {
+      "left" : "builder.append(inserts);",
+      "right" : "builder.append(inserts);",
+      "info" : "ExpressionStatement[5080-5104]:ExpressionStatement[5080-5104]"
+    }, {
+      "left" : "builder.append(\",\");",
+      "right" : "builder.append(\",\");",
+      "info" : "ExpressionStatement[5111-5131]:ExpressionStatement[5111-5131]"
+    }, {
+      "left" : "builder.append(updates);",
+      "right" : "builder.append(updates);",
+      "info" : "ExpressionStatement[5138-5162]:ExpressionStatement[5138-5162]"
+    }, {
+      "left" : "builder.append(\",\");",
+      "right" : "builder.append(\",\");",
+      "info" : "ExpressionStatement[5169-5189]:ExpressionStatement[5169-5189]"
+    }, {
+      "left" : "builder.append(deletes);",
+      "right" : "builder.append(deletes);",
+      "info" : "ExpressionStatement[5196-5220]:ExpressionStatement[5196-5220]"
+    }, {
+      "left" : "return builder.toString();",
+      "right" : "return builder.toString();",
+      "info" : "ReturnStatement[5227-5253]:ReturnStatement[5227-5253]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5302-5369]:Block[5302-5369]"
+    }, {
+      "left" : "return new Path(main + AcidUtils.DELTA_SIDE_FILE_SUFFIX);",
+      "right" : "return new Path(main + AcidUtils.DELTA_SIDE_FILE_SUFFIX);",
+      "info" : "ReturnStatement[5308-5365]:ReturnStatement[5308-5365]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5415-5486]:Block[5415-5486]"
+    }, {
+      "left" : "return ((IntWritable) struct.getFieldValue(OPERATION)).get();",
+      "right" : "return ((IntWritable) struct.getFieldValue(OPERATION)).get();",
+      "info" : "ReturnStatement[5421-5482]:ReturnStatement[5421-5482]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5542-5624]:Block[5542-5624]"
+    }, {
+      "left" : "return ((LongWritable) struct.getFieldValue(CURRENT_TRANSACTION)).get();",
+      "right" : "return ((LongWritable) struct.getFieldValue(CURRENT_TRANSACTION)).get();",
+      "info" : "ReturnStatement[5548-5620]:ReturnStatement[5548-5620]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5681-5764]:Block[5681-5764]"
+    }, {
+      "left" : "return ((LongWritable) struct.getFieldValue(ORIGINAL_TRANSACTION)).get();",
+      "right" : "return ((LongWritable) struct.getFieldValue(ORIGINAL_TRANSACTION)).get();",
+      "info" : "ReturnStatement[5687-5760]:ReturnStatement[5687-5760]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5807-5875]:Block[5807-5875]"
+    }, {
+      "left" : "return ((IntWritable) struct.getFieldValue(BUCKET)).get();",
+      "right" : "return ((IntWritable) struct.getFieldValue(BUCKET)).get();",
+      "info" : "ReturnStatement[5813-5871]:ReturnStatement[5813-5871]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5918-5987]:Block[5918-5987]"
+    }, {
+      "left" : "return ((LongWritable) struct.getFieldValue(ROW_ID)).get();",
+      "right" : "return ((LongWritable) struct.getFieldValue(ROW_ID)).get();",
+      "info" : "ReturnStatement[5924-5983]:ReturnStatement[5924-5983]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6033-6154]:Block[6033-6154]"
+    }, {
+      "left" : "if (struct == null)",
+      "right" : "if (struct == null)",
+      "info" : "IfStatement[6039-6150]:IfStatement[6039-6150]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6059-6085]:Block[6059-6085]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[6067-6079]:ReturnStatement[6067-6079]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6091-6150]:Block[6091-6150]"
+    }, {
+      "left" : "return (OrcStruct) struct.getFieldValue(ROW);",
+      "right" : "return (OrcStruct) struct.getFieldValue(ROW);",
+      "info" : "ReturnStatement[6099-6144]:ReturnStatement[6099-6144]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6412-6438]:Block[6412-6438]"
+    }, {
+      "left" : "super(conf);",
+      "right" : "super(conf);",
+      "info" : "SuperConstructorInvocation[6420-6432]:SuperConstructorInvocation[6420-6432]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6501-6557]:Block[6501-6557]"
+    }, {
+      "left" : "this.orcOptions = opts;",
+      "right" : "this.orcOptions = opts;",
+      "info" : "ExpressionStatement[6509-6532]:ExpressionStatement[6509-6532]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[6539-6551]:ReturnStatement[6539-6551]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6608-6640]:Block[6608-6640]"
+    }, {
+      "left" : "return orcOptions;",
+      "right" : "return orcOptions;",
+      "info" : "ReturnStatement[6616-6634]:ReturnStatement[6616-6634]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6953-7826]:Block[6953-7826]"
+    }, {
+      "left" : "List<StructField> fields = new ArrayList<StructField>();",
+      "right" : "List<StructField> fields = new ArrayList<StructField>();",
+      "info" : "VariableDeclarationStatement[6959-7015]:VariableDeclarationStatement[6959-7015]"
+    }, {
+      "left" : "fields.add(new OrcStruct.Field(\"operation\",\n        PrimitiveObjectInspectorFactory.writableIntObjectInspector, OPERATION));",
+      "right" : "fields.add(new OrcStruct.Field(\"operation\",\n        PrimitiveObjectInspectorFactory.writableIntObjectInspector, OPERATION));",
+      "info" : "ExpressionStatement[7020-7144]:ExpressionStatement[7020-7144]"
+    }, {
+      "left" : "fields.add(new OrcStruct.Field(\"originalTransaction\",\n        PrimitiveObjectInspectorFactory.writableLongObjectInspector,\n        ORIGINAL_TRANSACTION));",
+      "right" : "fields.add(new OrcStruct.Field(\"originalTransaction\",\n        PrimitiveObjectInspectorFactory.writableLongObjectInspector,\n        ORIGINAL_TRANSACTION));",
+      "info" : "ExpressionStatement[7149-7303]:ExpressionStatement[7149-7303]"
+    }, {
+      "left" : "fields.add(new OrcStruct.Field(\"bucket\",\n        PrimitiveObjectInspectorFactory.writableIntObjectInspector, BUCKET));",
+      "right" : "fields.add(new OrcStruct.Field(\"bucket\",\n        PrimitiveObjectInspectorFactory.writableIntObjectInspector, BUCKET));",
+      "info" : "ExpressionStatement[7308-7426]:ExpressionStatement[7308-7426]"
+    }, {
+      "left" : "fields.add(new OrcStruct.Field(\"rowId\",\n        PrimitiveObjectInspectorFactory.writableLongObjectInspector, ROW_ID));",
+      "right" : "fields.add(new OrcStruct.Field(\"rowId\",\n        PrimitiveObjectInspectorFactory.writableLongObjectInspector, ROW_ID));",
+      "info" : "ExpressionStatement[7431-7549]:ExpressionStatement[7431-7549]"
+    }, {
+      "left" : "fields.add(new OrcStruct.Field(\"currentTransaction\",\n        PrimitiveObjectInspectorFactory.writableLongObjectInspector,\n        CURRENT_TRANSACTION));",
+      "right" : "fields.add(new OrcStruct.Field(\"currentTransaction\",\n        PrimitiveObjectInspectorFactory.writableLongObjectInspector,\n        CURRENT_TRANSACTION));",
+      "info" : "ExpressionStatement[7554-7706]:ExpressionStatement[7554-7706]"
+    }, {
+      "left" : "fields.add(new OrcStruct.Field(\"row\", rowInspector, ROW));",
+      "right" : "fields.add(new OrcStruct.Field(\"row\", rowInspector, ROW));",
+      "info" : "ExpressionStatement[7711-7769]:ExpressionStatement[7711-7769]"
+    }, {
+      "left" : "return new OrcStruct.OrcStructInspector(fields);",
+      "right" : "return new OrcStruct.OrcStructInspector(fields);",
+      "info" : "ReturnStatement[7774-7822]:ReturnStatement[7774-7822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8110-10031]:Block[7930-9851]"
+    }, {
+      "left" : "this.options = options;",
+      "right" : "this.options = options;",
+      "info" : "ExpressionStatement[8116-8139]:ExpressionStatement[7936-7959]"
+    }, {
+      "left" : "this.bucket.set(options.getBucket());",
+      "right" : "this.bucket.set(options.getBucket());",
+      "info" : "ExpressionStatement[8144-8181]:ExpressionStatement[7964-8001]"
+    }, {
+      "left" : "this.path = AcidUtils.createFilename(path, options);",
+      "right" : "this.path = AcidUtils.createFilename(path, options);",
+      "info" : "ExpressionStatement[8186-8238]:ExpressionStatement[8006-8058]"
+    }, {
+      "left" : "FileSystem fs = options.getFilesystem();",
+      "right" : "FileSystem fs = options.getFilesystem();",
+      "info" : "VariableDeclarationStatement[8243-8283]:VariableDeclarationStatement[8063-8103]"
+    }, {
+      "left" : "if (fs == null)",
+      "right" : "if (fs == null)",
+      "info" : "IfStatement[8288-8370]:IfStatement[8108-8190]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8304-8370]:Block[8124-8190]"
+    }, {
+      "left" : "fs = path.getFileSystem(options.getConfiguration());",
+      "right" : "fs = path.getFileSystem(options.getConfiguration());",
+      "info" : "ExpressionStatement[8312-8364]:ExpressionStatement[8132-8184]"
+    }, {
+      "left" : "this.fs = fs;",
+      "right" : "this.fs = fs;",
+      "info" : "ExpressionStatement[8375-8388]:ExpressionStatement[8195-8208]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[8393-8712]:TryStatement[8213-8532]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8397-8542]:Block[8217-8362]"
+    }, {
+      "left" : "FSDataOutputStream strm = fs.create(new Path(path, ACID_FORMAT), false);",
+      "right" : "FSDataOutputStream strm = fs.create(new Path(path, ACID_FORMAT), false);",
+      "info" : "VariableDeclarationStatement[8405-8477]:VariableDeclarationStatement[8225-8297]"
+    }, {
+      "left" : "strm.writeInt(ORC_ACID_VERSION);",
+      "right" : "strm.writeInt(ORC_ACID_VERSION);",
+      "info" : "ExpressionStatement[8484-8516]:ExpressionStatement[8304-8336]"
+    }, {
+      "left" : "strm.close();",
+      "right" : "strm.close();",
+      "info" : "ExpressionStatement[8523-8536]:ExpressionStatement[8343-8356]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8567-8712]:Block[8387-8532]"
+    }, {
+      "left" : "if (LOG.isDebugEnabled())",
+      "right" : "if (LOG.isDebugEnabled())",
+      "info" : "IfStatement[8575-8706]:IfStatement[8395-8526]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8601-8706]:Block[8421-8526]"
+    }, {
+      "left" : "LOG.debug(\"Failed to create \" + path + \"/\" + ACID_FORMAT + \" with \" +\n            ioe);",
+      "right" : "LOG.debug(\"Failed to create \" + path + \"/\" + ACID_FORMAT + \" with \" +\n            ioe);",
+      "info" : "ExpressionStatement[8611-8698]:ExpressionStatement[8431-8518]"
+    }, {
+      "left" : "if (options.getMinimumTransactionId() != options.getMaximumTransactionId()\n        && !options.isWritingBase())",
+      "right" : "if (options.getMinimumTransactionId() != options.getMaximumTransactionId()\n        && !options.isWritingBase())",
+      "info" : "IfStatement[8717-8973]:IfStatement[8537-8793]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8828-8933]:Block[8648-8753]"
+    }, {
+      "left" : "flushLengths = fs.create(getSideFile(this.path), true, 8,\n          options.getReporter());",
+      "right" : "flushLengths = fs.create(getSideFile(this.path), true, 8,\n          options.getReporter());",
+      "info" : "ExpressionStatement[8836-8927]:ExpressionStatement[8656-8747]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8939-8973]:Block[8759-8793]"
+    }, {
+      "left" : "flushLengths = null;",
+      "right" : "flushLengths = null;",
+      "info" : "ExpressionStatement[8947-8967]:ExpressionStatement[8767-8787]"
+    }, {
+      "left" : "OrcFile.WriterOptions writerOptions = null;",
+      "right" : "OrcFile.WriterOptions writerOptions = null;",
+      "info" : "VariableDeclarationStatement[8978-9021]:VariableDeclarationStatement[8798-8841]"
+    }, {
+      "left" : "if (options instanceof OrcOptions)",
+      "right" : "if (options instanceof OrcOptions)",
+      "info" : "IfStatement[9026-9130]:IfStatement[8846-8950]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9061-9130]:Block[8881-8950]"
+    }, {
+      "left" : "writerOptions = ((OrcOptions) options).getOrcOptions();",
+      "right" : "writerOptions = ((OrcOptions) options).getOrcOptions();",
+      "info" : "ExpressionStatement[9069-9124]:ExpressionStatement[8889-8944]"
+    }, {
+      "left" : "if (writerOptions == null)",
+      "right" : "if (writerOptions == null)",
+      "info" : "IfStatement[9135-9242]:IfStatement[8955-9062]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9162-9242]:Block[8982-9062]"
+    }, {
+      "left" : "writerOptions = OrcFile.writerOptions(options.getConfiguration());",
+      "right" : "writerOptions = OrcFile.writerOptions(options.getConfiguration());",
+      "info" : "ExpressionStatement[9170-9236]:ExpressionStatement[8990-9056]"
+    }, {
+      "left" : "writerOptions.fileSystem(fs).callback(indexBuilder);",
+      "right" : "writerOptions.fileSystem(fs).callback(indexBuilder);",
+      "info" : "ExpressionStatement[9247-9299]:ExpressionStatement[9067-9119]"
+    }, {
+      "left" : "if (!options.isWritingBase())",
+      "right" : "if (!options.isWritingBase())",
+      "info" : "IfStatement[9304-9484]:IfStatement[9124-9304]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9334-9484]:Block[9154-9304]"
+    }, {
+      "left" : "writerOptions.blockPadding(false);",
+      "right" : "writerOptions.blockPadding(false);",
+      "info" : "ExpressionStatement[9342-9376]:ExpressionStatement[9162-9196]"
+    }, {
+      "left" : "writerOptions.bufferSize(DELTA_BUFFER_SIZE);",
+      "right" : "writerOptions.bufferSize(DELTA_BUFFER_SIZE);",
+      "info" : "ExpressionStatement[9383-9427]:ExpressionStatement[9203-9247]"
+    }, {
+      "left" : "writerOptions.stripeSize(DELTA_STRIPE_SIZE);",
+      "right" : "writerOptions.stripeSize(DELTA_STRIPE_SIZE);",
+      "info" : "ExpressionStatement[9434-9478]:ExpressionStatement[9254-9298]"
+    }, {
+      "left" : "rowInspector = (StructObjectInspector)options.getInspector();",
+      "right" : "rowInspector = (StructObjectInspector)options.getInspector();",
+      "info" : "ExpressionStatement[9489-9550]:ExpressionStatement[9309-9370]"
+    }, {
+      "left" : "writerOptions.inspector(createEventSchema(findRecId(options.getInspector(),\n        options.getRecordIdColumn())));",
+      "right" : "writerOptions.inspector(createEventSchema(findRecId(options.getInspector(),\n        options.getRecordIdColumn())));",
+      "info" : "ExpressionStatement[9555-9670]:ExpressionStatement[9375-9490]"
+    }, {
+      "left" : "this.writer = OrcFile.createWriter(this.path, writerOptions);",
+      "right" : "this.writer = OrcFile.createWriter(this.path, writerOptions);",
+      "info" : "ExpressionStatement[9675-9736]:ExpressionStatement[9495-9556]"
+    }, {
+      "left" : "item = new OrcStruct(FIELDS);",
+      "right" : "item = new OrcStruct(FIELDS);",
+      "info" : "ExpressionStatement[9741-9770]:ExpressionStatement[9561-9590]"
+    }, {
+      "left" : "item.setFieldValue(OPERATION, operation);",
+      "right" : "item.setFieldValue(OPERATION, operation);",
+      "info" : "ExpressionStatement[9775-9816]:ExpressionStatement[9595-9636]"
+    }, {
+      "left" : "item.setFieldValue(CURRENT_TRANSACTION, currentTransaction);",
+      "right" : "item.setFieldValue(CURRENT_TRANSACTION, currentTransaction);",
+      "info" : "ExpressionStatement[9821-9881]:ExpressionStatement[9641-9701]"
+    }, {
+      "left" : "item.setFieldValue(ORIGINAL_TRANSACTION, originalTransaction);",
+      "right" : "item.setFieldValue(ORIGINAL_TRANSACTION, originalTransaction);",
+      "info" : "ExpressionStatement[9886-9948]:ExpressionStatement[9706-9768]"
+    }, {
+      "left" : "item.setFieldValue(BUCKET, bucket);",
+      "right" : "item.setFieldValue(BUCKET, bucket);",
+      "info" : "ExpressionStatement[9953-9988]:ExpressionStatement[9773-9808]"
+    }, {
+      "left" : "item.setFieldValue(ROW_ID, rowId);",
+      "right" : "item.setFieldValue(ROW_ID, rowId);",
+      "info" : "ExpressionStatement[9993-10027]:ExpressionStatement[9813-9847]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10370-11570]:Block[10190-11390]"
+    }, {
+      "left" : "if(options.getStatementId() <= 0)",
+      "right" : "if(options.getStatementId() <= 0)",
+      "info" : "IfStatement[10763-10876]:IfStatement[10583-10696]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10797-10876]:Block[10617-10696]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[10805-10814]:ReturnStatement[10625-10634]"
+    }, {
+      "left" : "for(int pastStmt = options.getStatementId() - 1; pastStmt >= 0; pastStmt--)",
+      "right" : "for(int pastStmt = options.getStatementId() - 1; pastStmt >= 0; pastStmt--)",
+      "info" : "ForStatement[10881-11423]:ForStatement[10701-11243]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10957-11423]:Block[10777-11243]"
+    }, {
+      "left" : "Path matchingBucket = AcidUtils.createFilename(options.getFinalDestination(), options.clone().statementId(pastStmt));",
+      "right" : "Path matchingBucket = AcidUtils.createFilename(options.getFinalDestination(), options.clone().statementId(pastStmt));",
+      "info" : "VariableDeclarationStatement[10965-11082]:VariableDeclarationStatement[10785-10902]"
+    }, {
+      "left" : "if(!fs.exists(matchingBucket))",
+      "right" : "if(!fs.exists(matchingBucket))",
+      "info" : "IfStatement[11089-11147]:IfStatement[10909-10967]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11120-11147]:Block[10940-10967]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[11130-11139]:ContinueStatement[10950-10959]"
+    }, {
+      "left" : "Reader reader = OrcFile.createReader(matchingBucket, OrcFile.readerOptions(options.getConfiguration()));",
+      "right" : "Reader reader = OrcFile.createReader(matchingBucket, OrcFile.readerOptions(options.getConfiguration()));",
+      "info" : "VariableDeclarationStatement[11154-11258]:VariableDeclarationStatement[10974-11078]"
+    }, {
+      "left" : "AcidStats acidStats = parseAcidStats(reader);",
+      "right" : "AcidStats acidStats = parseAcidStats(reader);",
+      "info" : "VariableDeclarationStatement[11296-11341]:VariableDeclarationStatement[11116-11161]"
+    }, {
+      "left" : "if(acidStats.inserts > 0)",
+      "right" : "if(acidStats.inserts > 0)",
+      "info" : "IfStatement[11348-11417]:IfStatement[11168-11237]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11374-11417]:Block[11194-11237]"
+    }, {
+      "left" : "return acidStats.inserts;",
+      "right" : "return acidStats.inserts;",
+      "info" : "ReturnStatement[11384-11409]:ReturnStatement[11204-11229]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[11557-11566]:ReturnStatement[11377-11386]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11810-12914]:Block[11630-12734]"
+    }, {
+      "left" : "if (!(inspector instanceof StructObjectInspector))",
+      "right" : "if (!(inspector instanceof StructObjectInspector))",
+      "info" : "IfStatement[11816-12016]:IfStatement[11636-11836]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11867-12016]:Block[11687-11836]"
+    }, {
+      "left" : "throw new RuntimeException(\"Serious problem, expected a StructObjectInspector, but got a \" +\n          inspector.getClass().getName());",
+      "right" : "throw new RuntimeException(\"Serious problem, expected a StructObjectInspector, but got a \" +\n          inspector.getClass().getName());",
+      "info" : "ThrowStatement[11875-12010]:ThrowStatement[11695-11830]"
+    }, {
+      "left" : "if (rowIdColNum < 0)",
+      "right" : "if (rowIdColNum < 0)",
+      "info" : "IfStatement[12021-12910]:IfStatement[11841-12730]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12042-12073]:Block[11862-11893]"
+    }, {
+      "left" : "return inspector;",
+      "right" : "return inspector;",
+      "info" : "ReturnStatement[12050-12067]:ReturnStatement[11870-11887]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12079-12910]:Block[11899-12730]"
+    }, {
+      "left" : "RecIdStrippingObjectInspector newInspector =\n          new RecIdStrippingObjectInspector(inspector, rowIdColNum);",
+      "right" : "RecIdStrippingObjectInspector newInspector =\n          new RecIdStrippingObjectInspector(inspector, rowIdColNum);",
+      "info" : "VariableDeclarationStatement[12087-12200]:VariableDeclarationStatement[11907-12020]"
+    }, {
+      "left" : "recIdField = newInspector.getRecId();",
+      "right" : "recIdField = newInspector.getRecId();",
+      "info" : "ExpressionStatement[12207-12244]:ExpressionStatement[12027-12064]"
+    }, {
+      "left" : "List<? extends StructField> fields =\n          ((StructObjectInspector) recIdField.getFieldObjectInspector()).getAllStructFieldRefs();",
+      "right" : "List<? extends StructField> fields =\n          ((StructObjectInspector) recIdField.getFieldObjectInspector()).getAllStructFieldRefs();",
+      "info" : "VariableDeclarationStatement[12251-12385]:VariableDeclarationStatement[12071-12205]"
+    }, {
+      "left" : "originalTxnField = fields.get(0);",
+      "right" : "originalTxnField = fields.get(0);",
+      "info" : "ExpressionStatement[12551-12584]:ExpressionStatement[12371-12404]"
+    }, {
+      "left" : "origTxnInspector = (LongObjectInspector)originalTxnField.getFieldObjectInspector();",
+      "right" : "origTxnInspector = (LongObjectInspector)originalTxnField.getFieldObjectInspector();",
+      "info" : "ExpressionStatement[12591-12674]:ExpressionStatement[12411-12494]"
+    }, {
+      "left" : "rowIdField = fields.get(2);",
+      "right" : "rowIdField = fields.get(2);",
+      "info" : "ExpressionStatement[12681-12708]:ExpressionStatement[12501-12528]"
+    }, {
+      "left" : "rowIdInspector = (LongObjectInspector)rowIdField.getFieldObjectInspector();",
+      "right" : "rowIdInspector = (LongObjectInspector)rowIdField.getFieldObjectInspector();",
+      "info" : "ExpressionStatement[12715-12790]:ExpressionStatement[12535-12610]"
+    }, {
+      "left" : "recIdInspector = (StructObjectInspector) recIdField.getFieldObjectInspector();",
+      "right" : "recIdInspector = (StructObjectInspector) recIdField.getFieldObjectInspector();",
+      "info" : "ExpressionStatement[12799-12877]:ExpressionStatement[12619-12697]"
+    }, {
+      "left" : "return newInspector;",
+      "right" : "return newInspector;",
+      "info" : "ReturnStatement[12884-12904]:ReturnStatement[12704-12724]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13029-14049]:Block[12849-13869]"
+    }, {
+      "left" : "this.operation.set(operation);",
+      "right" : "this.operation.set(operation);",
+      "info" : "ExpressionStatement[13035-13065]:ExpressionStatement[12855-12885]"
+    }, {
+      "left" : "this.currentTransaction.set(currentTransaction);",
+      "right" : "this.currentTransaction.set(currentTransaction);",
+      "info" : "ExpressionStatement[13070-13118]:ExpressionStatement[12890-12938]"
+    }, {
+      "left" : "long originalTransaction = currentTransaction;",
+      "right" : "long originalTransaction = currentTransaction;",
+      "info" : "VariableDeclarationStatement[13268-13314]:VariableDeclarationStatement[13088-13134]"
+    }, {
+      "left" : "if (operation == DELETE_OPERATION || operation == UPDATE_OPERATION)",
+      "right" : "if (operation == DELETE_OPERATION || operation == UPDATE_OPERATION)",
+      "info" : "IfStatement[13319-13768]:IfStatement[13139-13588]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13387-13689]:Block[13207-13509]"
+    }, {
+      "left" : "Object rowIdValue = rowInspector.getStructFieldData(row, recIdField);",
+      "right" : "Object rowIdValue = rowInspector.getStructFieldData(row, recIdField);",
+      "info" : "VariableDeclarationStatement[13395-13464]:VariableDeclarationStatement[13215-13284]"
+    }, {
+      "left" : "originalTransaction = origTxnInspector.get(\n          recIdInspector.getStructFieldData(rowIdValue, originalTxnField));",
+      "right" : "originalTransaction = origTxnInspector.get(\n          recIdInspector.getStructFieldData(rowIdValue, originalTxnField));",
+      "info" : "ExpressionStatement[13471-13590]:ExpressionStatement[13291-13410]"
+    }, {
+      "left" : "rowId = rowIdInspector.get(recIdInspector.getStructFieldData(rowIdValue, rowIdField));",
+      "right" : "rowId = rowIdInspector.get(recIdInspector.getStructFieldData(rowIdValue, rowIdField));",
+      "info" : "ExpressionStatement[13597-13683]:ExpressionStatement[13417-13503]"
+    }, {
+      "left" : "if(operation == INSERT_OPERATION)",
+      "right" : "if(operation == INSERT_OPERATION)",
+      "info" : "IfStatement[13699-13768]:IfStatement[13519-13588]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13733-13768]:Block[13553-13588]"
+    }, {
+      "left" : "rowId += rowIdOffset;",
+      "right" : "rowId += rowIdOffset;",
+      "info" : "ExpressionStatement[13741-13762]:ExpressionStatement[13561-13582]"
+    }, {
+      "left" : "this.rowId.set(rowId);",
+      "right" : "this.rowId.set(rowId);",
+      "info" : "ExpressionStatement[13773-13795]:ExpressionStatement[13593-13615]"
+    }, {
+      "left" : "this.originalTransaction.set(originalTransaction);",
+      "right" : "this.originalTransaction.set(originalTransaction);",
+      "info" : "ExpressionStatement[13800-13850]:ExpressionStatement[13620-13670]"
+    }, {
+      "left" : "item.setFieldValue(OrcRecordUpdater.ROW, (operation == DELETE_OPERATION ? null : row));",
+      "right" : "item.setFieldValue(OrcRecordUpdater.ROW, (operation == DELETE_OPERATION ? null : row));",
+      "info" : "ExpressionStatement[13855-13942]:ExpressionStatement[13675-13762]"
+    }, {
+      "left" : "indexBuilder.addKey(operation, originalTransaction, bucket.get(), rowId);",
+      "right" : "indexBuilder.addKey(operation, originalTransaction, bucket.get(), rowId);",
+      "info" : "ExpressionStatement[13947-14020]:ExpressionStatement[13767-13840]"
+    }, {
+      "left" : "writer.addRow(item);",
+      "right" : "writer.addRow(item);",
+      "info" : "ExpressionStatement[14025-14045]:ExpressionStatement[13845-13865]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14140-14502]:Block[13960-14322]"
+    }, {
+      "left" : "if (this.currentTransaction.get() != currentTransaction)",
+      "right" : "if (this.currentTransaction.get() != currentTransaction)",
+      "info" : "IfStatement[14146-14404]:IfStatement[13966-14224]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14203-14404]:Block[14023-14224]"
+    }, {
+      "left" : "insertedRows = 0;",
+      "right" : "insertedRows = 0;",
+      "info" : "ExpressionStatement[14211-14228]:ExpressionStatement[14031-14048]"
+    }, {
+      "left" : "rowIdOffset = findRowIdOffsetForInsert();",
+      "right" : "rowIdOffset = findRowIdOffsetForInsert();",
+      "info" : "ExpressionStatement[14357-14398]:ExpressionStatement[14177-14218]"
+    }, {
+      "left" : "addEvent(INSERT_OPERATION, currentTransaction, insertedRows++, row);",
+      "right" : "addEvent(INSERT_OPERATION, currentTransaction, insertedRows++, row);",
+      "info" : "ExpressionStatement[14409-14477]:ExpressionStatement[14229-14297]"
+    }, {
+      "left" : "rowCountDelta++;",
+      "right" : "rowCountDelta++;",
+      "info" : "ExpressionStatement[14482-14498]:ExpressionStatement[14302-14318]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14593-14753]:Block[14413-14573]"
+    }, {
+      "left" : "if (this.currentTransaction.get() != currentTransaction)",
+      "right" : "if (this.currentTransaction.get() != currentTransaction)",
+      "info" : "IfStatement[14599-14687]:IfStatement[14419-14507]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14656-14687]:Block[14476-14507]"
+    }, {
+      "left" : "insertedRows = 0;",
+      "right" : "insertedRows = 0;",
+      "info" : "ExpressionStatement[14664-14681]:ExpressionStatement[14484-14501]"
+    }, {
+      "left" : "addEvent(UPDATE_OPERATION, currentTransaction, -1L, row);",
+      "right" : "addEvent(UPDATE_OPERATION, currentTransaction, -1L, row);",
+      "info" : "ExpressionStatement[14692-14749]:ExpressionStatement[14512-14569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14844-15025]:Block[14664-14845]"
+    }, {
+      "left" : "if (this.currentTransaction.get() != currentTransaction)",
+      "right" : "if (this.currentTransaction.get() != currentTransaction)",
+      "info" : "IfStatement[14850-14938]:IfStatement[14670-14758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14907-14938]:Block[14727-14758]"
+    }, {
+      "left" : "insertedRows = 0;",
+      "right" : "insertedRows = 0;",
+      "info" : "ExpressionStatement[14915-14932]:ExpressionStatement[14735-14752]"
+    }, {
+      "left" : "addEvent(DELETE_OPERATION, currentTransaction, -1, row);",
+      "right" : "addEvent(DELETE_OPERATION, currentTransaction, -1, row);",
+      "info" : "ExpressionStatement[14943-14999]:ExpressionStatement[14763-14819]"
+    }, {
+      "left" : "rowCountDelta--;",
+      "right" : "rowCountDelta--;",
+      "info" : "ExpressionStatement[15004-15020]:ExpressionStatement[14824-14840]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15080-15597]:Block[14900-15417]"
+    }, {
+      "left" : "if (flushLengths == null)",
+      "right" : "if (flushLengths == null)",
+      "info" : "IfStatement[15301-15464]:IfStatement[15121-15284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15327-15464]:Block[15147-15284]"
+    }, {
+      "left" : "throw new IllegalStateException(\"Attempting to flush a RecordUpdater on \"\n         + path + \" with a single transaction.\");",
+      "right" : "throw new IllegalStateException(\"Attempting to flush a RecordUpdater on \"\n         + path + \" with a single transaction.\");",
+      "info" : "ThrowStatement[15335-15458]:ThrowStatement[15155-15278]"
+    }, {
+      "left" : "long len = writer.writeIntermediateFooter();",
+      "right" : "long len = writer.writeIntermediateFooter();",
+      "info" : "VariableDeclarationStatement[15469-15513]:VariableDeclarationStatement[15289-15333]"
+    }, {
+      "left" : "flushLengths.writeLong(len);",
+      "right" : "flushLengths.writeLong(len);",
+      "info" : "ExpressionStatement[15518-15546]:ExpressionStatement[15338-15366]"
+    }, {
+      "left" : "OrcInputFormat.SHIMS.hflush(flushLengths);",
+      "right" : "OrcInputFormat.SHIMS.hflush(flushLengths);",
+      "info" : "ExpressionStatement[15551-15593]:ExpressionStatement[15371-15413]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15665-15950]:Block[15485-15770]"
+    }, {
+      "left" : "if (abort)",
+      "right" : "if (abort)",
+      "info" : "IfStatement[15671-15818]:IfStatement[15491-15638]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15682-15763]:Block[15502-15583]"
+    }, {
+      "left" : "if (flushLengths == null)",
+      "right" : "if (flushLengths == null)",
+      "info" : "IfStatement[15690-15757]:IfStatement[15510-15577]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15716-15757]:Block[15536-15577]"
+    }, {
+      "left" : "fs.delete(path, false);",
+      "right" : "fs.delete(path, false);",
+      "info" : "ExpressionStatement[15726-15749]:ExpressionStatement[15546-15569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15769-15818]:Block[15589-15638]"
+    }, {
+      "left" : "if (writer != null)",
+      "right" : "if (writer != null)",
+      "info" : "IfStatement[15777-15812]:IfStatement[15597-15632]"
+    }, {
+      "left" : "writer.close();",
+      "right" : "writer.close();",
+      "info" : "ExpressionStatement[15797-15812]:ExpressionStatement[15617-15632]"
+    }, {
+      "left" : "if (flushLengths != null)",
+      "right" : "if (flushLengths != null)",
+      "info" : "IfStatement[15823-15927]:IfStatement[15643-15747]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15849-15927]:Block[15669-15747]"
+    }, {
+      "left" : "flushLengths.close();",
+      "right" : "flushLengths.close();",
+      "info" : "ExpressionStatement[15857-15878]:ExpressionStatement[15677-15698]"
+    }, {
+      "left" : "fs.delete(getSideFile(path), false);",
+      "right" : "fs.delete(getSideFile(path), false);",
+      "info" : "ExpressionStatement[15885-15921]:ExpressionStatement[15705-15741]"
+    }, {
+      "left" : "writer = null;",
+      "right" : "writer = null;",
+      "info" : "ExpressionStatement[15932-15946]:ExpressionStatement[15752-15766]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15995-16271]:Block[15815-16091]"
+    }, {
+      "left" : "SerDeStats stats = new SerDeStats();",
+      "right" : "SerDeStats stats = new SerDeStats();",
+      "info" : "VariableDeclarationStatement[16001-16037]:VariableDeclarationStatement[15821-15857]"
+    }, {
+      "left" : "stats.setRowCount(rowCountDelta);",
+      "right" : "stats.setRowCount(rowCountDelta);",
+      "info" : "ExpressionStatement[16042-16075]:ExpressionStatement[15862-15895]"
+    }, {
+      "left" : "return stats;",
+      "right" : "return stats;",
+      "info" : "ReturnStatement[16254-16267]:ReturnStatement[16074-16087]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16315-16339]:Block[16135-16159]"
+    }, {
+      "left" : "return writer;",
+      "right" : "return writer;",
+      "info" : "ReturnStatement[16321-16335]:ReturnStatement[16141-16155]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16534-17326]:Block[16354-17146]"
+    }, {
+      "left" : "String[] stripes;",
+      "right" : "String[] stripes;",
+      "info" : "VariableDeclarationStatement[16540-16557]:VariableDeclarationStatement[16360-16377]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[16562-16924]:TryStatement[16382-16744]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16566-16759]:Block[16386-16579]"
+    }, {
+      "left" : "ByteBuffer val =\n          reader.getMetadataValue(OrcRecordUpdater.ACID_KEY_INDEX_NAME)\n              .duplicate();",
+      "right" : "ByteBuffer val =\n          reader.getMetadataValue(OrcRecordUpdater.ACID_KEY_INDEX_NAME)\n              .duplicate();",
+      "info" : "VariableDeclarationStatement[16574-16690]:VariableDeclarationStatement[16394-16510]"
+    }, {
+      "left" : "stripes = utf8Decoder.decode(val).toString().split(\";\");",
+      "right" : "stripes = utf8Decoder.decode(val).toString().split(\";\");",
+      "info" : "ExpressionStatement[16697-16753]:ExpressionStatement[16517-16573]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16795-16924]:Block[16615-16744]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Bad string encoding for \" +\n          OrcRecordUpdater.ACID_KEY_INDEX_NAME, e);",
+      "right" : "throw new IllegalArgumentException(\"Bad string encoding for \" +\n          OrcRecordUpdater.ACID_KEY_INDEX_NAME, e);",
+      "info" : "ThrowStatement[16803-16918]:ThrowStatement[16623-16738]"
+    }, {
+      "left" : "RecordIdentifier[] result = new RecordIdentifier[stripes.length];",
+      "right" : "RecordIdentifier[] result = new RecordIdentifier[stripes.length];",
+      "info" : "VariableDeclarationStatement[16929-16994]:VariableDeclarationStatement[16749-16814]"
+    }, {
+      "left" : "for(int i=0; i < stripes.length; ++i)",
+      "right" : "for(int i=0; i < stripes.length; ++i)",
+      "info" : "ForStatement[16999-17303]:ForStatement[16819-17123]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17037-17303]:Block[16857-17123]"
+    }, {
+      "left" : "if (stripes[i].length() != 0)",
+      "right" : "if (stripes[i].length() != 0)",
+      "info" : "IfStatement[17045-17297]:IfStatement[16865-17117]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17075-17297]:Block[16895-17117]"
+    }, {
+      "left" : "String[] parts = stripes[i].split(\",\");",
+      "right" : "String[] parts = stripes[i].split(\",\");",
+      "info" : "VariableDeclarationStatement[17085-17124]:VariableDeclarationStatement[16905-16944]"
+    }, {
+      "left" : "result[i] = new RecordIdentifier();",
+      "right" : "result[i] = new RecordIdentifier();",
+      "info" : "ExpressionStatement[17133-17168]:ExpressionStatement[16953-16988]"
+    }, {
+      "left" : "result[i].setValues(Long.parseLong(parts[0]),\n            Integer.parseInt(parts[1]), Long.parseLong(parts[2]));",
+      "right" : "result[i].setValues(Long.parseLong(parts[0]),\n            Integer.parseInt(parts[1]), Long.parseLong(parts[2]));",
+      "info" : "ExpressionStatement[17177-17289]:ExpressionStatement[16997-17109]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[17308-17322]:ReturnStatement[17128-17142]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17431-17845]:Block[17251-17665]"
+    }, {
+      "left" : "String statsSerialized;",
+      "right" : "String statsSerialized;",
+      "info" : "VariableDeclarationStatement[17437-17460]:VariableDeclarationStatement[17257-17280]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[17465-17798]:TryStatement[17285-17618]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17469-17644]:Block[17289-17464]"
+    }, {
+      "left" : "ByteBuffer val =\n        reader.getMetadataValue(OrcRecordUpdater.ACID_STATS)\n          .duplicate();",
+      "right" : "ByteBuffer val =\n        reader.getMetadataValue(OrcRecordUpdater.ACID_STATS)\n          .duplicate();",
+      "info" : "VariableDeclarationStatement[17477-17578]:VariableDeclarationStatement[17297-17398]"
+    }, {
+      "left" : "statsSerialized = utf8Decoder.decode(val).toString();",
+      "right" : "statsSerialized = utf8Decoder.decode(val).toString();",
+      "info" : "ExpressionStatement[17585-17638]:ExpressionStatement[17405-17458]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17680-17798]:Block[17500-17618]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Bad string encoding for \" +\n        OrcRecordUpdater.ACID_STATS, e);",
+      "right" : "throw new IllegalArgumentException(\"Bad string encoding for \" +\n        OrcRecordUpdater.ACID_STATS, e);",
+      "info" : "ThrowStatement[17688-17792]:ThrowStatement[17508-17612]"
+    }, {
+      "left" : "return new AcidStats(statsSerialized);",
+      "right" : "return new AcidStats(statsSerialized);",
+      "info" : "ReturnStatement[17803-17841]:ReturnStatement[17623-17661]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18173-18367]:Block[17993-18187]"
+    }, {
+      "left" : "lastKey.append(lastTransaction);",
+      "right" : "lastKey.append(lastTransaction);",
+      "info" : "ExpressionStatement[18181-18213]:ExpressionStatement[18001-18033]"
+    }, {
+      "left" : "lastKey.append(',');",
+      "right" : "lastKey.append(',');",
+      "info" : "ExpressionStatement[18220-18240]:ExpressionStatement[18040-18060]"
+    }, {
+      "left" : "lastKey.append(lastBucket);",
+      "right" : "lastKey.append(lastBucket);",
+      "info" : "ExpressionStatement[18247-18274]:ExpressionStatement[18067-18094]"
+    }, {
+      "left" : "lastKey.append(',');",
+      "right" : "lastKey.append(',');",
+      "info" : "ExpressionStatement[18281-18301]:ExpressionStatement[18101-18121]"
+    }, {
+      "left" : "lastKey.append(lastRowId);",
+      "right" : "lastKey.append(lastRowId);",
+      "info" : "ExpressionStatement[18308-18334]:ExpressionStatement[18128-18154]"
+    }, {
+      "left" : "lastKey.append(';');",
+      "right" : "lastKey.append(';');",
+      "info" : "ExpressionStatement[18341-18361]:ExpressionStatement[18161-18181]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18496-18711]:Block[18316-18531]"
+    }, {
+      "left" : "context.getWriter().addUserMetadata(ACID_KEY_INDEX_NAME,\n          UTF8.encode(lastKey.toString()));",
+      "right" : "context.getWriter().addUserMetadata(ACID_KEY_INDEX_NAME,\n          UTF8.encode(lastKey.toString()));",
+      "info" : "ExpressionStatement[18504-18604]:ExpressionStatement[18324-18424]"
+    }, {
+      "left" : "context.getWriter().addUserMetadata(ACID_STATS,\n          UTF8.encode(acidStats.serialize()));",
+      "right" : "context.getWriter().addUserMetadata(ACID_STATS,\n          UTF8.encode(acidStats.serialize()));",
+      "info" : "ExpressionStatement[18611-18705]:ExpressionStatement[18431-18525]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18779-19239]:Block[18599-19059]"
+    }, {
+      "left" : "switch (op) {\n        case INSERT_OPERATION:\n          acidStats.inserts += 1;\n          break;\n        case UPDATE_OPERATION:\n          acidStats.updates += 1;\n          break;\n        case DELETE_OPERATION:\n          acidStats.deletes += 1;\n          break;\n        default:\n          throw new IllegalArgumentException(\"Unknown operation \" + op);\n      }",
+      "right" : "switch (op) {\n        case INSERT_OPERATION:\n          acidStats.inserts += 1;\n          break;\n        case UPDATE_OPERATION:\n          acidStats.updates += 1;\n          break;\n        case DELETE_OPERATION:\n          acidStats.deletes += 1;\n          break;\n        default:\n          throw new IllegalArgumentException(\"Unknown operation \" + op);\n      }",
+      "info" : "SwitchStatement[18787-19144]:SwitchStatement[18607-18964]"
+    }, {
+      "left" : "case INSERT_OPERATION:",
+      "right" : "case INSERT_OPERATION:",
+      "info" : "SwitchCase[18809-18831]:SwitchCase[18629-18651]"
+    }, {
+      "left" : "acidStats.inserts += 1;",
+      "right" : "acidStats.inserts += 1;",
+      "info" : "ExpressionStatement[18842-18865]:ExpressionStatement[18662-18685]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[18876-18882]:BreakStatement[18696-18702]"
+    }, {
+      "left" : "case UPDATE_OPERATION:",
+      "right" : "case UPDATE_OPERATION:",
+      "info" : "SwitchCase[18891-18913]:SwitchCase[18711-18733]"
+    }, {
+      "left" : "acidStats.updates += 1;",
+      "right" : "acidStats.updates += 1;",
+      "info" : "ExpressionStatement[18924-18947]:ExpressionStatement[18744-18767]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[18958-18964]:BreakStatement[18778-18784]"
+    }, {
+      "left" : "case DELETE_OPERATION:",
+      "right" : "case DELETE_OPERATION:",
+      "info" : "SwitchCase[18973-18995]:SwitchCase[18793-18815]"
+    }, {
+      "left" : "acidStats.deletes += 1;",
+      "right" : "acidStats.deletes += 1;",
+      "info" : "ExpressionStatement[19006-19029]:ExpressionStatement[18826-18849]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[19040-19046]:BreakStatement[18860-18866]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[19055-19063]:SwitchCase[18875-18883]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Unknown operation \" + op);",
+      "right" : "throw new IllegalArgumentException(\"Unknown operation \" + op);",
+      "info" : "ThrowStatement[19074-19136]:ThrowStatement[18894-18956]"
+    }, {
+      "left" : "lastTransaction = transaction;",
+      "right" : "lastTransaction = transaction;",
+      "info" : "ExpressionStatement[19151-19181]:ExpressionStatement[18971-19001]"
+    }, {
+      "left" : "lastBucket = bucket;",
+      "right" : "lastBucket = bucket;",
+      "info" : "ExpressionStatement[19188-19208]:ExpressionStatement[19008-19028]"
+    }, {
+      "left" : "lastRowId = rowId;",
+      "right" : "lastRowId = rowId;",
+      "info" : "ExpressionStatement[19215-19233]:ExpressionStatement[19035-19053]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19627-20253]:Block[19447-20073]"
+    }, {
+      "left" : "if (!(oi instanceof StructObjectInspector))",
+      "right" : "if (!(oi instanceof StructObjectInspector))",
+      "info" : "IfStatement[19635-19832]:IfStatement[19455-19652]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19679-19832]:Block[19499-19652]"
+    }, {
+      "left" : "throw new RuntimeException(\"Serious problem, expected a StructObjectInspector, \" +\n            \"but got a \" + oi.getClass().getName());",
+      "right" : "throw new RuntimeException(\"Serious problem, expected a StructObjectInspector, \" +\n            \"but got a \" + oi.getClass().getName());",
+      "info" : "ThrowStatement[19689-19824]:ThrowStatement[19509-19644]"
+    }, {
+      "left" : "wrapped = (StructObjectInspector)oi;",
+      "right" : "wrapped = (StructObjectInspector)oi;",
+      "info" : "ExpressionStatement[19839-19875]:ExpressionStatement[19659-19695]"
+    }, {
+      "left" : "List<? extends StructField> wrappedFields = wrapped.getAllStructFieldRefs();",
+      "right" : "List<? extends StructField> wrappedFields = wrapped.getAllStructFieldRefs();",
+      "info" : "VariableDeclarationStatement[19882-19958]:VariableDeclarationStatement[19702-19778]"
+    }, {
+      "left" : "fields = new ArrayList<StructField>(wrapped.getAllStructFieldRefs().size());",
+      "right" : "fields = new ArrayList<StructField>(wrapped.getAllStructFieldRefs().size());",
+      "info" : "ExpressionStatement[19965-20041]:ExpressionStatement[19785-19861]"
+    }, {
+      "left" : "for (int i = 0; i < wrappedFields.size(); i++)",
+      "right" : "for (int i = 0; i < wrappedFields.size(); i++)",
+      "info" : "ForStatement[20048-20247]:ForStatement[19868-20067]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20095-20247]:Block[19915-20067]"
+    }, {
+      "left" : "if (i == rowIdColNum)",
+      "right" : "if (i == rowIdColNum)",
+      "info" : "IfStatement[20105-20239]:IfStatement[19925-20059]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20127-20178]:Block[19947-19998]"
+    }, {
+      "left" : "recId = wrappedFields.get(i);",
+      "right" : "recId = wrappedFields.get(i);",
+      "info" : "ExpressionStatement[20139-20168]:ExpressionStatement[19959-19988]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20184-20239]:Block[20004-20059]"
+    }, {
+      "left" : "fields.add(wrappedFields.get(i));",
+      "right" : "fields.add(wrappedFields.get(i));",
+      "info" : "ExpressionStatement[20196-20229]:ExpressionStatement[20016-20049]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20332-20360]:Block[20152-20180]"
+    }, {
+      "left" : "return fields;",
+      "right" : "return fields;",
+      "info" : "ReturnStatement[20340-20354]:ReturnStatement[20160-20174]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20435-20493]:Block[20255-20313]"
+    }, {
+      "left" : "return wrapped.getStructFieldRef(fieldName);",
+      "right" : "return wrapped.getStructFieldRef(fieldName);",
+      "info" : "ReturnStatement[20443-20487]:ReturnStatement[20263-20307]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20581-20828]:Block[20401-20648]"
+    }, {
+      "left" : "return wrapped.getStructFieldData(data, fieldRef);",
+      "right" : "return wrapped.getStructFieldData(data, fieldRef);",
+      "info" : "ReturnStatement[20772-20822]:ReturnStatement[20592-20642]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20907-20968]:Block[20727-20788]"
+    }, {
+      "left" : "return wrapped.getStructFieldsDataAsList(data);",
+      "right" : "return wrapped.getStructFieldsDataAsList(data);",
+      "info" : "ReturnStatement[20915-20962]:ReturnStatement[20735-20782]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21016-21059]:Block[20836-20879]"
+    }, {
+      "left" : "return wrapped.getTypeName();",
+      "right" : "return wrapped.getTypeName();",
+      "info" : "ReturnStatement[21024-21053]:ReturnStatement[20844-20873]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21109-21152]:Block[20929-20972]"
+    }, {
+      "left" : "return wrapped.getCategory();",
+      "right" : "return wrapped.getCategory();",
+      "info" : "ReturnStatement[21117-21146]:ReturnStatement[20937-20966]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21181-21208]:Block[21001-21028]"
+    }, {
+      "left" : "return recId;",
+      "right" : "return recId;",
+      "info" : "ReturnStatement[21189-21202]:ReturnStatement[21009-21022]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

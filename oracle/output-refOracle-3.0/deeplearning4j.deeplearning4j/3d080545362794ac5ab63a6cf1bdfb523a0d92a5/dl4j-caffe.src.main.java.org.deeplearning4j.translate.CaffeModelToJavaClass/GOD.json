@@ -1,0 +1,81 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CaffeModelToJavaClass",
+      "right" : "CaffeModelToJavaClass",
+      "info" : "TypeDeclaration[269-793]:TypeDeclaration[251-1335]"
+    }, {
+      "left" : "public static NetParameter readCaffeModel(String caffeModelPath, int sizeLimitMb) throws IOException",
+      "right" : "public static NetParameter readCaffeModel(String caffeModelPath, int sizeLimitMb) throws IOException",
+      "info" : "MethodDeclaration[356-791]:MethodDeclaration[893-1333]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[314-320]:Modifier[282-288]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[321-326]:TYPE_DECLARATION_KIND[289-294]"
+    }, {
+      "left" : "CaffeModelToJavaClass",
+      "right" : "CaffeModelToJavaClass",
+      "info" : "SimpleName[327-348]:SimpleName[295-316]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[356-362]:Modifier[1091-1097]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[363-369]:Modifier[1098-1104]"
+    }, {
+      "left" : "NetParameter",
+      "right" : "NetParameter",
+      "info" : "SimpleType[370-382]:SimpleType[1105-1117]"
+    }, {
+      "left" : "readCaffeModel",
+      "right" : "readCaffeModel",
+      "info" : "SimpleName[383-397]:SimpleName[1118-1132]"
+    }, {
+      "left" : "String caffeModelPath",
+      "right" : "String caffeModelPath",
+      "info" : "SingleVariableDeclaration[398-419]:SingleVariableDeclaration[1133-1154]"
+    }, {
+      "left" : "int sizeLimitMb",
+      "right" : "int sizeLimitMb",
+      "info" : "SingleVariableDeclaration[421-436]:SingleVariableDeclaration[1156-1171]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[445-456]:SimpleType[1180-1191]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[457-791]:Block[1192-1333]"
+    }, {
+      "left" : "InputStream is = new FileInputStream(caffeModelPath);",
+      "right" : "InputStream is = new BufferedInputStream(new FileInputStream(caffeModelPath));",
+      "info" : "VariableDeclarationStatement[467-520]:VariableDeclarationStatement[1202-1280]"
+    }, {
+      "left" : "new FileInputStream(caffeModelPath)",
+      "right" : "new FileInputStream(caffeModelPath)",
+      "info" : "ClassInstanceCreation[484-519]:ClassInstanceCreation[1243-1278]"
+    }, {
+      "left" : "CodedInputStream codeStream = CodedInputStream.newInstance(is);",
+      "right" : "CodedInputStream codeStream = CodedInputStream.newInstance(is);",
+      "info" : "VariableDeclarationStatement[529-592]:VariableDeclarationStatement[625-688]"
+    }, {
+      "left" : "int oldLimit = codeStream.setSizeLimit(sizeLimitMb * 1024 * 1024);",
+      "right" : "int oldLimit = codeStream.setSizeLimit(sizeLimitMb * 1024 * 1024);",
+      "info" : "VariableDeclarationStatement[668-734]:VariableDeclarationStatement[764-830]"
+    }, {
+      "left" : "return NetParameter.parseFrom(codeStream);",
+      "right" : "return NetParameter.parseFrom(codeStream);",
+      "info" : "ReturnStatement[743-785]:ReturnStatement[839-881]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

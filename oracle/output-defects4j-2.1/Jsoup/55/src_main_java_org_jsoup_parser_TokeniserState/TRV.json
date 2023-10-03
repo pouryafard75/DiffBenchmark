@@ -1,0 +1,425 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "abstract void read(Tokeniser t, CharacterReader r);",
+      "right" : "abstract void read(Tokeniser t, CharacterReader r);",
+      "info" : "MethodDeclaration[54809-54860]:MethodDeclaration[54844-54895]"
+    }, {
+      "left" : "static final char nullChar = '\\u0000';",
+      "right" : "static final char nullChar = '\\u0000';",
+      "info" : "FieldDeclaration[54866-54904]:FieldDeclaration[54901-54939]"
+    }, {
+      "left" : "private static final char[] attributeSingleValueCharsSorted = new char[]{'\\'', '&', nullChar};",
+      "right" : "private static final char[] attributeSingleValueCharsSorted = new char[]{'\\'', '&', nullChar};",
+      "info" : "FieldDeclaration[54909-55003]:FieldDeclaration[54944-55038]"
+    }, {
+      "left" : "private static final char[] attributeDoubleValueCharsSorted = new char[]{'\"', '&', nullChar};",
+      "right" : "private static final char[] attributeDoubleValueCharsSorted = new char[]{'\"', '&', nullChar};",
+      "info" : "FieldDeclaration[55008-55101]:FieldDeclaration[55043-55136]"
+    }, {
+      "left" : "private static final char[] attributeNameCharsSorted = new char[]{'\\t', '\\n', '\\r', '\\f', ' ', '/', '=', '>', nullChar, '\"', '\\'', '<'};",
+      "right" : "private static final char[] attributeNameCharsSorted = new char[]{'\\t', '\\n', '\\r', '\\f', ' ', '/', '=', '>', nullChar, '\"', '\\'', '<'};",
+      "info" : "FieldDeclaration[55106-55242]:FieldDeclaration[55141-55277]"
+    }, {
+      "left" : "private static final char[] attributeValueUnquoted = new char[]{'\\t', '\\n', '\\r', '\\f', ' ', '&', '>', nullChar, '\"', '\\'', '<', '=', '`'};",
+      "right" : "private static final char[] attributeValueUnquoted = new char[]{'\\t', '\\n', '\\r', '\\f', ' ', '&', '>', nullChar, '\"', '\\'', '<', '=', '`'};",
+      "info" : "FieldDeclaration[55247-55386]:FieldDeclaration[55282-55421]"
+    }, {
+      "left" : "private static final char replacementChar = Tokeniser.replacementChar;",
+      "right" : "private static final char replacementChar = Tokeniser.replacementChar;",
+      "info" : "FieldDeclaration[55392-55462]:FieldDeclaration[55427-55497]"
+    }, {
+      "left" : "private static final String replacementStr = String.valueOf(Tokeniser.replacementChar);",
+      "right" : "private static final String replacementStr = String.valueOf(Tokeniser.replacementChar);",
+      "info" : "FieldDeclaration[55467-55554]:FieldDeclaration[55502-55589]"
+    }, {
+      "left" : "private static final char eof = CharacterReader.EOF;",
+      "right" : "private static final char eof = CharacterReader.EOF;",
+      "info" : "FieldDeclaration[55559-55611]:FieldDeclaration[55594-55646]"
+    }, {
+      "left" : "private static void handleDataEndTag(Tokeniser t, CharacterReader r, TokeniserState elseTransition)",
+      "right" : "private static void handleDataEndTag(Tokeniser t, CharacterReader r, TokeniserState elseTransition)",
+      "info" : "MethodDeclaration[55837-57271]:MethodDeclaration[55872-57306]"
+    }, {
+      "left" : "private static void readData(Tokeniser t, CharacterReader r, TokeniserState current, TokeniserState advance)",
+      "right" : "private static void readData(Tokeniser t, CharacterReader r, TokeniserState current, TokeniserState advance)",
+      "info" : "MethodDeclaration[57277-57900]:MethodDeclaration[57312-57935]"
+    }, {
+      "left" : "private static void readCharRef(Tokeniser t, TokeniserState advance)",
+      "right" : "private static void readCharRef(Tokeniser t, TokeniserState advance)",
+      "info" : "MethodDeclaration[57906-58157]:MethodDeclaration[57941-58192]"
+    }, {
+      "left" : "private static void readEndTag(Tokeniser t, CharacterReader r, TokeniserState a, TokeniserState b)",
+      "right" : "private static void readEndTag(Tokeniser t, CharacterReader r, TokeniserState a, TokeniserState b)",
+      "info" : "MethodDeclaration[58163-58452]:MethodDeclaration[58198-58487]"
+    }, {
+      "left" : "private static void handleDataDoubleEscapeTag(Tokeniser t, CharacterReader r, TokeniserState primary, TokeniserState fallback)",
+      "right" : "private static void handleDataDoubleEscapeTag(Tokeniser t, CharacterReader r, TokeniserState primary, TokeniserState fallback)",
+      "info" : "MethodDeclaration[58458-59305]:MethodDeclaration[58493-59340]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[56103-57271]:Block[56138-57306]"
+    }, {
+      "left" : "if (r.matchesLetter())",
+      "right" : "if (r.matchesLetter())",
+      "info" : "IfStatement[56113-56305]:IfStatement[56148-56340]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[56136-56305]:Block[56171-56340]"
+    }, {
+      "left" : "String name = r.consumeLetterSequence();",
+      "right" : "String name = r.consumeLetterSequence();",
+      "info" : "VariableDeclarationStatement[56150-56190]:VariableDeclarationStatement[56185-56225]"
+    }, {
+      "left" : "t.tagPending.appendTagName(name);",
+      "right" : "t.tagPending.appendTagName(name);",
+      "info" : "ExpressionStatement[56203-56236]:ExpressionStatement[56238-56271]"
+    }, {
+      "left" : "t.dataBuffer.append(name);",
+      "right" : "t.dataBuffer.append(name);",
+      "info" : "ExpressionStatement[56249-56275]:ExpressionStatement[56284-56310]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[56288-56295]:ReturnStatement[56323-56330]"
+    }, {
+      "left" : "boolean needsExitTransition = false;",
+      "right" : "boolean needsExitTransition = false;",
+      "info" : "VariableDeclarationStatement[56315-56351]:VariableDeclarationStatement[56350-56386]"
+    }, {
+      "left" : "if (t.isAppropriateEndTagToken() && !r.isEmpty())",
+      "right" : "if (t.isAppropriateEndTagToken() && !r.isEmpty())",
+      "info" : "IfStatement[56360-57125]:IfStatement[56395-57160]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[56410-57068]:Block[56445-57103]"
+    }, {
+      "left" : "char c = r.consume();",
+      "right" : "char c = r.consume();",
+      "info" : "VariableDeclarationStatement[56424-56445]:VariableDeclarationStatement[56459-56480]"
+    }, {
+      "left" : "switch (c) {\n                case '\\t':\n                case '\\n':\n                case '\\r':\n                case '\\f':\n                case ' ':\n                    t.transition(BeforeAttributeName);\n                    break;\n                case '/':\n                    t.transition(SelfClosingStartTag);\n                    break;\n                case '>':\n                    t.emitTagPending();\n                    t.transition(Data);\n                    break;\n                default:\n                    t.dataBuffer.append(c);\n                    needsExitTransition = true;\n            }",
+      "right" : "switch (c) {\n                case '\\t':\n                case '\\n':\n                case '\\r':\n                case '\\f':\n                case ' ':\n                    t.transition(BeforeAttributeName);\n                    break;\n                case '/':\n                    t.transition(SelfClosingStartTag);\n                    break;\n                case '>':\n                    t.emitTagPending();\n                    t.transition(Data);\n                    break;\n                default:\n                    t.dataBuffer.append(c);\n                    needsExitTransition = true;\n            }",
+      "info" : "SwitchStatement[56458-57058]:SwitchStatement[56493-57093]"
+    }, {
+      "left" : "case '\\t':",
+      "right" : "case '\\t':",
+      "info" : "SwitchCase[56487-56497]:SwitchCase[56522-56532]"
+    }, {
+      "left" : "case '\\n':",
+      "right" : "case '\\n':",
+      "info" : "SwitchCase[56514-56524]:SwitchCase[56549-56559]"
+    }, {
+      "left" : "case '\\r':",
+      "right" : "case '\\r':",
+      "info" : "SwitchCase[56541-56551]:SwitchCase[56576-56586]"
+    }, {
+      "left" : "case '\\f':",
+      "right" : "case '\\f':",
+      "info" : "SwitchCase[56568-56578]:SwitchCase[56603-56613]"
+    }, {
+      "left" : "case ' ':",
+      "right" : "case ' ':",
+      "info" : "SwitchCase[56595-56604]:SwitchCase[56630-56639]"
+    }, {
+      "left" : "t.transition(BeforeAttributeName);",
+      "right" : "t.transition(BeforeAttributeName);",
+      "info" : "ExpressionStatement[56625-56659]:ExpressionStatement[56660-56694]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[56680-56686]:BreakStatement[56715-56721]"
+    }, {
+      "left" : "case '/':",
+      "right" : "case '/':",
+      "info" : "SwitchCase[56703-56712]:SwitchCase[56738-56747]"
+    }, {
+      "left" : "t.transition(SelfClosingStartTag);",
+      "right" : "t.transition(SelfClosingStartTag);",
+      "info" : "ExpressionStatement[56733-56767]:ExpressionStatement[56768-56802]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[56788-56794]:BreakStatement[56823-56829]"
+    }, {
+      "left" : "case '>':",
+      "right" : "case '>':",
+      "info" : "SwitchCase[56811-56820]:SwitchCase[56846-56855]"
+    }, {
+      "left" : "t.emitTagPending();",
+      "right" : "t.emitTagPending();",
+      "info" : "ExpressionStatement[56841-56860]:ExpressionStatement[56876-56895]"
+    }, {
+      "left" : "t.transition(Data);",
+      "right" : "t.transition(Data);",
+      "info" : "ExpressionStatement[56881-56900]:ExpressionStatement[56916-56935]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[56921-56927]:BreakStatement[56956-56962]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[56944-56952]:SwitchCase[56979-56987]"
+    }, {
+      "left" : "t.dataBuffer.append(c);",
+      "right" : "t.dataBuffer.append(c);",
+      "info" : "ExpressionStatement[56973-56996]:ExpressionStatement[57008-57031]"
+    }, {
+      "left" : "needsExitTransition = true;",
+      "right" : "needsExitTransition = true;",
+      "info" : "ExpressionStatement[57017-57044]:ExpressionStatement[57052-57079]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[57074-57125]:Block[57109-57160]"
+    }, {
+      "left" : "needsExitTransition = true;",
+      "right" : "needsExitTransition = true;",
+      "info" : "ExpressionStatement[57088-57115]:ExpressionStatement[57123-57150]"
+    }, {
+      "left" : "if (needsExitTransition)",
+      "right" : "if (needsExitTransition)",
+      "info" : "IfStatement[57135-57265]:IfStatement[57170-57300]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[57160-57265]:Block[57195-57300]"
+    }, {
+      "left" : "t.emit(\"</\" + t.dataBuffer.toString());",
+      "right" : "t.emit(\"</\" + t.dataBuffer.toString());",
+      "info" : "ExpressionStatement[57174-57213]:ExpressionStatement[57209-57248]"
+    }, {
+      "left" : "t.transition(elseTransition);",
+      "right" : "t.transition(elseTransition);",
+      "info" : "ExpressionStatement[57226-57255]:ExpressionStatement[57261-57290]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[57386-57900]:Block[57421-57935]"
+    }, {
+      "left" : "switch (r.current()) {\n            case '<':\n                t.advanceTransition(advance);\n                break;\n            case nullChar:\n                t.error(current);\n                r.advance();\n                t.emit(replacementChar);\n                break;\n            case eof:\n                t.emit(new Token.EOF());\n                break;\n            default:\n                String data = r.consumeToAny('<', nullChar);\n                t.emit(data);\n                break;\n        }",
+      "right" : "switch (r.current()) {\n            case '<':\n                t.advanceTransition(advance);\n                break;\n            case nullChar:\n                t.error(current);\n                r.advance();\n                t.emit(replacementChar);\n                break;\n            case eof:\n                t.emit(new Token.EOF());\n                break;\n            default:\n                String data = r.consumeToAny('<', nullChar);\n                t.emit(data);\n                break;\n        }",
+      "info" : "SwitchStatement[57396-57894]:SwitchStatement[57431-57929]"
+    }, {
+      "left" : "case '<':",
+      "right" : "case '<':",
+      "info" : "SwitchCase[57431-57440]:SwitchCase[57466-57475]"
+    }, {
+      "left" : "t.advanceTransition(advance);",
+      "right" : "t.advanceTransition(advance);",
+      "info" : "ExpressionStatement[57457-57486]:ExpressionStatement[57492-57521]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[57503-57509]:BreakStatement[57538-57544]"
+    }, {
+      "left" : "case nullChar:",
+      "right" : "case nullChar:",
+      "info" : "SwitchCase[57522-57536]:SwitchCase[57557-57571]"
+    }, {
+      "left" : "t.error(current);",
+      "right" : "t.error(current);",
+      "info" : "ExpressionStatement[57553-57570]:ExpressionStatement[57588-57605]"
+    }, {
+      "left" : "r.advance();",
+      "right" : "r.advance();",
+      "info" : "ExpressionStatement[57587-57599]:ExpressionStatement[57622-57634]"
+    }, {
+      "left" : "t.emit(replacementChar);",
+      "right" : "t.emit(replacementChar);",
+      "info" : "ExpressionStatement[57616-57640]:ExpressionStatement[57651-57675]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[57657-57663]:BreakStatement[57692-57698]"
+    }, {
+      "left" : "case eof:",
+      "right" : "case eof:",
+      "info" : "SwitchCase[57676-57685]:SwitchCase[57711-57720]"
+    }, {
+      "left" : "t.emit(new Token.EOF());",
+      "right" : "t.emit(new Token.EOF());",
+      "info" : "ExpressionStatement[57702-57726]:ExpressionStatement[57737-57761]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[57743-57749]:BreakStatement[57778-57784]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[57762-57770]:SwitchCase[57797-57805]"
+    }, {
+      "left" : "String data = r.consumeToAny('<', nullChar);",
+      "right" : "String data = r.consumeToAny('<', nullChar);",
+      "info" : "VariableDeclarationStatement[57787-57831]:VariableDeclarationStatement[57822-57866]"
+    }, {
+      "left" : "t.emit(data);",
+      "right" : "t.emit(data);",
+      "info" : "ExpressionStatement[57848-57861]:ExpressionStatement[57883-57896]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[57878-57884]:BreakStatement[57913-57919]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[57975-58157]:Block[58010-58192]"
+    }, {
+      "left" : "int[] c = t.consumeCharacterReference(null, false);",
+      "right" : "int[] c = t.consumeCharacterReference(null, false);",
+      "info" : "VariableDeclarationStatement[57985-58036]:VariableDeclarationStatement[58020-58071]"
+    }, {
+      "left" : "if (c == null)",
+      "right" : "if (c == null)",
+      "info" : "IfStatement[58045-58120]:IfStatement[58080-58155]"
+    }, {
+      "left" : "t.emit('&');",
+      "right" : "t.emit('&');",
+      "info" : "ExpressionStatement[58072-58084]:ExpressionStatement[58107-58119]"
+    }, {
+      "left" : "t.emit(c);",
+      "right" : "t.emit(c);",
+      "info" : "ExpressionStatement[58110-58120]:ExpressionStatement[58145-58155]"
+    }, {
+      "left" : "t.transition(advance);",
+      "right" : "t.transition(advance);",
+      "info" : "ExpressionStatement[58129-58151]:ExpressionStatement[58164-58186]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[58262-58452]:Block[58297-58487]"
+    }, {
+      "left" : "if (r.matchesLetter())",
+      "right" : "if (r.matchesLetter())",
+      "info" : "IfStatement[58272-58446]:IfStatement[58307-58481]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[58295-58374]:Block[58330-58409]"
+    }, {
+      "left" : "t.createTagPending(false);",
+      "right" : "t.createTagPending(false);",
+      "info" : "ExpressionStatement[58309-58335]:ExpressionStatement[58344-58370]"
+    }, {
+      "left" : "t.transition(a);",
+      "right" : "t.transition(a);",
+      "info" : "ExpressionStatement[58348-58364]:ExpressionStatement[58383-58399]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[58380-58446]:Block[58415-58481]"
+    }, {
+      "left" : "t.emit(\"</\");",
+      "right" : "t.emit(\"</\");",
+      "info" : "ExpressionStatement[58394-58407]:ExpressionStatement[58429-58442]"
+    }, {
+      "left" : "t.transition(b);",
+      "right" : "t.transition(b);",
+      "info" : "ExpressionStatement[58420-58436]:ExpressionStatement[58455-58471]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[58585-59305]:Block[58620-59340]"
+    }, {
+      "left" : "if (r.matchesLetter())",
+      "right" : "if (r.matchesLetter())",
+      "info" : "IfStatement[58595-58767]:IfStatement[58630-58802]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[58618-58767]:Block[58653-58802]"
+    }, {
+      "left" : "String name = r.consumeLetterSequence();",
+      "right" : "String name = r.consumeLetterSequence();",
+      "info" : "VariableDeclarationStatement[58632-58672]:VariableDeclarationStatement[58667-58707]"
+    }, {
+      "left" : "t.dataBuffer.append(name);",
+      "right" : "t.dataBuffer.append(name);",
+      "info" : "ExpressionStatement[58685-58711]:ExpressionStatement[58720-58746]"
+    }, {
+      "left" : "t.emit(name);",
+      "right" : "t.emit(name);",
+      "info" : "ExpressionStatement[58724-58737]:ExpressionStatement[58759-58772]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[58750-58757]:ReturnStatement[58785-58792]"
+    }, {
+      "left" : "char c = r.consume();",
+      "right" : "char c = r.consume();",
+      "info" : "VariableDeclarationStatement[58777-58798]:VariableDeclarationStatement[58812-58833]"
+    }, {
+      "left" : "switch (c) {\n            case '\\t':\n            case '\\n':\n            case '\\r':\n            case '\\f':\n            case ' ':\n            case '/':\n            case '>':\n                if (t.dataBuffer.toString().equals(\"script\"))\n                    t.transition(primary);\n                else\n                    t.transition(fallback);\n                t.emit(c);\n                break;\n            default:\n                r.unconsume();\n                t.transition(fallback);\n        }",
+      "right" : "switch (c) {\n            case '\\t':\n            case '\\n':\n            case '\\r':\n            case '\\f':\n            case ' ':\n            case '/':\n            case '>':\n                if (t.dataBuffer.toString().equals(\"script\"))\n                    t.transition(primary);\n                else\n                    t.transition(fallback);\n                t.emit(c);\n                break;\n            default:\n                r.unconsume();\n                t.transition(fallback);\n        }",
+      "info" : "SwitchStatement[58807-59299]:SwitchStatement[58842-59334]"
+    }, {
+      "left" : "case '\\t':",
+      "right" : "case '\\t':",
+      "info" : "SwitchCase[58832-58842]:SwitchCase[58867-58877]"
+    }, {
+      "left" : "case '\\n':",
+      "right" : "case '\\n':",
+      "info" : "SwitchCase[58855-58865]:SwitchCase[58890-58900]"
+    }, {
+      "left" : "case '\\r':",
+      "right" : "case '\\r':",
+      "info" : "SwitchCase[58878-58888]:SwitchCase[58913-58923]"
+    }, {
+      "left" : "case '\\f':",
+      "right" : "case '\\f':",
+      "info" : "SwitchCase[58901-58911]:SwitchCase[58936-58946]"
+    }, {
+      "left" : "case ' ':",
+      "right" : "case ' ':",
+      "info" : "SwitchCase[58924-58933]:SwitchCase[58959-58968]"
+    }, {
+      "left" : "case '/':",
+      "right" : "case '/':",
+      "info" : "SwitchCase[58946-58955]:SwitchCase[58981-58990]"
+    }, {
+      "left" : "case '>':",
+      "right" : "case '>':",
+      "info" : "SwitchCase[58968-58977]:SwitchCase[59003-59012]"
+    }, {
+      "left" : "if (t.dataBuffer.toString().equals(\"script\"))",
+      "right" : "if (t.dataBuffer.toString().equals(\"script\"))",
+      "info" : "IfStatement[58994-59147]:IfStatement[59029-59182]"
+    }, {
+      "left" : "t.transition(primary);",
+      "right" : "t.transition(primary);",
+      "info" : "ExpressionStatement[59060-59082]:ExpressionStatement[59095-59117]"
+    }, {
+      "left" : "t.transition(fallback);",
+      "right" : "t.transition(fallback);",
+      "info" : "ExpressionStatement[59124-59147]:ExpressionStatement[59159-59182]"
+    }, {
+      "left" : "t.emit(c);",
+      "right" : "t.emit(c);",
+      "info" : "ExpressionStatement[59164-59174]:ExpressionStatement[59199-59209]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[59191-59197]:BreakStatement[59226-59232]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[59210-59218]:SwitchCase[59245-59253]"
+    }, {
+      "left" : "r.unconsume();",
+      "right" : "r.unconsume();",
+      "info" : "ExpressionStatement[59235-59249]:ExpressionStatement[59270-59284]"
+    }, {
+      "left" : "t.transition(fallback);",
+      "right" : "t.transition(fallback);",
+      "info" : "ExpressionStatement[59266-59289]:ExpressionStatement[59301-59324]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

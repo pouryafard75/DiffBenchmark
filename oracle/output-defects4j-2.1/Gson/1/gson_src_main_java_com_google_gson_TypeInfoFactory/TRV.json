@@ -1,0 +1,121 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private TypeInfoFactory()",
+      "right" : "private TypeInfoFactory()",
+      "info" : "MethodDeclaration[1013-1108]:MethodDeclaration[1013-1108]"
+    }, {
+      "left" : "public static TypeInfoArray getTypeInfoForArray(Type type)",
+      "right" : "public static TypeInfoArray getTypeInfoForArray(Type type)",
+      "info" : "MethodDeclaration[1112-1270]:MethodDeclaration[1112-1270]"
+    }, {
+      "left" : "public static TypeInfo getTypeInfoForField(Field f, Type typeDefiningF)",
+      "right" : "public static TypeInfo getTypeInfoForField(Field f, Type typeDefiningF)",
+      "info" : "MethodDeclaration[1274-1931]:MethodDeclaration[1274-1931]"
+    }, {
+      "left" : "private static Type[] extractRealTypes(\n      Type[] actualTypeArguments, Type parentType, Class<?> rawParentClass)",
+      "right" : "private static Type[] extractRealTypes(\n      Type[] actualTypeArguments, Type parentType, Class<?> rawParentClass)",
+      "info" : "MethodDeclaration[4805-5213]:MethodDeclaration[6675-7083]"
+    }, {
+      "left" : "private static int getIndex(TypeVariable<?>[] types, TypeVariable<?> type)",
+      "right" : "private static int getIndex(TypeVariable<?>[] types, TypeVariable<?> type)",
+      "info" : "MethodDeclaration[5217-5525]:MethodDeclaration[7087-7395]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1039-1108]:Block[1039-1108]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1171-1270]:Block[1171-1270]"
+    }, {
+      "left" : "Preconditions.checkArgument(TypeUtils.isArray(type));",
+      "right" : "Preconditions.checkArgument(TypeUtils.isArray(type));",
+      "info" : "ExpressionStatement[1177-1230]:ExpressionStatement[1177-1230]"
+    }, {
+      "left" : "return new TypeInfoArray(type);",
+      "right" : "return new TypeInfoArray(type);",
+      "info" : "ReturnStatement[1235-1266]:ReturnStatement[1235-1266]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1712-1931]:Block[1712-1931]"
+    }, {
+      "left" : "Class<?> classDefiningF = TypeUtils.toRawClass(typeDefiningF);",
+      "right" : "Class<?> classDefiningF = TypeUtils.toRawClass(typeDefiningF);",
+      "info" : "VariableDeclarationStatement[1718-1780]:VariableDeclarationStatement[1718-1780]"
+    }, {
+      "left" : "Type type = f.getGenericType();",
+      "right" : "Type type = f.getGenericType();",
+      "info" : "VariableDeclarationStatement[1785-1816]:VariableDeclarationStatement[1785-1816]"
+    }, {
+      "left" : "Type actualType = getActualType(type, typeDefiningF, classDefiningF);",
+      "right" : "Type actualType = getActualType(type, typeDefiningF, classDefiningF);",
+      "info" : "VariableDeclarationStatement[1821-1890]:VariableDeclarationStatement[1821-1890]"
+    }, {
+      "left" : "return new TypeInfo(actualType);",
+      "right" : "return new TypeInfo(actualType);",
+      "info" : "ReturnStatement[1895-1927]:ReturnStatement[1895-1927]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4921-5213]:Block[6791-7083]"
+    }, {
+      "left" : "Preconditions.checkNotNull(actualTypeArguments);",
+      "right" : "Preconditions.checkNotNull(actualTypeArguments);",
+      "info" : "ExpressionStatement[4927-4975]:ExpressionStatement[6797-6845]"
+    }, {
+      "left" : "Type[] retTypes = new Type[actualTypeArguments.length];",
+      "right" : "Type[] retTypes = new Type[actualTypeArguments.length];",
+      "info" : "VariableDeclarationStatement[4981-5036]:VariableDeclarationStatement[6851-6906]"
+    }, {
+      "left" : "for (int i = 0; i < actualTypeArguments.length; ++i)",
+      "right" : "for (int i = 0; i < actualTypeArguments.length; ++i)",
+      "info" : "ForStatement[5041-5188]:ForStatement[6911-7058]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5094-5188]:Block[6964-7058]"
+    }, {
+      "left" : "retTypes[i] = getActualType(actualTypeArguments[i], parentType, rawParentClass);",
+      "right" : "retTypes[i] = getActualType(actualTypeArguments[i], parentType, rawParentClass);",
+      "info" : "ExpressionStatement[5102-5182]:ExpressionStatement[6972-7052]"
+    }, {
+      "left" : "return retTypes;",
+      "right" : "return retTypes;",
+      "info" : "ReturnStatement[5193-5209]:ReturnStatement[7063-7079]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5292-5525]:Block[7162-7395]"
+    }, {
+      "left" : "for (int i = 0; i < types.length; ++i)",
+      "right" : "for (int i = 0; i < types.length; ++i)",
+      "info" : "ForStatement[5298-5405]:ForStatement[7168-7275]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5337-5405]:Block[7207-7275]"
+    }, {
+      "left" : "if (type.equals(types[i]))",
+      "right" : "if (type.equals(types[i]))",
+      "info" : "IfStatement[5345-5399]:IfStatement[7215-7269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5372-5399]:Block[7242-7269]"
+    }, {
+      "left" : "return i;",
+      "right" : "return i;",
+      "info" : "ReturnStatement[5382-5391]:ReturnStatement[7252-7261]"
+    }, {
+      "left" : "throw new IllegalStateException(\n        \"How can the type variable not be present in the class declaration!\");",
+      "right" : "throw new IllegalStateException(\n        \"How can the type variable not be present in the class declaration!\");",
+      "info" : "ThrowStatement[5410-5521]:ThrowStatement[7280-7391]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

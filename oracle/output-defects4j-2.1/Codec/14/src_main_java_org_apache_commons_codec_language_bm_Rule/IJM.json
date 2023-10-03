@@ -1,0 +1,1561 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "Rule",
+      "right" : "Rule",
+      "info" : "TypeDeclaration[1295-27469]:TypeDeclaration[1295-27633]"
+    }, {
+      "left" : "Phoneme",
+      "right" : "Phoneme",
+      "info" : "TypeDeclaration[3185-5892]:TypeDeclaration[3185-6056]"
+    }, {
+      "left" : "public static final Comparator<Phoneme> COMPARATOR = new Comparator<Phoneme>() {\n            @Override\n            public int compare(final Phoneme o1, final Phoneme o2) {\n                for (int i = 0; i < o1.phonemeText.length(); i++) {\n                    if (i >= o2.phonemeText.length()) {\n                        return +1;\n                    }\n                    final int c = o1.phonemeText.charAt(i) - o2.phonemeText.charAt(i);\n                    if (c != 0) {\n                        return c;\n                    }\n                }\n\n                if (o1.phonemeText.length() < o2.phonemeText.length()) {\n                    return -1;\n                }\n\n                return 0;\n            }\n        };",
+      "right" : "public static final Comparator<Phoneme> COMPARATOR = new Comparator<Phoneme>() {\n            @Override\n            public int compare(final Phoneme o1, final Phoneme o2) {\n                for (int i = 0; i < o1.phonemeText.length(); i++) {\n                    if (i >= o2.phonemeText.length()) {\n                        return +1;\n                    }\n                    final int c = o1.phonemeText.charAt(i) - o2.phonemeText.charAt(i);\n                    if (c != 0) {\n                        return c;\n                    }\n                }\n\n                if (o1.phonemeText.length() < o2.phonemeText.length()) {\n                    return -1;\n                }\n\n                return 0;\n            }\n        };",
+      "info" : "FieldDeclaration[3252-3974]:FieldDeclaration[3252-3974]"
+    }, {
+      "left" : "public int compare(final Phoneme o1, final Phoneme o2)",
+      "right" : "public int compare(final Phoneme o1, final Phoneme o2)",
+      "info" : "MethodDeclaration[3345-3963]:MethodDeclaration[3345-3963]"
+    }, {
+      "left" : "private final StringBuilder phonemeText;",
+      "right" : "private final StringBuilder phonemeText;",
+      "info" : "FieldDeclaration[3984-4024]:FieldDeclaration[3984-4024]"
+    }, {
+      "left" : "private final Languages.LanguageSet languages;",
+      "right" : "private final Languages.LanguageSet languages;",
+      "info" : "FieldDeclaration[4033-4079]:FieldDeclaration[4033-4079]"
+    }, {
+      "left" : "public Phoneme(final CharSequence phonemeText, final Languages.LanguageSet languages)",
+      "right" : "public Phoneme(final CharSequence phonemeText, final Languages.LanguageSet languages)",
+      "info" : "MethodDeclaration[4089-4289]:MethodDeclaration[4089-4289]"
+    }, {
+      "left" : "public Phoneme(final Phoneme phonemeLeft, final Phoneme phonemeRight)",
+      "right" : "public Phoneme(final Phoneme phonemeLeft, final Phoneme phonemeRight)",
+      "info" : "MethodDeclaration[4299-4509]:MethodDeclaration[4299-4509]"
+    }, {
+      "left" : "public Phoneme(final Phoneme phonemeLeft, final Phoneme phonemeRight, final Languages.LanguageSet languages)",
+      "right" : "public Phoneme(final Phoneme phonemeLeft, final Phoneme phonemeRight, final Languages.LanguageSet languages)",
+      "info" : "MethodDeclaration[4519-4756]:MethodDeclaration[4519-4756]"
+    }, {
+      "left" : "public Phoneme append(final CharSequence str)",
+      "right" : "public Phoneme append(final CharSequence str)",
+      "info" : "MethodDeclaration[4766-4890]:MethodDeclaration[4766-4890]"
+    }, {
+      "left" : "public Languages.LanguageSet getLanguages()",
+      "right" : "public Languages.LanguageSet getLanguages()",
+      "info" : "MethodDeclaration[4900-4990]:MethodDeclaration[4900-4990]"
+    }, {
+      "left" : "public Iterable<Phoneme> getPhonemes()",
+      "right" : "public Iterable<Phoneme> getPhonemes()",
+      "info" : "MethodDeclaration[5000-5116]:MethodDeclaration[5000-5116]"
+    }, {
+      "left" : "public CharSequence getPhonemeText()",
+      "right" : "public CharSequence getPhonemeText()",
+      "info" : "MethodDeclaration[5126-5211]:MethodDeclaration[5126-5211]"
+    }, {
+      "left" : "public Phoneme join(final Phoneme right)",
+      "right" : "public Phoneme join(final Phoneme right)",
+      "info" : "MethodDeclaration[5221-5517]:MethodDeclaration[5221-5517]"
+    }, {
+      "left" : "public String toString()",
+      "right" : "public String toString()",
+      "info" : "MethodDeclaration[5527-5886]:MethodDeclaration[5931-6050]"
+    }, {
+      "left" : "PhonemeExpr",
+      "right" : "PhonemeExpr",
+      "info" : "TypeDeclaration[5898-5975]:TypeDeclaration[6062-6139]"
+    }, {
+      "left" : "Iterable<Phoneme> getPhonemes();",
+      "right" : "Iterable<Phoneme> getPhonemes();",
+      "info" : "MethodDeclaration[5937-5969]:MethodDeclaration[6101-6133]"
+    }, {
+      "left" : "PhonemeList",
+      "right" : "PhonemeList",
+      "info" : "TypeDeclaration[5981-6311]:TypeDeclaration[6145-6475]"
+    }, {
+      "left" : "private final List<Phoneme> phonemes;",
+      "right" : "private final List<Phoneme> phonemes;",
+      "info" : "FieldDeclaration[6052-6089]:FieldDeclaration[6216-6253]"
+    }, {
+      "left" : "public PhonemeList(final List<Phoneme> phonemes)",
+      "right" : "public PhonemeList(final List<Phoneme> phonemes)",
+      "info" : "MethodDeclaration[6099-6197]:MethodDeclaration[6263-6361]"
+    }, {
+      "left" : "public List<Phoneme> getPhonemes()",
+      "right" : "public List<Phoneme> getPhonemes()",
+      "info" : "MethodDeclaration[6207-6305]:MethodDeclaration[6371-6469]"
+    }, {
+      "left" : "RPattern",
+      "right" : "RPattern",
+      "info" : "TypeDeclaration[6317-6525]:TypeDeclaration[6481-6689]"
+    }, {
+      "left" : "boolean isMatch(CharSequence input);",
+      "right" : "boolean isMatch(CharSequence input);",
+      "info" : "MethodDeclaration[6483-6519]:MethodDeclaration[6647-6683]"
+    }, {
+      "left" : "public static final RPattern ALL_STRINGS_RMATCHER = new RPattern() {\n        @Override\n        public boolean isMatch(final CharSequence input) {\n            return true;\n        }\n    };",
+      "right" : "public static final RPattern ALL_STRINGS_RMATCHER = new RPattern() {\n        @Override\n        public boolean isMatch(final CharSequence input) {\n            return true;\n        }\n    };",
+      "info" : "FieldDeclaration[6531-6718]:FieldDeclaration[6695-6882]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[6608-6711]:MethodDeclaration[6772-6875]"
+    }, {
+      "left" : "public static final String ALL = \"ALL\";",
+      "right" : "public static final String ALL = \"ALL\";",
+      "info" : "FieldDeclaration[6724-6763]:FieldDeclaration[6888-6927]"
+    }, {
+      "left" : "private static final String DOUBLE_QUOTE = \"\\\"\";",
+      "right" : "private static final String DOUBLE_QUOTE = \"\\\"\";",
+      "info" : "FieldDeclaration[6769-6817]:FieldDeclaration[6933-6981]"
+    }, {
+      "left" : "private static final String HASH_INCLUDE = \"#include\";",
+      "right" : "private static final String HASH_INCLUDE = \"#include\";",
+      "info" : "FieldDeclaration[6823-6877]:FieldDeclaration[6987-7041]"
+    }, {
+      "left" : "private static final Map<NameType, Map<RuleType, Map<String, Map<String, List<Rule>>>>> RULES =\n            new EnumMap<NameType, Map<RuleType, Map<String, Map<String, List<Rule>>>>>(NameType.class);",
+      "right" : "private static final Map<NameType, Map<RuleType, Map<String, Map<String, List<Rule>>>>> RULES =\n            new EnumMap<NameType, Map<RuleType, Map<String, Map<String, List<Rule>>>>>(NameType.class);",
+      "info" : "FieldDeclaration[6883-7082]:FieldDeclaration[7047-7246]"
+    }, {
+      "left" : "private static boolean contains(final CharSequence chars, final char input)",
+      "right" : "private static boolean contains(final CharSequence chars, final char input)",
+      "info" : "MethodDeclaration[8307-8560]:MethodDeclaration[8471-8724]"
+    }, {
+      "left" : "private static String createResourceName(final NameType nameType, final RuleType rt, final String lang)",
+      "right" : "private static String createResourceName(final NameType nameType, final RuleType rt, final String lang)",
+      "info" : "MethodDeclaration[8566-8829]:MethodDeclaration[8730-8993]"
+    }, {
+      "left" : "private static Scanner createScanner(final NameType nameType, final RuleType rt, final String lang)",
+      "right" : "private static Scanner createScanner(final NameType nameType, final RuleType rt, final String lang)",
+      "info" : "MethodDeclaration[8835-9307]:MethodDeclaration[8999-9471]"
+    }, {
+      "left" : "private static Scanner createScanner(final String lang)",
+      "right" : "private static Scanner createScanner(final String lang)",
+      "info" : "MethodDeclaration[9313-9769]:MethodDeclaration[9477-9933]"
+    }, {
+      "left" : "private static boolean endsWith(final CharSequence input, final CharSequence suffix)",
+      "right" : "private static boolean endsWith(final CharSequence input, final CharSequence suffix)",
+      "info" : "MethodDeclaration[9775-10167]:MethodDeclaration[9939-10331]"
+    }, {
+      "left" : "public static List<Rule> getInstance(final NameType nameType, final RuleType rt,\n                                         final Languages.LanguageSet langs)",
+      "right" : "public static List<Rule> getInstance(final NameType nameType, final RuleType rt,\n                                         final Languages.LanguageSet langs)",
+      "info" : "MethodDeclaration[10173-10947]:MethodDeclaration[10337-11111]"
+    }, {
+      "left" : "public static List<Rule> getInstance(final NameType nameType, final RuleType rt, final String lang)",
+      "right" : "public static List<Rule> getInstance(final NameType nameType, final RuleType rt, final String lang)",
+      "info" : "MethodDeclaration[10953-11498]:MethodDeclaration[11117-11662]"
+    }, {
+      "left" : "public static Map<String, List<Rule>> getInstanceMap(final NameType nameType, final RuleType rt,\n                                                         final Languages.LanguageSet langs)",
+      "right" : "public static Map<String, List<Rule>> getInstanceMap(final NameType nameType, final RuleType rt,\n                                                         final Languages.LanguageSet langs)",
+      "info" : "MethodDeclaration[11504-12284]:MethodDeclaration[11668-12448]"
+    }, {
+      "left" : "public static Map<String, List<Rule>> getInstanceMap(final NameType nameType, final RuleType rt,\n                                                         final String lang)",
+      "right" : "public static Map<String, List<Rule>> getInstanceMap(final NameType nameType, final RuleType rt,\n                                                         final String lang)",
+      "info" : "MethodDeclaration[12290-13219]:MethodDeclaration[12454-13383]"
+    }, {
+      "left" : "private static Phoneme parsePhoneme(final String ph)",
+      "right" : "private static Phoneme parsePhoneme(final String ph)",
+      "info" : "MethodDeclaration[13225-13898]:MethodDeclaration[13389-14062]"
+    }, {
+      "left" : "private static PhonemeExpr parsePhonemeExpr(final String ph)",
+      "right" : "private static PhonemeExpr parsePhonemeExpr(final String ph)",
+      "info" : "MethodDeclaration[13904-14692]:MethodDeclaration[14068-14856]"
+    }, {
+      "left" : "private static Map<String, List<Rule>> parseRules(final Scanner scanner, final String location)",
+      "right" : "private static Map<String, List<Rule>> parseRules(final Scanner scanner, final String location)",
+      "info" : "MethodDeclaration[14698-19289]:MethodDeclaration[14862-19453]"
+    }, {
+      "left" : "private final int myLine = cLine;",
+      "right" : "private final int myLine = cLine;",
+      "info" : "FieldDeclaration[17470-17503]:FieldDeclaration[17634-17667]"
+    }, {
+      "left" : "private final String loc = location;",
+      "right" : "private final String loc = location;",
+      "info" : "FieldDeclaration[17540-17576]:FieldDeclaration[17704-17740]"
+    }, {
+      "left" : "public String toString()",
+      "right" : "public String toString()",
+      "info" : "MethodDeclaration[17614-18415]:MethodDeclaration[17778-18579]"
+    }, {
+      "left" : "private static RPattern pattern(final String regex)",
+      "right" : "private static RPattern pattern(final String regex)",
+      "info" : "MethodDeclaration[19295-23792]:MethodDeclaration[19459-23956]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[20133-20299]:MethodDeclaration[20297-20463]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[20416-20584]:MethodDeclaration[20580-20748]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[20922-21083]:MethodDeclaration[21086-21247]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[21236-21395]:MethodDeclaration[21400-21559]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[22273-22505]:MethodDeclaration[22437-22669]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[22692-22923]:MethodDeclaration[22856-23087]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[23107-23394]:MethodDeclaration[23271-23558]"
+    }, {
+      "left" : "Pattern pattern = Pattern.compile(regex);",
+      "right" : "Pattern pattern = Pattern.compile(regex);",
+      "info" : "FieldDeclaration[23531-23572]:FieldDeclaration[23695-23736]"
+    }, {
+      "left" : "public boolean isMatch(final CharSequence input)",
+      "right" : "public boolean isMatch(final CharSequence input)",
+      "info" : "MethodDeclaration[23586-23775]:MethodDeclaration[23750-23939]"
+    }, {
+      "left" : "private static boolean startsWith(final CharSequence input, final CharSequence prefix)",
+      "right" : "private static boolean startsWith(final CharSequence input, final CharSequence prefix)",
+      "info" : "MethodDeclaration[23798-24158]:MethodDeclaration[23962-24322]"
+    }, {
+      "left" : "private static String stripQuotes(String str)",
+      "right" : "private static String stripQuotes(String str)",
+      "info" : "MethodDeclaration[24164-24435]:MethodDeclaration[24328-24599]"
+    }, {
+      "left" : "private final RPattern lContext;",
+      "right" : "private final RPattern lContext;",
+      "info" : "FieldDeclaration[24441-24473]:FieldDeclaration[24605-24637]"
+    }, {
+      "left" : "private final String pattern;",
+      "right" : "private final String pattern;",
+      "info" : "FieldDeclaration[24479-24508]:FieldDeclaration[24643-24672]"
+    }, {
+      "left" : "private final PhonemeExpr phoneme;",
+      "right" : "private final PhonemeExpr phoneme;",
+      "info" : "FieldDeclaration[24514-24548]:FieldDeclaration[24678-24712]"
+    }, {
+      "left" : "private final RPattern rContext;",
+      "right" : "private final RPattern rContext;",
+      "info" : "FieldDeclaration[24554-24586]:FieldDeclaration[24718-24750]"
+    }, {
+      "left" : "public Rule(final String pattern, final String lContext, final String rContext, final PhonemeExpr phoneme)",
+      "right" : "public Rule(final String pattern, final String lContext, final String rContext, final PhonemeExpr phoneme)",
+      "info" : "MethodDeclaration[24592-25149]:MethodDeclaration[24756-25313]"
+    }, {
+      "left" : "public RPattern getLContext()",
+      "right" : "public RPattern getLContext()",
+      "info" : "MethodDeclaration[25155-25388]:MethodDeclaration[25319-25552]"
+    }, {
+      "left" : "public String getPattern()",
+      "right" : "public String getPattern()",
+      "info" : "MethodDeclaration[25394-25582]:MethodDeclaration[25558-25746]"
+    }, {
+      "left" : "public PhonemeExpr getPhoneme()",
+      "right" : "public PhonemeExpr getPhoneme()",
+      "info" : "MethodDeclaration[25588-25807]:MethodDeclaration[25752-25971]"
+    }, {
+      "left" : "public RPattern getRContext()",
+      "right" : "public RPattern getRContext()",
+      "info" : "MethodDeclaration[25813-26049]:MethodDeclaration[25977-26213]"
+    }, {
+      "left" : "public boolean patternAndContextMatches(final CharSequence input, final int i)",
+      "right" : "public boolean patternAndContextMatches(final CharSequence input, final int i)",
+      "info" : "MethodDeclaration[26055-27467]:MethodDeclaration[26219-27631]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3422-3963]:Block[3422-3963]"
+    }, {
+      "left" : "for (int i = 0; i < o1.phonemeText.length(); i++)",
+      "right" : "for (int i = 0; i < o1.phonemeText.length(); i++)",
+      "info" : "ForStatement[3440-3799]:ForStatement[3440-3799]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3490-3799]:Block[3490-3799]"
+    }, {
+      "left" : "if (i >= o2.phonemeText.length())",
+      "right" : "if (i >= o2.phonemeText.length())",
+      "info" : "IfStatement[3512-3604]:IfStatement[3512-3604]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3546-3604]:Block[3546-3604]"
+    }, {
+      "left" : "return +1;",
+      "right" : "return +1;",
+      "info" : "ReturnStatement[3572-3582]:ReturnStatement[3572-3582]"
+    }, {
+      "left" : "final int c = o1.phonemeText.charAt(i) - o2.phonemeText.charAt(i);",
+      "right" : "final int c = o1.phonemeText.charAt(i) - o2.phonemeText.charAt(i);",
+      "info" : "VariableDeclarationStatement[3625-3691]:VariableDeclarationStatement[3625-3691]"
+    }, {
+      "left" : "if (c != 0)",
+      "right" : "if (c != 0)",
+      "info" : "IfStatement[3712-3781]:IfStatement[3712-3781]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3724-3781]:Block[3724-3781]"
+    }, {
+      "left" : "return c;",
+      "right" : "return c;",
+      "info" : "ReturnStatement[3750-3759]:ReturnStatement[3750-3759]"
+    }, {
+      "left" : "if (o1.phonemeText.length() < o2.phonemeText.length())",
+      "right" : "if (o1.phonemeText.length() < o2.phonemeText.length())",
+      "info" : "IfStatement[3817-3922]:IfStatement[3817-3922]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3872-3922]:Block[3872-3922]"
+    }, {
+      "left" : "return -1;",
+      "right" : "return -1;",
+      "info" : "ReturnStatement[3894-3904]:ReturnStatement[3894-3904]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[3940-3949]:ReturnStatement[3940-3949]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4175-4289]:Block[4175-4289]"
+    }, {
+      "left" : "this.phonemeText = new StringBuilder(phonemeText);",
+      "right" : "this.phonemeText = new StringBuilder(phonemeText);",
+      "info" : "ExpressionStatement[4189-4239]:ExpressionStatement[4189-4239]"
+    }, {
+      "left" : "this.languages = languages;",
+      "right" : "this.languages = languages;",
+      "info" : "ExpressionStatement[4252-4279]:ExpressionStatement[4252-4279]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4369-4509]:Block[4369-4509]"
+    }, {
+      "left" : "this(phonemeLeft.phonemeText, phonemeLeft.languages);",
+      "right" : "this(phonemeLeft.phonemeText, phonemeLeft.languages);",
+      "info" : "ConstructorInvocation[4383-4436]:ConstructorInvocation[4383-4436]"
+    }, {
+      "left" : "this.phonemeText.append(phonemeRight.phonemeText);",
+      "right" : "this.phonemeText.append(phonemeRight.phonemeText);",
+      "info" : "ExpressionStatement[4449-4499]:ExpressionStatement[4449-4499]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4628-4756]:Block[4628-4756]"
+    }, {
+      "left" : "this(phonemeLeft.phonemeText, languages);",
+      "right" : "this(phonemeLeft.phonemeText, languages);",
+      "info" : "ConstructorInvocation[4642-4683]:ConstructorInvocation[4642-4683]"
+    }, {
+      "left" : "this.phonemeText.append(phonemeRight.phonemeText);",
+      "right" : "this.phonemeText.append(phonemeRight.phonemeText);",
+      "info" : "ExpressionStatement[4696-4746]:ExpressionStatement[4696-4746]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4812-4890]:Block[4812-4890]"
+    }, {
+      "left" : "this.phonemeText.append(str);",
+      "right" : "this.phonemeText.append(str);",
+      "info" : "ExpressionStatement[4826-4855]:ExpressionStatement[4826-4855]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[4868-4880]:ReturnStatement[4868-4880]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4944-4990]:Block[4944-4990]"
+    }, {
+      "left" : "return this.languages;",
+      "right" : "return this.languages;",
+      "info" : "ReturnStatement[4958-4980]:ReturnStatement[4958-4980]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5057-5116]:Block[5057-5116]"
+    }, {
+      "left" : "return Collections.singleton(this);",
+      "right" : "return Collections.singleton(this);",
+      "info" : "ReturnStatement[5071-5106]:ReturnStatement[5071-5106]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5163-5211]:Block[5163-5211]"
+    }, {
+      "left" : "return this.phonemeText;",
+      "right" : "return this.phonemeText;",
+      "info" : "ReturnStatement[5177-5201]:ReturnStatement[5177-5201]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5339-5517]:Block[5339-5517]"
+    }, {
+      "left" : "return new Phoneme(this.phonemeText.toString() + right.phonemeText.toString(),\n                               this.languages.restrictTo(right.languages));",
+      "right" : "return new Phoneme(this.phonemeText.toString() + right.phonemeText.toString(),\n                               this.languages.restrictTo(right.languages));",
+      "info" : "ReturnStatement[5353-5507]:ReturnStatement[5353-5507]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5810-5886]:Block[5974-6050]"
+    }, {
+      "left" : "return phonemeText.toString() + \"[\" + languages + \"]\";",
+      "right" : "return phonemeText.toString() + \"[\" + languages + \"]\";",
+      "info" : "ReturnStatement[5822-5876]:ReturnStatement[5986-6040]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6148-6197]:Block[6312-6361]"
+    }, {
+      "left" : "this.phonemes = phonemes;",
+      "right" : "this.phonemes = phonemes;",
+      "info" : "ExpressionStatement[6162-6187]:ExpressionStatement[6326-6351]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6260-6305]:Block[6424-6469]"
+    }, {
+      "left" : "return this.phonemes;",
+      "right" : "return this.phonemes;",
+      "info" : "ReturnStatement[6274-6295]:ReturnStatement[6438-6459]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6675-6711]:Block[6839-6875]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[6689-6701]:ReturnStatement[6853-6865]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7095-8301]:Block[7259-8465]"
+    }, {
+      "left" : "for (final NameType s : NameType.values())",
+      "right" : "for (final NameType s : NameType.values())",
+      "info" : "EnhancedForStatement[7105-8295]:EnhancedForStatement[7269-8459]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7148-8295]:Block[7312-8459]"
+    }, {
+      "left" : "final Map<RuleType, Map<String, Map<String, List<Rule>>>> rts =\n                    new EnumMap<RuleType, Map<String, Map<String, List<Rule>>>>(RuleType.class);",
+      "right" : "final Map<RuleType, Map<String, Map<String, List<Rule>>>> rts =\n                    new EnumMap<RuleType, Map<String, Map<String, List<Rule>>>>(RuleType.class);",
+      "info" : "VariableDeclarationStatement[7162-7322]:VariableDeclarationStatement[7326-7486]"
+    }, {
+      "left" : "for (final RuleType rt : RuleType.values())",
+      "right" : "for (final RuleType rt : RuleType.values())",
+      "info" : "EnhancedForStatement[7336-8224]:EnhancedForStatement[7500-8388]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7380-8224]:Block[7544-8388]"
+    }, {
+      "left" : "final Map<String, Map<String, List<Rule>>> rs = new HashMap<String, Map<String, List<Rule>>>();",
+      "right" : "final Map<String, Map<String, List<Rule>>> rs = new HashMap<String, Map<String, List<Rule>>>();",
+      "info" : "VariableDeclarationStatement[7398-7493]:VariableDeclarationStatement[7562-7657]"
+    }, {
+      "left" : "final Languages ls = Languages.getInstance(s);",
+      "right" : "final Languages ls = Languages.getInstance(s);",
+      "info" : "VariableDeclarationStatement[7511-7557]:VariableDeclarationStatement[7675-7721]"
+    }, {
+      "left" : "for (final String l : ls.getLanguages())",
+      "right" : "for (final String l : ls.getLanguages())",
+      "info" : "EnhancedForStatement[7574-7960]:EnhancedForStatement[7738-8124]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7615-7960]:Block[7779-8124]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[7637-7942]:TryStatement[7801-8106]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7641-7766]:Block[7805-7930]"
+    }, {
+      "left" : "rs.put(l, parseRules(createScanner(s, rt, l), createResourceName(s, rt, l)));",
+      "right" : "rs.put(l, parseRules(createScanner(s, rt, l), createResourceName(s, rt, l)));",
+      "info" : "ExpressionStatement[7667-7744]:ExpressionStatement[7831-7908]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7805-7942]:Block[7969-8106]"
+    }, {
+      "left" : "throw new IllegalStateException(\"Problem processing \" + createResourceName(s, rt, l), e);",
+      "right" : "throw new IllegalStateException(\"Problem processing \" + createResourceName(s, rt, l), e);",
+      "info" : "ThrowStatement[7831-7920]:ThrowStatement[7995-8084]"
+    }, {
+      "left" : "if (!rt.equals(RuleType.RULES))",
+      "right" : "if (!rt.equals(RuleType.RULES))",
+      "info" : "IfStatement[7977-8147]:IfStatement[8141-8311]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8009-8147]:Block[8173-8311]"
+    }, {
+      "left" : "rs.put(\"common\", parseRules(createScanner(s, rt, \"common\"), createResourceName(s, rt, \"common\")));",
+      "right" : "rs.put(\"common\", parseRules(createScanner(s, rt, \"common\"), createResourceName(s, rt, \"common\")));",
+      "info" : "ExpressionStatement[8031-8129]:ExpressionStatement[8195-8293]"
+    }, {
+      "left" : "rts.put(rt, Collections.unmodifiableMap(rs));",
+      "right" : "rts.put(rt, Collections.unmodifiableMap(rs));",
+      "info" : "ExpressionStatement[8165-8210]:ExpressionStatement[8329-8374]"
+    }, {
+      "left" : "RULES.put(s, Collections.unmodifiableMap(rts));",
+      "right" : "RULES.put(s, Collections.unmodifiableMap(rts));",
+      "info" : "ExpressionStatement[8238-8285]:ExpressionStatement[8402-8449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8383-8560]:Block[8547-8724]"
+    }, {
+      "left" : "for (int i = 0; i < chars.length(); i++)",
+      "right" : "for (int i = 0; i < chars.length(); i++)",
+      "info" : "ForStatement[8393-8532]:ForStatement[8557-8696]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8434-8532]:Block[8598-8696]"
+    }, {
+      "left" : "if (chars.charAt(i) == input)",
+      "right" : "if (chars.charAt(i) == input)",
+      "info" : "IfStatement[8448-8522]:IfStatement[8612-8686]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8478-8522]:Block[8642-8686]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[8496-8508]:ReturnStatement[8660-8672]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[8541-8554]:ReturnStatement[8705-8718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8670-8829]:Block[8834-8993]"
+    }, {
+      "left" : "return String.format(\"org/apache/commons/codec/language/bm/%s_%s_%s.txt\",\n                             nameType.getName(), rt.getName(), lang);",
+      "right" : "return String.format(\"org/apache/commons/codec/language/bm/%s_%s_%s.txt\",\n                             nameType.getName(), rt.getName(), lang);",
+      "info" : "ReturnStatement[8680-8823]:ReturnStatement[8844-8987]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8935-9307]:Block[9099-9471]"
+    }, {
+      "left" : "final String resName = createResourceName(nameType, rt, lang);",
+      "right" : "final String resName = createResourceName(nameType, rt, lang);",
+      "info" : "VariableDeclarationStatement[8945-9007]:VariableDeclarationStatement[9109-9171]"
+    }, {
+      "left" : "final InputStream rulesIS = Languages.class.getClassLoader().getResourceAsStream(resName);",
+      "right" : "final InputStream rulesIS = Languages.class.getClassLoader().getResourceAsStream(resName);",
+      "info" : "VariableDeclarationStatement[9016-9106]:VariableDeclarationStatement[9180-9270]"
+    }, {
+      "left" : "if (rulesIS == null)",
+      "right" : "if (rulesIS == null)",
+      "info" : "IfStatement[9116-9235]:IfStatement[9280-9399]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9137-9235]:Block[9301-9399]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Unable to load resource: \" + resName);",
+      "right" : "throw new IllegalArgumentException(\"Unable to load resource: \" + resName);",
+      "info" : "ThrowStatement[9151-9225]:ThrowStatement[9315-9389]"
+    }, {
+      "left" : "return new Scanner(rulesIS, ResourceConstants.ENCODING);",
+      "right" : "return new Scanner(rulesIS, ResourceConstants.ENCODING);",
+      "info" : "ReturnStatement[9245-9301]:ReturnStatement[9409-9465]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9369-9769]:Block[9533-9933]"
+    }, {
+      "left" : "final String resName = String.format(\"org/apache/commons/codec/language/bm/%s.txt\", lang);",
+      "right" : "final String resName = String.format(\"org/apache/commons/codec/language/bm/%s.txt\", lang);",
+      "info" : "VariableDeclarationStatement[9379-9469]:VariableDeclarationStatement[9543-9633]"
+    }, {
+      "left" : "final InputStream rulesIS = Languages.class.getClassLoader().getResourceAsStream(resName);",
+      "right" : "final InputStream rulesIS = Languages.class.getClassLoader().getResourceAsStream(resName);",
+      "info" : "VariableDeclarationStatement[9478-9568]:VariableDeclarationStatement[9642-9732]"
+    }, {
+      "left" : "if (rulesIS == null)",
+      "right" : "if (rulesIS == null)",
+      "info" : "IfStatement[9578-9697]:IfStatement[9742-9861]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9599-9697]:Block[9763-9861]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Unable to load resource: \" + resName);",
+      "right" : "throw new IllegalArgumentException(\"Unable to load resource: \" + resName);",
+      "info" : "ThrowStatement[9613-9687]:ThrowStatement[9777-9851]"
+    }, {
+      "left" : "return new Scanner(rulesIS, ResourceConstants.ENCODING);",
+      "right" : "return new Scanner(rulesIS, ResourceConstants.ENCODING);",
+      "info" : "ReturnStatement[9707-9763]:ReturnStatement[9871-9927]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9860-10167]:Block[10024-10331]"
+    }, {
+      "left" : "if (suffix.length() > input.length())",
+      "right" : "if (suffix.length() > input.length())",
+      "info" : "IfStatement[9870-9945]:IfStatement[10034-10109]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9908-9945]:Block[10072-10109]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[9922-9935]:ReturnStatement[10086-10099]"
+    }, {
+      "left" : "for (int i = input.length() - 1, j = suffix.length() - 1; j >= 0; i--, j--)",
+      "right" : "for (int i = input.length() - 1, j = suffix.length() - 1; j >= 0; i--, j--)",
+      "info" : "ForStatement[9954-10140]:ForStatement[10118-10304]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10030-10140]:Block[10194-10304]"
+    }, {
+      "left" : "if (input.charAt(i) != suffix.charAt(j))",
+      "right" : "if (input.charAt(i) != suffix.charAt(j))",
+      "info" : "IfStatement[10044-10130]:IfStatement[10208-10294]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10085-10130]:Block[10249-10294]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10103-10116]:ReturnStatement[10267-10280]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[10149-10161]:ReturnStatement[10313-10325]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10667-10947]:Block[10831-11111]"
+    }, {
+      "left" : "final Map<String, List<Rule>> ruleMap = getInstanceMap(nameType, rt, langs);",
+      "right" : "final Map<String, List<Rule>> ruleMap = getInstanceMap(nameType, rt, langs);",
+      "info" : "VariableDeclarationStatement[10677-10753]:VariableDeclarationStatement[10841-10917]"
+    }, {
+      "left" : "final List<Rule> allRules = new ArrayList<Rule>();",
+      "right" : "final List<Rule> allRules = new ArrayList<Rule>();",
+      "info" : "VariableDeclarationStatement[10762-10812]:VariableDeclarationStatement[10926-10976]"
+    }, {
+      "left" : "for (final List<Rule> rules : ruleMap.values())",
+      "right" : "for (final List<Rule> rules : ruleMap.values())",
+      "info" : "EnhancedForStatement[10821-10916]:EnhancedForStatement[10985-11080]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10869-10916]:Block[11033-11080]"
+    }, {
+      "left" : "allRules.addAll(rules);",
+      "right" : "allRules.addAll(rules);",
+      "info" : "ExpressionStatement[10883-10906]:ExpressionStatement[11047-11070]"
+    }, {
+      "left" : "return allRules;",
+      "right" : "return allRules;",
+      "info" : "ReturnStatement[10925-10941]:ReturnStatement[11089-11105]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11389-11498]:Block[11553-11662]"
+    }, {
+      "left" : "return getInstance(nameType, rt, LanguageSet.from(new HashSet<String>(Arrays.asList(lang))));",
+      "right" : "return getInstance(nameType, rt, LanguageSet.from(new HashSet<String>(Arrays.asList(lang))));",
+      "info" : "ReturnStatement[11399-11492]:ReturnStatement[11563-11656]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12111-12284]:Block[12275-12448]"
+    }, {
+      "left" : "return langs.isSingleton() ? getInstanceMap(nameType, rt, langs.getAny()) :\n                                     getInstanceMap(nameType, rt, Languages.ANY);",
+      "right" : "return langs.isSingleton() ? getInstanceMap(nameType, rt, langs.getAny()) :\n                                     getInstanceMap(nameType, rt, Languages.ANY);",
+      "info" : "ReturnStatement[12121-12278]:ReturnStatement[12285-12442]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12880-13219]:Block[13044-13383]"
+    }, {
+      "left" : "final Map<String, List<Rule>> rules = RULES.get(nameType).get(rt).get(lang);",
+      "right" : "final Map<String, List<Rule>> rules = RULES.get(nameType).get(rt).get(lang);",
+      "info" : "VariableDeclarationStatement[12890-12966]:VariableDeclarationStatement[13054-13130]"
+    }, {
+      "left" : "if (rules == null)",
+      "right" : "if (rules == null)",
+      "info" : "IfStatement[12976-13190]:IfStatement[13140-13354]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12995-13190]:Block[13159-13354]"
+    }, {
+      "left" : "throw new IllegalArgumentException(String.format(\"No rules found for %s, %s, %s.\",\n                                               nameType.getName(), rt.getName(), lang));",
+      "right" : "throw new IllegalArgumentException(String.format(\"No rules found for %s, %s, %s.\",\n                                               nameType.getName(), rt.getName(), lang));",
+      "info" : "ThrowStatement[13009-13180]:ThrowStatement[13173-13344]"
+    }, {
+      "left" : "return rules;",
+      "right" : "return rules;",
+      "info" : "ReturnStatement[13200-13213]:ReturnStatement[13364-13377]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13278-13898]:Block[13442-14062]"
+    }, {
+      "left" : "final int open = ph.indexOf(\"[\");",
+      "right" : "final int open = ph.indexOf(\"[\");",
+      "info" : "VariableDeclarationStatement[13288-13321]:VariableDeclarationStatement[13452-13485]"
+    }, {
+      "left" : "if (open >= 0)",
+      "right" : "if (open >= 0)",
+      "info" : "IfStatement[13330-13892]:IfStatement[13494-14056]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13345-13815]:Block[13509-13979]"
+    }, {
+      "left" : "if (!ph.endsWith(\"]\"))",
+      "right" : "if (!ph.endsWith(\"]\"))",
+      "info" : "IfStatement[13359-13510]:IfStatement[13523-13674]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13382-13510]:Block[13546-13674]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Phoneme expression contains a '[' but does not end in ']'\");",
+      "right" : "throw new IllegalArgumentException(\"Phoneme expression contains a '[' but does not end in ']'\");",
+      "info" : "ThrowStatement[13400-13496]:ThrowStatement[13564-13660]"
+    }, {
+      "left" : "final String before = ph.substring(0, open);",
+      "right" : "final String before = ph.substring(0, open);",
+      "info" : "VariableDeclarationStatement[13523-13567]:VariableDeclarationStatement[13687-13731]"
+    }, {
+      "left" : "final String in = ph.substring(open + 1, ph.length() - 1);",
+      "right" : "final String in = ph.substring(open + 1, ph.length() - 1);",
+      "info" : "VariableDeclarationStatement[13580-13638]:VariableDeclarationStatement[13744-13802]"
+    }, {
+      "left" : "final Set<String> langs = new HashSet<String>(Arrays.asList(in.split(\"[+]\")));",
+      "right" : "final Set<String> langs = new HashSet<String>(Arrays.asList(in.split(\"[+]\")));",
+      "info" : "VariableDeclarationStatement[13651-13729]:VariableDeclarationStatement[13815-13893]"
+    }, {
+      "left" : "return new Phoneme(before, Languages.LanguageSet.from(langs));",
+      "right" : "return new Phoneme(before, Languages.LanguageSet.from(langs));",
+      "info" : "ReturnStatement[13743-13805]:ReturnStatement[13907-13969]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13821-13892]:Block[13985-14056]"
+    }, {
+      "left" : "return new Phoneme(ph, Languages.ANY_LANGUAGE);",
+      "right" : "return new Phoneme(ph, Languages.ANY_LANGUAGE);",
+      "info" : "ReturnStatement[13835-13882]:ReturnStatement[13999-14046]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13965-14692]:Block[14129-14856]"
+    }, {
+      "left" : "if (ph.startsWith(\"(\"))",
+      "right" : "if (ph.startsWith(\"(\"))",
+      "info" : "IfStatement[13975-14686]:IfStatement[14139-14850]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13999-14632]:Block[14163-14796]"
+    }, {
+      "left" : "if (!ph.endsWith(\")\"))",
+      "right" : "if (!ph.endsWith(\")\"))",
+      "info" : "IfStatement[14052-14190]:IfStatement[14216-14354]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14075-14190]:Block[14239-14354]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Phoneme starts with '(' so must end with ')'\");",
+      "right" : "throw new IllegalArgumentException(\"Phoneme starts with '(' so must end with ')'\");",
+      "info" : "ThrowStatement[14093-14176]:ThrowStatement[14257-14340]"
+    }, {
+      "left" : "final List<Phoneme> phs = new ArrayList<Phoneme>();",
+      "right" : "final List<Phoneme> phs = new ArrayList<Phoneme>();",
+      "info" : "VariableDeclarationStatement[14204-14255]:VariableDeclarationStatement[14368-14419]"
+    }, {
+      "left" : "final String body = ph.substring(1, ph.length() - 1);",
+      "right" : "final String body = ph.substring(1, ph.length() - 1);",
+      "info" : "VariableDeclarationStatement[14268-14321]:VariableDeclarationStatement[14432-14485]"
+    }, {
+      "left" : "for (final String part : body.split(\"[|]\"))",
+      "right" : "for (final String part : body.split(\"[|]\"))",
+      "info" : "EnhancedForStatement[14334-14438]:EnhancedForStatement[14498-14602]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14378-14438]:Block[14542-14602]"
+    }, {
+      "left" : "phs.add(parsePhoneme(part));",
+      "right" : "phs.add(parsePhoneme(part));",
+      "info" : "ExpressionStatement[14396-14424]:ExpressionStatement[14560-14588]"
+    }, {
+      "left" : "if (body.startsWith(\"|\") || body.endsWith(\"|\"))",
+      "right" : "if (body.startsWith(\"|\") || body.endsWith(\"|\"))",
+      "info" : "IfStatement[14451-14580]:IfStatement[14615-14744]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14499-14580]:Block[14663-14744]"
+    }, {
+      "left" : "phs.add(new Phoneme(\"\", Languages.ANY_LANGUAGE));",
+      "right" : "phs.add(new Phoneme(\"\", Languages.ANY_LANGUAGE));",
+      "info" : "ExpressionStatement[14517-14566]:ExpressionStatement[14681-14730]"
+    }, {
+      "left" : "return new PhonemeList(phs);",
+      "right" : "return new PhonemeList(phs);",
+      "info" : "ReturnStatement[14594-14622]:ReturnStatement[14758-14786]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14638-14686]:Block[14802-14850]"
+    }, {
+      "left" : "return parsePhoneme(ph);",
+      "right" : "return parsePhoneme(ph);",
+      "info" : "ReturnStatement[14652-14676]:ReturnStatement[14816-14840]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14794-19289]:Block[14958-19453]"
+    }, {
+      "left" : "final Map<String, List<Rule>> lines = new HashMap<String, List<Rule>>();",
+      "right" : "final Map<String, List<Rule>> lines = new HashMap<String, List<Rule>>();",
+      "info" : "VariableDeclarationStatement[14804-14876]:VariableDeclarationStatement[14968-15040]"
+    }, {
+      "left" : "int currentLine = 0;",
+      "right" : "int currentLine = 0;",
+      "info" : "VariableDeclarationStatement[14885-14905]:VariableDeclarationStatement[15049-15069]"
+    }, {
+      "left" : "boolean inMultilineComment = false;",
+      "right" : "boolean inMultilineComment = false;",
+      "info" : "VariableDeclarationStatement[14915-14950]:VariableDeclarationStatement[15079-15114]"
+    }, {
+      "left" : "while (scanner.hasNextLine())",
+      "right" : "while (scanner.hasNextLine())",
+      "info" : "WhileStatement[14959-19260]:WhileStatement[15123-19424]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14989-19260]:Block[15153-19424]"
+    }, {
+      "left" : "currentLine++;",
+      "right" : "currentLine++;",
+      "info" : "ExpressionStatement[15003-15017]:ExpressionStatement[15167-15181]"
+    }, {
+      "left" : "final String rawLine = scanner.nextLine();",
+      "right" : "final String rawLine = scanner.nextLine();",
+      "info" : "VariableDeclarationStatement[15030-15072]:VariableDeclarationStatement[15194-15236]"
+    }, {
+      "left" : "String line = rawLine;",
+      "right" : "String line = rawLine;",
+      "info" : "VariableDeclarationStatement[15085-15107]:VariableDeclarationStatement[15249-15271]"
+    }, {
+      "left" : "if (inMultilineComment)",
+      "right" : "if (inMultilineComment)",
+      "info" : "IfStatement[15121-19250]:IfStatement[15285-19414]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15145-15294]:Block[15309-15458]"
+    }, {
+      "left" : "if (line.endsWith(ResourceConstants.EXT_CMT_END))",
+      "right" : "if (line.endsWith(ResourceConstants.EXT_CMT_END))",
+      "info" : "IfStatement[15163-15280]:IfStatement[15327-15444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15213-15280]:Block[15377-15444]"
+    }, {
+      "left" : "inMultilineComment = false;",
+      "right" : "inMultilineComment = false;",
+      "info" : "ExpressionStatement[15235-15262]:ExpressionStatement[15399-15426]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15300-19250]:Block[15464-19414]"
+    }, {
+      "left" : "if (line.startsWith(ResourceConstants.EXT_CMT_START))",
+      "right" : "if (line.startsWith(ResourceConstants.EXT_CMT_START))",
+      "info" : "IfStatement[15318-19236]:IfStatement[15482-19400]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15372-15438]:Block[15536-15602]"
+    }, {
+      "left" : "inMultilineComment = true;",
+      "right" : "inMultilineComment = true;",
+      "info" : "ExpressionStatement[15394-15420]:ExpressionStatement[15558-15584]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15444-19236]:Block[15608-19400]"
+    }, {
+      "left" : "final int cmtI = line.indexOf(ResourceConstants.CMT);",
+      "right" : "final int cmtI = line.indexOf(ResourceConstants.CMT);",
+      "info" : "VariableDeclarationStatement[15506-15559]:VariableDeclarationStatement[15670-15723]"
+    }, {
+      "left" : "if (cmtI >= 0)",
+      "right" : "if (cmtI >= 0)",
+      "info" : "IfStatement[15580-15674]:IfStatement[15744-15838]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15595-15674]:Block[15759-15838]"
+    }, {
+      "left" : "line = line.substring(0, cmtI);",
+      "right" : "line = line.substring(0, cmtI);",
+      "info" : "ExpressionStatement[15621-15652]:ExpressionStatement[15785-15816]"
+    }, {
+      "left" : "line = line.trim();",
+      "right" : "line = line.trim();",
+      "info" : "ExpressionStatement[15752-15771]:ExpressionStatement[15916-15935]"
+    }, {
+      "left" : "if (line.length() == 0)",
+      "right" : "if (line.length() == 0)",
+      "info" : "IfStatement[15793-15911]:IfStatement[15957-16075]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15817-15911]:Block[15981-16075]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[15843-15852]:ContinueStatement[16007-16016]"
+    }, {
+      "left" : "if (line.startsWith(HASH_INCLUDE))",
+      "right" : "if (line.startsWith(HASH_INCLUDE))",
+      "info" : "IfStatement[15933-19218]:IfStatement[16097-19382]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15968-16524]:Block[16132-16688]"
+    }, {
+      "left" : "final String incl = line.substring(HASH_INCLUDE.length()).trim();",
+      "right" : "final String incl = line.substring(HASH_INCLUDE.length()).trim();",
+      "info" : "VariableDeclarationStatement[16039-16104]:VariableDeclarationStatement[16203-16268]"
+    }, {
+      "left" : "if (incl.contains(\" \"))",
+      "right" : "if (incl.contains(\" \"))",
+      "info" : "IfStatement[16129-16502]:IfStatement[16293-16666]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16153-16370]:Block[16317-16534]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Malformed import statement '\" + rawLine + \"' in \" +\n                                                               location);",
+      "right" : "throw new IllegalArgumentException(\"Malformed import statement '\" + rawLine + \"' in \" +\n                                                               location);",
+      "info" : "ThrowStatement[16183-16344]:ThrowStatement[16347-16508]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16376-16502]:Block[16540-16666]"
+    }, {
+      "left" : "lines.putAll(parseRules(createScanner(incl), location + \"->\" + incl));",
+      "right" : "lines.putAll(parseRules(createScanner(incl), location + \"->\" + incl));",
+      "info" : "ExpressionStatement[16406-16476]:ExpressionStatement[16570-16640]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16530-19218]:Block[16694-19382]"
+    }, {
+      "left" : "final String[] parts = line.split(\"\\\\s+\");",
+      "right" : "final String[] parts = line.split(\"\\\\s+\");",
+      "info" : "VariableDeclarationStatement[16588-16630]:VariableDeclarationStatement[16752-16794]"
+    }, {
+      "left" : "if (parts.length != 4)",
+      "right" : "if (parts.length != 4)",
+      "info" : "IfStatement[16655-19196]:IfStatement[16819-19360]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16678-16930]:Block[16842-17094]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Malformed rule statement split into \" + parts.length +\n                                                               \" parts: \" + rawLine + \" in \" + location);",
+      "right" : "throw new IllegalArgumentException(\"Malformed rule statement split into \" + parts.length +\n                                                               \" parts: \" + rawLine + \" in \" + location);",
+      "info" : "ThrowStatement[16708-16904]:ThrowStatement[16872-17068]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16936-19196]:Block[17100-19360]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[16966-19170]:TryStatement[17130-19334]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16970-18904]:Block[17134-19068]"
+    }, {
+      "left" : "final String pat = stripQuotes(parts[0]);",
+      "right" : "final String pat = stripQuotes(parts[0]);",
+      "info" : "VariableDeclarationStatement[17004-17045]:VariableDeclarationStatement[17168-17209]"
+    }, {
+      "left" : "final String lCon = stripQuotes(parts[1]);",
+      "right" : "final String lCon = stripQuotes(parts[1]);",
+      "info" : "VariableDeclarationStatement[17078-17120]:VariableDeclarationStatement[17242-17284]"
+    }, {
+      "left" : "final String rCon = stripQuotes(parts[2]);",
+      "right" : "final String rCon = stripQuotes(parts[2]);",
+      "info" : "VariableDeclarationStatement[17153-17195]:VariableDeclarationStatement[17317-17359]"
+    }, {
+      "left" : "final PhonemeExpr ph = parsePhonemeExpr(stripQuotes(parts[3]));",
+      "right" : "final PhonemeExpr ph = parsePhonemeExpr(stripQuotes(parts[3]));",
+      "info" : "VariableDeclarationStatement[17228-17291]:VariableDeclarationStatement[17392-17455]"
+    }, {
+      "left" : "final int cLine = currentLine;",
+      "right" : "final int cLine = currentLine;",
+      "info" : "VariableDeclarationStatement[17324-17354]:VariableDeclarationStatement[17488-17518]"
+    }, {
+      "left" : "final Rule r = new Rule(pat, lCon, rCon, ph) {\n                                    private final int myLine = cLine;\n                                    private final String loc = location;\n\n                                    @Override\n                                    public String toString() {\n                                        final StringBuilder sb = new StringBuilder();\n                                        sb.append(\"Rule\");\n                                        sb.append(\"{line=\").append(myLine);\n                                        sb.append(\", loc='\").append(loc).append('\\'');\n                                        sb.append(\", pat='\").append(pat).append('\\'');\n                                        sb.append(\", lcon='\").append(lCon).append('\\'');\n                                        sb.append(\", rcon='\").append(rCon).append('\\'');\n                                        sb.append('}');\n                                        return sb.toString();\n                                    }\n                                };",
+      "right" : "final Rule r = new Rule(pat, lCon, rCon, ph) {\n                                    private final int myLine = cLine;\n                                    private final String loc = location;\n\n                                    @Override\n                                    public String toString() {\n                                        final StringBuilder sb = new StringBuilder();\n                                        sb.append(\"Rule\");\n                                        sb.append(\"{line=\").append(myLine);\n                                        sb.append(\", loc='\").append(loc).append('\\'');\n                                        sb.append(\", pat='\").append(pat).append('\\'');\n                                        sb.append(\", lcon='\").append(lCon).append('\\'');\n                                        sb.append(\", rcon='\").append(rCon).append('\\'');\n                                        sb.append('}');\n                                        return sb.toString();\n                                    }\n                                };",
+      "info" : "VariableDeclarationStatement[17387-18450]:VariableDeclarationStatement[17551-18614]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17685-18415]:Block[17849-18579]"
+    }, {
+      "left" : "final StringBuilder sb = new StringBuilder();",
+      "right" : "final StringBuilder sb = new StringBuilder();",
+      "info" : "VariableDeclarationStatement[17727-17772]:VariableDeclarationStatement[17891-17936]"
+    }, {
+      "left" : "sb.append(\"Rule\");",
+      "right" : "sb.append(\"Rule\");",
+      "info" : "ExpressionStatement[17813-17831]:ExpressionStatement[17977-17995]"
+    }, {
+      "left" : "sb.append(\"{line=\").append(myLine);",
+      "right" : "sb.append(\"{line=\").append(myLine);",
+      "info" : "ExpressionStatement[17872-17907]:ExpressionStatement[18036-18071]"
+    }, {
+      "left" : "sb.append(\", loc='\").append(loc).append('\\'');",
+      "right" : "sb.append(\", loc='\").append(loc).append('\\'');",
+      "info" : "ExpressionStatement[17948-17994]:ExpressionStatement[18112-18158]"
+    }, {
+      "left" : "sb.append(\", pat='\").append(pat).append('\\'');",
+      "right" : "sb.append(\", pat='\").append(pat).append('\\'');",
+      "info" : "ExpressionStatement[18035-18081]:ExpressionStatement[18199-18245]"
+    }, {
+      "left" : "sb.append(\", lcon='\").append(lCon).append('\\'');",
+      "right" : "sb.append(\", lcon='\").append(lCon).append('\\'');",
+      "info" : "ExpressionStatement[18122-18170]:ExpressionStatement[18286-18334]"
+    }, {
+      "left" : "sb.append(\", rcon='\").append(rCon).append('\\'');",
+      "right" : "sb.append(\", rcon='\").append(rCon).append('\\'');",
+      "info" : "ExpressionStatement[18211-18259]:ExpressionStatement[18375-18423]"
+    }, {
+      "left" : "sb.append('}');",
+      "right" : "sb.append('}');",
+      "info" : "ExpressionStatement[18300-18315]:ExpressionStatement[18464-18479]"
+    }, {
+      "left" : "return sb.toString();",
+      "right" : "return sb.toString();",
+      "info" : "ReturnStatement[18356-18377]:ReturnStatement[18520-18541]"
+    }, {
+      "left" : "final String patternKey = r.pattern.substring(0,1);",
+      "right" : "final String patternKey = r.pattern.substring(0,1);",
+      "info" : "VariableDeclarationStatement[18483-18534]:VariableDeclarationStatement[18647-18698]"
+    }, {
+      "left" : "List<Rule> rules = lines.get(patternKey);",
+      "right" : "List<Rule> rules = lines.get(patternKey);",
+      "info" : "VariableDeclarationStatement[18567-18608]:VariableDeclarationStatement[18731-18772]"
+    }, {
+      "left" : "if (rules == null)",
+      "right" : "if (rules == null)",
+      "info" : "IfStatement[18641-18828]:IfStatement[18805-18992]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18660-18828]:Block[18824-18992]"
+    }, {
+      "left" : "rules = new ArrayList<Rule>();",
+      "right" : "rules = new ArrayList<Rule>();",
+      "info" : "ExpressionStatement[18698-18728]:ExpressionStatement[18862-18892]"
+    }, {
+      "left" : "lines.put(patternKey, rules);",
+      "right" : "lines.put(patternKey, rules);",
+      "info" : "ExpressionStatement[18765-18794]:ExpressionStatement[18929-18958]"
+    }, {
+      "left" : "rules.add(r);",
+      "right" : "rules.add(r);",
+      "info" : "ExpressionStatement[18861-18874]:ExpressionStatement[19025-19038]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18946-19170]:Block[19110-19334]"
+    }, {
+      "left" : "throw new IllegalStateException(\"Problem parsing line '\" + currentLine + \"' in \" +\n                                                                location, e);",
+      "right" : "throw new IllegalStateException(\"Problem parsing line '\" + currentLine + \"' in \" +\n                                                                location, e);",
+      "info" : "ThrowStatement[18980-19140]:ThrowStatement[19144-19304]"
+    }, {
+      "left" : "return lines;",
+      "right" : "return lines;",
+      "info" : "ReturnStatement[19270-19283]:ReturnStatement[19434-19447]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19612-23792]:Block[19776-23956]"
+    }, {
+      "left" : "final boolean startsWith = regex.startsWith(\"^\");",
+      "right" : "final boolean startsWith = regex.startsWith(\"^\");",
+      "info" : "VariableDeclarationStatement[19622-19671]:VariableDeclarationStatement[19786-19835]"
+    }, {
+      "left" : "final boolean endsWith = regex.endsWith(\"$\");",
+      "right" : "final boolean endsWith = regex.endsWith(\"$\");",
+      "info" : "VariableDeclarationStatement[19680-19725]:VariableDeclarationStatement[19844-19889]"
+    }, {
+      "left" : "final String content = regex.substring(startsWith ? 1 : 0, endsWith ? regex.length() - 1 : regex.length());",
+      "right" : "final String content = regex.substring(startsWith ? 1 : 0, endsWith ? regex.length() - 1 : regex.length());",
+      "info" : "VariableDeclarationStatement[19734-19841]:VariableDeclarationStatement[19898-20005]"
+    }, {
+      "left" : "final boolean boxes = content.contains(\"[\");",
+      "right" : "final boolean boxes = content.contains(\"[\");",
+      "info" : "VariableDeclarationStatement[19850-19894]:VariableDeclarationStatement[20014-20058]"
+    }, {
+      "left" : "if (!boxes)",
+      "right" : "if (!boxes)",
+      "info" : "IfStatement[19904-23485]:IfStatement[20068-23649]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19916-21438]:Block[20080-21602]"
+    }, {
+      "left" : "if (startsWith && endsWith)",
+      "right" : "if (startsWith && endsWith)",
+      "info" : "IfStatement[19930-21428]:IfStatement[20094-21592]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19958-20639]:Block[20122-20803]"
+    }, {
+      "left" : "if (content.length() == 0)",
+      "right" : "if (content.length() == 0)",
+      "info" : "IfStatement[20007-20625]:IfStatement[20171-20789]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20034-20340]:Block[20198-20504]"
+    }, {
+      "left" : "return new RPattern() {\n                        @Override\n                        public boolean isMatch(final CharSequence input) {\n                            return input.length() == 0;\n                        }\n                    };",
+      "right" : "return new RPattern() {\n                        @Override\n                        public boolean isMatch(final CharSequence input) {\n                            return input.length() == 0;\n                        }\n                    };",
+      "info" : "ReturnStatement[20085-20322]:ReturnStatement[20249-20486]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20216-20299]:Block[20380-20463]"
+    }, {
+      "left" : "return input.length() == 0;",
+      "right" : "return input.length() == 0;",
+      "info" : "ReturnStatement[20246-20273]:ReturnStatement[20410-20437]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20346-20625]:Block[20510-20789]"
+    }, {
+      "left" : "return new RPattern() {\n                        @Override\n                        public boolean isMatch(final CharSequence input) {\n                            return input.equals(content);\n                        }\n                    };",
+      "right" : "return new RPattern() {\n                        @Override\n                        public boolean isMatch(final CharSequence input) {\n                            return input.equals(content);\n                        }\n                    };",
+      "info" : "ReturnStatement[20368-20607]:ReturnStatement[20532-20771]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20499-20584]:Block[20663-20748]"
+    }, {
+      "left" : "return input.equals(content);",
+      "right" : "return input.equals(content);",
+      "info" : "ReturnStatement[20529-20558]:ReturnStatement[20693-20722]"
+    }, {
+      "left" : "if ((startsWith || endsWith) && content.length() == 0)",
+      "right" : "if ((startsWith || endsWith) && content.length() == 0)",
+      "info" : "IfStatement[20645-21428]:IfStatement[20809-21592]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20700-20800]:Block[20864-20964]"
+    }, {
+      "left" : "return ALL_STRINGS_RMATCHER;",
+      "right" : "return ALL_STRINGS_RMATCHER;",
+      "info" : "ReturnStatement[20758-20786]:ReturnStatement[20922-20950]"
+    }, {
+      "left" : "if (startsWith)",
+      "right" : "if (startsWith)",
+      "info" : "IfStatement[20806-21428]:IfStatement[20970-21592]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20822-21116]:Block[20986-21280]"
+    }, {
+      "left" : "return new RPattern() {\n                    @Override\n                    public boolean isMatch(final CharSequence input) {\n                        return startsWith(input, content);\n                    }\n                };",
+      "right" : "return new RPattern() {\n                    @Override\n                    public boolean isMatch(final CharSequence input) {\n                        return startsWith(input, content);\n                    }\n                };",
+      "info" : "ReturnStatement[20878-21102]:ReturnStatement[21042-21266]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21001-21083]:Block[21165-21247]"
+    }, {
+      "left" : "return startsWith(input, content);",
+      "right" : "return startsWith(input, content);",
+      "info" : "ReturnStatement[21027-21061]:ReturnStatement[21191-21225]"
+    }, {
+      "left" : "if (endsWith)",
+      "right" : "if (endsWith)",
+      "info" : "IfStatement[21122-21428]:IfStatement[21286-21592]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21136-21428]:Block[21300-21592]"
+    }, {
+      "left" : "return new RPattern() {\n                    @Override\n                    public boolean isMatch(final CharSequence input) {\n                        return endsWith(input, content);\n                    }\n                };",
+      "right" : "return new RPattern() {\n                    @Override\n                    public boolean isMatch(final CharSequence input) {\n                        return endsWith(input, content);\n                    }\n                };",
+      "info" : "ReturnStatement[21192-21414]:ReturnStatement[21356-21578]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21315-21395]:Block[21479-21559]"
+    }, {
+      "left" : "return endsWith(input, content);",
+      "right" : "return endsWith(input, content);",
+      "info" : "ReturnStatement[21341-21373]:ReturnStatement[21505-21537]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21444-23485]:Block[21608-23649]"
+    }, {
+      "left" : "final boolean startsWithBox = content.startsWith(\"[\");",
+      "right" : "final boolean startsWithBox = content.startsWith(\"[\");",
+      "info" : "VariableDeclarationStatement[21458-21512]:VariableDeclarationStatement[21622-21676]"
+    }, {
+      "left" : "final boolean endsWithBox = content.endsWith(\"]\");",
+      "right" : "final boolean endsWithBox = content.endsWith(\"]\");",
+      "info" : "VariableDeclarationStatement[21525-21575]:VariableDeclarationStatement[21689-21739]"
+    }, {
+      "left" : "if (startsWithBox && endsWithBox)",
+      "right" : "if (startsWithBox && endsWithBox)",
+      "info" : "IfStatement[21589-23475]:IfStatement[21753-23639]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21623-23475]:Block[21787-23639]"
+    }, {
+      "left" : "String boxContent = content.substring(1, content.length() - 1);",
+      "right" : "String boxContent = content.substring(1, content.length() - 1);",
+      "info" : "VariableDeclarationStatement[21641-21704]:VariableDeclarationStatement[21805-21868]"
+    }, {
+      "left" : "if (!boxContent.contains(\"[\"))",
+      "right" : "if (!boxContent.contains(\"[\"))",
+      "info" : "IfStatement[21721-23461]:IfStatement[21885-23625]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21752-23461]:Block[21916-23625]"
+    }, {
+      "left" : "final boolean negate = boxContent.startsWith(\"^\");",
+      "right" : "final boolean negate = boxContent.startsWith(\"^\");",
+      "info" : "VariableDeclarationStatement[21825-21875]:VariableDeclarationStatement[21989-22039]"
+    }, {
+      "left" : "if (negate)",
+      "right" : "if (negate)",
+      "info" : "IfStatement[21896-21993]:IfStatement[22060-22157]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21908-21993]:Block[22072-22157]"
+    }, {
+      "left" : "boxContent = boxContent.substring(1);",
+      "right" : "boxContent = boxContent.substring(1);",
+      "info" : "ExpressionStatement[21934-21971]:ExpressionStatement[22098-22135]"
+    }, {
+      "left" : "final String bContent = boxContent;",
+      "right" : "final String bContent = boxContent;",
+      "info" : "VariableDeclarationStatement[22014-22049]:VariableDeclarationStatement[22178-22213]"
+    }, {
+      "left" : "final boolean shouldMatch = !negate;",
+      "right" : "final boolean shouldMatch = !negate;",
+      "info" : "VariableDeclarationStatement[22070-22106]:VariableDeclarationStatement[22234-22270]"
+    }, {
+      "left" : "if (startsWith && endsWith)",
+      "right" : "if (startsWith && endsWith)",
+      "info" : "IfStatement[22128-23443]:IfStatement[22292-23607]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22156-22554]:Block[22320-22718]"
+    }, {
+      "left" : "return new RPattern() {\n                            @Override\n                            public boolean isMatch(final CharSequence input) {\n                                return input.length() == 1 && contains(bContent, input.charAt(0)) == shouldMatch;\n                            }\n                        };",
+      "right" : "return new RPattern() {\n                            @Override\n                            public boolean isMatch(final CharSequence input) {\n                                return input.length() == 1 && contains(bContent, input.charAt(0)) == shouldMatch;\n                            }\n                        };",
+      "info" : "ReturnStatement[22221-22532]:ReturnStatement[22385-22696]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22360-22505]:Block[22524-22669]"
+    }, {
+      "left" : "return input.length() == 1 && contains(bContent, input.charAt(0)) == shouldMatch;",
+      "right" : "return input.length() == 1 && contains(bContent, input.charAt(0)) == shouldMatch;",
+      "info" : "ReturnStatement[22394-22475]:ReturnStatement[22558-22639]"
+    }, {
+      "left" : "if (startsWith)",
+      "right" : "if (startsWith)",
+      "info" : "IfStatement[22560-23443]:IfStatement[22724-23607]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22576-22972]:Block[22740-23136]"
+    }, {
+      "left" : "return new RPattern() {\n                            @Override\n                            public boolean isMatch(final CharSequence input) {\n                                return input.length() > 0 && contains(bContent, input.charAt(0)) == shouldMatch;\n                            }\n                        };",
+      "right" : "return new RPattern() {\n                            @Override\n                            public boolean isMatch(final CharSequence input) {\n                                return input.length() > 0 && contains(bContent, input.charAt(0)) == shouldMatch;\n                            }\n                        };",
+      "info" : "ReturnStatement[22640-22950]:ReturnStatement[22804-23114]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22779-22923]:Block[22943-23087]"
+    }, {
+      "left" : "return input.length() > 0 && contains(bContent, input.charAt(0)) == shouldMatch;",
+      "right" : "return input.length() > 0 && contains(bContent, input.charAt(0)) == shouldMatch;",
+      "info" : "ReturnStatement[22813-22893]:ReturnStatement[22977-23057]"
+    }, {
+      "left" : "if (endsWith)",
+      "right" : "if (endsWith)",
+      "info" : "IfStatement[22978-23443]:IfStatement[23142-23607]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22992-23443]:Block[23156-23607]"
+    }, {
+      "left" : "return new RPattern() {\n                            @Override\n                            public boolean isMatch(final CharSequence input) {\n                                return input.length() > 0 &&\n                                       contains(bContent, input.charAt(input.length() - 1)) == shouldMatch;\n                            }\n                        };",
+      "right" : "return new RPattern() {\n                            @Override\n                            public boolean isMatch(final CharSequence input) {\n                                return input.length() > 0 &&\n                                       contains(bContent, input.charAt(input.length() - 1)) == shouldMatch;\n                            }\n                        };",
+      "info" : "ReturnStatement[23055-23421]:ReturnStatement[23219-23585]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23194-23394]:Block[23358-23558]"
+    }, {
+      "left" : "return input.length() > 0 &&\n                                       contains(bContent, input.charAt(input.length() - 1)) == shouldMatch;",
+      "right" : "return input.length() > 0 &&\n                                       contains(bContent, input.charAt(input.length() - 1)) == shouldMatch;",
+      "info" : "ReturnStatement[23228-23364]:ReturnStatement[23392-23528]"
+    }, {
+      "left" : "return new RPattern() {\n            Pattern pattern = Pattern.compile(regex);\n\n            @Override\n            public boolean isMatch(final CharSequence input) {\n                final Matcher matcher = pattern.matcher(input);\n                return matcher.find();\n            }\n        };",
+      "right" : "return new RPattern() {\n            Pattern pattern = Pattern.compile(regex);\n\n            @Override\n            public boolean isMatch(final CharSequence input) {\n                final Matcher matcher = pattern.matcher(input);\n                return matcher.find();\n            }\n        };",
+      "info" : "ReturnStatement[23495-23786]:ReturnStatement[23659-23950]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23657-23775]:Block[23821-23939]"
+    }, {
+      "left" : "final Matcher matcher = pattern.matcher(input);",
+      "right" : "final Matcher matcher = pattern.matcher(input);",
+      "info" : "VariableDeclarationStatement[23675-23722]:VariableDeclarationStatement[23839-23886]"
+    }, {
+      "left" : "return matcher.find();",
+      "right" : "return matcher.find();",
+      "info" : "ReturnStatement[23739-23761]:ReturnStatement[23903-23925]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23885-24158]:Block[24049-24322]"
+    }, {
+      "left" : "if (prefix.length() > input.length())",
+      "right" : "if (prefix.length() > input.length())",
+      "info" : "IfStatement[23895-23970]:IfStatement[24059-24134]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23933-23970]:Block[24097-24134]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[23947-23960]:ReturnStatement[24111-24124]"
+    }, {
+      "left" : "for (int i = 0; i < prefix.length(); i++)",
+      "right" : "for (int i = 0; i < prefix.length(); i++)",
+      "info" : "ForStatement[23979-24131]:ForStatement[24143-24295]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24021-24131]:Block[24185-24295]"
+    }, {
+      "left" : "if (input.charAt(i) != prefix.charAt(i))",
+      "right" : "if (input.charAt(i) != prefix.charAt(i))",
+      "info" : "IfStatement[24035-24121]:IfStatement[24199-24285]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24076-24121]:Block[24240-24285]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[24094-24107]:ReturnStatement[24258-24271]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[24140-24152]:ReturnStatement[24304-24316]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24210-24435]:Block[24374-24599]"
+    }, {
+      "left" : "if (str.startsWith(DOUBLE_QUOTE))",
+      "right" : "if (str.startsWith(DOUBLE_QUOTE))",
+      "info" : "IfStatement[24220-24301]:IfStatement[24384-24465]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24254-24301]:Block[24418-24465]"
+    }, {
+      "left" : "str = str.substring(1);",
+      "right" : "str = str.substring(1);",
+      "info" : "ExpressionStatement[24268-24291]:ExpressionStatement[24432-24455]"
+    }, {
+      "left" : "if (str.endsWith(DOUBLE_QUOTE))",
+      "right" : "if (str.endsWith(DOUBLE_QUOTE))",
+      "info" : "IfStatement[24311-24408]:IfStatement[24475-24572]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24343-24408]:Block[24507-24572]"
+    }, {
+      "left" : "str = str.substring(0, str.length() - 1);",
+      "right" : "str = str.substring(0, str.length() - 1);",
+      "info" : "ExpressionStatement[24357-24398]:ExpressionStatement[24521-24562]"
+    }, {
+      "left" : "return str;",
+      "right" : "return str;",
+      "info" : "ReturnStatement[24418-24429]:ReturnStatement[24582-24593]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24980-25149]:Block[25144-25313]"
+    }, {
+      "left" : "this.pattern = pattern;",
+      "right" : "this.pattern = pattern;",
+      "info" : "ExpressionStatement[24990-25013]:ExpressionStatement[25154-25177]"
+    }, {
+      "left" : "this.lContext = pattern(lContext + \"$\");",
+      "right" : "this.lContext = pattern(lContext + \"$\");",
+      "info" : "ExpressionStatement[25022-25062]:ExpressionStatement[25186-25226]"
+    }, {
+      "left" : "this.rContext = pattern(\"^\" + rContext);",
+      "right" : "this.rContext = pattern(\"^\" + rContext);",
+      "info" : "ExpressionStatement[25071-25111]:ExpressionStatement[25235-25275]"
+    }, {
+      "left" : "this.phoneme = phoneme;",
+      "right" : "this.phoneme = phoneme;",
+      "info" : "ExpressionStatement[25120-25143]:ExpressionStatement[25284-25307]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25351-25388]:Block[25515-25552]"
+    }, {
+      "left" : "return this.lContext;",
+      "right" : "return this.lContext;",
+      "info" : "ReturnStatement[25361-25382]:ReturnStatement[25525-25546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25546-25582]:Block[25710-25746]"
+    }, {
+      "left" : "return this.pattern;",
+      "right" : "return this.pattern;",
+      "info" : "ReturnStatement[25556-25576]:ReturnStatement[25720-25740]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25771-25807]:Block[25935-25971]"
+    }, {
+      "left" : "return this.phoneme;",
+      "right" : "return this.phoneme;",
+      "info" : "ReturnStatement[25781-25801]:ReturnStatement[25945-25965]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26012-26049]:Block[26176-26213]"
+    }, {
+      "left" : "return this.rContext;",
+      "right" : "return this.rContext;",
+      "info" : "ReturnStatement[26022-26043]:ReturnStatement[26186-26207]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26701-27467]:Block[26865-27631]"
+    }, {
+      "left" : "if (i < 0)",
+      "right" : "if (i < 0)",
+      "info" : "IfStatement[26711-26827]:IfStatement[26875-26991]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26722-26827]:Block[26886-26991]"
+    }, {
+      "left" : "throw new IndexOutOfBoundsException(\"Can not match pattern at negative indexes\");",
+      "right" : "throw new IndexOutOfBoundsException(\"Can not match pattern at negative indexes\");",
+      "info" : "ThrowStatement[26736-26817]:ThrowStatement[26900-26981]"
+    }, {
+      "left" : "final int patternLength = this.pattern.length();",
+      "right" : "final int patternLength = this.pattern.length();",
+      "info" : "VariableDeclarationStatement[26837-26885]:VariableDeclarationStatement[27001-27049]"
+    }, {
+      "left" : "final int ipl = i + patternLength;",
+      "right" : "final int ipl = i + patternLength;",
+      "info" : "VariableDeclarationStatement[26894-26928]:VariableDeclarationStatement[27058-27092]"
+    }, {
+      "left" : "if (ipl > input.length())",
+      "right" : "if (ipl > input.length())",
+      "info" : "IfStatement[26938-27057]:IfStatement[27102-27221]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26964-27057]:Block[27128-27221]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[27034-27047]:ReturnStatement[27198-27211]"
+    }, {
+      "left" : "if (!input.subSequence(i, ipl).equals(this.pattern))",
+      "right" : "if (!input.subSequence(i, ipl).equals(this.pattern))",
+      "info" : "IfStatement[27197-27398]:IfStatement[27361-27562]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27250-27287]:Block[27414-27451]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[27264-27277]:ReturnStatement[27428-27441]"
+    }, {
+      "left" : "if (!this.rContext.isMatch(input.subSequence(ipl, input.length())))",
+      "right" : "if (!this.rContext.isMatch(input.subSequence(ipl, input.length())))",
+      "info" : "IfStatement[27293-27398]:IfStatement[27457-27562]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27361-27398]:Block[27525-27562]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[27375-27388]:ReturnStatement[27539-27552]"
+    }, {
+      "left" : "return this.lContext.isMatch(input.subSequence(0, i));",
+      "right" : "return this.lContext.isMatch(input.subSequence(0, i));",
+      "info" : "ReturnStatement[27407-27461]:ReturnStatement[27571-27625]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

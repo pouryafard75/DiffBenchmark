@@ -1,0 +1,2573 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "RemoveUnusedVars",
+      "right" : "RemoveUnusedVars",
+      "info" : "TypeDeclaration[1244-33919]:TypeDeclaration[1244-34070]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[3195-3235]:FieldDeclaration[3195-3235]"
+    }, {
+      "left" : "private final CodingConvention codingConvention;",
+      "right" : "private final CodingConvention codingConvention;",
+      "info" : "FieldDeclaration[3239-3287]:FieldDeclaration[3239-3287]"
+    }, {
+      "left" : "private final boolean removeGlobals;",
+      "right" : "private final boolean removeGlobals;",
+      "info" : "FieldDeclaration[3291-3327]:FieldDeclaration[3291-3327]"
+    }, {
+      "left" : "private boolean preserveFunctionExpressionNames;",
+      "right" : "private boolean preserveFunctionExpressionNames;",
+      "info" : "FieldDeclaration[3331-3379]:FieldDeclaration[3331-3379]"
+    }, {
+      "left" : "private final Set<Var> referenced = Sets.newHashSet();",
+      "right" : "private final Set<Var> referenced = Sets.newHashSet();",
+      "info" : "FieldDeclaration[3383-3501]:FieldDeclaration[3383-3501]"
+    }, {
+      "left" : "private final List<Var> maybeUnreferenced = Lists.newArrayList();",
+      "right" : "private final List<Var> maybeUnreferenced = Lists.newArrayList();",
+      "info" : "FieldDeclaration[3505-3639]:FieldDeclaration[3505-3639]"
+    }, {
+      "left" : "private final List<Scope> allFunctionScopes = Lists.newArrayList();",
+      "right" : "private final List<Scope> allFunctionScopes = Lists.newArrayList();",
+      "info" : "FieldDeclaration[3643-3770]:FieldDeclaration[3643-3770]"
+    }, {
+      "left" : "private final Multimap<Var, Assign> assignsByVar =\n      ArrayListMultimap.create();",
+      "right" : "private final Multimap<Var, Assign> assignsByVar =\n      ArrayListMultimap.create();",
+      "info" : "FieldDeclaration[3774-3938]:FieldDeclaration[3774-3938]"
+    }, {
+      "left" : "private final Map<Node, Assign> assignsByNode = Maps.newHashMap();",
+      "right" : "private final Map<Node, Assign> assignsByNode = Maps.newHashMap();",
+      "info" : "FieldDeclaration[3942-4084]:FieldDeclaration[3942-4084]"
+    }, {
+      "left" : "private final Multimap<Var, Node> inheritsCalls =\n      ArrayListMultimap.create();",
+      "right" : "private final Multimap<Var, Node> inheritsCalls =\n      ArrayListMultimap.create();",
+      "info" : "FieldDeclaration[4088-4230]:FieldDeclaration[4088-4230]"
+    }, {
+      "left" : "private final Multimap<Var, Continuation> continuations =\n      ArrayListMultimap.create();",
+      "right" : "private final Multimap<Var, Continuation> continuations =\n      ArrayListMultimap.create();",
+      "info" : "FieldDeclaration[4234-4444]:FieldDeclaration[4234-4444]"
+    }, {
+      "left" : "private boolean modifyCallSites;",
+      "right" : "private boolean modifyCallSites;",
+      "info" : "FieldDeclaration[4448-4480]:FieldDeclaration[4448-4480]"
+    }, {
+      "left" : "private CallSiteOptimizer callSiteOptimizer;",
+      "right" : "private CallSiteOptimizer callSiteOptimizer;",
+      "info" : "FieldDeclaration[4484-4528]:FieldDeclaration[4484-4528]"
+    }, {
+      "left" : "RemoveUnusedVars(\n      AbstractCompiler compiler,\n      boolean removeGlobals,\n      boolean preserveFunctionExpressionNames,\n      boolean modifyCallSites)",
+      "right" : "RemoveUnusedVars(\n      AbstractCompiler compiler,\n      boolean removeGlobals,\n      boolean preserveFunctionExpressionNames,\n      boolean modifyCallSites)",
+      "info" : "MethodDeclaration[4532-4945]:MethodDeclaration[4532-4945]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[4949-5519]:MethodDeclaration[4949-5519]"
+    }, {
+      "left" : "public void process(\n      Node externs, Node root, SimpleDefinitionFinder defFinder)",
+      "right" : "public void process(\n      Node externs, Node root, SimpleDefinitionFinder defFinder)",
+      "info" : "MethodDeclaration[5523-5902]:MethodDeclaration[5523-5902]"
+    }, {
+      "left" : "private void traverseAndRemoveUnusedReferences(Node root)",
+      "right" : "private void traverseAndRemoveUnusedReferences(Node root)",
+      "info" : "MethodDeclaration[5906-6386]:MethodDeclaration[5906-6386]"
+    }, {
+      "left" : "private void traverseNode(Node n, Node parent, Scope scope)",
+      "right" : "private void traverseNode(Node n, Node parent, Scope scope)",
+      "info" : "MethodDeclaration[6390-10863]:MethodDeclaration[6390-10863]"
+    }, {
+      "left" : "private boolean isRemovableVar(Var var)",
+      "right" : "private boolean isRemovableVar(Var var)",
+      "info" : "MethodDeclaration[10867-11302]:MethodDeclaration[10867-11302]"
+    }, {
+      "left" : "private void traverseFunction(Node n, Scope parentScope)",
+      "right" : "private void traverseFunction(Node n, Scope parentScope)",
+      "info" : "MethodDeclaration[11306-12172]:MethodDeclaration[11306-12172]"
+    }, {
+      "left" : "private void collectMaybeUnreferencedVars(Scope scope)",
+      "right" : "private void collectMaybeUnreferencedVars(Scope scope)",
+      "info" : "MethodDeclaration[12176-12554]:MethodDeclaration[12176-12554]"
+    }, {
+      "left" : "private void removeUnreferencedFunctionArgs(Scope fnScope)",
+      "right" : "private void removeUnreferencedFunctionArgs(Scope fnScope)",
+      "info" : "MethodDeclaration[12558-13750]:MethodDeclaration[12558-13750]"
+    }, {
+      "left" : "private static Node getFunctionArgList(Node function)",
+      "right" : "private static Node getFunctionArgList(Node function)",
+      "info" : "MethodDeclaration[13755-13934]:MethodDeclaration[13755-13934]"
+    }, {
+      "left" : "CallSiteOptimizer",
+      "right" : "CallSiteOptimizer",
+      "info" : "TypeDeclaration[13938-24047]:TypeDeclaration[13938-24047]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[13983-14023]:FieldDeclaration[13983-14023]"
+    }, {
+      "left" : "private final SimpleDefinitionFinder defFinder;",
+      "right" : "private final SimpleDefinitionFinder defFinder;",
+      "info" : "FieldDeclaration[14028-14075]:FieldDeclaration[14028-14075]"
+    }, {
+      "left" : "private final List<Node> toRemove = Lists.newArrayList();",
+      "right" : "private final List<Node> toRemove = Lists.newArrayList();",
+      "info" : "FieldDeclaration[14080-14137]:FieldDeclaration[14080-14137]"
+    }, {
+      "left" : "private final List<Node> toReplaceWithZero = Lists.newArrayList();",
+      "right" : "private final List<Node> toReplaceWithZero = Lists.newArrayList();",
+      "info" : "FieldDeclaration[14142-14208]:FieldDeclaration[14142-14208]"
+    }, {
+      "left" : "CallSiteOptimizer(\n        AbstractCompiler compiler,\n        SimpleDefinitionFinder defFinder)",
+      "right" : "CallSiteOptimizer(\n        AbstractCompiler compiler,\n        SimpleDefinitionFinder defFinder)",
+      "info" : "MethodDeclaration[14214-14383]:MethodDeclaration[14214-14383]"
+    }, {
+      "left" : "public void optimize(Scope fnScope, Set<Var> referenced)",
+      "right" : "public void optimize(Scope fnScope, Set<Var> referenced)",
+      "info" : "MethodDeclaration[14389-14913]:MethodDeclaration[14389-14913]"
+    }, {
+      "left" : "public void applyChanges()",
+      "right" : "public void applyChanges()",
+      "info" : "MethodDeclaration[14919-15294]:MethodDeclaration[14919-15294]"
+    }, {
+      "left" : "private boolean markUnreferencedFunctionArgs(\n        Scope scope, Node function, Set<Var> referenced,\n        Node param, int paramIndex,\n        boolean canChangeSignature)",
+      "right" : "private boolean markUnreferencedFunctionArgs(\n        Scope scope, Node function, Set<Var> referenced,\n        Node param, int paramIndex,\n        boolean canChangeSignature)",
+      "info" : "MethodDeclaration[15300-17445]:MethodDeclaration[15300-17445]"
+    }, {
+      "left" : "private boolean canRemoveArgFromCallSites(Node function, int argIndex)",
+      "right" : "private boolean canRemoveArgFromCallSites(Node function, int argIndex)",
+      "info" : "MethodDeclaration[17451-18282]:MethodDeclaration[17451-18282]"
+    }, {
+      "left" : "private void tryRemoveArgFromCallSites(\n        Node function, int argIndex, boolean canModifyAllSites)",
+      "right" : "private void tryRemoveArgFromCallSites(\n        Node function, int argIndex, boolean canModifyAllSites)",
+      "info" : "MethodDeclaration[18288-19481]:MethodDeclaration[18288-19481]"
+    }, {
+      "left" : "private void tryRemoveAllFollowingArgs(Node function, final int argIndex)",
+      "right" : "private void tryRemoveAllFollowingArgs(Node function, final int argIndex)",
+      "info" : "MethodDeclaration[19487-20093]:MethodDeclaration[19487-20093]"
+    }, {
+      "left" : "private static Node getArgumentForCallOrNewOrDotCall(UseSite site,\n        final int argIndex)",
+      "right" : "private static Node getArgumentForCallOrNewOrDotCall(UseSite site,\n        final int argIndex)",
+      "info" : "MethodDeclaration[20099-20576]:MethodDeclaration[20099-20576]"
+    }, {
+      "left" : "boolean canModifyCallers(Node function)",
+      "right" : "boolean canModifyCallers(Node function)",
+      "info" : "MethodDeclaration[20582-21309]:MethodDeclaration[20582-21309]"
+    }, {
+      "left" : "private static boolean isModifiableCallSite(UseSite site)",
+      "right" : "private static boolean isModifiableCallSite(UseSite site)",
+      "info" : "MethodDeclaration[21315-21628]:MethodDeclaration[21315-21628]"
+    }, {
+      "left" : "private boolean canChangeSignature(Node function)",
+      "right" : "private boolean canChangeSignature(Node function)",
+      "info" : "MethodDeclaration[21634-23526]:MethodDeclaration[21634-23526]"
+    }, {
+      "left" : "private Definition getFunctionDefinition(Node function)",
+      "right" : "private Definition getFunctionDefinition(Node function)",
+      "info" : "MethodDeclaration[23532-24043]:MethodDeclaration[23532-24043]"
+    }, {
+      "left" : "private void interpretAssigns()",
+      "right" : "private void interpretAssigns()",
+      "info" : "MethodDeclaration[24052-26343]:MethodDeclaration[24052-26489]"
+    }, {
+      "left" : "private void removeAllAssigns(Var var)",
+      "right" : "private void removeAllAssigns(Var var)",
+      "info" : "MethodDeclaration[26347-26551]:MethodDeclaration[26493-26697]"
+    }, {
+      "left" : "private boolean markReferencedVar(Var var)",
+      "right" : "private boolean markReferencedVar(Var var)",
+      "info" : "MethodDeclaration[26555-26929]:MethodDeclaration[26701-27075]"
+    }, {
+      "left" : "private void removeUnreferencedVars()",
+      "right" : "private void removeUnreferencedVars()",
+      "info" : "MethodDeclaration[26933-29724]:MethodDeclaration[27079-29870]"
+    }, {
+      "left" : "Continuation",
+      "right" : "Continuation",
+      "info" : "TypeDeclaration[29728-30421]:TypeDeclaration[29874-30567]"
+    }, {
+      "left" : "private final Node node;",
+      "right" : "private final Node node;",
+      "info" : "FieldDeclaration[29967-29991]:FieldDeclaration[30113-30137]"
+    }, {
+      "left" : "private final Scope scope;",
+      "right" : "private final Scope scope;",
+      "info" : "FieldDeclaration[29996-30022]:FieldDeclaration[30142-30168]"
+    }, {
+      "left" : "Continuation(Node node, Scope scope)",
+      "right" : "Continuation(Node node, Scope scope)",
+      "info" : "MethodDeclaration[30028-30122]:MethodDeclaration[30174-30268]"
+    }, {
+      "left" : "void apply()",
+      "right" : "void apply()",
+      "info" : "MethodDeclaration[30128-30417]:MethodDeclaration[30274-30563]"
+    }, {
+      "left" : "Assign",
+      "right" : "Assign",
+      "info" : "TypeDeclaration[30425-33917]:TypeDeclaration[30571-34068]"
+    }, {
+      "left" : "final Node assignNode;",
+      "right" : "final Node assignNode;",
+      "info" : "FieldDeclaration[30460-30482]:FieldDeclaration[30606-30628]"
+    }, {
+      "left" : "final Node nameNode;",
+      "right" : "final Node nameNode;",
+      "info" : "FieldDeclaration[30488-30508]:FieldDeclaration[30634-30654]"
+    }, {
+      "left" : "final boolean isPropertyAssign;",
+      "right" : "final boolean isPropertyAssign;",
+      "info" : "FieldDeclaration[30646-30677]:FieldDeclaration[30792-30823]"
+    }, {
+      "left" : "final boolean mayHaveSecondarySideEffects;",
+      "right" : "final boolean mayHaveSecondarySideEffects;",
+      "info" : "FieldDeclaration[31127-31169]:FieldDeclaration[31273-31315]"
+    }, {
+      "left" : "final boolean maybeAliased;",
+      "right" : "final boolean maybeAliased;",
+      "info" : "FieldDeclaration[31249-31276]:FieldDeclaration[31395-31422]"
+    }, {
+      "left" : "Assign(Node assignNode, Node nameNode, boolean isPropertyAssign)",
+      "right" : "Assign(Node assignNode, Node nameNode, boolean isPropertyAssign)",
+      "info" : "MethodDeclaration[31282-31808]:MethodDeclaration[31428-31959]"
+    }, {
+      "left" : "static Assign maybeCreateAssign(Node assignNode)",
+      "right" : "static Assign maybeCreateAssign(Node assignNode)",
+      "info" : "MethodDeclaration[31814-32916]:MethodDeclaration[31965-33067]"
+    }, {
+      "left" : "void remove()",
+      "right" : "void remove()",
+      "info" : "MethodDeclaration[32922-33913]:MethodDeclaration[33073-34064]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[3102-3107]:TYPE_DECLARATION_KIND[3102-3107]"
+    }, {
+      "left" : "RemoveUnusedVars",
+      "right" : "RemoveUnusedVars",
+      "info" : "SimpleName[3108-3124]:SimpleName[3108-3124]"
+    }, {
+      "left" : "CompilerPass",
+      "right" : "CompilerPass",
+      "info" : "SimpleType[3140-3152]:SimpleType[3140-3152]"
+    }, {
+      "left" : "OptimizeCalls.CallGraphCompilerPass",
+      "right" : "OptimizeCalls.CallGraphCompilerPass",
+      "info" : "SimpleType[3154-3189]:SimpleType[3154-3189]"
+    }, {
+      "left" : "RemoveUnusedVars",
+      "right" : "RemoveUnusedVars",
+      "info" : "SimpleName[4532-4548]:SimpleName[4532-4548]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[4556-4581]:SingleVariableDeclaration[4556-4581]"
+    }, {
+      "left" : "boolean removeGlobals",
+      "right" : "boolean removeGlobals",
+      "info" : "SingleVariableDeclaration[4589-4610]:SingleVariableDeclaration[4589-4610]"
+    }, {
+      "left" : "boolean preserveFunctionExpressionNames",
+      "right" : "boolean preserveFunctionExpressionNames",
+      "info" : "SingleVariableDeclaration[4618-4657]:SingleVariableDeclaration[4618-4657]"
+    }, {
+      "left" : "boolean modifyCallSites",
+      "right" : "boolean modifyCallSites",
+      "info" : "SingleVariableDeclaration[4665-4688]:SingleVariableDeclaration[4665-4688]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4690-4945]:Block[4690-4945]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[4696-4721]:ExpressionStatement[4696-4721]"
+    }, {
+      "left" : "this.codingConvention = compiler.getCodingConvention();",
+      "right" : "this.codingConvention = compiler.getCodingConvention();",
+      "info" : "ExpressionStatement[4726-4781]:ExpressionStatement[4726-4781]"
+    }, {
+      "left" : "this.removeGlobals = removeGlobals;",
+      "right" : "this.removeGlobals = removeGlobals;",
+      "info" : "ExpressionStatement[4786-4821]:ExpressionStatement[4786-4821]"
+    }, {
+      "left" : "this.preserveFunctionExpressionNames = preserveFunctionExpressionNames;",
+      "right" : "this.preserveFunctionExpressionNames = preserveFunctionExpressionNames;",
+      "info" : "ExpressionStatement[4826-4897]:ExpressionStatement[4826-4897]"
+    }, {
+      "left" : "this.modifyCallSites = modifyCallSites;",
+      "right" : "this.modifyCallSites = modifyCallSites;",
+      "info" : "ExpressionStatement[4902-4941]:ExpressionStatement[4902-4941]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[5096-5105]:MarkerAnnotation[5096-5105]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5108-5114]:Modifier[5108-5114]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5115-5119]:PrimitiveType[5115-5119]"
+    }, {
+      "left" : "process",
+      "right" : "process",
+      "info" : "SimpleName[5120-5127]:SimpleName[5120-5127]"
+    }, {
+      "left" : "Node externs",
+      "right" : "Node externs",
+      "info" : "SingleVariableDeclaration[5128-5140]:SingleVariableDeclaration[5128-5140]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[5142-5151]:SingleVariableDeclaration[5142-5151]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5153-5519]:Block[5153-5519]"
+    }, {
+      "left" : "Preconditions.checkState(compiler.getLifeCycleStage().isNormalized());",
+      "right" : "Preconditions.checkState(compiler.getLifeCycleStage().isNormalized());",
+      "info" : "ExpressionStatement[5159-5229]:ExpressionStatement[5159-5229]"
+    }, {
+      "left" : "SimpleDefinitionFinder defFinder = null;",
+      "right" : "SimpleDefinitionFinder defFinder = null;",
+      "info" : "VariableDeclarationStatement[5234-5274]:VariableDeclarationStatement[5234-5274]"
+    }, {
+      "left" : "if (modifyCallSites)",
+      "right" : "if (modifyCallSites)",
+      "info" : "IfStatement[5280-5476]:IfStatement[5280-5476]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5301-5476]:Block[5301-5476]"
+    }, {
+      "left" : "defFinder = new SimpleDefinitionFinder(compiler);",
+      "right" : "defFinder = new SimpleDefinitionFinder(compiler);",
+      "info" : "ExpressionStatement[5381-5430]:ExpressionStatement[5381-5430]"
+    }, {
+      "left" : "defFinder.process(externs, root);",
+      "right" : "defFinder.process(externs, root);",
+      "info" : "ExpressionStatement[5437-5470]:ExpressionStatement[5437-5470]"
+    }, {
+      "left" : "process(externs, root, defFinder);",
+      "right" : "process(externs, root, defFinder);",
+      "info" : "ExpressionStatement[5481-5515]:ExpressionStatement[5481-5515]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[5523-5532]:MarkerAnnotation[5523-5532]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5535-5541]:Modifier[5535-5541]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5542-5546]:PrimitiveType[5542-5546]"
+    }, {
+      "left" : "process",
+      "right" : "process",
+      "info" : "SimpleName[5547-5554]:SimpleName[5547-5554]"
+    }, {
+      "left" : "Node externs",
+      "right" : "Node externs",
+      "info" : "SingleVariableDeclaration[5562-5574]:SingleVariableDeclaration[5562-5574]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[5576-5585]:SingleVariableDeclaration[5576-5585]"
+    }, {
+      "left" : "SimpleDefinitionFinder defFinder",
+      "right" : "SimpleDefinitionFinder defFinder",
+      "info" : "SingleVariableDeclaration[5587-5619]:SingleVariableDeclaration[5587-5619]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5621-5902]:Block[5621-5902]"
+    }, {
+      "left" : "if (modifyCallSites)",
+      "right" : "if (modifyCallSites)",
+      "info" : "IfStatement[5627-5770]:IfStatement[5627-5770]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5648-5770]:Block[5648-5770]"
+    }, {
+      "left" : "Preconditions.checkNotNull(defFinder);",
+      "right" : "Preconditions.checkNotNull(defFinder);",
+      "info" : "ExpressionStatement[5656-5694]:ExpressionStatement[5656-5694]"
+    }, {
+      "left" : "callSiteOptimizer = new CallSiteOptimizer(compiler, defFinder);",
+      "right" : "callSiteOptimizer = new CallSiteOptimizer(compiler, defFinder);",
+      "info" : "ExpressionStatement[5701-5764]:ExpressionStatement[5701-5764]"
+    }, {
+      "left" : "traverseAndRemoveUnusedReferences(root);",
+      "right" : "traverseAndRemoveUnusedReferences(root);",
+      "info" : "ExpressionStatement[5775-5815]:ExpressionStatement[5775-5815]"
+    }, {
+      "left" : "if (callSiteOptimizer != null)",
+      "right" : "if (callSiteOptimizer != null)",
+      "info" : "IfStatement[5820-5898]:IfStatement[5820-5898]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5851-5898]:Block[5851-5898]"
+    }, {
+      "left" : "callSiteOptimizer.applyChanges();",
+      "right" : "callSiteOptimizer.applyChanges();",
+      "info" : "ExpressionStatement[5859-5892]:ExpressionStatement[5859-5892]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5978-5985]:Modifier[5978-5985]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5986-5990]:PrimitiveType[5986-5990]"
+    }, {
+      "left" : "traverseAndRemoveUnusedReferences",
+      "right" : "traverseAndRemoveUnusedReferences",
+      "info" : "SimpleName[5991-6024]:SimpleName[5991-6024]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[6025-6034]:SingleVariableDeclaration[6025-6034]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6036-6386]:Block[6036-6386]"
+    }, {
+      "left" : "Scope scope = new SyntacticScopeCreator(compiler).createScope(root, null);",
+      "right" : "Scope scope = new SyntacticScopeCreator(compiler).createScope(root, null);",
+      "info" : "VariableDeclarationStatement[6042-6116]:VariableDeclarationStatement[6042-6116]"
+    }, {
+      "left" : "traverseNode(root, null, scope);",
+      "right" : "traverseNode(root, null, scope);",
+      "info" : "ExpressionStatement[6121-6153]:ExpressionStatement[6121-6153]"
+    }, {
+      "left" : "if (removeGlobals)",
+      "right" : "if (removeGlobals)",
+      "info" : "IfStatement[6159-6228]:IfStatement[6159-6228]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6178-6228]:Block[6178-6228]"
+    }, {
+      "left" : "collectMaybeUnreferencedVars(scope);",
+      "right" : "collectMaybeUnreferencedVars(scope);",
+      "info" : "ExpressionStatement[6186-6222]:ExpressionStatement[6186-6222]"
+    }, {
+      "left" : "interpretAssigns();",
+      "right" : "interpretAssigns();",
+      "info" : "ExpressionStatement[6234-6253]:ExpressionStatement[6234-6253]"
+    }, {
+      "left" : "removeUnreferencedVars();",
+      "right" : "removeUnreferencedVars();",
+      "info" : "ExpressionStatement[6258-6283]:ExpressionStatement[6258-6283]"
+    }, {
+      "left" : "for (Scope fnScope : allFunctionScopes)",
+      "right" : "for (Scope fnScope : allFunctionScopes)",
+      "info" : "EnhancedForStatement[6288-6382]:EnhancedForStatement[6288-6382]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6328-6382]:Block[6328-6382]"
+    }, {
+      "left" : "removeUnreferencedFunctionArgs(fnScope);",
+      "right" : "removeUnreferencedFunctionArgs(fnScope);",
+      "info" : "ExpressionStatement[6336-6376]:ExpressionStatement[6336-6376]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6732-6739]:Modifier[6732-6739]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6740-6744]:PrimitiveType[6740-6744]"
+    }, {
+      "left" : "traverseNode",
+      "right" : "traverseNode",
+      "info" : "SimpleName[6745-6757]:SimpleName[6745-6757]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[6758-6764]:SingleVariableDeclaration[6758-6764]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[6766-6777]:SingleVariableDeclaration[6766-6777]"
+    }, {
+      "left" : "Scope scope",
+      "right" : "Scope scope",
+      "info" : "SingleVariableDeclaration[6779-6790]:SingleVariableDeclaration[6779-6790]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6792-10863]:Block[6792-10863]"
+    }, {
+      "left" : "int type = n.getType();",
+      "right" : "int type = n.getType();",
+      "info" : "VariableDeclarationStatement[6798-6821]:VariableDeclarationStatement[6798-6821]"
+    }, {
+      "left" : "Var var = null;",
+      "right" : "Var var = null;",
+      "info" : "VariableDeclarationStatement[6826-6841]:VariableDeclarationStatement[6826-6841]"
+    }, {
+      "left" : "switch (type) {\n      case Token.FUNCTION:\n        // If this function is a removable var, then create a continuation\n        // for it instead of traversing immediately.\n        if (NodeUtil.isFunctionDeclaration(n)) {\n          var = scope.getVar(n.getFirstChild().getString());\n        }\n\n        if (var != null && isRemovableVar(var)) {\n          continuations.put(var, new Continuation(n, scope));\n        } else {\n          traverseFunction(n, scope);\n        }\n        return;\n\n      case Token.ASSIGN:\n        Assign maybeAssign = Assign.maybeCreateAssign(n);\n        if (maybeAssign != null) {\n          // Put this in the assign map. It might count as a reference,\n          // but we won't know that until we have an index of all assigns.\n          var = scope.getVar(maybeAssign.nameNode.getString());\n          if (var != null) {\n            assignsByVar.put(var, maybeAssign);\n            assignsByNode.put(maybeAssign.nameNode, maybeAssign);\n\n            if (isRemovableVar(var) &&\n                !maybeAssign.mayHaveSecondarySideEffects) {\n              // If the var is unreferenced and performing this assign has\n              // no secondary side effects, then we can create a continuation\n              // for it instead of traversing immediately.\n              continuations.put(var, new Continuation(n, scope));\n              return;\n            }\n          }\n        }\n        break;\n\n      case Token.CALL:\n        // Look for calls to inheritance-defining calls (such as goog.inherits).\n        SubclassRelationship subclassRelationship =\n            codingConvention.getClassesDefinedByCall(n);\n        if (subclassRelationship != null) {\n          Var subclassVar = scope.getVar(subclassRelationship.subclassName);\n          // Don't try to track the inheritance calls for non-globals. It would\n          // be more correct to only not track when the subclass does not\n          // reference a constructor, but checking that it is a global is\n          // easier and mostly the same.\n          if (subclassVar != null && subclassVar.isGlobal()\n              && !referenced.contains(subclassVar)) {\n            // Save a reference to the EXPR node.\n            inheritsCalls.put(subclassVar, parent);\n            continuations.put(subclassVar, new Continuation(n, scope));\n            return;\n          }\n        }\n        break;\n\n      case Token.NAME:\n        var = scope.getVar(n.getString());\n        if (parent.isVar()) {\n          Node value = n.getFirstChild();\n          if (value != null && var != null && isRemovableVar(var) &&\n              !NodeUtil.mayHaveSideEffects(value)) {\n            // If the var is unreferenced and creating its value has no side\n            // effects, then we can create a continuation for it instead\n            // of traversing immediately.\n            continuations.put(var, new Continuation(n, scope));\n            return;\n          }\n        } else {\n\n          // If arguments is escaped, we just assume the worst and continue\n          // on all the parameters.\n          if (\"arguments\".equals(n.getString()) && scope.isLocal()) {\n            Node lp = scope.getRootNode().getFirstChild().getNext();\n            for (Node a = lp.getFirstChild(); a != null; a = a.getNext()) {\n              markReferencedVar(scope.getVar(a.getString()));\n            }\n          }\n\n          // All name references that aren't declarations or assigns\n          // are references to other vars.\n          if (var != null) {\n            // If that var hasn't already been marked referenced, then\n            // start tracking it.  If this is an assign, do nothing\n            // for now.\n            if (isRemovableVar(var)) {\n              if (!assignsByNode.containsKey(n)) {\n                markReferencedVar(var);\n              }\n            } else {\n              markReferencedVar(var);\n            }\n          }\n        }\n        break;\n    }",
+      "right" : "switch (type) {\n      case Token.FUNCTION:\n        // If this function is a removable var, then create a continuation\n        // for it instead of traversing immediately.\n        if (NodeUtil.isFunctionDeclaration(n)) {\n          var = scope.getVar(n.getFirstChild().getString());\n        }\n\n        if (var != null && isRemovableVar(var)) {\n          continuations.put(var, new Continuation(n, scope));\n        } else {\n          traverseFunction(n, scope);\n        }\n        return;\n\n      case Token.ASSIGN:\n        Assign maybeAssign = Assign.maybeCreateAssign(n);\n        if (maybeAssign != null) {\n          // Put this in the assign map. It might count as a reference,\n          // but we won't know that until we have an index of all assigns.\n          var = scope.getVar(maybeAssign.nameNode.getString());\n          if (var != null) {\n            assignsByVar.put(var, maybeAssign);\n            assignsByNode.put(maybeAssign.nameNode, maybeAssign);\n\n            if (isRemovableVar(var) &&\n                !maybeAssign.mayHaveSecondarySideEffects) {\n              // If the var is unreferenced and performing this assign has\n              // no secondary side effects, then we can create a continuation\n              // for it instead of traversing immediately.\n              continuations.put(var, new Continuation(n, scope));\n              return;\n            }\n          }\n        }\n        break;\n\n      case Token.CALL:\n        // Look for calls to inheritance-defining calls (such as goog.inherits).\n        SubclassRelationship subclassRelationship =\n            codingConvention.getClassesDefinedByCall(n);\n        if (subclassRelationship != null) {\n          Var subclassVar = scope.getVar(subclassRelationship.subclassName);\n          // Don't try to track the inheritance calls for non-globals. It would\n          // be more correct to only not track when the subclass does not\n          // reference a constructor, but checking that it is a global is\n          // easier and mostly the same.\n          if (subclassVar != null && subclassVar.isGlobal()\n              && !referenced.contains(subclassVar)) {\n            // Save a reference to the EXPR node.\n            inheritsCalls.put(subclassVar, parent);\n            continuations.put(subclassVar, new Continuation(n, scope));\n            return;\n          }\n        }\n        break;\n\n      case Token.NAME:\n        var = scope.getVar(n.getString());\n        if (parent.isVar()) {\n          Node value = n.getFirstChild();\n          if (value != null && var != null && isRemovableVar(var) &&\n              !NodeUtil.mayHaveSideEffects(value)) {\n            // If the var is unreferenced and creating its value has no side\n            // effects, then we can create a continuation for it instead\n            // of traversing immediately.\n            continuations.put(var, new Continuation(n, scope));\n            return;\n          }\n        } else {\n\n          // If arguments is escaped, we just assume the worst and continue\n          // on all the parameters.\n          if (\"arguments\".equals(n.getString()) && scope.isLocal()) {\n            Node lp = scope.getRootNode().getFirstChild().getNext();\n            for (Node a = lp.getFirstChild(); a != null; a = a.getNext()) {\n              markReferencedVar(scope.getVar(a.getString()));\n            }\n          }\n\n          // All name references that aren't declarations or assigns\n          // are references to other vars.\n          if (var != null) {\n            // If that var hasn't already been marked referenced, then\n            // start tracking it.  If this is an assign, do nothing\n            // for now.\n            if (isRemovableVar(var)) {\n              if (!assignsByNode.containsKey(n)) {\n                markReferencedVar(var);\n              }\n            } else {\n              markReferencedVar(var);\n            }\n          }\n        }\n        break;\n    }",
+      "info" : "SwitchStatement[6846-10752]:SwitchStatement[6846-10752]"
+    }, {
+      "left" : "case Token.FUNCTION:",
+      "right" : "case Token.FUNCTION:",
+      "info" : "SwitchCase[6868-6888]:SwitchCase[6868-6888]"
+    }, {
+      "left" : "if (NodeUtil.isFunctionDeclaration(n))",
+      "right" : "if (NodeUtil.isFunctionDeclaration(n))",
+      "info" : "IfStatement[7025-7136]:IfStatement[7025-7136]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7064-7136]:Block[7064-7136]"
+    }, {
+      "left" : "var = scope.getVar(n.getFirstChild().getString());",
+      "right" : "var = scope.getVar(n.getFirstChild().getString());",
+      "info" : "ExpressionStatement[7076-7126]:ExpressionStatement[7076-7126]"
+    }, {
+      "left" : "if (var != null && isRemovableVar(var))",
+      "right" : "if (var != null && isRemovableVar(var))",
+      "info" : "IfStatement[7146-7314]:IfStatement[7146-7314]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7186-7259]:Block[7186-7259]"
+    }, {
+      "left" : "continuations.put(var, new Continuation(n, scope));",
+      "right" : "continuations.put(var, new Continuation(n, scope));",
+      "info" : "ExpressionStatement[7198-7249]:ExpressionStatement[7198-7249]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7265-7314]:Block[7265-7314]"
+    }, {
+      "left" : "traverseFunction(n, scope);",
+      "right" : "traverseFunction(n, scope);",
+      "info" : "ExpressionStatement[7277-7304]:ExpressionStatement[7277-7304]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7323-7330]:ReturnStatement[7323-7330]"
+    }, {
+      "left" : "case Token.ASSIGN:",
+      "right" : "case Token.ASSIGN:",
+      "info" : "SwitchCase[7338-7356]:SwitchCase[7338-7356]"
+    }, {
+      "left" : "Assign maybeAssign = Assign.maybeCreateAssign(n);",
+      "right" : "Assign maybeAssign = Assign.maybeCreateAssign(n);",
+      "info" : "VariableDeclarationStatement[7365-7414]:VariableDeclarationStatement[7365-7414]"
+    }, {
+      "left" : "if (maybeAssign != null)",
+      "right" : "if (maybeAssign != null)",
+      "info" : "IfStatement[7423-8239]:IfStatement[7423-8239]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7448-8239]:Block[7448-8239]"
+    }, {
+      "left" : "var = scope.getVar(maybeAssign.nameNode.getString());",
+      "right" : "var = scope.getVar(maybeAssign.nameNode.getString());",
+      "info" : "ExpressionStatement[7607-7660]:ExpressionStatement[7607-7660]"
+    }, {
+      "left" : "if (var != null)",
+      "right" : "if (var != null)",
+      "info" : "IfStatement[7671-8229]:IfStatement[7671-8229]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7688-8229]:Block[7688-8229]"
+    }, {
+      "left" : "assignsByVar.put(var, maybeAssign);",
+      "right" : "assignsByVar.put(var, maybeAssign);",
+      "info" : "ExpressionStatement[7702-7737]:ExpressionStatement[7702-7737]"
+    }, {
+      "left" : "assignsByNode.put(maybeAssign.nameNode, maybeAssign);",
+      "right" : "assignsByNode.put(maybeAssign.nameNode, maybeAssign);",
+      "info" : "ExpressionStatement[7750-7803]:ExpressionStatement[7750-7803]"
+    }, {
+      "left" : "if (isRemovableVar(var) &&\n                !maybeAssign.mayHaveSecondarySideEffects)",
+      "right" : "if (isRemovableVar(var) &&\n                !maybeAssign.mayHaveSecondarySideEffects)",
+      "info" : "IfStatement[7817-8217]:IfStatement[7817-8217]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7902-8217]:Block[7902-8217]"
+    }, {
+      "left" : "continuations.put(var, new Continuation(n, scope));",
+      "right" : "continuations.put(var, new Continuation(n, scope));",
+      "info" : "ExpressionStatement[8130-8181]:ExpressionStatement[8130-8181]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8196-8203]:ReturnStatement[8196-8203]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[8248-8254]:BreakStatement[8248-8254]"
+    }, {
+      "left" : "case Token.CALL:",
+      "right" : "case Token.CALL:",
+      "info" : "SwitchCase[8262-8278]:SwitchCase[8262-8278]"
+    }, {
+      "left" : "SubclassRelationship subclassRelationship =\n            codingConvention.getClassesDefinedByCall(n);",
+      "right" : "SubclassRelationship subclassRelationship =\n            codingConvention.getClassesDefinedByCall(n);",
+      "info" : "VariableDeclarationStatement[8368-8468]:VariableDeclarationStatement[8368-8468]"
+    }, {
+      "left" : "if (subclassRelationship != null)",
+      "right" : "if (subclassRelationship != null)",
+      "info" : "IfStatement[8477-9188]:IfStatement[8477-9188]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8511-9188]:Block[8511-9188]"
+    }, {
+      "left" : "Var subclassVar = scope.getVar(subclassRelationship.subclassName);",
+      "right" : "Var subclassVar = scope.getVar(subclassRelationship.subclassName);",
+      "info" : "VariableDeclarationStatement[8523-8589]:VariableDeclarationStatement[8523-8589]"
+    }, {
+      "left" : "if (subclassVar != null && subclassVar.isGlobal()\n              && !referenced.contains(subclassVar))",
+      "right" : "if (subclassVar != null && subclassVar.isGlobal()\n              && !referenced.contains(subclassVar))",
+      "info" : "IfStatement[8869-9178]:IfStatement[8869-9178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8971-9178]:Block[8971-9178]"
+    }, {
+      "left" : "inheritsCalls.put(subclassVar, parent);",
+      "right" : "inheritsCalls.put(subclassVar, parent);",
+      "info" : "ExpressionStatement[9035-9074]:ExpressionStatement[9035-9074]"
+    }, {
+      "left" : "continuations.put(subclassVar, new Continuation(n, scope));",
+      "right" : "continuations.put(subclassVar, new Continuation(n, scope));",
+      "info" : "ExpressionStatement[9087-9146]:ExpressionStatement[9087-9146]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[9159-9166]:ReturnStatement[9159-9166]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[9197-9203]:BreakStatement[9197-9203]"
+    }, {
+      "left" : "case Token.NAME:",
+      "right" : "case Token.NAME:",
+      "info" : "SwitchCase[9211-9227]:SwitchCase[9211-9227]"
+    }, {
+      "left" : "var = scope.getVar(n.getString());",
+      "right" : "var = scope.getVar(n.getString());",
+      "info" : "ExpressionStatement[9236-9270]:ExpressionStatement[9236-9270]"
+    }, {
+      "left" : "if (parent.isVar())",
+      "right" : "if (parent.isVar())",
+      "info" : "IfStatement[9279-10731]:IfStatement[9279-10731]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9299-9762]:Block[9299-9762]"
+    }, {
+      "left" : "Node value = n.getFirstChild();",
+      "right" : "Node value = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[9311-9342]:VariableDeclarationStatement[9311-9342]"
+    }, {
+      "left" : "if (value != null && var != null && isRemovableVar(var) &&\n              !NodeUtil.mayHaveSideEffects(value))",
+      "right" : "if (value != null && var != null && isRemovableVar(var) &&\n              !NodeUtil.mayHaveSideEffects(value))",
+      "info" : "IfStatement[9353-9752]:IfStatement[9353-9752]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9463-9752]:Block[9463-9752]"
+    }, {
+      "left" : "continuations.put(var, new Continuation(n, scope));",
+      "right" : "continuations.put(var, new Continuation(n, scope));",
+      "info" : "ExpressionStatement[9669-9720]:ExpressionStatement[9669-9720]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[9733-9740]:ReturnStatement[9733-9740]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9768-10731]:Block[9768-10731]"
+    }, {
+      "left" : "if (\"arguments\".equals(n.getString()) && scope.isLocal())",
+      "right" : "if (\"arguments\".equals(n.getString()) && scope.isLocal())",
+      "info" : "IfStatement[9893-10185]:IfStatement[9893-10185]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9951-10185]:Block[9951-10185]"
+    }, {
+      "left" : "Node lp = scope.getRootNode().getFirstChild().getNext();",
+      "right" : "Node lp = scope.getRootNode().getFirstChild().getNext();",
+      "info" : "VariableDeclarationStatement[9965-10021]:VariableDeclarationStatement[9965-10021]"
+    }, {
+      "left" : "for (Node a = lp.getFirstChild(); a != null; a = a.getNext())",
+      "right" : "for (Node a = lp.getFirstChild(); a != null; a = a.getNext())",
+      "info" : "ForStatement[10034-10173]:ForStatement[10034-10173]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10096-10173]:Block[10096-10173]"
+    }, {
+      "left" : "markReferencedVar(scope.getVar(a.getString()));",
+      "right" : "markReferencedVar(scope.getVar(a.getString()));",
+      "info" : "ExpressionStatement[10112-10159]:ExpressionStatement[10112-10159]"
+    }, {
+      "left" : "if (var != null)",
+      "right" : "if (var != null)",
+      "info" : "IfStatement[10309-10721]:IfStatement[10309-10721]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10326-10721]:Block[10326-10721]"
+    }, {
+      "left" : "if (isRemovableVar(var))",
+      "right" : "if (isRemovableVar(var))",
+      "info" : "IfStatement[10503-10709]:IfStatement[10503-10709]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10528-10650]:Block[10528-10650]"
+    }, {
+      "left" : "if (!assignsByNode.containsKey(n))",
+      "right" : "if (!assignsByNode.containsKey(n))",
+      "info" : "IfStatement[10544-10636]:IfStatement[10544-10636]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10579-10636]:Block[10579-10636]"
+    }, {
+      "left" : "markReferencedVar(var);",
+      "right" : "markReferencedVar(var);",
+      "info" : "ExpressionStatement[10597-10620]:ExpressionStatement[10597-10620]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10656-10709]:Block[10656-10709]"
+    }, {
+      "left" : "markReferencedVar(var);",
+      "right" : "markReferencedVar(var);",
+      "info" : "ExpressionStatement[10672-10695]:ExpressionStatement[10672-10695]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10740-10746]:BreakStatement[10740-10746]"
+    }, {
+      "left" : "for (Node c = n.getFirstChild(); c != null; c = c.getNext())",
+      "right" : "for (Node c = n.getFirstChild(); c != null; c = c.getNext())",
+      "info" : "ForStatement[10758-10859]:ForStatement[10758-10859]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10819-10859]:Block[10819-10859]"
+    }, {
+      "left" : "traverseNode(c, n, scope);",
+      "right" : "traverseNode(c, n, scope);",
+      "info" : "ExpressionStatement[10827-10853]:ExpressionStatement[10827-10853]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10867-10874]:Modifier[10867-10874]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[10875-10882]:PrimitiveType[10875-10882]"
+    }, {
+      "left" : "isRemovableVar",
+      "right" : "isRemovableVar",
+      "info" : "SimpleName[10883-10897]:SimpleName[10883-10897]"
+    }, {
+      "left" : "Var var",
+      "right" : "Var var",
+      "info" : "SingleVariableDeclaration[10898-10905]:SingleVariableDeclaration[10898-10905]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10907-11302]:Block[10907-11302]"
+    }, {
+      "left" : "if (!removeGlobals && var.isGlobal())",
+      "right" : "if (!removeGlobals && var.isGlobal())",
+      "info" : "IfStatement[10985-11050]:IfStatement[10985-11050]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11023-11050]:Block[11023-11050]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11031-11044]:ReturnStatement[11031-11044]"
+    }, {
+      "left" : "if (referenced.contains(var))",
+      "right" : "if (referenced.contains(var))",
+      "info" : "IfStatement[11100-11157]:IfStatement[11100-11157]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11130-11157]:Block[11130-11157]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11138-11151]:ReturnStatement[11138-11151]"
+    }, {
+      "left" : "if (codingConvention.isExported(var.getName()))",
+      "right" : "if (codingConvention.isExported(var.getName()))",
+      "info" : "IfStatement[11205-11280]:IfStatement[11205-11280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11253-11280]:Block[11253-11280]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11261-11274]:ReturnStatement[11261-11274]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[11286-11298]:ReturnStatement[11286-11298]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11675-11682]:Modifier[11675-11682]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[11683-11687]:PrimitiveType[11683-11687]"
+    }, {
+      "left" : "traverseFunction",
+      "right" : "traverseFunction",
+      "info" : "SimpleName[11688-11704]:SimpleName[11688-11704]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[11705-11711]:SingleVariableDeclaration[11705-11711]"
+    }, {
+      "left" : "Scope parentScope",
+      "right" : "Scope parentScope",
+      "info" : "SingleVariableDeclaration[11713-11730]:SingleVariableDeclaration[11713-11730]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11732-12172]:Block[11732-12172]"
+    }, {
+      "left" : "Preconditions.checkState(n.getChildCount() == 3);",
+      "right" : "Preconditions.checkState(n.getChildCount() == 3);",
+      "info" : "ExpressionStatement[11738-11787]:ExpressionStatement[11738-11787]"
+    }, {
+      "left" : "Preconditions.checkState(n.isFunction());",
+      "right" : "Preconditions.checkState(n.isFunction());",
+      "info" : "ExpressionStatement[11792-11833]:ExpressionStatement[11792-11833]"
+    }, {
+      "left" : "final Node body = n.getLastChild();",
+      "right" : "final Node body = n.getLastChild();",
+      "info" : "VariableDeclarationStatement[11839-11874]:VariableDeclarationStatement[11839-11874]"
+    }, {
+      "left" : "Preconditions.checkState(body.getNext() == null &&\n            body.isBlock());",
+      "right" : "Preconditions.checkState(body.getNext() == null &&\n            body.isBlock());",
+      "info" : "ExpressionStatement[11879-11958]:ExpressionStatement[11879-11958]"
+    }, {
+      "left" : "Scope fnScope =\n        new SyntacticScopeCreator(compiler).createScope(n, parentScope);",
+      "right" : "Scope fnScope =\n        new SyntacticScopeCreator(compiler).createScope(n, parentScope);",
+      "info" : "VariableDeclarationStatement[11964-12052]:VariableDeclarationStatement[11964-12052]"
+    }, {
+      "left" : "traverseNode(body, n, fnScope);",
+      "right" : "traverseNode(body, n, fnScope);",
+      "info" : "ExpressionStatement[12057-12088]:ExpressionStatement[12057-12088]"
+    }, {
+      "left" : "collectMaybeUnreferencedVars(fnScope);",
+      "right" : "collectMaybeUnreferencedVars(fnScope);",
+      "info" : "ExpressionStatement[12094-12132]:ExpressionStatement[12094-12132]"
+    }, {
+      "left" : "allFunctionScopes.add(fnScope);",
+      "right" : "allFunctionScopes.add(fnScope);",
+      "info" : "ExpressionStatement[12137-12168]:ExpressionStatement[12137-12168]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12321-12328]:Modifier[12321-12328]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12329-12333]:PrimitiveType[12329-12333]"
+    }, {
+      "left" : "collectMaybeUnreferencedVars",
+      "right" : "collectMaybeUnreferencedVars",
+      "info" : "SimpleName[12334-12362]:SimpleName[12334-12362]"
+    }, {
+      "left" : "Scope scope",
+      "right" : "Scope scope",
+      "info" : "SingleVariableDeclaration[12363-12374]:SingleVariableDeclaration[12363-12374]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12376-12554]:Block[12376-12554]"
+    }, {
+      "left" : "for (Iterator<Var> it = scope.getVars(); it.hasNext())",
+      "right" : "for (Iterator<Var> it = scope.getVars(); it.hasNext())",
+      "info" : "ForStatement[12382-12550]:ForStatement[12382-12550]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12439-12550]:Block[12439-12550]"
+    }, {
+      "left" : "Var var = it.next();",
+      "right" : "Var var = it.next();",
+      "info" : "VariableDeclarationStatement[12447-12467]:VariableDeclarationStatement[12447-12467]"
+    }, {
+      "left" : "if (isRemovableVar(var))",
+      "right" : "if (isRemovableVar(var))",
+      "info" : "IfStatement[12474-12544]:IfStatement[12474-12544]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12499-12544]:Block[12499-12544]"
+    }, {
+      "left" : "maybeUnreferenced.add(var);",
+      "right" : "maybeUnreferenced.add(var);",
+      "info" : "ExpressionStatement[12509-12536]:ExpressionStatement[12509-12536]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12738-12745]:Modifier[12738-12745]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12746-12750]:PrimitiveType[12746-12750]"
+    }, {
+      "left" : "removeUnreferencedFunctionArgs",
+      "right" : "removeUnreferencedFunctionArgs",
+      "info" : "SimpleName[12751-12781]:SimpleName[12751-12781]"
+    }, {
+      "left" : "Scope fnScope",
+      "right" : "Scope fnScope",
+      "info" : "SingleVariableDeclaration[12782-12795]:SingleVariableDeclaration[12782-12795]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12797-13750]:Block[12797-13750]"
+    }, {
+      "left" : "Node function = fnScope.getRootNode();",
+      "right" : "Node function = fnScope.getRootNode();",
+      "info" : "VariableDeclarationStatement[12880-12918]:VariableDeclarationStatement[12880-12918]"
+    }, {
+      "left" : "Preconditions.checkState(function.isFunction());",
+      "right" : "Preconditions.checkState(function.isFunction());",
+      "info" : "ExpressionStatement[12924-12972]:ExpressionStatement[12924-12972]"
+    }, {
+      "left" : "if (NodeUtil.isGetOrSetKey(function.getParent()))",
+      "right" : "if (NodeUtil.isGetOrSetKey(function.getParent()))",
+      "info" : "IfStatement[12977-13115]:IfStatement[12977-13115]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13027-13115]:Block[13027-13115]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[13102-13109]:ReturnStatement[13102-13109]"
+    }, {
+      "left" : "Node argList = getFunctionArgList(function);",
+      "right" : "Node argList = getFunctionArgList(function);",
+      "info" : "VariableDeclarationStatement[13121-13165]:VariableDeclarationStatement[13121-13165]"
+    }, {
+      "left" : "boolean modifyCallers = modifyCallSites\n        && callSiteOptimizer.canModifyCallers(function);",
+      "right" : "boolean modifyCallers = modifyCallSites\n        && callSiteOptimizer.canModifyCallers(function);",
+      "info" : "VariableDeclarationStatement[13170-13266]:VariableDeclarationStatement[13170-13266]"
+    }, {
+      "left" : "if (!modifyCallers)",
+      "right" : "if (!modifyCallers)",
+      "info" : "IfStatement[13271-13746]:IfStatement[13271-13746]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13291-13678]:Block[13291-13678]"
+    }, {
+      "left" : "Node lastArg;",
+      "right" : "Node lastArg;",
+      "info" : "VariableDeclarationStatement[13373-13386]:VariableDeclarationStatement[13373-13386]"
+    }, {
+      "left" : "while ((lastArg = argList.getLastChild()) != null)",
+      "right" : "while ((lastArg = argList.getLastChild()) != null)",
+      "info" : "WhileStatement[13393-13672]:WhileStatement[13393-13672]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13444-13672]:Block[13444-13672]"
+    }, {
+      "left" : "Var var = fnScope.getVar(lastArg.getString());",
+      "right" : "Var var = fnScope.getVar(lastArg.getString());",
+      "info" : "VariableDeclarationStatement[13454-13500]:VariableDeclarationStatement[13454-13500]"
+    }, {
+      "left" : "if (!referenced.contains(var))",
+      "right" : "if (!referenced.contains(var))",
+      "info" : "IfStatement[13509-13664]:IfStatement[13509-13664]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13540-13630]:Block[13540-13630]"
+    }, {
+      "left" : "argList.removeChild(lastArg);",
+      "right" : "argList.removeChild(lastArg);",
+      "info" : "ExpressionStatement[13552-13581]:ExpressionStatement[13552-13581]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[13592-13620]:ExpressionStatement[13592-13620]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13636-13664]:Block[13636-13664]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[13648-13654]:BreakStatement[13648-13654]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13684-13746]:Block[13684-13746]"
+    }, {
+      "left" : "callSiteOptimizer.optimize(fnScope, referenced);",
+      "right" : "callSiteOptimizer.optimize(fnScope, referenced);",
+      "info" : "ExpressionStatement[13692-13740]:ExpressionStatement[13692-13740]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13828-13835]:Modifier[13828-13835]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[13836-13842]:Modifier[13836-13842]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[13843-13847]:SimpleType[13843-13847]"
+    }, {
+      "left" : "getFunctionArgList",
+      "right" : "getFunctionArgList",
+      "info" : "SimpleName[13848-13866]:SimpleName[13848-13866]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[13867-13880]:SingleVariableDeclaration[13867-13880]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13882-13934]:Block[13882-13934]"
+    }, {
+      "left" : "return function.getFirstChild().getNext();",
+      "right" : "return function.getFirstChild().getNext();",
+      "info" : "ReturnStatement[13888-13930]:ReturnStatement[13888-13930]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13938-13945]:Modifier[13938-13945]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[13946-13952]:Modifier[13946-13952]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[13953-13958]:TYPE_DECLARATION_KIND[13953-13958]"
+    }, {
+      "left" : "CallSiteOptimizer",
+      "right" : "CallSiteOptimizer",
+      "info" : "SimpleName[13959-13976]:SimpleName[13959-13976]"
+    }, {
+      "left" : "CallSiteOptimizer",
+      "right" : "CallSiteOptimizer",
+      "info" : "SimpleName[14214-14231]:SimpleName[14214-14231]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[14241-14266]:SingleVariableDeclaration[14241-14266]"
+    }, {
+      "left" : "SimpleDefinitionFinder defFinder",
+      "right" : "SimpleDefinitionFinder defFinder",
+      "info" : "SingleVariableDeclaration[14276-14308]:SingleVariableDeclaration[14276-14308]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14310-14383]:Block[14310-14383]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[14318-14343]:ExpressionStatement[14318-14343]"
+    }, {
+      "left" : "this.defFinder = defFinder;",
+      "right" : "this.defFinder = defFinder;",
+      "info" : "ExpressionStatement[14350-14377]:ExpressionStatement[14350-14377]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14389-14395]:Modifier[14389-14395]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14396-14400]:PrimitiveType[14396-14400]"
+    }, {
+      "left" : "optimize",
+      "right" : "optimize",
+      "info" : "SimpleName[14401-14409]:SimpleName[14401-14409]"
+    }, {
+      "left" : "Scope fnScope",
+      "right" : "Scope fnScope",
+      "info" : "SingleVariableDeclaration[14410-14423]:SingleVariableDeclaration[14410-14423]"
+    }, {
+      "left" : "Set<Var> referenced",
+      "right" : "Set<Var> referenced",
+      "info" : "SingleVariableDeclaration[14425-14444]:SingleVariableDeclaration[14425-14444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14446-14913]:Block[14446-14913]"
+    }, {
+      "left" : "Node function = fnScope.getRootNode();",
+      "right" : "Node function = fnScope.getRootNode();",
+      "info" : "VariableDeclarationStatement[14454-14492]:VariableDeclarationStatement[14454-14492]"
+    }, {
+      "left" : "Preconditions.checkState(function.isFunction());",
+      "right" : "Preconditions.checkState(function.isFunction());",
+      "info" : "ExpressionStatement[14499-14547]:ExpressionStatement[14499-14547]"
+    }, {
+      "left" : "Node argList = getFunctionArgList(function);",
+      "right" : "Node argList = getFunctionArgList(function);",
+      "info" : "VariableDeclarationStatement[14554-14598]:VariableDeclarationStatement[14554-14598]"
+    }, {
+      "left" : "boolean changeCallSignature = canChangeSignature(function);",
+      "right" : "boolean changeCallSignature = canChangeSignature(function);",
+      "info" : "VariableDeclarationStatement[14711-14770]:VariableDeclarationStatement[14711-14770]"
+    }, {
+      "left" : "markUnreferencedFunctionArgs(\n          fnScope, function, referenced,\n          argList.getFirstChild(), 0, changeCallSignature);",
+      "right" : "markUnreferencedFunctionArgs(\n          fnScope, function, referenced,\n          argList.getFirstChild(), 0, changeCallSignature);",
+      "info" : "ExpressionStatement[14777-14907]:ExpressionStatement[14777-14907]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14996-15002]:Modifier[14996-15002]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15003-15007]:PrimitiveType[15003-15007]"
+    }, {
+      "left" : "applyChanges",
+      "right" : "applyChanges",
+      "info" : "SimpleName[15008-15020]:SimpleName[15008-15020]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15023-15294]:Block[15023-15294]"
+    }, {
+      "left" : "for (Node n : toRemove)",
+      "right" : "for (Node n : toRemove)",
+      "info" : "EnhancedForStatement[15031-15139]:EnhancedForStatement[15031-15139]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15055-15139]:Block[15055-15139]"
+    }, {
+      "left" : "n.getParent().removeChild(n);",
+      "right" : "n.getParent().removeChild(n);",
+      "info" : "ExpressionStatement[15065-15094]:ExpressionStatement[15065-15094]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[15103-15131]:ExpressionStatement[15103-15131]"
+    }, {
+      "left" : "for (Node n : toReplaceWithZero)",
+      "right" : "for (Node n : toReplaceWithZero)",
+      "info" : "EnhancedForStatement[15146-15288]:EnhancedForStatement[15146-15288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15179-15288]:Block[15179-15288]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, IR.number(0).srcref(n));",
+      "right" : "n.getParent().replaceChild(n, IR.number(0).srcref(n));",
+      "info" : "ExpressionStatement[15189-15243]:ExpressionStatement[15189-15243]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[15252-15280]:ExpressionStatement[15252-15280]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[15922-15929]:Modifier[15922-15929]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[15930-15937]:PrimitiveType[15930-15937]"
+    }, {
+      "left" : "markUnreferencedFunctionArgs",
+      "right" : "markUnreferencedFunctionArgs",
+      "info" : "SimpleName[15938-15966]:SimpleName[15938-15966]"
+    }, {
+      "left" : "Scope scope",
+      "right" : "Scope scope",
+      "info" : "SingleVariableDeclaration[15976-15987]:SingleVariableDeclaration[15976-15987]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[15989-16002]:SingleVariableDeclaration[15989-16002]"
+    }, {
+      "left" : "Set<Var> referenced",
+      "right" : "Set<Var> referenced",
+      "info" : "SingleVariableDeclaration[16004-16023]:SingleVariableDeclaration[16004-16023]"
+    }, {
+      "left" : "Node param",
+      "right" : "Node param",
+      "info" : "SingleVariableDeclaration[16033-16043]:SingleVariableDeclaration[16033-16043]"
+    }, {
+      "left" : "int paramIndex",
+      "right" : "int paramIndex",
+      "info" : "SingleVariableDeclaration[16045-16059]:SingleVariableDeclaration[16045-16059]"
+    }, {
+      "left" : "boolean canChangeSignature",
+      "right" : "boolean canChangeSignature",
+      "info" : "SingleVariableDeclaration[16069-16095]:SingleVariableDeclaration[16069-16095]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16097-17445]:Block[16097-17445]"
+    }, {
+      "left" : "if (param != null)",
+      "right" : "if (param != null)",
+      "info" : "IfStatement[16105-17439]:IfStatement[16105-17439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16124-17245]:Block[16124-17245]"
+    }, {
+      "left" : "boolean hasFollowing = markUnreferencedFunctionArgs(\n            scope, function, referenced, param.getNext(), paramIndex+1,\n            canChangeSignature);",
+      "right" : "boolean hasFollowing = markUnreferencedFunctionArgs(\n            scope, function, referenced, param.getNext(), paramIndex+1,\n            canChangeSignature);",
+      "info" : "VariableDeclarationStatement[16188-16345]:VariableDeclarationStatement[16188-16345]"
+    }, {
+      "left" : "Var var = scope.getVar(param.getString());",
+      "right" : "Var var = scope.getVar(param.getString());",
+      "info" : "VariableDeclarationStatement[16355-16397]:VariableDeclarationStatement[16355-16397]"
+    }, {
+      "left" : "if (!referenced.contains(var))",
+      "right" : "if (!referenced.contains(var))",
+      "info" : "IfStatement[16406-17216]:IfStatement[16406-17216]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16437-17216]:Block[16437-17216]"
+    }, {
+      "left" : "Preconditions.checkNotNull(var);",
+      "right" : "Preconditions.checkNotNull(var);",
+      "info" : "ExpressionStatement[16449-16481]:ExpressionStatement[16449-16481]"
+    }, {
+      "left" : "boolean modifyAllCallSites = canChangeSignature || !hasFollowing;",
+      "right" : "boolean modifyAllCallSites = canChangeSignature || !hasFollowing;",
+      "info" : "VariableDeclarationStatement[16636-16701]:VariableDeclarationStatement[16636-16701]"
+    }, {
+      "left" : "if (modifyAllCallSites)",
+      "right" : "if (modifyAllCallSites)",
+      "info" : "IfStatement[16712-16848]:IfStatement[16712-16848]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16736-16848]:Block[16736-16848]"
+    }, {
+      "left" : "modifyAllCallSites = canRemoveArgFromCallSites(\n                function, paramIndex);",
+      "right" : "modifyAllCallSites = canRemoveArgFromCallSites(\n                function, paramIndex);",
+      "info" : "ExpressionStatement[16750-16836]:ExpressionStatement[16750-16836]"
+    }, {
+      "left" : "tryRemoveArgFromCallSites(function, paramIndex, modifyAllCallSites);",
+      "right" : "tryRemoveArgFromCallSites(function, paramIndex, modifyAllCallSites);",
+      "info" : "ExpressionStatement[16860-16928]:ExpressionStatement[16860-16928]"
+    }, {
+      "left" : "if (modifyAllCallSites || !hasFollowing)",
+      "right" : "if (modifyAllCallSites || !hasFollowing)",
+      "info" : "IfStatement[17086-17206]:IfStatement[17086-17206]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17127-17206]:Block[17127-17206]"
+    }, {
+      "left" : "toRemove.add(param);",
+      "right" : "toRemove.add(param);",
+      "info" : "ExpressionStatement[17141-17161]:ExpressionStatement[17141-17161]"
+    }, {
+      "left" : "return hasFollowing;",
+      "right" : "return hasFollowing;",
+      "info" : "ReturnStatement[17174-17194]:ReturnStatement[17174-17194]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[17225-17237]:ReturnStatement[17225-17237]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17251-17439]:Block[17251-17439]"
+    }, {
+      "left" : "tryRemoveAllFollowingArgs(function, paramIndex-1);",
+      "right" : "tryRemoveAllFollowingArgs(function, paramIndex-1);",
+      "info" : "ExpressionStatement[17359-17409]:ExpressionStatement[17359-17409]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[17418-17431]:ReturnStatement[17418-17431]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17616-17623]:Modifier[17616-17623]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[17624-17631]:PrimitiveType[17624-17631]"
+    }, {
+      "left" : "canRemoveArgFromCallSites",
+      "right" : "canRemoveArgFromCallSites",
+      "info" : "SimpleName[17632-17657]:SimpleName[17632-17657]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[17658-17671]:SingleVariableDeclaration[17658-17671]"
+    }, {
+      "left" : "int argIndex",
+      "right" : "int argIndex",
+      "info" : "SingleVariableDeclaration[17673-17685]:SingleVariableDeclaration[17673-17685]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17687-18282]:Block[17687-18282]"
+    }, {
+      "left" : "Definition definition = getFunctionDefinition(function);",
+      "right" : "Definition definition = getFunctionDefinition(function);",
+      "info" : "VariableDeclarationStatement[17695-17751]:VariableDeclarationStatement[17695-17751]"
+    }, {
+      "left" : "for (UseSite site : defFinder.getUseSites(definition))",
+      "right" : "for (UseSite site : defFinder.getUseSites(definition))",
+      "info" : "EnhancedForStatement[17794-18256]:EnhancedForStatement[17794-18256]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17849-18256]:Block[17849-18256]"
+    }, {
+      "left" : "if (isModifiableCallSite(site))",
+      "right" : "if (isModifiableCallSite(site))",
+      "info" : "IfStatement[17859-18248]:IfStatement[17859-18248]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17891-18207]:Block[17891-18207]"
+    }, {
+      "left" : "Node arg = getArgumentForCallOrNewOrDotCall(site, argIndex);",
+      "right" : "Node arg = getArgumentForCallOrNewOrDotCall(site, argIndex);",
+      "info" : "VariableDeclarationStatement[17903-17963]:VariableDeclarationStatement[17903-17963]"
+    }, {
+      "left" : "if (arg != null && NodeUtil.mayHaveSideEffects(arg, compiler))",
+      "right" : "if (arg != null && NodeUtil.mayHaveSideEffects(arg, compiler))",
+      "info" : "IfStatement[18095-18197]:IfStatement[18095-18197]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18158-18197]:Block[18158-18197]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[18172-18185]:ReturnStatement[18172-18185]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18213-18248]:Block[18213-18248]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[18225-18238]:ReturnStatement[18225-18238]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[18264-18276]:ReturnStatement[18264-18276]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18419-18426]:Modifier[18419-18426]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18427-18431]:PrimitiveType[18427-18431]"
+    }, {
+      "left" : "tryRemoveArgFromCallSites",
+      "right" : "tryRemoveArgFromCallSites",
+      "info" : "SimpleName[18432-18457]:SimpleName[18432-18457]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[18467-18480]:SingleVariableDeclaration[18467-18480]"
+    }, {
+      "left" : "int argIndex",
+      "right" : "int argIndex",
+      "info" : "SingleVariableDeclaration[18482-18494]:SingleVariableDeclaration[18482-18494]"
+    }, {
+      "left" : "boolean canModifyAllSites",
+      "right" : "boolean canModifyAllSites",
+      "info" : "SingleVariableDeclaration[18496-18521]:SingleVariableDeclaration[18496-18521]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18523-19481]:Block[18523-19481]"
+    }, {
+      "left" : "Definition definition = getFunctionDefinition(function);",
+      "right" : "Definition definition = getFunctionDefinition(function);",
+      "info" : "VariableDeclarationStatement[18531-18587]:VariableDeclarationStatement[18531-18587]"
+    }, {
+      "left" : "for (UseSite site : defFinder.getUseSites(definition))",
+      "right" : "for (UseSite site : defFinder.getUseSites(definition))",
+      "info" : "EnhancedForStatement[18595-19475]:EnhancedForStatement[18595-19475]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18650-19475]:Block[18650-19475]"
+    }, {
+      "left" : "if (isModifiableCallSite(site))",
+      "right" : "if (isModifiableCallSite(site))",
+      "info" : "IfStatement[18660-19467]:IfStatement[18660-19467]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18692-19467]:Block[18692-19467]"
+    }, {
+      "left" : "Node arg = getArgumentForCallOrNewOrDotCall(site, argIndex);",
+      "right" : "Node arg = getArgumentForCallOrNewOrDotCall(site, argIndex);",
+      "info" : "VariableDeclarationStatement[18704-18764]:VariableDeclarationStatement[18704-18764]"
+    }, {
+      "left" : "if (arg != null)",
+      "right" : "if (arg != null)",
+      "info" : "IfStatement[18775-19457]:IfStatement[18775-19457]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18792-19457]:Block[18792-19457]"
+    }, {
+      "left" : "Node argParent = arg.getParent();",
+      "right" : "Node argParent = arg.getParent();",
+      "info" : "VariableDeclarationStatement[18806-18839]:VariableDeclarationStatement[18806-18839]"
+    }, {
+      "left" : "if (canModifyAllSites\n                || (arg.getNext() == null\n                    && !NodeUtil.mayHaveSideEffects(arg, compiler)))",
+      "right" : "if (canModifyAllSites\n                || (arg.getNext() == null\n                    && !NodeUtil.mayHaveSideEffects(arg, compiler)))",
+      "info" : "IfStatement[19003-19445]:IfStatement[19003-19445]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19136-19184]:Block[19136-19184]"
+    }, {
+      "left" : "toRemove.add(arg);",
+      "right" : "toRemove.add(arg);",
+      "info" : "ExpressionStatement[19152-19170]:ExpressionStatement[19152-19170]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19190-19445]:Block[19190-19445]"
+    }, {
+      "left" : "if (!NodeUtil.mayHaveSideEffects(arg, compiler)\n                  && (!arg.isNumber() || arg.getDouble() != 0))",
+      "right" : "if (!NodeUtil.mayHaveSideEffects(arg, compiler)\n                  && (!arg.isNumber() || arg.getDouble() != 0))",
+      "info" : "IfStatement[19258-19431]:IfStatement[19258-19431]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19370-19431]:Block[19370-19431]"
+    }, {
+      "left" : "toReplaceWithZero.add(arg);",
+      "right" : "toReplaceWithZero.add(arg);",
+      "info" : "ExpressionStatement[19388-19415]:ExpressionStatement[19388-19415]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[19567-19574]:Modifier[19567-19574]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[19575-19579]:PrimitiveType[19575-19579]"
+    }, {
+      "left" : "tryRemoveAllFollowingArgs",
+      "right" : "tryRemoveAllFollowingArgs",
+      "info" : "SimpleName[19580-19605]:SimpleName[19580-19605]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[19606-19619]:SingleVariableDeclaration[19606-19619]"
+    }, {
+      "left" : "final int argIndex",
+      "right" : "final int argIndex",
+      "info" : "SingleVariableDeclaration[19621-19639]:SingleVariableDeclaration[19621-19639]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19641-20093]:Block[19641-20093]"
+    }, {
+      "left" : "Definition definition = getFunctionDefinition(function);",
+      "right" : "Definition definition = getFunctionDefinition(function);",
+      "info" : "VariableDeclarationStatement[19649-19705]:VariableDeclarationStatement[19649-19705]"
+    }, {
+      "left" : "for (UseSite site : defFinder.getUseSites(definition))",
+      "right" : "for (UseSite site : defFinder.getUseSites(definition))",
+      "info" : "EnhancedForStatement[19712-20087]:EnhancedForStatement[19712-20087]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19767-20087]:Block[19767-20087]"
+    }, {
+      "left" : "if (!isModifiableCallSite(site))",
+      "right" : "if (!isModifiableCallSite(site))",
+      "info" : "IfStatement[19777-19841]:IfStatement[19777-19841]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19810-19841]:Block[19810-19841]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[19822-19831]:ContinueStatement[19822-19831]"
+    }, {
+      "left" : "Node arg = getArgumentForCallOrNewOrDotCall(site, argIndex + 1);",
+      "right" : "Node arg = getArgumentForCallOrNewOrDotCall(site, argIndex + 1);",
+      "info" : "VariableDeclarationStatement[19850-19914]:VariableDeclarationStatement[19850-19914]"
+    }, {
+      "left" : "while (arg != null)",
+      "right" : "while (arg != null)",
+      "info" : "WhileStatement[19923-20079]:WhileStatement[19923-20079]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19943-20079]:Block[19943-20079]"
+    }, {
+      "left" : "if (!NodeUtil.mayHaveSideEffects(arg))",
+      "right" : "if (!NodeUtil.mayHaveSideEffects(arg))",
+      "info" : "IfStatement[19955-20038]:IfStatement[19955-20038]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19994-20038]:Block[19994-20038]"
+    }, {
+      "left" : "toRemove.add(arg);",
+      "right" : "toRemove.add(arg);",
+      "info" : "ExpressionStatement[20008-20026]:ExpressionStatement[20008-20026]"
+    }, {
+      "left" : "arg = arg.getNext();",
+      "right" : "arg = arg.getNext();",
+      "info" : "ExpressionStatement[20049-20069]:ExpressionStatement[20049-20069]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[20232-20239]:Modifier[20232-20239]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[20240-20246]:Modifier[20240-20246]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[20247-20251]:SimpleType[20247-20251]"
+    }, {
+      "left" : "getArgumentForCallOrNewOrDotCall",
+      "right" : "getArgumentForCallOrNewOrDotCall",
+      "info" : "SimpleName[20252-20284]:SimpleName[20252-20284]"
+    }, {
+      "left" : "UseSite site",
+      "right" : "UseSite site",
+      "info" : "SingleVariableDeclaration[20285-20297]:SingleVariableDeclaration[20285-20297]"
+    }, {
+      "left" : "final int argIndex",
+      "right" : "final int argIndex",
+      "info" : "SingleVariableDeclaration[20307-20325]:SingleVariableDeclaration[20307-20325]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20327-20576]:Block[20327-20576]"
+    }, {
+      "left" : "int adjustedArgIndex = argIndex;",
+      "right" : "int adjustedArgIndex = argIndex;",
+      "info" : "VariableDeclarationStatement[20335-20367]:VariableDeclarationStatement[20335-20367]"
+    }, {
+      "left" : "Node parent = site.node.getParent();",
+      "right" : "Node parent = site.node.getParent();",
+      "info" : "VariableDeclarationStatement[20374-20410]:VariableDeclarationStatement[20374-20410]"
+    }, {
+      "left" : "if (NodeUtil.isFunctionObjectCall(parent))",
+      "right" : "if (NodeUtil.isFunctionObjectCall(parent))",
+      "info" : "IfStatement[20417-20497]:IfStatement[20417-20497]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20460-20497]:Block[20460-20497]"
+    }, {
+      "left" : "adjustedArgIndex++;",
+      "right" : "adjustedArgIndex++;",
+      "info" : "ExpressionStatement[20470-20489]:ExpressionStatement[20470-20489]"
+    }, {
+      "left" : "return NodeUtil.getArgumentForCallOrNew(parent, adjustedArgIndex);",
+      "right" : "return NodeUtil.getArgumentForCallOrNew(parent, adjustedArgIndex);",
+      "info" : "ReturnStatement[20504-20570]:ReturnStatement[20504-20570]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[20701-20708]:PrimitiveType[20701-20708]"
+    }, {
+      "left" : "canModifyCallers",
+      "right" : "canModifyCallers",
+      "info" : "SimpleName[20709-20725]:SimpleName[20709-20725]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[20726-20739]:SingleVariableDeclaration[20726-20739]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20741-21309]:Block[20741-21309]"
+    }, {
+      "left" : "if (NodeUtil.isVarArgsFunction(function))",
+      "right" : "if (NodeUtil.isVarArgsFunction(function))",
+      "info" : "IfStatement[20749-20822]:IfStatement[20749-20822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20791-20822]:Block[20791-20822]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[20801-20814]:ReturnStatement[20801-20814]"
+    }, {
+      "left" : "DefinitionSite defSite = defFinder.getDefinitionForFunction(function);",
+      "right" : "DefinitionSite defSite = defFinder.getDefinitionForFunction(function);",
+      "info" : "VariableDeclarationStatement[20830-20900]:VariableDeclarationStatement[20830-20900]"
+    }, {
+      "left" : "if (defSite == null)",
+      "right" : "if (defSite == null)",
+      "info" : "IfStatement[20907-20959]:IfStatement[20907-20959]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20928-20959]:Block[20928-20959]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[20938-20951]:ReturnStatement[20938-20951]"
+    }, {
+      "left" : "Definition definition = defSite.definition;",
+      "right" : "Definition definition = defSite.definition;",
+      "info" : "VariableDeclarationStatement[20967-21010]:VariableDeclarationStatement[20967-21010]"
+    }, {
+      "left" : "if (!SimpleDefinitionFinder.isSimpleFunctionDeclaration(function))",
+      "right" : "if (!SimpleDefinitionFinder.isSimpleFunctionDeclaration(function))",
+      "info" : "IfStatement[21148-21246]:IfStatement[21148-21246]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21215-21246]:Block[21215-21246]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[21225-21238]:ReturnStatement[21225-21238]"
+    }, {
+      "left" : "return defFinder.canModifyDefinition(definition);",
+      "right" : "return defFinder.canModifyDefinition(definition);",
+      "info" : "ReturnStatement[21254-21303]:ReturnStatement[21254-21303]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[21436-21443]:Modifier[21436-21443]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[21444-21450]:Modifier[21444-21450]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[21451-21458]:PrimitiveType[21451-21458]"
+    }, {
+      "left" : "isModifiableCallSite",
+      "right" : "isModifiableCallSite",
+      "info" : "SimpleName[21459-21479]:SimpleName[21459-21479]"
+    }, {
+      "left" : "UseSite site",
+      "right" : "UseSite site",
+      "info" : "SingleVariableDeclaration[21480-21492]:SingleVariableDeclaration[21480-21492]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21494-21628]:Block[21494-21628]"
+    }, {
+      "left" : "return SimpleDefinitionFinder.isCallOrNewSite(site)\n          && !NodeUtil.isFunctionObjectApply(site.node.getParent());",
+      "right" : "return SimpleDefinitionFinder.isCallOrNewSite(site)\n          && !NodeUtil.isFunctionObjectApply(site.node.getParent());",
+      "info" : "ReturnStatement[21502-21622]:ReturnStatement[21502-21622]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[21764-21771]:Modifier[21764-21771]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[21772-21779]:PrimitiveType[21772-21779]"
+    }, {
+      "left" : "canChangeSignature",
+      "right" : "canChangeSignature",
+      "info" : "SimpleName[21780-21798]:SimpleName[21780-21798]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[21799-21812]:SingleVariableDeclaration[21799-21812]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21814-23526]:Block[21814-23526]"
+    }, {
+      "left" : "Definition definition = getFunctionDefinition(function);",
+      "right" : "Definition definition = getFunctionDefinition(function);",
+      "info" : "VariableDeclarationStatement[21822-21878]:VariableDeclarationStatement[21822-21878]"
+    }, {
+      "left" : "CodingConvention convention = compiler.getCodingConvention();",
+      "right" : "CodingConvention convention = compiler.getCodingConvention();",
+      "info" : "VariableDeclarationStatement[21885-21946]:VariableDeclarationStatement[21885-21946]"
+    }, {
+      "left" : "Preconditions.checkState(!definition.isExtern());",
+      "right" : "Preconditions.checkState(!definition.isExtern());",
+      "info" : "ExpressionStatement[21954-22003]:ExpressionStatement[21954-22003]"
+    }, {
+      "left" : "Collection<UseSite> useSites = defFinder.getUseSites(definition);",
+      "right" : "Collection<UseSite> useSites = defFinder.getUseSites(definition);",
+      "info" : "VariableDeclarationStatement[22011-22076]:VariableDeclarationStatement[22011-22076]"
+    }, {
+      "left" : "for (UseSite site : useSites)",
+      "right" : "for (UseSite site : useSites)",
+      "info" : "EnhancedForStatement[22083-23500]:EnhancedForStatement[22083-23500]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22113-23500]:Block[22113-23500]"
+    }, {
+      "left" : "Node parent = site.node.getParent();",
+      "right" : "Node parent = site.node.getParent();",
+      "info" : "VariableDeclarationStatement[22123-22159]:VariableDeclarationStatement[22123-22159]"
+    }, {
+      "left" : "if (parent == null)",
+      "right" : "if (parent == null)",
+      "info" : "IfStatement[22404-22469]:IfStatement[22404-22469]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22424-22469]:Block[22424-22469]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[22436-22445]:ContinueStatement[22436-22445]"
+    }, {
+      "left" : "if (parent.isCall() &&\n            convention.getClassesDefinedByCall(parent) != null)",
+      "right" : "if (parent.isCall() &&\n            convention.getClassesDefinedByCall(parent) != null)",
+      "info" : "IfStatement[22536-22654]:IfStatement[22536-22654]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22623-22654]:Block[22623-22654]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[22635-22644]:ContinueStatement[22635-22644]"
+    }, {
+      "left" : "if (!SimpleDefinitionFinder.isCallOrNewSite(site))",
+      "right" : "if (!SimpleDefinitionFinder.isCallOrNewSite(site))",
+      "info" : "IfStatement[22725-22931]:IfStatement[22725-22931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22776-22931]:Block[22776-22931]"
+    }, {
+      "left" : "if (!(parent.isGetProp() &&\n              NodeUtil.isFunctionObjectCall(parent.getParent())))",
+      "right" : "if (!(parent.isGetProp() &&\n              NodeUtil.isFunctionObjectCall(parent.getParent())))",
+      "info" : "IfStatement[22788-22921]:IfStatement[22788-22921]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22882-22921]:Block[22882-22921]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[22896-22909]:ReturnStatement[22896-22909]"
+    }, {
+      "left" : "if (NodeUtil.isFunctionObjectApply(parent))",
+      "right" : "if (NodeUtil.isFunctionObjectApply(parent))",
+      "info" : "IfStatement[22941-23020]:IfStatement[22941-23020]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22985-23020]:Block[22985-23020]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[22997-23010]:ReturnStatement[22997-23010]"
+    }, {
+      "left" : "Node nameNode = site.node;",
+      "right" : "Node nameNode = site.node;",
+      "info" : "VariableDeclarationStatement[23204-23230]:VariableDeclarationStatement[23204-23230]"
+    }, {
+      "left" : "Collection<Definition> singleSiteDefinitions =\n            defFinder.getDefinitionsReferencedAt(nameNode);",
+      "right" : "Collection<Definition> singleSiteDefinitions =\n            defFinder.getDefinitionsReferencedAt(nameNode);",
+      "info" : "VariableDeclarationStatement[23239-23345]:VariableDeclarationStatement[23239-23345]"
+    }, {
+      "left" : "Preconditions.checkState(singleSiteDefinitions.size() == 1);",
+      "right" : "Preconditions.checkState(singleSiteDefinitions.size() == 1);",
+      "info" : "ExpressionStatement[23354-23414]:ExpressionStatement[23354-23414]"
+    }, {
+      "left" : "Preconditions.checkState(singleSiteDefinitions.contains(definition));",
+      "right" : "Preconditions.checkState(singleSiteDefinitions.contains(definition));",
+      "info" : "ExpressionStatement[23423-23492]:ExpressionStatement[23423-23492]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[23508-23520]:ReturnStatement[23508-23520]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[23626-23633]:Modifier[23626-23633]"
+    }, {
+      "left" : "Definition",
+      "right" : "Definition",
+      "info" : "SimpleType[23634-23644]:SimpleType[23634-23644]"
+    }, {
+      "left" : "getFunctionDefinition",
+      "right" : "getFunctionDefinition",
+      "info" : "SimpleName[23645-23666]:SimpleName[23645-23666]"
+    }, {
+      "left" : "Node function",
+      "right" : "Node function",
+      "info" : "SingleVariableDeclaration[23667-23680]:SingleVariableDeclaration[23667-23680]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23682-24043]:Block[23682-24043]"
+    }, {
+      "left" : "DefinitionSite definitionSite = defFinder.getDefinitionForFunction(\n          function);",
+      "right" : "DefinitionSite definitionSite = defFinder.getDefinitionForFunction(\n          function);",
+      "info" : "VariableDeclarationStatement[23690-23778]:VariableDeclarationStatement[23690-23778]"
+    }, {
+      "left" : "Preconditions.checkNotNull(definitionSite);",
+      "right" : "Preconditions.checkNotNull(definitionSite);",
+      "info" : "ExpressionStatement[23785-23828]:ExpressionStatement[23785-23828]"
+    }, {
+      "left" : "Definition definition = definitionSite.definition;",
+      "right" : "Definition definition = definitionSite.definition;",
+      "info" : "VariableDeclarationStatement[23835-23885]:VariableDeclarationStatement[23835-23885]"
+    }, {
+      "left" : "Preconditions.checkState(!definitionSite.inExterns);",
+      "right" : "Preconditions.checkState(!definitionSite.inExterns);",
+      "info" : "ExpressionStatement[23892-23944]:ExpressionStatement[23892-23944]"
+    }, {
+      "left" : "Preconditions.checkState(definition.getRValue() == function);",
+      "right" : "Preconditions.checkState(definition.getRValue() == function);",
+      "info" : "ExpressionStatement[23951-24012]:ExpressionStatement[23951-24012]"
+    }, {
+      "left" : "return definition;",
+      "right" : "return definition;",
+      "info" : "ReturnStatement[24019-24037]:ReturnStatement[24019-24037]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[24712-24719]:Modifier[24712-24719]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[24720-24724]:PrimitiveType[24720-24724]"
+    }, {
+      "left" : "interpretAssigns",
+      "right" : "interpretAssigns",
+      "info" : "SimpleName[24725-24741]:SimpleName[24725-24741]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24744-26343]:Block[24744-26489]"
+    }, {
+      "left" : "boolean changes = false;",
+      "right" : "boolean changes = false;",
+      "info" : "VariableDeclarationStatement[24750-24774]:VariableDeclarationStatement[24750-24774]"
+    }, {
+      "left" : "do{...}",
+      "right" : "do{...}",
+      "info" : "DoStatement[24779-26339]:DoStatement[24779-26485]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24782-26322]:Block[24782-26468]"
+    }, {
+      "left" : "changes = false;",
+      "right" : "changes = false;",
+      "info" : "ExpressionStatement[24790-24806]:ExpressionStatement[24790-24806]"
+    }, {
+      "left" : "for (int current = 0; current < maybeUnreferenced.size(); current++)",
+      "right" : "for (int current = 0; current < maybeUnreferenced.size(); current++)",
+      "info" : "ForStatement[24985-26316]:ForStatement[24985-26462]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25054-26316]:Block[25054-26462]"
+    }, {
+      "left" : "Var var = maybeUnreferenced.get(current);",
+      "right" : "Var var = maybeUnreferenced.get(current);",
+      "info" : "VariableDeclarationStatement[25064-25105]:VariableDeclarationStatement[25064-25105]"
+    }, {
+      "left" : "if (referenced.contains(var))",
+      "right" : "if (referenced.contains(var))",
+      "info" : "IfStatement[25114-26308]:IfStatement[25114-26454]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25144-25221]:Block[25144-25221]"
+    }, {
+      "left" : "maybeUnreferenced.remove(current);",
+      "right" : "maybeUnreferenced.remove(current);",
+      "info" : "ExpressionStatement[25156-25190]:ExpressionStatement[25156-25190]"
+    }, {
+      "left" : "current--;",
+      "right" : "current--;",
+      "info" : "ExpressionStatement[25201-25211]:ExpressionStatement[25201-25211]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25227-26308]:Block[25227-26454]"
+    }, {
+      "left" : "boolean assignedToUnknownValue = false;",
+      "right" : "boolean assignedToUnknownValue = false;",
+      "info" : "VariableDeclarationStatement[25239-25278]:VariableDeclarationStatement[25239-25278]"
+    }, {
+      "left" : "boolean hasPropertyAssign = false;",
+      "right" : "boolean hasPropertyAssign = false;",
+      "info" : "VariableDeclarationStatement[25289-25323]:VariableDeclarationStatement[25289-25323]"
+    }, {
+      "left" : "if (var.getParentNode().isVar() &&\n              !NodeUtil.isForIn(var.getParentNode().getParent()))",
+      "right" : "if (var.getParentNode().isVar() &&\n              !NodeUtil.isForIn(var.getParentNode().getParent()))",
+      "info" : "IfStatement[25335-25778]:IfStatement[25335-25778]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25436-25606]:Block[25436-25606]"
+    }, {
+      "left" : "Node value = var.getInitialValue();",
+      "right" : "Node value = var.getInitialValue();",
+      "info" : "VariableDeclarationStatement[25450-25485]:VariableDeclarationStatement[25450-25485]"
+    }, {
+      "left" : "assignedToUnknownValue = value != null &&\n                !NodeUtil.isLiteralValue(value, true);",
+      "right" : "assignedToUnknownValue = value != null &&\n                !NodeUtil.isLiteralValue(value, true);",
+      "info" : "ExpressionStatement[25498-25594]:ExpressionStatement[25498-25594]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25612-25778]:Block[25612-25778]"
+    }, {
+      "left" : "assignedToUnknownValue = true;",
+      "right" : "assignedToUnknownValue = true;",
+      "info" : "ExpressionStatement[25736-25766]:ExpressionStatement[25736-25766]"
+    }, {
+      "left" : "for (Assign assign : assignsByVar.get(var))",
+      "right" : "for (Assign assign : assignsByVar.get(var))",
+      "info" : "EnhancedForStatement[25790-26097]:EnhancedForStatement[25830-26225]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25834-26097]:Block[25874-26225]"
+    }, {
+      "left" : "if (assign.isPropertyAssign)",
+      "right" : "if (assign.isPropertyAssign)",
+      "info" : "IfStatement[25848-26085]:IfStatement[25888-26125]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25877-25932]:Block[25917-25972]"
+    }, {
+      "left" : "hasPropertyAssign = true;",
+      "right" : "hasPropertyAssign = true;",
+      "info" : "ExpressionStatement[25893-25918]:ExpressionStatement[25933-25958]"
+    }, {
+      "left" : "if (!NodeUtil.isLiteralValue(\n                assign.assignNode.getLastChild(), true))",
+      "right" : "if (!NodeUtil.isLiteralValue(\n                assign.assignNode.getLastChild(), true))",
+      "info" : "IfStatement[25938-26085]:IfStatement[25978-26125]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26025-26085]:Block[26065-26125]"
+    }, {
+      "left" : "assignedToUnknownValue = true;",
+      "right" : "assignedToUnknownValue = true;",
+      "info" : "ExpressionStatement[26041-26071]:ExpressionStatement[26081-26111]"
+    }, {
+      "left" : "if (assignedToUnknownValue && hasPropertyAssign)",
+      "right" : "if ((assignedToUnknownValue || maybeEscaped) && hasPropertyAssign)",
+      "info" : "IfStatement[26109-26298]:IfStatement[26237-26444]"
+    }, {
+      "left" : "assignedToUnknownValue",
+      "right" : "assignedToUnknownValue",
+      "info" : "SimpleName[26113-26135]:SimpleName[26242-26264]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26158-26298]:Block[26304-26444]"
+    }, {
+      "left" : "changes = markReferencedVar(var) || changes;",
+      "right" : "changes = markReferencedVar(var) || changes;",
+      "info" : "ExpressionStatement[26172-26216]:ExpressionStatement[26318-26362]"
+    }, {
+      "left" : "maybeUnreferenced.remove(current);",
+      "right" : "maybeUnreferenced.remove(current);",
+      "info" : "ExpressionStatement[26229-26263]:ExpressionStatement[26375-26409]"
+    }, {
+      "left" : "current--;",
+      "right" : "current--;",
+      "info" : "ExpressionStatement[26276-26286]:ExpressionStatement[26422-26432]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[26393-26400]:Modifier[26539-26546]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[26401-26405]:PrimitiveType[26547-26551]"
+    }, {
+      "left" : "removeAllAssigns",
+      "right" : "removeAllAssigns",
+      "info" : "SimpleName[26406-26422]:SimpleName[26552-26568]"
+    }, {
+      "left" : "Var var",
+      "right" : "Var var",
+      "info" : "SingleVariableDeclaration[26423-26430]:SingleVariableDeclaration[26569-26576]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26432-26551]:Block[26578-26697]"
+    }, {
+      "left" : "for (Assign assign : assignsByVar.get(var))",
+      "right" : "for (Assign assign : assignsByVar.get(var))",
+      "info" : "EnhancedForStatement[26438-26547]:EnhancedForStatement[26584-26693]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26482-26547]:Block[26628-26693]"
+    }, {
+      "left" : "assign.remove();",
+      "right" : "assign.remove();",
+      "info" : "ExpressionStatement[26490-26506]:ExpressionStatement[26636-26652]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[26513-26541]:ExpressionStatement[26659-26687]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[26726-26733]:Modifier[26872-26879]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[26734-26741]:PrimitiveType[26880-26887]"
+    }, {
+      "left" : "markReferencedVar",
+      "right" : "markReferencedVar",
+      "info" : "SimpleName[26742-26759]:SimpleName[26888-26905]"
+    }, {
+      "left" : "Var var",
+      "right" : "Var var",
+      "info" : "SingleVariableDeclaration[26760-26767]:SingleVariableDeclaration[26906-26913]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26769-26929]:Block[26915-27075]"
+    }, {
+      "left" : "if (referenced.add(var))",
+      "right" : "if (referenced.add(var))",
+      "info" : "IfStatement[26775-26907]:IfStatement[26921-27053]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26800-26907]:Block[26946-27053]"
+    }, {
+      "left" : "for (Continuation c : continuations.get(var))",
+      "right" : "for (Continuation c : continuations.get(var))",
+      "info" : "EnhancedForStatement[26808-26882]:EnhancedForStatement[26954-27028]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26854-26882]:Block[27000-27028]"
+    }, {
+      "left" : "c.apply();",
+      "right" : "c.apply();",
+      "info" : "ExpressionStatement[26864-26874]:ExpressionStatement[27010-27020]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[26889-26901]:ReturnStatement[27035-27047]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[26912-26925]:ReturnStatement[27058-27071]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[27063-27070]:Modifier[27209-27216]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[27071-27075]:PrimitiveType[27217-27221]"
+    }, {
+      "left" : "removeUnreferencedVars",
+      "right" : "removeUnreferencedVars",
+      "info" : "SimpleName[27076-27098]:SimpleName[27222-27244]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27101-29724]:Block[27247-29870]"
+    }, {
+      "left" : "CodingConvention convention = codingConvention;",
+      "right" : "CodingConvention convention = codingConvention;",
+      "info" : "VariableDeclarationStatement[27107-27154]:VariableDeclarationStatement[27253-27300]"
+    }, {
+      "left" : "for (Iterator<Var> it = maybeUnreferenced.iterator(); it.hasNext())",
+      "right" : "for (Iterator<Var> it = maybeUnreferenced.iterator(); it.hasNext())",
+      "info" : "ForStatement[27160-29720]:ForStatement[27306-29866]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27230-29720]:Block[27376-29866]"
+    }, {
+      "left" : "Var var = it.next();",
+      "right" : "Var var = it.next();",
+      "info" : "VariableDeclarationStatement[27238-27258]:VariableDeclarationStatement[27384-27404]"
+    }, {
+      "left" : "for (Node exprCallNode : inheritsCalls.get(var))",
+      "right" : "for (Node exprCallNode : inheritsCalls.get(var))",
+      "info" : "EnhancedForStatement[27377-27542]:EnhancedForStatement[27523-27688]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27426-27542]:Block[27572-27688]"
+    }, {
+      "left" : "NodeUtil.removeChild(exprCallNode.getParent(), exprCallNode);",
+      "right" : "NodeUtil.removeChild(exprCallNode.getParent(), exprCallNode);",
+      "info" : "ExpressionStatement[27436-27497]:ExpressionStatement[27582-27643]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[27506-27534]:ExpressionStatement[27652-27680]"
+    }, {
+      "left" : "removeAllAssigns(var);",
+      "right" : "removeAllAssigns(var);",
+      "info" : "ExpressionStatement[27733-27755]:ExpressionStatement[27879-27901]"
+    }, {
+      "left" : "compiler.addToDebugLog(\"Unreferenced var: \" + var.name);",
+      "right" : "compiler.addToDebugLog(\"Unreferenced var: \" + var.name);",
+      "info" : "ExpressionStatement[27763-27819]:ExpressionStatement[27909-27965]"
+    }, {
+      "left" : "Node nameNode = var.nameNode;",
+      "right" : "Node nameNode = var.nameNode;",
+      "info" : "VariableDeclarationStatement[27826-27855]:VariableDeclarationStatement[27972-28001]"
+    }, {
+      "left" : "Node toRemove = nameNode.getParent();",
+      "right" : "Node toRemove = nameNode.getParent();",
+      "info" : "VariableDeclarationStatement[27862-27899]:VariableDeclarationStatement[28008-28045]"
+    }, {
+      "left" : "Node parent = toRemove.getParent();",
+      "right" : "Node parent = toRemove.getParent();",
+      "info" : "VariableDeclarationStatement[27906-27941]:VariableDeclarationStatement[28052-28087]"
+    }, {
+      "left" : "Preconditions.checkState(\n          toRemove.isVar() ||\n          toRemove.isFunction() ||\n          toRemove.isParamList() &&\n          parent.isFunction(),\n          \"We should only declare vars and functions and function args\");",
+      "right" : "Preconditions.checkState(\n          toRemove.isVar() ||\n          toRemove.isFunction() ||\n          toRemove.isParamList() &&\n          parent.isFunction(),\n          \"We should only declare vars and functions and function args\");",
+      "info" : "ExpressionStatement[27949-28180]:ExpressionStatement[28095-28326]"
+    }, {
+      "left" : "if (toRemove.isParamList() &&\n          parent.isFunction())",
+      "right" : "if (toRemove.isParamList() &&\n          parent.isFunction())",
+      "info" : "IfStatement[28188-29714]:IfStatement[28334-29860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28249-28396]:Block[28395-28542]"
+    }, {
+      "left" : "if (NodeUtil.isFunctionExpression(toRemove))",
+      "right" : "if (NodeUtil.isFunctionExpression(toRemove))",
+      "info" : "IfStatement[28402-29714]:IfStatement[28548-29860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28447-28647]:Block[28593-28793]"
+    }, {
+      "left" : "if (!preserveFunctionExpressionNames)",
+      "right" : "if (!preserveFunctionExpressionNames)",
+      "info" : "IfStatement[28457-28595]:IfStatement[28603-28741]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28495-28595]:Block[28641-28741]"
+    }, {
+      "left" : "toRemove.getFirstChild().setString(\"\");",
+      "right" : "toRemove.getFirstChild().setString(\"\");",
+      "info" : "ExpressionStatement[28507-28546]:ExpressionStatement[28653-28692]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[28557-28585]:ExpressionStatement[28703-28731]"
+    }, {
+      "left" : "if (parent != null &&\n          parent.isFor() &&\n          parent.getChildCount() < 4)",
+      "right" : "if (parent != null &&\n          parent.isFor() &&\n          parent.getChildCount() < 4)",
+      "info" : "IfStatement[28653-29714]:IfStatement[28799-29860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28741-28815]:Block[28887-28961]"
+    }, {
+      "left" : "if (toRemove.isVar() &&\n          nameNode.hasChildren() &&\n          NodeUtil.mayHaveSideEffects(nameNode.getFirstChild()))",
+      "right" : "if (toRemove.isVar() &&\n          nameNode.hasChildren() &&\n          NodeUtil.mayHaveSideEffects(nameNode.getFirstChild()))",
+      "info" : "IfStatement[28821-29714]:IfStatement[28967-29860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28946-29321]:Block[29092-29467]"
+    }, {
+      "left" : "if (toRemove.getChildCount() == 1)",
+      "right" : "if (toRemove.getChildCount() == 1)",
+      "info" : "IfStatement[29129-29313]:IfStatement[29275-29459]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29164-29313]:Block[29310-29459]"
+    }, {
+      "left" : "parent.replaceChild(toRemove,\n              IR.exprResult(nameNode.removeFirstChild()));",
+      "right" : "parent.replaceChild(toRemove,\n              IR.exprResult(nameNode.removeFirstChild()));",
+      "info" : "ExpressionStatement[29176-29264]:ExpressionStatement[29322-29410]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[29275-29303]:ExpressionStatement[29421-29449]"
+    }, {
+      "left" : "if (toRemove.isVar() &&\n          toRemove.getChildCount() > 1)",
+      "right" : "if (toRemove.isVar() &&\n          toRemove.getChildCount() > 1)",
+      "info" : "IfStatement[29327-29714]:IfStatement[29473-29860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29391-29594]:Block[29537-29740]"
+    }, {
+      "left" : "toRemove.removeChild(nameNode);",
+      "right" : "toRemove.removeChild(nameNode);",
+      "info" : "ExpressionStatement[29518-29549]:ExpressionStatement[29664-29695]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[29558-29586]:ExpressionStatement[29704-29732]"
+    }, {
+      "left" : "if (parent != null)",
+      "right" : "if (parent != null)",
+      "info" : "IfStatement[29600-29714]:IfStatement[29746-29860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29620-29714]:Block[29766-29860]"
+    }, {
+      "left" : "NodeUtil.removeChild(parent, toRemove);",
+      "right" : "NodeUtil.removeChild(parent, toRemove);",
+      "info" : "ExpressionStatement[29630-29669]:ExpressionStatement[29776-29815]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[29678-29706]:ExpressionStatement[29824-29852]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[29934-29941]:Modifier[30080-30087]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[29942-29947]:TYPE_DECLARATION_KIND[30088-30093]"
+    }, {
+      "left" : "Continuation",
+      "right" : "Continuation",
+      "info" : "SimpleName[29948-29960]:SimpleName[30094-30106]"
+    }, {
+      "left" : "Continuation",
+      "right" : "Continuation",
+      "info" : "SimpleName[30028-30040]:SimpleName[30174-30186]"
+    }, {
+      "left" : "Node node",
+      "right" : "Node node",
+      "info" : "SingleVariableDeclaration[30041-30050]:SingleVariableDeclaration[30187-30196]"
+    }, {
+      "left" : "Scope scope",
+      "right" : "Scope scope",
+      "info" : "SingleVariableDeclaration[30052-30063]:SingleVariableDeclaration[30198-30209]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30065-30122]:Block[30211-30268]"
+    }, {
+      "left" : "this.node = node;",
+      "right" : "this.node = node;",
+      "info" : "ExpressionStatement[30073-30090]:ExpressionStatement[30219-30236]"
+    }, {
+      "left" : "this.scope = scope;",
+      "right" : "this.scope = scope;",
+      "info" : "ExpressionStatement[30097-30116]:ExpressionStatement[30243-30262]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[30128-30132]:PrimitiveType[30274-30278]"
+    }, {
+      "left" : "apply",
+      "right" : "apply",
+      "info" : "SimpleName[30133-30138]:SimpleName[30279-30284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30141-30417]:Block[30287-30563]"
+    }, {
+      "left" : "if (NodeUtil.isFunctionDeclaration(node))",
+      "right" : "if (NodeUtil.isFunctionDeclaration(node))",
+      "info" : "IfStatement[30149-30411]:IfStatement[30295-30557]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30191-30239]:Block[30337-30385]"
+    }, {
+      "left" : "traverseFunction(node, scope);",
+      "right" : "traverseFunction(node, scope);",
+      "info" : "ExpressionStatement[30201-30231]:ExpressionStatement[30347-30377]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30245-30411]:Block[30391-30557]"
+    }, {
+      "left" : "for (Node child = node.getFirstChild();\n             child != null; child = child.getNext())",
+      "right" : "for (Node child = node.getFirstChild();\n             child != null; child = child.getNext())",
+      "info" : "ForStatement[30255-30403]:ForStatement[30401-30549]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30348-30403]:Block[30494-30549]"
+    }, {
+      "left" : "traverseNode(child, node, scope);",
+      "right" : "traverseNode(child, node, scope);",
+      "info" : "ExpressionStatement[30360-30393]:ExpressionStatement[30506-30539]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[30425-30432]:Modifier[30571-30578]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[30433-30439]:Modifier[30579-30585]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[30440-30445]:TYPE_DECLARATION_KIND[30586-30591]"
+    }, {
+      "left" : "Assign",
+      "right" : "Assign",
+      "info" : "SimpleName[30446-30452]:SimpleName[30592-30598]"
+    }, {
+      "left" : "Assign",
+      "right" : "Assign",
+      "info" : "SimpleName[31282-31288]:SimpleName[31428-31434]"
+    }, {
+      "left" : "Node assignNode",
+      "right" : "Node assignNode",
+      "info" : "SingleVariableDeclaration[31289-31304]:SingleVariableDeclaration[31435-31450]"
+    }, {
+      "left" : "Node nameNode",
+      "right" : "Node nameNode",
+      "info" : "SingleVariableDeclaration[31306-31319]:SingleVariableDeclaration[31452-31465]"
+    }, {
+      "left" : "boolean isPropertyAssign",
+      "right" : "boolean isPropertyAssign",
+      "info" : "SingleVariableDeclaration[31321-31345]:SingleVariableDeclaration[31467-31491]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31347-31808]:Block[31493-31959]"
+    }, {
+      "left" : "Preconditions.checkState(NodeUtil.isAssignmentOp(assignNode));",
+      "right" : "Preconditions.checkState(NodeUtil.isAssignmentOp(assignNode));",
+      "info" : "ExpressionStatement[31355-31417]:ExpressionStatement[31501-31563]"
+    }, {
+      "left" : "this.assignNode = assignNode;",
+      "right" : "this.assignNode = assignNode;",
+      "info" : "ExpressionStatement[31424-31453]:ExpressionStatement[31570-31599]"
+    }, {
+      "left" : "this.nameNode = nameNode;",
+      "right" : "this.nameNode = nameNode;",
+      "info" : "ExpressionStatement[31460-31485]:ExpressionStatement[31606-31631]"
+    }, {
+      "left" : "this.isPropertyAssign = isPropertyAssign;",
+      "right" : "this.isPropertyAssign = isPropertyAssign;",
+      "info" : "ExpressionStatement[31492-31533]:ExpressionStatement[31638-31679]"
+    }, {
+      "left" : "this.mayHaveSecondarySideEffects =\n          maybeAliased ||\n          NodeUtil.mayHaveSideEffects(assignNode.getFirstChild()) ||\n          NodeUtil.mayHaveSideEffects(assignNode.getLastChild());",
+      "right" : "this.mayHaveSecondarySideEffects =\n          maybeAliased ||\n          NodeUtil.mayHaveSideEffects(assignNode.getFirstChild()) ||\n          NodeUtil.mayHaveSideEffects(assignNode.getLastChild());",
+      "info" : "ExpressionStatement[31607-31802]:ExpressionStatement[31758-31953]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[31931-31937]:Modifier[32082-32088]"
+    }, {
+      "left" : "Assign",
+      "right" : "Assign",
+      "info" : "SimpleType[31938-31944]:SimpleType[32089-32095]"
+    }, {
+      "left" : "maybeCreateAssign",
+      "right" : "maybeCreateAssign",
+      "info" : "SimpleName[31945-31962]:SimpleName[32096-32113]"
+    }, {
+      "left" : "Node assignNode",
+      "right" : "Node assignNode",
+      "info" : "SingleVariableDeclaration[31963-31978]:SingleVariableDeclaration[32114-32129]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31980-32916]:Block[32131-33067]"
+    }, {
+      "left" : "Preconditions.checkState(NodeUtil.isAssignmentOp(assignNode));",
+      "right" : "Preconditions.checkState(NodeUtil.isAssignmentOp(assignNode));",
+      "info" : "ExpressionStatement[31988-32050]:ExpressionStatement[32139-32201]"
+    }, {
+      "left" : "boolean isPropAssign = false;",
+      "right" : "boolean isPropAssign = false;",
+      "info" : "VariableDeclarationStatement[32334-32363]:VariableDeclarationStatement[32485-32514]"
+    }, {
+      "left" : "Node current = assignNode.getFirstChild();",
+      "right" : "Node current = assignNode.getFirstChild();",
+      "info" : "VariableDeclarationStatement[32370-32412]:VariableDeclarationStatement[32521-32563]"
+    }, {
+      "left" : "if (NodeUtil.isGet(current))",
+      "right" : "if (NodeUtil.isGet(current))",
+      "info" : "IfStatement[32419-32790]:IfStatement[32570-32941]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32448-32790]:Block[32599-32941]"
+    }, {
+      "left" : "current = current.getFirstChild();",
+      "right" : "current = current.getFirstChild();",
+      "info" : "ExpressionStatement[32458-32492]:ExpressionStatement[32609-32643]"
+    }, {
+      "left" : "isPropAssign = true;",
+      "right" : "isPropAssign = true;",
+      "info" : "ExpressionStatement[32501-32521]:ExpressionStatement[32652-32672]"
+    }, {
+      "left" : "if (current.isGetProp() &&\n            current.getLastChild().getString().equals(\"prototype\"))",
+      "right" : "if (current.isGetProp() &&\n            current.getLastChild().getString().equals(\"prototype\"))",
+      "info" : "IfStatement[32531-32782]:IfStatement[32682-32933]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32626-32782]:Block[32777-32933]"
+    }, {
+      "left" : "current = current.getFirstChild();",
+      "right" : "current = current.getFirstChild();",
+      "info" : "ExpressionStatement[32738-32772]:ExpressionStatement[32889-32923]"
+    }, {
+      "left" : "if (current.isName())",
+      "right" : "if (current.isName())",
+      "info" : "IfStatement[32798-32891]:IfStatement[32949-33042]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32820-32891]:Block[32971-33042]"
+    }, {
+      "left" : "return new Assign(assignNode, current, isPropAssign);",
+      "right" : "return new Assign(assignNode, current, isPropAssign);",
+      "info" : "ReturnStatement[32830-32883]:ReturnStatement[32981-33034]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[32898-32910]:ReturnStatement[33049-33061]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[32998-33002]:PrimitiveType[33149-33153]"
+    }, {
+      "left" : "remove",
+      "right" : "remove",
+      "info" : "SimpleName[33003-33009]:SimpleName[33154-33160]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33012-33913]:Block[33163-34064]"
+    }, {
+      "left" : "Node parent = assignNode.getParent();",
+      "right" : "Node parent = assignNode.getParent();",
+      "info" : "VariableDeclarationStatement[33020-33057]:VariableDeclarationStatement[33171-33208]"
+    }, {
+      "left" : "if (mayHaveSecondarySideEffects)",
+      "right" : "if (mayHaveSecondarySideEffects)",
+      "info" : "IfStatement[33064-33907]:IfStatement[33215-34058]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33097-33645]:Block[33248-33796]"
+    }, {
+      "left" : "Node replacement = assignNode.getLastChild().detachFromParent();",
+      "right" : "Node replacement = assignNode.getLastChild().detachFromParent();",
+      "info" : "VariableDeclarationStatement[33107-33171]:VariableDeclarationStatement[33258-33322]"
+    }, {
+      "left" : "for (Node current = assignNode.getFirstChild();\n             !current.isName();\n             current = current.getFirstChild())",
+      "right" : "for (Node current = assignNode.getFirstChild();\n             !current.isName();\n             current = current.getFirstChild())",
+      "info" : "ForStatement[33231-33582]:ForStatement[33382-33733]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33359-33582]:Block[33510-33733]"
+    }, {
+      "left" : "if (current.isGetElem())",
+      "right" : "if (current.isGetElem())",
+      "info" : "IfStatement[33371-33572]:IfStatement[33522-33723]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33396-33572]:Block[33547-33723]"
+    }, {
+      "left" : "replacement = IR.comma(\n                current.getLastChild().detachFromParent(), replacement);",
+      "right" : "replacement = IR.comma(\n                current.getLastChild().detachFromParent(), replacement);",
+      "info" : "ExpressionStatement[33410-33506]:ExpressionStatement[33561-33657]"
+    }, {
+      "left" : "replacement.copyInformationFrom(current);",
+      "right" : "replacement.copyInformationFrom(current);",
+      "info" : "ExpressionStatement[33519-33560]:ExpressionStatement[33670-33711]"
+    }, {
+      "left" : "parent.replaceChild(assignNode, replacement);",
+      "right" : "parent.replaceChild(assignNode, replacement);",
+      "info" : "ExpressionStatement[33592-33637]:ExpressionStatement[33743-33788]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33651-33907]:Block[33802-34058]"
+    }, {
+      "left" : "Node gramps = parent.getParent();",
+      "right" : "Node gramps = parent.getParent();",
+      "info" : "VariableDeclarationStatement[33661-33694]:VariableDeclarationStatement[33812-33845]"
+    }, {
+      "left" : "if (parent.isExprResult())",
+      "right" : "if (parent.isExprResult())",
+      "info" : "IfStatement[33703-33899]:IfStatement[33854-34050]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33730-33779]:Block[33881-33930]"
+    }, {
+      "left" : "gramps.removeChild(parent);",
+      "right" : "gramps.removeChild(parent);",
+      "info" : "ExpressionStatement[33742-33769]:ExpressionStatement[33893-33920]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33785-33899]:Block[33936-34050]"
+    }, {
+      "left" : "parent.replaceChild(assignNode,\n              assignNode.getLastChild().detachFromParent());",
+      "right" : "parent.replaceChild(assignNode,\n              assignNode.getLastChild().detachFromParent());",
+      "info" : "ExpressionStatement[33797-33889]:ExpressionStatement[33948-34040]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

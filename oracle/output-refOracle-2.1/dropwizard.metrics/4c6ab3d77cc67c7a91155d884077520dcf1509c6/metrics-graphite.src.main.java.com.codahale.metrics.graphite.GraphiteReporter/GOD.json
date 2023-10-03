@@ -1,0 +1,681 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "GraphiteReporter",
+      "right" : "GraphiteReporter",
+      "info" : "TypeDeclaration[271-11520]:TypeDeclaration[271-11587]"
+    }, {
+      "left" : "public static Builder forRegistry(MetricRegistry registry)",
+      "right" : "public static Builder forRegistry(MetricRegistry registry)",
+      "info" : "MethodDeclaration[499-812]:MethodDeclaration[499-812]"
+    }, {
+      "left" : "Builder",
+      "right" : "Builder",
+      "info" : "TypeDeclaration[818-3839]:TypeDeclaration[818-3839]"
+    }, {
+      "left" : "private final MetricRegistry registry;",
+      "right" : "private final MetricRegistry registry;",
+      "info" : "FieldDeclaration[1100-1138]:FieldDeclaration[1100-1138]"
+    }, {
+      "left" : "private Clock clock;",
+      "right" : "private Clock clock;",
+      "info" : "FieldDeclaration[1147-1167]:FieldDeclaration[1147-1167]"
+    }, {
+      "left" : "private String prefix;",
+      "right" : "private String prefix;",
+      "info" : "FieldDeclaration[1176-1198]:FieldDeclaration[1176-1198]"
+    }, {
+      "left" : "private TimeUnit rateUnit;",
+      "right" : "private TimeUnit rateUnit;",
+      "info" : "FieldDeclaration[1207-1233]:FieldDeclaration[1207-1233]"
+    }, {
+      "left" : "private TimeUnit durationUnit;",
+      "right" : "private TimeUnit durationUnit;",
+      "info" : "FieldDeclaration[1242-1272]:FieldDeclaration[1242-1272]"
+    }, {
+      "left" : "private MetricFilter filter;",
+      "right" : "private MetricFilter filter;",
+      "info" : "FieldDeclaration[1281-1309]:FieldDeclaration[1281-1309]"
+    }, {
+      "left" : "private Builder(MetricRegistry registry)",
+      "right" : "private Builder(MetricRegistry registry)",
+      "info" : "MethodDeclaration[1319-1633]:MethodDeclaration[1319-1633]"
+    }, {
+      "left" : "public Builder withClock(Clock clock)",
+      "right" : "public Builder withClock(Clock clock)",
+      "info" : "MethodDeclaration[1643-1927]:MethodDeclaration[1643-1927]"
+    }, {
+      "left" : "public Builder prefixedWith(String prefix)",
+      "right" : "public Builder prefixedWith(String prefix)",
+      "info" : "MethodDeclaration[1937-2232]:MethodDeclaration[1937-2232]"
+    }, {
+      "left" : "public Builder convertRatesTo(TimeUnit rateUnit)",
+      "right" : "public Builder convertRatesTo(TimeUnit rateUnit)",
+      "info" : "MethodDeclaration[2242-2523]:MethodDeclaration[2242-2523]"
+    }, {
+      "left" : "public Builder convertDurationsTo(TimeUnit durationUnit)",
+      "right" : "public Builder convertDurationsTo(TimeUnit durationUnit)",
+      "info" : "MethodDeclaration[2533-2838]:MethodDeclaration[2533-2838]"
+    }, {
+      "left" : "public Builder filter(MetricFilter filter)",
+      "right" : "public Builder filter(MetricFilter filter)",
+      "info" : "MethodDeclaration[2848-3137]:MethodDeclaration[2848-3137]"
+    }, {
+      "left" : "public GraphiteReporter build(GraphiteSender graphite)",
+      "right" : "public GraphiteReporter build(GraphiteSender graphite)",
+      "info" : "MethodDeclaration[3147-3833]:MethodDeclaration[3147-3833]"
+    }, {
+      "left" : "private static final Logger LOGGER = LoggerFactory.getLogger(GraphiteReporter.class);",
+      "right" : "private static final Logger LOGGER = LoggerFactory.getLogger(GraphiteReporter.class);",
+      "info" : "FieldDeclaration[3845-3930]:FieldDeclaration[3845-3930]"
+    }, {
+      "left" : "private final GraphiteSender graphite;",
+      "right" : "private final GraphiteSender graphite;",
+      "info" : "FieldDeclaration[3936-3974]:FieldDeclaration[3936-3974]"
+    }, {
+      "left" : "private final Clock clock;",
+      "right" : "private final Clock clock;",
+      "info" : "FieldDeclaration[3979-4005]:FieldDeclaration[3979-4005]"
+    }, {
+      "left" : "private final String prefix;",
+      "right" : "private final String prefix;",
+      "info" : "FieldDeclaration[4010-4038]:FieldDeclaration[4010-4038]"
+    }, {
+      "left" : "private GraphiteReporter(MetricRegistry registry,\n                             GraphiteSender graphite,\n                             Clock clock,\n                             String prefix,\n                             TimeUnit rateUnit,\n                             TimeUnit durationUnit,\n                             MetricFilter filter)",
+      "right" : "private GraphiteReporter(MetricRegistry registry,\n                             GraphiteSender graphite,\n                             Clock clock,\n                             String prefix,\n                             TimeUnit rateUnit,\n                             TimeUnit durationUnit,\n                             MetricFilter filter)",
+      "info" : "MethodDeclaration[4044-4561]:MethodDeclaration[4044-4561]"
+    }, {
+      "left" : "public void report(SortedMap<String, Gauge> gauges,\n                       SortedMap<String, Counter> counters,\n                       SortedMap<String, Histogram> histograms,\n                       SortedMap<String, Meter> meters,\n                       SortedMap<String, Timer> timers)",
+      "right" : "public void report(SortedMap<String, Gauge> gauges,\n                       SortedMap<String, Counter> counters,\n                       SortedMap<String, Histogram> histograms,\n                       SortedMap<String, Meter> meters,\n                       SortedMap<String, Timer> timers)",
+      "info" : "MethodDeclaration[4567-6225]:MethodDeclaration[4567-6088]"
+    }, {
+      "left" : "public void stop()",
+      "right" : "public void stop()",
+      "info" : "MethodDeclaration[6231-6525]:MethodDeclaration[6298-6592]"
+    }, {
+      "left" : "private void reportTimer(String name, Timer timer, long timestamp) throws IOException",
+      "right" : "private void reportTimer(String name, Timer timer, long timestamp) throws IOException",
+      "info" : "MethodDeclaration[6531-8094]:MethodDeclaration[6598-8161]"
+    }, {
+      "left" : "private void reportMetered(String name, Metered meter, long timestamp) throws IOException",
+      "right" : "private void reportMetered(String name, Metered meter, long timestamp) throws IOException",
+      "info" : "MethodDeclaration[8100-8883]:MethodDeclaration[8167-8950]"
+    }, {
+      "left" : "private void reportHistogram(String name, Histogram histogram, long timestamp) throws IOException",
+      "right" : "private void reportHistogram(String name, Histogram histogram, long timestamp) throws IOException",
+      "info" : "MethodDeclaration[8889-10028]:MethodDeclaration[8956-10095]"
+    }, {
+      "left" : "private void reportCounter(String name, Counter counter, long timestamp) throws IOException",
+      "right" : "private void reportCounter(String name, Counter counter, long timestamp) throws IOException",
+      "info" : "MethodDeclaration[10034-10218]:MethodDeclaration[10101-10285]"
+    }, {
+      "left" : "private void reportGauge(String name, Gauge gauge, long timestamp) throws IOException",
+      "right" : "private void reportGauge(String name, Gauge gauge, long timestamp) throws IOException",
+      "info" : "MethodDeclaration[10224-10470]:MethodDeclaration[10291-10537]"
+    }, {
+      "left" : "private String format(Object o)",
+      "right" : "private String format(Object o)",
+      "info" : "MethodDeclaration[10476-11103]:MethodDeclaration[10543-11170]"
+    }, {
+      "left" : "private String prefix(String... components)",
+      "right" : "private String prefix(String... components)",
+      "info" : "MethodDeclaration[11109-11216]:MethodDeclaration[11176-11283]"
+    }, {
+      "left" : "private String format(long n)",
+      "right" : "private String format(long n)",
+      "info" : "MethodDeclaration[11222-11292]:MethodDeclaration[11289-11359]"
+    }, {
+      "left" : "private String format(double v)",
+      "right" : "private String format(double v)",
+      "info" : "MethodDeclaration[11298-11518]:MethodDeclaration[11365-11585]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[767-812]:Block[767-812]"
+    }, {
+      "left" : "return new Builder(registry);",
+      "right" : "return new Builder(registry);",
+      "info" : "ReturnStatement[777-806]:ReturnStatement[777-806]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1360-1633]:Block[1360-1633]"
+    }, {
+      "left" : "this.registry = registry;",
+      "right" : "this.registry = registry;",
+      "info" : "ExpressionStatement[1374-1399]:ExpressionStatement[1374-1399]"
+    }, {
+      "left" : "this.clock = Clock.defaultClock();",
+      "right" : "this.clock = Clock.defaultClock();",
+      "info" : "ExpressionStatement[1412-1446]:ExpressionStatement[1412-1446]"
+    }, {
+      "left" : "this.prefix = null;",
+      "right" : "this.prefix = null;",
+      "info" : "ExpressionStatement[1459-1478]:ExpressionStatement[1459-1478]"
+    }, {
+      "left" : "this.rateUnit = TimeUnit.SECONDS;",
+      "right" : "this.rateUnit = TimeUnit.SECONDS;",
+      "info" : "ExpressionStatement[1491-1524]:ExpressionStatement[1491-1524]"
+    }, {
+      "left" : "this.durationUnit = TimeUnit.MILLISECONDS;",
+      "right" : "this.durationUnit = TimeUnit.MILLISECONDS;",
+      "info" : "ExpressionStatement[1537-1579]:ExpressionStatement[1537-1579]"
+    }, {
+      "left" : "this.filter = MetricFilter.ALL;",
+      "right" : "this.filter = MetricFilter.ALL;",
+      "info" : "ExpressionStatement[1592-1623]:ExpressionStatement[1592-1623]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1859-1927]:Block[1859-1927]"
+    }, {
+      "left" : "this.clock = clock;",
+      "right" : "this.clock = clock;",
+      "info" : "ExpressionStatement[1873-1892]:ExpressionStatement[1873-1892]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[1905-1917]:ReturnStatement[1905-1917]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2162-2232]:Block[2162-2232]"
+    }, {
+      "left" : "this.prefix = prefix;",
+      "right" : "this.prefix = prefix;",
+      "info" : "ExpressionStatement[2176-2197]:ExpressionStatement[2176-2197]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[2210-2222]:ReturnStatement[2210-2222]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2449-2523]:Block[2449-2523]"
+    }, {
+      "left" : "this.rateUnit = rateUnit;",
+      "right" : "this.rateUnit = rateUnit;",
+      "info" : "ExpressionStatement[2463-2488]:ExpressionStatement[2463-2488]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[2501-2513]:ReturnStatement[2501-2513]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2756-2838]:Block[2756-2838]"
+    }, {
+      "left" : "this.durationUnit = durationUnit;",
+      "right" : "this.durationUnit = durationUnit;",
+      "info" : "ExpressionStatement[2770-2803]:ExpressionStatement[2770-2803]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[2816-2828]:ReturnStatement[2816-2828]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3067-3137]:Block[3067-3137]"
+    }, {
+      "left" : "this.filter = filter;",
+      "right" : "this.filter = filter;",
+      "info" : "ExpressionStatement[3081-3102]:ExpressionStatement[3081-3102]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[3115-3127]:ReturnStatement[3115-3127]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3474-3833]:Block[3474-3833]"
+    }, {
+      "left" : "return new GraphiteReporter(registry,\n                                        graphite,\n                                        clock,\n                                        prefix,\n                                        rateUnit,\n                                        durationUnit,\n                                        filter);",
+      "right" : "return new GraphiteReporter(registry,\n                                        graphite,\n                                        clock,\n                                        prefix,\n                                        rateUnit,\n                                        durationUnit,\n                                        filter);",
+      "info" : "ReturnStatement[3488-3823]:ReturnStatement[3488-3823]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4384-4561]:Block[4384-4561]"
+    }, {
+      "left" : "super(registry, \"graphite-reporter\", filter, rateUnit, durationUnit);",
+      "right" : "super(registry, \"graphite-reporter\", filter, rateUnit, durationUnit);",
+      "info" : "SuperConstructorInvocation[4394-4463]:SuperConstructorInvocation[4394-4463]"
+    }, {
+      "left" : "this.graphite = graphite;",
+      "right" : "this.graphite = graphite;",
+      "info" : "ExpressionStatement[4472-4497]:ExpressionStatement[4472-4497]"
+    }, {
+      "left" : "this.clock = clock;",
+      "right" : "this.clock = clock;",
+      "info" : "ExpressionStatement[4506-4525]:ExpressionStatement[4506-4525]"
+    }, {
+      "left" : "this.prefix = prefix;",
+      "right" : "this.prefix = prefix;",
+      "info" : "ExpressionStatement[4534-4555]:ExpressionStatement[4534-4555]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4869-6225]:Block[4869-6088]"
+    }, {
+      "left" : "final long timestamp = clock.getTime() / 1000;",
+      "right" : "final long timestamp = clock.getTime() / 1000;",
+      "info" : "VariableDeclarationStatement[4879-4925]:VariableDeclarationStatement[4879-4925]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[4983-6219]:TryStatement[4983-6082]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4987-5941]:Block[4987-5941]"
+    }, {
+      "left" : "if (!graphite.isConnected())",
+      "right" : "if (!graphite.isConnected())",
+      "info" : "IfStatement[5001-5080]:IfStatement[5001-5080]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5030-5080]:Block[5030-5080]"
+    }, {
+      "left" : "graphite.connect();",
+      "right" : "graphite.connect();",
+      "info" : "ExpressionStatement[5047-5066]:ExpressionStatement[5047-5066]"
+    }, {
+      "left" : "for (Map.Entry<String, Gauge> entry : gauges.entrySet())",
+      "right" : "for (Map.Entry<String, Gauge> entry : gauges.entrySet())",
+      "info" : "EnhancedForStatement[5094-5240]:EnhancedForStatement[5094-5240]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5151-5240]:Block[5151-5240]"
+    }, {
+      "left" : "reportGauge(entry.getKey(), entry.getValue(), timestamp);",
+      "right" : "reportGauge(entry.getKey(), entry.getValue(), timestamp);",
+      "info" : "ExpressionStatement[5169-5226]:ExpressionStatement[5169-5226]"
+    }, {
+      "left" : "for (Map.Entry<String, Counter> entry : counters.entrySet())",
+      "right" : "for (Map.Entry<String, Counter> entry : counters.entrySet())",
+      "info" : "EnhancedForStatement[5254-5406]:EnhancedForStatement[5254-5406]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5315-5406]:Block[5315-5406]"
+    }, {
+      "left" : "reportCounter(entry.getKey(), entry.getValue(), timestamp);",
+      "right" : "reportCounter(entry.getKey(), entry.getValue(), timestamp);",
+      "info" : "ExpressionStatement[5333-5392]:ExpressionStatement[5333-5392]"
+    }, {
+      "left" : "for (Map.Entry<String, Histogram> entry : histograms.entrySet())",
+      "right" : "for (Map.Entry<String, Histogram> entry : histograms.entrySet())",
+      "info" : "EnhancedForStatement[5420-5578]:EnhancedForStatement[5420-5578]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5485-5578]:Block[5485-5578]"
+    }, {
+      "left" : "reportHistogram(entry.getKey(), entry.getValue(), timestamp);",
+      "right" : "reportHistogram(entry.getKey(), entry.getValue(), timestamp);",
+      "info" : "ExpressionStatement[5503-5564]:ExpressionStatement[5503-5564]"
+    }, {
+      "left" : "for (Map.Entry<String, Meter> entry : meters.entrySet())",
+      "right" : "for (Map.Entry<String, Meter> entry : meters.entrySet())",
+      "info" : "EnhancedForStatement[5592-5740]:EnhancedForStatement[5592-5740]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5649-5740]:Block[5649-5740]"
+    }, {
+      "left" : "reportMetered(entry.getKey(), entry.getValue(), timestamp);",
+      "right" : "reportMetered(entry.getKey(), entry.getValue(), timestamp);",
+      "info" : "ExpressionStatement[5667-5726]:ExpressionStatement[5667-5726]"
+    }, {
+      "left" : "for (Map.Entry<String, Timer> entry : timers.entrySet())",
+      "right" : "for (Map.Entry<String, Timer> entry : timers.entrySet())",
+      "info" : "EnhancedForStatement[5754-5900]:EnhancedForStatement[5754-5900]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5811-5900]:Block[5811-5900]"
+    }, {
+      "left" : "reportTimer(entry.getKey(), entry.getValue(), timestamp);",
+      "right" : "reportTimer(entry.getKey(), entry.getValue(), timestamp);",
+      "info" : "ExpressionStatement[5829-5886]:ExpressionStatement[5829-5886]"
+    }, {
+      "left" : "graphite.flush();",
+      "right" : "graphite.flush();",
+      "info" : "ExpressionStatement[5914-5931]:ExpressionStatement[5914-5931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5964-6219]:Block[5962-6082]"
+    }, {
+      "left" : "LOGGER.warn(\"Unable to report to Graphite\", graphite, e);",
+      "right" : "LOGGER.warn(\"Unable to report to Graphite\", graphite, t);",
+      "info" : "ExpressionStatement[5978-6035]:ExpressionStatement[5976-6033]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6048-6209]:TryStatement[6143-6286]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6052-6101]:Block[6147-6188]"
+    }, {
+      "left" : "graphite.close();",
+      "right" : "graphite.close();",
+      "info" : "ExpressionStatement[6070-6087]:ExpressionStatement[6161-6178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6125-6209]:Block[6211-6286]"
+    }, {
+      "left" : "LOGGER.warn(\"Error closing Graphite\", graphite, e1);",
+      "right" : "LOGGER.warn(\"Error closing Graphite\", graphite, e);",
+      "info" : "ExpressionStatement[6143-6195]:ExpressionStatement[6225-6276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6264-6525]:Block[6331-6592]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6274-6519]:TryStatement[6341-6586]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6278-6315]:Block[6345-6382]"
+    }, {
+      "left" : "super.stop();",
+      "right" : "super.stop();",
+      "info" : "ExpressionStatement[6292-6305]:ExpressionStatement[6359-6372]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6324-6519]:Block[6391-6586]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6338-6509]:TryStatement[6405-6576]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6342-6391]:Block[6409-6458]"
+    }, {
+      "left" : "graphite.close();",
+      "right" : "graphite.close();",
+      "info" : "ExpressionStatement[6360-6377]:ExpressionStatement[6427-6444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6414-6509]:Block[6481-6576]"
+    }, {
+      "left" : "LOGGER.debug(\"Error disconnecting from Graphite\", graphite, e);",
+      "right" : "LOGGER.debug(\"Error disconnecting from Graphite\", graphite, e);",
+      "info" : "ExpressionStatement[6432-6495]:ExpressionStatement[6499-6562]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6617-8094]:Block[6684-8161]"
+    }, {
+      "left" : "final Snapshot snapshot = timer.getSnapshot();",
+      "right" : "final Snapshot snapshot = timer.getSnapshot();",
+      "info" : "VariableDeclarationStatement[6627-6673]:VariableDeclarationStatement[6694-6740]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"max\"), format(convertDuration(snapshot.getMax())), timestamp);",
+      "right" : "graphite.send(prefix(name, \"max\"), format(convertDuration(snapshot.getMax())), timestamp);",
+      "info" : "ExpressionStatement[6683-6773]:ExpressionStatement[6750-6840]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"mean\"), format(convertDuration(snapshot.getMean())), timestamp);",
+      "right" : "graphite.send(prefix(name, \"mean\"), format(convertDuration(snapshot.getMean())), timestamp);",
+      "info" : "ExpressionStatement[6782-6874]:ExpressionStatement[6849-6941]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"min\"), format(convertDuration(snapshot.getMin())), timestamp);",
+      "right" : "graphite.send(prefix(name, \"min\"), format(convertDuration(snapshot.getMin())), timestamp);",
+      "info" : "ExpressionStatement[6883-6973]:ExpressionStatement[6950-7040]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"stddev\"),\n                      format(convertDuration(snapshot.getStdDev())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"stddev\"),\n                      format(convertDuration(snapshot.getStdDev())),\n                      timestamp);",
+      "info" : "ExpressionStatement[6982-7122]:ExpressionStatement[7049-7189]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p50\"),\n                      format(convertDuration(snapshot.getMedian())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"p50\"),\n                      format(convertDuration(snapshot.getMedian())),\n                      timestamp);",
+      "info" : "ExpressionStatement[7131-7268]:ExpressionStatement[7198-7335]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p75\"),\n                      format(convertDuration(snapshot.get75thPercentile())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"p75\"),\n                      format(convertDuration(snapshot.get75thPercentile())),\n                      timestamp);",
+      "info" : "ExpressionStatement[7277-7422]:ExpressionStatement[7344-7489]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p95\"),\n                      format(convertDuration(snapshot.get95thPercentile())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"p95\"),\n                      format(convertDuration(snapshot.get95thPercentile())),\n                      timestamp);",
+      "info" : "ExpressionStatement[7431-7576]:ExpressionStatement[7498-7643]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p98\"),\n                      format(convertDuration(snapshot.get98thPercentile())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"p98\"),\n                      format(convertDuration(snapshot.get98thPercentile())),\n                      timestamp);",
+      "info" : "ExpressionStatement[7585-7730]:ExpressionStatement[7652-7797]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p99\"),\n                      format(convertDuration(snapshot.get99thPercentile())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"p99\"),\n                      format(convertDuration(snapshot.get99thPercentile())),\n                      timestamp);",
+      "info" : "ExpressionStatement[7739-7884]:ExpressionStatement[7806-7951]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p999\"),\n                      format(convertDuration(snapshot.get999thPercentile())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"p999\"),\n                      format(convertDuration(snapshot.get999thPercentile())),\n                      timestamp);",
+      "info" : "ExpressionStatement[7893-8040]:ExpressionStatement[7960-8107]"
+    }, {
+      "left" : "reportMetered(name, timer, timestamp);",
+      "right" : "reportMetered(name, timer, timestamp);",
+      "info" : "ExpressionStatement[8050-8088]:ExpressionStatement[8117-8155]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8190-8883]:Block[8257-8950]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"count\"), format(meter.getCount()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"count\"), format(meter.getCount()), timestamp);",
+      "info" : "ExpressionStatement[8200-8274]:ExpressionStatement[8267-8341]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"m1_rate\"),\n                      format(convertRate(meter.getOneMinuteRate())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"m1_rate\"),\n                      format(convertRate(meter.getOneMinuteRate())),\n                      timestamp);",
+      "info" : "ExpressionStatement[8283-8424]:ExpressionStatement[8350-8491]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"m5_rate\"),\n                      format(convertRate(meter.getFiveMinuteRate())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"m5_rate\"),\n                      format(convertRate(meter.getFiveMinuteRate())),\n                      timestamp);",
+      "info" : "ExpressionStatement[8433-8575]:ExpressionStatement[8500-8642]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"m15_rate\"),\n                      format(convertRate(meter.getFifteenMinuteRate())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"m15_rate\"),\n                      format(convertRate(meter.getFifteenMinuteRate())),\n                      timestamp);",
+      "info" : "ExpressionStatement[8584-8730]:ExpressionStatement[8651-8797]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"mean_rate\"),\n                      format(convertRate(meter.getMeanRate())),\n                      timestamp);",
+      "right" : "graphite.send(prefix(name, \"mean_rate\"),\n                      format(convertRate(meter.getMeanRate())),\n                      timestamp);",
+      "info" : "ExpressionStatement[8739-8877]:ExpressionStatement[8806-8944]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8987-10028]:Block[9054-10095]"
+    }, {
+      "left" : "final Snapshot snapshot = histogram.getSnapshot();",
+      "right" : "final Snapshot snapshot = histogram.getSnapshot();",
+      "info" : "VariableDeclarationStatement[8997-9047]:VariableDeclarationStatement[9064-9114]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"count\"), format(histogram.getCount()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"count\"), format(histogram.getCount()), timestamp);",
+      "info" : "ExpressionStatement[9056-9134]:ExpressionStatement[9123-9201]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"max\"), format(snapshot.getMax()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"max\"), format(snapshot.getMax()), timestamp);",
+      "info" : "ExpressionStatement[9143-9216]:ExpressionStatement[9210-9283]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"mean\"), format(snapshot.getMean()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"mean\"), format(snapshot.getMean()), timestamp);",
+      "info" : "ExpressionStatement[9225-9300]:ExpressionStatement[9292-9367]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"min\"), format(snapshot.getMin()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"min\"), format(snapshot.getMin()), timestamp);",
+      "info" : "ExpressionStatement[9309-9382]:ExpressionStatement[9376-9449]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"stddev\"), format(snapshot.getStdDev()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"stddev\"), format(snapshot.getStdDev()), timestamp);",
+      "info" : "ExpressionStatement[9391-9470]:ExpressionStatement[9458-9537]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p50\"), format(snapshot.getMedian()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"p50\"), format(snapshot.getMedian()), timestamp);",
+      "info" : "ExpressionStatement[9479-9555]:ExpressionStatement[9546-9622]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p75\"), format(snapshot.get75thPercentile()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"p75\"), format(snapshot.get75thPercentile()), timestamp);",
+      "info" : "ExpressionStatement[9564-9648]:ExpressionStatement[9631-9715]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p95\"), format(snapshot.get95thPercentile()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"p95\"), format(snapshot.get95thPercentile()), timestamp);",
+      "info" : "ExpressionStatement[9657-9741]:ExpressionStatement[9724-9808]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p98\"), format(snapshot.get98thPercentile()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"p98\"), format(snapshot.get98thPercentile()), timestamp);",
+      "info" : "ExpressionStatement[9750-9834]:ExpressionStatement[9817-9901]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p99\"), format(snapshot.get99thPercentile()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"p99\"), format(snapshot.get99thPercentile()), timestamp);",
+      "info" : "ExpressionStatement[9843-9927]:ExpressionStatement[9910-9994]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"p999\"), format(snapshot.get999thPercentile()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"p999\"), format(snapshot.get999thPercentile()), timestamp);",
+      "info" : "ExpressionStatement[9936-10022]:ExpressionStatement[10003-10089]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10126-10218]:Block[10193-10285]"
+    }, {
+      "left" : "graphite.send(prefix(name, \"count\"), format(counter.getCount()), timestamp);",
+      "right" : "graphite.send(prefix(name, \"count\"), format(counter.getCount()), timestamp);",
+      "info" : "ExpressionStatement[10136-10212]:ExpressionStatement[10203-10279]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10310-10470]:Block[10377-10537]"
+    }, {
+      "left" : "final String value = format(gauge.getValue());",
+      "right" : "final String value = format(gauge.getValue());",
+      "info" : "VariableDeclarationStatement[10320-10366]:VariableDeclarationStatement[10387-10433]"
+    }, {
+      "left" : "if (value != null)",
+      "right" : "if (value != null)",
+      "info" : "IfStatement[10375-10464]:IfStatement[10442-10531]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10394-10464]:Block[10461-10531]"
+    }, {
+      "left" : "graphite.send(prefix(name), value, timestamp);",
+      "right" : "graphite.send(prefix(name), value, timestamp);",
+      "info" : "ExpressionStatement[10408-10454]:ExpressionStatement[10475-10521]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10508-11103]:Block[10575-11170]"
+    }, {
+      "left" : "if (o instanceof Float)",
+      "right" : "if (o instanceof Float)",
+      "info" : "IfStatement[10518-11076]:IfStatement[10585-11143]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10542-10607]:Block[10609-10674]"
+    }, {
+      "left" : "return format(((Float) o).doubleValue());",
+      "right" : "return format(((Float) o).doubleValue());",
+      "info" : "ReturnStatement[10556-10597]:ReturnStatement[10623-10664]"
+    }, {
+      "left" : "if (o instanceof Double)",
+      "right" : "if (o instanceof Double)",
+      "info" : "IfStatement[10613-11076]:IfStatement[10680-11143]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10638-10704]:Block[10705-10771]"
+    }, {
+      "left" : "return format(((Double) o).doubleValue());",
+      "right" : "return format(((Double) o).doubleValue());",
+      "info" : "ReturnStatement[10652-10694]:ReturnStatement[10719-10761]"
+    }, {
+      "left" : "if (o instanceof Byte)",
+      "right" : "if (o instanceof Byte)",
+      "info" : "IfStatement[10710-11076]:IfStatement[10777-11143]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10733-10795]:Block[10800-10862]"
+    }, {
+      "left" : "return format(((Byte) o).longValue());",
+      "right" : "return format(((Byte) o).longValue());",
+      "info" : "ReturnStatement[10747-10785]:ReturnStatement[10814-10852]"
+    }, {
+      "left" : "if (o instanceof Short)",
+      "right" : "if (o instanceof Short)",
+      "info" : "IfStatement[10801-11076]:IfStatement[10868-11143]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10825-10888]:Block[10892-10955]"
+    }, {
+      "left" : "return format(((Short) o).longValue());",
+      "right" : "return format(((Short) o).longValue());",
+      "info" : "ReturnStatement[10839-10878]:ReturnStatement[10906-10945]"
+    }, {
+      "left" : "if (o instanceof Integer)",
+      "right" : "if (o instanceof Integer)",
+      "info" : "IfStatement[10894-11076]:IfStatement[10961-11143]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10920-10985]:Block[10987-11052]"
+    }, {
+      "left" : "return format(((Integer) o).longValue());",
+      "right" : "return format(((Integer) o).longValue());",
+      "info" : "ReturnStatement[10934-10975]:ReturnStatement[11001-11042]"
+    }, {
+      "left" : "if (o instanceof Long)",
+      "right" : "if (o instanceof Long)",
+      "info" : "IfStatement[10991-11076]:IfStatement[11058-11143]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11014-11076]:Block[11081-11143]"
+    }, {
+      "left" : "return format(((Long) o).longValue());",
+      "right" : "return format(((Long) o).longValue());",
+      "info" : "ReturnStatement[11028-11066]:ReturnStatement[11095-11133]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[11085-11097]:ReturnStatement[11152-11164]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11153-11216]:Block[11220-11283]"
+    }, {
+      "left" : "return MetricRegistry.name(prefix, components);",
+      "right" : "return MetricRegistry.name(prefix, components);",
+      "info" : "ReturnStatement[11163-11210]:ReturnStatement[11230-11277]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11252-11292]:Block[11319-11359]"
+    }, {
+      "left" : "return Long.toString(n);",
+      "right" : "return Long.toString(n);",
+      "info" : "ReturnStatement[11262-11286]:ReturnStatement[11329-11353]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11330-11518]:Block[11397-11585]"
+    }, {
+      "left" : "return String.format(Locale.US, \"%2.2f\", v);",
+      "right" : "return String.format(Locale.US, \"%2.2f\", v);",
+      "info" : "ReturnStatement[11468-11512]:ReturnStatement[11535-11579]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

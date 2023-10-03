@@ -1,0 +1,925 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "StorageNotification",
+      "right" : "StorageNotification",
+      "info" : "TypeDeclaration[1262-20849]:TypeDeclaration[1262-21283]"
+    }, {
+      "left" : "private static final String TAG = \"StorageNotification\";",
+      "right" : "private static final String TAG = \"StorageNotification\";",
+      "info" : "FieldDeclaration[1318-1374]:FieldDeclaration[1318-1374]"
+    }, {
+      "left" : "private static final boolean DEBUG = false;",
+      "right" : "private static final boolean DEBUG = false;",
+      "info" : "FieldDeclaration[1379-1422]:FieldDeclaration[1379-1422]"
+    }, {
+      "left" : "private static final boolean POP_UMS_ACTIVITY_ON_CONNECT = true;",
+      "right" : "private static final boolean POP_UMS_ACTIVITY_ON_CONNECT = true;",
+      "info" : "FieldDeclaration[1428-1492]:FieldDeclaration[1428-1492]"
+    }, {
+      "left" : "private Notification mUsbStorageNotification;",
+      "right" : "private Notification mUsbStorageNotification;",
+      "info" : "FieldDeclaration[1498-1734]:FieldDeclaration[1498-1734]"
+    }, {
+      "left" : "private Notification   mMediaStorageNotification;",
+      "right" : "private Notification   mMediaStorageNotification;",
+      "info" : "FieldDeclaration[1740-2157]:FieldDeclaration[1740-2157]"
+    }, {
+      "left" : "private boolean        mUmsAvailable;",
+      "right" : "private boolean        mUmsAvailable;",
+      "info" : "FieldDeclaration[2162-2199]:FieldDeclaration[2162-2199]"
+    }, {
+      "left" : "private StorageManager mStorageManager;",
+      "right" : "private StorageManager mStorageManager;",
+      "info" : "FieldDeclaration[2204-2243]:FieldDeclaration[2204-2243]"
+    }, {
+      "left" : "private Handler        mAsyncEventHandler;",
+      "right" : "private Handler        mAsyncEventHandler;",
+      "info" : "FieldDeclaration[2249-2291]:FieldDeclaration[2249-2291]"
+    }, {
+      "left" : "StorageNotificationEventListener",
+      "right" : "StorageNotificationEventListener",
+      "info" : "TypeDeclaration[2297-3049]:TypeDeclaration[2341-3093]"
+    }, {
+      "left" : "public void onUsbMassStorageConnectionChanged(final boolean connected)",
+      "right" : "public void onUsbMassStorageConnectionChanged(final boolean connected)",
+      "info" : "MethodDeclaration[2383-2685]:MethodDeclaration[2427-2729]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[2525-2659]:MethodDeclaration[2569-2703]"
+    }, {
+      "left" : "public void onStorageStateChanged(final String path,\n                final String oldState, final String newState)",
+      "right" : "public void onStorageStateChanged(final String path,\n                final String oldState, final String newState)",
+      "info" : "MethodDeclaration[2694-3043]:MethodDeclaration[2738-3087]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[2880-3017]:MethodDeclaration[2924-3061]"
+    }, {
+      "left" : "public void start()",
+      "right" : "public void start()",
+      "info" : "MethodDeclaration[3055-3806]:MethodDeclaration[3099-3491]"
+    }, {
+      "left" : "private void onUsbMassStorageConnectionChangedAsync(boolean connected)",
+      "right" : "private void onUsbMassStorageConnectionChangedAsync(boolean connected)",
+      "info" : "MethodDeclaration[3812-4563]:MethodDeclaration[4246-4997]"
+    }, {
+      "left" : "private void onStorageStateChangedAsync(String path, String oldState, String newState)",
+      "right" : "private void onStorageStateChangedAsync(String path, String oldState, String newState)",
+      "info" : "MethodDeclaration[4569-13475]:MethodDeclaration[5003-13909]"
+    }, {
+      "left" : "void updateUsbMassStorageNotification(boolean available)",
+      "right" : "void updateUsbMassStorageNotification(boolean available)",
+      "info" : "MethodDeclaration[13481-14269]:MethodDeclaration[13915-14703]"
+    }, {
+      "left" : "private synchronized void setUsbStorageNotification(int titleId, int messageId, int icon,\n            boolean sound, boolean visible, PendingIntent pi)",
+      "right" : "private synchronized void setUsbStorageNotification(int titleId, int messageId, int icon,\n            boolean sound, boolean visible, PendingIntent pi)",
+      "info" : "MethodDeclaration[14275-17859]:MethodDeclaration[14709-18293]"
+    }, {
+      "left" : "private synchronized boolean getMediaStorageNotificationDismissable()",
+      "right" : "private synchronized boolean getMediaStorageNotificationDismissable()",
+      "info" : "MethodDeclaration[17865-18175]:MethodDeclaration[18299-18609]"
+    }, {
+      "left" : "private synchronized void setMediaStorageNotification(int titleId, int messageId, int icon, boolean visible,\n                                                          boolean dismissable, PendingIntent pi)",
+      "right" : "private synchronized void setMediaStorageNotification(int titleId, int messageId, int icon, boolean visible,\n                                                          boolean dismissable, PendingIntent pi)",
+      "info" : "MethodDeclaration[18181-20847]:MethodDeclaration[18615-21281]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2454-2685]:Block[2498-2729]"
+    }, {
+      "left" : "mAsyncEventHandler.post(new Runnable() {\n                @Override\n                public void run() {\n                    onUsbMassStorageConnectionChangedAsync(connected);\n                }\n            });",
+      "right" : "mAsyncEventHandler.post(new Runnable() {\n                @Override\n                public void run() {\n                    onUsbMassStorageConnectionChangedAsync(connected);\n                }\n            });",
+      "info" : "ExpressionStatement[2468-2675]:ExpressionStatement[2512-2719]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2569-2659]:Block[2613-2703]"
+    }, {
+      "left" : "onUsbMassStorageConnectionChangedAsync(connected);",
+      "right" : "onUsbMassStorageConnectionChangedAsync(connected);",
+      "info" : "ExpressionStatement[2591-2641]:ExpressionStatement[2635-2685]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2809-3043]:Block[2853-3087]"
+    }, {
+      "left" : "mAsyncEventHandler.post(new Runnable() {\n                @Override\n                public void run() {\n                    onStorageStateChangedAsync(path, oldState, newState);\n                }\n            });",
+      "right" : "mAsyncEventHandler.post(new Runnable() {\n                @Override\n                public void run() {\n                    onStorageStateChangedAsync(path, oldState, newState);\n                }\n            });",
+      "info" : "ExpressionStatement[2823-3033]:ExpressionStatement[2867-3077]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2924-3017]:Block[2968-3061]"
+    }, {
+      "left" : "onStorageStateChangedAsync(path, oldState, newState);",
+      "right" : "onStorageStateChangedAsync(path, oldState, newState);",
+      "info" : "ExpressionStatement[2946-2999]:ExpressionStatement[2990-3043]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3089-3806]:Block[3523-4240]"
+    }, {
+      "left" : "mStorageManager = (StorageManager) mContext.getSystemService(Context.STORAGE_SERVICE);",
+      "right" : "mStorageManager = (StorageManager) mContext.getSystemService(Context.STORAGE_SERVICE);",
+      "info" : "ExpressionStatement[3099-3185]:ExpressionStatement[3533-3619]"
+    }, {
+      "left" : "final boolean connected = mStorageManager.isUsbMassStorageConnected();",
+      "right" : "final boolean connected = mStorageManager.isUsbMassStorageConnected();",
+      "info" : "VariableDeclarationStatement[3194-3264]:VariableDeclarationStatement[3628-3698]"
+    }, {
+      "left" : "if (DEBUG)",
+      "right" : "if (DEBUG)",
+      "info" : "IfStatement[3273-3432]:IfStatement[3707-3866]"
+    }, {
+      "left" : "Log.d(TAG, String.format( \"Startup with UMS connection %s (media state %s)\",\n                mUmsAvailable, Environment.getExternalStorageState()));",
+      "right" : "Log.d(TAG, String.format( \"Startup with UMS connection %s (media state %s)\",\n                mUmsAvailable, Environment.getExternalStorageState()));",
+      "info" : "ExpressionStatement[3284-3432]:ExpressionStatement[3718-3866]"
+    }, {
+      "left" : "HandlerThread thr = new HandlerThread(\"SystemUI StorageNotification\");",
+      "right" : "HandlerThread thr = new HandlerThread(\"SystemUI StorageNotification\");",
+      "info" : "VariableDeclarationStatement[3442-3512]:VariableDeclarationStatement[3876-3946]"
+    }, {
+      "left" : "thr.start();",
+      "right" : "thr.start();",
+      "info" : "ExpressionStatement[3521-3533]:ExpressionStatement[3955-3967]"
+    }, {
+      "left" : "mAsyncEventHandler = new Handler(thr.getLooper());",
+      "right" : "mAsyncEventHandler = new Handler(thr.getLooper());",
+      "info" : "ExpressionStatement[3542-3592]:ExpressionStatement[3976-4026]"
+    }, {
+      "left" : "StorageNotificationEventListener listener = new StorageNotificationEventListener();",
+      "right" : "StorageNotificationEventListener listener = new StorageNotificationEventListener();",
+      "info" : "VariableDeclarationStatement[3602-3685]:VariableDeclarationStatement[4036-4119]"
+    }, {
+      "left" : "listener.onUsbMassStorageConnectionChanged(connected);",
+      "right" : "listener.onUsbMassStorageConnectionChanged(connected);",
+      "info" : "ExpressionStatement[3694-3748]:ExpressionStatement[4128-4182]"
+    }, {
+      "left" : "mStorageManager.registerListener(listener);",
+      "right" : "mStorageManager.registerListener(listener);",
+      "info" : "ExpressionStatement[3757-3800]:ExpressionStatement[4191-4234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3883-4563]:Block[4317-4997]"
+    }, {
+      "left" : "mUmsAvailable = connected;",
+      "right" : "mUmsAvailable = connected;",
+      "info" : "ExpressionStatement[3893-3919]:ExpressionStatement[4327-4353]"
+    }, {
+      "left" : "String st = Environment.getExternalStorageState();",
+      "right" : "String st = Environment.getExternalStorageState();",
+      "info" : "VariableDeclarationStatement[4068-4118]:VariableDeclarationStatement[4502-4552]"
+    }, {
+      "left" : "if (DEBUG)",
+      "right" : "if (DEBUG)",
+      "info" : "IfStatement[4128-4245]:IfStatement[4562-4679]"
+    }, {
+      "left" : "Log.i(TAG, String.format(\"UMS connection changed to %s (media state %s)\",\n                connected, st));",
+      "right" : "Log.i(TAG, String.format(\"UMS connection changed to %s (media state %s)\",\n                connected, st));",
+      "info" : "ExpressionStatement[4139-4245]:ExpressionStatement[4573-4679]"
+    }, {
+      "left" : "if (connected && (st.equals(\n                Environment.MEDIA_REMOVED) || st.equals(Environment.MEDIA_CHECKING)))",
+      "right" : "if (connected && (st.equals(\n                Environment.MEDIA_REMOVED) || st.equals(Environment.MEDIA_CHECKING)))",
+      "info" : "IfStatement[4255-4504]:IfStatement[4689-4938]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4370-4504]:Block[4804-4938]"
+    }, {
+      "left" : "connected = false;",
+      "right" : "connected = false;",
+      "info" : "ExpressionStatement[4476-4494]:ExpressionStatement[4910-4928]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(connected);",
+      "right" : "updateUsbMassStorageNotification(connected);",
+      "info" : "ExpressionStatement[4513-4557]:ExpressionStatement[4947-4991]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4656-13475]:Block[5090-13909]"
+    }, {
+      "left" : "boolean isPrimary = mStorageManager.getPrimaryVolume().getPath().equals(path);",
+      "right" : "boolean isPrimary = mStorageManager.getPrimaryVolume().getPath().equals(path);",
+      "info" : "VariableDeclarationStatement[4666-4744]:VariableDeclarationStatement[5100-5178]"
+    }, {
+      "left" : "boolean isUsbStorage = false;",
+      "right" : "boolean isUsbStorage = false;",
+      "info" : "VariableDeclarationStatement[4753-4782]:VariableDeclarationStatement[5187-5216]"
+    }, {
+      "left" : "final StorageVolume[] storageVolumes = mStorageManager.getVolumeList();",
+      "right" : "final StorageVolume[] storageVolumes = mStorageManager.getVolumeList();",
+      "info" : "VariableDeclarationStatement[4791-4862]:VariableDeclarationStatement[5225-5296]"
+    }, {
+      "left" : "for (StorageVolume volume : storageVolumes)",
+      "right" : "for (StorageVolume volume : storageVolumes)",
+      "info" : "EnhancedForStatement[4871-5144]:EnhancedForStatement[5305-5578]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4915-5144]:Block[5349-5578]"
+    }, {
+      "left" : "if (volume.getPath().equals(path))",
+      "right" : "if (volume.getPath().equals(path))",
+      "info" : "IfStatement[4929-5134]:IfStatement[5363-5568]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4964-5134]:Block[5398-5568]"
+    }, {
+      "left" : "if (volume.getDescriptionId() == R.string.storage_usb)",
+      "right" : "if (volume.getDescriptionId() == R.string.storage_usb)",
+      "info" : "IfStatement[4982-5097]:IfStatement[5416-5531]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5037-5097]:Block[5471-5531]"
+    }, {
+      "left" : "isUsbStorage = true;",
+      "right" : "isUsbStorage = true;",
+      "info" : "ExpressionStatement[5059-5079]:ExpressionStatement[5493-5513]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[5114-5120]:BreakStatement[5548-5554]"
+    }, {
+      "left" : "if (DEBUG)",
+      "right" : "if (DEBUG)",
+      "info" : "IfStatement[5153-5353]:IfStatement[5587-5787]"
+    }, {
+      "left" : "Log.i(TAG, String.format(\n                \"Media {%s} state changed from {%s} -> {%s} (primary = %b, usb storage = %b)\",\n                path, oldState, newState, isPrimary, isUsbStorage));",
+      "right" : "Log.i(TAG, String.format(\n                \"Media {%s} state changed from {%s} -> {%s} (primary = %b, usb storage = %b)\",\n                path, oldState, newState, isPrimary, isUsbStorage));",
+      "info" : "ExpressionStatement[5164-5353]:ExpressionStatement[5598-5787]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_SHARED))",
+      "right" : "if (newState.equals(Environment.MEDIA_SHARED))",
+      "info" : "IfStatement[5362-13469]:IfStatement[5796-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5409-5983]:Block[5843-6417]"
+    }, {
+      "left" : "Intent intent = new Intent();",
+      "right" : "Intent intent = new Intent();",
+      "info" : "VariableDeclarationStatement[5553-5582]:VariableDeclarationStatement[5987-6016]"
+    }, {
+      "left" : "intent.setClass(mContext, com.android.systemui.usb.UsbStorageActivity.class);",
+      "right" : "intent.setClass(mContext, com.android.systemui.usb.UsbStorageActivity.class);",
+      "info" : "ExpressionStatement[5595-5672]:ExpressionStatement[6029-6106]"
+    }, {
+      "left" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "right" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "info" : "VariableDeclarationStatement[5685-5754]:VariableDeclarationStatement[6119-6188]"
+    }, {
+      "left" : "setUsbStorageNotification(R.string.usb_storage_stop_notification_title,\n                    R.string.usb_storage_stop_notification_message,\n                    R.drawable.stat_sys_warning, false, true, pi);",
+      "right" : "setUsbStorageNotification(R.string.usb_storage_stop_notification_title,\n                    R.string.usb_storage_stop_notification_message,\n                    R.drawable.stat_sys_warning, false, true, pi);",
+      "info" : "ExpressionStatement[5767-5973]:ExpressionStatement[6201-6407]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_CHECKING))",
+      "right" : "if (newState.equals(Environment.MEDIA_CHECKING))",
+      "info" : "IfStatement[5989-13469]:IfStatement[6423-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6038-6702]:Block[6472-7136]"
+    }, {
+      "left" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_checking_notification_title :\n                            R.string.sd_ext_media_checking_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_checking_notification_message :\n                            R.string.sd_ext_media_checking_notification_message,\n                    R.drawable.stat_notify_sdcard_prepare, true, false, null);",
+      "right" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_checking_notification_title :\n                            R.string.sd_ext_media_checking_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_checking_notification_message :\n                            R.string.sd_ext_media_checking_notification_message,\n                    R.drawable.stat_notify_sdcard_prepare, true, false, null);",
+      "info" : "ExpressionStatement[6194-6639]:ExpressionStatement[6628-7073]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(false);",
+      "right" : "updateUsbMassStorageNotification(false);",
+      "info" : "ExpressionStatement[6652-6692]:ExpressionStatement[7086-7126]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_MOUNTED))",
+      "right" : "if (newState.equals(Environment.MEDIA_MOUNTED))",
+      "info" : "IfStatement[6708-13469]:IfStatement[7142-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6756-7058]:Block[7190-7492]"
+    }, {
+      "left" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "right" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "info" : "ExpressionStatement[6930-6987]:ExpressionStatement[7364-7421]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "right" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "info" : "ExpressionStatement[7000-7048]:ExpressionStatement[7434-7482]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_UNMOUNTED))",
+      "right" : "if (newState.equals(Environment.MEDIA_UNMOUNTED))",
+      "info" : "IfStatement[7064-13469]:IfStatement[7498-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7114-9455]:Block[7548-9889]"
+    }, {
+      "left" : "if (!mStorageManager.isUsbMassStorageEnabled())",
+      "right" : "if (!mStorageManager.isUsbMassStorageEnabled())",
+      "info" : "IfStatement[7376-9445]:IfStatement[7810-9879]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7424-9108]:Block[7858-9542]"
+    }, {
+      "left" : "if (oldState.equals(Environment.MEDIA_SHARED))",
+      "right" : "if (oldState.equals(Environment.MEDIA_SHARED))",
+      "info" : "IfStatement[7442-9094]:IfStatement[7876-9528]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7489-7864]:Block[7923-8298]"
+    }, {
+      "left" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "right" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "info" : "ExpressionStatement[7720-7777]:ExpressionStatement[8154-8211]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "right" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "info" : "ExpressionStatement[7798-7846]:ExpressionStatement[8232-8280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7870-9094]:Block[8304-9528]"
+    }, {
+      "left" : "if (Environment.isExternalStorageRemovable())",
+      "right" : "if (Environment.isExternalStorageRemovable())",
+      "info" : "IfStatement[8068-9007]:IfStatement[8502-9441]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8114-8754]:Block[8548-9188]"
+    }, {
+      "left" : "setMediaStorageNotification(\n                                isUsbStorage ?\n                                        R.string.usb_ext_media_safe_unmount_notification_title :\n                                        R.string.sd_ext_media_safe_unmount_notification_title,\n                                isUsbStorage ?\n                                        R.string.usb_ext_media_safe_unmount_notification_message :\n                                        R.string.sd_ext_media_safe_unmount_notification_message,\n                                R.drawable.stat_notify_sdcard, true, true, null);",
+      "right" : "setMediaStorageNotification(\n                                isUsbStorage ?\n                                        R.string.usb_ext_media_safe_unmount_notification_title :\n                                        R.string.sd_ext_media_safe_unmount_notification_title,\n                                isUsbStorage ?\n                                        R.string.usb_ext_media_safe_unmount_notification_message :\n                                        R.string.sd_ext_media_safe_unmount_notification_message,\n                                R.drawable.stat_notify_sdcard, true, true, null);",
+      "info" : "ExpressionStatement[8140-8732]:ExpressionStatement[8574-9166]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8760-9007]:Block[9194-9441]"
+    }, {
+      "left" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "right" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "info" : "ExpressionStatement[8928-8985]:ExpressionStatement[9362-9419]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "right" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "info" : "ExpressionStatement[9028-9076]:ExpressionStatement[9462-9510]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9114-9445]:Block[9548-9879]"
+    }, {
+      "left" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "right" : "setMediaStorageNotification(0, 0, 0, false, false, null);",
+      "info" : "ExpressionStatement[9317-9374]:ExpressionStatement[9751-9808]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(false);",
+      "right" : "updateUsbMassStorageNotification(false);",
+      "info" : "ExpressionStatement[9391-9431]:ExpressionStatement[9825-9865]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_NOFS))",
+      "right" : "if (newState.equals(Environment.MEDIA_NOFS))",
+      "info" : "IfStatement[9461-13469]:IfStatement[9895-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9506-10573]:Block[9940-11007]"
+    }, {
+      "left" : "Intent intent = new Intent();",
+      "right" : "Intent intent = new Intent();",
+      "info" : "VariableDeclarationStatement[9681-9710]:VariableDeclarationStatement[10115-10144]"
+    }, {
+      "left" : "intent.setClass(mContext, com.android.internal.app.ExternalMediaFormatActivity.class);",
+      "right" : "intent.setClass(mContext, com.android.internal.app.ExternalMediaFormatActivity.class);",
+      "info" : "ExpressionStatement[9723-9809]:ExpressionStatement[10157-10243]"
+    }, {
+      "left" : "intent.putExtra(com.android.internal.app.ExternalMediaFormatActivity.FORMAT_PATH, path);",
+      "right" : "intent.putExtra(com.android.internal.app.ExternalMediaFormatActivity.FORMAT_PATH, path);",
+      "info" : "ExpressionStatement[9895-9983]:ExpressionStatement[10329-10417]"
+    }, {
+      "left" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "right" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "info" : "VariableDeclarationStatement[9996-10065]:VariableDeclarationStatement[10430-10499]"
+    }, {
+      "left" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_nofs_notification_title :\n                            R.string.sd_ext_media_nofs_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_nofs_notification_message :\n                            R.string.sd_ext_media_nofs_notification_message,\n                    R.drawable.stat_notify_sdcard_usb, true, false, pi);",
+      "right" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_nofs_notification_title :\n                            R.string.sd_ext_media_nofs_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_nofs_notification_message :\n                            R.string.sd_ext_media_nofs_notification_message,\n                    R.drawable.stat_notify_sdcard_usb, true, false, pi);",
+      "info" : "ExpressionStatement[10079-10502]:ExpressionStatement[10513-10936]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "right" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "info" : "ExpressionStatement[10515-10563]:ExpressionStatement[10949-10997]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_UNMOUNTABLE))",
+      "right" : "if (newState.equals(Environment.MEDIA_UNMOUNTABLE))",
+      "info" : "IfStatement[10579-13469]:IfStatement[11013-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10631-11721]:Block[11065-12155]"
+    }, {
+      "left" : "Intent intent = new Intent();",
+      "right" : "Intent intent = new Intent();",
+      "info" : "VariableDeclarationStatement[10801-10830]:VariableDeclarationStatement[11235-11264]"
+    }, {
+      "left" : "intent.setClass(mContext, com.android.internal.app.ExternalMediaFormatActivity.class);",
+      "right" : "intent.setClass(mContext, com.android.internal.app.ExternalMediaFormatActivity.class);",
+      "info" : "ExpressionStatement[10843-10929]:ExpressionStatement[11277-11363]"
+    }, {
+      "left" : "intent.putExtra(com.android.internal.app.ExternalMediaFormatActivity.FORMAT_PATH, path);",
+      "right" : "intent.putExtra(com.android.internal.app.ExternalMediaFormatActivity.FORMAT_PATH, path);",
+      "info" : "ExpressionStatement[11015-11103]:ExpressionStatement[11449-11537]"
+    }, {
+      "left" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "right" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "info" : "VariableDeclarationStatement[11116-11185]:VariableDeclarationStatement[11550-11619]"
+    }, {
+      "left" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_unmountable_notification_title :\n                            R.string.sd_ext_media_unmountable_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_unmountable_notification_message :\n                            R.string.sd_ext_media_unmountable_notification_message,\n                    R.drawable.stat_notify_sdcard_usb, true, false, pi);",
+      "right" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_unmountable_notification_title :\n                            R.string.sd_ext_media_unmountable_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_unmountable_notification_message :\n                            R.string.sd_ext_media_unmountable_notification_message,\n                    R.drawable.stat_notify_sdcard_usb, true, false, pi);",
+      "info" : "ExpressionStatement[11199-11650]:ExpressionStatement[11633-12084]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "right" : "updateUsbMassStorageNotification(mUmsAvailable);",
+      "info" : "ExpressionStatement[11663-11711]:ExpressionStatement[12097-12145]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_REMOVED))",
+      "right" : "if (newState.equals(Environment.MEDIA_REMOVED))",
+      "info" : "IfStatement[11727-13469]:IfStatement[12161-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11775-12538]:Block[12209-12972]"
+    }, {
+      "left" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_nomedia_notification_title :\n                            R.string.sd_ext_media_nomedia_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_nomedia_notification_message :\n                            R.string.sd_ext_media_nomedia_notification_message,\n                    R.drawable.stat_notify_sdcard_usb,\n                    true, !isPrimary, null);",
+      "right" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_nomedia_notification_title :\n                            R.string.sd_ext_media_nomedia_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_nomedia_notification_message :\n                            R.string.sd_ext_media_nomedia_notification_message,\n                    R.drawable.stat_notify_sdcard_usb,\n                    true, !isPrimary, null);",
+      "info" : "ExpressionStatement[11985-12447]:ExpressionStatement[12419-12881]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(isPrimary ? false : mUmsAvailable);",
+      "right" : "updateUsbMassStorageNotification(isPrimary ? false : mUmsAvailable);",
+      "info" : "ExpressionStatement[12460-12528]:ExpressionStatement[12894-12962]"
+    }, {
+      "left" : "if (newState.equals(Environment.MEDIA_BAD_REMOVAL))",
+      "right" : "if (newState.equals(Environment.MEDIA_BAD_REMOVAL))",
+      "info" : "IfStatement[12544-13469]:IfStatement[12978-13903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12596-13372]:Block[13030-13806]"
+    }, {
+      "left" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_badremoval_notification_title :\n                            R.string.sd_ext_media_badremoval_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_badremoval_notification_message :\n                            R.string.sd_ext_media_badremoval_notification_message,\n                    R.drawable.stat_sys_warning,\n                    true, true, null);",
+      "right" : "setMediaStorageNotification(\n                    isUsbStorage ? R.string.usb_ext_media_badremoval_notification_title :\n                            R.string.sd_ext_media_badremoval_notification_title,\n                    isUsbStorage ? R.string.usb_ext_media_badremoval_notification_message :\n                            R.string.sd_ext_media_badremoval_notification_message,\n                    R.drawable.stat_sys_warning,\n                    true, true, null);",
+      "info" : "ExpressionStatement[12819-13281]:ExpressionStatement[13253-13715]"
+    }, {
+      "left" : "updateUsbMassStorageNotification(isPrimary ? false : mUmsAvailable);",
+      "right" : "updateUsbMassStorageNotification(isPrimary ? false : mUmsAvailable);",
+      "info" : "ExpressionStatement[13294-13362]:ExpressionStatement[13728-13796]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13378-13469]:Block[13812-13903]"
+    }, {
+      "left" : "Log.w(TAG, String.format(\"Ignoring unknown state {%s}\", newState));",
+      "right" : "Log.w(TAG, String.format(\"Ignoring unknown state {%s}\", newState));",
+      "info" : "ExpressionStatement[13392-13459]:ExpressionStatement[13826-13893]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13615-14269]:Block[14049-14703]"
+    }, {
+      "left" : "if (available)",
+      "right" : "if (available)",
+      "info" : "IfStatement[13626-14263]:IfStatement[14060-14697]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13641-14178]:Block[14075-14612]"
+    }, {
+      "left" : "Intent intent = new Intent();",
+      "right" : "Intent intent = new Intent();",
+      "info" : "VariableDeclarationStatement[13655-13684]:VariableDeclarationStatement[14089-14118]"
+    }, {
+      "left" : "intent.setClass(mContext, com.android.systemui.usb.UsbStorageActivity.class);",
+      "right" : "intent.setClass(mContext, com.android.systemui.usb.UsbStorageActivity.class);",
+      "info" : "ExpressionStatement[13697-13774]:ExpressionStatement[14131-14208]"
+    }, {
+      "left" : "intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);",
+      "right" : "intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);",
+      "info" : "ExpressionStatement[13787-13834]:ExpressionStatement[14221-14268]"
+    }, {
+      "left" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "right" : "PendingIntent pi = PendingIntent.getActivity(mContext, 0, intent, 0);",
+      "info" : "VariableDeclarationStatement[13848-13917]:VariableDeclarationStatement[14282-14351]"
+    }, {
+      "left" : "setUsbStorageNotification(\n                    R.string.usb_storage_notification_title,\n                    R.string.usb_storage_notification_message,\n                    R.drawable.stat_sys_data_usb,\n                    false, true, pi);",
+      "right" : "setUsbStorageNotification(\n                    R.string.usb_storage_notification_title,\n                    R.string.usb_storage_notification_message,\n                    R.drawable.stat_sys_data_usb,\n                    false, true, pi);",
+      "info" : "ExpressionStatement[13930-14168]:ExpressionStatement[14364-14602]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14184-14263]:Block[14618-14697]"
+    }, {
+      "left" : "setUsbStorageNotification(0, 0, 0, false, false, null);",
+      "right" : "setUsbStorageNotification(0, 0, 0, false, false, null);",
+      "info" : "ExpressionStatement[14198-14253]:ExpressionStatement[14632-14687]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14485-17859]:Block[14919-18293]"
+    }, {
+      "left" : "if (SystemProperties.getBoolean(\"persist.sys.ums\", true))",
+      "right" : "if (SystemProperties.getBoolean(\"persist.sys.ums\", true))",
+      "info" : "IfStatement[14578-14800]:IfStatement[15012-15234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14636-14800]:Block[15070-15234]"
+    }, {
+      "left" : "titleId = 0;",
+      "right" : "titleId = 0;",
+      "info" : "ExpressionStatement[14650-14662]:ExpressionStatement[15084-15096]"
+    }, {
+      "left" : "messageId = 0;",
+      "right" : "messageId = 0;",
+      "info" : "ExpressionStatement[14675-14689]:ExpressionStatement[15109-15123]"
+    }, {
+      "left" : "icon = 0;",
+      "right" : "icon = 0;",
+      "info" : "ExpressionStatement[14702-14711]:ExpressionStatement[15136-15145]"
+    }, {
+      "left" : "sound = false;",
+      "right" : "sound = false;",
+      "info" : "ExpressionStatement[14724-14738]:ExpressionStatement[15158-15172]"
+    }, {
+      "left" : "visible = false;",
+      "right" : "visible = false;",
+      "info" : "ExpressionStatement[14751-14767]:ExpressionStatement[15185-15201]"
+    }, {
+      "left" : "pi = null;",
+      "right" : "pi = null;",
+      "info" : "ExpressionStatement[14780-14790]:ExpressionStatement[15214-15224]"
+    }, {
+      "left" : "if (!visible && mUsbStorageNotification == null)",
+      "right" : "if (!visible && mUsbStorageNotification == null)",
+      "info" : "IfStatement[14810-14890]:IfStatement[15244-15324]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14859-14890]:Block[15293-15324]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[14873-14880]:ReturnStatement[15307-15314]"
+    }, {
+      "left" : "NotificationManager notificationManager = (NotificationManager) mContext\n                .getSystemService(Context.NOTIFICATION_SERVICE);",
+      "right" : "NotificationManager notificationManager = (NotificationManager) mContext\n                .getSystemService(Context.NOTIFICATION_SERVICE);",
+      "info" : "VariableDeclarationStatement[14900-15037]:VariableDeclarationStatement[15334-15471]"
+    }, {
+      "left" : "if (notificationManager == null)",
+      "right" : "if (notificationManager == null)",
+      "info" : "IfStatement[15047-15111]:IfStatement[15481-15545]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15080-15111]:Block[15514-15545]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[15094-15101]:ReturnStatement[15528-15535]"
+    }, {
+      "left" : "if (visible)",
+      "right" : "if (visible)",
+      "info" : "IfStatement[15121-17524]:IfStatement[15555-17958]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15134-17524]:Block[15568-17958]"
+    }, {
+      "left" : "Resources r = Resources.getSystem();",
+      "right" : "Resources r = Resources.getSystem();",
+      "info" : "VariableDeclarationStatement[15148-15184]:VariableDeclarationStatement[15582-15618]"
+    }, {
+      "left" : "CharSequence title = r.getText(titleId);",
+      "right" : "CharSequence title = r.getText(titleId);",
+      "info" : "VariableDeclarationStatement[15197-15237]:VariableDeclarationStatement[15631-15671]"
+    }, {
+      "left" : "CharSequence message = r.getText(messageId);",
+      "right" : "CharSequence message = r.getText(messageId);",
+      "info" : "VariableDeclarationStatement[15250-15294]:VariableDeclarationStatement[15684-15728]"
+    }, {
+      "left" : "if (mUsbStorageNotification == null)",
+      "right" : "if (mUsbStorageNotification == null)",
+      "info" : "IfStatement[15308-15525]:IfStatement[15742-15959]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15345-15525]:Block[15779-15959]"
+    }, {
+      "left" : "mUsbStorageNotification = new Notification();",
+      "right" : "mUsbStorageNotification = new Notification();",
+      "info" : "ExpressionStatement[15363-15408]:ExpressionStatement[15797-15842]"
+    }, {
+      "left" : "mUsbStorageNotification.icon = icon;",
+      "right" : "mUsbStorageNotification.icon = icon;",
+      "info" : "ExpressionStatement[15425-15461]:ExpressionStatement[15859-15895]"
+    }, {
+      "left" : "mUsbStorageNotification.when = 0;",
+      "right" : "mUsbStorageNotification.when = 0;",
+      "info" : "ExpressionStatement[15478-15511]:ExpressionStatement[15912-15945]"
+    }, {
+      "left" : "if (sound)",
+      "right" : "if (sound)",
+      "info" : "IfStatement[15539-15747]:IfStatement[15973-16181]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15550-15645]:Block[15984-16079]"
+    }, {
+      "left" : "mUsbStorageNotification.defaults |= Notification.DEFAULT_SOUND;",
+      "right" : "mUsbStorageNotification.defaults |= Notification.DEFAULT_SOUND;",
+      "info" : "ExpressionStatement[15568-15631]:ExpressionStatement[16002-16065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15651-15747]:Block[16085-16181]"
+    }, {
+      "left" : "mUsbStorageNotification.defaults &= ~Notification.DEFAULT_SOUND;",
+      "right" : "mUsbStorageNotification.defaults &= ~Notification.DEFAULT_SOUND;",
+      "info" : "ExpressionStatement[15669-15733]:ExpressionStatement[16103-16167]"
+    }, {
+      "left" : "mUsbStorageNotification.flags = Notification.FLAG_ONGOING_EVENT;",
+      "right" : "mUsbStorageNotification.flags = Notification.FLAG_ONGOING_EVENT;",
+      "info" : "ExpressionStatement[15761-15825]:ExpressionStatement[16195-16259]"
+    }, {
+      "left" : "mUsbStorageNotification.tickerText = title;",
+      "right" : "mUsbStorageNotification.tickerText = title;",
+      "info" : "ExpressionStatement[15839-15882]:ExpressionStatement[16273-16316]"
+    }, {
+      "left" : "if (pi == null)",
+      "right" : "if (pi == null)",
+      "info" : "IfStatement[15895-16095]:IfStatement[16329-16529]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15911-16095]:Block[16345-16529]"
+    }, {
+      "left" : "Intent intent = new Intent();",
+      "right" : "Intent intent = new Intent();",
+      "info" : "VariableDeclarationStatement[15929-15958]:VariableDeclarationStatement[16363-16392]"
+    }, {
+      "left" : "pi = PendingIntent.getBroadcastAsUser(mContext, 0, intent, 0,\n                        UserHandle.CURRENT);",
+      "right" : "pi = PendingIntent.getBroadcastAsUser(mContext, 0, intent, 0,\n                        UserHandle.CURRENT);",
+      "info" : "ExpressionStatement[15975-16081]:ExpressionStatement[16409-16515]"
+    }, {
+      "left" : "mUsbStorageNotification.color = mContext.getResources().getColor(\n                    com.android.internal.R.color.system_notification_accent_color);",
+      "right" : "mUsbStorageNotification.color = mContext.getResources().getColor(\n                    com.android.internal.R.color.system_notification_accent_color);",
+      "info" : "ExpressionStatement[16108-16257]:ExpressionStatement[16542-16691]"
+    }, {
+      "left" : "mUsbStorageNotification.setLatestEventInfo(mContext, title, message, pi);",
+      "right" : "mUsbStorageNotification.setLatestEventInfo(mContext, title, message, pi);",
+      "info" : "ExpressionStatement[16270-16343]:ExpressionStatement[16704-16777]"
+    }, {
+      "left" : "mUsbStorageNotification.visibility = Notification.VISIBILITY_PUBLIC;",
+      "right" : "mUsbStorageNotification.visibility = Notification.VISIBILITY_PUBLIC;",
+      "info" : "ExpressionStatement[16356-16424]:ExpressionStatement[16790-16858]"
+    }, {
+      "left" : "mUsbStorageNotification.category = Notification.CATEGORY_SYSTEM;",
+      "right" : "mUsbStorageNotification.category = Notification.CATEGORY_SYSTEM;",
+      "info" : "ExpressionStatement[16437-16501]:ExpressionStatement[16871-16935]"
+    }, {
+      "left" : "final boolean adbOn = 1 == Settings.Global.getInt(\n                mContext.getContentResolver(),\n                Settings.Global.ADB_ENABLED,\n                0);",
+      "right" : "final boolean adbOn = 1 == Settings.Global.getInt(\n                mContext.getContentResolver(),\n                Settings.Global.ADB_ENABLED,\n                0);",
+      "info" : "VariableDeclarationStatement[16515-16677]:VariableDeclarationStatement[16949-17111]"
+    }, {
+      "left" : "if (POP_UMS_ACTIVITY_ON_CONNECT && !adbOn)",
+      "right" : "if (POP_UMS_ACTIVITY_ON_CONNECT && !adbOn)",
+      "info" : "IfStatement[16691-17514]:IfStatement[17125-17948]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16734-17514]:Block[17168-17948]"
+    }, {
+      "left" : "mUsbStorageNotification.fullScreenIntent = pi;",
+      "right" : "mUsbStorageNotification.fullScreenIntent = pi;",
+      "info" : "ExpressionStatement[17454-17500]:ExpressionStatement[17888-17934]"
+    }, {
+      "left" : "final int notificationId = mUsbStorageNotification.icon;",
+      "right" : "final int notificationId = mUsbStorageNotification.icon;",
+      "info" : "VariableDeclarationStatement[17534-17590]:VariableDeclarationStatement[17968-18024]"
+    }, {
+      "left" : "if (visible)",
+      "right" : "if (visible)",
+      "info" : "IfStatement[17599-17853]:IfStatement[18033-18287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17612-17752]:Block[18046-18186]"
+    }, {
+      "left" : "notificationManager.notifyAsUser(null, notificationId, mUsbStorageNotification,\n                    UserHandle.ALL);",
+      "right" : "notificationManager.notifyAsUser(null, notificationId, mUsbStorageNotification,\n                    UserHandle.ALL);",
+      "info" : "ExpressionStatement[17626-17742]:ExpressionStatement[18060-18176]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17758-17853]:Block[18192-18287]"
+    }, {
+      "left" : "notificationManager.cancelAsUser(null, notificationId, UserHandle.ALL);",
+      "right" : "notificationManager.cancelAsUser(null, notificationId, UserHandle.ALL);",
+      "info" : "ExpressionStatement[17772-17843]:ExpressionStatement[18206-18277]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17935-18175]:Block[18369-18609]"
+    }, {
+      "left" : "if ((mMediaStorageNotification != null) &&\n            ((mMediaStorageNotification.flags & Notification.FLAG_AUTO_CANCEL) ==\n                    Notification.FLAG_AUTO_CANCEL))",
+      "right" : "if ((mMediaStorageNotification != null) &&\n            ((mMediaStorageNotification.flags & Notification.FLAG_AUTO_CANCEL) ==\n                    Notification.FLAG_AUTO_CANCEL))",
+      "info" : "IfStatement[17945-18146]:IfStatement[18379-18580]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[18134-18146]:ReturnStatement[18568-18580]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[18156-18169]:ReturnStatement[18590-18603]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18447-20847]:Block[18881-21281]"
+    }, {
+      "left" : "if (!visible && mMediaStorageNotification == null)",
+      "right" : "if (!visible && mMediaStorageNotification == null)",
+      "info" : "IfStatement[18458-18540]:IfStatement[18892-18974]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18509-18540]:Block[18943-18974]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[18523-18530]:ReturnStatement[18957-18964]"
+    }, {
+      "left" : "NotificationManager notificationManager = (NotificationManager) mContext\n                .getSystemService(Context.NOTIFICATION_SERVICE);",
+      "right" : "NotificationManager notificationManager = (NotificationManager) mContext\n                .getSystemService(Context.NOTIFICATION_SERVICE);",
+      "info" : "VariableDeclarationStatement[18550-18687]:VariableDeclarationStatement[18984-19121]"
+    }, {
+      "left" : "if (notificationManager == null)",
+      "right" : "if (notificationManager == null)",
+      "info" : "IfStatement[18697-18761]:IfStatement[19131-19195]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18730-18761]:Block[19164-19195]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[18744-18751]:ReturnStatement[19178-19185]"
+    }, {
+      "left" : "if (mMediaStorageNotification != null && visible)",
+      "right" : "if (mMediaStorageNotification != null && visible)",
+      "info" : "IfStatement[18771-19082]:IfStatement[19205-19516]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18821-19082]:Block[19255-19516]"
+    }, {
+      "left" : "final int notificationId = mMediaStorageNotification.icon;",
+      "right" : "final int notificationId = mMediaStorageNotification.icon;",
+      "info" : "VariableDeclarationStatement[18958-19016]:VariableDeclarationStatement[19392-19450]"
+    }, {
+      "left" : "notificationManager.cancel(notificationId);",
+      "right" : "notificationManager.cancel(notificationId);",
+      "info" : "ExpressionStatement[19029-19072]:ExpressionStatement[19463-19506]"
+    }, {
+      "left" : "if (visible)",
+      "right" : "if (visible)",
+      "info" : "IfStatement[19092-20508]:IfStatement[19526-20942]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19105-20508]:Block[19539-20942]"
+    }, {
+      "left" : "Resources r = Resources.getSystem();",
+      "right" : "Resources r = Resources.getSystem();",
+      "info" : "VariableDeclarationStatement[19119-19155]:VariableDeclarationStatement[19553-19589]"
+    }, {
+      "left" : "CharSequence title = r.getText(titleId);",
+      "right" : "CharSequence title = r.getText(titleId);",
+      "info" : "VariableDeclarationStatement[19168-19208]:VariableDeclarationStatement[19602-19642]"
+    }, {
+      "left" : "CharSequence message = r.getText(messageId);",
+      "right" : "CharSequence message = r.getText(messageId);",
+      "info" : "VariableDeclarationStatement[19221-19265]:VariableDeclarationStatement[19655-19699]"
+    }, {
+      "left" : "if (mMediaStorageNotification == null)",
+      "right" : "if (mMediaStorageNotification == null)",
+      "info" : "IfStatement[19279-19449]:IfStatement[19713-19883]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19318-19449]:Block[19752-19883]"
+    }, {
+      "left" : "mMediaStorageNotification = new Notification();",
+      "right" : "mMediaStorageNotification = new Notification();",
+      "info" : "ExpressionStatement[19336-19383]:ExpressionStatement[19770-19817]"
+    }, {
+      "left" : "mMediaStorageNotification.when = 0;",
+      "right" : "mMediaStorageNotification.when = 0;",
+      "info" : "ExpressionStatement[19400-19435]:ExpressionStatement[19834-19869]"
+    }, {
+      "left" : "mMediaStorageNotification.defaults &= ~Notification.DEFAULT_SOUND;",
+      "right" : "mMediaStorageNotification.defaults &= ~Notification.DEFAULT_SOUND;",
+      "info" : "ExpressionStatement[19463-19529]:ExpressionStatement[19897-19963]"
+    }, {
+      "left" : "if (dismissable)",
+      "right" : "if (dismissable)",
+      "info" : "IfStatement[19543-19760]:IfStatement[19977-20194]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19560-19656]:Block[19994-20090]"
+    }, {
+      "left" : "mMediaStorageNotification.flags = Notification.FLAG_AUTO_CANCEL;",
+      "right" : "mMediaStorageNotification.flags = Notification.FLAG_AUTO_CANCEL;",
+      "info" : "ExpressionStatement[19578-19642]:ExpressionStatement[20012-20076]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19662-19760]:Block[20096-20194]"
+    }, {
+      "left" : "mMediaStorageNotification.flags = Notification.FLAG_ONGOING_EVENT;",
+      "right" : "mMediaStorageNotification.flags = Notification.FLAG_ONGOING_EVENT;",
+      "info" : "ExpressionStatement[19680-19746]:ExpressionStatement[20114-20180]"
+    }, {
+      "left" : "mMediaStorageNotification.tickerText = title;",
+      "right" : "mMediaStorageNotification.tickerText = title;",
+      "info" : "ExpressionStatement[19774-19819]:ExpressionStatement[20208-20253]"
+    }, {
+      "left" : "if (pi == null)",
+      "right" : "if (pi == null)",
+      "info" : "IfStatement[19832-20032]:IfStatement[20266-20466]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19848-20032]:Block[20282-20466]"
+    }, {
+      "left" : "Intent intent = new Intent();",
+      "right" : "Intent intent = new Intent();",
+      "info" : "VariableDeclarationStatement[19866-19895]:VariableDeclarationStatement[20300-20329]"
+    }, {
+      "left" : "pi = PendingIntent.getBroadcastAsUser(mContext, 0, intent, 0,\n                        UserHandle.CURRENT);",
+      "right" : "pi = PendingIntent.getBroadcastAsUser(mContext, 0, intent, 0,\n                        UserHandle.CURRENT);",
+      "info" : "ExpressionStatement[19912-20018]:ExpressionStatement[20346-20452]"
+    }, {
+      "left" : "mMediaStorageNotification.icon = icon;",
+      "right" : "mMediaStorageNotification.icon = icon;",
+      "info" : "ExpressionStatement[20046-20084]:ExpressionStatement[20480-20518]"
+    }, {
+      "left" : "mMediaStorageNotification.color = mContext.getResources().getColor(\n                    com.android.internal.R.color.system_notification_accent_color);",
+      "right" : "mMediaStorageNotification.color = mContext.getResources().getColor(\n                    com.android.internal.R.color.system_notification_accent_color);",
+      "info" : "ExpressionStatement[20097-20248]:ExpressionStatement[20531-20682]"
+    }, {
+      "left" : "mMediaStorageNotification.setLatestEventInfo(mContext, title, message, pi);",
+      "right" : "mMediaStorageNotification.setLatestEventInfo(mContext, title, message, pi);",
+      "info" : "ExpressionStatement[20261-20336]:ExpressionStatement[20695-20770]"
+    }, {
+      "left" : "mMediaStorageNotification.visibility = Notification.VISIBILITY_PUBLIC;",
+      "right" : "mMediaStorageNotification.visibility = Notification.VISIBILITY_PUBLIC;",
+      "info" : "ExpressionStatement[20349-20419]:ExpressionStatement[20783-20853]"
+    }, {
+      "left" : "mMediaStorageNotification.category = Notification.CATEGORY_SYSTEM;",
+      "right" : "mMediaStorageNotification.category = Notification.CATEGORY_SYSTEM;",
+      "info" : "ExpressionStatement[20432-20498]:ExpressionStatement[20866-20932]"
+    }, {
+      "left" : "final int notificationId = mMediaStorageNotification.icon;",
+      "right" : "final int notificationId = mMediaStorageNotification.icon;",
+      "info" : "VariableDeclarationStatement[20518-20576]:VariableDeclarationStatement[20952-21010]"
+    }, {
+      "left" : "if (visible)",
+      "right" : "if (visible)",
+      "info" : "IfStatement[20585-20841]:IfStatement[21019-21275]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20598-20740]:Block[21032-21174]"
+    }, {
+      "left" : "notificationManager.notifyAsUser(null, notificationId,\n                    mMediaStorageNotification, UserHandle.ALL);",
+      "right" : "notificationManager.notifyAsUser(null, notificationId,\n                    mMediaStorageNotification, UserHandle.ALL);",
+      "info" : "ExpressionStatement[20612-20730]:ExpressionStatement[21046-21164]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20746-20841]:Block[21180-21275]"
+    }, {
+      "left" : "notificationManager.cancelAsUser(null, notificationId, UserHandle.ALL);",
+      "right" : "notificationManager.cancelAsUser(null, notificationId, UserHandle.ALL);",
+      "info" : "ExpressionStatement[20760-20831]:ExpressionStatement[21194-21265]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

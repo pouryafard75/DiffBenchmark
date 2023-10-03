@@ -1,0 +1,333 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "XmlTreeBuilder",
+      "right" : "XmlTreeBuilder",
+      "info" : "TypeDeclaration[116-3479]:TypeDeclaration[116-3913]"
+    }, {
+      "left" : "protected void initialiseParse(String input, String baseUri, ParseErrorList errors)",
+      "right" : "protected void initialiseParse(String input, String baseUri, ParseErrorList errors)",
+      "info" : "MethodDeclaration[205-471]:MethodDeclaration[205-471]"
+    }, {
+      "left" : "protected boolean process(Token token)",
+      "right" : "protected boolean process(Token token)",
+      "info" : "MethodDeclaration[477-1320]:MethodDeclaration[477-1320]"
+    }, {
+      "left" : "private void insertNode(Node node)",
+      "right" : "private void insertNode(Node node)",
+      "info" : "MethodDeclaration[1326-1412]:MethodDeclaration[1326-1412]"
+    }, {
+      "left" : "Element insert(Token.StartTag startTag)",
+      "right" : "Element insert(Token.StartTag startTag)",
+      "info" : "MethodDeclaration[1418-2014]:MethodDeclaration[1418-2014]"
+    }, {
+      "left" : "void insert(Token.Comment commentToken)",
+      "right" : "void insert(Token.Comment commentToken)",
+      "info" : "MethodDeclaration[2020-2198]:MethodDeclaration[2020-2632]"
+    }, {
+      "left" : "void insert(Token.Character characterToken)",
+      "right" : "void insert(Token.Character characterToken)",
+      "info" : "MethodDeclaration[2204-2350]:MethodDeclaration[2638-2784]"
+    }, {
+      "left" : "void insert(Token.Doctype d)",
+      "right" : "void insert(Token.Doctype d)",
+      "info" : "MethodDeclaration[2356-2550]:MethodDeclaration[2790-2984]"
+    }, {
+      "left" : "private void popStackToClose(Token.EndTag endTag)",
+      "right" : "private void popStackToClose(Token.EndTag endTag)",
+      "info" : "MethodDeclaration[2556-3477]:MethodDeclaration[2990-3911]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[303-471]:Block[303-471]"
+    }, {
+      "left" : "super.initialiseParse(input, baseUri, errors);",
+      "right" : "super.initialiseParse(input, baseUri, errors);",
+      "info" : "ExpressionStatement[313-359]:ExpressionStatement[313-359]"
+    }, {
+      "left" : "stack.add(doc);",
+      "right" : "stack.add(doc);",
+      "info" : "ExpressionStatement[368-383]:ExpressionStatement[368-383]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[530-1320]:Block[530-1320]"
+    }, {
+      "left" : "switch (token.type) {\n            case StartTag:\n                insert(token.asStartTag());\n                break;\n            case EndTag:\n                popStackToClose(token.asEndTag());\n                break;\n            case Comment:\n                insert(token.asComment());\n                break;\n            case Character:\n                insert(token.asCharacter());\n                break;\n            case Doctype:\n                insert(token.asDoctype());\n                break;\n            case EOF: // could put some normalisation here if desired\n                break;\n            default:\n                Validate.fail(\"Unexpected token type: \" + token.type);\n        }",
+      "right" : "switch (token.type) {\n            case StartTag:\n                insert(token.asStartTag());\n                break;\n            case EndTag:\n                popStackToClose(token.asEndTag());\n                break;\n            case Comment:\n                insert(token.asComment());\n                break;\n            case Character:\n                insert(token.asCharacter());\n                break;\n            case Doctype:\n                insert(token.asDoctype());\n                break;\n            case EOF: // could put some normalisation here if desired\n                break;\n            default:\n                Validate.fail(\"Unexpected token type: \" + token.type);\n        }",
+      "info" : "SwitchStatement[604-1293]:SwitchStatement[604-1293]"
+    }, {
+      "left" : "case StartTag:",
+      "right" : "case StartTag:",
+      "info" : "SwitchCase[638-652]:SwitchCase[638-652]"
+    }, {
+      "left" : "insert(token.asStartTag());",
+      "right" : "insert(token.asStartTag());",
+      "info" : "ExpressionStatement[669-696]:ExpressionStatement[669-696]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[713-719]:BreakStatement[713-719]"
+    }, {
+      "left" : "case EndTag:",
+      "right" : "case EndTag:",
+      "info" : "SwitchCase[732-744]:SwitchCase[732-744]"
+    }, {
+      "left" : "popStackToClose(token.asEndTag());",
+      "right" : "popStackToClose(token.asEndTag());",
+      "info" : "ExpressionStatement[761-795]:ExpressionStatement[761-795]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[812-818]:BreakStatement[812-818]"
+    }, {
+      "left" : "case Comment:",
+      "right" : "case Comment:",
+      "info" : "SwitchCase[831-844]:SwitchCase[831-844]"
+    }, {
+      "left" : "insert(token.asComment());",
+      "right" : "insert(token.asComment());",
+      "info" : "ExpressionStatement[861-887]:ExpressionStatement[861-887]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[904-910]:BreakStatement[904-910]"
+    }, {
+      "left" : "case Character:",
+      "right" : "case Character:",
+      "info" : "SwitchCase[923-938]:SwitchCase[923-938]"
+    }, {
+      "left" : "insert(token.asCharacter());",
+      "right" : "insert(token.asCharacter());",
+      "info" : "ExpressionStatement[955-983]:ExpressionStatement[955-983]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[1000-1006]:BreakStatement[1000-1006]"
+    }, {
+      "left" : "case Doctype:",
+      "right" : "case Doctype:",
+      "info" : "SwitchCase[1019-1032]:SwitchCase[1019-1032]"
+    }, {
+      "left" : "insert(token.asDoctype());",
+      "right" : "insert(token.asDoctype());",
+      "info" : "ExpressionStatement[1049-1075]:ExpressionStatement[1049-1075]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[1092-1098]:BreakStatement[1092-1098]"
+    }, {
+      "left" : "case EOF:",
+      "right" : "case EOF:",
+      "info" : "SwitchCase[1111-1120]:SwitchCase[1111-1120]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[1185-1191]:BreakStatement[1185-1191]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[1204-1212]:SwitchCase[1204-1212]"
+    }, {
+      "left" : "Validate.fail(\"Unexpected token type: \" + token.type);",
+      "right" : "Validate.fail(\"Unexpected token type: \" + token.type);",
+      "info" : "ExpressionStatement[1229-1283]:ExpressionStatement[1229-1283]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[1302-1314]:ReturnStatement[1302-1314]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1361-1412]:Block[1361-1412]"
+    }, {
+      "left" : "currentElement().appendChild(node);",
+      "right" : "currentElement().appendChild(node);",
+      "info" : "ExpressionStatement[1371-1406]:ExpressionStatement[1371-1406]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1458-2014]:Block[1458-2014]"
+    }, {
+      "left" : "Tag tag = Tag.valueOf(startTag.name());",
+      "right" : "Tag tag = Tag.valueOf(startTag.name());",
+      "info" : "VariableDeclarationStatement[1468-1507]:VariableDeclarationStatement[1468-1507]"
+    }, {
+      "left" : "Element el = new Element(tag, baseUri, startTag.attributes);",
+      "right" : "Element el = new Element(tag, baseUri, startTag.attributes);",
+      "info" : "VariableDeclarationStatement[1617-1677]:VariableDeclarationStatement[1617-1677]"
+    }, {
+      "left" : "insertNode(el);",
+      "right" : "insertNode(el);",
+      "info" : "ExpressionStatement[1686-1701]:ExpressionStatement[1686-1701]"
+    }, {
+      "left" : "if (startTag.isSelfClosing())",
+      "right" : "if (startTag.isSelfClosing())",
+      "info" : "IfStatement[1710-1989]:IfStatement[1710-1989]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1740-1945]:Block[1740-1945]"
+    }, {
+      "left" : "tokeniser.acknowledgeSelfClosingFlag();",
+      "right" : "tokeniser.acknowledgeSelfClosingFlag();",
+      "info" : "ExpressionStatement[1754-1793]:ExpressionStatement[1754-1793]"
+    }, {
+      "left" : "if (!tag.isKnownTag())",
+      "right" : "if (!tag.isKnownTag())",
+      "info" : "IfStatement[1806-1935]:IfStatement[1806-1935]"
+    }, {
+      "left" : "tag.setSelfClosing();",
+      "right" : "tag.setSelfClosing();",
+      "info" : "ExpressionStatement[1914-1935]:ExpressionStatement[1914-1935]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1951-1989]:Block[1951-1989]"
+    }, {
+      "left" : "stack.add(el);",
+      "right" : "stack.add(el);",
+      "info" : "ExpressionStatement[1965-1979]:ExpressionStatement[1965-1979]"
+    }, {
+      "left" : "return el;",
+      "right" : "return el;",
+      "info" : "ReturnStatement[1998-2008]:ReturnStatement[1998-2008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2060-2198]:Block[2060-2632]"
+    }, {
+      "left" : "Comment comment = new Comment(commentToken.getData(), baseUri);",
+      "right" : "Comment comment = new Comment(commentToken.getData(), baseUri);",
+      "info" : "VariableDeclarationStatement[2070-2133]:VariableDeclarationStatement[2070-2133]"
+    }, {
+      "left" : "Node insert = comment;",
+      "right" : "Node insert = comment;",
+      "info" : "VariableDeclarationStatement[2142-2164]:VariableDeclarationStatement[2142-2164]"
+    }, {
+      "left" : "insertNode(insert);",
+      "right" : "insertNode(insert);",
+      "info" : "ExpressionStatement[2173-2192]:ExpressionStatement[2607-2626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2248-2350]:Block[2682-2784]"
+    }, {
+      "left" : "Node node = new TextNode(characterToken.getData(), baseUri);",
+      "right" : "Node node = new TextNode(characterToken.getData(), baseUri);",
+      "info" : "VariableDeclarationStatement[2258-2318]:VariableDeclarationStatement[2692-2752]"
+    }, {
+      "left" : "insertNode(node);",
+      "right" : "insertNode(node);",
+      "info" : "ExpressionStatement[2327-2344]:ExpressionStatement[2761-2778]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2385-2550]:Block[2819-2984]"
+    }, {
+      "left" : "DocumentType doctypeNode = new DocumentType(d.getName(), d.getPublicIdentifier(), d.getSystemIdentifier(), baseUri);",
+      "right" : "DocumentType doctypeNode = new DocumentType(d.getName(), d.getPublicIdentifier(), d.getSystemIdentifier(), baseUri);",
+      "info" : "VariableDeclarationStatement[2395-2511]:VariableDeclarationStatement[2829-2945]"
+    }, {
+      "left" : "insertNode(doctypeNode);",
+      "right" : "insertNode(doctypeNode);",
+      "info" : "ExpressionStatement[2520-2544]:ExpressionStatement[2954-2978]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2789-3477]:Block[3223-3911]"
+    }, {
+      "left" : "String elName = endTag.name();",
+      "right" : "String elName = endTag.name();",
+      "info" : "VariableDeclarationStatement[2799-2829]:VariableDeclarationStatement[3233-3263]"
+    }, {
+      "left" : "Element firstFound = null;",
+      "right" : "Element firstFound = null;",
+      "info" : "VariableDeclarationStatement[2838-2864]:VariableDeclarationStatement[3272-3298]"
+    }, {
+      "left" : "Iterator<Element> it = stack.descendingIterator();",
+      "right" : "Iterator<Element> it = stack.descendingIterator();",
+      "info" : "VariableDeclarationStatement[2874-2924]:VariableDeclarationStatement[3308-3358]"
+    }, {
+      "left" : "while (it.hasNext())",
+      "right" : "while (it.hasNext())",
+      "info" : "WhileStatement[2933-3125]:WhileStatement[3367-3559]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2954-3125]:Block[3388-3559]"
+    }, {
+      "left" : "Element next = it.next();",
+      "right" : "Element next = it.next();",
+      "info" : "VariableDeclarationStatement[2968-2993]:VariableDeclarationStatement[3402-3427]"
+    }, {
+      "left" : "if (next.nodeName().equals(elName))",
+      "right" : "if (next.nodeName().equals(elName))",
+      "info" : "IfStatement[3006-3115]:IfStatement[3440-3549]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3042-3115]:Block[3476-3549]"
+    }, {
+      "left" : "firstFound = next;",
+      "right" : "firstFound = next;",
+      "info" : "ExpressionStatement[3060-3078]:ExpressionStatement[3494-3512]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[3095-3101]:BreakStatement[3529-3535]"
+    }, {
+      "left" : "if (firstFound == null)",
+      "right" : "if (firstFound == null)",
+      "info" : "IfStatement[3134-3177]:IfStatement[3568-3611]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3170-3177]:ReturnStatement[3604-3611]"
+    }, {
+      "left" : "it = stack.descendingIterator();",
+      "right" : "it = stack.descendingIterator();",
+      "info" : "ExpressionStatement[3206-3238]:ExpressionStatement[3640-3672]"
+    }, {
+      "left" : "while (it.hasNext())",
+      "right" : "while (it.hasNext())",
+      "info" : "WhileStatement[3247-3471]:WhileStatement[3681-3905]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3268-3471]:Block[3702-3905]"
+    }, {
+      "left" : "Element next = it.next();",
+      "right" : "Element next = it.next();",
+      "info" : "VariableDeclarationStatement[3282-3307]:VariableDeclarationStatement[3716-3741]"
+    }, {
+      "left" : "if (next == firstFound)",
+      "right" : "if (next == firstFound)",
+      "info" : "IfStatement[3320-3461]:IfStatement[3754-3895]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3344-3411]:Block[3778-3845]"
+    }, {
+      "left" : "it.remove();",
+      "right" : "it.remove();",
+      "info" : "ExpressionStatement[3362-3374]:ExpressionStatement[3796-3808]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[3391-3397]:BreakStatement[3825-3831]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3417-3461]:Block[3851-3895]"
+    }, {
+      "left" : "it.remove();",
+      "right" : "it.remove();",
+      "info" : "ExpressionStatement[3435-3447]:ExpressionStatement[3869-3881]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

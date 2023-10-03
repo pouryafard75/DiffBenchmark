@@ -1,0 +1,941 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[2411-2952]:FieldDeclaration[2411-2952]"
+    }, {
+      "left" : "private final Set<Var> inlinedNewDependencies = Sets.newHashSet();",
+      "right" : "private final Set<Var> inlinedNewDependencies = Sets.newHashSet();",
+      "info" : "FieldDeclaration[2955-3021]:FieldDeclaration[2955-3021]"
+    }, {
+      "left" : "private ControlFlowGraph<Node> cfg;",
+      "right" : "private ControlFlowGraph<Node> cfg;",
+      "info" : "FieldDeclaration[3113-3148]:FieldDeclaration[3113-3148]"
+    }, {
+      "left" : "private List<Candidate> candidates;",
+      "right" : "private List<Candidate> candidates;",
+      "info" : "FieldDeclaration[3151-3186]:FieldDeclaration[3151-3186]"
+    }, {
+      "left" : "private MustBeReachingVariableDef reachingDef;",
+      "right" : "private MustBeReachingVariableDef reachingDef;",
+      "info" : "FieldDeclaration[3189-3235]:FieldDeclaration[3189-3235]"
+    }, {
+      "left" : "private MaybeReachingVariableUse reachingUses;",
+      "right" : "private MaybeReachingVariableUse reachingUses;",
+      "info" : "FieldDeclaration[3238-3284]:FieldDeclaration[3238-3284]"
+    }, {
+      "left" : "private static final Predicate<Node> SIDE_EFFECT_PREDICATE =\n    new Predicate<Node>() {\n      @Override\n      public boolean apply(Node n) {\n        // When the node is null it means, we reached the implicit return\n        // where the function returns (possibly without an return statement)\n        if (n == null) {\n          return false;\n        }\n\n        // TODO(user): We only care about calls to functions that\n        // passes one of the dependent variable to a non-side-effect free\n        // function.\n        if (n.isCall() && NodeUtil.functionCallHasSideEffects(n)) {\n          return true;\n        }\n\n        if (n.isNew() && NodeUtil.constructorCallHasSideEffects(n)) {\n          return true;\n        }\n\n        if (n.isDelProp()) {\n          return true;\n        }\n\n        for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {\n          if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c)) {\n            return true;\n          }\n        }\n        return false;\n      }\n  };",
+      "right" : "private static final Predicate<Node> SIDE_EFFECT_PREDICATE =\n    new Predicate<Node>() {\n      @Override\n      public boolean apply(Node n) {\n        // When the node is null it means, we reached the implicit return\n        // where the function returns (possibly without an return statement)\n        if (n == null) {\n          return false;\n        }\n\n        // TODO(user): We only care about calls to functions that\n        // passes one of the dependent variable to a non-side-effect free\n        // function.\n        if (n.isCall() && NodeUtil.functionCallHasSideEffects(n)) {\n          return true;\n        }\n\n        if (n.isNew() && NodeUtil.constructorCallHasSideEffects(n)) {\n          return true;\n        }\n\n        if (n.isDelProp()) {\n          return true;\n        }\n\n        for (Node c = n.getFirstChild(); c != null; c = c.getNext()) {\n          if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c)) {\n            return true;\n          }\n        }\n        return false;\n      }\n  };",
+      "info" : "FieldDeclaration[3288-4294]:FieldDeclaration[3288-4294]"
+    }, {
+      "left" : "public boolean apply(Node n)",
+      "right" : "public boolean apply(Node n)",
+      "info" : "MethodDeclaration[3383-4289]:MethodDeclaration[3383-4289]"
+    }, {
+      "left" : "public FlowSensitiveInlineVariables(AbstractCompiler compiler)",
+      "right" : "public FlowSensitiveInlineVariables(AbstractCompiler compiler)",
+      "info" : "MethodDeclaration[4298-4396]:MethodDeclaration[4298-4396]"
+    }, {
+      "left" : "public void enterScope(NodeTraversal t)",
+      "right" : "public void enterScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[4400-6182]:MethodDeclaration[4400-6182]"
+    }, {
+      "left" : "public void exitScope(NodeTraversal t)",
+      "right" : "public void exitScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[6186-6239]:MethodDeclaration[6186-6239]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[6243-6375]:MethodDeclaration[6243-6375]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[6379-6759]:MethodDeclaration[6379-6759]"
+    }, {
+      "left" : "GatherCandiates",
+      "right" : "GatherCandiates",
+      "info" : "TypeDeclaration[6763-8797]:TypeDeclaration[6763-8797]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[7198-8793]:MethodDeclaration[7198-8793]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[7565-8718]:MethodDeclaration[7565-8718]"
+    }, {
+      "left" : "private final String varName;",
+      "right" : "private final String varName;",
+      "info" : "FieldDeclaration[8951-8980]:FieldDeclaration[8951-8980]"
+    }, {
+      "left" : "private Node def;",
+      "right" : "private Node def;",
+      "info" : "FieldDeclaration[9026-9043]:FieldDeclaration[9026-9043]"
+    }, {
+      "left" : "private final Definition defMetadata;",
+      "right" : "private final Definition defMetadata;",
+      "info" : "FieldDeclaration[9048-9085]:FieldDeclaration[9048-9085]"
+    }, {
+      "left" : "private final Node use;",
+      "right" : "private final Node use;",
+      "info" : "FieldDeclaration[9124-9147]:FieldDeclaration[9124-9147]"
+    }, {
+      "left" : "private final Node useCfgNode;",
+      "right" : "private final Node useCfgNode;",
+      "info" : "FieldDeclaration[9152-9182]:FieldDeclaration[9152-9182]"
+    }, {
+      "left" : "private int numUsesWithinCfgNode;",
+      "right" : "private int numUsesWithinCfgNode;",
+      "info" : "FieldDeclaration[9255-9288]:FieldDeclaration[9255-9288]"
+    }, {
+      "left" : "Candidate(String varName, Definition defMetadata,\n        Node use, Node useCfgNode)",
+      "right" : "Candidate(String varName, Definition defMetadata,\n        Node use, Node useCfgNode)",
+      "info" : "MethodDeclaration[9294-9561]:MethodDeclaration[9294-9561]"
+    }, {
+      "left" : "private Node getDefCfgNode()",
+      "right" : "private Node getDefCfgNode()",
+      "info" : "MethodDeclaration[9567-9634]:MethodDeclaration[9567-9634]"
+    }, {
+      "left" : "private boolean canInline(final Scope scope)",
+      "right" : "private boolean canInline(final Scope scope)",
+      "info" : "MethodDeclaration[9640-14595]:MethodDeclaration[9640-14595]"
+    }, {
+      "left" : "public boolean apply(Node input)",
+      "right" : "public boolean apply(Node input)",
+      "info" : "MethodDeclaration[12638-13317]:MethodDeclaration[12638-13317]"
+    }, {
+      "left" : "public boolean apply(Node input)",
+      "right" : "public boolean apply(Node input)",
+      "info" : "MethodDeclaration[13379-13555]:MethodDeclaration[13379-13555]"
+    }, {
+      "left" : "private void inlineVariable()",
+      "right" : "private void inlineVariable()",
+      "info" : "MethodDeclaration[14601-15450]:MethodDeclaration[14601-15450]"
+    }, {
+      "left" : "private void getDefinition(Node n)",
+      "right" : "private void getDefinition(Node n)",
+      "info" : "MethodDeclaration[15456-16285]:MethodDeclaration[15456-16285]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[15717-16217]:MethodDeclaration[15717-16217]"
+    }, {
+      "left" : "private static boolean checkRightOf(\n      Node n, Node expressionRoot, Predicate<Node> predicate)",
+      "right" : "private static boolean checkRightOf(\n      Node n, Node expressionRoot, Predicate<Node> predicate)",
+      "info" : "MethodDeclaration[17391-17970]:MethodDeclaration[17736-18315]"
+    }, {
+      "left" : "private static boolean checkLeftOf(\n      Node n, Node expressionRoot, Predicate<Node> predicate)",
+      "right" : "private static boolean checkLeftOf(\n      Node n, Node expressionRoot, Predicate<Node> predicate)",
+      "info" : "MethodDeclaration[17974-18576]:MethodDeclaration[18319-18921]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3428-4289]:Block[3428-4289]"
+    }, {
+      "left" : "if (n == null)",
+      "right" : "if (n == null)",
+      "info" : "IfStatement[3589-3639]:IfStatement[3589-3639]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3604-3639]:Block[3604-3639]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[3616-3629]:ReturnStatement[3616-3629]"
+    }, {
+      "left" : "if (n.isCall() && NodeUtil.functionCallHasSideEffects(n))",
+      "right" : "if (n.isCall() && NodeUtil.functionCallHasSideEffects(n))",
+      "info" : "IfStatement[3810-3902]:IfStatement[3810-3902]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3868-3902]:Block[3868-3902]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[3880-3892]:ReturnStatement[3880-3892]"
+    }, {
+      "left" : "if (n.isNew() && NodeUtil.constructorCallHasSideEffects(n))",
+      "right" : "if (n.isNew() && NodeUtil.constructorCallHasSideEffects(n))",
+      "info" : "IfStatement[3912-4006]:IfStatement[3912-4006]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3972-4006]:Block[3972-4006]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[3984-3996]:ReturnStatement[3984-3996]"
+    }, {
+      "left" : "if (n.isDelProp())",
+      "right" : "if (n.isDelProp())",
+      "info" : "IfStatement[4016-4069]:IfStatement[4016-4069]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4035-4069]:Block[4035-4069]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[4047-4059]:ReturnStatement[4047-4059]"
+    }, {
+      "left" : "for (Node c = n.getFirstChild(); c != null; c = c.getNext())",
+      "right" : "for (Node c = n.getFirstChild(); c != null; c = c.getNext())",
+      "info" : "ForStatement[4079-4259]:ForStatement[4079-4259]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4140-4259]:Block[4140-4259]"
+    }, {
+      "left" : "if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c))",
+      "right" : "if (!ControlFlowGraph.isEnteringNewCfgNode(c) && apply(c))",
+      "info" : "IfStatement[4152-4249]:IfStatement[4152-4249]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4211-4249]:Block[4211-4249]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[4225-4237]:ReturnStatement[4225-4237]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[4268-4281]:ReturnStatement[4268-4281]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4361-4396]:Block[4361-4396]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[4367-4392]:ExpressionStatement[4367-4392]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4452-6182]:Block[4452-6182]"
+    }, {
+      "left" : "if (t.inGlobalScope())",
+      "right" : "if (t.inGlobalScope())",
+      "info" : "IfStatement[4459-4567]:IfStatement[4459-4567]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4482-4567]:Block[4482-4567]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4490-4497]:ReturnStatement[4490-4497]"
+    }, {
+      "left" : "if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE <\n        t.getScope().getVarCount())",
+      "right" : "if (LiveVariablesAnalysis.MAX_VARIABLES_TO_ANALYZE <\n        t.getScope().getVarCount())",
+      "info" : "IfStatement[4573-4683]:IfStatement[4573-4683]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4662-4683]:Block[4662-4683]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4670-4677]:ReturnStatement[4670-4677]"
+    }, {
+      "left" : "ControlFlowAnalysis cfa = new ControlFlowAnalysis(compiler, false, true);",
+      "right" : "ControlFlowAnalysis cfa = new ControlFlowAnalysis(compiler, false, true);",
+      "info" : "VariableDeclarationStatement[4737-4810]:VariableDeclarationStatement[4737-4810]"
+    }, {
+      "left" : "Preconditions.checkState(t.getScopeRoot().isFunction());",
+      "right" : "Preconditions.checkState(t.getScopeRoot().isFunction());",
+      "info" : "ExpressionStatement[4856-4912]:ExpressionStatement[4856-4912]"
+    }, {
+      "left" : "cfa.process(null, t.getScopeRoot().getLastChild());",
+      "right" : "cfa.process(null, t.getScopeRoot().getLastChild());",
+      "info" : "ExpressionStatement[4917-4968]:ExpressionStatement[4917-4968]"
+    }, {
+      "left" : "cfg = cfa.getCfg();",
+      "right" : "cfg = cfa.getCfg();",
+      "info" : "ExpressionStatement[4973-4992]:ExpressionStatement[4973-4992]"
+    }, {
+      "left" : "reachingDef = new MustBeReachingVariableDef(cfg, t.getScope(), compiler);",
+      "right" : "reachingDef = new MustBeReachingVariableDef(cfg, t.getScope(), compiler);",
+      "info" : "ExpressionStatement[4997-5070]:ExpressionStatement[4997-5070]"
+    }, {
+      "left" : "reachingDef.analyze();",
+      "right" : "reachingDef.analyze();",
+      "info" : "ExpressionStatement[5075-5097]:ExpressionStatement[5075-5097]"
+    }, {
+      "left" : "candidates = Lists.newLinkedList();",
+      "right" : "candidates = Lists.newLinkedList();",
+      "info" : "ExpressionStatement[5102-5137]:ExpressionStatement[5102-5137]"
+    }, {
+      "left" : "new NodeTraversal(compiler, new GatherCandiates()).traverse(\n        t.getScopeRoot().getLastChild());",
+      "right" : "new NodeTraversal(compiler, new GatherCandiates()).traverse(\n        t.getScopeRoot().getLastChild());",
+      "info" : "ExpressionStatement[5236-5338]:ExpressionStatement[5236-5338]"
+    }, {
+      "left" : "reachingUses = new MaybeReachingVariableUse(cfg, t.getScope(), compiler);",
+      "right" : "reachingUses = new MaybeReachingVariableUse(cfg, t.getScope(), compiler);",
+      "info" : "ExpressionStatement[5409-5482]:ExpressionStatement[5409-5482]"
+    }, {
+      "left" : "reachingUses.analyze();",
+      "right" : "reachingUses.analyze();",
+      "info" : "ExpressionStatement[5487-5510]:ExpressionStatement[5487-5510]"
+    }, {
+      "left" : "for (Candidate c : candidates)",
+      "right" : "for (Candidate c : candidates)",
+      "info" : "EnhancedForStatement[5515-6178]:EnhancedForStatement[5515-6178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5546-6178]:Block[5546-6178]"
+    }, {
+      "left" : "if (c.canInline(t.getScope()))",
+      "right" : "if (c.canInline(t.getScope()))",
+      "info" : "IfStatement[5554-6172]:IfStatement[5554-6172]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5585-6172]:Block[5585-6172]"
+    }, {
+      "left" : "c.inlineVariable();",
+      "right" : "c.inlineVariable();",
+      "info" : "ExpressionStatement[5595-5614]:ExpressionStatement[5595-5614]"
+    }, {
+      "left" : "if (!c.defMetadata.depends.isEmpty())",
+      "right" : "if (!c.defMetadata.depends.isEmpty())",
+      "info" : "IfStatement[6045-6164]:IfStatement[6045-6164]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6083-6164]:Block[6083-6164]"
+    }, {
+      "left" : "inlinedNewDependencies.add(t.getScope().getVar(c.varName));",
+      "right" : "inlinedNewDependencies.add(t.getScope().getVar(c.varName));",
+      "info" : "ExpressionStatement[6095-6154]:ExpressionStatement[6095-6154]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6237-6239]:Block[6237-6239]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6300-6375]:Block[6300-6375]"
+    }, {
+      "left" : "(new NodeTraversal(compiler, this)).traverseRoots(externs, root);",
+      "right" : "(new NodeTraversal(compiler, this)).traverseRoots(externs, root);",
+      "info" : "ExpressionStatement[6306-6371]:ExpressionStatement[6306-6371]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6447-6759]:Block[6447-6759]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7268-8793]:Block[7268-8793]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> graphNode = cfg.getDirectedGraphNode(n);",
+      "right" : "DiGraphNode<Node, Branch> graphNode = cfg.getDirectedGraphNode(n);",
+      "info" : "VariableDeclarationStatement[7276-7342]:VariableDeclarationStatement[7276-7342]"
+    }, {
+      "left" : "if (graphNode == null)",
+      "right" : "if (graphNode == null)",
+      "info" : "IfStatement[7349-7424]:IfStatement[7349-7424]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7372-7424]:Block[7372-7424]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7409-7416]:ReturnStatement[7409-7416]"
+    }, {
+      "left" : "final Node cfgNode = n;",
+      "right" : "final Node cfgNode = n;",
+      "info" : "VariableDeclarationStatement[7431-7454]:VariableDeclarationStatement[7431-7454]"
+    }, {
+      "left" : "AbstractCfgNodeTraversalCallback gatherCb =\n          new AbstractCfgNodeTraversalCallback() {\n\n        @Override\n        public void visit(NodeTraversal t, Node n, Node parent) {\n          if (n.isName()) {\n\n            // n.getParent() isn't null. This just the case where n is the root\n            // node that gatherCb started at.\n            if (parent == null) {\n              return;\n            }\n\n            // Make sure that the name node is purely a read.\n            if ((NodeUtil.isAssignmentOp(parent) && parent.getFirstChild() == n)\n                || parent.isVar() || parent.isInc() || parent.isDec() ||\n                parent.isParamList() || parent.isCatch()) {\n              return;\n            }\n\n            String name = n.getString();\n            if (compiler.getCodingConvention().isExported(name)) {\n              return;\n            }\n\n            Definition def = reachingDef.getDef(name, cfgNode);\n            // TODO(nicksantos): We need to add some notion of @const outer\n            // scope vars. We can inline those just fine.\n            if (def != null &&\n                !reachingDef.dependsOnOuterScopeVars(def)) {\n              candidates.add(new Candidate(name, def, n, cfgNode));\n            }\n          }\n        }\n      };",
+      "right" : "AbstractCfgNodeTraversalCallback gatherCb =\n          new AbstractCfgNodeTraversalCallback() {\n\n        @Override\n        public void visit(NodeTraversal t, Node n, Node parent) {\n          if (n.isName()) {\n\n            // n.getParent() isn't null. This just the case where n is the root\n            // node that gatherCb started at.\n            if (parent == null) {\n              return;\n            }\n\n            // Make sure that the name node is purely a read.\n            if ((NodeUtil.isAssignmentOp(parent) && parent.getFirstChild() == n)\n                || parent.isVar() || parent.isInc() || parent.isDec() ||\n                parent.isParamList() || parent.isCatch()) {\n              return;\n            }\n\n            String name = n.getString();\n            if (compiler.getCodingConvention().isExported(name)) {\n              return;\n            }\n\n            Definition def = reachingDef.getDef(name, cfgNode);\n            // TODO(nicksantos): We need to add some notion of @const outer\n            // scope vars. We can inline those just fine.\n            if (def != null &&\n                !reachingDef.dependsOnOuterScopeVars(def)) {\n              candidates.add(new Candidate(name, def, n, cfgNode));\n            }\n          }\n        }\n      };",
+      "info" : "VariableDeclarationStatement[7461-8727]:VariableDeclarationStatement[7461-8727]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7639-8718]:Block[7639-8718]"
+    }, {
+      "left" : "if (n.isName())",
+      "right" : "if (n.isName())",
+      "info" : "IfStatement[7651-8708]:IfStatement[7651-8708]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7667-8708]:Block[7667-8708]"
+    }, {
+      "left" : "if (parent == null)",
+      "right" : "if (parent == null)",
+      "info" : "IfStatement[7808-7865]:IfStatement[7808-7865]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7828-7865]:Block[7828-7865]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7844-7851]:ReturnStatement[7844-7851]"
+    }, {
+      "left" : "if ((NodeUtil.isAssignmentOp(parent) && parent.getFirstChild() == n)\n                || parent.isVar() || parent.isInc() || parent.isDec() ||\n                parent.isParamList() || parent.isCatch())",
+      "right" : "if ((NodeUtil.isAssignmentOp(parent) && parent.getFirstChild() == n)\n                || parent.isVar() || parent.isInc() || parent.isDec() ||\n                parent.isParamList() || parent.isCatch())",
+      "info" : "IfStatement[7941-8178]:IfStatement[7941-8178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8141-8178]:Block[8141-8178]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8157-8164]:ReturnStatement[8157-8164]"
+    }, {
+      "left" : "String name = n.getString();",
+      "right" : "String name = n.getString();",
+      "info" : "VariableDeclarationStatement[8192-8220]:VariableDeclarationStatement[8192-8220]"
+    }, {
+      "left" : "if (compiler.getCodingConvention().isExported(name))",
+      "right" : "if (compiler.getCodingConvention().isExported(name))",
+      "info" : "IfStatement[8233-8323]:IfStatement[8233-8323]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8286-8323]:Block[8286-8323]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8302-8309]:ReturnStatement[8302-8309]"
+    }, {
+      "left" : "Definition def = reachingDef.getDef(name, cfgNode);",
+      "right" : "Definition def = reachingDef.getDef(name, cfgNode);",
+      "info" : "VariableDeclarationStatement[8337-8388]:VariableDeclarationStatement[8337-8388]"
+    }, {
+      "left" : "if (def != null &&\n                !reachingDef.dependsOnOuterScopeVars(def))",
+      "right" : "if (def != null &&\n                !reachingDef.dependsOnOuterScopeVars(def))",
+      "info" : "IfStatement[8535-8696]:IfStatement[8535-8696]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8613-8696]:Block[8613-8696]"
+    }, {
+      "left" : "candidates.add(new Candidate(name, def, n, cfgNode));",
+      "right" : "candidates.add(new Candidate(name, def, n, cfgNode));",
+      "info" : "ExpressionStatement[8629-8682]:ExpressionStatement[8629-8682]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, cfgNode, gatherCb);",
+      "right" : "NodeTraversal.traverse(compiler, cfgNode, gatherCb);",
+      "info" : "ExpressionStatement[8735-8787]:ExpressionStatement[8735-8787]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9379-9561]:Block[9379-9561]"
+    }, {
+      "left" : "Preconditions.checkArgument(use.isName());",
+      "right" : "Preconditions.checkArgument(use.isName());",
+      "info" : "ExpressionStatement[9387-9429]:ExpressionStatement[9387-9429]"
+    }, {
+      "left" : "this.varName = varName;",
+      "right" : "this.varName = varName;",
+      "info" : "ExpressionStatement[9436-9459]:ExpressionStatement[9436-9459]"
+    }, {
+      "left" : "this.defMetadata = defMetadata;",
+      "right" : "this.defMetadata = defMetadata;",
+      "info" : "ExpressionStatement[9466-9497]:ExpressionStatement[9466-9497]"
+    }, {
+      "left" : "this.use = use;",
+      "right" : "this.use = use;",
+      "info" : "ExpressionStatement[9504-9519]:ExpressionStatement[9504-9519]"
+    }, {
+      "left" : "this.useCfgNode = useCfgNode;",
+      "right" : "this.useCfgNode = useCfgNode;",
+      "info" : "ExpressionStatement[9526-9555]:ExpressionStatement[9526-9555]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9596-9634]:Block[9596-9634]"
+    }, {
+      "left" : "return defMetadata.node;",
+      "right" : "return defMetadata.node;",
+      "info" : "ReturnStatement[9604-9628]:ReturnStatement[9604-9628]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9685-14595]:Block[9685-14595]"
+    }, {
+      "left" : "if (getDefCfgNode().isFunction())",
+      "right" : "if (getDefCfgNode().isFunction())",
+      "info" : "IfStatement[9729-9794]:IfStatement[9729-9794]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9763-9794]:Block[9763-9794]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[9773-9786]:ReturnStatement[9773-9786]"
+    }, {
+      "left" : "for (Var dependency : defMetadata.depends)",
+      "right" : "for (Var dependency : defMetadata.depends)",
+      "info" : "EnhancedForStatement[9991-10136]:EnhancedForStatement[9991-10136]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10034-10136]:Block[10034-10136]"
+    }, {
+      "left" : "if (inlinedNewDependencies.contains(dependency))",
+      "right" : "if (inlinedNewDependencies.contains(dependency))",
+      "info" : "IfStatement[10044-10128]:IfStatement[10044-10128]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10093-10128]:Block[10093-10128]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10105-10118]:ReturnStatement[10105-10118]"
+    }, {
+      "left" : "getDefinition(getDefCfgNode());",
+      "right" : "getDefinition(getDefCfgNode());",
+      "info" : "ExpressionStatement[10144-10175]:ExpressionStatement[10144-10175]"
+    }, {
+      "left" : "getNumUseInUseCfgNode(useCfgNode);",
+      "right" : "getNumUseInUseCfgNode(useCfgNode);",
+      "info" : "ExpressionStatement[10182-10216]:ExpressionStatement[10182-10216]"
+    }, {
+      "left" : "if (def == null)",
+      "right" : "if (def == null)",
+      "info" : "IfStatement[10259-10307]:IfStatement[10259-10307]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10276-10307]:Block[10276-10307]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10286-10299]:ReturnStatement[10286-10299]"
+    }, {
+      "left" : "if (def.isAssign() && !NodeUtil.isExprAssign(def.getParent()))",
+      "right" : "if (def.isAssign() && !NodeUtil.isExprAssign(def.getParent()))",
+      "info" : "IfStatement[10431-10525]:IfStatement[10431-10525]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10494-10525]:Block[10494-10525]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10504-10517]:ReturnStatement[10504-10517]"
+    }, {
+      "left" : "if (checkRightOf(def, getDefCfgNode(), SIDE_EFFECT_PREDICATE))",
+      "right" : "if (checkRightOf(def, getDefCfgNode(), SIDE_EFFECT_PREDICATE))",
+      "info" : "IfStatement[10663-10757]:IfStatement[10663-10757]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10726-10757]:Block[10726-10757]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10736-10749]:ReturnStatement[10736-10749]"
+    }, {
+      "left" : "if (checkLeftOf(use, useCfgNode, SIDE_EFFECT_PREDICATE))",
+      "right" : "if (checkLeftOf(use, useCfgNode, SIDE_EFFECT_PREDICATE))",
+      "info" : "IfStatement[10933-11021]:IfStatement[10933-11021]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10990-11021]:Block[10990-11021]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11000-11013]:ReturnStatement[11000-11013]"
+    }, {
+      "left" : "if (NodeUtil.mayHaveSideEffects(def.getLastChild(), compiler))",
+      "right" : "if (NodeUtil.mayHaveSideEffects(def.getLastChild(), compiler))",
+      "info" : "IfStatement[11217-11311]:IfStatement[11217-11311]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11280-11311]:Block[11280-11311]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11290-11303]:ReturnStatement[11290-11303]"
+    }, {
+      "left" : "if (numUsesWithinCfgNode != 1)",
+      "right" : "if (numUsesWithinCfgNode != 1)",
+      "info" : "IfStatement[11601-11663]:IfStatement[11601-11663]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11632-11663]:Block[11632-11663]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11642-11655]:ReturnStatement[11642-11655]"
+    }, {
+      "left" : "if (NodeUtil.isWithinLoop(use))",
+      "right" : "if (NodeUtil.isWithinLoop(use))",
+      "info" : "IfStatement[11725-11788]:IfStatement[11725-11788]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11757-11788]:Block[11757-11788]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11767-11780]:ReturnStatement[11767-11780]"
+    }, {
+      "left" : "Collection<Node> uses = reachingUses.getUses(varName, getDefCfgNode());",
+      "right" : "Collection<Node> uses = reachingUses.getUses(varName, getDefCfgNode());",
+      "info" : "VariableDeclarationStatement[11797-11868]:VariableDeclarationStatement[11797-11868]"
+    }, {
+      "left" : "if (uses.size() != 1)",
+      "right" : "if (uses.size() != 1)",
+      "info" : "IfStatement[11876-11929]:IfStatement[11876-11929]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11898-11929]:Block[11898-11929]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11908-11921]:ReturnStatement[11908-11921]"
+    }, {
+      "left" : "if (NodeUtil.has(def.getLastChild(),\n          new Predicate<Node>() {\n              @Override\n              public boolean apply(Node input) {\n                switch (input.getType()) {\n                  case Token.GETELEM:\n                  case Token.GETPROP:\n                  case Token.ARRAYLIT:\n                  case Token.OBJECTLIT:\n                  case Token.REGEXP:\n                  case Token.NEW:\n                    return true;\n                  case Token.NAME:\n                    Var var = scope.getOwnSlot(input.getString());\n                    if (var != null\n                        && var.getParentNode().isCatch()) {\n                      return true;\n                    }\n                }\n                return false;\n              }\n          },\n          new Predicate<Node>() {\n              @Override\n              public boolean apply(Node input) {\n                // Recurse if the node is not a function.\n                return !input.isFunction();\n              }\n          }))",
+      "right" : "if (NodeUtil.has(def.getLastChild(),\n          new Predicate<Node>() {\n              @Override\n              public boolean apply(Node input) {\n                switch (input.getType()) {\n                  case Token.GETELEM:\n                  case Token.GETPROP:\n                  case Token.ARRAYLIT:\n                  case Token.OBJECTLIT:\n                  case Token.REGEXP:\n                  case Token.NEW:\n                    return true;\n                  case Token.NAME:\n                    Var var = scope.getOwnSlot(input.getString());\n                    if (var != null\n                        && var.getParentNode().isCatch()) {\n                      return true;\n                    }\n                }\n                return false;\n              }\n          },\n          new Predicate<Node>() {\n              @Override\n              public boolean apply(Node input) {\n                // Recurse if the node is not a function.\n                return !input.isFunction();\n              }\n          }))",
+      "info" : "IfStatement[12553-13601]:IfStatement[12553-13601]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12695-13317]:Block[12695-13317]"
+    }, {
+      "left" : "switch (input.getType()) {\n                  case Token.GETELEM:\n                  case Token.GETPROP:\n                  case Token.ARRAYLIT:\n                  case Token.OBJECTLIT:\n                  case Token.REGEXP:\n                  case Token.NEW:\n                    return true;\n                  case Token.NAME:\n                    Var var = scope.getOwnSlot(input.getString());\n                    if (var != null\n                        && var.getParentNode().isCatch()) {\n                      return true;\n                    }\n                }",
+      "right" : "switch (input.getType()) {\n                  case Token.GETELEM:\n                  case Token.GETPROP:\n                  case Token.ARRAYLIT:\n                  case Token.OBJECTLIT:\n                  case Token.REGEXP:\n                  case Token.NEW:\n                    return true;\n                  case Token.NAME:\n                    Var var = scope.getOwnSlot(input.getString());\n                    if (var != null\n                        && var.getParentNode().isCatch()) {\n                      return true;\n                    }\n                }",
+      "info" : "SwitchStatement[12713-13271]:SwitchStatement[12713-13271]"
+    }, {
+      "left" : "case Token.GETELEM:",
+      "right" : "case Token.GETELEM:",
+      "info" : "SwitchCase[12758-12777]:SwitchCase[12758-12777]"
+    }, {
+      "left" : "case Token.GETPROP:",
+      "right" : "case Token.GETPROP:",
+      "info" : "SwitchCase[12796-12815]:SwitchCase[12796-12815]"
+    }, {
+      "left" : "case Token.ARRAYLIT:",
+      "right" : "case Token.ARRAYLIT:",
+      "info" : "SwitchCase[12834-12854]:SwitchCase[12834-12854]"
+    }, {
+      "left" : "case Token.OBJECTLIT:",
+      "right" : "case Token.OBJECTLIT:",
+      "info" : "SwitchCase[12873-12894]:SwitchCase[12873-12894]"
+    }, {
+      "left" : "case Token.REGEXP:",
+      "right" : "case Token.REGEXP:",
+      "info" : "SwitchCase[12913-12931]:SwitchCase[12913-12931]"
+    }, {
+      "left" : "case Token.NEW:",
+      "right" : "case Token.NEW:",
+      "info" : "SwitchCase[12950-12965]:SwitchCase[12950-12965]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[12986-12998]:ReturnStatement[12986-12998]"
+    }, {
+      "left" : "case Token.NAME:",
+      "right" : "case Token.NAME:",
+      "info" : "SwitchCase[13017-13033]:SwitchCase[13017-13033]"
+    }, {
+      "left" : "Var var = scope.getOwnSlot(input.getString());",
+      "right" : "Var var = scope.getOwnSlot(input.getString());",
+      "info" : "VariableDeclarationStatement[13054-13100]:VariableDeclarationStatement[13054-13100]"
+    }, {
+      "left" : "if (var != null\n                        && var.getParentNode().isCatch())",
+      "right" : "if (var != null\n                        && var.getParentNode().isCatch())",
+      "info" : "IfStatement[13121-13253]:IfStatement[13121-13253]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13195-13253]:Block[13195-13253]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[13219-13231]:ReturnStatement[13219-13231]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[13288-13301]:ReturnStatement[13288-13301]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13436-13555]:Block[13436-13555]"
+    }, {
+      "left" : "return !input.isFunction();",
+      "right" : "return !input.isFunction();",
+      "info" : "ReturnStatement[13512-13539]:ReturnStatement[13512-13539]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13570-13601]:Block[13570-13601]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[13580-13593]:ReturnStatement[13580-13593]"
+    }, {
+      "left" : "if (NodeUtil.isStatementBlock(getDefCfgNode().getParent()) &&\n          getDefCfgNode().getNext() != useCfgNode)",
+      "right" : "if (NodeUtil.isStatementBlock(getDefCfgNode().getParent()) &&\n          getDefCfgNode().getNext() != useCfgNode)",
+      "info" : "IfStatement[13727-14569]:IfStatement[13727-14569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13840-14569]:Block[13840-14569]"
+    }, {
+      "left" : "CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>\n          pathCheck = new CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>(\n                 cfg,\n                 cfg.getDirectedGraphNode(getDefCfgNode()),\n                 cfg.getDirectedGraphNode(useCfgNode),\n                 SIDE_EFFECT_PREDICATE,\n                 Predicates.\n                     <DiGraphEdge<Node, ControlFlowGraph.Branch>>alwaysTrue(),\n                 false);",
+      "right" : "CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>\n          pathCheck = new CheckPathsBetweenNodes<Node, ControlFlowGraph.Branch>(\n                 cfg,\n                 cfg.getDirectedGraphNode(getDefCfgNode()),\n                 cfg.getDirectedGraphNode(useCfgNode),\n                 SIDE_EFFECT_PREDICATE,\n                 Predicates.\n                     <DiGraphEdge<Node, ControlFlowGraph.Branch>>alwaysTrue(),\n                 false);",
+      "info" : "VariableDeclarationStatement[14030-14474]:VariableDeclarationStatement[14030-14474]"
+    }, {
+      "left" : "if (pathCheck.somePathsSatisfyPredicate())",
+      "right" : "if (pathCheck.somePathsSatisfyPredicate())",
+      "info" : "IfStatement[14483-14561]:IfStatement[14483-14561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14526-14561]:Block[14526-14561]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[14538-14551]:ReturnStatement[14538-14551]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[14577-14589]:ReturnStatement[14577-14589]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14677-15450]:Block[14677-15450]"
+    }, {
+      "left" : "Node defParent = def.getParent();",
+      "right" : "Node defParent = def.getParent();",
+      "info" : "VariableDeclarationStatement[14685-14718]:VariableDeclarationStatement[14685-14718]"
+    }, {
+      "left" : "Node useParent = use.getParent();",
+      "right" : "Node useParent = use.getParent();",
+      "info" : "VariableDeclarationStatement[14725-14758]:VariableDeclarationStatement[14725-14758]"
+    }, {
+      "left" : "if (def.isAssign())",
+      "right" : "if (def.isAssign())",
+      "info" : "IfStatement[14765-15409]:IfStatement[14765-15409]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14785-15164]:Block[14785-15164]"
+    }, {
+      "left" : "Node rhs = def.getLastChild();",
+      "right" : "Node rhs = def.getLastChild();",
+      "info" : "VariableDeclarationStatement[14795-14825]:VariableDeclarationStatement[14795-14825]"
+    }, {
+      "left" : "rhs.detachFromParent();",
+      "right" : "rhs.detachFromParent();",
+      "info" : "ExpressionStatement[14834-14857]:ExpressionStatement[14834-14857]"
+    }, {
+      "left" : "Preconditions.checkState(defParent.isExprResult());",
+      "right" : "Preconditions.checkState(defParent.isExprResult());",
+      "info" : "ExpressionStatement[14920-14971]:ExpressionStatement[14920-14971]"
+    }, {
+      "left" : "while (defParent.getParent().isLabel())",
+      "right" : "while (defParent.getParent().isLabel())",
+      "info" : "WhileStatement[14980-15076]:WhileStatement[14980-15076]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15020-15076]:Block[15020-15076]"
+    }, {
+      "left" : "defParent = defParent.getParent();",
+      "right" : "defParent = defParent.getParent();",
+      "info" : "ExpressionStatement[15032-15066]:ExpressionStatement[15032-15066]"
+    }, {
+      "left" : "defParent.detachFromParent();",
+      "right" : "defParent.detachFromParent();",
+      "info" : "ExpressionStatement[15085-15114]:ExpressionStatement[15085-15114]"
+    }, {
+      "left" : "useParent.replaceChild(use, rhs);",
+      "right" : "useParent.replaceChild(use, rhs);",
+      "info" : "ExpressionStatement[15123-15156]:ExpressionStatement[15123-15156]"
+    }, {
+      "left" : "if (defParent.isVar())",
+      "right" : "if (defParent.isVar())",
+      "info" : "IfStatement[15170-15409]:IfStatement[15170-15409]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15193-15313]:Block[15193-15313]"
+    }, {
+      "left" : "Node rhs = def.getLastChild();",
+      "right" : "Node rhs = def.getLastChild();",
+      "info" : "VariableDeclarationStatement[15203-15233]:VariableDeclarationStatement[15203-15233]"
+    }, {
+      "left" : "def.removeChild(rhs);",
+      "right" : "def.removeChild(rhs);",
+      "info" : "ExpressionStatement[15242-15263]:ExpressionStatement[15242-15263]"
+    }, {
+      "left" : "useParent.replaceChild(use, rhs);",
+      "right" : "useParent.replaceChild(use, rhs);",
+      "info" : "ExpressionStatement[15272-15305]:ExpressionStatement[15272-15305]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15319-15409]:Block[15319-15409]"
+    }, {
+      "left" : "Preconditions.checkState(false, \"No other definitions can be inlined.\");",
+      "right" : "Preconditions.checkState(false, \"No other definitions can be inlined.\");",
+      "info" : "ExpressionStatement[15329-15401]:ExpressionStatement[15329-15401]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[15416-15444]:ExpressionStatement[15416-15444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15607-16285]:Block[15607-16285]"
+    }, {
+      "left" : "AbstractCfgNodeTraversalCallback gatherCb =\n        new AbstractCfgNodeTraversalCallback() {\n\n        @Override\n        public void visit(NodeTraversal t, Node n, Node parent) {\n          switch (n.getType()) {\n            case Token.NAME:\n              if (n.getString().equals(varName) && n.hasChildren()) {\n                def = n;\n              }\n              return;\n\n            case Token.ASSIGN:\n              Node lhs = n.getFirstChild();\n              if (lhs.isName() && lhs.getString().equals(varName)) {\n                def = n;\n              }\n              return;\n          }\n        }\n      };",
+      "right" : "AbstractCfgNodeTraversalCallback gatherCb =\n        new AbstractCfgNodeTraversalCallback() {\n\n        @Override\n        public void visit(NodeTraversal t, Node n, Node parent) {\n          switch (n.getType()) {\n            case Token.NAME:\n              if (n.getString().equals(varName) && n.hasChildren()) {\n                def = n;\n              }\n              return;\n\n            case Token.ASSIGN:\n              Node lhs = n.getFirstChild();\n              if (lhs.isName() && lhs.getString().equals(varName)) {\n                def = n;\n              }\n              return;\n          }\n        }\n      };",
+      "info" : "VariableDeclarationStatement[15615-16226]:VariableDeclarationStatement[15615-16226]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15791-16217]:Block[15791-16217]"
+    }, {
+      "left" : "switch (n.getType()) {\n            case Token.NAME:\n              if (n.getString().equals(varName) && n.hasChildren()) {\n                def = n;\n              }\n              return;\n\n            case Token.ASSIGN:\n              Node lhs = n.getFirstChild();\n              if (lhs.isName() && lhs.getString().equals(varName)) {\n                def = n;\n              }\n              return;\n          }",
+      "right" : "switch (n.getType()) {\n            case Token.NAME:\n              if (n.getString().equals(varName) && n.hasChildren()) {\n                def = n;\n              }\n              return;\n\n            case Token.ASSIGN:\n              Node lhs = n.getFirstChild();\n              if (lhs.isName() && lhs.getString().equals(varName)) {\n                def = n;\n              }\n              return;\n          }",
+      "info" : "SwitchStatement[15803-16207]:SwitchStatement[15803-16207]"
+    }, {
+      "left" : "case Token.NAME:",
+      "right" : "case Token.NAME:",
+      "info" : "SwitchCase[15838-15854]:SwitchCase[15838-15854]"
+    }, {
+      "left" : "if (n.getString().equals(varName) && n.hasChildren())",
+      "right" : "if (n.getString().equals(varName) && n.hasChildren())",
+      "info" : "IfStatement[15869-15965]:IfStatement[15869-15965]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15923-15965]:Block[15923-15965]"
+    }, {
+      "left" : "def = n;",
+      "right" : "def = n;",
+      "info" : "ExpressionStatement[15941-15949]:ExpressionStatement[15941-15949]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[15980-15987]:ReturnStatement[15980-15987]"
+    }, {
+      "left" : "case Token.ASSIGN:",
+      "right" : "case Token.ASSIGN:",
+      "info" : "SwitchCase[16001-16019]:SwitchCase[16001-16019]"
+    }, {
+      "left" : "Node lhs = n.getFirstChild();",
+      "right" : "Node lhs = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[16034-16063]:VariableDeclarationStatement[16034-16063]"
+    }, {
+      "left" : "if (lhs.isName() && lhs.getString().equals(varName))",
+      "right" : "if (lhs.isName() && lhs.getString().equals(varName))",
+      "info" : "IfStatement[16078-16173]:IfStatement[16078-16173]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16131-16173]:Block[16131-16173]"
+    }, {
+      "left" : "def = n;",
+      "right" : "def = n;",
+      "info" : "ExpressionStatement[16149-16157]:ExpressionStatement[16149-16157]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[16188-16195]:ReturnStatement[16188-16195]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, n, gatherCb);",
+      "right" : "NodeTraversal.traverse(compiler, n, gatherCb);",
+      "info" : "ExpressionStatement[16233-16279]:ExpressionStatement[16233-16279]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17730-17970]:Block[18075-18315]"
+    }, {
+      "left" : "for (Node p = n; p != expressionRoot; p = p.getParent())",
+      "right" : "for (Node p = n; p != expressionRoot; p = p.getParent())",
+      "info" : "ForStatement[17736-17948]:ForStatement[18081-18293]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17793-17948]:Block[18138-18293]"
+    }, {
+      "left" : "for (Node cur = p.getNext(); cur != null; cur = cur.getNext())",
+      "right" : "for (Node cur = p.getNext(); cur != null; cur = cur.getNext())",
+      "info" : "ForStatement[17801-17942]:ForStatement[18146-18287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17864-17942]:Block[18209-18287]"
+    }, {
+      "left" : "if (predicate.apply(cur))",
+      "right" : "if (predicate.apply(cur))",
+      "info" : "IfStatement[17874-17934]:IfStatement[18219-18279]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17900-17934]:Block[18245-18279]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[17912-17924]:ReturnStatement[18257-18269]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[17953-17966]:ReturnStatement[18298-18311]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18311-18576]:Block[18656-18921]"
+    }, {
+      "left" : "for (Node p = n; p != expressionRoot; p = p.getParent())",
+      "right" : "for (Node p = n; p != expressionRoot; p = p.getParent())",
+      "info" : "ForStatement[18317-18554]:ForStatement[18662-18899]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18374-18554]:Block[18719-18899]"
+    }, {
+      "left" : "for (Node cur = p.getParent().getFirstChild(); cur != p;\n          cur = cur.getNext())",
+      "right" : "for (Node cur = p.getParent().getFirstChild(); cur != p;\n          cur = cur.getNext())",
+      "info" : "ForStatement[18382-18548]:ForStatement[18727-18893]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18470-18548]:Block[18815-18893]"
+    }, {
+      "left" : "if (predicate.apply(cur))",
+      "right" : "if (predicate.apply(cur))",
+      "info" : "IfStatement[18480-18540]:IfStatement[18825-18885]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18506-18540]:Block[18851-18885]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[18518-18530]:ReturnStatement[18863-18875]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[18559-18572]:ReturnStatement[18904-18917]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

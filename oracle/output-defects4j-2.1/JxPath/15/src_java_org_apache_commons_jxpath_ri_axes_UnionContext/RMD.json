@@ -1,0 +1,129 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "UnionContext",
+      "right" : "UnionContext",
+      "info" : "TypeDeclaration[1027-2377]:TypeDeclaration[1096-2570]"
+    }, {
+      "left" : "private EvalContext contexts[];",
+      "right" : "private EvalContext contexts[];",
+      "info" : "FieldDeclaration[1259-1290]:FieldDeclaration[1328-1359]"
+    }, {
+      "left" : "private boolean prepared;",
+      "right" : "private boolean prepared;",
+      "info" : "FieldDeclaration[1295-1320]:FieldDeclaration[1364-1389]"
+    }, {
+      "left" : "public UnionContext(EvalContext parentContext, EvalContext contexts[])",
+      "right" : "public UnionContext(EvalContext parentContext, EvalContext contexts[])",
+      "info" : "MethodDeclaration[1326-1488]:MethodDeclaration[1395-1557]"
+    }, {
+      "left" : "public int getDocumentOrder()",
+      "right" : "public int getDocumentOrder()",
+      "info" : "MethodDeclaration[1494-1598]:MethodDeclaration[1563-1667]"
+    }, {
+      "left" : "public boolean setPosition(int position)",
+      "right" : "public boolean setPosition(int position)",
+      "info" : "MethodDeclaration[1604-2375]:MethodDeclaration[1673-2568]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1397-1488]:Block[1466-1557]"
+    }, {
+      "left" : "super(parentContext, new BasicNodeSet());",
+      "right" : "super(parentContext, new BasicNodeSet());",
+      "info" : "SuperConstructorInvocation[1407-1448]:SuperConstructorInvocation[1476-1517]"
+    }, {
+      "left" : "this.contexts = contexts;",
+      "right" : "this.contexts = contexts;",
+      "info" : "ExpressionStatement[1457-1482]:ExpressionStatement[1526-1551]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1524-1598]:Block[1593-1667]"
+    }, {
+      "left" : "return contexts.length > 1 ? 1 : super.getDocumentOrder();",
+      "right" : "return contexts.length > 1 ? 1 : super.getDocumentOrder();",
+      "info" : "ReturnStatement[1534-1592]:ReturnStatement[1603-1661]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1645-2375]:Block[1714-2568]"
+    }, {
+      "left" : "if (!prepared)",
+      "right" : "if (!prepared)",
+      "info" : "IfStatement[1655-2325]:IfStatement[1724-2518]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1670-2325]:Block[1739-2518]"
+    }, {
+      "left" : "prepared = true;",
+      "right" : "prepared = true;",
+      "info" : "ExpressionStatement[1684-1700]:ExpressionStatement[1753-1769]"
+    }, {
+      "left" : "BasicNodeSet nodeSet = (BasicNodeSet) getNodeSet();",
+      "right" : "BasicNodeSet nodeSet = (BasicNodeSet) getNodeSet();",
+      "info" : "VariableDeclarationStatement[1713-1764]:VariableDeclarationStatement[1782-1833]"
+    }, {
+      "left" : "ArrayList pointers = new ArrayList();",
+      "right" : "ArrayList pointers = new ArrayList();",
+      "info" : "VariableDeclarationStatement[1777-1814]:VariableDeclarationStatement[1846-1883]"
+    }, {
+      "left" : "for (int i = 0; i < contexts.length; i++)",
+      "right" : "for (int i = 0; i < contexts.length; i++)",
+      "info" : "ForStatement[1827-2315]:ForStatement[1896-2338]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1869-2315]:Block[1938-2338]"
+    }, {
+      "left" : "EvalContext ctx = (EvalContext) contexts[i];",
+      "right" : "EvalContext ctx = (EvalContext) contexts[i];",
+      "info" : "VariableDeclarationStatement[1887-1931]:VariableDeclarationStatement[1956-2000]"
+    }, {
+      "left" : "while (ctx.nextSet())",
+      "right" : "while (ctx.nextSet())",
+      "info" : "WhileStatement[1948-2301]:WhileStatement[2017-2324]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1970-2301]:Block[2039-2324]"
+    }, {
+      "left" : "while (ctx.nextNode())",
+      "right" : "while (ctx.nextNode())",
+      "info" : "WhileStatement[1992-2283]:WhileStatement[2061-2306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2015-2283]:Block[2084-2306]"
+    }, {
+      "left" : "NodePointer ptr = ctx.getCurrentNodePointer();",
+      "right" : "NodePointer ptr = ctx.getCurrentNodePointer();",
+      "info" : "VariableDeclarationStatement[2041-2087]:VariableDeclarationStatement[2110-2156]"
+    }, {
+      "left" : "if (!pointers.contains(ptr))",
+      "right" : "if (!pointers.contains(ptr))",
+      "info" : "IfStatement[2112-2261]:IfStatement[2181-2284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2141-2261]:Block[2210-2284]"
+    }, {
+      "left" : "nodeSet.add(ptr);",
+      "right" : "nodeSet.add((Pointer) it.next());",
+      "info" : "ExpressionStatement[2171-2188]:ExpressionStatement[2461-2494]"
+    }, {
+      "left" : "pointers.add(ptr);",
+      "right" : "pointers.add(ptr);",
+      "info" : "ExpressionStatement[2217-2235]:ExpressionStatement[2240-2258]"
+    }, {
+      "left" : "return super.setPosition(position);",
+      "right" : "return super.setPosition(position);",
+      "info" : "ReturnStatement[2334-2369]:ReturnStatement[2527-2562]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

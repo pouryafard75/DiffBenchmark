@@ -1,0 +1,221 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CreateGogsWebhook",
+      "right" : "CreateGogsWebhook",
+      "info" : "TypeDeclaration[1824-5473]:TypeDeclaration[1564-5807]"
+    }, {
+      "left" : "@Parameter(property = \"webhookUrl\", required = true)\n    private String webhookUrl;",
+      "right" : "@Parameter(property = \"webhookUrl\", required = true)\n    private String webhookUrl;",
+      "info" : "FieldDeclaration[2005-2146]:FieldDeclaration[1745-1886]"
+    }, {
+      "left" : "@Parameter(property = \"repo\", required = true)\n    private String repo;",
+      "right" : "@Parameter(property = \"repo\", required = true)\n    private String repo;",
+      "info" : "FieldDeclaration[2152-2282]:FieldDeclaration[1892-2022]"
+    }, {
+      "left" : "@Parameter(property = \"gogsUsername\", defaultValue = \"${JENKINS_GOGS_USER}\")\n    private String gogsUsername;",
+      "right" : "@Parameter(property = \"gogsUsername\", defaultValue = \"${JENKINS_GOGS_USER}\")\n    private String gogsUsername;",
+      "info" : "FieldDeclaration[2288-2449]:FieldDeclaration[2028-2189]"
+    }, {
+      "left" : "@Parameter(property = \"gogsPassword\", defaultValue = \"${JENKINS_GOGS_PASSWORD}\")\n    private String gogsPassword;",
+      "right" : "@Parameter(property = \"gogsPassword\", defaultValue = \"${JENKINS_GOGS_PASSWORD}\")\n    private String gogsPassword;",
+      "info" : "FieldDeclaration[2455-2619]:FieldDeclaration[2195-2359]"
+    }, {
+      "left" : "@Parameter(property = \"secret\", defaultValue = \"secret101\")\n    private String secret;",
+      "right" : "@Parameter(property = \"secret\", defaultValue = \"secret101\")\n    private String secret;",
+      "info" : "FieldDeclaration[2625-2766]:FieldDeclaration[2365-2506]"
+    }, {
+      "left" : "public void execute() throws MojoExecutionException, MojoFailureException",
+      "right" : "public void execute() throws MojoExecutionException, MojoFailureException",
+      "info" : "MethodDeclaration[2772-5471]:MethodDeclaration[2512-3263]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2860-5471]:Block[2600-3263]"
+    }, {
+      "left" : "if (Strings.isNullOrBlank(gogsUsername))",
+      "right" : "if (Strings.isNullOrBlank(gogsUser))",
+      "info" : "IfStatement[2915-3007]:IfStatement[3675-3759]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2956-3007]:Block[3712-3759]"
+    }, {
+      "left" : "gogsUsername = \"gogsadmin\";",
+      "right" : "gogsUser = \"gogsadmin\";",
+      "info" : "ExpressionStatement[2970-2997]:ExpressionStatement[3726-3749]"
+    }, {
+      "left" : "if (Strings.isNullOrBlank(gogsPassword))",
+      "right" : "if (Strings.isNullOrBlank(gogsPwd))",
+      "info" : "IfStatement[3016-3107]:IfStatement[3768-3849]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3057-3107]:Block[3804-3849]"
+    }, {
+      "left" : "gogsPassword = \"RedHat$1\";",
+      "right" : "gogsPwd = \"RedHat$1\";",
+      "info" : "ExpressionStatement[3071-3097]:ExpressionStatement[3818-3839]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3117-5465]:TryStatement[2610-3257]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3121-5274]:Block[2614-3066]"
+    }, {
+      "left" : "KubernetesClient kubernetes = getKubernetes();",
+      "right" : "KubernetesClient kubernetes = getKubernetes();",
+      "info" : "VariableDeclarationStatement[3135-3181]:VariableDeclarationStatement[2628-2674]"
+    }, {
+      "left" : "String namespace = kubernetes.getNamespace();",
+      "right" : "String namespace = kubernetes.getNamespace();",
+      "info" : "VariableDeclarationStatement[3194-3239]:VariableDeclarationStatement[3860-3905]"
+    }, {
+      "left" : "Log log = getLog();",
+      "right" : "Log log = getLog();",
+      "info" : "VariableDeclarationStatement[3252-3271]:VariableDeclarationStatement[2687-2706]"
+    }, {
+      "left" : "String gogsAddress = kubernetes.getServiceURL(ServiceNames.GOGS, namespace, \"http\", true);",
+      "right" : "String gogsAddress = kubernetes.getServiceURL(ServiceNames.GOGS, namespace, \"http\", true);",
+      "info" : "VariableDeclarationStatement[3284-3374]:VariableDeclarationStatement[3914-4004]"
+    }, {
+      "left" : "log.info(\"Found gogs address: \" + gogsAddress + \" for namespace: \" + namespace + \" on Kubernetes address: \" + kubernetes.getAddress());",
+      "right" : "log.info(\"Found gogs address: \" + gogsAddress + \" for namespace: \" + namespace + \" on Kubernetes address: \" + kubernetes.getAddress());",
+      "info" : "ExpressionStatement[3387-3522]:ExpressionStatement[4013-4148]"
+    }, {
+      "left" : "if (Strings.isNullOrBlank(gogsAddress))",
+      "right" : "if (Strings.isNullOrBlank(gogsAddress))",
+      "info" : "IfStatement[3535-3799]:IfStatement[4157-4409]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3575-3799]:Block[4197-4409]"
+    }, {
+      "left" : "throw new MojoExecutionException(\"No address for service \" + ServiceNames.GOGS + \" in namespace: \"\n                        + namespace  + \" on Kubernetes address: \" + kubernetes.getAddress());",
+      "right" : "throw new MojoExecutionException(\"No address for service \" + ServiceNames.GOGS + \" in namespace: \"\n                    + namespace  + \" on Kubernetes address: \" + kubernetes.getAddress());",
+      "info" : "ThrowStatement[3593-3785]:ThrowStatement[4211-4399]"
+    }, {
+      "left" : "log.info(\"Querying webhooks in gogs for namespace: \" + namespace + \" on Kubernetes address: \" + kubernetes.getAddress());",
+      "right" : "log.info(\"Querying webhooks in gogs for namespace: \" + namespace + \" on Kubernetes address: \" + kubernetes.getAddress());",
+      "info" : "ExpressionStatement[3812-3933]:ExpressionStatement[4418-4539]"
+    }, {
+      "left" : "GitRepoClient repoClient = new GitRepoClient(gogsAddress, gogsUsername, gogsPassword);",
+      "right" : "GitRepoClient repoClient = new GitRepoClient(gogsAddress, gogsUser, gogsPwd);",
+      "info" : "VariableDeclarationStatement[3947-4033]:VariableDeclarationStatement[4549-4626]"
+    }, {
+      "left" : "List<WebHookDTO> webhooks = repoClient.getWebhooks(gogsUsername, repo);",
+      "right" : "List<WebHookDTO> webhooks = repoClient.getWebhooks(gogsUser, repoName);",
+      "info" : "VariableDeclarationStatement[4046-4117]:VariableDeclarationStatement[4635-4706]"
+    }, {
+      "left" : "for (WebHookDTO webhook : webhooks)",
+      "right" : "for (WebHookDTO webhook : webhooks)",
+      "info" : "EnhancedForStatement[4130-4669]:EnhancedForStatement[4715-5216]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4166-4669]:Block[4751-5216]"
+    }, {
+      "left" : "String url = null;",
+      "right" : "String url = null;",
+      "info" : "VariableDeclarationStatement[4184-4202]:VariableDeclarationStatement[4765-4783]"
+    }, {
+      "left" : "WebhookConfig config = webhook.getConfig();",
+      "right" : "WebhookConfig config = webhook.getConfig();",
+      "info" : "VariableDeclarationStatement[4219-4262]:VariableDeclarationStatement[4796-4839]"
+    }, {
+      "left" : "if (config != null)",
+      "right" : "if (config != null)",
+      "info" : "IfStatement[4279-4655]:IfStatement[4852-5206]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4299-4655]:Block[4872-5206]"
+    }, {
+      "left" : "url = config.getUrl();",
+      "right" : "url = config.getUrl();",
+      "info" : "ExpressionStatement[4321-4343]:ExpressionStatement[4890-4912]"
+    }, {
+      "left" : "if (Objects.equal(webhookUrl, url))",
+      "right" : "if (Objects.equal(webhookUrl, url))",
+      "info" : "IfStatement[4364-4551]:IfStatement[4929-5110]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4400-4551]:Block[4965-5110]"
+    }, {
+      "left" : "log.info(\"Already has webhook for: \" + url + \" so not creating again\");",
+      "right" : "log.info(\"Already has webhook for: \" + url + \" so not creating again\");",
+      "info" : "ExpressionStatement[4426-4497]:ExpressionStatement[4987-5058]"
+    }, {
+      "left" : "return;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[4522-4529]:ReturnStatement[5079-5092]"
+    }, {
+      "left" : "log.info(\"Ignoring webhook \" + url + \" from: \" + toJson(config));",
+      "right" : "log.info(\"Ignoring webhook \" + url + \" from: \" + toJson(config));",
+      "info" : "ExpressionStatement[4572-4637]:ExpressionStatement[5127-5192]"
+    }, {
+      "left" : "CreateWebhookDTO createWebhook = new CreateWebhookDTO();",
+      "right" : "CreateWebhookDTO createWebhook = new CreateWebhookDTO();",
+      "info" : "VariableDeclarationStatement[4682-4738]:VariableDeclarationStatement[5225-5281]"
+    }, {
+      "left" : "createWebhook.setType(\"gogs\");",
+      "right" : "createWebhook.setType(\"gogs\");",
+      "info" : "ExpressionStatement[4751-4781]:ExpressionStatement[5290-5320]"
+    }, {
+      "left" : "WebhookConfig config = createWebhook.getConfig();",
+      "right" : "WebhookConfig config = createWebhook.getConfig();",
+      "info" : "VariableDeclarationStatement[4794-4843]:VariableDeclarationStatement[5329-5378]"
+    }, {
+      "left" : "config.setUrl(webhookUrl);",
+      "right" : "config.setUrl(webhookUrl);",
+      "info" : "ExpressionStatement[4856-4882]:ExpressionStatement[5387-5413]"
+    }, {
+      "left" : "config.setSecret(secret);",
+      "right" : "config.setSecret(webhookSecret);",
+      "info" : "ExpressionStatement[4895-4920]:ExpressionStatement[5422-5454]"
+    }, {
+      "left" : "WebHookDTO webhook = repoClient.createWebhook(gogsUsername, repo, createWebhook);",
+      "right" : "WebHookDTO webhook = repoClient.createWebhook(gogsUser, repoName, createWebhook);",
+      "info" : "VariableDeclarationStatement[4933-5014]:VariableDeclarationStatement[5463-5544]"
+    }, {
+      "left" : "if (log.isDebugEnabled())",
+      "right" : "if (log.isDebugEnabled())",
+      "info" : "IfStatement[5027-5139]:IfStatement[5553-5657]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5053-5139]:Block[5579-5657]"
+    }, {
+      "left" : "log.debug(\"Got created web hook: \" + toJson(webhook));",
+      "right" : "log.debug(\"Got created web hook: \" + toJson(webhook));",
+      "info" : "ExpressionStatement[5071-5125]:ExpressionStatement[5593-5647]"
+    }, {
+      "left" : "log.info(\"Created webhook for \" + webhookUrl + \" for namespace: \" + namespace + \" on gogs URL: \" + gogsAddress);",
+      "right" : "log.info(\"Created webhook for \" + webhookUrl + \" for namespace: \" + namespace + \" on gogs URL: \" + gogsAddress);",
+      "info" : "ExpressionStatement[5152-5264]:ExpressionStatement[5666-5778]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5308-5340]:Block[3100-3132]"
+    }, {
+      "left" : "throw e;",
+      "right" : "throw e;",
+      "info" : "ThrowStatement[5322-5330]:ThrowStatement[3114-3122]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5361-5465]:Block[3153-3257]"
+    }, {
+      "left" : "throw new MojoExecutionException(\"Failed to load environment schemas: \" + e, e);",
+      "right" : "throw new MojoExecutionException(\"Failed to load environment schemas: \" + e, e);",
+      "info" : "ThrowStatement[5375-5455]:ThrowStatement[3167-3247]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

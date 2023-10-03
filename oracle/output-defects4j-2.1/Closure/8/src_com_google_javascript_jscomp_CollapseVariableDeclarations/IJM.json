@@ -1,0 +1,437 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CollapseVariableDeclarations",
+      "right" : "CollapseVariableDeclarations",
+      "info" : "TypeDeclaration[1077-6852]:TypeDeclaration[1077-6980]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[1808-1882]:FieldDeclaration[1808-1882]"
+    }, {
+      "left" : "Collapse",
+      "right" : "Collapse",
+      "info" : "TypeDeclaration[1886-2465]:TypeDeclaration[1886-2465]"
+    }, {
+      "left" : "final Node startNode;",
+      "right" : "final Node startNode;",
+      "info" : "FieldDeclaration[1998-2124]:FieldDeclaration[1998-2124]"
+    }, {
+      "left" : "final Node endNode;",
+      "right" : "final Node endNode;",
+      "info" : "FieldDeclaration[2130-2233]:FieldDeclaration[2130-2233]"
+    }, {
+      "left" : "final Node parent;",
+      "right" : "final Node parent;",
+      "info" : "FieldDeclaration[2239-2304]:FieldDeclaration[2239-2304]"
+    }, {
+      "left" : "Collapse(Node startNode, Node endNode, Node parent)",
+      "right" : "Collapse(Node startNode, Node endNode, Node parent)",
+      "info" : "MethodDeclaration[2310-2461]:MethodDeclaration[2310-2461]"
+    }, {
+      "left" : "private final List<Collapse> collapses = Lists.newArrayList();",
+      "right" : "private final List<Collapse> collapses = Lists.newArrayList();",
+      "info" : "FieldDeclaration[2469-2578]:FieldDeclaration[2469-2578]"
+    }, {
+      "left" : "private final Set<Node> nodesToCollapse = Sets.newHashSet();",
+      "right" : "private final Set<Node> nodesToCollapse = Sets.newHashSet();",
+      "info" : "FieldDeclaration[2582-2860]:FieldDeclaration[2582-2860]"
+    }, {
+      "left" : "CollapseVariableDeclarations(AbstractCompiler compiler)",
+      "right" : "CollapseVariableDeclarations(AbstractCompiler compiler)",
+      "info" : "MethodDeclaration[2864-3031]:MethodDeclaration[2864-3031]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[3035-3315]:MethodDeclaration[3035-3315]"
+    }, {
+      "left" : "GatherCollapses",
+      "right" : "GatherCollapses",
+      "info" : "TypeDeclaration[3319-5716]:TypeDeclaration[3319-5752]"
+    }, {
+      "left" : "private final Set<Var> blacklistedVars = Sets.newHashSet();",
+      "right" : "private final Set<Var> blacklistedVars = Sets.newHashSet();",
+      "info" : "FieldDeclaration[3811-3870]:FieldDeclaration[3811-3870]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[3876-4985]:MethodDeclaration[3876-4985]"
+    }, {
+      "left" : "private void blacklistStubVars(NodeTraversal t, Node varNode)",
+      "right" : "private void blacklistStubVars(NodeTraversal t, Node varNode)",
+      "info" : "MethodDeclaration[4991-5296]:MethodDeclaration[4991-5296]"
+    }, {
+      "left" : "private boolean canBeRedeclared(Node n, Scope s)",
+      "right" : "private boolean canBeRedeclared(Node n, Scope s)",
+      "info" : "MethodDeclaration[5302-5712]:MethodDeclaration[5302-5748]"
+    }, {
+      "left" : "private void applyCollapses()",
+      "right" : "private void applyCollapses()",
+      "info" : "MethodDeclaration[5721-6850]:MethodDeclaration[5849-6978]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2362-2461]:Block[2362-2461]"
+    }, {
+      "left" : "this.startNode = startNode;",
+      "right" : "this.startNode = startNode;",
+      "info" : "ExpressionStatement[2370-2397]:ExpressionStatement[2370-2397]"
+    }, {
+      "left" : "this.endNode = endNode;",
+      "right" : "this.endNode = endNode;",
+      "info" : "ExpressionStatement[2404-2427]:ExpressionStatement[2404-2427]"
+    }, {
+      "left" : "this.parent = parent;",
+      "right" : "this.parent = parent;",
+      "info" : "ExpressionStatement[2434-2455]:ExpressionStatement[2434-2455]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2920-3031]:Block[2920-3031]"
+    }, {
+      "left" : "Preconditions.checkState(!compiler.getLifeCycleStage().isNormalized());",
+      "right" : "Preconditions.checkState(!compiler.getLifeCycleStage().isNormalized());",
+      "info" : "ExpressionStatement[2926-2997]:ExpressionStatement[2926-2997]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[3002-3027]:ExpressionStatement[3002-3027]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3092-3315]:Block[3092-3315]"
+    }, {
+      "left" : "collapses.clear();",
+      "right" : "collapses.clear();",
+      "info" : "ExpressionStatement[3098-3116]:ExpressionStatement[3098-3116]"
+    }, {
+      "left" : "nodesToCollapse.clear();",
+      "right" : "nodesToCollapse.clear();",
+      "info" : "ExpressionStatement[3121-3145]:ExpressionStatement[3121-3145]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, new GatherCollapses());",
+      "right" : "NodeTraversal.traverse(compiler, root, new GatherCollapses());",
+      "info" : "ExpressionStatement[3151-3213]:ExpressionStatement[3151-3213]"
+    }, {
+      "left" : "if (!collapses.isEmpty())",
+      "right" : "if (!collapses.isEmpty())",
+      "info" : "IfStatement[3219-3311]:IfStatement[3219-3311]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3245-3311]:Block[3245-3311]"
+    }, {
+      "left" : "applyCollapses();",
+      "right" : "applyCollapses();",
+      "info" : "ExpressionStatement[3253-3270]:ExpressionStatement[3253-3270]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[3277-3305]:ExpressionStatement[3277-3305]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3946-4985]:Block[3946-4985]"
+    }, {
+      "left" : "if (n.isVar())",
+      "right" : "if (n.isVar())",
+      "info" : "IfStatement[3954-4011]:IfStatement[3954-4011]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3969-4011]:Block[3969-4011]"
+    }, {
+      "left" : "blacklistStubVars(t, n);",
+      "right" : "blacklistStubVars(t, n);",
+      "info" : "ExpressionStatement[3979-4003]:ExpressionStatement[3979-4003]"
+    }, {
+      "left" : "if (!n.isVar() && !canBeRedeclared(n, t.getScope()))",
+      "right" : "if (!n.isVar() && !canBeRedeclared(n, t.getScope()))",
+      "info" : "IfStatement[4054-4114]:IfStatement[4054-4114]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4107-4114]:ReturnStatement[4107-4114]"
+    }, {
+      "left" : "if (nodesToCollapse.contains(n))",
+      "right" : "if (nodesToCollapse.contains(n))",
+      "info" : "IfStatement[4177-4217]:IfStatement[4177-4217]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4210-4217]:ReturnStatement[4210-4217]"
+    }, {
+      "left" : "if (parent.isIf())",
+      "right" : "if (parent.isIf())",
+      "info" : "IfStatement[4328-4354]:IfStatement[4328-4354]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4347-4354]:ReturnStatement[4347-4354]"
+    }, {
+      "left" : "Node varNode = n;",
+      "right" : "Node varNode = n;",
+      "info" : "VariableDeclarationStatement[4362-4379]:VariableDeclarationStatement[4362-4379]"
+    }, {
+      "left" : "boolean hasVar = n.isVar();",
+      "right" : "boolean hasVar = n.isVar();",
+      "info" : "VariableDeclarationStatement[4387-4414]:VariableDeclarationStatement[4387-4414]"
+    }, {
+      "left" : "n = n.getNext();",
+      "right" : "n = n.getNext();",
+      "info" : "ExpressionStatement[4488-4504]:ExpressionStatement[4488-4504]"
+    }, {
+      "left" : "boolean hasNodesToCollapse = false;",
+      "right" : "boolean hasNodesToCollapse = false;",
+      "info" : "VariableDeclarationStatement[4512-4547]:VariableDeclarationStatement[4512-4547]"
+    }, {
+      "left" : "while (n != null &&\n          (n.isVar() || canBeRedeclared(n, t.getScope())))",
+      "right" : "while (n != null &&\n          (n.isVar() || canBeRedeclared(n, t.getScope())))",
+      "info" : "WhileStatement[4555-4833]:WhileStatement[4555-4833]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4634-4833]:Block[4634-4833]"
+    }, {
+      "left" : "if (n.isVar())",
+      "right" : "if (n.isVar())",
+      "info" : "IfStatement[4645-4731]:IfStatement[4645-4731]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4660-4731]:Block[4660-4731]"
+    }, {
+      "left" : "blacklistStubVars(t, n);",
+      "right" : "blacklistStubVars(t, n);",
+      "info" : "ExpressionStatement[4672-4696]:ExpressionStatement[4672-4696]"
+    }, {
+      "left" : "hasVar = true;",
+      "right" : "hasVar = true;",
+      "info" : "ExpressionStatement[4707-4721]:ExpressionStatement[4707-4721]"
+    }, {
+      "left" : "nodesToCollapse.add(n);",
+      "right" : "nodesToCollapse.add(n);",
+      "info" : "ExpressionStatement[4741-4764]:ExpressionStatement[4741-4764]"
+    }, {
+      "left" : "hasNodesToCollapse = true;",
+      "right" : "hasNodesToCollapse = true;",
+      "info" : "ExpressionStatement[4773-4799]:ExpressionStatement[4773-4799]"
+    }, {
+      "left" : "n = n.getNext();",
+      "right" : "n = n.getNext();",
+      "info" : "ExpressionStatement[4809-4825]:ExpressionStatement[4809-4825]"
+    }, {
+      "left" : "if (hasNodesToCollapse && hasVar)",
+      "right" : "if (hasNodesToCollapse && hasVar)",
+      "info" : "IfStatement[4841-4979]:IfStatement[4841-4979]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4875-4979]:Block[4875-4979]"
+    }, {
+      "left" : "nodesToCollapse.add(varNode);",
+      "right" : "nodesToCollapse.add(varNode);",
+      "info" : "ExpressionStatement[4885-4914]:ExpressionStatement[4885-4914]"
+    }, {
+      "left" : "collapses.add(new Collapse(varNode, n, parent));",
+      "right" : "collapses.add(new Collapse(varNode, n, parent));",
+      "info" : "ExpressionStatement[4923-4971]:ExpressionStatement[4923-4971]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5053-5296]:Block[5053-5296]"
+    }, {
+      "left" : "for (Node child = varNode.getFirstChild();\n           child != null; child = child.getNext())",
+      "right" : "for (Node child = varNode.getFirstChild();\n           child != null; child = child.getNext())",
+      "info" : "ForStatement[5061-5290]:ForStatement[5061-5290]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5155-5290]:Block[5155-5290]"
+    }, {
+      "left" : "if (child.getFirstChild() == null)",
+      "right" : "if (child.getFirstChild() == null)",
+      "info" : "IfStatement[5165-5282]:IfStatement[5165-5282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5200-5282]:Block[5200-5282]"
+    }, {
+      "left" : "blacklistedVars.add(t.getScope().getVar(child.getString()));",
+      "right" : "blacklistedVars.add(t.getScope().getVar(child.getString()));",
+      "info" : "ExpressionStatement[5212-5272]:ExpressionStatement[5212-5272]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5351-5712]:Block[5351-5748]"
+    }, {
+      "left" : "if (!NodeUtil.isExprAssign(n))",
+      "right" : "if (!NodeUtil.isExprAssign(n))",
+      "info" : "IfStatement[5359-5421]:IfStatement[5359-5421]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5390-5421]:Block[5390-5421]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[5400-5413]:ReturnStatement[5400-5413]"
+    }, {
+      "left" : "Node assign = n.getFirstChild();",
+      "right" : "Node assign = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[5428-5460]:VariableDeclarationStatement[5428-5460]"
+    }, {
+      "left" : "Node lhs = assign.getFirstChild();",
+      "right" : "Node lhs = assign.getFirstChild();",
+      "info" : "VariableDeclarationStatement[5467-5501]:VariableDeclarationStatement[5467-5501]"
+    }, {
+      "left" : "if (!lhs.isName())",
+      "right" : "if (!lhs.isName())",
+      "info" : "IfStatement[5509-5559]:IfStatement[5509-5559]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5528-5559]:Block[5528-5559]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[5538-5551]:ReturnStatement[5538-5551]"
+    }, {
+      "left" : "Var var = s.getVar(lhs.getString());",
+      "right" : "Var var = s.getVar(lhs.getString());",
+      "info" : "VariableDeclarationStatement[5567-5603]:VariableDeclarationStatement[5567-5603]"
+    }, {
+      "left" : "return var != null\n          && var.getScope() == s\n          && !blacklistedVars.contains(var);",
+      "right" : "return var != null\n          && var.getScope() == s\n          && !isNamedParameter(var)\n          && !blacklistedVars.contains(var);",
+      "info" : "ReturnStatement[5610-5706]:ReturnStatement[5610-5742]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5751-6850]:Block[5879-6978]"
+    }, {
+      "left" : "for (Collapse collapse : collapses)",
+      "right" : "for (Collapse collapse : collapses)",
+      "info" : "EnhancedForStatement[5757-6846]:EnhancedForStatement[5885-6974]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5793-6846]:Block[5921-6974]"
+    }, {
+      "left" : "Node var = new Node(Token.VAR);",
+      "right" : "Node var = new Node(Token.VAR);",
+      "info" : "VariableDeclarationStatement[5802-5833]:VariableDeclarationStatement[5930-5961]"
+    }, {
+      "left" : "var.copyInformationFrom(collapse.startNode);",
+      "right" : "var.copyInformationFrom(collapse.startNode);",
+      "info" : "ExpressionStatement[5840-5884]:ExpressionStatement[5968-6012]"
+    }, {
+      "left" : "collapse.parent.addChildBefore(var, collapse.startNode);",
+      "right" : "collapse.parent.addChildBefore(var, collapse.startNode);",
+      "info" : "ExpressionStatement[5891-5947]:ExpressionStatement[6019-6075]"
+    }, {
+      "left" : "boolean redeclaration = false;",
+      "right" : "boolean redeclaration = false;",
+      "info" : "VariableDeclarationStatement[5955-5985]:VariableDeclarationStatement[6083-6113]"
+    }, {
+      "left" : "for (Node n = collapse.startNode; n != collapse.endNode)",
+      "right" : "for (Node n = collapse.startNode; n != collapse.endNode)",
+      "info" : "ForStatement[5992-6688]:ForStatement[6120-6816]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6050-6688]:Block[6178-6816]"
+    }, {
+      "left" : "Node next = n.getNext();",
+      "right" : "Node next = n.getNext();",
+      "info" : "VariableDeclarationStatement[6060-6084]:VariableDeclarationStatement[6188-6212]"
+    }, {
+      "left" : "Preconditions.checkState(var.getNext() == n);",
+      "right" : "Preconditions.checkState(var.getNext() == n);",
+      "info" : "ExpressionStatement[6094-6139]:ExpressionStatement[6222-6267]"
+    }, {
+      "left" : "collapse.parent.removeChildAfter(var);",
+      "right" : "collapse.parent.removeChildAfter(var);",
+      "info" : "ExpressionStatement[6148-6186]:ExpressionStatement[6276-6314]"
+    }, {
+      "left" : "if (n.isVar())",
+      "right" : "if (n.isVar())",
+      "info" : "IfStatement[6196-6662]:IfStatement[6324-6790]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6211-6323]:Block[6339-6451]"
+    }, {
+      "left" : "while(n.hasChildren())",
+      "right" : "while(n.hasChildren())",
+      "info" : "WhileStatement[6223-6313]:WhileStatement[6351-6441]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6246-6313]:Block[6374-6441]"
+    }, {
+      "left" : "var.addChildToBack(n.removeFirstChild());",
+      "right" : "var.addChildToBack(n.removeFirstChild());",
+      "info" : "ExpressionStatement[6260-6301]:ExpressionStatement[6388-6429]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6329-6662]:Block[6457-6790]"
+    }, {
+      "left" : "Node assign = n.getFirstChild();",
+      "right" : "Node assign = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[6341-6373]:VariableDeclarationStatement[6469-6501]"
+    }, {
+      "left" : "Node lhs = assign.getFirstChild();",
+      "right" : "Node lhs = assign.getFirstChild();",
+      "info" : "VariableDeclarationStatement[6384-6418]:VariableDeclarationStatement[6512-6546]"
+    }, {
+      "left" : "Preconditions.checkState(lhs.isName());",
+      "right" : "Preconditions.checkState(lhs.isName());",
+      "info" : "ExpressionStatement[6429-6468]:ExpressionStatement[6557-6596]"
+    }, {
+      "left" : "Node rhs = assign.getLastChild();",
+      "right" : "Node rhs = assign.getLastChild();",
+      "info" : "VariableDeclarationStatement[6479-6512]:VariableDeclarationStatement[6607-6640]"
+    }, {
+      "left" : "lhs.addChildToBack(rhs.detachFromParent());",
+      "right" : "lhs.addChildToBack(rhs.detachFromParent());",
+      "info" : "ExpressionStatement[6523-6566]:ExpressionStatement[6651-6694]"
+    }, {
+      "left" : "var.addChildToBack(lhs.detachFromParent());",
+      "right" : "var.addChildToBack(lhs.detachFromParent());",
+      "info" : "ExpressionStatement[6577-6620]:ExpressionStatement[6705-6748]"
+    }, {
+      "left" : "redeclaration = true;",
+      "right" : "redeclaration = true;",
+      "info" : "ExpressionStatement[6631-6652]:ExpressionStatement[6759-6780]"
+    }, {
+      "left" : "n = next;",
+      "right" : "n = next;",
+      "info" : "ExpressionStatement[6671-6680]:ExpressionStatement[6799-6808]"
+    }, {
+      "left" : "if (redeclaration)",
+      "right" : "if (redeclaration)",
+      "info" : "IfStatement[6696-6840]:IfStatement[6824-6968]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6715-6840]:Block[6843-6968]"
+    }, {
+      "left" : "JSDocInfo info = new JSDocInfo();",
+      "right" : "JSDocInfo info = new JSDocInfo();",
+      "info" : "VariableDeclarationStatement[6725-6758]:VariableDeclarationStatement[6853-6886]"
+    }, {
+      "left" : "info.addSuppression(\"duplicate\");",
+      "right" : "info.addSuppression(\"duplicate\");",
+      "info" : "ExpressionStatement[6767-6800]:ExpressionStatement[6895-6928]"
+    }, {
+      "left" : "var.setJSDocInfo(info);",
+      "right" : "var.setJSDocInfo(info);",
+      "info" : "ExpressionStatement[6809-6832]:ExpressionStatement[6937-6960]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

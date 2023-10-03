@@ -1,0 +1,89 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "DeploymentGroupWatchCommand",
+      "right" : "DeploymentGroupWatchCommand",
+      "info" : "TypeDeclaration[1503-3871]:TypeDeclaration[1448-3359]"
+    }, {
+      "left" : "private final Argument nameArg;",
+      "right" : "private final Argument nameArg;",
+      "info" : "FieldDeclaration[1583-1614]:FieldDeclaration[1634-1665]"
+    }, {
+      "left" : "private final Argument intervalArg;",
+      "right" : "private final Argument intervalArg;",
+      "info" : "FieldDeclaration[1617-1652]:FieldDeclaration[1702-1737]"
+    }, {
+      "left" : "public DeploymentGroupWatchCommand(Subparser parser)",
+      "right" : "public DeploymentGroupWatchCommand(Subparser parser)",
+      "info" : "MethodDeclaration[1656-2016]:MethodDeclaration[1741-2222]"
+    }, {
+      "left" : "int run(final Namespace options, final List<TargetAndClient> clients,\n          final PrintStream out, final boolean json, final BufferedReader stdin)\n              throws ExecutionException, InterruptedException, IOException",
+      "right" : "int run(Namespace options, HeliosClient client, PrintStream out, boolean json,\n          BufferedReader stdin) throws ExecutionException, InterruptedException, IOException",
+      "info" : "MethodDeclaration[2020-2425]:MethodDeclaration[2226-3357]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1709-2016]:Block[1794-2222]"
+    }, {
+      "left" : "super(parser);",
+      "right" : "super(parser);",
+      "info" : "SuperConstructorInvocation[1715-1729]:SuperConstructorInvocation[1800-1814]"
+    }, {
+      "left" : "parser.help(\"watch deployment groups\");",
+      "right" : "parser.help(\"watch deployment groups\");",
+      "info" : "ExpressionStatement[1734-1773]:ExpressionStatement[1819-1858]"
+    }, {
+      "left" : "nameArg = parser.addArgument(\"name\")\n        .help(\"Deployment group name\");",
+      "right" : "nameArg = parser.addArgument(\"name\")\n        .help(\"Deployment group name\");",
+      "info" : "ExpressionStatement[1779-1855]:ExpressionStatement[1864-1940]"
+    }, {
+      "left" : "intervalArg = parser.addArgument(\"--interval\")\n        .type(Integer.class)\n        .setDefault(1)\n        .help(\"polling interval, default 1 second\");",
+      "right" : "intervalArg = parser.addArgument(\"--interval\")\n        .type(Integer.class)\n        .setDefault(1)\n        .help(\"polling interval, default 1 second\");",
+      "info" : "ExpressionStatement[1861-2012]:ExpressionStatement[2067-2218]"
+    }, {
+      "left" : "final String name = options.getString(nameArg.getDest());",
+      "right" : "final String name = options.getString(nameArg.getDest());",
+      "info" : "VariableDeclarationStatement[2264-2321]:VariableDeclarationStatement[2416-2473]"
+    }, {
+      "left" : "watchDeploymentGroup(out, name, options.getInt(intervalArg.getDest()), clients);",
+      "right" : "rc = DeploymentGroupStatusCommand.run0(client, out, json, name, full);",
+      "info" : "ExpressionStatement[2327-2407]:ExpressionStatement[3172-3242]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[2412-2421]:ReturnStatement[3344-3353]"
+    }, {
+      "left" : "out.println(\"Control-C to stop\");",
+      "right" : "out.println(\"Control-C to stop\");",
+      "info" : "ExpressionStatement[2656-2689]:ExpressionStatement[2716-2749]"
+    }, {
+      "left" : "out.println(\"STATUS               HOST                           STATE\");",
+      "right" : "out.println(\"STATUS               HOST                           STATE\");",
+      "info" : "ExpressionStatement[2694-2767]:ExpressionStatement[2756-2829]"
+    }, {
+      "left" : "final Instant now = new Instant();",
+      "right" : "final Instant now = new Instant();",
+      "info" : "VariableDeclarationStatement[2884-2918]:VariableDeclarationStatement[2969-3003]"
+    }, {
+      "left" : "if (out.checkError())",
+      "right" : "if (out.checkError())",
+      "info" : "IfStatement[3589-3635]:IfStatement[3249-3295]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3611-3635]:Block[3271-3295]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[3621-3627]:BreakStatement[3281-3287]"
+    }, {
+      "left" : "Thread.sleep(1000 * interval);",
+      "right" : "Thread.sleep(1000 * interval);",
+      "info" : "ExpressionStatement[3642-3672]:ExpressionStatement[3303-3333]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

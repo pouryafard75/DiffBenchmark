@@ -1,0 +1,821 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "GraphiteReporterTest",
+      "right" : "GraphiteReporterTest",
+      "info" : "TypeDeclaration[317-14250]:TypeDeclaration[317-14927]"
+    }, {
+      "left" : "private final long timestamp = 1000198;",
+      "right" : "private final long timestamp = 1000198;",
+      "info" : "FieldDeclaration[357-396]:FieldDeclaration[357-396]"
+    }, {
+      "left" : "private final Clock clock = mock(Clock.class);",
+      "right" : "private final Clock clock = mock(Clock.class);",
+      "info" : "FieldDeclaration[401-447]:FieldDeclaration[401-447]"
+    }, {
+      "left" : "private final Graphite graphite = mock(Graphite.class);",
+      "right" : "private final Graphite graphite = mock(Graphite.class);",
+      "info" : "FieldDeclaration[452-507]:FieldDeclaration[452-507]"
+    }, {
+      "left" : "private final MetricRegistry registry = mock(MetricRegistry.class);",
+      "right" : "private final MetricRegistry registry = mock(MetricRegistry.class);",
+      "info" : "FieldDeclaration[512-579]:FieldDeclaration[512-579]"
+    }, {
+      "left" : "private final GraphiteReporter reporter = GraphiteReporter.forRegistry(registry)\n                                                              .withClock(clock)\n                                                              .prefixedWith(\"prefix\")\n                                                              .convertRatesTo(TimeUnit.SECONDS)\n                                                              .convertDurationsTo(TimeUnit.MILLISECONDS)\n                                                              .filter(MetricFilter.ALL)\n                                                              .build(graphite);",
+      "right" : "private final GraphiteReporter reporter = GraphiteReporter.forRegistry(registry)\n                                                              .withClock(clock)\n                                                              .prefixedWith(\"prefix\")\n                                                              .convertRatesTo(TimeUnit.SECONDS)\n                                                              .convertDurationsTo(TimeUnit.MILLISECONDS)\n                                                              .filter(MetricFilter.ALL)\n                                                              .build(graphite);",
+      "info" : "FieldDeclaration[584-1199]:FieldDeclaration[584-1199]"
+    }, {
+      "left" : "public void setUp() throws Exception",
+      "right" : "public void setUp() throws Exception",
+      "info" : "MethodDeclaration[1205-1321]:MethodDeclaration[1205-1321]"
+    }, {
+      "left" : "public void doesNotReportStringGaugeValues() throws Exception",
+      "right" : "public void doesNotReportStringGaugeValues() throws Exception",
+      "info" : "MethodDeclaration[1327-1954]:MethodDeclaration[1327-1954]"
+    }, {
+      "left" : "public void reportsByteGaugeValues() throws Exception",
+      "right" : "public void reportsByteGaugeValues() throws Exception",
+      "info" : "MethodDeclaration[1960-2567]:MethodDeclaration[1960-2567]"
+    }, {
+      "left" : "public void reportsShortGaugeValues() throws Exception",
+      "right" : "public void reportsShortGaugeValues() throws Exception",
+      "info" : "MethodDeclaration[2573-3182]:MethodDeclaration[2573-3182]"
+    }, {
+      "left" : "public void reportsIntegerGaugeValues() throws Exception",
+      "right" : "public void reportsIntegerGaugeValues() throws Exception",
+      "info" : "MethodDeclaration[3188-3791]:MethodDeclaration[3188-3791]"
+    }, {
+      "left" : "public void reportsLongGaugeValues() throws Exception",
+      "right" : "public void reportsLongGaugeValues() throws Exception",
+      "info" : "MethodDeclaration[3797-4398]:MethodDeclaration[3797-4398]"
+    }, {
+      "left" : "public void reportsFloatGaugeValues() throws Exception",
+      "right" : "public void reportsFloatGaugeValues() throws Exception",
+      "info" : "MethodDeclaration[4404-5011]:MethodDeclaration[4404-5011]"
+    }, {
+      "left" : "public void reportsDoubleGaugeValues() throws Exception",
+      "right" : "public void reportsDoubleGaugeValues() throws Exception",
+      "info" : "MethodDeclaration[5017-5624]:MethodDeclaration[5017-5624]"
+    }, {
+      "left" : "public void reportsCounters() throws Exception",
+      "right" : "public void reportsCounters() throws Exception",
+      "info" : "MethodDeclaration[5630-6351]:MethodDeclaration[5630-6351]"
+    }, {
+      "left" : "public void reportsHistograms() throws Exception",
+      "right" : "public void reportsHistograms() throws Exception",
+      "info" : "MethodDeclaration[6357-8582]:MethodDeclaration[6357-8582]"
+    }, {
+      "left" : "public void reportsMeters() throws Exception",
+      "right" : "public void reportsMeters() throws Exception",
+      "info" : "MethodDeclaration[8588-9844]:MethodDeclaration[8588-9844]"
+    }, {
+      "left" : "public void reportsTimers() throws Exception",
+      "right" : "public void reportsTimers() throws Exception",
+      "info" : "MethodDeclaration[9850-13023]:MethodDeclaration[9850-13023]"
+    }, {
+      "left" : "public void closesConnectionIfGraphiteIsUnavailable() throws Exception",
+      "right" : "public void closesConnectionIfGraphiteIsUnavailable() throws Exception",
+      "info" : "MethodDeclaration[13029-13611]:MethodDeclaration[13029-13611]"
+    }, {
+      "left" : "public void closesConnectionOnReporterStop() throws Exception",
+      "right" : "public void closesConnectionOnReporterStop() throws Exception",
+      "info" : "MethodDeclaration[13617-13801]:MethodDeclaration[14294-14478]"
+    }, {
+      "left" : "private <T> SortedMap<String, T> map()",
+      "right" : "private <T> SortedMap<String, T> map()",
+      "info" : "MethodDeclaration[13807-13894]:MethodDeclaration[14484-14571]"
+    }, {
+      "left" : "private <T> SortedMap<String, T> map(String name, T metric)",
+      "right" : "private <T> SortedMap<String, T> map(String name, T metric)",
+      "info" : "MethodDeclaration[13900-14083]:MethodDeclaration[14577-14760]"
+    }, {
+      "left" : "private <T> Gauge gauge(T value)",
+      "right" : "private <T> Gauge gauge(T value)",
+      "info" : "MethodDeclaration[14089-14248]:MethodDeclaration[14766-14925]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1254-1321]:Block[1254-1321]"
+    }, {
+      "left" : "when(clock.getTime()).thenReturn(timestamp * 1000);",
+      "right" : "when(clock.getTime()).thenReturn(timestamp * 1000);",
+      "info" : "ExpressionStatement[1264-1315]:ExpressionStatement[1264-1315]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1399-1954]:Block[1399-1954]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge(\"value\")),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge(\"value\")),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[1409-1633]:ExpressionStatement[1409-1633]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[1643-1685]:VariableDeclarationStatement[1643-1685]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[1694-1733]:ExpressionStatement[1694-1733]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[1742-1777]:ExpressionStatement[1742-1777]"
+    }, {
+      "left" : "inOrder.verify(graphite, never()).send(\"prefix.gauge\", \"value\", timestamp);",
+      "right" : "inOrder.verify(graphite, never()).send(\"prefix.gauge\", \"value\", timestamp);",
+      "info" : "ExpressionStatement[1786-1861]:ExpressionStatement[1786-1861]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[1870-1903]:ExpressionStatement[1870-1903]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[1913-1948]:ExpressionStatement[1913-1948]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2024-2567]:Block[2024-2567]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge((byte) 1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge((byte) 1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[2034-2259]:ExpressionStatement[2034-2259]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[2269-2311]:VariableDeclarationStatement[2269-2311]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[2320-2359]:ExpressionStatement[2320-2359]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[2368-2403]:ExpressionStatement[2368-2403]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "info" : "ExpressionStatement[2412-2474]:ExpressionStatement[2412-2474]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[2483-2516]:ExpressionStatement[2483-2516]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[2526-2561]:ExpressionStatement[2526-2561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2638-3182]:Block[2638-3182]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge((short) 1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge((short) 1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[2648-2874]:ExpressionStatement[2648-2874]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[2884-2926]:VariableDeclarationStatement[2884-2926]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[2935-2974]:ExpressionStatement[2935-2974]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[2983-3018]:ExpressionStatement[2983-3018]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "info" : "ExpressionStatement[3027-3089]:ExpressionStatement[3027-3089]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[3098-3131]:ExpressionStatement[3098-3131]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[3141-3176]:ExpressionStatement[3141-3176]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3255-3791]:Block[3255-3791]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge(1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge(1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[3265-3483]:ExpressionStatement[3265-3483]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[3493-3535]:VariableDeclarationStatement[3493-3535]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[3544-3583]:ExpressionStatement[3544-3583]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[3592-3627]:ExpressionStatement[3592-3627]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "info" : "ExpressionStatement[3636-3698]:ExpressionStatement[3636-3698]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[3707-3740]:ExpressionStatement[3707-3740]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[3750-3785]:ExpressionStatement[3750-3785]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3861-4398]:Block[3861-4398]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge(1L)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge(1L)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[3871-4090]:ExpressionStatement[3871-4090]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[4100-4142]:VariableDeclarationStatement[4100-4142]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[4151-4190]:ExpressionStatement[4151-4190]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[4199-4234]:ExpressionStatement[4199-4234]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1\", timestamp);",
+      "info" : "ExpressionStatement[4243-4305]:ExpressionStatement[4243-4305]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[4314-4347]:ExpressionStatement[4314-4347]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[4357-4392]:ExpressionStatement[4357-4392]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4469-5011]:Block[4469-5011]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge(1.1f)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge(1.1f)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[4479-4700]:ExpressionStatement[4479-4700]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[4710-4752]:VariableDeclarationStatement[4710-4752]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[4761-4800]:ExpressionStatement[4761-4800]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[4809-4844]:ExpressionStatement[4809-4844]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1.10\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1.10\", timestamp);",
+      "info" : "ExpressionStatement[4853-4918]:ExpressionStatement[4853-4918]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[4927-4960]:ExpressionStatement[4927-4960]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[4970-5005]:ExpressionStatement[4970-5005]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5083-5624]:Block[5083-5624]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge(1.1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge(1.1)),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[5093-5313]:ExpressionStatement[5093-5313]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[5323-5365]:VariableDeclarationStatement[5323-5365]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[5374-5413]:ExpressionStatement[5374-5413]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[5422-5457]:ExpressionStatement[5422-5457]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1.10\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.gauge\", \"1.10\", timestamp);",
+      "info" : "ExpressionStatement[5466-5531]:ExpressionStatement[5466-5531]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[5540-5573]:ExpressionStatement[5540-5573]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[5583-5618]:ExpressionStatement[5583-5618]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5687-6351]:Block[5687-6351]"
+    }, {
+      "left" : "final Counter counter = mock(Counter.class);",
+      "right" : "final Counter counter = mock(Counter.class);",
+      "info" : "VariableDeclarationStatement[5697-5741]:VariableDeclarationStatement[5697-5741]"
+    }, {
+      "left" : "when(counter.getCount()).thenReturn(100L);",
+      "right" : "when(counter.getCount()).thenReturn(100L);",
+      "info" : "ExpressionStatement[5750-5792]:ExpressionStatement[5750-5792]"
+    }, {
+      "left" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(\"counter\", counter),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(\"counter\", counter),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[5802-6033]:ExpressionStatement[5802-6033]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[6043-6085]:VariableDeclarationStatement[6043-6085]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[6094-6133]:ExpressionStatement[6094-6133]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[6142-6177]:ExpressionStatement[6142-6177]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.counter.count\", \"100\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.counter.count\", \"100\", timestamp);",
+      "info" : "ExpressionStatement[6186-6258]:ExpressionStatement[6186-6258]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[6267-6300]:ExpressionStatement[6267-6300]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[6310-6345]:ExpressionStatement[6310-6345]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6416-8582]:Block[6416-8582]"
+    }, {
+      "left" : "final Histogram histogram = mock(Histogram.class);",
+      "right" : "final Histogram histogram = mock(Histogram.class);",
+      "info" : "VariableDeclarationStatement[6426-6476]:VariableDeclarationStatement[6426-6476]"
+    }, {
+      "left" : "when(histogram.getCount()).thenReturn(1L);",
+      "right" : "when(histogram.getCount()).thenReturn(1L);",
+      "info" : "ExpressionStatement[6485-6527]:ExpressionStatement[6485-6527]"
+    }, {
+      "left" : "final Snapshot snapshot = mock(Snapshot.class);",
+      "right" : "final Snapshot snapshot = mock(Snapshot.class);",
+      "info" : "VariableDeclarationStatement[6537-6584]:VariableDeclarationStatement[6537-6584]"
+    }, {
+      "left" : "when(snapshot.getMax()).thenReturn(2L);",
+      "right" : "when(snapshot.getMax()).thenReturn(2L);",
+      "info" : "ExpressionStatement[6593-6632]:ExpressionStatement[6593-6632]"
+    }, {
+      "left" : "when(snapshot.getMean()).thenReturn(3.0);",
+      "right" : "when(snapshot.getMean()).thenReturn(3.0);",
+      "info" : "ExpressionStatement[6641-6682]:ExpressionStatement[6641-6682]"
+    }, {
+      "left" : "when(snapshot.getMin()).thenReturn(4L);",
+      "right" : "when(snapshot.getMin()).thenReturn(4L);",
+      "info" : "ExpressionStatement[6691-6730]:ExpressionStatement[6691-6730]"
+    }, {
+      "left" : "when(snapshot.getStdDev()).thenReturn(5.0);",
+      "right" : "when(snapshot.getStdDev()).thenReturn(5.0);",
+      "info" : "ExpressionStatement[6739-6782]:ExpressionStatement[6739-6782]"
+    }, {
+      "left" : "when(snapshot.getMedian()).thenReturn(6.0);",
+      "right" : "when(snapshot.getMedian()).thenReturn(6.0);",
+      "info" : "ExpressionStatement[6791-6834]:ExpressionStatement[6791-6834]"
+    }, {
+      "left" : "when(snapshot.get75thPercentile()).thenReturn(7.0);",
+      "right" : "when(snapshot.get75thPercentile()).thenReturn(7.0);",
+      "info" : "ExpressionStatement[6843-6894]:ExpressionStatement[6843-6894]"
+    }, {
+      "left" : "when(snapshot.get95thPercentile()).thenReturn(8.0);",
+      "right" : "when(snapshot.get95thPercentile()).thenReturn(8.0);",
+      "info" : "ExpressionStatement[6903-6954]:ExpressionStatement[6903-6954]"
+    }, {
+      "left" : "when(snapshot.get98thPercentile()).thenReturn(9.0);",
+      "right" : "when(snapshot.get98thPercentile()).thenReturn(9.0);",
+      "info" : "ExpressionStatement[6963-7014]:ExpressionStatement[6963-7014]"
+    }, {
+      "left" : "when(snapshot.get99thPercentile()).thenReturn(10.0);",
+      "right" : "when(snapshot.get99thPercentile()).thenReturn(10.0);",
+      "info" : "ExpressionStatement[7023-7075]:ExpressionStatement[7023-7075]"
+    }, {
+      "left" : "when(snapshot.get999thPercentile()).thenReturn(11.0);",
+      "right" : "when(snapshot.get999thPercentile()).thenReturn(11.0);",
+      "info" : "ExpressionStatement[7084-7137]:ExpressionStatement[7084-7137]"
+    }, {
+      "left" : "when(histogram.getSnapshot()).thenReturn(snapshot);",
+      "right" : "when(histogram.getSnapshot()).thenReturn(snapshot);",
+      "info" : "ExpressionStatement[7147-7198]:ExpressionStatement[7147-7198]"
+    }, {
+      "left" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(),\n                        this.<Histogram>map(\"histogram\", histogram),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "right" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(),\n                        this.<Histogram>map(\"histogram\", histogram),\n                        this.<Meter>map(),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[7208-7443]:ExpressionStatement[7208-7443]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[7453-7495]:VariableDeclarationStatement[7453-7495]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[7504-7543]:ExpressionStatement[7504-7543]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[7552-7587]:ExpressionStatement[7552-7587]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.count\", \"1\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.count\", \"1\", timestamp);",
+      "info" : "ExpressionStatement[7596-7668]:ExpressionStatement[7596-7668]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.max\", \"2\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.max\", \"2\", timestamp);",
+      "info" : "ExpressionStatement[7677-7747]:ExpressionStatement[7677-7747]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.mean\", \"3.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.mean\", \"3.00\", timestamp);",
+      "info" : "ExpressionStatement[7756-7830]:ExpressionStatement[7756-7830]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.min\", \"4\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.min\", \"4\", timestamp);",
+      "info" : "ExpressionStatement[7839-7909]:ExpressionStatement[7839-7909]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.stddev\", \"5.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.stddev\", \"5.00\", timestamp);",
+      "info" : "ExpressionStatement[7918-7994]:ExpressionStatement[7918-7994]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.p50\", \"6.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.p50\", \"6.00\", timestamp);",
+      "info" : "ExpressionStatement[8003-8076]:ExpressionStatement[8003-8076]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.p75\", \"7.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.p75\", \"7.00\", timestamp);",
+      "info" : "ExpressionStatement[8085-8158]:ExpressionStatement[8085-8158]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.p95\", \"8.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.p95\", \"8.00\", timestamp);",
+      "info" : "ExpressionStatement[8167-8240]:ExpressionStatement[8167-8240]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.p98\", \"9.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.p98\", \"9.00\", timestamp);",
+      "info" : "ExpressionStatement[8249-8322]:ExpressionStatement[8249-8322]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.p99\", \"10.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.p99\", \"10.00\", timestamp);",
+      "info" : "ExpressionStatement[8331-8405]:ExpressionStatement[8331-8405]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.histogram.p999\", \"11.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.histogram.p999\", \"11.00\", timestamp);",
+      "info" : "ExpressionStatement[8414-8489]:ExpressionStatement[8414-8489]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[8498-8531]:ExpressionStatement[8498-8531]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[8541-8576]:ExpressionStatement[8541-8576]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8643-9844]:Block[8643-9844]"
+    }, {
+      "left" : "final Meter meter = mock(Meter.class);",
+      "right" : "final Meter meter = mock(Meter.class);",
+      "info" : "VariableDeclarationStatement[8653-8691]:VariableDeclarationStatement[8653-8691]"
+    }, {
+      "left" : "when(meter.getCount()).thenReturn(1L);",
+      "right" : "when(meter.getCount()).thenReturn(1L);",
+      "info" : "ExpressionStatement[8700-8738]:ExpressionStatement[8700-8738]"
+    }, {
+      "left" : "when(meter.getOneMinuteRate()).thenReturn(2.0);",
+      "right" : "when(meter.getOneMinuteRate()).thenReturn(2.0);",
+      "info" : "ExpressionStatement[8747-8794]:ExpressionStatement[8747-8794]"
+    }, {
+      "left" : "when(meter.getFiveMinuteRate()).thenReturn(3.0);",
+      "right" : "when(meter.getFiveMinuteRate()).thenReturn(3.0);",
+      "info" : "ExpressionStatement[8803-8851]:ExpressionStatement[8803-8851]"
+    }, {
+      "left" : "when(meter.getFifteenMinuteRate()).thenReturn(4.0);",
+      "right" : "when(meter.getFifteenMinuteRate()).thenReturn(4.0);",
+      "info" : "ExpressionStatement[8860-8911]:ExpressionStatement[8860-8911]"
+    }, {
+      "left" : "when(meter.getMeanRate()).thenReturn(5.0);",
+      "right" : "when(meter.getMeanRate()).thenReturn(5.0);",
+      "info" : "ExpressionStatement[8920-8962]:ExpressionStatement[8920-8962]"
+    }, {
+      "left" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(\"meter\", meter),\n                        this.<Timer>map());",
+      "right" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(\"meter\", meter),\n                        this.<Timer>map());",
+      "info" : "ExpressionStatement[8972-9199]:ExpressionStatement[8972-9199]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[9209-9251]:VariableDeclarationStatement[9209-9251]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[9260-9299]:ExpressionStatement[9260-9299]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[9308-9343]:ExpressionStatement[9308-9343]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.meter.count\", \"1\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.meter.count\", \"1\", timestamp);",
+      "info" : "ExpressionStatement[9352-9420]:ExpressionStatement[9352-9420]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.meter.m1_rate\", \"2.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.meter.m1_rate\", \"2.00\", timestamp);",
+      "info" : "ExpressionStatement[9429-9502]:ExpressionStatement[9429-9502]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.meter.m5_rate\", \"3.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.meter.m5_rate\", \"3.00\", timestamp);",
+      "info" : "ExpressionStatement[9511-9584]:ExpressionStatement[9511-9584]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.meter.m15_rate\", \"4.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.meter.m15_rate\", \"4.00\", timestamp);",
+      "info" : "ExpressionStatement[9593-9667]:ExpressionStatement[9593-9667]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.meter.mean_rate\", \"5.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.meter.mean_rate\", \"5.00\", timestamp);",
+      "info" : "ExpressionStatement[9676-9751]:ExpressionStatement[9676-9751]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[9760-9793]:ExpressionStatement[9760-9793]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[9803-9838]:ExpressionStatement[9803-9838]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9905-13023]:Block[9905-13023]"
+    }, {
+      "left" : "final Timer timer = mock(Timer.class);",
+      "right" : "final Timer timer = mock(Timer.class);",
+      "info" : "VariableDeclarationStatement[9915-9953]:VariableDeclarationStatement[9915-9953]"
+    }, {
+      "left" : "when(timer.getCount()).thenReturn(1L);",
+      "right" : "when(timer.getCount()).thenReturn(1L);",
+      "info" : "ExpressionStatement[9962-10000]:ExpressionStatement[9962-10000]"
+    }, {
+      "left" : "when(timer.getMeanRate()).thenReturn(2.0);",
+      "right" : "when(timer.getMeanRate()).thenReturn(2.0);",
+      "info" : "ExpressionStatement[10009-10051]:ExpressionStatement[10009-10051]"
+    }, {
+      "left" : "when(timer.getOneMinuteRate()).thenReturn(3.0);",
+      "right" : "when(timer.getOneMinuteRate()).thenReturn(3.0);",
+      "info" : "ExpressionStatement[10060-10107]:ExpressionStatement[10060-10107]"
+    }, {
+      "left" : "when(timer.getFiveMinuteRate()).thenReturn(4.0);",
+      "right" : "when(timer.getFiveMinuteRate()).thenReturn(4.0);",
+      "info" : "ExpressionStatement[10116-10164]:ExpressionStatement[10116-10164]"
+    }, {
+      "left" : "when(timer.getFifteenMinuteRate()).thenReturn(5.0);",
+      "right" : "when(timer.getFifteenMinuteRate()).thenReturn(5.0);",
+      "info" : "ExpressionStatement[10173-10224]:ExpressionStatement[10173-10224]"
+    }, {
+      "left" : "final Snapshot snapshot = mock(Snapshot.class);",
+      "right" : "final Snapshot snapshot = mock(Snapshot.class);",
+      "info" : "VariableDeclarationStatement[10234-10281]:VariableDeclarationStatement[10234-10281]"
+    }, {
+      "left" : "when(snapshot.getMax()).thenReturn(TimeUnit.MILLISECONDS.toNanos(100));",
+      "right" : "when(snapshot.getMax()).thenReturn(TimeUnit.MILLISECONDS.toNanos(100));",
+      "info" : "ExpressionStatement[10290-10361]:ExpressionStatement[10290-10361]"
+    }, {
+      "left" : "when(snapshot.getMean()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(200));",
+      "right" : "when(snapshot.getMean()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(200));",
+      "info" : "ExpressionStatement[10370-10451]:ExpressionStatement[10370-10451]"
+    }, {
+      "left" : "when(snapshot.getMin()).thenReturn(TimeUnit.MILLISECONDS.toNanos(300));",
+      "right" : "when(snapshot.getMin()).thenReturn(TimeUnit.MILLISECONDS.toNanos(300));",
+      "info" : "ExpressionStatement[10460-10531]:ExpressionStatement[10460-10531]"
+    }, {
+      "left" : "when(snapshot.getStdDev()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(400));",
+      "right" : "when(snapshot.getStdDev()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(400));",
+      "info" : "ExpressionStatement[10540-10623]:ExpressionStatement[10540-10623]"
+    }, {
+      "left" : "when(snapshot.getMedian()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(500));",
+      "right" : "when(snapshot.getMedian()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(500));",
+      "info" : "ExpressionStatement[10632-10715]:ExpressionStatement[10632-10715]"
+    }, {
+      "left" : "when(snapshot.get75thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(600));",
+      "right" : "when(snapshot.get75thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(600));",
+      "info" : "ExpressionStatement[10724-10815]:ExpressionStatement[10724-10815]"
+    }, {
+      "left" : "when(snapshot.get95thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(700));",
+      "right" : "when(snapshot.get95thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(700));",
+      "info" : "ExpressionStatement[10824-10915]:ExpressionStatement[10824-10915]"
+    }, {
+      "left" : "when(snapshot.get98thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(800));",
+      "right" : "when(snapshot.get98thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(800));",
+      "info" : "ExpressionStatement[10924-11015]:ExpressionStatement[10924-11015]"
+    }, {
+      "left" : "when(snapshot.get99thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(900));",
+      "right" : "when(snapshot.get99thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS.toNanos(900));",
+      "info" : "ExpressionStatement[11024-11115]:ExpressionStatement[11024-11115]"
+    }, {
+      "left" : "when(snapshot.get999thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS\n                                                                        .toNanos(1000));",
+      "right" : "when(snapshot.get999thPercentile()).thenReturn((double) TimeUnit.MILLISECONDS\n                                                                        .toNanos(1000));",
+      "info" : "ExpressionStatement[11124-11290]:ExpressionStatement[11124-11290]"
+    }, {
+      "left" : "when(timer.getSnapshot()).thenReturn(snapshot);",
+      "right" : "when(timer.getSnapshot()).thenReturn(snapshot);",
+      "info" : "ExpressionStatement[11300-11347]:ExpressionStatement[11300-11347]"
+    }, {
+      "left" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        map(\"timer\", timer));",
+      "right" : "reporter.report(this.<Gauge>map(),\n                        this.<Counter>map(),\n                        this.<Histogram>map(),\n                        this.<Meter>map(),\n                        map(\"timer\", timer));",
+      "info" : "ExpressionStatement[11357-11572]:ExpressionStatement[11357-11572]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[11582-11624]:VariableDeclarationStatement[11582-11624]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[11633-11672]:ExpressionStatement[11633-11672]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[11681-11716]:ExpressionStatement[11681-11716]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.max\", \"100.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.max\", \"100.00\", timestamp);",
+      "info" : "ExpressionStatement[11725-11796]:ExpressionStatement[11725-11796]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.mean\", \"200.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.mean\", \"200.00\", timestamp);",
+      "info" : "ExpressionStatement[11805-11877]:ExpressionStatement[11805-11877]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.min\", \"300.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.min\", \"300.00\", timestamp);",
+      "info" : "ExpressionStatement[11886-11957]:ExpressionStatement[11886-11957]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.stddev\", \"400.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.stddev\", \"400.00\", timestamp);",
+      "info" : "ExpressionStatement[11966-12040]:ExpressionStatement[11966-12040]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.p50\", \"500.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.p50\", \"500.00\", timestamp);",
+      "info" : "ExpressionStatement[12049-12120]:ExpressionStatement[12049-12120]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.p75\", \"600.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.p75\", \"600.00\", timestamp);",
+      "info" : "ExpressionStatement[12129-12200]:ExpressionStatement[12129-12200]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.p95\", \"700.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.p95\", \"700.00\", timestamp);",
+      "info" : "ExpressionStatement[12209-12280]:ExpressionStatement[12209-12280]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.p98\", \"800.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.p98\", \"800.00\", timestamp);",
+      "info" : "ExpressionStatement[12289-12360]:ExpressionStatement[12289-12360]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.p99\", \"900.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.p99\", \"900.00\", timestamp);",
+      "info" : "ExpressionStatement[12369-12440]:ExpressionStatement[12369-12440]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.p999\", \"1000.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.p999\", \"1000.00\", timestamp);",
+      "info" : "ExpressionStatement[12449-12522]:ExpressionStatement[12449-12522]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.count\", \"1\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.count\", \"1\", timestamp);",
+      "info" : "ExpressionStatement[12531-12599]:ExpressionStatement[12531-12599]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.m1_rate\", \"3.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.m1_rate\", \"3.00\", timestamp);",
+      "info" : "ExpressionStatement[12608-12681]:ExpressionStatement[12608-12681]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.m5_rate\", \"4.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.m5_rate\", \"4.00\", timestamp);",
+      "info" : "ExpressionStatement[12690-12763]:ExpressionStatement[12690-12763]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.m15_rate\", \"5.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.m15_rate\", \"5.00\", timestamp);",
+      "info" : "ExpressionStatement[12772-12846]:ExpressionStatement[12772-12846]"
+    }, {
+      "left" : "inOrder.verify(graphite).send(\"prefix.timer.mean_rate\", \"2.00\", timestamp);",
+      "right" : "inOrder.verify(graphite).send(\"prefix.timer.mean_rate\", \"2.00\", timestamp);",
+      "info" : "ExpressionStatement[12855-12930]:ExpressionStatement[12855-12930]"
+    }, {
+      "left" : "inOrder.verify(graphite).flush();",
+      "right" : "inOrder.verify(graphite).flush();",
+      "info" : "ExpressionStatement[12939-12972]:ExpressionStatement[12939-12972]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[12982-13017]:ExpressionStatement[12982-13017]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13110-13611]:Block[13110-13611]"
+    }, {
+      "left" : "doThrow(new UnknownHostException(\"UNKNOWN-HOST\")).when(graphite).connect();",
+      "right" : "doThrow(new UnknownHostException(\"UNKNOWN-HOST\")).when(graphite).connect();",
+      "info" : "ExpressionStatement[13120-13195]:ExpressionStatement[13120-13195]"
+    }, {
+      "left" : "reporter.report(map(\"gauge\", gauge(1)),\n            this.<Counter>map(),\n            this.<Histogram>map(),\n            this.<Meter>map(),\n            this.<Timer>map());",
+      "right" : "reporter.report(map(\"gauge\", gauge(1)),\n            this.<Counter>map(),\n            this.<Histogram>map(),\n            this.<Meter>map(),\n            this.<Timer>map());",
+      "info" : "ExpressionStatement[13204-13374]:ExpressionStatement[13204-13374]"
+    }, {
+      "left" : "final InOrder inOrder = inOrder(graphite);",
+      "right" : "final InOrder inOrder = inOrder(graphite);",
+      "info" : "VariableDeclarationStatement[13384-13426]:VariableDeclarationStatement[13384-13426]"
+    }, {
+      "left" : "inOrder.verify(graphite).isConnected();",
+      "right" : "inOrder.verify(graphite).isConnected();",
+      "info" : "ExpressionStatement[13435-13474]:ExpressionStatement[13435-13474]"
+    }, {
+      "left" : "inOrder.verify(graphite).connect();",
+      "right" : "inOrder.verify(graphite).connect();",
+      "info" : "ExpressionStatement[13483-13518]:ExpressionStatement[13483-13518]"
+    }, {
+      "left" : "inOrder.verify(graphite).close();",
+      "right" : "inOrder.verify(graphite).close();",
+      "info" : "ExpressionStatement[13527-13560]:ExpressionStatement[13527-13560]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[13570-13605]:ExpressionStatement[13570-13605]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13689-13801]:Block[14366-14478]"
+    }, {
+      "left" : "reporter.stop();",
+      "right" : "reporter.stop();",
+      "info" : "ExpressionStatement[13699-13715]:ExpressionStatement[14376-14392]"
+    }, {
+      "left" : "verify(graphite).close();",
+      "right" : "verify(graphite).close();",
+      "info" : "ExpressionStatement[13725-13750]:ExpressionStatement[14402-14427]"
+    }, {
+      "left" : "verifyNoMoreInteractions(graphite);",
+      "right" : "verifyNoMoreInteractions(graphite);",
+      "info" : "ExpressionStatement[13760-13795]:ExpressionStatement[14437-14472]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13846-13894]:Block[14523-14571]"
+    }, {
+      "left" : "return new TreeMap<String, T>();",
+      "right" : "return new TreeMap<String, T>();",
+      "info" : "ReturnStatement[13856-13888]:ReturnStatement[14533-14565]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13960-14083]:Block[14637-14760]"
+    }, {
+      "left" : "final TreeMap<String, T> map = new TreeMap<String, T>();",
+      "right" : "final TreeMap<String, T> map = new TreeMap<String, T>();",
+      "info" : "VariableDeclarationStatement[13970-14026]:VariableDeclarationStatement[14647-14703]"
+    }, {
+      "left" : "map.put(name, metric);",
+      "right" : "map.put(name, metric);",
+      "info" : "ExpressionStatement[14035-14057]:ExpressionStatement[14712-14734]"
+    }, {
+      "left" : "return map;",
+      "right" : "return map;",
+      "info" : "ReturnStatement[14066-14077]:ReturnStatement[14743-14754]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14122-14248]:Block[14799-14925]"
+    }, {
+      "left" : "final Gauge gauge = mock(Gauge.class);",
+      "right" : "final Gauge gauge = mock(Gauge.class);",
+      "info" : "VariableDeclarationStatement[14132-14170]:VariableDeclarationStatement[14809-14847]"
+    }, {
+      "left" : "when(gauge.getValue()).thenReturn(value);",
+      "right" : "when(gauge.getValue()).thenReturn(value);",
+      "info" : "ExpressionStatement[14179-14220]:ExpressionStatement[14856-14897]"
+    }, {
+      "left" : "return gauge;",
+      "right" : "return gauge;",
+      "info" : "ReturnStatement[14229-14242]:ReturnStatement[14906-14919]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,189 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CreateBuildConfigMojo",
+      "right" : "CreateBuildConfigMojo",
+      "info" : "TypeDeclaration[1542-5986]:TypeDeclaration[1542-8604]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.username\")\n    protected String username;",
+      "right" : "@Parameter(property = \"fabric8.gogsPassword\")\n    protected String password;",
+      "info" : "FieldDeclaration[1733-1828]:FieldDeclaration[1864-1981]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.repoName\")\n    protected String repoName;",
+      "right" : "@Parameter(property = \"fabric8.repoName\")\n    protected String repoName;",
+      "info" : "FieldDeclaration[1834-1929]:FieldDeclaration[1987-2082]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.fullName\")\n    protected String fullName;",
+      "right" : "@Parameter(property = \"fabric8.fullName\")\n    protected String fullName;",
+      "info" : "FieldDeclaration[1935-2030]:FieldDeclaration[2088-2183]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.gitUrl\")\n    protected String gitUrl;",
+      "right" : "@Parameter(property = \"fabric8.gitUrl\")\n    protected String gitUrl;",
+      "info" : "FieldDeclaration[2036-2127]:FieldDeclaration[2189-2280]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.webhookSecret\", defaultValue = \"secret101\")\n    protected  String secret;",
+      "right" : "@Parameter(property = \"fabric8.webhookSecret\", defaultValue = \"secret101\")\n    protected  String secret;",
+      "info" : "FieldDeclaration[2133-2316]:FieldDeclaration[2286-2469]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.buildImageStream\", defaultValue = \"triggerJenkins\")\n    protected  String buildImageStream;",
+      "right" : "@Parameter(property = \"fabric8.buildImageStream\", defaultValue = \"triggerJenkins\")\n    protected  String buildImageStream;",
+      "info" : "FieldDeclaration[2322-2495]:FieldDeclaration[2475-2648]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.buildImageTag\", defaultValue = \"latest\")\n    protected  String buildImageTag;",
+      "right" : "@Parameter(property = \"fabric8.buildImageTag\", defaultValue = \"latest\")\n    protected  String buildImageTag;",
+      "info" : "FieldDeclaration[2501-2659]:FieldDeclaration[2654-2812]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.jenkinsJob\")\n    protected  String jenkinsJob;",
+      "right" : "@Parameter(property = \"fabric8.jenkinsJob\")\n    protected  String jenkinsJob;",
+      "info" : "FieldDeclaration[2665-2837]:FieldDeclaration[2818-2990]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.jenkinsMonitorView\")\n    protected  String jenkinsMonitorView;",
+      "right" : "@Parameter(property = \"fabric8.jenkinsMonitorView\")\n    protected  String jenkinsMonitorView;",
+      "info" : "FieldDeclaration[2843-2996]:FieldDeclaration[2996-3149]"
+    }, {
+      "left" : "@Parameter(property = \"fabric8.jenkinsPipelineView\")\n    protected  String jenkinsPipelineView;",
+      "right" : "@Parameter(property = \"fabric8.jenkinsPipelineView\")\n    protected  String jenkinsPipelineView;",
+      "info" : "FieldDeclaration[3002-3157]:FieldDeclaration[3155-3310]"
+    }, {
+      "left" : "public void execute() throws MojoExecutionException, MojoFailureException",
+      "right" : "protected void createWebHook(String url)",
+      "info" : "MethodDeclaration[3164-5982]:MethodDeclaration[8263-8602]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3252-5982]:Block[3892-6922]"
+    }, {
+      "left" : "KubernetesClient kubernetes = getKubernetes();",
+      "right" : "KubernetesClient kubernetes = getKubernetes();",
+      "info" : "VariableDeclarationStatement[3262-3308]:VariableDeclarationStatement[3902-3948]"
+    }, {
+      "left" : "String name = repoName;",
+      "right" : "String name = repoName;",
+      "info" : "VariableDeclarationStatement[3318-3341]:VariableDeclarationStatement[3958-3981]"
+    }, {
+      "left" : "if (Strings.isNotBlank(username))",
+      "right" : "if (Strings.isNotBlank(username))",
+      "info" : "IfStatement[3350-3437]:IfStatement[3990-4077]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3384-3437]:Block[4024-4077]"
+    }, {
+      "left" : "name = username + \"-\" + name;",
+      "right" : "name = username + \"-\" + name;",
+      "info" : "ExpressionStatement[3398-3427]:ExpressionStatement[4038-4067]"
+    }, {
+      "left" : "Map<String,String> labels = new HashMap<>();",
+      "right" : "Map<String,String> labels = new HashMap<>();",
+      "info" : "VariableDeclarationStatement[3446-3490]:VariableDeclarationStatement[4086-4130]"
+    }, {
+      "left" : "labels.put(\"user\", username);",
+      "right" : "labels.put(\"user\", username);",
+      "info" : "ExpressionStatement[3499-3528]:ExpressionStatement[4139-4168]"
+    }, {
+      "left" : "labels.put(\"repo\", repoName);",
+      "right" : "labels.put(\"repo\", repoName);",
+      "info" : "ExpressionStatement[3537-3566]:ExpressionStatement[4177-4206]"
+    }, {
+      "left" : "Map<String,String> annotations = new HashMap<>();",
+      "right" : "Map<String,String> annotations = new HashMap<>();",
+      "info" : "VariableDeclarationStatement[3576-3625]:VariableDeclarationStatement[4216-4265]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3634-4811]:TryStatement[4274-5451]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3638-4708]:Block[4278-5348]"
+    }, {
+      "left" : "String jenkinsUrl = kubernetes.getServiceURL(ServiceNames.JENKINS, kubernetes.getNamespace(), \"http\", true);",
+      "right" : "String jenkinsUrl = kubernetes.getServiceURL(ServiceNames.JENKINS, kubernetes.getNamespace(), \"http\", true);",
+      "info" : "VariableDeclarationStatement[3652-3760]:VariableDeclarationStatement[4292-4400]"
+    }, {
+      "left" : "if (Strings.isNotBlank(jenkinsUrl))",
+      "right" : "if (Strings.isNotBlank(jenkinsUrl))",
+      "info" : "IfStatement[3774-4698]:IfStatement[4414-5338]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3810-4698]:Block[4450-5338]"
+    }, {
+      "left" : "if (Strings.isNotBlank(jenkinsMonitorView))",
+      "right" : "if (Strings.isNotBlank(jenkinsMonitorView))",
+      "info" : "IfStatement[3828-4110]:IfStatement[4468-4750]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3872-4110]:Block[4512-4750]"
+    }, {
+      "left" : "annotations.put(\"fabric8.link.jenkins.monitor/url\", URLUtils.pathJoin(jenkinsUrl, \"/view\", jenkinsMonitorView));",
+      "right" : "annotations.put(\"fabric8.link.jenkins.monitor/url\", URLUtils.pathJoin(jenkinsUrl, \"/view\", jenkinsMonitorView));",
+      "info" : "ExpressionStatement[3894-4006]:ExpressionStatement[4534-4646]"
+    }, {
+      "left" : "annotations.put(\"fabric8.link.jenkins.monitor/label\", \"Monitor\");",
+      "right" : "annotations.put(\"fabric8.link.jenkins.monitor/label\", \"Monitor\");",
+      "info" : "ExpressionStatement[4027-4092]:ExpressionStatement[4667-4732]"
+    }, {
+      "left" : "if (Strings.isNotBlank(jenkinsPipelineView))",
+      "right" : "if (Strings.isNotBlank(jenkinsPipelineView))",
+      "info" : "IfStatement[4127-4414]:IfStatement[4767-5054]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4172-4414]:Block[4812-5054]"
+    }, {
+      "left" : "annotations.put(\"fabric8.link.jenkins.pipeline/url\", URLUtils.pathJoin(jenkinsUrl, \"/view\", jenkinsPipelineView));",
+      "right" : "annotations.put(\"fabric8.link.jenkins.pipeline/url\", URLUtils.pathJoin(jenkinsUrl, \"/view\", jenkinsPipelineView));",
+      "info" : "ExpressionStatement[4194-4308]:ExpressionStatement[4834-4948]"
+    }, {
+      "left" : "annotations.put(\"fabric8.link.jenkins.pipeline/label\", \"Pipeline\");",
+      "right" : "annotations.put(\"fabric8.link.jenkins.pipeline/label\", \"Pipeline\");",
+      "info" : "ExpressionStatement[4329-4396]:ExpressionStatement[4969-5036]"
+    }, {
+      "left" : "if (Strings.isNotBlank(jenkinsJob))",
+      "right" : "if (Strings.isNotBlank(jenkinsJob))",
+      "info" : "IfStatement[4431-4684]:IfStatement[5071-5324]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4467-4684]:Block[5107-5324]"
+    }, {
+      "left" : "annotations.put(\"fabric8.link.jenkins.job/url\", URLUtils.pathJoin(jenkinsUrl, \"/job\", jenkinsJob));",
+      "right" : "annotations.put(\"fabric8.link.jenkins.job/url\", URLUtils.pathJoin(jenkinsUrl, \"/job\", jenkinsJob));",
+      "info" : "ExpressionStatement[4489-4588]:ExpressionStatement[5129-5228]"
+    }, {
+      "left" : "annotations.put(\"fabric8.link.jenkins.job/label\", \"Job\");",
+      "right" : "annotations.put(\"fabric8.link.jenkins.job/label\", \"Job\");",
+      "info" : "ExpressionStatement[4609-4666]:ExpressionStatement[5249-5306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4729-4811]:Block[5369-5451]"
+    }, {
+      "left" : "getLog().warn(\"Could not find the Jenkins URL!: \" + e, e);",
+      "right" : "getLog().warn(\"Could not find the Jenkins URL!: \" + e, e);",
+      "info" : "ExpressionStatement[4743-4801]:ExpressionStatement[5383-5441]"
+    }, {
+      "left" : "BuildConfig buildConfig = new BuildConfigBuilder().\n                withNewMetadata().withName(name).withLabels(labels).withAnnotations(annotations).endMetadata().\n                withNewSpec().\n                withNewSource().\n                withType(\"Git\").withNewGit().withUri(gitUrl).endGit().\n                endSource().\n                withNewStrategy().\n                withType(\"Docker\").withNewDockerStrategy().withNewFrom().withName(buildImageStream + \":\" + buildImageTag).endFrom().endDockerStrategy().\n                endStrategy().\n                addNewTrigger().\n                withType(\"github\").withNewGithub().withSecret(secret).endGithub().\n                endTrigger().\n                addNewTrigger().\n                withType(\"generic\").withNewGeneric().withSecret(secret).endGeneric().\n                endTrigger().\n                endSpec().\n                build();",
+      "right" : "BuildConfig buildConfig = new BuildConfigBuilder().\n                withNewMetadata().withName(name).withLabels(labels).withAnnotations(annotations).endMetadata().\n                withNewSpec().\n                withNewSource().\n                withType(\"Git\").withNewGit().withUri(gitUrl).endGit().\n                endSource().\n                withNewStrategy().\n                withType(\"Docker\").withNewDockerStrategy().withNewFrom().withName(buildImageStream + \":\" + buildImageTag).endFrom().endDockerStrategy().\n                endStrategy().\n                addNewTrigger().\n                withType(\"github\").withNewGithub().withSecret(secret).endGithub().\n                endTrigger().\n                addNewTrigger().\n                withType(\"generic\").withNewGeneric().withSecret(secret).endGeneric().\n                endTrigger().\n                endSpec().\n                build();",
+      "info" : "VariableDeclarationStatement[4821-5714]:VariableDeclarationStatement[5699-6592]"
+    }, {
+      "left" : "Controller controller = createController();",
+      "right" : "Controller controller = createController();",
+      "info" : "VariableDeclarationStatement[5724-5767]:VariableDeclarationStatement[6602-6645]"
+    }, {
+      "left" : "controller.applyBuildConfig(buildConfig, \"maven\");",
+      "right" : "controller.applyBuildConfig(buildConfig, \"maven\");",
+      "info" : "ExpressionStatement[5776-5826]:ExpressionStatement[6654-6704]"
+    }, {
+      "left" : "getLog().info(\"Created build configuration for \" + name + \" in namespace: \" + controller.getNamespace() + \" at \" + kubernetes.getAddress());",
+      "right" : "getLog().info(\"Created build configuration for \" + name + \" in namespace: \" + controller.getNamespace() + \" at \" + kubernetes.getAddress());",
+      "info" : "ExpressionStatement[5835-5975]:ExpressionStatement[6713-6853]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

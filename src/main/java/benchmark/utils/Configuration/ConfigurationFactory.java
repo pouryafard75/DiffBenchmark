@@ -7,9 +7,10 @@ import java.util.Set;
 
 /* Created by pourya on 2023-09-18 1:39 a.m. */
 public class ConfigurationFactory {
-    public static final String ORACLE_DIR = "D:\\RefactoringMiner\\src\\test\\resources\\oracle\\commits\\";
-    private static final String REFACTORING_MAPPINGS_DIR = "D:\\RefactoringMiner\\src\\test\\resources\\astDiff\\commits\\";
-    private static final String DEFECTS4J_MAPPING_DIR = "D:\\RefactoringMiner\\src\\test\\resources\\astDiff\\defects4j\\";
+    public static final String ORACLE_DIR = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/oracle/";
+    private static final String REFACTORING_MAPPINGS_DIR = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/commits/";
+    private static final String DEFECTS4J_MAPPING_DIR = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/defects4j";
+
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";
     private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";

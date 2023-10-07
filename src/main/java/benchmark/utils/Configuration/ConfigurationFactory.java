@@ -7,9 +7,15 @@ import java.util.Set;
 
 /* Created by pourya on 2023-09-18 1:39 a.m. */
 public class ConfigurationFactory {
+
+    //Update this path to $RefactoringMinerPath$/src/test/resources/oracle/
     public static final String ORACLE_DIR = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/oracle/";
+
+    //Update this path to $RefactoringMinerPath$/src/test/resources/astDiff/commits/
     private static final String REFACTORING_MAPPINGS_DIR = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/commits/";
-    private static final String DEFECTS4J_MAPPING_DIR = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/defects4j";
+
+    //Update this path to $RefactoringMinerPath$/src/test/resources/astDiff/defects4j/
+    private static final String DEFECTS4J_MAPPING_DIR = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/defects4j/";
 
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";

@@ -1,6 +1,7 @@
+Please check the [Wiki](https://github.com/pouryafard75/DiffBenchmark/wiki) for the detailed explanation.
+
 Table of Contents
 =================
-
    * [General info](#general-info)
    * [How to build DiffBenchmark](#how-to-build-diffbenchmark)
    * [Usage guidelines](#usage-guidelines)

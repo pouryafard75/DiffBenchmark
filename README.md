@@ -17,13 +17,9 @@ It is based on the Diff viewers provided by [GumTreeDiff](https://github.com/Gum
 
 First, clone the [RefactoringMiner](https://github.com/tsantalis/RefactoringMiner.git) repository.
 
-Next, edit file `build.gradle` in the root folder of the RefactoringMiner repository, and change the version to
-```
-version = "2.4.0-SNAPSHOT"
-```
+Then, go to file `benchmark.utils.Configuration.ConfigurationFactory` and update field `REFACTORING_MINER_PATH` to the RefactoringMiner cloned repository path in your hard drive.
 
-Run command `gradle publishToMavenLocal` in the root folder of the RefactoringMiner repository.
-This will create the `com.github.tsantalis:refactoring-miner:2.4.0-SNAPSHOT` dependency to your local Maven repository.
+Import DiffBenchmark as a gradle project in your IDE, or run `./gradlew jar` to build.
 
 # Usage guidelines
 

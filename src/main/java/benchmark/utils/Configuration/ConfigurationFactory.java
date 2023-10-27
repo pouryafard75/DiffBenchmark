@@ -7,15 +7,13 @@ import java.util.Set;
 
 /* Created by pourya on 2023-09-18 1:39 a.m. */
 public class ConfigurationFactory {
-
+    // Update value to the RefactoringMiner cloned repository path in your hard drive
     private static final String REFACTORING_MINER_PATH = "/home/tsantalis/eclipse-workspace/RefactoringMiner";
-    //Update this path to $RefactoringMinerPath$/src/test/resources/oracle/
+
     public static final String ORACLE_DIR = REFACTORING_MINER_PATH + "/src/test/resources/oracle/";
 
-    //Update this path to $RefactoringMinerPath$/src/test/resources/astDiff/commits/
     private static final String REFACTORING_MAPPINGS_DIR = REFACTORING_MINER_PATH + "/src/test/resources/astDiff/commits/";
 
-    //Update this path to $RefactoringMinerPath$/src/test/resources/astDiff/defects4j/
     private static final String DEFECTS4J_MAPPING_DIR = REFACTORING_MINER_PATH + "/src/test/resources/astDiff/defects4j/";
 
     private static final String perfectInfoName = "cases.json";

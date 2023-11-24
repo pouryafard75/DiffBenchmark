@@ -1,4 +1,4 @@
-package RQs;
+package rq;
 
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import at.aau.softwaredynamics.matchers.JavaMatchers;

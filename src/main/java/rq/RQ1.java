@@ -1,4 +1,4 @@
-package RQs;
+package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
@@ -17,7 +17,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
-import static RQs.Utils.mergeStats;
+import static rq.Utils.mergeStats;
 import static benchmark.metrics.computers.BenchmarkMetricsComputer.exportedFolderPathByCaseInfo;
 import static benchmark.metrics.computers.BenchmarkMetricsComputer.getPaths;
 import static benchmark.metrics.mm.writeToFile;

@@ -1,4 +1,4 @@
-package RQs;
+package rq;
 
 import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.CaseInfo;

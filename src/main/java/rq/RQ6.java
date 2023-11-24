@@ -1,11 +1,10 @@
-package RQs;
+package rq;
 
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
 import benchmark.metrics.computers.MappingsToConsider;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
 import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 
 import java.util.List;
 

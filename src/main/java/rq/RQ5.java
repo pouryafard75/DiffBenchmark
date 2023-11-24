@@ -1,4 +1,4 @@
-package RQs;
+package rq;
 
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
 import benchmark.metrics.computers.MappingsToConsider;

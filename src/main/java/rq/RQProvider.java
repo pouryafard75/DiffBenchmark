@@ -1,4 +1,4 @@
-package RQs;
+package rq;
 
 import benchmark.utils.Configuration.Configuration;
 

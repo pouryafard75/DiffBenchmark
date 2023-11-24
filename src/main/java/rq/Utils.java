@@ -1,4 +1,4 @@
-package RQs;
+package rq;
 
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.models.DiffStats;

@@ -1,4 +1,4 @@
-package RQs;
+package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
@@ -16,8 +16,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
 
-import static RQs.Utils.mergeStats;
-import static RQs.Utils.refactoringCountDist;
+import static rq.Utils.mergeStats;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-09-19 6:18 p.m. */
@@ -52,7 +51,7 @@ public class RQ4 implements RQProvider {
         }
     }
     public void rq4(Configuration configuration, int maxRefCount, int minFreq) throws Exception {
-        Map<Integer, Integer> countDist = refactoringCountDist(ConfigurationFactory.refOracleTwoPointOne());
+        Map<Integer, Integer> countDist = Utils.refactoringCountDist(ConfigurationFactory.refOracleTwoPointOne());
         Map<Integer,DiffComparisonResult> refCountStats = new HashMap<>();
         populateRefCountStats(configuration, maxRefCount, minFreq, countDist, refCountStats);
         List<DiffComparisonResult> stats = new ArrayList<>(refCountStats.values());
@@ -80,7 +79,7 @@ public class RQ4 implements RQProvider {
             if (existing.getIgnore() == null){
                 existing.setIgnore(new HumanReadableDiff());
             }
-            mergeStats(existing, oneCaseStats);
+            Utils.mergeStats(existing, oneCaseStats);
             refCountStats.put(numOfRef, existing);
         }
     }

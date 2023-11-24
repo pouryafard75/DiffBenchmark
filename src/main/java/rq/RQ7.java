@@ -5,7 +5,6 @@ import at.aau.softwaredynamics.matchers.JavaMatchers;
 import at.aau.softwaredynamics.matchers.MatcherFactory;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import com.github.gumtreediff.matchers.CompositeMatchers;
@@ -45,12 +44,24 @@ import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.populateDi
 /***
  * What is the execution time of each tool?
  */
-public class RQ7 {
+public class RQ7 implements RQProvider {
     private static final int numberOfExecutions = 5;
     static Map<CaseInfo, ProjectASTDiff> resourceMap = new HashMap<>();
+    private String filePath;
 
-    public static void main(String[] args) throws Exception {
-        Configuration config = ConfigurationFactory.defects4j();
+    public RQ7(String filePath) {
+        this.filePath = filePath;
+    }
+
+    @Override
+    public void run(Configuration configuration) {
+        try {
+            rq7(configuration);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void rq7(Configuration config) throws Exception {
         System.out.println("Configurations loaded.");
         populateResourceMap(config);
         System.out.println("Resource map populated.");
@@ -60,11 +71,9 @@ public class RQ7 {
             System.out.println("Working on: " + info.makeURL());
             result.add(executionTimeForEachCase(info));
             completed++;
-
             System.out.println("Completed: " + completed + " out of " + config.getAllCases().size());
-
         }
-        writeResults(result,"exeTime.csv");
+        writeResults(result, filePath);
     }
 
     private static void writeResults(List<ExeTimeRecord> result, String filePath) {

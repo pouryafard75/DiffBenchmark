@@ -27,7 +27,7 @@ public class MetricsCsvWriter {
     }
     public void writeStatsToCSV(boolean onFly) throws IOException {
         String destination = conf.getOutputFolder() + mappingsToConsider + "-";
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy-HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy,HH:mm:ss");
         String timeAndDate = formatter.format(new Date());
         writeStatsToCSV(onFly, destination + timeAndDate);
     }

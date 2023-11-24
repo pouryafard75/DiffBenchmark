@@ -21,6 +21,7 @@ import static RQs.Utils.refactoringCountDist;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-09-19 6:18 p.m. */
+
 /***
  * How do refactorings affect the accuracy of each tool?
  */
@@ -28,7 +29,7 @@ public class RQ4 implements RQProvider {
 
     private int maxRefCount = 101;
     private int minFreq = 3;
-    private String csvDestinationFile = "xyz.csv";
+    private String csvDestinationFile = "xyz.csv"; //TODO
 
     public void setCsvDestinationFile(String csvDestinationFile) {
         this.csvDestinationFile = csvDestinationFile;

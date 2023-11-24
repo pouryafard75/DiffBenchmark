@@ -15,7 +15,7 @@ public class MetricsToCSV {
     public static void main(String[] args) throws Exception {
 //        for (Boolean aBoolean : Set.of(true, false))
         {
-            Configuration configuration = ConfigurationFactory.refOracle();
+            Configuration configuration = ConfigurationFactory.dummy();
             MappingsToConsider mappingsToConsider = MappingsToConsider.ALL;
 
             BenchmarkMetricsComputer benchmarkMetricsComputer = new BenchmarkMetricsComputer(

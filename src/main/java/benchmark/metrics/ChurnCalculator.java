@@ -2,6 +2,7 @@ package benchmark.metrics;
 
 
 import com.github.difflib.DiffUtils;
+import com.github.difflib.UnifiedDiffUtils;
 import com.github.difflib.patch.*;
 import gui.webdiff.DirComparator;
 import org.apache.commons.lang3.tuple.Pair;
@@ -16,6 +17,18 @@ import java.util.*;
 public class ChurnCalculator {
 
     private static final String lineBreak = "\n";
+    public static String makeGitDiffOutput(String oldFilePath, String newFilePath, String oldContent, String newContent){
+        List<String> oldLines = getLines(oldContent);
+        List<String> newLines = getLines(newContent);
+        Patch<String> patch = DiffUtils.diff(oldLines, newLines);
+        List<String> strings = UnifiedDiffUtils.generateUnifiedDiff(oldFilePath, newFilePath, oldLines, patch, 0);
+        StringBuilder sb = new StringBuilder();
+        for (String string : strings) {
+            sb.append(string);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
     public static Pair<Integer, Integer> calculateAddDeleteChurn(String oldContent, String newContent) {
         List<String> oldLines = getLines(oldContent);
         List<String> newLines = getLines(newContent);

@@ -46,7 +46,7 @@ public abstract class HumanReadableDiffGenerator {
         make();
     }
 
-    private void make(){
+    public void make(){
         for (Mapping mapping : getAstDiff().getAllMappings()) {
             if (isPartOfJavadoc(mapping)) continue;
             if (isBetweenDifferentTypes(mapping)) throw new RuntimeException();
@@ -54,6 +54,22 @@ public abstract class HumanReadableDiffGenerator {
             if (mappingMetaInformation == null) continue;
             makeForEachMapping(mappingMetaInformation);
         }
+        extractMultiCollection();
+
+    }
+
+    private Set<Mapping> extractMultiCollection() {
+        Set<Mapping> multiCollection = new HashSet<>();
+        Map<Tree, Set<Tree>> treeSetMap = getAstDiff().getAllMappings().srcToDstMultis();
+
+        for (Map.Entry<Tree, Set<Tree>> entry : treeSetMap.entrySet()) {
+            Tree t1 = entry.getKey();
+            Set<Tree> value = entry.getValue();
+            for (Tree t2 : value) {
+                multiCollection.add(new Mapping(t1, t2));
+            }
+        }
+        return multiCollection;
     }
 
     public abstract void handleMethodDeclaration(MappingMetaInformation mappingMetaInformation);

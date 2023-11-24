@@ -62,6 +62,10 @@ public class Configuration {
         return activeTools.toArray(new ASTDiffTool[0]);
     }
 
+    public void setActiveTools(Set<ASTDiffTool> activeTools) {
+        this.activeTools = activeTools;
+    }
+
     public String getPerfectDiffDir() {
         return perfectDiffDir;
     }

@@ -8,9 +8,9 @@ import java.util.Set;
 /* Created by pourya on 2023-09-18 1:39 a.m. */
 public class ConfigurationFactory {
     // Update value to the RefactoringMiner cloned repository path in your hard drive
-    private static final String REFACTORING_MINER_PATH = "/home/tsantalis/eclipse-workspace/RefactoringMiner";
+    private static final String REFACTORING_MINER_PATH = "/Users/pourya/IdeaProjects/RM-ASTDiff/";
 
-    public static final String ORACLE_DIR = REFACTORING_MINER_PATH + "/src/test/resources/oracle/";
+    public static final String ORACLE_DIR = REFACTORING_MINER_PATH + "/src/test/resources/oracle/commits/";
 
     private static final String REFACTORING_MAPPINGS_DIR = REFACTORING_MINER_PATH + "/src/test/resources/astDiff/commits/";
 
@@ -19,9 +19,10 @@ public class ConfigurationFactory {
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";
     private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
+//    private static final String TEST_URL = "https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1f9540c809d7a12d3fb";
 
     public static Configuration getDefault() throws IOException {
-            return dummy();
+            return refOracleTwoPointOne();
     }
     public static Configuration refOracle() throws IOException {
         String confName = "refOracle-3.0";

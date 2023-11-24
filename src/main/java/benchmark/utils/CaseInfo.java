@@ -48,4 +48,5 @@ public class CaseInfo implements Serializable {
     public String makeURL() {
         return this.repo.replace(".git","") + "/commit/" + this.commit;
     }
+
 }

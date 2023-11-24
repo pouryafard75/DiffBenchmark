@@ -12,17 +12,15 @@ public class Stats {
         this.FN = FN;
     }
 
-    public float calcAccuracy() {
-        return ((float) (TP + TN)) / ((float) (TP + TN + FP + FN));
+    public double calcAccuracy() {
+        return ((double) (TP + TN)) / ((double) (TP + TN + FP + FN));
     }
 
-    public float calcPrecision() {
-        return ((float) (TP)) / ((float) (TP + FP));
+    public double calcPrecision() {
+        return ((double) (TP)) / ((double) (TP + FP));
     }
 
-    public float calcRecall() {
-        return ((float) (TP)) / ((float) (TP + FN));
-    }
+    public double calcRecall() { return ((double) (TP)) / ((double) (TP + FN)); }
 
     public int getTP() {
         return TP;

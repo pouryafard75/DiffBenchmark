@@ -8,6 +8,10 @@ public class DiffStats {
         this.programElementStats = programElementStats;
         this.abstractMappingStats = abstractMappingStats;
     }
+    public DiffStats(){
+        this.programElementStats = new Stats(0,0,0);
+        this.abstractMappingStats = new Stats(0,0,0);
+    }
 
     public Stats getProgramElementStats() {
         return programElementStats;

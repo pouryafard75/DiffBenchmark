@@ -1,10 +1,11 @@
 package benchmark.metrics.models;
 
+import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.oracle.models.NecessaryMappings;
 import benchmark.utils.CaseInfo;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /* Created by pourya on 2023-04-03 4:47 a.m. */
 public class DiffComparisonResult {
@@ -40,6 +41,16 @@ public class DiffComparisonResult {
 
     public void putStats(String toolName, DiffStats diffStats) {
         diffStatsList.put(toolName, diffStats);
+    }
+
+
+    public void addToIgnore(NecessaryMappings trivial) {
+        List<AbstractMapping> newElements = new ArrayList<>(ignore.intraFileMappings.getMatchedElements());
+        newElements.addAll(trivial.getMatchedElements());
+
+        List<AbstractMapping> newMappings = new ArrayList<>(ignore.intraFileMappings.getMappings());
+        newMappings.addAll(trivial.getMappings());
+        ignore = new HumanReadableDiff(new NecessaryMappings(newElements ,newMappings));
     }
 }
 

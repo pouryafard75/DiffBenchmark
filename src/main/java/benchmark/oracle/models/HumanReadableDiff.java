@@ -23,7 +23,10 @@ public class HumanReadableDiff implements Serializable {
     public Map<String,NecessaryMappings> interFileMappings;
 
     public HumanReadableDiff() {
-        intraFileMappings = new NecessaryMappings();
+        this(new NecessaryMappings());
+    }
+    public HumanReadableDiff(NecessaryMappings necessaryMappings) {
+        intraFileMappings = necessaryMappings;
         interFileMappings = new HashMap<>();
     }
 
@@ -40,5 +43,9 @@ public class HumanReadableDiff implements Serializable {
     }
     private static String prettify(String out) {
         return out.replace(": [", ": [\n");
+    }
+
+    public static HumanReadableDiff makeEmpty() {
+        return new HumanReadableDiff(new NecessaryMappings());
     }
 }

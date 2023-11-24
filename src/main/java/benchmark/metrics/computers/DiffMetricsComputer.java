@@ -4,6 +4,8 @@ import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.oracle.models.NecessaryMappings;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
@@ -13,14 +15,14 @@ public class DiffMetricsComputer {
 
     private final HumanReadableDiff godDiff;
     private final HumanReadableDiff toolDiff;
-    private final boolean includingInterFileMappings;
+    private MappingsToConsider mappingsToConsider;
 
-    public DiffMetricsComputer(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, boolean includingInterFileMappings) {
+    public DiffMetricsComputer(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, MappingsToConsider mappingsToConsider) {
         this.godDiff = godDiff;
         this.toolDiff = toolDiff;
-        this.includingInterFileMappings = includingInterFileMappings;
+        this.mappingsToConsider = mappingsToConsider;
     }
-    private Stats makeStats(Set<AbstractMapping> godList, Set<AbstractMapping> toolList) {
+    private Stats makeStats(Collection<AbstractMapping> godList, Collection<AbstractMapping> toolList) {
         int TP = 0;
         int FP = 0;
         int FN = 0;
@@ -40,34 +42,46 @@ public class DiffMetricsComputer {
     }
 
     public Stats programElementStats(){
-        if (!includingInterFileMappings)
-            return makeStats(
-                godDiff.intraFileMappings.getMatchedElements(),
-                toolDiff.intraFileMappings.getMatchedElements()
-            );
-        else {
-            Set<AbstractMapping> godMerged = getMerged(godDiff, NecessaryMappings::getMatchedElements);
-            Set<AbstractMapping> toolMerged = getMerged(toolDiff, NecessaryMappings::getMatchedElements);
-            return makeStats(godMerged,toolMerged);
-        }
+        return categoyStats(NecessaryMappings::getMatchedElements);
     }
     public Stats mappingStats(){
-        if (!includingInterFileMappings)
-            return makeStats(godDiff.intraFileMappings.getMappings(),toolDiff.intraFileMappings.getMappings());
-        else {
-            Set<AbstractMapping> godMerged = getMerged(godDiff, NecessaryMappings::getMappings);
-            Set<AbstractMapping> toolMerged = getMerged(toolDiff, NecessaryMappings::getMappings);
-            return makeStats(godMerged,toolMerged);
+        return categoyStats(NecessaryMappings::getMappings);
+    }
+    public Stats categoyStats(Function<NecessaryMappings, Collection<AbstractMapping>> criteriaSelector) {
+        Collection<AbstractMapping> godFinalized;
+        Collection<AbstractMapping> toolFinalized;
+        switch (mappingsToConsider) {
+            case ALL:
+            case MULTI_ONLY:
+                godFinalized = getMerged(godDiff, criteriaSelector, true);
+                toolFinalized = getMerged(toolDiff, criteriaSelector, true);
+                break;
+            case INTER_FILE_ONLY:
+                godFinalized = criteriaSelector.apply(godDiff.intraFileMappings);
+                toolFinalized = criteriaSelector.apply(toolDiff.intraFileMappings);
+                break;
+            case INTRA_FILE_ONLY:
+                godFinalized = getMerged(godDiff, criteriaSelector, false);
+                toolFinalized = getMerged(toolDiff, criteriaSelector, false);
+                break;
+            default:
+                throw new RuntimeException("Not Valid status for mappingsToConsider");
         }
+        return makeStats(godFinalized, toolFinalized);
     }
 
-    private static Set<AbstractMapping> getMerged(HumanReadableDiff humanReadableDiff, Function<NecessaryMappings,Set<AbstractMapping>> function) {
-        Set<AbstractMapping> merged = function.apply(humanReadableDiff.intraFileMappings);
-        for (Map.Entry<String, NecessaryMappings> stringNecessaryMappingsEntry : humanReadableDiff.interFileMappings.entrySet()) {
-            merged.addAll(function.apply(stringNecessaryMappingsEntry.getValue()));
+    private static Set<AbstractMapping> getMerged(HumanReadableDiff humanReadableDiff, Function<NecessaryMappings, Collection<AbstractMapping>> criteriaSelector, boolean withIntraFiles) {
+        Collection<AbstractMapping> merged =
+                withIntraFiles ?
+                        criteriaSelector.apply(humanReadableDiff.intraFileMappings) :
+                        new HashSet<>();
+        for (Map.Entry<String, NecessaryMappings> entry : humanReadableDiff.interFileMappings.entrySet()) {
+            merged.addAll(criteriaSelector.apply(entry.getValue()));
         }
-        return merged;
+        if (merged instanceof Set)
+            return ((Set<AbstractMapping>) merged);
+        else
+            throw new RuntimeException("Bug");
     }
-
 }
 

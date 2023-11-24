@@ -32,6 +32,17 @@ public class AbstractMapping implements Serializable {
         info = makeInfo();
     }
 
+//    @JsonCreator
+//    public AbstractMapping(
+//            @JsonProperty("left") String left,
+//            @JsonProperty("right") String right,
+//            @JsonProperty("info") String info) {
+//        this.left = left;
+//        this.right = right;
+//        this.info = info;
+//        deserialize();
+//    }
+
     public AbstractMapping(Mapping mapping, String srcString, String dstString) {
         this.leftOffset = mapping.first.getPos();
         this.leftEndOffset = mapping.first.getEndPos();
@@ -49,6 +60,21 @@ public class AbstractMapping implements Serializable {
                 ":" +
                 rightType + "[" + rightOffset + "-" + rightEndOffset + "]";
         return info;
+    }
+
+    private String getLeftInfo() {
+        return info.split(":")[0];
+    }
+
+    private String getRightInfo() {
+        return info.split(":")[1];
+    }
+
+    public boolean isMultiMappingPartner(AbstractMapping other) {
+        boolean notTheSame = !this.getInfo().equals(other.getInfo());
+        boolean sameRight = this.getLeftInfo().equals(other.getLeftInfo());
+        boolean sameLeft = this.getRightInfo().equals(other.getRightInfo());
+        return notTheSame && (sameRight || sameLeft);
     }
 
     enum AbstractMappingKind

@@ -55,7 +55,7 @@ public class ChurnCalculator {
     }
 
     public static List<String> getLines(String content) {
-        return content.equals("") ? new ArrayList<>() : Arrays.asList(content.split(lineBreak));
+        return content.isEmpty() ? new ArrayList<>() : Arrays.asList(content.split(lineBreak));
     }
 
     public static Pair<Integer,Integer> calculateAddDeleteChurn(ProjectASTDiff projectASTDiff, boolean includeAddedFiles, boolean includeRemovedFiles) {

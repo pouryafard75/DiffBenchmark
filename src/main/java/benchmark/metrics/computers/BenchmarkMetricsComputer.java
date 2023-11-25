@@ -1,11 +1,10 @@
 package benchmark.metrics.computers;
 
+import benchmark.metrics.computers.filters.MappingsLocationFilter;
+import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
-import benchmark.metrics.models.Stats;
-import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.oracle.models.NecessaryMappings;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.oracle.generators.tools.models.ASTDiffTool;
@@ -13,20 +12,18 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static benchmark.utils.PathResolver.repoFolder;
 
 /* Created by pourya on 2023-04-03 1:51 a.m. */
 public class BenchmarkMetricsComputer {
-    private static boolean WRITE_INTERMEDIATE_FILES = true;
+    private static boolean WRITE_INTERMEDIATE_FILES = false; //TODO: make this consistent
     private final Set<CaseInfo> infos;
     private final Configuration configuration;
 //    private final Map<CaseInfo, ProjectASTDiff> rm_projectDiff = new LinkedHashMap<>();
@@ -37,16 +34,17 @@ public class BenchmarkMetricsComputer {
         this.configuration = configuration;
     }
 
-    public List<DiffComparisonResult> generateBenchmarkStats(MappingsToConsider mappingsToConsider) throws IOException {
+    public List<DiffComparisonResult> generateBenchmarkStats(MappingsLocationFilter mappingsLocationFilter,
+                                                             MappingsTypeFilter mappingsTypeFilter) throws IOException {
         List<DiffComparisonResult> benchmarkStats = new ArrayList<>();
         for (CaseInfo info : infos) {
-            oneCaseStats(info, benchmarkStats, configuration, mappingsToConsider);
+            oneCaseStats(info, benchmarkStats, mappingsLocationFilter, mappingsTypeFilter);
         }
         System.out.println("Finished generating benchmark stats...");
         return benchmarkStats;
     }
 
-    public static void oneCaseStats(CaseInfo info, List<DiffComparisonResult> benchmarkStats, Configuration configuration, MappingsToConsider mappingsToConsider) throws IOException {
+    public void oneCaseStats(CaseInfo info, List<DiffComparisonResult> benchmarkStats, MappingsLocationFilter mappingsLocationFilter, MappingsTypeFilter mappingsTypeFilter) throws IOException {
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(configuration.getOutputFolder() + folderPath  + "/");
         System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
@@ -57,35 +55,22 @@ public class BenchmarkMetricsComputer {
             String godFullPath = path + "/" +  ASTDiffTool.GOD.name() + ".json";
             mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
             HumanReadableDiff godHRD = mapper.readValue(new File(godFullPath), HumanReadableDiff.class);
-            populateComparisonResults(configuration, diffComparisonResult, godFullPath, godHRD, mappingsToConsider);
+            populateComparisonResults(diffComparisonResult, godFullPath, godHRD, mappingsLocationFilter, mappingsTypeFilter);
             benchmarkStats.add(diffComparisonResult);
         }
         System.out.println("Finished generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
     }
 
-    private static void setIgnoreFromFile(String godFullPath, DiffComparisonResult diffComparisonResult) throws IOException {
+    private void setIgnoreFromFile(String godFullPath, DiffComparisonResult diffComparisonResult, MappingsLocationFilter mappingsLocationFilter, MappingsTypeFilter mappingsTypeFilter) throws IOException {
         String ignorePath = godFullPath.replace(ASTDiffTool.GOD.name(), ASTDiffTool.TRV.name());
         HumanReadableDiff diffIgnore =  mapper.readValue(new File(ignorePath), HumanReadableDiff.class);
-        diffComparisonResult.setIgnore(diffIgnore);
-    }
-    private static void setIgnoreEmpty(String godFullPath, DiffComparisonResult diffComparisonResult) throws IOException {
-        diffComparisonResult.setIgnore(HumanReadableDiff.makeEmpty());
+        diffIgnore = mappingsLocationFilter.getFilter().make(diffIgnore);
+        diffComparisonResult.setIgnore(mappingsTypeFilter.apply(diffIgnore));
     }
 
-
-    private static void populateComparisonResults(Configuration configuration, DiffComparisonResult diffComparisonResult, String godFullPath, HumanReadableDiff godHRD, MappingsToConsider mappingsToConsider) throws IOException {
-        HumanReadableDiff godMultiHRD = null;
-        if (mappingsToConsider == MappingsToConsider.MULTI_ONLY) {
-            setIgnoreEmpty(godFullPath, diffComparisonResult);
-            godMultiHRD = new HumanReadableDiff
-                    (new NecessaryMappings(
-                            extractMultiMappings(godHRD, godHRD, NecessaryMappings::getMatchedElements),
-                            extractMultiMappings(godHRD, godHRD, NecessaryMappings::getMappings)));
-            writeIntermediateFiles(godMultiHRD,godFullPath, ASTDiffTool.GOD.name());
-        } else {
-            setIgnoreFromFile(godFullPath, diffComparisonResult);
-        }
-
+    private void populateComparisonResults(DiffComparisonResult diffComparisonResult, String godFullPath, HumanReadableDiff godHRD, MappingsLocationFilter mappingsLocationFilter, MappingsTypeFilter mappingsTypeFilter) throws IOException {
+        HumanReadableDiff godHRDFinalized = mappingsLocationFilter.getFilter().make(godHRD, godHRD);
+        setIgnoreFromFile(godFullPath, diffComparisonResult, mappingsLocationFilter, mappingsTypeFilter);
         for (ASTDiffTool tool : configuration.getActiveTools()) {
             if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
                 continue;
@@ -94,17 +79,8 @@ public class BenchmarkMetricsComputer {
             HumanReadableDiff toolHRD;
             toolHRD = mapper.readValue(new File(toolFullPath), HumanReadableDiff.class);
             DiffStats diffStats;
-            if (mappingsToConsider == MappingsToConsider.MULTI_ONLY) {
-                HumanReadableDiff toolMultiHRD = new HumanReadableDiff
-                        (new NecessaryMappings(
-                                extractMultiMappings(toolHRD, godMultiHRD, NecessaryMappings::getMatchedElements),
-                                extractMultiMappings(toolHRD, godMultiHRD, NecessaryMappings::getMappings)));
-                writeIntermediateFiles(toolMultiHRD, godFullPath, tool.name());
-                diffStats = compareHumanReadableDiffs(godMultiHRD, toolMultiHRD, mappingsToConsider);
-            }
-            else {
-                diffStats = compareHumanReadableDiffs(godHRD, toolHRD, mappingsToConsider);
-            }
+            HumanReadableDiff toolHRDFinalized = mappingsLocationFilter.getFilter().make(toolHRD, godHRDFinalized);
+            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, mappingsLocationFilter, mappingsTypeFilter);
             diffComparisonResult.putStats(toolPath, diffStats);
         }
     }
@@ -129,26 +105,10 @@ public class BenchmarkMetricsComputer {
                 .collect(Collectors.toList());
     }
 
-    private static DiffStats compareHumanReadableDiffs(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, MappingsToConsider mappingsToConsider) {
-        DiffMetricsComputer diffMetricsComputer = new DiffMetricsComputer(godDiff, toolDiff, mappingsToConsider);
+    private DiffStats compareHumanReadableDiffs(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, MappingsLocationFilter mappingsLocationFilter, MappingsTypeFilter mappingsTypeFilter) {
+        DiffMetricsComputer diffMetricsComputer = new DiffMetricsComputer(godDiff, toolDiff, mappingsLocationFilter, mappingsTypeFilter);
         return new DiffStats(diffMetricsComputer.programElementStats(), diffMetricsComputer.mappingStats());
     }
-
-
-    private static Set<AbstractMapping> extractMultiMappings(HumanReadableDiff godDiff, HumanReadableDiff other,
-                                                             Function<NecessaryMappings, Collection<AbstractMapping>> function) {
-        Set<AbstractMapping> multi = new HashSet<>();
-        for (AbstractMapping m1 : function.apply(godDiff.intraFileMappings)) {
-            for (AbstractMapping m2 : function.apply(other.intraFileMappings)) {
-                if (m1.isMultiMappingPartner(m2)) {
-                    multi.add(m1);
-                    break;
-                }
-            }
-        }
-        return multi;
-    }
-
     public static String exportedFolderPathByCaseInfo(CaseInfo info) {
         return repoFolder(info.getRepo()) +  "/" + info.getCommit();
     }

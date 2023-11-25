@@ -1,6 +1,7 @@
 package benchmark.metrics.writers;
 
-import benchmark.metrics.computers.MappingsToConsider;
+import benchmark.metrics.computers.filters.MappingsLocationFilter;
+import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
@@ -18,18 +19,20 @@ import java.util.Date;
 public class MetricsCsvWriter {
     private final Configuration conf;
     private final Collection<DiffComparisonResult> stats;
-    private MappingsToConsider mappingsToConsider;
+    private final MappingsLocationFilter mappingsLocationFilter;
+    private final MappingsTypeFilter mappingsTypeFilter;
 
-    public MetricsCsvWriter(Configuration conf, Collection<DiffComparisonResult> stats, MappingsToConsider mappingsToConsider){
+    public MetricsCsvWriter(Configuration conf, Collection<DiffComparisonResult> stats, MappingsLocationFilter mappingsLocationFilter, MappingsTypeFilter mappingsTypeFilter){
         this.conf = conf;
         this.stats = stats;
-        this.mappingsToConsider = mappingsToConsider;
+        this.mappingsLocationFilter = mappingsLocationFilter;
+        this.mappingsTypeFilter = mappingsTypeFilter;
     }
     public void writeStatsToCSV(boolean onFly) throws IOException {
-        String destination = conf.getOutputFolder() + mappingsToConsider + "-";
+        String destination = conf.getOutputFolder() + "LOC:" + mappingsLocationFilter + "-" + "TYPE:" + mappingsTypeFilter + "-";
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy,HH:mm:ss");
         String timeAndDate = formatter.format(new Date());
-        writeStatsToCSV(onFly, destination + timeAndDate);
+        writeStatsToCSV(onFly, destination + timeAndDate + ".csv");
     }
     public void writeStatsToCSV(boolean onFly, String exportPath) throws IOException {
         ASTDiffTool[] activeTools = conf.getActiveTools();
@@ -75,8 +78,8 @@ public class MetricsCsvWriter {
                     .append(stat.getSrcFileName()).append(",");
             if (!onFly) {
                 row
-                        .append(stat.getIgnore().intraFileMappings.getMappings().size()).append(",")
-                        .append(stat.getIgnore().intraFileMappings.getMatchedElements().size()).append(",");
+                        .append(stat.getIgnore().getIntraFileMappings().getMappings().size()).append(",")
+                        .append(stat.getIgnore().getIntraFileMappings().getMatchedElements().size()).append(",");
             }
 
             for (ASTDiffTool tool : activeTools) {
@@ -84,8 +87,8 @@ public class MetricsCsvWriter {
                     continue;
                 String toolName = tool.name();
                 DiffStats toolStat = stat.getDiffStatsList().get(toolName);
-                appendStats(row, toolStat.getAbstractMappingStats(), stat.getIgnore().intraFileMappings.getMappings().size(),onFly);
-                appendStats(row, toolStat.getProgramElementStats(), stat.getIgnore().intraFileMappings.getMatchedElements().size(),onFly);
+                appendStats(row, toolStat.getAbstractMappingStats(), stat.getIgnore().getIntraFileMappings().getMappings().size(),onFly);
+                appendStats(row, toolStat.getProgramElementStats(), stat.getIgnore().getIntraFileMappings().getMatchedElements().size(),onFly);
             }
             row.deleteCharAt(row.length() - 1); // Remove trailing comma
             row.append("\n");

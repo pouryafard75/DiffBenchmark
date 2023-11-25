@@ -77,7 +77,7 @@ public abstract class HumanReadableDiffGenerator {
     private MappingMetaInformation getMetaInformation(Mapping mapping) {
         if (isInterFileMapping(mapping, getAstDiff().src.getRoot(), getAstDiff().dst.getRoot()))
             return getMappingMetaInformationForInterFileMappings(mapping);
-        return new MappingMetaInformation(getAstDiff().getSrcPath(), getAstDiff().getDstPath(), getResult().intraFileMappings, mapping, false);
+        return new MappingMetaInformation(getAstDiff().getSrcPath(), getAstDiff().getDstPath(), getResult().getIntraFileMappings(), mapping, false);
     }
 
     private MappingMetaInformation getMappingMetaInformationForInterFileMappings(Mapping mapping) {
@@ -89,8 +89,8 @@ public abstract class HumanReadableDiffGenerator {
                 String currDst;
                 if (e instanceof MoveOut && actionBelongsToMapping(mapping, e)) {
                     String key = e.toString();
-                    getResult().interFileMappings.putIfAbsent(key, new NecessaryMappings());
-                    target = getResult().interFileMappings.get(key);
+                    getResult().getInterFileMappings().putIfAbsent(key, new NecessaryMappings());
+                    target = getResult().getInterFileMappings().get(key);
                     currSrc = getAstDiff().getSrcPath();
                     currDst = ((MoveOut) e).getDstFile();
                     return new MappingMetaInformation(currSrc, currDst, target, mapping, true);
@@ -98,8 +98,8 @@ public abstract class HumanReadableDiffGenerator {
                 else if (e instanceof MoveIn && actionBelongsToMapping(mapping, e))
                 {
                     String key = e.toString();
-                    getResult().interFileMappings.putIfAbsent(key, new NecessaryMappings());
-                    target = getResult().interFileMappings.get(key);
+                    getResult().getInterFileMappings().putIfAbsent(key, new NecessaryMappings());
+                    target = getResult().getInterFileMappings().get(key);
                     currSrc = ((MoveIn) e).getSrcFile();
                     currDst = getAstDiff().getDstPath();
                     return new MappingMetaInformation(currSrc, currDst, target, mapping, true);

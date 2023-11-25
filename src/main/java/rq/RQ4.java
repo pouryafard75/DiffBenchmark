@@ -2,7 +2,8 @@ package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
-import benchmark.metrics.computers.MappingsToConsider;
+import benchmark.metrics.computers.filters.MappingsLocationFilter;
+import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.writers.MetricsCsvWriter;
@@ -12,7 +13,6 @@ import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
-import java.io.IOException;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -26,6 +26,8 @@ import static benchmark.utils.Helpers.runWhatever;
  */
 public class RQ4 implements RQProvider {
 
+    private static final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.NO_FILTER;
+    private static final MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
     private int maxRefCount = 101;
     private int minFreq = 3;
     private String csvDestinationFile = "xyz.csv"; //TODO
@@ -56,10 +58,10 @@ public class RQ4 implements RQProvider {
         populateRefCountStats(configuration, maxRefCount, minFreq, countDist, refCountStats);
         List<DiffComparisonResult> stats = new ArrayList<>(refCountStats.values());
         stats.sort(Comparator.comparingInt(o -> Integer.parseInt(o.getSrcFileName())));
-        new MetricsCsvWriter(configuration, stats, MappingsToConsider.ALL).writeStatsToCSV(true, this.csvDestinationFile);
+        new MetricsCsvWriter(configuration, stats, mappingsLocationFilter, mappingsTypeFilter).writeStatsToCSV(true, this.csvDestinationFile);
     }
 
-    private static void populateRefCountStats(Configuration configuration, int maxRefCount, int minFreq, Map<Integer, Integer> countDist, Map<Integer, DiffComparisonResult> refCountStats) throws IOException {
+    private static void populateRefCountStats(Configuration configuration, int maxRefCount, int minFreq, Map<Integer, Integer> countDist, Map<Integer, DiffComparisonResult> refCountStats) throws Exception {
         for (CaseInfo caseInfo : configuration.getAllCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(caseInfo.getRepo(), caseInfo.getCommit());
             int numOfRef = projectASTDiff.getRefactorings().size();
@@ -70,7 +72,7 @@ public class RQ4 implements RQProvider {
                             new DiffComparisonResult(
                                     new CaseInfo("RefCount",String.valueOf(numOfRef)), String.valueOf(numOfRef)));
             ArrayList<DiffComparisonResult> oneCaseStats = new ArrayList<>();
-            BenchmarkMetricsComputer.oneCaseStats(caseInfo, oneCaseStats, configuration, MappingsToConsider.ALL);
+            new BenchmarkMetricsComputer(configuration).oneCaseStats(caseInfo, oneCaseStats, mappingsLocationFilter, mappingsTypeFilter);
             if (existing.getDiffStatsList().isEmpty()){
                 for (Entry<String, DiffStats> entry : oneCaseStats.get(0).getDiffStatsList().entrySet()) {
                     existing.getDiffStatsList().put(entry.getKey(), new DiffStats());

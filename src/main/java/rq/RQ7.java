@@ -27,17 +27,13 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
 import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
 import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createModelForASTDiff;
-import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.populateDirectories;
 
 /* Created by pourya on 2023-11-23 9:53 p.m. */
 
@@ -60,6 +56,25 @@ public class RQ7 implements RQProvider {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+    public static ProjectASTDiff customAPI(Map<String, String> fileContentsBefore, Map<String, String> fileContentsCurrent) throws Exception {
+        UMLModel parentUMLModel = createModelForASTDiff(fileContentsBefore, populateDirectories(fileContentsBefore));
+        UMLModel currentUMLModel = createModelForASTDiff(fileContentsCurrent, populateDirectories(fileContentsCurrent));
+        UMLModelDiff modelDiff = parentUMLModel.diff(currentUMLModel);
+        ProjectASTDiffer differ = new ProjectASTDiffer(modelDiff, fileContentsBefore, fileContentsCurrent);
+        return differ.getProjectASTDiff();
+    }
+
+    private static Set<String> populateDirectories(Map<String, String> fileContents) {
+        Set<String> repositoryDirectories = new LinkedHashSet<>();
+        for(String path : fileContents.keySet()) {
+            String directory = new String(path);
+            while(directory.contains("/")) {
+                directory = directory.substring(0, directory.lastIndexOf("/"));
+                repositoryDirectories.add(directory);
+            }
+        }
+        return repositoryDirectories;
     }
     public void rq7(Configuration config) throws Exception {
         System.out.println("Configurations loaded.");
@@ -183,14 +198,6 @@ public class RQ7 implements RQProvider {
             loaded++;
             System.out.println(loaded + " out of " + config.getAllCases().size() + " loaded.");
         }
-    }
-
-    public static ProjectASTDiff customAPI(Map<String, String> fileContentsBefore, Map<String, String> fileContentsCurrent) throws Exception {
-        UMLModel parentUMLModel = createModelForASTDiff(fileContentsBefore, populateDirectories(fileContentsBefore));
-        UMLModel currentUMLModel = createModelForASTDiff(fileContentsCurrent, populateDirectories(fileContentsCurrent));
-        UMLModelDiff modelDiff = parentUMLModel.diff(currentUMLModel);
-        ProjectASTDiffer differ = new ProjectASTDiffer(modelDiff, fileContentsBefore, fileContentsCurrent);
-        return differ.getProjectASTDiff();
     }
     public static long diffTimeDefects4j(String projectDir, String bugID) throws Exception {
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtDirectories(

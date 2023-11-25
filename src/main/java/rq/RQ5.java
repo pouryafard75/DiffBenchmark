@@ -1,7 +1,8 @@
 package rq;
 
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
-import benchmark.metrics.computers.MappingsToConsider;
+import benchmark.metrics.computers.filters.MappingsLocationFilter;
+import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
 import benchmark.utils.Configuration.Configuration;
@@ -15,7 +16,8 @@ import java.util.List;
  */
 public class RQ5 implements RQProvider{
 
-    private final MappingsToConsider mappingsToConsider = MappingsToConsider.INTRA_FILE_ONLY;
+    private static final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.INTRA_FILE_ONLY;
+    private static final MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
     private String csvDestinationFile; //TODO
 
     public void setCsvDestinationFile(String csvDestinationFile) {
@@ -34,7 +36,7 @@ public class RQ5 implements RQProvider{
     private void rq5(Configuration configuration) throws Exception {
         BenchmarkMetricsComputer benchmarkMetricsComputer = new BenchmarkMetricsComputer(
                 configuration);
-        List<DiffComparisonResult> stats = benchmarkMetricsComputer.generateBenchmarkStats(mappingsToConsider);
-        new MetricsCsvWriter(configuration, stats , mappingsToConsider).writeStatsToCSV(false);
+        List<DiffComparisonResult> stats = benchmarkMetricsComputer.generateBenchmarkStats(mappingsLocationFilter, mappingsTypeFilter);
+        new MetricsCsvWriter(configuration, stats , mappingsLocationFilter, mappingsTypeFilter).writeStatsToCSV(false);
     }
 }

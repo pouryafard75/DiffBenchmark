@@ -20,7 +20,7 @@ import java.util.Set;
 public class TrivialDiff {
     private final ASTDiff rm_astDiff;
     private final HumanReadableDiff humanReadableDiff = new HumanReadableDiff();
-    private final NecessaryMappings target = humanReadableDiff.intraFileMappings;
+    private final NecessaryMappings target = humanReadableDiff.getIntraFileMappings();
 
     public ASTDiff makeASTDiff() {
         MappingStore mappings = new GreedySubtreeMatcher() {

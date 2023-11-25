@@ -45,10 +45,10 @@ public class DiffComparisonResult {
 
 
     public void addToIgnore(NecessaryMappings trivial) {
-        List<AbstractMapping> newElements = new ArrayList<>(ignore.intraFileMappings.getMatchedElements());
+        List<AbstractMapping> newElements = new ArrayList<>(ignore.getIntraFileMappings().getMatchedElements());
         newElements.addAll(trivial.getMatchedElements());
 
-        List<AbstractMapping> newMappings = new ArrayList<>(ignore.intraFileMappings.getMappings());
+        List<AbstractMapping> newMappings = new ArrayList<>(ignore.getIntraFileMappings().getMappings());
         newMappings.addAll(trivial.getMappings());
         ignore = new HumanReadableDiff(new NecessaryMappings(newElements ,newMappings));
     }

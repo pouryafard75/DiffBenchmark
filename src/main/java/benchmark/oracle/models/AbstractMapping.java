@@ -62,11 +62,11 @@ public class AbstractMapping implements Serializable {
         return info;
     }
 
-    private String getLeftInfo() {
+    public String getLeftInfo() {
         return info.split(":")[0];
     }
 
-    private String getRightInfo() {
+    public String getRightInfo() {
         return info.split(":")[1];
     }
 

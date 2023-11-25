@@ -7,8 +7,7 @@ import benchmark.utils.Configuration.ConfigurationFactory;
 public class MakeToolsOutput {
     public static void main(String[] args) throws Exception {
         BenchmarkHumanReadableDiffGenerator benchmarkHumanReadableDiffGenerator = new BenchmarkHumanReadableDiffGenerator
-                (ConfigurationFactory.dummy());
+                (ConfigurationFactory.defects4j());
         benchmarkHumanReadableDiffGenerator.generate();
     }
-
 }

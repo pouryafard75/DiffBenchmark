@@ -2,7 +2,8 @@ package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 import benchmark.metrics.computers.BenchmarkMetricsComputer;
-import benchmark.metrics.computers.MappingsToConsider;
+import benchmark.metrics.computers.filters.MappingsLocationFilter;
+import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.DiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
 import benchmark.oracle.models.HumanReadableDiff;
@@ -28,7 +29,8 @@ import static benchmark.metrics.mm.writeToFile;
  * How many multi-mappings are missed by each tool?
  */
 public class RQ1 implements RQProvider {
-    private final MappingsToConsider mappingsToConsider = MappingsToConsider.MULTI_ONLY;
+    private final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.MULTI_ONLY;
+    private final MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
     private String csvDestinationFile;
 
     public RQ1(String csvDestinationFile) {
@@ -38,8 +40,8 @@ public class RQ1 implements RQProvider {
     public void rq1(Configuration configuration) throws Exception {
         BenchmarkMetricsComputer benchmarkMetricsComputer = new BenchmarkMetricsComputer(
                configuration);
-        List<DiffComparisonResult> stats = benchmarkMetricsComputer.generateBenchmarkStats(mappingsToConsider);
-        new MetricsCsvWriter(configuration, stats, mappingsToConsider).writeStatsToCSV(false, csvDestinationFile);
+        List<DiffComparisonResult> stats = benchmarkMetricsComputer.generateBenchmarkStats(mappingsLocationFilter, mappingsTypeFilter);
+        new MetricsCsvWriter(configuration, stats, mappingsLocationFilter, mappingsTypeFilter).writeStatsToCSV(false, csvDestinationFile);
     }
     public static void verifyMultiMappings(Configuration configuration) throws IOException {
         int mm = 0 ;
@@ -55,9 +57,9 @@ public class RQ1 implements RQProvider {
                 ObjectMapper mapper = new ObjectMapper();
                 mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
                 HumanReadableDiff godMMHRD = mapper.readValue(GodMM, HumanReadableDiff.class);
-                if (!godMMHRD.intraFileMappings.getMappings().isEmpty()
+                if (!godMMHRD.getIntraFileMappings().getMappings().isEmpty()
                 ||
-                    !godMMHRD.intraFileMappings.getMatchedElements().isEmpty())
+                    !godMMHRD.getIntraFileMappings().getMatchedElements().isEmpty())
                 {
                     mm++;
                     urls.add(info.makeURL());

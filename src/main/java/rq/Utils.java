@@ -22,8 +22,8 @@ import static benchmark.utils.Helpers.runWhatever;
 public class Utils {
     public static void mergeStats(DiffComparisonResult existing, ArrayList<DiffComparisonResult> oneCaseStats) {
         for (DiffComparisonResult oneCaseStat : oneCaseStats) {
-            if (!oneCaseStat.getIgnore().interFileMappings.isEmpty()) throw new RuntimeException();
-            NecessaryMappings trivial = oneCaseStat.getIgnore().intraFileMappings;
+            if (!oneCaseStat.getIgnore().getInterFileMappings().isEmpty()) throw new RuntimeException();
+            NecessaryMappings trivial = oneCaseStat.getIgnore().getIntraFileMappings();
             existing.addToIgnore(trivial);
         }
 

@@ -14,20 +14,24 @@ import java.util.*;
 
 public class HumanReadableDiff implements Serializable {
     @JsonIgnore
-    public static Comparator<AbstractMapping> abstractMappingComparator = Comparator.comparing(AbstractMapping::getLeftOffset)
+    static Comparator<AbstractMapping> abstractMappingComparator = Comparator.comparing(AbstractMapping::getLeftOffset)
             .thenComparing(AbstractMapping::getRightOffset)
             .thenComparing(AbstractMapping::getLeftEndOffset)
             .thenComparing(AbstractMapping::getRightEndOffset);
 
-    public NecessaryMappings intraFileMappings;
-    public Map<String,NecessaryMappings> interFileMappings;
+    private NecessaryMappings intraFileMappings;
+    private Map<String,NecessaryMappings> interFileMappings;
 
     public HumanReadableDiff() {
         this(new NecessaryMappings());
     }
     public HumanReadableDiff(NecessaryMappings necessaryMappings) {
-        intraFileMappings = necessaryMappings;
-        interFileMappings = new HashMap<>();
+        this(necessaryMappings, new HashMap<>());
+    }
+
+    public HumanReadableDiff(NecessaryMappings necessaryMappings, Map<String, NecessaryMappings> interFileMappings) {
+        setIntraFileMappings(necessaryMappings);
+        setInterFileMappings(interFileMappings);
     }
 
     public static void write(File file, HumanReadableDiff result) {
@@ -47,5 +51,29 @@ public class HumanReadableDiff implements Serializable {
 
     public static HumanReadableDiff makeEmpty() {
         return new HumanReadableDiff(new NecessaryMappings());
+    }
+
+    public static Comparator<AbstractMapping> getAbstractMappingComparator() {
+        return abstractMappingComparator;
+    }
+
+    public static void setAbstractMappingComparator(Comparator<AbstractMapping> abstractMappingComparator) {
+        HumanReadableDiff.abstractMappingComparator = abstractMappingComparator;
+    }
+
+    public NecessaryMappings getIntraFileMappings() {
+        return intraFileMappings;
+    }
+
+    public void setIntraFileMappings(NecessaryMappings intraFileMappings) {
+        this.intraFileMappings = intraFileMappings;
+    }
+
+    public Map<String, NecessaryMappings> getInterFileMappings() {
+        return interFileMappings;
+    }
+
+    public void setInterFileMappings(Map<String, NecessaryMappings> interFileMappings) {
+        this.interFileMappings = interFileMappings;
     }
 }

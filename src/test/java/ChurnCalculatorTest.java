@@ -1,4 +1,4 @@
-import benchmark.metrics.ChurnCalculator;
+import benchmark.metrics.computers.churn.ChurnCalculator;
 import org.apache.commons.lang3.tuple.Pair;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;

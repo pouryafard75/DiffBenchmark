@@ -1,4 +1,4 @@
-package benchmark.metrics.computers;
+package benchmark.metrics.computers.churn;
 
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
@@ -14,7 +14,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static benchmark.metrics.ChurnCalculator.*;
+import static benchmark.metrics.computers.churn.ChurnCalculator.*;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-08-30 8:54 p.m. */

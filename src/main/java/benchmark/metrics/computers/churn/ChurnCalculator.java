@@ -1,4 +1,4 @@
-package benchmark.metrics;
+package benchmark.metrics.computers.churn;
 
 
 import com.github.difflib.DiffUtils;

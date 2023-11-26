@@ -1,8 +1,10 @@
 package benchmark.utils.Configuration;
 
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.Set;
 
 /* Created by pourya on 2023-09-18 1:39 a.m. */
@@ -23,6 +25,14 @@ public class ConfigurationFactory {
 
     public static Configuration getDefault() throws IOException {
             return refOracleTwoPointOne();
+    }
+    public static Configuration experiment() throws IOException{
+        String confName = "experiment-0.0";
+        return getConfTemplate(confName,
+                REFACTORING_MAPPINGS_DIR,
+                Compatibility.Experiment,
+                GenerationStrategy.NonFiltered);
+
     }
     public static Configuration refOracle() throws IOException {
         String confName = "refOracle-3.0";

@@ -4,6 +4,26 @@ import benchmark.oracle.generators.tools.models.ASTDiffTool;
 
 /* Created by pourya on 2023-09-15 5:04 p.m. */
 public enum Compatibility {
+
+    Experiment{
+      @Override
+        ASTDiffTool[] getTools() {
+            return new ASTDiffTool[]{
+                    ASTDiffTool.RMD,
+                    ASTDiffTool.GTG,
+                    ASTDiffTool.GTS,
+                    ASTDiffTool.IJM,
+                    ASTDiffTool.MTD,
+                    ASTDiffTool.GT2,
+            };
+        }
+
+        @Override
+        String getVersion() {
+            return "0.0";
+        }
+    },
+
     TwoPointOne {
         @Override
         ASTDiffTool[] getTools() {

@@ -61,11 +61,12 @@ public class AbstractMapping implements Serializable {
                 rightType + "[" + rightOffset + "-" + rightEndOffset + "]";
         return info;
     }
-
+    @JsonIgnore
     public String getLeftInfo() {
         return info.split(":")[0];
     }
 
+    @JsonIgnore
     public String getRightInfo() {
         return info.split(":")[1];
     }

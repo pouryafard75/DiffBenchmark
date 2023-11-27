@@ -19,30 +19,6 @@ public class AbstractMapping implements Serializable {
 
     public AbstractMapping(){}
 
-
-    public AbstractMapping(int leftOffset, int leftEndOffset, int rightOffset, int rightEndOffset, String left, String right, String leftType, String rightType) {
-        this.leftOffset = leftOffset;
-        this.leftEndOffset = leftEndOffset;
-        this.rightOffset = rightOffset;
-        this.rightEndOffset = rightEndOffset;
-        this.left = left;
-        this.right = right;
-        this.leftType = leftType;
-        this.rightType = rightType;
-        info = makeInfo();
-    }
-
-//    @JsonCreator
-//    public AbstractMapping(
-//            @JsonProperty("left") String left,
-//            @JsonProperty("right") String right,
-//            @JsonProperty("info") String info) {
-//        this.left = left;
-//        this.right = right;
-//        this.info = info;
-//        deserialize();
-//    }
-
     public AbstractMapping(Mapping mapping, String srcString, String dstString) {
         this.leftOffset = mapping.first.getPos();
         this.leftEndOffset = mapping.first.getEndPos();
@@ -76,12 +52,6 @@ public class AbstractMapping implements Serializable {
         boolean sameRight = this.getLeftInfo().equals(other.getLeftInfo());
         boolean sameLeft = this.getRightInfo().equals(other.getRightInfo());
         return notTheSame && (sameRight || sameLeft);
-    }
-
-    enum AbstractMappingKind
-    {
-        STATEMENT,
-        EXPRESSION
     }
 
     public int getLeftOffset() {

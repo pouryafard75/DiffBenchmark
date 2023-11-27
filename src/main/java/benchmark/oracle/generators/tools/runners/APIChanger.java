@@ -66,8 +66,7 @@ public abstract class APIChanger {
         }
         catch (Exception e)
         {
-            System.err.println("Check this !!");
-            e.printStackTrace();
+            throw new RuntimeException("Must check");
         }
         return new Diff(srcTC,dstTC,mappingStore,editScript);
     }

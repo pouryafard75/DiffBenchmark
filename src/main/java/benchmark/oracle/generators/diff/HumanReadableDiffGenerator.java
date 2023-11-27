@@ -47,7 +47,9 @@ public abstract class HumanReadableDiffGenerator {
     }
 
     public void make(){
-        for (Mapping mapping : getAstDiff().getAllMappings()) {
+        List<Mapping> mappings = new ArrayList<>(getAstDiff().getAllMappings().getMappings());
+        mappings.sort(Comparator.comparingInt(o -> o.first.getPos()));
+        for (Mapping mapping : mappings ) {
             if (isPartOfJavadoc(mapping)) continue;
             if (isBetweenDifferentTypes(mapping)) throw new RuntimeException();
             MappingMetaInformation mappingMetaInformation = getMetaInformation(mapping);

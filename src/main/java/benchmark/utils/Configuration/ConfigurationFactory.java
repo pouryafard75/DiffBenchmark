@@ -20,8 +20,12 @@ public class ConfigurationFactory {
 
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";
-    private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
+//    private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
+//    private static final String TEST_URL = "https://github.com/phishman3579/java-algorithms-implementation/commit/ab98bcacf6e5bf1c3a06f6bcca68f178f880ffc9";
+    private static final String TEST_URL = "https://github.com/JetBrains/intellij-community/commit/a9379ee529ed87e28c0736c3c6657dcd6a0680e4";
 //    private static final String TEST_URL = "https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1f9540c809d7a12d3fb";
+//    private static final String TEST_URL = "https://github.com/AsyncHttpClient/async-http-client/commit/f01d8610b9ceebc1de59d42f569b8af3efbe0a0f";
+
 
     public static Configuration getDefault() throws IOException {
             return refOracleTwoPointOne();
@@ -84,8 +88,6 @@ public class ConfigurationFactory {
                 .setGenerationStrategy(GenerationStrategy.Filtered);
         return setOutputPaths(confName, configurationBuilder);
     }
-
-
 
     private static Configuration getConfTemplate(String confName, String perfectDiffDir, Compatibility compatibility, GenerationStrategy generationStrategy) throws IOException {
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()

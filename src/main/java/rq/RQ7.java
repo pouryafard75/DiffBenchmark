@@ -40,7 +40,7 @@ import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createMode
 /***
  * What is the execution time of each tool?
  */
-public class RQ7 implements RQProvider {
+public class RQ7 {
     private static final int numberOfExecutions = 5;
     static Map<CaseInfo, ProjectASTDiff> resourceMap = new HashMap<>();
     private String filePath;
@@ -49,7 +49,6 @@ public class RQ7 implements RQProvider {
         this.filePath = filePath;
     }
 
-    @Override
     public void run(Configuration configuration) {
         try {
             rq7(configuration);

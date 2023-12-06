@@ -16,7 +16,11 @@ public enum MappingsTypeFilter {
     TYPE_DECL_ONLY(getFilterByType(Constants.TYPE_DECLARATION)),
     METHOD_DECL_ONLY(getFilterByType(Constants.METHOD_DECLARATION)),
     FIELD_DECL_ONLY(getFilterByType(Constants.FIELD_DECLARATION)),
-    ENUM_DECL_ONLY(getFilterByType(Constants.ENUM_DECLARATION));
+    ENUM_DECL_ONLY(getFilterByType(Constants.ENUM_DECLARATION)),
+    PROGRAM_ELEMENTS(getFilterByType(Constants.TYPE_DECLARATION)
+            .or(getFilterByType(Constants.METHOD_DECLARATION))
+            .or(getFilterByType(Constants.FIELD_DECLARATION))
+            .or(getFilterByType(Constants.ENUM_DECLARATION)));
 
     private final Predicate<AbstractMapping> typeFilter;
 
@@ -39,6 +43,7 @@ public enum MappingsTypeFilter {
     }
     private static Predicate<AbstractMapping> getFilterByType(String type)
     {
-        return abstractMapping -> abstractMapping.getLeftInfo().contains(type) || abstractMapping.getRightInfo().contains(type);
+        String finalType = type + "["; //To avoid matching with TYPE_DECLARATION_STATEMENT
+        return abstractMapping -> abstractMapping.getLeftInfo().contains(finalType) || abstractMapping.getRightInfo().contains(finalType);
     }
 }

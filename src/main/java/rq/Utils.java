@@ -1,11 +1,15 @@
 package rq;
 
-import benchmark.metrics.models.DiffComparisonResult;
+import benchmark.metrics.models.BaseDiffComparisonResult;
+import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
+import benchmark.oracle.models.AbstractMapping;
+import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.oracle.models.NecessaryMappings;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
+import benchmark.utils.Configuration.ConfigurationFactory;
 import com.opencsv.CSVWriter;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
@@ -20,9 +24,17 @@ import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-11-21 11:55 p.m. */
 public class Utils {
-    public static void mergeStats(DiffComparisonResult existing, ArrayList<DiffComparisonResult> oneCaseStats) {
-        for (DiffComparisonResult oneCaseStat : oneCaseStats) {
-            if (!oneCaseStat.getIgnore().getInterFileMappings().isEmpty()) throw new RuntimeException();
+    public static void mergeStats(BaseDiffComparisonResult existing, Collection<? extends BaseDiffComparisonResult> oneCaseStats) {
+        if (existing.getIgnore() == null){
+            existing.setIgnore(new HumanReadableDiff());
+        }
+        for (String toolName : oneCaseStats.iterator().next().getDiffStatsList().keySet()) {
+            existing.putStats(toolName, new DiffStats());
+        }
+        for (BaseDiffComparisonResult oneCaseStat : oneCaseStats) {
+            if (!oneCaseStat.getIgnore().getInterFileMappings().isEmpty()){
+                throw new RuntimeException("Inter file mappings are not empty");
+            }
             NecessaryMappings trivial = oneCaseStat.getIgnore().getIntraFileMappings();
             existing.addToIgnore(trivial);
         }
@@ -30,7 +42,7 @@ public class Utils {
         for (Map.Entry<String, DiffStats> entry : existing.getDiffStatsList().entrySet()) {
             String key = entry.getKey();
             DiffStats value = entry.getValue();
-            for (DiffComparisonResult oneCaseStat : oneCaseStats) {
+            for (BaseDiffComparisonResult oneCaseStat : oneCaseStats) {
                 DiffStats diffStats = oneCaseStat.getDiffStatsList().get(key);
                 value = mergeStats(value, diffStats);
             }
@@ -53,8 +65,19 @@ public class Utils {
         );
     }
 
-
-    private static Map<RefactoringType, Integer> refactoringTypeDist(Configuration configuration) throws IOException {
+    public static void main(String[] args) throws IOException {
+        System.out.println("ola");
+//        Map<RefactoringType, Integer> rmo = refactoringTypeDist(ConfigurationFactory.refOracle());
+//        Map<RefactoringType, Integer> df4 = refactoringTypeDist(ConfigurationFactory.defects4j());
+//        //merge rmo and df4 based on same key but add the values
+//        Map<RefactoringType, Integer> all = new HashMap<>(rmo);
+//        df4.forEach((key, value) -> all.merge(key, value, Integer::sum));
+//
+//        writeRecordsToCSV(rmo, "refOracle-Distribution.csv", "Refactoring Type");
+//        writeRecordsToCSV(df4, "d4j-Distribution.csv", "Refactoring Type");
+//        writeRecordsToCSV(sortBasedOnValues(all), "merged-Distribution.csv", "Refactoring Type");
+    }
+    static Map<RefactoringType, Integer> refactoringTypeDist(Configuration configuration) throws IOException {
         return refDistribution(configuration, null, Refactoring::getRefactoringType);
     }
     static Map<Integer, Integer> refactoringCountDist(Configuration configuration) throws IOException {
@@ -84,6 +107,10 @@ public class Utils {
                 throw new RuntimeException("Both functions are null");
             }
         }
+        return sortBasedOnValues(countMap);
+    }
+
+    private static <T> Map<T, Integer> sortBasedOnValues(Map<T, Integer> countMap) {
         List<Map.Entry<T, Integer>> entryList = new ArrayList<>(countMap.entrySet());
 
         // Use Collections.sort with a custom comparator

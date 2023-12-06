@@ -1,89 +1,124 @@
 package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
-import benchmark.metrics.computers.BenchmarkMetricsComputer;
-import benchmark.metrics.computers.filters.MappingsLocationFilter;
-import benchmark.metrics.computers.filters.MappingsTypeFilter;
-import benchmark.metrics.models.DiffComparisonResult;
-import benchmark.metrics.models.DiffStats;
+
+import benchmark.metrics.computers.refactoring.RefactoringWiseBenchmarkComputer;
+import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvException;
+import org.refactoringminer.api.RefactoringType;
 
+import java.io.*;
 import java.util.*;
-import java.util.Map.Entry;
-
-import static rq.Utils.mergeStats;
-import static benchmark.utils.Helpers.runWhatever;
+import java.util.stream.Collectors;
 
 /* Created by pourya on 2023-09-19 6:18 p.m. */
 
 /***
  * How do refactorings affect the accuracy of each tool?
  */
-public class RQ4 implements RQProvider {
-
-    private static final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.NO_FILTER;
-    private static final MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
-    private int maxRefCount = 101;
-    private int minFreq = 3;
+public class RQ4 {
+    private int minFreq = 10;
     private String csvDestinationFile = "xyz.csv"; //TODO
 
     public void setCsvDestinationFile(String csvDestinationFile) {
         this.csvDestinationFile = csvDestinationFile;
     }
 
-    public void setMaxRefCount(int maxRefCount) {
-        this.maxRefCount = maxRefCount;
-    }
-
     public void setMinFreq(int minFreq) {
         this.minFreq = minFreq;
     }
 
-    @Override
     public void run(Configuration configuration) {
         try {
-            rq4(configuration, maxRefCount, minFreq);
+            rq4(new Configuration[]{ConfigurationFactory.refOracle() , ConfigurationFactory.defects4j()}, minFreq);
+            rq4(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne() , ConfigurationFactory.defects4jTwoPointOne()}, minFreq);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    public void rq4(Configuration configuration, int maxRefCount, int minFreq) throws Exception {
-        Map<Integer, Integer> countDist = Utils.refactoringCountDist(ConfigurationFactory.refOracleTwoPointOne());
-        Map<Integer,DiffComparisonResult> refCountStats = new HashMap<>();
-        populateRefCountStats(configuration, maxRefCount, minFreq, countDist, refCountStats);
-        List<DiffComparisonResult> stats = new ArrayList<>(refCountStats.values());
-        stats.sort(Comparator.comparingInt(o -> Integer.parseInt(o.getSrcFileName())));
-        new MetricsCsvWriter(configuration, stats, mappingsLocationFilter, mappingsTypeFilter).writeStatsToCSV(true, this.csvDestinationFile);
+    public void rq4(Configuration[] configs, int minFreq) throws Exception {
+        // Create a map to store the data
+        Map<RefactoringType, Integer> dist = readCsvFromFile("merged-Distribution.csv");
+        Map<RefactoringType, Integer> workingDist = dist.entrySet()
+                .stream()
+                .filter(e -> e.getValue() >= minFreq)
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue,
+                        LinkedHashMap::new));
+        Collection<BaseDiffComparisonResult> result = new ArrayList<>();
+        StringBuilder name = new StringBuilder();
+        for (Configuration config : configs) {
+            for (CaseInfo info : config.getAllCases()) {
+                result.addAll(new RefactoringWiseBenchmarkComputer(config, workingDist.keySet()).compute(info));
+            }
+            name.append(config.getName()).append("-");
+        }
+
+//        new MetricsCsvWriter(
+//                result,
+//                Arrays.stream(configs).iterator().next().getActiveTools(),
+//                Arrays.stream(configs).iterator().next().getOutputFolder()
+//        ).writeStatsToCSV(false, this.csvDestinationFile);
+        MetricsCsvWriter.exportToCSV(result, "rq4-" + name + ".csv", true);
     }
 
-    private static void populateRefCountStats(Configuration configuration, int maxRefCount, int minFreq, Map<Integer, Integer> countDist, Map<Integer, DiffComparisonResult> refCountStats) throws Exception {
-        for (CaseInfo caseInfo : configuration.getAllCases()) {
-            ProjectASTDiff projectASTDiff = runWhatever(caseInfo.getRepo(), caseInfo.getCommit());
-            int numOfRef = projectASTDiff.getRefactorings().size();
-            if (numOfRef > maxRefCount || countDist.get(numOfRef) < minFreq) continue;
-            System.out.println(caseInfo.makeURL() + " has " + numOfRef + " refactorings");
-            DiffComparisonResult existing =
-                    refCountStats.getOrDefault(numOfRef,
-                            new DiffComparisonResult(
-                                    new CaseInfo("RefCount",String.valueOf(numOfRef)), String.valueOf(numOfRef)));
-            ArrayList<DiffComparisonResult> oneCaseStats = new ArrayList<>();
-            new BenchmarkMetricsComputer(configuration).oneCaseStats(caseInfo, oneCaseStats, mappingsLocationFilter, mappingsTypeFilter);
-            if (existing.getDiffStatsList().isEmpty()){
-                for (Entry<String, DiffStats> entry : oneCaseStats.get(0).getDiffStatsList().entrySet()) {
-                    existing.getDiffStatsList().put(entry.getKey(), new DiffStats());
+
+
+    private static Map<RefactoringType, Integer> readCsvFromFile(String name) {
+        Map<RefactoringType, Integer> resultMap = new LinkedHashMap<>();
+        InputStream inputStream = ClassLoader.getSystemResourceAsStream(name);
+
+        try (Reader reader = new InputStreamReader(inputStream);
+             CSVReader csvReader = new CSVReader(reader)) {
+            // Read all records at once
+            List<String[]> records = csvReader.readAll();
+
+            // Assuming the header is the first record
+            String[] header = records.get(0);
+            int refactoringTypeIndex = -1;
+            int countIndex = -1;
+
+            // Find the indices of "Refactoring Type" and "Count" in the header
+            for (int i = 0; i < header.length; i++) {
+                if ("Refactoring Type".equals(header[i])) {
+                    refactoringTypeIndex = i;
+                } else if ("Count".equals(header[i])) {
+                    countIndex = i;
                 }
             }
-            if (existing.getIgnore() == null){
-                existing.setIgnore(new HumanReadableDiff());
+
+            if (refactoringTypeIndex == -1 || countIndex == -1) {
+                System.out.println("Header not found");
+                return null;
             }
-            Utils.mergeStats(existing, oneCaseStats);
-            refCountStats.put(numOfRef, existing);
+
+
+            // Skip the header and process the remaining records
+            for (int i = 1; i < records.size(); i++) {
+                String[] record = records.get(i);
+                String refactoringTypeString = record[refactoringTypeIndex];
+                int count = Integer.parseInt(record[countIndex]);
+                RefactoringType refactoringType = RefactoringType.valueOf(refactoringTypeString);
+                resultMap.put(refactoringType, count);
+            }
+
+        } catch (IOException | CsvException e) {
+            throw new RuntimeException("");
         }
+        return resultMap;
     }
+
+    public static void main(String[] args) throws IOException {
+        new RQ4().run(null);
+    }
+
 }
 

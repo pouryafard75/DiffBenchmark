@@ -5,6 +5,6 @@ import benchmark.oracle.models.HumanReadableDiff;
 public class NoInterFileFilter implements HumanReadableDiffFilter {
     @Override
     public HumanReadableDiff make(HumanReadableDiff original, HumanReadableDiff slack) {
-        return HumanReadableDiffFilter.noInterFile(original);
+        return new HumanReadableDiff(original.getIntraFileMappings());
     }
 }

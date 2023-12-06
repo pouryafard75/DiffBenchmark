@@ -1,5 +1,7 @@
 package benchmark.metrics.models;
 
+import java.util.Objects;
+
 /* Created by pourya on 2023-04-16 2:42 a.m. */
 public class DiffStats {
     private final Stats programElementStats;
@@ -19,5 +21,18 @@ public class DiffStats {
 
     public Stats getAbstractMappingStats() {
         return abstractMappingStats;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DiffStats diffStats = (DiffStats) o;
+        return Objects.equals(programElementStats, diffStats.programElementStats) && Objects.equals(abstractMappingStats, diffStats.abstractMappingStats);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(programElementStats, abstractMappingStats);
     }
 }

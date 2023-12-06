@@ -76,4 +76,9 @@ public class HumanReadableDiff implements Serializable {
     public void setInterFileMappings(Map<String, NecessaryMappings> interFileMappings) {
         this.interFileMappings = interFileMappings;
     }
+
+    @JsonIgnore
+    public boolean isEmpty() {
+        return intraFileMappings.getMappings().isEmpty() && intraFileMappings.getMatchedElements().isEmpty() && interFileMappings.isEmpty();
+    }
 }

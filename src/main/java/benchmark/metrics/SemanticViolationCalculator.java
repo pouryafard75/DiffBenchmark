@@ -5,7 +5,7 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import com.github.gumtreediff.matchers.Mapping;
-import com.opencsv.CSVWriter;
+//import com.opencsv.CSVWriter;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.matchers.Constants;
@@ -48,7 +48,8 @@ public class SemanticViolationCalculator {
         for (Entry<ASTDiffTool, List<SemanticViolationRecord>> item : toolViolationMap.entrySet()) {
             ASTDiffTool tool = item.getKey();
             List<SemanticViolationRecord> semanticViolationRecords = item.getValue();
-            writeRecordsToCSV(semanticViolationRecords, "sV-" + configuration.getName() + "-" + tool.name() +  ".csv");
+            //TODO:
+//            writeRecordsToCSV(semanticViolationRecords, "sV-" + configuration.getName() + "-" + tool.name() +  ".csv");
         }
     }
 
@@ -141,24 +142,24 @@ public class SemanticViolationCalculator {
         &&
         mapping.second.getLabel().equals(godMapping.second.getLabel());
     }
-    public static void writeRecordsToCSV(List<SemanticViolationRecord> records, String filePath) throws IOException {
-        FileWriter fileWriter = new FileWriter(filePath);
-        CSVWriter csvWriter = new CSVWriter(fileWriter);
-
-        String[] header = {"ParentTypesPair", "First", "Second", "URL"};
-        csvWriter.writeNext(header);
-
-        for (SemanticViolationRecord record : records) {
-            String[] data = {
-                    record.parentTypesPair,
-                    record.first,
-                    record.second,
-                    record.url
-            };
-            csvWriter.writeNext(data);
-        }
-        csvWriter.close();
-    }
+//    public static void writeRecordsToCSV(List<SemanticViolationRecord> records, String filePath) throws IOException {
+//        FileWriter fileWriter = new FileWriter(filePath);
+//        CSVWriter csvWriter = new CSVWriter(fileWriter);
+//
+//        String[] header = {"ParentTypesPair", "First", "Second", "URL"};
+//        csvWriter.writeNext(header);
+//
+//        for (SemanticViolationRecord record : records) {
+//            String[] data = {
+//                    record.parentTypesPair,
+//                    record.first,
+//                    record.second,
+//                    record.url
+//            };
+//            csvWriter.writeNext(data);
+//        }
+//        csvWriter.close();
+//    }
     static class SemanticViolationRecord {
         String parentTypesPair;
         String first;

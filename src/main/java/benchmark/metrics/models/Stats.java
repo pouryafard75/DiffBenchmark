@@ -1,5 +1,7 @@
 package benchmark.metrics.models;
 
+import java.util.Objects;
+
 public class Stats {
     private final int TP;
     private final int FP;
@@ -36,5 +38,18 @@ public class Stats {
 
     public int getTN() {
         return TN;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Stats stats = (Stats) o;
+        return TP == stats.TP && FP == stats.FP && FN == stats.FN && TN == stats.TN;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(TP, FP, FN, TN);
     }
 }

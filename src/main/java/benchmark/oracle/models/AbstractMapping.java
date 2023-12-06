@@ -1,6 +1,8 @@
 package benchmark.oracle.models;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.github.gumtreediff.matchers.Mapping;
 
 import java.io.Serializable;
@@ -18,6 +20,31 @@ public class AbstractMapping implements Serializable {
     String info;
 
     public AbstractMapping(){}
+
+
+    @JsonCreator
+    public static AbstractMapping create(@JsonProperty("left") String left,
+                                         @JsonProperty("right") String right,
+                                         @JsonProperty("info") String info) {
+        AbstractMapping obj = new AbstractMapping();
+        obj.left = left;
+        obj.right = right;
+        obj.info = info;
+        deserializeAll(obj);
+        return obj;
+    }
+
+    private static void deserializeAll(AbstractMapping obj) {
+        String[] parts = obj.info.split(":");
+        String[] leftParts = parts[0].split("\\[");
+        String[] rightParts = parts[1].split("\\[");
+        obj.leftType = leftParts[0];
+        obj.rightType = rightParts[0];
+        obj.leftOffset = Integer.parseInt(leftParts[1].split("-")[0]);
+        obj.leftEndOffset = Integer.parseInt(leftParts[1].split("-")[1].split("]")[0]);
+        obj.rightOffset = Integer.parseInt(rightParts[1].split("-")[0]);
+        obj.rightEndOffset = Integer.parseInt(rightParts[1].split("-")[1].split("]")[0]);
+    }
 
     public AbstractMapping(Mapping mapping, String srcString, String dstString) {
         this.leftOffset = mapping.first.getPos();

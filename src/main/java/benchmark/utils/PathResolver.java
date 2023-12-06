@@ -1,6 +1,11 @@
 package benchmark.utils;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
 
@@ -34,5 +39,17 @@ public class PathResolver {
 
     public static String getDefect4jDir() {
         return ORACLE_DIR + "defects4j" + File.separator;
+    }
+
+    public static List<Path> getPaths(Path dir, int exactDepth) throws IOException {
+        int minDepth = exactDepth;
+        int maxDepth = minDepth + 1;
+        return Files.walk(dir, maxDepth)
+                .filter(path -> path.toFile().isDirectory())
+                .filter(path -> path.getNameCount() - dir.getNameCount() >= minDepth)
+                .collect(Collectors.toList());
+    }
+    public static String exportedFolderPathByCaseInfo(CaseInfo info) {
+        return repoFolder(info.getRepo()) +  "/" + info.getCommit();
     }
 }

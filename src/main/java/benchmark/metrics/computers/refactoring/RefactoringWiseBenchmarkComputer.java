@@ -30,7 +30,7 @@ import static rq.Utils.mergeStats;
 public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     final Set<RefactoringType> acceptedRefactoringTypes;
     private final static Logger logger = LoggerFactory.getLogger(RefactoringWiseBenchmarkComputer.class);
-    private final Set<Class<?>> forbiddenTypes;
+    private final Set<Class<? extends Refactoring>> forbiddenTypes;
 
     public RefactoringWiseBenchmarkComputer(Configuration configuration, Set<RefactoringType> acceptedRefactoringTypes) {
         super(configuration);
@@ -63,7 +63,8 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
         for (Refactoring refactoring : projectASTDiff.getRefactorings()) {
             if (!acceptedRefactoringTypes.contains(refactoring.getRefactoringType())) continue;
-            if (result.stream().map(RefactoringSpecificComparisonResult::getRefactoring).anyMatch(refactoring1 -> refactoring1.toString().equals(refactoring.toString()))) continue;
+            if (result.stream().map(RefactoringSpecificComparisonResult::getRefactoring).anyMatch(ref -> makeCodeRangesAssociatedWithRefactoring(ref).equals(makeCodeRangesAssociatedWithRefactoring(refactoring)))) continue;
+//            if (result.stream().map(RefactoringSpecificComparisonResult::getRefactoring).anyMatch(refactoring1 -> refactoring1.toString().equals(refactoring.toString()))) continue;
             boolean moveRelated = false;
             for (Class<?> clazz : forbiddenTypes) {
                 if (clazz.isInstance(refactoring)) {
@@ -80,7 +81,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             populateStats(refactoringSpecificComparisonResult, ranges);
             if (refactoringSpecificComparisonResult.getDiffStatsList().isEmpty()) continue;
 //            refactoringSpecificComparisonResult.getDiffStatsList()
-            if (result.stream().map(RefactoringSpecificComparisonResult::getDiffStatsList).anyMatch(diffStatsList -> diffStatsList.equals(refactoringSpecificComparisonResult.getDiffStatsList()))) continue;
+
             result.add(refactoringSpecificComparisonResult);
         }
         return result;
@@ -102,9 +103,8 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         Path dirPath = dir.resolve(fileNameAsFolder(leftFile));
         if (!new File(String.valueOf(dirPath)).exists())
         {
-//            logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " " + dirPath + " because it does not exist!");
+            logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " " + dirPath + " because it does not exist!");
             return;
-//            throw new RuntimeException("The folder " + dirPath + " does not exist!");
         }
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
         populateComparisonResults(baseDiffComparisonResult, dirPath, new QueryBasedHumanReadableDiffFilter(leftRanges, rightRanges));
@@ -113,8 +113,8 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     }
 
     private static RefactoringRanges makeCodeRangesAssociatedWithRefactoring(Refactoring refactoring) {
-        Collection<CodeRange> leftRanges = new ArrayList<>(refactoring.leftSide());
-        Collection<CodeRange> rightRanges = new ArrayList<>(refactoring.rightSide());
+        Collection<CodeRange> leftRanges = new HashSet<>(refactoring.leftSide());
+        Collection<CodeRange> rightRanges = new HashSet<>(refactoring.rightSide());
         if (refactoring instanceof ReferenceBasedRefactoring){
             ReferenceBasedRefactoring referenceBasedRefactoring = (ReferenceBasedRefactoring) refactoring;
             Set<AbstractCodeMapping> references = referenceBasedRefactoring.getReferences();
@@ -140,6 +140,19 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             String leftFileName = this.leftRanges().stream().map(CodeRange::getFilePath).collect(Collectors.toSet()).iterator().next();
             String rightFileName = this.rightRanges().stream().map(CodeRange::getFilePath).collect(Collectors.toSet()).iterator().next();
             return !rightFileName.equals(leftFileName);
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            RefactoringRanges that = (RefactoringRanges) o;
+            return Objects.equals(leftRanges, that.leftRanges) && Objects.equals(rightRanges, that.rightRanges);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(leftRanges, rightRanges);
         }
     }
 }

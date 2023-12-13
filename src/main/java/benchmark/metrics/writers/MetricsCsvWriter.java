@@ -11,6 +11,7 @@ import java.util.Collection;
 /* Created by pourya on 2023-11-23 8:47 p.m. */
 public class MetricsCsvWriter {
     public static void exportToCSV(Collection<? extends CsvWritable> compResults, String csvFilePath, boolean withHeader) {
+        csvFilePath = "out/" + csvFilePath;
         if (compResults.isEmpty()) {
             System.out.println("Collection is empty. Nothing to export.");
             return;

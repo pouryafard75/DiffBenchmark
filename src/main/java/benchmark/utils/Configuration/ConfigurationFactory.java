@@ -101,7 +101,7 @@ public class ConfigurationFactory {
 
     private static Configuration setOutputPaths(String confName, ConfigurationBuilder configurationBuilder) throws IOException {
         Configuration configuration = configurationBuilder.createConfiguration();
-        configuration.setOutputFolder("output-" + confName);
+        configuration.setOutputFolder("oracle/output-" + confName);
         configuration.setCsvDestinationFile("stats.csv/");
         configuration.setName(confName);
         return configuration;

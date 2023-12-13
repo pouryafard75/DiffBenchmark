@@ -23,7 +23,7 @@ public class CsvWriter {
         this.benchmarkViolationComputer = benchmarkViolationComputer;
     }
     public void writeForAllTools() throws IOException {
-        File dir = new File("RQ2/");
+        File dir = new File("out/RQ2/");
         if (!dir.exists())
             if (!dir.mkdir()) throw new RuntimeException("Could not create directory" + dir.getAbsolutePath());
         for (ViolationReport report : benchmarkViolationComputer.getReports()) {

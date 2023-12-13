@@ -81,4 +81,17 @@ public class HumanReadableDiff implements Serializable {
     public boolean isEmpty() {
         return intraFileMappings.getMappings().isEmpty() && intraFileMappings.getMatchedElements().isEmpty() && interFileMappings.isEmpty();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HumanReadableDiff that = (HumanReadableDiff) o;
+        return Objects.equals(intraFileMappings, that.intraFileMappings) && Objects.equals(interFileMappings, that.interFileMappings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(intraFileMappings, interFileMappings);
+    }
 }

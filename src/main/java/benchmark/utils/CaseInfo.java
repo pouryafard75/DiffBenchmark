@@ -45,8 +45,15 @@ public class CaseInfo implements Serializable {
                 second.getCommit().equals(this.getCommit());
     }
 
+    public boolean isGitHub() {
+        return this.repo.contains("github");
+    }
+
     public String makeURL() {
-        return this.repo.replace(".git","") + "/commit/" + this.commit;
+        if (isGitHub())
+            return this.repo.replace(".git","") + "/commit/" + this.commit;
+        else
+            return this.repo + "/" + this.commit;
     }
 
 }

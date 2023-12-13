@@ -22,18 +22,8 @@ import java.util.stream.Collectors;
  * How do refactorings affect the accuracy of each tool?
  */
 public class RQ4 {
-    private int minFreq = 10;
-    private String csvDestinationFile = "xyz.csv"; //TODO
-
-    public void setCsvDestinationFile(String csvDestinationFile) {
-        this.csvDestinationFile = csvDestinationFile;
-    }
-
-    public void setMinFreq(int minFreq) {
-        this.minFreq = minFreq;
-    }
-
-    public void run(Configuration configuration) {
+    private final int minFreq = 10;
+    public void run() {
         try {
             rq4(new Configuration[]{ConfigurationFactory.refOracle() , ConfigurationFactory.defects4j()}, minFreq);
             rq4(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne() , ConfigurationFactory.defects4jTwoPointOne()}, minFreq);
@@ -57,17 +47,12 @@ public class RQ4 {
         StringBuilder name = new StringBuilder();
         for (Configuration config : configs) {
             for (CaseInfo info : config.getAllCases()) {
+                System.out.println("Running " + info.makeURL());
                 result.addAll(new RefactoringWiseBenchmarkComputer(config, workingDist.keySet()).compute(info));
             }
             name.append(config.getName()).append("-");
         }
-
-//        new MetricsCsvWriter(
-//                result,
-//                Arrays.stream(configs).iterator().next().getActiveTools(),
-//                Arrays.stream(configs).iterator().next().getOutputFolder()
-//        ).writeStatsToCSV(false, this.csvDestinationFile);
-        MetricsCsvWriter.exportToCSV(result, "rq4-" + name + ".csv", true);
+        MetricsCsvWriter.exportToCSV(result, "rq4-uniqueTypeAndMappings-" + name + ".csv", false);
     }
 
 
@@ -117,7 +102,7 @@ public class RQ4 {
     }
 
     public static void main(String[] args) throws IOException {
-        new RQ4().run(null);
+        new RQ4().run();
     }
 
 }

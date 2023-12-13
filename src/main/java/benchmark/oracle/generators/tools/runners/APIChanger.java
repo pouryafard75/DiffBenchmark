@@ -30,15 +30,25 @@ public abstract class APIChanger {
         this.rm_astDiff = rm_astDiff;
     }
     public Matcher makeMappings() throws IOException {
-        TreeGenerator gen = getGeneratorType();
-        String srcContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getSrcPath());
-        String dstContents = projectASTDiff.getFileContentsAfter().get(rm_astDiff.getDstPath());
-        ITree srcITree = gen.generateFromString(srcContents).getRoot();
-        ITree dstITree = gen.generateFromString(dstContents).getRoot();
-        shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(getMatcherType()).createMatcher(srcITree, dstITree);
+        shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(
+                getMatcherType()).createMatcher(
+                getSrcRoot(),
+                getDstRoot());
         m.match();
         return m;
 //        return Utils.convert(m.getMappingSet(), srcContents, dstContents);
+    }
+
+    public ITree getSrcRoot() throws IOException {
+        String srcContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getSrcPath());
+        return getTreeRoot(getGeneratorType(), srcContents);
+    }
+    public ITree getDstRoot() throws IOException {
+        String dstContents = projectASTDiff.getFileContentsAfter().get(rm_astDiff.getDstPath());
+        return getTreeRoot(getGeneratorType(), dstContents);
+    }
+    private static ITree getTreeRoot(TreeGenerator gen, String srcContents) throws IOException {
+        return gen.generateFromString(srcContents).getRoot();
     }
 
     public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();

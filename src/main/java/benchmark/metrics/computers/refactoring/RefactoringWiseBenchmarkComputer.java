@@ -5,8 +5,10 @@ import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.RefactoringSpecificComparisonResult;
+import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
+import com.fasterxml.jackson.databind.JsonNode;
 import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
 import gr.uom.java.xmi.diff.*;
 import org.refactoringminer.api.Refactoring;
@@ -22,8 +24,10 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static benchmark.utils.Configuration.ConfigurationFactory.REFACTORING_MINER_PATH;
 import static benchmark.utils.Helpers.runWhatever;
-import static benchmark.utils.PathResolver.*;
+import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
+import static benchmark.utils.PathResolver.fileNameAsFolder;
 import static rq.Utils.mergeStats;
 
 /* Created by pourya on 2023-11-29 9:01 a.m. */
@@ -31,6 +35,8 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     final Set<RefactoringType> acceptedRefactoringTypes;
     private final static Logger logger = LoggerFactory.getLogger(RefactoringWiseBenchmarkComputer.class);
     private final Set<Class<? extends Refactoring>> forbiddenTypes;
+    private static final String dataPath = REFACTORING_MINER_PATH + "/src/test/resources/oracle/data.json";
+    private final JsonNode refactoringValidationJsonNode;
 
     public RefactoringWiseBenchmarkComputer(Configuration configuration, Set<RefactoringType> acceptedRefactoringTypes) {
         super(configuration);
@@ -44,6 +50,42 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
                 MoveSourceFolderRefactoring.class,
                 ChangeAttributeAccessModifierRefactoring.class //All the cases for this refactoring caused because of the move file refactorings (has been verified)
         );
+        try {
+            // Parse the JSON file
+            refactoringValidationJsonNode = getMapper().readTree(new File(dataPath));
+        } catch (IOException e) {
+            throw new RuntimeException("Refactoring validation file not found! " + dataPath);
+        }
+    }
+
+    private JsonNode findRefactoringByRepoSha1AndDescription(String repo, String sha1, String descriptionToFind) {
+        descriptionToFind = descriptionToFind.replace("\t", " ");
+        for (JsonNode item : refactoringValidationJsonNode) {
+            if (item.get("repository").asText().equals(repo) && item.get("sha1").asText().equals(sha1)) {
+                JsonNode refactoring = getJsonNode(descriptionToFind, item);
+                if (refactoring != null) return refactoring;
+            }
+        }
+        //Again try but considering only the sha1 part because there is a scenario of changing the project repo
+        for (JsonNode item : refactoringValidationJsonNode) {
+            if (/*item.get("repository").asText().equals(repo) &&*/ item.get("sha1").asText().equals(sha1)) {
+                JsonNode refactoring = getJsonNode(descriptionToFind, item);
+                if (refactoring != null) return refactoring;
+            }
+        }
+        return null;
+    }
+
+    private static JsonNode getJsonNode(String descriptionToFind, JsonNode item) {
+        JsonNode refactorings = item.get("refactorings");
+        for (JsonNode refactoring : refactorings) {
+            JsonNode descNode = refactoring.get("description");
+            String refactoringDescription = descNode.asText().trim().replaceAll("^\"|\"$", "");
+            if (refactoringDescription.equals(descriptionToFind)) {
+                return refactoring;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -63,8 +105,6 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
         for (Refactoring refactoring : projectASTDiff.getRefactorings()) {
             if (!acceptedRefactoringTypes.contains(refactoring.getRefactoringType())) continue;
-            if (result.stream().map(RefactoringSpecificComparisonResult::getRefactoring).anyMatch(ref -> makeCodeRangesAssociatedWithRefactoring(ref).equals(makeCodeRangesAssociatedWithRefactoring(refactoring)))) continue;
-//            if (result.stream().map(RefactoringSpecificComparisonResult::getRefactoring).anyMatch(refactoring1 -> refactoring1.toString().equals(refactoring.toString()))) continue;
             boolean moveRelated = false;
             for (Class<?> clazz : forbiddenTypes) {
                 if (clazz.isInstance(refactoring)) {
@@ -78,11 +118,36 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             }
             RefactoringSpecificComparisonResult refactoringSpecificComparisonResult = new RefactoringSpecificComparisonResult(info, refactoring);
             RefactoringRanges ranges = makeCodeRangesAssociatedWithRefactoring(refactoring);
-            populateStats(refactoringSpecificComparisonResult, ranges);
-            if (refactoringSpecificComparisonResult.getDiffStatsList().isEmpty()) continue;
-//            refactoringSpecificComparisonResult.getDiffStatsList()
 
-            result.add(refactoringSpecificComparisonResult);
+            //Validate the refactoring with data.json in case it comes from refactoring oracle
+            if (info.isGitHub()) {
+                JsonNode refactoringFromJson = findRefactoringByRepoSha1AndDescription(info.getRepo(), info.getCommit(), refactoringSpecificComparisonResult.getRefactoring().toString());
+                if (refactoringFromJson == null) {
+                    logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " because it does not exist in data.json!");
+                    throw new RuntimeException("Refactoring not found in data.json! " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL());
+//                    continue;
+                }
+                String validationStatus = refactoringFromJson.get("validation").asText();
+                if (!validationStatus.equals("TP") && !validationStatus.equals("CTP")) {
+                    logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " because it is not validated in data.json!");
+                    continue;
+                }
+            }
+
+
+            populateStats(refactoringSpecificComparisonResult, ranges);
+            if (refactoringSpecificComparisonResult.getDiffStatsList().isEmpty())
+                continue;
+
+            if (result
+                    .stream()
+                    .noneMatch(
+                        existing ->
+                            existing.getRefactoringType().equals(refactoring.getRefactoringType())
+                            &&
+                            existing.getGodFinalizedHRD().equals(refactoringSpecificComparisonResult.getGodFinalizedHRD())
+                    ))
+                result.add(refactoringSpecificComparisonResult);
         }
         return result;
     }
@@ -107,9 +172,10 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             return;
         }
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
-        populateComparisonResults(baseDiffComparisonResult, dirPath, new QueryBasedHumanReadableDiffFilter(leftRanges, rightRanges));
+        HumanReadableDiff godFinalizedHRD = populateComparisonResults(baseDiffComparisonResult, dirPath, new QueryBasedHumanReadableDiffFilter(leftRanges, rightRanges));
         benchmarkStats.add(baseDiffComparisonResult);
         mergeStats(refactoringSpecificComparisonResult, benchmarkStats);
+        refactoringSpecificComparisonResult.setGodFinalizedHRD(godFinalizedHRD);
     }
 
     private static RefactoringRanges makeCodeRangesAssociatedWithRefactoring(Refactoring refactoring) {

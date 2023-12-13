@@ -133,4 +133,11 @@ public class AbstractMapping implements Serializable {
     public int hashCode() {
         return Objects.hash(info);
     }
+
+    @Override
+    public String toString() {
+        return "AbstractMapping{" +
+                "info='" + info + '\'' +
+                '}';
+    }
 }

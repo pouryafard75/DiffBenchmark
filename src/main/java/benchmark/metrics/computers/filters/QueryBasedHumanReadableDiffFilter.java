@@ -19,11 +19,6 @@ public class QueryBasedHumanReadableDiffFilter implements HumanReadableDiffFilte
         this.rightRanges = rightRanges;
     }
     @Override
-    public HumanReadableDiff make(HumanReadableDiff original) {
-        return make(original, original);
-    }
-
-    @Override
     public HumanReadableDiff make(HumanReadableDiff original, HumanReadableDiff slack) {
         HumanReadableDiff result = HumanReadableDiff.makeEmpty();
         Collection<AbstractMapping> matchedElements = getLeftAndRightBasedOnSelector(original, NecessaryMappings::getMatchedElements);
@@ -34,17 +29,55 @@ public class QueryBasedHumanReadableDiffFilter implements HumanReadableDiffFilte
     }
 
     private Collection<AbstractMapping> getLeftAndRightBasedOnSelector(HumanReadableDiff original, Function<NecessaryMappings, Collection<AbstractMapping>> criteriaSelector) {
-        Collection<AbstractMapping> result = new HashSet<>();
-        result.addAll(getCriteriaBasedOnOffsetFunctions(original, leftRanges, AbstractMapping::getLeftOffset, AbstractMapping::getLeftEndOffset, criteriaSelector));
-        result.addAll(getCriteriaBasedOnOffsetFunctions(original, rightRanges,AbstractMapping::getRightOffset, AbstractMapping::getRightEndOffset, criteriaSelector));
+        Collection<AbstractMapping> collection = criteriaSelector.apply(original.getIntraFileMappings());
+        Collection<AbstractMapping> lefts = getCriteriaBasedOnOffsetFunctions(leftRanges, AbstractMapping::getLeftOffset, AbstractMapping::getLeftEndOffset, collection);
+        Collection<AbstractMapping> rights = getCriteriaBasedOnOffsetFunctions(rightRanges, AbstractMapping::getRightOffset, AbstractMapping::getRightEndOffset, collection);
+
+        Collection<AbstractMapping> intersection = intersection(lefts, rights);
+        Collection<AbstractMapping> result = new HashSet<>(intersection);
+        unionOfDeltas(lefts, rights)
+                .stream()
+                .filter(abstractMapping -> notMulti(abstractMapping, intersection))
+                .forEach(result::add);
+        return result;
+
+    }
+
+    private boolean notMulti(AbstractMapping abstractMapping, Collection<AbstractMapping> intersection) {
+        long count = intersection
+                .stream()
+                .filter(mapping ->
+                        mapping.getLeftInfo().equals(abstractMapping.getLeftInfo())
+                                ||
+                        mapping.getRightInfo().equals(abstractMapping.getRightInfo()))
+                .count();
+        return count == 0;
+    }
+
+    private static Collection<AbstractMapping> intersection(Collection<AbstractMapping> lefts, Collection<AbstractMapping> rights) {
+        Collection<AbstractMapping> result = new HashSet<>(lefts);
+        result.retainAll(rights);
         return result;
     }
 
-    private static Collection<AbstractMapping> getCriteriaBasedOnOffsetFunctions(HumanReadableDiff original, Collection<CodeRange> rangeSelector, Function<AbstractMapping, Integer> startOffsetFunction, Function<AbstractMapping, Integer> endOffsetFunction, Function<NecessaryMappings, Collection<AbstractMapping>> criteriaSelector) {
+    private static Collection<AbstractMapping> union(Collection<AbstractMapping> left, Collection<AbstractMapping> right){
+        Collection<AbstractMapping> result = new HashSet<>(left);
+        result.addAll(right);
+        return result;
+    }
+
+    private static Collection<AbstractMapping> unionOfDeltas(Collection<AbstractMapping> left, Collection<AbstractMapping> right) {
+        Collection<AbstractMapping> unionOfDeltas = new HashSet<>(union(left, right));
+        unionOfDeltas.removeAll(intersection(left, right));
+        return unionOfDeltas;
+    }
+
+
+    private static Collection<AbstractMapping> getCriteriaBasedOnOffsetFunctions(Collection<CodeRange> rangeSelector, Function<AbstractMapping, Integer> startOffsetFunction, Function<AbstractMapping, Integer> endOffsetFunction, Collection<AbstractMapping> collection) {
         Collection<AbstractMapping> result = new HashSet<>();
         for (CodeRange range : rangeSelector) {
 //            if (!fileNameAsFolder(leftRange.getFilePath()).equals(path)) continue;
-            criteriaSelector.apply(original.getIntraFileMappings()).forEach(abstractMapping -> {
+            collection.forEach(abstractMapping -> {
                 if (
                         subsumes(range.getStartOffset(),
                         range.getEndOffset(),

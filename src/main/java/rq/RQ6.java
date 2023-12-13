@@ -6,9 +6,9 @@ import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
 import benchmark.utils.Configuration.Configuration;
+import benchmark.utils.Configuration.ConfigurationFactory;
 
 import java.util.Collection;
-import java.util.List;
 
 /* Created by pourya on 2023-11-23 9:47 p.m. */
 
@@ -16,17 +16,16 @@ import java.util.List;
  * What is the overall accuracy of each tool?
  */
 public class RQ6{
-    MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.NO_FILTER;
-    MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
+
+    private final MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
 
     public void rq6(Configuration configuration) throws Exception
     {
-        VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration, mappingsLocationFilter.getFilter(), mappingsTypeFilter);
-        Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-        MetricsCsvWriter.exportToCSV(stats, "rq6.csv",true);
-
-//        new MetricsCsvWriter(computer, stats).writeStatsToCSV("");
-//        new MetricsCsvWriter(configuration, stats, mappingsLocationFilter, mappingsTypeFilter).writeStatsToCSV(false);
+        for (MappingsLocationFilter mappingsLocationFilter : new MappingsLocationFilter[]{MappingsLocationFilter.NO_FILTER, MappingsLocationFilter.INTRA_FILE_ONLY}) {
+            VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration, mappingsLocationFilter.getFilter(), mappingsTypeFilter);
+            Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
+            MetricsCsvWriter.exportToCSV(stats, "rq6-" + configuration.getName() + "-" + mappingsLocationFilter + ".csv", false);
+        }
     }
 
     public void run(Configuration configuration) {
@@ -35,5 +34,12 @@ public class RQ6{
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void main(String[] args) throws Exception {
+        new RQ6().rq6(ConfigurationFactory.refOracle());
+        new RQ6().rq6(ConfigurationFactory.refOracleTwoPointOne());
+        new RQ6().rq6(ConfigurationFactory.defects4j());
+        new RQ6().rq6(ConfigurationFactory.defects4jTwoPointOne());
     }
 }

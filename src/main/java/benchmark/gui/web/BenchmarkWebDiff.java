@@ -49,7 +49,19 @@ public class BenchmarkWebDiff {
         this.godDiff = GOD_astDiff;
     }
 
+    public static boolean isWindows() {
+        String OS = System.getProperty("os.name").toLowerCase();
+        return (OS.contains("win"));
+    }
     public void run() {
+        if (!isWindows()) {
+            try {
+                Runtime.getRuntime().exec("bash " + "kill.sh");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
         DirComparator comperator = new DirComparator(projectASTDiff);
         configureSpark(comperator, this.port);
         Spark.awaitInitialization();

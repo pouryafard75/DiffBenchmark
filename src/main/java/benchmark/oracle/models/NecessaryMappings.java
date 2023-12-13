@@ -31,4 +31,16 @@ public class NecessaryMappings {
         return mappings;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NecessaryMappings that = (NecessaryMappings) o;
+        return Objects.equals(matchedElements, that.matchedElements) && Objects.equals(mappings, that.mappings);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(matchedElements, mappings);
+    }
 }

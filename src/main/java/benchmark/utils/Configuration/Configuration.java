@@ -81,6 +81,14 @@ public class Configuration {
     public String getCsvDestinationFile() {
         return csvDestinationFile;
     }
+
+    public static String geMergedNames(Configuration[] configurations) {
+        StringBuilder configNames = new StringBuilder();
+        for (Configuration configuration : configurations) {
+            configNames.append(configuration.getName()).append("-");
+        }
+        return configNames.toString();
+    }
 }
 
 

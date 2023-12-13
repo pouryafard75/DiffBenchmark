@@ -4,6 +4,7 @@ import benchmark.metrics.computers.BaseBenchmarkComputer;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
+import benchmark.metrics.computers.refactoring.RefactoringWiseBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
@@ -70,7 +71,11 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
         return benchmarkStats;
     }
 
-    protected void populateComparisonResults(BaseDiffComparisonResult baseDiffComparisonResult, Path dirPath, HumanReadableDiffFilter filter) throws IOException {
+    /**
+     * @return Finalized HRD of the god tool after all the filtration. Originally, this method was supposed to be void.
+     * <h> However based on my later experiments, I found out that the godFinalizedHRD can be beneficial in some cases such as {@link RefactoringWiseBenchmarkComputer}. So, I decided to return the god tool's HumanReadableDiff </h>
+     */
+    protected HumanReadableDiff populateComparisonResults(BaseDiffComparisonResult baseDiffComparisonResult, Path dirPath, HumanReadableDiffFilter filter) throws IOException {
         String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
         HumanReadableDiff originalGodHRD = getMapper().readValue(new File(godFullPath), HumanReadableDiff.class);
         HumanReadableDiff godHRDFinalized = filter.make(originalGodHRD, originalGodHRD);
@@ -87,12 +92,13 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
             baseDiffComparisonResult.putStats(toolPath, diffStats);
         }
         setIgnore(godFullPath, baseDiffComparisonResult, filter);
+        return godHRDFinalized;
     }
 
     protected void setIgnore(String godFullPath, BaseDiffComparisonResult baseDiffComparisonResult, HumanReadableDiffFilter filter) throws IOException {
         String ignorePath = godFullPath.replace(ASTDiffTool.GOD.name(), ASTDiffTool.TRV.name());
         HumanReadableDiff diffIgnore =  getMapper().readValue(new File(ignorePath), HumanReadableDiff.class);
-        diffIgnore = filter.make(diffIgnore);
+        diffIgnore = filter.make(diffIgnore, HumanReadableDiff.makeEmpty());
         baseDiffComparisonResult.setIgnore(mappingsTypeFilter.apply(diffIgnore));
     }
 }

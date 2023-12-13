@@ -1,5 +1,6 @@
 package benchmark.metrics.models;
 
+import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
@@ -11,6 +12,8 @@ import java.util.Objects;
 public class RefactoringSpecificComparisonResult extends BaseDiffComparisonResult {
     final Refactoring refactoring;
     final RefactoringType refactoringType;
+    private HumanReadableDiff godFinalizedHRD;
+
     public RefactoringSpecificComparisonResult(CaseInfo caseInfo, Refactoring refactoring) {
         super(caseInfo);
         this.refactoring = refactoring;
@@ -25,10 +28,18 @@ public class RefactoringSpecificComparisonResult extends BaseDiffComparisonResul
         return refactoringType;
     }
 
+    public HumanReadableDiff getGodFinalizedHRD() {
+        return godFinalizedHRD;
+    }
+
+    public void setGodFinalizedHRD(HumanReadableDiff godFinalizedHRD) {
+        this.godFinalizedHRD = godFinalizedHRD;
+    }
+
     @Override
     public void writeData(FileWriter writer) throws Exception {
         if (this.getIgnore() == null)
-            System.out.println();
+            throw new RuntimeException("Ignore is null");
         StringBuilder row = new StringBuilder();
         row.append(this.getCaseInfo().makeURL()).append(",")
                 .append(this.refactoring.toString().replace(","," ")).append(",")

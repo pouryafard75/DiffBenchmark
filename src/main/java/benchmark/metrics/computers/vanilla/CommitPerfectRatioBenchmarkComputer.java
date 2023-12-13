@@ -33,13 +33,8 @@ public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
             Path dir = Paths.get(getConfiguration().getOutputFolder() + folderPath  + "/");
             System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
             List<Path> paths = getPaths(dir, 1);
-            boolean gt2 = false;
-            boolean gtg = false;
-            boolean trv = false;
             for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
                 boolean miss = false;
-//                if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
-//                    continue;
                 for (Path dirPath : paths) {
                     String toolPath = tool.name();
                     String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
@@ -49,31 +44,15 @@ public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
                         break;
                     }
                 }
-                if (!miss) {
-                    result.put(tool, result.getOrDefault(tool, 0) + 1);
-                    if (tool.equals(ASTDiffTool.GTG)) {
-                        gtg = true;
-                    }
-                    if (tool.equals(ASTDiffTool.GT2)) {
-                        gt2 = true;
-                    }
-                    if (tool.equals(ASTDiffTool.TRV)) {
-                        trv = true;
-                    }
+                if (!miss) result.put(tool, result.getOrDefault(tool, 0) + 1);
                 }
             }
-//            if (gt2 && !gtg)
-//                System.out.println("GT2 without GTG: " + info.getRepo() + " " + info.getCommit());
-            if (trv)
-                System.out.println("TRV: " + info.getRepo() + " " + info.getCommit());
-        }
         return result;
     }
 
     private static boolean areFileContentsEqual(Path file1, Path file2) throws IOException {
         byte[] content1 = Files.readAllBytes(file1);
         byte[] content2 = Files.readAllBytes(file2);
-
         return Arrays.equals(content1, content2);
     }
 

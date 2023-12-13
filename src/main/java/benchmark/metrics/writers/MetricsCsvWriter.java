@@ -1,11 +1,10 @@
 package benchmark.metrics.writers;
 
-import benchmark.metrics.computers.StatsComputer;
-import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
-import benchmark.metrics.models.*;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.metrics.models.CsvWritable;
 
 import java.io.FileWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 
 
@@ -16,7 +15,7 @@ public class MetricsCsvWriter {
             System.out.println("Collection is empty. Nothing to export.");
             return;
         }
-        try (FileWriter writer = new FileWriter(csvFilePath))
+        try (FileWriter writer = new FileWriter(addDateAndTime(csvFilePath)))
         {
             if (withHeader) compResults.iterator().next().writeHeader(writer);
             for (CsvWritable compResult : compResults) {
@@ -28,9 +27,9 @@ public class MetricsCsvWriter {
 
 
     }
-    public static void exportToCsv(Collection<? extends CsvWritable> compResults, StatsComputer computer){
-        //todo
+    private static String addDateAndTime(String csvFilePath) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        return csvFilePath.replace(".csv", "-" + dtf.format(now) + ".csv");
     }
-
-
 }

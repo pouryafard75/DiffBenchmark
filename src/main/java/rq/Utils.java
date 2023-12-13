@@ -65,18 +65,6 @@ public class Utils {
         );
     }
 
-    public static void main(String[] args) throws IOException {
-        System.out.println("ola");
-//        Map<RefactoringType, Integer> rmo = refactoringTypeDist(ConfigurationFactory.refOracle());
-//        Map<RefactoringType, Integer> df4 = refactoringTypeDist(ConfigurationFactory.defects4j());
-//        //merge rmo and df4 based on same key but add the values
-//        Map<RefactoringType, Integer> all = new HashMap<>(rmo);
-//        df4.forEach((key, value) -> all.merge(key, value, Integer::sum));
-//
-//        writeRecordsToCSV(rmo, "refOracle-Distribution.csv", "Refactoring Type");
-//        writeRecordsToCSV(df4, "d4j-Distribution.csv", "Refactoring Type");
-//        writeRecordsToCSV(sortBasedOnValues(all), "merged-Distribution.csv", "Refactoring Type");
-    }
     static Map<RefactoringType, Integer> refactoringTypeDist(Configuration configuration) throws IOException {
         return refDistribution(configuration, null, Refactoring::getRefactoringType);
     }

@@ -10,7 +10,7 @@ import java.util.Set;
 /* Created by pourya on 2023-09-18 1:39 a.m. */
 public class ConfigurationFactory {
     // Update value to the RefactoringMiner cloned repository path in your hard drive
-    private static final String REFACTORING_MINER_PATH = "/Users/pourya/IdeaProjects/RM-ASTDiff/";
+    public static final String REFACTORING_MINER_PATH = "/Users/pourya/IdeaProjects/RM-ASTDiff/";
 
     public static final String ORACLE_DIR = REFACTORING_MINER_PATH + "/src/test/resources/oracle/commits/";
 
@@ -20,9 +20,10 @@ public class ConfigurationFactory {
 
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";
-//    private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
+    private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
 //    private static final String TEST_URL = "https://github.com/phishman3579/java-algorithms-implementation/commit/ab98bcacf6e5bf1c3a06f6bcca68f178f880ffc9";
-    private static final String TEST_URL = "https://github.com/JetBrains/intellij-community/commit/a9379ee529ed87e28c0736c3c6657dcd6a0680e4";
+//    private static final String TEST_URL = "https://github.com/JetBrains/intellij-community/commit/a9379ee529ed87e28c0736c3c6657dcd6a0680e4";
+//    private static final String TEST_URL = "https://github.com/crate/crate/commit/72b5348";
 //    private static final String TEST_URL = "https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1f9540c809d7a12d3fb";
 //    private static final String TEST_URL = "https://github.com/AsyncHttpClient/async-http-client/commit/f01d8610b9ceebc1de59d42f569b8af3efbe0a0f";
 

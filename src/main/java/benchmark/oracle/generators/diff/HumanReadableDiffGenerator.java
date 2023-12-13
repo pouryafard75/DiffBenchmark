@@ -156,7 +156,7 @@ public abstract class HumanReadableDiffGenerator {
             addAccordingly(getAbstractMapping(mapping, srcPath, dstPath), target);
     }
 
-    static class MappingMetaInformation {
+    public static class MappingMetaInformation {
         public final String currSrc;
         public final String currDst;
         public final NecessaryMappings target;

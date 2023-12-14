@@ -29,6 +29,8 @@ public enum ViolationKind
     }),
 
     SIMPLE_NAME((mapping, tool) -> {
+        if (tool.equals(ASTDiffTool.GT2))
+            return GT2_SIMPLE_NAME_LOGIC(mapping);
         if (havingSameParentsType().test(mapping)) return false;
         if (mapping.first.getType().name.equals(Constants.SIMPLE_NAME))
             return !mapping.first.getLabel().equals(mapping.second.getLabel());
@@ -80,5 +82,9 @@ public enum ViolationKind
 
     public BiPredicate<Mapping, ASTDiffTool> getCondition() {
         return condition;
+    }
+
+    private static boolean GT2_SIMPLE_NAME_LOGIC(Mapping m){
+        throw new RuntimeException("Not implemented");
     }
 }

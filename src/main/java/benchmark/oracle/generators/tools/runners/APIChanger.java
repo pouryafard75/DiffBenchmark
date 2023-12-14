@@ -47,7 +47,7 @@ public abstract class APIChanger {
         String dstContents = projectASTDiff.getFileContentsAfter().get(rm_astDiff.getDstPath());
         return getTreeRoot(getGeneratorType(), dstContents);
     }
-    private static ITree getTreeRoot(TreeGenerator gen, String srcContents) throws IOException {
+    public static ITree getTreeRoot(TreeGenerator gen, String srcContents) throws IOException {
         return gen.generateFromString(srcContents).getRoot();
     }
 

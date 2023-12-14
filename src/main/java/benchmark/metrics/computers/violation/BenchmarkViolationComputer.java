@@ -1,14 +1,16 @@
 package benchmark.metrics.computers.violation;
 
+import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.models.ViolationReport;
-import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,6 +21,7 @@ import static benchmark.oracle.generators.tools.models.ASTDiffTool.GOD;
 
 /* Created by pourya on 2023-12-10 9:02 p.m. */
 public class BenchmarkViolationComputer {
+    private final static Logger logger = LoggerFactory.getLogger(BenchmarkViolationComputer.class);
     private final Collection<ViolationReport> reports;
     private final Configuration[] configurations;
 
@@ -68,14 +71,14 @@ public class BenchmarkViolationComputer {
     private void populateAllReports(ASTDiff perfect, ASTDiff generated, ASTDiffTool tool, CaseInfo info, Collection<ViolationReport> reports) {
         for (Mapping mapping : generated.getAllMappings()) {
             for (ViolationReport report : reports) {
-                if (report.getViolationKind().getCondition().test(mapping, tool))
+                if (report.getViolationKind().getCondition().test(mapping, tool, perfect))
                     if (!contains(perfect,mapping))
-                        report.getViolations().get(tool).add(getSemanticViolationRecord(mapping, info.makeURL(), "perfect.getSrcPath()"));
+                        report.getViolations().get(tool).add(getSemanticViolationRecord(mapping, info.makeURL(), perfect.getSrcPath()));
             }
         }
     }
 
-    private static SemanticViolationRecord getSemanticViolationRecord(Mapping violation, String infoURL, String filename) {
+    public static SemanticViolationRecord getSemanticViolationRecord(Mapping violation, String infoURL, String filename) {
         return new SemanticViolationRecord(
                 makeKey(violation), violation.first.toString(), violation.second.toString(), infoURL, filename);
     }
@@ -87,9 +90,9 @@ public class BenchmarkViolationComputer {
             for (ASTDiffTool tool : configuration.getActiveTools())
             {
                 if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV)) continue; // GOD and TRV are not considered
-                System.out.println("Generating " + tool.name());
+//                logger.info("Generating " + tool.name());
                 ASTDiff generated = tool.getFactory().getASTDiff(projectASTDiff, rm_astDiff, info, configuration);
-                System.out.println("Comparing " + tool.name());
+//                logger.info("Comparing " + tool.name());
                 populateAllReports(perfect, generated, tool, info, reports);
             }
         }

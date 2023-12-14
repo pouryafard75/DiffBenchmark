@@ -13,7 +13,7 @@ public class GT2Helpers {
 //        if (!input.getParent().getType().name.equals(Constants.METHOD_INVOCATION)) throw new RuntimeException("Parent is not method invocation");
         Tree eqv = TreeUtilFunctions.getTreeBetweenPositions(threePointZeroTree, input.getPos(), input.getEndPos(), input.getType().name);
         if (eqv == null) {
-            logger.error("eqv is null for " + input.getType().name + " " + input.getLabel() + " " + input.getPos() + " " + input.getEndPos());
+            logger.error("eqv is null for " + input.getType().name + " " +   input.getLabel() + " " + input.getPos() + " " + input.getEndPos());
             return null;
         }
 

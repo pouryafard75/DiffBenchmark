@@ -48,6 +48,7 @@ public class RQ8 {
 
     public static void main(String[] args) throws Exception {
         new RQ8("ref-exe.csv").rq8(ConfigurationFactory.refOracle());
+        new RQ8("d4j-exe.csv").rq8(ConfigurationFactory.defects4j());
     }
 
     public RQ8(String filePath) {

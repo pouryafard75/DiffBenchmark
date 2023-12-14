@@ -32,7 +32,9 @@ public enum ViolationKind
     SIMPLE_NAME((mapping, tool, perfect) -> {
         boolean baseCondition = SimpleNameGeneralLogic(mapping);
         if (!baseCondition) return false;
-        if (tool.equals(ASTDiffTool.GT2)) return GT2_SIMPLE_NAME_LOGIC(mapping, perfect);
+        if (tool.equals(ASTDiffTool.GT2) || tool.equals(ASTDiffTool.IJM) || tool.equals(ASTDiffTool.MTD)) {
+            return GT2_SIMPLE_NAME_LOGIC(mapping, perfect);
+        }
         return !havingSameParentsType().test(mapping);
     }),
 
@@ -59,8 +61,7 @@ public enum ViolationKind
 
     private static boolean SimpleNameGeneralLogic(Mapping mapping) {
         if (mapping.first.getType().name.equals(Constants.SIMPLE_NAME))
-//            return !mapping.first.getLabel().equals(mapping.second.getLabel());
-            return true;
+            return !mapping.first.getLabel().equals(mapping.second.getLabel());
         else
             return false;
     }

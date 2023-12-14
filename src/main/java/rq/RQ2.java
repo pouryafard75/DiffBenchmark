@@ -31,8 +31,6 @@ public class RQ2{
         BenchmarkViolationComputer benchmarkViolationComputer = new BenchmarkViolationComputer(configurations, violationKindsToCheck);
         for (Configuration configuration : configurations) {
             for (CaseInfo info : configuration.getAllCases()) {
-//                if (info.getRepo().equals("Closure") && info.getCommit().equals("10"))
-//                if (info.makeURL().equals("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825"))
                 {
                     System.out.println("Working on " + info.getRepo() + " " + info.getCommit());
                     ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());

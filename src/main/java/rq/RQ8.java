@@ -5,6 +5,7 @@ import at.aau.softwaredynamics.matchers.JavaMatchers;
 import at.aau.softwaredynamics.matchers.MatcherFactory;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
+import benchmark.utils.Configuration.ConfigurationFactory;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import com.github.gumtreediff.matchers.CompositeMatchers;
@@ -43,19 +44,16 @@ import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createMode
 public class RQ8 {
     private static final int numberOfExecutions = 5;
     static Map<CaseInfo, ProjectASTDiff> resourceMap = new HashMap<>();
-    private String filePath;
+    private final String filePath;
+
+    public static void main(String[] args) throws Exception {
+        new RQ8("ref-exe.csv").rq8(ConfigurationFactory.refOracle());
+    }
 
     public RQ8(String filePath) {
         this.filePath = filePath;
     }
 
-    public void run(Configuration configuration) {
-        try {
-            rq7(configuration);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
     public static ProjectASTDiff customAPI(Map<String, String> fileContentsBefore, Map<String, String> fileContentsCurrent) throws Exception {
         UMLModel parentUMLModel = createModelForASTDiff(fileContentsBefore, populateDirectories(fileContentsBefore));
         UMLModel currentUMLModel = createModelForASTDiff(fileContentsCurrent, populateDirectories(fileContentsCurrent));
@@ -75,8 +73,8 @@ public class RQ8 {
         }
         return repositoryDirectories;
     }
-    public void rq7(Configuration config) throws Exception {
-        System.out.println("Configurations loaded.");
+    public void rq8(Configuration config) throws Exception {
+        System.out.println("Configuration loaded.");
         populateResourceMap(config);
         System.out.println("Resource map populated.");
         List<ExeTimeRecord> result = new ArrayList<>();

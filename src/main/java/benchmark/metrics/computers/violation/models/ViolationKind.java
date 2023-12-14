@@ -1,10 +1,12 @@
 package benchmark.metrics.computers.violation.models;
 
 import benchmark.metrics.computers.violation.modifier.ModifierKind;
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.matchers.Constants;
 
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 import static benchmark.metrics.computers.violation.constructor.Helpers.*;
@@ -12,7 +14,7 @@ import static benchmark.metrics.computers.violation.constructor.Helpers.*;
 /* Created by pourya on 2023-12-10 9:01 p.m. */
 public enum ViolationKind
 {
-    BLOCK((mapping) -> {
+    BLOCK((mapping, tool) -> {
         if (havingSameParentsType().test(mapping)) return false;
         if (mapping.first.getType().name.equals(Constants.BLOCK))
         {
@@ -26,7 +28,7 @@ public enum ViolationKind
             return false;
     }),
 
-    SIMPLE_NAME((mapping) -> {
+    SIMPLE_NAME((mapping, tool) -> {
         if (havingSameParentsType().test(mapping)) return false;
         if (mapping.first.getType().name.equals(Constants.SIMPLE_NAME))
             return !mapping.first.getLabel().equals(mapping.second.getLabel());
@@ -34,23 +36,23 @@ public enum ViolationKind
             return false;
     }),
 
-    TYPE((mapping) -> {
+    TYPE((mapping, tool) -> {
             if (havingSameParentsType().test(mapping)) return false;
             return getJdtTypes().contains(mapping.first.getType().name);
     }),
 
-    SINGLE_VARIABLE_DECL((mapping) -> {
+    SINGLE_VARIABLE_DECL((mapping, tool) -> {
             if (havingSameParentsType().test(mapping)) return false;
             else return mapping.first.getType().name.equals("SingleVariableDeclaration");
     }),
 
-    MODIFIER((mapping) -> {
+    MODIFIER((mapping, tool) -> {
                 if (mapping.first.getType().name.equals("Modifier")) {
                     return ModifierKind.isViolation(mapping);
                 } else
                     return false;
     }),
-    CONSTRUCTOR((mapping) -> {
+    CONSTRUCTOR((mapping, tool) -> {
         return isConstructor(mapping.first) != isConstructor(mapping.second);
     })
     ;
@@ -71,12 +73,12 @@ public enum ViolationKind
         };
     }
 
-    private final Predicate<Mapping> condition;
-    ViolationKind(Predicate<Mapping> condition) {
+    private final BiPredicate<Mapping, ASTDiffTool> condition;
+    ViolationKind(BiPredicate<Mapping, ASTDiffTool> condition) {
         this.condition = condition;
     }
 
-    public Predicate<Mapping> getCondition() {
+    public BiPredicate<Mapping, ASTDiffTool> getCondition() {
         return condition;
     }
 }

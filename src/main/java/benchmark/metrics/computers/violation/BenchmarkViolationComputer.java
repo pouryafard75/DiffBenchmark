@@ -68,7 +68,7 @@ public class BenchmarkViolationComputer {
     private void populateAllReports(ASTDiff perfect, ASTDiff generated, ASTDiffTool tool, CaseInfo info, Collection<ViolationReport> reports) {
         for (Mapping mapping : generated.getAllMappings()) {
             for (ViolationReport report : reports) {
-                if (report.getViolationKind().getCondition().test(mapping))
+                if (report.getViolationKind().getCondition().test(mapping, tool))
                     if (!contains(perfect,mapping))
                         report.getViolations().get(tool).add(getSemanticViolationRecord(mapping, info.makeURL(), "perfect.getSrcPath()"));
             }

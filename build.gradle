@@ -1,7 +1,8 @@
 plugins {
     id 'java'
+    id 'application'
 }
-
+mainClassName = "gui.CmdRunner"
 group 'ca.concordia'
 version '1.0-SNAPSHOT'
 
@@ -25,7 +26,7 @@ dependencies {
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
-    testImplementation 'org.testng:testng:7.1.0'
+    implementation 'com.beust:jcommander:1.78'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 
     implementation 'com.opencsv:opencsv:5.5'

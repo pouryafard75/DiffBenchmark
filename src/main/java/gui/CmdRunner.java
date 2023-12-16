@@ -41,17 +41,21 @@ public class CmdRunner {
     @Parameter(names = {"--action", "-a"}, description = "Action to perform (RUN or COMPARE)")
     private Action action;
 
-    public static void main(String[] args) {
-        CmdRunner mainClass = new CmdRunner();
-        JCommander.newBuilder()
-                .addObject(mainClass)
-                .build()
-                .parse(args);
-        
+    @Parameter(names = {"--help", "-h"}, description = "Show help", help = true)
+    private boolean help;
 
+    public static void main(String[] args) throws Exception {
+        CmdRunner runner = new CmdRunner();
+        JCommander commander =JCommander.newBuilder()
+                .addObject(runner)
+                .build();
+	commander.parse(args);
+
+	if (runner.help) commander.usage(); // Display help
+	else runner.run();
     }
 
-    void execute() throws Exception {
+    void run() throws Exception {
         if (url != null) {
             if ((action == Action.COMPARE)) {
                 new WebDiff(
@@ -83,7 +87,7 @@ public class CmdRunner {
             }
         }
         else {
-            System.out.println("Please provide a valid input");
+            System.out.println("Please provide a valid input. Use --help to see the options");
         }
     }
 }

@@ -10,7 +10,7 @@ import benchmark.utils.Configuration.Configuration;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/* Created by pourya on 2023-11-29 9:13 a.m. */
+/* Created by pourya on 2023-11-29 9:13 a.m. */
 public abstract class BaseBenchmarkComputer implements StatsComputer {
     private final Configuration configuration;
     private final ObjectMapper mapper;

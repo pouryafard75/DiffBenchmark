@@ -13,7 +13,7 @@ import java.io.IOException;
 import static benchmark.oracle.generators.tools.models.ASTDiffTool.GOD;
 import static benchmark.utils.Helpers.runWhatever;
 
-/* Created by pourya on 2023-12-05 9:52 p.m. */
+/* Created by pourya on 2023-12-05 9:52 p.m. */
 public class Characteristics {
     public static void main(String[] args) throws IOException {
         printCharacteristics(ConfigurationFactory.refOracle());

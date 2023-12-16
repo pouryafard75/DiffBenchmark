@@ -4,7 +4,7 @@ import benchmark.utils.CaseInfo;
 
 import java.io.FileWriter;
 
-/* Created by pourya on 2023-11-29 12:12 a.m. */
+/* Created by pourya on 2023-11-29 12:12 a.m. */
 public class CommitRefactoringCountComparisonResult extends BaseDiffComparisonResult {
     private final int numOfRefactorings;
     public CommitRefactoringCountComparisonResult(CaseInfo caseInfo, int numOfRefactorings) {

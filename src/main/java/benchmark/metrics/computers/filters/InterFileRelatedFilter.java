@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.function.Function;
 
-/* Created by pourya on 2023-12-09 11:00 p.m. */
+/* Created by pourya on 2023-12-09 11:00 p.m. */
 public class InterFileRelatedFilter implements HumanReadableDiffFilter {
     @Override
     public HumanReadableDiff make(HumanReadableDiff original, HumanReadableDiff slack) {

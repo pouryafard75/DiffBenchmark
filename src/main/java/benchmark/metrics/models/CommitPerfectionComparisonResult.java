@@ -4,7 +4,7 @@ import benchmark.utils.CaseInfo;
 
 import java.io.FileWriter;
 
-/* Created by pourya on 2023-12-04 2:23 p.m. */
+/* Created by pourya on 2023-12-04 2:23 p.m. */
 public class CommitPerfectionComparisonResult extends BaseDiffComparisonResult {
 
     CommitPerfectionComparisonResult(CaseInfo caseInfo) {

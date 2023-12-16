@@ -5,7 +5,7 @@ import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/* Created by pourya on 2023-12-13 9:36 p.m. */
+/* Created by pourya on 2023-12-13 9:36 p.m. */
 public class GT2Helpers {
     private final static Logger logger = LoggerFactory.getLogger(GT2Helpers.class);
     public static String findGT2TranslatedParentTypeForMethodInvocations(Tree input, Tree threePointZeroTree) {

@@ -13,7 +13,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/* Created by pourya on 2023-11-28 10:56 p.m. */
+/* Created by pourya on 2023-11-28 10:56 p.m. */
 public abstract class BaseDiffComparisonResult implements CsvWritable{
     final Map<String, DiffStats> diffStatsList = new LinkedHashMap<>();
     final CaseInfo caseInfo;

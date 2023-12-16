@@ -5,7 +5,7 @@ import org.refactoringminer.astDiff.actions.ASTDiff;
 
 import java.util.Arrays;
 
-/* Created by pourya on 2023-12-11 3:25 p.m. */
+/* Created by pourya on 2023-12-11 3:25 p.m. */
 public class Helpers {
     public static boolean contains(ASTDiff perfect, Mapping mapping) {
         for (Mapping godMapping : perfect.getAllMappings()) {

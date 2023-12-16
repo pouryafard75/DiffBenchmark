@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.function.Function;
 
-/* Created by pourya on 2023-11-30 1:31 a.m. */
+/* Created by pourya on 2023-11-30 1:31 a.m. */
 public class QueryBasedHumanReadableDiffFilter implements HumanReadableDiffFilter {
     private final Collection<CodeRange> leftRanges;
     private final Collection<CodeRange> rightRanges;

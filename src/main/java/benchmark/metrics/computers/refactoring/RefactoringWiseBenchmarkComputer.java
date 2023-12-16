@@ -30,7 +30,7 @@ import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 import static benchmark.utils.PathResolver.fileNameAsFolder;
 import static rq.Utils.mergeStats;
 
-/* Created by pourya on 2023-11-29 9:01 a.m. */
+/* Created by pourya on 2023-11-29 9:01 a.m. */
 public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     final Set<RefactoringType> acceptedRefactoringTypes;
     private final static Logger logger = LoggerFactory.getLogger(RefactoringWiseBenchmarkComputer.class);

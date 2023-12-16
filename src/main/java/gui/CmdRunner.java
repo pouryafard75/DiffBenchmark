@@ -57,7 +57,7 @@ public class CmdRunner {
 
     void run() throws Exception {
         if (url != null) {
-            if ((action == Action.COMPARE)) {
+            if ((action == Action.RUN)) {
                 new WebDiff(
                         new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI
                                 (URLHelper.getRepo(url), URLHelper.getCommit(url), new File(ORACLE_DIR)))

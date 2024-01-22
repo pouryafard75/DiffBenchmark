@@ -55,6 +55,10 @@ public abstract class APIChanger {
     public abstract shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType();
     public Diff diff() throws Exception {
         Matcher m = makeMappings();
+        return getDiff(m);
+    }
+
+    public static Diff getDiff(Matcher m) throws Exception {
         Tree srcMirror = mirrorTree(m.getSrc());
         Tree dstMirror = mirrorTree(m.getDst());
 
@@ -78,7 +82,7 @@ public abstract class APIChanger {
         {
             throw new RuntimeException("Must check");
         }
-        return new Diff(srcTC,dstTC,mappingStore,editScript);
+        return new Diff(srcTC, dstTC, mappingStore, editScript);
     }
 
     private static Tree whichTree(Matcher m, Tree srcMirror, Tree dstMirror, ITree input) throws Exception {
@@ -97,9 +101,14 @@ public abstract class APIChanger {
 
     public ASTDiff makeASTDiff() throws Exception {
         Diff diff = this.diff();
-        ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(),diff.dst.getRoot());
+        return diffToASTDiff(diff, this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath());
+    }
+
+    public static ASTDiff diffToASTDiff(Diff diff, String srcPath, String dstPath) {
+        ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(), diff.dst.getRoot());
         mappings.add(diff.mappings);
-        ASTDiff astDiff = new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), diff.src, diff.dst, mappings);
+        ASTDiff astDiff = new ASTDiff(srcPath, dstPath, diff.src, diff.dst, mappings);
+        astDiff.computeVanillaEditScript();
         return astDiff;
     }
 

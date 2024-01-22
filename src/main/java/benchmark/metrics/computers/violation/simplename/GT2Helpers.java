@@ -9,15 +9,19 @@ import org.slf4j.LoggerFactory;
 public class GT2Helpers {
     private final static Logger logger = LoggerFactory.getLogger(GT2Helpers.class);
     public static String findGT2TranslatedParentTypeForMethodInvocations(Tree input, Tree threePointZeroTree) {
+        Tree eqv = getEqv(input, threePointZeroTree);
+        if (eqv == null) return null;
         if (input.getParent() == null) throw new RuntimeException("Parent is null");
-//        if (!input.getParent().getType().name.equals(Constants.METHOD_INVOCATION)) throw new RuntimeException("Parent is not method invocation");
+        return eqv.getParent().getType().name;
+    }
+
+    public static Tree getEqv(Tree input, Tree threePointZeroTree) {
         Tree eqv = TreeUtilFunctions.getTreeBetweenPositions(threePointZeroTree, input.getPos(), input.getEndPos(), input.getType().name);
         if (eqv == null) {
             logger.error("eqv is null for " + input.getType().name + " " +   input.getLabel() + " " + input.getPos() + " " + input.getEndPos());
             return null;
         }
-
-        return eqv.getParent().getType().name;
+        return eqv;
     }
 
 }

@@ -51,7 +51,10 @@ public abstract class HumanReadableDiffGenerator {
         mappings.sort(Comparator.comparingInt(o -> o.first.getPos()));
         for (Mapping mapping : mappings ) {
             if (isPartOfJavadoc(mapping)) continue;
-            if (isBetweenDifferentTypes(mapping)) throw new RuntimeException();
+            if (isBetweenDifferentTypes(mapping)) {
+//                throw new RuntimeException();
+//                System.out.println("");
+            }
             MappingMetaInformation mappingMetaInformation = getMetaInformation(mapping);
             if (mappingMetaInformation == null) continue;
             makeForEachMapping(mappingMetaInformation);
@@ -174,7 +177,8 @@ public abstract class HumanReadableDiffGenerator {
 
     public static void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
         if (!abstractMapping.getLeftType().equals(abstractMapping.getRightType()))
-            return;
+            target.getMappings().add(abstractMapping);
+        else
         if (isProgramElement(abstractMapping.getLeftType()))
             target.getMatchedElements().add(abstractMapping);
         else

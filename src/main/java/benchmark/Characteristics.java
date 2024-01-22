@@ -8,19 +8,17 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
-import java.io.IOException;
-
 import static benchmark.oracle.generators.tools.models.ASTDiffTool.GOD;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-12-05 9:52 p.m. */
 public class Characteristics {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         printCharacteristics(ConfigurationFactory.refOracle());
         printCharacteristics(ConfigurationFactory.defects4j());
     }
 
-    private static void printCharacteristics(Configuration configuration) throws IOException {
+    private static void printCharacteristics(Configuration configuration) throws Exception {
         int size = configuration.getAllCases().size();
 
         float avgChurn = getAvgChurn(configuration);
@@ -33,7 +31,7 @@ public class Characteristics {
         System.out.println("Number of cases containing multi-mappings: " + numOfMultiMappings + " which is " + (float) numOfMultiMappings / size * 100 + "%");
     }
 
-    private static int getNumOfMultiMappings(Configuration configuration) {
+    private static int getNumOfMultiMappings(Configuration configuration) throws Exception {
         int count = 0;
         for (CaseInfo info : configuration.getAllCases()) {
             System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
@@ -65,7 +63,7 @@ public class Characteristics {
         return count;
     }
 
-    private static float getAvgChurn(Configuration configuration) throws IOException {
+    private static float getAvgChurn(Configuration configuration) {
         float totalLeft = 0.0f;
         float totalRight = 0.0f;
         int commitCount = 0;

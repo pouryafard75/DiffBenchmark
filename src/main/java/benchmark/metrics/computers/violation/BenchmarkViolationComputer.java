@@ -83,7 +83,7 @@ public class BenchmarkViolationComputer {
                 makeKey(violation), violation.first.toString(), violation.second.toString(), infoURL, filename);
     }
 
-    public void compute(ProjectASTDiff projectASTDiff, CaseInfo info, Configuration configuration) {
+    public void compute(ProjectASTDiff projectASTDiff, CaseInfo info, Configuration configuration) throws Exception {
         for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet())
         {
             ASTDiff perfect = GOD.getFactory().getASTDiff(projectASTDiff, rm_astDiff, info, configuration);

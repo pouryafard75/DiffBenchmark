@@ -1,5 +1,6 @@
 package benchmark.utils.Configuration;
 
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +16,12 @@ public class ConfigurationBuilder {
     private Set<CaseInfo> allCases = new TreeSet<>(Comparator.comparing(CaseInfo::makeURL));
     private Compatibility compatibility;
     private GenerationStrategy generationStrategy;
+    private Set<ASTDiffTool> tools;
 
+    public ConfigurationBuilder setTools(Set<ASTDiffTool> tools) {
+        this.tools = tools;
+        return this;
+    }
 
     public ConfigurationBuilder setPerfectDiffDir(String perfectDiffDir) {
         this.perfectDiffDir = perfectDiffDir;
@@ -47,6 +53,9 @@ public class ConfigurationBuilder {
 
 
     public Configuration createConfiguration() throws IOException {
-        return new Configuration(perfectDiffDir, allCases, compatibility, generationStrategy);
+        if (tools == null)
+            return new Configuration(perfectDiffDir, allCases, compatibility, generationStrategy);
+        else
+            return new Configuration(perfectDiffDir, allCases, compatibility, generationStrategy, tools);
     }
 }

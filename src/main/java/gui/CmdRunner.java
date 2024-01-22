@@ -46,6 +46,7 @@ public class CmdRunner {
 
     public static void main(String[] args) throws Exception {
         CmdRunner runner = new CmdRunner();
+        if (runner.action == null) runner.action = Action.RUN;
         JCommander commander =JCommander.newBuilder()
                 .addObject(runner)
                 .build();
@@ -67,7 +68,7 @@ public class CmdRunner {
             }
         }
         else if (srcDir != null && dstDir != null) {
-            if ((action == Action.COMPARE)) {
+            if ((action == Action.RUN)) {
                 new WebDiff(
                         new GitHistoryRefactoringMinerImpl().diffAtDirectories
                                 (new File(srcDir).toPath(), new File(dstDir).toPath()))

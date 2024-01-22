@@ -47,16 +47,29 @@ public class Configuration {
     }
 
     public Configuration(String perfectDiffDir, Set<CaseInfo> allCases, Compatibility compatibility, GenerationStrategy generationStrategy) throws IOException {
+            this(
+                perfectDiffDir,
+                allCases,
+                compatibility,
+                generationStrategy,
+                populateTools(compatibility)
+            );
+    }
+    public Configuration(String perfectDiffDir, Set<CaseInfo> allCases, Compatibility compatibility, GenerationStrategy generationStrategy, Set<ASTDiffTool> activeTools) throws IOException {
         this.perfectDiffDir = perfectDiffDir;
         this.allCases = allCases;
         this.compatibility = compatibility;
         this.generationStrategy = generationStrategy;
-        populateTools();
+        this.activeTools = activeTools;
     }
-    private void populateTools() {
-        activeTools.add(ASTDiffTool.GOD);
-        activeTools.add(ASTDiffTool.TRV);
-        activeTools.addAll(Arrays.asList(compatibility.getTools()));
+    private static Set<ASTDiffTool> populateTools(Compatibility compatibility) {
+        Set<ASTDiffTool> tools = new LinkedHashSet<>();
+        tools.add(ASTDiffTool.GOD);
+        tools.add(ASTDiffTool.TRV);
+//        tools.addAll(Arrays.asList(compatibility.getTools())); //FIXME: Temporary
+        tools.add(ASTDiffTool.RMD);
+//        tools.add(ASTDiffTool.IAM);
+        return tools;
     }
     public ASTDiffTool[] getActiveTools() {
         return activeTools.toArray(new ASTDiffTool[0]);

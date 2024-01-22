@@ -1,5 +1,6 @@
 package benchmark.oracle.generators;
 
+
 import benchmark.oracle.generators.diff.HumanReadableDiffGenerator;
 import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.oracle.generators.tools.models.DiffToolFactory;
@@ -9,6 +10,8 @@ import benchmark.utils.Configuration.GenerationStrategy;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.matchers.ProjectASTDiffer;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import java.util.*;
 
@@ -25,9 +28,20 @@ public class BenchmarkHumanReadableDiffGenerator {
         this.configuration = current;
     }
     public void generate() throws Exception {
+        int numThreads = Runtime.getRuntime().availableProcessors();
+        ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
         for (CaseInfo info : configuration.getAllCases()) {
-            this.writeActiveTools(info, configuration.getOutputFolder());
+            executorService.submit(
+                    () -> {
+                        try {
+                            writeActiveTools(info, configuration.getOutputFolder());
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
+
         }
+        executorService.shutdown();
         System.out.println("Finished generating human readable diffs...");
     }
     private void writeActiveTools(CaseInfo info, String output_folder) throws Exception {

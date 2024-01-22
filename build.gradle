@@ -22,7 +22,7 @@ dependencies {
     implementation('org.rendersnake:rendersnake:1.9.0') {
         exclude group: 'javax.servlet', module: 'servlet-api'
     }
-    implementation files('libs/IJM-1.0-SNAPSHOT-shaded.jar')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'

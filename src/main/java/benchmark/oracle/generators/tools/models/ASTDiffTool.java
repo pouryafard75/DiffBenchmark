@@ -42,6 +42,13 @@ public enum ASTDiffTool {
         }
     })
     ,
+    IAM((projectASTDiff, rm_astDiff, info, configuration) -> {
+        try {
+            return new iASTMapper(projectASTDiff,rm_astDiff).makeASTDiff();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }),
     TRV ((projectASTDiff, rm_astDiff, info, configuration) ->  new TrivialDiff(rm_astDiff).makeASTDiff());
 
     private final DiffToolFactory factory;

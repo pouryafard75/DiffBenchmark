@@ -1,9 +1,6 @@
 package benchmark.gui.web;
 
-import benchmark.oracle.generators.tools.runners.GT2;
-import benchmark.oracle.generators.tools.runners.IJM;
-import benchmark.oracle.generators.tools.runners.MTDiff;
-import benchmark.oracle.generators.tools.runners.PerfectDiff;
+import benchmark.oracle.generators.tools.runners.*;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
@@ -56,12 +53,14 @@ public class BenchmarkWebDiffFactory {
         Set<Diff> MTD_astDiff = new LinkedHashSet<>();
         Set<Diff> GT2_astDiff = new LinkedHashSet<>();
         Set<ASTDiff> GOD_astDiff = new LinkedHashSet<>();
+        Set<Diff> iAST_diff = new LinkedHashSet<>();
         for (ASTDiff astDiff : RM_astDiff) {
             GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
             GTS_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.SimpleGumtree()));
             IJM_astDiff.add(new IJM(projectASTDiffByRM,astDiff).diff());
             MTD_astDiff.add(new MTDiff(projectASTDiffByRM,astDiff).diff());
             GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());
+            iAST_diff.add(new iASTMapper(projectASTDiffByRM,astDiff).diff());
             ASTDiff perfectDiff;
             try {
                 String repo = info.getRepo();
@@ -75,7 +74,15 @@ public class BenchmarkWebDiffFactory {
                 System.out.println("Error in loading perfect diff for " + astDiff.getSrcPath());
             }
         }
-        return new BenchmarkWebDiff(projectASTDiffByRM, RM_astDiff, GTG_astDiff, GTS_astDiff, IJM_astDiff, MTD_astDiff, GT2_astDiff, GOD_astDiff);
+        return new BenchmarkWebDiff(projectASTDiffByRM,
+                RM_astDiff,
+                GTG_astDiff,
+                GTS_astDiff,
+                IJM_astDiff,
+                MTD_astDiff,
+                GT2_astDiff,
+                iAST_diff,
+                GOD_astDiff);
     }
 
 }

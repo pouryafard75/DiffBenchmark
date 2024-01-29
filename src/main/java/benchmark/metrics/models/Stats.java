@@ -24,6 +24,10 @@ public class Stats {
 
     public double calcRecall() { return ((double) (TP)) / ((double) (TP + FN)); }
 
+    public double calcF1() {
+        return 2 * calcPrecision() * calcRecall() / (calcPrecision() + calcRecall());
+    }
+
     public int getTP() {
         return TP;
     }

@@ -48,7 +48,8 @@ public enum Compatibility {
             return new ASTDiffTool[]{
                     ASTDiffTool.RMD,
                     ASTDiffTool.GTG,
-                    ASTDiffTool.GTS
+                    ASTDiffTool.GTS,
+                    ASTDiffTool.IAM,
             };
         }
 

@@ -66,8 +66,9 @@ public class Configuration {
         Set<ASTDiffTool> tools = new LinkedHashSet<>();
         tools.add(ASTDiffTool.GOD);
         tools.add(ASTDiffTool.TRV);
-//        tools.addAll(Arrays.asList(compatibility.getTools())); //FIXME: Temporary
-        tools.add(ASTDiffTool.RMD);
+        tools.addAll(Arrays.asList(compatibility.getTools()));
+        //FIXME: Temporary
+//        tools.add(ASTDiffTool.RMD);
 //        tools.add(ASTDiffTool.IAM);
         return tools;
     }

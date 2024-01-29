@@ -29,10 +29,7 @@ public abstract class BaseBenchmarkComputer implements StatsComputer {
         return mapper;
     }
 
-    public DiffStats compareHumanReadableDiffs(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, MappingsTypeFilter mappingsTypeFilter) {
-        DiffMetricsComputer diffMetricsComputer = new DiffMetricsComputer(godDiff, toolDiff, mappingsTypeFilter);
-        return new DiffStats(diffMetricsComputer.programElementStats(), diffMetricsComputer.mappingStats());
-    }
+
 
 
 }

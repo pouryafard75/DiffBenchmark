@@ -6,14 +6,10 @@ import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.computers.refactoring.RefactoringWiseBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
-import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
-import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -63,42 +59,52 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
         System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
         List<Path> paths = getPaths(dir, 1);
         for (Path dirPath : paths) {
-            BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
-            populateComparisonResults(baseDiffComparisonResult, dirPath, getHumanReadableDiffFilter());
+            BenchmarkComparisonInput read = BenchmarkComparisonInput.read(getConfiguration(), info, dirPath.getFileName().toString());
+            HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(humanReadableDiffFilter, mappingsTypeFilter, read);
+            BaseDiffComparisonResult baseDiffComparisonResult = getBaseDiffComparisonResult(info, dirPath);
+            hrdBenchmarkComputer.compute(baseDiffComparisonResult);
             benchmarkStats.add(baseDiffComparisonResult);
         }
         System.out.println("Finished generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
         return benchmarkStats;
     }
 
+    private BaseDiffComparisonResult getBaseDiffComparisonResult(CaseInfo info, Path dirPath) throws IOException {
+        BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
+        new HRDBenchmarkComputer(getHumanReadableDiffFilter(), getMappingsTypeFilter(),
+                BenchmarkComparisonInput.read(this.getConfiguration(), info, dirPath.getFileName().toString()))
+                .compute(baseDiffComparisonResult);
+        return baseDiffComparisonResult;
+    }
+
     /**
      * @return Finalized HRD of the god tool after all the filtration. Originally, this method was supposed to be void.
      * <h> However based on my later experiments, I found out that the godFinalizedHRD can be beneficial in some cases such as {@link RefactoringWiseBenchmarkComputer}. So, I decided to return the god tool's HumanReadableDiff </h>
      */
-    protected HumanReadableDiff populateComparisonResults(BaseDiffComparisonResult baseDiffComparisonResult, Path dirPath, HumanReadableDiffFilter filter) throws IOException {
-        String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
-        HumanReadableDiff originalGodHRD = getMapper().readValue(new File(godFullPath), HumanReadableDiff.class);
-        HumanReadableDiff godHRDFinalized = filter.make(originalGodHRD, originalGodHRD);
-        for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
-            if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
-                continue;
-            String toolPath = tool.name();
-            String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
-            HumanReadableDiff toolHRD;
-            toolHRD = getMapper().readValue(new File(toolFullPath), HumanReadableDiff.class);
-            DiffStats diffStats;
-            HumanReadableDiff toolHRDFinalized = filter.make(toolHRD, godHRDFinalized);
-            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, mappingsTypeFilter);
-            baseDiffComparisonResult.putStats(toolPath, diffStats);
-        }
-        setIgnore(godFullPath, baseDiffComparisonResult, filter);
-        return godHRDFinalized;
-    }
+//    protected HumanReadableDiff populateComparisonResults(BaseDiffComparisonResult baseDiffComparisonResult, Path dirPath, HumanReadableDiffFilter filter) throws IOException {
+//        String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
+//        HumanReadableDiff originalGodHRD = getMapper().readValue(new File(godFullPath), HumanReadableDiff.class);
+//        HumanReadableDiff godHRDFinalized = filter.make(originalGodHRD, originalGodHRD);
+//        for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
+//            if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
+//                continue;
+//            String toolPath = tool.name();
+//            String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
+//            HumanReadableDiff toolHRD;
+//            toolHRD = getMapper().readValue(new File(toolFullPath), HumanReadableDiff.class);
+//            DiffStats diffStats;
+//            HumanReadableDiff toolHRDFinalized = filter.make(toolHRD, godHRDFinalized);
+//            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, mappingsTypeFilter);
+//            baseDiffComparisonResult.putStats(toolPath, diffStats);
+//        }
+//        setIgnore(godFullPath, baseDiffComparisonResult, filter);
+//        return godHRDFinalized;
+//    }
 
-    protected void setIgnore(String godFullPath, BaseDiffComparisonResult baseDiffComparisonResult, HumanReadableDiffFilter filter) throws IOException {
-        String ignorePath = godFullPath.replace(ASTDiffTool.GOD.name(), ASTDiffTool.TRV.name());
-        HumanReadableDiff diffIgnore =  getMapper().readValue(new File(ignorePath), HumanReadableDiff.class);
-        diffIgnore = filter.make(diffIgnore, HumanReadableDiff.makeEmpty());
-        baseDiffComparisonResult.setIgnore(mappingsTypeFilter.apply(diffIgnore));
-    }
+//    protected void setIgnore(String godFullPath, BaseDiffComparisonResult baseDiffComparisonResult, HumanReadableDiffFilter filter) throws IOException {
+//        String ignorePath = godFullPath.replace(ASTDiffTool.GOD.name(), ASTDiffTool.TRV.name());
+//        HumanReadableDiff diffIgnore =  getMapper().readValue(new File(ignorePath), HumanReadableDiff.class);
+//        diffIgnore = filter.make(diffIgnore, HumanReadableDiff.makeEmpty());
+//        baseDiffComparisonResult.setIgnore(mappingsTypeFilter.apply(diffIgnore));
+//    }
 }

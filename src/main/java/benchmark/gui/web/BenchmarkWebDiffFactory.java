@@ -6,6 +6,9 @@ import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.matchers.CompositeMatchers;
+import com.github.gumtreediff.matchers.ConfigurationOptions;
+import com.github.gumtreediff.matchers.GumtreeProperties;
+import com.github.gumtreediff.matchers.Matcher;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
@@ -56,7 +59,10 @@ public class BenchmarkWebDiffFactory {
         Set<Diff> iAST_diff = new LinkedHashSet<>();
         for (ASTDiff astDiff : RM_astDiff) {
             GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
-            GTS_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.SimpleGumtree()));
+            CompositeMatchers.SimpleGumtree simple = new CompositeMatchers.SimpleGumtree();
+            simple.setOption(ConfigurationOptions.st_minprio, 5);
+            simple.setOption(ConfigurationOptions.st_priocalc, "abalfazl");
+            GTS_astDiff.add(diffByGumTree(astDiff, simple));
             IJM_astDiff.add(new IJM(projectASTDiffByRM,astDiff).diff());
             MTD_astDiff.add(new MTDiff(projectASTDiffByRM,astDiff).diff());
             GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());

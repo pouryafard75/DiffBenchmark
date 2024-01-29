@@ -16,6 +16,23 @@ public class PathResolver {
         String repoReplaced = repoFolder(repo);
         return baseFolder + repoReplaced + "/" + commit + "/" + replacedFileName + "/" + toolname + ".json";
     }
+
+    /**
+     * We have to replace the old logic with the invocation of this method
+     */
+    public static String removeJavaExtension(String fileName) {
+        String toRemove = ".java";
+        if (fileName.endsWith(toRemove)) {
+            // Remove the .java extension
+            return fileName.substring(0, fileName.length() - toRemove.length());
+        } else {
+            // If .java is not at the end, return the original string
+            return fileName;
+        }
+    }
+    /**
+     * Be careful on the usage of this method, might remove the .java in the name of the file
+     */
     public static String fileNameAsFolder(String srcPath) {
         return srcPath.replace(".java", "").replace("/", ".");
     }

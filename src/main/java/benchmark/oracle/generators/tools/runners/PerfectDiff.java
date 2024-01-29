@@ -21,7 +21,7 @@ import java.util.Map;
 
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff {
-    private static final String JSON_SUFFIX = ".json";
+    public static final String JSON_SUFFIX = ".json";
     private final String repo;
     private final String commit;
     private final String srcPath;

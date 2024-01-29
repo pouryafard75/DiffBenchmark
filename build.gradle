@@ -12,8 +12,10 @@ repositories {
 }
 
 dependencies {
+    implementation('com.google.code.gson:gson:2.8.9')
+
     implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.35.0'
-    implementation 'com.github.tsantalis:refactoring-miner:3.0.4'
+    implementation 'com.github.tsantalis:refactoring-miner:3.0.4-SNAPSHOT'
     implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
     implementation 'com.github.gumtreediff:core:3.0.0'
     implementation 'com.github.gumtreediff:gen.jdt:3.0.0'
@@ -22,7 +24,9 @@ dependencies {
     implementation('org.rendersnake:rendersnake:1.9.0') {
         exclude group: 'javax.servlet', module: 'servlet-api'
     }
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation files('libs/IJM-1.0-SNAPSHOT-customized.jar')
+    implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
+    implementation files('libs/iAST-1.0-SNAPSHOT-shaded.jar')
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
@@ -34,6 +38,22 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.5.2'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.5.2'
 
+
+
+}
+
+task customizeJar(type: Jar) {
+    archiveFileName = 'IJM-1.0-SNAPSHOT-customized.jar'
+    destinationDir = file('build/libs')  // Change the destination directory as needed
+
+    // Include all contents from the original JAR
+    from zipTree('libs/IJM-1.0-SNAPSHOT-shaded.jar')
+
+    // Exclude specific dependencies
+    exclude 'com/google/gson/*'  // Use double asterisks to exclude all classes under the package
+    exclude 'com/google/gson/**'  // Use double asterisks to exclude all classes under the package
+
+    // You can add more exclude statements if needed
 }
 configurations.all {
     resolutionStrategy {

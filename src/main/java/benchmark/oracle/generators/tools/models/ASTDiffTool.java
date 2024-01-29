@@ -49,7 +49,9 @@ public enum ASTDiffTool {
             throw new RuntimeException(e);
         }
     }),
-    TRV ((projectASTDiff, rm_astDiff, info, configuration) ->  new TrivialDiff(rm_astDiff).makeASTDiff());
+    DAT(null),
+
+    TRV ((projectASTDiff, rm_astDiff, info, configuration) ->  new TrivialDiff(rm_astDiff).makeASTDiff()), ;
 
     private final DiffToolFactory factory;
     public DiffToolFactory getFactory() {

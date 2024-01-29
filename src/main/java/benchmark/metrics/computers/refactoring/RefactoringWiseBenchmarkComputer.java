@@ -165,6 +165,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             return;
         }
         String leftFile = leftRanges.iterator().next().getFilePath();
+        //TODO MUST BE CHECKED, FILE NAME AS FOLDER LOOKS WRONG
         Path dirPath = dir.resolve(fileNameAsFolder(leftFile));
         if (!new File(String.valueOf(dirPath)).exists())
         {
@@ -172,10 +173,11 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             return;
         }
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
-        HumanReadableDiff godFinalizedHRD = populateComparisonResults(baseDiffComparisonResult, dirPath, new QueryBasedHumanReadableDiffFilter(leftRanges, rightRanges));
-        benchmarkStats.add(baseDiffComparisonResult);
-        mergeStats(refactoringSpecificComparisonResult, benchmarkStats);
-        refactoringSpecificComparisonResult.setGodFinalizedHRD(godFinalizedHRD);
+        throw new RuntimeException("TODO: RefactoringWiseBenchmarkComputer.populateStats");
+//        HumanReadableDiff godFinalizedHRD = populateComparisonResults(baseDiffComparisonResult, dirPath, new QueryBasedHumanReadableDiffFilter(leftRanges, rightRanges));
+//        benchmarkStats.add(baseDiffComparisonResult);
+//        mergeStats(refactoringSpecificComparisonResult, benchmarkStats);
+//        refactoringSpecificComparisonResult.setGodFinalizedHRD(godFinalizedHRD);
     }
 
     private static RefactoringRanges makeCodeRangesAssociatedWithRefactoring(Refactoring refactoring) {

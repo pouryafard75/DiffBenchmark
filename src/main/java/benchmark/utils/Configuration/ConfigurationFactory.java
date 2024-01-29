@@ -76,6 +76,7 @@ public class ConfigurationFactory {
                 .setAllCases(Set.of(new CaseInfo(TEST_URL)))
 //                .setAllCases(Set.of(new CaseInfo("Chart", "1"), new CaseInfo("Chart", "2")))
                 .setCompatibility(Compatibility.ThreePointZero)
+//                .setTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.DAT))
                 .setGenerationStrategy(GenerationStrategy.NonFiltered);
         return setOutputPaths(confName, configurationBuilder);
     }

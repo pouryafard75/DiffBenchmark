@@ -46,7 +46,7 @@ public abstract class HumanReadableDiffGenerator {
         make();
     }
 
-    public void make(){
+    private void make(){
         List<Mapping> mappings = new ArrayList<>(getAstDiff().getAllMappings().getMappings());
         mappings.sort(Comparator.comparingInt(o -> o.first.getPos()));
         for (Mapping mapping : mappings ) {
@@ -295,6 +295,7 @@ public abstract class HumanReadableDiffGenerator {
         File file = new File(PathResolver.getCommonPath(output_folder, srcPath, fileName, commit, repo));
         HumanReadableDiff.write(file, result);
     }
+
 
 }
 

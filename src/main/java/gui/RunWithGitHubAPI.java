@@ -15,6 +15,7 @@ import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
 public class RunWithGitHubAPI {
     public static void main(String[] args) throws RefactoringMinerTimedOutException, IOException {
         String url = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
+
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
 

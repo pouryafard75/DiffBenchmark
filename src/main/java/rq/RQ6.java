@@ -5,6 +5,7 @@ import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
+import benchmark.oracle.generators.BenchmarkHumanReadableDiffGenerator;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 
@@ -24,7 +25,7 @@ public class RQ6{
         for (MappingsLocationFilter mappingsLocationFilter : new MappingsLocationFilter[]{MappingsLocationFilter.NO_FILTER, MappingsLocationFilter.INTRA_FILE_ONLY}) {
             VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration, mappingsLocationFilter.getFilter(), mappingsTypeFilter);
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-            MetricsCsvWriter.exportToCSV(stats, "rq6-" + configuration.getName() + "-" + mappingsLocationFilter + ".csv", false);
+            MetricsCsvWriter.exportToCSV(stats, "rq6-" + configuration.getName() + "-" + mappingsLocationFilter + ".csv", true);
         }
     }
 
@@ -38,8 +39,8 @@ public class RQ6{
 
     public static void main(String[] args) throws Exception {
         new RQ6().rq6(ConfigurationFactory.refOracle());
-        new RQ6().rq6(ConfigurationFactory.refOracleTwoPointOne());
-        new RQ6().rq6(ConfigurationFactory.defects4j());
-        new RQ6().rq6(ConfigurationFactory.defects4jTwoPointOne());
+//        new RQ6().rq6(ConfigurationFactory.refOracleTwoPointOne());
+//        new RQ6().rq6(ConfigurationFactory.defects4j());
+//        new RQ6().rq6(ConfigurationFactory.defects4jTwoPointOne());
     }
 }

@@ -12,7 +12,6 @@ import fr.gumtree.autotuning.Main;
 import fr.gumtree.autotuning.domain.CategoricalParameterDomain;
 import fr.gumtree.autotuning.domain.DoubleParameterDomain;
 import fr.gumtree.autotuning.domain.IntParameterDomain;
-import fr.gumtree.autotuning.searchengines.ExhaustiveEngine;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.slf4j.Logger;
@@ -27,7 +26,11 @@ import static fr.gumtree.autotuning.gumtree.ParametersResolvers.defaultDomain;
 /* Created by pourya on 2024-01-18*/
 public class IntegrationTest {
     private final static Logger logger = LoggerFactory.getLogger(IntegrationTest.class);
-    public static void main(String[] args) throws Exception {
+
+    public static void main(String[] args) {
+        System.out.println("ola");
+    }
+    public static void main2(String[] args) throws Exception {
         System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
         setParameters();
         Configuration configuration = ConfigurationFactory.refOracle();
@@ -68,6 +71,7 @@ public class IntegrationTest {
         writeIntelListToCsv(BenchrmarkFitness.intels, "intel.csv");
         logger.info("Intel written to csv");
     }
+
 
     public static void writeIntelListToCsv(List<Intel> intelList, String filePath) {
         try (CSVWriter writer = new CSVWriter(new FileWriter(filePath))) {
@@ -126,13 +130,13 @@ public class IntegrationTest {
         datTuner.setMode("exhaustive");
         datTuner.setParallel("PROPERTY_LEVEL");
         datTuner.setOut("dat_output");
-        datTuner.setNrthreads(5);
+        datTuner.setNrthreads(50);
         datTuner.setTimeout(5000);
         datTuner.setWriteResults(false);
         Matcher[] matchers = new Matcher[] {
                 new CompositeMatchers.SimpleGumtree(),
-                new CompositeMatchers.ClassicGumtree(),
-                new CompositeMatchers.HybridGumtree(),
+//                new CompositeMatchers.ClassicGumtree(),
+//                new CompositeMatchers.HybridGumtree(),
         };
         datTuner.setMatchers(matchers);
 //        datTuner.setOverwriteresults(true);

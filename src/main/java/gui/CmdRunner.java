@@ -45,6 +45,7 @@ public class CmdRunner {
     private boolean help;
 
     public static void main(String[] args) throws Exception {
+        System.out.println("Running CmdRunner...");
         CmdRunner runner = new CmdRunner();
         if (runner.action == null) runner.action = Action.RUN;
         JCommander commander =JCommander.newBuilder()

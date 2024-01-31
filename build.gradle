@@ -2,7 +2,9 @@ plugins {
     id 'java'
     id 'application'
 }
-mainClassName = "gui.CmdRunner"
+application {
+    mainClassName = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "gui.CmdRunner"
+}
 group 'ca.concordia'
 version '1.0-SNAPSHOT'
 
@@ -44,8 +46,6 @@ dependencies {
 
 task customizeJar(type: Jar) {
     archiveFileName = 'IJM-1.0-SNAPSHOT-customized.jar'
-    destinationDir = file('build/libs')  // Change the destination directory as needed
-
     // Include all contents from the original JAR
     from zipTree('libs/IJM-1.0-SNAPSHOT-shaded.jar')
 

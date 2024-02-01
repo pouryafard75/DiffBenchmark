@@ -59,10 +59,7 @@ public class BenchmarkWebDiffFactory {
         Set<Diff> iAST_diff = new LinkedHashSet<>();
         for (ASTDiff astDiff : RM_astDiff) {
             GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
-            CompositeMatchers.SimpleGumtree simple = new CompositeMatchers.SimpleGumtree();
-            simple.setOption(ConfigurationOptions.st_minprio, 5);
-            simple.setOption(ConfigurationOptions.st_priocalc, "abalfazl");
-            GTS_astDiff.add(diffByGumTree(astDiff, simple));
+            GTS_astDiff.add(diffByGumTree(astDiff, new CompositeMatchers.SimpleGumtree()));
             IJM_astDiff.add(new IJM(projectASTDiffByRM,astDiff).diff());
             MTD_astDiff.add(new MTDiff(projectASTDiffByRM,astDiff).diff());
             GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());

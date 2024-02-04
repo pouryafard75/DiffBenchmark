@@ -28,10 +28,10 @@ public class ConfigurationFactory {
 //    private static final String TEST_URL = "https://github.com/AsyncHttpClient/async-http-client/commit/f01d8610b9ceebc1de59d42f569b8af3efbe0a0f";
 
 
-    public static Configuration getDefault() throws IOException {
+    public static Configuration getDefault(){
             return refOracleTwoPointOne();
     }
-    public static Configuration experiment() throws IOException{
+    public static Configuration experiment() {
         String confName = "experiment-0.0";
         return getConfTemplate(confName,
                 REFACTORING_MAPPINGS_DIR,
@@ -39,21 +39,21 @@ public class ConfigurationFactory {
                 GenerationStrategy.NonFiltered);
 
     }
-    public static Configuration refOracle() throws IOException {
+    public static Configuration refOracle() {
         String confName = "refOracle-3.0";
         return getConfTemplate(confName,
                 REFACTORING_MAPPINGS_DIR,
                 Compatibility.ThreePointZero,
                 GenerationStrategy.NonFiltered);
     }
-    public static Configuration refOracleTwoPointOne() throws IOException {
+    public static Configuration refOracleTwoPointOne() {
         String confName = "refOracle-2.1";
         return getConfTemplate(confName,
                 REFACTORING_MAPPINGS_DIR,
                 Compatibility.TwoPointOne,
                 GenerationStrategy.Filtered);
     }
-    public static Configuration defects4j() throws IOException {
+    public static Configuration defects4j() {
         String confName = "defects4j-3.0";
         return getConfTemplate(confName,
                 DEFECTS4J_MAPPING_DIR,
@@ -61,14 +61,14 @@ public class ConfigurationFactory {
                 GenerationStrategy.NonFiltered);
     }
 
-    public static Configuration defects4jTwoPointOne() throws IOException {
+    public static Configuration defects4jTwoPointOne() {
         String confName = "defects4j-2.1";
         return getConfTemplate(confName,
                 DEFECTS4J_MAPPING_DIR,
                 Compatibility.TwoPointOne,
                 GenerationStrategy.Filtered);
     }
-    public static Configuration dummy() throws IOException{
+    public static Configuration dummy() {
         String confName = "dummy3.0";
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
                 .setPerfectDiffDir(REFACTORING_MAPPINGS_DIR)
@@ -91,7 +91,7 @@ public class ConfigurationFactory {
         return setOutputPaths(confName, configurationBuilder);
     }
 
-    private static Configuration getConfTemplate(String confName, String perfectDiffDir, Compatibility compatibility, GenerationStrategy generationStrategy) throws IOException {
+    private static Configuration getConfTemplate(String confName, String perfectDiffDir, Compatibility compatibility, GenerationStrategy generationStrategy) {
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
                 .setPerfectDiffDir(perfectDiffDir)
                 .setAllCases(new String[]{ perfectDiffDir + perfectInfoName, perfectDiffDir + problematicInfoName })
@@ -100,7 +100,7 @@ public class ConfigurationFactory {
         return setOutputPaths(confName, configurationBuilder);
     }
 
-    private static Configuration setOutputPaths(String confName, ConfigurationBuilder configurationBuilder) throws IOException {
+    private static Configuration setOutputPaths(String confName, ConfigurationBuilder configurationBuilder) {
         Configuration configuration = configurationBuilder.createConfiguration();
         configuration.setOutputFolder("oracle/output-" + confName);
         configuration.setCsvDestinationFile("stats.csv/");

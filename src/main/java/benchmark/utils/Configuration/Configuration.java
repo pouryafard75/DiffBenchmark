@@ -46,7 +46,7 @@ public class Configuration {
         return compatibility;
     }
 
-    public Configuration(String perfectDiffDir, Set<CaseInfo> allCases, Compatibility compatibility, GenerationStrategy generationStrategy) throws IOException {
+    public Configuration(String perfectDiffDir, Set<CaseInfo> allCases, Compatibility compatibility, GenerationStrategy generationStrategy) {
             this(
                 perfectDiffDir,
                 allCases,
@@ -55,7 +55,7 @@ public class Configuration {
                 populateTools(compatibility)
             );
     }
-    public Configuration(String perfectDiffDir, Set<CaseInfo> allCases, Compatibility compatibility, GenerationStrategy generationStrategy, Set<ASTDiffTool> activeTools) throws IOException {
+    public Configuration(String perfectDiffDir, Set<CaseInfo> allCases, Compatibility compatibility, GenerationStrategy generationStrategy, Set<ASTDiffTool> activeTools) {
         this.perfectDiffDir = perfectDiffDir;
         this.allCases = allCases;
         this.compatibility = compatibility;

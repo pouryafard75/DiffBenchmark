@@ -33,13 +33,9 @@ public class RQ7 {
     }
 
     public static void main(String[] args){
-        try {
-            new RQ7().run(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne()});
-            new RQ7().run(new Configuration[]{ConfigurationFactory.refOracle()});
-            new RQ7().run(new Configuration[]{ConfigurationFactory.defects4jTwoPointOne()});
-            new RQ7().run(new Configuration[]{ConfigurationFactory.defects4j()});
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        new RQ7().run(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne()});
+        new RQ7().run(new Configuration[]{ConfigurationFactory.refOracle()});
+        new RQ7().run(new Configuration[]{ConfigurationFactory.defects4jTwoPointOne()});
+        new RQ7().run(new Configuration[]{ConfigurationFactory.defects4j()});
     }
 }

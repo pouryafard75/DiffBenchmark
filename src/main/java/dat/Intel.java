@@ -57,10 +57,10 @@ public class Intel {
                     "repo", "commit", "srcFile",
                     "Matcher", "Name",
                     "EdSize", "EdSizeNonJavaDoc",
-                    "TRV_mappings, TRV_programElements",
-                    "TP_mappings, FP_mappings, FN_mappings",
-                    "TP_programElements, FP_programElements, FN_programElements",
-                    "Precision, Recall, F1"
+                    "TRV_mappings","TRV_programElements",
+                    "TP_mappings","FP_mappings","FN_mappings",
+                    "TP_programElements","FP_programElements","FN_programElements",
+                    "Precision","Recall","F1"
             };
             writer.writeNext(header);
 

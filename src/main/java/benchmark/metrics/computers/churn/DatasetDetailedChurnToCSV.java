@@ -20,15 +20,7 @@ import static benchmark.utils.Helpers.runWhatever;
 /* Created by pourya on 2023-08-30 8:54 p.m. */
 public class DatasetDetailedChurnToCSV {
     private static final boolean includeAddedAndRemovedFiles = true;
-    private static final Configuration config;
-
-    static {
-        try {
-            config = ConfigurationFactory.defects4j();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    private static final Configuration config = ConfigurationFactory.defects4j();
 
     //url addedInModifiedFiles deletedFromModifiedFiles sizeOfModifiedFilesNew sizeOfModifiedFilesOld addedFilesSize removedFilesSize
     public static void main(String[] args) throws Exception {

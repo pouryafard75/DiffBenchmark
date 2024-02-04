@@ -90,6 +90,31 @@ public class BenchrmarkFitness implements Fitness {
         return finalStats.calcF1();
     }
 
+    private DiffStats makeStats(ASTDiff generated) {
+        HumanReadableDiffGenerator datGen = new HRDGen3(
+                projectASTDiff,
+                generated,
+                info,
+                configuration
+        );
+        BenchmarkComparisonInput input;
+        try {
+            input = BenchmarkComparisonInput.read(configuration, info, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        input.add(ASTDiffTool.DAT, datGen.getResult());
+        input.filterForDat();
+        HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(input);
+        BaseDiffComparisonResult fileDiffComparisonResult = new FileDiffComparisonResult(info, rmDiff.getSrcPath());
+        try {
+            hrdBenchmarkComputer.compute(fileDiffComparisonResult);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return fileDiffComparisonResult.getDiffStatsList().get(ASTDiffTool.DAT.name());
+    }
+
     @Override
     public Double computeFitness(List<Double> list, ExecutionConfiguration.METRIC metric) {
         throw new RuntimeException("Not implemented 3");

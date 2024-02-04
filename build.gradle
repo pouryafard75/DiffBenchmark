@@ -3,7 +3,8 @@ plugins {
     id 'application'
 }
 application {
-    mainClassName = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "gui.CmdRunner"
+    mainClassName = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "dat.Make"
+//    todo: rever this
 }
 group 'ca.concordia'
 version '1.0-SNAPSHOT'
@@ -17,7 +18,10 @@ dependencies {
     implementation('com.google.code.gson:gson:2.8.9')
 
     implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.35.0'
-    implementation 'com.github.tsantalis:refactoring-miner:3.0.4-SNAPSHOT'
+    implementation ('com.github.tsantalis:refactoring-miner:3.0.4-SNAPSHOT') {
+        exclude group: 'org.slf4j', module: 'slf4j-simple'
+        exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
+    }
     implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
     implementation 'com.github.gumtreediff:core:3.0.0'
     implementation 'com.github.gumtreediff:gen.jdt:3.0.0'
@@ -26,9 +30,9 @@ dependencies {
     implementation('org.rendersnake:rendersnake:1.9.0') {
         exclude group: 'javax.servlet', module: 'servlet-api'
     }
-    implementation files('libs/IJM-1.0-SNAPSHOT-customized.jar')
+    implementation files('libs/IJM-1.0-SNAPSHOT-customized2.jar')
     implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
-    implementation files('libs/iAST-1.0-SNAPSHOT-shaded.jar')
+    implementation files('libs/iAST-1.0-SNAPSHOT-customized.jar')
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
@@ -40,20 +44,33 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.5.2'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.5.2'
 
+    implementation 'org.slf4j:slf4j-api:1.7.32'
+    implementation 'ch.qos.logback:logback-classic:1.4.12'
+
 
 
 }
 
-task customizeJar(type: Jar) {
-    archiveFileName = 'IJM-1.0-SNAPSHOT-customized.jar'
+task ijm_jar(type: Jar) {
+    archiveFileName = 'IJM-1.0-SNAPSHOT-customized2.jar'
     // Include all contents from the original JAR
-    from zipTree('libs/IJM-1.0-SNAPSHOT-shaded.jar')
+    destinationDir = file('libs/')
+    from zipTree('libs/IJM-1.0-SNAPSHOT-customized.jar')
+    exclude 'com/google/gson/*'
+    exclude 'com/google/gson/**'
+    exclude 'org/slf4j/*'
+    exclude 'org/slf4j/**'
+}
 
-    // Exclude specific dependencies
-    exclude 'com/google/gson/*'  // Use double asterisks to exclude all classes under the package
-    exclude 'com/google/gson/**'  // Use double asterisks to exclude all classes under the package
-
-    // You can add more exclude statements if needed
+task iast_jar(type: Jar) {
+    archiveFileName = 'iAST-1.0-SNAPSHOT-customized.jar'
+    // Include all contents from the original JAR
+    destinationDir = file('libs/')
+    from zipTree('libs/iAST-1.0-SNAPSHOT-shaded.jar')
+    exclude 'com/google/gson/*'
+    exclude 'com/google/gson/**'
+    exclude 'org/slf4j/*'
+    exclude 'org/slf4j/**'
 }
 configurations.all {
     resolutionStrategy {
@@ -62,6 +79,7 @@ configurations.all {
         force 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 
     }
+//    exclude group: 'org.slf4j', module: 'slf4j-simple'
 }
 
 test {

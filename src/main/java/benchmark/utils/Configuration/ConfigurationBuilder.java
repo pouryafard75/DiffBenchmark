@@ -32,10 +32,15 @@ public class ConfigurationBuilder {
         this.allCases = allCases;
         return this;
     }
-    public ConfigurationBuilder setAllCases(String[] casesPath) throws IOException {
+    public ConfigurationBuilder setAllCases(String[] casesPath) {
         ObjectMapper mapper = new ObjectMapper();
         for (String path : casesPath) {
-            Set<CaseInfo> loaded = mapper.readValue(new File(path), new TypeReference<Set<CaseInfo>>(){});
+            Set<CaseInfo> loaded = null;
+            try {
+                loaded = mapper.readValue(new File(path), new TypeReference<Set<CaseInfo>>(){});
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             this.allCases.addAll(loaded);
         }
         return this;
@@ -52,7 +57,7 @@ public class ConfigurationBuilder {
     }
 
 
-    public Configuration createConfiguration() throws IOException {
+    public Configuration createConfiguration(){
         if (tools == null)
             return new Configuration(perfectDiffDir, allCases, compatibility, generationStrategy);
         else

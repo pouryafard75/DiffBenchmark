@@ -37,16 +37,16 @@ import java.util.concurrent.TimeUnit;
 
 import static benchmark.oracle.generators.diff.HumanReadableDiffGenerator.isPartOfJavadoc;
 import static benchmark.oracle.generators.tools.runners.APIChanger.diffToASTDiff;
-import static dat.BenchrmarkFitness.intels;
 
 /* Created by pourya on 2024-02-01*/
 public class GridSearch {
     private final static Logger logger = LoggerFactory.getLogger(GridSearch.class);
-    private static final Matcher[] matchers = new Matcher[] {
-            new CompositeMatchers.SimpleGumtree(),
-            new CompositeMatchers.ClassicGumtree(),
-            new CompositeMatchers.HybridGumtree(),
-    };
+    private static final List<Class<? extends Matcher>> matchers = Arrays.asList(
+            CompositeMatchers.SimpleGumtree.class
+            ,CompositeMatchers.ClassicGumtree.class
+            ,CompositeMatchers.HybridGumtree.class
+    );
+    private final List<Intel> intels;
     private static final int nrthreads = 50;
     private static final long timeout = 1000;
     private static final String PARALLEL_LEVEL = "PROPERTY_LEVEL";
@@ -61,7 +61,12 @@ public class GridSearch {
 
     static{
         ParametersResolvers domain = setParameters();
-        initCacheCombinationProperties(domain);
+        try {
+            initCacheCombinationProperties(domain);
+        } catch (Exception e) {
+            logger.error("Error in initCacheCombinationProperties", e);
+            throw new RuntimeException(e);
+        }
     }
 
     public GridSearch(CaseInfo info, ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, Configuration configuration)
@@ -72,48 +77,80 @@ public class GridSearch {
         this.configuration = configuration;
         src = rm_astDiff.src.getRoot();
         dst = rm_astDiff.dst.getRoot();
+        intels = new ArrayList<>();
 
     }
-
-    public void run(int numThreads) throws Exception {
+    public static Matcher getMatcher(String algoName) {
+        if (algoName.equals("SimpleGumtree")) {
+            return new CompositeMatchers.SimpleGumtree();
+        } else if (algoName.equals("ClassicGumtree")) {
+            return new CompositeMatchers.ClassicGumtree();
+        } else if (algoName.equals("HybridGumtree")) {
+            return new CompositeMatchers.HybridGumtree();
+        } else {
+            throw new RuntimeException("Unknown algorithm: " + algoName);
+        }
+    }
+    public List<Intel> run(int numThreads) throws Exception {
         ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
         List<Callable<Void>> tasks = new LinkedList<>();
         logger.info("Preparing tasks");
-        for (Matcher matcher : matchers) {
-            List<GumtreeProperties> allCombinations = cacheCombinations.get(matcher.getClass().getCanonicalName());
+        for (Class<? extends Matcher> matcher : matchers) {
+            List<GumtreeProperties> allCombinations = cacheCombinations.get(matcher.getSimpleName());
             for (GumtreeProperties properties : allCombinations) {
                 tasks.add(() -> {
-                    addIntel(matcher, properties);
+                    try {
+                        addIntel(getMatcher(matcher.getSimpleName()), properties);
+                    } catch (Exception e) {
+                        logger.error("Error in task for " + matcher.getSimpleName() + " " + properties, e);
+                    }
                     return null;
                 });
             }
         }
-
-        logger.info(tasks.size() + " tasks have been submitted");
         try {
             executorService.invokeAll(tasks);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            logger.error(e.getMessage());
+            logger.error(e.getCause().toString());
+            logger.info("Error in executorService");
         } finally {
             executorService.shutdown();
-            if (!executorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS)) {
-                System.err.println("ExecutorService did not terminate within the timeout.");
+            if (!executorService.awaitTermination(1, TimeUnit.MINUTES)) {
+                String msg = "ExecutorService did not terminate within the timeout.";
+                logger.error(msg);
+                throw new RuntimeException(msg);
             }
         }
+        System.out.println(intels.size() + " intels have been generated");
+        return intels;
     }
     private void addIntel(Matcher matcher, GumtreeProperties properties) {
-        logger.debug("Working on " + matcher + " " + properties);
-        Diff diff = makeDiff(matcher, properties);
-        BaseDiffComparisonResult compResult = makeStats(diffToASTDiff(diff, rmDiff.getSrcPath(), rmDiff.getDstPath()));
+        try {
+//        logger.debug("Working on " + matcher + " " + properties);
+            Diff diff = makeDiff(matcher, properties);
+            BaseDiffComparisonResult compResult = makeStats(diffToASTDiff(diff, rmDiff.getSrcPath(), rmDiff.getDstPath()));
 //        logger.debug("Stats has been generated for " + matcher + " " + properties);
-        DiffStats dat = compResult.getDiffStatsList().get(ASTDiffTool.DAT.name());
-        NecessaryMappings ignore = compResult.getIgnore().getIntraFileMappings();
-        int edSize = diff.editScript.asList().size();
-        int edSizeNonJavaDocs = diff.editScript.asList().stream().filter(x ->
-                !isPartOfJavadoc(x.getNode())).toList().size();
+            DiffStats dat = compResult.getDiffStatsList().get(ASTDiffTool.DAT.name());
+            if (dat == null)
+                throw new RuntimeException("DAT is null");
+            NecessaryMappings ignore = compResult.getIgnore().getIntraFileMappings();
+            int edSize = diff.editScript.asList().size();
+
+            int edSizeNonJavaDocs = diff.editScript.asList().stream().filter(x ->
+                    !isPartOfJavadoc(x.getNode())).toList().size();
 //        logger.debug("About to add the intel for " + matcher + " " + properties);
+            add(matcher, properties, edSize, edSizeNonJavaDocs, ignore, dat);
+        }
+        catch (Exception e) {
+            logger.error("Error in addIntel", e);
+            throw new RuntimeException(e);
+        }
+    }
+
+    private synchronized void add(Matcher matcher, GumtreeProperties properties, int edSize, int edSizeNonJavaDocs, NecessaryMappings ignore, DiffStats dat) {
         Intel intel = new Intel(info.getRepo(), info.getCommit(), rmDiff.getSrcPath(),
-                matcher.getClass().getName(), properties.toString(),
+                matcher.getClass().getCanonicalName(), properties.toString(),
                 edSize, edSizeNonJavaDocs,
                 ignore, dat);
         logger.debug("Intel #" + (intels.size() + 1) + " is added");
@@ -145,17 +182,24 @@ public class GridSearch {
         return fileDiffComparisonResult;
     }
     private Diff makeDiff(Matcher matcher, GumtreeProperties properties) {
-        CompositeMatchers.CompositeMatcher cm = (CompositeMatchers.CompositeMatcher) matcher;
-        cm.configure(properties);
-        MappingStore mappings = matcher.match(src, dst);
-        ChawatheScriptGenerator edGenerator = new ChawatheScriptGenerator();
-        EditScript actions = edGenerator.computeActions(mappings);
-        TreeContext leftContext = new TreeContext();
-        leftContext.setRoot(src);
-        TreeContext rightContext = new TreeContext();
-        rightContext.setRoot(dst);
+        try {
+            CompositeMatchers.CompositeMatcher cm = (CompositeMatchers.CompositeMatcher) matcher;
+            cm.configure(properties);
+            MappingStore mappings = matcher.match(src, dst);
+            ChawatheScriptGenerator edGenerator = new ChawatheScriptGenerator();
+            EditScript actions = edGenerator.computeActions(mappings);
+            TreeContext leftContext = new TreeContext();
+            leftContext.setRoot(src);
+            TreeContext rightContext = new TreeContext();
+            rightContext.setRoot(dst);
 //        logger.debug("Diff has been created for " + matcher + " " + properties);
-        return new Diff(leftContext, rightContext, mappings, actions);
+            return new Diff(leftContext, rightContext, mappings, actions);
+        }
+        catch (Exception e) {
+            System.out.println("bug3");
+            logger.error("Error in makeDiff", e);
+            throw new RuntimeException(e);
+        }
     }
 
     private static ParametersResolvers setParameters() {
@@ -166,12 +210,13 @@ public class GridSearch {
         domain.getParametersDomain().put(ConfigurationOptions.st_priocalc, new CategoricalParameterDomain(ConfigurationOptions.st_priocalc.name(), String.class, "height", new String[] { "size", "height" }));
         return domain;
     }
-    public static void initCacheCombinationProperties(ParametersResolvers domain) {
+    public static void initCacheCombinationProperties(ParametersResolvers domain) throws InstantiationException, IllegalAccessException {
         cacheCombinations.clear();
-        for (Matcher matcher : matchers) {
-            List<GumtreeProperties> allCombinations = computesCombinations(matcher, domain);
-            cacheCombinations.put(matcher.getClass().getCanonicalName(), allCombinations);
-            logger.info(matcher.getClass().getCanonicalName() + " has " + allCombinations.size() + " combinations");
+            for (Class<? extends Matcher> matcher : matchers) {
+            Matcher matcherInstance = getMatcher(matcher.getSimpleName());
+            List<GumtreeProperties> allCombinations = computesCombinations(matcherInstance, domain);
+            cacheCombinations.put(matcher.getSimpleName(), allCombinations);
+            logger.info(matcherInstance.getClass().getCanonicalName() + " has " + allCombinations.size() + " combinations");
         }
         logger.info("All combinations have been computed");
     }

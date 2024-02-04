@@ -30,12 +30,12 @@ public class Make {
                 GridSearch dat = new GridSearch(info, projectASTDiff, rm_astDiff, configuration);
                 dat.run(numThreads);
             }
-            if (case_count % 10 == 0) {
+            if (case_count % 4 == 0) {
                 writeIntelListToCsv(BenchrmarkFitness.intels, "intels" + case_count + ".csv");
             }
         }
         logger.info("DAT finished");
-        writeIntelListToCsv(BenchrmarkFitness.intels, "intel.csv");
+        writeIntelListToCsv(BenchrmarkFitness.intels, "all_intels.csv");
         logger.info("Intel written to csv");
     }
 }

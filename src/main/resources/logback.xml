@@ -9,7 +9,8 @@
     </appender>
 
     <!-- Console Appender -->
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <appender name="CONSOLE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/console.log</file> <!-- Set the desired file name -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
@@ -26,6 +27,8 @@
             <level>INFO</level>
         </filter>
     </appender>
+
+
 
     <root level="all">
         <appender-ref ref="INFO_FILE"/>

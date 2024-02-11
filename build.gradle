@@ -90,8 +90,8 @@ test {
 }
 
 run {
-    def refactoringMinerPathValue = System.getProperty("refactoringMinerPath")
+    def refactoringMinerPathValue = System.properties['refactoringMinerPath']
     if (refactoringMinerPathValue && !refactoringMinerPathValue.isEmpty()) {
-        System.setProperty("refactoringMinerPath", refactoringMinerPathValue)
+        systemProperty("refactoringMinerPath", refactoringMinerPathValue)
     }
 }

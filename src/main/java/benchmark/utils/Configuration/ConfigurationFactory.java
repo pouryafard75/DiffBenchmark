@@ -35,6 +35,9 @@ new CaseInfo("https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1
 //    private static final String TEST_URL = "https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1f9540c809d7a12d3fb";
 //    private static final String TEST_URL = "https://github.com/AsyncHttpClient/async-http-client/commit/f01d8610b9ceebc1de59d42f569b8af3efbe0a0f";
 
+    static {
+        System.out.println("RefactoringMinerPath: " + FINALIZED_REFACTORING_MINER_PATH);
+    }
 
     public static Configuration getDefault(){
             return refOracleTwoPointOne();

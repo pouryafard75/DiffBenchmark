@@ -13,11 +13,21 @@ repositories {
     mavenLocal()
 }
 
+def refactoringMinerVersion = project.hasProperty('refactoringMinerVersion') ?
+        project.refactoringMinerVersion :
+        '3.0.4-SNAPSHOT'
+
+java {
+    if (project.hasProperty("refactoringMinerPath")) {
+        systemProperty "refactoringMinerPath", project.refactoringMinerPath
+    }
+}
+
 dependencies {
     implementation('com.google.code.gson:gson:2.8.9')
 
     implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.35.0'
-    implementation ('com.github.tsantalis:refactoring-miner:3.0.4-SNAPSHOT') {
+    implementation ("com.github.tsantalis:refactoring-miner:$refactoringMinerVersion") {
         exclude group: 'org.slf4j', module: 'slf4j-simple'
         exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
     }

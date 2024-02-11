@@ -1,11 +1,9 @@
 package benchmark.metrics.computers.refactoring;
 
-import benchmark.metrics.computers.filters.QueryBasedHumanReadableDiffFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.RefactoringSpecificComparisonResult;
-import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -24,7 +22,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static benchmark.utils.Configuration.ConfigurationFactory.REFACTORING_MINER_PATH;
+import static benchmark.utils.Configuration.ConfigurationFactory.FINALIZED_REFACTORING_MINER_PATH;
 import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 import static benchmark.utils.PathResolver.fileNameAsFolder;
@@ -35,7 +33,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     final Set<RefactoringType> acceptedRefactoringTypes;
     private final static Logger logger = LoggerFactory.getLogger(RefactoringWiseBenchmarkComputer.class);
     private final Set<Class<? extends Refactoring>> forbiddenTypes;
-    private static final String dataPath = REFACTORING_MINER_PATH + "/src/test/resources/oracle/data.json";
+    private static final String dataPath = FINALIZED_REFACTORING_MINER_PATH + "/src/test/resources/oracle/data.json";
     private final JsonNode refactoringValidationJsonNode;
 
     public RefactoringWiseBenchmarkComputer(Configuration configuration, Set<RefactoringType> acceptedRefactoringTypes) {

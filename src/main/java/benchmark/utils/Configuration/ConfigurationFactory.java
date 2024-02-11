@@ -1,22 +1,22 @@
 package benchmark.utils.Configuration;
 
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.Set;
 
 /* Created by pourya on 2023-09-18 1:39 a.m. */
 public class ConfigurationFactory {
     // Update value to the RefactoringMiner cloned repository path in your hard drive
-    public static final String REFACTORING_MINER_PATH = "/Users/pourya/IdeaProjects/RM-ASTDiff/";
+    private static final String REFACTORING_MINER_PATH = "/Users/pourya/IdeaProjects/RM-ASTDiff/";
 
-    public static final String ORACLE_DIR = REFACTORING_MINER_PATH + "/src/test/resources/oracle/commits/";
+    public static final String FINALIZED_REFACTORING_MINER_PATH = System.getProperty("refactoringMinerPath", REFACTORING_MINER_PATH);
 
-    private static final String REFACTORING_MAPPINGS_DIR = REFACTORING_MINER_PATH + "/src/test/resources/astDiff/commits/";
+    public static final String ORACLE_DIR = FINALIZED_REFACTORING_MINER_PATH + "/src/test/resources/oracle/commits/";
 
-    private static final String DEFECTS4J_MAPPING_DIR = REFACTORING_MINER_PATH + "/src/test/resources/astDiff/defects4j/";
+    private static final String REFACTORING_MAPPINGS_DIR = FINALIZED_REFACTORING_MINER_PATH + "/src/test/resources/astDiff/commits/";
+
+    private static final String DEFECTS4J_MAPPING_DIR = FINALIZED_REFACTORING_MINER_PATH + "/src/test/resources/astDiff/defects4j/";
 
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";

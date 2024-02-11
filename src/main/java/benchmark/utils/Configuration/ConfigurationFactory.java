@@ -107,4 +107,18 @@ public class ConfigurationFactory {
         configuration.setName(confName);
         return configuration;
     }
+
+    public static Configuration getConfByName(String arg) {
+        switch (arg) {
+            case "refOracle":
+                return refOracle();
+            case "refOracleTwoPointOne":
+                return refOracleTwoPointOne();
+            case "defects4j":
+                return defects4j();
+            case "defects4jTwoPointOne":
+                return defects4jTwoPointOne();
+        }
+        return null;
+    }
 }

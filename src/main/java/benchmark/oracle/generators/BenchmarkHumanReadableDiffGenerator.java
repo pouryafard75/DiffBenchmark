@@ -39,8 +39,10 @@ public class BenchmarkHumanReadableDiffGenerator {
                 try {
                     writeActiveTools(info, configuration.getOutputFolder());
                 } catch (Exception e) {
-                    System.out.println(e);
+                    System.out.println(e.getMessage());
+                    System.exit(1); // Terminate execution with status code 1
                     throw new RuntimeException(e);
+
                 } finally {
                     latch.countDown();
                 }

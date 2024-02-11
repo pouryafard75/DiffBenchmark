@@ -21,7 +21,15 @@ public class ConfigurationFactory {
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";
     private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
-//    private static final String TEST_URL = "https://github.com/phishman3579/java-algorithms-implementation/commit/ab98bcacf6e5bf1c3a06f6bcca68f178f880ffc9";
+    private static final Set<CaseInfo> dummySet = Set.of(
+            new CaseInfo("https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1f9540c809d7a12d3fb"),
+            new CaseInfo("https://github.com/Activiti/Activiti/commit/ca7d0c3b33a0863bed04c77932b9ef6b1317f34"),
+            new CaseInfo("https://github.com/Alluxio/alluxio/commit/0ba343846f21649e29ffc600f30a7f3e463fb24c"),
+            new CaseInfo("https://github.com/Alluxio/alluxio/commit/5b184ac783784c1ca4baf1437888c79bd9460763"),
+            new CaseInfo("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825"),
+            new CaseInfo("https://github.com/Alluxio/alluxio/commit/b0938501f1014cf663e33b44ed5bb9b24d19a358")
+    );
+    //    private static final String TEST_URL = "https://github.com/phishman3579/java-algorithms-implementation/commit/ab98bcacf6e5bf1c3a06f6bcca68f178f880ffc9";
 //    private static final String TEST_URL = "https://github.com/JetBrains/intellij-community/commit/a9379ee529ed87e28c0736c3c6657dcd6a0680e4";
 //    private static final String TEST_URL = "https://github.com/crate/crate/commit/72b5348";
 //    private static final String TEST_URL = "https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1f9540c809d7a12d3fb";
@@ -73,7 +81,8 @@ public class ConfigurationFactory {
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
                 .setPerfectDiffDir(REFACTORING_MAPPINGS_DIR)
 //                .setPerfectDiffDir(REF_ORACLE_DIR)
-                .setAllCases(Set.of(new CaseInfo(TEST_URL)))
+//                .setAllCases(Set.of(new CaseInfo(TEST_URL)))
+                .setAllCases(dummySet)
 //                .setAllCases(Set.of(new CaseInfo("Chart", "1"), new CaseInfo("Chart", "2")))
                 .setCompatibility(Compatibility.ThreePointZero)
 //                .setTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.DAT))
@@ -81,11 +90,12 @@ public class ConfigurationFactory {
         return setOutputPaths(confName, configurationBuilder);
     }
 
-    public static Configuration dummyTwoPointOne() throws IOException{
+    public static Configuration dummyTwoPointOne() {
         String confName = "dummy2.1";
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
                 .setPerfectDiffDir(REFACTORING_MAPPINGS_DIR)
-                .setAllCases(Set.of(new CaseInfo(TEST_URL)))
+//                .setAllCases(Set.of(new CaseInfo(TEST_URL)))
+                .setAllCases(dummySet)
                 .setCompatibility(Compatibility.TwoPointOne)
                 .setGenerationStrategy(GenerationStrategy.Filtered);
         return setOutputPaths(confName, configurationBuilder);
@@ -118,6 +128,10 @@ public class ConfigurationFactory {
                 return defects4j();
             case "defects4jTwoPointOne":
                 return defects4jTwoPointOne();
+            case "dummy":
+                return dummy();
+            case "dummyTwoPointOne":
+                return dummyTwoPointOne();
         }
         return null;
     }

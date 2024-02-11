@@ -17,12 +17,6 @@ def refactoringMinerVersion = project.hasProperty('refactoringMinerVersion') ?
         project.refactoringMinerVersion :
         '3.0.4-SNAPSHOT'
 
-java {
-    if (project.hasProperty("refactoringMinerPath")) {
-        systemProperty "refactoringMinerPath", project.refactoringMinerPath
-    }
-}
-
 dependencies {
     implementation('com.google.code.gson:gson:2.8.9')
 
@@ -93,4 +87,11 @@ configurations.all {
 
 test {
     useJUnitPlatform()
+}
+
+run {
+    def refactoringMinerPathValue = System.getProperty("refactoringMinerPath")
+    if (refactoringMinerPathValue && !refactoringMinerPathValue.isEmpty()) {
+        System.setProperty("refactoringMinerPath", refactoringMinerPathValue)
+    }
 }

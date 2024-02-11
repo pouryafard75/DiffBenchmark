@@ -36,7 +36,7 @@ public class FileDiffComparisonResult extends BaseDiffComparisonResult {
         StringBuilder header = new StringBuilder();
         header
                 .append("url").append(",")
-                .append(srcFileName).append(",");
+                .append("srcFileName").append(",");
         writeToolsHeader(header, onFly);
         header.deleteCharAt(header.length() - 1); // Remove trailing comma
         header.append("\n");

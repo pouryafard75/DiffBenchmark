@@ -10,6 +10,8 @@ import benchmark.utils.Configuration.GenerationStrategy;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.matchers.ProjectASTDiffer;
+
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -30,18 +32,28 @@ public class BenchmarkHumanReadableDiffGenerator {
     public void generate() throws Exception {
         int numThreads = Runtime.getRuntime().availableProcessors();
         ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
+        CountDownLatch latch = new CountDownLatch(configuration.getAllCases().size());
+        int i = 0;
         for (CaseInfo info : configuration.getAllCases()) {
-            executorService.submit(
-                    () -> {
-                        try {
-                            writeActiveTools(info, configuration.getOutputFolder());
-                        } catch (Exception e) {
-                            throw new RuntimeException(e);
-                        }
-                    });
-
+            executorService.submit(() -> {
+                try {
+                    writeActiveTools(info, configuration.getOutputFolder());
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                } finally {
+                    latch.countDown();
+                }
+            });
         }
+
         executorService.shutdown();
+        try {
+            // Wait until all threads finish their work
+            latch.await();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         System.out.println("Finished generating human readable diffs...");
     }
     private void writeActiveTools(CaseInfo info, String output_folder) throws Exception {

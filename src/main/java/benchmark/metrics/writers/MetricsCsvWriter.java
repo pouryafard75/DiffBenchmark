@@ -2,7 +2,11 @@ package benchmark.metrics.writers;
 
 import benchmark.metrics.models.CsvWritable;
 
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Collection;
@@ -15,6 +19,12 @@ public class MetricsCsvWriter {
         if (compResults.isEmpty()) {
             System.out.println("Collection is empty. Nothing to export.");
             return;
+        }
+        try {
+            Files.createDirectories(Paths.get(csvFilePath).getParent());
+        } catch (IOException e) {
+            e.printStackTrace();
+            return; // Exit if directory creation fails
         }
         try (FileWriter writer = new FileWriter(addDateAndTime(csvFilePath)))
         {

@@ -105,4 +105,16 @@ public abstract class BaseDiffComparisonResult implements CsvWritable{
         }
     }
 
+    @Override
+    public int compareTo(CsvWritable o) {
+        if (o instanceof BaseDiffComparisonResult)
+        {
+            BaseDiffComparisonResult o2 = (BaseDiffComparisonResult) (o);
+            return this.caseInfo.makeURL().compareTo(o2.caseInfo.makeURL());
+        }
+        else {
+            return 0;
+        }
+    }
+
 }

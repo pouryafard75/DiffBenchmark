@@ -1,5 +1,6 @@
 package benchmark.metrics.writers;
 
+import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.CsvWritable;
 
 import java.io.File;
@@ -9,7 +10,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 
 /* Created by pourya on 2023-11-23 8:47 p.m. */
@@ -26,6 +29,7 @@ public class MetricsCsvWriter {
             e.printStackTrace();
             return; // Exit if directory creation fails
         }
+        Collections.sort(new ArrayList<CsvWritable>(compResults));
         try (FileWriter writer = new FileWriter(addDateAndTime(csvFilePath)))
         {
             if (withHeader) compResults.iterator().next().writeHeader(writer);
@@ -35,8 +39,6 @@ public class MetricsCsvWriter {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
     }
     private static String addDateAndTime(String csvFilePath) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy_MM_dd HH:mm:ss");

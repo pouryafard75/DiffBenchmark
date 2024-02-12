@@ -42,6 +42,17 @@ public class FileDiffComparisonResult extends BaseDiffComparisonResult {
         header.append("\n");
         writer.append(header.toString());
     }
+
+    @Override
+    public int compareTo(CsvWritable o) {
+        if (o instanceof FileDiffComparisonResult){
+            int comp = super.compareTo(o);
+            if (comp != 0) return comp;
+            return this.srcFileName.compareTo(
+                    ((FileDiffComparisonResult) o).srcFileName);
+        }
+        return 0;
+    }
 }
 
 

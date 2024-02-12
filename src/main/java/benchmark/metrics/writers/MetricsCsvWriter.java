@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 
 /* Created by pourya on 2023-11-23 8:47 p.m. */
@@ -29,11 +30,12 @@ public class MetricsCsvWriter {
             e.printStackTrace();
             return; // Exit if directory creation fails
         }
-        Collections.sort(new ArrayList<CsvWritable>(compResults));
+        List<CsvWritable> sortedResult = new ArrayList<>(compResults);
+        Collections.sort(sortedResult);
         try (FileWriter writer = new FileWriter(addDateAndTime(csvFilePath)))
         {
-            if (withHeader) compResults.iterator().next().writeHeader(writer);
-            for (CsvWritable compResult : compResults) {
+            if (withHeader) sortedResult.iterator().next().writeHeader(writer);
+            for (CsvWritable compResult : sortedResult) {
                 compResult.writeData(writer);
             }
         } catch (Exception e) {

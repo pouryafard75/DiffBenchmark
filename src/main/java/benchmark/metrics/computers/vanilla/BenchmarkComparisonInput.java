@@ -6,6 +6,7 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.bouncycastle.util.Arrays;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,9 +47,9 @@ public class BenchmarkComparisonInput {
     public static BenchmarkComparisonInput read(Configuration configuration, CaseInfo info, String fileName) throws IOException {
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(configuration.getOutputFolder() + folderPath + "/");
-        return readDir(dir.resolve(fileName));
+        return readDir(dir.resolve(fileName), configuration);
     }
-    public static BenchmarkComparisonInput readDir(Path finalPath) throws IOException {
+    public static BenchmarkComparisonInput readDir(Path finalPath, Configuration configuration) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
 
@@ -68,7 +69,9 @@ public class BenchmarkComparisonInput {
                         trv = hrd;
                         break;
                     default:
-                        hrds.put(ASTDiffTool.valueOf(toolName), hrd);
+                        ASTDiffTool astDiffTool = ASTDiffTool.valueOf(toolName);
+                        if (java.util.Arrays.stream(configuration.getActiveTools()).toList().contains(astDiffTool))
+                            hrds.put(astDiffTool, hrd);
                 }
             }
         } catch (IOException e) {

@@ -67,13 +67,11 @@ public class Configuration {
         tools.add(ASTDiffTool.GOD);
         tools.add(ASTDiffTool.TRV);
         tools.addAll(Arrays.asList(compatibility.getTools()));
-        //FIXME: Temporary
-//        tools.add(ASTDiffTool.RMD);
-//        tools.add(ASTDiffTool.IAM);
         return tools;
     }
     public ASTDiffTool[] getActiveTools() {
-        return activeTools.toArray(new ASTDiffTool[0]);
+        ASTDiffTool[] array = activeTools.toArray(new ASTDiffTool[0]);
+        return array;
     }
 
     public void setActiveTools(Set<ASTDiffTool> activeTools) {

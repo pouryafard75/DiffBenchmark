@@ -6,9 +6,6 @@ import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.matchers.CompositeMatchers;
-import com.github.gumtreediff.matchers.ConfigurationOptions;
-import com.github.gumtreediff.matchers.GumtreeProperties;
-import com.github.gumtreediff.matchers.Matcher;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
@@ -48,6 +45,11 @@ public class BenchmarkWebDiffFactory {
     }
 
     private static BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, CaseInfo info) throws Exception {
+        Configuration conf = null;
+        if (info != null && info.getRepo() != null) {
+            String repo = info.getRepo();
+            conf = (repo.contains(".git")) ? ConfigurationFactory.refOracle() : ConfigurationFactory.defects4j();
+        }
 
         Set<ASTDiff> RM_astDiff = projectASTDiffByRM.getDiffSet();
         Set<Diff> GTG_astDiff = new LinkedHashSet<>();
@@ -57,18 +59,20 @@ public class BenchmarkWebDiffFactory {
         Set<Diff> GT2_astDiff = new LinkedHashSet<>();
         Set<ASTDiff> GOD_astDiff = new LinkedHashSet<>();
         Set<Diff> iAST_diff = new LinkedHashSet<>();
+        Set<ASTDiff> TRV_astDiff = new LinkedHashSet<>();
+        Set<ASTDiff> RM2_astDiff = new LinkedHashSet<>();
         for (ASTDiff astDiff : RM_astDiff) {
             GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
             GTS_astDiff.add(diffByGumTree(astDiff, new CompositeMatchers.SimpleGumtree()));
             IJM_astDiff.add(new IJM(projectASTDiffByRM,astDiff).diff());
-            MTD_astDiff.add(new MTDiff(projectASTDiffByRM,astDiff).diff());
-            GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff).diff());
+            MTD_astDiff.add(new MTDiff(projectASTDiffByRM,astDiff, info, conf).diff());
+            GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff, info, conf).diff());
             iAST_diff.add(new iASTMapper(projectASTDiffByRM,astDiff).diff());
+            if (info != null)
+                RM2_astDiff.add(new RM2(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
+            TRV_astDiff.add(new TrivialDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
             ASTDiff perfectDiff;
             try {
-                String repo = info.getRepo();
-                Configuration conf =  (repo.contains(".git")) ? ConfigurationFactory.refOracle() : ConfigurationFactory.defects4j();
-
                 perfectDiff = new PerfectDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff();
                 GOD_astDiff.add(perfectDiff);
             }
@@ -85,6 +89,8 @@ public class BenchmarkWebDiffFactory {
                 MTD_astDiff,
                 GT2_astDiff,
                 iAST_diff,
+                RM2_astDiff,
+                TRV_astDiff,
                 GOD_astDiff);
     }
 

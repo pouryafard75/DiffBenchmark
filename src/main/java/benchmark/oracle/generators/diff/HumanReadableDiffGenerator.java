@@ -184,7 +184,7 @@ public abstract class HumanReadableDiffGenerator {
         else
             target.getMappings().add(abstractMapping);
     }
-    static boolean isProgramElement(String leftType) {
+    public static boolean isProgramElement(String leftType) {
         return leftType.equals(Constants.TYPE_DECLARATION) ||
                 leftType.equals(Constants.METHOD_DECLARATION) ||
                 leftType.equals(Constants.FIELD_DECLARATION) ||

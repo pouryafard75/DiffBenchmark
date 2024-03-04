@@ -18,7 +18,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 import static benchmark.oracle.generators.tools.Utils.getTreesExactPosition;
-import static benchmark.oracle.generators.tools.runners.APIChanger.diffToASTDiff;
+import static benchmark.oracle.generators.tools.runners.APIChanger.diffToASTDiffWithActions;
 
 /* Created by pourya on 2024-01-10*/
 public class iASTMapper {
@@ -33,7 +33,7 @@ public class iASTMapper {
     }
 
     public ASTDiff makeASTDiff() throws Exception {
-        return diffToASTDiff(diff(), rmAstDiff.getSrcPath(), rmAstDiff.getDstPath());
+        return diffToASTDiffWithActions(diff(), rmAstDiff.getSrcPath(), rmAstDiff.getDstPath());
     }
     public Diff diff() throws Exception {
         cs.model.algorithm.iASTMapper m = new cs.model.algorithm.iASTMapper(srcContents, dstContents);

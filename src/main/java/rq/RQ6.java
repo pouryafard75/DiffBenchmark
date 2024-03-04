@@ -38,9 +38,11 @@ public class RQ6{
     }
 
     public static void main(String[] args) throws Exception {
-        new RQ6().rq6(ConfigurationFactory.refOracle());
+//        new RQ6().rq6(ConfigurationFactory.dummy());
+//        new RQ6().rq6(ConfigurationFactory.dummyTwoPointOne());
+//        new RQ6().rq6(ConfigurationFactory.refOracle());
 //        new RQ6().rq6(ConfigurationFactory.refOracleTwoPointOne());
 //        new RQ6().rq6(ConfigurationFactory.defects4j());
-//        new RQ6().rq6(ConfigurationFactory.defects4jTwoPointOne());
+        new RQ6().rq6(ConfigurationFactory.defects4jTwoPointOne());
     }
 }

@@ -34,6 +34,7 @@ public enum Compatibility {
                     ASTDiffTool.IJM,
                     ASTDiffTool.MTD,
                     ASTDiffTool.GT2,
+//                    ASTDiffTool.RM2,
             };
         }
 
@@ -49,7 +50,7 @@ public enum Compatibility {
                     ASTDiffTool.RMD,
                     ASTDiffTool.GTG,
                     ASTDiffTool.GTS,
-                    ASTDiffTool.IAM,
+//                    ASTDiffTool.IAM,
             };
         }
 

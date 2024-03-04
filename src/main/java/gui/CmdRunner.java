@@ -38,8 +38,8 @@ public class CmdRunner {
     @Parameter(names = {"--file2"}, description = "Second file path")
     private String filePath2;
 
-    @Parameter(names = {"--action", "-a"}, description = "Action to perform (RUN or COMPARE)")
-    private Action action;
+//    @Parameter(names = {"--action", "-a"}, description = "Action to perform (RUN or COMPARE)")
+    private Action action = Action.COMPARE;
 
     @Parameter(names = {"--help", "-h"}, description = "Show help", help = true)
     private boolean help;
@@ -47,7 +47,7 @@ public class CmdRunner {
     public static void main(String[] args) throws Exception {
         System.out.println("Running CmdRunner...");
         CmdRunner runner = new CmdRunner();
-        if (runner.action == null) runner.action = Action.RUN;
+        if (runner.action == null) runner.action = Action.COMPARE;
         JCommander commander =JCommander.newBuilder()
                 .addObject(runner)
                 .build();

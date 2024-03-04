@@ -36,7 +36,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import static benchmark.oracle.generators.diff.HumanReadableDiffGenerator.isPartOfJavadoc;
-import static benchmark.oracle.generators.tools.runners.APIChanger.diffToASTDiff;
+import static benchmark.oracle.generators.tools.runners.APIChanger.diffToASTDiffWithActions;
 
 /* Created by pourya on 2024-02-01*/
 public class GridSearch {
@@ -129,7 +129,7 @@ public class GridSearch {
         try {
 //        logger.debug("Working on " + matcher + " " + properties);
             Diff diff = makeDiff(matcher, properties);
-            BaseDiffComparisonResult compResult = makeStats(diffToASTDiff(diff, rmDiff.getSrcPath(), rmDiff.getDstPath()));
+            BaseDiffComparisonResult compResult = makeStats(diffToASTDiffWithActions(diff, rmDiff.getSrcPath(), rmDiff.getDstPath()));
 //        logger.debug("Stats has been generated for " + matcher + " " + properties);
             DiffStats dat = compResult.getDiffStatsList().get(ASTDiffTool.DAT.name());
             if (dat == null)

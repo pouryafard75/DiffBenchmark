@@ -7,11 +7,13 @@ import benchmark.oracle.generators.BenchmarkHumanReadableDiffGenerator;
 import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
+import org.eclipse.jgit.annotations.Nullable;
 
 import java.util.*;
 
 /* Created by pourya on 2023-04-17 7:45 p.m. */
 public class CmdRunner {
+    //
     public static void main(String[] args) throws Exception {
         if (args.length == 0) {
             throw new RuntimeException("No arguments provided");
@@ -25,7 +27,7 @@ public class CmdRunner {
             }
             else  confs = argsToConfs(args);
             for (Configuration configuration : confs) {
-                if (rm_only) configuration.setActiveTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD));
+                if (rm_only) configuration.setActiveTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.RM2));
                 new BenchmarkHumanReadableDiffGenerator(configuration).generate();
                 VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration);
                 Collection<? extends BaseDiffComparisonResult> stats = computer.compute();

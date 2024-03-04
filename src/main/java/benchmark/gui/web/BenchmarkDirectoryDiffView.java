@@ -126,6 +126,10 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                     .a(class_("btn btn-primary btn-sm").href("/GT2-monaco/" + id)).content("GT2-monaco")
                                     .a(class_("btn btn-primary btn-sm").href("/iAST/" + id)).content("iAST")
                                     .a(class_("btn btn-primary btn-sm").href("/iAST-monaco/" + id)).content("iAST-monaco")
+                                    .a(class_("btn btn-primary btn-sm").href("/RM2/" + id)).content("RM2")
+                                    .a(class_("btn btn-primary btn-sm").href("/RM2-monaco/" + id)).content("RM2-monaco")
+                                    .a(class_("btn btn-primary btn-sm").href("/TRV/" + id)).content("TRV")
+                                    .a(class_("btn btn-primary btn-sm").href("/TRV-monaco/" + id)).content("TRV-monaco")
 
 //
                             ._div()

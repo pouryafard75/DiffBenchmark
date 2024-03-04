@@ -1,6 +1,8 @@
 package benchmark.oracle.generators.tools.runners;
 
 import at.aau.softwaredynamics.matchers.MatcherFactory;
+import benchmark.utils.CaseInfo;
+import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
@@ -23,8 +25,8 @@ import static benchmark.oracle.generators.tools.Utils.mirrorTree;
 
 /* Created by pourya on 2023-04-17 8:10 p.m. */
 public abstract class APIChanger {
-    private final ProjectASTDiff projectASTDiff;
-    private final ASTDiff rm_astDiff;
+    final ProjectASTDiff projectASTDiff;
+    final ASTDiff rm_astDiff;
     APIChanger(ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff){
         this.projectASTDiff = projectASTDiff;
         this.rm_astDiff = rm_astDiff;
@@ -101,14 +103,20 @@ public abstract class APIChanger {
 
     public ASTDiff makeASTDiff() throws Exception {
         Diff diff = this.diff();
-        return diffToASTDiff(diff, this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath());
+        ASTDiff astDiff = diffToASTDiffWithActions(diff, this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath());
+        return astDiff;
     }
 
-    public static ASTDiff diffToASTDiff(Diff diff, String srcPath, String dstPath) {
+    public static ASTDiff diffToASTDiffWithActions(Diff diff, String srcPath, String dstPath) {
+        ASTDiff astDiff = diffToASTDiffNoAction(diff, srcPath, dstPath);
+        astDiff.computeVanillaEditScript();
+        return astDiff;
+    }
+
+    public static ASTDiff diffToASTDiffNoAction(Diff diff, String srcPath, String dstPath) {
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(), diff.dst.getRoot());
         mappings.add(diff.mappings);
         ASTDiff astDiff = new ASTDiff(srcPath, dstPath, diff.src, diff.dst, mappings);
-        astDiff.computeVanillaEditScript();
         return astDiff;
     }
 
@@ -121,5 +129,15 @@ public abstract class APIChanger {
             if (!astDiff.getSrcPath().equals("src_java_org_apache_commons_lang_math_NumberUtils.java"))
                 throw new RuntimeException("Mapping has been lost!");
         return diff;
+    }
+
+    ASTDiff diffWithTrivialAddition(CaseInfo info, Configuration configuration) throws Exception {
+        Diff diff = this.diff();
+        ASTDiff astDiff = diffToASTDiffNoAction(diff, this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath());
+        ExtendedMultiMappingStore trv = new TrivialDiff(this.projectASTDiff, this.rm_astDiff, info, configuration).makeASTDiff().getAllMappings();
+        for (com.github.gumtreediff.matchers.Mapping mapping : trv) {
+            astDiff.getAllMappings().addMapping(mapping.first, mapping.second);
+        }
+        return astDiff;
     }
 }

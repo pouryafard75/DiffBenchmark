@@ -30,12 +30,14 @@ public class BenchmarkWebDiff {
 
     private final ProjectASTDiff projectASTDiff;
     public Set<ASTDiff> rmDiff;
+    public Set<ASTDiff> rm2;
     public Set<Diff> gtgDiff;
     public Set<Diff> gtsDiff;
     public Set<Diff> ijmDiff;
     public Set<Diff> mtdiff;
     public Set<Diff> gt2diff;
     public Set<Diff> iastdiff;
+    private final Set<ASTDiff> trvDiff;
     private final Set<ASTDiff> godDiff;
 
 
@@ -47,6 +49,8 @@ public class BenchmarkWebDiff {
                             Set<Diff> mtd,
                             Set<Diff> gt2,
                             Set<Diff> iast,
+                            Set<ASTDiff> rm2,
+                            Set<ASTDiff> TRV_astDiff,
                             Set<ASTDiff> GOD_astDiff) {
         this.projectASTDiff = projectASTDiffByRM;
         this.rmDiff = rm;
@@ -56,6 +60,8 @@ public class BenchmarkWebDiff {
         this.mtdiff = mtd;
         this.gt2diff = gt2;
         this.iastdiff = iast;
+        this.rm2 = rm2;
+        this.trvDiff = TRV_astDiff;
         this.godDiff = GOD_astDiff;
     }
 
@@ -110,6 +116,79 @@ public class BenchmarkWebDiff {
                     astDiff, id,false);
             return render(view);
         });
+
+        get("/RM2/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<ASTDiff> iterator = rm2.iterator();
+            ASTDiff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new VanillaDiffView("RM2", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, false);
+            return render(view);
+        });
+        get("/RM2-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<ASTDiff> iterator = rm2.iterator();
+            ASTDiff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("RM2", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, id,false);
+            return render(view);
+        });
+
+        get("/TRV/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<ASTDiff> iterator = trvDiff.iterator();
+            ASTDiff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new VanillaDiffView("TRV", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, false);
+            return render(view);
+        });
+        get("/TRV-monaco/:id", (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            int i = id;
+            Iterator<ASTDiff> iterator = trvDiff.iterator();
+            ASTDiff diff = iterator.next();
+            while (i > 0)
+            {
+                i = i-1;
+                diff = iterator.next();
+            }
+            ASTDiff astDiff = comperator.getASTDiff(id);
+            Renderable view = new MonacoDiffView("TRV", astDiff.getSrcPath(),astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    diff, id,false);
+            return render(view);
+        });
+
+
+
         get("/GTG/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             int i = id;

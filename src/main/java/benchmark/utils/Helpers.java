@@ -38,5 +38,25 @@ public class Helpers {
         }
         return projectASTDiff;
     }
+
+    public static rm2.refactoringminer.astDiff.actions.ProjectASTDiff runWhateverForRM2(CaseInfo caseInfo) {
+        String repo = caseInfo.repo;
+        String commit = caseInfo.commit;
+        if (repo == null){
+            if (caseInfo.srcPath != null && caseInfo.dstPath != null)
+                return new rm2.refactoringminer.rm1.GitHistoryRefactoringMinerImpl().diffAtDirectories(new File(caseInfo.srcPath), new File(caseInfo.dstPath));
+        }
+        rm2.refactoringminer.astDiff.actions.ProjectASTDiff projectASTDiff;
+        if (repo.contains("github")) {
+            projectASTDiff = new rm2.refactoringminer.rm1.GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
+        }
+        else{
+            Path beforePath = Path.of(getBeforeDir(repo, commit));
+            Path afterPath = Path.of(getAfterDir(repo, commit));
+            projectASTDiff = new rm2.refactoringminer.rm1.GitHistoryRefactoringMinerImpl().diffAtDirectories(
+                    beforePath, afterPath);
+        }
+        return projectASTDiff;
+    }
 }
 ///Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/defects4j/Chart/1

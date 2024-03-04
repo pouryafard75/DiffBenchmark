@@ -1,9 +1,14 @@
 package benchmark.metrics.computers.refactoring;
 
+import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
+import benchmark.metrics.computers.filters.QueryBasedHumanReadableDiffFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
+import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.RefactoringSpecificComparisonResult;
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -22,6 +27,7 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static benchmark.metrics.computers.vanilla.HRDBenchmarkComputer.compareHumanReadableDiffs;
 import static benchmark.utils.Configuration.ConfigurationFactory.FINALIZED_REFACTORING_MINER_PATH;
 import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
@@ -171,11 +177,43 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             return;
         }
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
-        throw new RuntimeException("TODO: RefactoringWiseBenchmarkComputer.populateStats");
-//        HumanReadableDiff godFinalizedHRD = populateComparisonResults(baseDiffComparisonResult, dirPath, new QueryBasedHumanReadableDiffFilter(leftRanges, rightRanges));
-//        benchmarkStats.add(baseDiffComparisonResult);
-//        mergeStats(refactoringSpecificComparisonResult, benchmarkStats);
-//        refactoringSpecificComparisonResult.setGodFinalizedHRD(godFinalizedHRD);
+//        throw new RuntimeException("TODO: RefactoringWiseBenchmarkComputer.populateStats");
+        HumanReadableDiff godFinalizedHRD = populateComparisonResults(baseDiffComparisonResult, dirPath, new QueryBasedHumanReadableDiffFilter(leftRanges, rightRanges));
+        benchmarkStats.add(baseDiffComparisonResult);
+        mergeStats(refactoringSpecificComparisonResult, benchmarkStats);
+        refactoringSpecificComparisonResult.setGodFinalizedHRD(godFinalizedHRD);
+    }
+
+
+    /**
+     * @return Finalized HRD of the god tool after all the filtration. Originally, this method was supposed to be void.
+     * <h> However based on my later experiments, I found out that the godFinalizedHRD can be beneficial in some cases such as {@link RefactoringWiseBenchmarkComputer}. So, I decided to return the god tool's HumanReadableDiff </h>
+     */
+    protected HumanReadableDiff populateComparisonResults(BaseDiffComparisonResult baseDiffComparisonResult, Path dirPath, HumanReadableDiffFilter filter) throws IOException {
+        String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
+        HumanReadableDiff originalGodHRD = getMapper().readValue(new File(godFullPath), HumanReadableDiff.class);
+        HumanReadableDiff godHRDFinalized = filter.make(originalGodHRD, originalGodHRD);
+        for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
+            if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
+                continue;
+            String toolPath = tool.name();
+            String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
+            HumanReadableDiff toolHRD;
+            toolHRD = getMapper().readValue(new File(toolFullPath), HumanReadableDiff.class);
+            DiffStats diffStats;
+            HumanReadableDiff toolHRDFinalized = filter.make(toolHRD, godHRDFinalized);
+            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, getMappingsTypeFilter());
+            baseDiffComparisonResult.putStats(toolPath, diffStats);
+        }
+        setIgnore(godFullPath, baseDiffComparisonResult, filter);
+        return godHRDFinalized;
+    }
+
+    protected void setIgnore(String godFullPath, BaseDiffComparisonResult baseDiffComparisonResult, HumanReadableDiffFilter filter) throws IOException {
+        String ignorePath = godFullPath.replace(ASTDiffTool.GOD.name(), ASTDiffTool.TRV.name());
+        HumanReadableDiff diffIgnore =  getMapper().readValue(new File(ignorePath), HumanReadableDiff.class);
+        diffIgnore = filter.make(diffIgnore, HumanReadableDiff.makeEmpty());
+        baseDiffComparisonResult.setIgnore(getMappingsTypeFilter().apply(diffIgnore));
     }
 
     private static RefactoringRanges makeCodeRangesAssociatedWithRefactoring(Refactoring refactoring) {

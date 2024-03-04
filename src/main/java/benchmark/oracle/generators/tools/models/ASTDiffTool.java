@@ -28,7 +28,7 @@ public enum ASTDiffTool {
     ,
     MTD ((projectASTDiff, rm_astDiff, info, configuration) -> {
         try {
-            return new MTDiff(projectASTDiff,rm_astDiff).makeASTDiff();
+            return new MTDiff(projectASTDiff,rm_astDiff, info, configuration).makeASTDiff();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -36,7 +36,7 @@ public enum ASTDiffTool {
     ,
     GT2 ((projectASTDiff, rm_astDiff, info, configuration) -> {
         try {
-            return new GT2(projectASTDiff,rm_astDiff).makeASTDiff();
+            return new GT2(projectASTDiff,rm_astDiff, info, configuration).makeASTDiff();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -51,7 +51,10 @@ public enum ASTDiffTool {
     }),
     DAT(null),
 
-    TRV ((projectASTDiff, rm_astDiff, info, configuration) ->  new TrivialDiff(rm_astDiff).makeASTDiff()), ;
+    RM2((projectASTDiff, rm_astDiff, info, configuration) ->  new RM2(projectASTDiff, rm_astDiff,info, configuration).makeASTDiff()),
+
+    TRV ((projectASTDiff, rm_astDiff, info, configuration) -> new TrivialDiff(projectASTDiff, rm_astDiff, info, configuration).makeASTDiff()) ;
+
 
     private final DiffToolFactory factory;
     public DiffToolFactory getFactory() {

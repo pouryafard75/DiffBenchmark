@@ -31,7 +31,7 @@ public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
         for (CaseInfo info : getConfiguration().getAllCases()) {
             String folderPath = exportedFolderPathByCaseInfo(info);
             Path dir = Paths.get(getConfiguration().getOutputFolder() + folderPath  + "/");
-            System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
+//            System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
             List<Path> paths = getPaths(dir, 1);
             for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
                 boolean miss = false;

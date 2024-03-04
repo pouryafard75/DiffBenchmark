@@ -7,7 +7,15 @@ import java.io.Serializable;
 public class CaseInfo implements Serializable {
     String repo;
     String commit;
+    String srcPath;
+    String dstPath;
 
+    public static CaseInfo fromDirs(String srcPath, String dstPath){
+        CaseInfo info = new CaseInfo();
+        info.srcPath = srcPath;
+        info.dstPath = dstPath;
+        return info;
+    }
 
     public CaseInfo(String repo, String commit) {
         this.repo = repo;

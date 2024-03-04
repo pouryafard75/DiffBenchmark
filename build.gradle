@@ -35,7 +35,7 @@ dependencies {
     }
     implementation files('libs/IJM-1.0-SNAPSHOT-customized2.jar')
     implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
-    implementation files('libs/RM-2.2.0.jar')
+    implementation files('libs/RM-2.2.0-customized.jar')
     implementation files('libs/iAST-1.0-SNAPSHOT-customized.jar')
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
@@ -54,6 +54,23 @@ dependencies {
 
 
 }
+task rm2p2_jar(type: Jar) {
+    archiveFileName = 'RM-2.2.0-customized.jar'
+    // Include all contents from the original JAR
+    destinationDir = file('libs/')
+    from zipTree('libs/RM-2.2.0.jar')
+    exclude 'org/slf4j/*'
+    exclude 'org/slf4j/**'
+}
+task rm2p0_jar(type: Jar) {
+    archiveFileName = 'RM-2.0.0-customized.jar'
+    // Include all contents from the original JAR
+    destinationDir = file('libs/')
+    from zipTree('libs/RM-2.0.0.jar')
+    exclude 'org/slf4j/*'
+    exclude 'org/slf4j/**'
+}
+
 
 task ijm_jar(type: Jar) {
     archiveFileName = 'IJM-1.0-SNAPSHOT-customized2.jar'

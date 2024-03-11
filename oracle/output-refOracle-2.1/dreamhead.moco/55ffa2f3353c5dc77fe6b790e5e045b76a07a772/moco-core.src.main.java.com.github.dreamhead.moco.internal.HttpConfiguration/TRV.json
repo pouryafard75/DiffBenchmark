@@ -1,0 +1,133 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "protected HttpConfiguration(final Optional<Integer> port, final MocoMonitor monitor, final MocoConfig[] configs)",
+      "right" : "protected HttpConfiguration(final Optional<Integer> port, final MocoMonitor monitor, final MocoConfig[] configs)",
+      "info" : "MethodDeclaration[891-1050]:MethodDeclaration[1042-1201]"
+    }, {
+      "left" : "public HttpResponseSetting get(final RequestMatcher matcher)",
+      "right" : "public HttpResponseSetting get(final RequestMatcher matcher)",
+      "info" : "MethodDeclaration[1056-1243]:MethodDeclaration[1207-1394]"
+    }, {
+      "left" : "public HttpResponseSetting post(final RequestMatcher matcher)",
+      "right" : "public HttpResponseSetting post(final RequestMatcher matcher)",
+      "info" : "MethodDeclaration[1249-1438]:MethodDeclaration[1400-1589]"
+    }, {
+      "left" : "public HttpResponseSetting put(final RequestMatcher matcher)",
+      "right" : "public HttpResponseSetting put(final RequestMatcher matcher)",
+      "info" : "MethodDeclaration[1444-1631]:MethodDeclaration[1595-1782]"
+    }, {
+      "left" : "public HttpResponseSetting delete(final RequestMatcher matcher)",
+      "right" : "public HttpResponseSetting delete(final RequestMatcher matcher)",
+      "info" : "MethodDeclaration[1637-1830]:MethodDeclaration[1788-1981]"
+    }, {
+      "left" : "public HttpResponseSetting mount(final String dir, final MountTo target, final MountPredicate... predicates)",
+      "right" : "public HttpResponseSetting mount(final String dir, final MountTo target, final MountPredicate... predicates)",
+      "info" : "MethodDeclaration[1836-2253]:MethodDeclaration[1987-2404]"
+    }, {
+      "left" : "private HttpResponseSetting requestByHttpMethod(final HttpMethod method, final RequestMatcher matcher)",
+      "right" : "private HttpResponseSetting requestByHttpMethod(final HttpMethod method, final RequestMatcher matcher)",
+      "info" : "MethodDeclaration[2259-2434]:MethodDeclaration[2410-2585]"
+    }, {
+      "left" : "public HttpResponseSetting proxy(final ProxyConfig config)",
+      "right" : "public HttpResponseSetting proxy(final ProxyConfig config)",
+      "info" : "MethodDeclaration[2440-2626]:MethodDeclaration[2591-2777]"
+    }, {
+      "left" : "public HttpResponseSetting proxy(final ProxyConfig proxyConfig, final Failover failover)",
+      "right" : "public HttpResponseSetting proxy(final ProxyConfig proxyConfig, final Failover failover)",
+      "info" : "MethodDeclaration[2632-3002]:MethodDeclaration[2783-3153]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1004-1050]:Block[1155-1201]"
+    }, {
+      "left" : "super(port, monitor, configs);",
+      "right" : "super(port, monitor, configs);",
+      "info" : "SuperConstructorInvocation[1014-1044]:SuperConstructorInvocation[1165-1195]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1131-1243]:Block[1282-1394]"
+    }, {
+      "left" : "return requestByHttpMethod(HttpMethod.GET, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "right" : "return requestByHttpMethod(HttpMethod.GET, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "info" : "ReturnStatement[1141-1237]:ReturnStatement[1292-1388]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1325-1438]:Block[1476-1589]"
+    }, {
+      "left" : "return requestByHttpMethod(HttpMethod.POST, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "right" : "return requestByHttpMethod(HttpMethod.POST, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "info" : "ReturnStatement[1335-1432]:ReturnStatement[1486-1583]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1519-1631]:Block[1670-1782]"
+    }, {
+      "left" : "return requestByHttpMethod(HttpMethod.PUT, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "right" : "return requestByHttpMethod(HttpMethod.PUT, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "info" : "ReturnStatement[1529-1625]:ReturnStatement[1680-1776]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1715-1830]:Block[1866-1981]"
+    }, {
+      "left" : "return requestByHttpMethod(HttpMethod.DELETE, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "right" : "return requestByHttpMethod(HttpMethod.DELETE, checkNotNull(matcher, \"Matcher should not be null\"));",
+      "info" : "ReturnStatement[1725-1824]:ReturnStatement[1876-1975]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1959-2253]:Block[2110-2404]"
+    }, {
+      "left" : "File mountedDir = new File(checkNotNullOrEmpty(dir, \"Directory should not be null\"));",
+      "right" : "File mountedDir = new File(checkNotNullOrEmpty(dir, \"Directory should not be null\"));",
+      "info" : "VariableDeclarationStatement[1969-2054]:VariableDeclarationStatement[2120-2205]"
+    }, {
+      "left" : "checkNotNull(target, \"Target should not be null\");",
+      "right" : "checkNotNull(target, \"Target should not be null\");",
+      "info" : "ExpressionStatement[2063-2113]:ExpressionStatement[2214-2264]"
+    }, {
+      "left" : "return this.request(new MountMatcher(mountedDir, target, copyOf(predicates))).response(new MountHandler(mountedDir, target));",
+      "right" : "return this.request(new MountMatcher(mountedDir, target, copyOf(predicates))).response(new MountHandler(mountedDir, target));",
+      "info" : "ReturnStatement[2122-2247]:ReturnStatement[2273-2398]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2362-2434]:Block[2513-2585]"
+    }, {
+      "left" : "return request(and(by(method(method.name())), matcher));",
+      "right" : "return request(and(by(method(method.name())), matcher));",
+      "info" : "ReturnStatement[2372-2428]:ReturnStatement[2523-2579]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2513-2626]:Block[2664-2777]"
+    }, {
+      "left" : "return proxy(checkNotNull(config, \"Proxy config should not be null\"), Failover.DEFAULT_FAILOVER);",
+      "right" : "return proxy(checkNotNull(config, \"Proxy config should not be null\"), Failover.DEFAULT_FAILOVER);",
+      "info" : "ReturnStatement[2523-2620]:ReturnStatement[2674-2771]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2735-3002]:Block[2886-3153]"
+    }, {
+      "left" : "ProxyConfig config = checkNotNull(proxyConfig, \"Proxy config should not be null\");",
+      "right" : "ProxyConfig config = checkNotNull(proxyConfig, \"Proxy config should not be null\");",
+      "info" : "VariableDeclarationStatement[2745-2827]:VariableDeclarationStatement[2896-2978]"
+    }, {
+      "left" : "this.request(InternalApis.context(config.localBase())).response(Moco.proxy(config, checkNotNull(failover, \"Failover should not be null\")));",
+      "right" : "this.request(InternalApis.context(config.localBase())).response(Moco.proxy(config, checkNotNull(failover, \"Failover should not be null\")));",
+      "info" : "ExpressionStatement[2836-2975]:ExpressionStatement[2987-3126]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[2984-2996]:ReturnStatement[3135-3147]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

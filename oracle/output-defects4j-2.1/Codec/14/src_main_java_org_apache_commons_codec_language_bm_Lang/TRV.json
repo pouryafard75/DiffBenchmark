@@ -1,0 +1,349 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "LangRule",
+      "right" : "LangRule",
+      "info" : "TypeDeclaration[3551-4081]:TypeDeclaration[3551-4081]"
+    }, {
+      "left" : "private final boolean acceptOnMatch;",
+      "right" : "private final boolean acceptOnMatch;",
+      "info" : "FieldDeclaration[3597-3633]:FieldDeclaration[3597-3633]"
+    }, {
+      "left" : "private final Set<String> languages;",
+      "right" : "private final Set<String> languages;",
+      "info" : "FieldDeclaration[3642-3678]:FieldDeclaration[3642-3678]"
+    }, {
+      "left" : "private final Pattern pattern;",
+      "right" : "private final Pattern pattern;",
+      "info" : "FieldDeclaration[3687-3717]:FieldDeclaration[3687-3717]"
+    }, {
+      "left" : "private LangRule(final Pattern pattern, final Set<String> languages, final boolean acceptOnMatch)",
+      "right" : "private LangRule(final Pattern pattern, final Set<String> languages, final boolean acceptOnMatch)",
+      "info" : "MethodDeclaration[3727-3960]:MethodDeclaration[3727-3960]"
+    }, {
+      "left" : "public boolean matches(final String txt)",
+      "right" : "public boolean matches(final String txt)",
+      "info" : "MethodDeclaration[3970-4075]:MethodDeclaration[3970-4075]"
+    }, {
+      "left" : "private static final Map<NameType, Lang> Langs = new EnumMap<NameType, Lang>(NameType.class);",
+      "right" : "private static final Map<NameType, Lang> Langs = new EnumMap<NameType, Lang>(NameType.class);",
+      "info" : "FieldDeclaration[4087-4180]:FieldDeclaration[4087-4180]"
+    }, {
+      "left" : "public static Lang instance(final NameType nameType)",
+      "right" : "public static Lang instance(final NameType nameType)",
+      "info" : "MethodDeclaration[4460-4791]:MethodDeclaration[4491-4822]"
+    }, {
+      "left" : "public static Lang loadFromResource(final String languageRulesResourceName, final Languages languages)",
+      "right" : "public static Lang loadFromResource(final String languageRulesResourceName, final Languages languages)",
+      "info" : "MethodDeclaration[4797-7885]:MethodDeclaration[4828-7916]"
+    }, {
+      "left" : "private final Languages languages;",
+      "right" : "private final Languages languages;",
+      "info" : "FieldDeclaration[7891-7925]:FieldDeclaration[7922-7956]"
+    }, {
+      "left" : "private final List<LangRule> rules;",
+      "right" : "private final List<LangRule> rules;",
+      "info" : "FieldDeclaration[7930-7965]:FieldDeclaration[7961-7996]"
+    }, {
+      "left" : "private Lang(final List<LangRule> rules, final Languages languages)",
+      "right" : "private Lang(final List<LangRule> rules, final Languages languages)",
+      "info" : "MethodDeclaration[7971-8140]:MethodDeclaration[8002-8171]"
+    }, {
+      "left" : "public String guessLanguage(final String text)",
+      "right" : "public String guessLanguage(final String text)",
+      "info" : "MethodDeclaration[8146-8546]:MethodDeclaration[8177-8577]"
+    }, {
+      "left" : "public Languages.LanguageSet guessLanguages(final String input)",
+      "right" : "public Languages.LanguageSet guessLanguages(final String input)",
+      "info" : "MethodDeclaration[8552-9438]:MethodDeclaration[8583-9469]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3825-3960]:Block[3825-3960]"
+    }, {
+      "left" : "this.pattern = pattern;",
+      "right" : "this.pattern = pattern;",
+      "info" : "ExpressionStatement[3839-3862]:ExpressionStatement[3839-3862]"
+    }, {
+      "left" : "this.languages = languages;",
+      "right" : "this.languages = languages;",
+      "info" : "ExpressionStatement[3875-3902]:ExpressionStatement[3875-3902]"
+    }, {
+      "left" : "this.acceptOnMatch = acceptOnMatch;",
+      "right" : "this.acceptOnMatch = acceptOnMatch;",
+      "info" : "ExpressionStatement[3915-3950]:ExpressionStatement[3915-3950]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4011-4075]:Block[4011-4075]"
+    }, {
+      "left" : "return this.pattern.matcher(txt).find();",
+      "right" : "return this.pattern.matcher(txt).find();",
+      "info" : "ReturnStatement[4025-4065]:ReturnStatement[4025-4065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4748-4791]:Block[4779-4822]"
+    }, {
+      "left" : "return Langs.get(nameType);",
+      "right" : "return Langs.get(nameType);",
+      "info" : "ReturnStatement[4758-4785]:ReturnStatement[4789-4816]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5442-7885]:Block[5473-7916]"
+    }, {
+      "left" : "final List<LangRule> rules = new ArrayList<LangRule>();",
+      "right" : "final List<LangRule> rules = new ArrayList<LangRule>();",
+      "info" : "VariableDeclarationStatement[5452-5507]:VariableDeclarationStatement[5483-5538]"
+    }, {
+      "left" : "final InputStream lRulesIS = Lang.class.getClassLoader().getResourceAsStream(languageRulesResourceName);",
+      "right" : "final InputStream lRulesIS = Lang.class.getClassLoader().getResourceAsStream(languageRulesResourceName);",
+      "info" : "VariableDeclarationStatement[5516-5620]:VariableDeclarationStatement[5547-5651]"
+    }, {
+      "left" : "if (lRulesIS == null)",
+      "right" : "if (lRulesIS == null)",
+      "info" : "IfStatement[5630-5768]:IfStatement[5661-5799]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5652-5768]:Block[5683-5799]"
+    }, {
+      "left" : "throw new IllegalStateException(\"Unable to resolve required resource:\" + LANGUAGE_RULES_RN);",
+      "right" : "throw new IllegalStateException(\"Unable to resolve required resource:\" + LANGUAGE_RULES_RN);",
+      "info" : "ThrowStatement[5666-5758]:ThrowStatement[5697-5789]"
+    }, {
+      "left" : "final Scanner scanner = new Scanner(lRulesIS, ResourceConstants.ENCODING);",
+      "right" : "final Scanner scanner = new Scanner(lRulesIS, ResourceConstants.ENCODING);",
+      "info" : "VariableDeclarationStatement[5778-5852]:VariableDeclarationStatement[5809-5883]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[5861-7836]:TryStatement[5892-7867]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5865-7787]:Block[5896-7818]"
+    }, {
+      "left" : "boolean inExtendedComment = false;",
+      "right" : "boolean inExtendedComment = false;",
+      "info" : "VariableDeclarationStatement[5879-5913]:VariableDeclarationStatement[5910-5944]"
+    }, {
+      "left" : "while (scanner.hasNextLine())",
+      "right" : "while (scanner.hasNextLine())",
+      "info" : "WhileStatement[5926-7777]:WhileStatement[5957-7808]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5956-7777]:Block[5987-7808]"
+    }, {
+      "left" : "final String rawLine = scanner.nextLine();",
+      "right" : "final String rawLine = scanner.nextLine();",
+      "info" : "VariableDeclarationStatement[5974-6016]:VariableDeclarationStatement[6005-6047]"
+    }, {
+      "left" : "String line = rawLine;",
+      "right" : "String line = rawLine;",
+      "info" : "VariableDeclarationStatement[6033-6055]:VariableDeclarationStatement[6064-6086]"
+    }, {
+      "left" : "if (inExtendedComment)",
+      "right" : "if (inExtendedComment)",
+      "info" : "IfStatement[6072-7763]:IfStatement[6103-7794]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6095-6351]:Block[6126-6382]"
+    }, {
+      "left" : "if (line.endsWith(ResourceConstants.EXT_CMT_END))",
+      "right" : "if (line.endsWith(ResourceConstants.EXT_CMT_END))",
+      "info" : "IfStatement[6209-6333]:IfStatement[6240-6364]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6259-6333]:Block[6290-6364]"
+    }, {
+      "left" : "inExtendedComment = false;",
+      "right" : "inExtendedComment = false;",
+      "info" : "ExpressionStatement[6285-6311]:ExpressionStatement[6316-6342]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6357-7763]:Block[6388-7794]"
+    }, {
+      "left" : "if (line.startsWith(ResourceConstants.EXT_CMT_START))",
+      "right" : "if (line.startsWith(ResourceConstants.EXT_CMT_START))",
+      "info" : "IfStatement[6379-7745]:IfStatement[6410-7776]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6433-6506]:Block[6464-6537]"
+    }, {
+      "left" : "inExtendedComment = true;",
+      "right" : "inExtendedComment = true;",
+      "info" : "ExpressionStatement[6459-6484]:ExpressionStatement[6490-6515]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6512-7745]:Block[6543-7776]"
+    }, {
+      "left" : "final int cmtI = line.indexOf(ResourceConstants.CMT);",
+      "right" : "final int cmtI = line.indexOf(ResourceConstants.CMT);",
+      "info" : "VariableDeclarationStatement[6582-6635]:VariableDeclarationStatement[6613-6666]"
+    }, {
+      "left" : "if (cmtI >= 0)",
+      "right" : "if (cmtI >= 0)",
+      "info" : "IfStatement[6660-6762]:IfStatement[6691-6793]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6675-6762]:Block[6706-6793]"
+    }, {
+      "left" : "line = line.substring(0, cmtI);",
+      "right" : "line = line.substring(0, cmtI);",
+      "info" : "ExpressionStatement[6705-6736]:ExpressionStatement[6736-6767]"
+    }, {
+      "left" : "line = line.trim();",
+      "right" : "line = line.trim();",
+      "info" : "ExpressionStatement[6848-6867]:ExpressionStatement[6879-6898]"
+    }, {
+      "left" : "if (line.length() == 0)",
+      "right" : "if (line.length() == 0)",
+      "info" : "IfStatement[6893-7019]:IfStatement[6924-7050]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6917-7019]:Block[6948-7050]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[6947-6956]:ContinueStatement[6978-6987]"
+    }, {
+      "left" : "final String[] parts = line.split(\"\\\\s+\");",
+      "right" : "final String[] parts = line.split(\"\\\\s+\");",
+      "info" : "VariableDeclarationStatement[7084-7126]:VariableDeclarationStatement[7115-7157]"
+    }, {
+      "left" : "if (parts.length != 3)",
+      "right" : "if (parts.length != 3)",
+      "info" : "IfStatement[7152-7395]:IfStatement[7183-7426]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7175-7395]:Block[7206-7426]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Malformed line '\" + rawLine +\n                                    \"' in language resource '\" + languageRulesResourceName + \"'\");",
+      "right" : "throw new IllegalArgumentException(\"Malformed line '\" + rawLine +\n                                    \"' in language resource '\" + languageRulesResourceName + \"'\");",
+      "info" : "ThrowStatement[7205-7369]:ThrowStatement[7236-7400]"
+    }, {
+      "left" : "final Pattern pattern = Pattern.compile(parts[0]);",
+      "right" : "final Pattern pattern = Pattern.compile(parts[0]);",
+      "info" : "VariableDeclarationStatement[7421-7471]:VariableDeclarationStatement[7452-7502]"
+    }, {
+      "left" : "final String[] langs = parts[1].split(\"\\\\+\");",
+      "right" : "final String[] langs = parts[1].split(\"\\\\+\");",
+      "info" : "VariableDeclarationStatement[7496-7541]:VariableDeclarationStatement[7527-7572]"
+    }, {
+      "left" : "final boolean accept = parts[2].equals(\"true\");",
+      "right" : "final boolean accept = parts[2].equals(\"true\");",
+      "info" : "VariableDeclarationStatement[7566-7613]:VariableDeclarationStatement[7597-7644]"
+    }, {
+      "left" : "rules.add(new LangRule(pattern, new HashSet<String>(Arrays.asList(langs)), accept));",
+      "right" : "rules.add(new LangRule(pattern, new HashSet<String>(Arrays.asList(langs)), accept));",
+      "info" : "ExpressionStatement[7639-7723]:ExpressionStatement[7670-7754]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7796-7836]:Block[7827-7867]"
+    }, {
+      "left" : "scanner.close();",
+      "right" : "scanner.close();",
+      "info" : "ExpressionStatement[7810-7826]:ExpressionStatement[7841-7857]"
+    }, {
+      "left" : "return new Lang(rules, languages);",
+      "right" : "return new Lang(rules, languages);",
+      "info" : "ReturnStatement[7845-7879]:ReturnStatement[7876-7910]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8039-8140]:Block[8070-8171]"
+    }, {
+      "left" : "this.rules = Collections.unmodifiableList(rules);",
+      "right" : "this.rules = Collections.unmodifiableList(rules);",
+      "info" : "ExpressionStatement[8049-8098]:ExpressionStatement[8080-8129]"
+    }, {
+      "left" : "this.languages = languages;",
+      "right" : "this.languages = languages;",
+      "info" : "ExpressionStatement[8107-8134]:ExpressionStatement[8138-8165]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8413-8546]:Block[8444-8577]"
+    }, {
+      "left" : "final Languages.LanguageSet ls = guessLanguages(text);",
+      "right" : "final Languages.LanguageSet ls = guessLanguages(text);",
+      "info" : "VariableDeclarationStatement[8423-8477]:VariableDeclarationStatement[8454-8508]"
+    }, {
+      "left" : "return ls.isSingleton() ? ls.getAny() : Languages.ANY;",
+      "right" : "return ls.isSingleton() ? ls.getAny() : Languages.ANY;",
+      "info" : "ReturnStatement[8486-8540]:ReturnStatement[8517-8571]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8822-9438]:Block[8853-9469]"
+    }, {
+      "left" : "final String text = input.toLowerCase(Locale.ENGLISH);",
+      "right" : "final String text = input.toLowerCase(Locale.ENGLISH);",
+      "info" : "VariableDeclarationStatement[8832-8886]:VariableDeclarationStatement[8863-8917]"
+    }, {
+      "left" : "final Set<String> langs = new HashSet<String>(this.languages.getLanguages());",
+      "right" : "final Set<String> langs = new HashSet<String>(this.languages.getLanguages());",
+      "info" : "VariableDeclarationStatement[8896-8973]:VariableDeclarationStatement[8927-9004]"
+    }, {
+      "left" : "for (final LangRule rule : this.rules)",
+      "right" : "for (final LangRule rule : this.rules)",
+      "info" : "EnhancedForStatement[8982-9275]:EnhancedForStatement[9013-9306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9021-9275]:Block[9052-9306]"
+    }, {
+      "left" : "if (rule.matches(text))",
+      "right" : "if (rule.matches(text))",
+      "info" : "IfStatement[9035-9265]:IfStatement[9066-9296]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9059-9265]:Block[9090-9296]"
+    }, {
+      "left" : "if (rule.acceptOnMatch)",
+      "right" : "if (rule.acceptOnMatch)",
+      "info" : "IfStatement[9077-9251]:IfStatement[9108-9282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9101-9173]:Block[9132-9204]"
+    }, {
+      "left" : "langs.retainAll(rule.languages);",
+      "right" : "langs.retainAll(rule.languages);",
+      "info" : "ExpressionStatement[9123-9155]:ExpressionStatement[9154-9186]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9179-9251]:Block[9210-9282]"
+    }, {
+      "left" : "langs.removeAll(rule.languages);",
+      "right" : "langs.removeAll(rule.languages);",
+      "info" : "ExpressionStatement[9201-9233]:ExpressionStatement[9232-9264]"
+    }, {
+      "left" : "final Languages.LanguageSet ls = Languages.LanguageSet.from(langs);",
+      "right" : "final Languages.LanguageSet ls = Languages.LanguageSet.from(langs);",
+      "info" : "VariableDeclarationStatement[9285-9352]:VariableDeclarationStatement[9316-9383]"
+    }, {
+      "left" : "return ls.equals(Languages.NO_LANGUAGES) ? Languages.ANY_LANGUAGE : ls;",
+      "right" : "return ls.equals(Languages.NO_LANGUAGES) ? Languages.ANY_LANGUAGE : ls;",
+      "info" : "ReturnStatement[9361-9432]:ReturnStatement[9392-9463]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

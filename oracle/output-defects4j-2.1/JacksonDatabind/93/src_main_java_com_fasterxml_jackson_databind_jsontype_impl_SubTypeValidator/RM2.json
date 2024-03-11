@@ -1,0 +1,129 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "SubTypeValidator",
+      "right" : "SubTypeValidator",
+      "info" : "TypeDeclaration[305-4438]:TypeDeclaration[305-4479]"
+    }, {
+      "left" : "protected final static String PREFIX_STRING = \"org.springframework.\";",
+      "right" : "protected final static String PREFIX_STRING = \"org.springframework.\";",
+      "info" : "FieldDeclaration[573-642]:FieldDeclaration[573-642]"
+    }, {
+      "left" : "protected final static Set<String> DEFAULT_NO_DESER_CLASS_NAMES;",
+      "right" : "protected final static Set<String> DEFAULT_NO_DESER_CLASS_NAMES;",
+      "info" : "FieldDeclaration[647-867]:FieldDeclaration[647-867]"
+    }, {
+      "left" : "protected Set<String> _cfgIllegalClassNames = DEFAULT_NO_DESER_CLASS_NAMES;",
+      "right" : "protected Set<String> _cfgIllegalClassNames = DEFAULT_NO_DESER_CLASS_NAMES;",
+      "info" : "FieldDeclaration[2560-2721]:FieldDeclaration[2560-2721]"
+    }, {
+      "left" : "private final static SubTypeValidator instance = new SubTypeValidator();",
+      "right" : "private final static SubTypeValidator instance = new SubTypeValidator();",
+      "info" : "FieldDeclaration[2727-2799]:FieldDeclaration[2727-2799]"
+    }, {
+      "left" : "protected SubTypeValidator()",
+      "right" : "protected SubTypeValidator()",
+      "info" : "MethodDeclaration[2805-2837]:MethodDeclaration[2805-2837]"
+    }, {
+      "left" : "public static SubTypeValidator instance()",
+      "right" : "public static SubTypeValidator instance()",
+      "info" : "MethodDeclaration[2843-2905]:MethodDeclaration[2843-2905]"
+    }, {
+      "left" : "public void validateSubType(DeserializationContext ctxt, JavaType type) throws JsonMappingException",
+      "right" : "public void validateSubType(DeserializationContext ctxt, JavaType type) throws JsonMappingException",
+      "info" : "MethodDeclaration[2911-4436]:MethodDeclaration[2911-4477]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2834-2837]:Block[2834-2837]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2885-2905]:Block[2885-2905]"
+    }, {
+      "left" : "return instance;",
+      "right" : "return instance;",
+      "info" : "ReturnStatement[2887-2903]:ReturnStatement[2887-2903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3015-4436]:Block[3015-4477]"
+    }, {
+      "left" : "final Class<?> raw = type.getRawClass();",
+      "right" : "final Class<?> raw = type.getRawClass();",
+      "info" : "VariableDeclarationStatement[3152-3192]:VariableDeclarationStatement[3152-3192]"
+    }, {
+      "left" : "String full = raw.getName();",
+      "right" : "String full = raw.getName();",
+      "info" : "VariableDeclarationStatement[3201-3229]:VariableDeclarationStatement[3201-3229]"
+    }, {
+      "left" : "main_check:\n        do {\n            if (_cfgIllegalClassNames.contains(full)) {\n                break;\n            }\n\n            // 18-Dec-2017, tatu: As per [databind#1855], need bit more sophisticated handling\n            //    for some Spring framework types\n            // 05-Jan-2017, tatu: ... also, only applies to classes, not interfaces\n            if (full.startsWith(PREFIX_STRING)) {\n                for (Class<?> cls = raw; cls != Object.class; cls = cls.getSuperclass()) {\n                    String name = cls.getSimpleName();\n                    // looking for \"AbstractBeanFactoryPointcutAdvisor\" but no point to allow any is there?\n                    if (\"AbstractPointcutAdvisor\".equals(name)\n                            // ditto  for \"FileSystemXmlApplicationContext\": block all ApplicationContexts\n                            || \"AbstractApplicationContext\".equals(name)) {\n                        break main_check;\n                    }\n                }\n            }\n            return;\n        } while (false);",
+      "right" : "main_check:\n        do {\n            if (_cfgIllegalClassNames.contains(full)) {\n                break;\n            }\n\n            // 18-Dec-2017, tatu: As per [databind#1855], need bit more sophisticated handling\n            //    for some Spring framework types\n            // 05-Jan-2017, tatu: ... also, only applies to classes, not interfaces\n            if (!raw.isInterface() && full.startsWith(PREFIX_STRING)) {\n                for (Class<?> cls = raw; (cls != null) && (cls != Object.class); cls = cls.getSuperclass()) {\n                    String name = cls.getSimpleName();\n                    // looking for \"AbstractBeanFactoryPointcutAdvisor\" but no point to allow any is there?\n                    if (\"AbstractPointcutAdvisor\".equals(name)\n                            // ditto  for \"FileSystemXmlApplicationContext\": block all ApplicationContexts\n                            || \"AbstractApplicationContext\".equals(name)) {\n                        break main_check;\n                    }\n                }\n            }\n            return;\n        } while (false);",
+      "info" : "LabeledStatement[3239-4277]:LabeledStatement[3239-4318]"
+    }, {
+      "left" : "do{...}",
+      "right" : "do{...}",
+      "info" : "DoStatement[3259-4277]:DoStatement[3259-4318]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3262-4262]:Block[3262-4303]"
+    }, {
+      "left" : "if (_cfgIllegalClassNames.contains(full))",
+      "right" : "if (_cfgIllegalClassNames.contains(full))",
+      "info" : "IfStatement[3276-3356]:IfStatement[3276-3356]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3318-3356]:Block[3318-3356]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[3336-3342]:BreakStatement[3336-3342]"
+    }, {
+      "left" : "if (full.startsWith(PREFIX_STRING))",
+      "right" : "if (!raw.isInterface() && full.startsWith(PREFIX_STRING))",
+      "info" : "IfStatement[3599-4232]:IfStatement[3599-4273]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3635-4232]:Block[3657-4273]"
+    }, {
+      "left" : "for (Class<?> cls = raw; cls != Object.class; cls = cls.getSuperclass())",
+      "right" : "for (Class<?> cls = raw; (cls != null) && (cls != Object.class); cls = cls.getSuperclass())",
+      "info" : "ForStatement[3653-4218]:ForStatement[3675-4259]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3726-4218]:Block[3767-4259]"
+    }, {
+      "left" : "String name = cls.getSimpleName();",
+      "right" : "String name = cls.getSimpleName();",
+      "info" : "VariableDeclarationStatement[3748-3782]:VariableDeclarationStatement[3789-3823]"
+    }, {
+      "left" : "if (\"AbstractPointcutAdvisor\".equals(name)\n                            // ditto  for \"FileSystemXmlApplicationContext\": block all ApplicationContexts\n                            || \"AbstractApplicationContext\".equals(name))",
+      "right" : "if (\"AbstractPointcutAdvisor\".equals(name)\n                            // ditto  for \"FileSystemXmlApplicationContext\": block all ApplicationContexts\n                            || \"AbstractApplicationContext\".equals(name))",
+      "info" : "IfStatement[3911-4200]:IfStatement[3952-4241]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4135-4200]:Block[4176-4241]"
+    }, {
+      "left" : "break main_check;",
+      "right" : "break main_check;",
+      "info" : "BreakStatement[4161-4178]:BreakStatement[4202-4219]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4245-4252]:ReturnStatement[4286-4293]"
+    }, {
+      "left" : "throw JsonMappingException.from(ctxt,\n                String.format(\"Illegal type (%s) to deserialize: prevented for security reasons\", full));",
+      "right" : "throw JsonMappingException.from(ctxt,\n                String.format(\"Illegal type (%s) to deserialize: prevented for security reasons\", full));",
+      "info" : "ThrowStatement[4287-4430]:ThrowStatement[4328-4471]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

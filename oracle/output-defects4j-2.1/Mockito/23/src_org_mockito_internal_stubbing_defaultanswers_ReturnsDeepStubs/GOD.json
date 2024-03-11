@@ -1,0 +1,193 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ReturnsDeepStubs",
+      "right" : "ReturnsDeepStubs",
+      "info" : "TypeDeclaration[772-5299]:TypeDeclaration[772-5798]"
+    }, {
+      "left" : "private static final long serialVersionUID = -7105341425736035847L;",
+      "right" : "private static final long serialVersionUID = -7105341425736035847L;",
+      "info" : "FieldDeclaration[1554-1621]:FieldDeclaration[1554-1621]"
+    }, {
+      "left" : "private MockitoCore mockitoCore = new MockitoCore();",
+      "right" : "private transient MockitoCore mockitoCore;",
+      "info" : "FieldDeclaration[1629-1681]:FieldDeclaration[1629-1671]"
+    }, {
+      "left" : "private ReturnsEmptyValues delegate = new ReturnsEmptyValues();",
+      "right" : "private transient ReturnsEmptyValues delegate;",
+      "info" : "FieldDeclaration[1687-1750]:FieldDeclaration[1677-1723]"
+    }, {
+      "left" : "public Object answer(InvocationOnMock invocation) throws Throwable",
+      "right" : "public Object answer(InvocationOnMock invocation) throws Throwable",
+      "info" : "MethodDeclaration[1758-2257]:MethodDeclaration[1731-2313]"
+    }, {
+      "left" : "private Object getMock(InvocationOnMock invocation, GenericMetadataSupport returnTypeGenericMetadata) throws Throwable",
+      "right" : "private Object getMock(InvocationOnMock invocation, GenericMetadataSupport returnTypeGenericMetadata) throws Throwable",
+      "info" : "MethodDeclaration[2269-3043]:MethodDeclaration[2655-3429]"
+    }, {
+      "left" : "private Object createNewDeepStubMock(GenericMetadataSupport returnTypeGenericMetadata)",
+      "right" : "private Object createNewDeepStubMock(GenericMetadataSupport returnTypeGenericMetadata)",
+      "info" : "MethodDeclaration[3051-3837]:MethodDeclaration[3437-4223]"
+    }, {
+      "left" : "private MockSettings withSettingsUsing(GenericMetadataSupport returnTypeGenericMetadata)",
+      "right" : "private MockSettings withSettingsUsing(GenericMetadataSupport returnTypeGenericMetadata)",
+      "info" : "MethodDeclaration[3845-4307]:MethodDeclaration[4231-4720]"
+    }, {
+      "left" : "private ReturnsDeepStubs returnsDeepStubsAnswerUsing(final GenericMetadataSupport returnTypeGenericMetadata)",
+      "right" : "private ReturnsDeepStubs returnsDeepStubsAnswerUsing(final GenericMetadataSupport returnTypeGenericMetadata)",
+      "info" : "MethodDeclaration[4315-4659]:MethodDeclaration[4728-5072]"
+    }, {
+      "left" : "protected GenericMetadataSupport actualParameterizedType(Object mock)",
+      "right" : "protected GenericMetadataSupport actualParameterizedType(Object mock)",
+      "info" : "MethodDeclaration[4480-4640]:MethodDeclaration[4893-5053]"
+    }, {
+      "left" : "private Object recordDeepStubMock(final Object mock, InvocationContainerImpl container) throws Throwable",
+      "right" : "private Object recordDeepStubMock(final Object mock, InvocationContainerImpl container) throws Throwable",
+      "info" : "MethodDeclaration[4667-5005]:MethodDeclaration[5080-5422]"
+    }, {
+      "left" : "public Object answer(InvocationOnMock invocation) throws Throwable",
+      "right" : "public Object answer(InvocationOnMock invocation) throws Throwable",
+      "info" : "MethodDeclaration[4841-4954]:MethodDeclaration[5258-5371]"
+    }, {
+      "left" : "protected GenericMetadataSupport actualParameterizedType(Object mock)",
+      "right" : "protected GenericMetadataSupport actualParameterizedType(Object mock)",
+      "info" : "MethodDeclaration[5023-5296]:MethodDeclaration[5522-5795]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1825-2257]:Block[1798-2313]"
+    }, {
+      "left" : "GenericMetadataSupport returnTypeGenericMetadata =\r\n                actualParameterizedType(invocation.getMock()).resolveGenericReturnType(invocation.getMethod());",
+      "right" : "GenericMetadataSupport returnTypeGenericMetadata =\r\n                actualParameterizedType(invocation.getMock()).resolveGenericReturnType(invocation.getMethod());",
+      "info" : "VariableDeclarationStatement[1836-1999]:VariableDeclarationStatement[1809-1972]"
+    }, {
+      "left" : "Class<?> rawType = returnTypeGenericMetadata.rawType();",
+      "right" : "Class<?> rawType = returnTypeGenericMetadata.rawType();",
+      "info" : "VariableDeclarationStatement[2011-2066]:VariableDeclarationStatement[1984-2039]"
+    }, {
+      "left" : "if (!mockitoCore.isTypeMockable(rawType))",
+      "right" : "if (!mockitoCore.isTypeMockable(rawType))",
+      "info" : "IfStatement[2076-2184]:IfStatement[2132-2240]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2118-2184]:Block[2174-2240]"
+    }, {
+      "left" : "return delegate.returnValueFor(rawType);",
+      "right" : "return delegate.returnValueFor(rawType);",
+      "info" : "ReturnStatement[2133-2173]:ReturnStatement[2189-2229]"
+    }, {
+      "left" : "return getMock(invocation, returnTypeGenericMetadata);",
+      "right" : "return getMock(invocation, returnTypeGenericMetadata);",
+      "info" : "ReturnStatement[2196-2250]:ReturnStatement[2252-2306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2388-3043]:Block[2774-3429]"
+    }, {
+      "left" : "InternalMockHandler<Object> handler = new MockUtil().getMockHandler(invocation.getMock());",
+      "right" : "InternalMockHandler<Object> handler = new MockUtil().getMockHandler(invocation.getMock());",
+      "info" : "VariableDeclarationStatement[2396-2486]:VariableDeclarationStatement[2782-2872]"
+    }, {
+      "left" : "InvocationContainerImpl container = (InvocationContainerImpl) handler.getInvocationContainer();",
+      "right" : "InvocationContainerImpl container = (InvocationContainerImpl) handler.getInvocationContainer();",
+      "info" : "VariableDeclarationStatement[2493-2588]:VariableDeclarationStatement[2879-2974]"
+    }, {
+      "left" : "for (StubbedInvocationMatcher stubbedInvocationMatcher : container.getStubbedInvocations())",
+      "right" : "for (StubbedInvocationMatcher stubbedInvocationMatcher : container.getStubbedInvocations())",
+      "info" : "EnhancedForStatement[2648-2915]:EnhancedForStatement[3034-3301]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2740-2915]:Block[3126-3301]"
+    }, {
+      "left" : "if(container.getInvocationForStubbing().matches(stubbedInvocationMatcher.getInvocation()))",
+      "right" : "if(container.getInvocationForStubbing().matches(stubbedInvocationMatcher.getInvocation()))",
+      "info" : "IfStatement[2749-2910]:IfStatement[3135-3296]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2840-2910]:Block[3226-3296]"
+    }, {
+      "left" : "return stubbedInvocationMatcher.answer(invocation);",
+      "right" : "return stubbedInvocationMatcher.answer(invocation);",
+      "info" : "ReturnStatement[2850-2901]:ReturnStatement[3236-3287]"
+    }, {
+      "left" : "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container);",
+      "right" : "return recordDeepStubMock(createNewDeepStubMock(returnTypeGenericMetadata), container);",
+      "info" : "ReturnStatement[2949-3036]:ReturnStatement[3335-3422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3667-3837]:Block[4053-4223]"
+    }, {
+      "left" : "return mockitoCore.mock(\r\n                returnTypeGenericMetadata.rawType(),\r\n                withSettingsUsing(returnTypeGenericMetadata)\r\n        );",
+      "right" : "return mockitoCore.mock(\r\n                returnTypeGenericMetadata.rawType(),\r\n                withSettingsUsing(returnTypeGenericMetadata)\r\n        );",
+      "info" : "ReturnStatement[3678-3830]:ReturnStatement[4064-4216]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3934-4307]:Block[4320-4720]"
+    }, {
+      "left" : "MockSettings mockSettings =\r\n                returnTypeGenericMetadata.rawExtraInterfaces().length > 0 ?\r\n                withSettings().extraInterfaces(returnTypeGenericMetadata.rawExtraInterfaces())\r\n                : withSettings();",
+      "right" : "MockSettings mockSettings =\r\n                returnTypeGenericMetadata.rawExtraInterfaces().length > 0 ?\r\n                withSettings().extraInterfaces(returnTypeGenericMetadata.rawExtraInterfaces())\r\n                : withSettings();",
+      "info" : "VariableDeclarationStatement[3945-4180]:VariableDeclarationStatement[4331-4566]"
+    }, {
+      "left" : "return mockSettings\r\n                .defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata));",
+      "right" : "return mockSettings\r\n\t\t        .serializable()\r\n                .defaultAnswer(returnsDeepStubsAnswerUsing(returnTypeGenericMetadata));",
+      "info" : "ReturnStatement[4192-4300]:ReturnStatement[4578-4713]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4424-4659]:Block[4837-5072]"
+    }, {
+      "left" : "return new ReturnsDeepStubs() {\r\n            @Override\r\n            protected GenericMetadataSupport actualParameterizedType(Object mock) {\r\n                return returnTypeGenericMetadata;\r\n            }\r\n        };",
+      "right" : "return new ReturnsDeepStubs() {\r\n            @Override\r\n            protected GenericMetadataSupport actualParameterizedType(Object mock) {\r\n                return returnTypeGenericMetadata;\r\n            }\r\n        };",
+      "info" : "ReturnStatement[4435-4652]:ReturnStatement[4848-5065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4573-4640]:Block[4986-5053]"
+    }, {
+      "left" : "return returnTypeGenericMetadata;",
+      "right" : "return returnTypeGenericMetadata;",
+      "info" : "ReturnStatement[4592-4625]:ReturnStatement[5005-5038]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4772-5005]:Block[5185-5422]"
+    }, {
+      "left" : "container.addAnswer(new Answer<Object>() {\r\n            public Object answer(InvocationOnMock invocation) throws Throwable {\r\n                return mock;\r\n            }\r\n        }, false);",
+      "right" : "container.addAnswer(new SerializableAnswer() {\r\n            public Object answer(InvocationOnMock invocation) throws Throwable {\r\n                return mock;\r\n            }\r\n        }, false);",
+      "info" : "ExpressionStatement[4785-4974]:ExpressionStatement[5198-5391]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4908-4954]:Block[5325-5371]"
+    }, {
+      "left" : "return mock;",
+      "right" : "return mock;",
+      "info" : "ReturnStatement[4927-4939]:ReturnStatement[5344-5356]"
+    }, {
+      "left" : "return mock;",
+      "right" : "return mock;",
+      "info" : "ReturnStatement[4986-4998]:ReturnStatement[5403-5415]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5093-5296]:Block[5592-5795]"
+    }, {
+      "left" : "CreationSettings mockSettings = (CreationSettings) new MockUtil().getMockHandler(mock).getMockSettings();",
+      "right" : "CreationSettings mockSettings = (CreationSettings) new MockUtil().getMockHandler(mock).getMockSettings();",
+      "info" : "VariableDeclarationStatement[5104-5209]:VariableDeclarationStatement[5603-5708]"
+    }, {
+      "left" : "return GenericMetadataSupport.inferFrom(mockSettings.getTypeToMock());",
+      "right" : "return GenericMetadataSupport.inferFrom(mockSettings.getTypeToMock());",
+      "info" : "ReturnStatement[5219-5289]:ReturnStatement[5718-5788]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

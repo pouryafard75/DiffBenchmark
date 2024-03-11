@@ -1,0 +1,709 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "static final char replacementChar = '\\uFFFD';",
+      "right" : "static final char replacementChar = '\\uFFFD';",
+      "info" : "FieldDeclaration[218-263]:FieldDeclaration[218-263]"
+    }, {
+      "left" : "private CharacterReader reader;",
+      "right" : "private CharacterReader reader;",
+      "info" : "FieldDeclaration[296-327]:FieldDeclaration[296-327]"
+    }, {
+      "left" : "private ParseErrorList errors;",
+      "right" : "private ParseErrorList errors;",
+      "info" : "FieldDeclaration[346-376]:FieldDeclaration[346-376]"
+    }, {
+      "left" : "private TokeniserState state = TokeniserState.Data;",
+      "right" : "private TokeniserState state = TokeniserState.Data;",
+      "info" : "FieldDeclaration[415-466]:FieldDeclaration[415-466]"
+    }, {
+      "left" : "private Token emitPending;",
+      "right" : "private Token emitPending;",
+      "info" : "FieldDeclaration[501-527]:FieldDeclaration[501-527]"
+    }, {
+      "left" : "private boolean isEmitPending = false;",
+      "right" : "private boolean isEmitPending = false;",
+      "info" : "FieldDeclaration[579-617]:FieldDeclaration[579-617]"
+    }, {
+      "left" : "private StringBuilder charBuffer = new StringBuilder();",
+      "right" : "private StringBuilder charBuffer = new StringBuilder();",
+      "info" : "FieldDeclaration[622-677]:FieldDeclaration[622-677]"
+    }, {
+      "left" : "StringBuilder dataBuffer;",
+      "right" : "StringBuilder dataBuffer;",
+      "info" : "FieldDeclaration[727-752]:FieldDeclaration[727-752]"
+    }, {
+      "left" : "Token.Tag tagPending;",
+      "right" : "Token.Tag tagPending;",
+      "info" : "FieldDeclaration[796-817]:FieldDeclaration[796-817]"
+    }, {
+      "left" : "Token.Doctype doctypePending;",
+      "right" : "Token.Doctype doctypePending;",
+      "info" : "FieldDeclaration[848-877]:FieldDeclaration[848-877]"
+    }, {
+      "left" : "Token.Comment commentPending;",
+      "right" : "Token.Comment commentPending;",
+      "info" : "FieldDeclaration[905-934]:FieldDeclaration[905-934]"
+    }, {
+      "left" : "private Token.StartTag lastStartTag;",
+      "right" : "private Token.StartTag lastStartTag;",
+      "info" : "FieldDeclaration[962-998]:FieldDeclaration[962-998]"
+    }, {
+      "left" : "private boolean selfClosingFlagAcknowledged = true;",
+      "right" : "private boolean selfClosingFlagAcknowledged = true;",
+      "info" : "FieldDeclaration[1062-1113]:FieldDeclaration[1062-1113]"
+    }, {
+      "left" : "Tokeniser(CharacterReader reader, ParseErrorList errors)",
+      "right" : "Tokeniser(CharacterReader reader, ParseErrorList errors)",
+      "info" : "MethodDeclaration[1119-1243]:MethodDeclaration[1119-1243]"
+    }, {
+      "left" : "Token read()",
+      "right" : "Token read()",
+      "info" : "MethodDeclaration[1249-1903]:MethodDeclaration[1249-1903]"
+    }, {
+      "left" : "void emit(Token token)",
+      "right" : "void emit(Token token)",
+      "info" : "MethodDeclaration[1909-2561]:MethodDeclaration[1909-2561]"
+    }, {
+      "left" : "void emit(String str)",
+      "right" : "void emit(String str)",
+      "info" : "MethodDeclaration[2567-2800]:MethodDeclaration[2567-2800]"
+    }, {
+      "left" : "void emit(char c)",
+      "right" : "void emit(char c)",
+      "info" : "MethodDeclaration[2806-2861]:MethodDeclaration[2806-2861]"
+    }, {
+      "left" : "TokeniserState getState()",
+      "right" : "TokeniserState getState()",
+      "info" : "MethodDeclaration[2867-2922]:MethodDeclaration[2867-2922]"
+    }, {
+      "left" : "void transition(TokeniserState state)",
+      "right" : "void transition(TokeniserState state)",
+      "info" : "MethodDeclaration[2928-3001]:MethodDeclaration[2928-3001]"
+    }, {
+      "left" : "void advanceTransition(TokeniserState state)",
+      "right" : "void advanceTransition(TokeniserState state)",
+      "info" : "MethodDeclaration[3007-3113]:MethodDeclaration[3007-3113]"
+    }, {
+      "left" : "void acknowledgeSelfClosingFlag()",
+      "right" : "void acknowledgeSelfClosingFlag()",
+      "info" : "MethodDeclaration[3119-3204]:MethodDeclaration[3119-3204]"
+    }, {
+      "left" : "Token.Tag createTagPending(boolean start)",
+      "right" : "Token.Tag createTagPending(boolean start)",
+      "info" : "MethodDeclaration[6258-6406]:MethodDeclaration[6267-6415]"
+    }, {
+      "left" : "void emitTagPending()",
+      "right" : "void emitTagPending()",
+      "info" : "MethodDeclaration[6412-6501]:MethodDeclaration[6421-6510]"
+    }, {
+      "left" : "void createCommentPending()",
+      "right" : "void createCommentPending()",
+      "info" : "MethodDeclaration[6507-6588]:MethodDeclaration[6516-6597]"
+    }, {
+      "left" : "void emitCommentPending()",
+      "right" : "void emitCommentPending()",
+      "info" : "MethodDeclaration[6594-6657]:MethodDeclaration[6603-6666]"
+    }, {
+      "left" : "void createDoctypePending()",
+      "right" : "void createDoctypePending()",
+      "info" : "MethodDeclaration[6663-6744]:MethodDeclaration[6672-6753]"
+    }, {
+      "left" : "void emitDoctypePending()",
+      "right" : "void emitDoctypePending()",
+      "info" : "MethodDeclaration[6750-6813]:MethodDeclaration[6759-6822]"
+    }, {
+      "left" : "void createTempBuffer()",
+      "right" : "void createTempBuffer()",
+      "info" : "MethodDeclaration[6819-6892]:MethodDeclaration[6828-6901]"
+    }, {
+      "left" : "boolean isAppropriateEndTagToken()",
+      "right" : "boolean isAppropriateEndTagToken()",
+      "info" : "MethodDeclaration[6898-7004]:MethodDeclaration[6907-7013]"
+    }, {
+      "left" : "String appropriateEndTagName()",
+      "right" : "String appropriateEndTagName()",
+      "info" : "MethodDeclaration[7010-7085]:MethodDeclaration[7019-7094]"
+    }, {
+      "left" : "void error(TokeniserState state)",
+      "right" : "void error(TokeniserState state)",
+      "info" : "MethodDeclaration[7091-7293]:MethodDeclaration[7100-7302]"
+    }, {
+      "left" : "void eofError(TokeniserState state)",
+      "right" : "void eofError(TokeniserState state)",
+      "info" : "MethodDeclaration[7299-7499]:MethodDeclaration[7308-7508]"
+    }, {
+      "left" : "private void characterReferenceError(String message)",
+      "right" : "private void characterReferenceError(String message)",
+      "info" : "MethodDeclaration[7505-7697]:MethodDeclaration[7514-7706]"
+    }, {
+      "left" : "private void error(String errorMsg)",
+      "right" : "private void error(String errorMsg)",
+      "info" : "MethodDeclaration[7703-7844]:MethodDeclaration[7712-7853]"
+    }, {
+      "left" : "boolean currentNodeInHtmlNS()",
+      "right" : "boolean currentNodeInHtmlNS()",
+      "info" : "MethodDeclaration[7850-8086]:MethodDeclaration[7859-8095]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "Tokeniser",
+      "right" : "Tokeniser",
+      "info" : "SimpleName[1119-1128]:SimpleName[1119-1128]"
+    }, {
+      "left" : "CharacterReader reader",
+      "right" : "CharacterReader reader",
+      "info" : "SingleVariableDeclaration[1129-1151]:SingleVariableDeclaration[1129-1151]"
+    }, {
+      "left" : "ParseErrorList errors",
+      "right" : "ParseErrorList errors",
+      "info" : "SingleVariableDeclaration[1153-1174]:SingleVariableDeclaration[1153-1174]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1176-1243]:Block[1176-1243]"
+    }, {
+      "left" : "this.reader = reader;",
+      "right" : "this.reader = reader;",
+      "info" : "ExpressionStatement[1186-1207]:ExpressionStatement[1186-1207]"
+    }, {
+      "left" : "this.errors = errors;",
+      "right" : "this.errors = errors;",
+      "info" : "ExpressionStatement[1216-1237]:ExpressionStatement[1216-1237]"
+    }, {
+      "left" : "Token",
+      "right" : "Token",
+      "info" : "SimpleType[1249-1254]:SimpleType[1249-1254]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[1255-1259]:SimpleName[1255-1259]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1262-1903]:Block[1262-1903]"
+    }, {
+      "left" : "if (!selfClosingFlagAcknowledged)",
+      "right" : "if (!selfClosingFlagAcknowledged)",
+      "info" : "IfStatement[1272-1422]:IfStatement[1272-1422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1306-1422]:Block[1306-1422]"
+    }, {
+      "left" : "error(\"Self closing flag not acknowledged\");",
+      "right" : "error(\"Self closing flag not acknowledged\");",
+      "info" : "ExpressionStatement[1320-1364]:ExpressionStatement[1320-1364]"
+    }, {
+      "left" : "selfClosingFlagAcknowledged = true;",
+      "right" : "selfClosingFlagAcknowledged = true;",
+      "info" : "ExpressionStatement[1377-1412]:ExpressionStatement[1377-1412]"
+    }, {
+      "left" : "while (!isEmitPending)\n            state.read(this, reader);",
+      "right" : "while (!isEmitPending)\n            state.read(this, reader);",
+      "info" : "WhileStatement[1432-1492]:WhileStatement[1432-1492]"
+    }, {
+      "left" : "state.read(this, reader);",
+      "right" : "state.read(this, reader);",
+      "info" : "ExpressionStatement[1467-1492]:ExpressionStatement[1467-1492]"
+    }, {
+      "left" : "if (charBuffer.length() > 0)",
+      "right" : "if (charBuffer.length() > 0)",
+      "info" : "IfStatement[1625-1897]:IfStatement[1625-1897]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1654-1813]:Block[1654-1813]"
+    }, {
+      "left" : "String str = charBuffer.toString();",
+      "right" : "String str = charBuffer.toString();",
+      "info" : "VariableDeclarationStatement[1668-1703]:VariableDeclarationStatement[1668-1703]"
+    }, {
+      "left" : "charBuffer.delete(0, charBuffer.length());",
+      "right" : "charBuffer.delete(0, charBuffer.length());",
+      "info" : "ExpressionStatement[1716-1758]:ExpressionStatement[1716-1758]"
+    }, {
+      "left" : "return new Token.Character(str);",
+      "right" : "return new Token.Character(str);",
+      "info" : "ReturnStatement[1771-1803]:ReturnStatement[1771-1803]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1819-1897]:Block[1819-1897]"
+    }, {
+      "left" : "isEmitPending = false;",
+      "right" : "isEmitPending = false;",
+      "info" : "ExpressionStatement[1833-1855]:ExpressionStatement[1833-1855]"
+    }, {
+      "left" : "return emitPending;",
+      "right" : "return emitPending;",
+      "info" : "ReturnStatement[1868-1887]:ReturnStatement[1868-1887]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[1909-1913]:PrimitiveType[1909-1913]"
+    }, {
+      "left" : "emit",
+      "right" : "emit",
+      "info" : "SimpleName[1914-1918]:SimpleName[1914-1918]"
+    }, {
+      "left" : "Token token",
+      "right" : "Token token",
+      "info" : "SingleVariableDeclaration[1919-1930]:SingleVariableDeclaration[1919-1930]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1932-2561]:Block[1932-2561]"
+    }, {
+      "left" : "Validate.isFalse(isEmitPending, \"There is an unread token pending!\");",
+      "right" : "Validate.isFalse(isEmitPending, \"There is an unread token pending!\");",
+      "info" : "ExpressionStatement[1942-2011]:ExpressionStatement[1942-2011]"
+    }, {
+      "left" : "emitPending = token;",
+      "right" : "emitPending = token;",
+      "info" : "ExpressionStatement[2021-2041]:ExpressionStatement[2021-2041]"
+    }, {
+      "left" : "isEmitPending = true;",
+      "right" : "isEmitPending = true;",
+      "info" : "ExpressionStatement[2050-2071]:ExpressionStatement[2050-2071]"
+    }, {
+      "left" : "if (token.type == Token.TokenType.StartTag)",
+      "right" : "if (token.type == Token.TokenType.StartTag)",
+      "info" : "IfStatement[2081-2555]:IfStatement[2081-2555]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2125-2326]:Block[2125-2326]"
+    }, {
+      "left" : "Token.StartTag startTag = (Token.StartTag) token;",
+      "right" : "Token.StartTag startTag = (Token.StartTag) token;",
+      "info" : "VariableDeclarationStatement[2139-2188]:VariableDeclarationStatement[2139-2188]"
+    }, {
+      "left" : "lastStartTag = startTag;",
+      "right" : "lastStartTag = startTag;",
+      "info" : "ExpressionStatement[2201-2225]:ExpressionStatement[2201-2225]"
+    }, {
+      "left" : "if (startTag.selfClosing)",
+      "right" : "if (startTag.selfClosing)",
+      "info" : "IfStatement[2238-2316]:IfStatement[2238-2316]"
+    }, {
+      "left" : "selfClosingFlagAcknowledged = false;",
+      "right" : "selfClosingFlagAcknowledged = false;",
+      "info" : "ExpressionStatement[2280-2316]:ExpressionStatement[2280-2316]"
+    }, {
+      "left" : "if (token.type == Token.TokenType.EndTag)",
+      "right" : "if (token.type == Token.TokenType.EndTag)",
+      "info" : "IfStatement[2332-2555]:IfStatement[2332-2555]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2374-2555]:Block[2374-2555]"
+    }, {
+      "left" : "Token.EndTag endTag = (Token.EndTag) token;",
+      "right" : "Token.EndTag endTag = (Token.EndTag) token;",
+      "info" : "VariableDeclarationStatement[2388-2431]:VariableDeclarationStatement[2388-2431]"
+    }, {
+      "left" : "if (endTag.attributes.size() > 0)",
+      "right" : "if (endTag.attributes.size() > 0)",
+      "info" : "IfStatement[2444-2545]:IfStatement[2444-2545]"
+    }, {
+      "left" : "error(\"Attributes incorrectly present on end tag\");",
+      "right" : "error(\"Attributes incorrectly present on end tag\");",
+      "info" : "ExpressionStatement[2494-2545]:ExpressionStatement[2494-2545]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2567-2571]:PrimitiveType[2567-2571]"
+    }, {
+      "left" : "emit",
+      "right" : "emit",
+      "info" : "SimpleName[2572-2576]:SimpleName[2572-2576]"
+    }, {
+      "left" : "String str",
+      "right" : "String str",
+      "info" : "SingleVariableDeclaration[2577-2587]:SingleVariableDeclaration[2577-2587]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2589-2800]:Block[2589-2800]"
+    }, {
+      "left" : "charBuffer.append(str);",
+      "right" : "charBuffer.append(str);",
+      "info" : "ExpressionStatement[2771-2794]:ExpressionStatement[2771-2794]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2806-2810]:PrimitiveType[2806-2810]"
+    }, {
+      "left" : "emit",
+      "right" : "emit",
+      "info" : "SimpleName[2811-2815]:SimpleName[2811-2815]"
+    }, {
+      "left" : "char c",
+      "right" : "char c",
+      "info" : "SingleVariableDeclaration[2816-2822]:SingleVariableDeclaration[2816-2822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2824-2861]:Block[2824-2861]"
+    }, {
+      "left" : "charBuffer.append(c);",
+      "right" : "charBuffer.append(c);",
+      "info" : "ExpressionStatement[2834-2855]:ExpressionStatement[2834-2855]"
+    }, {
+      "left" : "TokeniserState",
+      "right" : "TokeniserState",
+      "info" : "SimpleType[2867-2881]:SimpleType[2867-2881]"
+    }, {
+      "left" : "getState",
+      "right" : "getState",
+      "info" : "SimpleName[2882-2890]:SimpleName[2882-2890]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2893-2922]:Block[2893-2922]"
+    }, {
+      "left" : "return state;",
+      "right" : "return state;",
+      "info" : "ReturnStatement[2903-2916]:ReturnStatement[2903-2916]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2928-2932]:PrimitiveType[2928-2932]"
+    }, {
+      "left" : "transition",
+      "right" : "transition",
+      "info" : "SimpleName[2933-2943]:SimpleName[2933-2943]"
+    }, {
+      "left" : "TokeniserState state",
+      "right" : "TokeniserState state",
+      "info" : "SingleVariableDeclaration[2944-2964]:SingleVariableDeclaration[2944-2964]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2966-3001]:Block[2966-3001]"
+    }, {
+      "left" : "this.state = state;",
+      "right" : "this.state = state;",
+      "info" : "ExpressionStatement[2976-2995]:ExpressionStatement[2976-2995]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3007-3011]:PrimitiveType[3007-3011]"
+    }, {
+      "left" : "advanceTransition",
+      "right" : "advanceTransition",
+      "info" : "SimpleName[3012-3029]:SimpleName[3012-3029]"
+    }, {
+      "left" : "TokeniserState state",
+      "right" : "TokeniserState state",
+      "info" : "SingleVariableDeclaration[3030-3050]:SingleVariableDeclaration[3030-3050]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3052-3113]:Block[3052-3113]"
+    }, {
+      "left" : "reader.advance();",
+      "right" : "reader.advance();",
+      "info" : "ExpressionStatement[3062-3079]:ExpressionStatement[3062-3079]"
+    }, {
+      "left" : "this.state = state;",
+      "right" : "this.state = state;",
+      "info" : "ExpressionStatement[3088-3107]:ExpressionStatement[3088-3107]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3119-3123]:PrimitiveType[3119-3123]"
+    }, {
+      "left" : "acknowledgeSelfClosingFlag",
+      "right" : "acknowledgeSelfClosingFlag",
+      "info" : "SimpleName[3124-3150]:SimpleName[3124-3150]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3153-3204]:Block[3153-3204]"
+    }, {
+      "left" : "selfClosingFlagAcknowledged = true;",
+      "right" : "selfClosingFlagAcknowledged = true;",
+      "info" : "ExpressionStatement[3163-3198]:ExpressionStatement[3163-3198]"
+    }, {
+      "left" : "Token.Tag",
+      "right" : "Token.Tag",
+      "info" : "SimpleType[6258-6267]:SimpleType[6267-6276]"
+    }, {
+      "left" : "createTagPending",
+      "right" : "createTagPending",
+      "info" : "SimpleName[6268-6284]:SimpleName[6277-6293]"
+    }, {
+      "left" : "boolean start",
+      "right" : "boolean start",
+      "info" : "SingleVariableDeclaration[6285-6298]:SingleVariableDeclaration[6294-6307]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6300-6406]:Block[6309-6415]"
+    }, {
+      "left" : "tagPending = start ? new Token.StartTag() : new Token.EndTag();",
+      "right" : "tagPending = start ? new Token.StartTag() : new Token.EndTag();",
+      "info" : "ExpressionStatement[6310-6373]:ExpressionStatement[6319-6382]"
+    }, {
+      "left" : "return tagPending;",
+      "right" : "return tagPending;",
+      "info" : "ReturnStatement[6382-6400]:ReturnStatement[6391-6409]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6412-6416]:PrimitiveType[6421-6425]"
+    }, {
+      "left" : "emitTagPending",
+      "right" : "emitTagPending",
+      "info" : "SimpleName[6417-6431]:SimpleName[6426-6440]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6434-6501]:Block[6443-6510]"
+    }, {
+      "left" : "tagPending.finaliseTag();",
+      "right" : "tagPending.finaliseTag();",
+      "info" : "ExpressionStatement[6444-6469]:ExpressionStatement[6453-6478]"
+    }, {
+      "left" : "emit(tagPending);",
+      "right" : "emit(tagPending);",
+      "info" : "ExpressionStatement[6478-6495]:ExpressionStatement[6487-6504]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6507-6511]:PrimitiveType[6516-6520]"
+    }, {
+      "left" : "createCommentPending",
+      "right" : "createCommentPending",
+      "info" : "SimpleName[6512-6532]:SimpleName[6521-6541]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6535-6588]:Block[6544-6597]"
+    }, {
+      "left" : "commentPending = new Token.Comment();",
+      "right" : "commentPending = new Token.Comment();",
+      "info" : "ExpressionStatement[6545-6582]:ExpressionStatement[6554-6591]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6594-6598]:PrimitiveType[6603-6607]"
+    }, {
+      "left" : "emitCommentPending",
+      "right" : "emitCommentPending",
+      "info" : "SimpleName[6599-6617]:SimpleName[6608-6626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6620-6657]:Block[6629-6666]"
+    }, {
+      "left" : "emit(commentPending);",
+      "right" : "emit(commentPending);",
+      "info" : "ExpressionStatement[6630-6651]:ExpressionStatement[6639-6660]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6663-6667]:PrimitiveType[6672-6676]"
+    }, {
+      "left" : "createDoctypePending",
+      "right" : "createDoctypePending",
+      "info" : "SimpleName[6668-6688]:SimpleName[6677-6697]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6691-6744]:Block[6700-6753]"
+    }, {
+      "left" : "doctypePending = new Token.Doctype();",
+      "right" : "doctypePending = new Token.Doctype();",
+      "info" : "ExpressionStatement[6701-6738]:ExpressionStatement[6710-6747]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6750-6754]:PrimitiveType[6759-6763]"
+    }, {
+      "left" : "emitDoctypePending",
+      "right" : "emitDoctypePending",
+      "info" : "SimpleName[6755-6773]:SimpleName[6764-6782]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6776-6813]:Block[6785-6822]"
+    }, {
+      "left" : "emit(doctypePending);",
+      "right" : "emit(doctypePending);",
+      "info" : "ExpressionStatement[6786-6807]:ExpressionStatement[6795-6816]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6819-6823]:PrimitiveType[6828-6832]"
+    }, {
+      "left" : "createTempBuffer",
+      "right" : "createTempBuffer",
+      "info" : "SimpleName[6824-6840]:SimpleName[6833-6849]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6843-6892]:Block[6852-6901]"
+    }, {
+      "left" : "dataBuffer = new StringBuilder();",
+      "right" : "dataBuffer = new StringBuilder();",
+      "info" : "ExpressionStatement[6853-6886]:ExpressionStatement[6862-6895]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[6898-6905]:PrimitiveType[6907-6914]"
+    }, {
+      "left" : "isAppropriateEndTagToken",
+      "right" : "isAppropriateEndTagToken",
+      "info" : "SimpleName[6906-6930]:SimpleName[6915-6939]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6933-7004]:Block[6942-7013]"
+    }, {
+      "left" : "return tagPending.tagName.equals(lastStartTag.tagName);",
+      "right" : "return tagPending.tagName.equals(lastStartTag.tagName);",
+      "info" : "ReturnStatement[6943-6998]:ReturnStatement[6952-7007]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[7010-7016]:SimpleType[7019-7025]"
+    }, {
+      "left" : "appropriateEndTagName",
+      "right" : "appropriateEndTagName",
+      "info" : "SimpleName[7017-7038]:SimpleName[7026-7047]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7041-7085]:Block[7050-7094]"
+    }, {
+      "left" : "return lastStartTag.tagName;",
+      "right" : "return lastStartTag.tagName;",
+      "info" : "ReturnStatement[7051-7079]:ReturnStatement[7060-7088]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7091-7095]:PrimitiveType[7100-7104]"
+    }, {
+      "left" : "error",
+      "right" : "error",
+      "info" : "SimpleName[7096-7101]:SimpleName[7105-7110]"
+    }, {
+      "left" : "TokeniserState state",
+      "right" : "TokeniserState state",
+      "info" : "SingleVariableDeclaration[7102-7122]:SingleVariableDeclaration[7111-7131]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7124-7293]:Block[7133-7302]"
+    }, {
+      "left" : "if (errors.canAddError())",
+      "right" : "if (errors.canAddError())",
+      "info" : "IfStatement[7134-7287]:IfStatement[7143-7296]"
+    }, {
+      "left" : "errors.add(new ParseError(reader.pos(), \"Unexpected character '%s' in input state [%s]\", reader.current(), state));",
+      "right" : "errors.add(new ParseError(reader.pos(), \"Unexpected character '%s' in input state [%s]\", reader.current(), state));",
+      "info" : "ExpressionStatement[7172-7287]:ExpressionStatement[7181-7296]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7299-7303]:PrimitiveType[7308-7312]"
+    }, {
+      "left" : "eofError",
+      "right" : "eofError",
+      "info" : "SimpleName[7304-7312]:SimpleName[7313-7321]"
+    }, {
+      "left" : "TokeniserState state",
+      "right" : "TokeniserState state",
+      "info" : "SingleVariableDeclaration[7313-7333]:SingleVariableDeclaration[7322-7342]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7335-7499]:Block[7344-7508]"
+    }, {
+      "left" : "if (errors.canAddError())",
+      "right" : "if (errors.canAddError())",
+      "info" : "IfStatement[7345-7493]:IfStatement[7354-7502]"
+    }, {
+      "left" : "errors.add(new ParseError(reader.pos(), \"Unexpectedly reached end of file (EOF) in input state [%s]\", state));",
+      "right" : "errors.add(new ParseError(reader.pos(), \"Unexpectedly reached end of file (EOF) in input state [%s]\", state));",
+      "info" : "ExpressionStatement[7383-7493]:ExpressionStatement[7392-7502]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[7505-7512]:Modifier[7514-7521]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7513-7517]:PrimitiveType[7522-7526]"
+    }, {
+      "left" : "characterReferenceError",
+      "right" : "characterReferenceError",
+      "info" : "SimpleName[7518-7541]:SimpleName[7527-7550]"
+    }, {
+      "left" : "String message",
+      "right" : "String message",
+      "info" : "SingleVariableDeclaration[7542-7556]:SingleVariableDeclaration[7551-7565]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7558-7697]:Block[7567-7706]"
+    }, {
+      "left" : "if (errors.canAddError())",
+      "right" : "if (errors.canAddError())",
+      "info" : "IfStatement[7568-7691]:IfStatement[7577-7700]"
+    }, {
+      "left" : "errors.add(new ParseError(reader.pos(), \"Invalid character reference: %s\", message));",
+      "right" : "errors.add(new ParseError(reader.pos(), \"Invalid character reference: %s\", message));",
+      "info" : "ExpressionStatement[7606-7691]:ExpressionStatement[7615-7700]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[7703-7710]:Modifier[7712-7719]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7711-7715]:PrimitiveType[7720-7724]"
+    }, {
+      "left" : "error",
+      "right" : "error",
+      "info" : "SimpleName[7716-7721]:SimpleName[7725-7730]"
+    }, {
+      "left" : "String errorMsg",
+      "right" : "String errorMsg",
+      "info" : "SingleVariableDeclaration[7722-7737]:SingleVariableDeclaration[7731-7746]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7739-7844]:Block[7748-7853]"
+    }, {
+      "left" : "if (errors.canAddError())",
+      "right" : "if (errors.canAddError())",
+      "info" : "IfStatement[7749-7838]:IfStatement[7758-7847]"
+    }, {
+      "left" : "errors.add(new ParseError(reader.pos(), errorMsg));",
+      "right" : "errors.add(new ParseError(reader.pos(), errorMsg));",
+      "info" : "ExpressionStatement[7787-7838]:ExpressionStatement[7796-7847]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[7850-7857]:PrimitiveType[7859-7866]"
+    }, {
+      "left" : "currentNodeInHtmlNS",
+      "right" : "currentNodeInHtmlNS",
+      "info" : "SimpleName[7858-7877]:SimpleName[7867-7886]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7880-8086]:Block[7889-8095]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[7939-7951]:ReturnStatement[7948-7960]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

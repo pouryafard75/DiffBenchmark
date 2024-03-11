@@ -1,0 +1,3545 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "static final int SIGNATURE_HEADER_SIZE = 32;",
+      "right" : "static final int SIGNATURE_HEADER_SIZE = 32;",
+      "info" : "FieldDeclaration[2489-2533]:FieldDeclaration[2489-2533]"
+    }, {
+      "left" : "private final String fileName;",
+      "right" : "private final String fileName;",
+      "info" : "FieldDeclaration[2539-2569]:FieldDeclaration[2539-2569]"
+    }, {
+      "left" : "private RandomAccessFile file;",
+      "right" : "private RandomAccessFile file;",
+      "info" : "FieldDeclaration[2574-2604]:FieldDeclaration[2574-2604]"
+    }, {
+      "left" : "private final Archive archive;",
+      "right" : "private final Archive archive;",
+      "info" : "FieldDeclaration[2609-2639]:FieldDeclaration[2609-2639]"
+    }, {
+      "left" : "private int currentEntryIndex = -1;",
+      "right" : "private int currentEntryIndex = -1;",
+      "info" : "FieldDeclaration[2644-2679]:FieldDeclaration[2644-2679]"
+    }, {
+      "left" : "private int currentFolderIndex = -1;",
+      "right" : "private int currentFolderIndex = -1;",
+      "info" : "FieldDeclaration[2684-2720]:FieldDeclaration[2684-2720]"
+    }, {
+      "left" : "private InputStream currentFolderInputStream = null;",
+      "right" : "private InputStream currentFolderInputStream = null;",
+      "info" : "FieldDeclaration[2725-2777]:FieldDeclaration[2725-2777]"
+    }, {
+      "left" : "private byte[] password;",
+      "right" : "private byte[] password;",
+      "info" : "FieldDeclaration[2782-2806]:FieldDeclaration[2782-2806]"
+    }, {
+      "left" : "private final ArrayList<InputStream> deferredBlockStreams = new ArrayList<InputStream>();",
+      "right" : "private final ArrayList<InputStream> deferredBlockStreams = new ArrayList<InputStream>();",
+      "info" : "FieldDeclaration[2812-2901]:FieldDeclaration[2812-2901]"
+    }, {
+      "left" : "static final byte[] sevenZSignature = {\n        (byte)'7', (byte)'z', (byte)0xBC, (byte)0xAF, (byte)0x27, (byte)0x1C\n    };",
+      "right" : "static final byte[] sevenZSignature = {\n        (byte)'7', (byte)'z', (byte)0xBC, (byte)0xAF, (byte)0x27, (byte)0x1C\n    };",
+      "info" : "FieldDeclaration[2907-3030]:FieldDeclaration[2907-3030]"
+    }, {
+      "left" : "public SevenZFile(final File filename, final byte[] password) throws IOException",
+      "right" : "public SevenZFile(final File filename, final byte[] password) throws IOException",
+      "info" : "MethodDeclaration[3040-4044]:MethodDeclaration[3040-4044]"
+    }, {
+      "left" : "public SevenZFile(final File filename) throws IOException",
+      "right" : "public SevenZFile(final File filename) throws IOException",
+      "info" : "MethodDeclaration[4054-4314]:MethodDeclaration[4054-4314]"
+    }, {
+      "left" : "public void close() throws IOException",
+      "right" : "public void close() throws IOException",
+      "info" : "MethodDeclaration[4320-4773]:MethodDeclaration[4320-4773]"
+    }, {
+      "left" : "public SevenZArchiveEntry getNextEntry() throws IOException",
+      "right" : "public SevenZArchiveEntry getNextEntry() throws IOException",
+      "info" : "MethodDeclaration[4783-5335]:MethodDeclaration[4783-5335]"
+    }, {
+      "left" : "public Iterable<SevenZArchiveEntry> getEntries()",
+      "right" : "public Iterable<SevenZArchiveEntry> getEntries()",
+      "info" : "MethodDeclaration[5345-5930]:MethodDeclaration[5345-5930]"
+    }, {
+      "left" : "private Archive readHeaders(final byte[] password) throws IOException",
+      "right" : "private Archive readHeaders(final byte[] password) throws IOException",
+      "info" : "MethodDeclaration[5940-8261]:MethodDeclaration[5940-8261]"
+    }, {
+      "left" : "private StartHeader readStartHeader(final long startHeaderCrc) throws IOException",
+      "right" : "private StartHeader readStartHeader(final long startHeaderCrc) throws IOException",
+      "info" : "MethodDeclaration[8271-9100]:MethodDeclaration[8271-9100]"
+    }, {
+      "left" : "private void readHeader(final DataInput header, final Archive archive) throws IOException",
+      "right" : "private void readHeader(final DataInput header, final Archive archive) throws IOException",
+      "info" : "MethodDeclaration[9110-10012]:MethodDeclaration[9110-10012]"
+    }, {
+      "left" : "private void readArchiveProperties(final DataInput input) throws IOException",
+      "right" : "private void readArchiveProperties(final DataInput input) throws IOException",
+      "info" : "MethodDeclaration[10022-10470]:MethodDeclaration[10022-10470]"
+    }, {
+      "left" : "private DataInputStream readEncodedHeader(final DataInputStream header, final Archive archive,\n                                              final byte[] password) throws IOException",
+      "right" : "private DataInputStream readEncodedHeader(final DataInputStream header, final Archive archive,\n                                              final byte[] password) throws IOException",
+      "info" : "MethodDeclaration[10480-12145]:MethodDeclaration[10480-12145]"
+    }, {
+      "left" : "private void readStreamsInfo(final DataInput header, final Archive archive) throws IOException",
+      "right" : "private void readStreamsInfo(final DataInput header, final Archive archive) throws IOException",
+      "info" : "MethodDeclaration[12155-12976]:MethodDeclaration[12155-12976]"
+    }, {
+      "left" : "private void readPackInfo(final DataInput header, final Archive archive) throws IOException",
+      "right" : "private void readPackInfo(final DataInput header, final Archive archive) throws IOException",
+      "info" : "MethodDeclaration[12986-14142]:MethodDeclaration[12986-14142]"
+    }, {
+      "left" : "private void readUnpackInfo(final DataInput header, final Archive archive) throws IOException",
+      "right" : "private void readUnpackInfo(final DataInput header, final Archive archive) throws IOException",
+      "info" : "MethodDeclaration[14152-15954]:MethodDeclaration[14152-15954]"
+    }, {
+      "left" : "private void readSubStreamsInfo(final DataInput header, final Archive archive) throws IOException",
+      "right" : "private void readSubStreamsInfo(final DataInput header, final Archive archive) throws IOException",
+      "info" : "MethodDeclaration[15964-19288]:MethodDeclaration[15964-19288]"
+    }, {
+      "left" : "private Folder readFolder(final DataInput header) throws IOException",
+      "right" : "private Folder readFolder(final DataInput header) throws IOException",
+      "info" : "MethodDeclaration[19298-22630]:MethodDeclaration[19298-22630]"
+    }, {
+      "left" : "private BitSet readAllOrBits(final DataInput header, final int size) throws IOException",
+      "right" : "private BitSet readAllOrBits(final DataInput header, final int size) throws IOException",
+      "info" : "MethodDeclaration[22640-23079]:MethodDeclaration[22640-23079]"
+    }, {
+      "left" : "private BitSet readBits(final DataInput header, final int size) throws IOException",
+      "right" : "private BitSet readBits(final DataInput header, final int size) throws IOException",
+      "info" : "MethodDeclaration[23089-23536]:MethodDeclaration[23089-23536]"
+    }, {
+      "left" : "private void readFilesInfo(final DataInput header, final Archive archive) throws IOException",
+      "right" : "private void readFilesInfo(final DataInput header, final Archive archive) throws IOException",
+      "info" : "MethodDeclaration[23546-31132]:MethodDeclaration[23546-31132]"
+    }, {
+      "left" : "private void calculateStreamMap(final Archive archive) throws IOException",
+      "right" : "private void calculateStreamMap(final Archive archive) throws IOException",
+      "info" : "MethodDeclaration[31142-33523]:MethodDeclaration[31142-33523]"
+    }, {
+      "left" : "private void buildDecodingStream() throws IOException",
+      "right" : "private void buildDecodingStream() throws IOException",
+      "info" : "MethodDeclaration[33533-35592]:MethodDeclaration[33533-35592]"
+    }, {
+      "left" : "private InputStream buildDecoderStack(final Folder folder, final long folderOffset,\n                final int firstPackStreamIndex, final SevenZArchiveEntry entry) throws IOException",
+      "right" : "private InputStream buildDecoderStack(final Folder folder, final long folderOffset,\n                final int firstPackStreamIndex, final SevenZArchiveEntry entry) throws IOException",
+      "info" : "MethodDeclaration[35598-37020]:MethodDeclaration[35598-37020]"
+    }, {
+      "left" : "public int read() throws IOException",
+      "right" : "public int read() throws IOException",
+      "info" : "MethodDeclaration[37030-37307]:MethodDeclaration[37030-37307]"
+    }, {
+      "left" : "public int read(final byte[] b) throws IOException",
+      "right" : "public int read(final byte[] b) throws IOException",
+      "info" : "MethodDeclaration[38063-38416]:MethodDeclaration[38194-38547]"
+    }, {
+      "left" : "public int read(final byte[] b, final int off, final int len) throws IOException",
+      "right" : "public int read(final byte[] b, final int off, final int len) throws IOException",
+      "info" : "MethodDeclaration[38426-38921]:MethodDeclaration[38557-39052]"
+    }, {
+      "left" : "private static long readUint64(final DataInput in) throws IOException",
+      "right" : "private static long readUint64(final DataInput in) throws IOException",
+      "info" : "MethodDeclaration[38931-39515]:MethodDeclaration[39062-39646]"
+    }, {
+      "left" : "public static boolean matches(final byte[] signature, final int length)",
+      "right" : "public static boolean matches(final byte[] signature, final int length)",
+      "info" : "MethodDeclaration[39521-40176]:MethodDeclaration[39652-40307]"
+    }, {
+      "left" : "private static long skipBytesFully(final DataInput input, long bytesToSkip) throws IOException",
+      "right" : "private static long skipBytesFully(final DataInput input, long bytesToSkip) throws IOException",
+      "info" : "MethodDeclaration[40182-40960]:MethodDeclaration[40313-41091]"
+    }, {
+      "left" : "public String toString()",
+      "right" : "public String toString()",
+      "info" : "MethodDeclaration[40970-41049]:MethodDeclaration[41101-41180]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3364-3370]:Modifier[3364-3370]"
+    }, {
+      "left" : "SevenZFile",
+      "right" : "SevenZFile",
+      "info" : "SimpleName[3371-3381]:SimpleName[3371-3381]"
+    }, {
+      "left" : "final File filename",
+      "right" : "final File filename",
+      "info" : "SingleVariableDeclaration[3382-3401]:SingleVariableDeclaration[3382-3401]"
+    }, {
+      "left" : "final byte[] password",
+      "right" : "final byte[] password",
+      "info" : "SingleVariableDeclaration[3403-3424]:SingleVariableDeclaration[3403-3424]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[3433-3444]:SimpleType[3433-3444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3445-4044]:Block[3445-4044]"
+    }, {
+      "left" : "boolean succeeded = false;",
+      "right" : "boolean succeeded = false;",
+      "info" : "VariableDeclarationStatement[3455-3481]:VariableDeclarationStatement[3455-3481]"
+    }, {
+      "left" : "this.file = new RandomAccessFile(filename, \"r\");",
+      "right" : "this.file = new RandomAccessFile(filename, \"r\");",
+      "info" : "ExpressionStatement[3490-3538]:ExpressionStatement[3490-3538]"
+    }, {
+      "left" : "this.fileName = filename.getAbsolutePath();",
+      "right" : "this.fileName = filename.getAbsolutePath();",
+      "info" : "ExpressionStatement[3547-3590]:ExpressionStatement[3547-3590]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3599-4038]:TryStatement[3599-4038]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3603-3939]:Block[3603-3939]"
+    }, {
+      "left" : "archive = readHeaders(password);",
+      "right" : "archive = readHeaders(password);",
+      "info" : "ExpressionStatement[3617-3649]:ExpressionStatement[3617-3649]"
+    }, {
+      "left" : "if (password != null)",
+      "right" : "if (password != null)",
+      "info" : "IfStatement[3662-3899]:IfStatement[3662-3899]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3684-3840]:Block[3684-3840]"
+    }, {
+      "left" : "this.password = new byte[password.length];",
+      "right" : "this.password = new byte[password.length];",
+      "info" : "ExpressionStatement[3702-3744]:ExpressionStatement[3702-3744]"
+    }, {
+      "left" : "System.arraycopy(password, 0, this.password, 0, password.length);",
+      "right" : "System.arraycopy(password, 0, this.password, 0, password.length);",
+      "info" : "ExpressionStatement[3761-3826]:ExpressionStatement[3761-3826]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3846-3899]:Block[3846-3899]"
+    }, {
+      "left" : "this.password = null;",
+      "right" : "this.password = null;",
+      "info" : "ExpressionStatement[3864-3885]:ExpressionStatement[3864-3885]"
+    }, {
+      "left" : "succeeded = true;",
+      "right" : "succeeded = true;",
+      "info" : "ExpressionStatement[3912-3929]:ExpressionStatement[3912-3929]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3948-4038]:Block[3948-4038]"
+    }, {
+      "left" : "if (!succeeded)",
+      "right" : "if (!succeeded)",
+      "info" : "IfStatement[3962-4028]:IfStatement[3962-4028]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3978-4028]:Block[3978-4028]"
+    }, {
+      "left" : "this.file.close();",
+      "right" : "this.file.close();",
+      "info" : "ExpressionStatement[3996-4014]:ExpressionStatement[3996-4014]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4219-4225]:Modifier[4219-4225]"
+    }, {
+      "left" : "SevenZFile",
+      "right" : "SevenZFile",
+      "info" : "SimpleName[4226-4236]:SimpleName[4226-4236]"
+    }, {
+      "left" : "final File filename",
+      "right" : "final File filename",
+      "info" : "SingleVariableDeclaration[4237-4256]:SingleVariableDeclaration[4237-4256]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[4265-4276]:SimpleType[4265-4276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4277-4314]:Block[4277-4314]"
+    }, {
+      "left" : "this(filename, null);",
+      "right" : "this(filename, null);",
+      "info" : "ConstructorInvocation[4287-4308]:ConstructorInvocation[4287-4308]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4416-4425]:MarkerAnnotation[4416-4425]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4430-4436]:Modifier[4430-4436]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4437-4441]:PrimitiveType[4437-4441]"
+    }, {
+      "left" : "close",
+      "right" : "close",
+      "info" : "SimpleName[4442-4447]:SimpleName[4442-4447]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[4457-4468]:SimpleType[4457-4468]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4469-4773]:Block[4469-4773]"
+    }, {
+      "left" : "if (file != null)",
+      "right" : "if (file != null)",
+      "info" : "IfStatement[4479-4767]:IfStatement[4479-4767]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4497-4767]:Block[4497-4767]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[4511-4757]:TryStatement[4511-4757]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4515-4560]:Block[4515-4560]"
+    }, {
+      "left" : "file.close();",
+      "right" : "file.close();",
+      "info" : "ExpressionStatement[4533-4546]:ExpressionStatement[4533-4546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4569-4757]:Block[4569-4757]"
+    }, {
+      "left" : "file = null;",
+      "right" : "file = null;",
+      "info" : "ExpressionStatement[4587-4599]:ExpressionStatement[4587-4599]"
+    }, {
+      "left" : "if (password != null)",
+      "right" : "if (password != null)",
+      "info" : "IfStatement[4616-4710]:IfStatement[4616-4710]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4638-4710]:Block[4638-4710]"
+    }, {
+      "left" : "Arrays.fill(password, (byte) 0);",
+      "right" : "Arrays.fill(password, (byte) 0);",
+      "info" : "ExpressionStatement[4660-4692]:ExpressionStatement[4660-4692]"
+    }, {
+      "left" : "password = null;",
+      "right" : "password = null;",
+      "info" : "ExpressionStatement[4727-4743]:ExpressionStatement[4727-4743]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5015-5021]:Modifier[5015-5021]"
+    }, {
+      "left" : "SevenZArchiveEntry",
+      "right" : "SevenZArchiveEntry",
+      "info" : "SimpleType[5022-5040]:SimpleType[5022-5040]"
+    }, {
+      "left" : "getNextEntry",
+      "right" : "getNextEntry",
+      "info" : "SimpleName[5041-5053]:SimpleName[5041-5053]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[5063-5074]:SimpleType[5063-5074]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5075-5335]:Block[5075-5335]"
+    }, {
+      "left" : "if (currentEntryIndex >= archive.files.length - 1)",
+      "right" : "if (currentEntryIndex >= archive.files.length - 1)",
+      "info" : "IfStatement[5085-5172]:IfStatement[5085-5172]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5136-5172]:Block[5136-5172]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5150-5162]:ReturnStatement[5150-5162]"
+    }, {
+      "left" : "++currentEntryIndex;",
+      "right" : "++currentEntryIndex;",
+      "info" : "ExpressionStatement[5181-5201]:ExpressionStatement[5181-5201]"
+    }, {
+      "left" : "final SevenZArchiveEntry entry = archive.files[currentEntryIndex];",
+      "right" : "final SevenZArchiveEntry entry = archive.files[currentEntryIndex];",
+      "info" : "VariableDeclarationStatement[5210-5276]:VariableDeclarationStatement[5210-5276]"
+    }, {
+      "left" : "buildDecodingStream();",
+      "right" : "buildDecodingStream();",
+      "info" : "ExpressionStatement[5285-5307]:ExpressionStatement[5285-5307]"
+    }, {
+      "left" : "return entry;",
+      "right" : "return entry;",
+      "info" : "ReturnStatement[5316-5329]:ReturnStatement[5316-5329]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5829-5835]:Modifier[5829-5835]"
+    }, {
+      "left" : "Iterable<SevenZArchiveEntry>",
+      "right" : "Iterable<SevenZArchiveEntry>",
+      "info" : "ParameterizedType[5836-5864]:ParameterizedType[5836-5864]"
+    }, {
+      "left" : "getEntries",
+      "right" : "getEntries",
+      "info" : "SimpleName[5865-5875]:SimpleName[5865-5875]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5878-5930]:Block[5878-5930]"
+    }, {
+      "left" : "return Arrays.asList(archive.files);",
+      "right" : "return Arrays.asList(archive.files);",
+      "info" : "ReturnStatement[5888-5924]:ReturnStatement[5888-5924]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5940-5947]:Modifier[5940-5947]"
+    }, {
+      "left" : "Archive",
+      "right" : "Archive",
+      "info" : "SimpleType[5948-5955]:SimpleType[5948-5955]"
+    }, {
+      "left" : "readHeaders",
+      "right" : "readHeaders",
+      "info" : "SimpleName[5956-5967]:SimpleName[5956-5967]"
+    }, {
+      "left" : "final byte[] password",
+      "right" : "final byte[] password",
+      "info" : "SingleVariableDeclaration[5968-5989]:SingleVariableDeclaration[5968-5989]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[5998-6009]:SimpleType[5998-6009]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6010-8261]:Block[6010-8261]"
+    }, {
+      "left" : "final byte[] signature = new byte[6];",
+      "right" : "final byte[] signature = new byte[6];",
+      "info" : "VariableDeclarationStatement[6020-6057]:VariableDeclarationStatement[6020-6057]"
+    }, {
+      "left" : "file.readFully(signature);",
+      "right" : "file.readFully(signature);",
+      "info" : "ExpressionStatement[6066-6092]:ExpressionStatement[6066-6092]"
+    }, {
+      "left" : "if (!Arrays.equals(signature, sevenZSignature))",
+      "right" : "if (!Arrays.equals(signature, sevenZSignature))",
+      "info" : "IfStatement[6101-6215]:IfStatement[6101-6215]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6149-6215]:Block[6149-6215]"
+    }, {
+      "left" : "throw new IOException(\"Bad 7z signature\");",
+      "right" : "throw new IOException(\"Bad 7z signature\");",
+      "info" : "ThrowStatement[6163-6205]:ThrowStatement[6163-6205]"
+    }, {
+      "left" : "final byte archiveVersionMajor = file.readByte();",
+      "right" : "final byte archiveVersionMajor = file.readByte();",
+      "info" : "VariableDeclarationStatement[6291-6340]:VariableDeclarationStatement[6291-6340]"
+    }, {
+      "left" : "final byte archiveVersionMinor = file.readByte();",
+      "right" : "final byte archiveVersionMinor = file.readByte();",
+      "info" : "VariableDeclarationStatement[6349-6398]:VariableDeclarationStatement[6349-6398]"
+    }, {
+      "left" : "if (archiveVersionMajor != 0)",
+      "right" : "if (archiveVersionMajor != 0)",
+      "info" : "IfStatement[6407-6594]:IfStatement[6407-6594]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6437-6594]:Block[6437-6594]"
+    }, {
+      "left" : "throw new IOException(String.format(\"Unsupported 7z version (%d,%d)\",\n                    archiveVersionMajor, archiveVersionMinor));",
+      "right" : "throw new IOException(String.format(\"Unsupported 7z version (%d,%d)\",\n                    archiveVersionMajor, archiveVersionMinor));",
+      "info" : "ThrowStatement[6451-6584]:ThrowStatement[6451-6584]"
+    }, {
+      "left" : "final long startHeaderCrc = 0xffffFFFFL & Integer.reverseBytes(file.readInt());",
+      "right" : "final long startHeaderCrc = 0xffffFFFFL & Integer.reverseBytes(file.readInt());",
+      "info" : "VariableDeclarationStatement[6604-6683]:VariableDeclarationStatement[6604-6683]"
+    }, {
+      "left" : "final StartHeader startHeader = readStartHeader(startHeaderCrc);",
+      "right" : "final StartHeader startHeader = readStartHeader(startHeaderCrc);",
+      "info" : "VariableDeclarationStatement[6692-6756]:VariableDeclarationStatement[6692-6756]"
+    }, {
+      "left" : "final int nextHeaderSizeInt = (int) startHeader.nextHeaderSize;",
+      "right" : "final int nextHeaderSizeInt = (int) startHeader.nextHeaderSize;",
+      "info" : "VariableDeclarationStatement[6774-6837]:VariableDeclarationStatement[6774-6837]"
+    }, {
+      "left" : "if (nextHeaderSizeInt != startHeader.nextHeaderSize)",
+      "right" : "if (nextHeaderSizeInt != startHeader.nextHeaderSize)",
+      "info" : "IfStatement[6846-7007]:IfStatement[6846-7007]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6899-7007]:Block[6899-7007]"
+    }, {
+      "left" : "throw new IOException(\"cannot handle nextHeaderSize \" + startHeader.nextHeaderSize);",
+      "right" : "throw new IOException(\"cannot handle nextHeaderSize \" + startHeader.nextHeaderSize);",
+      "info" : "ThrowStatement[6913-6997]:ThrowStatement[6913-6997]"
+    }, {
+      "left" : "file.seek(SIGNATURE_HEADER_SIZE + startHeader.nextHeaderOffset);",
+      "right" : "file.seek(SIGNATURE_HEADER_SIZE + startHeader.nextHeaderOffset);",
+      "info" : "ExpressionStatement[7016-7080]:ExpressionStatement[7016-7080]"
+    }, {
+      "left" : "final byte[] nextHeader = new byte[nextHeaderSizeInt];",
+      "right" : "final byte[] nextHeader = new byte[nextHeaderSizeInt];",
+      "info" : "VariableDeclarationStatement[7089-7143]:VariableDeclarationStatement[7089-7143]"
+    }, {
+      "left" : "file.readFully(nextHeader);",
+      "right" : "file.readFully(nextHeader);",
+      "info" : "ExpressionStatement[7152-7179]:ExpressionStatement[7152-7179]"
+    }, {
+      "left" : "final CRC32 crc = new CRC32();",
+      "right" : "final CRC32 crc = new CRC32();",
+      "info" : "VariableDeclarationStatement[7188-7218]:VariableDeclarationStatement[7188-7218]"
+    }, {
+      "left" : "crc.update(nextHeader);",
+      "right" : "crc.update(nextHeader);",
+      "info" : "ExpressionStatement[7227-7250]:ExpressionStatement[7227-7250]"
+    }, {
+      "left" : "if (startHeader.nextHeaderCrc != crc.getValue())",
+      "right" : "if (startHeader.nextHeaderCrc != crc.getValue())",
+      "info" : "IfStatement[7259-7381]:IfStatement[7259-7381]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7308-7381]:Block[7308-7381]"
+    }, {
+      "left" : "throw new IOException(\"NextHeader CRC mismatch\");",
+      "right" : "throw new IOException(\"NextHeader CRC mismatch\");",
+      "info" : "ThrowStatement[7322-7371]:ThrowStatement[7322-7371]"
+    }, {
+      "left" : "final ByteArrayInputStream byteStream = new ByteArrayInputStream(nextHeader);",
+      "right" : "final ByteArrayInputStream byteStream = new ByteArrayInputStream(nextHeader);",
+      "info" : "VariableDeclarationStatement[7399-7476]:VariableDeclarationStatement[7399-7476]"
+    }, {
+      "left" : "DataInputStream nextHeaderInputStream = new DataInputStream(\n                byteStream);",
+      "right" : "DataInputStream nextHeaderInputStream = new DataInputStream(\n                byteStream);",
+      "info" : "VariableDeclarationStatement[7485-7574]:VariableDeclarationStatement[7485-7574]"
+    }, {
+      "left" : "Archive archive = new Archive();",
+      "right" : "Archive archive = new Archive();",
+      "info" : "VariableDeclarationStatement[7583-7615]:VariableDeclarationStatement[7583-7615]"
+    }, {
+      "left" : "int nid = nextHeaderInputStream.readUnsignedByte();",
+      "right" : "int nid = nextHeaderInputStream.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[7624-7675]:VariableDeclarationStatement[7624-7675]"
+    }, {
+      "left" : "if (nid == NID.kEncodedHeader)",
+      "right" : "if (nid == NID.kEncodedHeader)",
+      "info" : "IfStatement[7684-7992]:IfStatement[7684-7992]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7715-7992]:Block[7715-7992]"
+    }, {
+      "left" : "nextHeaderInputStream =\n                readEncodedHeader(nextHeaderInputStream, archive, password);",
+      "right" : "nextHeaderInputStream =\n                readEncodedHeader(nextHeaderInputStream, archive, password);",
+      "info" : "ExpressionStatement[7729-7829]:ExpressionStatement[7729-7829]"
+    }, {
+      "left" : "archive = new Archive();",
+      "right" : "archive = new Archive();",
+      "info" : "ExpressionStatement[7898-7922]:ExpressionStatement[7898-7922]"
+    }, {
+      "left" : "nid = nextHeaderInputStream.readUnsignedByte();",
+      "right" : "nid = nextHeaderInputStream.readUnsignedByte();",
+      "info" : "ExpressionStatement[7935-7982]:ExpressionStatement[7935-7982]"
+    }, {
+      "left" : "if (nid == NID.kHeader)",
+      "right" : "if (nid == NID.kHeader)",
+      "info" : "IfStatement[8001-8231]:IfStatement[8001-8231]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8025-8135]:Block[8025-8135]"
+    }, {
+      "left" : "readHeader(nextHeaderInputStream, archive);",
+      "right" : "readHeader(nextHeaderInputStream, archive);",
+      "info" : "ExpressionStatement[8039-8082]:ExpressionStatement[8039-8082]"
+    }, {
+      "left" : "nextHeaderInputStream.close();",
+      "right" : "nextHeaderInputStream.close();",
+      "info" : "ExpressionStatement[8095-8125]:ExpressionStatement[8095-8125]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8141-8231]:Block[8141-8231]"
+    }, {
+      "left" : "throw new IOException(\"Broken or unsupported archive: no Header\");",
+      "right" : "throw new IOException(\"Broken or unsupported archive: no Header\");",
+      "info" : "ThrowStatement[8155-8221]:ThrowStatement[8155-8221]"
+    }, {
+      "left" : "return archive;",
+      "right" : "return archive;",
+      "info" : "ReturnStatement[8240-8255]:ReturnStatement[8240-8255]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8271-8278]:Modifier[8271-8278]"
+    }, {
+      "left" : "StartHeader",
+      "right" : "StartHeader",
+      "info" : "SimpleType[8279-8290]:SimpleType[8279-8290]"
+    }, {
+      "left" : "readStartHeader",
+      "right" : "readStartHeader",
+      "info" : "SimpleName[8291-8306]:SimpleName[8291-8306]"
+    }, {
+      "left" : "final long startHeaderCrc",
+      "right" : "final long startHeaderCrc",
+      "info" : "SingleVariableDeclaration[8307-8332]:SingleVariableDeclaration[8307-8332]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[8341-8352]:SimpleType[8341-8352]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8353-9100]:Block[8353-9100]"
+    }, {
+      "left" : "final StartHeader startHeader = new StartHeader();",
+      "right" : "final StartHeader startHeader = new StartHeader();",
+      "info" : "VariableDeclarationStatement[8363-8413]:VariableDeclarationStatement[8363-8413]"
+    }, {
+      "left" : "DataInputStream dataInputStream = null;",
+      "right" : "DataInputStream dataInputStream = null;",
+      "info" : "VariableDeclarationStatement[8422-8461]:VariableDeclarationStatement[8422-8461]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[8470-9094]:TryStatement[8470-9094]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8474-8976]:Block[8474-8976]"
+    }, {
+      "left" : "dataInputStream = new DataInputStream(new CRC32VerifyingInputStream(\n                    new BoundedRandomAccessFileInputStream(file, 20), 20, startHeaderCrc));",
+      "right" : "dataInputStream = new DataInputStream(new CRC32VerifyingInputStream(\n                    new BoundedRandomAccessFileInputStream(file, 20), 20, startHeaderCrc));",
+      "info" : "ExpressionStatement[8489-8649]:ExpressionStatement[8489-8649]"
+    }, {
+      "left" : "startHeader.nextHeaderOffset = Long.reverseBytes(dataInputStream.readLong());",
+      "right" : "startHeader.nextHeaderOffset = Long.reverseBytes(dataInputStream.readLong());",
+      "info" : "ExpressionStatement[8663-8740]:ExpressionStatement[8663-8740]"
+    }, {
+      "left" : "startHeader.nextHeaderSize = Long.reverseBytes(dataInputStream.readLong());",
+      "right" : "startHeader.nextHeaderSize = Long.reverseBytes(dataInputStream.readLong());",
+      "info" : "ExpressionStatement[8754-8829]:ExpressionStatement[8754-8829]"
+    }, {
+      "left" : "startHeader.nextHeaderCrc = 0xffffFFFFL & Integer.reverseBytes(dataInputStream.readInt());",
+      "right" : "startHeader.nextHeaderCrc = 0xffffFFFFL & Integer.reverseBytes(dataInputStream.readInt());",
+      "info" : "ExpressionStatement[8843-8933]:ExpressionStatement[8843-8933]"
+    }, {
+      "left" : "return startHeader;",
+      "right" : "return startHeader;",
+      "info" : "ReturnStatement[8947-8966]:ReturnStatement[8947-8966]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8985-9094]:Block[8985-9094]"
+    }, {
+      "left" : "if (dataInputStream != null)",
+      "right" : "if (dataInputStream != null)",
+      "info" : "IfStatement[8999-9084]:IfStatement[8999-9084]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9028-9084]:Block[9028-9084]"
+    }, {
+      "left" : "dataInputStream.close();",
+      "right" : "dataInputStream.close();",
+      "info" : "ExpressionStatement[9046-9070]:ExpressionStatement[9046-9070]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[9110-9117]:Modifier[9110-9117]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9118-9122]:PrimitiveType[9118-9122]"
+    }, {
+      "left" : "readHeader",
+      "right" : "readHeader",
+      "info" : "SimpleName[9123-9133]:SimpleName[9123-9133]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[9134-9156]:SingleVariableDeclaration[9134-9156]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[9158-9179]:SingleVariableDeclaration[9158-9179]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[9188-9199]:SimpleType[9188-9199]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9200-10012]:Block[9200-10012]"
+    }, {
+      "left" : "int nid = header.readUnsignedByte();",
+      "right" : "int nid = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[9210-9246]:VariableDeclarationStatement[9210-9246]"
+    }, {
+      "left" : "if (nid == NID.kArchiveProperties)",
+      "right" : "if (nid == NID.kArchiveProperties)",
+      "info" : "IfStatement[9264-9398]:IfStatement[9264-9398]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9299-9398]:Block[9299-9398]"
+    }, {
+      "left" : "readArchiveProperties(header);",
+      "right" : "readArchiveProperties(header);",
+      "info" : "ExpressionStatement[9313-9343]:ExpressionStatement[9313-9343]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[9356-9388]:ExpressionStatement[9356-9388]"
+    }, {
+      "left" : "if (nid == NID.kAdditionalStreamsInfo)",
+      "right" : "if (nid == NID.kAdditionalStreamsInfo)",
+      "info" : "IfStatement[9416-9582]:IfStatement[9416-9582]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9455-9582]:Block[9455-9582]"
+    }, {
+      "left" : "throw new IOException(\"Additional streams unsupported\");",
+      "right" : "throw new IOException(\"Additional streams unsupported\");",
+      "info" : "ThrowStatement[9469-9525]:ThrowStatement[9469-9525]"
+    }, {
+      "left" : "if (nid == NID.kMainStreamsInfo)",
+      "right" : "if (nid == NID.kMainStreamsInfo)",
+      "info" : "IfStatement[9600-9735]:IfStatement[9600-9735]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9633-9735]:Block[9633-9735]"
+    }, {
+      "left" : "readStreamsInfo(header, archive);",
+      "right" : "readStreamsInfo(header, archive);",
+      "info" : "ExpressionStatement[9647-9680]:ExpressionStatement[9647-9680]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[9693-9725]:ExpressionStatement[9693-9725]"
+    }, {
+      "left" : "if (nid == NID.kFilesInfo)",
+      "right" : "if (nid == NID.kFilesInfo)",
+      "info" : "IfStatement[9753-9880]:IfStatement[9753-9880]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9780-9880]:Block[9780-9880]"
+    }, {
+      "left" : "readFilesInfo(header, archive);",
+      "right" : "readFilesInfo(header, archive);",
+      "info" : "ExpressionStatement[9794-9825]:ExpressionStatement[9794-9825]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[9838-9870]:ExpressionStatement[9838-9870]"
+    }, {
+      "left" : "if (nid != NID.kEnd)",
+      "right" : "if (nid != NID.kEnd)",
+      "info" : "IfStatement[9898-10006]:IfStatement[9898-10006]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9919-10006]:Block[9919-10006]"
+    }, {
+      "left" : "throw new IOException(\"Badly terminated header, found \" + nid);",
+      "right" : "throw new IOException(\"Badly terminated header, found \" + nid);",
+      "info" : "ThrowStatement[9933-9996]:ThrowStatement[9933-9996]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10022-10029]:Modifier[10022-10029]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10030-10034]:PrimitiveType[10030-10034]"
+    }, {
+      "left" : "readArchiveProperties",
+      "right" : "readArchiveProperties",
+      "info" : "SimpleName[10035-10056]:SimpleName[10035-10056]"
+    }, {
+      "left" : "final DataInput input",
+      "right" : "final DataInput input",
+      "info" : "SingleVariableDeclaration[10057-10078]:SingleVariableDeclaration[10057-10078]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[10087-10098]:SimpleType[10087-10098]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10099-10470]:Block[10099-10470]"
+    }, {
+      "left" : "int nid =  input.readUnsignedByte();",
+      "right" : "int nid =  input.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[10179-10215]:VariableDeclarationStatement[10179-10215]"
+    }, {
+      "left" : "while (nid != NID.kEnd)",
+      "right" : "while (nid != NID.kEnd)",
+      "info" : "WhileStatement[10224-10464]:WhileStatement[10224-10464]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10248-10464]:Block[10248-10464]"
+    }, {
+      "left" : "final long propertySize = readUint64(input);",
+      "right" : "final long propertySize = readUint64(input);",
+      "info" : "VariableDeclarationStatement[10262-10306]:VariableDeclarationStatement[10262-10306]"
+    }, {
+      "left" : "final byte[] property = new byte[(int)propertySize];",
+      "right" : "final byte[] property = new byte[(int)propertySize];",
+      "info" : "VariableDeclarationStatement[10319-10371]:VariableDeclarationStatement[10319-10371]"
+    }, {
+      "left" : "input.readFully(property);",
+      "right" : "input.readFully(property);",
+      "info" : "ExpressionStatement[10384-10410]:ExpressionStatement[10384-10410]"
+    }, {
+      "left" : "nid = input.readUnsignedByte();",
+      "right" : "nid = input.readUnsignedByte();",
+      "info" : "ExpressionStatement[10423-10454]:ExpressionStatement[10423-10454]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10480-10487]:Modifier[10480-10487]"
+    }, {
+      "left" : "DataInputStream",
+      "right" : "DataInputStream",
+      "info" : "SimpleType[10488-10503]:SimpleType[10488-10503]"
+    }, {
+      "left" : "readEncodedHeader",
+      "right" : "readEncodedHeader",
+      "info" : "SimpleName[10504-10521]:SimpleName[10504-10521]"
+    }, {
+      "left" : "final DataInputStream header",
+      "right" : "final DataInputStream header",
+      "info" : "SingleVariableDeclaration[10522-10550]:SingleVariableDeclaration[10522-10550]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[10552-10573]:SingleVariableDeclaration[10552-10573]"
+    }, {
+      "left" : "final byte[] password",
+      "right" : "final byte[] password",
+      "info" : "SingleVariableDeclaration[10621-10642]:SingleVariableDeclaration[10621-10642]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[10651-10662]:SimpleType[10651-10662]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10663-12145]:Block[10663-12145]"
+    }, {
+      "left" : "readStreamsInfo(header, archive);",
+      "right" : "readStreamsInfo(header, archive);",
+      "info" : "ExpressionStatement[10673-10706]:ExpressionStatement[10673-10706]"
+    }, {
+      "left" : "final Folder folder = archive.folders[0];",
+      "right" : "final Folder folder = archive.folders[0];",
+      "info" : "VariableDeclarationStatement[10810-10851]:VariableDeclarationStatement[10810-10851]"
+    }, {
+      "left" : "final int firstPackStreamIndex = 0;",
+      "right" : "final int firstPackStreamIndex = 0;",
+      "info" : "VariableDeclarationStatement[10860-10895]:VariableDeclarationStatement[10860-10895]"
+    }, {
+      "left" : "final long folderOffset = SIGNATURE_HEADER_SIZE + archive.packPos +\n                0;",
+      "right" : "final long folderOffset = SIGNATURE_HEADER_SIZE + archive.packPos +\n                0;",
+      "info" : "VariableDeclarationStatement[10904-10990]:VariableDeclarationStatement[10904-10990]"
+    }, {
+      "left" : "file.seek(folderOffset);",
+      "right" : "file.seek(folderOffset);",
+      "info" : "ExpressionStatement[11008-11032]:ExpressionStatement[11008-11032]"
+    }, {
+      "left" : "InputStream inputStreamStack = new BoundedRandomAccessFileInputStream(file,\n                archive.packSizes[firstPackStreamIndex]);",
+      "right" : "InputStream inputStreamStack = new BoundedRandomAccessFileInputStream(file,\n                archive.packSizes[firstPackStreamIndex]);",
+      "info" : "VariableDeclarationStatement[11041-11174]:VariableDeclarationStatement[11041-11174]"
+    }, {
+      "left" : "for (final Coder coder : folder.getOrderedCoders())",
+      "right" : "for (final Coder coder : folder.getOrderedCoders())",
+      "info" : "EnhancedForStatement[11183-11580]:EnhancedForStatement[11183-11580]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11235-11580]:Block[11235-11580]"
+    }, {
+      "left" : "if (coder.numInStreams != 1 || coder.numOutStreams != 1)",
+      "right" : "if (coder.numInStreams != 1 || coder.numOutStreams != 1)",
+      "info" : "IfStatement[11249-11418]:IfStatement[11249-11418]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11306-11418]:Block[11306-11418]"
+    }, {
+      "left" : "throw new IOException(\"Multi input/output stream coders are not yet supported\");",
+      "right" : "throw new IOException(\"Multi input/output stream coders are not yet supported\");",
+      "info" : "ThrowStatement[11324-11404]:ThrowStatement[11324-11404]"
+    }, {
+      "left" : "inputStreamStack = Coders.addDecoder(fileName, inputStreamStack,\n                    folder.getUnpackSizeForCoder(coder), coder, password);",
+      "right" : "inputStreamStack = Coders.addDecoder(fileName, inputStreamStack,\n                    folder.getUnpackSizeForCoder(coder), coder, password);",
+      "info" : "ExpressionStatement[11431-11570]:ExpressionStatement[11431-11570]"
+    }, {
+      "left" : "if (folder.hasCrc)",
+      "right" : "if (folder.hasCrc)",
+      "info" : "IfStatement[11589-11755]:IfStatement[11589-11755]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11608-11755]:Block[11608-11755]"
+    }, {
+      "left" : "inputStreamStack = new CRC32VerifyingInputStream(inputStreamStack,\n                    folder.getUnpackSize(), folder.crc);",
+      "right" : "inputStreamStack = new CRC32VerifyingInputStream(inputStreamStack,\n                    folder.getUnpackSize(), folder.crc);",
+      "info" : "ExpressionStatement[11622-11745]:ExpressionStatement[11622-11745]"
+    }, {
+      "left" : "final byte[] nextHeader = new byte[(int)folder.getUnpackSize()];",
+      "right" : "final byte[] nextHeader = new byte[(int)folder.getUnpackSize()];",
+      "info" : "VariableDeclarationStatement[11764-11828]:VariableDeclarationStatement[11764-11828]"
+    }, {
+      "left" : "final DataInputStream nextHeaderInputStream = new DataInputStream(inputStreamStack);",
+      "right" : "final DataInputStream nextHeaderInputStream = new DataInputStream(inputStreamStack);",
+      "info" : "VariableDeclarationStatement[11837-11921]:VariableDeclarationStatement[11837-11921]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[11930-12065]:TryStatement[11930-12065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11934-12002]:Block[11934-12002]"
+    }, {
+      "left" : "nextHeaderInputStream.readFully(nextHeader);",
+      "right" : "nextHeaderInputStream.readFully(nextHeader);",
+      "info" : "ExpressionStatement[11948-11992]:ExpressionStatement[11948-11992]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12011-12065]:Block[12011-12065]"
+    }, {
+      "left" : "nextHeaderInputStream.close();",
+      "right" : "nextHeaderInputStream.close();",
+      "info" : "ExpressionStatement[12025-12055]:ExpressionStatement[12025-12055]"
+    }, {
+      "left" : "return new DataInputStream(new ByteArrayInputStream(nextHeader));",
+      "right" : "return new DataInputStream(new ByteArrayInputStream(nextHeader));",
+      "info" : "ReturnStatement[12074-12139]:ReturnStatement[12074-12139]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12155-12162]:Modifier[12155-12162]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12163-12167]:PrimitiveType[12163-12167]"
+    }, {
+      "left" : "readStreamsInfo",
+      "right" : "readStreamsInfo",
+      "info" : "SimpleName[12168-12183]:SimpleName[12168-12183]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[12184-12206]:SingleVariableDeclaration[12184-12206]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[12208-12229]:SingleVariableDeclaration[12208-12229]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[12238-12249]:SimpleType[12238-12249]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12250-12976]:Block[12250-12976]"
+    }, {
+      "left" : "int nid = header.readUnsignedByte();",
+      "right" : "int nid = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[12260-12296]:VariableDeclarationStatement[12260-12296]"
+    }, {
+      "left" : "if (nid == NID.kPackInfo)",
+      "right" : "if (nid == NID.kPackInfo)",
+      "info" : "IfStatement[12314-12439]:IfStatement[12314-12439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12340-12439]:Block[12340-12439]"
+    }, {
+      "left" : "readPackInfo(header, archive);",
+      "right" : "readPackInfo(header, archive);",
+      "info" : "ExpressionStatement[12354-12384]:ExpressionStatement[12354-12384]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[12397-12429]:ExpressionStatement[12397-12429]"
+    }, {
+      "left" : "if (nid == NID.kUnpackInfo)",
+      "right" : "if (nid == NID.kUnpackInfo)",
+      "info" : "IfStatement[12457-12698]:IfStatement[12457-12698]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12485-12586]:Block[12485-12586]"
+    }, {
+      "left" : "readUnpackInfo(header, archive);",
+      "right" : "readUnpackInfo(header, archive);",
+      "info" : "ExpressionStatement[12499-12531]:ExpressionStatement[12499-12531]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[12544-12576]:ExpressionStatement[12544-12576]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12592-12698]:Block[12592-12698]"
+    }, {
+      "left" : "archive.folders = new Folder[0];",
+      "right" : "archive.folders = new Folder[0];",
+      "info" : "ExpressionStatement[12656-12688]:ExpressionStatement[12656-12688]"
+    }, {
+      "left" : "if (nid == NID.kSubStreamsInfo)",
+      "right" : "if (nid == NID.kSubStreamsInfo)",
+      "info" : "IfStatement[12716-12853]:IfStatement[12716-12853]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12748-12853]:Block[12748-12853]"
+    }, {
+      "left" : "readSubStreamsInfo(header, archive);",
+      "right" : "readSubStreamsInfo(header, archive);",
+      "info" : "ExpressionStatement[12762-12798]:ExpressionStatement[12762-12798]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[12811-12843]:ExpressionStatement[12811-12843]"
+    }, {
+      "left" : "if (nid != NID.kEnd)",
+      "right" : "if (nid != NID.kEnd)",
+      "info" : "IfStatement[12871-12970]:IfStatement[12871-12970]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12892-12970]:Block[12892-12970]"
+    }, {
+      "left" : "throw new IOException(\"Badly terminated StreamsInfo\");",
+      "right" : "throw new IOException(\"Badly terminated StreamsInfo\");",
+      "info" : "ThrowStatement[12906-12960]:ThrowStatement[12906-12960]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12986-12993]:Modifier[12986-12993]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12994-12998]:PrimitiveType[12994-12998]"
+    }, {
+      "left" : "readPackInfo",
+      "right" : "readPackInfo",
+      "info" : "SimpleName[12999-13011]:SimpleName[12999-13011]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[13012-13034]:SingleVariableDeclaration[13012-13034]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[13036-13057]:SingleVariableDeclaration[13036-13057]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[13066-13077]:SimpleType[13066-13077]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13078-14142]:Block[13078-14142]"
+    }, {
+      "left" : "archive.packPos = readUint64(header);",
+      "right" : "archive.packPos = readUint64(header);",
+      "info" : "ExpressionStatement[13088-13125]:ExpressionStatement[13088-13125]"
+    }, {
+      "left" : "final long numPackStreams = readUint64(header);",
+      "right" : "final long numPackStreams = readUint64(header);",
+      "info" : "VariableDeclarationStatement[13134-13181]:VariableDeclarationStatement[13134-13181]"
+    }, {
+      "left" : "int nid = header.readUnsignedByte();",
+      "right" : "int nid = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[13190-13226]:VariableDeclarationStatement[13190-13226]"
+    }, {
+      "left" : "if (nid == NID.kSize)",
+      "right" : "if (nid == NID.kSize)",
+      "info" : "IfStatement[13235-13514]:IfStatement[13235-13514]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13257-13514]:Block[13257-13514]"
+    }, {
+      "left" : "archive.packSizes = new long[(int)numPackStreams];",
+      "right" : "archive.packSizes = new long[(int)numPackStreams];",
+      "info" : "ExpressionStatement[13271-13321]:ExpressionStatement[13271-13321]"
+    }, {
+      "left" : "for (int i = 0; i < archive.packSizes.length; i++)",
+      "right" : "for (int i = 0; i < archive.packSizes.length; i++)",
+      "info" : "ForStatement[13334-13459]:ForStatement[13334-13459]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13385-13459]:Block[13385-13459]"
+    }, {
+      "left" : "archive.packSizes[i] = readUint64(header);",
+      "right" : "archive.packSizes[i] = readUint64(header);",
+      "info" : "ExpressionStatement[13403-13445]:ExpressionStatement[13403-13445]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[13472-13504]:ExpressionStatement[13472-13504]"
+    }, {
+      "left" : "if (nid == NID.kCRC)",
+      "right" : "if (nid == NID.kCRC)",
+      "info" : "IfStatement[13532-14008]:IfStatement[13532-14008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13553-14008]:Block[13553-14008]"
+    }, {
+      "left" : "archive.packCrcsDefined = readAllOrBits(header, (int)numPackStreams);",
+      "right" : "archive.packCrcsDefined = readAllOrBits(header, (int)numPackStreams);",
+      "info" : "ExpressionStatement[13567-13636]:ExpressionStatement[13567-13636]"
+    }, {
+      "left" : "archive.packCrcs = new long[(int)numPackStreams];",
+      "right" : "archive.packCrcs = new long[(int)numPackStreams];",
+      "info" : "ExpressionStatement[13649-13698]:ExpressionStatement[13649-13698]"
+    }, {
+      "left" : "for (int i = 0; i < (int)numPackStreams; i++)",
+      "right" : "for (int i = 0; i < (int)numPackStreams; i++)",
+      "info" : "ForStatement[13711-13940]:ForStatement[13711-13940]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13757-13940]:Block[13757-13940]"
+    }, {
+      "left" : "if (archive.packCrcsDefined.get(i))",
+      "right" : "if (archive.packCrcsDefined.get(i))",
+      "info" : "IfStatement[13775-13926]:IfStatement[13775-13926]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13811-13926]:Block[13811-13926]"
+    }, {
+      "left" : "archive.packCrcs[i] = 0xffffFFFFL & Integer.reverseBytes(header.readInt());",
+      "right" : "archive.packCrcs[i] = 0xffffFFFFL & Integer.reverseBytes(header.readInt());",
+      "info" : "ExpressionStatement[13833-13908]:ExpressionStatement[13833-13908]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[13966-13998]:ExpressionStatement[13966-13998]"
+    }, {
+      "left" : "if (nid != NID.kEnd)",
+      "right" : "if (nid != NID.kEnd)",
+      "info" : "IfStatement[14026-14136]:IfStatement[14026-14136]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14047-14136]:Block[14047-14136]"
+    }, {
+      "left" : "throw new IOException(\"Badly terminated PackInfo (\" + nid + \")\");",
+      "right" : "throw new IOException(\"Badly terminated PackInfo (\" + nid + \")\");",
+      "info" : "ThrowStatement[14061-14126]:ThrowStatement[14061-14126]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[14152-14159]:Modifier[14152-14159]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14160-14164]:PrimitiveType[14160-14164]"
+    }, {
+      "left" : "readUnpackInfo",
+      "right" : "readUnpackInfo",
+      "info" : "SimpleName[14165-14179]:SimpleName[14165-14179]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[14180-14202]:SingleVariableDeclaration[14180-14202]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[14204-14225]:SingleVariableDeclaration[14204-14225]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[14234-14245]:SimpleType[14234-14245]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14246-15954]:Block[14246-15954]"
+    }, {
+      "left" : "int nid = header.readUnsignedByte();",
+      "right" : "int nid = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[14256-14292]:VariableDeclarationStatement[14256-14292]"
+    }, {
+      "left" : "if (nid != NID.kFolder)",
+      "right" : "if (nid != NID.kFolder)",
+      "info" : "IfStatement[14301-14403]:IfStatement[14301-14403]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14325-14403]:Block[14325-14403]"
+    }, {
+      "left" : "throw new IOException(\"Expected kFolder, got \" + nid);",
+      "right" : "throw new IOException(\"Expected kFolder, got \" + nid);",
+      "info" : "ThrowStatement[14339-14393]:ThrowStatement[14339-14393]"
+    }, {
+      "left" : "final long numFolders = readUint64(header);",
+      "right" : "final long numFolders = readUint64(header);",
+      "info" : "VariableDeclarationStatement[14412-14455]:VariableDeclarationStatement[14412-14455]"
+    }, {
+      "left" : "final Folder[] folders = new Folder[(int)numFolders];",
+      "right" : "final Folder[] folders = new Folder[(int)numFolders];",
+      "info" : "VariableDeclarationStatement[14464-14517]:VariableDeclarationStatement[14464-14517]"
+    }, {
+      "left" : "archive.folders = folders;",
+      "right" : "archive.folders = folders;",
+      "info" : "ExpressionStatement[14526-14552]:ExpressionStatement[14526-14552]"
+    }, {
+      "left" : "final int external = header.readUnsignedByte();",
+      "right" : "final int external = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[14561-14608]:VariableDeclarationStatement[14561-14608]"
+    }, {
+      "left" : "if (external != 0)",
+      "right" : "if (external != 0)",
+      "info" : "IfStatement[14617-14706]:IfStatement[14617-14706]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14636-14706]:Block[14636-14706]"
+    }, {
+      "left" : "throw new IOException(\"External unsupported\");",
+      "right" : "throw new IOException(\"External unsupported\");",
+      "info" : "ThrowStatement[14650-14696]:ThrowStatement[14650-14696]"
+    }, {
+      "left" : "for (int i = 0; i < (int)numFolders; i++)",
+      "right" : "for (int i = 0; i < (int)numFolders; i++)",
+      "info" : "ForStatement[14715-14813]:ForStatement[14715-14813]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14757-14813]:Block[14757-14813]"
+    }, {
+      "left" : "folders[i] = readFolder(header);",
+      "right" : "folders[i] = readFolder(header);",
+      "info" : "ExpressionStatement[14771-14803]:ExpressionStatement[14771-14803]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[14831-14863]:ExpressionStatement[14831-14863]"
+    }, {
+      "left" : "if (nid != NID.kCodersUnpackSize)",
+      "right" : "if (nid != NID.kCodersUnpackSize)",
+      "info" : "IfStatement[14872-14994]:IfStatement[14872-14994]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14906-14994]:Block[14906-14994]"
+    }, {
+      "left" : "throw new IOException(\"Expected kCodersUnpackSize, got \" + nid);",
+      "right" : "throw new IOException(\"Expected kCodersUnpackSize, got \" + nid);",
+      "info" : "ThrowStatement[14920-14984]:ThrowStatement[14920-14984]"
+    }, {
+      "left" : "for (final Folder folder : folders)",
+      "right" : "for (final Folder folder : folders)",
+      "info" : "EnhancedForStatement[15003-15265]:EnhancedForStatement[15003-15265]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15039-15265]:Block[15039-15265]"
+    }, {
+      "left" : "folder.unpackSizes = new long[(int)folder.totalOutputStreams];",
+      "right" : "folder.unpackSizes = new long[(int)folder.totalOutputStreams];",
+      "info" : "ExpressionStatement[15053-15115]:ExpressionStatement[15053-15115]"
+    }, {
+      "left" : "for (int i = 0; i < folder.totalOutputStreams; i++)",
+      "right" : "for (int i = 0; i < folder.totalOutputStreams; i++)",
+      "info" : "ForStatement[15128-15255]:ForStatement[15128-15255]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15180-15255]:Block[15180-15255]"
+    }, {
+      "left" : "folder.unpackSizes[i] = readUint64(header);",
+      "right" : "folder.unpackSizes[i] = readUint64(header);",
+      "info" : "ExpressionStatement[15198-15241]:ExpressionStatement[15198-15241]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[15283-15315]:ExpressionStatement[15283-15315]"
+    }, {
+      "left" : "if (nid == NID.kCRC)",
+      "right" : "if (nid == NID.kCRC)",
+      "info" : "IfStatement[15324-15832]:IfStatement[15324-15832]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15345-15832]:Block[15345-15832]"
+    }, {
+      "left" : "final BitSet crcsDefined = readAllOrBits(header, (int)numFolders);",
+      "right" : "final BitSet crcsDefined = readAllOrBits(header, (int)numFolders);",
+      "info" : "VariableDeclarationStatement[15359-15425]:VariableDeclarationStatement[15359-15425]"
+    }, {
+      "left" : "for (int i = 0; i < (int)numFolders; i++)",
+      "right" : "for (int i = 0; i < (int)numFolders; i++)",
+      "info" : "ForStatement[15438-15764]:ForStatement[15438-15764]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15480-15764]:Block[15480-15764]"
+    }, {
+      "left" : "if (crcsDefined.get(i))",
+      "right" : "if (crcsDefined.get(i))",
+      "info" : "IfStatement[15498-15750]:IfStatement[15498-15750]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15522-15678]:Block[15522-15678]"
+    }, {
+      "left" : "folders[i].hasCrc = true;",
+      "right" : "folders[i].hasCrc = true;",
+      "info" : "ExpressionStatement[15544-15569]:ExpressionStatement[15544-15569]"
+    }, {
+      "left" : "folders[i].crc = 0xffffFFFFL & Integer.reverseBytes(header.readInt());",
+      "right" : "folders[i].crc = 0xffffFFFFL & Integer.reverseBytes(header.readInt());",
+      "info" : "ExpressionStatement[15590-15660]:ExpressionStatement[15590-15660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15684-15750]:Block[15684-15750]"
+    }, {
+      "left" : "folders[i].hasCrc = false;",
+      "right" : "folders[i].hasCrc = false;",
+      "info" : "ExpressionStatement[15706-15732]:ExpressionStatement[15706-15732]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[15790-15822]:ExpressionStatement[15790-15822]"
+    }, {
+      "left" : "if (nid != NID.kEnd)",
+      "right" : "if (nid != NID.kEnd)",
+      "info" : "IfStatement[15850-15948]:IfStatement[15850-15948]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15871-15948]:Block[15871-15948]"
+    }, {
+      "left" : "throw new IOException(\"Badly terminated UnpackInfo\");",
+      "right" : "throw new IOException(\"Badly terminated UnpackInfo\");",
+      "info" : "ThrowStatement[15885-15938]:ThrowStatement[15885-15938]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[15964-15971]:Modifier[15964-15971]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15972-15976]:PrimitiveType[15972-15976]"
+    }, {
+      "left" : "readSubStreamsInfo",
+      "right" : "readSubStreamsInfo",
+      "info" : "SimpleName[15977-15995]:SimpleName[15977-15995]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[15996-16018]:SingleVariableDeclaration[15996-16018]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[16020-16041]:SingleVariableDeclaration[16020-16041]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[16050-16061]:SimpleType[16050-16061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16062-19288]:Block[16062-19288]"
+    }, {
+      "left" : "for (final Folder folder : archive.folders)",
+      "right" : "for (final Folder folder : archive.folders)",
+      "info" : "EnhancedForStatement[16072-16171]:EnhancedForStatement[16072-16171]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16116-16171]:Block[16116-16171]"
+    }, {
+      "left" : "folder.numUnpackSubStreams = 1;",
+      "right" : "folder.numUnpackSubStreams = 1;",
+      "info" : "ExpressionStatement[16130-16161]:ExpressionStatement[16130-16161]"
+    }, {
+      "left" : "int totalUnpackStreams = archive.folders.length;",
+      "right" : "int totalUnpackStreams = archive.folders.length;",
+      "info" : "VariableDeclarationStatement[16180-16228]:VariableDeclarationStatement[16180-16228]"
+    }, {
+      "left" : "int nid = header.readUnsignedByte();",
+      "right" : "int nid = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[16246-16282]:VariableDeclarationStatement[16246-16282]"
+    }, {
+      "left" : "if (nid == NID.kNumUnpackStream)",
+      "right" : "if (nid == NID.kNumUnpackStream)",
+      "info" : "IfStatement[16291-16660]:IfStatement[16291-16660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16324-16660]:Block[16324-16660]"
+    }, {
+      "left" : "totalUnpackStreams = 0;",
+      "right" : "totalUnpackStreams = 0;",
+      "info" : "ExpressionStatement[16338-16361]:ExpressionStatement[16338-16361]"
+    }, {
+      "left" : "for (final Folder folder : archive.folders)",
+      "right" : "for (final Folder folder : archive.folders)",
+      "info" : "EnhancedForStatement[16374-16605]:EnhancedForStatement[16374-16605]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16418-16605]:Block[16418-16605]"
+    }, {
+      "left" : "final long numStreams = readUint64(header);",
+      "right" : "final long numStreams = readUint64(header);",
+      "info" : "VariableDeclarationStatement[16436-16479]:VariableDeclarationStatement[16436-16479]"
+    }, {
+      "left" : "folder.numUnpackSubStreams = (int)numStreams;",
+      "right" : "folder.numUnpackSubStreams = (int)numStreams;",
+      "info" : "ExpressionStatement[16496-16541]:ExpressionStatement[16496-16541]"
+    }, {
+      "left" : "totalUnpackStreams += numStreams;",
+      "right" : "totalUnpackStreams += numStreams;",
+      "info" : "ExpressionStatement[16558-16591]:ExpressionStatement[16558-16591]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[16618-16650]:ExpressionStatement[16618-16650]"
+    }, {
+      "left" : "final SubStreamsInfo subStreamsInfo = new SubStreamsInfo();",
+      "right" : "final SubStreamsInfo subStreamsInfo = new SubStreamsInfo();",
+      "info" : "VariableDeclarationStatement[16678-16737]:VariableDeclarationStatement[16678-16737]"
+    }, {
+      "left" : "subStreamsInfo.unpackSizes = new long[totalUnpackStreams];",
+      "right" : "subStreamsInfo.unpackSizes = new long[totalUnpackStreams];",
+      "info" : "ExpressionStatement[16746-16804]:ExpressionStatement[16746-16804]"
+    }, {
+      "left" : "subStreamsInfo.hasCrc = new BitSet(totalUnpackStreams);",
+      "right" : "subStreamsInfo.hasCrc = new BitSet(totalUnpackStreams);",
+      "info" : "ExpressionStatement[16813-16868]:ExpressionStatement[16813-16868]"
+    }, {
+      "left" : "subStreamsInfo.crcs = new long[totalUnpackStreams];",
+      "right" : "subStreamsInfo.crcs = new long[totalUnpackStreams];",
+      "info" : "ExpressionStatement[16877-16928]:ExpressionStatement[16877-16928]"
+    }, {
+      "left" : "int nextUnpackStream = 0;",
+      "right" : "int nextUnpackStream = 0;",
+      "info" : "VariableDeclarationStatement[16946-16971]:VariableDeclarationStatement[16946-16971]"
+    }, {
+      "left" : "for (final Folder folder : archive.folders)",
+      "right" : "for (final Folder folder : archive.folders)",
+      "info" : "EnhancedForStatement[16980-17552]:EnhancedForStatement[16980-17552]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17024-17552]:Block[17024-17552]"
+    }, {
+      "left" : "if (folder.numUnpackSubStreams == 0)",
+      "right" : "if (folder.numUnpackSubStreams == 0)",
+      "info" : "IfStatement[17038-17116]:IfStatement[17038-17116]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17075-17116]:Block[17075-17116]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[17093-17102]:ContinueStatement[17093-17102]"
+    }, {
+      "left" : "long sum = 0;",
+      "right" : "long sum = 0;",
+      "info" : "VariableDeclarationStatement[17129-17142]:VariableDeclarationStatement[17129-17142]"
+    }, {
+      "left" : "if (nid == NID.kSize)",
+      "right" : "if (nid == NID.kSize)",
+      "info" : "IfStatement[17155-17451]:IfStatement[17155-17451]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17177-17451]:Block[17177-17451]"
+    }, {
+      "left" : "for (int i = 0; i < folder.numUnpackSubStreams - 1; i++)",
+      "right" : "for (int i = 0; i < folder.numUnpackSubStreams - 1; i++)",
+      "info" : "ForStatement[17195-17437]:ForStatement[17195-17437]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17252-17437]:Block[17252-17437]"
+    }, {
+      "left" : "final long size = readUint64(header);",
+      "right" : "final long size = readUint64(header);",
+      "info" : "VariableDeclarationStatement[17274-17311]:VariableDeclarationStatement[17274-17311]"
+    }, {
+      "left" : "subStreamsInfo.unpackSizes[nextUnpackStream++] = size;",
+      "right" : "subStreamsInfo.unpackSizes[nextUnpackStream++] = size;",
+      "info" : "ExpressionStatement[17332-17386]:ExpressionStatement[17332-17386]"
+    }, {
+      "left" : "sum += size;",
+      "right" : "sum += size;",
+      "info" : "ExpressionStatement[17407-17419]:ExpressionStatement[17407-17419]"
+    }, {
+      "left" : "subStreamsInfo.unpackSizes[nextUnpackStream++] = folder.getUnpackSize() - sum;",
+      "right" : "subStreamsInfo.unpackSizes[nextUnpackStream++] = folder.getUnpackSize() - sum;",
+      "info" : "ExpressionStatement[17464-17542]:ExpressionStatement[17464-17542]"
+    }, {
+      "left" : "if (nid == NID.kSize)",
+      "right" : "if (nid == NID.kSize)",
+      "info" : "IfStatement[17561-17639]:IfStatement[17561-17639]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17583-17639]:Block[17583-17639]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[17597-17629]:ExpressionStatement[17597-17629]"
+    }, {
+      "left" : "int numDigests = 0;",
+      "right" : "int numDigests = 0;",
+      "info" : "VariableDeclarationStatement[17657-17676]:VariableDeclarationStatement[17657-17676]"
+    }, {
+      "left" : "for (final Folder folder : archive.folders)",
+      "right" : "for (final Folder folder : archive.folders)",
+      "info" : "EnhancedForStatement[17685-17881]:EnhancedForStatement[17685-17881]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17729-17881]:Block[17729-17881]"
+    }, {
+      "left" : "if (folder.numUnpackSubStreams != 1 || !folder.hasCrc)",
+      "right" : "if (folder.numUnpackSubStreams != 1 || !folder.hasCrc)",
+      "info" : "IfStatement[17743-17871]:IfStatement[17743-17871]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17798-17871]:Block[17798-17871]"
+    }, {
+      "left" : "numDigests += folder.numUnpackSubStreams;",
+      "right" : "numDigests += folder.numUnpackSubStreams;",
+      "info" : "ExpressionStatement[17816-17857]:ExpressionStatement[17816-17857]"
+    }, {
+      "left" : "if (nid == NID.kCRC)",
+      "right" : "if (nid == NID.kCRC)",
+      "info" : "IfStatement[17899-19104]:IfStatement[17899-19104]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17920-19104]:Block[17920-19104]"
+    }, {
+      "left" : "final BitSet hasMissingCrc = readAllOrBits(header, numDigests);",
+      "right" : "final BitSet hasMissingCrc = readAllOrBits(header, numDigests);",
+      "info" : "VariableDeclarationStatement[17934-17997]:VariableDeclarationStatement[17934-17997]"
+    }, {
+      "left" : "final long[] missingCrcs = new long[numDigests];",
+      "right" : "final long[] missingCrcs = new long[numDigests];",
+      "info" : "VariableDeclarationStatement[18010-18058]:VariableDeclarationStatement[18010-18058]"
+    }, {
+      "left" : "for (int i = 0; i < numDigests; i++)",
+      "right" : "for (int i = 0; i < numDigests; i++)",
+      "info" : "ForStatement[18071-18276]:ForStatement[18071-18276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18108-18276]:Block[18108-18276]"
+    }, {
+      "left" : "if (hasMissingCrc.get(i))",
+      "right" : "if (hasMissingCrc.get(i))",
+      "info" : "IfStatement[18126-18262]:IfStatement[18126-18262]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18152-18262]:Block[18152-18262]"
+    }, {
+      "left" : "missingCrcs[i] = 0xffffFFFFL & Integer.reverseBytes(header.readInt());",
+      "right" : "missingCrcs[i] = 0xffffFFFFL & Integer.reverseBytes(header.readInt());",
+      "info" : "ExpressionStatement[18174-18244]:ExpressionStatement[18174-18244]"
+    }, {
+      "left" : "int nextCrc = 0;",
+      "right" : "int nextCrc = 0;",
+      "info" : "VariableDeclarationStatement[18289-18305]:VariableDeclarationStatement[18289-18305]"
+    }, {
+      "left" : "int nextMissingCrc = 0;",
+      "right" : "int nextMissingCrc = 0;",
+      "info" : "VariableDeclarationStatement[18318-18341]:VariableDeclarationStatement[18318-18341]"
+    }, {
+      "left" : "for (final Folder folder: archive.folders)",
+      "right" : "for (final Folder folder: archive.folders)",
+      "info" : "EnhancedForStatement[18354-19036]:EnhancedForStatement[18354-19036]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18397-19036]:Block[18397-19036]"
+    }, {
+      "left" : "if (folder.numUnpackSubStreams == 1 && folder.hasCrc)",
+      "right" : "if (folder.numUnpackSubStreams == 1 && folder.hasCrc)",
+      "info" : "IfStatement[18415-19022]:IfStatement[18415-19022]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18469-18644]:Block[18469-18644]"
+    }, {
+      "left" : "subStreamsInfo.hasCrc.set(nextCrc, true);",
+      "right" : "subStreamsInfo.hasCrc.set(nextCrc, true);",
+      "info" : "ExpressionStatement[18491-18532]:ExpressionStatement[18491-18532]"
+    }, {
+      "left" : "subStreamsInfo.crcs[nextCrc] = folder.crc;",
+      "right" : "subStreamsInfo.crcs[nextCrc] = folder.crc;",
+      "info" : "ExpressionStatement[18553-18595]:ExpressionStatement[18553-18595]"
+    }, {
+      "left" : "++nextCrc;",
+      "right" : "++nextCrc;",
+      "info" : "ExpressionStatement[18616-18626]:ExpressionStatement[18616-18626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18650-19022]:Block[18650-19022]"
+    }, {
+      "left" : "for (int i = 0; i < folder.numUnpackSubStreams; i++)",
+      "right" : "for (int i = 0; i < folder.numUnpackSubStreams; i++)",
+      "info" : "ForStatement[18672-19004]:ForStatement[18672-19004]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18725-19004]:Block[18725-19004]"
+    }, {
+      "left" : "subStreamsInfo.hasCrc.set(nextCrc, hasMissingCrc.get(nextMissingCrc));",
+      "right" : "subStreamsInfo.hasCrc.set(nextCrc, hasMissingCrc.get(nextMissingCrc));",
+      "info" : "ExpressionStatement[18751-18821]:ExpressionStatement[18751-18821]"
+    }, {
+      "left" : "subStreamsInfo.crcs[nextCrc] = missingCrcs[nextMissingCrc];",
+      "right" : "subStreamsInfo.crcs[nextCrc] = missingCrcs[nextMissingCrc];",
+      "info" : "ExpressionStatement[18846-18905]:ExpressionStatement[18846-18905]"
+    }, {
+      "left" : "++nextCrc;",
+      "right" : "++nextCrc;",
+      "info" : "ExpressionStatement[18930-18940]:ExpressionStatement[18930-18940]"
+    }, {
+      "left" : "++nextMissingCrc;",
+      "right" : "++nextMissingCrc;",
+      "info" : "ExpressionStatement[18965-18982]:ExpressionStatement[18965-18982]"
+    }, {
+      "left" : "nid = header.readUnsignedByte();",
+      "right" : "nid = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[19062-19094]:ExpressionStatement[19062-19094]"
+    }, {
+      "left" : "if (nid != NID.kEnd)",
+      "right" : "if (nid != NID.kEnd)",
+      "info" : "IfStatement[19122-19224]:IfStatement[19122-19224]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19143-19224]:Block[19143-19224]"
+    }, {
+      "left" : "throw new IOException(\"Badly terminated SubStreamsInfo\");",
+      "right" : "throw new IOException(\"Badly terminated SubStreamsInfo\");",
+      "info" : "ThrowStatement[19157-19214]:ThrowStatement[19157-19214]"
+    }, {
+      "left" : "archive.subStreamsInfo = subStreamsInfo;",
+      "right" : "archive.subStreamsInfo = subStreamsInfo;",
+      "info" : "ExpressionStatement[19242-19282]:ExpressionStatement[19242-19282]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[19298-19305]:Modifier[19298-19305]"
+    }, {
+      "left" : "Folder",
+      "right" : "Folder",
+      "info" : "SimpleType[19306-19312]:SimpleType[19306-19312]"
+    }, {
+      "left" : "readFolder",
+      "right" : "readFolder",
+      "info" : "SimpleName[19313-19323]:SimpleName[19313-19323]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[19324-19346]:SingleVariableDeclaration[19324-19346]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[19355-19366]:SimpleType[19355-19366]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19367-22630]:Block[19367-22630]"
+    }, {
+      "left" : "final Folder folder = new Folder();",
+      "right" : "final Folder folder = new Folder();",
+      "info" : "VariableDeclarationStatement[19377-19412]:VariableDeclarationStatement[19377-19412]"
+    }, {
+      "left" : "final long numCoders = readUint64(header);",
+      "right" : "final long numCoders = readUint64(header);",
+      "info" : "VariableDeclarationStatement[19430-19472]:VariableDeclarationStatement[19430-19472]"
+    }, {
+      "left" : "final Coder[] coders = new Coder[(int)numCoders];",
+      "right" : "final Coder[] coders = new Coder[(int)numCoders];",
+      "info" : "VariableDeclarationStatement[19481-19530]:VariableDeclarationStatement[19481-19530]"
+    }, {
+      "left" : "long totalInStreams = 0;",
+      "right" : "long totalInStreams = 0;",
+      "info" : "VariableDeclarationStatement[19539-19563]:VariableDeclarationStatement[19539-19563]"
+    }, {
+      "left" : "long totalOutStreams = 0;",
+      "right" : "long totalOutStreams = 0;",
+      "info" : "VariableDeclarationStatement[19572-19597]:VariableDeclarationStatement[19572-19597]"
+    }, {
+      "left" : "for (int i = 0; i < coders.length; i++)",
+      "right" : "for (int i = 0; i < coders.length; i++)",
+      "info" : "ForStatement[19606-21037]:ForStatement[19606-21037]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19646-21037]:Block[19646-21037]"
+    }, {
+      "left" : "coders[i] = new Coder();",
+      "right" : "coders[i] = new Coder();",
+      "info" : "ExpressionStatement[19660-19684]:ExpressionStatement[19660-19684]"
+    }, {
+      "left" : "final int bits = header.readUnsignedByte();",
+      "right" : "final int bits = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[19697-19740]:VariableDeclarationStatement[19697-19740]"
+    }, {
+      "left" : "final int idSize = bits & 0xf;",
+      "right" : "final int idSize = bits & 0xf;",
+      "info" : "VariableDeclarationStatement[19753-19783]:VariableDeclarationStatement[19753-19783]"
+    }, {
+      "left" : "final boolean isSimple = (bits & 0x10) == 0;",
+      "right" : "final boolean isSimple = (bits & 0x10) == 0;",
+      "info" : "VariableDeclarationStatement[19796-19840]:VariableDeclarationStatement[19796-19840]"
+    }, {
+      "left" : "final boolean hasAttributes = (bits & 0x20) != 0;",
+      "right" : "final boolean hasAttributes = (bits & 0x20) != 0;",
+      "info" : "VariableDeclarationStatement[19853-19902]:VariableDeclarationStatement[19853-19902]"
+    }, {
+      "left" : "final boolean moreAlternativeMethods = (bits & 0x80) != 0;",
+      "right" : "final boolean moreAlternativeMethods = (bits & 0x80) != 0;",
+      "info" : "VariableDeclarationStatement[19915-19973]:VariableDeclarationStatement[19915-19973]"
+    }, {
+      "left" : "coders[i].decompressionMethodId = new byte[idSize];",
+      "right" : "coders[i].decompressionMethodId = new byte[idSize];",
+      "info" : "ExpressionStatement[19999-20050]:ExpressionStatement[19999-20050]"
+    }, {
+      "left" : "header.readFully(coders[i].decompressionMethodId);",
+      "right" : "header.readFully(coders[i].decompressionMethodId);",
+      "info" : "ExpressionStatement[20063-20113]:ExpressionStatement[20063-20113]"
+    }, {
+      "left" : "if (isSimple)",
+      "right" : "if (isSimple)",
+      "info" : "IfStatement[20126-20388]:IfStatement[20126-20388]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20140-20244]:Block[20140-20244]"
+    }, {
+      "left" : "coders[i].numInStreams = 1;",
+      "right" : "coders[i].numInStreams = 1;",
+      "info" : "ExpressionStatement[20158-20185]:ExpressionStatement[20158-20185]"
+    }, {
+      "left" : "coders[i].numOutStreams = 1;",
+      "right" : "coders[i].numOutStreams = 1;",
+      "info" : "ExpressionStatement[20202-20230]:ExpressionStatement[20202-20230]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20250-20388]:Block[20250-20388]"
+    }, {
+      "left" : "coders[i].numInStreams = readUint64(header);",
+      "right" : "coders[i].numInStreams = readUint64(header);",
+      "info" : "ExpressionStatement[20268-20312]:ExpressionStatement[20268-20312]"
+    }, {
+      "left" : "coders[i].numOutStreams = readUint64(header);",
+      "right" : "coders[i].numOutStreams = readUint64(header);",
+      "info" : "ExpressionStatement[20329-20374]:ExpressionStatement[20329-20374]"
+    }, {
+      "left" : "totalInStreams += coders[i].numInStreams;",
+      "right" : "totalInStreams += coders[i].numInStreams;",
+      "info" : "ExpressionStatement[20401-20442]:ExpressionStatement[20401-20442]"
+    }, {
+      "left" : "totalOutStreams += coders[i].numOutStreams;",
+      "right" : "totalOutStreams += coders[i].numOutStreams;",
+      "info" : "ExpressionStatement[20455-20498]:ExpressionStatement[20455-20498]"
+    }, {
+      "left" : "if (hasAttributes)",
+      "right" : "if (hasAttributes)",
+      "info" : "IfStatement[20511-20735]:IfStatement[20511-20735]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20530-20735]:Block[20530-20735]"
+    }, {
+      "left" : "final long propertiesSize = readUint64(header);",
+      "right" : "final long propertiesSize = readUint64(header);",
+      "info" : "VariableDeclarationStatement[20548-20595]:VariableDeclarationStatement[20548-20595]"
+    }, {
+      "left" : "coders[i].properties = new byte[(int)propertiesSize];",
+      "right" : "coders[i].properties = new byte[(int)propertiesSize];",
+      "info" : "ExpressionStatement[20612-20665]:ExpressionStatement[20612-20665]"
+    }, {
+      "left" : "header.readFully(coders[i].properties);",
+      "right" : "header.readFully(coders[i].properties);",
+      "info" : "ExpressionStatement[20682-20721]:ExpressionStatement[20682-20721]"
+    }, {
+      "left" : "while (moreAlternativeMethods)",
+      "right" : "while (moreAlternativeMethods)",
+      "info" : "WhileStatement[20800-21027]:WhileStatement[20800-21027]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20831-21027]:Block[20831-21027]"
+    }, {
+      "left" : "throw new IOException(\"Alternative methods are unsupported, please report. \" +\n                        \"The reference implementation doesn't support them either.\");",
+      "right" : "throw new IOException(\"Alternative methods are unsupported, please report. \" +\n                        \"The reference implementation doesn't support them either.\");",
+      "info" : "ThrowStatement[20849-21013]:ThrowStatement[20849-21013]"
+    }, {
+      "left" : "folder.coders = coders;",
+      "right" : "folder.coders = coders;",
+      "info" : "ExpressionStatement[21046-21069]:ExpressionStatement[21046-21069]"
+    }, {
+      "left" : "folder.totalInputStreams = totalInStreams;",
+      "right" : "folder.totalInputStreams = totalInStreams;",
+      "info" : "ExpressionStatement[21078-21120]:ExpressionStatement[21078-21120]"
+    }, {
+      "left" : "folder.totalOutputStreams = totalOutStreams;",
+      "right" : "folder.totalOutputStreams = totalOutStreams;",
+      "info" : "ExpressionStatement[21129-21173]:ExpressionStatement[21129-21173]"
+    }, {
+      "left" : "if (totalOutStreams == 0)",
+      "right" : "if (totalOutStreams == 0)",
+      "info" : "IfStatement[21191-21298]:IfStatement[21191-21298]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21217-21298]:Block[21217-21298]"
+    }, {
+      "left" : "throw new IOException(\"Total output streams can't be 0\");",
+      "right" : "throw new IOException(\"Total output streams can't be 0\");",
+      "info" : "ThrowStatement[21231-21288]:ThrowStatement[21231-21288]"
+    }, {
+      "left" : "final long numBindPairs = totalOutStreams - 1;",
+      "right" : "final long numBindPairs = totalOutStreams - 1;",
+      "info" : "VariableDeclarationStatement[21307-21353]:VariableDeclarationStatement[21307-21353]"
+    }, {
+      "left" : "final BindPair[] bindPairs = new BindPair[(int)numBindPairs];",
+      "right" : "final BindPair[] bindPairs = new BindPair[(int)numBindPairs];",
+      "info" : "VariableDeclarationStatement[21362-21423]:VariableDeclarationStatement[21362-21423]"
+    }, {
+      "left" : "for (int i = 0; i < bindPairs.length; i++)",
+      "right" : "for (int i = 0; i < bindPairs.length; i++)",
+      "info" : "ForStatement[21432-21640]:ForStatement[21432-21640]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21475-21640]:Block[21475-21640]"
+    }, {
+      "left" : "bindPairs[i] = new BindPair();",
+      "right" : "bindPairs[i] = new BindPair();",
+      "info" : "ExpressionStatement[21489-21519]:ExpressionStatement[21489-21519]"
+    }, {
+      "left" : "bindPairs[i].inIndex = readUint64(header);",
+      "right" : "bindPairs[i].inIndex = readUint64(header);",
+      "info" : "ExpressionStatement[21532-21574]:ExpressionStatement[21532-21574]"
+    }, {
+      "left" : "bindPairs[i].outIndex = readUint64(header);",
+      "right" : "bindPairs[i].outIndex = readUint64(header);",
+      "info" : "ExpressionStatement[21587-21630]:ExpressionStatement[21587-21630]"
+    }, {
+      "left" : "folder.bindPairs = bindPairs;",
+      "right" : "folder.bindPairs = bindPairs;",
+      "info" : "ExpressionStatement[21649-21678]:ExpressionStatement[21649-21678]"
+    }, {
+      "left" : "if (totalInStreams < numBindPairs)",
+      "right" : "if (totalInStreams < numBindPairs)",
+      "info" : "IfStatement[21696-21844]:IfStatement[21696-21844]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21731-21844]:Block[21731-21844]"
+    }, {
+      "left" : "throw new IOException(\"Total input streams can't be less than the number of bind pairs\");",
+      "right" : "throw new IOException(\"Total input streams can't be less than the number of bind pairs\");",
+      "info" : "ThrowStatement[21745-21834]:ThrowStatement[21745-21834]"
+    }, {
+      "left" : "final long numPackedStreams = totalInStreams - numBindPairs;",
+      "right" : "final long numPackedStreams = totalInStreams - numBindPairs;",
+      "info" : "VariableDeclarationStatement[21853-21913]:VariableDeclarationStatement[21853-21913]"
+    }, {
+      "left" : "final long packedStreams[] = new long[(int)numPackedStreams];",
+      "right" : "final long packedStreams[] = new long[(int)numPackedStreams];",
+      "info" : "VariableDeclarationStatement[21922-21983]:VariableDeclarationStatement[21922-21983]"
+    }, {
+      "left" : "if (numPackedStreams == 1)",
+      "right" : "if (numPackedStreams == 1)",
+      "info" : "IfStatement[21992-22546]:IfStatement[21992-22546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22019-22398]:Block[22019-22398]"
+    }, {
+      "left" : "int i;",
+      "right" : "int i;",
+      "info" : "VariableDeclarationStatement[22033-22039]:VariableDeclarationStatement[22033-22039]"
+    }, {
+      "left" : "for (i = 0; i < (int)totalInStreams; i++)",
+      "right" : "for (i = 0; i < (int)totalInStreams; i++)",
+      "info" : "ForStatement[22052-22215]:ForStatement[22052-22215]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22094-22215]:Block[22094-22215]"
+    }, {
+      "left" : "if (folder.findBindPairForInStream(i) < 0)",
+      "right" : "if (folder.findBindPairForInStream(i) < 0)",
+      "info" : "IfStatement[22112-22201]:IfStatement[22112-22201]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22155-22201]:Block[22155-22201]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[22177-22183]:BreakStatement[22177-22183]"
+    }, {
+      "left" : "if (i == (int)totalInStreams)",
+      "right" : "if (i == (int)totalInStreams)",
+      "info" : "IfStatement[22228-22354]:IfStatement[22228-22354]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22258-22354]:Block[22258-22354]"
+    }, {
+      "left" : "throw new IOException(\"Couldn't find stream's bind pair index\");",
+      "right" : "throw new IOException(\"Couldn't find stream's bind pair index\");",
+      "info" : "ThrowStatement[22276-22340]:ThrowStatement[22276-22340]"
+    }, {
+      "left" : "packedStreams[0] = i;",
+      "right" : "packedStreams[0] = i;",
+      "info" : "ExpressionStatement[22367-22388]:ExpressionStatement[22367-22388]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22404-22546]:Block[22404-22546]"
+    }, {
+      "left" : "for (int i = 0; i < (int)numPackedStreams; i++)",
+      "right" : "for (int i = 0; i < (int)numPackedStreams; i++)",
+      "info" : "ForStatement[22418-22536]:ForStatement[22418-22536]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22466-22536]:Block[22466-22536]"
+    }, {
+      "left" : "packedStreams[i] = readUint64(header);",
+      "right" : "packedStreams[i] = readUint64(header);",
+      "info" : "ExpressionStatement[22484-22522]:ExpressionStatement[22484-22522]"
+    }, {
+      "left" : "folder.packedStreams = packedStreams;",
+      "right" : "folder.packedStreams = packedStreams;",
+      "info" : "ExpressionStatement[22555-22592]:ExpressionStatement[22555-22592]"
+    }, {
+      "left" : "return folder;",
+      "right" : "return folder;",
+      "info" : "ReturnStatement[22610-22624]:ReturnStatement[22610-22624]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[22640-22647]:Modifier[22640-22647]"
+    }, {
+      "left" : "BitSet",
+      "right" : "BitSet",
+      "info" : "SimpleType[22648-22654]:SimpleType[22648-22654]"
+    }, {
+      "left" : "readAllOrBits",
+      "right" : "readAllOrBits",
+      "info" : "SimpleName[22655-22668]:SimpleName[22655-22668]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[22669-22691]:SingleVariableDeclaration[22669-22691]"
+    }, {
+      "left" : "final int size",
+      "right" : "final int size",
+      "info" : "SingleVariableDeclaration[22693-22707]:SingleVariableDeclaration[22693-22707]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[22716-22727]:SimpleType[22716-22727]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22728-23079]:Block[22728-23079]"
+    }, {
+      "left" : "final int areAllDefined = header.readUnsignedByte();",
+      "right" : "final int areAllDefined = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[22738-22790]:VariableDeclarationStatement[22738-22790]"
+    }, {
+      "left" : "final BitSet bits;",
+      "right" : "final BitSet bits;",
+      "info" : "VariableDeclarationStatement[22799-22817]:VariableDeclarationStatement[22799-22817]"
+    }, {
+      "left" : "if (areAllDefined != 0)",
+      "right" : "if (areAllDefined != 0)",
+      "info" : "IfStatement[22826-23052]:IfStatement[22826-23052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22850-22992]:Block[22850-22992]"
+    }, {
+      "left" : "bits = new BitSet(size);",
+      "right" : "bits = new BitSet(size);",
+      "info" : "ExpressionStatement[22864-22888]:ExpressionStatement[22864-22888]"
+    }, {
+      "left" : "for (int i = 0; i < size; i++)",
+      "right" : "for (int i = 0; i < size; i++)",
+      "info" : "ForStatement[22901-22982]:ForStatement[22901-22982]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22932-22982]:Block[22932-22982]"
+    }, {
+      "left" : "bits.set(i, true);",
+      "right" : "bits.set(i, true);",
+      "info" : "ExpressionStatement[22950-22968]:ExpressionStatement[22950-22968]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22998-23052]:Block[22998-23052]"
+    }, {
+      "left" : "bits = readBits(header, size);",
+      "right" : "bits = readBits(header, size);",
+      "info" : "ExpressionStatement[23012-23042]:ExpressionStatement[23012-23042]"
+    }, {
+      "left" : "return bits;",
+      "right" : "return bits;",
+      "info" : "ReturnStatement[23061-23073]:ReturnStatement[23061-23073]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[23089-23096]:Modifier[23089-23096]"
+    }, {
+      "left" : "BitSet",
+      "right" : "BitSet",
+      "info" : "SimpleType[23097-23103]:SimpleType[23097-23103]"
+    }, {
+      "left" : "readBits",
+      "right" : "readBits",
+      "info" : "SimpleName[23104-23112]:SimpleName[23104-23112]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[23113-23135]:SingleVariableDeclaration[23113-23135]"
+    }, {
+      "left" : "final int size",
+      "right" : "final int size",
+      "info" : "SingleVariableDeclaration[23137-23151]:SingleVariableDeclaration[23137-23151]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[23160-23171]:SimpleType[23160-23171]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23172-23536]:Block[23172-23536]"
+    }, {
+      "left" : "final BitSet bits = new BitSet(size);",
+      "right" : "final BitSet bits = new BitSet(size);",
+      "info" : "VariableDeclarationStatement[23182-23219]:VariableDeclarationStatement[23182-23219]"
+    }, {
+      "left" : "int mask = 0;",
+      "right" : "int mask = 0;",
+      "info" : "VariableDeclarationStatement[23228-23241]:VariableDeclarationStatement[23228-23241]"
+    }, {
+      "left" : "int cache = 0;",
+      "right" : "int cache = 0;",
+      "info" : "VariableDeclarationStatement[23250-23264]:VariableDeclarationStatement[23250-23264]"
+    }, {
+      "left" : "for (int i = 0; i < size; i++)",
+      "right" : "for (int i = 0; i < size; i++)",
+      "info" : "ForStatement[23273-23509]:ForStatement[23273-23509]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23304-23509]:Block[23304-23509]"
+    }, {
+      "left" : "if (mask == 0)",
+      "right" : "if (mask == 0)",
+      "info" : "IfStatement[23318-23428]:IfStatement[23318-23428]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23333-23428]:Block[23333-23428]"
+    }, {
+      "left" : "mask = 0x80;",
+      "right" : "mask = 0x80;",
+      "info" : "ExpressionStatement[23351-23363]:ExpressionStatement[23351-23363]"
+    }, {
+      "left" : "cache = header.readUnsignedByte();",
+      "right" : "cache = header.readUnsignedByte();",
+      "info" : "ExpressionStatement[23380-23414]:ExpressionStatement[23380-23414]"
+    }, {
+      "left" : "bits.set(i, (cache & mask) != 0);",
+      "right" : "bits.set(i, (cache & mask) != 0);",
+      "info" : "ExpressionStatement[23441-23474]:ExpressionStatement[23441-23474]"
+    }, {
+      "left" : "mask >>>= 1;",
+      "right" : "mask >>>= 1;",
+      "info" : "ExpressionStatement[23487-23499]:ExpressionStatement[23487-23499]"
+    }, {
+      "left" : "return bits;",
+      "right" : "return bits;",
+      "info" : "ReturnStatement[23518-23530]:ReturnStatement[23518-23530]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[23546-23553]:Modifier[23546-23553]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[23554-23558]:PrimitiveType[23554-23558]"
+    }, {
+      "left" : "readFilesInfo",
+      "right" : "readFilesInfo",
+      "info" : "SimpleName[23559-23572]:SimpleName[23559-23572]"
+    }, {
+      "left" : "final DataInput header",
+      "right" : "final DataInput header",
+      "info" : "SingleVariableDeclaration[23573-23595]:SingleVariableDeclaration[23573-23595]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[23597-23618]:SingleVariableDeclaration[23597-23618]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[23627-23638]:SimpleType[23627-23638]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23639-31132]:Block[23639-31132]"
+    }, {
+      "left" : "final long numFiles = readUint64(header);",
+      "right" : "final long numFiles = readUint64(header);",
+      "info" : "VariableDeclarationStatement[23649-23690]:VariableDeclarationStatement[23649-23690]"
+    }, {
+      "left" : "final SevenZArchiveEntry[] files = new SevenZArchiveEntry[(int)numFiles];",
+      "right" : "final SevenZArchiveEntry[] files = new SevenZArchiveEntry[(int)numFiles];",
+      "info" : "VariableDeclarationStatement[23699-23772]:VariableDeclarationStatement[23699-23772]"
+    }, {
+      "left" : "for (int i = 0; i < files.length; i++)",
+      "right" : "for (int i = 0; i < files.length; i++)",
+      "info" : "ForStatement[23781-23880]:ForStatement[23781-23880]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23820-23880]:Block[23820-23880]"
+    }, {
+      "left" : "files[i] = new SevenZArchiveEntry();",
+      "right" : "files[i] = new SevenZArchiveEntry();",
+      "info" : "ExpressionStatement[23834-23870]:ExpressionStatement[23834-23870]"
+    }, {
+      "left" : "BitSet isEmptyStream = null;",
+      "right" : "BitSet isEmptyStream = null;",
+      "info" : "VariableDeclarationStatement[23889-23917]:VariableDeclarationStatement[23889-23917]"
+    }, {
+      "left" : "BitSet isEmptyFile = null;",
+      "right" : "BitSet isEmptyFile = null;",
+      "info" : "VariableDeclarationStatement[23926-23952]:VariableDeclarationStatement[23926-23952]"
+    }, {
+      "left" : "BitSet isAnti = null;",
+      "right" : "BitSet isAnti = null;",
+      "info" : "VariableDeclarationStatement[23962-23983]:VariableDeclarationStatement[23962-23983]"
+    }, {
+      "left" : "while (true)",
+      "right" : "while (true)",
+      "info" : "WhileStatement[23992-30050]:WhileStatement[23992-30050]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24005-30050]:Block[24005-30050]"
+    }, {
+      "left" : "final int propertyType = header.readUnsignedByte();",
+      "right" : "final int propertyType = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[24019-24070]:VariableDeclarationStatement[24019-24070]"
+    }, {
+      "left" : "if (propertyType == 0)",
+      "right" : "if (propertyType == 0)",
+      "info" : "IfStatement[24083-24144]:IfStatement[24083-24144]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24106-24144]:Block[24106-24144]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[24124-24130]:BreakStatement[24124-24130]"
+    }, {
+      "left" : "final long size = readUint64(header);",
+      "right" : "final long size = readUint64(header);",
+      "info" : "VariableDeclarationStatement[24157-24194]:VariableDeclarationStatement[24157-24194]"
+    }, {
+      "left" : "switch (propertyType) {\n                case NID.kEmptyStream: {\n                    isEmptyStream = readBits(header, files.length);\n                    break;\n                }\n                case NID.kEmptyFile: {\n                    if (isEmptyStream == null) { // protect against NPE\n                        throw new IOException(\"Header format error: kEmptyStream must appear before kEmptyFile\");\n                    }\n                    isEmptyFile = readBits(header, isEmptyStream.cardinality());\n                    break;\n                }\n                case NID.kAnti: {\n                    if (isEmptyStream == null) { // protect against NPE\n                        throw new IOException(\"Header format error: kEmptyStream must appear before kAnti\");\n                    }\n                    isAnti = readBits(header, isEmptyStream.cardinality());\n                    break;\n                }\n                case NID.kName: {\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Not implemented\");\n                    }\n                    if (((size - 1) & 1) != 0) {\n                        throw new IOException(\"File names length invalid\");\n                    }\n                    final byte[] names = new byte[(int)(size - 1)];\n                    header.readFully(names);\n                    int nextFile = 0;\n                    int nextName = 0;\n                    for (int i = 0; i < names.length; i += 2) {\n                        if (names[i] == 0 && names[i+1] == 0) {\n                            files[nextFile++].setName(new String(names, nextName, i-nextName, CharsetNames.UTF_16LE));\n                            nextName = i + 2;\n                        }\n                    }\n                    if (nextName != names.length || nextFile != files.length) {\n                        throw new IOException(\"Error parsing file names\");\n                    }\n                    break;\n                }\n                case NID.kCTime: {\n                    final BitSet timesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasCreationDate(timesDefined.get(i));\n                        if (files[i].getHasCreationDate()) {\n                            files[i].setCreationDate(Long.reverseBytes(header.readLong()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kATime: {\n                    final BitSet timesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasAccessDate(timesDefined.get(i));\n                        if (files[i].getHasAccessDate()) {\n                            files[i].setAccessDate(Long.reverseBytes(header.readLong()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kMTime: {\n                    final BitSet timesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasLastModifiedDate(timesDefined.get(i));\n                        if (files[i].getHasLastModifiedDate()) {\n                            files[i].setLastModifiedDate(Long.reverseBytes(header.readLong()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kWinAttributes: {\n                    final BitSet attributesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasWindowsAttributes(attributesDefined.get(i));\n                        if (files[i].getHasWindowsAttributes()) {\n                            files[i].setWindowsAttributes(Integer.reverseBytes(header.readInt()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kStartPos: {\n                    throw new IOException(\"kStartPos is unsupported, please report\");\n                }\n                case NID.kDummy: {\n                    // 7z 9.20 asserts the content is all zeros and ignores the property\n                    // Compress up to 1.8.1 would throw an exception, now we ignore it (see COMPRESS-287\n                    \n                    if (skipBytesFully(header, size) < size) {\n                        throw new IOException(\"Incomplete kDummy property\");\n                    }\n                    break;\n                }\n\n                default: {\n                    // Compress up to 1.8.1 would throw an exception, now we ignore it (see COMPRESS-287\n                    if (skipBytesFully(header, size) < size) {\n                        throw new IOException(\"Incomplete property of type \" + propertyType);\n                    }\n                    break;\n                }\n            }",
+      "right" : "switch (propertyType) {\n                case NID.kEmptyStream: {\n                    isEmptyStream = readBits(header, files.length);\n                    break;\n                }\n                case NID.kEmptyFile: {\n                    if (isEmptyStream == null) { // protect against NPE\n                        throw new IOException(\"Header format error: kEmptyStream must appear before kEmptyFile\");\n                    }\n                    isEmptyFile = readBits(header, isEmptyStream.cardinality());\n                    break;\n                }\n                case NID.kAnti: {\n                    if (isEmptyStream == null) { // protect against NPE\n                        throw new IOException(\"Header format error: kEmptyStream must appear before kAnti\");\n                    }\n                    isAnti = readBits(header, isEmptyStream.cardinality());\n                    break;\n                }\n                case NID.kName: {\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Not implemented\");\n                    }\n                    if (((size - 1) & 1) != 0) {\n                        throw new IOException(\"File names length invalid\");\n                    }\n                    final byte[] names = new byte[(int)(size - 1)];\n                    header.readFully(names);\n                    int nextFile = 0;\n                    int nextName = 0;\n                    for (int i = 0; i < names.length; i += 2) {\n                        if (names[i] == 0 && names[i+1] == 0) {\n                            files[nextFile++].setName(new String(names, nextName, i-nextName, CharsetNames.UTF_16LE));\n                            nextName = i + 2;\n                        }\n                    }\n                    if (nextName != names.length || nextFile != files.length) {\n                        throw new IOException(\"Error parsing file names\");\n                    }\n                    break;\n                }\n                case NID.kCTime: {\n                    final BitSet timesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasCreationDate(timesDefined.get(i));\n                        if (files[i].getHasCreationDate()) {\n                            files[i].setCreationDate(Long.reverseBytes(header.readLong()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kATime: {\n                    final BitSet timesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasAccessDate(timesDefined.get(i));\n                        if (files[i].getHasAccessDate()) {\n                            files[i].setAccessDate(Long.reverseBytes(header.readLong()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kMTime: {\n                    final BitSet timesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasLastModifiedDate(timesDefined.get(i));\n                        if (files[i].getHasLastModifiedDate()) {\n                            files[i].setLastModifiedDate(Long.reverseBytes(header.readLong()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kWinAttributes: {\n                    final BitSet attributesDefined = readAllOrBits(header, files.length);\n                    final int external = header.readUnsignedByte();\n                    if (external != 0) {\n                        throw new IOException(\"Unimplemented\");\n                    }\n                    for (int i = 0; i < files.length; i++) {\n                        files[i].setHasWindowsAttributes(attributesDefined.get(i));\n                        if (files[i].getHasWindowsAttributes()) {\n                            files[i].setWindowsAttributes(Integer.reverseBytes(header.readInt()));\n                        }\n                    }\n                    break;\n                }\n                case NID.kStartPos: {\n                    throw new IOException(\"kStartPos is unsupported, please report\");\n                }\n                case NID.kDummy: {\n                    // 7z 9.20 asserts the content is all zeros and ignores the property\n                    // Compress up to 1.8.1 would throw an exception, now we ignore it (see COMPRESS-287\n                    \n                    if (skipBytesFully(header, size) < size) {\n                        throw new IOException(\"Incomplete kDummy property\");\n                    }\n                    break;\n                }\n\n                default: {\n                    // Compress up to 1.8.1 would throw an exception, now we ignore it (see COMPRESS-287\n                    if (skipBytesFully(header, size) < size) {\n                        throw new IOException(\"Incomplete property of type \" + propertyType);\n                    }\n                    break;\n                }\n            }",
+      "info" : "SwitchStatement[24207-30040]:SwitchStatement[24207-30040]"
+    }, {
+      "left" : "case NID.kEmptyStream:",
+      "right" : "case NID.kEmptyStream:",
+      "info" : "SwitchCase[24247-24269]:SwitchCase[24247-24269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24270-24384]:Block[24270-24384]"
+    }, {
+      "left" : "isEmptyStream = readBits(header, files.length);",
+      "right" : "isEmptyStream = readBits(header, files.length);",
+      "info" : "ExpressionStatement[24292-24339]:ExpressionStatement[24292-24339]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[24360-24366]:BreakStatement[24360-24366]"
+    }, {
+      "left" : "case NID.kEmptyFile:",
+      "right" : "case NID.kEmptyFile:",
+      "info" : "SwitchCase[24401-24421]:SwitchCase[24401-24421]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24422-24757]:Block[24422-24757]"
+    }, {
+      "left" : "if (isEmptyStream == null)",
+      "right" : "if (isEmptyStream == null)",
+      "info" : "IfStatement[24444-24631]:IfStatement[24444-24631]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24471-24631]:Block[24471-24631]"
+    }, {
+      "left" : "throw new IOException(\"Header format error: kEmptyStream must appear before kEmptyFile\");",
+      "right" : "throw new IOException(\"Header format error: kEmptyStream must appear before kEmptyFile\");",
+      "info" : "ThrowStatement[24520-24609]:ThrowStatement[24520-24609]"
+    }, {
+      "left" : "isEmptyFile = readBits(header, isEmptyStream.cardinality());",
+      "right" : "isEmptyFile = readBits(header, isEmptyStream.cardinality());",
+      "info" : "ExpressionStatement[24652-24712]:ExpressionStatement[24652-24712]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[24733-24739]:BreakStatement[24733-24739]"
+    }, {
+      "left" : "case NID.kAnti:",
+      "right" : "case NID.kAnti:",
+      "info" : "SwitchCase[24774-24789]:SwitchCase[24774-24789]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24790-25115]:Block[24790-25115]"
+    }, {
+      "left" : "if (isEmptyStream == null)",
+      "right" : "if (isEmptyStream == null)",
+      "info" : "IfStatement[24812-24994]:IfStatement[24812-24994]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24839-24994]:Block[24839-24994]"
+    }, {
+      "left" : "throw new IOException(\"Header format error: kEmptyStream must appear before kAnti\");",
+      "right" : "throw new IOException(\"Header format error: kEmptyStream must appear before kAnti\");",
+      "info" : "ThrowStatement[24888-24972]:ThrowStatement[24888-24972]"
+    }, {
+      "left" : "isAnti = readBits(header, isEmptyStream.cardinality());",
+      "right" : "isAnti = readBits(header, isEmptyStream.cardinality());",
+      "info" : "ExpressionStatement[25015-25070]:ExpressionStatement[25015-25070]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[25091-25097]:BreakStatement[25091-25097]"
+    }, {
+      "left" : "case NID.kName:",
+      "right" : "case NID.kName:",
+      "info" : "SwitchCase[25132-25147]:SwitchCase[25132-25147]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25148-26245]:Block[25148-26245]"
+    }, {
+      "left" : "final int external = header.readUnsignedByte();",
+      "right" : "final int external = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[25170-25217]:VariableDeclarationStatement[25170-25217]"
+    }, {
+      "left" : "if (external != 0)",
+      "right" : "if (external != 0)",
+      "info" : "IfStatement[25238-25346]:IfStatement[25238-25346]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25257-25346]:Block[25257-25346]"
+    }, {
+      "left" : "throw new IOException(\"Not implemented\");",
+      "right" : "throw new IOException(\"Not implemented\");",
+      "info" : "ThrowStatement[25283-25324]:ThrowStatement[25283-25324]"
+    }, {
+      "left" : "if (((size - 1) & 1) != 0)",
+      "right" : "if (((size - 1) & 1) != 0)",
+      "info" : "IfStatement[25367-25493]:IfStatement[25367-25493]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25394-25493]:Block[25394-25493]"
+    }, {
+      "left" : "throw new IOException(\"File names length invalid\");",
+      "right" : "throw new IOException(\"File names length invalid\");",
+      "info" : "ThrowStatement[25420-25471]:ThrowStatement[25420-25471]"
+    }, {
+      "left" : "final byte[] names = new byte[(int)(size - 1)];",
+      "right" : "final byte[] names = new byte[(int)(size - 1)];",
+      "info" : "VariableDeclarationStatement[25514-25561]:VariableDeclarationStatement[25514-25561]"
+    }, {
+      "left" : "header.readFully(names);",
+      "right" : "header.readFully(names);",
+      "info" : "ExpressionStatement[25582-25606]:ExpressionStatement[25582-25606]"
+    }, {
+      "left" : "int nextFile = 0;",
+      "right" : "int nextFile = 0;",
+      "info" : "VariableDeclarationStatement[25627-25644]:VariableDeclarationStatement[25627-25644]"
+    }, {
+      "left" : "int nextName = 0;",
+      "right" : "int nextName = 0;",
+      "info" : "VariableDeclarationStatement[25665-25682]:VariableDeclarationStatement[25665-25682]"
+    }, {
+      "left" : "for (int i = 0; i < names.length; i += 2)",
+      "right" : "for (int i = 0; i < names.length; i += 2)",
+      "info" : "ForStatement[25703-26023]:ForStatement[25703-26023]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25745-26023]:Block[25745-26023]"
+    }, {
+      "left" : "if (names[i] == 0 && names[i+1] == 0)",
+      "right" : "if (names[i] == 0 && names[i+1] == 0)",
+      "info" : "IfStatement[25771-26001]:IfStatement[25771-26001]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25809-26001]:Block[25809-26001]"
+    }, {
+      "left" : "files[nextFile++].setName(new String(names, nextName, i-nextName, CharsetNames.UTF_16LE));",
+      "right" : "files[nextFile++].setName(new String(names, nextName, i-nextName, CharsetNames.UTF_16LE));",
+      "info" : "ExpressionStatement[25839-25929]:ExpressionStatement[25839-25929]"
+    }, {
+      "left" : "nextName = i + 2;",
+      "right" : "nextName = i + 2;",
+      "info" : "ExpressionStatement[25958-25975]:ExpressionStatement[25958-25975]"
+    }, {
+      "left" : "if (nextName != names.length || nextFile != files.length)",
+      "right" : "if (nextName != names.length || nextFile != files.length)",
+      "info" : "IfStatement[26044-26200]:IfStatement[26044-26200]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26102-26200]:Block[26102-26200]"
+    }, {
+      "left" : "throw new IOException(\"Error parsing file names\");",
+      "right" : "throw new IOException(\"Error parsing file names\");",
+      "info" : "ThrowStatement[26128-26178]:ThrowStatement[26128-26178]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[26221-26227]:BreakStatement[26221-26227]"
+    }, {
+      "left" : "case NID.kCTime:",
+      "right" : "case NID.kCTime:",
+      "info" : "SwitchCase[26262-26278]:SwitchCase[26262-26278]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26279-26941]:Block[26279-26941]"
+    }, {
+      "left" : "final BitSet timesDefined = readAllOrBits(header, files.length);",
+      "right" : "final BitSet timesDefined = readAllOrBits(header, files.length);",
+      "info" : "VariableDeclarationStatement[26301-26365]:VariableDeclarationStatement[26301-26365]"
+    }, {
+      "left" : "final int external = header.readUnsignedByte();",
+      "right" : "final int external = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[26386-26433]:VariableDeclarationStatement[26386-26433]"
+    }, {
+      "left" : "if (external != 0)",
+      "right" : "if (external != 0)",
+      "info" : "IfStatement[26454-26560]:IfStatement[26454-26560]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26473-26560]:Block[26473-26560]"
+    }, {
+      "left" : "throw new IOException(\"Unimplemented\");",
+      "right" : "throw new IOException(\"Unimplemented\");",
+      "info" : "ThrowStatement[26499-26538]:ThrowStatement[26499-26538]"
+    }, {
+      "left" : "for (int i = 0; i < files.length; i++)",
+      "right" : "for (int i = 0; i < files.length; i++)",
+      "info" : "ForStatement[26581-26896]:ForStatement[26581-26896]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26620-26896]:Block[26620-26896]"
+    }, {
+      "left" : "files[i].setHasCreationDate(timesDefined.get(i));",
+      "right" : "files[i].setHasCreationDate(timesDefined.get(i));",
+      "info" : "ExpressionStatement[26646-26695]:ExpressionStatement[26646-26695]"
+    }, {
+      "left" : "if (files[i].getHasCreationDate())",
+      "right" : "if (files[i].getHasCreationDate())",
+      "info" : "IfStatement[26720-26874]:IfStatement[26720-26874]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26755-26874]:Block[26755-26874]"
+    }, {
+      "left" : "files[i].setCreationDate(Long.reverseBytes(header.readLong()));",
+      "right" : "files[i].setCreationDate(Long.reverseBytes(header.readLong()));",
+      "info" : "ExpressionStatement[26785-26848]:ExpressionStatement[26785-26848]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[26917-26923]:BreakStatement[26917-26923]"
+    }, {
+      "left" : "case NID.kATime:",
+      "right" : "case NID.kATime:",
+      "info" : "SwitchCase[26958-26974]:SwitchCase[26958-26974]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26975-27631]:Block[26975-27631]"
+    }, {
+      "left" : "final BitSet timesDefined = readAllOrBits(header, files.length);",
+      "right" : "final BitSet timesDefined = readAllOrBits(header, files.length);",
+      "info" : "VariableDeclarationStatement[26997-27061]:VariableDeclarationStatement[26997-27061]"
+    }, {
+      "left" : "final int external = header.readUnsignedByte();",
+      "right" : "final int external = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[27082-27129]:VariableDeclarationStatement[27082-27129]"
+    }, {
+      "left" : "if (external != 0)",
+      "right" : "if (external != 0)",
+      "info" : "IfStatement[27150-27256]:IfStatement[27150-27256]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27169-27256]:Block[27169-27256]"
+    }, {
+      "left" : "throw new IOException(\"Unimplemented\");",
+      "right" : "throw new IOException(\"Unimplemented\");",
+      "info" : "ThrowStatement[27195-27234]:ThrowStatement[27195-27234]"
+    }, {
+      "left" : "for (int i = 0; i < files.length; i++)",
+      "right" : "for (int i = 0; i < files.length; i++)",
+      "info" : "ForStatement[27277-27586]:ForStatement[27277-27586]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27316-27586]:Block[27316-27586]"
+    }, {
+      "left" : "files[i].setHasAccessDate(timesDefined.get(i));",
+      "right" : "files[i].setHasAccessDate(timesDefined.get(i));",
+      "info" : "ExpressionStatement[27342-27389]:ExpressionStatement[27342-27389]"
+    }, {
+      "left" : "if (files[i].getHasAccessDate())",
+      "right" : "if (files[i].getHasAccessDate())",
+      "info" : "IfStatement[27414-27564]:IfStatement[27414-27564]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27447-27564]:Block[27447-27564]"
+    }, {
+      "left" : "files[i].setAccessDate(Long.reverseBytes(header.readLong()));",
+      "right" : "files[i].setAccessDate(Long.reverseBytes(header.readLong()));",
+      "info" : "ExpressionStatement[27477-27538]:ExpressionStatement[27477-27538]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[27607-27613]:BreakStatement[27607-27613]"
+    }, {
+      "left" : "case NID.kMTime:",
+      "right" : "case NID.kMTime:",
+      "info" : "SwitchCase[27648-27664]:SwitchCase[27648-27664]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27665-28339]:Block[27665-28339]"
+    }, {
+      "left" : "final BitSet timesDefined = readAllOrBits(header, files.length);",
+      "right" : "final BitSet timesDefined = readAllOrBits(header, files.length);",
+      "info" : "VariableDeclarationStatement[27687-27751]:VariableDeclarationStatement[27687-27751]"
+    }, {
+      "left" : "final int external = header.readUnsignedByte();",
+      "right" : "final int external = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[27772-27819]:VariableDeclarationStatement[27772-27819]"
+    }, {
+      "left" : "if (external != 0)",
+      "right" : "if (external != 0)",
+      "info" : "IfStatement[27840-27946]:IfStatement[27840-27946]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27859-27946]:Block[27859-27946]"
+    }, {
+      "left" : "throw new IOException(\"Unimplemented\");",
+      "right" : "throw new IOException(\"Unimplemented\");",
+      "info" : "ThrowStatement[27885-27924]:ThrowStatement[27885-27924]"
+    }, {
+      "left" : "for (int i = 0; i < files.length; i++)",
+      "right" : "for (int i = 0; i < files.length; i++)",
+      "info" : "ForStatement[27967-28294]:ForStatement[27967-28294]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28006-28294]:Block[28006-28294]"
+    }, {
+      "left" : "files[i].setHasLastModifiedDate(timesDefined.get(i));",
+      "right" : "files[i].setHasLastModifiedDate(timesDefined.get(i));",
+      "info" : "ExpressionStatement[28032-28085]:ExpressionStatement[28032-28085]"
+    }, {
+      "left" : "if (files[i].getHasLastModifiedDate())",
+      "right" : "if (files[i].getHasLastModifiedDate())",
+      "info" : "IfStatement[28110-28272]:IfStatement[28110-28272]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28149-28272]:Block[28149-28272]"
+    }, {
+      "left" : "files[i].setLastModifiedDate(Long.reverseBytes(header.readLong()));",
+      "right" : "files[i].setLastModifiedDate(Long.reverseBytes(header.readLong()));",
+      "info" : "ExpressionStatement[28179-28246]:ExpressionStatement[28179-28246]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[28315-28321]:BreakStatement[28315-28321]"
+    }, {
+      "left" : "case NID.kWinAttributes:",
+      "right" : "case NID.kWinAttributes:",
+      "info" : "SwitchCase[28356-28380]:SwitchCase[28356-28380]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28381-29070]:Block[28381-29070]"
+    }, {
+      "left" : "final BitSet attributesDefined = readAllOrBits(header, files.length);",
+      "right" : "final BitSet attributesDefined = readAllOrBits(header, files.length);",
+      "info" : "VariableDeclarationStatement[28403-28472]:VariableDeclarationStatement[28403-28472]"
+    }, {
+      "left" : "final int external = header.readUnsignedByte();",
+      "right" : "final int external = header.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[28493-28540]:VariableDeclarationStatement[28493-28540]"
+    }, {
+      "left" : "if (external != 0)",
+      "right" : "if (external != 0)",
+      "info" : "IfStatement[28561-28667]:IfStatement[28561-28667]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28580-28667]:Block[28580-28667]"
+    }, {
+      "left" : "throw new IOException(\"Unimplemented\");",
+      "right" : "throw new IOException(\"Unimplemented\");",
+      "info" : "ThrowStatement[28606-28645]:ThrowStatement[28606-28645]"
+    }, {
+      "left" : "for (int i = 0; i < files.length; i++)",
+      "right" : "for (int i = 0; i < files.length; i++)",
+      "info" : "ForStatement[28688-29025]:ForStatement[28688-29025]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28727-29025]:Block[28727-29025]"
+    }, {
+      "left" : "files[i].setHasWindowsAttributes(attributesDefined.get(i));",
+      "right" : "files[i].setHasWindowsAttributes(attributesDefined.get(i));",
+      "info" : "ExpressionStatement[28753-28812]:ExpressionStatement[28753-28812]"
+    }, {
+      "left" : "if (files[i].getHasWindowsAttributes())",
+      "right" : "if (files[i].getHasWindowsAttributes())",
+      "info" : "IfStatement[28837-29003]:IfStatement[28837-29003]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28877-29003]:Block[28877-29003]"
+    }, {
+      "left" : "files[i].setWindowsAttributes(Integer.reverseBytes(header.readInt()));",
+      "right" : "files[i].setWindowsAttributes(Integer.reverseBytes(header.readInt()));",
+      "info" : "ExpressionStatement[28907-28977]:ExpressionStatement[28907-28977]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[29046-29052]:BreakStatement[29046-29052]"
+    }, {
+      "left" : "case NID.kStartPos:",
+      "right" : "case NID.kStartPos:",
+      "info" : "SwitchCase[29087-29106]:SwitchCase[29087-29106]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29107-29212]:Block[29107-29212]"
+    }, {
+      "left" : "throw new IOException(\"kStartPos is unsupported, please report\");",
+      "right" : "throw new IOException(\"kStartPos is unsupported, please report\");",
+      "info" : "ThrowStatement[29129-29194]:ThrowStatement[29129-29194]"
+    }, {
+      "left" : "case NID.kDummy:",
+      "right" : "case NID.kDummy:",
+      "info" : "SwitchCase[29229-29245]:SwitchCase[29229-29245]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29246-29669]:Block[29246-29669]"
+    }, {
+      "left" : "if (skipBytesFully(header, size) < size)",
+      "right" : "if (skipBytesFully(header, size) < size)",
+      "info" : "IfStatement[29483-29624]:IfStatement[29483-29624]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29524-29624]:Block[29524-29624]"
+    }, {
+      "left" : "throw new IOException(\"Incomplete kDummy property\");",
+      "right" : "throw new IOException(\"Incomplete kDummy property\");",
+      "info" : "ThrowStatement[29550-29602]:ThrowStatement[29550-29602]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[29645-29651]:BreakStatement[29645-29651]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[29687-29695]:SwitchCase[29687-29695]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29696-30026]:Block[29696-30026]"
+    }, {
+      "left" : "if (skipBytesFully(header, size) < size)",
+      "right" : "if (skipBytesFully(header, size) < size)",
+      "info" : "IfStatement[29823-29981]:IfStatement[29823-29981]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29864-29981]:Block[29864-29981]"
+    }, {
+      "left" : "throw new IOException(\"Incomplete property of type \" + propertyType);",
+      "right" : "throw new IOException(\"Incomplete property of type \" + propertyType);",
+      "info" : "ThrowStatement[29890-29959]:ThrowStatement[29890-29959]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[30002-30008]:BreakStatement[30002-30008]"
+    }, {
+      "left" : "int nonEmptyFileCounter = 0;",
+      "right" : "int nonEmptyFileCounter = 0;",
+      "info" : "VariableDeclarationStatement[30059-30087]:VariableDeclarationStatement[30059-30087]"
+    }, {
+      "left" : "int emptyFileCounter = 0;",
+      "right" : "int emptyFileCounter = 0;",
+      "info" : "VariableDeclarationStatement[30096-30121]:VariableDeclarationStatement[30096-30121]"
+    }, {
+      "left" : "for (int i = 0; i < files.length; i++)",
+      "right" : "for (int i = 0; i < files.length; i++)",
+      "info" : "ForStatement[30130-31058]:ForStatement[30130-31058]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30169-31058]:Block[30169-31058]"
+    }, {
+      "left" : "files[i].setHasStream(isEmptyStream == null ? true : !isEmptyStream.get(i));",
+      "right" : "files[i].setHasStream(isEmptyStream == null ? true : !isEmptyStream.get(i));",
+      "info" : "ExpressionStatement[30183-30259]:ExpressionStatement[30183-30259]"
+    }, {
+      "left" : "if (files[i].hasStream())",
+      "right" : "if (files[i].hasStream())",
+      "info" : "IfStatement[30272-31048]:IfStatement[30272-31048]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30298-30714]:Block[30298-30714]"
+    }, {
+      "left" : "files[i].setDirectory(false);",
+      "right" : "files[i].setDirectory(false);",
+      "info" : "ExpressionStatement[30316-30345]:ExpressionStatement[30316-30345]"
+    }, {
+      "left" : "files[i].setAntiItem(false);",
+      "right" : "files[i].setAntiItem(false);",
+      "info" : "ExpressionStatement[30362-30390]:ExpressionStatement[30362-30390]"
+    }, {
+      "left" : "files[i].setHasCrc(archive.subStreamsInfo.hasCrc.get(nonEmptyFileCounter));",
+      "right" : "files[i].setHasCrc(archive.subStreamsInfo.hasCrc.get(nonEmptyFileCounter));",
+      "info" : "ExpressionStatement[30407-30482]:ExpressionStatement[30407-30482]"
+    }, {
+      "left" : "files[i].setCrcValue(archive.subStreamsInfo.crcs[nonEmptyFileCounter]);",
+      "right" : "files[i].setCrcValue(archive.subStreamsInfo.crcs[nonEmptyFileCounter]);",
+      "info" : "ExpressionStatement[30499-30570]:ExpressionStatement[30499-30570]"
+    }, {
+      "left" : "files[i].setSize(archive.subStreamsInfo.unpackSizes[nonEmptyFileCounter]);",
+      "right" : "files[i].setSize(archive.subStreamsInfo.unpackSizes[nonEmptyFileCounter]);",
+      "info" : "ExpressionStatement[30587-30661]:ExpressionStatement[30587-30661]"
+    }, {
+      "left" : "++nonEmptyFileCounter;",
+      "right" : "++nonEmptyFileCounter;",
+      "info" : "ExpressionStatement[30678-30700]:ExpressionStatement[30678-30700]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30720-31048]:Block[30720-31048]"
+    }, {
+      "left" : "files[i].setDirectory(isEmptyFile == null ? true : !isEmptyFile.get(emptyFileCounter));",
+      "right" : "files[i].setDirectory(isEmptyFile == null ? true : !isEmptyFile.get(emptyFileCounter));",
+      "info" : "ExpressionStatement[30738-30825]:ExpressionStatement[30738-30825]"
+    }, {
+      "left" : "files[i].setAntiItem(isAnti == null ? false : isAnti.get(emptyFileCounter));",
+      "right" : "files[i].setAntiItem(isAnti == null ? false : isAnti.get(emptyFileCounter));",
+      "info" : "ExpressionStatement[30842-30918]:ExpressionStatement[30842-30918]"
+    }, {
+      "left" : "files[i].setHasCrc(false);",
+      "right" : "files[i].setHasCrc(false);",
+      "info" : "ExpressionStatement[30935-30961]:ExpressionStatement[30935-30961]"
+    }, {
+      "left" : "files[i].setSize(0);",
+      "right" : "files[i].setSize(0);",
+      "info" : "ExpressionStatement[30978-30998]:ExpressionStatement[30978-30998]"
+    }, {
+      "left" : "++emptyFileCounter;",
+      "right" : "++emptyFileCounter;",
+      "info" : "ExpressionStatement[31015-31034]:ExpressionStatement[31015-31034]"
+    }, {
+      "left" : "archive.files = files;",
+      "right" : "archive.files = files;",
+      "info" : "ExpressionStatement[31067-31089]:ExpressionStatement[31067-31089]"
+    }, {
+      "left" : "calculateStreamMap(archive);",
+      "right" : "calculateStreamMap(archive);",
+      "info" : "ExpressionStatement[31098-31126]:ExpressionStatement[31098-31126]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[31142-31149]:Modifier[31142-31149]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[31150-31154]:PrimitiveType[31150-31154]"
+    }, {
+      "left" : "calculateStreamMap",
+      "right" : "calculateStreamMap",
+      "info" : "SimpleName[31155-31173]:SimpleName[31155-31173]"
+    }, {
+      "left" : "final Archive archive",
+      "right" : "final Archive archive",
+      "info" : "SingleVariableDeclaration[31174-31195]:SingleVariableDeclaration[31174-31195]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[31204-31215]:SimpleType[31204-31215]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31216-33523]:Block[31216-33523]"
+    }, {
+      "left" : "final StreamMap streamMap = new StreamMap();",
+      "right" : "final StreamMap streamMap = new StreamMap();",
+      "info" : "VariableDeclarationStatement[31226-31270]:VariableDeclarationStatement[31226-31270]"
+    }, {
+      "left" : "int nextFolderPackStreamIndex = 0;",
+      "right" : "int nextFolderPackStreamIndex = 0;",
+      "info" : "VariableDeclarationStatement[31288-31322]:VariableDeclarationStatement[31288-31322]"
+    }, {
+      "left" : "final int numFolders = archive.folders != null ? archive.folders.length : 0;",
+      "right" : "final int numFolders = archive.folders != null ? archive.folders.length : 0;",
+      "info" : "VariableDeclarationStatement[31331-31407]:VariableDeclarationStatement[31331-31407]"
+    }, {
+      "left" : "streamMap.folderFirstPackStreamIndex = new int[numFolders];",
+      "right" : "streamMap.folderFirstPackStreamIndex = new int[numFolders];",
+      "info" : "ExpressionStatement[31416-31475]:ExpressionStatement[31416-31475]"
+    }, {
+      "left" : "for (int i = 0; i < numFolders; i++)",
+      "right" : "for (int i = 0; i < numFolders; i++)",
+      "info" : "ForStatement[31484-31695]:ForStatement[31484-31695]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31521-31695]:Block[31521-31695]"
+    }, {
+      "left" : "streamMap.folderFirstPackStreamIndex[i] = nextFolderPackStreamIndex;",
+      "right" : "streamMap.folderFirstPackStreamIndex[i] = nextFolderPackStreamIndex;",
+      "info" : "ExpressionStatement[31535-31603]:ExpressionStatement[31535-31603]"
+    }, {
+      "left" : "nextFolderPackStreamIndex += archive.folders[i].packedStreams.length;",
+      "right" : "nextFolderPackStreamIndex += archive.folders[i].packedStreams.length;",
+      "info" : "ExpressionStatement[31616-31685]:ExpressionStatement[31616-31685]"
+    }, {
+      "left" : "long nextPackStreamOffset = 0;",
+      "right" : "long nextPackStreamOffset = 0;",
+      "info" : "VariableDeclarationStatement[31713-31743]:VariableDeclarationStatement[31713-31743]"
+    }, {
+      "left" : "final int numPackSizes = archive.packSizes != null ? archive.packSizes.length : 0;",
+      "right" : "final int numPackSizes = archive.packSizes != null ? archive.packSizes.length : 0;",
+      "info" : "VariableDeclarationStatement[31752-31834]:VariableDeclarationStatement[31752-31834]"
+    }, {
+      "left" : "streamMap.packStreamOffsets = new long[numPackSizes];",
+      "right" : "streamMap.packStreamOffsets = new long[numPackSizes];",
+      "info" : "ExpressionStatement[31843-31896]:ExpressionStatement[31843-31896]"
+    }, {
+      "left" : "for (int i = 0; i < numPackSizes; i++)",
+      "right" : "for (int i = 0; i < numPackSizes; i++)",
+      "info" : "ForStatement[31905-32081]:ForStatement[31905-32081]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31944-32081]:Block[31944-32081]"
+    }, {
+      "left" : "streamMap.packStreamOffsets[i] = nextPackStreamOffset;",
+      "right" : "streamMap.packStreamOffsets[i] = nextPackStreamOffset;",
+      "info" : "ExpressionStatement[31958-32012]:ExpressionStatement[31958-32012]"
+    }, {
+      "left" : "nextPackStreamOffset += archive.packSizes[i];",
+      "right" : "nextPackStreamOffset += archive.packSizes[i];",
+      "info" : "ExpressionStatement[32025-32070]:ExpressionStatement[32025-32070]"
+    }, {
+      "left" : "streamMap.folderFirstFileIndex = new int[numFolders];",
+      "right" : "streamMap.folderFirstFileIndex = new int[numFolders];",
+      "info" : "ExpressionStatement[32099-32152]:ExpressionStatement[32099-32152]"
+    }, {
+      "left" : "streamMap.fileFolderIndex = new int[archive.files.length];",
+      "right" : "streamMap.fileFolderIndex = new int[archive.files.length];",
+      "info" : "ExpressionStatement[32161-32219]:ExpressionStatement[32161-32219]"
+    }, {
+      "left" : "int nextFolderIndex = 0;",
+      "right" : "int nextFolderIndex = 0;",
+      "info" : "VariableDeclarationStatement[32228-32252]:VariableDeclarationStatement[32228-32252]"
+    }, {
+      "left" : "int nextFolderUnpackStreamIndex = 0;",
+      "right" : "int nextFolderUnpackStreamIndex = 0;",
+      "info" : "VariableDeclarationStatement[32261-32297]:VariableDeclarationStatement[32261-32297]"
+    }, {
+      "left" : "for (int i = 0; i < archive.files.length; i++)",
+      "right" : "for (int i = 0; i < archive.files.length; i++)",
+      "info" : "ForStatement[32306-33469]:ForStatement[32306-33469]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32353-33469]:Block[32353-33469]"
+    }, {
+      "left" : "if (!archive.files[i].hasStream() && nextFolderUnpackStreamIndex == 0)",
+      "right" : "if (!archive.files[i].hasStream() && nextFolderUnpackStreamIndex == 0)",
+      "info" : "IfStatement[32367-32530]:IfStatement[32367-32530]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32438-32530]:Block[32438-32530]"
+    }, {
+      "left" : "streamMap.fileFolderIndex[i] = -1;",
+      "right" : "streamMap.fileFolderIndex[i] = -1;",
+      "info" : "ExpressionStatement[32456-32490]:ExpressionStatement[32456-32490]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[32507-32516]:ContinueStatement[32507-32516]"
+    }, {
+      "left" : "if (nextFolderUnpackStreamIndex == 0)",
+      "right" : "if (nextFolderUnpackStreamIndex == 0)",
+      "info" : "IfStatement[32543-33066]:IfStatement[32543-33066]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32581-33066]:Block[32581-33066]"
+    }, {
+      "left" : "for (; nextFolderIndex < archive.folders.length; ++nextFolderIndex)",
+      "right" : "for (; nextFolderIndex < archive.folders.length; ++nextFolderIndex)",
+      "info" : "ForStatement[32599-32896]:ForStatement[32599-32896]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32667-32896]:Block[32667-32896]"
+    }, {
+      "left" : "streamMap.folderFirstFileIndex[nextFolderIndex] = i;",
+      "right" : "streamMap.folderFirstFileIndex[nextFolderIndex] = i;",
+      "info" : "ExpressionStatement[32689-32741]:ExpressionStatement[32689-32741]"
+    }, {
+      "left" : "if (archive.folders[nextFolderIndex].numUnpackSubStreams > 0)",
+      "right" : "if (archive.folders[nextFolderIndex].numUnpackSubStreams > 0)",
+      "info" : "IfStatement[32762-32878]:IfStatement[32762-32878]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32824-32878]:Block[32824-32878]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[32850-32856]:BreakStatement[32850-32856]"
+    }, {
+      "left" : "if (nextFolderIndex >= archive.folders.length)",
+      "right" : "if (nextFolderIndex >= archive.folders.length)",
+      "info" : "IfStatement[32913-33052]:IfStatement[32913-33052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32960-33052]:Block[32960-33052]"
+    }, {
+      "left" : "throw new IOException(\"Too few folders in archive\");",
+      "right" : "throw new IOException(\"Too few folders in archive\");",
+      "info" : "ThrowStatement[32982-33034]:ThrowStatement[32982-33034]"
+    }, {
+      "left" : "streamMap.fileFolderIndex[i] = nextFolderIndex;",
+      "right" : "streamMap.fileFolderIndex[i] = nextFolderIndex;",
+      "info" : "ExpressionStatement[33079-33126]:ExpressionStatement[33079-33126]"
+    }, {
+      "left" : "if (!archive.files[i].hasStream())",
+      "right" : "if (!archive.files[i].hasStream())",
+      "info" : "IfStatement[33139-33215]:IfStatement[33139-33215]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33174-33215]:Block[33174-33215]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[33192-33201]:ContinueStatement[33192-33201]"
+    }, {
+      "left" : "++nextFolderUnpackStreamIndex;",
+      "right" : "++nextFolderUnpackStreamIndex;",
+      "info" : "ExpressionStatement[33228-33258]:ExpressionStatement[33228-33258]"
+    }, {
+      "left" : "if (nextFolderUnpackStreamIndex >= archive.folders[nextFolderIndex].numUnpackSubStreams)",
+      "right" : "if (nextFolderUnpackStreamIndex >= archive.folders[nextFolderIndex].numUnpackSubStreams)",
+      "info" : "IfStatement[33271-33459]:IfStatement[33271-33459]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33360-33459]:Block[33360-33459]"
+    }, {
+      "left" : "++nextFolderIndex;",
+      "right" : "++nextFolderIndex;",
+      "info" : "ExpressionStatement[33378-33396]:ExpressionStatement[33378-33396]"
+    }, {
+      "left" : "nextFolderUnpackStreamIndex = 0;",
+      "right" : "nextFolderUnpackStreamIndex = 0;",
+      "info" : "ExpressionStatement[33413-33445]:ExpressionStatement[33413-33445]"
+    }, {
+      "left" : "archive.streamMap = streamMap;",
+      "right" : "archive.streamMap = streamMap;",
+      "info" : "ExpressionStatement[33487-33517]:ExpressionStatement[33487-33517]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[33533-33540]:Modifier[33533-33540]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[33541-33545]:PrimitiveType[33541-33545]"
+    }, {
+      "left" : "buildDecodingStream",
+      "right" : "buildDecodingStream",
+      "info" : "SimpleName[33546-33565]:SimpleName[33546-33565]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[33575-33586]:SimpleType[33575-33586]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33587-35592]:Block[33587-35592]"
+    }, {
+      "left" : "final int folderIndex = archive.streamMap.fileFolderIndex[currentEntryIndex];",
+      "right" : "final int folderIndex = archive.streamMap.fileFolderIndex[currentEntryIndex];",
+      "info" : "VariableDeclarationStatement[33597-33674]:VariableDeclarationStatement[33597-33674]"
+    }, {
+      "left" : "if (folderIndex < 0)",
+      "right" : "if (folderIndex < 0)",
+      "info" : "IfStatement[33683-33919]:IfStatement[33683-33919]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33704-33919]:Block[33704-33919]"
+    }, {
+      "left" : "deferredBlockStreams.clear();",
+      "right" : "deferredBlockStreams.clear();",
+      "info" : "ExpressionStatement[33718-33747]:ExpressionStatement[33718-33747]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[33902-33909]:ReturnStatement[33902-33909]"
+    }, {
+      "left" : "final SevenZArchiveEntry file = archive.files[currentEntryIndex];",
+      "right" : "final SevenZArchiveEntry file = archive.files[currentEntryIndex];",
+      "info" : "VariableDeclarationStatement[33928-33993]:VariableDeclarationStatement[33928-33993]"
+    }, {
+      "left" : "if (currentFolderIndex == folderIndex)",
+      "right" : "if (currentFolderIndex == folderIndex)",
+      "info" : "IfStatement[34002-35285]:IfStatement[34002-35285]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34041-34481]:Block[34041-34481]"
+    }, {
+      "left" : "file.setContentMethods(archive.files[currentEntryIndex - 1].getContentMethods());",
+      "right" : "file.setContentMethods(archive.files[currentEntryIndex - 1].getContentMethods());",
+      "info" : "ExpressionStatement[34390-34471]:ExpressionStatement[34390-34471]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34487-35285]:Block[34487-35285]"
+    }, {
+      "left" : "currentFolderIndex = folderIndex;",
+      "right" : "currentFolderIndex = folderIndex;",
+      "info" : "ExpressionStatement[34587-34620]:ExpressionStatement[34587-34620]"
+    }, {
+      "left" : "deferredBlockStreams.clear();",
+      "right" : "deferredBlockStreams.clear();",
+      "info" : "ExpressionStatement[34633-34662]:ExpressionStatement[34633-34662]"
+    }, {
+      "left" : "if (currentFolderInputStream != null)",
+      "right" : "if (currentFolderInputStream != null)",
+      "info" : "IfStatement[34675-34827]:IfStatement[34675-34827]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34713-34827]:Block[34713-34827]"
+    }, {
+      "left" : "currentFolderInputStream.close();",
+      "right" : "currentFolderInputStream.close();",
+      "info" : "ExpressionStatement[34731-34764]:ExpressionStatement[34731-34764]"
+    }, {
+      "left" : "currentFolderInputStream = null;",
+      "right" : "currentFolderInputStream = null;",
+      "info" : "ExpressionStatement[34781-34813]:ExpressionStatement[34781-34813]"
+    }, {
+      "left" : "final Folder folder = archive.folders[folderIndex];",
+      "right" : "final Folder folder = archive.folders[folderIndex];",
+      "info" : "VariableDeclarationStatement[34853-34904]:VariableDeclarationStatement[34853-34904]"
+    }, {
+      "left" : "final int firstPackStreamIndex = archive.streamMap.folderFirstPackStreamIndex[folderIndex];",
+      "right" : "final int firstPackStreamIndex = archive.streamMap.folderFirstPackStreamIndex[folderIndex];",
+      "info" : "VariableDeclarationStatement[34917-35008]:VariableDeclarationStatement[34917-35008]"
+    }, {
+      "left" : "final long folderOffset = SIGNATURE_HEADER_SIZE + archive.packPos +\n                    archive.streamMap.packStreamOffsets[firstPackStreamIndex];",
+      "right" : "final long folderOffset = SIGNATURE_HEADER_SIZE + archive.packPos +\n                    archive.streamMap.packStreamOffsets[firstPackStreamIndex];",
+      "info" : "VariableDeclarationStatement[35021-35167]:VariableDeclarationStatement[35021-35167]"
+    }, {
+      "left" : "currentFolderInputStream = buildDecoderStack(folder, folderOffset, firstPackStreamIndex, file);",
+      "right" : "currentFolderInputStream = buildDecoderStack(folder, folderOffset, firstPackStreamIndex, file);",
+      "info" : "ExpressionStatement[35180-35275]:ExpressionStatement[35180-35275]"
+    }, {
+      "left" : "InputStream fileStream = new BoundedInputStream(currentFolderInputStream, file.getSize());",
+      "right" : "InputStream fileStream = new BoundedInputStream(currentFolderInputStream, file.getSize());",
+      "info" : "VariableDeclarationStatement[35295-35385]:VariableDeclarationStatement[35295-35385]"
+    }, {
+      "left" : "if (file.getHasCrc())",
+      "right" : "if (file.getHasCrc())",
+      "info" : "IfStatement[35394-35531]:IfStatement[35394-35531]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35416-35531]:Block[35416-35531]"
+    }, {
+      "left" : "fileStream = new CRC32VerifyingInputStream(fileStream, file.getSize(), file.getCrcValue());",
+      "right" : "fileStream = new CRC32VerifyingInputStream(fileStream, file.getSize(), file.getCrcValue());",
+      "info" : "ExpressionStatement[35430-35521]:ExpressionStatement[35430-35521]"
+    }, {
+      "left" : "deferredBlockStreams.add(fileStream);",
+      "right" : "deferredBlockStreams.add(fileStream);",
+      "info" : "ExpressionStatement[35549-35586]:ExpressionStatement[35549-35586]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[35598-35605]:Modifier[35598-35605]"
+    }, {
+      "left" : "InputStream",
+      "right" : "InputStream",
+      "info" : "SimpleType[35606-35617]:SimpleType[35606-35617]"
+    }, {
+      "left" : "buildDecoderStack",
+      "right" : "buildDecoderStack",
+      "info" : "SimpleName[35618-35635]:SimpleName[35618-35635]"
+    }, {
+      "left" : "final Folder folder",
+      "right" : "final Folder folder",
+      "info" : "SingleVariableDeclaration[35636-35655]:SingleVariableDeclaration[35636-35655]"
+    }, {
+      "left" : "final long folderOffset",
+      "right" : "final long folderOffset",
+      "info" : "SingleVariableDeclaration[35657-35680]:SingleVariableDeclaration[35657-35680]"
+    }, {
+      "left" : "final int firstPackStreamIndex",
+      "right" : "final int firstPackStreamIndex",
+      "info" : "SingleVariableDeclaration[35698-35728]:SingleVariableDeclaration[35698-35728]"
+    }, {
+      "left" : "final SevenZArchiveEntry entry",
+      "right" : "final SevenZArchiveEntry entry",
+      "info" : "SingleVariableDeclaration[35730-35760]:SingleVariableDeclaration[35730-35760]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[35769-35780]:SimpleType[35769-35780]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35781-37020]:Block[35781-37020]"
+    }, {
+      "left" : "file.seek(folderOffset);",
+      "right" : "file.seek(folderOffset);",
+      "info" : "ExpressionStatement[35791-35815]:ExpressionStatement[35791-35815]"
+    }, {
+      "left" : "InputStream inputStreamStack =\n            new BufferedInputStream(\n              new BoundedRandomAccessFileInputStream(file,\n                  archive.packSizes[firstPackStreamIndex]));",
+      "right" : "InputStream inputStreamStack =\n            new BufferedInputStream(\n              new BoundedRandomAccessFileInputStream(file,\n                  archive.packSizes[firstPackStreamIndex]));",
+      "info" : "VariableDeclarationStatement[35824-36011]:VariableDeclarationStatement[35824-36011]"
+    }, {
+      "left" : "final LinkedList<SevenZMethodConfiguration> methods = new LinkedList<SevenZMethodConfiguration>();",
+      "right" : "final LinkedList<SevenZMethodConfiguration> methods = new LinkedList<SevenZMethodConfiguration>();",
+      "info" : "VariableDeclarationStatement[36020-36118]:VariableDeclarationStatement[36020-36118]"
+    }, {
+      "left" : "for (final Coder coder : folder.getOrderedCoders())",
+      "right" : "for (final Coder coder : folder.getOrderedCoders())",
+      "info" : "EnhancedForStatement[36127-36776]:EnhancedForStatement[36127-36776]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36179-36776]:Block[36179-36776]"
+    }, {
+      "left" : "if (coder.numInStreams != 1 || coder.numOutStreams != 1)",
+      "right" : "if (coder.numInStreams != 1 || coder.numOutStreams != 1)",
+      "info" : "IfStatement[36193-36362]:IfStatement[36193-36362]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36250-36362]:Block[36250-36362]"
+    }, {
+      "left" : "throw new IOException(\"Multi input/output stream coders are not yet supported\");",
+      "right" : "throw new IOException(\"Multi input/output stream coders are not yet supported\");",
+      "info" : "ThrowStatement[36268-36348]:ThrowStatement[36268-36348]"
+    }, {
+      "left" : "final SevenZMethod method = SevenZMethod.byId(coder.decompressionMethodId);",
+      "right" : "final SevenZMethod method = SevenZMethod.byId(coder.decompressionMethodId);",
+      "info" : "VariableDeclarationStatement[36375-36450]:VariableDeclarationStatement[36375-36450]"
+    }, {
+      "left" : "inputStreamStack = Coders.addDecoder(fileName, inputStreamStack,\n                    folder.getUnpackSizeForCoder(coder), coder, password);",
+      "right" : "inputStreamStack = Coders.addDecoder(fileName, inputStreamStack,\n                    folder.getUnpackSizeForCoder(coder), coder, password);",
+      "info" : "ExpressionStatement[36463-36602]:ExpressionStatement[36463-36602]"
+    }, {
+      "left" : "methods.addFirst(new SevenZMethodConfiguration(method,\n                     Coders.findByMethod(method).getOptionsFromCoder(coder, inputStreamStack)));",
+      "right" : "methods.addFirst(new SevenZMethodConfiguration(method,\n                     Coders.findByMethod(method).getOptionsFromCoder(coder, inputStreamStack)));",
+      "info" : "ExpressionStatement[36615-36766]:ExpressionStatement[36615-36766]"
+    }, {
+      "left" : "entry.setContentMethods(methods);",
+      "right" : "entry.setContentMethods(methods);",
+      "info" : "ExpressionStatement[36785-36818]:ExpressionStatement[36785-36818]"
+    }, {
+      "left" : "if (folder.hasCrc)",
+      "right" : "if (folder.hasCrc)",
+      "info" : "IfStatement[36827-36981]:IfStatement[36827-36981]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36846-36981]:Block[36846-36981]"
+    }, {
+      "left" : "return new CRC32VerifyingInputStream(inputStreamStack,\n                    folder.getUnpackSize(), folder.crc);",
+      "right" : "return new CRC32VerifyingInputStream(inputStreamStack,\n                    folder.getUnpackSize(), folder.crc);",
+      "info" : "ReturnStatement[36860-36971]:ReturnStatement[36860-36971]"
+    }, {
+      "left" : "return inputStreamStack;",
+      "right" : "return inputStreamStack;",
+      "info" : "ReturnStatement[36990-37014]:ReturnStatement[36990-37014]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[37221-37227]:Modifier[37221-37227]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[37228-37231]:PrimitiveType[37228-37231]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[37232-37236]:SimpleName[37232-37236]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[37246-37257]:SimpleType[37246-37257]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37258-37307]:Block[37258-37307]"
+    }, {
+      "left" : "return getCurrentStream().read();",
+      "right" : "return getCurrentStream().read();",
+      "info" : "ReturnStatement[37268-37301]:ReturnStatement[37268-37301]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[38321-38327]:Modifier[38452-38458]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[38328-38331]:PrimitiveType[38459-38462]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[38332-38336]:SimpleName[38463-38467]"
+    }, {
+      "left" : "final byte[] b",
+      "right" : "final byte[] b",
+      "info" : "SingleVariableDeclaration[38337-38351]:SingleVariableDeclaration[38468-38482]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[38360-38371]:SimpleType[38491-38502]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38372-38416]:Block[38503-38547]"
+    }, {
+      "left" : "return read(b, 0, b.length);",
+      "right" : "return read(b, 0, b.length);",
+      "info" : "ReturnStatement[38382-38410]:ReturnStatement[38513-38541]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[38780-38786]:Modifier[38911-38917]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[38787-38790]:PrimitiveType[38918-38921]"
+    }, {
+      "left" : "read",
+      "right" : "read",
+      "info" : "SimpleName[38791-38795]:SimpleName[38922-38926]"
+    }, {
+      "left" : "final byte[] b",
+      "right" : "final byte[] b",
+      "info" : "SingleVariableDeclaration[38796-38810]:SingleVariableDeclaration[38927-38941]"
+    }, {
+      "left" : "final int off",
+      "right" : "final int off",
+      "info" : "SingleVariableDeclaration[38812-38825]:SingleVariableDeclaration[38943-38956]"
+    }, {
+      "left" : "final int len",
+      "right" : "final int len",
+      "info" : "SingleVariableDeclaration[38827-38840]:SingleVariableDeclaration[38958-38971]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[38849-38860]:SimpleType[38980-38991]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38861-38921]:Block[38992-39052]"
+    }, {
+      "left" : "return getCurrentStream().read(b, off, len);",
+      "right" : "return getCurrentStream().read(b, off, len);",
+      "info" : "ReturnStatement[38871-38915]:ReturnStatement[39002-39046]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[38931-38938]:Modifier[39062-39069]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[38939-38945]:Modifier[39070-39076]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[38946-38950]:PrimitiveType[39077-39081]"
+    }, {
+      "left" : "readUint64",
+      "right" : "readUint64",
+      "info" : "SimpleName[38951-38961]:SimpleName[39082-39092]"
+    }, {
+      "left" : "final DataInput in",
+      "right" : "final DataInput in",
+      "info" : "SingleVariableDeclaration[38962-38980]:SingleVariableDeclaration[39093-39111]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[38989-39000]:SimpleType[39120-39131]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39001-39515]:Block[39132-39646]"
+    }, {
+      "left" : "final long firstByte = in.readUnsignedByte();",
+      "right" : "final long firstByte = in.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[39094-39139]:VariableDeclarationStatement[39225-39270]"
+    }, {
+      "left" : "int mask = 0x80;",
+      "right" : "int mask = 0x80;",
+      "info" : "VariableDeclarationStatement[39148-39164]:VariableDeclarationStatement[39279-39295]"
+    }, {
+      "left" : "long value = 0;",
+      "right" : "long value = 0;",
+      "info" : "VariableDeclarationStatement[39173-39188]:VariableDeclarationStatement[39304-39319]"
+    }, {
+      "left" : "for (int i = 0; i < 8; i++)",
+      "right" : "for (int i = 0; i < 8; i++)",
+      "info" : "ForStatement[39197-39487]:ForStatement[39328-39618]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39225-39487]:Block[39356-39618]"
+    }, {
+      "left" : "if ((firstByte & mask) == 0)",
+      "right" : "if ((firstByte & mask) == 0)",
+      "info" : "IfStatement[39239-39353]:IfStatement[39370-39484]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39268-39353]:Block[39399-39484]"
+    }, {
+      "left" : "return value | ((firstByte & (mask - 1)) << (8 * i));",
+      "right" : "return value | ((firstByte & (mask - 1)) << (8 * i));",
+      "info" : "ReturnStatement[39286-39339]:ReturnStatement[39417-39470]"
+    }, {
+      "left" : "final long nextByte = in.readUnsignedByte();",
+      "right" : "final long nextByte = in.readUnsignedByte();",
+      "info" : "VariableDeclarationStatement[39366-39410]:VariableDeclarationStatement[39497-39541]"
+    }, {
+      "left" : "value |= nextByte << (8 * i);",
+      "right" : "value |= nextByte << (8 * i);",
+      "info" : "ExpressionStatement[39423-39452]:ExpressionStatement[39554-39583]"
+    }, {
+      "left" : "mask >>>= 1;",
+      "right" : "mask >>>= 1;",
+      "info" : "ExpressionStatement[39465-39477]:ExpressionStatement[39596-39608]"
+    }, {
+      "left" : "return value;",
+      "right" : "return value;",
+      "info" : "ReturnStatement[39496-39509]:ReturnStatement[39627-39640]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[39825-39831]:Modifier[39956-39962]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[39832-39838]:Modifier[39963-39969]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[39839-39846]:PrimitiveType[39970-39977]"
+    }, {
+      "left" : "matches",
+      "right" : "matches",
+      "info" : "SimpleName[39847-39854]:SimpleName[39978-39985]"
+    }, {
+      "left" : "final byte[] signature",
+      "right" : "final byte[] signature",
+      "info" : "SingleVariableDeclaration[39855-39877]:SingleVariableDeclaration[39986-40008]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[39879-39895]:SingleVariableDeclaration[40010-40026]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39897-40176]:Block[40028-40307]"
+    }, {
+      "left" : "if (length < sevenZSignature.length)",
+      "right" : "if (length < sevenZSignature.length)",
+      "info" : "IfStatement[39907-39981]:IfStatement[40038-40112]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39944-39981]:Block[40075-40112]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[39958-39971]:ReturnStatement[40089-40102]"
+    }, {
+      "left" : "for (int i = 0; i < sevenZSignature.length; i++)",
+      "right" : "for (int i = 0; i < sevenZSignature.length; i++)",
+      "info" : "ForStatement[39991-40149]:ForStatement[40122-40280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40040-40149]:Block[40171-40280]"
+    }, {
+      "left" : "if (signature[i] != sevenZSignature[i])",
+      "right" : "if (signature[i] != sevenZSignature[i])",
+      "info" : "IfStatement[40054-40139]:IfStatement[40185-40270]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40094-40139]:Block[40225-40270]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[40112-40125]:ReturnStatement[40243-40256]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[40158-40170]:ReturnStatement[40289-40301]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[40182-40189]:Modifier[40313-40320]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[40190-40196]:Modifier[40321-40327]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[40197-40201]:PrimitiveType[40328-40332]"
+    }, {
+      "left" : "skipBytesFully",
+      "right" : "skipBytesFully",
+      "info" : "SimpleName[40202-40216]:SimpleName[40333-40347]"
+    }, {
+      "left" : "final DataInput input",
+      "right" : "final DataInput input",
+      "info" : "SingleVariableDeclaration[40217-40238]:SingleVariableDeclaration[40348-40369]"
+    }, {
+      "left" : "long bytesToSkip",
+      "right" : "long bytesToSkip",
+      "info" : "SingleVariableDeclaration[40240-40256]:SingleVariableDeclaration[40371-40387]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[40265-40276]:SimpleType[40396-40407]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40277-40960]:Block[40408-41091]"
+    }, {
+      "left" : "if (bytesToSkip < 1)",
+      "right" : "if (bytesToSkip < 1)",
+      "info" : "IfStatement[40287-40341]:IfStatement[40418-40472]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40308-40341]:Block[40439-40472]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[40322-40331]:ReturnStatement[40453-40462]"
+    }, {
+      "left" : "long skipped = 0;",
+      "right" : "long skipped = 0;",
+      "info" : "VariableDeclarationStatement[40350-40367]:VariableDeclarationStatement[40481-40498]"
+    }, {
+      "left" : "while (bytesToSkip > Integer.MAX_VALUE)",
+      "right" : "while (bytesToSkip > Integer.MAX_VALUE)",
+      "info" : "WhileStatement[40376-40660]:WhileStatement[40507-40791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40416-40660]:Block[40547-40791]"
+    }, {
+      "left" : "final long skippedNow = skipBytesFully(input, Integer.MAX_VALUE);",
+      "right" : "final long skippedNow = skipBytesFully(input, Integer.MAX_VALUE);",
+      "info" : "VariableDeclarationStatement[40430-40495]:VariableDeclarationStatement[40561-40626]"
+    }, {
+      "left" : "if (skippedNow == 0)",
+      "right" : "if (skippedNow == 0)",
+      "info" : "IfStatement[40508-40576]:IfStatement[40639-40707]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40529-40576]:Block[40660-40707]"
+    }, {
+      "left" : "return skipped;",
+      "right" : "return skipped;",
+      "info" : "ReturnStatement[40547-40562]:ReturnStatement[40678-40693]"
+    }, {
+      "left" : "skipped += skippedNow;",
+      "right" : "skipped += skippedNow;",
+      "info" : "ExpressionStatement[40589-40611]:ExpressionStatement[40720-40742]"
+    }, {
+      "left" : "bytesToSkip -= skippedNow;",
+      "right" : "bytesToSkip -= skippedNow;",
+      "info" : "ExpressionStatement[40624-40650]:ExpressionStatement[40755-40781]"
+    }, {
+      "left" : "while (bytesToSkip > 0)",
+      "right" : "while (bytesToSkip > 0)",
+      "info" : "WhileStatement[40669-40930]:WhileStatement[40800-41061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40693-40930]:Block[40824-41061]"
+    }, {
+      "left" : "final int skippedNow = input.skipBytes((int) bytesToSkip);",
+      "right" : "final int skippedNow = input.skipBytes((int) bytesToSkip);",
+      "info" : "VariableDeclarationStatement[40707-40765]:VariableDeclarationStatement[40838-40896]"
+    }, {
+      "left" : "if (skippedNow == 0)",
+      "right" : "if (skippedNow == 0)",
+      "info" : "IfStatement[40778-40846]:IfStatement[40909-40977]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40799-40846]:Block[40930-40977]"
+    }, {
+      "left" : "return skipped;",
+      "right" : "return skipped;",
+      "info" : "ReturnStatement[40817-40832]:ReturnStatement[40948-40963]"
+    }, {
+      "left" : "skipped += skippedNow;",
+      "right" : "skipped += skippedNow;",
+      "info" : "ExpressionStatement[40859-40881]:ExpressionStatement[40990-41012]"
+    }, {
+      "left" : "bytesToSkip -= skippedNow;",
+      "right" : "bytesToSkip -= skippedNow;",
+      "info" : "ExpressionStatement[40894-40920]:ExpressionStatement[41025-41051]"
+    }, {
+      "left" : "return skipped;",
+      "right" : "return skipped;",
+      "info" : "ReturnStatement[40939-40954]:ReturnStatement[41070-41085]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[40970-40979]:MarkerAnnotation[41101-41110]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[40984-40990]:Modifier[41115-41121]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[40991-40997]:SimpleType[41122-41128]"
+    }, {
+      "left" : "toString",
+      "right" : "toString",
+      "info" : "SimpleName[40998-41006]:SimpleName[41129-41137]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41009-41049]:Block[41140-41180]"
+    }, {
+      "left" : "return archive.toString();",
+      "right" : "return archive.toString();",
+      "info" : "ReturnStatement[41017-41043]:ReturnStatement[41148-41174]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

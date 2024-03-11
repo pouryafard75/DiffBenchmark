@@ -1,0 +1,117 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "SimpleAbstractTypeResolver",
+      "right" : "SimpleAbstractTypeResolver",
+      "info" : "TypeDeclaration[328-3540]:TypeDeclaration[328-3581]"
+    }, {
+      "left" : "private static final long serialVersionUID = 8635483102371490919L;",
+      "right" : "private static final long serialVersionUID = 8635483102371490919L;",
+      "info" : "FieldDeclaration[1238-1304]:FieldDeclaration[1238-1304]"
+    }, {
+      "left" : "protected final HashMap<ClassKey,Class<?>> _mappings = new HashMap<ClassKey,Class<?>>();",
+      "right" : "protected final HashMap<ClassKey,Class<?>> _mappings = new HashMap<ClassKey,Class<?>>();",
+      "info" : "FieldDeclaration[1310-1459]:FieldDeclaration[1310-1459]"
+    }, {
+      "left" : "public <T> SimpleAbstractTypeResolver addMapping(Class<T> superType, Class<? extends T> subType)",
+      "right" : "public <T> SimpleAbstractTypeResolver addMapping(Class<T> superType, Class<? extends T> subType)",
+      "info" : "MethodDeclaration[1465-2910]:MethodDeclaration[1465-2910]"
+    }, {
+      "left" : "public JavaType findTypeMapping(DeserializationConfig config, JavaType type)",
+      "right" : "public JavaType findTypeMapping(DeserializationConfig config, JavaType type)",
+      "info" : "MethodDeclaration[2916-3357]:MethodDeclaration[2916-3398]"
+    }, {
+      "left" : "public JavaType resolveAbstractType(DeserializationConfig config, JavaType type)",
+      "right" : "public JavaType resolveAbstractType(DeserializationConfig config, JavaType type)",
+      "info" : "MethodDeclaration[3368-3538]:MethodDeclaration[3409-3579]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2139-2910]:Block[2139-2910]"
+    }, {
+      "left" : "if (superType == subType)",
+      "right" : "if (superType == subType)",
+      "info" : "IfStatement[2221-2350]:IfStatement[2221-2350]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2247-2350]:Block[2247-2350]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Can not add mapping from class to itself\");",
+      "right" : "throw new IllegalArgumentException(\"Can not add mapping from class to itself\");",
+      "info" : "ThrowStatement[2261-2340]:ThrowStatement[2261-2340]"
+    }, {
+      "left" : "if (!superType.isAssignableFrom(subType))",
+      "right" : "if (!superType.isAssignableFrom(subType))",
+      "info" : "IfStatement[2359-2602]:IfStatement[2359-2602]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2401-2602]:Block[2401-2602]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Can not add mapping from class \"+superType.getName()\n                    +\" to \"+subType.getName()+\", as latter is not a subtype of former\");",
+      "right" : "throw new IllegalArgumentException(\"Can not add mapping from class \"+superType.getName()\n                    +\" to \"+subType.getName()+\", as latter is not a subtype of former\");",
+      "info" : "ThrowStatement[2415-2592]:ThrowStatement[2415-2592]"
+    }, {
+      "left" : "if (!Modifier.isAbstract(superType.getModifiers()))",
+      "right" : "if (!Modifier.isAbstract(superType.getModifiers()))",
+      "info" : "IfStatement[2611-2826]:IfStatement[2611-2826]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2663-2826]:Block[2663-2826]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Can not add mapping from class \"+superType.getName()\n                    +\" since it is not abstract\");",
+      "right" : "throw new IllegalArgumentException(\"Can not add mapping from class \"+superType.getName()\n                    +\" since it is not abstract\");",
+      "info" : "ThrowStatement[2677-2816]:ThrowStatement[2677-2816]"
+    }, {
+      "left" : "_mappings.put(new ClassKey(superType), subType);",
+      "right" : "_mappings.put(new ClassKey(superType), subType);",
+      "info" : "ExpressionStatement[2835-2883]:ExpressionStatement[2835-2883]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[2892-2904]:ReturnStatement[2892-2904]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3011-3357]:Block[3011-3398]"
+    }, {
+      "left" : "Class<?> src = type.getRawClass();",
+      "right" : "Class<?> src = type.getRawClass();",
+      "info" : "VariableDeclarationStatement[3073-3107]:VariableDeclarationStatement[3073-3107]"
+    }, {
+      "left" : "Class<?> dst = _mappings.get(new ClassKey(src));",
+      "right" : "Class<?> dst = _mappings.get(new ClassKey(src));",
+      "info" : "VariableDeclarationStatement[3116-3164]:VariableDeclarationStatement[3116-3164]"
+    }, {
+      "left" : "if (dst == null)",
+      "right" : "if (dst == null)",
+      "info" : "IfStatement[3173-3226]:IfStatement[3173-3226]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3190-3226]:Block[3190-3226]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[3204-3216]:ReturnStatement[3204-3216]"
+    }, {
+      "left" : "return type.narrowBy(dst);",
+      "right" : "return config.getTypeFactory().constructSpecializedType(type, dst);",
+      "info" : "ReturnStatement[3325-3351]:ReturnStatement[3325-3392]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3467-3538]:Block[3508-3579]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[3520-3532]:ReturnStatement[3561-3573]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

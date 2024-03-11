@@ -1,0 +1,937 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "FileWritingMessageHandlerTests",
+      "right" : "FileWritingMessageHandlerTests",
+      "info" : "TypeDeclaration[1969-13150]:TypeDeclaration[2028-15366]"
+    }, {
+      "left" : "static final String DEFAULT_ENCODING = \"UTF-8\";",
+      "right" : "static final String DEFAULT_ENCODING = \"UTF-8\";",
+      "info" : "FieldDeclaration[2143-2190]:FieldDeclaration[2228-2275]"
+    }, {
+      "left" : "static final String SAMPLE_CONTENT = \"HelloWorld\\näöüß\";",
+      "right" : "static final String SAMPLE_CONTENT = \"HelloWorld\\näöüß\";",
+      "info" : "FieldDeclaration[2193-2249]:FieldDeclaration[2278-2334]"
+    }, {
+      "left" : "private File sourceFile;",
+      "right" : "private File sourceFile;",
+      "info" : "FieldDeclaration[2253-2277]:FieldDeclaration[2338-2362]"
+    }, {
+      "left" : "@Rule\n\tpublic TemporaryFolder temp = new TemporaryFolder() {\n\t\t@Override\n\t\tpublic void create() throws IOException {\n\t\t\tsuper.create();\n\t\t\toutputDirectory = temp.newFolder(\"outputDirectory\");\n\t\t\thandler = new FileWritingMessageHandler(outputDirectory);\n\t\t\thandler.setBeanFactory(mock(BeanFactory.class));\n\t\t\thandler.afterPropertiesSet();\n\t\t\tsourceFile = temp.newFile(\"sourceFile\");\n\t\t\tFileCopyUtils.copy(SAMPLE_CONTENT.getBytes(DEFAULT_ENCODING),\n\t\t\t\tnew FileOutputStream(sourceFile, false));\n\t\t}\n\t};",
+      "right" : "@Rule\n\tpublic TemporaryFolder temp = new TemporaryFolder() {\n\t\t@Override\n\t\tpublic void create() throws IOException {\n\t\t\tsuper.create();\n\t\t\toutputDirectory = temp.newFolder(\"outputDirectory\");\n\t\t\thandler = new FileWritingMessageHandler(outputDirectory);\n\t\t\thandler.setBeanFactory(mock(BeanFactory.class));\n\t\t\thandler.afterPropertiesSet();\n\t\t\tsourceFile = temp.newFile(\"sourceFile\");\n\t\t\tFileCopyUtils.copy(SAMPLE_CONTENT.getBytes(DEFAULT_ENCODING),\n\t\t\t\tnew FileOutputStream(sourceFile, false));\n\t\t}\n\t};",
+      "info" : "FieldDeclaration[2280-2780]:FieldDeclaration[2365-2865]"
+    }, {
+      "left" : "public void create() throws IOException",
+      "right" : "public void create() throws IOException",
+      "info" : "MethodDeclaration[2343-2776]:MethodDeclaration[2428-2861]"
+    }, {
+      "left" : "private File outputDirectory;",
+      "right" : "private File outputDirectory;",
+      "info" : "FieldDeclaration[2783-2812]:FieldDeclaration[2868-2897]"
+    }, {
+      "left" : "private FileWritingMessageHandler handler;",
+      "right" : "private FileWritingMessageHandler handler;",
+      "info" : "FieldDeclaration[2815-2857]:FieldDeclaration[2900-2942]"
+    }, {
+      "left" : "public void setup() throws Exception",
+      "right" : "public void setup() throws Exception",
+      "info" : "MethodDeclaration[2860-2971]:MethodDeclaration[2945-3056]"
+    }, {
+      "left" : "public void unsupportedType() throws Exception",
+      "right" : "public void unsupportedType() throws Exception",
+      "info" : "MethodDeclaration[2974-3192]:MethodDeclaration[3059-3277]"
+    }, {
+      "left" : "public void supportedType() throws Exception",
+      "right" : "public void supportedType() throws Exception",
+      "info" : "MethodDeclaration[3195-3421]:MethodDeclaration[3280-3506]"
+    }, {
+      "left" : "public void stringPayloadCopiedToNewFile() throws Exception",
+      "right" : "public void stringPayloadCopiedToNewFile() throws Exception",
+      "info" : "MethodDeclaration[3424-3804]:MethodDeclaration[3509-3889]"
+    }, {
+      "left" : "public void stringPayloadCopiedToNewFileWithNewLines() throws Exception",
+      "right" : "public void stringPayloadCopiedToNewFileWithNewLines() throws Exception",
+      "info" : "MethodDeclaration[3807-4308]:MethodDeclaration[3892-4393]"
+    }, {
+      "left" : "public void byteArrayPayloadCopiedToNewFile() throws Exception",
+      "right" : "public void byteArrayPayloadCopiedToNewFile() throws Exception",
+      "info" : "MethodDeclaration[4311-4686]:MethodDeclaration[4396-4771]"
+    }, {
+      "left" : "public void byteArrayPayloadCopiedToNewFileWithNewLines() throws Exception",
+      "right" : "public void byteArrayPayloadCopiedToNewFileWithNewLines() throws Exception",
+      "info" : "MethodDeclaration[4689-5185]:MethodDeclaration[4774-5270]"
+    }, {
+      "left" : "public void filePayloadCopiedToNewFile() throws Exception",
+      "right" : "public void filePayloadCopiedToNewFile() throws Exception",
+      "info" : "MethodDeclaration[5188-5522]:MethodDeclaration[5273-5607]"
+    }, {
+      "left" : "public void filePayloadCopiedToNewFileWithNewLines() throws Exception",
+      "right" : "public void filePayloadCopiedToNewFileWithNewLines() throws Exception",
+      "info" : "MethodDeclaration[5525-5952]:MethodDeclaration[5610-6037]"
+    }, {
+      "left" : "// INT-3289 ignored because it won't fail on all OS\n\tpublic void testCreateDirFail()",
+      "right" : "// INT-3289 ignored because it won't fail on all OS\n\tpublic void testCreateDirFail()",
+      "info" : "MethodDeclaration[5955-6411]:MethodDeclaration[6909-7365]"
+    }, {
+      "left" : "public void deleteFilesFalseByDefault() throws Exception",
+      "right" : "public void deleteFilesFalseByDefault() throws Exception",
+      "info" : "MethodDeclaration[6414-6782]:MethodDeclaration[7368-7736]"
+    }, {
+      "left" : "public void deleteFilesTrueWithFilePayload() throws Exception",
+      "right" : "public void deleteFilesTrueWithFilePayload() throws Exception",
+      "info" : "MethodDeclaration[6785-7197]:MethodDeclaration[7739-8151]"
+    }, {
+      "left" : "public void deleteSourceFileWithStringPayloadAndFileInstanceHeader() throws Exception",
+      "right" : "public void deleteSourceFileWithStringPayloadAndFileInstanceHeader() throws Exception",
+      "info" : "MethodDeclaration[7200-7774]:MethodDeclaration[8154-8728]"
+    }, {
+      "left" : "public void deleteSourceFileWithStringPayloadAndFilePathHeader() throws Exception",
+      "right" : "public void deleteSourceFileWithStringPayloadAndFilePathHeader() throws Exception",
+      "info" : "MethodDeclaration[7777-8365]:MethodDeclaration[8731-9319]"
+    }, {
+      "left" : "public void deleteSourceFileWithByteArrayPayloadAndFileInstanceHeader() throws Exception",
+      "right" : "public void deleteSourceFileWithByteArrayPayloadAndFileInstanceHeader() throws Exception",
+      "info" : "MethodDeclaration[8368-8977]:MethodDeclaration[9322-9931]"
+    }, {
+      "left" : "public void deleteSourceFileWithByteArrayPayloadAndFilePathHeader() throws Exception",
+      "right" : "public void deleteSourceFileWithByteArrayPayloadAndFilePathHeader() throws Exception",
+      "info" : "MethodDeclaration[8980-9603]:MethodDeclaration[9934-10557]"
+    }, {
+      "left" : "public void customFileNameGenerator() throws Exception",
+      "right" : "public void customFileNameGenerator() throws Exception",
+      "info" : "MethodDeclaration[9606-10162]:MethodDeclaration[11822-12378]"
+    }, {
+      "left" : "public String generateFileName(Message<?> message)",
+      "right" : "public String generateFileName(Message<?> message)",
+      "info" : "MethodDeclaration[9854-9948]:MethodDeclaration[12070-12164]"
+    }, {
+      "left" : "public void existingFileIgnored() throws Exception",
+      "right" : "public void existingFileIgnored() throws Exception",
+      "info" : "MethodDeclaration[10165-10761]:MethodDeclaration[12381-12977]"
+    }, {
+      "left" : "public void existingWritingFileIgnored() throws Exception",
+      "right" : "public void existingWritingFileIgnored() throws Exception",
+      "info" : "MethodDeclaration[10764-11508]:MethodDeclaration[12980-13724]"
+    }, {
+      "left" : "public void existingWritingFileNotIgnoredIfEmptySuffix() throws Exception",
+      "right" : "public void existingWritingFileNotIgnoredIfEmptySuffix() throws Exception",
+      "info" : "MethodDeclaration[11511-12343]:MethodDeclaration[13727-14559]"
+    }, {
+      "left" : "void assertFileContentIsMatching(Message<?> result) throws IOException, UnsupportedEncodingException",
+      "right" : "void assertFileContentIsMatching(Message<?> result) throws IOException, UnsupportedEncodingException",
+      "info" : "MethodDeclaration[12346-12498]:MethodDeclaration[14562-14714]"
+    }, {
+      "left" : "void assertFileContentIs(Message<?> result, String expected) throws IOException, UnsupportedEncodingException",
+      "right" : "void assertFileContentIs(Message<?> result, String expected) throws IOException, UnsupportedEncodingException",
+      "info" : "MethodDeclaration[12501-12809]:MethodDeclaration[14717-15025]"
+    }, {
+      "left" : "void assertFileContentIs(File destFile, String expected) throws IOException, UnsupportedEncodingException",
+      "right" : "void assertFileContentIs(File destFile, String expected) throws IOException, UnsupportedEncodingException",
+      "info" : "MethodDeclaration[12812-13147]:MethodDeclaration[15028-15363]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2395-2776]:Block[2480-2861]"
+    }, {
+      "left" : "super.create();",
+      "right" : "super.create();",
+      "info" : "ExpressionStatement[2400-2415]:ExpressionStatement[2485-2500]"
+    }, {
+      "left" : "outputDirectory = temp.newFolder(\"outputDirectory\");",
+      "right" : "outputDirectory = temp.newFolder(\"outputDirectory\");",
+      "info" : "ExpressionStatement[2419-2471]:ExpressionStatement[2504-2556]"
+    }, {
+      "left" : "handler = new FileWritingMessageHandler(outputDirectory);",
+      "right" : "handler = new FileWritingMessageHandler(outputDirectory);",
+      "info" : "ExpressionStatement[2475-2532]:ExpressionStatement[2560-2617]"
+    }, {
+      "left" : "handler.setBeanFactory(mock(BeanFactory.class));",
+      "right" : "handler.setBeanFactory(mock(BeanFactory.class));",
+      "info" : "ExpressionStatement[2536-2584]:ExpressionStatement[2621-2669]"
+    }, {
+      "left" : "handler.afterPropertiesSet();",
+      "right" : "handler.afterPropertiesSet();",
+      "info" : "ExpressionStatement[2588-2617]:ExpressionStatement[2673-2702]"
+    }, {
+      "left" : "sourceFile = temp.newFile(\"sourceFile\");",
+      "right" : "sourceFile = temp.newFile(\"sourceFile\");",
+      "info" : "ExpressionStatement[2621-2661]:ExpressionStatement[2706-2746]"
+    }, {
+      "left" : "FileCopyUtils.copy(SAMPLE_CONTENT.getBytes(DEFAULT_ENCODING),\n\t\t\t\tnew FileOutputStream(sourceFile, false));",
+      "right" : "FileCopyUtils.copy(SAMPLE_CONTENT.getBytes(DEFAULT_ENCODING),\n\t\t\t\tnew FileOutputStream(sourceFile, false));",
+      "info" : "ExpressionStatement[2665-2772]:ExpressionStatement[2750-2857]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2906-2971]:Block[2991-3056]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3071-3192]:Block[3156-3277]"
+    }, {
+      "left" : "handler.handleMessage(new GenericMessage<Integer>(99));",
+      "right" : "handler.handleMessage(new GenericMessage<Integer>(99));",
+      "info" : "ExpressionStatement[3075-3130]:ExpressionStatement[3160-3215]"
+    }, {
+      "left" : "assertThat(outputDirectory.listFiles()[0], nullValue());",
+      "right" : "assertThat(outputDirectory.listFiles()[0], nullValue());",
+      "info" : "ExpressionStatement[3133-3189]:ExpressionStatement[3218-3274]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3247-3421]:Block[3332-3506]"
+    }, {
+      "left" : "handler.setOutputChannel(new NullChannel());",
+      "right" : "handler.setOutputChannel(new NullChannel());",
+      "info" : "ExpressionStatement[3251-3295]:ExpressionStatement[3336-3380]"
+    }, {
+      "left" : "handler.handleMessage(new GenericMessage<String>(\"test\"));",
+      "right" : "handler.handleMessage(new GenericMessage<String>(\"test\"));",
+      "info" : "ExpressionStatement[3298-3356]:ExpressionStatement[3383-3441]"
+    }, {
+      "left" : "assertThat(outputDirectory.listFiles()[0], notNullValue());",
+      "right" : "assertThat(outputDirectory.listFiles()[0], notNullValue());",
+      "info" : "ExpressionStatement[3359-3418]:ExpressionStatement[3444-3503]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3491-3804]:Block[3576-3889]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "info" : "VariableDeclarationStatement[3495-3567]:VariableDeclarationStatement[3580-3652]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[3570-3611]:VariableDeclarationStatement[3655-3696]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[3614-3651]:ExpressionStatement[3699-3736]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[3654-3687]:ExpressionStatement[3739-3772]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[3690-3721]:ExpressionStatement[3775-3806]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[3724-3762]:VariableDeclarationStatement[3809-3847]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[3765-3801]:ExpressionStatement[3850-3886]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3886-4308]:Block[3971-4393]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "info" : "VariableDeclarationStatement[3890-3962]:VariableDeclarationStatement[3975-4047]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[3965-4006]:VariableDeclarationStatement[4050-4091]"
+    }, {
+      "left" : "String newLine = System.getProperty(\"line.separator\");",
+      "right" : "String newLine = System.getProperty(\"line.separator\");",
+      "info" : "VariableDeclarationStatement[4009-4063]:VariableDeclarationStatement[4094-4148]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[4066-4103]:ExpressionStatement[4151-4188]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[4106-4139]:ExpressionStatement[4191-4224]"
+    }, {
+      "left" : "handler.setAppendNewLine(true);",
+      "right" : "handler.setAppendNewLine(true);",
+      "info" : "ExpressionStatement[4142-4173]:ExpressionStatement[4227-4258]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[4176-4207]:ExpressionStatement[4261-4292]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[4210-4248]:VariableDeclarationStatement[4295-4333]"
+    }, {
+      "left" : "assertFileContentIs(result, SAMPLE_CONTENT + newLine);",
+      "right" : "assertFileContentIs(result, SAMPLE_CONTENT + newLine);",
+      "info" : "ExpressionStatement[4251-4305]:ExpressionStatement[4336-4390]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4381-4686]:Block[4466-4771]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING)).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING)).build();",
+      "info" : "VariableDeclarationStatement[4385-4489]:VariableDeclarationStatement[4470-4574]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[4492-4533]:VariableDeclarationStatement[4577-4618]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[4536-4569]:ExpressionStatement[4621-4654]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[4572-4603]:ExpressionStatement[4657-4688]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[4606-4644]:VariableDeclarationStatement[4691-4729]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[4647-4683]:ExpressionStatement[4732-4768]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4771-5185]:Block[4856-5270]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING)).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING)).build();",
+      "info" : "VariableDeclarationStatement[4775-4879]:VariableDeclarationStatement[4860-4964]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[4882-4923]:VariableDeclarationStatement[4967-5008]"
+    }, {
+      "left" : "String newLine = System.getProperty(\"line.separator\");",
+      "right" : "String newLine = System.getProperty(\"line.separator\");",
+      "info" : "VariableDeclarationStatement[4926-4980]:VariableDeclarationStatement[5011-5065]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[4983-5016]:ExpressionStatement[5068-5101]"
+    }, {
+      "left" : "handler.setAppendNewLine(true);",
+      "right" : "handler.setAppendNewLine(true);",
+      "info" : "ExpressionStatement[5019-5050]:ExpressionStatement[5104-5135]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[5053-5084]:ExpressionStatement[5138-5169]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[5087-5125]:VariableDeclarationStatement[5172-5210]"
+    }, {
+      "left" : "assertFileContentIs(result, SAMPLE_CONTENT + newLine);",
+      "right" : "assertFileContentIs(result, SAMPLE_CONTENT + newLine);",
+      "info" : "ExpressionStatement[5128-5182]:ExpressionStatement[5213-5267]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5253-5522]:Block[5338-5607]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "info" : "VariableDeclarationStatement[5257-5325]:VariableDeclarationStatement[5342-5410]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[5328-5369]:VariableDeclarationStatement[5413-5454]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[5372-5405]:ExpressionStatement[5457-5490]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[5408-5439]:ExpressionStatement[5493-5524]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[5442-5480]:VariableDeclarationStatement[5527-5565]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[5483-5519]:ExpressionStatement[5568-5604]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5602-5952]:Block[5687-6037]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "info" : "VariableDeclarationStatement[5606-5674]:VariableDeclarationStatement[5691-5759]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[5677-5718]:VariableDeclarationStatement[5762-5803]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[5721-5754]:ExpressionStatement[5806-5839]"
+    }, {
+      "left" : "handler.setAppendNewLine(true);",
+      "right" : "handler.setAppendNewLine(true);",
+      "info" : "ExpressionStatement[5757-5788]:ExpressionStatement[5842-5873]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[5791-5822]:ExpressionStatement[5876-5907]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[5825-5863]:VariableDeclarationStatement[5910-5948]"
+    }, {
+      "left" : "assertFileContentIs(result, SAMPLE_CONTENT + System.getProperty(\"line.separator\"));",
+      "right" : "assertFileContentIs(result, SAMPLE_CONTENT + System.getProperty(\"line.separator\"));",
+      "info" : "ExpressionStatement[5866-5949]:ExpressionStatement[5951-6034]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6054-6411]:Block[7008-7365]"
+    }, {
+      "left" : "File dir = new File(\"/foo\");",
+      "right" : "File dir = new File(\"/foo\");",
+      "info" : "VariableDeclarationStatement[6058-6086]:VariableDeclarationStatement[7012-7040]"
+    }, {
+      "left" : "FileWritingMessageHandler handler = new FileWritingMessageHandler(dir);",
+      "right" : "FileWritingMessageHandler handler = new FileWritingMessageHandler(dir);",
+      "info" : "VariableDeclarationStatement[6089-6160]:VariableDeclarationStatement[7043-7114]"
+    }, {
+      "left" : "handler.setBeanFactory(mock(BeanFactory.class));",
+      "right" : "handler.setBeanFactory(mock(BeanFactory.class));",
+      "info" : "ExpressionStatement[6163-6211]:ExpressionStatement[7117-7165]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6214-6408]:TryStatement[7168-7362]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6218-6287]:Block[7172-7241]"
+    }, {
+      "left" : "handler.afterPropertiesSet();",
+      "right" : "handler.afterPropertiesSet();",
+      "info" : "ExpressionStatement[6223-6252]:ExpressionStatement[7177-7206]"
+    }, {
+      "left" : "fail(\"Expected exception\");",
+      "right" : "fail(\"Expected exception\");",
+      "info" : "ExpressionStatement[6256-6283]:ExpressionStatement[7210-7237]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6325-6408]:Block[7279-7362]"
+    }, {
+      "left" : "assertThat(e.getMessage(), containsString(\"[/foo] could not be created\"));",
+      "right" : "assertThat(e.getMessage(), containsString(\"[/foo] could not be created\"));",
+      "info" : "ExpressionStatement[6330-6404]:ExpressionStatement[7284-7358]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6478-6782]:Block[7432-7736]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[6482-6523]:VariableDeclarationStatement[7436-7477]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[6526-6559]:ExpressionStatement[7480-7513]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "info" : "VariableDeclarationStatement[6562-6630]:VariableDeclarationStatement[7516-7584]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[6633-6664]:ExpressionStatement[7587-7618]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[6667-6705]:VariableDeclarationStatement[7621-7659]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[6708-6744]:ExpressionStatement[7662-7698]"
+    }, {
+      "left" : "assertTrue(sourceFile.exists());",
+      "right" : "assertTrue(sourceFile.exists());",
+      "info" : "ExpressionStatement[6747-6779]:ExpressionStatement[7701-7733]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6854-7197]:Block[7808-8151]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[6858-6899]:VariableDeclarationStatement[7812-7853]"
+    }, {
+      "left" : "handler.setDeleteSourceFiles(true);",
+      "right" : "handler.setDeleteSourceFiles(true);",
+      "info" : "ExpressionStatement[6902-6937]:ExpressionStatement[7856-7891]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[6940-6973]:ExpressionStatement[7894-7927]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(sourceFile).build();",
+      "info" : "VariableDeclarationStatement[6976-7044]:VariableDeclarationStatement[7930-7998]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[7047-7078]:ExpressionStatement[8001-8032]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[7081-7119]:VariableDeclarationStatement[8035-8073]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[7122-7158]:ExpressionStatement[8076-8112]"
+    }, {
+      "left" : "assertFalse(sourceFile.exists());",
+      "right" : "assertFalse(sourceFile.exists());",
+      "info" : "ExpressionStatement[7161-7194]:ExpressionStatement[8115-8148]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7293-7774]:Block[8247-8728]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[7297-7338]:VariableDeclarationStatement[8251-8292]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[7341-7378]:ExpressionStatement[8295-8332]"
+    }, {
+      "left" : "handler.setDeleteSourceFiles(true);",
+      "right" : "handler.setDeleteSourceFiles(true);",
+      "info" : "ExpressionStatement[7381-7416]:ExpressionStatement[8335-8370]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[7419-7452]:ExpressionStatement[8373-8406]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT)\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile)\n\t\t\t\t.build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT)\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile)\n\t\t\t\t.build();",
+      "info" : "VariableDeclarationStatement[7455-7586]:VariableDeclarationStatement[8409-8540]"
+    }, {
+      "left" : "assertTrue(sourceFile.exists());",
+      "right" : "assertTrue(sourceFile.exists());",
+      "info" : "ExpressionStatement[7589-7621]:ExpressionStatement[8543-8575]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[7624-7655]:ExpressionStatement[8578-8609]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[7658-7696]:VariableDeclarationStatement[8612-8650]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[7699-7735]:ExpressionStatement[8653-8689]"
+    }, {
+      "left" : "assertFalse(sourceFile.exists());",
+      "right" : "assertFalse(sourceFile.exists());",
+      "info" : "ExpressionStatement[7738-7771]:ExpressionStatement[8692-8725]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7866-8365]:Block[8820-9319]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[7870-7911]:VariableDeclarationStatement[8824-8865]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[7914-7951]:ExpressionStatement[8868-8905]"
+    }, {
+      "left" : "handler.setDeleteSourceFiles(true);",
+      "right" : "handler.setDeleteSourceFiles(true);",
+      "info" : "ExpressionStatement[7954-7989]:ExpressionStatement[8908-8943]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[7992-8025]:ExpressionStatement[8946-8979]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT)\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile.getAbsolutePath())\n\t\t\t\t.build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT)\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile.getAbsolutePath())\n\t\t\t\t.build();",
+      "info" : "VariableDeclarationStatement[8028-8177]:VariableDeclarationStatement[8982-9131]"
+    }, {
+      "left" : "assertTrue(sourceFile.exists());",
+      "right" : "assertTrue(sourceFile.exists());",
+      "info" : "ExpressionStatement[8180-8212]:ExpressionStatement[9134-9166]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[8215-8246]:ExpressionStatement[9169-9200]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[8249-8287]:VariableDeclarationStatement[9203-9241]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[8290-8326]:ExpressionStatement[9244-9280]"
+    }, {
+      "left" : "assertFalse(sourceFile.exists());",
+      "right" : "assertFalse(sourceFile.exists());",
+      "info" : "ExpressionStatement[8329-8362]:ExpressionStatement[9283-9316]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8464-8977]:Block[9418-9931]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[8468-8509]:VariableDeclarationStatement[9422-9463]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[8512-8549]:ExpressionStatement[9466-9503]"
+    }, {
+      "left" : "handler.setDeleteSourceFiles(true);",
+      "right" : "handler.setDeleteSourceFiles(true);",
+      "info" : "ExpressionStatement[8552-8587]:ExpressionStatement[9506-9541]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[8590-8623]:ExpressionStatement[9544-9577]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING))\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile)\n\t\t\t\t.build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING))\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile)\n\t\t\t\t.build();",
+      "info" : "VariableDeclarationStatement[8626-8789]:VariableDeclarationStatement[9580-9743]"
+    }, {
+      "left" : "assertTrue(sourceFile.exists());",
+      "right" : "assertTrue(sourceFile.exists());",
+      "info" : "ExpressionStatement[8792-8824]:ExpressionStatement[9746-9778]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[8827-8858]:ExpressionStatement[9781-9812]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[8861-8899]:VariableDeclarationStatement[9815-9853]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[8902-8938]:ExpressionStatement[9856-9892]"
+    }, {
+      "left" : "assertFalse(sourceFile.exists());",
+      "right" : "assertFalse(sourceFile.exists());",
+      "info" : "ExpressionStatement[8941-8974]:ExpressionStatement[9895-9928]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9072-9603]:Block[10026-10557]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[9076-9117]:VariableDeclarationStatement[10030-10071]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[9120-9157]:ExpressionStatement[10074-10111]"
+    }, {
+      "left" : "handler.setDeleteSourceFiles(true);",
+      "right" : "handler.setDeleteSourceFiles(true);",
+      "info" : "ExpressionStatement[9160-9195]:ExpressionStatement[10114-10149]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[9198-9231]:ExpressionStatement[10152-10185]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING))\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile.getAbsolutePath())\n\t\t\t\t.build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(\n\t\t\t\tSAMPLE_CONTENT.getBytes(DEFAULT_ENCODING))\n\t\t\t\t.setHeader(FileHeaders.ORIGINAL_FILE, sourceFile.getAbsolutePath())\n\t\t\t\t.build();",
+      "info" : "VariableDeclarationStatement[9234-9415]:VariableDeclarationStatement[10188-10369]"
+    }, {
+      "left" : "assertTrue(sourceFile.exists());",
+      "right" : "assertTrue(sourceFile.exists());",
+      "info" : "ExpressionStatement[9418-9450]:ExpressionStatement[10372-10404]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[9453-9484]:ExpressionStatement[10407-10438]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[9487-9525]:VariableDeclarationStatement[10441-10479]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[9528-9564]:ExpressionStatement[10482-10518]"
+    }, {
+      "left" : "assertFalse(sourceFile.exists());",
+      "right" : "assertFalse(sourceFile.exists());",
+      "info" : "ExpressionStatement[9567-9600]:ExpressionStatement[10521-10554]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9668-10162]:Block[11884-12378]"
+    }, {
+      "left" : "final String anyFilename = \"fooBar.test\";",
+      "right" : "final String anyFilename = \"fooBar.test\";",
+      "info" : "VariableDeclarationStatement[9672-9713]:VariableDeclarationStatement[11888-11929]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[9716-9757]:VariableDeclarationStatement[11932-11973]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[9760-9793]:ExpressionStatement[11976-12009]"
+    }, {
+      "left" : "handler.setFileNameGenerator(new FileNameGenerator() {\n\t\t\t@Override\n\t\t\tpublic String generateFileName(Message<?> message) {\n\t\t\t\treturn anyFilename;\n\t\t\t}\n\t\t});",
+      "right" : "handler.setFileNameGenerator(new FileNameGenerator() {\n\t\t\t@Override\n\t\t\tpublic String generateFileName(Message<?> message) {\n\t\t\t\treturn anyFilename;\n\t\t\t}\n\t\t});",
+      "info" : "ExpressionStatement[9796-9954]:ExpressionStatement[12012-12170]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9918-9948]:Block[12134-12164]"
+    }, {
+      "left" : "return anyFilename;",
+      "right" : "return anyFilename;",
+      "info" : "ReturnStatement[9924-9943]:ReturnStatement[12140-12159]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(\"test\").build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(\"test\").build();",
+      "info" : "VariableDeclarationStatement[9957-10021]:VariableDeclarationStatement[12173-12237]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[10024-10055]:ExpressionStatement[12240-12271]"
+    }, {
+      "left" : "File result = (File) output.receive(0).getPayload();",
+      "right" : "File result = (File) output.receive(0).getPayload();",
+      "info" : "VariableDeclarationStatement[10058-10110]:VariableDeclarationStatement[12274-12326]"
+    }, {
+      "left" : "assertThat(result.getName(), is(anyFilename));",
+      "right" : "assertThat(result.getName(), is(anyFilename));",
+      "info" : "ExpressionStatement[10113-10159]:ExpressionStatement[12329-12375]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10223-10761]:Block[12439-12977]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "info" : "VariableDeclarationStatement[10227-10299]:VariableDeclarationStatement[12443-12515]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[10302-10343]:VariableDeclarationStatement[12518-12559]"
+    }, {
+      "left" : "File outFile = temp.newFile(\"/outputDirectory/\" + message.getHeaders().getId().toString() + \".msg\");",
+      "right" : "File outFile = temp.newFile(\"/outputDirectory/\" + message.getHeaders().getId().toString() + \".msg\");",
+      "info" : "VariableDeclarationStatement[10346-10446]:VariableDeclarationStatement[12562-12662]"
+    }, {
+      "left" : "FileCopyUtils.copy(\"foo\".getBytes(), new FileOutputStream(outFile));",
+      "right" : "FileCopyUtils.copy(\"foo\".getBytes(), new FileOutputStream(outFile));",
+      "info" : "ExpressionStatement[10449-10517]:ExpressionStatement[12665-12733]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[10520-10557]:ExpressionStatement[12736-12773]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[10560-10593]:ExpressionStatement[12776-12809]"
+    }, {
+      "left" : "handler.setFileExistsMode(FileExistsMode.IGNORE);",
+      "right" : "handler.setFileExistsMode(FileExistsMode.IGNORE);",
+      "info" : "ExpressionStatement[10596-10645]:ExpressionStatement[12812-12861]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[10648-10679]:ExpressionStatement[12864-12895]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[10682-10720]:VariableDeclarationStatement[12898-12936]"
+    }, {
+      "left" : "assertFileContentIs(result, \"foo\");",
+      "right" : "assertFileContentIs(result, \"foo\");",
+      "info" : "ExpressionStatement[10723-10758]:ExpressionStatement[12939-12974]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10829-11508]:Block[13045-13724]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "info" : "VariableDeclarationStatement[10833-10905]:VariableDeclarationStatement[13049-13121]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[10908-10949]:VariableDeclarationStatement[13124-13165]"
+    }, {
+      "left" : "File outFile = temp.newFile(\"/outputDirectory/\" + message.getHeaders().getId().toString() + \".msg.writing\");",
+      "right" : "File outFile = temp.newFile(\"/outputDirectory/\" + message.getHeaders().getId().toString() + \".msg.writing\");",
+      "info" : "VariableDeclarationStatement[10952-11060]:VariableDeclarationStatement[13168-13276]"
+    }, {
+      "left" : "FileCopyUtils.copy(\"foo\".getBytes(), new FileOutputStream(outFile));",
+      "right" : "FileCopyUtils.copy(\"foo\".getBytes(), new FileOutputStream(outFile));",
+      "info" : "ExpressionStatement[11063-11131]:ExpressionStatement[13279-13347]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[11134-11171]:ExpressionStatement[13350-13387]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[11174-11207]:ExpressionStatement[13390-13423]"
+    }, {
+      "left" : "handler.setFileExistsMode(FileExistsMode.IGNORE);",
+      "right" : "handler.setFileExistsMode(FileExistsMode.IGNORE);",
+      "info" : "ExpressionStatement[11210-11259]:ExpressionStatement[13426-13475]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[11262-11293]:ExpressionStatement[13478-13509]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[11296-11334]:VariableDeclarationStatement[13512-13550]"
+    }, {
+      "left" : "File destFile = (File) result.getPayload();",
+      "right" : "File destFile = (File) result.getPayload();",
+      "info" : "VariableDeclarationStatement[11337-11380]:VariableDeclarationStatement[13553-13596]"
+    }, {
+      "left" : "assertNotSame(destFile, sourceFile);",
+      "right" : "assertNotSame(destFile, sourceFile);",
+      "info" : "ExpressionStatement[11383-11419]:ExpressionStatement[13599-13635]"
+    }, {
+      "left" : "assertThat(destFile.exists(), is(false));",
+      "right" : "assertThat(destFile.exists(), is(false));",
+      "info" : "ExpressionStatement[11422-11463]:ExpressionStatement[13638-13679]"
+    }, {
+      "left" : "assertThat(outFile.exists(), is(true));",
+      "right" : "assertThat(outFile.exists(), is(true));",
+      "info" : "ExpressionStatement[11466-11505]:ExpressionStatement[13682-13721]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11592-12343]:Block[13808-14559]"
+    }, {
+      "left" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "right" : "Message<?> message = MessageBuilder.withPayload(SAMPLE_CONTENT).build();",
+      "info" : "VariableDeclarationStatement[11596-11668]:VariableDeclarationStatement[13812-13884]"
+    }, {
+      "left" : "QueueChannel output = new QueueChannel();",
+      "right" : "QueueChannel output = new QueueChannel();",
+      "info" : "VariableDeclarationStatement[11671-11712]:VariableDeclarationStatement[13887-13928]"
+    }, {
+      "left" : "File outFile = temp.newFile(\"/outputDirectory/\" + message.getHeaders().getId().toString() + \".msg.writing\");",
+      "right" : "File outFile = temp.newFile(\"/outputDirectory/\" + message.getHeaders().getId().toString() + \".msg.writing\");",
+      "info" : "VariableDeclarationStatement[11715-11823]:VariableDeclarationStatement[13931-14039]"
+    }, {
+      "left" : "FileCopyUtils.copy(\"foo\".getBytes(), new FileOutputStream(outFile));",
+      "right" : "FileCopyUtils.copy(\"foo\".getBytes(), new FileOutputStream(outFile));",
+      "info" : "ExpressionStatement[11826-11894]:ExpressionStatement[14042-14110]"
+    }, {
+      "left" : "handler.setCharset(DEFAULT_ENCODING);",
+      "right" : "handler.setCharset(DEFAULT_ENCODING);",
+      "info" : "ExpressionStatement[11897-11934]:ExpressionStatement[14113-14150]"
+    }, {
+      "left" : "handler.setOutputChannel(output);",
+      "right" : "handler.setOutputChannel(output);",
+      "info" : "ExpressionStatement[11937-11970]:ExpressionStatement[14153-14186]"
+    }, {
+      "left" : "handler.setFileExistsMode(FileExistsMode.IGNORE);",
+      "right" : "handler.setFileExistsMode(FileExistsMode.IGNORE);",
+      "info" : "ExpressionStatement[11973-12022]:ExpressionStatement[14189-14238]"
+    }, {
+      "left" : "handler.setTemporaryFileSuffix(\"\");",
+      "right" : "handler.setTemporaryFileSuffix(\"\");",
+      "info" : "ExpressionStatement[12025-12060]:ExpressionStatement[14241-14276]"
+    }, {
+      "left" : "handler.handleMessage(message);",
+      "right" : "handler.handleMessage(message);",
+      "info" : "ExpressionStatement[12063-12094]:ExpressionStatement[14279-14310]"
+    }, {
+      "left" : "Message<?> result = output.receive(0);",
+      "right" : "Message<?> result = output.receive(0);",
+      "info" : "VariableDeclarationStatement[12097-12135]:VariableDeclarationStatement[14313-14351]"
+    }, {
+      "left" : "File destFile = (File) result.getPayload();",
+      "right" : "File destFile = (File) result.getPayload();",
+      "info" : "VariableDeclarationStatement[12138-12181]:VariableDeclarationStatement[14354-14397]"
+    }, {
+      "left" : "assertNotSame(destFile, sourceFile);",
+      "right" : "assertNotSame(destFile, sourceFile);",
+      "info" : "ExpressionStatement[12184-12220]:ExpressionStatement[14400-14436]"
+    }, {
+      "left" : "assertFileContentIsMatching(result);",
+      "right" : "assertFileContentIsMatching(result);",
+      "info" : "ExpressionStatement[12223-12259]:ExpressionStatement[14439-14475]"
+    }, {
+      "left" : "assertThat(outFile.exists(), is(true));",
+      "right" : "assertThat(outFile.exists(), is(true));",
+      "info" : "ExpressionStatement[12262-12301]:ExpressionStatement[14478-14517]"
+    }, {
+      "left" : "assertFileContentIs(outFile, \"foo\");",
+      "right" : "assertFileContentIs(outFile, \"foo\");",
+      "info" : "ExpressionStatement[12304-12340]:ExpressionStatement[14520-14556]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12447-12498]:Block[14663-14714]"
+    }, {
+      "left" : "assertFileContentIs(result, SAMPLE_CONTENT);",
+      "right" : "assertFileContentIs(result, SAMPLE_CONTENT);",
+      "info" : "ExpressionStatement[12451-12495]:ExpressionStatement[14667-14711]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12611-12809]:Block[14827-15025]"
+    }, {
+      "left" : "assertThat(result, is(notNullValue()));",
+      "right" : "assertThat(result, is(notNullValue()));",
+      "info" : "ExpressionStatement[12615-12654]:ExpressionStatement[14831-14870]"
+    }, {
+      "left" : "assertThat(result.getPayload(), is(instanceOf(File.class)));",
+      "right" : "assertThat(result.getPayload(), is(instanceOf(File.class)));",
+      "info" : "ExpressionStatement[12657-12717]:ExpressionStatement[14873-14933]"
+    }, {
+      "left" : "File destFile = (File) result.getPayload();",
+      "right" : "File destFile = (File) result.getPayload();",
+      "info" : "VariableDeclarationStatement[12720-12763]:VariableDeclarationStatement[14936-14979]"
+    }, {
+      "left" : "assertFileContentIs(destFile, expected);",
+      "right" : "assertFileContentIs(destFile, expected);",
+      "info" : "ExpressionStatement[12766-12806]:ExpressionStatement[14982-15022]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12918-13147]:Block[15134-15363]"
+    }, {
+      "left" : "assertNotSame(destFile, sourceFile);",
+      "right" : "assertNotSame(destFile, sourceFile);",
+      "info" : "ExpressionStatement[12922-12958]:ExpressionStatement[15138-15174]"
+    }, {
+      "left" : "assertThat(destFile.exists(), is(true));",
+      "right" : "assertThat(destFile.exists(), is(true));",
+      "info" : "ExpressionStatement[12961-13001]:ExpressionStatement[15177-15217]"
+    }, {
+      "left" : "byte[] destFileContent = FileCopyUtils.copyToByteArray(destFile);",
+      "right" : "byte[] destFileContent = FileCopyUtils.copyToByteArray(destFile);",
+      "info" : "VariableDeclarationStatement[13004-13069]:VariableDeclarationStatement[15220-15285]"
+    }, {
+      "left" : "assertThat(new String(destFileContent, DEFAULT_ENCODING), is(expected));",
+      "right" : "assertThat(new String(destFileContent, DEFAULT_ENCODING), is(expected));",
+      "info" : "ExpressionStatement[13072-13144]:ExpressionStatement[15288-15360]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

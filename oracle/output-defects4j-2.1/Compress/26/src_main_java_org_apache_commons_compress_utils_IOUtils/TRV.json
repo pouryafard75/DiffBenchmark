@@ -1,0 +1,197 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final int COPY_BUF_SIZE = 8024;",
+      "right" : "private static final int COPY_BUF_SIZE = 8024;",
+      "info" : "FieldDeclaration[1077-1123]:FieldDeclaration[1077-1123]"
+    }, {
+      "left" : "private static final int SKIP_BUF_SIZE = 4096;",
+      "right" : "private static final int SKIP_BUF_SIZE = 4096;",
+      "info" : "FieldDeclaration[1128-1174]:FieldDeclaration[1128-1174]"
+    }, {
+      "left" : "private IOUtils(",
+      "right" : "private IOUtils(",
+      "info" : "MethodDeclaration[1180-1283]:MethodDeclaration[1180-1283]"
+    }, {
+      "left" : "public static long copy(final InputStream input, final OutputStream output) throws IOException",
+      "right" : "public static long copy(final InputStream input, final OutputStream output) throws IOException",
+      "info" : "MethodDeclaration[1289-1763]:MethodDeclaration[1289-1763]"
+    }, {
+      "left" : "public static long copy(final InputStream input, final OutputStream output, int buffersize) throws IOException",
+      "right" : "public static long copy(final InputStream input, final OutputStream output, int buffersize) throws IOException",
+      "info" : "MethodDeclaration[1769-2462]:MethodDeclaration[1769-2462]"
+    }, {
+      "left" : "public static int readFully(InputStream input, byte[] b) throws IOException",
+      "right" : "public static int readFully(InputStream input, byte[] b) throws IOException",
+      "info" : "MethodDeclaration[3503-4063]:MethodDeclaration[3894-4454]"
+    }, {
+      "left" : "public static int readFully(InputStream input, byte[] b, int offset, int len)\n        throws IOException",
+      "right" : "public static int readFully(InputStream input, byte[] b, int offset, int len)\n        throws IOException",
+      "info" : "MethodDeclaration[4069-5157]:MethodDeclaration[4460-5548]"
+    }, {
+      "left" : "public static byte[] toByteArray(final InputStream input) throws IOException",
+      "right" : "public static byte[] toByteArray(final InputStream input) throws IOException",
+      "info" : "MethodDeclaration[5400-6087]:MethodDeclaration[5791-6478]"
+    }, {
+      "left" : "public static void closeQuietly(Closeable c)",
+      "right" : "public static void closeQuietly(Closeable c)",
+      "info" : "MethodDeclaration[6093-6453]:MethodDeclaration[6484-6844]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1276-1283]:Block[1276-1283]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1705-1763]:Block[1705-1763]"
+    }, {
+      "left" : "return copy(input, output, COPY_BUF_SIZE);",
+      "right" : "return copy(input, output, COPY_BUF_SIZE);",
+      "info" : "ReturnStatement[1715-1757]:ReturnStatement[1715-1757]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2217-2462]:Block[2217-2462]"
+    }, {
+      "left" : "final byte[] buffer = new byte[buffersize];",
+      "right" : "final byte[] buffer = new byte[buffersize];",
+      "info" : "VariableDeclarationStatement[2227-2270]:VariableDeclarationStatement[2227-2270]"
+    }, {
+      "left" : "int n = 0;",
+      "right" : "int n = 0;",
+      "info" : "VariableDeclarationStatement[2279-2289]:VariableDeclarationStatement[2279-2289]"
+    }, {
+      "left" : "long count=0;",
+      "right" : "long count=0;",
+      "info" : "VariableDeclarationStatement[2298-2311]:VariableDeclarationStatement[2298-2311]"
+    }, {
+      "left" : "while (-1 != (n = input.read(buffer)))",
+      "right" : "while (-1 != (n = input.read(buffer)))",
+      "info" : "WhileStatement[2320-2434]:WhileStatement[2320-2434]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2359-2434]:Block[2359-2434]"
+    }, {
+      "left" : "output.write(buffer, 0, n);",
+      "right" : "output.write(buffer, 0, n);",
+      "info" : "ExpressionStatement[2373-2400]:ExpressionStatement[2373-2400]"
+    }, {
+      "left" : "count += n;",
+      "right" : "count += n;",
+      "info" : "ExpressionStatement[2413-2424]:ExpressionStatement[2413-2424]"
+    }, {
+      "left" : "return count;",
+      "right" : "return count;",
+      "info" : "ReturnStatement[2443-2456]:ReturnStatement[2443-2456]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4007-4063]:Block[4398-4454]"
+    }, {
+      "left" : "return readFully(input, b, 0, b.length);",
+      "right" : "return readFully(input, b, 0, b.length);",
+      "info" : "ReturnStatement[4017-4057]:ReturnStatement[4408-4448]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4784-5157]:Block[5175-5548]"
+    }, {
+      "left" : "if (len < 0 || offset < 0 || len + offset > b.length)",
+      "right" : "if (len < 0 || offset < 0 || len + offset > b.length)",
+      "info" : "IfStatement[4794-4910]:IfStatement[5185-5301]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4848-4910]:Block[5239-5301]"
+    }, {
+      "left" : "throw new IndexOutOfBoundsException();",
+      "right" : "throw new IndexOutOfBoundsException();",
+      "info" : "ThrowStatement[4862-4900]:ThrowStatement[5253-5291]"
+    }, {
+      "left" : "int count = 0, x = 0;",
+      "right" : "int count = 0, x = 0;",
+      "info" : "VariableDeclarationStatement[4919-4940]:VariableDeclarationStatement[5310-5331]"
+    }, {
+      "left" : "while (count != len)",
+      "right" : "while (count != len)",
+      "info" : "WhileStatement[4949-5129]:WhileStatement[5340-5520]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4970-5129]:Block[5361-5520]"
+    }, {
+      "left" : "x = input.read(b, offset + count, len - count);",
+      "right" : "x = input.read(b, offset + count, len - count);",
+      "info" : "ExpressionStatement[4984-5031]:ExpressionStatement[5375-5422]"
+    }, {
+      "left" : "if (x == -1)",
+      "right" : "if (x == -1)",
+      "info" : "IfStatement[5044-5095]:IfStatement[5435-5486]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5057-5095]:Block[5448-5486]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[5075-5081]:BreakStatement[5466-5472]"
+    }, {
+      "left" : "count += x;",
+      "right" : "count += x;",
+      "info" : "ExpressionStatement[5108-5119]:ExpressionStatement[5499-5510]"
+    }, {
+      "left" : "return count;",
+      "right" : "return count;",
+      "info" : "ReturnStatement[5138-5151]:ReturnStatement[5529-5542]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5940-6087]:Block[6331-6478]"
+    }, {
+      "left" : "final ByteArrayOutputStream output = new ByteArrayOutputStream();",
+      "right" : "final ByteArrayOutputStream output = new ByteArrayOutputStream();",
+      "info" : "VariableDeclarationStatement[5950-6015]:VariableDeclarationStatement[6341-6406]"
+    }, {
+      "left" : "copy(input, output);",
+      "right" : "copy(input, output);",
+      "info" : "ExpressionStatement[6024-6044]:ExpressionStatement[6415-6435]"
+    }, {
+      "left" : "return output.toByteArray();",
+      "right" : "return output.toByteArray();",
+      "info" : "ReturnStatement[6053-6081]:ReturnStatement[6444-6472]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6299-6453]:Block[6690-6844]"
+    }, {
+      "left" : "if (c != null)",
+      "right" : "if (c != null)",
+      "info" : "IfStatement[6309-6447]:IfStatement[6700-6838]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6324-6447]:Block[6715-6838]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[6338-6437]:TryStatement[6729-6828]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6342-6384]:Block[6733-6775]"
+    }, {
+      "left" : "c.close();",
+      "right" : "c.close();",
+      "info" : "ExpressionStatement[6360-6370]:ExpressionStatement[6751-6761]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6413-6437]:Block[6804-6828]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,937 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[2189-2229]:FieldDeclaration[2189-2229]"
+    }, {
+      "left" : "private final boolean aggressiveRenaming;",
+      "right" : "private final boolean aggressiveRenaming;",
+      "info" : "FieldDeclaration[2232-2273]:FieldDeclaration[2232-2273]"
+    }, {
+      "left" : "private final char[] reservedCharacters;",
+      "right" : "private final char[] reservedCharacters;",
+      "info" : "FieldDeclaration[2276-2316]:FieldDeclaration[2276-2316]"
+    }, {
+      "left" : "private final VariableMap prevUsedRenameMap;",
+      "right" : "private final VariableMap prevUsedRenameMap;",
+      "info" : "FieldDeclaration[2320-2413]:FieldDeclaration[2320-2413]"
+    }, {
+      "left" : "Property",
+      "right" : "Property",
+      "info" : "TypeDeclaration[2417-4672]:TypeDeclaration[2417-4672]"
+    }, {
+      "left" : "String oldName;",
+      "right" : "String oldName;",
+      "info" : "FieldDeclaration[2556-2571]:FieldDeclaration[2556-2571]"
+    }, {
+      "left" : "String newName;",
+      "right" : "String newName;",
+      "info" : "FieldDeclaration[2576-2591]:FieldDeclaration[2576-2591]"
+    }, {
+      "left" : "int prototypeCount;",
+      "right" : "int prototypeCount;",
+      "info" : "FieldDeclaration[2596-2615]:FieldDeclaration[2596-2615]"
+    }, {
+      "left" : "int objLitCount;",
+      "right" : "int objLitCount;",
+      "info" : "FieldDeclaration[2620-2636]:FieldDeclaration[2620-2636]"
+    }, {
+      "left" : "int refCount;",
+      "right" : "int refCount;",
+      "info" : "FieldDeclaration[2641-2654]:FieldDeclaration[2641-2654]"
+    }, {
+      "left" : "Property(String name)",
+      "right" : "Property(String name)",
+      "info" : "MethodDeclaration[2660-2827]:MethodDeclaration[2660-2827]"
+    }, {
+      "left" : "int count()",
+      "right" : "int count()",
+      "info" : "MethodDeclaration[2833-2906]:MethodDeclaration[2833-2906]"
+    }, {
+      "left" : "boolean canRename()",
+      "right" : "boolean canRename()",
+      "info" : "MethodDeclaration[2912-3501]:MethodDeclaration[2912-3501]"
+    }, {
+      "left" : "private boolean canRenamePrototypeProperty()",
+      "right" : "private boolean canRenamePrototypeProperty()",
+      "info" : "MethodDeclaration[3507-4151]:MethodDeclaration[3507-4151]"
+    }, {
+      "left" : "private boolean canRenameObjLitProperty()",
+      "right" : "private boolean canRenameObjLitProperty()",
+      "info" : "MethodDeclaration[4157-4668]:MethodDeclaration[4157-4668]"
+    }, {
+      "left" : "private static final Comparator<Property> FREQUENCY_COMPARATOR =\n    new Comparator<Property>() {\n      public int compare(Property a1, Property a2) {\n        int n1 = a1.count();\n        int n2 = a2.count();\n        if (n1 != n2) {\n          return n2 - n1;\n        }\n        return a1.oldName.compareTo(a2.oldName);\n      }\n    };",
+      "right" : "private static final Comparator<Property> FREQUENCY_COMPARATOR =\n    new Comparator<Property>() {\n      public int compare(Property a1, Property a2) {\n        int n1 = a1.count();\n        int n2 = a2.count();\n        if (n1 != n2) {\n          return n2 - n1;\n        }\n        return a1.oldName.compareTo(a2.oldName);\n      }\n    };",
+      "info" : "FieldDeclaration[4676-5140]:FieldDeclaration[4676-5140]"
+    }, {
+      "left" : "public int compare(Property a1, Property a2)",
+      "right" : "public int compare(Property a1, Property a2)",
+      "info" : "MethodDeclaration[4912-5133]:MethodDeclaration[4912-5133]"
+    }, {
+      "left" : "private final Set<Node> stringNodes = new HashSet<Node>();",
+      "right" : "private final Set<Node> stringNodes = new HashSet<Node>();",
+      "info" : "FieldDeclaration[5180-5238]:FieldDeclaration[5180-5238]"
+    }, {
+      "left" : "private final Map<String, Property> properties =\n      new HashMap<String, Property>();",
+      "right" : "private final Map<String, Property> properties =\n      new HashMap<String, Property>();",
+      "info" : "FieldDeclaration[5293-5380]:FieldDeclaration[5293-5380]"
+    }, {
+      "left" : "private final Set<String> reservedNames =\n      new HashSet<String>(Arrays.asList(\n          \"indexOf\", \"lastIndexOf\", \"toString\", \"valueOf\"));",
+      "right" : "private final Set<String> reservedNames =\n      new HashSet<String>(Arrays.asList(\n          \"indexOf\", \"lastIndexOf\", \"toString\", \"valueOf\"));",
+      "info" : "FieldDeclaration[5462-5605]:FieldDeclaration[5462-5605]"
+    }, {
+      "left" : "private final Set<Node> prototypeObjLits = new HashSet<Node>();",
+      "right" : "private final Set<Node> prototypeObjLits = new HashSet<Node>();",
+      "info" : "FieldDeclaration[5666-5729]:FieldDeclaration[5666-5729]"
+    }, {
+      "left" : "RenamePrototypes(AbstractCompiler compiler, boolean aggressiveRenaming,\n                   @Nullable char[] reservedCharacters,\n                   @Nullable VariableMap prevUsedRenameMap)",
+      "right" : "RenamePrototypes(AbstractCompiler compiler, boolean aggressiveRenaming,\n                   @Nullable char[] reservedCharacters,\n                   @Nullable VariableMap prevUsedRenameMap)",
+      "info" : "MethodDeclaration[5733-6424]:MethodDeclaration[5733-6424]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[6428-8641]:MethodDeclaration[6428-8641]"
+    }, {
+      "left" : "private void reusePrototypeNames(Set<Property> properties)",
+      "right" : "private void reusePrototypeNames(Set<Property> properties)",
+      "info" : "MethodDeclaration[8645-9309]:MethodDeclaration[8645-9309]"
+    }, {
+      "left" : "ProcessExternedProperties",
+      "right" : "ProcessExternedProperties",
+      "info" : "TypeDeclaration[9313-9861]:TypeDeclaration[9313-9861]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[9541-9857]:MethodDeclaration[9541-9857]"
+    }, {
+      "left" : "private void markPrototypePropertyCandidate(Node n, CompilerInput input)",
+      "right" : "private void markPrototypePropertyCandidate(Node n, CompilerInput input)",
+      "info" : "MethodDeclaration[12776-13135]:MethodDeclaration[12804-13163]"
+    }, {
+      "left" : "private void markObjLitPropertyCandidate(Node n, CompilerInput input)",
+      "right" : "private void markObjLitPropertyCandidate(Node n, CompilerInput input)",
+      "info" : "MethodDeclaration[13141-13494]:MethodDeclaration[13169-13522]"
+    }, {
+      "left" : "private void markPropertyAccessCandidate(Node n, CompilerInput input)",
+      "right" : "private void markPropertyAccessCandidate(Node n, CompilerInput input)",
+      "info" : "MethodDeclaration[13500-13850]:MethodDeclaration[13528-13878]"
+    }, {
+      "left" : "private Property getProperty(String name)",
+      "right" : "private Property getProperty(String name)",
+      "info" : "MethodDeclaration[13856-14184]:MethodDeclaration[13884-14212]"
+    }, {
+      "left" : "VariableMap getPropertyMap()",
+      "right" : "VariableMap getPropertyMap()",
+      "info" : "MethodDeclaration[14192-14559]:MethodDeclaration[14220-14587]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2527-2534]:Modifier[2527-2534]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2535-2540]:TYPE_DECLARATION_KIND[2535-2540]"
+    }, {
+      "left" : "Property",
+      "right" : "Property",
+      "info" : "SimpleName[2541-2549]:SimpleName[2541-2549]"
+    }, {
+      "left" : "Property",
+      "right" : "Property",
+      "info" : "SimpleName[2660-2668]:SimpleName[2660-2668]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[2669-2680]:SingleVariableDeclaration[2669-2680]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2682-2827]:Block[2682-2827]"
+    }, {
+      "left" : "this.oldName = name;",
+      "right" : "this.oldName = name;",
+      "info" : "ExpressionStatement[2690-2710]:ExpressionStatement[2690-2710]"
+    }, {
+      "left" : "this.newName = null;",
+      "right" : "this.newName = null;",
+      "info" : "ExpressionStatement[2717-2737]:ExpressionStatement[2717-2737]"
+    }, {
+      "left" : "this.prototypeCount = 0;",
+      "right" : "this.prototypeCount = 0;",
+      "info" : "ExpressionStatement[2744-2768]:ExpressionStatement[2744-2768]"
+    }, {
+      "left" : "this.objLitCount = 0;",
+      "right" : "this.objLitCount = 0;",
+      "info" : "ExpressionStatement[2775-2796]:ExpressionStatement[2775-2796]"
+    }, {
+      "left" : "this.refCount = 0;",
+      "right" : "this.refCount = 0;",
+      "info" : "ExpressionStatement[2803-2821]:ExpressionStatement[2803-2821]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[2833-2836]:PrimitiveType[2833-2836]"
+    }, {
+      "left" : "count",
+      "right" : "count",
+      "info" : "SimpleName[2837-2842]:SimpleName[2837-2842]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2845-2906]:Block[2845-2906]"
+    }, {
+      "left" : "return prototypeCount + objLitCount + refCount;",
+      "right" : "return prototypeCount + objLitCount + refCount;",
+      "info" : "ReturnStatement[2853-2900]:ReturnStatement[2853-2900]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[2912-2919]:PrimitiveType[2912-2919]"
+    }, {
+      "left" : "canRename",
+      "right" : "canRename",
+      "info" : "SimpleName[2920-2929]:SimpleName[2920-2929]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2932-3501]:Block[2932-3501]"
+    }, {
+      "left" : "if (this.prototypeCount > 0 && this.objLitCount == 0)",
+      "right" : "if (this.prototypeCount > 0 && this.objLitCount == 0)",
+      "info" : "IfStatement[2940-3048]:IfStatement[2940-3048]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2994-3048]:Block[2994-3048]"
+    }, {
+      "left" : "return canRenamePrototypeProperty();",
+      "right" : "return canRenamePrototypeProperty();",
+      "info" : "ReturnStatement[3004-3040]:ReturnStatement[3004-3040]"
+    }, {
+      "left" : "if (this.objLitCount > 0 && this.prototypeCount == 0)",
+      "right" : "if (this.objLitCount > 0 && this.prototypeCount == 0)",
+      "info" : "IfStatement[3055-3160]:IfStatement[3055-3160]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3109-3160]:Block[3109-3160]"
+    }, {
+      "left" : "return canRenameObjLitProperty();",
+      "right" : "return canRenameObjLitProperty();",
+      "info" : "ReturnStatement[3119-3152]:ReturnStatement[3119-3152]"
+    }, {
+      "left" : "return canRenamePrototypeProperty() && canRenameObjLitProperty();",
+      "right" : "return canRenamePrototypeProperty() && canRenameObjLitProperty();",
+      "info" : "ReturnStatement[3430-3495]:ReturnStatement[3430-3495]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3507-3514]:Modifier[3507-3514]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[3515-3522]:PrimitiveType[3515-3522]"
+    }, {
+      "left" : "canRenamePrototypeProperty",
+      "right" : "canRenamePrototypeProperty",
+      "info" : "SimpleName[3523-3549]:SimpleName[3523-3549]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3552-4151]:Block[3552-4151]"
+    }, {
+      "left" : "if (compiler.getCodingConvention().isExported(oldName))",
+      "right" : "if (compiler.getCodingConvention().isExported(oldName))",
+      "info" : "IfStatement[3560-3708]:IfStatement[3560-3708]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3616-3708]:Block[3616-3708]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[3687-3700]:ReturnStatement[3687-3700]"
+    }, {
+      "left" : "if (compiler.getCodingConvention().isPrivate(oldName))",
+      "right" : "if (compiler.getCodingConvention().isPrivate(oldName))",
+      "info" : "IfStatement[3716-3857]:IfStatement[3716-3857]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3771-3857]:Block[3771-3857]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[3837-3849]:ReturnStatement[3837-3849]"
+    }, {
+      "left" : "if (aggressiveRenaming)",
+      "right" : "if (aggressiveRenaming)",
+      "info" : "IfStatement[3865-3919]:IfStatement[3865-3919]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3889-3919]:Block[3889-3919]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[3899-3911]:ReturnStatement[3899-3911]"
+    }, {
+      "left" : "for (int i = 0, n = oldName.length(); i < n; i++)",
+      "right" : "for (int i = 0, n = oldName.length(); i < n; i++)",
+      "info" : "ForStatement[3927-4125]:ForStatement[3927-4125]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3977-4125]:Block[3977-4125]"
+    }, {
+      "left" : "char ch = oldName.charAt(i);",
+      "right" : "char ch = oldName.charAt(i);",
+      "info" : "VariableDeclarationStatement[3987-4015]:VariableDeclarationStatement[3987-4015]"
+    }, {
+      "left" : "if (Character.isUpperCase(ch) || !Character.isLetter(ch))",
+      "right" : "if (Character.isUpperCase(ch) || !Character.isLetter(ch))",
+      "info" : "IfStatement[4025-4117]:IfStatement[4025-4117]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4083-4117]:Block[4083-4117]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[4095-4107]:ReturnStatement[4095-4107]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[4132-4145]:ReturnStatement[4132-4145]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4157-4164]:Modifier[4157-4164]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[4165-4172]:PrimitiveType[4165-4172]"
+    }, {
+      "left" : "canRenameObjLitProperty",
+      "right" : "canRenameObjLitProperty",
+      "info" : "SimpleName[4173-4196]:SimpleName[4173-4196]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4199-4668]:Block[4199-4668]"
+    }, {
+      "left" : "if (compiler.getCodingConvention().isExported(oldName))",
+      "right" : "if (compiler.getCodingConvention().isExported(oldName))",
+      "info" : "IfStatement[4207-4355]:IfStatement[4207-4355]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4263-4355]:Block[4263-4355]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[4334-4347]:ReturnStatement[4334-4347]"
+    }, {
+      "left" : "if (compiler.getCodingConvention().isPrivate(oldName))",
+      "right" : "if (compiler.getCodingConvention().isPrivate(oldName))",
+      "info" : "IfStatement[4363-4504]:IfStatement[4363-4504]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4418-4504]:Block[4418-4504]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[4484-4496]:ReturnStatement[4484-4496]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[4649-4662]:ReturnStatement[4649-4662]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4912-4918]:Modifier[4912-4918]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[4919-4922]:PrimitiveType[4919-4922]"
+    }, {
+      "left" : "compare",
+      "right" : "compare",
+      "info" : "SimpleName[4923-4930]:SimpleName[4923-4930]"
+    }, {
+      "left" : "Property a1",
+      "right" : "Property a1",
+      "info" : "SingleVariableDeclaration[4931-4942]:SingleVariableDeclaration[4931-4942]"
+    }, {
+      "left" : "Property a2",
+      "right" : "Property a2",
+      "info" : "SingleVariableDeclaration[4944-4955]:SingleVariableDeclaration[4944-4955]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4957-5133]:Block[4957-5133]"
+    }, {
+      "left" : "int n1 = a1.count();",
+      "right" : "int n1 = a1.count();",
+      "info" : "VariableDeclarationStatement[4967-4987]:VariableDeclarationStatement[4967-4987]"
+    }, {
+      "left" : "int n2 = a2.count();",
+      "right" : "int n2 = a2.count();",
+      "info" : "VariableDeclarationStatement[4996-5016]:VariableDeclarationStatement[4996-5016]"
+    }, {
+      "left" : "if (n1 != n2)",
+      "right" : "if (n1 != n2)",
+      "info" : "IfStatement[5025-5076]:IfStatement[5025-5076]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5039-5076]:Block[5039-5076]"
+    }, {
+      "left" : "return n2 - n1;",
+      "right" : "return n2 - n1;",
+      "info" : "ReturnStatement[5051-5066]:ReturnStatement[5051-5066]"
+    }, {
+      "left" : "return a1.oldName.compareTo(a2.oldName);",
+      "right" : "return a1.oldName.compareTo(a2.oldName);",
+      "info" : "ReturnStatement[5085-5125]:ReturnStatement[5085-5125]"
+    }, {
+      "left" : "RenamePrototypes",
+      "right" : "RenamePrototypes",
+      "info" : "SimpleName[6053-6069]:SimpleName[6053-6069]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[6070-6095]:SingleVariableDeclaration[6070-6095]"
+    }, {
+      "left" : "boolean aggressiveRenaming",
+      "right" : "boolean aggressiveRenaming",
+      "info" : "SingleVariableDeclaration[6097-6123]:SingleVariableDeclaration[6097-6123]"
+    }, {
+      "left" : "@Nullable char[] reservedCharacters",
+      "right" : "@Nullable char[] reservedCharacters",
+      "info" : "SingleVariableDeclaration[6144-6179]:SingleVariableDeclaration[6144-6179]"
+    }, {
+      "left" : "@Nullable VariableMap prevUsedRenameMap",
+      "right" : "@Nullable VariableMap prevUsedRenameMap",
+      "info" : "SingleVariableDeclaration[6200-6239]:SingleVariableDeclaration[6200-6239]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6241-6424]:Block[6241-6424]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[6247-6272]:ExpressionStatement[6247-6272]"
+    }, {
+      "left" : "this.aggressiveRenaming = aggressiveRenaming;",
+      "right" : "this.aggressiveRenaming = aggressiveRenaming;",
+      "info" : "ExpressionStatement[6277-6322]:ExpressionStatement[6277-6322]"
+    }, {
+      "left" : "this.reservedCharacters = reservedCharacters;",
+      "right" : "this.reservedCharacters = reservedCharacters;",
+      "info" : "ExpressionStatement[6327-6372]:ExpressionStatement[6327-6372]"
+    }, {
+      "left" : "this.prevUsedRenameMap = prevUsedRenameMap;",
+      "right" : "this.prevUsedRenameMap = prevUsedRenameMap;",
+      "info" : "ExpressionStatement[6377-6420]:ExpressionStatement[6377-6420]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6590-6596]:Modifier[6590-6596]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6597-6601]:PrimitiveType[6597-6601]"
+    }, {
+      "left" : "process",
+      "right" : "process",
+      "info" : "SimpleName[6602-6609]:SimpleName[6602-6609]"
+    }, {
+      "left" : "Node externs",
+      "right" : "Node externs",
+      "info" : "SingleVariableDeclaration[6610-6622]:SingleVariableDeclaration[6610-6622]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[6624-6633]:SingleVariableDeclaration[6624-6633]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6635-8641]:Block[6635-8641]"
+    }, {
+      "left" : "Preconditions.checkState(compiler.getLifeCycleStage().isNormalized());",
+      "right" : "Preconditions.checkState(compiler.getLifeCycleStage().isNormalized());",
+      "info" : "ExpressionStatement[6641-6711]:ExpressionStatement[6641-6711]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, externs,\n                           new ProcessExternedProperties());",
+      "right" : "NodeTraversal.traverse(compiler, externs,\n                           new ProcessExternedProperties());",
+      "info" : "ExpressionStatement[6717-6819]:ExpressionStatement[6717-6819]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, new ProcessProperties());",
+      "right" : "NodeTraversal.traverse(compiler, root, new ProcessProperties());",
+      "info" : "ExpressionStatement[6824-6888]:ExpressionStatement[6824-6888]"
+    }, {
+      "left" : "SortedSet<Property> propsByFrequency =\n        new TreeSet<Property>(FREQUENCY_COMPARATOR);",
+      "right" : "SortedSet<Property> propsByFrequency =\n        new TreeSet<Property>(FREQUENCY_COMPARATOR);",
+      "info" : "VariableDeclarationStatement[6951-7042]:VariableDeclarationStatement[6951-7042]"
+    }, {
+      "left" : "for (Iterator<Map.Entry<String, Property>> it =\n           properties.entrySet().iterator(); it.hasNext())",
+      "right" : "for (Iterator<Map.Entry<String, Property>> it =\n           properties.entrySet().iterator(); it.hasNext())",
+      "info" : "ForStatement[7048-7489]:ForStatement[7048-7489]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7157-7489]:Block[7157-7489]"
+    }, {
+      "left" : "Property a = it.next().getValue();",
+      "right" : "Property a = it.next().getValue();",
+      "info" : "VariableDeclarationStatement[7165-7199]:VariableDeclarationStatement[7165-7199]"
+    }, {
+      "left" : "if (a.canRename() && !reservedNames.contains(a.oldName))",
+      "right" : "if (a.canRename() && !reservedNames.contains(a.oldName))",
+      "info" : "IfStatement[7206-7483]:IfStatement[7206-7483]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7263-7305]:Block[7263-7305]"
+    }, {
+      "left" : "propsByFrequency.add(a);",
+      "right" : "propsByFrequency.add(a);",
+      "info" : "ExpressionStatement[7273-7297]:ExpressionStatement[7273-7297]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7311-7483]:Block[7311-7483]"
+    }, {
+      "left" : "it.remove();",
+      "right" : "it.remove();",
+      "info" : "ExpressionStatement[7321-7333]:ExpressionStatement[7321-7333]"
+    }, {
+      "left" : "reservedNames.add(a.oldName);",
+      "right" : "reservedNames.add(a.oldName);",
+      "info" : "ExpressionStatement[7446-7475]:ExpressionStatement[7446-7475]"
+    }, {
+      "left" : "if (prevUsedRenameMap != null)",
+      "right" : "if (prevUsedRenameMap != null)",
+      "info" : "IfStatement[7573-7656]:IfStatement[7573-7656]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7604-7656]:Block[7604-7656]"
+    }, {
+      "left" : "reusePrototypeNames(propsByFrequency);",
+      "right" : "reusePrototypeNames(propsByFrequency);",
+      "info" : "ExpressionStatement[7612-7650]:ExpressionStatement[7612-7650]"
+    }, {
+      "left" : "NameGenerator nameGen = new NameGenerator(reservedNames, \"\",\n                                              reservedCharacters);",
+      "right" : "NameGenerator nameGen = new NameGenerator(reservedNames, \"\",\n                                              reservedCharacters);",
+      "info" : "VariableDeclarationStatement[7689-7816]:VariableDeclarationStatement[7689-7816]"
+    }, {
+      "left" : "StringBuilder debug = new StringBuilder();",
+      "right" : "StringBuilder debug = new StringBuilder();",
+      "info" : "VariableDeclarationStatement[7821-7863]:VariableDeclarationStatement[7821-7863]"
+    }, {
+      "left" : "for (Property a : propsByFrequency)",
+      "right" : "for (Property a : propsByFrequency)",
+      "info" : "EnhancedForStatement[7868-8114]:EnhancedForStatement[7868-8114]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7904-8114]:Block[7904-8114]"
+    }, {
+      "left" : "if (a.newName == null)",
+      "right" : "if (a.newName == null)",
+      "info" : "IfStatement[7912-8030]:IfStatement[7912-8030]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7935-8030]:Block[7935-8030]"
+    }, {
+      "left" : "a.newName = nameGen.generateNextName();",
+      "right" : "a.newName = nameGen.generateNextName();",
+      "info" : "ExpressionStatement[7945-7984]:ExpressionStatement[7945-7984]"
+    }, {
+      "left" : "reservedNames.add(a.newName);",
+      "right" : "reservedNames.add(a.newName);",
+      "info" : "ExpressionStatement[7993-8022]:ExpressionStatement[7993-8022]"
+    }, {
+      "left" : "debug.append(a.oldName).append(\" => \").append(a.newName).append('\\n');",
+      "right" : "debug.append(a.oldName).append(\" => \").append(a.newName).append('\\n');",
+      "info" : "ExpressionStatement[8038-8108]:ExpressionStatement[8038-8108]"
+    }, {
+      "left" : "compiler.addToDebugLog(\"JS property assignments:\\n\" + debug);",
+      "right" : "compiler.addToDebugLog(\"JS property assignments:\\n\" + debug);",
+      "info" : "ExpressionStatement[8120-8181]:ExpressionStatement[8120-8181]"
+    }, {
+      "left" : "boolean changed = false;",
+      "right" : "boolean changed = false;",
+      "info" : "VariableDeclarationStatement[8219-8243]:VariableDeclarationStatement[8219-8243]"
+    }, {
+      "left" : "for (Node n : stringNodes)",
+      "right" : "for (Node n : stringNodes)",
+      "info" : "EnhancedForStatement[8248-8505]:EnhancedForStatement[8248-8505]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8275-8505]:Block[8275-8505]"
+    }, {
+      "left" : "String oldName = n.getString();",
+      "right" : "String oldName = n.getString();",
+      "info" : "VariableDeclarationStatement[8283-8314]:VariableDeclarationStatement[8283-8314]"
+    }, {
+      "left" : "Property a = properties.get(oldName);",
+      "right" : "Property a = properties.get(oldName);",
+      "info" : "VariableDeclarationStatement[8321-8358]:VariableDeclarationStatement[8321-8358]"
+    }, {
+      "left" : "if (a != null && a.newName != null)",
+      "right" : "if (a != null && a.newName != null)",
+      "info" : "IfStatement[8365-8499]:IfStatement[8365-8499]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8401-8499]:Block[8401-8499]"
+    }, {
+      "left" : "n.setString(a.newName);",
+      "right" : "n.setString(a.newName);",
+      "info" : "ExpressionStatement[8411-8434]:ExpressionStatement[8411-8434]"
+    }, {
+      "left" : "changed = changed || !a.newName.equals(oldName);",
+      "right" : "changed = changed || !a.newName.equals(oldName);",
+      "info" : "ExpressionStatement[8443-8491]:ExpressionStatement[8443-8491]"
+    }, {
+      "left" : "if (changed)",
+      "right" : "if (changed)",
+      "info" : "IfStatement[8511-8566]:IfStatement[8511-8566]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8524-8566]:Block[8524-8566]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[8532-8560]:ExpressionStatement[8532-8560]"
+    }, {
+      "left" : "compiler.setLifeCycleStage(LifeCycleStage.NORMALIZED_OBFUSCATED);",
+      "right" : "compiler.setLifeCycleStage(LifeCycleStage.NORMALIZED_OBFUSCATED);",
+      "info" : "ExpressionStatement[8572-8637]:ExpressionStatement[8572-8637]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8942-8949]:Modifier[8942-8949]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8950-8954]:PrimitiveType[8950-8954]"
+    }, {
+      "left" : "reusePrototypeNames",
+      "right" : "reusePrototypeNames",
+      "info" : "SimpleName[8955-8974]:SimpleName[8955-8974]"
+    }, {
+      "left" : "Set<Property> properties",
+      "right" : "Set<Property> properties",
+      "info" : "SingleVariableDeclaration[8975-8999]:SingleVariableDeclaration[8975-8999]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9001-9309]:Block[9001-9309]"
+    }, {
+      "left" : "for (Property prop : properties)",
+      "right" : "for (Property prop : properties)",
+      "info" : "EnhancedForStatement[9007-9305]:EnhancedForStatement[9007-9305]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9040-9305]:Block[9040-9305]"
+    }, {
+      "left" : "String prevName = prevUsedRenameMap.lookupNewName(prop.oldName);",
+      "right" : "String prevName = prevUsedRenameMap.lookupNewName(prop.oldName);",
+      "info" : "VariableDeclarationStatement[9048-9112]:VariableDeclarationStatement[9048-9112]"
+    }, {
+      "left" : "if (prevName != null)",
+      "right" : "if (prevName != null)",
+      "info" : "IfStatement[9119-9299]:IfStatement[9119-9299]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9141-9299]:Block[9141-9299]"
+    }, {
+      "left" : "if (reservedNames.contains(prevName))",
+      "right" : "if (reservedNames.contains(prevName))",
+      "info" : "IfStatement[9151-9220]:IfStatement[9151-9220]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9189-9220]:Block[9189-9220]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[9201-9210]:ContinueStatement[9201-9210]"
+    }, {
+      "left" : "prop.newName = prevName;",
+      "right" : "prop.newName = prevName;",
+      "info" : "ExpressionStatement[9230-9254]:ExpressionStatement[9230-9254]"
+    }, {
+      "left" : "reservedNames.add(prevName);",
+      "right" : "reservedNames.add(prevName);",
+      "info" : "ExpressionStatement[9263-9291]:ExpressionStatement[9263-9291]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[9460-9467]:Modifier[9460-9467]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[9468-9473]:TYPE_DECLARATION_KIND[9468-9473]"
+    }, {
+      "left" : "ProcessExternedProperties",
+      "right" : "ProcessExternedProperties",
+      "info" : "SimpleName[9474-9499]:SimpleName[9474-9499]"
+    }, {
+      "left" : "AbstractPostOrderCallback",
+      "right" : "AbstractPostOrderCallback",
+      "info" : "SimpleType[9508-9533]:SimpleType[9508-9533]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9541-9547]:Modifier[9541-9547]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9548-9552]:PrimitiveType[9548-9552]"
+    }, {
+      "left" : "visit",
+      "right" : "visit",
+      "info" : "SimpleName[9553-9558]:SimpleName[9553-9558]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[9559-9574]:SingleVariableDeclaration[9559-9574]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[9576-9582]:SingleVariableDeclaration[9576-9582]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[9584-9595]:SingleVariableDeclaration[9584-9595]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9597-9857]:Block[9597-9857]"
+    }, {
+      "left" : "switch (n.getType()) {\n        case Token.GETPROP:\n        case Token.GETELEM:\n          Node dest = n.getFirstChild().getNext();\n          if (dest.getType() == Token.STRING) {\n            reservedNames.add(dest.getString());\n          }\n      }",
+      "right" : "switch (n.getType()) {\n        case Token.GETPROP:\n        case Token.GETELEM:\n          Node dest = n.getFirstChild().getNext();\n          if (dest.getType() == Token.STRING) {\n            reservedNames.add(dest.getString());\n          }\n      }",
+      "info" : "SwitchStatement[9605-9851]:SwitchStatement[9605-9851]"
+    }, {
+      "left" : "case Token.GETPROP:",
+      "right" : "case Token.GETPROP:",
+      "info" : "SwitchCase[9636-9655]:SwitchCase[9636-9655]"
+    }, {
+      "left" : "case Token.GETELEM:",
+      "right" : "case Token.GETELEM:",
+      "info" : "SwitchCase[9664-9683]:SwitchCase[9664-9683]"
+    }, {
+      "left" : "Node dest = n.getFirstChild().getNext();",
+      "right" : "Node dest = n.getFirstChild().getNext();",
+      "info" : "VariableDeclarationStatement[9694-9734]:VariableDeclarationStatement[9694-9734]"
+    }, {
+      "left" : "if (dest.getType() == Token.STRING)",
+      "right" : "if (dest.getType() == Token.STRING)",
+      "info" : "IfStatement[9745-9843]:IfStatement[9745-9843]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9781-9843]:Block[9781-9843]"
+    }, {
+      "left" : "reservedNames.add(dest.getString());",
+      "right" : "reservedNames.add(dest.getString());",
+      "info" : "ExpressionStatement[9795-9831]:ExpressionStatement[9795-9831]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[12978-12985]:Modifier[13006-13013]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12986-12990]:PrimitiveType[13014-13018]"
+    }, {
+      "left" : "markPrototypePropertyCandidate",
+      "right" : "markPrototypePropertyCandidate",
+      "info" : "SimpleName[12991-13021]:SimpleName[13019-13049]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[13022-13028]:SingleVariableDeclaration[13050-13056]"
+    }, {
+      "left" : "CompilerInput input",
+      "right" : "CompilerInput input",
+      "info" : "SingleVariableDeclaration[13030-13049]:SingleVariableDeclaration[13058-13077]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13051-13135]:Block[13079-13163]"
+    }, {
+      "left" : "stringNodes.add(n);",
+      "right" : "stringNodes.add(n);",
+      "info" : "ExpressionStatement[13059-13078]:ExpressionStatement[13087-13106]"
+    }, {
+      "left" : "getProperty(n.getString()).prototypeCount++;",
+      "right" : "getProperty(n.getString()).prototypeCount++;",
+      "info" : "ExpressionStatement[13085-13129]:ExpressionStatement[13113-13157]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13343-13350]:Modifier[13371-13378]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13351-13355]:PrimitiveType[13379-13383]"
+    }, {
+      "left" : "markObjLitPropertyCandidate",
+      "right" : "markObjLitPropertyCandidate",
+      "info" : "SimpleName[13356-13383]:SimpleName[13384-13411]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[13384-13390]:SingleVariableDeclaration[13412-13418]"
+    }, {
+      "left" : "CompilerInput input",
+      "right" : "CompilerInput input",
+      "info" : "SingleVariableDeclaration[13392-13411]:SingleVariableDeclaration[13420-13439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13413-13494]:Block[13441-13522]"
+    }, {
+      "left" : "stringNodes.add(n);",
+      "right" : "stringNodes.add(n);",
+      "info" : "ExpressionStatement[13421-13440]:ExpressionStatement[13449-13468]"
+    }, {
+      "left" : "getProperty(n.getString()).objLitCount++;",
+      "right" : "getProperty(n.getString()).objLitCount++;",
+      "info" : "ExpressionStatement[13447-13488]:ExpressionStatement[13475-13516]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13702-13709]:Modifier[13730-13737]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13710-13714]:PrimitiveType[13738-13742]"
+    }, {
+      "left" : "markPropertyAccessCandidate",
+      "right" : "markPropertyAccessCandidate",
+      "info" : "SimpleName[13715-13742]:SimpleName[13743-13770]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[13743-13749]:SingleVariableDeclaration[13771-13777]"
+    }, {
+      "left" : "CompilerInput input",
+      "right" : "CompilerInput input",
+      "info" : "SingleVariableDeclaration[13751-13770]:SingleVariableDeclaration[13779-13798]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13772-13850]:Block[13800-13878]"
+    }, {
+      "left" : "stringNodes.add(n);",
+      "right" : "stringNodes.add(n);",
+      "info" : "ExpressionStatement[13780-13799]:ExpressionStatement[13808-13827]"
+    }, {
+      "left" : "getProperty(n.getString()).refCount++;",
+      "right" : "getProperty(n.getString()).refCount++;",
+      "info" : "ExpressionStatement[13806-13844]:ExpressionStatement[13834-13872]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13967-13974]:Modifier[13995-14002]"
+    }, {
+      "left" : "Property",
+      "right" : "Property",
+      "info" : "SimpleType[13975-13983]:SimpleType[14003-14011]"
+    }, {
+      "left" : "getProperty",
+      "right" : "getProperty",
+      "info" : "SimpleName[13984-13995]:SimpleName[14012-14023]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[13996-14007]:SingleVariableDeclaration[14024-14035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14009-14184]:Block[14037-14212]"
+    }, {
+      "left" : "Property prop = properties.get(name);",
+      "right" : "Property prop = properties.get(name);",
+      "info" : "VariableDeclarationStatement[14017-14054]:VariableDeclarationStatement[14045-14082]"
+    }, {
+      "left" : "if (prop == null)",
+      "right" : "if (prop == null)",
+      "info" : "IfStatement[14061-14159]:IfStatement[14089-14187]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14079-14159]:Block[14107-14187]"
+    }, {
+      "left" : "prop = new Property(name);",
+      "right" : "prop = new Property(name);",
+      "info" : "ExpressionStatement[14089-14115]:ExpressionStatement[14117-14143]"
+    }, {
+      "left" : "properties.put(name, prop);",
+      "right" : "properties.put(name, prop);",
+      "info" : "ExpressionStatement[14124-14151]:ExpressionStatement[14152-14179]"
+    }, {
+      "left" : "return prop;",
+      "right" : "return prop;",
+      "info" : "ReturnStatement[14166-14178]:ReturnStatement[14194-14206]"
+    }, {
+      "left" : "VariableMap",
+      "right" : "VariableMap",
+      "info" : "SimpleType[14302-14313]:SimpleType[14330-14341]"
+    }, {
+      "left" : "getPropertyMap",
+      "right" : "getPropertyMap",
+      "info" : "SimpleName[14314-14328]:SimpleName[14342-14356]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14331-14559]:Block[14359-14587]"
+    }, {
+      "left" : "Map<String, String> map = new HashMap<String, String>();",
+      "right" : "Map<String, String> map = new HashMap<String, String>();",
+      "info" : "VariableDeclarationStatement[14337-14393]:VariableDeclarationStatement[14365-14421]"
+    }, {
+      "left" : "for (Property p : properties.values())",
+      "right" : "for (Property p : properties.values())",
+      "info" : "EnhancedForStatement[14398-14522]:EnhancedForStatement[14426-14550]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14437-14522]:Block[14465-14550]"
+    }, {
+      "left" : "if (p.newName != null)",
+      "right" : "if (p.newName != null)",
+      "info" : "IfStatement[14445-14516]:IfStatement[14473-14544]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14468-14516]:Block[14496-14544]"
+    }, {
+      "left" : "map.put(p.oldName, p.newName);",
+      "right" : "map.put(p.oldName, p.newName);",
+      "info" : "ExpressionStatement[14478-14508]:ExpressionStatement[14506-14536]"
+    }, {
+      "left" : "return new VariableMap(map);",
+      "right" : "return new VariableMap(map);",
+      "info" : "ReturnStatement[14527-14555]:ReturnStatement[14555-14583]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

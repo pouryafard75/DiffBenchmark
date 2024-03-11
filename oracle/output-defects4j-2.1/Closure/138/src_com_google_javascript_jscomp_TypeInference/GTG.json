@@ -1,0 +1,2877 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "TypeInference",
+      "right" : "TypeInference",
+      "info" : "TypeDeclaration[2597-42923]:TypeDeclaration[2597-43233]"
+    }, {
+      "left" : "static final DiagnosticType TEMPLATE_TYPE_NOT_OBJECT_TYPE =\n      DiagnosticType.error(\n      \"JSC_TEMPLATE_TYPE_NOT_OBJECT_TYPE\",\n      \"The template type must be an object type\");",
+      "right" : "static final DiagnosticType TEMPLATE_TYPE_NOT_OBJECT_TYPE =\n      DiagnosticType.error(\n      \"JSC_TEMPLATE_TYPE_NOT_OBJECT_TYPE\",\n      \"The template type must be an object type\");",
+      "info" : "FieldDeclaration[2814-2995]:FieldDeclaration[2814-2995]"
+    }, {
+      "left" : "static final DiagnosticType TEMPLATE_TYPE_OF_THIS_EXPECTED =\n      DiagnosticType.error(\n      \"JSC_TEMPLATE_TYPE_OF_THIS_EXPECTED\",\n      \"A function type with the template type as the type of this must be a \" +\n      \"parameter type\");",
+      "right" : "static final DiagnosticType TEMPLATE_TYPE_OF_THIS_EXPECTED =\n      DiagnosticType.error(\n      \"JSC_TEMPLATE_TYPE_OF_THIS_EXPECTED\",\n      \"A function type with the template type as the type of this must be a \" +\n      \"parameter type\");",
+      "info" : "FieldDeclaration[2999-3236]:FieldDeclaration[2999-3236]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[3241-3281]:FieldDeclaration[3241-3281]"
+    }, {
+      "left" : "private final JSTypeRegistry registry;",
+      "right" : "private final JSTypeRegistry registry;",
+      "info" : "FieldDeclaration[3284-3322]:FieldDeclaration[3284-3322]"
+    }, {
+      "left" : "private final ReverseAbstractInterpreter reverseInterpreter;",
+      "right" : "private final ReverseAbstractInterpreter reverseInterpreter;",
+      "info" : "FieldDeclaration[3325-3385]:FieldDeclaration[3325-3385]"
+    }, {
+      "left" : "private final Scope syntacticScope;",
+      "right" : "private final Scope syntacticScope;",
+      "info" : "FieldDeclaration[3388-3423]:FieldDeclaration[3388-3423]"
+    }, {
+      "left" : "private final FlowScope functionScope;",
+      "right" : "private final FlowScope functionScope;",
+      "info" : "FieldDeclaration[3426-3464]:FieldDeclaration[3426-3464]"
+    }, {
+      "left" : "private final FlowScope bottomScope;",
+      "right" : "private final FlowScope bottomScope;",
+      "info" : "FieldDeclaration[3467-3503]:FieldDeclaration[3467-3503]"
+    }, {
+      "left" : "private final Multimap<Scope, Var> assignedOuterLocalVars =\n      HashMultimap.create();",
+      "right" : "private final Multimap<Scope, Var> assignedOuterLocalVars =\n      HashMultimap.create();",
+      "info" : "FieldDeclaration[3507-3699]:FieldDeclaration[3507-3699]"
+    }, {
+      "left" : "private final Set<String> unflowableVarNames = Sets.newHashSet();",
+      "right" : "private final Set<String> unflowableVarNames = Sets.newHashSet();",
+      "info" : "FieldDeclaration[3703-3832]:FieldDeclaration[3703-3832]"
+    }, {
+      "left" : "TypeInference(AbstractCompiler compiler, ControlFlowGraph<Node> cfg,\n                ReverseAbstractInterpreter reverseInterpreter,\n                Scope functionScope)",
+      "right" : "TypeInference(AbstractCompiler compiler, ControlFlowGraph<Node> cfg,\n                ReverseAbstractInterpreter reverseInterpreter,\n                Scope functionScope)",
+      "info" : "MethodDeclaration[3836-4103]:MethodDeclaration[3836-4103]"
+    }, {
+      "left" : "// TODO(nicksantos): Create a builder for this class.\n  TypeInference(AbstractCompiler compiler, ControlFlowGraph<Node> cfg,\n                ReverseAbstractInterpreter reverseInterpreter,\n                Scope functionScope, Collection<Var> unflowableVars)",
+      "right" : "// TODO(nicksantos): Create a builder for this class.\n  TypeInference(AbstractCompiler compiler, ControlFlowGraph<Node> cfg,\n                ReverseAbstractInterpreter reverseInterpreter,\n                Scope functionScope, Collection<Var> unflowableVars)",
+      "info" : "MethodDeclaration[4107-5692]:MethodDeclaration[4107-5692]"
+    }, {
+      "left" : "FlowScope createInitialEstimateLattice()",
+      "right" : "FlowScope createInitialEstimateLattice()",
+      "info" : "MethodDeclaration[5696-5778]:MethodDeclaration[5696-5778]"
+    }, {
+      "left" : "FlowScope createEntryLattice()",
+      "right" : "FlowScope createEntryLattice()",
+      "info" : "MethodDeclaration[5782-5856]:MethodDeclaration[5782-5856]"
+    }, {
+      "left" : "Multimap<Scope, Var> getAssignedOuterLocalVars()",
+      "right" : "Multimap<Scope, Var> getAssignedOuterLocalVars()",
+      "info" : "MethodDeclaration[5860-6113]:MethodDeclaration[5860-6113]"
+    }, {
+      "left" : "FlowScope flowThrough(Node n, FlowScope input)",
+      "right" : "FlowScope flowThrough(Node n, FlowScope input)",
+      "info" : "MethodDeclaration[6117-6465]:MethodDeclaration[6117-6465]"
+    }, {
+      "left" : "List<FlowScope> branchedFlowThrough(Node source, FlowScope input)",
+      "right" : "List<FlowScope> branchedFlowThrough(Node source, FlowScope input)",
+      "info" : "MethodDeclaration[6469-10649]:MethodDeclaration[6469-10649]"
+    }, {
+      "left" : "private FlowScope traverse(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverse(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[10653-15209]:MethodDeclaration[10653-15209]"
+    }, {
+      "left" : "private FlowScope traverseCatch(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseCatch(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[15213-15603]:MethodDeclaration[15213-15603]"
+    }, {
+      "left" : "private FlowScope traverseAssign(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseAssign(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[15607-15973]:MethodDeclaration[15607-15973]"
+    }, {
+      "left" : "private void updateScopeForTypeChange(\n      FlowScope scope, Node left, JSType leftType, JSType resultType)",
+      "right" : "private void updateScopeForTypeChange(\n      FlowScope scope, Node left, JSType leftType, JSType resultType)",
+      "info" : "MethodDeclaration[15977-18025]:MethodDeclaration[15977-18025]"
+    }, {
+      "left" : "private void ensurePropertyDefined(Node getprop, JSType rightType)",
+      "right" : "private void ensurePropertyDefined(Node getprop, JSType rightType)",
+      "info" : "MethodDeclaration[18029-19895]:MethodDeclaration[18029-19895]"
+    }, {
+      "left" : "private void ensurePropertyDeclared(Node getprop)",
+      "right" : "private void ensurePropertyDeclared(Node getprop)",
+      "info" : "MethodDeclaration[19899-20432]:MethodDeclaration[19899-20432]"
+    }, {
+      "left" : "private boolean ensurePropertyDeclaredHelper(\n      Node getprop, ObjectType objectType)",
+      "right" : "private boolean ensurePropertyDeclaredHelper(\n      Node getprop, ObjectType objectType)",
+      "info" : "MethodDeclaration[20436-21388]:MethodDeclaration[20436-21388]"
+    }, {
+      "left" : "private FlowScope traverseName(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseName(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[21392-22494]:MethodDeclaration[21392-22804]"
+    }, {
+      "left" : "private FlowScope traverseArrayLiteral(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseArrayLiteral(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[22498-22714]:MethodDeclaration[22808-23024]"
+    }, {
+      "left" : "private FlowScope traverseObjectLiteral(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseObjectLiteral(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[22718-23799]:MethodDeclaration[23028-24109]"
+    }, {
+      "left" : "private FlowScope traverseAdd(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseAdd(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[23803-24983]:MethodDeclaration[24113-25293]"
+    }, {
+      "left" : "private boolean isAddedAsNumber(JSType type)",
+      "right" : "private boolean isAddedAsNumber(JSType type)",
+      "info" : "MethodDeclaration[24987-25184]:MethodDeclaration[25297-25494]"
+    }, {
+      "left" : "private FlowScope traverseHook(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseHook(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[25188-26334]:MethodDeclaration[25498-26644]"
+    }, {
+      "left" : "private FlowScope traverseCall(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseCall(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[26338-27000]:MethodDeclaration[26648-27310]"
+    }, {
+      "left" : "private void updateTypeOfParametersOnClosure(Node n, FunctionType fnType)",
+      "right" : "private void updateTypeOfParametersOnClosure(Node n, FunctionType fnType)",
+      "info" : "MethodDeclaration[27004-27970]:MethodDeclaration[27314-28280]"
+    }, {
+      "left" : "private void updateTypeOfThisOnClosure(Node n, FunctionType fnType)",
+      "right" : "private void updateTypeOfThisOnClosure(Node n, FunctionType fnType)",
+      "info" : "MethodDeclaration[27974-31641]:MethodDeclaration[28284-31951]"
+    }, {
+      "left" : "private FlowScope traverseNew(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseNew(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[31645-32442]:MethodDeclaration[31955-32752]"
+    }, {
+      "left" : "private BooleanOutcomePair traverseAnd(Node n, FlowScope scope)",
+      "right" : "private BooleanOutcomePair traverseAnd(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[32446-32572]:MethodDeclaration[32756-32882]"
+    }, {
+      "left" : "private FlowScope traverseChildren(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseChildren(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[32576-32771]:MethodDeclaration[32886-33081]"
+    }, {
+      "left" : "private FlowScope traverseGetElem(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseGetElem(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[32775-33190]:MethodDeclaration[33085-33500]"
+    }, {
+      "left" : "private FlowScope traverseGetProp(Node n, FlowScope scope)",
+      "right" : "private FlowScope traverseGetProp(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[33194-33540]:MethodDeclaration[33504-33850]"
+    }, {
+      "left" : "private FlowScope dereferencePointer(Node n, FlowScope scope)",
+      "right" : "private FlowScope dereferencePointer(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[33544-34004]:MethodDeclaration[33854-34314]"
+    }, {
+      "left" : "private JSType getPropertyType(JSType objType, String propName,\n      Node n, FlowScope scope)",
+      "right" : "private JSType getPropertyType(JSType objType, String propName,\n      Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[34008-35262]:MethodDeclaration[34318-35572]"
+    }, {
+      "left" : "private BooleanOutcomePair traverseOr(Node n, FlowScope scope)",
+      "right" : "private BooleanOutcomePair traverseOr(Node n, FlowScope scope)",
+      "info" : "MethodDeclaration[35266-35392]:MethodDeclaration[35576-35702]"
+    }, {
+      "left" : "private BooleanOutcomePair traverseShortCircuitingBinOp(\n      Node n, FlowScope scope, boolean condition)",
+      "right" : "private BooleanOutcomePair traverseShortCircuitingBinOp(\n      Node n, FlowScope scope, boolean condition)",
+      "info" : "MethodDeclaration[35396-37757]:MethodDeclaration[35706-38067]"
+    }, {
+      "left" : "private BooleanOutcomePair traverseWithinShortCircuitingBinOp(Node n,\n      FlowScope scope)",
+      "right" : "private BooleanOutcomePair traverseWithinShortCircuitingBinOp(Node n,\n      FlowScope scope)",
+      "info" : "MethodDeclaration[37761-38123]:MethodDeclaration[38071-38433]"
+    }, {
+      "left" : "BooleanOutcomePair getBooleanOutcomePair(BooleanOutcomePair left,\n      BooleanOutcomePair right, boolean condition)",
+      "right" : "BooleanOutcomePair getBooleanOutcomePair(BooleanOutcomePair left,\n      BooleanOutcomePair right, boolean condition)",
+      "info" : "MethodDeclaration[38127-38759]:MethodDeclaration[38437-39069]"
+    }, {
+      "left" : "static BooleanLiteralSet getBooleanOutcomes(BooleanLiteralSet left,\n      BooleanLiteralSet right, boolean condition)",
+      "right" : "static BooleanLiteralSet getBooleanOutcomes(BooleanLiteralSet left,\n      BooleanLiteralSet right, boolean condition)",
+      "info" : "MethodDeclaration[38763-39621]:MethodDeclaration[39073-39931]"
+    }, {
+      "left" : "BooleanOutcomePair",
+      "right" : "BooleanOutcomePair",
+      "info" : "TypeDeclaration[39625-41483]:TypeDeclaration[39935-41793]"
+    }, {
+      "left" : "final BooleanLiteralSet toBooleanOutcomes;",
+      "right" : "final BooleanLiteralSet toBooleanOutcomes;",
+      "info" : "FieldDeclaration[39953-39995]:FieldDeclaration[40263-40305]"
+    }, {
+      "left" : "final BooleanLiteralSet booleanValues;",
+      "right" : "final BooleanLiteralSet booleanValues;",
+      "info" : "FieldDeclaration[40000-40038]:FieldDeclaration[40310-40348]"
+    }, {
+      "left" : "final FlowScope leftScope;",
+      "right" : "final FlowScope leftScope;",
+      "info" : "FieldDeclaration[40119-40145]:FieldDeclaration[40429-40455]"
+    }, {
+      "left" : "final FlowScope rightScope;",
+      "right" : "final FlowScope rightScope;",
+      "info" : "FieldDeclaration[40204-40231]:FieldDeclaration[40514-40541]"
+    }, {
+      "left" : "FlowScope joinedScope = null;",
+      "right" : "FlowScope joinedScope = null;",
+      "info" : "FieldDeclaration[40313-40342]:FieldDeclaration[40623-40652]"
+    }, {
+      "left" : "BooleanOutcomePair(\n        BooleanLiteralSet toBooleanOutcomes, BooleanLiteralSet booleanValues,\n        FlowScope leftScope, FlowScope rightScope)",
+      "right" : "BooleanOutcomePair(\n        BooleanLiteralSet toBooleanOutcomes, BooleanLiteralSet booleanValues,\n        FlowScope leftScope, FlowScope rightScope)",
+      "info" : "MethodDeclaration[40348-40666]:MethodDeclaration[40658-40976]"
+    }, {
+      "left" : "FlowScope getJoinedFlowScope()",
+      "right" : "FlowScope getJoinedFlowScope()",
+      "info" : "MethodDeclaration[40672-41056]:MethodDeclaration[40982-41366]"
+    }, {
+      "left" : "FlowScope getOutcomeFlowScope(int nodeType, boolean outcome)",
+      "right" : "FlowScope getOutcomeFlowScope(int nodeType, boolean outcome)",
+      "info" : "MethodDeclaration[41062-41479]:MethodDeclaration[41372-41789]"
+    }, {
+      "left" : "private BooleanOutcomePair newBooleanOutcomePair(\n      JSType jsType, FlowScope flowScope)",
+      "right" : "private BooleanOutcomePair newBooleanOutcomePair(\n      JSType jsType, FlowScope flowScope)",
+      "info" : "MethodDeclaration[41487-41965]:MethodDeclaration[41797-42275]"
+    }, {
+      "left" : "private void redeclare(FlowScope scope, String varName, JSType varType)",
+      "right" : "private void redeclare(FlowScope scope, String varName, JSType varType)",
+      "info" : "MethodDeclaration[41969-42248]:MethodDeclaration[42279-42558]"
+    }, {
+      "left" : "private JSType getJSType(Node n)",
+      "right" : "private JSType getJSType(Node n)",
+      "info" : "MethodDeclaration[42252-42819]:MethodDeclaration[42562-43129]"
+    }, {
+      "left" : "private JSType getNativeType(JSTypeNative typeId)",
+      "right" : "private JSType getNativeType(JSTypeNative typeId)",
+      "info" : "MethodDeclaration[42823-42921]:MethodDeclaration[43133-43231]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4005-4103]:Block[4005-4103]"
+    }, {
+      "left" : "this(compiler, cfg, reverseInterpreter, functionScope,\n         ImmutableSet.<Var>of());",
+      "right" : "this(compiler, cfg, reverseInterpreter, functionScope,\n         ImmutableSet.<Var>of());",
+      "info" : "ConstructorInvocation[4011-4099]:ConstructorInvocation[4011-4099]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4452-5692]:Block[4452-5692]"
+    }, {
+      "left" : "super(cfg, new LinkedFlowScope.FlowScopeJoinOp());",
+      "right" : "super(cfg, new LinkedFlowScope.FlowScopeJoinOp());",
+      "info" : "SuperConstructorInvocation[4458-4508]:SuperConstructorInvocation[4458-4508]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[4513-4538]:ExpressionStatement[4513-4538]"
+    }, {
+      "left" : "this.registry = compiler.getTypeRegistry();",
+      "right" : "this.registry = compiler.getTypeRegistry();",
+      "info" : "ExpressionStatement[4543-4586]:ExpressionStatement[4543-4586]"
+    }, {
+      "left" : "this.reverseInterpreter = reverseInterpreter;",
+      "right" : "this.reverseInterpreter = reverseInterpreter;",
+      "info" : "ExpressionStatement[4591-4636]:ExpressionStatement[4591-4636]"
+    }, {
+      "left" : "this.syntacticScope = functionScope;",
+      "right" : "this.syntacticScope = functionScope;",
+      "info" : "ExpressionStatement[4641-4677]:ExpressionStatement[4641-4677]"
+    }, {
+      "left" : "this.functionScope = LinkedFlowScope.createEntryLattice(functionScope);",
+      "right" : "this.functionScope = LinkedFlowScope.createEntryLattice(functionScope);",
+      "info" : "ExpressionStatement[4682-4753]:ExpressionStatement[4682-4753]"
+    }, {
+      "left" : "for (Var unflowableVar : unflowableVars)",
+      "right" : "for (Var unflowableVar : unflowableVars)",
+      "info" : "EnhancedForStatement[4759-4960]:EnhancedForStatement[4759-4960]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4800-4960]:Block[4800-4960]"
+    }, {
+      "left" : "String name = unflowableVar.getName();",
+      "right" : "String name = unflowableVar.getName();",
+      "info" : "VariableDeclarationStatement[4808-4846]:VariableDeclarationStatement[4808-4846]"
+    }, {
+      "left" : "if (functionScope.getVar(name) == unflowableVar)",
+      "right" : "if (functionScope.getVar(name) == unflowableVar)",
+      "info" : "IfStatement[4853-4954]:IfStatement[4853-4954]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4902-4954]:Block[4902-4954]"
+    }, {
+      "left" : "this.unflowableVarNames.add(name);",
+      "right" : "this.unflowableVarNames.add(name);",
+      "info" : "ExpressionStatement[4912-4946]:ExpressionStatement[4912-4946]"
+    }, {
+      "left" : "Iterator<Var> varIt = functionScope.getVars();",
+      "right" : "Iterator<Var> varIt = functionScope.getVars();",
+      "info" : "VariableDeclarationStatement[4966-5012]:VariableDeclarationStatement[4966-5012]"
+    }, {
+      "left" : "while (varIt.hasNext())",
+      "right" : "while (varIt.hasNext())",
+      "info" : "WhileStatement[5017-5548]:WhileStatement[5017-5548]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5041-5548]:Block[5041-5548]"
+    }, {
+      "left" : "Var var = varIt.next();",
+      "right" : "Var var = varIt.next();",
+      "info" : "VariableDeclarationStatement[5049-5072]:VariableDeclarationStatement[5049-5072]"
+    }, {
+      "left" : "if (this.unflowableVarNames.contains(var.getName()))",
+      "right" : "if (this.unflowableVarNames.contains(var.getName()))",
+      "info" : "IfStatement[5079-5159]:IfStatement[5079-5159]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5132-5159]:Block[5132-5159]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[5142-5151]:ContinueStatement[5142-5151]"
+    }, {
+      "left" : "if (var.getParentNode() != null &&\n          var.getType() == null && // no declared type\n          var.getParentNode().getType() == Token.VAR &&\n          !var.isExtern())",
+      "right" : "if (var.getParentNode() != null &&\n          var.getType() == null && // no declared type\n          var.getParentNode().getType() == Token.VAR &&\n          !var.isExtern())",
+      "info" : "IfStatement[5264-5542]:IfStatement[5264-5542]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5437-5542]:Block[5437-5542]"
+    }, {
+      "left" : "this.functionScope.inferSlotType(\n            var.getName(), getNativeType(VOID_TYPE));",
+      "right" : "this.functionScope.inferSlotType(\n            var.getName(), getNativeType(VOID_TYPE));",
+      "info" : "ExpressionStatement[5447-5534]:ExpressionStatement[5447-5534]"
+    }, {
+      "left" : "this.bottomScope = LinkedFlowScope.createEntryLattice(\n        new Scope(functionScope.getRootNode(), functionScope.getTypeOfThis()));",
+      "right" : "this.bottomScope = LinkedFlowScope.createEntryLattice(\n        new Scope(functionScope.getRootNode(), functionScope.getTypeOfThis()));",
+      "info" : "ExpressionStatement[5554-5688]:ExpressionStatement[5554-5688]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5749-5778]:Block[5749-5778]"
+    }, {
+      "left" : "return bottomScope;",
+      "right" : "return bottomScope;",
+      "info" : "ReturnStatement[5755-5774]:ReturnStatement[5755-5774]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5825-5856]:Block[5825-5856]"
+    }, {
+      "left" : "return functionScope;",
+      "right" : "return functionScope;",
+      "info" : "ReturnStatement[5831-5852]:ReturnStatement[5831-5852]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6073-6113]:Block[6073-6113]"
+    }, {
+      "left" : "return assignedOuterLocalVars;",
+      "right" : "return assignedOuterLocalVars;",
+      "info" : "ReturnStatement[6079-6109]:ReturnStatement[6079-6109]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6176-6465]:Block[6176-6465]"
+    }, {
+      "left" : "if (input == bottomScope)",
+      "right" : "if (input == bottomScope)",
+      "info" : "IfStatement[6301-6354]:IfStatement[6301-6354]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6327-6354]:Block[6327-6354]"
+    }, {
+      "left" : "return input;",
+      "right" : "return input;",
+      "info" : "ReturnStatement[6335-6348]:ReturnStatement[6335-6348]"
+    }, {
+      "left" : "FlowScope output = input.createChildFlowScope();",
+      "right" : "FlowScope output = input.createChildFlowScope();",
+      "info" : "VariableDeclarationStatement[6360-6408]:VariableDeclarationStatement[6360-6408]"
+    }, {
+      "left" : "output = traverse(n, output);",
+      "right" : "output = traverse(n, output);",
+      "info" : "ExpressionStatement[6413-6442]:ExpressionStatement[6413-6442]"
+    }, {
+      "left" : "return output;",
+      "right" : "return output;",
+      "info" : "ReturnStatement[6447-6461]:ReturnStatement[6447-6461]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6582-10649]:Block[6582-10649]"
+    }, {
+      "left" : "FlowScope output = flowThrough(source, input);",
+      "right" : "FlowScope output = flowThrough(source, input);",
+      "info" : "VariableDeclarationStatement[6903-6949]:VariableDeclarationStatement[6903-6949]"
+    }, {
+      "left" : "Node condition = null;",
+      "right" : "Node condition = null;",
+      "info" : "VariableDeclarationStatement[6954-6976]:VariableDeclarationStatement[6954-6976]"
+    }, {
+      "left" : "FlowScope conditionFlowScope = null;",
+      "right" : "FlowScope conditionFlowScope = null;",
+      "info" : "VariableDeclarationStatement[6981-7017]:VariableDeclarationStatement[6981-7017]"
+    }, {
+      "left" : "BooleanOutcomePair conditionOutcomes = null;",
+      "right" : "BooleanOutcomePair conditionOutcomes = null;",
+      "info" : "VariableDeclarationStatement[7022-7066]:VariableDeclarationStatement[7022-7066]"
+    }, {
+      "left" : "List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(source);",
+      "right" : "List<DiGraphEdge<Node, Branch>> branchEdges = getCfg().getOutEdges(source);",
+      "info" : "VariableDeclarationStatement[7072-7147]:VariableDeclarationStatement[7072-7147]"
+    }, {
+      "left" : "List<FlowScope> result = Lists.newArrayListWithCapacity(branchEdges.size());",
+      "right" : "List<FlowScope> result = Lists.newArrayListWithCapacity(branchEdges.size());",
+      "info" : "VariableDeclarationStatement[7152-7228]:VariableDeclarationStatement[7152-7228]"
+    }, {
+      "left" : "for (DiGraphEdge<Node, Branch> branchEdge : branchEdges)",
+      "right" : "for (DiGraphEdge<Node, Branch> branchEdge : branchEdges)",
+      "info" : "EnhancedForStatement[7233-10626]:EnhancedForStatement[7233-10626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7290-10626]:Block[7290-10626]"
+    }, {
+      "left" : "Branch branch = branchEdge.getValue();",
+      "right" : "Branch branch = branchEdge.getValue();",
+      "info" : "VariableDeclarationStatement[7298-7336]:VariableDeclarationStatement[7298-7336]"
+    }, {
+      "left" : "FlowScope newScope = output;",
+      "right" : "FlowScope newScope = output;",
+      "info" : "VariableDeclarationStatement[7343-7371]:VariableDeclarationStatement[7343-7371]"
+    }, {
+      "left" : "switch (branch) {\n        case ON_TRUE:\n          if (NodeUtil.isForIn(source)) {\n            // item is assigned a property name, so its type should be string.\n            Node item = source.getFirstChild();\n            if (item.getType() == Token.VAR) {\n              item = item.getFirstChild();\n            }\n            if (item.getType() == Token.NAME) {\n              FlowScope informed = output.createChildFlowScope();\n              redeclare(informed, item.getString(),\n                  getNativeType(STRING_TYPE));\n              newScope = informed;\n            }\n            break;\n          }\n\n          // FALL THROUGH\n\n        case ON_FALSE:\n          if (condition == null) {\n            condition = NodeUtil.getConditionExpression(source);\n            if (condition == null && source.getType() == Token.CASE) {\n              condition = source;\n\n              // conditionFlowScope is cached from previous iterations\n              // of the loop.\n              if (conditionFlowScope == null) {\n                conditionFlowScope = traverse(\n                    condition.getFirstChild(), output.createChildFlowScope());\n              }\n            }\n          }\n\n          if (condition != null) {\n            if (condition.getType() == Token.AND ||\n                condition.getType() == Token.OR) {\n              // When handling the short-circuiting binary operators,\n              // the outcome scope on true can be different than the outcome\n              // scope on false.\n              //\n              // TODO(nicksantos): The \"right\" way to do this is to\n              // carry the known outcome all the way through the\n              // recursive traversal, so that we can construct a\n              // different flow scope based on the outcome. However,\n              // this would require a bunch of code and a bunch of\n              // extra computation for an edge case. This seems to be\n              // a \"good enough\" approximation.\n\n              // conditionOutcomes is cached from previous iterations\n              // of the loop.\n              if (conditionOutcomes == null) {\n                conditionOutcomes = condition.getType() == Token.AND ?\n                    traverseAnd(condition, output.createChildFlowScope()) :\n                    traverseOr(condition, output.createChildFlowScope());\n              }\n              newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition,\n                      conditionOutcomes.getOutcomeFlowScope(\n                          condition.getType(), branch == Branch.ON_TRUE),\n                      branch == Branch.ON_TRUE);\n            } else {\n              // conditionFlowScope is cached from previous iterations\n              // of the loop.\n              if (conditionFlowScope == null) {\n                conditionFlowScope =\n                    traverse(condition, output.createChildFlowScope());\n              }\n              newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition, conditionFlowScope, branch == Branch.ON_TRUE);\n            }\n          }\n          break;\n      }",
+      "right" : "switch (branch) {\n        case ON_TRUE:\n          if (NodeUtil.isForIn(source)) {\n            // item is assigned a property name, so its type should be string.\n            Node item = source.getFirstChild();\n            if (item.getType() == Token.VAR) {\n              item = item.getFirstChild();\n            }\n            if (item.getType() == Token.NAME) {\n              FlowScope informed = output.createChildFlowScope();\n              redeclare(informed, item.getString(),\n                  getNativeType(STRING_TYPE));\n              newScope = informed;\n            }\n            break;\n          }\n\n          // FALL THROUGH\n\n        case ON_FALSE:\n          if (condition == null) {\n            condition = NodeUtil.getConditionExpression(source);\n            if (condition == null && source.getType() == Token.CASE) {\n              condition = source;\n\n              // conditionFlowScope is cached from previous iterations\n              // of the loop.\n              if (conditionFlowScope == null) {\n                conditionFlowScope = traverse(\n                    condition.getFirstChild(), output.createChildFlowScope());\n              }\n            }\n          }\n\n          if (condition != null) {\n            if (condition.getType() == Token.AND ||\n                condition.getType() == Token.OR) {\n              // When handling the short-circuiting binary operators,\n              // the outcome scope on true can be different than the outcome\n              // scope on false.\n              //\n              // TODO(nicksantos): The \"right\" way to do this is to\n              // carry the known outcome all the way through the\n              // recursive traversal, so that we can construct a\n              // different flow scope based on the outcome. However,\n              // this would require a bunch of code and a bunch of\n              // extra computation for an edge case. This seems to be\n              // a \"good enough\" approximation.\n\n              // conditionOutcomes is cached from previous iterations\n              // of the loop.\n              if (conditionOutcomes == null) {\n                conditionOutcomes = condition.getType() == Token.AND ?\n                    traverseAnd(condition, output.createChildFlowScope()) :\n                    traverseOr(condition, output.createChildFlowScope());\n              }\n              newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition,\n                      conditionOutcomes.getOutcomeFlowScope(\n                          condition.getType(), branch == Branch.ON_TRUE),\n                      branch == Branch.ON_TRUE);\n            } else {\n              // conditionFlowScope is cached from previous iterations\n              // of the loop.\n              if (conditionFlowScope == null) {\n                conditionFlowScope =\n                    traverse(condition, output.createChildFlowScope());\n              }\n              newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition, conditionFlowScope, branch == Branch.ON_TRUE);\n            }\n          }\n          break;\n      }",
+      "info" : "SwitchStatement[7379-10580]:SwitchStatement[7379-10580]"
+    }, {
+      "left" : "case ON_TRUE:",
+      "right" : "case ON_TRUE:",
+      "info" : "SwitchCase[7405-7418]:SwitchCase[7405-7418]"
+    }, {
+      "left" : "if (NodeUtil.isForIn(source))",
+      "right" : "if (NodeUtil.isForIn(source))",
+      "info" : "IfStatement[7429-7984]:IfStatement[7429-7984]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7459-7984]:Block[7459-7984]"
+    }, {
+      "left" : "Node item = source.getFirstChild();",
+      "right" : "Node item = source.getFirstChild();",
+      "info" : "VariableDeclarationStatement[7552-7587]:VariableDeclarationStatement[7552-7587]"
+    }, {
+      "left" : "if (item.getType() == Token.VAR)",
+      "right" : "if (item.getType() == Token.VAR)",
+      "info" : "IfStatement[7600-7691]:IfStatement[7600-7691]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7633-7691]:Block[7633-7691]"
+    }, {
+      "left" : "item = item.getFirstChild();",
+      "right" : "item = item.getFirstChild();",
+      "info" : "ExpressionStatement[7649-7677]:ExpressionStatement[7649-7677]"
+    }, {
+      "left" : "if (item.getType() == Token.NAME)",
+      "right" : "if (item.getType() == Token.NAME)",
+      "info" : "IfStatement[7704-7953]:IfStatement[7704-7953]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7738-7953]:Block[7738-7953]"
+    }, {
+      "left" : "FlowScope informed = output.createChildFlowScope();",
+      "right" : "FlowScope informed = output.createChildFlowScope();",
+      "info" : "VariableDeclarationStatement[7754-7805]:VariableDeclarationStatement[7754-7805]"
+    }, {
+      "left" : "redeclare(informed, item.getString(),\n                  getNativeType(STRING_TYPE));",
+      "right" : "redeclare(informed, item.getString(),\n                  getNativeType(STRING_TYPE));",
+      "info" : "ExpressionStatement[7820-7904]:ExpressionStatement[7820-7904]"
+    }, {
+      "left" : "newScope = informed;",
+      "right" : "newScope = informed;",
+      "info" : "ExpressionStatement[7919-7939]:ExpressionStatement[7919-7939]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[7966-7972]:BreakStatement[7966-7972]"
+    }, {
+      "left" : "case ON_FALSE:",
+      "right" : "case ON_FALSE:",
+      "info" : "SwitchCase[8021-8035]:SwitchCase[8021-8035]"
+    }, {
+      "left" : "if (condition == null)",
+      "right" : "if (condition == null)",
+      "info" : "IfStatement[8046-8558]:IfStatement[8046-8558]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8069-8558]:Block[8069-8558]"
+    }, {
+      "left" : "condition = NodeUtil.getConditionExpression(source);",
+      "right" : "condition = NodeUtil.getConditionExpression(source);",
+      "info" : "ExpressionStatement[8083-8135]:ExpressionStatement[8083-8135]"
+    }, {
+      "left" : "if (condition == null && source.getType() == Token.CASE)",
+      "right" : "if (condition == null && source.getType() == Token.CASE)",
+      "info" : "IfStatement[8148-8546]:IfStatement[8148-8546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8205-8546]:Block[8205-8546]"
+    }, {
+      "left" : "condition = source;",
+      "right" : "condition = source;",
+      "info" : "ExpressionStatement[8221-8240]:ExpressionStatement[8221-8240]"
+    }, {
+      "left" : "if (conditionFlowScope == null)",
+      "right" : "if (conditionFlowScope == null)",
+      "info" : "IfStatement[8357-8532]:IfStatement[8357-8532]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8389-8532]:Block[8389-8532]"
+    }, {
+      "left" : "conditionFlowScope = traverse(\n                    condition.getFirstChild(), output.createChildFlowScope());",
+      "right" : "conditionFlowScope = traverse(\n                    condition.getFirstChild(), output.createChildFlowScope());",
+      "info" : "ExpressionStatement[8407-8516]:ExpressionStatement[8407-8516]"
+    }, {
+      "left" : "if (condition != null)",
+      "right" : "if (condition != null)",
+      "info" : "IfStatement[8570-10555]:IfStatement[8570-10555]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8593-10555]:Block[8593-10555]"
+    }, {
+      "left" : "if (condition.getType() == Token.AND ||\n                condition.getType() == Token.OR)",
+      "right" : "if (condition.getType() == Token.AND ||\n                condition.getType() == Token.OR)",
+      "info" : "IfStatement[8607-10543]:IfStatement[8607-10543]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8696-10065]:Block[8696-10065]"
+    }, {
+      "left" : "if (conditionOutcomes == null)",
+      "right" : "if (conditionOutcomes == null)",
+      "info" : "IfStatement[9462-9731]:IfStatement[9462-9731]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9493-9731]:Block[9493-9731]"
+    }, {
+      "left" : "conditionOutcomes = condition.getType() == Token.AND ?\n                    traverseAnd(condition, output.createChildFlowScope()) :\n                    traverseOr(condition, output.createChildFlowScope());",
+      "right" : "conditionOutcomes = condition.getType() == Token.AND ?\n                    traverseAnd(condition, output.createChildFlowScope()) :\n                    traverseOr(condition, output.createChildFlowScope());",
+      "info" : "ExpressionStatement[9511-9715]:ExpressionStatement[9511-9715]"
+    }, {
+      "left" : "newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition,\n                      conditionOutcomes.getOutcomeFlowScope(\n                          condition.getType(), branch == Branch.ON_TRUE),\n                      branch == Branch.ON_TRUE);",
+      "right" : "newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition,\n                      conditionOutcomes.getOutcomeFlowScope(\n                          condition.getType(), branch == Branch.ON_TRUE),\n                      branch == Branch.ON_TRUE);",
+      "info" : "ExpressionStatement[9746-10051]:ExpressionStatement[9746-10051]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10071-10543]:Block[10071-10543]"
+    }, {
+      "left" : "if (conditionFlowScope == null)",
+      "right" : "if (conditionFlowScope == null)",
+      "info" : "IfStatement[10188-10346]:IfStatement[10188-10346]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10220-10346]:Block[10220-10346]"
+    }, {
+      "left" : "conditionFlowScope =\n                    traverse(condition, output.createChildFlowScope());",
+      "right" : "conditionFlowScope =\n                    traverse(condition, output.createChildFlowScope());",
+      "info" : "ExpressionStatement[10238-10330]:ExpressionStatement[10238-10330]"
+    }, {
+      "left" : "newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition, conditionFlowScope, branch == Branch.ON_TRUE);",
+      "right" : "newScope =\n                  reverseInterpreter.getPreciserScopeKnowingConditionOutcome(\n                      condition, conditionFlowScope, branch == Branch.ON_TRUE);",
+      "info" : "ExpressionStatement[10361-10529]:ExpressionStatement[10361-10529]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10566-10572]:BreakStatement[10566-10572]"
+    }, {
+      "left" : "result.add(newScope.optimize());",
+      "right" : "result.add(newScope.optimize());",
+      "info" : "ExpressionStatement[10588-10620]:ExpressionStatement[10588-10620]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[10631-10645]:ReturnStatement[10631-10645]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10705-15209]:Block[10705-15209]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.ASSIGN:\n        scope = traverseAssign(n, scope);\n        break;\n\n      case Token.NAME:\n        scope = traverseName(n, scope);\n        break;\n\n      case Token.GETPROP:\n        scope = traverseGetProp(n, scope);\n        break;\n\n      case Token.AND:\n        scope = traverseAnd(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();\n        break;\n\n      case Token.OR:\n        scope = traverseOr(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();\n        break;\n\n      case Token.HOOK:\n        scope = traverseHook(n, scope);\n        break;\n\n      case Token.OBJECTLIT:\n        scope = traverseObjectLiteral(n, scope);\n        break;\n\n      case Token.CALL:\n        scope = traverseCall(n, scope);\n        break;\n\n      case Token.NEW:\n        scope = traverseNew(n, scope);\n        break;\n\n      case Token.ASSIGN_ADD:\n      case Token.ADD:\n        scope = traverseAdd(n, scope);\n        break;\n\n      case Token.POS:\n      case Token.NEG:\n        scope = traverse(n.getFirstChild(), scope);  // Find types.\n        n.setJSType(getNativeType(NUMBER_TYPE));\n        break;\n\n      case Token.NULL:\n        n.setJSType(getNativeType(NULL_TYPE));\n        break;\n\n      case Token.VOID:\n        n.setJSType(getNativeType(VOID_TYPE));\n        break;\n\n      case Token.ARRAYLIT:\n        scope = traverseArrayLiteral(n, scope);\n        break;\n\n      case Token.REF_SPECIAL:\n        n.setJSType(getNativeType(UNKNOWN_TYPE));\n        break;\n\n      case Token.REGEXP:\n        n.setJSType(getNativeType(REGEXP_TYPE));\n        break;\n\n      case Token.THIS:\n        n.setJSType(scope.getTypeOfThis());\n        break;\n\n      case Token.ASSIGN_LSH:\n      case Token.ASSIGN_RSH:\n      case Token.LSH:\n      case Token.RSH:\n      case Token.ASSIGN_URSH:\n      case Token.URSH:\n      case Token.ASSIGN_DIV:\n      case Token.ASSIGN_MOD:\n      case Token.ASSIGN_BITAND:\n      case Token.ASSIGN_BITXOR:\n      case Token.ASSIGN_BITOR:\n      case Token.ASSIGN_MUL:\n      case Token.ASSIGN_SUB:\n      case Token.DIV:\n      case Token.MOD:\n      case Token.BITAND:\n      case Token.BITXOR:\n      case Token.BITOR:\n      case Token.MUL:\n      case Token.SUB:\n      case Token.DEC:\n      case Token.INC:\n      case Token.BITNOT:\n      case Token.NUMBER:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getNativeType(NUMBER_TYPE));\n        break;\n\n      case Token.LP:\n      case Token.GET_REF:\n        scope = traverse(n.getFirstChild(), scope);\n        n.setJSType(getJSType(n.getFirstChild()));\n        break;\n\n      case Token.COMMA:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getJSType(n.getLastChild()));\n        break;\n\n      case Token.STRING:\n      case Token.TYPEOF:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getNativeType(STRING_TYPE));\n        break;\n\n      case Token.LT:\n      case Token.LE:\n      case Token.GT:\n      case Token.GE:\n      case Token.NOT:\n      case Token.EQ:\n      case Token.NE:\n      case Token.SHEQ:\n      case Token.SHNE:\n      case Token.INSTANCEOF:\n      case Token.IN:\n      case Token.TRUE:\n      case Token.FALSE:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getNativeType(BOOLEAN_TYPE));\n        break;\n\n      case Token.GETELEM:\n        scope = traverseGetElem(n, scope);\n        break;\n\n      case Token.EXPR_RESULT:\n        scope = traverseChildren(n, scope);\n        if (n.getFirstChild().getType() == Token.GETPROP) {\n          ensurePropertyDeclared(n.getFirstChild());\n        }\n        break;\n\n      case Token.SWITCH:\n        scope = traverse(n.getFirstChild(), scope);\n        break;\n\n      case Token.VAR:\n      case Token.RETURN:\n      case Token.THROW:\n        scope = traverseChildren(n, scope);\n        break;\n\n      case Token.CATCH:\n        scope = traverseCatch(n, scope);\n        break;\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.ASSIGN:\n        scope = traverseAssign(n, scope);\n        break;\n\n      case Token.NAME:\n        scope = traverseName(n, scope);\n        break;\n\n      case Token.GETPROP:\n        scope = traverseGetProp(n, scope);\n        break;\n\n      case Token.AND:\n        scope = traverseAnd(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();\n        break;\n\n      case Token.OR:\n        scope = traverseOr(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();\n        break;\n\n      case Token.HOOK:\n        scope = traverseHook(n, scope);\n        break;\n\n      case Token.OBJECTLIT:\n        scope = traverseObjectLiteral(n, scope);\n        break;\n\n      case Token.CALL:\n        scope = traverseCall(n, scope);\n        break;\n\n      case Token.NEW:\n        scope = traverseNew(n, scope);\n        break;\n\n      case Token.ASSIGN_ADD:\n      case Token.ADD:\n        scope = traverseAdd(n, scope);\n        break;\n\n      case Token.POS:\n      case Token.NEG:\n        scope = traverse(n.getFirstChild(), scope);  // Find types.\n        n.setJSType(getNativeType(NUMBER_TYPE));\n        break;\n\n      case Token.NULL:\n        n.setJSType(getNativeType(NULL_TYPE));\n        break;\n\n      case Token.VOID:\n        n.setJSType(getNativeType(VOID_TYPE));\n        break;\n\n      case Token.ARRAYLIT:\n        scope = traverseArrayLiteral(n, scope);\n        break;\n\n      case Token.REF_SPECIAL:\n        n.setJSType(getNativeType(UNKNOWN_TYPE));\n        break;\n\n      case Token.REGEXP:\n        n.setJSType(getNativeType(REGEXP_TYPE));\n        break;\n\n      case Token.THIS:\n        n.setJSType(scope.getTypeOfThis());\n        break;\n\n      case Token.ASSIGN_LSH:\n      case Token.ASSIGN_RSH:\n      case Token.LSH:\n      case Token.RSH:\n      case Token.ASSIGN_URSH:\n      case Token.URSH:\n      case Token.ASSIGN_DIV:\n      case Token.ASSIGN_MOD:\n      case Token.ASSIGN_BITAND:\n      case Token.ASSIGN_BITXOR:\n      case Token.ASSIGN_BITOR:\n      case Token.ASSIGN_MUL:\n      case Token.ASSIGN_SUB:\n      case Token.DIV:\n      case Token.MOD:\n      case Token.BITAND:\n      case Token.BITXOR:\n      case Token.BITOR:\n      case Token.MUL:\n      case Token.SUB:\n      case Token.DEC:\n      case Token.INC:\n      case Token.BITNOT:\n      case Token.NUMBER:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getNativeType(NUMBER_TYPE));\n        break;\n\n      case Token.LP:\n      case Token.GET_REF:\n        scope = traverse(n.getFirstChild(), scope);\n        n.setJSType(getJSType(n.getFirstChild()));\n        break;\n\n      case Token.COMMA:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getJSType(n.getLastChild()));\n        break;\n\n      case Token.STRING:\n      case Token.TYPEOF:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getNativeType(STRING_TYPE));\n        break;\n\n      case Token.LT:\n      case Token.LE:\n      case Token.GT:\n      case Token.GE:\n      case Token.NOT:\n      case Token.EQ:\n      case Token.NE:\n      case Token.SHEQ:\n      case Token.SHNE:\n      case Token.INSTANCEOF:\n      case Token.IN:\n      case Token.TRUE:\n      case Token.FALSE:\n        scope = traverseChildren(n, scope);\n        n.setJSType(getNativeType(BOOLEAN_TYPE));\n        break;\n\n      case Token.GETELEM:\n        scope = traverseGetElem(n, scope);\n        break;\n\n      case Token.EXPR_RESULT:\n        scope = traverseChildren(n, scope);\n        if (n.getFirstChild().getType() == Token.GETPROP) {\n          ensurePropertyDeclared(n.getFirstChild());\n        }\n        break;\n\n      case Token.SWITCH:\n        scope = traverse(n.getFirstChild(), scope);\n        break;\n\n      case Token.VAR:\n      case Token.RETURN:\n      case Token.THROW:\n        scope = traverseChildren(n, scope);\n        break;\n\n      case Token.CATCH:\n        scope = traverseCatch(n, scope);\n        break;\n    }",
+      "info" : "SwitchStatement[10711-14588]:SwitchStatement[10711-14588]"
+    }, {
+      "left" : "case Token.ASSIGN:",
+      "right" : "case Token.ASSIGN:",
+      "info" : "SwitchCase[10740-10758]:SwitchCase[10740-10758]"
+    }, {
+      "left" : "scope = traverseAssign(n, scope);",
+      "right" : "scope = traverseAssign(n, scope);",
+      "info" : "ExpressionStatement[10767-10800]:ExpressionStatement[10767-10800]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10809-10815]:BreakStatement[10809-10815]"
+    }, {
+      "left" : "case Token.NAME:",
+      "right" : "case Token.NAME:",
+      "info" : "SwitchCase[10823-10839]:SwitchCase[10823-10839]"
+    }, {
+      "left" : "scope = traverseName(n, scope);",
+      "right" : "scope = traverseName(n, scope);",
+      "info" : "ExpressionStatement[10848-10879]:ExpressionStatement[10848-10879]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10888-10894]:BreakStatement[10888-10894]"
+    }, {
+      "left" : "case Token.GETPROP:",
+      "right" : "case Token.GETPROP:",
+      "info" : "SwitchCase[10902-10921]:SwitchCase[10902-10921]"
+    }, {
+      "left" : "scope = traverseGetProp(n, scope);",
+      "right" : "scope = traverseGetProp(n, scope);",
+      "info" : "ExpressionStatement[10930-10964]:ExpressionStatement[10930-10964]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[10973-10979]:BreakStatement[10973-10979]"
+    }, {
+      "left" : "case Token.AND:",
+      "right" : "case Token.AND:",
+      "info" : "SwitchCase[10987-11002]:SwitchCase[10987-11002]"
+    }, {
+      "left" : "scope = traverseAnd(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();",
+      "right" : "scope = traverseAnd(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();",
+      "info" : "ExpressionStatement[11011-11098]:ExpressionStatement[11011-11098]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11107-11113]:BreakStatement[11107-11113]"
+    }, {
+      "left" : "case Token.OR:",
+      "right" : "case Token.OR:",
+      "info" : "SwitchCase[11121-11135]:SwitchCase[11121-11135]"
+    }, {
+      "left" : "scope = traverseOr(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();",
+      "right" : "scope = traverseOr(n, scope).getJoinedFlowScope()\n            .createChildFlowScope();",
+      "info" : "ExpressionStatement[11144-11230]:ExpressionStatement[11144-11230]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11239-11245]:BreakStatement[11239-11245]"
+    }, {
+      "left" : "case Token.HOOK:",
+      "right" : "case Token.HOOK:",
+      "info" : "SwitchCase[11253-11269]:SwitchCase[11253-11269]"
+    }, {
+      "left" : "scope = traverseHook(n, scope);",
+      "right" : "scope = traverseHook(n, scope);",
+      "info" : "ExpressionStatement[11278-11309]:ExpressionStatement[11278-11309]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11318-11324]:BreakStatement[11318-11324]"
+    }, {
+      "left" : "case Token.OBJECTLIT:",
+      "right" : "case Token.OBJECTLIT:",
+      "info" : "SwitchCase[11332-11353]:SwitchCase[11332-11353]"
+    }, {
+      "left" : "scope = traverseObjectLiteral(n, scope);",
+      "right" : "scope = traverseObjectLiteral(n, scope);",
+      "info" : "ExpressionStatement[11362-11402]:ExpressionStatement[11362-11402]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11411-11417]:BreakStatement[11411-11417]"
+    }, {
+      "left" : "case Token.CALL:",
+      "right" : "case Token.CALL:",
+      "info" : "SwitchCase[11425-11441]:SwitchCase[11425-11441]"
+    }, {
+      "left" : "scope = traverseCall(n, scope);",
+      "right" : "scope = traverseCall(n, scope);",
+      "info" : "ExpressionStatement[11450-11481]:ExpressionStatement[11450-11481]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11490-11496]:BreakStatement[11490-11496]"
+    }, {
+      "left" : "case Token.NEW:",
+      "right" : "case Token.NEW:",
+      "info" : "SwitchCase[11504-11519]:SwitchCase[11504-11519]"
+    }, {
+      "left" : "scope = traverseNew(n, scope);",
+      "right" : "scope = traverseNew(n, scope);",
+      "info" : "ExpressionStatement[11528-11558]:ExpressionStatement[11528-11558]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11567-11573]:BreakStatement[11567-11573]"
+    }, {
+      "left" : "case Token.ASSIGN_ADD:",
+      "right" : "case Token.ASSIGN_ADD:",
+      "info" : "SwitchCase[11581-11603]:SwitchCase[11581-11603]"
+    }, {
+      "left" : "case Token.ADD:",
+      "right" : "case Token.ADD:",
+      "info" : "SwitchCase[11610-11625]:SwitchCase[11610-11625]"
+    }, {
+      "left" : "scope = traverseAdd(n, scope);",
+      "right" : "scope = traverseAdd(n, scope);",
+      "info" : "ExpressionStatement[11634-11664]:ExpressionStatement[11634-11664]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11673-11679]:BreakStatement[11673-11679]"
+    }, {
+      "left" : "case Token.POS:",
+      "right" : "case Token.POS:",
+      "info" : "SwitchCase[11687-11702]:SwitchCase[11687-11702]"
+    }, {
+      "left" : "case Token.NEG:",
+      "right" : "case Token.NEG:",
+      "info" : "SwitchCase[11709-11724]:SwitchCase[11709-11724]"
+    }, {
+      "left" : "scope = traverse(n.getFirstChild(), scope);",
+      "right" : "scope = traverse(n.getFirstChild(), scope);",
+      "info" : "ExpressionStatement[11733-11776]:ExpressionStatement[11733-11776]"
+    }, {
+      "left" : "n.setJSType(getNativeType(NUMBER_TYPE));",
+      "right" : "n.setJSType(getNativeType(NUMBER_TYPE));",
+      "info" : "ExpressionStatement[11801-11841]:ExpressionStatement[11801-11841]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11850-11856]:BreakStatement[11850-11856]"
+    }, {
+      "left" : "case Token.NULL:",
+      "right" : "case Token.NULL:",
+      "info" : "SwitchCase[11864-11880]:SwitchCase[11864-11880]"
+    }, {
+      "left" : "n.setJSType(getNativeType(NULL_TYPE));",
+      "right" : "n.setJSType(getNativeType(NULL_TYPE));",
+      "info" : "ExpressionStatement[11889-11927]:ExpressionStatement[11889-11927]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11936-11942]:BreakStatement[11936-11942]"
+    }, {
+      "left" : "case Token.VOID:",
+      "right" : "case Token.VOID:",
+      "info" : "SwitchCase[11950-11966]:SwitchCase[11950-11966]"
+    }, {
+      "left" : "n.setJSType(getNativeType(VOID_TYPE));",
+      "right" : "n.setJSType(getNativeType(VOID_TYPE));",
+      "info" : "ExpressionStatement[11975-12013]:ExpressionStatement[11975-12013]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[12022-12028]:BreakStatement[12022-12028]"
+    }, {
+      "left" : "case Token.ARRAYLIT:",
+      "right" : "case Token.ARRAYLIT:",
+      "info" : "SwitchCase[12036-12056]:SwitchCase[12036-12056]"
+    }, {
+      "left" : "scope = traverseArrayLiteral(n, scope);",
+      "right" : "scope = traverseArrayLiteral(n, scope);",
+      "info" : "ExpressionStatement[12065-12104]:ExpressionStatement[12065-12104]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[12113-12119]:BreakStatement[12113-12119]"
+    }, {
+      "left" : "case Token.REF_SPECIAL:",
+      "right" : "case Token.REF_SPECIAL:",
+      "info" : "SwitchCase[12127-12150]:SwitchCase[12127-12150]"
+    }, {
+      "left" : "n.setJSType(getNativeType(UNKNOWN_TYPE));",
+      "right" : "n.setJSType(getNativeType(UNKNOWN_TYPE));",
+      "info" : "ExpressionStatement[12159-12200]:ExpressionStatement[12159-12200]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[12209-12215]:BreakStatement[12209-12215]"
+    }, {
+      "left" : "case Token.REGEXP:",
+      "right" : "case Token.REGEXP:",
+      "info" : "SwitchCase[12223-12241]:SwitchCase[12223-12241]"
+    }, {
+      "left" : "n.setJSType(getNativeType(REGEXP_TYPE));",
+      "right" : "n.setJSType(getNativeType(REGEXP_TYPE));",
+      "info" : "ExpressionStatement[12250-12290]:ExpressionStatement[12250-12290]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[12299-12305]:BreakStatement[12299-12305]"
+    }, {
+      "left" : "case Token.THIS:",
+      "right" : "case Token.THIS:",
+      "info" : "SwitchCase[12313-12329]:SwitchCase[12313-12329]"
+    }, {
+      "left" : "n.setJSType(scope.getTypeOfThis());",
+      "right" : "n.setJSType(scope.getTypeOfThis());",
+      "info" : "ExpressionStatement[12338-12373]:ExpressionStatement[12338-12373]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[12382-12388]:BreakStatement[12382-12388]"
+    }, {
+      "left" : "case Token.ASSIGN_LSH:",
+      "right" : "case Token.ASSIGN_LSH:",
+      "info" : "SwitchCase[12396-12418]:SwitchCase[12396-12418]"
+    }, {
+      "left" : "case Token.ASSIGN_RSH:",
+      "right" : "case Token.ASSIGN_RSH:",
+      "info" : "SwitchCase[12425-12447]:SwitchCase[12425-12447]"
+    }, {
+      "left" : "case Token.LSH:",
+      "right" : "case Token.LSH:",
+      "info" : "SwitchCase[12454-12469]:SwitchCase[12454-12469]"
+    }, {
+      "left" : "case Token.RSH:",
+      "right" : "case Token.RSH:",
+      "info" : "SwitchCase[12476-12491]:SwitchCase[12476-12491]"
+    }, {
+      "left" : "case Token.ASSIGN_URSH:",
+      "right" : "case Token.ASSIGN_URSH:",
+      "info" : "SwitchCase[12498-12521]:SwitchCase[12498-12521]"
+    }, {
+      "left" : "case Token.URSH:",
+      "right" : "case Token.URSH:",
+      "info" : "SwitchCase[12528-12544]:SwitchCase[12528-12544]"
+    }, {
+      "left" : "case Token.ASSIGN_DIV:",
+      "right" : "case Token.ASSIGN_DIV:",
+      "info" : "SwitchCase[12551-12573]:SwitchCase[12551-12573]"
+    }, {
+      "left" : "case Token.ASSIGN_MOD:",
+      "right" : "case Token.ASSIGN_MOD:",
+      "info" : "SwitchCase[12580-12602]:SwitchCase[12580-12602]"
+    }, {
+      "left" : "case Token.ASSIGN_BITAND:",
+      "right" : "case Token.ASSIGN_BITAND:",
+      "info" : "SwitchCase[12609-12634]:SwitchCase[12609-12634]"
+    }, {
+      "left" : "case Token.ASSIGN_BITXOR:",
+      "right" : "case Token.ASSIGN_BITXOR:",
+      "info" : "SwitchCase[12641-12666]:SwitchCase[12641-12666]"
+    }, {
+      "left" : "case Token.ASSIGN_BITOR:",
+      "right" : "case Token.ASSIGN_BITOR:",
+      "info" : "SwitchCase[12673-12697]:SwitchCase[12673-12697]"
+    }, {
+      "left" : "case Token.ASSIGN_MUL:",
+      "right" : "case Token.ASSIGN_MUL:",
+      "info" : "SwitchCase[12704-12726]:SwitchCase[12704-12726]"
+    }, {
+      "left" : "case Token.ASSIGN_SUB:",
+      "right" : "case Token.ASSIGN_SUB:",
+      "info" : "SwitchCase[12733-12755]:SwitchCase[12733-12755]"
+    }, {
+      "left" : "case Token.DIV:",
+      "right" : "case Token.DIV:",
+      "info" : "SwitchCase[12762-12777]:SwitchCase[12762-12777]"
+    }, {
+      "left" : "case Token.MOD:",
+      "right" : "case Token.MOD:",
+      "info" : "SwitchCase[12784-12799]:SwitchCase[12784-12799]"
+    }, {
+      "left" : "case Token.BITAND:",
+      "right" : "case Token.BITAND:",
+      "info" : "SwitchCase[12806-12824]:SwitchCase[12806-12824]"
+    }, {
+      "left" : "case Token.BITXOR:",
+      "right" : "case Token.BITXOR:",
+      "info" : "SwitchCase[12831-12849]:SwitchCase[12831-12849]"
+    }, {
+      "left" : "case Token.BITOR:",
+      "right" : "case Token.BITOR:",
+      "info" : "SwitchCase[12856-12873]:SwitchCase[12856-12873]"
+    }, {
+      "left" : "case Token.MUL:",
+      "right" : "case Token.MUL:",
+      "info" : "SwitchCase[12880-12895]:SwitchCase[12880-12895]"
+    }, {
+      "left" : "case Token.SUB:",
+      "right" : "case Token.SUB:",
+      "info" : "SwitchCase[12902-12917]:SwitchCase[12902-12917]"
+    }, {
+      "left" : "case Token.DEC:",
+      "right" : "case Token.DEC:",
+      "info" : "SwitchCase[12924-12939]:SwitchCase[12924-12939]"
+    }, {
+      "left" : "case Token.INC:",
+      "right" : "case Token.INC:",
+      "info" : "SwitchCase[12946-12961]:SwitchCase[12946-12961]"
+    }, {
+      "left" : "case Token.BITNOT:",
+      "right" : "case Token.BITNOT:",
+      "info" : "SwitchCase[12968-12986]:SwitchCase[12968-12986]"
+    }, {
+      "left" : "case Token.NUMBER:",
+      "right" : "case Token.NUMBER:",
+      "info" : "SwitchCase[12993-13011]:SwitchCase[12993-13011]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[13020-13055]:ExpressionStatement[13020-13055]"
+    }, {
+      "left" : "n.setJSType(getNativeType(NUMBER_TYPE));",
+      "right" : "n.setJSType(getNativeType(NUMBER_TYPE));",
+      "info" : "ExpressionStatement[13064-13104]:ExpressionStatement[13064-13104]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[13113-13119]:BreakStatement[13113-13119]"
+    }, {
+      "left" : "case Token.LP:",
+      "right" : "case Token.LP:",
+      "info" : "SwitchCase[13127-13141]:SwitchCase[13127-13141]"
+    }, {
+      "left" : "case Token.GET_REF:",
+      "right" : "case Token.GET_REF:",
+      "info" : "SwitchCase[13148-13167]:SwitchCase[13148-13167]"
+    }, {
+      "left" : "scope = traverse(n.getFirstChild(), scope);",
+      "right" : "scope = traverse(n.getFirstChild(), scope);",
+      "info" : "ExpressionStatement[13176-13219]:ExpressionStatement[13176-13219]"
+    }, {
+      "left" : "n.setJSType(getJSType(n.getFirstChild()));",
+      "right" : "n.setJSType(getJSType(n.getFirstChild()));",
+      "info" : "ExpressionStatement[13228-13270]:ExpressionStatement[13228-13270]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[13279-13285]:BreakStatement[13279-13285]"
+    }, {
+      "left" : "case Token.COMMA:",
+      "right" : "case Token.COMMA:",
+      "info" : "SwitchCase[13293-13310]:SwitchCase[13293-13310]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[13319-13354]:ExpressionStatement[13319-13354]"
+    }, {
+      "left" : "n.setJSType(getJSType(n.getLastChild()));",
+      "right" : "n.setJSType(getJSType(n.getLastChild()));",
+      "info" : "ExpressionStatement[13363-13404]:ExpressionStatement[13363-13404]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[13413-13419]:BreakStatement[13413-13419]"
+    }, {
+      "left" : "case Token.STRING:",
+      "right" : "case Token.STRING:",
+      "info" : "SwitchCase[13427-13445]:SwitchCase[13427-13445]"
+    }, {
+      "left" : "case Token.TYPEOF:",
+      "right" : "case Token.TYPEOF:",
+      "info" : "SwitchCase[13452-13470]:SwitchCase[13452-13470]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[13479-13514]:ExpressionStatement[13479-13514]"
+    }, {
+      "left" : "n.setJSType(getNativeType(STRING_TYPE));",
+      "right" : "n.setJSType(getNativeType(STRING_TYPE));",
+      "info" : "ExpressionStatement[13523-13563]:ExpressionStatement[13523-13563]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[13572-13578]:BreakStatement[13572-13578]"
+    }, {
+      "left" : "case Token.LT:",
+      "right" : "case Token.LT:",
+      "info" : "SwitchCase[13586-13600]:SwitchCase[13586-13600]"
+    }, {
+      "left" : "case Token.LE:",
+      "right" : "case Token.LE:",
+      "info" : "SwitchCase[13607-13621]:SwitchCase[13607-13621]"
+    }, {
+      "left" : "case Token.GT:",
+      "right" : "case Token.GT:",
+      "info" : "SwitchCase[13628-13642]:SwitchCase[13628-13642]"
+    }, {
+      "left" : "case Token.GE:",
+      "right" : "case Token.GE:",
+      "info" : "SwitchCase[13649-13663]:SwitchCase[13649-13663]"
+    }, {
+      "left" : "case Token.NOT:",
+      "right" : "case Token.NOT:",
+      "info" : "SwitchCase[13670-13685]:SwitchCase[13670-13685]"
+    }, {
+      "left" : "case Token.EQ:",
+      "right" : "case Token.EQ:",
+      "info" : "SwitchCase[13692-13706]:SwitchCase[13692-13706]"
+    }, {
+      "left" : "case Token.NE:",
+      "right" : "case Token.NE:",
+      "info" : "SwitchCase[13713-13727]:SwitchCase[13713-13727]"
+    }, {
+      "left" : "case Token.SHEQ:",
+      "right" : "case Token.SHEQ:",
+      "info" : "SwitchCase[13734-13750]:SwitchCase[13734-13750]"
+    }, {
+      "left" : "case Token.SHNE:",
+      "right" : "case Token.SHNE:",
+      "info" : "SwitchCase[13757-13773]:SwitchCase[13757-13773]"
+    }, {
+      "left" : "case Token.INSTANCEOF:",
+      "right" : "case Token.INSTANCEOF:",
+      "info" : "SwitchCase[13780-13802]:SwitchCase[13780-13802]"
+    }, {
+      "left" : "case Token.IN:",
+      "right" : "case Token.IN:",
+      "info" : "SwitchCase[13809-13823]:SwitchCase[13809-13823]"
+    }, {
+      "left" : "case Token.TRUE:",
+      "right" : "case Token.TRUE:",
+      "info" : "SwitchCase[13830-13846]:SwitchCase[13830-13846]"
+    }, {
+      "left" : "case Token.FALSE:",
+      "right" : "case Token.FALSE:",
+      "info" : "SwitchCase[13853-13870]:SwitchCase[13853-13870]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[13879-13914]:ExpressionStatement[13879-13914]"
+    }, {
+      "left" : "n.setJSType(getNativeType(BOOLEAN_TYPE));",
+      "right" : "n.setJSType(getNativeType(BOOLEAN_TYPE));",
+      "info" : "ExpressionStatement[13923-13964]:ExpressionStatement[13923-13964]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[13973-13979]:BreakStatement[13973-13979]"
+    }, {
+      "left" : "case Token.GETELEM:",
+      "right" : "case Token.GETELEM:",
+      "info" : "SwitchCase[13987-14006]:SwitchCase[13987-14006]"
+    }, {
+      "left" : "scope = traverseGetElem(n, scope);",
+      "right" : "scope = traverseGetElem(n, scope);",
+      "info" : "ExpressionStatement[14015-14049]:ExpressionStatement[14015-14049]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[14058-14064]:BreakStatement[14058-14064]"
+    }, {
+      "left" : "case Token.EXPR_RESULT:",
+      "right" : "case Token.EXPR_RESULT:",
+      "info" : "SwitchCase[14072-14095]:SwitchCase[14072-14095]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[14104-14139]:ExpressionStatement[14104-14139]"
+    }, {
+      "left" : "if (n.getFirstChild().getType() == Token.GETPROP)",
+      "right" : "if (n.getFirstChild().getType() == Token.GETPROP)",
+      "info" : "IfStatement[14148-14262]:IfStatement[14148-14262]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14198-14262]:Block[14198-14262]"
+    }, {
+      "left" : "ensurePropertyDeclared(n.getFirstChild());",
+      "right" : "ensurePropertyDeclared(n.getFirstChild());",
+      "info" : "ExpressionStatement[14210-14252]:ExpressionStatement[14210-14252]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[14271-14277]:BreakStatement[14271-14277]"
+    }, {
+      "left" : "case Token.SWITCH:",
+      "right" : "case Token.SWITCH:",
+      "info" : "SwitchCase[14285-14303]:SwitchCase[14285-14303]"
+    }, {
+      "left" : "scope = traverse(n.getFirstChild(), scope);",
+      "right" : "scope = traverse(n.getFirstChild(), scope);",
+      "info" : "ExpressionStatement[14312-14355]:ExpressionStatement[14312-14355]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[14364-14370]:BreakStatement[14364-14370]"
+    }, {
+      "left" : "case Token.VAR:",
+      "right" : "case Token.VAR:",
+      "info" : "SwitchCase[14378-14393]:SwitchCase[14378-14393]"
+    }, {
+      "left" : "case Token.RETURN:",
+      "right" : "case Token.RETURN:",
+      "info" : "SwitchCase[14400-14418]:SwitchCase[14400-14418]"
+    }, {
+      "left" : "case Token.THROW:",
+      "right" : "case Token.THROW:",
+      "info" : "SwitchCase[14425-14442]:SwitchCase[14425-14442]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[14451-14486]:ExpressionStatement[14451-14486]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[14495-14501]:BreakStatement[14495-14501]"
+    }, {
+      "left" : "case Token.CATCH:",
+      "right" : "case Token.CATCH:",
+      "info" : "SwitchCase[14509-14526]:SwitchCase[14509-14526]"
+    }, {
+      "left" : "scope = traverseCatch(n, scope);",
+      "right" : "scope = traverseCatch(n, scope);",
+      "info" : "ExpressionStatement[14535-14567]:ExpressionStatement[14535-14567]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[14576-14582]:BreakStatement[14576-14582]"
+    }, {
+      "left" : "if (n.getType() != Token.FUNCTION)",
+      "right" : "if (n.getType() != Token.FUNCTION)",
+      "info" : "IfStatement[14593-15186]:IfStatement[14593-15186]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14628-15186]:Block[14628-15186]"
+    }, {
+      "left" : "JSDocInfo info = n.getJSDocInfo();",
+      "right" : "JSDocInfo info = n.getJSDocInfo();",
+      "info" : "VariableDeclarationStatement[14636-14670]:VariableDeclarationStatement[14636-14670]"
+    }, {
+      "left" : "if (info != null && info.hasType())",
+      "right" : "if (info != null && info.hasType())",
+      "info" : "IfStatement[14677-15180]:IfStatement[14677-15180]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14713-15180]:Block[14713-15180]"
+    }, {
+      "left" : "JSType castType = info.getType().evaluate(syntacticScope);",
+      "right" : "JSType castType = info.getType().evaluate(syntacticScope);",
+      "info" : "VariableDeclarationStatement[14723-14781]:VariableDeclarationStatement[14723-14781]"
+    }, {
+      "left" : "if (n.isQualifiedName() &&\n            n.getParent().getType() == Token.EXPR_RESULT)",
+      "right" : "if (n.isQualifiedName() &&\n            n.getParent().getType() == Token.EXPR_RESULT)",
+      "info" : "IfStatement[14973-15140]:IfStatement[14973-15140]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15058-15140]:Block[15058-15140]"
+    }, {
+      "left" : "updateScopeForTypeChange(scope, n, n.getJSType(), castType);",
+      "right" : "updateScopeForTypeChange(scope, n, n.getJSType(), castType);",
+      "info" : "ExpressionStatement[15070-15130]:ExpressionStatement[15070-15130]"
+    }, {
+      "left" : "n.setJSType(castType);",
+      "right" : "n.setJSType(castType);",
+      "info" : "ExpressionStatement[15150-15172]:ExpressionStatement[15150-15172]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[15192-15205]:ReturnStatement[15192-15205]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15413-15603]:Block[15413-15603]"
+    }, {
+      "left" : "Node name = n.getFirstChild();",
+      "right" : "Node name = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[15419-15449]:VariableDeclarationStatement[15419-15449]"
+    }, {
+      "left" : "JSType type = getNativeType(JSTypeNative.UNKNOWN_TYPE);",
+      "right" : "JSType type = getNativeType(JSTypeNative.UNKNOWN_TYPE);",
+      "info" : "VariableDeclarationStatement[15454-15509]:VariableDeclarationStatement[15454-15509]"
+    }, {
+      "left" : "name.setJSType(type);",
+      "right" : "name.setJSType(type);",
+      "info" : "ExpressionStatement[15514-15535]:ExpressionStatement[15514-15535]"
+    }, {
+      "left" : "redeclare(scope, name.getString(), type);",
+      "right" : "redeclare(scope, name.getString(), type);",
+      "info" : "ExpressionStatement[15540-15581]:ExpressionStatement[15540-15581]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[15586-15599]:ReturnStatement[15586-15599]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15665-15973]:Block[15665-15973]"
+    }, {
+      "left" : "Node left = n.getFirstChild();",
+      "right" : "Node left = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[15671-15701]:VariableDeclarationStatement[15671-15701]"
+    }, {
+      "left" : "Node right = n.getLastChild();",
+      "right" : "Node right = n.getLastChild();",
+      "info" : "VariableDeclarationStatement[15706-15736]:VariableDeclarationStatement[15706-15736]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[15741-15776]:ExpressionStatement[15741-15776]"
+    }, {
+      "left" : "JSType leftType = left.getJSType();",
+      "right" : "JSType leftType = left.getJSType();",
+      "info" : "VariableDeclarationStatement[15782-15817]:VariableDeclarationStatement[15782-15817]"
+    }, {
+      "left" : "JSType rightType = getJSType(right);",
+      "right" : "JSType rightType = getJSType(right);",
+      "info" : "VariableDeclarationStatement[15822-15858]:VariableDeclarationStatement[15822-15858]"
+    }, {
+      "left" : "n.setJSType(rightType);",
+      "right" : "n.setJSType(rightType);",
+      "info" : "ExpressionStatement[15863-15886]:ExpressionStatement[15863-15886]"
+    }, {
+      "left" : "updateScopeForTypeChange(scope, left, leftType, rightType);",
+      "right" : "updateScopeForTypeChange(scope, left, leftType, rightType);",
+      "info" : "ExpressionStatement[15892-15951]:ExpressionStatement[15892-15951]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[15956-15969]:ReturnStatement[15956-15969]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16203-18025]:Block[16203-18025]"
+    }, {
+      "left" : "Preconditions.checkNotNull(resultType);",
+      "right" : "Preconditions.checkNotNull(resultType);",
+      "info" : "ExpressionStatement[16209-16248]:ExpressionStatement[16209-16248]"
+    }, {
+      "left" : "switch (left.getType()) {\n      case Token.NAME:\n        String varName = left.getString();\n        Var var = syntacticScope.getVar(varName);\n        if (var != null && var.isLocal() && var.getScope() != syntacticScope) {\n          assignedOuterLocalVars.put(var.getScope(), var);\n        }\n\n        // When looking at VAR initializers for declared VARs, we trust\n        // the declared type over the type it's being initialized to.\n        // This has two purposes:\n        // 1) We avoid re-declaring declared variables so that built-in\n        //    types defined in externs are not redeclared.\n        // 2) When there's a lexical closure like\n        //    /** @type {?string} */ var x = null;\n        //    function f() { x = 'xyz'; }\n        //    the inference will ignore the lexical closure,\n        //    which is just wrong. This bug needs to be fixed eventually.\n        boolean isVarDeclaration = left.hasChildren();\n        if (!isVarDeclaration || var == null || var.isTypeInferred()) {\n          redeclare(scope, varName, resultType);\n        }\n        left.setJSType(isVarDeclaration || leftType == null ?\n            resultType : null);\n\n        if (var != null && var.isTypeInferred()) {\n          JSType oldType = var.getType();\n          var.setType(oldType == null ?\n              resultType : oldType.getLeastSupertype(resultType));\n        }\n        break;\n      case Token.GETPROP:\n        String qualifiedName = left.getQualifiedName();\n        if (qualifiedName != null) {\n          scope.inferQualifiedSlot(qualifiedName,\n              leftType == null ? getNativeType(UNKNOWN_TYPE) : leftType,\n              resultType);\n        }\n\n        left.setJSType(resultType);\n        ensurePropertyDefined(left, resultType);\n        break;\n    }",
+      "right" : "switch (left.getType()) {\n      case Token.NAME:\n        String varName = left.getString();\n        Var var = syntacticScope.getVar(varName);\n        if (var != null && var.isLocal() && var.getScope() != syntacticScope) {\n          assignedOuterLocalVars.put(var.getScope(), var);\n        }\n\n        // When looking at VAR initializers for declared VARs, we trust\n        // the declared type over the type it's being initialized to.\n        // This has two purposes:\n        // 1) We avoid re-declaring declared variables so that built-in\n        //    types defined in externs are not redeclared.\n        // 2) When there's a lexical closure like\n        //    /** @type {?string} */ var x = null;\n        //    function f() { x = 'xyz'; }\n        //    the inference will ignore the lexical closure,\n        //    which is just wrong. This bug needs to be fixed eventually.\n        boolean isVarDeclaration = left.hasChildren();\n        if (!isVarDeclaration || var == null || var.isTypeInferred()) {\n          redeclare(scope, varName, resultType);\n        }\n        left.setJSType(isVarDeclaration || leftType == null ?\n            resultType : null);\n\n        if (var != null && var.isTypeInferred()) {\n          JSType oldType = var.getType();\n          var.setType(oldType == null ?\n              resultType : oldType.getLeastSupertype(resultType));\n        }\n        break;\n      case Token.GETPROP:\n        String qualifiedName = left.getQualifiedName();\n        if (qualifiedName != null) {\n          scope.inferQualifiedSlot(qualifiedName,\n              leftType == null ? getNativeType(UNKNOWN_TYPE) : leftType,\n              resultType);\n        }\n\n        left.setJSType(resultType);\n        ensurePropertyDefined(left, resultType);\n        break;\n    }",
+      "info" : "SwitchStatement[16253-18021]:SwitchStatement[16253-18021]"
+    }, {
+      "left" : "case Token.NAME:",
+      "right" : "case Token.NAME:",
+      "info" : "SwitchCase[16285-16301]:SwitchCase[16285-16301]"
+    }, {
+      "left" : "String varName = left.getString();",
+      "right" : "String varName = left.getString();",
+      "info" : "VariableDeclarationStatement[16310-16344]:VariableDeclarationStatement[16310-16344]"
+    }, {
+      "left" : "Var var = syntacticScope.getVar(varName);",
+      "right" : "Var var = syntacticScope.getVar(varName);",
+      "info" : "VariableDeclarationStatement[16353-16394]:VariableDeclarationStatement[16353-16394]"
+    }, {
+      "left" : "if (var != null && var.isLocal() && var.getScope() != syntacticScope)",
+      "right" : "if (var != null && var.isLocal() && var.getScope() != syntacticScope)",
+      "info" : "IfStatement[16403-16543]:IfStatement[16403-16543]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16473-16543]:Block[16473-16543]"
+    }, {
+      "left" : "assignedOuterLocalVars.put(var.getScope(), var);",
+      "right" : "assignedOuterLocalVars.put(var.getScope(), var);",
+      "info" : "ExpressionStatement[16485-16533]:ExpressionStatement[16485-16533]"
+    }, {
+      "left" : "boolean isVarDeclaration = left.hasChildren();",
+      "right" : "boolean isVarDeclaration = left.hasChildren();",
+      "info" : "VariableDeclarationStatement[17138-17184]:VariableDeclarationStatement[17138-17184]"
+    }, {
+      "left" : "if (!isVarDeclaration || var == null || var.isTypeInferred())",
+      "right" : "if (!isVarDeclaration || var == null || var.isTypeInferred())",
+      "info" : "IfStatement[17193-17315]:IfStatement[17193-17315]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17255-17315]:Block[17255-17315]"
+    }, {
+      "left" : "redeclare(scope, varName, resultType);",
+      "right" : "redeclare(scope, varName, resultType);",
+      "info" : "ExpressionStatement[17267-17305]:ExpressionStatement[17267-17305]"
+    }, {
+      "left" : "left.setJSType(isVarDeclaration || leftType == null ?\n            resultType : null);",
+      "right" : "left.setJSType(isVarDeclaration || leftType == null ?\n            resultType : null);",
+      "info" : "ExpressionStatement[17324-17409]:ExpressionStatement[17324-17409]"
+    }, {
+      "left" : "if (var != null && var.isTypeInferred())",
+      "right" : "if (var != null && var.isTypeInferred())",
+      "info" : "IfStatement[17419-17620]:IfStatement[17419-17620]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17460-17620]:Block[17460-17620]"
+    }, {
+      "left" : "JSType oldType = var.getType();",
+      "right" : "JSType oldType = var.getType();",
+      "info" : "VariableDeclarationStatement[17472-17503]:VariableDeclarationStatement[17472-17503]"
+    }, {
+      "left" : "var.setType(oldType == null ?\n              resultType : oldType.getLeastSupertype(resultType));",
+      "right" : "var.setType(oldType == null ?\n              resultType : oldType.getLeastSupertype(resultType));",
+      "info" : "ExpressionStatement[17514-17610]:ExpressionStatement[17514-17610]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[17629-17635]:BreakStatement[17629-17635]"
+    }, {
+      "left" : "case Token.GETPROP:",
+      "right" : "case Token.GETPROP:",
+      "info" : "SwitchCase[17642-17661]:SwitchCase[17642-17661]"
+    }, {
+      "left" : "String qualifiedName = left.getQualifiedName();",
+      "right" : "String qualifiedName = left.getQualifiedName();",
+      "info" : "VariableDeclarationStatement[17670-17717]:VariableDeclarationStatement[17670-17717]"
+    }, {
+      "left" : "if (qualifiedName != null)",
+      "right" : "if (qualifiedName != null)",
+      "info" : "IfStatement[17726-17914]:IfStatement[17726-17914]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17753-17914]:Block[17753-17914]"
+    }, {
+      "left" : "scope.inferQualifiedSlot(qualifiedName,\n              leftType == null ? getNativeType(UNKNOWN_TYPE) : leftType,\n              resultType);",
+      "right" : "scope.inferQualifiedSlot(qualifiedName,\n              leftType == null ? getNativeType(UNKNOWN_TYPE) : leftType,\n              resultType);",
+      "info" : "ExpressionStatement[17765-17904]:ExpressionStatement[17765-17904]"
+    }, {
+      "left" : "left.setJSType(resultType);",
+      "right" : "left.setJSType(resultType);",
+      "info" : "ExpressionStatement[17924-17951]:ExpressionStatement[17924-17951]"
+    }, {
+      "left" : "ensurePropertyDefined(left, resultType);",
+      "right" : "ensurePropertyDefined(left, resultType);",
+      "info" : "ExpressionStatement[17960-18000]:ExpressionStatement[17960-18000]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[18009-18015]:BreakStatement[18009-18015]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18174-19895]:Block[18174-19895]"
+    }, {
+      "left" : "ObjectType objectType = ObjectType.cast(\n        getJSType(getprop.getFirstChild()).restrictByNotNullOrUndefined());",
+      "right" : "ObjectType objectType = ObjectType.cast(\n        getJSType(getprop.getFirstChild()).restrictByNotNullOrUndefined());",
+      "info" : "VariableDeclarationStatement[18180-18296]:VariableDeclarationStatement[18180-18296]"
+    }, {
+      "left" : "if (objectType != null)",
+      "right" : "if (objectType != null)",
+      "info" : "IfStatement[18301-19891]:IfStatement[18301-19891]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18325-19891]:Block[18325-19891]"
+    }, {
+      "left" : "if (ensurePropertyDeclaredHelper(getprop, objectType))",
+      "right" : "if (ensurePropertyDeclaredHelper(getprop, objectType))",
+      "info" : "IfStatement[18333-18413]:IfStatement[18333-18413]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18388-18413]:Block[18388-18413]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[18398-18405]:ReturnStatement[18398-18405]"
+    }, {
+      "left" : "String propName = getprop.getLastChild().getString();",
+      "right" : "String propName = getprop.getLastChild().getString();",
+      "info" : "VariableDeclarationStatement[18421-18474]:VariableDeclarationStatement[18421-18474]"
+    }, {
+      "left" : "if (!objectType.isPropertyTypeDeclared(propName))",
+      "right" : "if (!objectType.isPropertyTypeDeclared(propName))",
+      "info" : "IfStatement[18481-19885]:IfStatement[18481-19885]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18531-19885]:Block[18531-19885]"
+    }, {
+      "left" : "if (objectType.hasProperty(propName) ||\n            !objectType.isInstanceType())",
+      "right" : "if (objectType.hasProperty(propName) ||\n            !objectType.isInstanceType())",
+      "info" : "IfStatement[19229-19877]:IfStatement[19229-19877]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19311-19549]:Block[19311-19549]"
+    }, {
+      "left" : "if (\"prototype\".equals(propName))",
+      "right" : "if (\"prototype\".equals(propName))",
+      "info" : "IfStatement[19323-19539]:IfStatement[19323-19539]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19357-19445]:Block[19357-19445]"
+    }, {
+      "left" : "objectType.defineDeclaredProperty(propName, rightType, false);",
+      "right" : "objectType.defineDeclaredProperty(propName, rightType, false);",
+      "info" : "ExpressionStatement[19371-19433]:ExpressionStatement[19371-19433]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19451-19539]:Block[19451-19539]"
+    }, {
+      "left" : "objectType.defineInferredProperty(propName, rightType, false);",
+      "right" : "objectType.defineInferredProperty(propName, rightType, false);",
+      "info" : "ExpressionStatement[19465-19527]:ExpressionStatement[19465-19527]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19555-19877]:Block[19555-19877]"
+    }, {
+      "left" : "if (getprop.getFirstChild().getType() == Token.THIS &&\n              getJSType(syntacticScope.getRootNode()).isConstructor())",
+      "right" : "if (getprop.getFirstChild().getType() == Token.THIS &&\n              getJSType(syntacticScope.getRootNode()).isConstructor())",
+      "info" : "IfStatement[19567-19867]:IfStatement[19567-19867]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19693-19781]:Block[19693-19781]"
+    }, {
+      "left" : "objectType.defineInferredProperty(propName, rightType, false);",
+      "right" : "objectType.defineInferredProperty(propName, rightType, false);",
+      "info" : "ExpressionStatement[19707-19769]:ExpressionStatement[19707-19769]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19787-19867]:Block[19787-19867]"
+    }, {
+      "left" : "registry.registerPropertyOnType(propName, objectType);",
+      "right" : "registry.registerPropertyOnType(propName, objectType);",
+      "info" : "ExpressionStatement[19801-19855]:ExpressionStatement[19801-19855]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20216-20432]:Block[20216-20432]"
+    }, {
+      "left" : "ObjectType ownerType = ObjectType.cast(\n        getJSType(getprop.getFirstChild()).restrictByNotNullOrUndefined());",
+      "right" : "ObjectType ownerType = ObjectType.cast(\n        getJSType(getprop.getFirstChild()).restrictByNotNullOrUndefined());",
+      "info" : "VariableDeclarationStatement[20222-20337]:VariableDeclarationStatement[20222-20337]"
+    }, {
+      "left" : "if (ownerType != null)",
+      "right" : "if (ownerType != null)",
+      "info" : "IfStatement[20342-20428]:IfStatement[20342-20428]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20365-20428]:Block[20365-20428]"
+    }, {
+      "left" : "ensurePropertyDeclaredHelper(getprop, ownerType);",
+      "right" : "ensurePropertyDeclaredHelper(getprop, ownerType);",
+      "info" : "ExpressionStatement[20373-20422]:ExpressionStatement[20373-20422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20636-21388]:Block[20636-21388]"
+    }, {
+      "left" : "String propName = getprop.getLastChild().getString();",
+      "right" : "String propName = getprop.getLastChild().getString();",
+      "info" : "VariableDeclarationStatement[20642-20695]:VariableDeclarationStatement[20642-20695]"
+    }, {
+      "left" : "String qName = getprop.getQualifiedName();",
+      "right" : "String qName = getprop.getQualifiedName();",
+      "info" : "VariableDeclarationStatement[20700-20742]:VariableDeclarationStatement[20700-20742]"
+    }, {
+      "left" : "if (qName != null)",
+      "right" : "if (qName != null)",
+      "info" : "IfStatement[20747-21366]:IfStatement[20747-21366]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20766-21366]:Block[20766-21366]"
+    }, {
+      "left" : "Var var = syntacticScope.getVar(qName);",
+      "right" : "Var var = syntacticScope.getVar(qName);",
+      "info" : "VariableDeclarationStatement[20774-20813]:VariableDeclarationStatement[20774-20813]"
+    }, {
+      "left" : "if (var != null && !var.isTypeInferred())",
+      "right" : "if (var != null && !var.isTypeInferred())",
+      "info" : "IfStatement[20820-21360]:IfStatement[20820-21360]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20862-21360]:Block[20862-21360]"
+    }, {
+      "left" : "if (propName.equals(\"prototype\") ||\n        // Handle prototype declarations that could not be addressed earlier.\n            (!objectType.hasOwnProperty(propName) &&\n             (!objectType.isInstanceType() ||\n                 (var.isExtern() && !objectType.isNativeObjectType()))))",
+      "right" : "if (propName.equals(\"prototype\") ||\n        // Handle prototype declarations that could not be addressed earlier.\n            (!objectType.hasOwnProperty(propName) &&\n             (!objectType.isInstanceType() ||\n                 (var.isExtern() && !objectType.isNativeObjectType()))))",
+      "info" : "IfStatement[20947-21352]:IfStatement[20947-21352]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21233-21352]:Block[21233-21352]"
+    }, {
+      "left" : "return objectType.defineDeclaredProperty(\n              propName, var.getType(), var.isExtern());",
+      "right" : "return objectType.defineDeclaredProperty(\n              propName, var.getType(), var.isExtern());",
+      "info" : "ReturnStatement[21245-21342]:ReturnStatement[21245-21342]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[21371-21384]:ReturnStatement[21371-21384]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21448-22494]:Block[21448-22804]"
+    }, {
+      "left" : "String varName = n.getString();",
+      "right" : "String varName = n.getString();",
+      "info" : "VariableDeclarationStatement[21454-21485]:VariableDeclarationStatement[21454-21485]"
+    }, {
+      "left" : "Node value = n.getFirstChild();",
+      "right" : "Node value = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[21490-21521]:VariableDeclarationStatement[21490-21521]"
+    }, {
+      "left" : "JSType type = n.getJSType();",
+      "right" : "JSType type = n.getJSType();",
+      "info" : "VariableDeclarationStatement[21526-21554]:VariableDeclarationStatement[21526-21554]"
+    }, {
+      "left" : "if (value != null)",
+      "right" : "if (value != null)",
+      "info" : "IfStatement[21559-22449]:IfStatement[21559-22759]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21578-21748]:Block[21578-21748]"
+    }, {
+      "left" : "scope = traverse(value, scope);",
+      "right" : "scope = traverse(value, scope);",
+      "info" : "ExpressionStatement[21586-21617]:ExpressionStatement[21586-21617]"
+    }, {
+      "left" : "updateScopeForTypeChange(scope, n, n.getJSType() /* could be null */,\n          getJSType(value));",
+      "right" : "updateScopeForTypeChange(scope, n, n.getJSType() /* could be null */,\n          getJSType(value));",
+      "info" : "ExpressionStatement[21624-21722]:ExpressionStatement[21624-21722]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[21729-21742]:ReturnStatement[21729-21742]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21754-22449]:Block[21754-22759]"
+    }, {
+      "left" : "StaticSlot<JSType> var = scope.getSlot(varName);",
+      "right" : "StaticSlot<JSType> var = scope.getSlot(varName);",
+      "info" : "VariableDeclarationStatement[21762-21810]:VariableDeclarationStatement[21762-21810]"
+    }, {
+      "left" : "if (var != null &&\n          !(var.isTypeInferred() && unflowableVarNames.contains(varName)))",
+      "right" : "if (!unflowable && !nonLocalInferredSlot)",
+      "info" : "IfStatement[21817-22443]:IfStatement[22570-22745]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21911-22443]:Block[22612-22745]"
+    }, {
+      "left" : "type = var.getType();",
+      "right" : "type = var.getType();",
+      "info" : "ExpressionStatement[22326-22347]:ExpressionStatement[22624-22645]"
+    }, {
+      "left" : "if (type == null)",
+      "right" : "if (type == null)",
+      "info" : "IfStatement[22358-22435]:IfStatement[22656-22735]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22376-22435]:Block[22674-22735]"
+    }, {
+      "left" : "type = getNativeType(UNKNOWN_TYPE);",
+      "right" : "type = getNativeType(UNKNOWN_TYPE);",
+      "info" : "ExpressionStatement[22390-22425]:ExpressionStatement[22688-22723]"
+    }, {
+      "left" : "n.setJSType(type);",
+      "right" : "n.setJSType(type);",
+      "info" : "ExpressionStatement[22454-22472]:ExpressionStatement[22764-22782]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[22477-22490]:ReturnStatement[22787-22800]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22607-22714]:Block[22917-23024]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[22613-22648]:ExpressionStatement[22923-22958]"
+    }, {
+      "left" : "n.setJSType(getNativeType(ARRAY_TYPE));",
+      "right" : "n.setJSType(getNativeType(ARRAY_TYPE));",
+      "info" : "ExpressionStatement[22653-22692]:ExpressionStatement[22963-23002]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[22697-22710]:ReturnStatement[23007-23020]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22783-23799]:Block[23093-24109]"
+    }, {
+      "left" : "if (n.getJSType() != null)",
+      "right" : "if (n.getJSType() != null)",
+      "info" : "IfStatement[22789-23019]:IfStatement[23099-23329]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22816-23019]:Block[23126-23329]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[23000-23013]:ReturnStatement[23310-23323]"
+    }, {
+      "left" : "ObjectType objectType = registry.createAnonymousObjectType();",
+      "right" : "ObjectType objectType = registry.createAnonymousObjectType();",
+      "info" : "VariableDeclarationStatement[23024-23085]:VariableDeclarationStatement[23334-23395]"
+    }, {
+      "left" : "for (Node name = n.getFirstChild(); name != null;\n         name = name.getNext().getNext())",
+      "right" : "for (Node name = n.getFirstChild(); name != null;\n         name = name.getNext().getNext())",
+      "info" : "ForStatement[23090-23748]:ForStatement[23400-24058]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23182-23748]:Block[23492-24058]"
+    }, {
+      "left" : "Node value = name.getNext();",
+      "right" : "Node value = name.getNext();",
+      "info" : "VariableDeclarationStatement[23190-23218]:VariableDeclarationStatement[23500-23528]"
+    }, {
+      "left" : "scope = traverse(name, scope);",
+      "right" : "scope = traverse(name, scope);",
+      "info" : "ExpressionStatement[23225-23255]:ExpressionStatement[23535-23565]"
+    }, {
+      "left" : "scope = traverse(value, scope);",
+      "right" : "scope = traverse(value, scope);",
+      "info" : "ExpressionStatement[23262-23293]:ExpressionStatement[23572-23603]"
+    }, {
+      "left" : "String memberName = NodeUtil.getStringValue(name);",
+      "right" : "String memberName = NodeUtil.getStringValue(name);",
+      "info" : "VariableDeclarationStatement[23300-23350]:VariableDeclarationStatement[23610-23660]"
+    }, {
+      "left" : "if (memberName != null)",
+      "right" : "if (memberName != null)",
+      "info" : "IfStatement[23357-23742]:IfStatement[23667-24052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23381-23655]:Block[23691-23965]"
+    }, {
+      "left" : "objectType.defineInferredProperty(memberName, getJSType(value), false);",
+      "right" : "objectType.defineInferredProperty(memberName, getJSType(value), false);",
+      "info" : "ExpressionStatement[23576-23647]:ExpressionStatement[23886-23957]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23661-23742]:Block[23971-24052]"
+    }, {
+      "left" : "n.setJSType(getNativeType(UNKNOWN_TYPE));",
+      "right" : "n.setJSType(getNativeType(UNKNOWN_TYPE));",
+      "info" : "ExpressionStatement[23671-23712]:ExpressionStatement[23981-24022]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[23721-23734]:ReturnStatement[24031-24044]"
+    }, {
+      "left" : "n.setJSType(objectType);",
+      "right" : "n.setJSType(objectType);",
+      "info" : "ExpressionStatement[23753-23777]:ExpressionStatement[24063-24087]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[23782-23795]:ReturnStatement[24092-24105]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23858-24983]:Block[24168-25293]"
+    }, {
+      "left" : "Node left = n.getFirstChild();",
+      "right" : "Node left = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[23864-23894]:VariableDeclarationStatement[24174-24204]"
+    }, {
+      "left" : "Node right = left.getNext();",
+      "right" : "Node right = left.getNext();",
+      "info" : "VariableDeclarationStatement[23899-23927]:VariableDeclarationStatement[24209-24237]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[23932-23967]:ExpressionStatement[24242-24277]"
+    }, {
+      "left" : "JSType leftType = left.getJSType();",
+      "right" : "JSType leftType = left.getJSType();",
+      "info" : "VariableDeclarationStatement[23973-24008]:VariableDeclarationStatement[24283-24318]"
+    }, {
+      "left" : "JSType rightType = right.getJSType();",
+      "right" : "JSType rightType = right.getJSType();",
+      "info" : "VariableDeclarationStatement[24013-24050]:VariableDeclarationStatement[24323-24360]"
+    }, {
+      "left" : "JSType type = getNativeType(UNKNOWN_TYPE);",
+      "right" : "JSType type = getNativeType(UNKNOWN_TYPE);",
+      "info" : "VariableDeclarationStatement[24056-24098]:VariableDeclarationStatement[24366-24408]"
+    }, {
+      "left" : "if (leftType != null && rightType != null)",
+      "right" : "if (leftType != null && rightType != null)",
+      "info" : "IfStatement[24103-24826]:IfStatement[24413-25136]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24146-24826]:Block[24456-25136]"
+    }, {
+      "left" : "boolean leftIsUnknown = leftType.isUnknownType();",
+      "right" : "boolean leftIsUnknown = leftType.isUnknownType();",
+      "info" : "VariableDeclarationStatement[24154-24203]:VariableDeclarationStatement[24464-24513]"
+    }, {
+      "left" : "boolean rightIsUnknown = rightType.isUnknownType();",
+      "right" : "boolean rightIsUnknown = rightType.isUnknownType();",
+      "info" : "VariableDeclarationStatement[24210-24261]:VariableDeclarationStatement[24520-24571]"
+    }, {
+      "left" : "if (leftIsUnknown && rightIsUnknown)",
+      "right" : "if (leftIsUnknown && rightIsUnknown)",
+      "info" : "IfStatement[24268-24820]:IfStatement[24578-25130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24305-24358]:Block[24615-24668]"
+    }, {
+      "left" : "type = getNativeType(UNKNOWN_TYPE);",
+      "right" : "type = getNativeType(UNKNOWN_TYPE);",
+      "info" : "ExpressionStatement[24315-24350]:ExpressionStatement[24625-24660]"
+    }, {
+      "left" : "if ((!leftIsUnknown && leftType.isString()) ||\n                 (!rightIsUnknown && rightType.isString()))",
+      "right" : "if ((!leftIsUnknown && leftType.isString()) ||\n                 (!rightIsUnknown && rightType.isString()))",
+      "info" : "IfStatement[24364-24820]:IfStatement[24674-25130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24471-24523]:Block[24781-24833]"
+    }, {
+      "left" : "type = getNativeType(STRING_TYPE);",
+      "right" : "type = getNativeType(STRING_TYPE);",
+      "info" : "ExpressionStatement[24481-24515]:ExpressionStatement[24791-24825]"
+    }, {
+      "left" : "if (leftIsUnknown || rightIsUnknown)",
+      "right" : "if (leftIsUnknown || rightIsUnknown)",
+      "info" : "IfStatement[24529-24820]:IfStatement[24839-25130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24566-24619]:Block[24876-24929]"
+    }, {
+      "left" : "type = getNativeType(UNKNOWN_TYPE);",
+      "right" : "type = getNativeType(UNKNOWN_TYPE);",
+      "info" : "ExpressionStatement[24576-24611]:ExpressionStatement[24886-24921]"
+    }, {
+      "left" : "if (isAddedAsNumber(leftType) && isAddedAsNumber(rightType))",
+      "right" : "if (isAddedAsNumber(leftType) && isAddedAsNumber(rightType))",
+      "info" : "IfStatement[24625-24820]:IfStatement[24935-25130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24686-24738]:Block[24996-25048]"
+    }, {
+      "left" : "type = getNativeType(NUMBER_TYPE);",
+      "right" : "type = getNativeType(NUMBER_TYPE);",
+      "info" : "ExpressionStatement[24696-24730]:ExpressionStatement[25006-25040]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24744-24820]:Block[25054-25130]"
+    }, {
+      "left" : "type = registry.createUnionType(STRING_TYPE, NUMBER_TYPE);",
+      "right" : "type = registry.createUnionType(STRING_TYPE, NUMBER_TYPE);",
+      "info" : "ExpressionStatement[24754-24812]:ExpressionStatement[25064-25122]"
+    }, {
+      "left" : "n.setJSType(type);",
+      "right" : "n.setJSType(type);",
+      "info" : "ExpressionStatement[24831-24849]:ExpressionStatement[25141-25159]"
+    }, {
+      "left" : "if (n.getType() == Token.ASSIGN_ADD)",
+      "right" : "if (n.getType() == Token.ASSIGN_ADD)",
+      "info" : "IfStatement[24855-24960]:IfStatement[25165-25270]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24892-24960]:Block[25202-25270]"
+    }, {
+      "left" : "updateScopeForTypeChange(scope, left, leftType, type);",
+      "right" : "updateScopeForTypeChange(scope, left, leftType, type);",
+      "info" : "ExpressionStatement[24900-24954]:ExpressionStatement[25210-25264]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[24966-24979]:ReturnStatement[25276-25289]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25032-25184]:Block[25342-25494]"
+    }, {
+      "left" : "return type.isSubtype(registry.createUnionType(VOID_TYPE, NULL_TYPE,\n        NUMBER_VALUE_OR_OBJECT_TYPE, BOOLEAN_TYPE, BOOLEAN_OBJECT_TYPE));",
+      "right" : "return type.isSubtype(registry.createUnionType(VOID_TYPE, NULL_TYPE,\n        NUMBER_VALUE_OR_OBJECT_TYPE, BOOLEAN_TYPE, BOOLEAN_OBJECT_TYPE));",
+      "info" : "ReturnStatement[25038-25180]:ReturnStatement[25348-25490]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25244-26334]:Block[25554-26644]"
+    }, {
+      "left" : "Node condition = n.getFirstChild();",
+      "right" : "Node condition = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[25250-25285]:VariableDeclarationStatement[25560-25595]"
+    }, {
+      "left" : "Node trueNode = condition.getNext();",
+      "right" : "Node trueNode = condition.getNext();",
+      "info" : "VariableDeclarationStatement[25290-25326]:VariableDeclarationStatement[25600-25636]"
+    }, {
+      "left" : "Node falseNode = n.getLastChild();",
+      "right" : "Node falseNode = n.getLastChild();",
+      "info" : "VariableDeclarationStatement[25331-25365]:VariableDeclarationStatement[25641-25675]"
+    }, {
+      "left" : "scope = traverse(condition, scope);",
+      "right" : "scope = traverse(condition, scope);",
+      "info" : "ExpressionStatement[25399-25434]:ExpressionStatement[25709-25744]"
+    }, {
+      "left" : "FlowScope trueScope = reverseInterpreter.\n        getPreciserScopeKnowingConditionOutcome(\n            condition, scope, true);",
+      "right" : "FlowScope trueScope = reverseInterpreter.\n        getPreciserScopeKnowingConditionOutcome(\n            condition, scope, true);",
+      "info" : "VariableDeclarationStatement[25514-25641]:VariableDeclarationStatement[25824-25951]"
+    }, {
+      "left" : "FlowScope falseScope = reverseInterpreter.\n        getPreciserScopeKnowingConditionOutcome(\n            condition, scope, false);",
+      "right" : "FlowScope falseScope = reverseInterpreter.\n        getPreciserScopeKnowingConditionOutcome(\n            condition, scope, false);",
+      "info" : "VariableDeclarationStatement[25646-25775]:VariableDeclarationStatement[25956-26085]"
+    }, {
+      "left" : "traverse(trueNode, trueScope.createChildFlowScope());",
+      "right" : "traverse(trueNode, trueScope.createChildFlowScope());",
+      "info" : "ExpressionStatement[25830-25883]:ExpressionStatement[26140-26193]"
+    }, {
+      "left" : "traverse(falseNode, falseScope.createChildFlowScope());",
+      "right" : "traverse(falseNode, falseScope.createChildFlowScope());",
+      "info" : "ExpressionStatement[25940-25995]:ExpressionStatement[26250-26305]"
+    }, {
+      "left" : "JSType trueType = trueNode.getJSType();",
+      "right" : "JSType trueType = trueNode.getJSType();",
+      "info" : "VariableDeclarationStatement[26052-26091]:VariableDeclarationStatement[26362-26401]"
+    }, {
+      "left" : "JSType falseType = falseNode.getJSType();",
+      "right" : "JSType falseType = falseNode.getJSType();",
+      "info" : "VariableDeclarationStatement[26096-26137]:VariableDeclarationStatement[26406-26447]"
+    }, {
+      "left" : "if (trueType != null && falseType != null)",
+      "right" : "if (trueType != null && falseType != null)",
+      "info" : "IfStatement[26142-26288]:IfStatement[26452-26598]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26185-26250]:Block[26495-26560]"
+    }, {
+      "left" : "n.setJSType(trueType.getLeastSupertype(falseType));",
+      "right" : "n.setJSType(trueType.getLeastSupertype(falseType));",
+      "info" : "ExpressionStatement[26193-26244]:ExpressionStatement[26503-26554]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26256-26288]:Block[26566-26598]"
+    }, {
+      "left" : "n.setJSType(null);",
+      "right" : "n.setJSType(null);",
+      "info" : "ExpressionStatement[26264-26282]:ExpressionStatement[26574-26592]"
+    }, {
+      "left" : "return scope.createChildFlowScope();",
+      "right" : "return scope.createChildFlowScope();",
+      "info" : "ReturnStatement[26294-26330]:ReturnStatement[26604-26640]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26394-27000]:Block[26704-27310]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[26400-26435]:ExpressionStatement[26710-26745]"
+    }, {
+      "left" : "Node left = n.getFirstChild();",
+      "right" : "Node left = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[26441-26471]:VariableDeclarationStatement[26751-26781]"
+    }, {
+      "left" : "JSType functionType = getJSType(left).restrictByNotNullOrUndefined();",
+      "right" : "JSType functionType = getJSType(left).restrictByNotNullOrUndefined();",
+      "info" : "VariableDeclarationStatement[26476-26545]:VariableDeclarationStatement[26786-26855]"
+    }, {
+      "left" : "if (functionType != null)",
+      "right" : "if (functionType != null)",
+      "info" : "IfStatement[26550-26978]:IfStatement[26860-27288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26576-26978]:Block[26886-27288]"
+    }, {
+      "left" : "if (functionType instanceof FunctionType)",
+      "right" : "if (functionType instanceof FunctionType)",
+      "info" : "IfStatement[26584-26972]:IfStatement[26894-27282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26626-26837]:Block[26936-27147]"
+    }, {
+      "left" : "FunctionType fnType = (FunctionType) functionType;",
+      "right" : "FunctionType fnType = (FunctionType) functionType;",
+      "info" : "VariableDeclarationStatement[26636-26686]:VariableDeclarationStatement[26946-26996]"
+    }, {
+      "left" : "n.setJSType(fnType.getReturnType());",
+      "right" : "n.setJSType(fnType.getReturnType());",
+      "info" : "ExpressionStatement[26695-26731]:ExpressionStatement[27005-27041]"
+    }, {
+      "left" : "updateTypeOfParametersOnClosure(n, fnType);",
+      "right" : "updateTypeOfParametersOnClosure(n, fnType);",
+      "info" : "ExpressionStatement[26740-26783]:ExpressionStatement[27050-27093]"
+    }, {
+      "left" : "updateTypeOfThisOnClosure(n, fnType);",
+      "right" : "updateTypeOfThisOnClosure(n, fnType);",
+      "info" : "ExpressionStatement[26792-26829]:ExpressionStatement[27102-27139]"
+    }, {
+      "left" : "if (functionType.equals(getNativeType(CHECKED_UNKNOWN_TYPE)))",
+      "right" : "if (functionType.equals(getNativeType(CHECKED_UNKNOWN_TYPE)))",
+      "info" : "IfStatement[26843-26972]:IfStatement[27153-27282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26905-26972]:Block[27215-27282]"
+    }, {
+      "left" : "n.setJSType(getNativeType(CHECKED_UNKNOWN_TYPE));",
+      "right" : "n.setJSType(getNativeType(CHECKED_UNKNOWN_TYPE));",
+      "info" : "ExpressionStatement[26915-26964]:ExpressionStatement[27225-27274]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[26983-26996]:ReturnStatement[27293-27306]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27238-27970]:Block[27548-28280]"
+    }, {
+      "left" : "int i = 0;",
+      "right" : "int i = 0;",
+      "info" : "VariableDeclarationStatement[27244-27254]:VariableDeclarationStatement[27554-27564]"
+    }, {
+      "left" : "for (Node iParameter : fnType.getParameters())",
+      "right" : "for (Node iParameter : fnType.getParameters())",
+      "info" : "EnhancedForStatement[27259-27966]:EnhancedForStatement[27569-28276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27306-27966]:Block[27616-28276]"
+    }, {
+      "left" : "JSType iParameterType = iParameter.getJSType();",
+      "right" : "JSType iParameterType = iParameter.getJSType();",
+      "info" : "VariableDeclarationStatement[27314-27361]:VariableDeclarationStatement[27624-27671]"
+    }, {
+      "left" : "if (iParameterType instanceof FunctionType)",
+      "right" : "if (iParameterType instanceof FunctionType)",
+      "info" : "IfStatement[27368-27949]:IfStatement[27678-28259]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27412-27949]:Block[27722-28259]"
+    }, {
+      "left" : "FunctionType iParameterFnType = (FunctionType) iParameterType;",
+      "right" : "FunctionType iParameterFnType = (FunctionType) iParameterType;",
+      "info" : "VariableDeclarationStatement[27422-27484]:VariableDeclarationStatement[27732-27794]"
+    }, {
+      "left" : "if (i + 1 >= n.getChildCount())",
+      "right" : "if (i + 1 >= n.getChildCount())",
+      "info" : "IfStatement[27494-27620]:IfStatement[27804-27930]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27526-27620]:Block[27836-27930]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[27603-27610]:ReturnStatement[27913-27920]"
+    }, {
+      "left" : "Node iArgument = n.getChildAtIndex(i + 1);",
+      "right" : "Node iArgument = n.getChildAtIndex(i + 1);",
+      "info" : "VariableDeclarationStatement[27629-27671]:VariableDeclarationStatement[27939-27981]"
+    }, {
+      "left" : "JSType iArgumentType = getJSType(iArgument);",
+      "right" : "JSType iArgumentType = getJSType(iArgument);",
+      "info" : "VariableDeclarationStatement[27680-27724]:VariableDeclarationStatement[27990-28034]"
+    }, {
+      "left" : "if (iArgument.getType() == Token.FUNCTION &&\n            iArgumentType instanceof FunctionType &&\n            iArgumentType.getJSDocInfo() == null)",
+      "right" : "if (iArgument.getType() == Token.FUNCTION &&\n            iArgumentType instanceof FunctionType &&\n            iArgumentType.getJSDocInfo() == null)",
+      "info" : "IfStatement[27733-27941]:IfStatement[28043-28251]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27881-27941]:Block[28191-28251]"
+    }, {
+      "left" : "iArgument.setJSType(iParameterFnType);",
+      "right" : "iArgument.setJSType(iParameterFnType);",
+      "info" : "ExpressionStatement[27893-27931]:ExpressionStatement[28203-28241]"
+    }, {
+      "left" : "i++;",
+      "right" : "i++;",
+      "info" : "ExpressionStatement[27956-27960]:ExpressionStatement[28266-28270]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28233-31641]:Block[28543-31951]"
+    }, {
+      "left" : "if (fnType.getTemplateTypeName() == null)",
+      "right" : "if (fnType.getTemplateTypeName() == null)",
+      "info" : "IfStatement[28297-28360]:IfStatement[28607-28670]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28339-28360]:Block[28649-28670]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[28347-28354]:ReturnStatement[28657-28664]"
+    }, {
+      "left" : "int i = 0;",
+      "right" : "int i = 0;",
+      "info" : "VariableDeclarationStatement[28366-28376]:VariableDeclarationStatement[28676-28686]"
+    }, {
+      "left" : "for (Node iParameter : fnType.getParameters())",
+      "right" : "for (Node iParameter : fnType.getParameters())",
+      "info" : "EnhancedForStatement[28440-31637]:EnhancedForStatement[28750-31947]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28487-31637]:Block[28797-31947]"
+    }, {
+      "left" : "JSType iParameterType = getJSType(iParameter);",
+      "right" : "JSType iParameterType = getJSType(iParameter);",
+      "info" : "VariableDeclarationStatement[28495-28541]:VariableDeclarationStatement[28805-28851]"
+    }, {
+      "left" : "iParameterType = iParameterType.restrictByNotNullOrUndefined();",
+      "right" : "iParameterType = iParameterType.restrictByNotNullOrUndefined();",
+      "info" : "ExpressionStatement[28548-28611]:ExpressionStatement[28858-28921]"
+    }, {
+      "left" : "if (iParameterType.isTemplateType())",
+      "right" : "if (iParameterType.isTemplateType())",
+      "info" : "IfStatement[28618-31620]:IfStatement[28928-31930]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28655-31620]:Block[28965-31930]"
+    }, {
+      "left" : "if (i + 1 >= n.getChildCount())",
+      "right" : "if (i + 1 >= n.getChildCount())",
+      "info" : "IfStatement[28715-28840]:IfStatement[29025-29150]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28747-28840]:Block[29057-29150]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[28823-28830]:ReturnStatement[29133-29140]"
+    }, {
+      "left" : "Node iArgument = n.getChildAtIndex(i + 1);",
+      "right" : "Node iArgument = n.getChildAtIndex(i + 1);",
+      "info" : "VariableDeclarationStatement[28849-28891]:VariableDeclarationStatement[29159-29201]"
+    }, {
+      "left" : "JSType iArgumentType = getJSType(iArgument);",
+      "right" : "JSType iArgumentType = getJSType(iArgument);",
+      "info" : "VariableDeclarationStatement[28900-28944]:VariableDeclarationStatement[29210-29254]"
+    }, {
+      "left" : "if (iArgumentType != null)",
+      "right" : "if (iArgumentType != null)",
+      "info" : "IfStatement[28953-31612]:IfStatement[29263-31922]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28980-31612]:Block[29290-31922]"
+    }, {
+      "left" : "iArgumentType = iArgumentType.restrictByNotNullOrUndefined();",
+      "right" : "iArgumentType = iArgumentType.restrictByNotNullOrUndefined();",
+      "info" : "ExpressionStatement[28992-29053]:ExpressionStatement[29302-29363]"
+    }, {
+      "left" : "if (!(iArgumentType instanceof ObjectType))",
+      "right" : "if (!(iArgumentType instanceof ObjectType))",
+      "info" : "IfStatement[29064-29307]:IfStatement[29374-29617]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29108-29307]:Block[29418-29617]"
+    }, {
+      "left" : "compiler.report(\n                JSError.make(NodeUtil.getSourceName(iArgument), iArgument,\n                             TEMPLATE_TYPE_NOT_OBJECT_TYPE));",
+      "right" : "compiler.report(\n                JSError.make(NodeUtil.getSourceName(iArgument), iArgument,\n                             TEMPLATE_TYPE_NOT_OBJECT_TYPE));",
+      "info" : "ExpressionStatement[29122-29275]:ExpressionStatement[29432-29585]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[29288-29295]:ReturnStatement[29598-29605]"
+    }, {
+      "left" : "boolean foundTemplateTypeOfThisParameter = false;",
+      "right" : "boolean foundTemplateTypeOfThisParameter = false;",
+      "info" : "VariableDeclarationStatement[29388-29437]:VariableDeclarationStatement[29698-29747]"
+    }, {
+      "left" : "int j = 0;",
+      "right" : "int j = 0;",
+      "info" : "VariableDeclarationStatement[29448-29458]:VariableDeclarationStatement[29758-29768]"
+    }, {
+      "left" : "for (Node jParameter : fnType.getParameters())",
+      "right" : "for (Node jParameter : fnType.getParameters())",
+      "info" : "EnhancedForStatement[29469-31316]:EnhancedForStatement[29779-31626]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29516-31316]:Block[29826-31626]"
+    }, {
+      "left" : "JSType jParameterType = getJSType(jParameter);",
+      "right" : "JSType jParameterType = getJSType(jParameter);",
+      "info" : "VariableDeclarationStatement[29530-29576]:VariableDeclarationStatement[29840-29886]"
+    }, {
+      "left" : "if (jParameterType instanceof FunctionType)",
+      "right" : "if (jParameterType instanceof FunctionType)",
+      "info" : "IfStatement[29589-31287]:IfStatement[29899-31597]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29633-31287]:Block[29943-31597]"
+    }, {
+      "left" : "FunctionType jParameterFnType = (FunctionType) jParameterType;",
+      "right" : "FunctionType jParameterFnType = (FunctionType) jParameterType;",
+      "info" : "VariableDeclarationStatement[29649-29711]:VariableDeclarationStatement[29959-30021]"
+    }, {
+      "left" : "if (jParameterFnType.getTypeOfThis().equals(iParameterType))",
+      "right" : "if (jParameterFnType.getTypeOfThis().equals(iParameterType))",
+      "info" : "IfStatement[29726-31273]:IfStatement[30036-31583]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29787-31273]:Block[30097-31583]"
+    }, {
+      "left" : "foundTemplateTypeOfThisParameter = true;",
+      "right" : "foundTemplateTypeOfThisParameter = true;",
+      "info" : "ExpressionStatement[29805-29845]:ExpressionStatement[30115-30155]"
+    }, {
+      "left" : "if (j + 1 >= n.getChildCount())",
+      "right" : "if (j + 1 >= n.getChildCount())",
+      "info" : "IfStatement[29920-30069]:IfStatement[30230-30379]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29952-30069]:Block[30262-30379]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[30044-30051]:ReturnStatement[30354-30361]"
+    }, {
+      "left" : "Node jArgument = n.getChildAtIndex(j + 1);",
+      "right" : "Node jArgument = n.getChildAtIndex(j + 1);",
+      "info" : "VariableDeclarationStatement[30086-30128]:VariableDeclarationStatement[30396-30438]"
+    }, {
+      "left" : "JSType jArgumentType = getJSType(jArgument);",
+      "right" : "JSType jArgumentType = getJSType(jArgument);",
+      "info" : "VariableDeclarationStatement[30145-30189]:VariableDeclarationStatement[30455-30499]"
+    }, {
+      "left" : "if (jArgument.getType() == Token.FUNCTION &&\n                    jArgumentType instanceof FunctionType)",
+      "right" : "if (jArgument.getType() == Token.FUNCTION &&\n                    jArgumentType instanceof FunctionType)",
+      "info" : "IfStatement[30206-31137]:IfStatement[30516-31447]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30310-31137]:Block[30620-31447]"
+    }, {
+      "left" : "FunctionType jArgumentFnType =(FunctionType) jArgumentType;",
+      "right" : "FunctionType jArgumentFnType =(FunctionType) jArgumentType;",
+      "info" : "VariableDeclarationStatement[30455-30514]:VariableDeclarationStatement[30765-30824]"
+    }, {
+      "left" : "if (jArgumentFnType.getTypeOfThis().isUnknownType())",
+      "right" : "if (jArgumentFnType.getTypeOfThis().isUnknownType())",
+      "info" : "IfStatement[30533-31119]:IfStatement[30843-31429]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30586-31119]:Block[30896-31429]"
+    }, {
+      "left" : "jArgument.setJSType(\n                        new FunctionType(\n                            registry, jArgumentFnType.getReferenceName(),\n                            jArgumentFnType.getSource(),\n                            jArgumentFnType.getParametersNode(),\n                            jArgumentFnType.getReturnType(),\n                            (ObjectType) iArgumentType));",
+      "right" : "jArgument.setJSType(\n                        new FunctionType(\n                            registry, jArgumentFnType.getReferenceName(),\n                            jArgumentFnType.getSource(),\n                            jArgumentFnType.getParametersNode(),\n                            jArgumentFnType.getReturnType(),\n                            (ObjectType) iArgumentType));",
+      "info" : "ExpressionStatement[30722-31099]:ExpressionStatement[31032-31409]"
+    }, {
+      "left" : "j++;",
+      "right" : "j++;",
+      "info" : "ExpressionStatement[31300-31304]:ExpressionStatement[31610-31614]"
+    }, {
+      "left" : "if (!foundTemplateTypeOfThisParameter)",
+      "right" : "if (!foundTemplateTypeOfThisParameter)",
+      "info" : "IfStatement[31328-31602]:IfStatement[31638-31912]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31367-31602]:Block[31677-31912]"
+    }, {
+      "left" : "Node source = fnType.getSource();",
+      "right" : "Node source = fnType.getSource();",
+      "info" : "VariableDeclarationStatement[31381-31414]:VariableDeclarationStatement[31691-31724]"
+    }, {
+      "left" : "compiler.report(JSError.make(NodeUtil.getSourceName(source), source,\n                                         TEMPLATE_TYPE_OF_THIS_EXPECTED));",
+      "right" : "compiler.report(JSError.make(NodeUtil.getSourceName(source), source,\n                                         TEMPLATE_TYPE_OF_THIS_EXPECTED));",
+      "info" : "ExpressionStatement[31427-31570]:ExpressionStatement[31737-31880]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[31583-31590]:ReturnStatement[31893-31900]"
+    }, {
+      "left" : "i++;",
+      "right" : "i++;",
+      "info" : "ExpressionStatement[31627-31631]:ExpressionStatement[31937-31941]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31700-32442]:Block[32010-32752]"
+    }, {
+      "left" : "Node constructor = n.getFirstChild();",
+      "right" : "Node constructor = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[31706-31743]:VariableDeclarationStatement[32016-32053]"
+    }, {
+      "left" : "scope = traverse(constructor, scope);",
+      "right" : "scope = traverse(constructor, scope);",
+      "info" : "ExpressionStatement[31748-31785]:ExpressionStatement[32058-32095]"
+    }, {
+      "left" : "JSType constructorType = constructor.getJSType();",
+      "right" : "JSType constructorType = constructor.getJSType();",
+      "info" : "VariableDeclarationStatement[31791-31840]:VariableDeclarationStatement[32101-32150]"
+    }, {
+      "left" : "JSType type = null;",
+      "right" : "JSType type = null;",
+      "info" : "VariableDeclarationStatement[31845-31864]:VariableDeclarationStatement[32155-32174]"
+    }, {
+      "left" : "if (constructorType != null)",
+      "right" : "if (constructorType != null)",
+      "info" : "IfStatement[31869-32275]:IfStatement[32179-32585]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31898-32275]:Block[32208-32585]"
+    }, {
+      "left" : "constructorType = constructorType.restrictByNotNullOrUndefined();",
+      "right" : "constructorType = constructorType.restrictByNotNullOrUndefined();",
+      "info" : "ExpressionStatement[31906-31971]:ExpressionStatement[32216-32281]"
+    }, {
+      "left" : "if (constructorType.isUnknownType())",
+      "right" : "if (constructorType.isUnknownType())",
+      "info" : "IfStatement[31978-32269]:IfStatement[32288-32579]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32015-32068]:Block[32325-32378]"
+    }, {
+      "left" : "type = getNativeType(UNKNOWN_TYPE);",
+      "right" : "type = getNativeType(UNKNOWN_TYPE);",
+      "info" : "ExpressionStatement[32025-32060]:ExpressionStatement[32335-32370]"
+    }, {
+      "left" : "if (constructorType instanceof FunctionType)",
+      "right" : "if (constructorType instanceof FunctionType)",
+      "info" : "IfStatement[32074-32269]:IfStatement[32384-32579]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32119-32269]:Block[32429-32579]"
+    }, {
+      "left" : "FunctionType ct = (FunctionType) constructorType;",
+      "right" : "FunctionType ct = (FunctionType) constructorType;",
+      "info" : "VariableDeclarationStatement[32129-32178]:VariableDeclarationStatement[32439-32488]"
+    }, {
+      "left" : "if (ct.isConstructor())",
+      "right" : "if (ct.isConstructor())",
+      "info" : "IfStatement[32187-32261]:IfStatement[32497-32571]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32211-32261]:Block[32521-32571]"
+    }, {
+      "left" : "type = ct.getInstanceType();",
+      "right" : "type = ct.getInstanceType();",
+      "info" : "ExpressionStatement[32223-32251]:ExpressionStatement[32533-32561]"
+    }, {
+      "left" : "n.setJSType(type);",
+      "right" : "n.setJSType(type);",
+      "info" : "ExpressionStatement[32280-32298]:ExpressionStatement[32590-32608]"
+    }, {
+      "left" : "for (Node arg = constructor.getNext(); arg != null; arg = arg.getNext())",
+      "right" : "for (Node arg = constructor.getNext(); arg != null; arg = arg.getNext())",
+      "info" : "ForStatement[32304-32420]:ForStatement[32614-32730]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32377-32420]:Block[32687-32730]"
+    }, {
+      "left" : "scope = traverse(arg, scope);",
+      "right" : "scope = traverse(arg, scope);",
+      "info" : "ExpressionStatement[32385-32414]:ExpressionStatement[32695-32724]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[32425-32438]:ReturnStatement[32735-32748]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32510-32572]:Block[32820-32882]"
+    }, {
+      "left" : "return traverseShortCircuitingBinOp(n, scope, true);",
+      "right" : "return traverseShortCircuitingBinOp(n, scope, true);",
+      "info" : "ReturnStatement[32516-32568]:ReturnStatement[32826-32878]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32636-32771]:Block[32946-33081]"
+    }, {
+      "left" : "for (Node el = n.getFirstChild(); el != null; el = el.getNext())",
+      "right" : "for (Node el = n.getFirstChild(); el != null; el = el.getNext())",
+      "info" : "ForStatement[32642-32749]:ForStatement[32952-33059]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32707-32749]:Block[33017-33059]"
+    }, {
+      "left" : "scope = traverse(el, scope);",
+      "right" : "scope = traverse(el, scope);",
+      "info" : "ExpressionStatement[32715-32743]:ExpressionStatement[33025-33053]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[32754-32767]:ReturnStatement[33064-33077]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32834-33190]:Block[33144-33500]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[32840-32875]:ExpressionStatement[33150-33185]"
+    }, {
+      "left" : "ObjectType objType = ObjectType.cast(\n        getJSType(n.getFirstChild()).restrictByNotNullOrUndefined());",
+      "right" : "ObjectType objType = ObjectType.cast(\n        getJSType(n.getFirstChild()).restrictByNotNullOrUndefined());",
+      "info" : "VariableDeclarationStatement[32880-32987]:VariableDeclarationStatement[33190-33297]"
+    }, {
+      "left" : "if (objType != null)",
+      "right" : "if (objType != null)",
+      "info" : "IfStatement[32992-33129]:IfStatement[33302-33439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33013-33129]:Block[33323-33439]"
+    }, {
+      "left" : "JSType type = objType.getParameterType();",
+      "right" : "JSType type = objType.getParameterType();",
+      "info" : "VariableDeclarationStatement[33021-33062]:VariableDeclarationStatement[33331-33372]"
+    }, {
+      "left" : "if (type != null)",
+      "right" : "if (type != null)",
+      "info" : "IfStatement[33069-33123]:IfStatement[33379-33433]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33087-33123]:Block[33397-33433]"
+    }, {
+      "left" : "n.setJSType(type);",
+      "right" : "n.setJSType(type);",
+      "info" : "ExpressionStatement[33097-33115]:ExpressionStatement[33407-33425]"
+    }, {
+      "left" : "return dereferencePointer(n.getFirstChild(), scope);",
+      "right" : "return dereferencePointer(n.getFirstChild(), scope);",
+      "info" : "ReturnStatement[33134-33186]:ReturnStatement[33444-33496]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33253-33540]:Block[33563-33850]"
+    }, {
+      "left" : "Node objNode = n.getFirstChild();",
+      "right" : "Node objNode = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[33259-33292]:VariableDeclarationStatement[33569-33602]"
+    }, {
+      "left" : "Node property = n.getLastChild();",
+      "right" : "Node property = n.getLastChild();",
+      "info" : "VariableDeclarationStatement[33297-33330]:VariableDeclarationStatement[33607-33640]"
+    }, {
+      "left" : "scope = traverseChildren(n, scope);",
+      "right" : "scope = traverseChildren(n, scope);",
+      "info" : "ExpressionStatement[33335-33370]:ExpressionStatement[33645-33680]"
+    }, {
+      "left" : "n.setJSType(\n        getPropertyType(\n            objNode.getJSType(), property.getString(), n, scope));",
+      "right" : "n.setJSType(\n        getPropertyType(\n            objNode.getJSType(), property.getString(), n, scope));",
+      "info" : "ExpressionStatement[33375-33479]:ExpressionStatement[33685-33789]"
+    }, {
+      "left" : "return dereferencePointer(n.getFirstChild(), scope);",
+      "right" : "return dereferencePointer(n.getFirstChild(), scope);",
+      "info" : "ReturnStatement[33484-33536]:ReturnStatement[33794-33846]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33708-34004]:Block[34018-34314]"
+    }, {
+      "left" : "if (n.getType() == Token.NAME)",
+      "right" : "if (n.getType() == Token.NAME)",
+      "info" : "IfStatement[33714-33982]:IfStatement[34024-34292]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33745-33982]:Block[34055-34292]"
+    }, {
+      "left" : "JSType type = getJSType(n);",
+      "right" : "JSType type = getJSType(n);",
+      "info" : "VariableDeclarationStatement[33753-33780]:VariableDeclarationStatement[34063-34090]"
+    }, {
+      "left" : "JSType narrowed = type.restrictByNotNullOrUndefined();",
+      "right" : "JSType narrowed = type.restrictByNotNullOrUndefined();",
+      "info" : "VariableDeclarationStatement[33787-33841]:VariableDeclarationStatement[34097-34151]"
+    }, {
+      "left" : "if (type != narrowed)",
+      "right" : "if (type != narrowed)",
+      "info" : "IfStatement[33848-33976]:IfStatement[34158-34286]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33870-33976]:Block[34180-34286]"
+    }, {
+      "left" : "scope = scope.createChildFlowScope();",
+      "right" : "scope = scope.createChildFlowScope();",
+      "info" : "ExpressionStatement[33880-33917]:ExpressionStatement[34190-34227]"
+    }, {
+      "left" : "redeclare(scope, n.getString(), narrowed);",
+      "right" : "redeclare(scope, n.getString(), narrowed);",
+      "info" : "ExpressionStatement[33926-33968]:ExpressionStatement[34236-34278]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[33987-34000]:ReturnStatement[34297-34310]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34103-35262]:Block[34413-35572]"
+    }, {
+      "left" : "String qualifiedName = n.getQualifiedName();",
+      "right" : "String qualifiedName = n.getQualifiedName();",
+      "info" : "VariableDeclarationStatement[34183-34227]:VariableDeclarationStatement[34493-34537]"
+    }, {
+      "left" : "StaticSlot<JSType> var = scope.getSlot(qualifiedName);",
+      "right" : "StaticSlot<JSType> var = scope.getSlot(qualifiedName);",
+      "info" : "VariableDeclarationStatement[34232-34286]:VariableDeclarationStatement[34542-34596]"
+    }, {
+      "left" : "if (var != null)",
+      "right" : "if (var != null)",
+      "info" : "IfStatement[34291-34765]:IfStatement[34601-35075]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34308-34765]:Block[34618-35075]"
+    }, {
+      "left" : "JSType varType = var.getType();",
+      "right" : "JSType varType = var.getType();",
+      "info" : "VariableDeclarationStatement[34316-34347]:VariableDeclarationStatement[34626-34657]"
+    }, {
+      "left" : "if (varType != null)",
+      "right" : "if (varType != null)",
+      "info" : "IfStatement[34354-34759]:IfStatement[34664-35069]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34375-34759]:Block[34685-35069]"
+    }, {
+      "left" : "if (varType.equals(getNativeType(UNKNOWN_TYPE)) &&\n            var != syntacticScope.getSlot(qualifiedName))",
+      "right" : "if (varType.equals(getNativeType(UNKNOWN_TYPE)) &&\n            var != syntacticScope.getSlot(qualifiedName))",
+      "info" : "IfStatement[34385-34751]:IfStatement[34695-35061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34494-34708]:Block[34804-35018]"
+    }, {
+      "left" : "return getNativeType(CHECKED_UNKNOWN_TYPE);",
+      "right" : "return getNativeType(CHECKED_UNKNOWN_TYPE);",
+      "info" : "ReturnStatement[34655-34698]:ReturnStatement[34965-35008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34714-34751]:Block[35024-35061]"
+    }, {
+      "left" : "return varType;",
+      "right" : "return varType;",
+      "info" : "ReturnStatement[34726-34741]:ReturnStatement[35036-35051]"
+    }, {
+      "left" : "JSType propertyType = null;",
+      "right" : "JSType propertyType = null;",
+      "info" : "VariableDeclarationStatement[34771-34798]:VariableDeclarationStatement[35081-35108]"
+    }, {
+      "left" : "if (objType != null)",
+      "right" : "if (objType != null)",
+      "info" : "IfStatement[34803-34888]:IfStatement[35113-35198]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34824-34888]:Block[35134-35198]"
+    }, {
+      "left" : "propertyType = objType.findPropertyType(propName);",
+      "right" : "propertyType = objType.findPropertyType(propName);",
+      "info" : "ExpressionStatement[34832-34882]:ExpressionStatement[35142-35192]"
+    }, {
+      "left" : "if ((propertyType == null || propertyType.isUnknownType()) &&\n        qualifiedName != null)",
+      "right" : "if ((propertyType == null || propertyType.isUnknownType()) &&\n        qualifiedName != null)",
+      "info" : "IfStatement[34894-35232]:IfStatement[35204-35542]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34987-35232]:Block[35297-35542]"
+    }, {
+      "left" : "ObjectType regType = ObjectType.cast(registry.getType(qualifiedName));",
+      "right" : "ObjectType regType = ObjectType.cast(registry.getType(qualifiedName));",
+      "info" : "VariableDeclarationStatement[35070-35140]:VariableDeclarationStatement[35380-35450]"
+    }, {
+      "left" : "if (regType != null)",
+      "right" : "if (regType != null)",
+      "info" : "IfStatement[35147-35226]:IfStatement[35457-35536]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35168-35226]:Block[35478-35536]"
+    }, {
+      "left" : "propertyType = regType.getConstructor();",
+      "right" : "propertyType = regType.getConstructor();",
+      "info" : "ExpressionStatement[35178-35218]:ExpressionStatement[35488-35528]"
+    }, {
+      "left" : "return propertyType;",
+      "right" : "return propertyType;",
+      "info" : "ReturnStatement[35238-35258]:ReturnStatement[35548-35568]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35329-35392]:Block[35639-35702]"
+    }, {
+      "left" : "return traverseShortCircuitingBinOp(n, scope, false);",
+      "right" : "return traverseShortCircuitingBinOp(n, scope, false);",
+      "info" : "ReturnStatement[35335-35388]:ReturnStatement[35645-35698]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35503-37757]:Block[35813-38067]"
+    }, {
+      "left" : "Node left = n.getFirstChild();",
+      "right" : "Node left = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[35509-35539]:VariableDeclarationStatement[35819-35849]"
+    }, {
+      "left" : "Node right = n.getLastChild();",
+      "right" : "Node right = n.getLastChild();",
+      "info" : "VariableDeclarationStatement[35544-35574]:VariableDeclarationStatement[35854-35884]"
+    }, {
+      "left" : "BooleanOutcomePair leftLiterals =\n        traverseWithinShortCircuitingBinOp(left,\n            scope.createChildFlowScope());",
+      "right" : "BooleanOutcomePair leftLiterals =\n        traverseWithinShortCircuitingBinOp(left,\n            scope.createChildFlowScope());",
+      "info" : "VariableDeclarationStatement[35606-35731]:VariableDeclarationStatement[35916-36041]"
+    }, {
+      "left" : "JSType leftType = left.getJSType();",
+      "right" : "JSType leftType = left.getJSType();",
+      "info" : "VariableDeclarationStatement[35736-35771]:VariableDeclarationStatement[36046-36081]"
+    }, {
+      "left" : "FlowScope rightScope = reverseInterpreter.\n        getPreciserScopeKnowingConditionOutcome(\n            left, leftLiterals.getOutcomeFlowScope(left.getType(), condition),\n            condition);",
+      "right" : "FlowScope rightScope = reverseInterpreter.\n        getPreciserScopeKnowingConditionOutcome(\n            left, leftLiterals.getOutcomeFlowScope(left.getType(), condition),\n            condition);",
+      "info" : "VariableDeclarationStatement[35895-36089]:VariableDeclarationStatement[36205-36399]"
+    }, {
+      "left" : "BooleanOutcomePair rightLiterals =\n        traverseWithinShortCircuitingBinOp(\n            right, rightScope.createChildFlowScope());",
+      "right" : "BooleanOutcomePair rightLiterals =\n        traverseWithinShortCircuitingBinOp(\n            right, rightScope.createChildFlowScope());",
+      "info" : "VariableDeclarationStatement[36122-36255]:VariableDeclarationStatement[36432-36565]"
+    }, {
+      "left" : "JSType rightType = right.getJSType();",
+      "right" : "JSType rightType = right.getJSType();",
+      "info" : "VariableDeclarationStatement[36260-36297]:VariableDeclarationStatement[36570-36607]"
+    }, {
+      "left" : "JSType type;",
+      "right" : "JSType type;",
+      "info" : "VariableDeclarationStatement[36303-36315]:VariableDeclarationStatement[36613-36625]"
+    }, {
+      "left" : "BooleanOutcomePair literals;",
+      "right" : "BooleanOutcomePair literals;",
+      "info" : "VariableDeclarationStatement[36320-36348]:VariableDeclarationStatement[36630-36658]"
+    }, {
+      "left" : "if (leftType != null && rightType != null)",
+      "right" : "if (leftType != null && rightType != null)",
+      "info" : "IfStatement[36353-37708]:IfStatement[36663-38018]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36396-37485]:Block[36706-37795]"
+    }, {
+      "left" : "leftType = leftType.getRestrictedTypeGivenToBooleanOutcome(!condition);",
+      "right" : "leftType = leftType.getRestrictedTypeGivenToBooleanOutcome(!condition);",
+      "info" : "ExpressionStatement[36404-36475]:ExpressionStatement[36714-36785]"
+    }, {
+      "left" : "if (leftLiterals.toBooleanOutcomes ==\n          BooleanLiteralSet.get(!condition))",
+      "right" : "if (leftLiterals.toBooleanOutcomes ==\n          BooleanLiteralSet.get(!condition))",
+      "info" : "IfStatement[36482-37023]:IfStatement[36792-37333]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36565-36727]:Block[36875-37037]"
+    }, {
+      "left" : "type = leftType;",
+      "right" : "type = leftType;",
+      "info" : "ExpressionStatement[36670-36686]:ExpressionStatement[36980-36996]"
+    }, {
+      "left" : "literals = leftLiterals;",
+      "right" : "literals = leftLiterals;",
+      "info" : "ExpressionStatement[36695-36719]:ExpressionStatement[37005-37029]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36733-37023]:Block[37043-37333]"
+    }, {
+      "left" : "type = leftType.getLeastSupertype(rightType);",
+      "right" : "type = leftType.getLeastSupertype(rightType);",
+      "info" : "ExpressionStatement[36876-36921]:ExpressionStatement[37186-37231]"
+    }, {
+      "left" : "literals =\n            getBooleanOutcomePair(leftLiterals, rightLiterals, condition);",
+      "right" : "literals =\n            getBooleanOutcomePair(leftLiterals, rightLiterals, condition);",
+      "info" : "ExpressionStatement[36930-37015]:ExpressionStatement[37240-37325]"
+    }, {
+      "left" : "if (literals.booleanValues == BooleanLiteralSet.EMPTY &&\n          getNativeType(BOOLEAN_TYPE).isSubtype(type))",
+      "right" : "if (literals.booleanValues == BooleanLiteralSet.EMPTY &&\n          getNativeType(BOOLEAN_TYPE).isSubtype(type))",
+      "info" : "IfStatement[37152-37479]:IfStatement[37462-37789]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37264-37479]:Block[37574-37789]"
+    }, {
+      "left" : "if (type instanceof UnionType)",
+      "right" : "if (type instanceof UnionType)",
+      "info" : "IfStatement[37329-37471]:IfStatement[37639-37781]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37360-37471]:Block[37670-37781]"
+    }, {
+      "left" : "type = ((UnionType) type).getRestrictedUnion(\n              getNativeType(BOOLEAN_TYPE));",
+      "right" : "type = ((UnionType) type).getRestrictedUnion(\n              getNativeType(BOOLEAN_TYPE));",
+      "info" : "ExpressionStatement[37372-37461]:ExpressionStatement[37682-37771]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37491-37708]:Block[37801-38018]"
+    }, {
+      "left" : "type = null;",
+      "right" : "type = null;",
+      "info" : "ExpressionStatement[37499-37511]:ExpressionStatement[37809-37821]"
+    }, {
+      "left" : "literals = new BooleanOutcomePair(\n          BooleanLiteralSet.BOTH, BooleanLiteralSet.BOTH,\n          leftLiterals.getJoinedFlowScope(),\n          rightLiterals.getJoinedFlowScope());",
+      "right" : "literals = new BooleanOutcomePair(\n          BooleanLiteralSet.BOTH, BooleanLiteralSet.BOTH,\n          leftLiterals.getJoinedFlowScope(),\n          rightLiterals.getJoinedFlowScope());",
+      "info" : "ExpressionStatement[37518-37702]:ExpressionStatement[37828-38012]"
+    }, {
+      "left" : "n.setJSType(type);",
+      "right" : "n.setJSType(type);",
+      "info" : "ExpressionStatement[37713-37731]:ExpressionStatement[38023-38041]"
+    }, {
+      "left" : "return literals;",
+      "right" : "return literals;",
+      "info" : "ReturnStatement[37737-37753]:ReturnStatement[38047-38063]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37854-38123]:Block[38164-38433]"
+    }, {
+      "left" : "switch (n.getType()) {\n      case Token.AND:\n        return traverseAnd(n, scope);\n\n      case Token.OR:\n        return traverseOr(n, scope);\n\n      default:\n        scope = traverse(n, scope);\n        return newBooleanOutcomePair(n.getJSType(), scope);\n    }",
+      "right" : "switch (n.getType()) {\n      case Token.AND:\n        return traverseAnd(n, scope);\n\n      case Token.OR:\n        return traverseOr(n, scope);\n\n      default:\n        scope = traverse(n, scope);\n        return newBooleanOutcomePair(n.getJSType(), scope);\n    }",
+      "info" : "SwitchStatement[37860-38119]:SwitchStatement[38170-38429]"
+    }, {
+      "left" : "case Token.AND:",
+      "right" : "case Token.AND:",
+      "info" : "SwitchCase[37889-37904]:SwitchCase[38199-38214]"
+    }, {
+      "left" : "return traverseAnd(n, scope);",
+      "right" : "return traverseAnd(n, scope);",
+      "info" : "ReturnStatement[37913-37942]:ReturnStatement[38223-38252]"
+    }, {
+      "left" : "case Token.OR:",
+      "right" : "case Token.OR:",
+      "info" : "SwitchCase[37950-37964]:SwitchCase[38260-38274]"
+    }, {
+      "left" : "return traverseOr(n, scope);",
+      "right" : "return traverseOr(n, scope);",
+      "info" : "ReturnStatement[37973-38001]:ReturnStatement[38283-38311]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[38009-38017]:SwitchCase[38319-38327]"
+    }, {
+      "left" : "scope = traverse(n, scope);",
+      "right" : "scope = traverse(n, scope);",
+      "info" : "ExpressionStatement[38026-38053]:ExpressionStatement[38336-38363]"
+    }, {
+      "left" : "return newBooleanOutcomePair(n.getJSType(), scope);",
+      "right" : "return newBooleanOutcomePair(n.getJSType(), scope);",
+      "info" : "ReturnStatement[38062-38113]:ReturnStatement[38372-38423]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38460-38759]:Block[38770-39069]"
+    }, {
+      "left" : "return new BooleanOutcomePair(\n        getBooleanOutcomes(left.toBooleanOutcomes, right.toBooleanOutcomes,\n                           condition),\n        getBooleanOutcomes(left.booleanValues, right.booleanValues, condition),\n        left.getJoinedFlowScope(), right.getJoinedFlowScope());",
+      "right" : "return new BooleanOutcomePair(\n        getBooleanOutcomes(left.toBooleanOutcomes, right.toBooleanOutcomes,\n                           condition),\n        getBooleanOutcomes(left.booleanValues, right.booleanValues, condition),\n        left.getJoinedFlowScope(), right.getJoinedFlowScope());",
+      "info" : "ReturnStatement[38466-38755]:ReturnStatement[38776-39065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39538-39621]:Block[39848-39931]"
+    }, {
+      "left" : "return right.union(left.intersection(BooleanLiteralSet.get(!condition)));",
+      "right" : "return right.union(left.intersection(BooleanLiteralSet.get(!condition)));",
+      "info" : "ReturnStatement[39544-39617]:ReturnStatement[39854-39927]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40497-40666]:Block[40807-40976]"
+    }, {
+      "left" : "this.toBooleanOutcomes = toBooleanOutcomes;",
+      "right" : "this.toBooleanOutcomes = toBooleanOutcomes;",
+      "info" : "ExpressionStatement[40505-40548]:ExpressionStatement[40815-40858]"
+    }, {
+      "left" : "this.booleanValues = booleanValues;",
+      "right" : "this.booleanValues = booleanValues;",
+      "info" : "ExpressionStatement[40555-40590]:ExpressionStatement[40865-40900]"
+    }, {
+      "left" : "this.leftScope = leftScope;",
+      "right" : "this.leftScope = leftScope;",
+      "info" : "ExpressionStatement[40597-40624]:ExpressionStatement[40907-40934]"
+    }, {
+      "left" : "this.rightScope = rightScope;",
+      "right" : "this.rightScope = rightScope;",
+      "info" : "ExpressionStatement[40631-40660]:ExpressionStatement[40941-40970]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40827-41056]:Block[41137-41366]"
+    }, {
+      "left" : "if (joinedScope == null)",
+      "right" : "if (joinedScope == null)",
+      "info" : "IfStatement[40835-41024]:IfStatement[41145-41334]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40860-41024]:Block[41170-41334]"
+    }, {
+      "left" : "if (leftScope == rightScope)",
+      "right" : "if (leftScope == rightScope)",
+      "info" : "IfStatement[40870-41016]:IfStatement[41180-41326]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40899-40946]:Block[41209-41256]"
+    }, {
+      "left" : "joinedScope = rightScope;",
+      "right" : "joinedScope = rightScope;",
+      "info" : "ExpressionStatement[40911-40936]:ExpressionStatement[41221-41246]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40952-41016]:Block[41262-41326]"
+    }, {
+      "left" : "joinedScope = join(leftScope, rightScope);",
+      "right" : "joinedScope = join(leftScope, rightScope);",
+      "info" : "ExpressionStatement[40964-41006]:ExpressionStatement[41274-41316]"
+    }, {
+      "left" : "return joinedScope;",
+      "right" : "return joinedScope;",
+      "info" : "ReturnStatement[41031-41050]:ReturnStatement[41341-41360]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41228-41479]:Block[41538-41789]"
+    }, {
+      "left" : "if (nodeType == Token.AND && outcome ||\n          nodeType == Token.OR && !outcome)",
+      "right" : "if (nodeType == Token.AND && outcome ||\n          nodeType == Token.OR && !outcome)",
+      "info" : "IfStatement[41236-41473]:IfStatement[41546-41783]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41320-41421]:Block[41630-41731]"
+    }, {
+      "left" : "return rightScope;",
+      "right" : "return rightScope;",
+      "info" : "ReturnStatement[41395-41413]:ReturnStatement[41705-41723]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41427-41473]:Block[41737-41783]"
+    }, {
+      "left" : "return getJoinedFlowScope();",
+      "right" : "return getJoinedFlowScope();",
+      "info" : "ReturnStatement[41437-41465]:ReturnStatement[41747-41775]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41579-41965]:Block[41889-42275]"
+    }, {
+      "left" : "if (jsType == null)",
+      "right" : "if (jsType == null)",
+      "info" : "IfStatement[41585-41730]:IfStatement[41895-42040]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41605-41730]:Block[41915-42040]"
+    }, {
+      "left" : "return new BooleanOutcomePair(\n          BooleanLiteralSet.BOTH, BooleanLiteralSet.BOTH, flowScope, flowScope);",
+      "right" : "return new BooleanOutcomePair(\n          BooleanLiteralSet.BOTH, BooleanLiteralSet.BOTH, flowScope, flowScope);",
+      "info" : "ReturnStatement[41613-41724]:ReturnStatement[41923-42034]"
+    }, {
+      "left" : "return new BooleanOutcomePair(jsType.getPossibleToBooleanOutcomes(),\n        registry.getNativeType(BOOLEAN_TYPE).isSubtype(jsType) ?\n            BooleanLiteralSet.BOTH : BooleanLiteralSet.EMPTY,\n        flowScope, flowScope);",
+      "right" : "return new BooleanOutcomePair(jsType.getPossibleToBooleanOutcomes(),\n        registry.getNativeType(BOOLEAN_TYPE).isSubtype(jsType) ?\n            BooleanLiteralSet.BOTH : BooleanLiteralSet.EMPTY,\n        flowScope, flowScope);",
+      "info" : "ReturnStatement[41735-41961]:ReturnStatement[42045-42271]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42041-42248]:Block[42351-42558]"
+    }, {
+      "left" : "if (varType == null)",
+      "right" : "if (varType == null)",
+      "info" : "IfStatement[42047-42133]:IfStatement[42357-42443]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42068-42133]:Block[42378-42443]"
+    }, {
+      "left" : "varType = getNativeType(JSTypeNative.UNKNOWN_TYPE);",
+      "right" : "varType = getNativeType(JSTypeNative.UNKNOWN_TYPE);",
+      "info" : "ExpressionStatement[42076-42127]:ExpressionStatement[42386-42437]"
+    }, {
+      "left" : "if (unflowableVarNames.contains(varName))",
+      "right" : "if (unflowableVarNames.contains(varName))",
+      "info" : "IfStatement[42138-42201]:IfStatement[42448-42511]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42180-42201]:Block[42490-42511]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[42188-42195]:ReturnStatement[42498-42505]"
+    }, {
+      "left" : "scope.inferSlotType(varName, varType);",
+      "right" : "scope.inferSlotType(varName, varType);",
+      "info" : "ExpressionStatement[42206-42244]:ExpressionStatement[42516-42554]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42391-42819]:Block[42701-43129]"
+    }, {
+      "left" : "JSType jsType = n.getJSType();",
+      "right" : "JSType jsType = n.getJSType();",
+      "info" : "VariableDeclarationStatement[42397-42427]:VariableDeclarationStatement[42707-42737]"
+    }, {
+      "left" : "if (jsType == null)",
+      "right" : "if (jsType == null)",
+      "info" : "IfStatement[42432-42815]:IfStatement[42742-43125]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42452-42781]:Block[42762-43091]"
+    }, {
+      "left" : "return getNativeType(UNKNOWN_TYPE);",
+      "right" : "return getNativeType(UNKNOWN_TYPE);",
+      "info" : "ReturnStatement[42740-42775]:ReturnStatement[43050-43085]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42787-42815]:Block[43097-43125]"
+    }, {
+      "left" : "return jsType;",
+      "right" : "return jsType;",
+      "info" : "ReturnStatement[42795-42809]:ReturnStatement[43105-43119]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42873-42921]:Block[43183-43231]"
+    }, {
+      "left" : "return registry.getNativeType(typeId);",
+      "right" : "return registry.getNativeType(typeId);",
+      "info" : "ReturnStatement[42879-42917]:ReturnStatement[43189-43227]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

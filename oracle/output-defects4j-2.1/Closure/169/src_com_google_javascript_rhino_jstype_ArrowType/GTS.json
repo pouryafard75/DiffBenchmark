@@ -1,0 +1,633 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ArrowType",
+      "right" : "ArrowType",
+      "info" : "TypeDeclaration[1797-10008]:TypeDeclaration[1797-9988]"
+    }, {
+      "left" : "private static final long serialVersionUID = 1L;",
+      "right" : "private static final long serialVersionUID = 1L;",
+      "info" : "FieldDeclaration[2132-2180]:FieldDeclaration[2132-2180]"
+    }, {
+      "left" : "final Node parameters;",
+      "right" : "final Node parameters;",
+      "info" : "FieldDeclaration[2184-2206]:FieldDeclaration[2184-2206]"
+    }, {
+      "left" : "JSType returnType;",
+      "right" : "JSType returnType;",
+      "info" : "FieldDeclaration[2209-2227]:FieldDeclaration[2209-2227]"
+    }, {
+      "left" : "final boolean returnTypeInferred;",
+      "right" : "final boolean returnTypeInferred;",
+      "info" : "FieldDeclaration[2273-2306]:FieldDeclaration[2273-2306]"
+    }, {
+      "left" : "ArrowType(JSTypeRegistry registry, Node parameters,\n      JSType returnType)",
+      "right" : "ArrowType(JSTypeRegistry registry, Node parameters,\n      JSType returnType)",
+      "info" : "MethodDeclaration[2310-2443]:MethodDeclaration[2310-2443]"
+    }, {
+      "left" : "ArrowType(JSTypeRegistry registry, Node parameters,\n      JSType returnType, boolean returnTypeInferred)",
+      "right" : "ArrowType(JSTypeRegistry registry, Node parameters,\n      JSType returnType, boolean returnTypeInferred)",
+      "info" : "MethodDeclaration[2447-2861]:MethodDeclaration[2447-2861]"
+    }, {
+      "left" : "public boolean isSubtype(JSType other)",
+      "right" : "public boolean isSubtype(JSType other)",
+      "info" : "MethodDeclaration[2865-6138]:MethodDeclaration[2865-6138]"
+    }, {
+      "left" : "boolean hasEqualParameters(ArrowType that, boolean tolerateUnknowns)",
+      "right" : "boolean hasEqualParameters(ArrowType that, EquivalenceMethod eqMethod)",
+      "info" : "MethodDeclaration[6142-7215]:MethodDeclaration[6142-7209]"
+    }, {
+      "left" : "boolean checkArrowEquivalenceHelper(\n      ArrowType that, boolean tolerateUnknowns)",
+      "right" : "boolean checkArrowEquivalenceHelper(\n      ArrowType that, EquivalenceMethod eqMethod)",
+      "info" : "MethodDeclaration[7219-7544]:MethodDeclaration[7213-7524]"
+    }, {
+      "left" : "public int hashCode()",
+      "right" : "public int hashCode()",
+      "info" : "MethodDeclaration[7548-8051]:MethodDeclaration[7528-8031]"
+    }, {
+      "left" : "public JSType getLeastSupertype(JSType that)",
+      "right" : "public JSType getLeastSupertype(JSType that)",
+      "info" : "MethodDeclaration[8055-8164]:MethodDeclaration[8035-8144]"
+    }, {
+      "left" : "public JSType getGreatestSubtype(JSType that)",
+      "right" : "public JSType getGreatestSubtype(JSType that)",
+      "info" : "MethodDeclaration[8168-8278]:MethodDeclaration[8148-8258]"
+    }, {
+      "left" : "public TernaryValue testForEquality(JSType that)",
+      "right" : "public TernaryValue testForEquality(JSType that)",
+      "info" : "MethodDeclaration[8282-8395]:MethodDeclaration[8262-8375]"
+    }, {
+      "left" : "public <T> T visit(Visitor<T> visitor)",
+      "right" : "public <T> T visit(Visitor<T> visitor)",
+      "info" : "MethodDeclaration[8399-8502]:MethodDeclaration[8379-8482]"
+    }, {
+      "left" : "public BooleanLiteralSet getPossibleToBooleanOutcomes()",
+      "right" : "public BooleanLiteralSet getPossibleToBooleanOutcomes()",
+      "info" : "MethodDeclaration[8506-8614]:MethodDeclaration[8486-8594]"
+    }, {
+      "left" : "JSType resolveInternal(ErrorReporter t, StaticScope<JSType> scope)",
+      "right" : "JSType resolveInternal(ErrorReporter t, StaticScope<JSType> scope)",
+      "info" : "MethodDeclaration[8618-9006]:MethodDeclaration[8598-8986]"
+    }, {
+      "left" : "boolean hasUnknownParamsOrReturn()",
+      "right" : "boolean hasUnknownParamsOrReturn()",
+      "info" : "MethodDeclaration[9010-9406]:MethodDeclaration[8990-9386]"
+    }, {
+      "left" : "String toStringHelper(boolean forAnnotations)",
+      "right" : "String toStringHelper(boolean forAnnotations)",
+      "info" : "MethodDeclaration[9410-9499]:MethodDeclaration[9390-9479]"
+    }, {
+      "left" : "public boolean hasAnyTemplateInternal()",
+      "right" : "public boolean hasAnyTemplateInternal()",
+      "info" : "MethodDeclaration[9503-9639]:MethodDeclaration[9483-9619]"
+    }, {
+      "left" : "private boolean hasTemplatedParameterType()",
+      "right" : "private boolean hasTemplatedParameterType()",
+      "info" : "MethodDeclaration[9643-10006]:MethodDeclaration[9623-9986]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2387-2443]:Block[2387-2443]"
+    }, {
+      "left" : "this(registry, parameters, returnType, false);",
+      "right" : "this(registry, parameters, returnType, false);",
+      "info" : "ConstructorInvocation[2393-2439]:ConstructorInvocation[2393-2439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2552-2861]:Block[2552-2861]"
+    }, {
+      "left" : "super(registry);",
+      "right" : "super(registry);",
+      "info" : "SuperConstructorInvocation[2558-2574]:SuperConstructorInvocation[2558-2574]"
+    }, {
+      "left" : "this.parameters = parameters == null ?\n        registry.createParametersWithVarArgs(getNativeType(UNKNOWN_TYPE)) :\n        parameters;",
+      "right" : "this.parameters = parameters == null ?\n        registry.createParametersWithVarArgs(getNativeType(UNKNOWN_TYPE)) :\n        parameters;",
+      "info" : "ExpressionStatement[2580-2714]:ExpressionStatement[2580-2714]"
+    }, {
+      "left" : "this.returnType = returnType == null ?\n        getNativeType(UNKNOWN_TYPE) : returnType;",
+      "right" : "this.returnType = returnType == null ?\n        getNativeType(UNKNOWN_TYPE) : returnType;",
+      "info" : "ExpressionStatement[2719-2807]:ExpressionStatement[2719-2807]"
+    }, {
+      "left" : "this.returnTypeInferred = returnTypeInferred;",
+      "right" : "this.returnTypeInferred = returnTypeInferred;",
+      "info" : "ExpressionStatement[2812-2857]:ExpressionStatement[2812-2857]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2916-6138]:Block[2916-6138]"
+    }, {
+      "left" : "if (!(other instanceof ArrowType))",
+      "right" : "if (!(other instanceof ArrowType))",
+      "info" : "IfStatement[2922-2984]:IfStatement[2922-2984]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2957-2984]:Block[2957-2984]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[2965-2978]:ReturnStatement[2965-2978]"
+    }, {
+      "left" : "ArrowType that = (ArrowType) other;",
+      "right" : "ArrowType that = (ArrowType) other;",
+      "info" : "VariableDeclarationStatement[2990-3025]:VariableDeclarationStatement[2990-3025]"
+    }, {
+      "left" : "if (!this.returnType.isSubtype(that.returnType))",
+      "right" : "if (!this.returnType.isSubtype(that.returnType))",
+      "info" : "IfStatement[3187-3263]:IfStatement[3187-3263]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3236-3263]:Block[3236-3263]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[3244-3257]:ReturnStatement[3244-3257]"
+    }, {
+      "left" : "Node thisParam = parameters.getFirstChild();",
+      "right" : "Node thisParam = parameters.getFirstChild();",
+      "info" : "VariableDeclarationStatement[4101-4145]:VariableDeclarationStatement[4101-4145]"
+    }, {
+      "left" : "Node thatParam = that.parameters.getFirstChild();",
+      "right" : "Node thatParam = that.parameters.getFirstChild();",
+      "info" : "VariableDeclarationStatement[4150-4199]:VariableDeclarationStatement[4150-4199]"
+    }, {
+      "left" : "while (thisParam != null && thatParam != null)",
+      "right" : "while (thisParam != null && thatParam != null)",
+      "info" : "WhileStatement[4204-5889]:WhileStatement[4204-5889]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4251-5889]:Block[4251-5889]"
+    }, {
+      "left" : "JSType thisParamType = thisParam.getJSType();",
+      "right" : "JSType thisParamType = thisParam.getJSType();",
+      "info" : "VariableDeclarationStatement[4259-4304]:VariableDeclarationStatement[4259-4304]"
+    }, {
+      "left" : "JSType thatParamType = thatParam.getJSType();",
+      "right" : "JSType thatParamType = thatParam.getJSType();",
+      "info" : "VariableDeclarationStatement[4311-4356]:VariableDeclarationStatement[4311-4356]"
+    }, {
+      "left" : "if (thisParamType != null)",
+      "right" : "if (thisParamType != null)",
+      "info" : "IfStatement[4363-4525]:IfStatement[4363-4525]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4390-4525]:Block[4390-4525]"
+    }, {
+      "left" : "if (thatParamType == null ||\n            !thatParamType.isSubtype(thisParamType))",
+      "right" : "if (thatParamType == null ||\n            !thatParamType.isSubtype(thisParamType))",
+      "info" : "IfStatement[4400-4517]:IfStatement[4400-4517]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4482-4517]:Block[4482-4517]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[4494-4507]:ReturnStatement[4494-4507]"
+    }, {
+      "left" : "boolean thisIsVarArgs = thisParam.isVarArgs();",
+      "right" : "boolean thisIsVarArgs = thisParam.isVarArgs();",
+      "info" : "VariableDeclarationStatement[4533-4579]:VariableDeclarationStatement[4533-4579]"
+    }, {
+      "left" : "boolean thatIsVarArgs = thatParam.isVarArgs();",
+      "right" : "boolean thatIsVarArgs = thatParam.isVarArgs();",
+      "info" : "VariableDeclarationStatement[4586-4632]:VariableDeclarationStatement[4586-4632]"
+    }, {
+      "left" : "boolean thisIsOptional = thisIsVarArgs || thisParam.isOptionalArg();",
+      "right" : "boolean thisIsOptional = thisIsVarArgs || thisParam.isOptionalArg();",
+      "info" : "VariableDeclarationStatement[4639-4707]:VariableDeclarationStatement[4639-4707]"
+    }, {
+      "left" : "boolean thatIsOptional = thatIsVarArgs || thatParam.isOptionalArg();",
+      "right" : "boolean thatIsOptional = thatIsVarArgs || thatParam.isOptionalArg();",
+      "info" : "VariableDeclarationStatement[4714-4782]:VariableDeclarationStatement[4714-4782]"
+    }, {
+      "left" : "if (!thisIsOptional && thatIsOptional)",
+      "right" : "if (!thisIsOptional && thatIsOptional)",
+      "info" : "IfStatement[4870-5529]:IfStatement[4870-5529]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4909-5529]:Block[4909-5529]"
+    }, {
+      "left" : "boolean isTopFunction =\n            thatIsVarArgs &&\n            (thatParamType == null ||\n             thatParamType.isUnknownType() ||\n             thatParamType.isNoType());",
+      "right" : "boolean isTopFunction =\n            thatIsVarArgs &&\n            (thatParamType == null ||\n             thatParamType.isUnknownType() ||\n             thatParamType.isNoType());",
+      "info" : "VariableDeclarationStatement[5281-5457]:VariableDeclarationStatement[5281-5457]"
+    }, {
+      "left" : "if (!isTopFunction)",
+      "right" : "if (!isTopFunction)",
+      "info" : "IfStatement[5466-5521]:IfStatement[5466-5521]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5486-5521]:Block[5486-5521]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[5498-5511]:ReturnStatement[5498-5511]"
+    }, {
+      "left" : "if (!thisIsVarArgs)",
+      "right" : "if (!thisIsVarArgs)",
+      "info" : "IfStatement[5590-5660]:IfStatement[5590-5660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5610-5660]:Block[5610-5660]"
+    }, {
+      "left" : "thisParam = thisParam.getNext();",
+      "right" : "thisParam = thisParam.getNext();",
+      "info" : "ExpressionStatement[5620-5652]:ExpressionStatement[5620-5652]"
+    }, {
+      "left" : "if (!thatIsVarArgs)",
+      "right" : "if (!thatIsVarArgs)",
+      "info" : "IfStatement[5667-5737]:IfStatement[5667-5737]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5687-5737]:Block[5687-5737]"
+    }, {
+      "left" : "thatParam = thatParam.getNext();",
+      "right" : "thatParam = thatParam.getNext();",
+      "info" : "ExpressionStatement[5697-5729]:ExpressionStatement[5697-5729]"
+    }, {
+      "left" : "if (thisIsVarArgs && thatIsVarArgs)",
+      "right" : "if (thisIsVarArgs && thatIsVarArgs)",
+      "info" : "IfStatement[5786-5883]:IfStatement[5786-5883]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5822-5883]:Block[5822-5883]"
+    }, {
+      "left" : "thisParam = null;",
+      "right" : "thisParam = null;",
+      "info" : "ExpressionStatement[5832-5849]:ExpressionStatement[5832-5849]"
+    }, {
+      "left" : "thatParam = null;",
+      "right" : "thatParam = null;",
+      "info" : "ExpressionStatement[5858-5875]:ExpressionStatement[5858-5875]"
+    }, {
+      "left" : "if (thisParam != null\n        && !thisParam.isOptionalArg() && !thisParam.isVarArgs()\n        && thatParam == null)",
+      "right" : "if (thisParam != null\n        && !thisParam.isOptionalArg() && !thisParam.isVarArgs()\n        && thatParam == null)",
+      "info" : "IfStatement[5973-6116]:IfStatement[5973-6116]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6089-6116]:Block[6089-6116]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[6097-6110]:ReturnStatement[6097-6110]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[6122-6134]:ReturnStatement[6122-6134]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6315-7215]:Block[6317-7209]"
+    }, {
+      "left" : "Node thisParam = parameters.getFirstChild();",
+      "right" : "Node thisParam = parameters.getFirstChild();",
+      "info" : "VariableDeclarationStatement[6321-6365]:VariableDeclarationStatement[6323-6367]"
+    }, {
+      "left" : "Node otherParam = that.parameters.getFirstChild();",
+      "right" : "Node otherParam = that.parameters.getFirstChild();",
+      "info" : "VariableDeclarationStatement[6370-6420]:VariableDeclarationStatement[6372-6422]"
+    }, {
+      "left" : "while (thisParam != null && otherParam != null)",
+      "right" : "while (thisParam != null && otherParam != null)",
+      "info" : "WhileStatement[6425-7051]:WhileStatement[6427-7045]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6473-7051]:Block[6475-7045]"
+    }, {
+      "left" : "JSType thisParamType = thisParam.getJSType();",
+      "right" : "JSType thisParamType = thisParam.getJSType();",
+      "info" : "VariableDeclarationStatement[6481-6526]:VariableDeclarationStatement[6483-6528]"
+    }, {
+      "left" : "JSType otherParamType = otherParam.getJSType();",
+      "right" : "JSType otherParamType = otherParam.getJSType();",
+      "info" : "VariableDeclarationStatement[6533-6580]:VariableDeclarationStatement[6535-6582]"
+    }, {
+      "left" : "if (thisParamType != null)",
+      "right" : "if (thisParamType != null)",
+      "info" : "IfStatement[6587-6965]:IfStatement[6589-6959]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6614-6878]:Block[6616-6872]"
+    }, {
+      "left" : "if (otherParamType != null &&\n            !thisParamType.checkEquivalenceHelper(\n                otherParamType, tolerateUnknowns))",
+      "right" : "if (otherParamType != null &&\n            !thisParamType.checkEquivalenceHelper(\n                otherParamType, eqMethod))",
+      "info" : "IfStatement[6703-6870]:IfStatement[6705-6864]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6835-6870]:Block[6829-6864]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[6847-6860]:ReturnStatement[6841-6854]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6884-6965]:Block[6878-6959]"
+    }, {
+      "left" : "if (otherParamType != null)",
+      "right" : "if (otherParamType != null)",
+      "info" : "IfStatement[6894-6957]:IfStatement[6888-6951]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6922-6957]:Block[6916-6951]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[6934-6947]:ReturnStatement[6928-6941]"
+    }, {
+      "left" : "thisParam = thisParam.getNext();",
+      "right" : "thisParam = thisParam.getNext();",
+      "info" : "ExpressionStatement[6972-7004]:ExpressionStatement[6966-6998]"
+    }, {
+      "left" : "otherParam = otherParam.getNext();",
+      "right" : "otherParam = otherParam.getNext();",
+      "info" : "ExpressionStatement[7011-7045]:ExpressionStatement[7005-7039]"
+    }, {
+      "left" : "return thisParam == otherParam;",
+      "right" : "return thisParam == otherParam;",
+      "info" : "ReturnStatement[7180-7211]:ReturnStatement[7174-7205]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7304-7544]:Block[7300-7524]"
+    }, {
+      "left" : "if (!returnType.checkEquivalenceHelper(that.returnType, tolerateUnknowns))",
+      "right" : "if (!returnType.checkEquivalenceHelper(that.returnType, eqMethod))",
+      "info" : "IfStatement[7383-7485]:IfStatement[7379-7473]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7458-7485]:Block[7446-7473]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[7466-7479]:ReturnStatement[7454-7467]"
+    }, {
+      "left" : "return hasEqualParameters(that, tolerateUnknowns);",
+      "right" : "return hasEqualParameters(that, eqMethod);",
+      "info" : "ReturnStatement[7490-7540]:ReturnStatement[7478-7520]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7582-8051]:Block[7562-8031]"
+    }, {
+      "left" : "int hashCode = 0;",
+      "right" : "int hashCode = 0;",
+      "info" : "VariableDeclarationStatement[7588-7605]:VariableDeclarationStatement[7568-7585]"
+    }, {
+      "left" : "if (returnType != null)",
+      "right" : "if (returnType != null)",
+      "info" : "IfStatement[7610-7682]:IfStatement[7590-7662]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7634-7682]:Block[7614-7662]"
+    }, {
+      "left" : "hashCode += returnType.hashCode();",
+      "right" : "hashCode += returnType.hashCode();",
+      "info" : "ExpressionStatement[7642-7676]:ExpressionStatement[7622-7656]"
+    }, {
+      "left" : "if (returnTypeInferred)",
+      "right" : "if (returnTypeInferred)",
+      "info" : "IfStatement[7687-7739]:IfStatement[7667-7719]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7711-7739]:Block[7691-7719]"
+    }, {
+      "left" : "hashCode += 1;",
+      "right" : "hashCode += 1;",
+      "info" : "ExpressionStatement[7719-7733]:ExpressionStatement[7699-7713]"
+    }, {
+      "left" : "if (parameters != null)",
+      "right" : "if (parameters != null)",
+      "info" : "IfStatement[7744-8026]:IfStatement[7724-8006]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7768-8026]:Block[7748-8006]"
+    }, {
+      "left" : "Node param = parameters.getFirstChild();",
+      "right" : "Node param = parameters.getFirstChild();",
+      "info" : "VariableDeclarationStatement[7776-7816]:VariableDeclarationStatement[7756-7796]"
+    }, {
+      "left" : "while (param != null)",
+      "right" : "while (param != null)",
+      "info" : "WhileStatement[7823-8020]:WhileStatement[7803-8000]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7845-8020]:Block[7825-8000]"
+    }, {
+      "left" : "JSType paramType = param.getJSType();",
+      "right" : "JSType paramType = param.getJSType();",
+      "info" : "VariableDeclarationStatement[7855-7892]:VariableDeclarationStatement[7835-7872]"
+    }, {
+      "left" : "if (paramType != null)",
+      "right" : "if (paramType != null)",
+      "info" : "IfStatement[7901-7979]:IfStatement[7881-7959]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7924-7979]:Block[7904-7959]"
+    }, {
+      "left" : "hashCode += paramType.hashCode();",
+      "right" : "hashCode += paramType.hashCode();",
+      "info" : "ExpressionStatement[7936-7969]:ExpressionStatement[7916-7949]"
+    }, {
+      "left" : "param = param.getNext();",
+      "right" : "param = param.getNext();",
+      "info" : "ExpressionStatement[7988-8012]:ExpressionStatement[7968-7992]"
+    }, {
+      "left" : "return hashCode;",
+      "right" : "return hashCode;",
+      "info" : "ReturnStatement[8031-8047]:ReturnStatement[8011-8027]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8112-8164]:Block[8092-8144]"
+    }, {
+      "left" : "throw new UnsupportedOperationException();",
+      "right" : "throw new UnsupportedOperationException();",
+      "info" : "ThrowStatement[8118-8160]:ThrowStatement[8098-8140]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8226-8278]:Block[8206-8258]"
+    }, {
+      "left" : "throw new UnsupportedOperationException();",
+      "right" : "throw new UnsupportedOperationException();",
+      "info" : "ThrowStatement[8232-8274]:ThrowStatement[8212-8254]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8343-8395]:Block[8323-8375]"
+    }, {
+      "left" : "throw new UnsupportedOperationException();",
+      "right" : "throw new UnsupportedOperationException();",
+      "info" : "ThrowStatement[8349-8391]:ThrowStatement[8329-8371]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8450-8502]:Block[8430-8482]"
+    }, {
+      "left" : "throw new UnsupportedOperationException();",
+      "right" : "throw new UnsupportedOperationException();",
+      "info" : "ThrowStatement[8456-8498]:ThrowStatement[8436-8478]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8574-8614]:Block[8554-8594]"
+    }, {
+      "left" : "return BooleanLiteralSet.TRUE;",
+      "right" : "return BooleanLiteralSet.TRUE;",
+      "info" : "ReturnStatement[8580-8610]:ReturnStatement[8560-8590]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8697-9006]:Block[8677-8986]"
+    }, {
+      "left" : "returnType = safeResolve(returnType, t, scope);",
+      "right" : "returnType = safeResolve(returnType, t, scope);",
+      "info" : "ExpressionStatement[8703-8750]:ExpressionStatement[8683-8730]"
+    }, {
+      "left" : "if (parameters != null)",
+      "right" : "if (parameters != null)",
+      "info" : "IfStatement[8755-8985]:IfStatement[8735-8965]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8779-8985]:Block[8759-8965]"
+    }, {
+      "left" : "for (Node paramNode = parameters.getFirstChild();\n           paramNode != null; paramNode = paramNode.getNext())",
+      "right" : "for (Node paramNode = parameters.getFirstChild();\n           paramNode != null; paramNode = paramNode.getNext())",
+      "info" : "ForStatement[8787-8979]:ForStatement[8767-8959]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8900-8979]:Block[8880-8959]"
+    }, {
+      "left" : "paramNode.setJSType(paramNode.getJSType().resolve(t, scope));",
+      "right" : "paramNode.setJSType(paramNode.getJSType().resolve(t, scope));",
+      "info" : "ExpressionStatement[8910-8971]:ExpressionStatement[8890-8951]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[8990-9002]:ReturnStatement[8970-8982]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9045-9406]:Block[9025-9386]"
+    }, {
+      "left" : "if (parameters != null)",
+      "right" : "if (parameters != null)",
+      "info" : "IfStatement[9051-9341]:IfStatement[9031-9321]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9075-9341]:Block[9055-9321]"
+    }, {
+      "left" : "for (Node paramNode = parameters.getFirstChild();\n           paramNode != null; paramNode = paramNode.getNext())",
+      "right" : "for (Node paramNode = parameters.getFirstChild();\n           paramNode != null; paramNode = paramNode.getNext())",
+      "info" : "ForStatement[9083-9335]:ForStatement[9063-9315]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9196-9335]:Block[9176-9315]"
+    }, {
+      "left" : "JSType type = paramNode.getJSType();",
+      "right" : "JSType type = paramNode.getJSType();",
+      "info" : "VariableDeclarationStatement[9206-9242]:VariableDeclarationStatement[9186-9222]"
+    }, {
+      "left" : "if (type == null || type.isUnknownType())",
+      "right" : "if (type == null || type.isUnknownType())",
+      "info" : "IfStatement[9251-9327]:IfStatement[9231-9307]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9293-9327]:Block[9273-9307]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[9305-9317]:ReturnStatement[9285-9297]"
+    }, {
+      "left" : "return returnType == null || returnType.isUnknownType();",
+      "right" : "return returnType == null || returnType.isUnknownType();",
+      "info" : "ReturnStatement[9346-9402]:ReturnStatement[9326-9382]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9468-9499]:Block[9448-9479]"
+    }, {
+      "left" : "return \"[ArrowType]\";",
+      "right" : "return \"[ArrowType]\";",
+      "info" : "ReturnStatement[9474-9495]:ReturnStatement[9454-9475]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9555-9639]:Block[9535-9619]"
+    }, {
+      "left" : "return returnType.hasAnyTemplate()\n        || hasTemplatedParameterType();",
+      "right" : "return returnType.hasAnyTemplate()\n        || hasTemplatedParameterType();",
+      "info" : "ReturnStatement[9561-9635]:ReturnStatement[9541-9615]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9687-10006]:Block[9667-9986]"
+    }, {
+      "left" : "if (parameters != null)",
+      "right" : "if (parameters != null)",
+      "info" : "IfStatement[9693-9984]:IfStatement[9673-9964]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9717-9984]:Block[9697-9964]"
+    }, {
+      "left" : "for (Node paramNode = parameters.getFirstChild();\n           paramNode != null; paramNode = paramNode.getNext())",
+      "right" : "for (Node paramNode = parameters.getFirstChild();\n           paramNode != null; paramNode = paramNode.getNext())",
+      "info" : "ForStatement[9725-9978]:ForStatement[9705-9958]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9838-9978]:Block[9818-9958]"
+    }, {
+      "left" : "JSType type = paramNode.getJSType();",
+      "right" : "JSType type = paramNode.getJSType();",
+      "info" : "VariableDeclarationStatement[9848-9884]:VariableDeclarationStatement[9828-9864]"
+    }, {
+      "left" : "if (type != null && type.hasAnyTemplate())",
+      "right" : "if (type != null && type.hasAnyTemplate())",
+      "info" : "IfStatement[9893-9970]:IfStatement[9873-9950]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9936-9970]:Block[9916-9950]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[9948-9960]:ReturnStatement[9928-9940]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[9989-10002]:ReturnStatement[9969-9982]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

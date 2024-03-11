@@ -1,0 +1,1653 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final Map<Var, ReferenceCollection> referenceMap =\n      Maps.newHashMap();",
+      "right" : "private final Map<Var, ReferenceCollection> referenceMap =\n      Maps.newHashMap();",
+      "info" : "FieldDeclaration[1680-1949]:FieldDeclaration[1680-1949]"
+    }, {
+      "left" : "private final Deque<BasicBlock> blockStack = new ArrayDeque<BasicBlock>();",
+      "right" : "private final Deque<BasicBlock> blockStack = new ArrayDeque<BasicBlock>();",
+      "info" : "FieldDeclaration[1953-2110]:FieldDeclaration[1953-2110]"
+    }, {
+      "left" : "private final Behavior behavior;",
+      "right" : "private final Behavior behavior;",
+      "info" : "FieldDeclaration[2114-2218]:FieldDeclaration[2114-2218]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[2222-2321]:FieldDeclaration[2222-2321]"
+    }, {
+      "left" : "private final Predicate<Var> varFilter;",
+      "right" : "private final Predicate<Var> varFilter;",
+      "info" : "FieldDeclaration[2325-2429]:FieldDeclaration[2325-2429]"
+    }, {
+      "left" : "ReferenceCollectingCallback(AbstractCompiler compiler, Behavior behavior)",
+      "right" : "ReferenceCollectingCallback(AbstractCompiler compiler, Behavior behavior)",
+      "info" : "MethodDeclaration[2433-2626]:MethodDeclaration[2433-2626]"
+    }, {
+      "left" : "ReferenceCollectingCallback(AbstractCompiler compiler, Behavior behavior,\n      Predicate<Var> varFilter)",
+      "right" : "ReferenceCollectingCallback(AbstractCompiler compiler, Behavior behavior,\n      Predicate<Var> varFilter)",
+      "info" : "MethodDeclaration[2630-3039]:MethodDeclaration[2630-3039]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[3043-3249]:MethodDeclaration[3043-3249]"
+    }, {
+      "left" : "public ReferenceCollection getReferenceCollection(Var v)",
+      "right" : "public ReferenceCollection getReferenceCollection(Var v)",
+      "info" : "MethodDeclaration[3253-3418]:MethodDeclaration[3253-3418]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[3422-3887]:MethodDeclaration[3422-3887]"
+    }, {
+      "left" : "public void enterScope(NodeTraversal t)",
+      "right" : "public void enterScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[3891-4172]:MethodDeclaration[3891-4172]"
+    }, {
+      "left" : "public void exitScope(NodeTraversal t)",
+      "right" : "public void exitScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[4176-4363]:MethodDeclaration[4176-4363]"
+    }, {
+      "left" : "public boolean shouldTraverse(NodeTraversal nodeTraversal, Node n,\n      Node parent)",
+      "right" : "public boolean shouldTraverse(NodeTraversal nodeTraversal, Node n,\n      Node parent)",
+      "info" : "MethodDeclaration[4367-4680]:MethodDeclaration[4367-4680]"
+    }, {
+      "left" : "private static boolean isBlockBoundary(Node n, Node parent)",
+      "right" : "private static boolean isBlockBoundary(Node n, Node parent)",
+      "info" : "MethodDeclaration[4684-5672]:MethodDeclaration[4684-5672]"
+    }, {
+      "left" : "private void addReference(NodeTraversal t, Var v, Reference reference)",
+      "right" : "private void addReference(NodeTraversal t, Var v, Reference reference)",
+      "info" : "MethodDeclaration[5676-6062]:MethodDeclaration[5676-6062]"
+    }, {
+      "left" : "Behavior",
+      "right" : "Behavior",
+      "info" : "TypeDeclaration[6066-6374]:TypeDeclaration[6066-6374]"
+    }, {
+      "left" : "void afterExitScope(NodeTraversal t,\n        Map<Var, ReferenceCollection> referenceMap);",
+      "right" : "void afterExitScope(NodeTraversal t,\n        Map<Var, ReferenceCollection> referenceMap);",
+      "info" : "MethodDeclaration[6221-6370]:MethodDeclaration[6221-6370]"
+    }, {
+      "left" : "static Behavior DO_NOTHING_BEHAVIOR = new Behavior() {\n    @Override\n    public void afterExitScope(NodeTraversal t,\n        Map<Var, ReferenceCollection> referenceMap) {}\n  };",
+      "right" : "static Behavior DO_NOTHING_BEHAVIOR = new Behavior() {\n    @Override\n    public void afterExitScope(NodeTraversal t,\n        Map<Var, ReferenceCollection> referenceMap) {}\n  };",
+      "info" : "FieldDeclaration[6378-6554]:FieldDeclaration[6378-6554]"
+    }, {
+      "left" : "public void afterExitScope(NodeTraversal t,\n        Map<Var, ReferenceCollection> referenceMap)",
+      "right" : "public void afterExitScope(NodeTraversal t,\n        Map<Var, ReferenceCollection> referenceMap)",
+      "info" : "MethodDeclaration[6437-6549]:MethodDeclaration[6437-6549]"
+    }, {
+      "left" : "List<Reference> references = Lists.newArrayList();",
+      "right" : "List<Reference> references = Lists.newArrayList();",
+      "info" : "FieldDeclaration[6721-6771]:FieldDeclaration[6721-6771]"
+    }, {
+      "left" : "void add(Reference reference, NodeTraversal t, Var v)",
+      "right" : "void add(Reference reference, NodeTraversal t, Var v)",
+      "info" : "MethodDeclaration[6777-6871]:MethodDeclaration[6777-6871]"
+    }, {
+      "left" : "protected boolean isWellDefined()",
+      "right" : "protected boolean isWellDefined()",
+      "info" : "MethodDeclaration[6877-7982]:MethodDeclaration[6877-7982]"
+    }, {
+      "left" : "boolean isEscaped()",
+      "right" : "boolean isEscaped()",
+      "info" : "MethodDeclaration[7988-8318]:MethodDeclaration[7988-8318]"
+    }, {
+      "left" : "private boolean isInitializingDeclarationAt(int index)",
+      "right" : "private boolean isInitializingDeclarationAt(int index)",
+      "info" : "MethodDeclaration[8324-8958]:MethodDeclaration[8324-8958]"
+    }, {
+      "left" : "private boolean isInitializingAssignmentAt(int index)",
+      "right" : "private boolean isInitializingAssignmentAt(int index)",
+      "info" : "MethodDeclaration[8964-9689]:MethodDeclaration[8964-9689]"
+    }, {
+      "left" : "Reference getInitializingReference()",
+      "right" : "Reference getInitializingReference()",
+      "info" : "MethodDeclaration[9695-10224]:MethodDeclaration[9695-10224]"
+    }, {
+      "left" : "Reference getInitializingReferenceForConstants()",
+      "right" : "Reference getInitializingReferenceForConstants()",
+      "info" : "MethodDeclaration[10230-10595]:MethodDeclaration[10230-10595]"
+    }, {
+      "left" : "private Reference getOneAndOnlyAssignment()",
+      "right" : "private Reference getOneAndOnlyAssignment()",
+      "info" : "MethodDeclaration[10938-11484]:MethodDeclaration[11170-11716]"
+    }, {
+      "left" : "boolean isNeverAssigned()",
+      "right" : "boolean isNeverAssigned()",
+      "info" : "MethodDeclaration[11490-11846]:MethodDeclaration[11722-12078]"
+    }, {
+      "left" : "boolean firstReferenceIsAssigningDeclaration()",
+      "right" : "boolean firstReferenceIsAssigningDeclaration()",
+      "info" : "MethodDeclaration[11852-12062]:MethodDeclaration[12084-12294]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "TypeDeclaration[12070-15642]:TypeDeclaration[12302-15874]"
+    }, {
+      "left" : "private static final Set<Integer> DECLARATION_PARENTS =\n        ImmutableSet.of(Token.VAR, Token.FUNCTION, Token.CATCH);",
+      "right" : "private static final Set<Integer> DECLARATION_PARENTS =\n        ImmutableSet.of(Token.VAR, Token.FUNCTION, Token.CATCH);",
+      "info" : "FieldDeclaration[12183-12303]:FieldDeclaration[12415-12535]"
+    }, {
+      "left" : "private final Node nameNode;",
+      "right" : "private final Node nameNode;",
+      "info" : "FieldDeclaration[12309-12337]:FieldDeclaration[12541-12569]"
+    }, {
+      "left" : "private final Node parent;",
+      "right" : "private final Node parent;",
+      "info" : "FieldDeclaration[12342-12368]:FieldDeclaration[12574-12600]"
+    }, {
+      "left" : "private final Node grandparent;",
+      "right" : "private final Node grandparent;",
+      "info" : "FieldDeclaration[12373-12404]:FieldDeclaration[12605-12636]"
+    }, {
+      "left" : "private final BasicBlock basicBlock;",
+      "right" : "private final BasicBlock basicBlock;",
+      "info" : "FieldDeclaration[12409-12445]:FieldDeclaration[12641-12677]"
+    }, {
+      "left" : "private final Scope scope;",
+      "right" : "private final Scope scope;",
+      "info" : "FieldDeclaration[12450-12476]:FieldDeclaration[12682-12708]"
+    }, {
+      "left" : "private final String sourceName;",
+      "right" : "private final String sourceName;",
+      "info" : "FieldDeclaration[12481-12513]:FieldDeclaration[12713-12745]"
+    }, {
+      "left" : "Reference(Node nameNode, Node parent, NodeTraversal t,\n        BasicBlock basicBlock)",
+      "right" : "Reference(Node nameNode, Node parent, NodeTraversal t,\n        BasicBlock basicBlock)",
+      "info" : "MethodDeclaration[12519-12718]:MethodDeclaration[12751-12950]"
+    }, {
+      "left" : "static Reference newBleedingFunction(NodeTraversal t,\n        BasicBlock basicBlock, Node func)",
+      "right" : "static Reference newBleedingFunction(NodeTraversal t,\n        BasicBlock basicBlock, Node func)",
+      "info" : "MethodDeclaration[12864-13096]:MethodDeclaration[13096-13328]"
+    }, {
+      "left" : "private Reference(Node nameNode, Node parent, Node grandparent,\n        BasicBlock basicBlock, Scope scope, String sourceName)",
+      "right" : "private Reference(Node nameNode, Node parent, Node grandparent,\n        BasicBlock basicBlock, Scope scope, String sourceName)",
+      "info" : "MethodDeclaration[13102-13432]:MethodDeclaration[13334-13664]"
+    }, {
+      "left" : "boolean isDeclaration()",
+      "right" : "boolean isDeclaration()",
+      "info" : "MethodDeclaration[13438-13625]:MethodDeclaration[13670-13857]"
+    }, {
+      "left" : "boolean isVarDeclaration()",
+      "right" : "boolean isVarDeclaration()",
+      "info" : "MethodDeclaration[13631-13709]:MethodDeclaration[13863-13941]"
+    }, {
+      "left" : "boolean isHoistedFunction()",
+      "right" : "boolean isHoistedFunction()",
+      "info" : "MethodDeclaration[13715-13810]:MethodDeclaration[13947-14042]"
+    }, {
+      "left" : "boolean isInitializingDeclaration()",
+      "right" : "boolean isInitializingDeclaration()",
+      "info" : "MethodDeclaration[13816-14215]:MethodDeclaration[14048-14447]"
+    }, {
+      "left" : "Node getAssignedValue()",
+      "right" : "Node getAssignedValue()",
+      "info" : "MethodDeclaration[14220-14507]:MethodDeclaration[14452-14739]"
+    }, {
+      "left" : "BasicBlock getBasicBlock()",
+      "right" : "BasicBlock getBasicBlock()",
+      "info" : "MethodDeclaration[14513-14572]:MethodDeclaration[14745-14804]"
+    }, {
+      "left" : "Node getParent()",
+      "right" : "Node getParent()",
+      "info" : "MethodDeclaration[14578-14623]:MethodDeclaration[14810-14855]"
+    }, {
+      "left" : "Node getNameNode()",
+      "right" : "Node getNameNode()",
+      "info" : "MethodDeclaration[14629-14678]:MethodDeclaration[14861-14910]"
+    }, {
+      "left" : "Node getGrandparent()",
+      "right" : "Node getGrandparent()",
+      "info" : "MethodDeclaration[14684-14739]:MethodDeclaration[14916-14971]"
+    }, {
+      "left" : "private static boolean isLhsOfForInExpression(Node n)",
+      "right" : "private static boolean isLhsOfForInExpression(Node n)",
+      "info" : "MethodDeclaration[14745-15009]:MethodDeclaration[14977-15241]"
+    }, {
+      "left" : "boolean isSimpleAssignmentToName()",
+      "right" : "boolean isSimpleAssignmentToName()",
+      "info" : "MethodDeclaration[15015-15152]:MethodDeclaration[15247-15384]"
+    }, {
+      "left" : "boolean isLvalue()",
+      "right" : "boolean isLvalue()",
+      "info" : "MethodDeclaration[15158-15520]:MethodDeclaration[15390-15752]"
+    }, {
+      "left" : "Scope getScope()",
+      "right" : "Scope getScope()",
+      "info" : "MethodDeclaration[15526-15570]:MethodDeclaration[15758-15802]"
+    }, {
+      "left" : "public String getSourceName()",
+      "right" : "public String getSourceName()",
+      "info" : "MethodDeclaration[15576-15638]:MethodDeclaration[15808-15870]"
+    }, {
+      "left" : "private final BasicBlock parent;",
+      "right" : "private final BasicBlock parent;",
+      "info" : "FieldDeclaration[15812-15844]:FieldDeclaration[16044-16076]"
+    }, {
+      "left" : "private final boolean isHoisted;",
+      "right" : "private final boolean isHoisted;",
+      "info" : "FieldDeclaration[15850-16032]:FieldDeclaration[16082-16264]"
+    }, {
+      "left" : "BasicBlock getParent()",
+      "right" : "BasicBlock getParent()",
+      "info" : "MethodDeclaration[16499-16550]:MethodDeclaration[17110-17161]"
+    }, {
+      "left" : "boolean provablyExecutesBefore(BasicBlock thatBlock)",
+      "right" : "boolean provablyExecutesBefore(BasicBlock thatBlock)",
+      "info" : "MethodDeclaration[16556-17186]:MethodDeclaration[17167-17797]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "ReferenceCollectingCallback",
+      "right" : "ReferenceCollectingCallback",
+      "info" : "SimpleName[2487-2514]:SimpleName[2487-2514]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[2515-2540]:SingleVariableDeclaration[2515-2540]"
+    }, {
+      "left" : "Behavior behavior",
+      "right" : "Behavior behavior",
+      "info" : "SingleVariableDeclaration[2542-2559]:SingleVariableDeclaration[2542-2559]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2561-2626]:Block[2561-2626]"
+    }, {
+      "left" : "this(compiler, behavior, Predicates.<Var>alwaysTrue());",
+      "right" : "this(compiler, behavior, Predicates.<Var>alwaysTrue());",
+      "info" : "ConstructorInvocation[2567-2622]:ConstructorInvocation[2567-2622]"
+    }, {
+      "left" : "ReferenceCollectingCallback",
+      "right" : "ReferenceCollectingCallback",
+      "info" : "SimpleName[2836-2863]:SimpleName[2836-2863]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[2864-2889]:SingleVariableDeclaration[2864-2889]"
+    }, {
+      "left" : "Behavior behavior",
+      "right" : "Behavior behavior",
+      "info" : "SingleVariableDeclaration[2891-2908]:SingleVariableDeclaration[2891-2908]"
+    }, {
+      "left" : "Predicate<Var> varFilter",
+      "right" : "Predicate<Var> varFilter",
+      "info" : "SingleVariableDeclaration[2916-2940]:SingleVariableDeclaration[2916-2940]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2942-3039]:Block[2942-3039]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[2948-2973]:ExpressionStatement[2948-2973]"
+    }, {
+      "left" : "this.behavior = behavior;",
+      "right" : "this.behavior = behavior;",
+      "info" : "ExpressionStatement[2978-3003]:ExpressionStatement[2978-3003]"
+    }, {
+      "left" : "this.varFilter = varFilter;",
+      "right" : "this.varFilter = varFilter;",
+      "info" : "ExpressionStatement[3008-3035]:ExpressionStatement[3008-3035]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3149-3155]:Modifier[3149-3155]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3156-3160]:PrimitiveType[3156-3160]"
+    }, {
+      "left" : "process",
+      "right" : "process",
+      "info" : "SimpleName[3161-3168]:SimpleName[3161-3168]"
+    }, {
+      "left" : "Node externs",
+      "right" : "Node externs",
+      "info" : "SingleVariableDeclaration[3169-3181]:SingleVariableDeclaration[3169-3181]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[3183-3192]:SingleVariableDeclaration[3183-3192]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3194-3249]:Block[3194-3249]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, this);",
+      "right" : "NodeTraversal.traverse(compiler, root, this);",
+      "info" : "ExpressionStatement[3200-3245]:ExpressionStatement[3200-3245]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3324-3330]:Modifier[3324-3330]"
+    }, {
+      "left" : "ReferenceCollection",
+      "right" : "ReferenceCollection",
+      "info" : "SimpleType[3331-3350]:SimpleType[3331-3350]"
+    }, {
+      "left" : "getReferenceCollection",
+      "right" : "getReferenceCollection",
+      "info" : "SimpleName[3351-3373]:SimpleName[3351-3373]"
+    }, {
+      "left" : "Var v",
+      "right" : "Var v",
+      "info" : "SingleVariableDeclaration[3374-3379]:SingleVariableDeclaration[3374-3379]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3381-3418]:Block[3381-3418]"
+    }, {
+      "left" : "return referenceMap.get(v);",
+      "right" : "return referenceMap.get(v);",
+      "info" : "ReturnStatement[3387-3414]:ReturnStatement[3387-3414]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3523-3529]:Modifier[3523-3529]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3530-3534]:PrimitiveType[3530-3534]"
+    }, {
+      "left" : "visit",
+      "right" : "visit",
+      "info" : "SimpleName[3535-3540]:SimpleName[3535-3540]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[3541-3556]:SingleVariableDeclaration[3541-3556]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[3558-3564]:SingleVariableDeclaration[3558-3564]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[3566-3577]:SingleVariableDeclaration[3566-3577]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3579-3887]:Block[3579-3887]"
+    }, {
+      "left" : "if (n.getType() == Token.NAME)",
+      "right" : "if (n.getType() == Token.NAME)",
+      "info" : "IfStatement[3585-3814]:IfStatement[3585-3814]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3616-3814]:Block[3616-3814]"
+    }, {
+      "left" : "Var v = t.getScope().getVar(n.getString());",
+      "right" : "Var v = t.getScope().getVar(n.getString());",
+      "info" : "VariableDeclarationStatement[3624-3667]:VariableDeclarationStatement[3624-3667]"
+    }, {
+      "left" : "if (v != null && varFilter.apply(v))",
+      "right" : "if (v != null && varFilter.apply(v))",
+      "info" : "IfStatement[3674-3808]:IfStatement[3674-3808]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3711-3808]:Block[3711-3808]"
+    }, {
+      "left" : "addReference(t, v,\n            new Reference(n, parent, t, blockStack.peek()));",
+      "right" : "addReference(t, v,\n            new Reference(n, parent, t, blockStack.peek()));",
+      "info" : "ExpressionStatement[3721-3800]:ExpressionStatement[3721-3800]"
+    }, {
+      "left" : "if (isBlockBoundary(n, parent))",
+      "right" : "if (isBlockBoundary(n, parent))",
+      "info" : "IfStatement[3820-3883]:IfStatement[3820-3883]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3852-3883]:Block[3852-3883]"
+    }, {
+      "left" : "blockStack.pop();",
+      "right" : "blockStack.pop();",
+      "info" : "ExpressionStatement[3860-3877]:ExpressionStatement[3860-3877]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3965-3971]:Modifier[3965-3971]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3972-3976]:PrimitiveType[3972-3976]"
+    }, {
+      "left" : "enterScope",
+      "right" : "enterScope",
+      "info" : "SimpleName[3977-3987]:SimpleName[3977-3987]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[3988-4003]:SingleVariableDeclaration[3988-4003]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4005-4172]:Block[4005-4172]"
+    }, {
+      "left" : "Node n = t.getScope().getRootNode();",
+      "right" : "Node n = t.getScope().getRootNode();",
+      "info" : "VariableDeclarationStatement[4011-4047]:VariableDeclarationStatement[4011-4047]"
+    }, {
+      "left" : "BasicBlock parent = blockStack.isEmpty() ? null : blockStack.peek();",
+      "right" : "BasicBlock parent = blockStack.isEmpty() ? null : blockStack.peek();",
+      "info" : "VariableDeclarationStatement[4052-4120]:VariableDeclarationStatement[4052-4120]"
+    }, {
+      "left" : "blockStack.push(new BasicBlock(parent, n));",
+      "right" : "blockStack.push(new BasicBlock(parent, n));",
+      "info" : "ExpressionStatement[4125-4168]:ExpressionStatement[4125-4168]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4251-4257]:Modifier[4251-4257]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4258-4262]:PrimitiveType[4258-4262]"
+    }, {
+      "left" : "exitScope",
+      "right" : "exitScope",
+      "info" : "SimpleName[4263-4272]:SimpleName[4263-4272]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[4273-4288]:SingleVariableDeclaration[4273-4288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4290-4363]:Block[4290-4363]"
+    }, {
+      "left" : "blockStack.pop();",
+      "right" : "blockStack.pop();",
+      "info" : "ExpressionStatement[4296-4313]:ExpressionStatement[4296-4313]"
+    }, {
+      "left" : "behavior.afterExitScope(t, referenceMap);",
+      "right" : "behavior.afterExitScope(t, referenceMap);",
+      "info" : "ExpressionStatement[4318-4359]:ExpressionStatement[4318-4359]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4405-4411]:Modifier[4405-4411]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[4412-4419]:PrimitiveType[4412-4419]"
+    }, {
+      "left" : "shouldTraverse",
+      "right" : "shouldTraverse",
+      "info" : "SimpleName[4420-4434]:SimpleName[4420-4434]"
+    }, {
+      "left" : "NodeTraversal nodeTraversal",
+      "right" : "NodeTraversal nodeTraversal",
+      "info" : "SingleVariableDeclaration[4435-4462]:SingleVariableDeclaration[4435-4462]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[4464-4470]:SingleVariableDeclaration[4464-4470]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[4478-4489]:SingleVariableDeclaration[4478-4489]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4491-4680]:Block[4491-4680]"
+    }, {
+      "left" : "if (isBlockBoundary(n, parent))",
+      "right" : "if (isBlockBoundary(n, parent))",
+      "info" : "IfStatement[4559-4659]:IfStatement[4559-4659]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4591-4659]:Block[4591-4659]"
+    }, {
+      "left" : "blockStack.push(new BasicBlock(blockStack.peek(), n));",
+      "right" : "blockStack.push(new BasicBlock(blockStack.peek(), n));",
+      "info" : "ExpressionStatement[4599-4653]:ExpressionStatement[4599-4653]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[4664-4676]:ReturnStatement[4664-4676]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4764-4771]:Modifier[4764-4771]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[4772-4778]:Modifier[4772-4778]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[4779-4786]:PrimitiveType[4779-4786]"
+    }, {
+      "left" : "isBlockBoundary",
+      "right" : "isBlockBoundary",
+      "info" : "SimpleName[4787-4802]:SimpleName[4787-4802]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[4803-4809]:SingleVariableDeclaration[4803-4809]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[4811-4822]:SingleVariableDeclaration[4811-4822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4824-5672]:Block[4824-5672]"
+    }, {
+      "left" : "if (parent != null)",
+      "right" : "if (parent != null)",
+      "info" : "IfStatement[4830-5629]:IfStatement[4830-5629]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4850-5629]:Block[4850-5629]"
+    }, {
+      "left" : "switch (parent.getType()) {\n        case Token.DO:\n        case Token.FOR:\n        case Token.TRY:\n        case Token.WHILE:\n        case Token.WITH:\n          // NOTE: TRY has up to 3 child blocks:\n          // TRY\n          //   BLOCK\n          //   BLOCK\n          //     CATCH\n          //   BLOCK\n          // Note that there is an explcit CATCH token but no explicit\n          // FINALLY token. For simplicity, we consider each BLOCK\n          // a separate basic BLOCK.\n          return true;\n        case Token.AND:\n        case Token.HOOK:\n        case Token.IF:\n        case Token.OR:\n          // The first child of a conditional is not a boundary,\n          // but all the rest of the children are.\n          return n != parent.getFirstChild();\n\n      }",
+      "right" : "switch (parent.getType()) {\n        case Token.DO:\n        case Token.FOR:\n        case Token.TRY:\n        case Token.WHILE:\n        case Token.WITH:\n          // NOTE: TRY has up to 3 child blocks:\n          // TRY\n          //   BLOCK\n          //   BLOCK\n          //     CATCH\n          //   BLOCK\n          // Note that there is an explcit CATCH token but no explicit\n          // FINALLY token. For simplicity, we consider each BLOCK\n          // a separate basic BLOCK.\n          return true;\n        case Token.AND:\n        case Token.HOOK:\n        case Token.IF:\n        case Token.OR:\n          // The first child of a conditional is not a boundary,\n          // but all the rest of the children are.\n          return n != parent.getFirstChild();\n\n      }",
+      "info" : "SwitchStatement[4858-5623]:SwitchStatement[4858-5623]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[4894-4908]:SwitchCase[4894-4908]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[4917-4932]:SwitchCase[4917-4932]"
+    }, {
+      "left" : "case Token.TRY:",
+      "right" : "case Token.TRY:",
+      "info" : "SwitchCase[4941-4956]:SwitchCase[4941-4956]"
+    }, {
+      "left" : "case Token.WHILE:",
+      "right" : "case Token.WHILE:",
+      "info" : "SwitchCase[4965-4982]:SwitchCase[4965-4982]"
+    }, {
+      "left" : "case Token.WITH:",
+      "right" : "case Token.WITH:",
+      "info" : "SwitchCase[4991-5007]:SwitchCase[4991-5007]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[5345-5357]:ReturnStatement[5345-5357]"
+    }, {
+      "left" : "case Token.AND:",
+      "right" : "case Token.AND:",
+      "info" : "SwitchCase[5366-5381]:SwitchCase[5366-5381]"
+    }, {
+      "left" : "case Token.HOOK:",
+      "right" : "case Token.HOOK:",
+      "info" : "SwitchCase[5390-5406]:SwitchCase[5390-5406]"
+    }, {
+      "left" : "case Token.IF:",
+      "right" : "case Token.IF:",
+      "info" : "SwitchCase[5415-5429]:SwitchCase[5415-5429]"
+    }, {
+      "left" : "case Token.OR:",
+      "right" : "case Token.OR:",
+      "info" : "SwitchCase[5438-5452]:SwitchCase[5438-5452]"
+    }, {
+      "left" : "return n != parent.getFirstChild();",
+      "right" : "return n != parent.getFirstChild();",
+      "info" : "ReturnStatement[5579-5614]:ReturnStatement[5579-5614]"
+    }, {
+      "left" : "return n.getType() == Token.CASE;",
+      "right" : "return n.getType() == Token.CASE;",
+      "info" : "ReturnStatement[5635-5668]:ReturnStatement[5635-5668]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5676-5683]:Modifier[5676-5683]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5684-5688]:PrimitiveType[5684-5688]"
+    }, {
+      "left" : "addReference",
+      "right" : "addReference",
+      "info" : "SimpleName[5689-5701]:SimpleName[5689-5701]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[5702-5717]:SingleVariableDeclaration[5702-5717]"
+    }, {
+      "left" : "Var v",
+      "right" : "Var v",
+      "info" : "SingleVariableDeclaration[5719-5724]:SingleVariableDeclaration[5719-5724]"
+    }, {
+      "left" : "Reference reference",
+      "right" : "Reference reference",
+      "info" : "SingleVariableDeclaration[5726-5745]:SingleVariableDeclaration[5726-5745]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5747-6062]:Block[5747-6062]"
+    }, {
+      "left" : "ReferenceCollection referenceInfo = referenceMap.get(v);",
+      "right" : "ReferenceCollection referenceInfo = referenceMap.get(v);",
+      "info" : "VariableDeclarationStatement[5794-5850]:VariableDeclarationStatement[5794-5850]"
+    }, {
+      "left" : "if (referenceInfo == null)",
+      "right" : "if (referenceInfo == null)",
+      "info" : "IfStatement[5855-5980]:IfStatement[5855-5980]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5882-5980]:Block[5882-5980]"
+    }, {
+      "left" : "referenceInfo = new ReferenceCollection();",
+      "right" : "referenceInfo = new ReferenceCollection();",
+      "info" : "ExpressionStatement[5890-5932]:ExpressionStatement[5890-5932]"
+    }, {
+      "left" : "referenceMap.put(v, referenceInfo);",
+      "right" : "referenceMap.put(v, referenceInfo);",
+      "info" : "ExpressionStatement[5939-5974]:ExpressionStatement[5939-5974]"
+    }, {
+      "left" : "referenceInfo.add(reference, t, v);",
+      "right" : "referenceInfo.add(reference, t, v);",
+      "info" : "ExpressionStatement[6023-6058]:ExpressionStatement[6023-6058]"
+    }, {
+      "left" : "interface",
+      "right" : "interface",
+      "info" : "TYPE_DECLARATION_KIND[6196-6205]:TYPE_DECLARATION_KIND[6196-6205]"
+    }, {
+      "left" : "Behavior",
+      "right" : "Behavior",
+      "info" : "SimpleName[6206-6214]:SimpleName[6206-6214]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6281-6285]:PrimitiveType[6281-6285]"
+    }, {
+      "left" : "afterExitScope",
+      "right" : "afterExitScope",
+      "info" : "SimpleName[6286-6300]:SimpleName[6286-6300]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[6301-6316]:SingleVariableDeclaration[6301-6316]"
+    }, {
+      "left" : "Map<Var, ReferenceCollection> referenceMap",
+      "right" : "Map<Var, ReferenceCollection> referenceMap",
+      "info" : "SingleVariableDeclaration[6326-6368]:SingleVariableDeclaration[6326-6368]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6437-6446]:MarkerAnnotation[6437-6446]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6451-6457]:Modifier[6451-6457]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6458-6462]:PrimitiveType[6458-6462]"
+    }, {
+      "left" : "afterExitScope",
+      "right" : "afterExitScope",
+      "info" : "SimpleName[6463-6477]:SimpleName[6463-6477]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[6478-6493]:SingleVariableDeclaration[6478-6493]"
+    }, {
+      "left" : "Map<Var, ReferenceCollection> referenceMap",
+      "right" : "Map<Var, ReferenceCollection> referenceMap",
+      "info" : "SingleVariableDeclaration[6503-6545]:SingleVariableDeclaration[6503-6545]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6547-6549]:Block[6547-6549]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6777-6781]:PrimitiveType[6777-6781]"
+    }, {
+      "left" : "add",
+      "right" : "add",
+      "info" : "SimpleName[6782-6785]:SimpleName[6782-6785]"
+    }, {
+      "left" : "Reference reference",
+      "right" : "Reference reference",
+      "info" : "SingleVariableDeclaration[6786-6805]:SingleVariableDeclaration[6786-6805]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[6807-6822]:SingleVariableDeclaration[6807-6822]"
+    }, {
+      "left" : "Var v",
+      "right" : "Var v",
+      "info" : "SingleVariableDeclaration[6824-6829]:SingleVariableDeclaration[6824-6829]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6831-6871]:Block[6831-6871]"
+    }, {
+      "left" : "references.add(reference);",
+      "right" : "references.add(reference);",
+      "info" : "ExpressionStatement[6839-6865]:ExpressionStatement[6839-6865]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[7317-7326]:Modifier[7317-7326]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[7327-7334]:PrimitiveType[7327-7334]"
+    }, {
+      "left" : "isWellDefined",
+      "right" : "isWellDefined",
+      "info" : "SimpleName[7335-7348]:SimpleName[7335-7348]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7351-7982]:Block[7351-7982]"
+    }, {
+      "left" : "int size = references.size();",
+      "right" : "int size = references.size();",
+      "info" : "VariableDeclarationStatement[7359-7388]:VariableDeclarationStatement[7359-7388]"
+    }, {
+      "left" : "if (size == 0)",
+      "right" : "if (size == 0)",
+      "info" : "IfStatement[7395-7441]:IfStatement[7395-7441]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7410-7441]:Block[7410-7441]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[7420-7433]:ReturnStatement[7420-7433]"
+    }, {
+      "left" : "Reference init = getInitializingReference();",
+      "right" : "Reference init = getInitializingReference();",
+      "info" : "VariableDeclarationStatement[7555-7599]:VariableDeclarationStatement[7555-7599]"
+    }, {
+      "left" : "if (init == null)",
+      "right" : "if (init == null)",
+      "info" : "IfStatement[7606-7655]:IfStatement[7606-7655]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7624-7655]:Block[7624-7655]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[7634-7647]:ReturnStatement[7634-7647]"
+    }, {
+      "left" : "Preconditions.checkState(references.get(0).isDeclaration());",
+      "right" : "Preconditions.checkState(references.get(0).isDeclaration());",
+      "info" : "ExpressionStatement[7663-7723]:ExpressionStatement[7663-7723]"
+    }, {
+      "left" : "BasicBlock initBlock = init.getBasicBlock();",
+      "right" : "BasicBlock initBlock = init.getBasicBlock();",
+      "info" : "VariableDeclarationStatement[7730-7774]:VariableDeclarationStatement[7730-7774]"
+    }, {
+      "left" : "for (int i = 1; i < size; i++)",
+      "right" : "for (int i = 1; i < size; i++)",
+      "info" : "ForStatement[7781-7956]:ForStatement[7781-7956]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7812-7956]:Block[7812-7956]"
+    }, {
+      "left" : "if (!initBlock.provablyExecutesBefore(\n                references.get(i).getBasicBlock()))",
+      "right" : "if (!initBlock.provablyExecutesBefore(\n                references.get(i).getBasicBlock()))",
+      "info" : "IfStatement[7822-7948]:IfStatement[7822-7948]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7913-7948]:Block[7913-7948]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[7925-7938]:ReturnStatement[7925-7938]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[7964-7976]:ReturnStatement[7964-7976]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[8064-8071]:PrimitiveType[8064-8071]"
+    }, {
+      "left" : "isEscaped",
+      "right" : "isEscaped",
+      "info" : "SimpleName[8072-8081]:SimpleName[8072-8081]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8084-8318]:Block[8084-8318]"
+    }, {
+      "left" : "Scope scope = null;",
+      "right" : "Scope scope = null;",
+      "info" : "VariableDeclarationStatement[8092-8111]:VariableDeclarationStatement[8092-8111]"
+    }, {
+      "left" : "for (Reference ref : references)",
+      "right" : "for (Reference ref : references)",
+      "info" : "EnhancedForStatement[8118-8292]:EnhancedForStatement[8118-8292]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8151-8292]:Block[8151-8292]"
+    }, {
+      "left" : "if (scope == null)",
+      "right" : "if (scope == null)",
+      "info" : "IfStatement[8161-8284]:IfStatement[8161-8284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8180-8220]:Block[8180-8220]"
+    }, {
+      "left" : "scope = ref.scope;",
+      "right" : "scope = ref.scope;",
+      "info" : "ExpressionStatement[8192-8210]:ExpressionStatement[8192-8210]"
+    }, {
+      "left" : "if (scope != ref.scope)",
+      "right" : "if (scope != ref.scope)",
+      "info" : "IfStatement[8226-8284]:IfStatement[8226-8284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8250-8284]:Block[8250-8284]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[8262-8274]:ReturnStatement[8262-8274]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[8299-8312]:ReturnStatement[8299-8312]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8578-8585]:Modifier[8578-8585]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[8586-8593]:PrimitiveType[8586-8593]"
+    }, {
+      "left" : "isInitializingDeclarationAt",
+      "right" : "isInitializingDeclarationAt",
+      "info" : "SimpleName[8594-8621]:SimpleName[8594-8621]"
+    }, {
+      "left" : "int index",
+      "right" : "int index",
+      "info" : "SingleVariableDeclaration[8622-8631]:SingleVariableDeclaration[8622-8631]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8633-8958]:Block[8633-8958]"
+    }, {
+      "left" : "Reference maybeInit = references.get(index);",
+      "right" : "Reference maybeInit = references.get(index);",
+      "info" : "VariableDeclarationStatement[8641-8685]:VariableDeclarationStatement[8641-8685]"
+    }, {
+      "left" : "if (maybeInit.isInitializingDeclaration())",
+      "right" : "if (maybeInit.isInitializingDeclaration())",
+      "info" : "IfStatement[8692-8932]:IfStatement[8692-8932]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8735-8932]:Block[8735-8932]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[8912-8924]:ReturnStatement[8912-8924]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[8939-8952]:ReturnStatement[8939-8952]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[9217-9224]:Modifier[9217-9224]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[9225-9232]:PrimitiveType[9225-9232]"
+    }, {
+      "left" : "isInitializingAssignmentAt",
+      "right" : "isInitializingAssignmentAt",
+      "info" : "SimpleName[9233-9259]:SimpleName[9233-9259]"
+    }, {
+      "left" : "int index",
+      "right" : "int index",
+      "info" : "SingleVariableDeclaration[9260-9269]:SingleVariableDeclaration[9260-9269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9271-9689]:Block[9271-9689]"
+    }, {
+      "left" : "if (index < references.size() && index > 0)",
+      "right" : "if (index < references.size() && index > 0)",
+      "info" : "IfStatement[9279-9663]:IfStatement[9279-9663]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9323-9663]:Block[9323-9663]"
+    }, {
+      "left" : "Reference maybeDecl = references.get(index-1);",
+      "right" : "Reference maybeDecl = references.get(index-1);",
+      "info" : "VariableDeclarationStatement[9333-9379]:VariableDeclarationStatement[9333-9379]"
+    }, {
+      "left" : "if (maybeDecl.isVarDeclaration())",
+      "right" : "if (maybeDecl.isVarDeclaration())",
+      "info" : "IfStatement[9388-9655]:IfStatement[9388-9655]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9422-9655]:Block[9422-9655]"
+    }, {
+      "left" : "Preconditions.checkState(!maybeDecl.isInitializingDeclaration());",
+      "right" : "Preconditions.checkState(!maybeDecl.isInitializingDeclaration());",
+      "info" : "ExpressionStatement[9434-9499]:ExpressionStatement[9434-9499]"
+    }, {
+      "left" : "Reference maybeInit = references.get(index);",
+      "right" : "Reference maybeInit = references.get(index);",
+      "info" : "VariableDeclarationStatement[9510-9554]:VariableDeclarationStatement[9510-9554]"
+    }, {
+      "left" : "if (maybeInit.isSimpleAssignmentToName())",
+      "right" : "if (maybeInit.isSimpleAssignmentToName())",
+      "info" : "IfStatement[9565-9645]:IfStatement[9565-9645]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9607-9645]:Block[9607-9645]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[9621-9633]:ReturnStatement[9621-9633]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[9670-9683]:ReturnStatement[9670-9683]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "SimpleType[9991-10000]:SimpleType[9991-10000]"
+    }, {
+      "left" : "getInitializingReference",
+      "right" : "getInitializingReference",
+      "info" : "SimpleName[10001-10025]:SimpleName[10001-10025]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10028-10224]:Block[10028-10224]"
+    }, {
+      "left" : "if (isInitializingDeclarationAt(0))",
+      "right" : "if (isInitializingDeclarationAt(0))",
+      "info" : "IfStatement[10036-10199]:IfStatement[10036-10199]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10072-10115]:Block[10072-10115]"
+    }, {
+      "left" : "return references.get(0);",
+      "right" : "return references.get(0);",
+      "info" : "ReturnStatement[10082-10107]:ReturnStatement[10082-10107]"
+    }, {
+      "left" : "if (isInitializingAssignmentAt(1))",
+      "right" : "if (isInitializingAssignmentAt(1))",
+      "info" : "IfStatement[10121-10199]:IfStatement[10121-10199]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10156-10199]:Block[10156-10199]"
+    }, {
+      "left" : "return references.get(1);",
+      "right" : "return references.get(1);",
+      "info" : "ReturnStatement[10166-10191]:ReturnStatement[10166-10191]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[10206-10218]:ReturnStatement[10206-10218]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "SimpleType[10312-10321]:SimpleType[10312-10321]"
+    }, {
+      "left" : "getInitializingReferenceForConstants",
+      "right" : "getInitializingReferenceForConstants",
+      "info" : "SimpleName[10322-10358]:SimpleName[10322-10358]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10361-10595]:Block[10361-10595]"
+    }, {
+      "left" : "int size = references.size();",
+      "right" : "int size = references.size();",
+      "info" : "VariableDeclarationStatement[10369-10398]:VariableDeclarationStatement[10369-10398]"
+    }, {
+      "left" : "for (int i = 0; i < size; i++)",
+      "right" : "for (int i = 0; i < size; i++)",
+      "info" : "ForStatement[10405-10570]:ForStatement[10405-10570]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10436-10570]:Block[10436-10570]"
+    }, {
+      "left" : "if (isInitializingDeclarationAt(i) || isInitializingAssignmentAt(i))",
+      "right" : "if (isInitializingDeclarationAt(i) || isInitializingAssignmentAt(i))",
+      "info" : "IfStatement[10446-10562]:IfStatement[10446-10562]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10515-10562]:Block[10515-10562]"
+    }, {
+      "left" : "return references.get(i);",
+      "right" : "return references.get(i);",
+      "info" : "ReturnStatement[10527-10552]:ReturnStatement[10527-10552]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[10577-10589]:ReturnStatement[10577-10589]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11050-11057]:Modifier[11282-11289]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "SimpleType[11058-11067]:SimpleType[11290-11299]"
+    }, {
+      "left" : "getOneAndOnlyAssignment",
+      "right" : "getOneAndOnlyAssignment",
+      "info" : "SimpleName[11068-11091]:SimpleName[11300-11323]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11094-11484]:Block[11326-11716]"
+    }, {
+      "left" : "Reference assignment = null;",
+      "right" : "Reference assignment = null;",
+      "info" : "VariableDeclarationStatement[11102-11130]:VariableDeclarationStatement[11334-11362]"
+    }, {
+      "left" : "int size = references.size();",
+      "right" : "int size = references.size();",
+      "info" : "VariableDeclarationStatement[11137-11166]:VariableDeclarationStatement[11369-11398]"
+    }, {
+      "left" : "for (int i = 0; i < size; i++)",
+      "right" : "for (int i = 0; i < size; i++)",
+      "info" : "ForStatement[11173-11453]:ForStatement[11405-11685]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11204-11453]:Block[11436-11685]"
+    }, {
+      "left" : "Reference ref = references.get(i);",
+      "right" : "Reference ref = references.get(i);",
+      "info" : "VariableDeclarationStatement[11214-11248]:VariableDeclarationStatement[11446-11480]"
+    }, {
+      "left" : "if (ref.isLvalue() || ref.isInitializingDeclaration())",
+      "right" : "if (ref.isLvalue() || ref.isInitializingDeclaration())",
+      "info" : "IfStatement[11257-11445]:IfStatement[11489-11677]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11312-11445]:Block[11544-11677]"
+    }, {
+      "left" : "if (assignment == null)",
+      "right" : "if (assignment == null)",
+      "info" : "IfStatement[11324-11435]:IfStatement[11556-11667]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11348-11391]:Block[11580-11623]"
+    }, {
+      "left" : "assignment = ref;",
+      "right" : "assignment = ref;",
+      "info" : "ExpressionStatement[11362-11379]:ExpressionStatement[11594-11611]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11397-11435]:Block[11629-11667]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[11411-11423]:ReturnStatement[11643-11655]"
+    }, {
+      "left" : "return assignment;",
+      "right" : "return assignment;",
+      "info" : "ReturnStatement[11460-11478]:ReturnStatement[11692-11710]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[11569-11576]:PrimitiveType[11801-11808]"
+    }, {
+      "left" : "isNeverAssigned",
+      "right" : "isNeverAssigned",
+      "info" : "SimpleName[11577-11592]:SimpleName[11809-11824]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11595-11846]:Block[11827-12078]"
+    }, {
+      "left" : "int size = references.size();",
+      "right" : "int size = references.size();",
+      "info" : "VariableDeclarationStatement[11603-11632]:VariableDeclarationStatement[11835-11864]"
+    }, {
+      "left" : "for (int i = 0; i < size; i++)",
+      "right" : "for (int i = 0; i < size; i++)",
+      "info" : "ForStatement[11639-11821]:ForStatement[11871-12053]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11670-11821]:Block[11902-12053]"
+    }, {
+      "left" : "Reference ref = references.get(i);",
+      "right" : "Reference ref = references.get(i);",
+      "info" : "VariableDeclarationStatement[11680-11714]:VariableDeclarationStatement[11912-11946]"
+    }, {
+      "left" : "if (ref.isLvalue() || ref.isInitializingDeclaration())",
+      "right" : "if (ref.isLvalue() || ref.isInitializingDeclaration())",
+      "info" : "IfStatement[11723-11813]:IfStatement[11955-12045]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11778-11813]:Block[12010-12045]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11790-11803]:ReturnStatement[12022-12035]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[11828-11840]:ReturnStatement[12060-12072]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[11852-11859]:PrimitiveType[12084-12091]"
+    }, {
+      "left" : "firstReferenceIsAssigningDeclaration",
+      "right" : "firstReferenceIsAssigningDeclaration",
+      "info" : "SimpleName[11860-11896]:SimpleName[12092-12128]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11899-12062]:Block[12131-12294]"
+    }, {
+      "left" : "int size = references.size();",
+      "right" : "int size = references.size();",
+      "info" : "VariableDeclarationStatement[11907-11936]:VariableDeclarationStatement[12139-12168]"
+    }, {
+      "left" : "if (size > 0 && references.get(0).isInitializingDeclaration())",
+      "right" : "if (size > 0 && references.get(0).isInitializingDeclaration())",
+      "info" : "IfStatement[11943-12036]:IfStatement[12175-12268]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12006-12036]:Block[12238-12268]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[12016-12028]:ReturnStatement[12248-12260]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[12043-12056]:ReturnStatement[12275-12288]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[12147-12153]:Modifier[12379-12385]"
+    }, {
+      "left" : "final",
+      "right" : "final",
+      "info" : "Modifier[12154-12159]:Modifier[12386-12391]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[12160-12165]:TYPE_DECLARATION_KIND[12392-12397]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "SimpleName[12166-12175]:SimpleName[12398-12407]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "SimpleName[12519-12528]:SimpleName[12751-12760]"
+    }, {
+      "left" : "Node nameNode",
+      "right" : "Node nameNode",
+      "info" : "SingleVariableDeclaration[12529-12542]:SingleVariableDeclaration[12761-12774]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[12544-12555]:SingleVariableDeclaration[12776-12787]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[12557-12572]:SingleVariableDeclaration[12789-12804]"
+    }, {
+      "left" : "BasicBlock basicBlock",
+      "right" : "BasicBlock basicBlock",
+      "info" : "SingleVariableDeclaration[12582-12603]:SingleVariableDeclaration[12814-12835]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12605-12718]:Block[12837-12950]"
+    }, {
+      "left" : "this(nameNode, parent, parent.getParent(), basicBlock, t.getScope(),\n           t.getSourceName());",
+      "right" : "this(nameNode, parent, parent.getParent(), basicBlock, t.getScope(),\n           t.getSourceName());",
+      "info" : "ConstructorInvocation[12613-12712]:ConstructorInvocation[12845-12944]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[12864-12870]:Modifier[13096-13102]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "SimpleType[12871-12880]:SimpleType[13103-13112]"
+    }, {
+      "left" : "newBleedingFunction",
+      "right" : "newBleedingFunction",
+      "info" : "SimpleName[12881-12900]:SimpleName[13113-13132]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[12901-12916]:SingleVariableDeclaration[13133-13148]"
+    }, {
+      "left" : "BasicBlock basicBlock",
+      "right" : "BasicBlock basicBlock",
+      "info" : "SingleVariableDeclaration[12926-12947]:SingleVariableDeclaration[13158-13179]"
+    }, {
+      "left" : "Node func",
+      "right" : "Node func",
+      "info" : "SingleVariableDeclaration[12949-12958]:SingleVariableDeclaration[13181-13190]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12960-13096]:Block[13192-13328]"
+    }, {
+      "left" : "return new Reference(func.getFirstChild(), func, func.getParent(),\n          basicBlock, t.getScope(), t.getSourceName());",
+      "right" : "return new Reference(func.getFirstChild(), func, func.getParent(),\n          basicBlock, t.getScope(), t.getSourceName());",
+      "info" : "ReturnStatement[12968-13090]:ReturnStatement[13200-13322]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13102-13109]:Modifier[13334-13341]"
+    }, {
+      "left" : "Reference",
+      "right" : "Reference",
+      "info" : "SimpleName[13110-13119]:SimpleName[13342-13351]"
+    }, {
+      "left" : "Node nameNode",
+      "right" : "Node nameNode",
+      "info" : "SingleVariableDeclaration[13120-13133]:SingleVariableDeclaration[13352-13365]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[13135-13146]:SingleVariableDeclaration[13367-13378]"
+    }, {
+      "left" : "Node grandparent",
+      "right" : "Node grandparent",
+      "info" : "SingleVariableDeclaration[13148-13164]:SingleVariableDeclaration[13380-13396]"
+    }, {
+      "left" : "BasicBlock basicBlock",
+      "right" : "BasicBlock basicBlock",
+      "info" : "SingleVariableDeclaration[13174-13195]:SingleVariableDeclaration[13406-13427]"
+    }, {
+      "left" : "Scope scope",
+      "right" : "Scope scope",
+      "info" : "SingleVariableDeclaration[13197-13208]:SingleVariableDeclaration[13429-13440]"
+    }, {
+      "left" : "String sourceName",
+      "right" : "String sourceName",
+      "info" : "SingleVariableDeclaration[13210-13227]:SingleVariableDeclaration[13442-13459]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13229-13432]:Block[13461-13664]"
+    }, {
+      "left" : "this.nameNode = nameNode;",
+      "right" : "this.nameNode = nameNode;",
+      "info" : "ExpressionStatement[13237-13262]:ExpressionStatement[13469-13494]"
+    }, {
+      "left" : "this.parent = parent;",
+      "right" : "this.parent = parent;",
+      "info" : "ExpressionStatement[13269-13290]:ExpressionStatement[13501-13522]"
+    }, {
+      "left" : "this.grandparent = grandparent;",
+      "right" : "this.grandparent = grandparent;",
+      "info" : "ExpressionStatement[13297-13328]:ExpressionStatement[13529-13560]"
+    }, {
+      "left" : "this.basicBlock = basicBlock;",
+      "right" : "this.basicBlock = basicBlock;",
+      "info" : "ExpressionStatement[13335-13364]:ExpressionStatement[13567-13596]"
+    }, {
+      "left" : "this.scope = scope;",
+      "right" : "this.scope = scope;",
+      "info" : "ExpressionStatement[13371-13390]:ExpressionStatement[13603-13622]"
+    }, {
+      "left" : "this.sourceName = sourceName;",
+      "right" : "this.sourceName = sourceName;",
+      "info" : "ExpressionStatement[13397-13426]:ExpressionStatement[13629-13658]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[13438-13445]:PrimitiveType[13670-13677]"
+    }, {
+      "left" : "isDeclaration",
+      "right" : "isDeclaration",
+      "info" : "SimpleName[13446-13459]:SimpleName[13678-13691]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13462-13625]:Block[13694-13857]"
+    }, {
+      "left" : "return DECLARATION_PARENTS.contains(parent.getType()) ||\n          parent.getType() == Token.LP &&\n          grandparent.getType() == Token.FUNCTION;",
+      "right" : "return DECLARATION_PARENTS.contains(parent.getType()) ||\n          parent.getType() == Token.LP &&\n          grandparent.getType() == Token.FUNCTION;",
+      "info" : "ReturnStatement[13470-13619]:ReturnStatement[13702-13851]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[13631-13638]:PrimitiveType[13863-13870]"
+    }, {
+      "left" : "isVarDeclaration",
+      "right" : "isVarDeclaration",
+      "info" : "SimpleName[13639-13655]:SimpleName[13871-13887]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13658-13709]:Block[13890-13941]"
+    }, {
+      "left" : "return parent.getType() == Token.VAR;",
+      "right" : "return parent.getType() == Token.VAR;",
+      "info" : "ReturnStatement[13666-13703]:ReturnStatement[13898-13935]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[13715-13722]:PrimitiveType[13947-13954]"
+    }, {
+      "left" : "isHoistedFunction",
+      "right" : "isHoistedFunction",
+      "info" : "SimpleName[13723-13740]:SimpleName[13955-13972]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13743-13810]:Block[13975-14042]"
+    }, {
+      "left" : "return NodeUtil.isHoistedFunctionDeclaration(parent);",
+      "right" : "return NodeUtil.isHoistedFunctionDeclaration(parent);",
+      "info" : "ReturnStatement[13751-13804]:ReturnStatement[13983-14036]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[13906-13913]:PrimitiveType[14138-14145]"
+    }, {
+      "left" : "isInitializingDeclaration",
+      "right" : "isInitializingDeclaration",
+      "info" : "SimpleName[13914-13939]:SimpleName[14146-14171]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13942-14215]:Block[14174-14447]"
+    }, {
+      "left" : "return isDeclaration() &&\n          (parent.getType() != Token.VAR || nameNode.getFirstChild() != null);",
+      "right" : "return isDeclaration() &&\n          (parent.getType() != Token.VAR || nameNode.getFirstChild() != null);",
+      "info" : "ReturnStatement[14105-14209]:ReturnStatement[14337-14441]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[14363-14367]:SimpleType[14595-14599]"
+    }, {
+      "left" : "getAssignedValue",
+      "right" : "getAssignedValue",
+      "info" : "SimpleName[14368-14384]:SimpleName[14600-14616]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14387-14507]:Block[14619-14739]"
+    }, {
+      "left" : "return (parent.getType() == Token.FUNCTION)\n          ? parent : NodeUtil.getAssignedValue(getNameNode());",
+      "right" : "return (parent.getType() == Token.FUNCTION)\n          ? parent : NodeUtil.getAssignedValue(getNameNode());",
+      "info" : "ReturnStatement[14395-14501]:ReturnStatement[14627-14733]"
+    }, {
+      "left" : "BasicBlock",
+      "right" : "BasicBlock",
+      "info" : "SimpleType[14513-14523]:SimpleType[14745-14755]"
+    }, {
+      "left" : "getBasicBlock",
+      "right" : "getBasicBlock",
+      "info" : "SimpleName[14524-14537]:SimpleName[14756-14769]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14540-14572]:Block[14772-14804]"
+    }, {
+      "left" : "return basicBlock;",
+      "right" : "return basicBlock;",
+      "info" : "ReturnStatement[14548-14566]:ReturnStatement[14780-14798]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[14578-14582]:SimpleType[14810-14814]"
+    }, {
+      "left" : "getParent",
+      "right" : "getParent",
+      "info" : "SimpleName[14583-14592]:SimpleName[14815-14824]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14595-14623]:Block[14827-14855]"
+    }, {
+      "left" : "return parent;",
+      "right" : "return parent;",
+      "info" : "ReturnStatement[14603-14617]:ReturnStatement[14835-14849]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[14629-14633]:SimpleType[14861-14865]"
+    }, {
+      "left" : "getNameNode",
+      "right" : "getNameNode",
+      "info" : "SimpleName[14634-14645]:SimpleName[14866-14877]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14648-14678]:Block[14880-14910]"
+    }, {
+      "left" : "return nameNode;",
+      "right" : "return nameNode;",
+      "info" : "ReturnStatement[14656-14672]:ReturnStatement[14888-14904]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[14684-14688]:SimpleType[14916-14920]"
+    }, {
+      "left" : "getGrandparent",
+      "right" : "getGrandparent",
+      "info" : "SimpleName[14689-14703]:SimpleName[14921-14935]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14706-14739]:Block[14938-14971]"
+    }, {
+      "left" : "return grandparent;",
+      "right" : "return grandparent;",
+      "info" : "ReturnStatement[14714-14733]:ReturnStatement[14946-14965]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[14745-14752]:Modifier[14977-14984]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[14753-14759]:Modifier[14985-14991]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[14760-14767]:PrimitiveType[14992-14999]"
+    }, {
+      "left" : "isLhsOfForInExpression",
+      "right" : "isLhsOfForInExpression",
+      "info" : "SimpleName[14768-14790]:SimpleName[15000-15022]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[14791-14797]:SingleVariableDeclaration[15023-15029]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14799-15009]:Block[15031-15241]"
+    }, {
+      "left" : "Node parent = n.getParent();",
+      "right" : "Node parent = n.getParent();",
+      "info" : "VariableDeclarationStatement[14807-14835]:VariableDeclarationStatement[15039-15067]"
+    }, {
+      "left" : "if (parent.getType() == Token.VAR)",
+      "right" : "if (parent.getType() == Token.VAR)",
+      "info" : "IfStatement[14842-14933]:IfStatement[15074-15165]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14877-14933]:Block[15109-15165]"
+    }, {
+      "left" : "return isLhsOfForInExpression(parent);",
+      "right" : "return isLhsOfForInExpression(parent);",
+      "info" : "ReturnStatement[14887-14925]:ReturnStatement[15119-15157]"
+    }, {
+      "left" : "return NodeUtil.isForIn(parent) && parent.getFirstChild() == n;",
+      "right" : "return NodeUtil.isForIn(parent) && parent.getFirstChild() == n;",
+      "info" : "ReturnStatement[14940-15003]:ReturnStatement[15172-15235]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[15015-15022]:PrimitiveType[15247-15254]"
+    }, {
+      "left" : "isSimpleAssignmentToName",
+      "right" : "isSimpleAssignmentToName",
+      "info" : "SimpleName[15023-15047]:SimpleName[15255-15279]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15050-15152]:Block[15282-15384]"
+    }, {
+      "left" : "return parent.getType() == Token.ASSIGN\n          && parent.getFirstChild() == nameNode;",
+      "right" : "return parent.getType() == Token.ASSIGN\n          && parent.getFirstChild() == nameNode;",
+      "info" : "ReturnStatement[15058-15146]:ReturnStatement[15290-15378]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[15158-15165]:PrimitiveType[15390-15397]"
+    }, {
+      "left" : "isLvalue",
+      "right" : "isLvalue",
+      "info" : "SimpleName[15166-15174]:SimpleName[15398-15406]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15177-15520]:Block[15409-15752]"
+    }, {
+      "left" : "int parentType = parent.getType();",
+      "right" : "int parentType = parent.getType();",
+      "info" : "VariableDeclarationStatement[15185-15219]:VariableDeclarationStatement[15417-15451]"
+    }, {
+      "left" : "return (parentType == Token.VAR && nameNode.getFirstChild() != null)\n          || parentType == Token.INC\n          || parentType == Token.DEC\n          || (NodeUtil.isAssignmentOp(parent)\n              && parent.getFirstChild() == nameNode)\n          || isLhsOfForInExpression(nameNode);",
+      "right" : "return (parentType == Token.VAR && nameNode.getFirstChild() != null)\n          || parentType == Token.INC\n          || parentType == Token.DEC\n          || (NodeUtil.isAssignmentOp(parent)\n              && parent.getFirstChild() == nameNode)\n          || isLhsOfForInExpression(nameNode);",
+      "info" : "ReturnStatement[15226-15514]:ReturnStatement[15458-15746]"
+    }, {
+      "left" : "Scope",
+      "right" : "Scope",
+      "info" : "SimpleType[15526-15531]:SimpleType[15758-15763]"
+    }, {
+      "left" : "getScope",
+      "right" : "getScope",
+      "info" : "SimpleName[15532-15540]:SimpleName[15764-15772]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15543-15570]:Block[15775-15802]"
+    }, {
+      "left" : "return scope;",
+      "right" : "return scope;",
+      "info" : "ReturnStatement[15551-15564]:ReturnStatement[15783-15796]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15576-15582]:Modifier[15808-15814]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[15583-15589]:SimpleType[15815-15821]"
+    }, {
+      "left" : "getSourceName",
+      "right" : "getSourceName",
+      "info" : "SimpleName[15590-15603]:SimpleName[15822-15835]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15606-15638]:Block[15838-15870]"
+    }, {
+      "left" : "return sourceName;",
+      "right" : "return sourceName;",
+      "info" : "ReturnStatement[15614-15632]:ReturnStatement[15846-15864]"
+    }, {
+      "left" : "BasicBlock",
+      "right" : "BasicBlock",
+      "info" : "SimpleType[16499-16509]:SimpleType[17110-17120]"
+    }, {
+      "left" : "getParent",
+      "right" : "getParent",
+      "info" : "SimpleName[16510-16519]:SimpleName[17121-17130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16522-16550]:Block[17133-17161]"
+    }, {
+      "left" : "return parent;",
+      "right" : "return parent;",
+      "info" : "ReturnStatement[16530-16544]:ReturnStatement[17141-17155]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[16678-16685]:PrimitiveType[17289-17296]"
+    }, {
+      "left" : "provablyExecutesBefore",
+      "right" : "provablyExecutesBefore",
+      "info" : "SimpleName[16686-16708]:SimpleName[17297-17319]"
+    }, {
+      "left" : "BasicBlock thatBlock",
+      "right" : "BasicBlock thatBlock",
+      "info" : "SingleVariableDeclaration[16709-16729]:SingleVariableDeclaration[17320-17340]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16731-17186]:Block[17342-17797]"
+    }, {
+      "left" : "BasicBlock currentBlock;",
+      "right" : "BasicBlock currentBlock;",
+      "info" : "VariableDeclarationStatement[16892-16916]:VariableDeclarationStatement[17503-17527]"
+    }, {
+      "left" : "for (currentBlock = thatBlock;\n           currentBlock != null && currentBlock != this;\n           currentBlock = currentBlock.getParent())",
+      "right" : "for (currentBlock = thatBlock;\n           currentBlock != null && currentBlock != this;\n           currentBlock = currentBlock.getParent())",
+      "info" : "ForStatement[16923-17144]:ForStatement[17534-17755]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17063-17144]:Block[17674-17755]"
+    }, {
+      "left" : "if (currentBlock.isHoisted)",
+      "right" : "if (currentBlock.isHoisted)",
+      "info" : "IfStatement[17073-17136]:IfStatement[17684-17747]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17101-17136]:Block[17712-17747]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[17113-17126]:ReturnStatement[17724-17737]"
+    }, {
+      "left" : "return currentBlock == this;",
+      "right" : "return currentBlock == this;",
+      "info" : "ReturnStatement[17152-17180]:ReturnStatement[17763-17791]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

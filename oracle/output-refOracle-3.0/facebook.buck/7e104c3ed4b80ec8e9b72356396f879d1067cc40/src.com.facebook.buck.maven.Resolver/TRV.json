@@ -1,0 +1,1017 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final String TEMPLATE =\n      Resolver.class.getPackage().getName().replace(\".\", \"/\") + \"/build-file.st\";",
+      "right" : "private static final String TEMPLATE =\n      Resolver.class.getPackage().getName().replace(\".\", \"/\") + \"/build-file.st\";",
+      "info" : "FieldDeclaration[3227-3347]:FieldDeclaration[3227-3347]"
+    }, {
+      "left" : "private final Path buckRepoRoot;",
+      "right" : "private final Path buckRepoRoot;",
+      "info" : "FieldDeclaration[3351-3383]:FieldDeclaration[3351-3383]"
+    }, {
+      "left" : "private final Path buckThirdPartyRelativePath;",
+      "right" : "private final Path buckThirdPartyRelativePath;",
+      "info" : "FieldDeclaration[3386-3432]:FieldDeclaration[3386-3432]"
+    }, {
+      "left" : "private final LocalRepository localRepo;",
+      "right" : "private final LocalRepository localRepo;",
+      "info" : "FieldDeclaration[3435-3475]:FieldDeclaration[3435-3475]"
+    }, {
+      "left" : "private final ImmutableList<RemoteRepository> repos;",
+      "right" : "private final ImmutableList<RemoteRepository> repos;",
+      "info" : "FieldDeclaration[3478-3530]:FieldDeclaration[3478-3530]"
+    }, {
+      "left" : "private final ServiceLocator locator;",
+      "right" : "private final ServiceLocator locator;",
+      "info" : "FieldDeclaration[3533-3570]:FieldDeclaration[3533-3570]"
+    }, {
+      "left" : "public Resolver(\n      Path buckRepoRoot,\n      Path relativeThirdParty,\n      Path localRepoPath,\n      String... repoUrls)",
+      "right" : "public Resolver(\n      Path buckRepoRoot,\n      Path relativeThirdParty,\n      Path localRepoPath,\n      String... repoUrls)",
+      "info" : "MethodDeclaration[3574-4559]:MethodDeclaration[3574-4559]"
+    }, {
+      "left" : "private Path copy(ArtifactResult result, Path destDir) throws IOException",
+      "right" : "private Path copy(ArtifactResult result, Path destDir) throws IOException",
+      "info" : "MethodDeclaration[8658-8953]:MethodDeclaration[9632-9927]"
+    }, {
+      "left" : "private  MutableDirectedGraph<Artifact> buildDependencyGraph(\n      RepositorySystem repoSys,\n      RepositorySystemSession session,\n      Map<String, Artifact> knownDeps) throws ArtifactDescriptorException",
+      "right" : "private  MutableDirectedGraph<Artifact> buildDependencyGraph(\n      RepositorySystem repoSys,\n      RepositorySystemSession session,\n      Map<String, Artifact> knownDeps) throws ArtifactDescriptorException",
+      "info" : "MethodDeclaration[8957-10391]:MethodDeclaration[9931-11365]"
+    }, {
+      "left" : "private List<Dependency> getDependenciesOf(\n      RepositorySystem repoSys,\n      RepositorySystemSession session,\n      Artifact dep) throws ArtifactDescriptorException",
+      "right" : "private List<Dependency> getDependenciesOf(\n      RepositorySystem repoSys,\n      RepositorySystemSession session,\n      Artifact dep) throws ArtifactDescriptorException",
+      "info" : "MethodDeclaration[10395-10936]:MethodDeclaration[11369-11910]"
+    }, {
+      "left" : "private boolean isTestTime(Dependency dependency)",
+      "right" : "private boolean isTestTime(Dependency dependency)",
+      "info" : "MethodDeclaration[10940-11042]:MethodDeclaration[11914-12016]"
+    }, {
+      "left" : "private ImmutableMap<String, Artifact> getRunTimeTransitiveDeps(\n      RepositorySystem repoSys,\n      RepositorySystemSession session,\n      String... mavenCoords)\n      throws RepositoryException",
+      "right" : "private ImmutableMap<String, Artifact> getRunTimeTransitiveDeps(\n      RepositorySystem repoSys,\n      RepositorySystemSession session,\n      String... mavenCoords)\n      throws RepositoryException",
+      "info" : "MethodDeclaration[11046-13064]:MethodDeclaration[12020-14038]"
+    }, {
+      "left" : "private RepositorySystemSession newSession(RepositorySystem repoSys)",
+      "right" : "private RepositorySystemSession newSession(RepositorySystem repoSys)",
+      "info" : "MethodDeclaration[13068-13371]:MethodDeclaration[14042-14345]"
+    }, {
+      "left" : "private String buildKey(Artifact artifact)",
+      "right" : "private String buildKey(Artifact artifact)",
+      "info" : "MethodDeclaration[13375-13655]:MethodDeclaration[14349-14629]"
+    }, {
+      "left" : "public static void main(String[] args) throws RepositoryException, IOException",
+      "right" : "public static void main(String[] args) throws RepositoryException, IOException",
+      "info" : "MethodDeclaration[13659-14290]:MethodDeclaration[14633-15264]"
+    }, {
+      "left" : "private final String name;",
+      "right" : "private final String name;",
+      "info" : "FieldDeclaration[14363-14389]:FieldDeclaration[15416-15442]"
+    }, {
+      "left" : "private final Path binaryJar;",
+      "right" : "private final Path binaryJar;",
+      "info" : "FieldDeclaration[14394-14423]:FieldDeclaration[15447-15476]"
+    }, {
+      "left" : "private Path sourceJar;",
+      "right" : "private Path sourceJar;",
+      "info" : "FieldDeclaration[14428-14451]:FieldDeclaration[15481-15504]"
+    }, {
+      "left" : "private final SortedSet<String> deps = new TreeSet<>(new BuckDepComparator());",
+      "right" : "private final SortedSet<String> deps = new TreeSet<>(new BuckDepComparator());",
+      "info" : "FieldDeclaration[14456-14534]:FieldDeclaration[15509-15587]"
+    }, {
+      "left" : "private final SortedSet<String> visibilities = new TreeSet<>(new BuckDepComparator());",
+      "right" : "private final SortedSet<String> visibilities = new TreeSet<>(new BuckDepComparator());",
+      "info" : "FieldDeclaration[14539-14625]:FieldDeclaration[15592-15678]"
+    }, {
+      "left" : "public Prebuilt(String name, Path binaryJar)",
+      "right" : "public Prebuilt(String name, Path binaryJar)",
+      "info" : "MethodDeclaration[14631-14741]:MethodDeclaration[15684-15794]"
+    }, {
+      "left" : "// This method is read reflectively.\n    public String getName()",
+      "right" : "// This method is read reflectively.\n    public String getName()",
+      "info" : "MethodDeclaration[14747-14866]:MethodDeclaration[15800-15919]"
+    }, {
+      "left" : "// This method is read reflectively.\n    public Path getBinaryJar()",
+      "right" : "// This method is read reflectively.\n    public Path getBinaryJar()",
+      "info" : "MethodDeclaration[14872-14999]:MethodDeclaration[15925-16052]"
+    }, {
+      "left" : "public void setSourceJar(Path sourceJar)",
+      "right" : "public void setSourceJar(Path sourceJar)",
+      "info" : "MethodDeclaration[15005-15087]:MethodDeclaration[16058-16140]"
+    }, {
+      "left" : "// This method is read reflectively.\n    public Path getSourceJar()",
+      "right" : "// This method is read reflectively.\n    public Path getSourceJar()",
+      "info" : "MethodDeclaration[15093-15220]:MethodDeclaration[16146-16273]"
+    }, {
+      "left" : "public void addDep(String dep)",
+      "right" : "public void addDep(String dep)",
+      "info" : "MethodDeclaration[15226-15290]:MethodDeclaration[16279-16343]"
+    }, {
+      "left" : "// This method is read reflectively.\n    public SortedSet<String> getDeps()",
+      "right" : "// This method is read reflectively.\n    public SortedSet<String> getDeps()",
+      "info" : "MethodDeclaration[15296-15426]:MethodDeclaration[16501-16631]"
+    }, {
+      "left" : "public void addVisibility(String dep)",
+      "right" : "public void addVisibility(String dep)",
+      "info" : "MethodDeclaration[15432-15511]:MethodDeclaration[16637-16716]"
+    }, {
+      "left" : "// This method is read reflectively.\n    public SortedSet<String> getVisibility()",
+      "right" : "// This method is read reflectively.\n    public SortedSet<String> getVisibility()",
+      "info" : "MethodDeclaration[15517-15661]:MethodDeclaration[17140-17284]"
+    }, {
+      "left" : "public int compareTo(Prebuilt that)",
+      "right" : "public int compareTo(Prebuilt that)",
+      "info" : "MethodDeclaration[15667-15769]:MethodDeclaration[17290-17392]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3574-3580]:Modifier[3574-3580]"
+    }, {
+      "left" : "Resolver",
+      "right" : "Resolver",
+      "info" : "SimpleName[3581-3589]:SimpleName[3581-3589]"
+    }, {
+      "left" : "Path buckRepoRoot",
+      "right" : "Path buckRepoRoot",
+      "info" : "SingleVariableDeclaration[3597-3614]:SingleVariableDeclaration[3597-3614]"
+    }, {
+      "left" : "Path relativeThirdParty",
+      "right" : "Path relativeThirdParty",
+      "info" : "SingleVariableDeclaration[3622-3645]:SingleVariableDeclaration[3622-3645]"
+    }, {
+      "left" : "Path localRepoPath",
+      "right" : "Path localRepoPath",
+      "info" : "SingleVariableDeclaration[3653-3671]:SingleVariableDeclaration[3653-3671]"
+    }, {
+      "left" : "String... repoUrls",
+      "right" : "String... repoUrls",
+      "info" : "SingleVariableDeclaration[3679-3697]:SingleVariableDeclaration[3679-3697]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3699-4559]:Block[3699-4559]"
+    }, {
+      "left" : "this.buckRepoRoot = buckRepoRoot;",
+      "right" : "this.buckRepoRoot = buckRepoRoot;",
+      "info" : "ExpressionStatement[3705-3738]:ExpressionStatement[3705-3738]"
+    }, {
+      "left" : "this.buckThirdPartyRelativePath = relativeThirdParty;",
+      "right" : "this.buckThirdPartyRelativePath = relativeThirdParty;",
+      "info" : "ExpressionStatement[3743-3796]:ExpressionStatement[3743-3796]"
+    }, {
+      "left" : "this.localRepo = new LocalRepository(localRepoPath.toFile());",
+      "right" : "this.localRepo = new LocalRepository(localRepoPath.toFile());",
+      "info" : "ExpressionStatement[3801-3862]:ExpressionStatement[3801-3862]"
+    }, {
+      "left" : "ImmutableList.Builder<RemoteRepository> builder = ImmutableList.builder();",
+      "right" : "ImmutableList.Builder<RemoteRepository> builder = ImmutableList.builder();",
+      "info" : "VariableDeclarationStatement[3868-3942]:VariableDeclarationStatement[3868-3942]"
+    }, {
+      "left" : "for (int i = 0; i < repoUrls.length; i++)",
+      "right" : "for (int i = 0; i < repoUrls.length; i++)",
+      "info" : "ForStatement[3947-4231]:ForStatement[3947-4231]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3989-4231]:Block[3989-4231]"
+    }, {
+      "left" : "RemoteRepository.Builder remote =\n          new RemoteRepository.Builder(\"remote \" + i, \"default\", repoUrls[i])\n              .setPolicy(new RepositoryPolicy(true, null, CHECKSUM_POLICY_FAIL));",
+      "right" : "RemoteRepository.Builder remote =\n          new RemoteRepository.Builder(\"remote \" + i, \"default\", repoUrls[i])\n              .setPolicy(new RepositoryPolicy(true, null, CHECKSUM_POLICY_FAIL));",
+      "info" : "VariableDeclarationStatement[3997-4190]:VariableDeclarationStatement[3997-4190]"
+    }, {
+      "left" : "builder.add(remote.build());",
+      "right" : "builder.add(remote.build());",
+      "info" : "ExpressionStatement[4197-4225]:ExpressionStatement[4197-4225]"
+    }, {
+      "left" : "this.repos = builder.build();",
+      "right" : "this.repos = builder.build();",
+      "info" : "ExpressionStatement[4236-4265]:ExpressionStatement[4236-4265]"
+    }, {
+      "left" : "DefaultServiceLocator locator = MavenRepositorySystemUtils.newServiceLocator();",
+      "right" : "DefaultServiceLocator locator = MavenRepositorySystemUtils.newServiceLocator();",
+      "info" : "VariableDeclarationStatement[4271-4350]:VariableDeclarationStatement[4271-4350]"
+    }, {
+      "left" : "locator.addService(RepositoryConnectorFactory.class, BasicRepositoryConnectorFactory.class);",
+      "right" : "locator.addService(RepositoryConnectorFactory.class, BasicRepositoryConnectorFactory.class);",
+      "info" : "ExpressionStatement[4355-4447]:ExpressionStatement[4355-4447]"
+    }, {
+      "left" : "locator.addService(TransporterFactory.class, HttpTransporterFactory.class);",
+      "right" : "locator.addService(TransporterFactory.class, HttpTransporterFactory.class);",
+      "info" : "ExpressionStatement[4452-4527]:ExpressionStatement[4452-4527]"
+    }, {
+      "left" : "this.locator = locator;",
+      "right" : "this.locator = locator;",
+      "info" : "ExpressionStatement[4532-4555]:ExpressionStatement[4532-4555]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8658-8665]:Modifier[9632-9639]"
+    }, {
+      "left" : "Path",
+      "right" : "Path",
+      "info" : "SimpleType[8666-8670]:SimpleType[9640-9644]"
+    }, {
+      "left" : "copy",
+      "right" : "copy",
+      "info" : "SimpleName[8671-8675]:SimpleName[9645-9649]"
+    }, {
+      "left" : "ArtifactResult result",
+      "right" : "ArtifactResult result",
+      "info" : "SingleVariableDeclaration[8676-8697]:SingleVariableDeclaration[9650-9671]"
+    }, {
+      "left" : "Path destDir",
+      "right" : "Path destDir",
+      "info" : "SingleVariableDeclaration[8699-8711]:SingleVariableDeclaration[9673-9685]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[8720-8731]:SimpleType[9694-9705]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8732-8953]:Block[9706-9927]"
+    }, {
+      "left" : "Path source = result.getArtifact().getFile().toPath();",
+      "right" : "Path source = result.getArtifact().getFile().toPath();",
+      "info" : "VariableDeclarationStatement[8738-8792]:VariableDeclarationStatement[9712-9766]"
+    }, {
+      "left" : "Path sink = destDir.resolve(source.getFileName());",
+      "right" : "Path sink = destDir.resolve(source.getFileName());",
+      "info" : "VariableDeclarationStatement[8797-8847]:VariableDeclarationStatement[9771-9821]"
+    }, {
+      "left" : "if (!Files.exists(sink))",
+      "right" : "if (!Files.exists(sink))",
+      "info" : "IfStatement[8853-8917]:IfStatement[9827-9891]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8878-8917]:Block[9852-9891]"
+    }, {
+      "left" : "Files.copy(source, sink);",
+      "right" : "Files.copy(source, sink);",
+      "info" : "ExpressionStatement[8886-8911]:ExpressionStatement[9860-9885]"
+    }, {
+      "left" : "return sink.getFileName();",
+      "right" : "return sink.getFileName();",
+      "info" : "ReturnStatement[8923-8949]:ReturnStatement[9897-9923]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8957-8964]:Modifier[9931-9938]"
+    }, {
+      "left" : "MutableDirectedGraph<Artifact>",
+      "right" : "MutableDirectedGraph<Artifact>",
+      "info" : "ParameterizedType[8966-8996]:ParameterizedType[9940-9970]"
+    }, {
+      "left" : "buildDependencyGraph",
+      "right" : "buildDependencyGraph",
+      "info" : "SimpleName[8997-9017]:SimpleName[9971-9991]"
+    }, {
+      "left" : "RepositorySystem repoSys",
+      "right" : "RepositorySystem repoSys",
+      "info" : "SingleVariableDeclaration[9025-9049]:SingleVariableDeclaration[9999-10023]"
+    }, {
+      "left" : "RepositorySystemSession session",
+      "right" : "RepositorySystemSession session",
+      "info" : "SingleVariableDeclaration[9057-9088]:SingleVariableDeclaration[10031-10062]"
+    }, {
+      "left" : "Map<String, Artifact> knownDeps",
+      "right" : "Map<String, Artifact> knownDeps",
+      "info" : "SingleVariableDeclaration[9096-9127]:SingleVariableDeclaration[10070-10101]"
+    }, {
+      "left" : "ArtifactDescriptorException",
+      "right" : "ArtifactDescriptorException",
+      "info" : "SimpleType[9136-9163]:SimpleType[10110-10137]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9164-10391]:Block[10138-11365]"
+    }, {
+      "left" : "MutableDirectedGraph<Artifact> graph;",
+      "right" : "MutableDirectedGraph<Artifact> graph;",
+      "info" : "VariableDeclarationStatement[9170-9207]:VariableDeclarationStatement[10144-10181]"
+    }, {
+      "left" : "graph = new MutableDirectedGraph<>();",
+      "right" : "graph = new MutableDirectedGraph<>();",
+      "info" : "ExpressionStatement[9212-9249]:ExpressionStatement[10186-10223]"
+    }, {
+      "left" : "for (Artifact dep : knownDeps.values())",
+      "right" : "for (Artifact dep : knownDeps.values())",
+      "info" : "EnhancedForStatement[9254-10369]:EnhancedForStatement[10228-11343]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9294-10369]:Block[10268-11343]"
+    }, {
+      "left" : "String key = buildKey(dep);",
+      "right" : "String key = buildKey(dep);",
+      "info" : "VariableDeclarationStatement[9302-9329]:VariableDeclarationStatement[10276-10303]"
+    }, {
+      "left" : "Preconditions.checkNotNull(knownDeps.get(key));",
+      "right" : "Preconditions.checkNotNull(knownDeps.get(key));",
+      "info" : "ExpressionStatement[9337-9384]:ExpressionStatement[10311-10358]"
+    }, {
+      "left" : "graph.addNode(dep);",
+      "right" : "graph.addNode(dep);",
+      "info" : "ExpressionStatement[9392-9411]:ExpressionStatement[10366-10385]"
+    }, {
+      "left" : "List<Dependency> dependencies = getDependenciesOf(repoSys, session, dep);",
+      "right" : "List<Dependency> dependencies = getDependenciesOf(repoSys, session, dep);",
+      "info" : "VariableDeclarationStatement[9419-9492]:VariableDeclarationStatement[10393-10466]"
+    }, {
+      "left" : "for (Dependency dependency : dependencies)",
+      "right" : "for (Dependency dependency : dependencies)",
+      "info" : "EnhancedForStatement[9500-10363]:EnhancedForStatement[10474-11337]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9543-10363]:Block[10517-11337]"
+    }, {
+      "left" : "if (dependency.getArtifact() == null)",
+      "right" : "if (dependency.getArtifact() == null)",
+      "info" : "IfStatement[9553-9704]:IfStatement[10527-10678]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9591-9704]:Block[10565-10678]"
+    }, {
+      "left" : "System.out.println(\"Skipping because artifact missing: \" + dependency);",
+      "right" : "System.out.println(\"Skipping because artifact missing: \" + dependency);",
+      "info" : "ExpressionStatement[9603-9674]:ExpressionStatement[10577-10648]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[9685-9694]:ContinueStatement[10659-10668]"
+    }, {
+      "left" : "String depKey = buildKey(dependency.getArtifact());",
+      "right" : "String depKey = buildKey(dependency.getArtifact());",
+      "info" : "VariableDeclarationStatement[9714-9765]:VariableDeclarationStatement[10688-10739]"
+    }, {
+      "left" : "Artifact actualDep = knownDeps.get(depKey);",
+      "right" : "Artifact actualDep = knownDeps.get(depKey);",
+      "info" : "VariableDeclarationStatement[9774-9817]:VariableDeclarationStatement[10748-10791]"
+    }, {
+      "left" : "if (actualDep == null)",
+      "right" : "if (actualDep == null)",
+      "info" : "IfStatement[9826-9880]:IfStatement[10800-10854]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9849-9880]:Block[10823-10854]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[9861-9870]:ContinueStatement[10835-10844]"
+    }, {
+      "left" : "if (isTestTime(dependency))",
+      "right" : "if (isTestTime(dependency))",
+      "info" : "IfStatement[9983-10042]:IfStatement[10957-11016]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10011-10042]:Block[10985-11016]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[10023-10032]:ContinueStatement[10997-11006]"
+    }, {
+      "left" : "Preconditions.checkNotNull(actualDep, key + \" -> \" + dep + \" in \" + knownDeps.keySet());",
+      "right" : "Preconditions.checkNotNull(actualDep, key + \" -> \" + dep + \" in \" + knownDeps.keySet());",
+      "info" : "ExpressionStatement[10194-10282]:ExpressionStatement[11168-11256]"
+    }, {
+      "left" : "graph.addNode(actualDep);",
+      "right" : "graph.addNode(actualDep);",
+      "info" : "ExpressionStatement[10291-10316]:ExpressionStatement[11265-11290]"
+    }, {
+      "left" : "graph.addEdge(actualDep, dep);",
+      "right" : "graph.addEdge(actualDep, dep);",
+      "info" : "ExpressionStatement[10325-10355]:ExpressionStatement[11299-11329]"
+    }, {
+      "left" : "return graph;",
+      "right" : "return graph;",
+      "info" : "ReturnStatement[10374-10387]:ReturnStatement[11348-11361]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10395-10402]:Modifier[11369-11376]"
+    }, {
+      "left" : "List<Dependency>",
+      "right" : "List<Dependency>",
+      "info" : "ParameterizedType[10403-10419]:ParameterizedType[11377-11393]"
+    }, {
+      "left" : "getDependenciesOf",
+      "right" : "getDependenciesOf",
+      "info" : "SimpleName[10420-10437]:SimpleName[11394-11411]"
+    }, {
+      "left" : "RepositorySystem repoSys",
+      "right" : "RepositorySystem repoSys",
+      "info" : "SingleVariableDeclaration[10445-10469]:SingleVariableDeclaration[11419-11443]"
+    }, {
+      "left" : "RepositorySystemSession session",
+      "right" : "RepositorySystemSession session",
+      "info" : "SingleVariableDeclaration[10477-10508]:SingleVariableDeclaration[11451-11482]"
+    }, {
+      "left" : "Artifact dep",
+      "right" : "Artifact dep",
+      "info" : "SingleVariableDeclaration[10516-10528]:SingleVariableDeclaration[11490-11502]"
+    }, {
+      "left" : "ArtifactDescriptorException",
+      "right" : "ArtifactDescriptorException",
+      "info" : "SimpleType[10537-10564]:SimpleType[11511-11538]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10565-10936]:Block[11539-11910]"
+    }, {
+      "left" : "ArtifactDescriptorRequest descriptorRequest = new ArtifactDescriptorRequest();",
+      "right" : "ArtifactDescriptorRequest descriptorRequest = new ArtifactDescriptorRequest();",
+      "info" : "VariableDeclarationStatement[10571-10649]:VariableDeclarationStatement[11545-11623]"
+    }, {
+      "left" : "descriptorRequest.setArtifact(dep);",
+      "right" : "descriptorRequest.setArtifact(dep);",
+      "info" : "ExpressionStatement[10654-10689]:ExpressionStatement[11628-11663]"
+    }, {
+      "left" : "descriptorRequest.setRepositories(repos);",
+      "right" : "descriptorRequest.setRepositories(repos);",
+      "info" : "ExpressionStatement[10694-10735]:ExpressionStatement[11668-11709]"
+    }, {
+      "left" : "descriptorRequest.setRequestContext(JavaScopes.RUNTIME);",
+      "right" : "descriptorRequest.setRequestContext(JavaScopes.RUNTIME);",
+      "info" : "ExpressionStatement[10740-10796]:ExpressionStatement[11714-11770]"
+    }, {
+      "left" : "ArtifactDescriptorResult result = repoSys.readArtifactDescriptor(session, descriptorRequest);",
+      "right" : "ArtifactDescriptorResult result = repoSys.readArtifactDescriptor(session, descriptorRequest);",
+      "info" : "VariableDeclarationStatement[10802-10895]:VariableDeclarationStatement[11776-11869]"
+    }, {
+      "left" : "return result.getDependencies();",
+      "right" : "return result.getDependencies();",
+      "info" : "ReturnStatement[10900-10932]:ReturnStatement[11874-11906]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10940-10947]:Modifier[11914-11921]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[10948-10955]:PrimitiveType[11922-11929]"
+    }, {
+      "left" : "isTestTime",
+      "right" : "isTestTime",
+      "info" : "SimpleName[10956-10966]:SimpleName[11930-11940]"
+    }, {
+      "left" : "Dependency dependency",
+      "right" : "Dependency dependency",
+      "info" : "SingleVariableDeclaration[10967-10988]:SingleVariableDeclaration[11941-11962]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10990-11042]:Block[11964-12016]"
+    }, {
+      "left" : "return TEST.equals(dependency.getScope());",
+      "right" : "return TEST.equals(dependency.getScope());",
+      "info" : "ReturnStatement[10996-11038]:ReturnStatement[11970-12012]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11046-11053]:Modifier[12020-12027]"
+    }, {
+      "left" : "ImmutableMap<String, Artifact>",
+      "right" : "ImmutableMap<String, Artifact>",
+      "info" : "ParameterizedType[11054-11084]:ParameterizedType[12028-12058]"
+    }, {
+      "left" : "getRunTimeTransitiveDeps",
+      "right" : "getRunTimeTransitiveDeps",
+      "info" : "SimpleName[11085-11109]:SimpleName[12059-12083]"
+    }, {
+      "left" : "RepositorySystem repoSys",
+      "right" : "RepositorySystem repoSys",
+      "info" : "SingleVariableDeclaration[11117-11141]:SingleVariableDeclaration[12091-12115]"
+    }, {
+      "left" : "RepositorySystemSession session",
+      "right" : "RepositorySystemSession session",
+      "info" : "SingleVariableDeclaration[11149-11180]:SingleVariableDeclaration[12123-12154]"
+    }, {
+      "left" : "String... mavenCoords",
+      "right" : "String... mavenCoords",
+      "info" : "SingleVariableDeclaration[11188-11209]:SingleVariableDeclaration[12162-12183]"
+    }, {
+      "left" : "RepositoryException",
+      "right" : "RepositoryException",
+      "info" : "SimpleType[11224-11243]:SimpleType[12198-12217]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11244-13064]:Block[12218-14038]"
+    }, {
+      "left" : "CollectRequest collectRequest = new CollectRequest();",
+      "right" : "CollectRequest collectRequest = new CollectRequest();",
+      "info" : "VariableDeclarationStatement[11251-11304]:VariableDeclarationStatement[12225-12278]"
+    }, {
+      "left" : "collectRequest.setRequestContext(JavaScopes.RUNTIME);",
+      "right" : "collectRequest.setRequestContext(JavaScopes.RUNTIME);",
+      "info" : "ExpressionStatement[11309-11362]:ExpressionStatement[12283-12336]"
+    }, {
+      "left" : "collectRequest.setRepositories(repos);",
+      "right" : "collectRequest.setRepositories(repos);",
+      "info" : "ExpressionStatement[11367-11405]:ExpressionStatement[12341-12379]"
+    }, {
+      "left" : "for (String coord : mavenCoords)",
+      "right" : "for (String coord : mavenCoords)",
+      "info" : "EnhancedForStatement[11411-12473]:EnhancedForStatement[12385-13447]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11444-12473]:Block[12418-13447]"
+    }, {
+      "left" : "DefaultArtifact artifact = new DefaultArtifact(coord);",
+      "right" : "DefaultArtifact artifact = new DefaultArtifact(coord);",
+      "info" : "VariableDeclarationStatement[11452-11506]:VariableDeclarationStatement[12426-12480]"
+    }, {
+      "left" : "collectRequest.addDependency(new Dependency(artifact, JavaScopes.RUNTIME));",
+      "right" : "collectRequest.addDependency(new Dependency(artifact, JavaScopes.RUNTIME));",
+      "info" : "ExpressionStatement[11513-11588]:ExpressionStatement[12487-12562]"
+    }, {
+      "left" : "ArtifactDescriptorRequest descriptorRequest = new ArtifactDescriptorRequest();",
+      "right" : "ArtifactDescriptorRequest descriptorRequest = new ArtifactDescriptorRequest();",
+      "info" : "VariableDeclarationStatement[11596-11674]:VariableDeclarationStatement[12570-12648]"
+    }, {
+      "left" : "descriptorRequest.setArtifact(artifact);",
+      "right" : "descriptorRequest.setArtifact(artifact);",
+      "info" : "ExpressionStatement[11681-11721]:ExpressionStatement[12655-12695]"
+    }, {
+      "left" : "descriptorRequest.setRepositories(repos);",
+      "right" : "descriptorRequest.setRepositories(repos);",
+      "info" : "ExpressionStatement[11882-11923]:ExpressionStatement[12856-12897]"
+    }, {
+      "left" : "ArtifactDescriptorResult descriptorResult = repoSys.readArtifactDescriptor(\n          session,\n          descriptorRequest);",
+      "right" : "ArtifactDescriptorResult descriptorResult = repoSys.readArtifactDescriptor(\n          session,\n          descriptorRequest);",
+      "info" : "VariableDeclarationStatement[11930-12054]:VariableDeclarationStatement[12904-13028]"
+    }, {
+      "left" : "for (Dependency dependency : descriptorResult.getDependencies())",
+      "right" : "for (Dependency dependency : descriptorResult.getDependencies())",
+      "info" : "EnhancedForStatement[12062-12254]:EnhancedForStatement[13036-13228]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12127-12254]:Block[13101-13228]"
+    }, {
+      "left" : "if (isTestTime(dependency))",
+      "right" : "if (isTestTime(dependency))",
+      "info" : "IfStatement[12137-12196]:IfStatement[13111-13170]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12165-12196]:Block[13139-13170]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[12177-12186]:ContinueStatement[13151-13160]"
+    }, {
+      "left" : "collectRequest.addDependency(dependency);",
+      "right" : "collectRequest.addDependency(dependency);",
+      "info" : "ExpressionStatement[12205-12246]:ExpressionStatement[13179-13220]"
+    }, {
+      "left" : "for (Dependency dependency : descriptorResult.getManagedDependencies())",
+      "right" : "for (Dependency dependency : descriptorResult.getManagedDependencies())",
+      "info" : "EnhancedForStatement[12261-12467]:EnhancedForStatement[13235-13441]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12333-12467]:Block[13307-13441]"
+    }, {
+      "left" : "if (isTestTime(dependency))",
+      "right" : "if (isTestTime(dependency))",
+      "info" : "IfStatement[12343-12402]:IfStatement[13317-13376]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12371-12402]:Block[13345-13376]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[12383-12392]:ContinueStatement[13357-13366]"
+    }, {
+      "left" : "collectRequest.addManagedDependency(dependency);",
+      "right" : "collectRequest.addManagedDependency(dependency);",
+      "info" : "ExpressionStatement[12411-12459]:ExpressionStatement[13385-13433]"
+    }, {
+      "left" : "DependencyFilter filter = DependencyFilterUtils.classpathFilter(JavaScopes.RUNTIME);",
+      "right" : "DependencyFilter filter = DependencyFilterUtils.classpathFilter(JavaScopes.RUNTIME);",
+      "info" : "VariableDeclarationStatement[12479-12563]:VariableDeclarationStatement[13453-13537]"
+    }, {
+      "left" : "DependencyRequest dependencyRequest = new DependencyRequest(collectRequest, filter);",
+      "right" : "DependencyRequest dependencyRequest = new DependencyRequest(collectRequest, filter);",
+      "info" : "VariableDeclarationStatement[12568-12652]:VariableDeclarationStatement[13542-13626]"
+    }, {
+      "left" : "DependencyResult dependencyResult = repoSys.resolveDependencies(session, dependencyRequest);",
+      "right" : "DependencyResult dependencyResult = repoSys.resolveDependencies(session, dependencyRequest);",
+      "info" : "VariableDeclarationStatement[12658-12750]:VariableDeclarationStatement[13632-13724]"
+    }, {
+      "left" : "ImmutableSortedMap.Builder<String, Artifact> knownDeps = ImmutableSortedMap.naturalOrder();",
+      "right" : "ImmutableSortedMap.Builder<String, Artifact> knownDeps = ImmutableSortedMap.naturalOrder();",
+      "info" : "VariableDeclarationStatement[12756-12847]:VariableDeclarationStatement[13730-13821]"
+    }, {
+      "left" : "for (ArtifactResult artifactResult : dependencyResult.getArtifactResults())",
+      "right" : "for (ArtifactResult artifactResult : dependencyResult.getArtifactResults())",
+      "info" : "EnhancedForStatement[12852-13030]:EnhancedForStatement[13826-14004]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12928-13030]:Block[13902-14004]"
+    }, {
+      "left" : "Artifact node = artifactResult.getArtifact();",
+      "right" : "Artifact node = artifactResult.getArtifact();",
+      "info" : "VariableDeclarationStatement[12936-12981]:VariableDeclarationStatement[13910-13955]"
+    }, {
+      "left" : "knownDeps.put(buildKey(node), node);",
+      "right" : "knownDeps.put(buildKey(node), node);",
+      "info" : "ExpressionStatement[12988-13024]:ExpressionStatement[13962-13998]"
+    }, {
+      "left" : "return knownDeps.build();",
+      "right" : "return knownDeps.build();",
+      "info" : "ReturnStatement[13035-13060]:ReturnStatement[14009-14034]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13068-13075]:Modifier[14042-14049]"
+    }, {
+      "left" : "RepositorySystemSession",
+      "right" : "RepositorySystemSession",
+      "info" : "SimpleType[13076-13099]:SimpleType[14050-14073]"
+    }, {
+      "left" : "newSession",
+      "right" : "newSession",
+      "info" : "SimpleName[13100-13110]:SimpleName[14074-14084]"
+    }, {
+      "left" : "RepositorySystem repoSys",
+      "right" : "RepositorySystem repoSys",
+      "info" : "SingleVariableDeclaration[13111-13135]:SingleVariableDeclaration[14085-14109]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13137-13371]:Block[14111-14345]"
+    }, {
+      "left" : "DefaultRepositorySystemSession session = MavenRepositorySystemUtils.newSession();",
+      "right" : "DefaultRepositorySystemSession session = MavenRepositorySystemUtils.newSession();",
+      "info" : "VariableDeclarationStatement[13143-13224]:VariableDeclarationStatement[14117-14198]"
+    }, {
+      "left" : "session.setLocalRepositoryManager(repoSys.newLocalRepositoryManager(session, localRepo));",
+      "right" : "session.setLocalRepositoryManager(repoSys.newLocalRepositoryManager(session, localRepo));",
+      "info" : "ExpressionStatement[13230-13319]:ExpressionStatement[14204-14293]"
+    }, {
+      "left" : "session.setReadOnly();",
+      "right" : "session.setReadOnly();",
+      "info" : "ExpressionStatement[13324-13346]:ExpressionStatement[14298-14320]"
+    }, {
+      "left" : "return session;",
+      "right" : "return session;",
+      "info" : "ReturnStatement[13352-13367]:ReturnStatement[14326-14341]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13451-13458]:Modifier[14425-14432]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[13459-13465]:SimpleType[14433-14439]"
+    }, {
+      "left" : "buildKey",
+      "right" : "buildKey",
+      "info" : "SimpleName[13466-13474]:SimpleName[14440-14448]"
+    }, {
+      "left" : "Artifact artifact",
+      "right" : "Artifact artifact",
+      "info" : "SingleVariableDeclaration[13475-13492]:SingleVariableDeclaration[14449-14466]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13494-13655]:Block[14468-14629]"
+    }, {
+      "left" : "return artifact.getGroupId() +\n        ':' + artifact.getArtifactId() +\n        ':' + artifact.getExtension() +\n        ':' + artifact.getClassifier();",
+      "right" : "return artifact.getGroupId() +\n        ':' + artifact.getArtifactId() +\n        ':' + artifact.getExtension() +\n        ':' + artifact.getClassifier();",
+      "info" : "ReturnStatement[13500-13651]:ReturnStatement[14474-14625]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13659-13665]:Modifier[14633-14639]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[13666-13672]:Modifier[14640-14646]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13673-13677]:PrimitiveType[14647-14651]"
+    }, {
+      "left" : "main",
+      "right" : "main",
+      "info" : "SimpleName[13678-13682]:SimpleName[14652-14656]"
+    }, {
+      "left" : "String[] args",
+      "right" : "String[] args",
+      "info" : "SingleVariableDeclaration[13683-13696]:SingleVariableDeclaration[14657-14670]"
+    }, {
+      "left" : "RepositoryException",
+      "right" : "RepositoryException",
+      "info" : "SimpleType[13705-13724]:SimpleType[14679-14698]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[13726-13737]:SimpleType[14700-14711]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13738-14290]:Block[14712-15264]"
+    }, {
+      "left" : "if (args.length < 5)",
+      "right" : "if (args.length < 5)",
+      "info" : "IfStatement[13744-13945]:IfStatement[14718-14919]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13765-13945]:Block[14739-14919]"
+    }, {
+      "left" : "System.err.println(\"Usage: java -jar resolver.jar buck-repo third-party \" +\n              \"maven-local-repo maven-url junit:junit:jar:4.12...\");",
+      "right" : "System.err.println(\"Usage: java -jar resolver.jar buck-repo third-party \" +\n              \"maven-local-repo maven-url junit:junit:jar:4.12...\");",
+      "info" : "ExpressionStatement[13773-13917]:ExpressionStatement[14747-14891]"
+    }, {
+      "left" : "System.exit(1);",
+      "right" : "System.exit(1);",
+      "info" : "ExpressionStatement[13924-13939]:ExpressionStatement[14898-14913]"
+    }, {
+      "left" : "Path buckRepoRoot = Paths.get(args[0]);",
+      "right" : "Path buckRepoRoot = Paths.get(args[0]);",
+      "info" : "VariableDeclarationStatement[13951-13990]:VariableDeclarationStatement[14925-14964]"
+    }, {
+      "left" : "Path thirdParty = Paths.get(args[1]);",
+      "right" : "Path thirdParty = Paths.get(args[1]);",
+      "info" : "VariableDeclarationStatement[13995-14032]:VariableDeclarationStatement[14969-15006]"
+    }, {
+      "left" : "Path m2 = Paths.get(args[2]);",
+      "right" : "Path m2 = Paths.get(args[2]);",
+      "info" : "VariableDeclarationStatement[14037-14066]:VariableDeclarationStatement[15011-15040]"
+    }, {
+      "left" : "String mavenCentral = args[3];",
+      "right" : "String mavenCentral = args[3];",
+      "info" : "VariableDeclarationStatement[14071-14101]:VariableDeclarationStatement[15045-15075]"
+    }, {
+      "left" : "String[] coords = Arrays.copyOfRange(args, 4, args.length);",
+      "right" : "String[] coords = Arrays.copyOfRange(args, 4, args.length);",
+      "info" : "VariableDeclarationStatement[14106-14165]:VariableDeclarationStatement[15080-15139]"
+    }, {
+      "left" : "new Resolver(\n        buckRepoRoot,\n        thirdParty,\n        m2,\n        mavenCentral)\n        .resolve(coords);",
+      "right" : "new Resolver(\n        buckRepoRoot,\n        thirdParty,\n        m2,\n        mavenCentral)\n        .resolve(coords);",
+      "info" : "ExpressionStatement[14171-14286]:ExpressionStatement[15145-15260]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14631-14637]:Modifier[15684-15690]"
+    }, {
+      "left" : "Prebuilt",
+      "right" : "Prebuilt",
+      "info" : "SimpleName[14638-14646]:SimpleName[15691-15699]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[14647-14658]:SingleVariableDeclaration[15700-15711]"
+    }, {
+      "left" : "Path binaryJar",
+      "right" : "Path binaryJar",
+      "info" : "SingleVariableDeclaration[14660-14674]:SingleVariableDeclaration[15713-15727]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14676-14741]:Block[15729-15794]"
+    }, {
+      "left" : "this.name = name;",
+      "right" : "this.name = name;",
+      "info" : "ExpressionStatement[14684-14701]:ExpressionStatement[15737-15754]"
+    }, {
+      "left" : "this.binaryJar = binaryJar;",
+      "right" : "this.binaryJar = binaryJar;",
+      "info" : "ExpressionStatement[14708-14735]:ExpressionStatement[15761-15788]"
+    }, {
+      "left" : "@SuppressWarnings(\"unused\")",
+      "right" : "@SuppressWarnings(\"unused\")",
+      "info" : "SingleMemberAnnotation[14747-14774]:SingleMemberAnnotation[15800-15827]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14816-14822]:Modifier[15869-15875]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[14823-14829]:SimpleType[15876-15882]"
+    }, {
+      "left" : "getName",
+      "right" : "getName",
+      "info" : "SimpleName[14830-14837]:SimpleName[15883-15890]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14840-14866]:Block[15893-15919]"
+    }, {
+      "left" : "return name;",
+      "right" : "return name;",
+      "info" : "ReturnStatement[14848-14860]:ReturnStatement[15901-15913]"
+    }, {
+      "left" : "@SuppressWarnings(\"unused\")",
+      "right" : "@SuppressWarnings(\"unused\")",
+      "info" : "SingleMemberAnnotation[14872-14899]:SingleMemberAnnotation[15925-15952]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14941-14947]:Modifier[15994-16000]"
+    }, {
+      "left" : "Path",
+      "right" : "Path",
+      "info" : "SimpleType[14948-14952]:SimpleType[16001-16005]"
+    }, {
+      "left" : "getBinaryJar",
+      "right" : "getBinaryJar",
+      "info" : "SimpleName[14953-14965]:SimpleName[16006-16018]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14968-14999]:Block[16021-16052]"
+    }, {
+      "left" : "return binaryJar;",
+      "right" : "return binaryJar;",
+      "info" : "ReturnStatement[14976-14993]:ReturnStatement[16029-16046]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15005-15011]:Modifier[16058-16064]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15012-15016]:PrimitiveType[16065-16069]"
+    }, {
+      "left" : "setSourceJar",
+      "right" : "setSourceJar",
+      "info" : "SimpleName[15017-15029]:SimpleName[16070-16082]"
+    }, {
+      "left" : "Path sourceJar",
+      "right" : "Path sourceJar",
+      "info" : "SingleVariableDeclaration[15030-15044]:SingleVariableDeclaration[16083-16097]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15046-15087]:Block[16099-16140]"
+    }, {
+      "left" : "this.sourceJar = sourceJar;",
+      "right" : "this.sourceJar = sourceJar;",
+      "info" : "ExpressionStatement[15054-15081]:ExpressionStatement[16107-16134]"
+    }, {
+      "left" : "@SuppressWarnings(\"unused\")",
+      "right" : "@SuppressWarnings(\"unused\")",
+      "info" : "SingleMemberAnnotation[15093-15120]:SingleMemberAnnotation[16146-16173]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15162-15168]:Modifier[16215-16221]"
+    }, {
+      "left" : "Path",
+      "right" : "Path",
+      "info" : "SimpleType[15169-15173]:SimpleType[16222-16226]"
+    }, {
+      "left" : "getSourceJar",
+      "right" : "getSourceJar",
+      "info" : "SimpleName[15174-15186]:SimpleName[16227-16239]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15189-15220]:Block[16242-16273]"
+    }, {
+      "left" : "return sourceJar;",
+      "right" : "return sourceJar;",
+      "info" : "ReturnStatement[15197-15214]:ReturnStatement[16250-16267]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15226-15232]:Modifier[16279-16285]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15233-15237]:PrimitiveType[16286-16290]"
+    }, {
+      "left" : "addDep",
+      "right" : "addDep",
+      "info" : "SimpleName[15238-15244]:SimpleName[16291-16297]"
+    }, {
+      "left" : "String dep",
+      "right" : "String dep",
+      "info" : "SingleVariableDeclaration[15245-15255]:SingleVariableDeclaration[16298-16308]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15257-15290]:Block[16310-16343]"
+    }, {
+      "left" : "this.deps.add(dep);",
+      "right" : "this.deps.add(dep);",
+      "info" : "ExpressionStatement[15265-15284]:ExpressionStatement[16318-16337]"
+    }, {
+      "left" : "@SuppressWarnings(\"unused\")",
+      "right" : "@SuppressWarnings(\"unused\")",
+      "info" : "SingleMemberAnnotation[15296-15323]:SingleMemberAnnotation[16501-16528]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15365-15371]:Modifier[16570-16576]"
+    }, {
+      "left" : "SortedSet<String>",
+      "right" : "SortedSet<String>",
+      "info" : "ParameterizedType[15372-15389]:ParameterizedType[16577-16594]"
+    }, {
+      "left" : "getDeps",
+      "right" : "getDeps",
+      "info" : "SimpleName[15390-15397]:SimpleName[16595-16602]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15400-15426]:Block[16605-16631]"
+    }, {
+      "left" : "return deps;",
+      "right" : "return deps;",
+      "info" : "ReturnStatement[15408-15420]:ReturnStatement[16613-16625]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15432-15438]:Modifier[16637-16643]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15439-15443]:PrimitiveType[16644-16648]"
+    }, {
+      "left" : "addVisibility",
+      "right" : "addVisibility",
+      "info" : "SimpleName[15444-15457]:SimpleName[16649-16662]"
+    }, {
+      "left" : "String dep",
+      "right" : "String dep",
+      "info" : "SingleVariableDeclaration[15458-15468]:SingleVariableDeclaration[16663-16673]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15470-15511]:Block[16675-16716]"
+    }, {
+      "left" : "this.visibilities.add(dep);",
+      "right" : "this.visibilities.add(dep);",
+      "info" : "ExpressionStatement[15478-15505]:ExpressionStatement[16683-16710]"
+    }, {
+      "left" : "@SuppressWarnings(\"unused\")",
+      "right" : "@SuppressWarnings(\"unused\")",
+      "info" : "SingleMemberAnnotation[15517-15544]:SingleMemberAnnotation[17140-17167]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15586-15592]:Modifier[17209-17215]"
+    }, {
+      "left" : "SortedSet<String>",
+      "right" : "SortedSet<String>",
+      "info" : "ParameterizedType[15593-15610]:ParameterizedType[17216-17233]"
+    }, {
+      "left" : "getVisibility",
+      "right" : "getVisibility",
+      "info" : "SimpleName[15611-15624]:SimpleName[17234-17247]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15627-15661]:Block[17250-17284]"
+    }, {
+      "left" : "return visibilities;",
+      "right" : "return visibilities;",
+      "info" : "ReturnStatement[15635-15655]:ReturnStatement[17258-17278]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15667-15676]:MarkerAnnotation[17290-17299]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15681-15687]:Modifier[17304-17310]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[15688-15691]:PrimitiveType[17311-17314]"
+    }, {
+      "left" : "compareTo",
+      "right" : "compareTo",
+      "info" : "SimpleName[15692-15701]:SimpleName[17315-17324]"
+    }, {
+      "left" : "Prebuilt that",
+      "right" : "Prebuilt that",
+      "info" : "SingleVariableDeclaration[15702-15715]:SingleVariableDeclaration[17325-17338]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15717-15769]:Block[17340-17392]"
+    }, {
+      "left" : "return this.name.compareTo(that.name);",
+      "right" : "return this.name.compareTo(that.name);",
+      "info" : "ReturnStatement[15725-15763]:ReturnStatement[17348-17386]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

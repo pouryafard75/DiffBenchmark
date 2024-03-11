@@ -1,0 +1,2181 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final Logger logger = Logger.getLogger(\n      DisambiguateProperties.class.getName());",
+      "right" : "private static final Logger logger = Logger.getLogger(\n      DisambiguateProperties.class.getName());",
+      "info" : "FieldDeclaration[2853-2954]:FieldDeclaration[2853-2954]"
+    }, {
+      "left" : "static final DiagnosticType INVALIDATION = DiagnosticType.warning(\n      \"JSC_INVALIDATION\",\n      \"Property disambiguator skipping all instances of property {0} \"\n      + \"because of type {1} node {2}\");",
+      "right" : "static final DiagnosticType INVALIDATION = DiagnosticType.warning(\n      \"JSC_INVALIDATION\",\n      \"Property disambiguator skipping all instances of property {0} \"\n      + \"because of type {1} node {2}\");",
+      "info" : "FieldDeclaration[3043-3247]:FieldDeclaration[3043-3247]"
+    }, {
+      "left" : "private final boolean showInvalidationWarnings = false;",
+      "right" : "private final boolean showInvalidationWarnings = false;",
+      "info" : "FieldDeclaration[3250-3305]:FieldDeclaration[3250-3305]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[3309-3349]:FieldDeclaration[3309-3349]"
+    }, {
+      "left" : "private final TypeSystem<T> typeSystem;",
+      "right" : "private final TypeSystem<T> typeSystem;",
+      "info" : "FieldDeclaration[3352-3391]:FieldDeclaration[3352-3391]"
+    }, {
+      "left" : "Property",
+      "right" : "Property",
+      "info" : "TypeDeclaration[3395-8512]:TypeDeclaration[3395-8512]"
+    }, {
+      "left" : "final String name;",
+      "right" : "final String name;",
+      "info" : "FieldDeclaration[3424-3479]:FieldDeclaration[3424-3479]"
+    }, {
+      "left" : "private UnionFind<T> types;",
+      "right" : "private UnionFind<T> types;",
+      "info" : "FieldDeclaration[3485-3589]:FieldDeclaration[3485-3589]"
+    }, {
+      "left" : "Set<T> typesToSkip = Sets.newHashSet();",
+      "right" : "Set<T> typesToSkip = Sets.newHashSet();",
+      "info" : "FieldDeclaration[3595-3793]:FieldDeclaration[3595-3793]"
+    }, {
+      "left" : "boolean skipRenaming;",
+      "right" : "boolean skipRenaming;",
+      "info" : "FieldDeclaration[3799-3949]:FieldDeclaration[3799-3949]"
+    }, {
+      "left" : "Set<Node> renameNodes = Sets.newHashSet();",
+      "right" : "Set<Node> renameNodes = Sets.newHashSet();",
+      "info" : "FieldDeclaration[3955-4056]:FieldDeclaration[3955-4056]"
+    }, {
+      "left" : "final Map<Node, T> rootTypes = Maps.newHashMap();",
+      "right" : "final Map<Node, T> rootTypes = Maps.newHashMap();",
+      "info" : "FieldDeclaration[4062-4328]:FieldDeclaration[4062-4328]"
+    }, {
+      "left" : "Property(String name)",
+      "right" : "Property(String name)",
+      "info" : "MethodDeclaration[4334-4387]:MethodDeclaration[4334-4387]"
+    }, {
+      "left" : "UnionFind<T> getTypes()",
+      "right" : "UnionFind<T> getTypes()",
+      "info" : "MethodDeclaration[4393-4587]:MethodDeclaration[4393-4587]"
+    }, {
+      "left" : "boolean addType(T type, T top, T relatedType)",
+      "right" : "boolean addType(T type, T top, T relatedType)",
+      "info" : "MethodDeclaration[4593-5356]:MethodDeclaration[4593-5356]"
+    }, {
+      "left" : "void addTypeToSkip(T type)",
+      "right" : "void addTypeToSkip(T type)",
+      "info" : "MethodDeclaration[5362-5615]:MethodDeclaration[5362-5615]"
+    }, {
+      "left" : "void expandTypesToSkip()",
+      "right" : "void expandTypesToSkip()",
+      "info" : "MethodDeclaration[5621-7054]:MethodDeclaration[5621-7054]"
+    }, {
+      "left" : "boolean shouldRename()",
+      "right" : "boolean shouldRename()",
+      "info" : "MethodDeclaration[7060-7265]:MethodDeclaration[7060-7265]"
+    }, {
+      "left" : "boolean shouldRename(T type)",
+      "right" : "boolean shouldRename(T type)",
+      "info" : "MethodDeclaration[7271-7567]:MethodDeclaration[7271-7567]"
+    }, {
+      "left" : "boolean invalidate()",
+      "right" : "boolean invalidate()",
+      "info" : "MethodDeclaration[7573-7833]:MethodDeclaration[7573-7833]"
+    }, {
+      "left" : "boolean scheduleRenaming(Node node, T type)",
+      "right" : "boolean scheduleRenaming(Node node, T type)",
+      "info" : "MethodDeclaration[7839-8508]:MethodDeclaration[7839-8508]"
+    }, {
+      "left" : "private Map<String, Property> properties = Maps.newHashMap();",
+      "right" : "private Map<String, Property> properties = Maps.newHashMap();",
+      "info" : "FieldDeclaration[8516-8577]:FieldDeclaration[8516-8577]"
+    }, {
+      "left" : "static DisambiguateProperties<JSType> forJSTypeSystem(\n      AbstractCompiler compiler)",
+      "right" : "static DisambiguateProperties<JSType> forJSTypeSystem(\n      AbstractCompiler compiler)",
+      "info" : "MethodDeclaration[8581-8768]:MethodDeclaration[8581-8768]"
+    }, {
+      "left" : "static DisambiguateProperties<ConcreteType> forConcreteTypeSystem(\n      AbstractCompiler compiler, TightenTypes tt)",
+      "right" : "static DisambiguateProperties<ConcreteType> forConcreteTypeSystem(\n      AbstractCompiler compiler, TightenTypes tt)",
+      "info" : "MethodDeclaration[8772-9026]:MethodDeclaration[8772-9026]"
+    }, {
+      "left" : "private DisambiguateProperties(AbstractCompiler compiler,\n                                 TypeSystem<T> typeSystem)",
+      "right" : "private DisambiguateProperties(AbstractCompiler compiler,\n                                 TypeSystem<T> typeSystem)",
+      "info" : "MethodDeclaration[9030-9373]:MethodDeclaration[9030-9373]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[9377-9814]:MethodDeclaration[9377-9814]"
+    }, {
+      "left" : "private void addInvalidatingType(JSType type)",
+      "right" : "private void addInvalidatingType(JSType type)",
+      "info" : "MethodDeclaration[9818-10404]:MethodDeclaration[9818-10404]"
+    }, {
+      "left" : "protected Property getProperty(String name)",
+      "right" : "protected Property getProperty(String name)",
+      "info" : "MethodDeclaration[10409-10662]:MethodDeclaration[10409-10662]"
+    }, {
+      "left" : "T getTypeWithProperty(String field, T type)",
+      "right" : "T getTypeWithProperty(String field, T type)",
+      "info" : "MethodDeclaration[10666-10800]:MethodDeclaration[10666-10800]"
+    }, {
+      "left" : "AbstractScopingCallback",
+      "right" : "AbstractScopingCallback",
+      "info" : "TypeDeclaration[10804-11570]:TypeDeclaration[10804-11570]"
+    }, {
+      "left" : "protected final Stack<StaticScope<T>> scopes =\n        new Stack<StaticScope<T>>();",
+      "right" : "protected final Stack<StaticScope<T>> scopes =\n        new Stack<StaticScope<T>>();",
+      "info" : "FieldDeclaration[10947-11030]:FieldDeclaration[10947-11030]"
+    }, {
+      "left" : "public boolean shouldTraverse(NodeTraversal t, Node n, Node parent)",
+      "right" : "public boolean shouldTraverse(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[11036-11130]:MethodDeclaration[11036-11130]"
+    }, {
+      "left" : "public void enterScope(NodeTraversal t)",
+      "right" : "public void enterScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[11136-11353]:MethodDeclaration[11136-11353]"
+    }, {
+      "left" : "public void exitScope(NodeTraversal t)",
+      "right" : "public void exitScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[11359-11425]:MethodDeclaration[11359-11425]"
+    }, {
+      "left" : "protected StaticScope<T> getScope()",
+      "right" : "protected StaticScope<T> getScope()",
+      "info" : "MethodDeclaration[11431-11566]:MethodDeclaration[11431-11566]"
+    }, {
+      "left" : "FindExternProperties",
+      "right" : "FindExternProperties",
+      "info" : "TypeDeclaration[11574-12641]:TypeDeclaration[11574-12641]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[11800-12637]:MethodDeclaration[11800-12637]"
+    }, {
+      "left" : "FindRenameableProperties",
+      "right" : "FindRenameableProperties",
+      "info" : "TypeDeclaration[12645-15881]:TypeDeclaration[12645-15881]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[12841-13079]:MethodDeclaration[12841-13079]"
+    }, {
+      "left" : "private void handleGetProp(NodeTraversal t, Node n)",
+      "right" : "private void handleGetProp(NodeTraversal t, Node n)",
+      "info" : "MethodDeclaration[13085-13709]:MethodDeclaration[13085-13709]"
+    }, {
+      "left" : "private void handleObjectLit(NodeTraversal t, Node n)",
+      "right" : "private void handleObjectLit(NodeTraversal t, Node n)",
+      "info" : "MethodDeclaration[13715-14593]:MethodDeclaration[13715-14593]"
+    }, {
+      "left" : "private T processProperty(\n        NodeTraversal t, Property prop, T type, T relatedType)",
+      "right" : "private T processProperty(\n        NodeTraversal t, Property prop, T type, T relatedType)",
+      "info" : "MethodDeclaration[14599-15877]:MethodDeclaration[14599-15877]"
+    }, {
+      "left" : "void renameProperties()",
+      "right" : "void renameProperties()",
+      "info" : "MethodDeclaration[15885-17309]:MethodDeclaration[15885-17309]"
+    }, {
+      "left" : "private Map<T, String> buildPropNames(UnionFind<T> types, String name)",
+      "right" : "private Map<T, String> buildPropNames(UnionFind<T> types, String name)",
+      "info" : "MethodDeclaration[17313-18106]:MethodDeclaration[17313-18106]"
+    }, {
+      "left" : "Multimap<String, Collection<T>> getRenamedTypesForTesting()",
+      "right" : "Multimap<String, Collection<T>> getRenamedTypesForTesting()",
+      "info" : "MethodDeclaration[18110-18706]:MethodDeclaration[18110-18706]"
+    }, {
+      "left" : "TypeSystem",
+      "right" : "TypeSystem",
+      "info" : "TypeDeclaration[18710-21568]:TypeDeclaration[18710-21568]"
+    }, {
+      "left" : "StaticScope<T> getRootScope();",
+      "right" : "StaticScope<T> getRootScope();",
+      "info" : "MethodDeclaration[18949-19051]:MethodDeclaration[18949-19051]"
+    }, {
+      "left" : "StaticScope<T> getFunctionScope(Node node);",
+      "right" : "StaticScope<T> getFunctionScope(Node node);",
+      "info" : "MethodDeclaration[19057-19169]:MethodDeclaration[19057-19169]"
+    }, {
+      "left" : "T getType(StaticScope<T> scope, Node node, String prop);",
+      "right" : "T getType(StaticScope<T> scope, Node node, String prop);",
+      "info" : "MethodDeclaration[19175-19626]:MethodDeclaration[19175-19626]"
+    }, {
+      "left" : "boolean isInvalidatingType(T type);",
+      "right" : "boolean isInvalidatingType(T type);",
+      "info" : "MethodDeclaration[19632-19951]:MethodDeclaration[19632-19951]"
+    }, {
+      "left" : "void addInvalidatingType(JSType type);",
+      "right" : "void addInvalidatingType(JSType type);",
+      "info" : "MethodDeclaration[19957-20134]:MethodDeclaration[19957-20134]"
+    }, {
+      "left" : "ImmutableSet<T> getTypesToSkipForType(T type);",
+      "right" : "ImmutableSet<T> getTypesToSkipForType(T type);",
+      "info" : "MethodDeclaration[20140-20390]:MethodDeclaration[20140-20390]"
+    }, {
+      "left" : "boolean isTypeToSkip(T type);",
+      "right" : "boolean isTypeToSkip(T type);",
+      "info" : "MethodDeclaration[20396-20552]:MethodDeclaration[20396-20552]"
+    }, {
+      "left" : "T restrictByNotNullOrUndefined(T type);",
+      "right" : "T restrictByNotNullOrUndefined(T type);",
+      "info" : "MethodDeclaration[20558-20670]:MethodDeclaration[20558-20670]"
+    }, {
+      "left" : "Iterable<T> getTypeAlternatives(T type);",
+      "right" : "Iterable<T> getTypeAlternatives(T type);",
+      "info" : "MethodDeclaration[20676-20911]:MethodDeclaration[20676-20911]"
+    }, {
+      "left" : "T getTypeWithProperty(String field, T type);",
+      "right" : "T getTypeWithProperty(String field, T type);",
+      "info" : "MethodDeclaration[20917-21108]:MethodDeclaration[20917-21108]"
+    }, {
+      "left" : "T getInstanceFromPrototype(T type);",
+      "right" : "T getInstanceFromPrototype(T type);",
+      "info" : "MethodDeclaration[21114-21288]:MethodDeclaration[21114-21288]"
+    }, {
+      "left" : "void recordInterfaces(T type, T relatedType,\n                          DisambiguateProperties<T>.Property p);",
+      "right" : "void recordInterfaces(T type, T relatedType,\n                          DisambiguateProperties<T>.Property p);",
+      "info" : "MethodDeclaration[21294-21564]:MethodDeclaration[21294-21564]"
+    }, {
+      "left" : "private final Set<JSType> invalidatingTypes;",
+      "right" : "private final Set<JSType> invalidatingTypes;",
+      "info" : "FieldDeclaration[21695-21739]:FieldDeclaration[21695-21739]"
+    }, {
+      "left" : "private JSTypeRegistry registry;",
+      "right" : "private JSTypeRegistry registry;",
+      "info" : "FieldDeclaration[21744-21776]:FieldDeclaration[21744-21776]"
+    }, {
+      "left" : "public JSTypeSystem(AbstractCompiler compiler)",
+      "right" : "public JSTypeSystem(AbstractCompiler compiler)",
+      "info" : "MethodDeclaration[21782-22363]:MethodDeclaration[21782-22363]"
+    }, {
+      "left" : "public void addInvalidatingType(JSType type)",
+      "right" : "public void addInvalidatingType(JSType type)",
+      "info" : "MethodDeclaration[22369-22505]:MethodDeclaration[22369-22505]"
+    }, {
+      "left" : "public StaticScope<JSType> getRootScope()",
+      "right" : "public StaticScope<JSType> getRootScope()",
+      "info" : "MethodDeclaration[22511-22579]:MethodDeclaration[22511-22579]"
+    }, {
+      "left" : "public StaticScope<JSType> getFunctionScope(Node node)",
+      "right" : "public StaticScope<JSType> getFunctionScope(Node node)",
+      "info" : "MethodDeclaration[22585-22676]:MethodDeclaration[22585-22676]"
+    }, {
+      "left" : "public JSType getType(\n        StaticScope<JSType> scope, Node node, String prop)",
+      "right" : "public JSType getType(\n        StaticScope<JSType> scope, Node node, String prop)",
+      "info" : "MethodDeclaration[22682-22924]:MethodDeclaration[22682-22924]"
+    }, {
+      "left" : "public boolean isInvalidatingType(JSType type)",
+      "right" : "public boolean isInvalidatingType(JSType type)",
+      "info" : "MethodDeclaration[22930-23255]:MethodDeclaration[22930-23255]"
+    }, {
+      "left" : "public ImmutableSet<JSType> getTypesToSkipForType(JSType type)",
+      "right" : "public ImmutableSet<JSType> getTypesToSkipForType(JSType type)",
+      "info" : "MethodDeclaration[23261-23738]:MethodDeclaration[23261-23738]"
+    }, {
+      "left" : "private Set<JSType> getTypesToSkipForTypeNonUnion(JSType type)",
+      "right" : "private Set<JSType> getTypesToSkipForTypeNonUnion(JSType type)",
+      "info" : "MethodDeclaration[23744-24174]:MethodDeclaration[23744-24174]"
+    }, {
+      "left" : "public boolean isTypeToSkip(JSType type)",
+      "right" : "public boolean isTypeToSkip(JSType type)",
+      "info" : "MethodDeclaration[24180-24302]:MethodDeclaration[24180-24302]"
+    }, {
+      "left" : "public JSType restrictByNotNullOrUndefined(JSType type)",
+      "right" : "public JSType restrictByNotNullOrUndefined(JSType type)",
+      "info" : "MethodDeclaration[24308-24431]:MethodDeclaration[24308-24431]"
+    }, {
+      "left" : "public Iterable<JSType> getTypeAlternatives(JSType type)",
+      "right" : "public Iterable<JSType> getTypeAlternatives(JSType type)",
+      "info" : "MethodDeclaration[24437-25080]:MethodDeclaration[24437-25080]"
+    }, {
+      "left" : "public JSType getInstanceFromPrototype(JSType type)",
+      "right" : "public JSType getInstanceFromPrototype(JSType type)",
+      "info" : "MethodDeclaration[26389-26831]:MethodDeclaration[26654-27096]"
+    }, {
+      "left" : "public void recordInterfaces(JSType type, JSType relatedType,\n                                 DisambiguateProperties<JSType>.Property p)",
+      "right" : "public void recordInterfaces(JSType type, JSType relatedType,\n                                 DisambiguateProperties<JSType>.Property p)",
+      "info" : "MethodDeclaration[26837-28114]:MethodDeclaration[27102-28379]"
+    }, {
+      "left" : "ConcreteTypeSystem",
+      "right" : "ConcreteTypeSystem",
+      "info" : "TypeDeclaration[28122-34203]:TypeDeclaration[28387-34468]"
+    }, {
+      "left" : "private final TightenTypes tt;",
+      "right" : "private final TightenTypes tt;",
+      "info" : "FieldDeclaration[28264-28294]:FieldDeclaration[28529-28559]"
+    }, {
+      "left" : "private int nextUniqueId;",
+      "right" : "private int nextUniqueId;",
+      "info" : "FieldDeclaration[28299-28324]:FieldDeclaration[28564-28589]"
+    }, {
+      "left" : "private CodingConvention codingConvention;",
+      "right" : "private CodingConvention codingConvention;",
+      "info" : "FieldDeclaration[28329-28371]:FieldDeclaration[28594-28636]"
+    }, {
+      "left" : "private final Set<JSType> invalidatingTypes = Sets.newHashSet();",
+      "right" : "private final Set<JSType> invalidatingTypes = Sets.newHashSet();",
+      "info" : "FieldDeclaration[28376-28440]:FieldDeclaration[28641-28705]"
+    }, {
+      "left" : "private static final JSTypeNative [] nativeTypes = new JSTypeNative[] {\n        JSTypeNative.BOOLEAN_OBJECT_TYPE,\n        JSTypeNative.NUMBER_OBJECT_TYPE,\n        JSTypeNative.STRING_OBJECT_TYPE\n    };",
+      "right" : "private static final JSTypeNative [] nativeTypes = new JSTypeNative[] {\n        JSTypeNative.BOOLEAN_OBJECT_TYPE,\n        JSTypeNative.NUMBER_OBJECT_TYPE,\n        JSTypeNative.STRING_OBJECT_TYPE\n    };",
+      "info" : "FieldDeclaration[28590-28791]:FieldDeclaration[28855-29056]"
+    }, {
+      "left" : "public ConcreteTypeSystem(TightenTypes tt, CodingConvention convention)",
+      "right" : "public ConcreteTypeSystem(TightenTypes tt, CodingConvention convention)",
+      "info" : "MethodDeclaration[28797-28938]:MethodDeclaration[29062-29203]"
+    }, {
+      "left" : "public void addInvalidatingType(JSType type)",
+      "right" : "public void addInvalidatingType(JSType type)",
+      "info" : "MethodDeclaration[28944-29080]:MethodDeclaration[29209-29345]"
+    }, {
+      "left" : "public StaticScope<ConcreteType> getRootScope()",
+      "right" : "public StaticScope<ConcreteType> getRootScope()",
+      "info" : "MethodDeclaration[29086-29182]:MethodDeclaration[29351-29447]"
+    }, {
+      "left" : "public StaticScope<ConcreteType> getFunctionScope(Node decl)",
+      "right" : "public StaticScope<ConcreteType> getFunctionScope(Node decl)",
+      "info" : "MethodDeclaration[29188-29422]:MethodDeclaration[29453-29687]"
+    }, {
+      "left" : "public ConcreteType getType(\n        StaticScope<ConcreteType> scope, Node node, String prop)",
+      "right" : "public ConcreteType getType(\n        StaticScope<ConcreteType> scope, Node node, String prop)",
+      "info" : "MethodDeclaration[29428-29765]:MethodDeclaration[29693-30030]"
+    }, {
+      "left" : "private ConcreteType maybeAddAutoboxes(\n        ConcreteType cType, Node node, String prop)",
+      "right" : "private ConcreteType maybeAddAutoboxes(\n        ConcreteType cType, Node node, String prop)",
+      "info" : "MethodDeclaration[29771-30633]:MethodDeclaration[30036-30898]"
+    }, {
+      "left" : "private ConcreteType maybeAddAutoboxes(\n        ConcreteType cType, JSType jsType, String prop)",
+      "right" : "private ConcreteType maybeAddAutoboxes(\n        ConcreteType cType, JSType jsType, String prop)",
+      "info" : "MethodDeclaration[30639-31300]:MethodDeclaration[30904-31565]"
+    }, {
+      "left" : "public boolean isInvalidatingType(ConcreteType type)",
+      "right" : "public boolean isInvalidatingType(ConcreteType type)",
+      "info" : "MethodDeclaration[31306-31690]:MethodDeclaration[31571-31955]"
+    }, {
+      "left" : "public ImmutableSet<ConcreteType> getTypesToSkipForType(ConcreteType type)",
+      "right" : "public ImmutableSet<ConcreteType> getTypesToSkipForType(ConcreteType type)",
+      "info" : "MethodDeclaration[31696-31828]:MethodDeclaration[31961-32093]"
+    }, {
+      "left" : "public boolean isTypeToSkip(ConcreteType type)",
+      "right" : "public boolean isTypeToSkip(ConcreteType type)",
+      "info" : "MethodDeclaration[31834-32104]:MethodDeclaration[32099-32369]"
+    }, {
+      "left" : "public ConcreteType restrictByNotNullOrUndefined(ConcreteType type)",
+      "right" : "public ConcreteType restrictByNotNullOrUndefined(ConcreteType type)",
+      "info" : "MethodDeclaration[32110-32272]:MethodDeclaration[32375-32537]"
+    }, {
+      "left" : "public Iterable<ConcreteType> getTypeAlternatives(ConcreteType type)",
+      "right" : "public Iterable<ConcreteType> getTypeAlternatives(ConcreteType type)",
+      "info" : "MethodDeclaration[32278-32501]:MethodDeclaration[32543-32766]"
+    }, {
+      "left" : "public ConcreteType getTypeWithProperty(String field,\n                                                      ConcreteType type)",
+      "right" : "public ConcreteType getTypeWithProperty(String field,\n                                                      ConcreteType type)",
+      "info" : "MethodDeclaration[32507-33628]:MethodDeclaration[32772-33893]"
+    }, {
+      "left" : "public ConcreteType getInstanceFromPrototype(ConcreteType type)",
+      "right" : "public ConcreteType getInstanceFromPrototype(ConcreteType type)",
+      "info" : "MethodDeclaration[33634-33976]:MethodDeclaration[33899-34241]"
+    }, {
+      "left" : "public void recordInterfaces(ConcreteType type, ConcreteType relatedType,\n        DisambiguateProperties<ConcreteType>.Property p)",
+      "right" : "public void recordInterfaces(ConcreteType type, ConcreteType relatedType,\n        DisambiguateProperties<ConcreteType>.Property p)",
+      "info" : "MethodDeclaration[33982-34199]:MethodDeclaration[34247-34464]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4356-4387]:Block[4356-4387]"
+    }, {
+      "left" : "this.name = name;",
+      "right" : "this.name = name;",
+      "info" : "ExpressionStatement[4364-4381]:ExpressionStatement[4364-4381]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4481-4587]:Block[4481-4587]"
+    }, {
+      "left" : "if (types == null)",
+      "right" : "if (types == null)",
+      "info" : "IfStatement[4489-4561]:IfStatement[4489-4561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4508-4561]:Block[4508-4561]"
+    }, {
+      "left" : "types = new StandardUnionFind<T>();",
+      "right" : "types = new StandardUnionFind<T>();",
+      "info" : "ExpressionStatement[4518-4553]:ExpressionStatement[4518-4553]"
+    }, {
+      "left" : "return types;",
+      "right" : "return types;",
+      "info" : "ReturnStatement[4568-4581]:ReturnStatement[4568-4581]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4854-5356]:Block[4854-5356]"
+    }, {
+      "left" : "checkState(!skipRenaming, \"Attempt to record skipped property: %s\", name);",
+      "right" : "checkState(!skipRenaming, \"Attempt to record skipped property: %s\", name);",
+      "info" : "ExpressionStatement[4862-4936]:ExpressionStatement[4862-4936]"
+    }, {
+      "left" : "if (typeSystem.isInvalidatingType(top))",
+      "right" : "if (typeSystem.isInvalidatingType(top))",
+      "info" : "IfStatement[4943-5350]:IfStatement[4943-5350]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4983-5036]:Block[4983-5036]"
+    }, {
+      "left" : "invalidate();",
+      "right" : "invalidate();",
+      "info" : "ExpressionStatement[4993-5006]:ExpressionStatement[4993-5006]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[5015-5028]:ReturnStatement[5015-5028]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5042-5350]:Block[5042-5350]"
+    }, {
+      "left" : "if (typeSystem.isTypeToSkip(top))",
+      "right" : "if (typeSystem.isTypeToSkip(top))",
+      "info" : "IfStatement[5052-5127]:IfStatement[5052-5127]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5086-5127]:Block[5086-5127]"
+    }, {
+      "left" : "addTypeToSkip(top);",
+      "right" : "addTypeToSkip(top);",
+      "info" : "ExpressionStatement[5098-5117]:ExpressionStatement[5098-5117]"
+    }, {
+      "left" : "if (relatedType == null)",
+      "right" : "if (relatedType == null)",
+      "info" : "IfStatement[5137-5267]:IfStatement[5137-5267]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5162-5204]:Block[5162-5204]"
+    }, {
+      "left" : "getTypes().add(top);",
+      "right" : "getTypes().add(top);",
+      "info" : "ExpressionStatement[5174-5194]:ExpressionStatement[5174-5194]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5210-5267]:Block[5210-5267]"
+    }, {
+      "left" : "getTypes().union(top, relatedType);",
+      "right" : "getTypes().union(top, relatedType);",
+      "info" : "ExpressionStatement[5222-5257]:ExpressionStatement[5222-5257]"
+    }, {
+      "left" : "typeSystem.recordInterfaces(type, top, this);",
+      "right" : "typeSystem.recordInterfaces(type, top, this);",
+      "info" : "ExpressionStatement[5276-5321]:ExpressionStatement[5276-5321]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[5330-5342]:ReturnStatement[5330-5342]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5457-5615]:Block[5457-5615]"
+    }, {
+      "left" : "for (T skipType : typeSystem.getTypesToSkipForType(type))",
+      "right" : "for (T skipType : typeSystem.getTypesToSkipForType(type))",
+      "info" : "EnhancedForStatement[5465-5609]:EnhancedForStatement[5465-5609]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5523-5609]:Block[5523-5609]"
+    }, {
+      "left" : "typesToSkip.add(skipType);",
+      "right" : "typesToSkip.add(skipType);",
+      "info" : "ExpressionStatement[5533-5559]:ExpressionStatement[5533-5559]"
+    }, {
+      "left" : "getTypes().union(skipType, type);",
+      "right" : "getTypes().union(skipType, type);",
+      "info" : "ExpressionStatement[5568-5601]:ExpressionStatement[5568-5601]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5705-7054]:Block[5705-7054]"
+    }, {
+      "left" : "if (shouldRename())",
+      "right" : "if (shouldRename())",
+      "info" : "IfStatement[5859-7048]:IfStatement[5859-7048]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5879-7048]:Block[5879-7048]"
+    }, {
+      "left" : "int count = 0;",
+      "right" : "int count = 0;",
+      "info" : "VariableDeclarationStatement[5889-5903]:VariableDeclarationStatement[5889-5903]"
+    }, {
+      "left" : "while (true)",
+      "right" : "while (true)",
+      "info" : "WhileStatement[5912-7040]:WhileStatement[5912-7040]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5925-7040]:Block[5925-7040]"
+    }, {
+      "left" : "checkState(++count < 10, \"Stuck in loop expanding types to skip.\");",
+      "right" : "checkState(++count < 10, \"Stuck in loop expanding types to skip.\");",
+      "info" : "ExpressionStatement[6010-6077]:ExpressionStatement[6010-6077]"
+    }, {
+      "left" : "Set<T> rootTypesToSkip = Sets.newHashSet();",
+      "right" : "Set<T> rootTypesToSkip = Sets.newHashSet();",
+      "info" : "VariableDeclarationStatement[6204-6247]:VariableDeclarationStatement[6204-6247]"
+    }, {
+      "left" : "for (T subType : typesToSkip)",
+      "right" : "for (T subType : typesToSkip)",
+      "info" : "EnhancedForStatement[6258-6355]:EnhancedForStatement[6258-6355]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6288-6355]:Block[6288-6355]"
+    }, {
+      "left" : "rootTypesToSkip.add(types.find(subType));",
+      "right" : "rootTypesToSkip.add(types.find(subType));",
+      "info" : "ExpressionStatement[6302-6343]:ExpressionStatement[6302-6343]"
+    }, {
+      "left" : "typesToSkip.addAll(rootTypesToSkip);",
+      "right" : "typesToSkip.addAll(rootTypesToSkip);",
+      "info" : "ExpressionStatement[6366-6402]:ExpressionStatement[6366-6402]"
+    }, {
+      "left" : "Set<T> newTypesToSkip = Sets.newHashSet();",
+      "right" : "Set<T> newTypesToSkip = Sets.newHashSet();",
+      "info" : "VariableDeclarationStatement[6414-6456]:VariableDeclarationStatement[6414-6456]"
+    }, {
+      "left" : "Set<T> allTypes = types.elements();",
+      "right" : "Set<T> allTypes = types.elements();",
+      "info" : "VariableDeclarationStatement[6467-6502]:VariableDeclarationStatement[6467-6502]"
+    }, {
+      "left" : "int originalTypesSize = allTypes.size();",
+      "right" : "int originalTypesSize = allTypes.size();",
+      "info" : "VariableDeclarationStatement[6513-6553]:VariableDeclarationStatement[6513-6553]"
+    }, {
+      "left" : "for (T subType : allTypes)",
+      "right" : "for (T subType : allTypes)",
+      "info" : "EnhancedForStatement[6564-6772]:EnhancedForStatement[6564-6772]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6591-6772]:Block[6591-6772]"
+    }, {
+      "left" : "if (!typesToSkip.contains(subType)\n                && typesToSkip.contains(types.find(subType)))",
+      "right" : "if (!typesToSkip.contains(subType)\n                && typesToSkip.contains(types.find(subType)))",
+      "info" : "IfStatement[6605-6760]:IfStatement[6605-6760]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6702-6760]:Block[6702-6760]"
+    }, {
+      "left" : "newTypesToSkip.add(subType);",
+      "right" : "newTypesToSkip.add(subType);",
+      "info" : "ExpressionStatement[6718-6746]:ExpressionStatement[6718-6746]"
+    }, {
+      "left" : "for (T newType : newTypesToSkip)",
+      "right" : "for (T newType : newTypesToSkip)",
+      "info" : "EnhancedForStatement[6784-6866]:EnhancedForStatement[6784-6866]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6817-6866]:Block[6817-6866]"
+    }, {
+      "left" : "addTypeToSkip(newType);",
+      "right" : "addTypeToSkip(newType);",
+      "info" : "ExpressionStatement[6831-6854]:ExpressionStatement[6831-6854]"
+    }, {
+      "left" : "if (types.elements().size() == originalTypesSize)",
+      "right" : "if (types.elements().size() == originalTypesSize)",
+      "info" : "IfStatement[6948-7030]:IfStatement[6948-7030]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6998-7030]:Block[6998-7030]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[7012-7018]:BreakStatement[7012-7018]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7159-7265]:Block[7159-7265]"
+    }, {
+      "left" : "return !skipRenaming && types != null\n          && types.allEquivalenceClasses().size() > 1;",
+      "right" : "return !skipRenaming && types != null\n          && types.allEquivalenceClasses().size() > 1;",
+      "info" : "ReturnStatement[7167-7259]:ReturnStatement[7167-7259]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7501-7567]:Block[7501-7567]"
+    }, {
+      "left" : "return !skipRenaming && !typesToSkip.contains(type);",
+      "right" : "return !skipRenaming && !typesToSkip.contains(type);",
+      "info" : "ReturnStatement[7509-7561]:ReturnStatement[7509-7561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7718-7833]:Block[7718-7833]"
+    }, {
+      "left" : "boolean changed = !skipRenaming;",
+      "right" : "boolean changed = !skipRenaming;",
+      "info" : "VariableDeclarationStatement[7726-7758]:VariableDeclarationStatement[7726-7758]"
+    }, {
+      "left" : "skipRenaming = true;",
+      "right" : "skipRenaming = true;",
+      "info" : "ExpressionStatement[7765-7785]:ExpressionStatement[7765-7785]"
+    }, {
+      "left" : "types = null;",
+      "right" : "types = null;",
+      "info" : "ExpressionStatement[7792-7805]:ExpressionStatement[7792-7805]"
+    }, {
+      "left" : "return changed;",
+      "right" : "return changed;",
+      "info" : "ReturnStatement[7812-7827]:ReturnStatement[7812-7827]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8272-8508]:Block[8272-8508]"
+    }, {
+      "left" : "if (!skipRenaming)",
+      "right" : "if (!skipRenaming)",
+      "info" : "IfStatement[8280-8483]:IfStatement[8280-8483]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8299-8483]:Block[8299-8483]"
+    }, {
+      "left" : "if (typeSystem.isInvalidatingType(type))",
+      "right" : "if (typeSystem.isInvalidatingType(type))",
+      "info" : "IfStatement[8309-8409]:IfStatement[8309-8409]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8350-8409]:Block[8350-8409]"
+    }, {
+      "left" : "invalidate();",
+      "right" : "invalidate();",
+      "info" : "ExpressionStatement[8362-8375]:ExpressionStatement[8362-8375]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[8386-8399]:ReturnStatement[8386-8399]"
+    }, {
+      "left" : "renameNodes.add(node);",
+      "right" : "renameNodes.add(node);",
+      "info" : "ExpressionStatement[8418-8440]:ExpressionStatement[8418-8440]"
+    }, {
+      "left" : "rootTypes.put(node, type);",
+      "right" : "rootTypes.put(node, type);",
+      "info" : "ExpressionStatement[8449-8475]:ExpressionStatement[8449-8475]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[8490-8502]:ReturnStatement[8490-8502]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8669-8768]:Block[8669-8768]"
+    }, {
+      "left" : "return new DisambiguateProperties<JSType>(\n        compiler, new JSTypeSystem(compiler));",
+      "right" : "return new DisambiguateProperties<JSType>(\n        compiler, new JSTypeSystem(compiler));",
+      "info" : "ReturnStatement[8675-8764]:ReturnStatement[8675-8764]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8889-9026]:Block[8889-9026]"
+    }, {
+      "left" : "return new DisambiguateProperties<ConcreteType>(\n        compiler, new ConcreteTypeSystem(tt, compiler.getCodingConvention()));",
+      "right" : "return new DisambiguateProperties<ConcreteType>(\n        compiler, new ConcreteTypeSystem(tt, compiler.getCodingConvention()));",
+      "info" : "ReturnStatement[8895-9022]:ReturnStatement[8895-9022]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9304-9373]:Block[9304-9373]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[9310-9335]:ExpressionStatement[9310-9335]"
+    }, {
+      "left" : "this.typeSystem = typeSystem;",
+      "right" : "this.typeSystem = typeSystem;",
+      "info" : "ExpressionStatement[9340-9369]:ExpressionStatement[9340-9369]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9422-9814]:Block[9422-9814]"
+    }, {
+      "left" : "for (TypeMismatch mis : compiler.getTypeValidator().getMismatches())",
+      "right" : "for (TypeMismatch mis : compiler.getTypeValidator().getMismatches())",
+      "info" : "EnhancedForStatement[9428-9580]:EnhancedForStatement[9428-9580]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9497-9580]:Block[9497-9580]"
+    }, {
+      "left" : "addInvalidatingType(mis.typeA);",
+      "right" : "addInvalidatingType(mis.typeA);",
+      "info" : "ExpressionStatement[9505-9536]:ExpressionStatement[9505-9536]"
+    }, {
+      "left" : "addInvalidatingType(mis.typeB);",
+      "right" : "addInvalidatingType(mis.typeB);",
+      "info" : "ExpressionStatement[9543-9574]:ExpressionStatement[9543-9574]"
+    }, {
+      "left" : "StaticScope<T> scope = typeSystem.getRootScope();",
+      "right" : "StaticScope<T> scope = typeSystem.getRootScope();",
+      "info" : "VariableDeclarationStatement[9586-9635]:VariableDeclarationStatement[9586-9635]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, externs, new FindExternProperties());",
+      "right" : "NodeTraversal.traverse(compiler, externs, new FindExternProperties());",
+      "info" : "ExpressionStatement[9640-9710]:ExpressionStatement[9640-9710]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, new FindRenameableProperties());",
+      "right" : "NodeTraversal.traverse(compiler, root, new FindRenameableProperties());",
+      "info" : "ExpressionStatement[9715-9786]:ExpressionStatement[9715-9786]"
+    }, {
+      "left" : "renameProperties();",
+      "right" : "renameProperties();",
+      "info" : "ExpressionStatement[9791-9810]:ExpressionStatement[9791-9810]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9954-10404]:Block[9954-10404]"
+    }, {
+      "left" : "type = type.restrictByNotNullOrUndefined();",
+      "right" : "type = type.restrictByNotNullOrUndefined();",
+      "info" : "ExpressionStatement[9960-10003]:ExpressionStatement[9960-10003]"
+    }, {
+      "left" : "if (type instanceof UnionType)",
+      "right" : "if (type instanceof UnionType)",
+      "info" : "IfStatement[10008-10164]:IfStatement[10008-10164]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10039-10164]:Block[10039-10164]"
+    }, {
+      "left" : "for (JSType alt : ((UnionType) type).getAlternates())",
+      "right" : "for (JSType alt : ((UnionType) type).getAlternates())",
+      "info" : "EnhancedForStatement[10047-10144]:EnhancedForStatement[10047-10144]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10101-10144]:Block[10101-10144]"
+    }, {
+      "left" : "addInvalidatingType(alt);",
+      "right" : "addInvalidatingType(alt);",
+      "info" : "ExpressionStatement[10111-10136]:ExpressionStatement[10111-10136]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[10151-10158]:ReturnStatement[10151-10158]"
+    }, {
+      "left" : "typeSystem.addInvalidatingType(type);",
+      "right" : "typeSystem.addInvalidatingType(type);",
+      "info" : "ExpressionStatement[10170-10207]:ExpressionStatement[10170-10207]"
+    }, {
+      "left" : "ObjectType objType = ObjectType.cast(type);",
+      "right" : "ObjectType objType = ObjectType.cast(type);",
+      "info" : "VariableDeclarationStatement[10212-10255]:VariableDeclarationStatement[10212-10255]"
+    }, {
+      "left" : "if (objType != null && objType.getImplicitPrototype() != null)",
+      "right" : "if (objType != null && objType.getImplicitPrototype() != null)",
+      "info" : "IfStatement[10260-10400]:IfStatement[10260-10400]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10323-10400]:Block[10323-10400]"
+    }, {
+      "left" : "typeSystem.addInvalidatingType(objType.getImplicitPrototype());",
+      "right" : "typeSystem.addInvalidatingType(objType.getImplicitPrototype());",
+      "info" : "ExpressionStatement[10331-10394]:ExpressionStatement[10331-10394]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10529-10662]:Block[10529-10662]"
+    }, {
+      "left" : "if (!properties.containsKey(name))",
+      "right" : "if (!properties.containsKey(name))",
+      "info" : "IfStatement[10535-10625]:IfStatement[10535-10625]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10570-10625]:Block[10570-10625]"
+    }, {
+      "left" : "properties.put(name, new Property(name));",
+      "right" : "properties.put(name, new Property(name));",
+      "info" : "ExpressionStatement[10578-10619]:ExpressionStatement[10578-10619]"
+    }, {
+      "left" : "return properties.get(name);",
+      "right" : "return properties.get(name);",
+      "info" : "ReturnStatement[10630-10658]:ReturnStatement[10630-10658]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10739-10800]:Block[10739-10800]"
+    }, {
+      "left" : "return typeSystem.getTypeWithProperty(field, type);",
+      "right" : "return typeSystem.getTypeWithProperty(field, type);",
+      "info" : "ReturnStatement[10745-10796]:ReturnStatement[10745-10796]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11104-11130]:Block[11104-11130]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[11112-11124]:ReturnStatement[11112-11124]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11176-11353]:Block[11176-11353]"
+    }, {
+      "left" : "if (t.inGlobalScope())",
+      "right" : "if (t.inGlobalScope())",
+      "info" : "IfStatement[11184-11347]:IfStatement[11184-11347]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11207-11264]:Block[11207-11264]"
+    }, {
+      "left" : "scopes.push(typeSystem.getRootScope());",
+      "right" : "scopes.push(typeSystem.getRootScope());",
+      "info" : "ExpressionStatement[11217-11256]:ExpressionStatement[11217-11256]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11270-11347]:Block[11270-11347]"
+    }, {
+      "left" : "scopes.push(typeSystem.getFunctionScope(t.getScopeRoot()));",
+      "right" : "scopes.push(typeSystem.getFunctionScope(t.getScopeRoot()));",
+      "info" : "ExpressionStatement[11280-11339]:ExpressionStatement[11280-11339]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11398-11425]:Block[11398-11425]"
+    }, {
+      "left" : "scopes.pop();",
+      "right" : "scopes.pop();",
+      "info" : "ExpressionStatement[11406-11419]:ExpressionStatement[11406-11419]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11531-11566]:Block[11531-11566]"
+    }, {
+      "left" : "return scopes.peek();",
+      "right" : "return scopes.peek();",
+      "info" : "ReturnStatement[11539-11560]:ReturnStatement[11539-11560]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11866-12637]:Block[11866-12637]"
+    }, {
+      "left" : "if (n.getType() == Token.GETPROP)",
+      "right" : "if (n.getType() == Token.GETPROP)",
+      "info" : "IfStatement[11874-12631]:IfStatement[11874-12631]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11908-12631]:Block[11908-12631]"
+    }, {
+      "left" : "String field = n.getLastChild().getString();",
+      "right" : "String field = n.getLastChild().getString();",
+      "info" : "VariableDeclarationStatement[11918-11962]:VariableDeclarationStatement[11918-11962]"
+    }, {
+      "left" : "T type = typeSystem.getType(getScope(), n.getFirstChild(), field);",
+      "right" : "T type = typeSystem.getType(getScope(), n.getFirstChild(), field);",
+      "info" : "VariableDeclarationStatement[11971-12037]:VariableDeclarationStatement[11971-12037]"
+    }, {
+      "left" : "Property prop = getProperty(field);",
+      "right" : "Property prop = getProperty(field);",
+      "info" : "VariableDeclarationStatement[12046-12081]:VariableDeclarationStatement[12046-12081]"
+    }, {
+      "left" : "if (typeSystem.isInvalidatingType(type))",
+      "right" : "if (typeSystem.isInvalidatingType(type))",
+      "info" : "IfStatement[12090-12623]:IfStatement[12090-12623]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12131-12171]:Block[12131-12171]"
+    }, {
+      "left" : "prop.invalidate();",
+      "right" : "prop.invalidate();",
+      "info" : "ExpressionStatement[12143-12161]:ExpressionStatement[12143-12161]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12177-12623]:Block[12177-12623]"
+    }, {
+      "left" : "prop.addTypeToSkip(type);",
+      "right" : "prop.addTypeToSkip(type);",
+      "info" : "ExpressionStatement[12189-12214]:ExpressionStatement[12189-12214]"
+    }, {
+      "left" : "if ((type = typeSystem.getInstanceFromPrototype(type)) != null)",
+      "right" : "if ((type = typeSystem.getInstanceFromPrototype(type)) != null)",
+      "info" : "IfStatement[12457-12613]:IfStatement[12457-12613]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12521-12613]:Block[12521-12613]"
+    }, {
+      "left" : "prop.getTypes().add(type);",
+      "right" : "prop.getTypes().add(type);",
+      "info" : "ExpressionStatement[12535-12561]:ExpressionStatement[12535-12561]"
+    }, {
+      "left" : "prop.typesToSkip.add(type);",
+      "right" : "prop.typesToSkip.add(type);",
+      "info" : "ExpressionStatement[12574-12601]:ExpressionStatement[12574-12601]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12911-13079]:Block[12911-13079]"
+    }, {
+      "left" : "if (n.getType() == Token.GETPROP)",
+      "right" : "if (n.getType() == Token.GETPROP)",
+      "info" : "IfStatement[12919-13073]:IfStatement[12919-13073]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12953-12991]:Block[12953-12991]"
+    }, {
+      "left" : "handleGetProp(t, n);",
+      "right" : "handleGetProp(t, n);",
+      "info" : "ExpressionStatement[12963-12983]:ExpressionStatement[12963-12983]"
+    }, {
+      "left" : "if (n.getType() == Token.OBJECTLIT)",
+      "right" : "if (n.getType() == Token.OBJECTLIT)",
+      "info" : "IfStatement[12997-13073]:IfStatement[12997-13073]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13033-13073]:Block[13033-13073]"
+    }, {
+      "left" : "handleObjectLit(t, n);",
+      "right" : "handleObjectLit(t, n);",
+      "info" : "ExpressionStatement[13043-13065]:ExpressionStatement[13043-13065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13186-13709]:Block[13186-13709]"
+    }, {
+      "left" : "String name = n.getLastChild().getString();",
+      "right" : "String name = n.getLastChild().getString();",
+      "info" : "VariableDeclarationStatement[13194-13237]:VariableDeclarationStatement[13194-13237]"
+    }, {
+      "left" : "T type = typeSystem.getType(getScope(), n.getFirstChild(), name);",
+      "right" : "T type = typeSystem.getType(getScope(), n.getFirstChild(), name);",
+      "info" : "VariableDeclarationStatement[13244-13309]:VariableDeclarationStatement[13244-13309]"
+    }, {
+      "left" : "Property prop = getProperty(name);",
+      "right" : "Property prop = getProperty(name);",
+      "info" : "VariableDeclarationStatement[13317-13351]:VariableDeclarationStatement[13317-13351]"
+    }, {
+      "left" : "if (!prop.scheduleRenaming(n.getLastChild(),\n                                 processProperty(t, prop, type, null)))",
+      "right" : "if (!prop.scheduleRenaming(n.getLastChild(),\n                                 processProperty(t, prop, type, null)))",
+      "info" : "IfStatement[13358-13703]:IfStatement[13358-13703]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13475-13703]:Block[13475-13703]"
+    }, {
+      "left" : "if (showInvalidationWarnings)",
+      "right" : "if (showInvalidationWarnings)",
+      "info" : "IfStatement[13485-13695]:IfStatement[13485-13695]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13515-13695]:Block[13515-13695]"
+    }, {
+      "left" : "compiler.report(JSError.make(\n              t.getSourceName(), n, INVALIDATION, name,\n              (type == null ? \"null\" : type.toString()), n.toString()));",
+      "right" : "compiler.report(JSError.make(\n              t.getSourceName(), n, INVALIDATION, name,\n              (type == null ? \"null\" : type.toString()), n.toString()));",
+      "info" : "ExpressionStatement[13527-13685]:ExpressionStatement[13527-13685]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13820-14593]:Block[13820-14593]"
+    }, {
+      "left" : "Node child = n.getFirstChild();",
+      "right" : "Node child = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[13828-13859]:VariableDeclarationStatement[13828-13859]"
+    }, {
+      "left" : "while (child != null)",
+      "right" : "while (child != null)",
+      "info" : "WhileStatement[13866-14587]:WhileStatement[13866-14587]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13888-14587]:Block[13888-14587]"
+    }, {
+      "left" : "if (child.getType() == Token.STRING)",
+      "right" : "if (child.getType() == Token.STRING)",
+      "info" : "IfStatement[13898-14535]:IfStatement[13898-14535]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13935-14535]:Block[13935-14535]"
+    }, {
+      "left" : "String name = child.getString();",
+      "right" : "String name = child.getString();",
+      "info" : "VariableDeclarationStatement[14010-14042]:VariableDeclarationStatement[14010-14042]"
+    }, {
+      "left" : "T type = typeSystem.getType(getScope(), n, name);",
+      "right" : "T type = typeSystem.getType(getScope(), n, name);",
+      "info" : "VariableDeclarationStatement[14053-14102]:VariableDeclarationStatement[14053-14102]"
+    }, {
+      "left" : "Property prop = getProperty(name);",
+      "right" : "Property prop = getProperty(name);",
+      "info" : "VariableDeclarationStatement[14114-14148]:VariableDeclarationStatement[14114-14148]"
+    }, {
+      "left" : "if (!prop.scheduleRenaming(child,\n                                     processProperty(t, prop, type, null)))",
+      "right" : "if (!prop.scheduleRenaming(child,\n                                     processProperty(t, prop, type, null)))",
+      "info" : "IfStatement[14159-14525]:IfStatement[14159-14525]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14269-14525]:Block[14269-14525]"
+    }, {
+      "left" : "if (showInvalidationWarnings)",
+      "right" : "if (showInvalidationWarnings)",
+      "info" : "IfStatement[14283-14513]:IfStatement[14283-14513]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14313-14513]:Block[14313-14513]"
+    }, {
+      "left" : "compiler.report(JSError.make(\n                  t.getSourceName(), child, INVALIDATION, name,\n                  (type == null ? \"null\" : type.toString()), n.toString()));",
+      "right" : "compiler.report(JSError.make(\n                  t.getSourceName(), child, INVALIDATION, name,\n                  (type == null ? \"null\" : type.toString()), n.toString()));",
+      "info" : "ExpressionStatement[14329-14499]:ExpressionStatement[14329-14499]"
+    }, {
+      "left" : "child = child.getNext().getNext();",
+      "right" : "child = child.getNext().getNext();",
+      "info" : "ExpressionStatement[14545-14579]:ExpressionStatement[14545-14579]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15066-15877]:Block[15066-15877]"
+    }, {
+      "left" : "type = typeSystem.restrictByNotNullOrUndefined(type);",
+      "right" : "type = typeSystem.restrictByNotNullOrUndefined(type);",
+      "info" : "ExpressionStatement[15074-15127]:ExpressionStatement[15074-15127]"
+    }, {
+      "left" : "if (prop.skipRenaming || typeSystem.isInvalidatingType(type))",
+      "right" : "if (prop.skipRenaming || typeSystem.isInvalidatingType(type))",
+      "info" : "IfStatement[15134-15226]:IfStatement[15134-15226]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15196-15226]:Block[15196-15226]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[15206-15218]:ReturnStatement[15206-15218]"
+    }, {
+      "left" : "Iterable<T> alternatives = typeSystem.getTypeAlternatives(type);",
+      "right" : "Iterable<T> alternatives = typeSystem.getTypeAlternatives(type);",
+      "info" : "VariableDeclarationStatement[15234-15298]:VariableDeclarationStatement[15234-15298]"
+    }, {
+      "left" : "if (alternatives != null)",
+      "right" : "if (alternatives != null)",
+      "info" : "IfStatement[15305-15871]:IfStatement[15305-15871]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15331-15626]:Block[15331-15626]"
+    }, {
+      "left" : "T firstType = null;",
+      "right" : "T firstType = null;",
+      "info" : "VariableDeclarationStatement[15341-15360]:VariableDeclarationStatement[15341-15360]"
+    }, {
+      "left" : "for (T subType : alternatives)",
+      "right" : "for (T subType : alternatives)",
+      "info" : "EnhancedForStatement[15369-15592]:EnhancedForStatement[15369-15592]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15400-15592]:Block[15400-15592]"
+    }, {
+      "left" : "T lastType = processProperty(t, prop, subType, firstType);",
+      "right" : "T lastType = processProperty(t, prop, subType, firstType);",
+      "info" : "VariableDeclarationStatement[15412-15470]:VariableDeclarationStatement[15412-15470]"
+    }, {
+      "left" : "if (lastType != null)",
+      "right" : "if (lastType != null)",
+      "info" : "IfStatement[15481-15582]:IfStatement[15481-15582]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15503-15582]:Block[15503-15582]"
+    }, {
+      "left" : "firstType = firstType == null ? lastType : firstType;",
+      "right" : "firstType = firstType == null ? lastType : firstType;",
+      "info" : "ExpressionStatement[15517-15570]:ExpressionStatement[15517-15570]"
+    }, {
+      "left" : "return firstType;",
+      "right" : "return firstType;",
+      "info" : "ReturnStatement[15601-15618]:ReturnStatement[15601-15618]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15632-15871]:Block[15632-15871]"
+    }, {
+      "left" : "T topType = typeSystem.getTypeWithProperty(prop.name, type);",
+      "right" : "T topType = typeSystem.getTypeWithProperty(prop.name, type);",
+      "info" : "VariableDeclarationStatement[15642-15702]:VariableDeclarationStatement[15642-15702]"
+    }, {
+      "left" : "if (typeSystem.isInvalidatingType(topType))",
+      "right" : "if (typeSystem.isInvalidatingType(topType))",
+      "info" : "IfStatement[15711-15789]:IfStatement[15711-15789]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15755-15789]:Block[15755-15789]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[15767-15779]:ReturnStatement[15767-15779]"
+    }, {
+      "left" : "prop.addType(type, topType, relatedType);",
+      "right" : "prop.addType(type, topType, relatedType);",
+      "info" : "ExpressionStatement[15798-15839]:ExpressionStatement[15798-15839]"
+    }, {
+      "left" : "return topType;",
+      "right" : "return topType;",
+      "info" : "ReturnStatement[15848-15863]:ReturnStatement[15848-15863]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15980-17309]:Block[15980-17309]"
+    }, {
+      "left" : "int propsRenamed = 0, propsSkipped = 0, instancesRenamed = 0,\n        instancesSkipped = 0, singleTypeProps = 0;",
+      "right" : "int propsRenamed = 0, propsSkipped = 0, instancesRenamed = 0,\n        instancesSkipped = 0, singleTypeProps = 0;",
+      "info" : "VariableDeclarationStatement[15986-16098]:VariableDeclarationStatement[15986-16098]"
+    }, {
+      "left" : "for (Property prop : properties.values())",
+      "right" : "for (Property prop : properties.values())",
+      "info" : "EnhancedForStatement[16104-16884]:EnhancedForStatement[16104-16884]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16146-16884]:Block[16146-16884]"
+    }, {
+      "left" : "if (prop.shouldRename())",
+      "right" : "if (prop.shouldRename())",
+      "info" : "IfStatement[16154-16878]:IfStatement[16154-16878]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16179-16748]:Block[16179-16748]"
+    }, {
+      "left" : "Map<T, String> propNames = buildPropNames(prop.getTypes(), prop.name);",
+      "right" : "Map<T, String> propNames = buildPropNames(prop.getTypes(), prop.name);",
+      "info" : "VariableDeclarationStatement[16189-16259]:VariableDeclarationStatement[16189-16259]"
+    }, {
+      "left" : "++propsRenamed;",
+      "right" : "++propsRenamed;",
+      "info" : "ExpressionStatement[16269-16284]:ExpressionStatement[16269-16284]"
+    }, {
+      "left" : "prop.expandTypesToSkip();",
+      "right" : "prop.expandTypesToSkip();",
+      "info" : "ExpressionStatement[16293-16318]:ExpressionStatement[16293-16318]"
+    }, {
+      "left" : "UnionFind<T> types = prop.getTypes();",
+      "right" : "UnionFind<T> types = prop.getTypes();",
+      "info" : "VariableDeclarationStatement[16327-16364]:VariableDeclarationStatement[16327-16364]"
+    }, {
+      "left" : "for (Node node : prop.renameNodes)",
+      "right" : "for (Node node : prop.renameNodes)",
+      "info" : "EnhancedForStatement[16373-16740]:EnhancedForStatement[16373-16740]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16408-16740]:Block[16408-16740]"
+    }, {
+      "left" : "T rootType = prop.rootTypes.get(node);",
+      "right" : "T rootType = prop.rootTypes.get(node);",
+      "info" : "VariableDeclarationStatement[16420-16458]:VariableDeclarationStatement[16420-16458]"
+    }, {
+      "left" : "if (prop.shouldRename(rootType))",
+      "right" : "if (prop.shouldRename(rootType))",
+      "info" : "IfStatement[16469-16730]:IfStatement[16469-16730]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16502-16679]:Block[16502-16679]"
+    }, {
+      "left" : "String newName = propNames.get(rootType);",
+      "right" : "String newName = propNames.get(rootType);",
+      "info" : "VariableDeclarationStatement[16516-16557]:VariableDeclarationStatement[16516-16557]"
+    }, {
+      "left" : "node.setString(newName);",
+      "right" : "node.setString(newName);",
+      "info" : "ExpressionStatement[16570-16594]:ExpressionStatement[16570-16594]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[16607-16635]:ExpressionStatement[16607-16635]"
+    }, {
+      "left" : "++instancesRenamed;",
+      "right" : "++instancesRenamed;",
+      "info" : "ExpressionStatement[16648-16667]:ExpressionStatement[16648-16667]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16685-16730]:Block[16685-16730]"
+    }, {
+      "left" : "++instancesSkipped;",
+      "right" : "++instancesSkipped;",
+      "info" : "ExpressionStatement[16699-16718]:ExpressionStatement[16699-16718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16754-16878]:Block[16754-16878]"
+    }, {
+      "left" : "if (prop.skipRenaming)",
+      "right" : "if (prop.skipRenaming)",
+      "info" : "IfStatement[16764-16870]:IfStatement[16764-16870]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16787-16824]:Block[16787-16824]"
+    }, {
+      "left" : "++propsSkipped;",
+      "right" : "++propsSkipped;",
+      "info" : "ExpressionStatement[16799-16814]:ExpressionStatement[16799-16814]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16830-16870]:Block[16830-16870]"
+    }, {
+      "left" : "++singleTypeProps;",
+      "right" : "++singleTypeProps;",
+      "info" : "ExpressionStatement[16842-16860]:ExpressionStatement[16842-16860]"
+    }, {
+      "left" : "logger.info(\"Renamed \" + instancesRenamed + \" instances of \"\n                + propsRenamed + \" properties.\");",
+      "right" : "logger.info(\"Renamed \" + instancesRenamed + \" instances of \"\n                + propsRenamed + \" properties.\");",
+      "info" : "ExpressionStatement[16889-16999]:ExpressionStatement[16889-16999]"
+    }, {
+      "left" : "logger.info(\"Skipped renaming \" + instancesSkipped + \" invalidated \"\n                + \"properties, \" + propsSkipped + \" instances of properties \"\n                + \"that were skipped for specific types and \" + singleTypeProps\n                + \" properties that were referenced from only one type.\");",
+      "right" : "logger.info(\"Skipped renaming \" + instancesSkipped + \" invalidated \"\n                + \"properties, \" + propsSkipped + \" instances of properties \"\n                + \"that were skipped for specific types and \" + singleTypeProps\n                + \" properties that were referenced from only one type.\");",
+      "info" : "ExpressionStatement[17004-17305]:ExpressionStatement[17004-17305]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17507-18106]:Block[17507-18106]"
+    }, {
+      "left" : "Map<T, String> names = Maps.newHashMap();",
+      "right" : "Map<T, String> names = Maps.newHashMap();",
+      "info" : "VariableDeclarationStatement[17513-17554]:VariableDeclarationStatement[17513-17554]"
+    }, {
+      "left" : "for (Set<T> set : types.allEquivalenceClasses())",
+      "right" : "for (Set<T> set : types.allEquivalenceClasses())",
+      "info" : "EnhancedForStatement[17559-18084]:EnhancedForStatement[17559-18084]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17608-18084]:Block[17608-18084]"
+    }, {
+      "left" : "checkState(!set.isEmpty());",
+      "right" : "checkState(!set.isEmpty());",
+      "info" : "ExpressionStatement[17616-17643]:ExpressionStatement[17616-17643]"
+    }, {
+      "left" : "String typeName = null;",
+      "right" : "String typeName = null;",
+      "info" : "VariableDeclarationStatement[17651-17674]:VariableDeclarationStatement[17651-17674]"
+    }, {
+      "left" : "for (T type : set)",
+      "right" : "for (T type : set)",
+      "info" : "EnhancedForStatement[17681-17832]:EnhancedForStatement[17681-17832]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17700-17832]:Block[17700-17832]"
+    }, {
+      "left" : "if (typeName == null || type.toString().compareTo(typeName) < 0)",
+      "right" : "if (typeName == null || type.toString().compareTo(typeName) < 0)",
+      "info" : "IfStatement[17710-17824]:IfStatement[17710-17824]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17775-17824]:Block[17775-17824]"
+    }, {
+      "left" : "typeName = type.toString();",
+      "right" : "typeName = type.toString();",
+      "info" : "ExpressionStatement[17787-17814]:ExpressionStatement[17787-17814]"
+    }, {
+      "left" : "String newName;",
+      "right" : "String newName;",
+      "info" : "VariableDeclarationStatement[17840-17855]:VariableDeclarationStatement[17840-17855]"
+    }, {
+      "left" : "if (\"{...}\".equals(typeName))",
+      "right" : "if (\"{...}\".equals(typeName))",
+      "info" : "IfStatement[17862-18008]:IfStatement[17862-18008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17892-17925]:Block[17892-17925]"
+    }, {
+      "left" : "newName = name;",
+      "right" : "newName = name;",
+      "info" : "ExpressionStatement[17902-17917]:ExpressionStatement[17902-17917]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17931-18008]:Block[17931-18008]"
+    }, {
+      "left" : "newName = typeName.replaceAll(\"[^\\\\w$]\", \"_\") + \"$\" + name;",
+      "right" : "newName = typeName.replaceAll(\"[^\\\\w$]\", \"_\") + \"$\" + name;",
+      "info" : "ExpressionStatement[17941-18000]:ExpressionStatement[17941-18000]"
+    }, {
+      "left" : "for (T type : set)",
+      "right" : "for (T type : set)",
+      "info" : "EnhancedForStatement[18016-18078]:EnhancedForStatement[18016-18078]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18035-18078]:Block[18035-18078]"
+    }, {
+      "left" : "names.put(type, newName);",
+      "right" : "names.put(type, newName);",
+      "info" : "ExpressionStatement[18045-18070]:ExpressionStatement[18045-18070]"
+    }, {
+      "left" : "return names;",
+      "right" : "return names;",
+      "info" : "ReturnStatement[18089-18102]:ReturnStatement[18089-18102]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18248-18706]:Block[18248-18706]"
+    }, {
+      "left" : "Multimap<String, Collection<T>> ret = HashMultimap.create();",
+      "right" : "Multimap<String, Collection<T>> ret = HashMultimap.create();",
+      "info" : "VariableDeclarationStatement[18254-18314]:VariableDeclarationStatement[18254-18314]"
+    }, {
+      "left" : "for (Map.Entry<String, Property> entry: properties.entrySet())",
+      "right" : "for (Map.Entry<String, Property> entry: properties.entrySet())",
+      "info" : "EnhancedForStatement[18319-18686]:EnhancedForStatement[18319-18686]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18382-18686]:Block[18382-18686]"
+    }, {
+      "left" : "Property prop = entry.getValue();",
+      "right" : "Property prop = entry.getValue();",
+      "info" : "VariableDeclarationStatement[18390-18423]:VariableDeclarationStatement[18390-18423]"
+    }, {
+      "left" : "if (!prop.skipRenaming)",
+      "right" : "if (!prop.skipRenaming)",
+      "info" : "IfStatement[18430-18680]:IfStatement[18430-18680]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18454-18680]:Block[18454-18680]"
+    }, {
+      "left" : "for (Collection<T> c : prop.getTypes().allEquivalenceClasses())",
+      "right" : "for (Collection<T> c : prop.getTypes().allEquivalenceClasses())",
+      "info" : "EnhancedForStatement[18464-18672]:EnhancedForStatement[18464-18672]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18528-18672]:Block[18528-18672]"
+    }, {
+      "left" : "if (!c.isEmpty() && !prop.typesToSkip.contains(c.iterator().next()))",
+      "right" : "if (!c.isEmpty() && !prop.typesToSkip.contains(c.iterator().next()))",
+      "info" : "IfStatement[18540-18662]:IfStatement[18540-18662]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18609-18662]:Block[18609-18662]"
+    }, {
+      "left" : "ret.put(entry.getKey(), c);",
+      "right" : "ret.put(entry.getKey(), c);",
+      "info" : "ExpressionStatement[18623-18650]:ExpressionStatement[18623-18650]"
+    }, {
+      "left" : "return ret;",
+      "right" : "return ret;",
+      "info" : "ReturnStatement[18691-18702]:ReturnStatement[18691-18702]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21829-22363]:Block[21829-22363]"
+    }, {
+      "left" : "registry = compiler.getTypeRegistry();",
+      "right" : "registry = compiler.getTypeRegistry();",
+      "info" : "ExpressionStatement[21837-21875]:ExpressionStatement[21837-21875]"
+    }, {
+      "left" : "invalidatingTypes = Sets.newHashSet(\n          registry.getNativeType(JSTypeNative.ALL_TYPE),\n          registry.getNativeType(JSTypeNative.NO_OBJECT_TYPE),\n          registry.getNativeType(JSTypeNative.NO_TYPE),\n          registry.getNativeType(JSTypeNative.FUNCTION_PROTOTYPE),\n          registry.getNativeType(JSTypeNative.OBJECT_PROTOTYPE),\n          registry.getNativeType(JSTypeNative.TOP_LEVEL_PROTOTYPE),\n          registry.getNativeType(JSTypeNative.UNKNOWN_TYPE));",
+      "right" : "invalidatingTypes = Sets.newHashSet(\n          registry.getNativeType(JSTypeNative.ALL_TYPE),\n          registry.getNativeType(JSTypeNative.NO_OBJECT_TYPE),\n          registry.getNativeType(JSTypeNative.NO_TYPE),\n          registry.getNativeType(JSTypeNative.FUNCTION_PROTOTYPE),\n          registry.getNativeType(JSTypeNative.OBJECT_PROTOTYPE),\n          registry.getNativeType(JSTypeNative.TOP_LEVEL_PROTOTYPE),\n          registry.getNativeType(JSTypeNative.UNKNOWN_TYPE));",
+      "info" : "ExpressionStatement[21882-22356]:ExpressionStatement[21882-22356]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22424-22505]:Block[22424-22505]"
+    }, {
+      "left" : "checkState(!type.isUnionType());",
+      "right" : "checkState(!type.isUnionType());",
+      "info" : "ExpressionStatement[22432-22464]:ExpressionStatement[22432-22464]"
+    }, {
+      "left" : "invalidatingTypes.add(type);",
+      "right" : "invalidatingTypes.add(type);",
+      "info" : "ExpressionStatement[22471-22499]:ExpressionStatement[22471-22499]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22563-22579]:Block[22563-22579]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[22565-22577]:ReturnStatement[22565-22577]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22650-22676]:Block[22650-22676]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[22658-22670]:ReturnStatement[22658-22670]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22774-22924]:Block[22774-22924]"
+    }, {
+      "left" : "if (node.getJSType() == null)",
+      "right" : "if (node.getJSType() == null)",
+      "info" : "IfStatement[22782-22887]:IfStatement[22782-22887]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22812-22887]:Block[22812-22887]"
+    }, {
+      "left" : "return registry.getNativeType(JSTypeNative.UNKNOWN_TYPE);",
+      "right" : "return registry.getNativeType(JSTypeNative.UNKNOWN_TYPE);",
+      "info" : "ReturnStatement[22822-22879]:ReturnStatement[22822-22879]"
+    }, {
+      "left" : "return node.getJSType();",
+      "right" : "return node.getJSType();",
+      "info" : "ReturnStatement[22894-22918]:ReturnStatement[22894-22918]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22987-23255]:Block[22987-23255]"
+    }, {
+      "left" : "if (type == null || invalidatingTypes.contains(type) ||\n          (type.isNamedType() && type.isUnknownType()))",
+      "right" : "if (type == null || invalidatingTypes.contains(type) ||\n          (type.isNamedType() && type.isUnknownType()))",
+      "info" : "IfStatement[22995-23137]:IfStatement[22995-23137]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23107-23137]:Block[23107-23137]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[23117-23129]:ReturnStatement[23117-23129]"
+    }, {
+      "left" : "ObjectType objType = ObjectType.cast(type);",
+      "right" : "ObjectType objType = ObjectType.cast(type);",
+      "info" : "VariableDeclarationStatement[23145-23188]:VariableDeclarationStatement[23145-23188]"
+    }, {
+      "left" : "return objType != null && !objType.hasReferenceName();",
+      "right" : "return objType != null && !objType.hasReferenceName();",
+      "info" : "ReturnStatement[23195-23249]:ReturnStatement[23195-23249]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23334-23738]:Block[23334-23738]"
+    }, {
+      "left" : "type = type.restrictByNotNullOrUndefined();",
+      "right" : "type = type.restrictByNotNullOrUndefined();",
+      "info" : "ExpressionStatement[23342-23385]:ExpressionStatement[23342-23385]"
+    }, {
+      "left" : "if (type instanceof UnionType)",
+      "right" : "if (type instanceof UnionType)",
+      "info" : "IfStatement[23392-23661]:IfStatement[23392-23661]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23423-23661]:Block[23423-23661]"
+    }, {
+      "left" : "Set<JSType> types = Sets.newHashSet(type);",
+      "right" : "Set<JSType> types = Sets.newHashSet(type);",
+      "info" : "VariableDeclarationStatement[23433-23475]:VariableDeclarationStatement[23433-23475]"
+    }, {
+      "left" : "for (JSType alt : ((UnionType) type).getAlternates())",
+      "right" : "for (JSType alt : ((UnionType) type).getAlternates())",
+      "info" : "EnhancedForStatement[23484-23610]:EnhancedForStatement[23484-23610]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23538-23610]:Block[23538-23610]"
+    }, {
+      "left" : "types.addAll(getTypesToSkipForTypeNonUnion(type));",
+      "right" : "types.addAll(getTypesToSkipForTypeNonUnion(type));",
+      "info" : "ExpressionStatement[23550-23600]:ExpressionStatement[23550-23600]"
+    }, {
+      "left" : "return ImmutableSet.copyOf(types);",
+      "right" : "return ImmutableSet.copyOf(types);",
+      "info" : "ReturnStatement[23619-23653]:ReturnStatement[23619-23653]"
+    }, {
+      "left" : "return ImmutableSet.copyOf(getTypesToSkipForTypeNonUnion(type));",
+      "right" : "return ImmutableSet.copyOf(getTypesToSkipForTypeNonUnion(type));",
+      "info" : "ReturnStatement[23668-23732]:ReturnStatement[23668-23732]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23807-24174]:Block[23807-24174]"
+    }, {
+      "left" : "Set<JSType> types = Sets.newHashSet();",
+      "right" : "Set<JSType> types = Sets.newHashSet();",
+      "info" : "VariableDeclarationStatement[23815-23853]:VariableDeclarationStatement[23815-23853]"
+    }, {
+      "left" : "JSType skipType = type;",
+      "right" : "JSType skipType = type;",
+      "info" : "VariableDeclarationStatement[23860-23883]:VariableDeclarationStatement[23860-23883]"
+    }, {
+      "left" : "while (skipType != null)",
+      "right" : "while (skipType != null)",
+      "info" : "WhileStatement[23890-24148]:WhileStatement[23890-24148]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23915-24148]:Block[23915-24148]"
+    }, {
+      "left" : "types.add(skipType);",
+      "right" : "types.add(skipType);",
+      "info" : "ExpressionStatement[23925-23945]:ExpressionStatement[23925-23945]"
+    }, {
+      "left" : "ObjectType objSkipType = skipType.toObjectType();",
+      "right" : "ObjectType objSkipType = skipType.toObjectType();",
+      "info" : "VariableDeclarationStatement[23955-24004]:VariableDeclarationStatement[23955-24004]"
+    }, {
+      "left" : "if (objSkipType != null)",
+      "right" : "if (objSkipType != null)",
+      "info" : "IfStatement[24013-24140]:IfStatement[24013-24140]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24038-24106]:Block[24038-24106]"
+    }, {
+      "left" : "skipType = objSkipType.getImplicitPrototype();",
+      "right" : "skipType = objSkipType.getImplicitPrototype();",
+      "info" : "ExpressionStatement[24050-24096]:ExpressionStatement[24050-24096]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24112-24140]:Block[24112-24140]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[24124-24130]:BreakStatement[24124-24130]"
+    }, {
+      "left" : "return types;",
+      "right" : "return types;",
+      "info" : "ReturnStatement[24155-24168]:ReturnStatement[24155-24168]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24231-24302]:Block[24231-24302]"
+    }, {
+      "left" : "return type.isEnumType() || (type.autoboxesTo() != null);",
+      "right" : "return type.isEnumType() || (type.autoboxesTo() != null);",
+      "info" : "ReturnStatement[24239-24296]:ReturnStatement[24239-24296]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24374-24431]:Block[24374-24431]"
+    }, {
+      "left" : "return type.restrictByNotNullOrUndefined();",
+      "right" : "return type.restrictByNotNullOrUndefined();",
+      "info" : "ReturnStatement[24382-24425]:ReturnStatement[24382-24425]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24504-25080]:Block[24504-25080]"
+    }, {
+      "left" : "if (type.isUnionType())",
+      "right" : "if (type.isUnionType())",
+      "info" : "IfStatement[24512-25074]:IfStatement[24512-25074]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24536-24596]:Block[24536-24596]"
+    }, {
+      "left" : "return ((UnionType) type).getAlternates();",
+      "right" : "return ((UnionType) type).getAlternates();",
+      "info" : "ReturnStatement[24546-24588]:ReturnStatement[24546-24588]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24602-25074]:Block[24602-25074]"
+    }, {
+      "left" : "ObjectType objType = type.toObjectType();",
+      "right" : "ObjectType objType = type.toObjectType();",
+      "info" : "VariableDeclarationStatement[24612-24653]:VariableDeclarationStatement[24612-24653]"
+    }, {
+      "left" : "if (objType != null &&\n            objType.getConstructor() != null &&\n            objType.getConstructor().isInterface())",
+      "right" : "if (objType != null &&\n            objType.getConstructor() != null &&\n            objType.getConstructor().isInterface())",
+      "info" : "IfStatement[24662-25066]:IfStatement[24662-25066]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24785-25026]:Block[24785-25026]"
+    }, {
+      "left" : "List<JSType> list = Lists.newArrayList();",
+      "right" : "List<JSType> list = Lists.newArrayList();",
+      "info" : "VariableDeclarationStatement[24797-24838]:VariableDeclarationStatement[24797-24838]"
+    }, {
+      "left" : "for (FunctionType impl\n                   : registry.getDirectImplementors(objType))",
+      "right" : "for (FunctionType impl\n                   : registry.getDirectImplementors(objType))",
+      "info" : "EnhancedForStatement[24849-24993]:EnhancedForStatement[24849-24993]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24934-24993]:Block[24934-24993]"
+    }, {
+      "left" : "list.add(impl.getInstanceType());",
+      "right" : "list.add(impl.getInstanceType());",
+      "info" : "ExpressionStatement[24948-24981]:ExpressionStatement[24948-24981]"
+    }, {
+      "left" : "return list;",
+      "right" : "return list;",
+      "info" : "ReturnStatement[25004-25016]:ReturnStatement[25004-25016]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25032-25066]:Block[25032-25066]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[25044-25056]:ReturnStatement[25044-25056]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26451-26831]:Block[26716-27096]"
+    }, {
+      "left" : "if (type.isFunctionPrototypeType())",
+      "right" : "if (type.isFunctionPrototypeType())",
+      "info" : "IfStatement[26459-26806]:IfStatement[26724-27071]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26495-26806]:Block[26760-27071]"
+    }, {
+      "left" : "FunctionPrototypeType prototype = (FunctionPrototypeType) type;",
+      "right" : "FunctionPrototypeType prototype = (FunctionPrototypeType) type;",
+      "info" : "VariableDeclarationStatement[26505-26568]:VariableDeclarationStatement[26770-26833]"
+    }, {
+      "left" : "FunctionType owner = prototype.getOwnerFunction();",
+      "right" : "FunctionType owner = prototype.getOwnerFunction();",
+      "info" : "VariableDeclarationStatement[26577-26627]:VariableDeclarationStatement[26842-26892]"
+    }, {
+      "left" : "if (owner.isConstructor() || owner.isInterface())",
+      "right" : "if (owner.isConstructor() || owner.isInterface())",
+      "info" : "IfStatement[26636-26798]:IfStatement[26901-27063]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26686-26798]:Block[26951-27063]"
+    }, {
+      "left" : "return ((FunctionPrototypeType) type).getOwnerFunction()\n              .getInstanceType();",
+      "right" : "return ((FunctionPrototypeType) type).getOwnerFunction()\n              .getInstanceType();",
+      "info" : "ReturnStatement[26698-26788]:ReturnStatement[26963-27053]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[26813-26825]:ReturnStatement[27078-27090]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26989-28114]:Block[27254-28379]"
+    }, {
+      "left" : "ObjectType objType = ObjectType.cast(type);",
+      "right" : "ObjectType objType = ObjectType.cast(type);",
+      "info" : "VariableDeclarationStatement[26997-27040]:VariableDeclarationStatement[27262-27305]"
+    }, {
+      "left" : "if (objType != null)",
+      "right" : "if (objType != null)",
+      "info" : "IfStatement[27047-28108]:IfStatement[27312-28373]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27068-28108]:Block[27333-28373]"
+    }, {
+      "left" : "FunctionType constructor;",
+      "right" : "FunctionType constructor;",
+      "info" : "VariableDeclarationStatement[27078-27103]:VariableDeclarationStatement[27343-27368]"
+    }, {
+      "left" : "if (objType instanceof FunctionType)",
+      "right" : "if (objType instanceof FunctionType)",
+      "info" : "IfStatement[27112-27416]:IfStatement[27377-27681]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27149-27208]:Block[27414-27473]"
+    }, {
+      "left" : "constructor = (FunctionType) objType;",
+      "right" : "constructor = (FunctionType) objType;",
+      "info" : "ExpressionStatement[27161-27198]:ExpressionStatement[27426-27463]"
+    }, {
+      "left" : "if (objType instanceof FunctionPrototypeType)",
+      "right" : "if (objType instanceof FunctionPrototypeType)",
+      "info" : "IfStatement[27214-27416]:IfStatement[27479-27681]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27260-27349]:Block[27525-27614]"
+    }, {
+      "left" : "constructor = ((FunctionPrototypeType) objType).getOwnerFunction();",
+      "right" : "constructor = ((FunctionPrototypeType) objType).getOwnerFunction();",
+      "info" : "ExpressionStatement[27272-27339]:ExpressionStatement[27537-27604]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27355-27416]:Block[27620-27681]"
+    }, {
+      "left" : "constructor = objType.getConstructor();",
+      "right" : "constructor = objType.getConstructor();",
+      "info" : "ExpressionStatement[27367-27406]:ExpressionStatement[27632-27671]"
+    }, {
+      "left" : "while (constructor != null)",
+      "right" : "while (constructor != null)",
+      "info" : "WhileStatement[27425-28100]:WhileStatement[27690-28365]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27453-28100]:Block[27718-28365]"
+    }, {
+      "left" : "for (ObjectType itype : constructor.getImplementedInterfaces())",
+      "right" : "for (ObjectType itype : constructor.getImplementedInterfaces())",
+      "info" : "EnhancedForStatement[27465-27887]:EnhancedForStatement[27730-28152]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27529-27887]:Block[27794-28152]"
+    }, {
+      "left" : "JSType top = getTypeWithProperty(p.name, itype);",
+      "right" : "JSType top = getTypeWithProperty(p.name, itype);",
+      "info" : "VariableDeclarationStatement[27543-27591]:VariableDeclarationStatement[27808-27856]"
+    }, {
+      "left" : "if (top != null)",
+      "right" : "if (top != null)",
+      "info" : "IfStatement[27604-27762]:IfStatement[27869-28027]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27621-27686]:Block[27886-27951]"
+    }, {
+      "left" : "p.addType(itype, top, relatedType);",
+      "right" : "p.addType(itype, top, relatedType);",
+      "info" : "ExpressionStatement[27637-27672]:ExpressionStatement[27902-27937]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27692-27762]:Block[27957-28027]"
+    }, {
+      "left" : "recordInterfaces(itype, relatedType, p);",
+      "right" : "recordInterfaces(itype, relatedType, p);",
+      "info" : "ExpressionStatement[27708-27748]:ExpressionStatement[27973-28013]"
+    }, {
+      "left" : "if (p.skipRenaming)",
+      "right" : "if (p.skipRenaming)",
+      "info" : "IfStatement[27848-27875]:IfStatement[28113-28140]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[27868-27875]:ReturnStatement[28133-28140]"
+    }, {
+      "left" : "if (constructor.isInterface() || constructor.isConstructor())",
+      "right" : "if (constructor.isInterface() || constructor.isConstructor())",
+      "info" : "IfStatement[27898-28090]:IfStatement[28163-28355]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27960-28039]:Block[28225-28304]"
+    }, {
+      "left" : "constructor = constructor.getSuperClassConstructor();",
+      "right" : "constructor = constructor.getSuperClassConstructor();",
+      "info" : "ExpressionStatement[27974-28027]:ExpressionStatement[28239-28292]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28045-28090]:Block[28310-28355]"
+    }, {
+      "left" : "constructor = null;",
+      "right" : "constructor = null;",
+      "info" : "ExpressionStatement[28059-28078]:ExpressionStatement[28324-28343]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28869-28938]:Block[29134-29203]"
+    }, {
+      "left" : "this.tt = tt;",
+      "right" : "this.tt = tt;",
+      "info" : "ExpressionStatement[28877-28890]:ExpressionStatement[29142-29155]"
+    }, {
+      "left" : "this.codingConvention = convention;",
+      "right" : "this.codingConvention = convention;",
+      "info" : "ExpressionStatement[28897-28932]:ExpressionStatement[29162-29197]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28999-29080]:Block[29264-29345]"
+    }, {
+      "left" : "checkState(!type.isUnionType());",
+      "right" : "checkState(!type.isUnionType());",
+      "info" : "ExpressionStatement[29007-29039]:ExpressionStatement[29272-29304]"
+    }, {
+      "left" : "invalidatingTypes.add(type);",
+      "right" : "invalidatingTypes.add(type);",
+      "info" : "ExpressionStatement[29046-29074]:ExpressionStatement[29311-29339]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29144-29182]:Block[29409-29447]"
+    }, {
+      "left" : "return tt.getTopScope();",
+      "right" : "return tt.getTopScope();",
+      "info" : "ReturnStatement[29152-29176]:ReturnStatement[29417-29441]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29259-29422]:Block[29524-29687]"
+    }, {
+      "left" : "ConcreteFunctionType func = tt.getConcreteFunction(decl);",
+      "right" : "ConcreteFunctionType func = tt.getConcreteFunction(decl);",
+      "info" : "VariableDeclarationStatement[29267-29324]:VariableDeclarationStatement[29532-29589]"
+    }, {
+      "left" : "return (func != null) ?\n          func.getScope() : (StaticScope<ConcreteType>) null;",
+      "right" : "return (func != null) ?\n          func.getScope() : (StaticScope<ConcreteType>) null;",
+      "info" : "ReturnStatement[29331-29416]:ReturnStatement[29596-29681]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29536-29765]:Block[29801-30030]"
+    }, {
+      "left" : "if (scope != null)",
+      "right" : "if (scope != null)",
+      "info" : "IfStatement[29544-29759]:IfStatement[29809-30024]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29563-29723]:Block[29828-29988]"
+    }, {
+      "left" : "ConcreteType c = tt.inferConcreteType(\n            (TightenTypes.ConcreteScope) scope, node);",
+      "right" : "ConcreteType c = tt.inferConcreteType(\n            (TightenTypes.ConcreteScope) scope, node);",
+      "info" : "VariableDeclarationStatement[29573-29666]:VariableDeclarationStatement[29838-29931]"
+    }, {
+      "left" : "return maybeAddAutoboxes(c, node, prop);",
+      "right" : "return maybeAddAutoboxes(c, node, prop);",
+      "info" : "ReturnStatement[29675-29715]:ReturnStatement[29940-29980]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29729-29759]:Block[29994-30024]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[29739-29751]:ReturnStatement[30004-30016]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30081-30633]:Block[30346-30898]"
+    }, {
+      "left" : "JSType jsType = node.getJSType();",
+      "right" : "JSType jsType = node.getJSType();",
+      "info" : "VariableDeclarationStatement[30089-30122]:VariableDeclarationStatement[30354-30387]"
+    }, {
+      "left" : "if (jsType == null)",
+      "right" : "if (jsType == null)",
+      "info" : "IfStatement[30129-30573]:IfStatement[30394-30838]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30149-30180]:Block[30414-30445]"
+    }, {
+      "left" : "return cType;",
+      "right" : "return cType;",
+      "info" : "ReturnStatement[30159-30172]:ReturnStatement[30424-30437]"
+    }, {
+      "left" : "if (jsType.isUnknownType())",
+      "right" : "if (jsType.isUnknownType())",
+      "info" : "IfStatement[30186-30573]:IfStatement[30451-30838]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30214-30573]:Block[30479-30838]"
+    }, {
+      "left" : "for (JSTypeNative nativeType : nativeTypes)",
+      "right" : "for (JSTypeNative nativeType : nativeTypes)",
+      "info" : "EnhancedForStatement[30224-30543]:EnhancedForStatement[30489-30808]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30268-30543]:Block[30533-30808]"
+    }, {
+      "left" : "ConcreteType concrete = tt.getConcreteInstance(\n              tt.getTypeRegistry().getNativeObjectType(nativeType));",
+      "right" : "ConcreteType concrete = tt.getConcreteInstance(\n              tt.getTypeRegistry().getNativeObjectType(nativeType));",
+      "info" : "VariableDeclarationStatement[30280-30396]:VariableDeclarationStatement[30545-30661]"
+    }, {
+      "left" : "if (concrete != null && !concrete.getPropertyType(prop).isNone())",
+      "right" : "if (concrete != null && !concrete.getPropertyType(prop).isNone())",
+      "info" : "IfStatement[30407-30533]:IfStatement[30672-30798]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30473-30533]:Block[30738-30798]"
+    }, {
+      "left" : "cType = cType.unionWith(concrete);",
+      "right" : "cType = cType.unionWith(concrete);",
+      "info" : "ExpressionStatement[30487-30521]:ExpressionStatement[30752-30786]"
+    }, {
+      "left" : "return cType;",
+      "right" : "return cType;",
+      "info" : "ReturnStatement[30552-30565]:ReturnStatement[30817-30830]"
+    }, {
+      "left" : "return maybeAddAutoboxes(cType, jsType, prop);",
+      "right" : "return maybeAddAutoboxes(cType, jsType, prop);",
+      "info" : "ReturnStatement[30581-30627]:ReturnStatement[30846-30892]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30735-31300]:Block[31000-31565]"
+    }, {
+      "left" : "jsType = jsType.restrictByNotNullOrUndefined();",
+      "right" : "jsType = jsType.restrictByNotNullOrUndefined();",
+      "info" : "ExpressionStatement[30743-30790]:ExpressionStatement[31008-31055]"
+    }, {
+      "left" : "if (jsType instanceof UnionType)",
+      "right" : "if (jsType instanceof UnionType)",
+      "info" : "IfStatement[30797-30969]:IfStatement[31062-31234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30830-30969]:Block[31095-31234]"
+    }, {
+      "left" : "for (JSType alt : ((UnionType) jsType).getAlternates())",
+      "right" : "for (JSType alt : ((UnionType) jsType).getAlternates())",
+      "info" : "EnhancedForStatement[30840-30961]:EnhancedForStatement[31105-31226]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30896-30961]:Block[31161-31226]"
+    }, {
+      "left" : "return maybeAddAutoboxes(cType, alt, prop);",
+      "right" : "return maybeAddAutoboxes(cType, alt, prop);",
+      "info" : "ReturnStatement[30908-30951]:ReturnStatement[31173-31216]"
+    }, {
+      "left" : "if (jsType.autoboxesTo() != null)",
+      "right" : "if (jsType.autoboxesTo() != null)",
+      "info" : "IfStatement[30977-31273]:IfStatement[31242-31538]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31011-31149]:Block[31276-31414]"
+    }, {
+      "left" : "JSType autoboxed = jsType.autoboxesTo();",
+      "right" : "JSType autoboxed = jsType.autoboxesTo();",
+      "info" : "VariableDeclarationStatement[31021-31061]:VariableDeclarationStatement[31286-31326]"
+    }, {
+      "left" : "return cType.unionWith(tt.getConcreteInstance((ObjectType) autoboxed));",
+      "right" : "return cType.unionWith(tt.getConcreteInstance((ObjectType) autoboxed));",
+      "info" : "ReturnStatement[31070-31141]:ReturnStatement[31335-31406]"
+    }, {
+      "left" : "if (jsType.unboxesTo() != null)",
+      "right" : "if (jsType.unboxesTo() != null)",
+      "info" : "IfStatement[31155-31273]:IfStatement[31420-31538]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31187-31273]:Block[31452-31538]"
+    }, {
+      "left" : "return cType.unionWith(tt.getConcreteInstance((ObjectType) jsType));",
+      "right" : "return cType.unionWith(tt.getConcreteInstance((ObjectType) jsType));",
+      "info" : "ReturnStatement[31197-31265]:ReturnStatement[31462-31530]"
+    }, {
+      "left" : "return cType;",
+      "right" : "return cType;",
+      "info" : "ReturnStatement[31281-31294]:ReturnStatement[31546-31559]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31369-31690]:Block[31634-31955]"
+    }, {
+      "left" : "return (type == null) || type.isAll() || type.isFunction()\n        || (type.isInstance()\n            && invalidatingTypes.contains(type.toInstance().instanceType));",
+      "right" : "return (type == null) || type.isAll() || type.isFunction()\n        || (type.isInstance()\n            && invalidatingTypes.contains(type.toInstance().instanceType));",
+      "info" : "ReturnStatement[31520-31684]:ReturnStatement[31785-31949]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31785-31828]:Block[32050-32093]"
+    }, {
+      "left" : "return ImmutableSet.of(type);",
+      "right" : "return ImmutableSet.of(type);",
+      "info" : "ReturnStatement[31793-31822]:ReturnStatement[32058-32087]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31891-32104]:Block[32156-32369]"
+    }, {
+      "left" : "return type.isInstance()\n        && !(type.toInstance().isFunctionPrototype()\n             || type.toInstance().instanceType.isInstanceType());",
+      "right" : "return type.isInstance()\n        && !(type.toInstance().isFunctionPrototype()\n             || type.toInstance().instanceType.isInstanceType());",
+      "info" : "ReturnStatement[31955-32098]:ReturnStatement[32220-32363]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32192-32272]:Block[32457-32537]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[32254-32266]:ReturnStatement[32519-32531]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32361-32501]:Block[32626-32766]"
+    }, {
+      "left" : "if (type.isUnion())",
+      "right" : "if (type.isUnion())",
+      "info" : "IfStatement[32369-32495]:IfStatement[32634-32760]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32389-32459]:Block[32654-32724]"
+    }, {
+      "left" : "return ((ConcreteUnionType) type).getAlternatives();",
+      "right" : "return ((ConcreteUnionType) type).getAlternatives();",
+      "info" : "ReturnStatement[32399-32451]:ReturnStatement[32664-32716]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32465-32495]:Block[32730-32760]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[32475-32487]:ReturnStatement[32740-32752]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32644-33628]:Block[32909-33893]"
+    }, {
+      "left" : "if (type.isInstance())",
+      "right" : "if (type.isInstance())",
+      "info" : "IfStatement[32652-33603]:IfStatement[32917-33868]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32675-32821]:Block[32940-33086]"
+    }, {
+      "left" : "ConcreteInstanceType instanceType = (ConcreteInstanceType) type;",
+      "right" : "ConcreteInstanceType instanceType = (ConcreteInstanceType) type;",
+      "info" : "VariableDeclarationStatement[32685-32749]:VariableDeclarationStatement[32950-33014]"
+    }, {
+      "left" : "return instanceType.getInstanceTypeWithProperty(field);",
+      "right" : "return instanceType.getInstanceTypeWithProperty(field);",
+      "info" : "ReturnStatement[32758-32813]:ReturnStatement[33023-33078]"
+    }, {
+      "left" : "if (type.isFunction())",
+      "right" : "if (type.isFunction())",
+      "info" : "IfStatement[32827-33603]:IfStatement[33092-33868]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32850-32994]:Block[33115-33259]"
+    }, {
+      "left" : "if (\"prototype\".equals(field)\n            || codingConvention.isSuperClassReference(field))",
+      "right" : "if (\"prototype\".equals(field)\n            || codingConvention.isSuperClassReference(field))",
+      "info" : "IfStatement[32860-32986]:IfStatement[33125-33251]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32952-32986]:Block[33217-33251]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[32964-32976]:ReturnStatement[33229-33241]"
+    }, {
+      "left" : "if (type.isNone())",
+      "right" : "if (type.isNone())",
+      "info" : "IfStatement[33000-33603]:IfStatement[33265-33868]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33019-33301]:Block[33284-33566]"
+    }, {
+      "left" : "return new ConcreteUniqueType(++nextUniqueId);",
+      "right" : "return new ConcreteUniqueType(++nextUniqueId);",
+      "info" : "ReturnStatement[33247-33293]:ReturnStatement[33512-33558]"
+    }, {
+      "left" : "if (type.isUnion())",
+      "right" : "if (type.isUnion())",
+      "info" : "IfStatement[33307-33603]:IfStatement[33572-33868]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33327-33603]:Block[33592-33868]"
+    }, {
+      "left" : "for (ConcreteType t : ((ConcreteUnionType) type).getAlternatives())",
+      "right" : "for (ConcreteType t : ((ConcreteUnionType) type).getAlternatives())",
+      "info" : "EnhancedForStatement[33391-33595]:EnhancedForStatement[33656-33860]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33459-33595]:Block[33724-33860]"
+    }, {
+      "left" : "ConcreteType ret = getTypeWithProperty(field, t);",
+      "right" : "ConcreteType ret = getTypeWithProperty(field, t);",
+      "info" : "VariableDeclarationStatement[33471-33520]:VariableDeclarationStatement[33736-33785]"
+    }, {
+      "left" : "if (ret != null)",
+      "right" : "if (ret != null)",
+      "info" : "IfStatement[33531-33585]:IfStatement[33796-33850]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33548-33585]:Block[33813-33850]"
+    }, {
+      "left" : "return ret;",
+      "right" : "return ret;",
+      "info" : "ReturnStatement[33562-33573]:ReturnStatement[33827-33838]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[33610-33622]:ReturnStatement[33875-33887]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33708-33976]:Block[33973-34241]"
+    }, {
+      "left" : "if (type.isInstance())",
+      "right" : "if (type.isInstance())",
+      "info" : "IfStatement[33716-33951]:IfStatement[33981-34216]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33739-33951]:Block[34004-34216]"
+    }, {
+      "left" : "ConcreteInstanceType instanceType = (ConcreteInstanceType) type;",
+      "right" : "ConcreteInstanceType instanceType = (ConcreteInstanceType) type;",
+      "info" : "VariableDeclarationStatement[33749-33813]:VariableDeclarationStatement[34014-34078]"
+    }, {
+      "left" : "if (instanceType.isFunctionPrototype())",
+      "right" : "if (instanceType.isFunctionPrototype())",
+      "info" : "IfStatement[33822-33943]:IfStatement[34087-34208]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33862-33943]:Block[34127-34208]"
+    }, {
+      "left" : "return instanceType.getConstructorType().getInstanceType();",
+      "right" : "return instanceType.getConstructorType().getInstanceType();",
+      "info" : "ReturnStatement[33874-33933]:ReturnStatement[34139-34198]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[33958-33970]:ReturnStatement[34223-34235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34127-34199]:Block[34392-34464]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

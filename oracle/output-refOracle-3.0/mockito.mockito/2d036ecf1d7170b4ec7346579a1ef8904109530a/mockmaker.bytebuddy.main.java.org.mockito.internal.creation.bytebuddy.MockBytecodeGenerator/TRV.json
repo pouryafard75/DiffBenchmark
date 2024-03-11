@@ -1,0 +1,145 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final ByteBuddy byteBuddy;",
+      "right" : "private final ByteBuddy byteBuddy;",
+      "info" : "FieldDeclaration[1163-1197]:FieldDeclaration[1618-1652]"
+    }, {
+      "left" : "private final Random random;",
+      "right" : "private final Random random;",
+      "info" : "FieldDeclaration[1202-1230]:FieldDeclaration[1657-1685]"
+    }, {
+      "left" : "private String nameFor(Class<?> type)",
+      "right" : "private String nameFor(Class<?> type)",
+      "info" : "MethodDeclaration[3524-3897]:MethodDeclaration[4219-4592]"
+    }, {
+      "left" : "private boolean isComingFromJDK(Class<?> type)",
+      "right" : "private boolean isComingFromJDK(Class<?> type)",
+      "info" : "MethodDeclaration[3903-4373]:MethodDeclaration[4598-5068]"
+    }, {
+      "left" : "private boolean isComingFromSealedPackage(Class<?> type)",
+      "right" : "private boolean isComingFromSealedPackage(Class<?> type)",
+      "info" : "MethodDeclaration[4379-4517]:MethodDeclaration[5074-5212]"
+    }, {
+      "left" : "private boolean isComingFromSignedJar(Class<?> type)",
+      "right" : "private boolean isComingFromSignedJar(Class<?> type)",
+      "info" : "MethodDeclaration[4523-4625]:MethodDeclaration[5218-5320]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3524-3531]:Modifier[4219-4226]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[3532-3538]:SimpleType[4227-4233]"
+    }, {
+      "left" : "nameFor",
+      "right" : "nameFor",
+      "info" : "SimpleName[3539-3546]:SimpleName[4234-4241]"
+    }, {
+      "left" : "Class<?> type",
+      "right" : "Class<?> type",
+      "info" : "SingleVariableDeclaration[3547-3560]:SingleVariableDeclaration[4242-4255]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3562-3897]:Block[4257-4592]"
+    }, {
+      "left" : "String typeName = type.getName();",
+      "right" : "String typeName = type.getName();",
+      "info" : "VariableDeclarationStatement[3572-3605]:VariableDeclarationStatement[4267-4300]"
+    }, {
+      "left" : "if (isComingFromJDK(type)\n                || isComingFromSignedJar(type)\n                || isComingFromSealedPackage(type))",
+      "right" : "if (isComingFromJDK(type)\n                || isComingFromSignedJar(type)\n                || isComingFromSealedPackage(type))",
+      "info" : "IfStatement[3614-3796]:IfStatement[4309-4491]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3739-3796]:Block[4434-4491]"
+    }, {
+      "left" : "typeName = \"codegen.\" + typeName;",
+      "right" : "typeName = \"codegen.\" + typeName;",
+      "info" : "ExpressionStatement[3753-3786]:ExpressionStatement[4448-4481]"
+    }, {
+      "left" : "return String.format(\"%s$%s$%d\", typeName, \"MockitoMock\", Math.abs(random.nextInt()));",
+      "right" : "return String.format(\"%s$%s$%d\", typeName, \"MockitoMock\", Math.abs(random.nextInt()));",
+      "info" : "ReturnStatement[3805-3891]:ReturnStatement[4500-4586]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3903-3910]:Modifier[4598-4605]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[3911-3918]:PrimitiveType[4606-4613]"
+    }, {
+      "left" : "isComingFromJDK",
+      "right" : "isComingFromJDK",
+      "info" : "SimpleName[3919-3934]:SimpleName[4614-4629]"
+    }, {
+      "left" : "Class<?> type",
+      "right" : "Class<?> type",
+      "info" : "SingleVariableDeclaration[3935-3948]:SingleVariableDeclaration[4630-4643]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3950-4373]:Block[4645-5068]"
+    }, {
+      "left" : "return type.getPackage() != null && \"Java Runtime Environment\".equalsIgnoreCase(type.getPackage().getImplementationTitle())\n                || type.getName().startsWith(\"java.\")\n                || type.getName().startsWith(\"javax.\");",
+      "right" : "return type.getPackage() != null && \"Java Runtime Environment\".equalsIgnoreCase(type.getPackage().getImplementationTitle())\n                || type.getName().startsWith(\"java.\")\n                || type.getName().startsWith(\"javax.\");",
+      "info" : "ReturnStatement[4134-4367]:ReturnStatement[4829-5062]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4379-4386]:Modifier[5074-5081]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[4387-4394]:PrimitiveType[5082-5089]"
+    }, {
+      "left" : "isComingFromSealedPackage",
+      "right" : "isComingFromSealedPackage",
+      "info" : "SimpleName[4395-4420]:SimpleName[5090-5115]"
+    }, {
+      "left" : "Class<?> type",
+      "right" : "Class<?> type",
+      "info" : "SingleVariableDeclaration[4421-4434]:SingleVariableDeclaration[5116-5129]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4436-4517]:Block[5131-5212]"
+    }, {
+      "left" : "return type.getPackage() != null && type.getPackage().isSealed();",
+      "right" : "return type.getPackage() != null && type.getPackage().isSealed();",
+      "info" : "ReturnStatement[4446-4511]:ReturnStatement[5141-5206]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4523-4530]:Modifier[5218-5225]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[4531-4538]:PrimitiveType[5226-5233]"
+    }, {
+      "left" : "isComingFromSignedJar",
+      "right" : "isComingFromSignedJar",
+      "info" : "SimpleName[4539-4560]:SimpleName[5234-5255]"
+    }, {
+      "left" : "Class<?> type",
+      "right" : "Class<?> type",
+      "info" : "SingleVariableDeclaration[4561-4574]:SingleVariableDeclaration[5256-5269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4576-4625]:Block[5271-5320]"
+    }, {
+      "left" : "return type.getSigners() != null;",
+      "right" : "return type.getSigners() != null;",
+      "info" : "ReturnStatement[4586-4619]:ReturnStatement[5281-5314]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,209 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "protected final RandomGenerator random;",
+      "right" : "protected final RandomGenerator random;",
+      "info" : "FieldDeclaration[1942-2065]:FieldDeclaration[1942-2065]"
+    }, {
+      "left" : "private final List<T> singletons;",
+      "right" : "private final List<T> singletons;",
+      "info" : "FieldDeclaration[2070-2158]:FieldDeclaration[2070-2158]"
+    }, {
+      "left" : "private final double[] probabilities;",
+      "right" : "private final double[] probabilities;",
+      "info" : "FieldDeclaration[2163-2295]:FieldDeclaration[2163-2295]"
+    }, {
+      "left" : "public DiscreteDistribution(final List<Pair<T, Double>> samples)\n        throws NotPositiveException, MathArithmeticException, MathIllegalArgumentException",
+      "right" : "public DiscreteDistribution(final List<Pair<T, Double>> samples)\n        throws NotPositiveException, MathArithmeticException, MathIllegalArgumentException",
+      "info" : "MethodDeclaration[2301-2995]:MethodDeclaration[2301-2995]"
+    }, {
+      "left" : "public DiscreteDistribution(final RandomGenerator rng, final List<Pair<T, Double>> samples)\n        throws NotPositiveException, MathArithmeticException, MathIllegalArgumentException",
+      "right" : "public DiscreteDistribution(final RandomGenerator rng, final List<Pair<T, Double>> samples)\n        throws NotPositiveException, MathArithmeticException, MathIllegalArgumentException",
+      "info" : "MethodDeclaration[3001-4283]:MethodDeclaration[3001-4283]"
+    }, {
+      "left" : "public void reseedRandomGenerator(long seed)",
+      "right" : "public void reseedRandomGenerator(long seed)",
+      "info" : "MethodDeclaration[4289-4487]:MethodDeclaration[4289-4487]"
+    }, {
+      "left" : "double probability(final T x)",
+      "right" : "double probability(final T x)",
+      "info" : "MethodDeclaration[4493-5250]:MethodDeclaration[4493-5250]"
+    }, {
+      "left" : "public List<Pair<T, Double>> getSamples()",
+      "right" : "public List<Pair<T, Double>> getSamples()",
+      "info" : "MethodDeclaration[5256-5757]:MethodDeclaration[5256-5757]"
+    }, {
+      "left" : "public T sample()",
+      "right" : "public T sample()",
+      "info" : "MethodDeclaration[5763-6437]:MethodDeclaration[5763-6437]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2947-2995]:Block[2947-2995]"
+    }, {
+      "left" : "this(new Well19937c(), samples);",
+      "right" : "this(new Well19937c(), samples);",
+      "info" : "ConstructorInvocation[2957-2989]:ConstructorInvocation[2957-2989]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3745-4283]:Block[3745-4283]"
+    }, {
+      "left" : "random = rng;",
+      "right" : "random = rng;",
+      "info" : "ExpressionStatement[3755-3768]:ExpressionStatement[3755-3768]"
+    }, {
+      "left" : "singletons = new ArrayList<T>(samples.size());",
+      "right" : "singletons = new ArrayList<T>(samples.size());",
+      "info" : "ExpressionStatement[3778-3824]:ExpressionStatement[3778-3824]"
+    }, {
+      "left" : "final double[] probs = new double[samples.size()];",
+      "right" : "final double[] probs = new double[samples.size()];",
+      "info" : "VariableDeclarationStatement[3833-3883]:VariableDeclarationStatement[3833-3883]"
+    }, {
+      "left" : "for (int i = 0; i < samples.size(); i++)",
+      "right" : "for (int i = 0; i < samples.size(); i++)",
+      "info" : "ForStatement[3893-4213]:ForStatement[3893-4213]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3934-4213]:Block[3934-4213]"
+    }, {
+      "left" : "final Pair<T, Double> sample = samples.get(i);",
+      "right" : "final Pair<T, Double> sample = samples.get(i);",
+      "info" : "VariableDeclarationStatement[3948-3994]:VariableDeclarationStatement[3948-3994]"
+    }, {
+      "left" : "singletons.add(sample.getKey());",
+      "right" : "singletons.add(sample.getKey());",
+      "info" : "ExpressionStatement[4007-4039]:ExpressionStatement[4007-4039]"
+    }, {
+      "left" : "if (sample.getValue() < 0)",
+      "right" : "if (sample.getValue() < 0)",
+      "info" : "IfStatement[4052-4161]:IfStatement[4052-4161]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4079-4161]:Block[4079-4161]"
+    }, {
+      "left" : "throw new NotPositiveException(sample.getValue());",
+      "right" : "throw new NotPositiveException(sample.getValue());",
+      "info" : "ThrowStatement[4097-4147]:ThrowStatement[4097-4147]"
+    }, {
+      "left" : "probs[i] = sample.getValue();",
+      "right" : "probs[i] = sample.getValue();",
+      "info" : "ExpressionStatement[4174-4203]:ExpressionStatement[4174-4203]"
+    }, {
+      "left" : "probabilities = MathArrays.normalizeArray(probs, 1.0);",
+      "right" : "probabilities = MathArrays.normalizeArray(probs, 1.0);",
+      "info" : "ExpressionStatement[4223-4277]:ExpressionStatement[4223-4277]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4450-4487]:Block[4450-4487]"
+    }, {
+      "left" : "random.setSeed(seed);",
+      "right" : "random.setSeed(seed);",
+      "info" : "ExpressionStatement[4460-4481]:ExpressionStatement[4460-4481]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4929-5250]:Block[4929-5250]"
+    }, {
+      "left" : "double probability = 0;",
+      "right" : "double probability = 0;",
+      "info" : "VariableDeclarationStatement[4939-4962]:VariableDeclarationStatement[4939-4962]"
+    }, {
+      "left" : "for (int i = 0; i < probabilities.length; i++)",
+      "right" : "for (int i = 0; i < probabilities.length; i++)",
+      "info" : "ForStatement[4972-5215]:ForStatement[4972-5215]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5019-5215]:Block[5019-5215]"
+    }, {
+      "left" : "if ((x == null && singletons.get(i) == null) ||\n                (x != null && x.equals(singletons.get(i))))",
+      "right" : "if ((x == null && singletons.get(i) == null) ||\n                (x != null && x.equals(singletons.get(i))))",
+      "info" : "IfStatement[5033-5205]:IfStatement[5033-5205]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5141-5205]:Block[5141-5205]"
+    }, {
+      "left" : "probability += probabilities[i];",
+      "right" : "probability += probabilities[i];",
+      "info" : "ExpressionStatement[5159-5191]:ExpressionStatement[5159-5191]"
+    }, {
+      "left" : "return probability;",
+      "right" : "return probability;",
+      "info" : "ReturnStatement[5225-5244]:ReturnStatement[5225-5244]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5474-5757]:Block[5474-5757]"
+    }, {
+      "left" : "final List<Pair<T, Double>> samples = new ArrayList<Pair<T, Double>>(probabilities.length);",
+      "right" : "final List<Pair<T, Double>> samples = new ArrayList<Pair<T, Double>>(probabilities.length);",
+      "info" : "VariableDeclarationStatement[5484-5575]:VariableDeclarationStatement[5484-5575]"
+    }, {
+      "left" : "for (int i = 0; i < probabilities.length; i++)",
+      "right" : "for (int i = 0; i < probabilities.length; i++)",
+      "info" : "ForStatement[5585-5726]:ForStatement[5585-5726]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5632-5726]:Block[5632-5726]"
+    }, {
+      "left" : "samples.add(new Pair<T, Double>(singletons.get(i), probabilities[i]));",
+      "right" : "samples.add(new Pair<T, Double>(singletons.get(i), probabilities[i]));",
+      "info" : "ExpressionStatement[5646-5716]:ExpressionStatement[5646-5716]"
+    }, {
+      "left" : "return samples;",
+      "right" : "return samples;",
+      "info" : "ReturnStatement[5736-5751]:ReturnStatement[5736-5751]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5898-6437]:Block[5898-6437]"
+    }, {
+      "left" : "final double randomValue = random.nextDouble();",
+      "right" : "final double randomValue = random.nextDouble();",
+      "info" : "VariableDeclarationStatement[5908-5955]:VariableDeclarationStatement[5908-5955]"
+    }, {
+      "left" : "double sum = 0;",
+      "right" : "double sum = 0;",
+      "info" : "VariableDeclarationStatement[5964-5979]:VariableDeclarationStatement[5964-5979]"
+    }, {
+      "left" : "for (int i = 0; i < probabilities.length; i++)",
+      "right" : "for (int i = 0; i < probabilities.length; i++)",
+      "info" : "ForStatement[5989-6177]:ForStatement[5989-6177]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6036-6177]:Block[6036-6177]"
+    }, {
+      "left" : "sum += probabilities[i];",
+      "right" : "sum += probabilities[i];",
+      "info" : "ExpressionStatement[6050-6074]:ExpressionStatement[6050-6074]"
+    }, {
+      "left" : "if (randomValue < sum)",
+      "right" : "if (randomValue < sum)",
+      "info" : "IfStatement[6087-6167]:IfStatement[6087-6167]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6110-6167]:Block[6110-6167]"
+    }, {
+      "left" : "return singletons.get(i);",
+      "right" : "return singletons.get(i);",
+      "info" : "ReturnStatement[6128-6153]:ReturnStatement[6128-6153]"
+    }, {
+      "left" : "return singletons.get(singletons.size() - 1);",
+      "right" : "return singletons.get(singletons.size() - 1);",
+      "info" : "ReturnStatement[6386-6431]:ReturnStatement[6386-6431]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

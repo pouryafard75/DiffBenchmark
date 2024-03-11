@@ -1,0 +1,665 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "UnreachableCodeElimination",
+      "right" : "UnreachableCodeElimination",
+      "info" : "TypeDeclaration[1262-9281]:TypeDeclaration[1262-9608]"
+    }, {
+      "left" : "private static final Logger logger =\n    Logger.getLogger(UnreachableCodeElimination.class.getName());",
+      "right" : "private static final Logger logger =\n    Logger.getLogger(UnreachableCodeElimination.class.getName());",
+      "info" : "FieldDeclaration[2168-2270]:FieldDeclaration[2168-2270]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[2273-2313]:FieldDeclaration[2273-2313]"
+    }, {
+      "left" : "private final boolean removeNoOpStatements;",
+      "right" : "private final boolean removeNoOpStatements;",
+      "info" : "FieldDeclaration[2316-2359]:FieldDeclaration[2316-2359]"
+    }, {
+      "left" : "private boolean codeChanged;",
+      "right" : "private boolean codeChanged;",
+      "info" : "FieldDeclaration[2362-2390]:FieldDeclaration[2362-2390]"
+    }, {
+      "left" : "UnreachableCodeElimination(AbstractCompiler compiler,\n      boolean removeNoOpStatements)",
+      "right" : "UnreachableCodeElimination(AbstractCompiler compiler,\n      boolean removeNoOpStatements)",
+      "info" : "MethodDeclaration[2394-2573]:MethodDeclaration[2394-2573]"
+    }, {
+      "left" : "public void process(Node externs, Node toplevel)",
+      "right" : "public void process(Node externs, Node toplevel)",
+      "info" : "MethodDeclaration[2577-3423]:MethodDeclaration[2577-3423]"
+    }, {
+      "left" : "public void visit(AbstractCompiler compiler, Node root)",
+      "right" : "public void visit(AbstractCompiler compiler, Node root)",
+      "info" : "MethodDeclaration[2726-3409]:MethodDeclaration[2726-3409]"
+    }, {
+      "left" : "EliminationPass",
+      "right" : "EliminationPass",
+      "info" : "TypeDeclaration[3427-9279]:TypeDeclaration[3427-9606]"
+    }, {
+      "left" : "private final ControlFlowGraph<Node> cfg;",
+      "right" : "private final ControlFlowGraph<Node> cfg;",
+      "info" : "FieldDeclaration[3495-3536]:FieldDeclaration[3495-3536]"
+    }, {
+      "left" : "private EliminationPass(ControlFlowGraph<Node> cfg)",
+      "right" : "private EliminationPass(ControlFlowGraph<Node> cfg)",
+      "info" : "MethodDeclaration[3541-3622]:MethodDeclaration[3541-3622]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[3628-4181]:MethodDeclaration[3628-4181]"
+    }, {
+      "left" : "private void tryRemoveUnconditionalBranching(Node n)",
+      "right" : "private void tryRemoveUnconditionalBranching(Node n)",
+      "info" : "MethodDeclaration[4187-6913]:MethodDeclaration[4187-6945]"
+    }, {
+      "left" : "private Node computeFollowing(Node n)",
+      "right" : "private Node computeFollowing(Node n)",
+      "info" : "MethodDeclaration[6920-7240]:MethodDeclaration[7247-7567]"
+    }, {
+      "left" : "private void removeDeadExprStatementSafely(Node n)",
+      "right" : "private void removeDeadExprStatementSafely(Node n)",
+      "info" : "MethodDeclaration[7246-8978]:MethodDeclaration[7573-9305]"
+    }, {
+      "left" : "private void removeNode(Node n)",
+      "right" : "private void removeNode(Node n)",
+      "info" : "MethodDeclaration[8984-9275]:MethodDeclaration[9311-9602]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2107-2112]:TYPE_DECLARATION_KIND[2107-2112]"
+    }, {
+      "left" : "UnreachableCodeElimination",
+      "right" : "UnreachableCodeElimination",
+      "info" : "SimpleName[2113-2139]:SimpleName[2113-2139]"
+    }, {
+      "left" : "CompilerPass",
+      "right" : "CompilerPass",
+      "info" : "SimpleType[2151-2163]:SimpleType[2151-2163]"
+    }, {
+      "left" : "UnreachableCodeElimination",
+      "right" : "UnreachableCodeElimination",
+      "info" : "SimpleName[2394-2420]:SimpleName[2394-2420]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[2421-2446]:SingleVariableDeclaration[2421-2446]"
+    }, {
+      "left" : "boolean removeNoOpStatements",
+      "right" : "boolean removeNoOpStatements",
+      "info" : "SingleVariableDeclaration[2454-2482]:SingleVariableDeclaration[2454-2482]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2484-2573]:Block[2484-2573]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[2490-2515]:ExpressionStatement[2490-2515]"
+    }, {
+      "left" : "this.removeNoOpStatements = removeNoOpStatements;",
+      "right" : "this.removeNoOpStatements = removeNoOpStatements;",
+      "info" : "ExpressionStatement[2520-2569]:ExpressionStatement[2520-2569]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2577-2586]:MarkerAnnotation[2577-2586]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2589-2595]:Modifier[2589-2595]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2596-2600]:PrimitiveType[2596-2600]"
+    }, {
+      "left" : "process",
+      "right" : "process",
+      "info" : "SimpleName[2601-2608]:SimpleName[2601-2608]"
+    }, {
+      "left" : "Node externs",
+      "right" : "Node externs",
+      "info" : "SingleVariableDeclaration[2609-2621]:SingleVariableDeclaration[2609-2621]"
+    }, {
+      "left" : "Node toplevel",
+      "right" : "Node toplevel",
+      "info" : "SingleVariableDeclaration[2623-2636]:SingleVariableDeclaration[2623-2636]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2638-3423]:Block[2638-3423]"
+    }, {
+      "left" : "NodeTraversal.traverseChangedFunctions(compiler, new FunctionCallback() {\n        @Override\n        public void visit(AbstractCompiler compiler, Node root) {\n          // Computes the control flow graph.\n          ControlFlowAnalysis cfa =\n              new ControlFlowAnalysis(compiler, false, false);\n          cfa.process(null, root);\n          ControlFlowGraph<Node> cfg = cfa.getCfg();\n          new GraphReachability<Node, ControlFlowGraph.Branch>(cfg)\n              .compute(cfg.getEntry().getValue());\n          if (root.isFunction()) {\n            root = root.getLastChild();\n          }\n          do {\n            codeChanged = false;\n            NodeTraversal.traverse(compiler, root, new EliminationPass(cfg));\n          } while (codeChanged);\n        }\n      });",
+      "right" : "NodeTraversal.traverseChangedFunctions(compiler, new FunctionCallback() {\n        @Override\n        public void visit(AbstractCompiler compiler, Node root) {\n          // Computes the control flow graph.\n          ControlFlowAnalysis cfa =\n              new ControlFlowAnalysis(compiler, false, false);\n          cfa.process(null, root);\n          ControlFlowGraph<Node> cfg = cfa.getCfg();\n          new GraphReachability<Node, ControlFlowGraph.Branch>(cfg)\n              .compute(cfg.getEntry().getValue());\n          if (root.isFunction()) {\n            root = root.getLastChild();\n          }\n          do {\n            codeChanged = false;\n            NodeTraversal.traverse(compiler, root, new EliminationPass(cfg));\n          } while (codeChanged);\n        }\n      });",
+      "info" : "ExpressionStatement[2644-3419]:ExpressionStatement[2644-3419]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2726-2735]:MarkerAnnotation[2726-2735]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2744-2750]:Modifier[2744-2750]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2751-2755]:PrimitiveType[2751-2755]"
+    }, {
+      "left" : "visit",
+      "right" : "visit",
+      "info" : "SimpleName[2756-2761]:SimpleName[2756-2761]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[2762-2787]:SingleVariableDeclaration[2762-2787]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[2789-2798]:SingleVariableDeclaration[2789-2798]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2800-3409]:Block[2800-3409]"
+    }, {
+      "left" : "ControlFlowAnalysis cfa =\n              new ControlFlowAnalysis(compiler, false, false);",
+      "right" : "ControlFlowAnalysis cfa =\n              new ControlFlowAnalysis(compiler, false, false);",
+      "info" : "VariableDeclarationStatement[2858-2946]:VariableDeclarationStatement[2858-2946]"
+    }, {
+      "left" : "cfa.process(null, root);",
+      "right" : "cfa.process(null, root);",
+      "info" : "ExpressionStatement[2957-2981]:ExpressionStatement[2957-2981]"
+    }, {
+      "left" : "ControlFlowGraph<Node> cfg = cfa.getCfg();",
+      "right" : "ControlFlowGraph<Node> cfg = cfa.getCfg();",
+      "info" : "VariableDeclarationStatement[2992-3034]:VariableDeclarationStatement[2992-3034]"
+    }, {
+      "left" : "new GraphReachability<Node, ControlFlowGraph.Branch>(cfg)\n              .compute(cfg.getEntry().getValue());",
+      "right" : "new GraphReachability<Node, ControlFlowGraph.Branch>(cfg)\n              .compute(cfg.getEntry().getValue());",
+      "info" : "ExpressionStatement[3045-3153]:ExpressionStatement[3045-3153]"
+    }, {
+      "left" : "if (root.isFunction())",
+      "right" : "if (root.isFunction())",
+      "info" : "IfStatement[3164-3240]:IfStatement[3164-3240]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3187-3240]:Block[3187-3240]"
+    }, {
+      "left" : "root = root.getLastChild();",
+      "right" : "root = root.getLastChild();",
+      "info" : "ExpressionStatement[3201-3228]:ExpressionStatement[3201-3228]"
+    }, {
+      "left" : "do{...}",
+      "right" : "do{...}",
+      "info" : "DoStatement[3251-3399]:DoStatement[3251-3399]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3254-3378]:Block[3254-3378]"
+    }, {
+      "left" : "codeChanged = false;",
+      "right" : "codeChanged = false;",
+      "info" : "ExpressionStatement[3268-3288]:ExpressionStatement[3268-3288]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, new EliminationPass(cfg));",
+      "right" : "NodeTraversal.traverse(compiler, root, new EliminationPass(cfg));",
+      "info" : "ExpressionStatement[3301-3366]:ExpressionStatement[3301-3366]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3427-3434]:Modifier[3427-3434]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[3435-3440]:TYPE_DECLARATION_KIND[3435-3440]"
+    }, {
+      "left" : "EliminationPass",
+      "right" : "EliminationPass",
+      "info" : "SimpleName[3441-3456]:SimpleName[3441-3456]"
+    }, {
+      "left" : "AbstractShallowCallback",
+      "right" : "AbstractShallowCallback",
+      "info" : "SimpleType[3465-3488]:SimpleType[3465-3488]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3541-3548]:Modifier[3541-3548]"
+    }, {
+      "left" : "EliminationPass",
+      "right" : "EliminationPass",
+      "info" : "SimpleName[3549-3564]:SimpleName[3549-3564]"
+    }, {
+      "left" : "ControlFlowGraph<Node> cfg",
+      "right" : "ControlFlowGraph<Node> cfg",
+      "info" : "SingleVariableDeclaration[3565-3591]:SingleVariableDeclaration[3565-3591]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3593-3622]:Block[3593-3622]"
+    }, {
+      "left" : "this.cfg = cfg;",
+      "right" : "this.cfg = cfg;",
+      "info" : "ExpressionStatement[3601-3616]:ExpressionStatement[3601-3616]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[3628-3637]:MarkerAnnotation[3628-3637]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3642-3648]:Modifier[3642-3648]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3649-3653]:PrimitiveType[3649-3653]"
+    }, {
+      "left" : "visit",
+      "right" : "visit",
+      "info" : "SimpleName[3654-3659]:SimpleName[3654-3659]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[3660-3675]:SingleVariableDeclaration[3660-3675]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[3677-3683]:SingleVariableDeclaration[3677-3683]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[3685-3696]:SingleVariableDeclaration[3685-3696]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3698-4181]:Block[3698-4181]"
+    }, {
+      "left" : "if (parent == null || n.isFunction() || n.isScript())",
+      "right" : "if (parent == null || n.isFunction() || n.isScript())",
+      "info" : "IfStatement[3706-3785]:IfStatement[3706-3785]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3760-3785]:Block[3760-3785]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3770-3777]:ReturnStatement[3770-3777]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> gNode = cfg.getDirectedGraphNode(n);",
+      "right" : "DiGraphNode<Node, Branch> gNode = cfg.getDirectedGraphNode(n);",
+      "info" : "VariableDeclarationStatement[3792-3854]:VariableDeclarationStatement[3792-3854]"
+    }, {
+      "left" : "if (gNode == null)",
+      "right" : "if (gNode == null)",
+      "info" : "IfStatement[3861-3920]:IfStatement[3861-3920]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3880-3920]:Block[3880-3920]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3905-3912]:ReturnStatement[3905-3912]"
+    }, {
+      "left" : "if (gNode.getAnnotation() != GraphReachability.REACHABLE ||\n          (removeNoOpStatements && !NodeUtil.mayHaveSideEffects(n, compiler)))",
+      "right" : "if (gNode.getAnnotation() != GraphReachability.REACHABLE ||\n          (removeNoOpStatements && !NodeUtil.mayHaveSideEffects(n, compiler)))",
+      "info" : "IfStatement[3927-4133]:IfStatement[3927-4133]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4066-4133]:Block[4066-4133]"
+    }, {
+      "left" : "removeDeadExprStatementSafely(n);",
+      "right" : "removeDeadExprStatementSafely(n);",
+      "info" : "ExpressionStatement[4076-4109]:ExpressionStatement[4076-4109]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[4118-4125]:ReturnStatement[4118-4125]"
+    }, {
+      "left" : "tryRemoveUnconditionalBranching(n);",
+      "right" : "tryRemoveUnconditionalBranching(n);",
+      "info" : "ExpressionStatement[4140-4175]:ExpressionStatement[4140-4175]"
+    }, {
+      "left" : "@SuppressWarnings(\"fallthrough\")",
+      "right" : "@SuppressWarnings(\"fallthrough\")",
+      "info" : "SingleMemberAnnotation[5149-5181]:SingleMemberAnnotation[5149-5181]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5186-5193]:Modifier[5186-5193]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5194-5198]:PrimitiveType[5194-5198]"
+    }, {
+      "left" : "tryRemoveUnconditionalBranching",
+      "right" : "tryRemoveUnconditionalBranching",
+      "info" : "SimpleName[5199-5230]:SimpleName[5199-5230]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[5231-5237]:SingleVariableDeclaration[5231-5237]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5239-6913]:Block[5239-6945]"
+    }, {
+      "left" : "if (n == null)",
+      "right" : "if (n == null)",
+      "info" : "IfStatement[5768-5809]:IfStatement[5768-5809]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5783-5809]:Block[5783-5809]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[5794-5801]:ReturnStatement[5794-5801]"
+    }, {
+      "left" : "DiGraphNode<Node, Branch> gNode = cfg.getDirectedGraphNode(n);",
+      "right" : "DiGraphNode<Node, Branch> gNode = cfg.getDirectedGraphNode(n);",
+      "info" : "VariableDeclarationStatement[5817-5879]:VariableDeclarationStatement[5817-5879]"
+    }, {
+      "left" : "if (gNode == null)",
+      "right" : "if (gNode == null)",
+      "info" : "IfStatement[5887-5931]:IfStatement[5887-5931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5906-5931]:Block[5906-5931]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[5916-5923]:ReturnStatement[5916-5923]"
+    }, {
+      "left" : "switch (n.getType()) {\n        case Token.RETURN:\n          if (n.hasChildren()) {\n            break;\n          }\n        case Token.BREAK:\n        case Token.CONTINUE:\n          // We are looking for a control flow changing statement that always\n          // branches to the same node. If after removing it control still\n          // branches to the same node, it is safe to remove.\n          List<DiGraphEdge<Node, Branch>> outEdges = gNode.getOutEdges();\n          if (outEdges.size() == 1 &&\n              // If there is a next node, this jump is not useless.\n              (n.getNext() == null || n.getNext().isFunction())) {\n\n            Preconditions.checkState(\n                outEdges.get(0).getValue() == Branch.UNCOND);\n            Node fallThrough = computeFollowing(n);\n            Node nextCfgNode = outEdges.get(0).getDestination().getValue();\n            if (nextCfgNode == fallThrough) {\n              removeNode(n);\n            }\n          }\n      }",
+      "right" : "switch (n.getType()) {\n        case Token.RETURN:\n          if (n.hasChildren()) {\n            break;\n          }\n        case Token.BREAK:\n        case Token.CONTINUE:\n          // We are looking for a control flow changing statement that always\n          // branches to the same node. If after removing it control still\n          // branches to the same node, it is safe to remove.\n          List<DiGraphEdge<Node, Branch>> outEdges = gNode.getOutEdges();\n          if (outEdges.size() == 1 &&\n              // If there is a next node, this jump is not useless.\n              (n.getNext() == null || n.getNext().isFunction())) {\n\n            Preconditions.checkState(\n                outEdges.get(0).getValue() == Branch.UNCOND);\n            Node fallThrough = computeFollowing(n);\n            Node nextCfgNode = outEdges.get(0).getDestination().getValue();\n            if (nextCfgNode == fallThrough && !inFinally(n.getParent(), n)) {\n              removeNode(n);\n            }\n          }\n      }",
+      "info" : "SwitchStatement[5939-6907]:SwitchStatement[5939-6939]"
+    }, {
+      "left" : "case Token.RETURN:",
+      "right" : "case Token.RETURN:",
+      "info" : "SwitchCase[5970-5988]:SwitchCase[5970-5988]"
+    }, {
+      "left" : "if (n.hasChildren())",
+      "right" : "if (n.hasChildren())",
+      "info" : "IfStatement[5999-6052]:IfStatement[5999-6052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6020-6052]:Block[6020-6052]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[6034-6040]:BreakStatement[6034-6040]"
+    }, {
+      "left" : "case Token.BREAK:",
+      "right" : "case Token.BREAK:",
+      "info" : "SwitchCase[6061-6078]:SwitchCase[6061-6078]"
+    }, {
+      "left" : "case Token.CONTINUE:",
+      "right" : "case Token.CONTINUE:",
+      "info" : "SwitchCase[6087-6107]:SwitchCase[6087-6107]"
+    }, {
+      "left" : "List<DiGraphEdge<Node, Branch>> outEdges = gNode.getOutEdges();",
+      "right" : "List<DiGraphEdge<Node, Branch>> outEdges = gNode.getOutEdges();",
+      "info" : "VariableDeclarationStatement[6333-6396]:VariableDeclarationStatement[6333-6396]"
+    }, {
+      "left" : "if (outEdges.size() == 1 &&\n              // If there is a next node, this jump is not useless.\n              (n.getNext() == null || n.getNext().isFunction()))",
+      "right" : "if (outEdges.size() == 1 &&\n              // If there is a next node, this jump is not useless.\n              (n.getNext() == null || n.getNext().isFunction()))",
+      "info" : "IfStatement[6407-6899]:IfStatement[6407-6931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6568-6899]:Block[6568-6931]"
+    }, {
+      "left" : "Preconditions.checkState(\n                outEdges.get(0).getValue() == Branch.UNCOND);",
+      "right" : "Preconditions.checkState(\n                outEdges.get(0).getValue() == Branch.UNCOND);",
+      "info" : "ExpressionStatement[6583-6670]:ExpressionStatement[6583-6670]"
+    }, {
+      "left" : "Node fallThrough = computeFollowing(n);",
+      "right" : "Node fallThrough = computeFollowing(n);",
+      "info" : "VariableDeclarationStatement[6683-6722]:VariableDeclarationStatement[6683-6722]"
+    }, {
+      "left" : "Node nextCfgNode = outEdges.get(0).getDestination().getValue();",
+      "right" : "Node nextCfgNode = outEdges.get(0).getDestination().getValue();",
+      "info" : "VariableDeclarationStatement[6735-6798]:VariableDeclarationStatement[6735-6798]"
+    }, {
+      "left" : "if (nextCfgNode == fallThrough)",
+      "right" : "if (nextCfgNode == fallThrough && !inFinally(n.getParent(), n))",
+      "info" : "IfStatement[6811-6887]:IfStatement[6811-6919]"
+    }, {
+      "left" : "nextCfgNode == fallThrough",
+      "right" : "nextCfgNode == fallThrough",
+      "info" : "InfixExpression[6815-6841]:InfixExpression[6815-6841]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6843-6887]:Block[6875-6919]"
+    }, {
+      "left" : "removeNode(n);",
+      "right" : "removeNode(n);",
+      "info" : "ExpressionStatement[6859-6873]:ExpressionStatement[6891-6905]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6920-6927]:Modifier[7247-7254]"
+    }, {
+      "left" : "Node",
+      "right" : "Node",
+      "info" : "SimpleType[6928-6932]:SimpleType[7255-7259]"
+    }, {
+      "left" : "computeFollowing",
+      "right" : "computeFollowing",
+      "info" : "SimpleName[6933-6949]:SimpleName[7260-7276]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[6950-6956]:SingleVariableDeclaration[7277-7283]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6958-7240]:Block[7285-7567]"
+    }, {
+      "left" : "Node next = ControlFlowAnalysis.computeFollowNode(n);",
+      "right" : "Node next = ControlFlowAnalysis.computeFollowNode(n);",
+      "info" : "VariableDeclarationStatement[6966-7019]:VariableDeclarationStatement[7293-7346]"
+    }, {
+      "left" : "while (next != null && next.isBlock())",
+      "right" : "while (next != null && next.isBlock())",
+      "info" : "WhileStatement[7026-7215]:WhileStatement[7353-7542]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7065-7215]:Block[7392-7542]"
+    }, {
+      "left" : "if (next.hasChildren())",
+      "right" : "if (next.hasChildren())",
+      "info" : "IfStatement[7075-7207]:IfStatement[7402-7534]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7099-7149]:Block[7426-7476]"
+    }, {
+      "left" : "next = next.getFirstChild();",
+      "right" : "next = next.getFirstChild();",
+      "info" : "ExpressionStatement[7111-7139]:ExpressionStatement[7438-7466]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7155-7207]:Block[7482-7534]"
+    }, {
+      "left" : "next = computeFollowing(next);",
+      "right" : "next = computeFollowing(next);",
+      "info" : "ExpressionStatement[7167-7197]:ExpressionStatement[7494-7524]"
+    }, {
+      "left" : "return next;",
+      "right" : "return next;",
+      "info" : "ReturnStatement[7222-7234]:ReturnStatement[7549-7561]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[7246-7253]:Modifier[7573-7580]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7254-7258]:PrimitiveType[7581-7585]"
+    }, {
+      "left" : "removeDeadExprStatementSafely",
+      "right" : "removeDeadExprStatementSafely",
+      "info" : "SimpleName[7259-7288]:SimpleName[7586-7615]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[7289-7295]:SingleVariableDeclaration[7616-7622]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7297-8978]:Block[7624-9305]"
+    }, {
+      "left" : "Node parent = n.getParent();",
+      "right" : "Node parent = n.getParent();",
+      "info" : "VariableDeclarationStatement[7305-7333]:VariableDeclarationStatement[7632-7660]"
+    }, {
+      "left" : "if (n.isEmpty() || (n.isBlock() && !n.hasChildren()))",
+      "right" : "if (n.isEmpty() || (n.isBlock() && !n.hasChildren()))",
+      "info" : "IfStatement[7340-7500]:IfStatement[7667-7827]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7394-7500]:Block[7721-7827]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7485-7492]:ReturnStatement[7812-7819]"
+    }, {
+      "left" : "if (NodeUtil.isForIn(parent))",
+      "right" : "if (NodeUtil.isForIn(parent))",
+      "info" : "IfStatement[7654-7709]:IfStatement[7981-8036]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7684-7709]:Block[8011-8036]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7694-7701]:ReturnStatement[8021-8028]"
+    }, {
+      "left" : "switch (n.getType()) {\n        // Removing an unreachable DO node is messy b/c it means we still have\n        // to execute one iteration. If the DO's body has breaks in the middle,\n        // it can get even more tricky and code size might actually increase.\n        case Token.DO:\n          return;\n\n        case Token.BLOCK:\n          // BLOCKs are used in several ways including wrapping CATCH\n          // blocks in TRYs\n          if (parent.isTry() && NodeUtil.isTryCatchNodeContainer(n)) {\n            return;\n          }\n          break;\n\n        case Token.CATCH:\n          Node tryNode = parent.getParent();\n          NodeUtil.maybeAddFinally(tryNode);\n          break;\n      }",
+      "right" : "switch (n.getType()) {\n        // Removing an unreachable DO node is messy b/c it means we still have\n        // to execute one iteration. If the DO's body has breaks in the middle,\n        // it can get even more tricky and code size might actually increase.\n        case Token.DO:\n          return;\n\n        case Token.BLOCK:\n          // BLOCKs are used in several ways including wrapping CATCH\n          // blocks in TRYs\n          if (parent.isTry() && NodeUtil.isTryCatchNodeContainer(n)) {\n            return;\n          }\n          break;\n\n        case Token.CATCH:\n          Node tryNode = parent.getParent();\n          NodeUtil.maybeAddFinally(tryNode);\n          break;\n      }",
+      "info" : "SwitchStatement[7717-8404]:SwitchStatement[8044-8731]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[7985-7999]:SwitchCase[8312-8326]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8010-8017]:ReturnStatement[8337-8344]"
+    }, {
+      "left" : "case Token.BLOCK:",
+      "right" : "case Token.BLOCK:",
+      "info" : "SwitchCase[8027-8044]:SwitchCase[8354-8371]"
+    }, {
+      "left" : "if (parent.isTry() && NodeUtil.isTryCatchNodeContainer(n))",
+      "right" : "if (parent.isTry() && NodeUtil.isTryCatchNodeContainer(n))",
+      "info" : "IfStatement[8153-8245]:IfStatement[8480-8572]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8212-8245]:Block[8539-8572]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8226-8233]:ReturnStatement[8553-8560]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[8256-8262]:BreakStatement[8583-8589]"
+    }, {
+      "left" : "case Token.CATCH:",
+      "right" : "case Token.CATCH:",
+      "info" : "SwitchCase[8272-8289]:SwitchCase[8599-8616]"
+    }, {
+      "left" : "Node tryNode = parent.getParent();",
+      "right" : "Node tryNode = parent.getParent();",
+      "info" : "VariableDeclarationStatement[8300-8334]:VariableDeclarationStatement[8627-8661]"
+    }, {
+      "left" : "NodeUtil.maybeAddFinally(tryNode);",
+      "right" : "NodeUtil.maybeAddFinally(tryNode);",
+      "info" : "ExpressionStatement[8345-8379]:ExpressionStatement[8672-8706]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[8390-8396]:BreakStatement[8717-8723]"
+    }, {
+      "left" : "if (n.isVar() && !n.getFirstChild().hasChildren())",
+      "right" : "if (n.isVar() && !n.getFirstChild().hasChildren())",
+      "info" : "IfStatement[8412-8950]:IfStatement[8739-9277]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8463-8950]:Block[8790-9277]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8935-8942]:ReturnStatement[9262-9269]"
+    }, {
+      "left" : "removeNode(n);",
+      "right" : "removeNode(n);",
+      "info" : "ExpressionStatement[8958-8972]:ExpressionStatement[9285-9299]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8984-8991]:Modifier[9311-9318]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8992-8996]:PrimitiveType[9319-9323]"
+    }, {
+      "left" : "removeNode",
+      "right" : "removeNode",
+      "info" : "SimpleName[8997-9007]:SimpleName[9324-9334]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[9008-9014]:SingleVariableDeclaration[9335-9341]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9016-9275]:Block[9343-9602]"
+    }, {
+      "left" : "codeChanged = true;",
+      "right" : "codeChanged = true;",
+      "info" : "ExpressionStatement[9024-9043]:ExpressionStatement[9351-9370]"
+    }, {
+      "left" : "NodeUtil.redeclareVarsInsideBranch(n);",
+      "right" : "NodeUtil.redeclareVarsInsideBranch(n);",
+      "info" : "ExpressionStatement[9050-9088]:ExpressionStatement[9377-9415]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[9095-9123]:ExpressionStatement[9422-9450]"
+    }, {
+      "left" : "if (logger.isLoggable(Level.FINE))",
+      "right" : "if (logger.isLoggable(Level.FINE))",
+      "info" : "IfStatement[9130-9223]:IfStatement[9457-9550]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9165-9223]:Block[9492-9550]"
+    }, {
+      "left" : "logger.fine(\"Removing \" + n.toString());",
+      "right" : "logger.fine(\"Removing \" + n.toString());",
+      "info" : "ExpressionStatement[9175-9215]:ExpressionStatement[9502-9542]"
+    }, {
+      "left" : "NodeUtil.removeChild(n.getParent(), n);",
+      "right" : "NodeUtil.removeChild(n.getParent(), n);",
+      "info" : "ExpressionStatement[9230-9269]:ExpressionStatement[9557-9596]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

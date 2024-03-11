@@ -1,0 +1,1433 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ChainableReverseAbstractInterpreter",
+      "right" : "ChainableReverseAbstractInterpreter",
+      "info" : "TypeDeclaration[2362-21616]:TypeDeclaration[2362-21705]"
+    }, {
+      "left" : "protected final CodingConvention convention;",
+      "right" : "protected final CodingConvention convention;",
+      "info" : "FieldDeclaration[2550-2594]:FieldDeclaration[2550-2594]"
+    }, {
+      "left" : "final JSTypeRegistry typeRegistry;",
+      "right" : "final JSTypeRegistry typeRegistry;",
+      "info" : "FieldDeclaration[2597-2631]:FieldDeclaration[2597-2631]"
+    }, {
+      "left" : "private ChainableReverseAbstractInterpreter firstLink;",
+      "right" : "private ChainableReverseAbstractInterpreter firstLink;",
+      "info" : "FieldDeclaration[2634-2688]:FieldDeclaration[2634-2688]"
+    }, {
+      "left" : "private ChainableReverseAbstractInterpreter nextLink;",
+      "right" : "private ChainableReverseAbstractInterpreter nextLink;",
+      "info" : "FieldDeclaration[2691-2744]:FieldDeclaration[2691-2744]"
+    }, {
+      "left" : "public ChainableReverseAbstractInterpreter(CodingConvention convention,\n      JSTypeRegistry typeRegistry)",
+      "right" : "public ChainableReverseAbstractInterpreter(CodingConvention convention,\n      JSTypeRegistry typeRegistry)",
+      "info" : "MethodDeclaration[2748-3155]:MethodDeclaration[2748-3155]"
+    }, {
+      "left" : "public ChainableReverseAbstractInterpreter append(\n      ChainableReverseAbstractInterpreter lastLink)",
+      "right" : "public ChainableReverseAbstractInterpreter append(\n      ChainableReverseAbstractInterpreter lastLink)",
+      "info" : "MethodDeclaration[3159-3732]:MethodDeclaration[3159-3732]"
+    }, {
+      "left" : "public ChainableReverseAbstractInterpreter getFirst()",
+      "right" : "public ChainableReverseAbstractInterpreter getFirst()",
+      "info" : "MethodDeclaration[3736-3869]:MethodDeclaration[3736-3869]"
+    }, {
+      "left" : "protected FlowScope firstPreciserScopeKnowingConditionOutcome(Node condition,\n      FlowScope blindScope, boolean outcome)",
+      "right" : "protected FlowScope firstPreciserScopeKnowingConditionOutcome(Node condition,\n      FlowScope blindScope, boolean outcome)",
+      "info" : "MethodDeclaration[3873-4181]:MethodDeclaration[3873-4181]"
+    }, {
+      "left" : "protected FlowScope nextPreciserScopeKnowingConditionOutcome(Node condition,\n      FlowScope blindScope, boolean outcome)",
+      "right" : "protected FlowScope nextPreciserScopeKnowingConditionOutcome(Node condition,\n      FlowScope blindScope, boolean outcome)",
+      "info" : "MethodDeclaration[4185-4585]:MethodDeclaration[4185-4585]"
+    }, {
+      "left" : "protected JSType getTypeIfRefinable(Node node, FlowScope scope)",
+      "right" : "protected JSType getTypeIfRefinable(Node node, FlowScope scope)",
+      "info" : "MethodDeclaration[4589-5813]:MethodDeclaration[4589-5813]"
+    }, {
+      "left" : "protected void declareNameInScope(FlowScope scope, Node node, JSType type)",
+      "right" : "protected void declareNameInScope(FlowScope scope, Node node, JSType type)",
+      "info" : "MethodDeclaration[5817-6829]:MethodDeclaration[5817-6829]"
+    }, {
+      "left" : "private final Visitor<JSType> restrictUndefinedVisitor =\n    new Visitor<JSType>() {\n      @Override\n      public JSType caseEnumElementType(EnumElementType enumElementType) {\n        JSType type = enumElementType.getPrimitiveType().visit(this);\n        if (type != null && enumElementType.getPrimitiveType().isEquivalentTo(type)) {\n          return enumElementType;\n        } else {\n          return type;\n        }\n      }\n\n      @Override\n      public JSType caseAllType() {\n        return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, NULL_TYPE);\n      }\n\n      @Override\n      public JSType caseNoObjectType() {\n        return getNativeType(NO_OBJECT_TYPE);\n      }\n\n      @Override\n      public JSType caseNoType() {\n        return getNativeType(NO_TYPE);\n      }\n\n      @Override\n      public JSType caseBooleanType() {\n        return getNativeType(BOOLEAN_TYPE);\n      }\n\n      @Override\n      public JSType caseFunctionType(FunctionType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseNullType() {\n        return getNativeType(NULL_TYPE);\n      }\n\n      @Override\n      public JSType caseNumberType() {\n        return getNativeType(NUMBER_TYPE);\n      }\n\n      @Override\n      public JSType caseObjectType(ObjectType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseStringType() {\n        return getNativeType(STRING_TYPE);\n      }\n\n      @Override\n      public JSType caseUnionType(UnionType type) {\n        return type.getRestrictedUnion(getNativeType(VOID_TYPE));\n      }\n\n      @Override\n      public JSType caseUnknownType() {\n        return getNativeType(UNKNOWN_TYPE);\n      }\n\n      @Override\n      public JSType caseVoidType() {\n        return null;\n      }\n\n      @Override\n      public JSType caseParameterizedType(ParameterizedType type) {\n        return caseObjectType(type);\n      }\n\n      @Override\n      public JSType caseTemplateType(TemplateType templateType) {\n        return caseObjectType(templateType);\n      }\n    };",
+      "right" : "private final Visitor<JSType> restrictUndefinedVisitor =\n    new Visitor<JSType>() {\n      @Override\n      public JSType caseEnumElementType(EnumElementType enumElementType) {\n        JSType type = enumElementType.getPrimitiveType().visit(this);\n        if (type != null && enumElementType.getPrimitiveType().isEquivalentTo(type)) {\n          return enumElementType;\n        } else {\n          return type;\n        }\n      }\n\n      @Override\n      public JSType caseAllType() {\n        return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, NULL_TYPE);\n      }\n\n      @Override\n      public JSType caseNoObjectType() {\n        return getNativeType(NO_OBJECT_TYPE);\n      }\n\n      @Override\n      public JSType caseNoType() {\n        return getNativeType(NO_TYPE);\n      }\n\n      @Override\n      public JSType caseBooleanType() {\n        return getNativeType(BOOLEAN_TYPE);\n      }\n\n      @Override\n      public JSType caseFunctionType(FunctionType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseNullType() {\n        return getNativeType(NULL_TYPE);\n      }\n\n      @Override\n      public JSType caseNumberType() {\n        return getNativeType(NUMBER_TYPE);\n      }\n\n      @Override\n      public JSType caseObjectType(ObjectType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseStringType() {\n        return getNativeType(STRING_TYPE);\n      }\n\n      @Override\n      public JSType caseUnionType(UnionType type) {\n        return type.getRestrictedUnion(getNativeType(VOID_TYPE));\n      }\n\n      @Override\n      public JSType caseUnknownType() {\n        return getNativeType(UNKNOWN_TYPE);\n      }\n\n      @Override\n      public JSType caseVoidType() {\n        return null;\n      }\n\n      @Override\n      public JSType caseParameterizedType(ParameterizedType type) {\n        return caseObjectType(type);\n      }\n\n      @Override\n      public JSType caseTemplateType(TemplateType templateType) {\n        return caseObjectType(templateType);\n      }\n    };",
+      "info" : "FieldDeclaration[6833-8949]:FieldDeclaration[6833-8949]"
+    }, {
+      "left" : "public JSType caseEnumElementType(EnumElementType enumElementType)",
+      "right" : "public JSType caseEnumElementType(EnumElementType enumElementType)",
+      "info" : "MethodDeclaration[6985-7318]:MethodDeclaration[6985-7318]"
+    }, {
+      "left" : "public JSType caseAllType()",
+      "right" : "public JSType caseAllType()",
+      "info" : "MethodDeclaration[7326-7500]:MethodDeclaration[7326-7500]"
+    }, {
+      "left" : "public JSType caseNoObjectType()",
+      "right" : "public JSType caseNoObjectType()",
+      "info" : "MethodDeclaration[7508-7612]:MethodDeclaration[7508-7612]"
+    }, {
+      "left" : "public JSType caseNoType()",
+      "right" : "public JSType caseNoType()",
+      "info" : "MethodDeclaration[7620-7711]:MethodDeclaration[7620-7711]"
+    }, {
+      "left" : "public JSType caseBooleanType()",
+      "right" : "public JSType caseBooleanType()",
+      "info" : "MethodDeclaration[7719-7820]:MethodDeclaration[7719-7820]"
+    }, {
+      "left" : "public JSType caseFunctionType(FunctionType type)",
+      "right" : "public JSType caseFunctionType(FunctionType type)",
+      "info" : "MethodDeclaration[7828-7924]:MethodDeclaration[7828-7924]"
+    }, {
+      "left" : "public JSType caseNullType()",
+      "right" : "public JSType caseNullType()",
+      "info" : "MethodDeclaration[7932-8027]:MethodDeclaration[7932-8027]"
+    }, {
+      "left" : "public JSType caseNumberType()",
+      "right" : "public JSType caseNumberType()",
+      "info" : "MethodDeclaration[8035-8134]:MethodDeclaration[8035-8134]"
+    }, {
+      "left" : "public JSType caseObjectType(ObjectType type)",
+      "right" : "public JSType caseObjectType(ObjectType type)",
+      "info" : "MethodDeclaration[8142-8234]:MethodDeclaration[8142-8234]"
+    }, {
+      "left" : "public JSType caseStringType()",
+      "right" : "public JSType caseStringType()",
+      "info" : "MethodDeclaration[8242-8341]:MethodDeclaration[8242-8341]"
+    }, {
+      "left" : "public JSType caseUnionType(UnionType type)",
+      "right" : "public JSType caseUnionType(UnionType type)",
+      "info" : "MethodDeclaration[8349-8484]:MethodDeclaration[8349-8484]"
+    }, {
+      "left" : "public JSType caseUnknownType()",
+      "right" : "public JSType caseUnknownType()",
+      "info" : "MethodDeclaration[8492-8593]:MethodDeclaration[8492-8593]"
+    }, {
+      "left" : "public JSType caseVoidType()",
+      "right" : "public JSType caseVoidType()",
+      "info" : "MethodDeclaration[8601-8676]:MethodDeclaration[8601-8676]"
+    }, {
+      "left" : "public JSType caseParameterizedType(ParameterizedType type)",
+      "right" : "public JSType caseParameterizedType(ParameterizedType type)",
+      "info" : "MethodDeclaration[8684-8806]:MethodDeclaration[8684-8806]"
+    }, {
+      "left" : "public JSType caseTemplateType(TemplateType templateType)",
+      "right" : "public JSType caseTemplateType(TemplateType templateType)",
+      "info" : "MethodDeclaration[8814-8942]:MethodDeclaration[8814-8942]"
+    }, {
+      "left" : "private final Visitor<JSType> restrictNullVisitor =\n    new Visitor<JSType>() {\n      @Override\n      public JSType caseEnumElementType(EnumElementType enumElementType) {\n        JSType type = enumElementType.getPrimitiveType().visit(this);\n        if (type != null &&\n            enumElementType.getPrimitiveType().isEquivalentTo(type)) {\n          return enumElementType;\n        } else {\n          return type;\n        }\n      }\n\n      @Override\n      public JSType caseAllType() {\n        return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, VOID_TYPE);\n      }\n\n      @Override\n      public JSType caseNoObjectType() {\n        return getNativeType(NO_OBJECT_TYPE);\n      }\n\n      @Override\n      public JSType caseNoType() {\n        return getNativeType(NO_TYPE);\n      }\n\n      @Override\n      public JSType caseBooleanType() {\n        return getNativeType(BOOLEAN_TYPE);\n      }\n\n      @Override\n      public JSType caseFunctionType(FunctionType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseNullType() {\n        return null;\n      }\n\n      @Override\n      public JSType caseNumberType() {\n        return getNativeType(NUMBER_TYPE);\n      }\n\n      @Override\n      public JSType caseObjectType(ObjectType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseStringType() {\n        return getNativeType(STRING_TYPE);\n      }\n\n      @Override\n      public JSType caseUnionType(UnionType type) {\n        return type.getRestrictedUnion(getNativeType(NULL_TYPE));\n      }\n\n      @Override\n      public JSType caseUnknownType() {\n        return getNativeType(UNKNOWN_TYPE);\n      }\n\n      @Override\n      public JSType caseVoidType() {\n        return getNativeType(VOID_TYPE);\n      }\n\n      @Override\n      public JSType caseParameterizedType(ParameterizedType type) {\n        return caseObjectType(type);\n      }\n\n      @Override\n      public JSType caseTemplateType(TemplateType templateType) {\n        return caseObjectType(templateType);\n      }\n    };",
+      "right" : "private final Visitor<JSType> restrictNullVisitor =\n    new Visitor<JSType>() {\n      @Override\n      public JSType caseEnumElementType(EnumElementType enumElementType) {\n        JSType type = enumElementType.getPrimitiveType().visit(this);\n        if (type != null &&\n            enumElementType.getPrimitiveType().isEquivalentTo(type)) {\n          return enumElementType;\n        } else {\n          return type;\n        }\n      }\n\n      @Override\n      public JSType caseAllType() {\n        return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, VOID_TYPE);\n      }\n\n      @Override\n      public JSType caseNoObjectType() {\n        return getNativeType(NO_OBJECT_TYPE);\n      }\n\n      @Override\n      public JSType caseNoType() {\n        return getNativeType(NO_TYPE);\n      }\n\n      @Override\n      public JSType caseBooleanType() {\n        return getNativeType(BOOLEAN_TYPE);\n      }\n\n      @Override\n      public JSType caseFunctionType(FunctionType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseNullType() {\n        return null;\n      }\n\n      @Override\n      public JSType caseNumberType() {\n        return getNativeType(NUMBER_TYPE);\n      }\n\n      @Override\n      public JSType caseObjectType(ObjectType type) {\n        return type;\n      }\n\n      @Override\n      public JSType caseStringType() {\n        return getNativeType(STRING_TYPE);\n      }\n\n      @Override\n      public JSType caseUnionType(UnionType type) {\n        return type.getRestrictedUnion(getNativeType(NULL_TYPE));\n      }\n\n      @Override\n      public JSType caseUnknownType() {\n        return getNativeType(UNKNOWN_TYPE);\n      }\n\n      @Override\n      public JSType caseVoidType() {\n        return getNativeType(VOID_TYPE);\n      }\n\n      @Override\n      public JSType caseParameterizedType(ParameterizedType type) {\n        return caseObjectType(type);\n      }\n\n      @Override\n      public JSType caseTemplateType(TemplateType templateType) {\n        return caseObjectType(templateType);\n      }\n    };",
+      "info" : "FieldDeclaration[8954-11072]:FieldDeclaration[8954-11072]"
+    }, {
+      "left" : "public JSType caseEnumElementType(EnumElementType enumElementType)",
+      "right" : "public JSType caseEnumElementType(EnumElementType enumElementType)",
+      "info" : "MethodDeclaration[9096-9441]:MethodDeclaration[9096-9441]"
+    }, {
+      "left" : "public JSType caseAllType()",
+      "right" : "public JSType caseAllType()",
+      "info" : "MethodDeclaration[9449-9623]:MethodDeclaration[9449-9623]"
+    }, {
+      "left" : "public JSType caseNoObjectType()",
+      "right" : "public JSType caseNoObjectType()",
+      "info" : "MethodDeclaration[9631-9735]:MethodDeclaration[9631-9735]"
+    }, {
+      "left" : "public JSType caseNoType()",
+      "right" : "public JSType caseNoType()",
+      "info" : "MethodDeclaration[9743-9834]:MethodDeclaration[9743-9834]"
+    }, {
+      "left" : "public JSType caseBooleanType()",
+      "right" : "public JSType caseBooleanType()",
+      "info" : "MethodDeclaration[9842-9943]:MethodDeclaration[9842-9943]"
+    }, {
+      "left" : "public JSType caseFunctionType(FunctionType type)",
+      "right" : "public JSType caseFunctionType(FunctionType type)",
+      "info" : "MethodDeclaration[9951-10047]:MethodDeclaration[9951-10047]"
+    }, {
+      "left" : "public JSType caseNullType()",
+      "right" : "public JSType caseNullType()",
+      "info" : "MethodDeclaration[10055-10130]:MethodDeclaration[10055-10130]"
+    }, {
+      "left" : "public JSType caseNumberType()",
+      "right" : "public JSType caseNumberType()",
+      "info" : "MethodDeclaration[10138-10237]:MethodDeclaration[10138-10237]"
+    }, {
+      "left" : "public JSType caseObjectType(ObjectType type)",
+      "right" : "public JSType caseObjectType(ObjectType type)",
+      "info" : "MethodDeclaration[10245-10337]:MethodDeclaration[10245-10337]"
+    }, {
+      "left" : "public JSType caseStringType()",
+      "right" : "public JSType caseStringType()",
+      "info" : "MethodDeclaration[10345-10444]:MethodDeclaration[10345-10444]"
+    }, {
+      "left" : "public JSType caseUnionType(UnionType type)",
+      "right" : "public JSType caseUnionType(UnionType type)",
+      "info" : "MethodDeclaration[10452-10587]:MethodDeclaration[10452-10587]"
+    }, {
+      "left" : "public JSType caseUnknownType()",
+      "right" : "public JSType caseUnknownType()",
+      "info" : "MethodDeclaration[10595-10696]:MethodDeclaration[10595-10696]"
+    }, {
+      "left" : "public JSType caseVoidType()",
+      "right" : "public JSType caseVoidType()",
+      "info" : "MethodDeclaration[10704-10799]:MethodDeclaration[10704-10799]"
+    }, {
+      "left" : "public JSType caseParameterizedType(ParameterizedType type)",
+      "right" : "public JSType caseParameterizedType(ParameterizedType type)",
+      "info" : "MethodDeclaration[10807-10929]:MethodDeclaration[10807-10929]"
+    }, {
+      "left" : "public JSType caseTemplateType(TemplateType templateType)",
+      "right" : "public JSType caseTemplateType(TemplateType templateType)",
+      "info" : "MethodDeclaration[10937-11065]:MethodDeclaration[10937-11065]"
+    }, {
+      "left" : "RestrictByTypeOfResultVisitor",
+      "right" : "RestrictByTypeOfResultVisitor",
+      "info" : "TypeDeclaration[11076-13495]:TypeDeclaration[11076-13495]"
+    }, {
+      "left" : "protected abstract JSType caseTopType(JSType topType);",
+      "right" : "protected abstract JSType caseTopType(JSType topType);",
+      "info" : "MethodDeclaration[11286-11606]:MethodDeclaration[11286-11606]"
+    }, {
+      "left" : "public JSType caseAllType()",
+      "right" : "public JSType caseAllType()",
+      "info" : "MethodDeclaration[11612-11712]:MethodDeclaration[11612-11712]"
+    }, {
+      "left" : "public JSType caseUnknownType()",
+      "right" : "public JSType caseUnknownType()",
+      "info" : "MethodDeclaration[11718-11834]:MethodDeclaration[11718-11834]"
+    }, {
+      "left" : "public JSType caseUnionType(UnionType type)",
+      "right" : "public JSType caseUnionType(UnionType type)",
+      "info" : "MethodDeclaration[11840-12326]:MethodDeclaration[11840-12326]"
+    }, {
+      "left" : "public JSType caseNoType()",
+      "right" : "public JSType caseNoType()",
+      "info" : "MethodDeclaration[12332-12417]:MethodDeclaration[12332-12417]"
+    }, {
+      "left" : "public JSType caseEnumElementType(EnumElementType enumElementType)",
+      "right" : "public JSType caseEnumElementType(EnumElementType enumElementType)",
+      "info" : "MethodDeclaration[12423-13241]:MethodDeclaration[12423-13241]"
+    }, {
+      "left" : "public JSType caseParameterizedType(ParameterizedType type)",
+      "right" : "public JSType caseParameterizedType(ParameterizedType type)",
+      "info" : "MethodDeclaration[13247-13363]:MethodDeclaration[13247-13363]"
+    }, {
+      "left" : "public JSType caseTemplateType(TemplateType templateType)",
+      "right" : "public JSType caseTemplateType(TemplateType templateType)",
+      "info" : "MethodDeclaration[13369-13491]:MethodDeclaration[13369-13491]"
+    }, {
+      "left" : "RestrictByTrueTypeOfResultVisitor",
+      "right" : "RestrictByTrueTypeOfResultVisitor",
+      "info" : "TypeDeclaration[13499-14487]:TypeDeclaration[13499-14487]"
+    }, {
+      "left" : "public JSType caseNoObjectType()",
+      "right" : "public JSType caseNoObjectType()",
+      "info" : "MethodDeclaration[13840-13913]:MethodDeclaration[13840-13913]"
+    }, {
+      "left" : "public JSType caseBooleanType()",
+      "right" : "public JSType caseBooleanType()",
+      "info" : "MethodDeclaration[13919-13991]:MethodDeclaration[13919-13991]"
+    }, {
+      "left" : "public JSType caseFunctionType(FunctionType type)",
+      "right" : "public JSType caseFunctionType(FunctionType type)",
+      "info" : "MethodDeclaration[13997-14087]:MethodDeclaration[13997-14087]"
+    }, {
+      "left" : "public JSType caseNullType()",
+      "right" : "public JSType caseNullType()",
+      "info" : "MethodDeclaration[14093-14162]:MethodDeclaration[14093-14162]"
+    }, {
+      "left" : "public JSType caseNumberType()",
+      "right" : "public JSType caseNumberType()",
+      "info" : "MethodDeclaration[14168-14239]:MethodDeclaration[14168-14239]"
+    }, {
+      "left" : "public JSType caseObjectType(ObjectType type)",
+      "right" : "public JSType caseObjectType(ObjectType type)",
+      "info" : "MethodDeclaration[14245-14331]:MethodDeclaration[14245-14331]"
+    }, {
+      "left" : "public JSType caseStringType()",
+      "right" : "public JSType caseStringType()",
+      "info" : "MethodDeclaration[14337-14408]:MethodDeclaration[14337-14408]"
+    }, {
+      "left" : "public JSType caseVoidType()",
+      "right" : "public JSType caseVoidType()",
+      "info" : "MethodDeclaration[14414-14483]:MethodDeclaration[14414-14483]"
+    }, {
+      "left" : "RestrictByFalseTypeOfResultVisitor",
+      "right" : "RestrictByFalseTypeOfResultVisitor",
+      "info" : "TypeDeclaration[14491-15705]:TypeDeclaration[14491-15705]"
+    }, {
+      "left" : "protected JSType caseTopType(JSType topType)",
+      "right" : "protected JSType caseTopType(JSType topType)",
+      "info" : "MethodDeclaration[14832-14920]:MethodDeclaration[14832-14920]"
+    }, {
+      "left" : "public JSType caseNoObjectType()",
+      "right" : "public JSType caseNoObjectType()",
+      "info" : "MethodDeclaration[14926-15024]:MethodDeclaration[14926-15024]"
+    }, {
+      "left" : "public JSType caseBooleanType()",
+      "right" : "public JSType caseBooleanType()",
+      "info" : "MethodDeclaration[15030-15125]:MethodDeclaration[15030-15125]"
+    }, {
+      "left" : "public JSType caseFunctionType(FunctionType type)",
+      "right" : "public JSType caseFunctionType(FunctionType type)",
+      "info" : "MethodDeclaration[15131-15221]:MethodDeclaration[15131-15221]"
+    }, {
+      "left" : "public JSType caseNullType()",
+      "right" : "public JSType caseNullType()",
+      "info" : "MethodDeclaration[15227-15316]:MethodDeclaration[15227-15316]"
+    }, {
+      "left" : "public JSType caseNumberType()",
+      "right" : "public JSType caseNumberType()",
+      "info" : "MethodDeclaration[15322-15415]:MethodDeclaration[15322-15415]"
+    }, {
+      "left" : "public JSType caseObjectType(ObjectType type)",
+      "right" : "public JSType caseObjectType(ObjectType type)",
+      "info" : "MethodDeclaration[15421-15507]:MethodDeclaration[15421-15507]"
+    }, {
+      "left" : "public JSType caseStringType()",
+      "right" : "public JSType caseStringType()",
+      "info" : "MethodDeclaration[15513-15606]:MethodDeclaration[15513-15606]"
+    }, {
+      "left" : "public JSType caseVoidType()",
+      "right" : "public JSType caseVoidType()",
+      "info" : "MethodDeclaration[15612-15701]:MethodDeclaration[15612-15701]"
+    }, {
+      "left" : "RestrictByOneTypeOfResultVisitor",
+      "right" : "RestrictByOneTypeOfResultVisitor",
+      "info" : "TypeDeclaration[15709-18481]:TypeDeclaration[15709-18570]"
+    }, {
+      "left" : "private final String value;",
+      "right" : "private final String value;",
+      "info" : "FieldDeclaration[15892-16035]:FieldDeclaration[15892-16035]"
+    }, {
+      "left" : "private final boolean resultEqualsValue;",
+      "right" : "private final boolean resultEqualsValue;",
+      "info" : "FieldDeclaration[16041-16259]:FieldDeclaration[16041-16259]"
+    }, {
+      "left" : "RestrictByOneTypeOfResultVisitor(String value, boolean resultEqualsValue)",
+      "right" : "RestrictByOneTypeOfResultVisitor(String value, boolean resultEqualsValue)",
+      "info" : "MethodDeclaration[16265-16422]:MethodDeclaration[16265-16422]"
+    }, {
+      "left" : "private boolean matchesExpectation(String result)",
+      "right" : "private boolean matchesExpectation(String result)",
+      "info" : "MethodDeclaration[16428-16724]:MethodDeclaration[16428-16724]"
+    }, {
+      "left" : "protected JSType caseTopType(JSType topType)",
+      "right" : "protected JSType caseTopType(JSType topType)",
+      "info" : "MethodDeclaration[16730-17021]:MethodDeclaration[16730-17021]"
+    }, {
+      "left" : "public JSType caseNoObjectType()",
+      "right" : "public JSType caseNoObjectType()",
+      "info" : "MethodDeclaration[17027-17218]:MethodDeclaration[17027-17218]"
+    }, {
+      "left" : "public JSType caseBooleanType()",
+      "right" : "public JSType caseBooleanType()",
+      "info" : "MethodDeclaration[17224-17358]:MethodDeclaration[17224-17358]"
+    }, {
+      "left" : "public JSType caseFunctionType(FunctionType type)",
+      "right" : "public JSType caseFunctionType(FunctionType type)",
+      "info" : "MethodDeclaration[17364-17494]:MethodDeclaration[17364-17494]"
+    }, {
+      "left" : "public JSType caseNullType()",
+      "right" : "public JSType caseNullType()",
+      "info" : "MethodDeclaration[17500-17627]:MethodDeclaration[17500-17627]"
+    }, {
+      "left" : "public JSType caseNumberType()",
+      "right" : "public JSType caseNumberType()",
+      "info" : "MethodDeclaration[17633-17764]:MethodDeclaration[17633-17764]"
+    }, {
+      "left" : "public JSType caseObjectType(ObjectType type)",
+      "right" : "public JSType caseObjectType(ObjectType type)",
+      "info" : "MethodDeclaration[17770-18204]:MethodDeclaration[17770-18293]"
+    }, {
+      "left" : "public JSType caseStringType()",
+      "right" : "public JSType caseStringType()",
+      "info" : "MethodDeclaration[18210-18341]:MethodDeclaration[18299-18430]"
+    }, {
+      "left" : "public JSType caseVoidType()",
+      "right" : "public JSType caseVoidType()",
+      "info" : "MethodDeclaration[18347-18477]:MethodDeclaration[18436-18566]"
+    }, {
+      "left" : "protected final JSType getRestrictedWithoutUndefined(JSType type)",
+      "right" : "protected final JSType getRestrictedWithoutUndefined(JSType type)",
+      "info" : "MethodDeclaration[18485-18702]:MethodDeclaration[18574-18791]"
+    }, {
+      "left" : "protected final JSType getRestrictedWithoutNull(JSType type)",
+      "right" : "protected final JSType getRestrictedWithoutNull(JSType type)",
+      "info" : "MethodDeclaration[18706-18908]:MethodDeclaration[18795-18997]"
+    }, {
+      "left" : "JSType getRestrictedByTypeOfResult(JSType type, String value,\n                                     boolean resultEqualsValue)",
+      "right" : "JSType getRestrictedByTypeOfResult(JSType type, String value,\n                                     boolean resultEqualsValue)",
+      "info" : "MethodDeclaration[18912-20622]:MethodDeclaration[19001-20711]"
+    }, {
+      "left" : "JSType getNativeType(JSTypeNative typeId)",
+      "right" : "JSType getNativeType(JSTypeNative typeId)",
+      "info" : "MethodDeclaration[20626-20720]:MethodDeclaration[20715-20809]"
+    }, {
+      "left" : "private JSType getNativeTypeForTypeOf(String value)",
+      "right" : "private JSType getNativeTypeForTypeOf(String value)",
+      "info" : "MethodDeclaration[20724-21614]:MethodDeclaration[20813-21703]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2991-3155]:Block[2991-3155]"
+    }, {
+      "left" : "Preconditions.checkNotNull(convention);",
+      "right" : "Preconditions.checkNotNull(convention);",
+      "info" : "ExpressionStatement[2997-3036]:ExpressionStatement[2997-3036]"
+    }, {
+      "left" : "this.convention = convention;",
+      "right" : "this.convention = convention;",
+      "info" : "ExpressionStatement[3041-3070]:ExpressionStatement[3041-3070]"
+    }, {
+      "left" : "this.typeRegistry = typeRegistry;",
+      "right" : "this.typeRegistry = typeRegistry;",
+      "info" : "ExpressionStatement[3075-3108]:ExpressionStatement[3075-3108]"
+    }, {
+      "left" : "firstLink = this;",
+      "right" : "firstLink = this;",
+      "info" : "ExpressionStatement[3113-3130]:ExpressionStatement[3113-3130]"
+    }, {
+      "left" : "nextLink = null;",
+      "right" : "nextLink = null;",
+      "info" : "ExpressionStatement[3135-3151]:ExpressionStatement[3135-3151]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3575-3732]:Block[3575-3732]"
+    }, {
+      "left" : "Preconditions.checkArgument(lastLink.nextLink == null);",
+      "right" : "Preconditions.checkArgument(lastLink.nextLink == null);",
+      "info" : "ExpressionStatement[3581-3636]:ExpressionStatement[3581-3636]"
+    }, {
+      "left" : "this.nextLink = lastLink;",
+      "right" : "this.nextLink = lastLink;",
+      "info" : "ExpressionStatement[3641-3666]:ExpressionStatement[3641-3666]"
+    }, {
+      "left" : "lastLink.firstLink = this.firstLink;",
+      "right" : "lastLink.firstLink = this.firstLink;",
+      "info" : "ExpressionStatement[3671-3707]:ExpressionStatement[3671-3707]"
+    }, {
+      "left" : "return lastLink;",
+      "right" : "return lastLink;",
+      "info" : "ReturnStatement[3712-3728]:ReturnStatement[3712-3728]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3842-3869]:Block[3842-3869]"
+    }, {
+      "left" : "return firstLink;",
+      "right" : "return firstLink;",
+      "info" : "ReturnStatement[3848-3865]:ReturnStatement[3848-3865]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4073-4181]:Block[4073-4181]"
+    }, {
+      "left" : "return firstLink.getPreciserScopeKnowingConditionOutcome(\n        condition, blindScope, outcome);",
+      "right" : "return firstLink.getPreciserScopeKnowingConditionOutcome(\n        condition, blindScope, outcome);",
+      "info" : "ReturnStatement[4079-4177]:ReturnStatement[4079-4177]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4446-4585]:Block[4446-4585]"
+    }, {
+      "left" : "return nextLink != null ? nextLink.getPreciserScopeKnowingConditionOutcome(\n        condition, blindScope, outcome) : blindScope;",
+      "right" : "return nextLink != null ? nextLink.getPreciserScopeKnowingConditionOutcome(\n        condition, blindScope, outcome) : blindScope;",
+      "info" : "ReturnStatement[4452-4581]:ReturnStatement[4452-4581]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4875-5813]:Block[4875-5813]"
+    }, {
+      "left" : "switch (node.getType()) {\n      case Token.NAME:\n        StaticSlot<JSType> nameVar = scope.getSlot(node.getString());\n        if (nameVar != null) {\n          JSType nameVarType = nameVar.getType();\n          if (nameVarType == null) {\n            nameVarType = node.getJSType();\n          }\n          return nameVarType;\n        }\n        return null;\n\n      case Token.GETPROP:\n        String qualifiedName = node.getQualifiedName();\n        if (qualifiedName == null) {\n          return null;\n        }\n        StaticSlot<JSType> propVar = scope.getSlot(qualifiedName);\n        JSType propVarType = null;\n        if (propVar != null) {\n          propVarType = propVar.getType();\n        }\n        if (propVarType == null) {\n          propVarType = node.getJSType();\n        }\n        if (propVarType == null) {\n          propVarType = getNativeType(UNKNOWN_TYPE);\n        }\n        return propVarType;\n    }",
+      "right" : "switch (node.getType()) {\n      case Token.NAME:\n        StaticSlot<JSType> nameVar = scope.getSlot(node.getString());\n        if (nameVar != null) {\n          JSType nameVarType = nameVar.getType();\n          if (nameVarType == null) {\n            nameVarType = node.getJSType();\n          }\n          return nameVarType;\n        }\n        return null;\n\n      case Token.GETPROP:\n        String qualifiedName = node.getQualifiedName();\n        if (qualifiedName == null) {\n          return null;\n        }\n        StaticSlot<JSType> propVar = scope.getSlot(qualifiedName);\n        JSType propVarType = null;\n        if (propVar != null) {\n          propVarType = propVar.getType();\n        }\n        if (propVarType == null) {\n          propVarType = node.getJSType();\n        }\n        if (propVarType == null) {\n          propVarType = getNativeType(UNKNOWN_TYPE);\n        }\n        return propVarType;\n    }",
+      "info" : "SwitchStatement[4881-5792]:SwitchStatement[4881-5792]"
+    }, {
+      "left" : "case Token.NAME:",
+      "right" : "case Token.NAME:",
+      "info" : "SwitchCase[4913-4929]:SwitchCase[4913-4929]"
+    }, {
+      "left" : "StaticSlot<JSType> nameVar = scope.getSlot(node.getString());",
+      "right" : "StaticSlot<JSType> nameVar = scope.getSlot(node.getString());",
+      "info" : "VariableDeclarationStatement[4938-4999]:VariableDeclarationStatement[4938-4999]"
+    }, {
+      "left" : "if (nameVar != null)",
+      "right" : "if (nameVar != null)",
+      "info" : "IfStatement[5008-5213]:IfStatement[5008-5213]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5029-5213]:Block[5029-5213]"
+    }, {
+      "left" : "JSType nameVarType = nameVar.getType();",
+      "right" : "JSType nameVarType = nameVar.getType();",
+      "info" : "VariableDeclarationStatement[5041-5080]:VariableDeclarationStatement[5041-5080]"
+    }, {
+      "left" : "if (nameVarType == null)",
+      "right" : "if (nameVarType == null)",
+      "info" : "IfStatement[5091-5173]:IfStatement[5091-5173]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5116-5173]:Block[5116-5173]"
+    }, {
+      "left" : "nameVarType = node.getJSType();",
+      "right" : "nameVarType = node.getJSType();",
+      "info" : "ExpressionStatement[5130-5161]:ExpressionStatement[5130-5161]"
+    }, {
+      "left" : "return nameVarType;",
+      "right" : "return nameVarType;",
+      "info" : "ReturnStatement[5184-5203]:ReturnStatement[5184-5203]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5222-5234]:ReturnStatement[5222-5234]"
+    }, {
+      "left" : "case Token.GETPROP:",
+      "right" : "case Token.GETPROP:",
+      "info" : "SwitchCase[5242-5261]:SwitchCase[5242-5261]"
+    }, {
+      "left" : "String qualifiedName = node.getQualifiedName();",
+      "right" : "String qualifiedName = node.getQualifiedName();",
+      "info" : "VariableDeclarationStatement[5270-5317]:VariableDeclarationStatement[5270-5317]"
+    }, {
+      "left" : "if (qualifiedName == null)",
+      "right" : "if (qualifiedName == null)",
+      "info" : "IfStatement[5326-5387]:IfStatement[5326-5387]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5353-5387]:Block[5353-5387]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5365-5377]:ReturnStatement[5365-5377]"
+    }, {
+      "left" : "StaticSlot<JSType> propVar = scope.getSlot(qualifiedName);",
+      "right" : "StaticSlot<JSType> propVar = scope.getSlot(qualifiedName);",
+      "info" : "VariableDeclarationStatement[5396-5454]:VariableDeclarationStatement[5396-5454]"
+    }, {
+      "left" : "JSType propVarType = null;",
+      "right" : "JSType propVarType = null;",
+      "info" : "VariableDeclarationStatement[5463-5489]:VariableDeclarationStatement[5463-5489]"
+    }, {
+      "left" : "if (propVar != null)",
+      "right" : "if (propVar != null)",
+      "info" : "IfStatement[5498-5573]:IfStatement[5498-5573]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5519-5573]:Block[5519-5573]"
+    }, {
+      "left" : "propVarType = propVar.getType();",
+      "right" : "propVarType = propVar.getType();",
+      "info" : "ExpressionStatement[5531-5563]:ExpressionStatement[5531-5563]"
+    }, {
+      "left" : "if (propVarType == null)",
+      "right" : "if (propVarType == null)",
+      "info" : "IfStatement[5582-5660]:IfStatement[5582-5660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5607-5660]:Block[5607-5660]"
+    }, {
+      "left" : "propVarType = node.getJSType();",
+      "right" : "propVarType = node.getJSType();",
+      "info" : "ExpressionStatement[5619-5650]:ExpressionStatement[5619-5650]"
+    }, {
+      "left" : "if (propVarType == null)",
+      "right" : "if (propVarType == null)",
+      "info" : "IfStatement[5669-5758]:IfStatement[5669-5758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5694-5758]:Block[5694-5758]"
+    }, {
+      "left" : "propVarType = getNativeType(UNKNOWN_TYPE);",
+      "right" : "propVarType = getNativeType(UNKNOWN_TYPE);",
+      "info" : "ExpressionStatement[5706-5748]:ExpressionStatement[5706-5748]"
+    }, {
+      "left" : "return propVarType;",
+      "right" : "return propVarType;",
+      "info" : "ReturnStatement[5767-5786]:ReturnStatement[5767-5786]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5797-5809]:ReturnStatement[5797-5809]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6125-6829]:Block[6125-6829]"
+    }, {
+      "left" : "switch (node.getType()) {\n      case Token.NAME:\n        scope.inferSlotType(node.getString(), type);\n        break;\n\n      case Token.GETPROP:\n        String qualifiedName = node.getQualifiedName();\n        Preconditions.checkNotNull(qualifiedName);\n\n        JSType origType = node.getJSType();\n        origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;\n        scope.inferQualifiedSlot(node, qualifiedName, origType, type);\n        break;\n\n      case Token.THIS:\n        // \"this\" references aren't currently modeled in the CFG.\n        break;\n\n      default:\n        throw new IllegalArgumentException(\"Node cannot be refined. \\n\" +\n            node.toStringTree());\n    }",
+      "right" : "switch (node.getType()) {\n      case Token.NAME:\n        scope.inferSlotType(node.getString(), type);\n        break;\n\n      case Token.GETPROP:\n        String qualifiedName = node.getQualifiedName();\n        Preconditions.checkNotNull(qualifiedName);\n\n        JSType origType = node.getJSType();\n        origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;\n        scope.inferQualifiedSlot(node, qualifiedName, origType, type);\n        break;\n\n      case Token.THIS:\n        // \"this\" references aren't currently modeled in the CFG.\n        break;\n\n      default:\n        throw new IllegalArgumentException(\"Node cannot be refined. \\n\" +\n            node.toStringTree());\n    }",
+      "info" : "SwitchStatement[6131-6825]:SwitchStatement[6131-6825]"
+    }, {
+      "left" : "case Token.NAME:",
+      "right" : "case Token.NAME:",
+      "info" : "SwitchCase[6163-6179]:SwitchCase[6163-6179]"
+    }, {
+      "left" : "scope.inferSlotType(node.getString(), type);",
+      "right" : "scope.inferSlotType(node.getString(), type);",
+      "info" : "ExpressionStatement[6188-6232]:ExpressionStatement[6188-6232]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[6241-6247]:BreakStatement[6241-6247]"
+    }, {
+      "left" : "case Token.GETPROP:",
+      "right" : "case Token.GETPROP:",
+      "info" : "SwitchCase[6255-6274]:SwitchCase[6255-6274]"
+    }, {
+      "left" : "String qualifiedName = node.getQualifiedName();",
+      "right" : "String qualifiedName = node.getQualifiedName();",
+      "info" : "VariableDeclarationStatement[6283-6330]:VariableDeclarationStatement[6283-6330]"
+    }, {
+      "left" : "Preconditions.checkNotNull(qualifiedName);",
+      "right" : "Preconditions.checkNotNull(qualifiedName);",
+      "info" : "ExpressionStatement[6339-6381]:ExpressionStatement[6339-6381]"
+    }, {
+      "left" : "JSType origType = node.getJSType();",
+      "right" : "JSType origType = node.getJSType();",
+      "info" : "VariableDeclarationStatement[6391-6426]:VariableDeclarationStatement[6391-6426]"
+    }, {
+      "left" : "origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;",
+      "right" : "origType = origType == null ? getNativeType(UNKNOWN_TYPE) : origType;",
+      "info" : "ExpressionStatement[6435-6504]:ExpressionStatement[6435-6504]"
+    }, {
+      "left" : "scope.inferQualifiedSlot(node, qualifiedName, origType, type);",
+      "right" : "scope.inferQualifiedSlot(node, qualifiedName, origType, type);",
+      "info" : "ExpressionStatement[6513-6575]:ExpressionStatement[6513-6575]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[6584-6590]:BreakStatement[6584-6590]"
+    }, {
+      "left" : "case Token.THIS:",
+      "right" : "case Token.THIS:",
+      "info" : "SwitchCase[6598-6614]:SwitchCase[6598-6614]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[6689-6695]:BreakStatement[6689-6695]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[6703-6711]:SwitchCase[6703-6711]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Node cannot be refined. \\n\" +\n            node.toStringTree());",
+      "right" : "throw new IllegalArgumentException(\"Node cannot be refined. \\n\" +\n            node.toStringTree());",
+      "info" : "ThrowStatement[6720-6819]:ThrowStatement[6720-6819]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7068-7318]:Block[7068-7318]"
+    }, {
+      "left" : "JSType type = enumElementType.getPrimitiveType().visit(this);",
+      "right" : "JSType type = enumElementType.getPrimitiveType().visit(this);",
+      "info" : "VariableDeclarationStatement[7078-7139]:VariableDeclarationStatement[7078-7139]"
+    }, {
+      "left" : "if (type != null && enumElementType.getPrimitiveType().isEquivalentTo(type))",
+      "right" : "if (type != null && enumElementType.getPrimitiveType().isEquivalentTo(type))",
+      "info" : "IfStatement[7148-7310]:IfStatement[7148-7310]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7225-7270]:Block[7225-7270]"
+    }, {
+      "left" : "return enumElementType;",
+      "right" : "return enumElementType;",
+      "info" : "ReturnStatement[7237-7260]:ReturnStatement[7237-7260]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7276-7310]:Block[7276-7310]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[7288-7300]:ReturnStatement[7288-7300]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7370-7500]:Block[7370-7500]"
+    }, {
+      "left" : "return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, NULL_TYPE);",
+      "right" : "return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, NULL_TYPE);",
+      "info" : "ReturnStatement[7380-7492]:ReturnStatement[7380-7492]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7557-7612]:Block[7557-7612]"
+    }, {
+      "left" : "return getNativeType(NO_OBJECT_TYPE);",
+      "right" : "return getNativeType(NO_OBJECT_TYPE);",
+      "info" : "ReturnStatement[7567-7604]:ReturnStatement[7567-7604]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7663-7711]:Block[7663-7711]"
+    }, {
+      "left" : "return getNativeType(NO_TYPE);",
+      "right" : "return getNativeType(NO_TYPE);",
+      "info" : "ReturnStatement[7673-7703]:ReturnStatement[7673-7703]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7767-7820]:Block[7767-7820]"
+    }, {
+      "left" : "return getNativeType(BOOLEAN_TYPE);",
+      "right" : "return getNativeType(BOOLEAN_TYPE);",
+      "info" : "ReturnStatement[7777-7812]:ReturnStatement[7777-7812]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7894-7924]:Block[7894-7924]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[7904-7916]:ReturnStatement[7904-7916]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7977-8027]:Block[7977-8027]"
+    }, {
+      "left" : "return getNativeType(NULL_TYPE);",
+      "right" : "return getNativeType(NULL_TYPE);",
+      "info" : "ReturnStatement[7987-8019]:ReturnStatement[7987-8019]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8082-8134]:Block[8082-8134]"
+    }, {
+      "left" : "return getNativeType(NUMBER_TYPE);",
+      "right" : "return getNativeType(NUMBER_TYPE);",
+      "info" : "ReturnStatement[8092-8126]:ReturnStatement[8092-8126]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8204-8234]:Block[8204-8234]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[8214-8226]:ReturnStatement[8214-8226]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8289-8341]:Block[8289-8341]"
+    }, {
+      "left" : "return getNativeType(STRING_TYPE);",
+      "right" : "return getNativeType(STRING_TYPE);",
+      "info" : "ReturnStatement[8299-8333]:ReturnStatement[8299-8333]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8409-8484]:Block[8409-8484]"
+    }, {
+      "left" : "return type.getRestrictedUnion(getNativeType(VOID_TYPE));",
+      "right" : "return type.getRestrictedUnion(getNativeType(VOID_TYPE));",
+      "info" : "ReturnStatement[8419-8476]:ReturnStatement[8419-8476]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8540-8593]:Block[8540-8593]"
+    }, {
+      "left" : "return getNativeType(UNKNOWN_TYPE);",
+      "right" : "return getNativeType(UNKNOWN_TYPE);",
+      "info" : "ReturnStatement[8550-8585]:ReturnStatement[8550-8585]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8646-8676]:Block[8646-8676]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[8656-8668]:ReturnStatement[8656-8668]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8760-8806]:Block[8760-8806]"
+    }, {
+      "left" : "return caseObjectType(type);",
+      "right" : "return caseObjectType(type);",
+      "info" : "ReturnStatement[8770-8798]:ReturnStatement[8770-8798]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8888-8942]:Block[8888-8942]"
+    }, {
+      "left" : "return caseObjectType(templateType);",
+      "right" : "return caseObjectType(templateType);",
+      "info" : "ReturnStatement[8898-8934]:ReturnStatement[8898-8934]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9179-9441]:Block[9179-9441]"
+    }, {
+      "left" : "JSType type = enumElementType.getPrimitiveType().visit(this);",
+      "right" : "JSType type = enumElementType.getPrimitiveType().visit(this);",
+      "info" : "VariableDeclarationStatement[9189-9250]:VariableDeclarationStatement[9189-9250]"
+    }, {
+      "left" : "if (type != null &&\n            enumElementType.getPrimitiveType().isEquivalentTo(type))",
+      "right" : "if (type != null &&\n            enumElementType.getPrimitiveType().isEquivalentTo(type))",
+      "info" : "IfStatement[9259-9433]:IfStatement[9259-9433]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9348-9393]:Block[9348-9393]"
+    }, {
+      "left" : "return enumElementType;",
+      "right" : "return enumElementType;",
+      "info" : "ReturnStatement[9360-9383]:ReturnStatement[9360-9383]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9399-9433]:Block[9399-9433]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[9411-9423]:ReturnStatement[9411-9423]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9493-9623]:Block[9493-9623]"
+    }, {
+      "left" : "return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, VOID_TYPE);",
+      "right" : "return typeRegistry.createUnionType(OBJECT_TYPE, NUMBER_TYPE,\n            STRING_TYPE, BOOLEAN_TYPE, VOID_TYPE);",
+      "info" : "ReturnStatement[9503-9615]:ReturnStatement[9503-9615]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9680-9735]:Block[9680-9735]"
+    }, {
+      "left" : "return getNativeType(NO_OBJECT_TYPE);",
+      "right" : "return getNativeType(NO_OBJECT_TYPE);",
+      "info" : "ReturnStatement[9690-9727]:ReturnStatement[9690-9727]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9786-9834]:Block[9786-9834]"
+    }, {
+      "left" : "return getNativeType(NO_TYPE);",
+      "right" : "return getNativeType(NO_TYPE);",
+      "info" : "ReturnStatement[9796-9826]:ReturnStatement[9796-9826]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9890-9943]:Block[9890-9943]"
+    }, {
+      "left" : "return getNativeType(BOOLEAN_TYPE);",
+      "right" : "return getNativeType(BOOLEAN_TYPE);",
+      "info" : "ReturnStatement[9900-9935]:ReturnStatement[9900-9935]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10017-10047]:Block[10017-10047]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[10027-10039]:ReturnStatement[10027-10039]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10100-10130]:Block[10100-10130]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[10110-10122]:ReturnStatement[10110-10122]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10185-10237]:Block[10185-10237]"
+    }, {
+      "left" : "return getNativeType(NUMBER_TYPE);",
+      "right" : "return getNativeType(NUMBER_TYPE);",
+      "info" : "ReturnStatement[10195-10229]:ReturnStatement[10195-10229]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10307-10337]:Block[10307-10337]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[10317-10329]:ReturnStatement[10317-10329]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10392-10444]:Block[10392-10444]"
+    }, {
+      "left" : "return getNativeType(STRING_TYPE);",
+      "right" : "return getNativeType(STRING_TYPE);",
+      "info" : "ReturnStatement[10402-10436]:ReturnStatement[10402-10436]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10512-10587]:Block[10512-10587]"
+    }, {
+      "left" : "return type.getRestrictedUnion(getNativeType(NULL_TYPE));",
+      "right" : "return type.getRestrictedUnion(getNativeType(NULL_TYPE));",
+      "info" : "ReturnStatement[10522-10579]:ReturnStatement[10522-10579]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10643-10696]:Block[10643-10696]"
+    }, {
+      "left" : "return getNativeType(UNKNOWN_TYPE);",
+      "right" : "return getNativeType(UNKNOWN_TYPE);",
+      "info" : "ReturnStatement[10653-10688]:ReturnStatement[10653-10688]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10749-10799]:Block[10749-10799]"
+    }, {
+      "left" : "return getNativeType(VOID_TYPE);",
+      "right" : "return getNativeType(VOID_TYPE);",
+      "info" : "ReturnStatement[10759-10791]:ReturnStatement[10759-10791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10883-10929]:Block[10883-10929]"
+    }, {
+      "left" : "return caseObjectType(type);",
+      "right" : "return caseObjectType(type);",
+      "info" : "ReturnStatement[10893-10921]:ReturnStatement[10893-10921]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11011-11065]:Block[11011-11065]"
+    }, {
+      "left" : "return caseObjectType(templateType);",
+      "right" : "return caseObjectType(templateType);",
+      "info" : "ReturnStatement[11021-11057]:ReturnStatement[11021-11057]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11654-11712]:Block[11654-11712]"
+    }, {
+      "left" : "return caseTopType(getNativeType(ALL_TYPE));",
+      "right" : "return caseTopType(getNativeType(ALL_TYPE));",
+      "info" : "ReturnStatement[11662-11706]:ReturnStatement[11662-11706]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11764-11834]:Block[11764-11834]"
+    }, {
+      "left" : "return caseTopType(getNativeType(CHECKED_UNKNOWN_TYPE));",
+      "right" : "return caseTopType(getNativeType(CHECKED_UNKNOWN_TYPE));",
+      "info" : "ReturnStatement[11772-11828]:ReturnStatement[11772-11828]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11898-12326]:Block[11898-12326]"
+    }, {
+      "left" : "JSType restricted = null;",
+      "right" : "JSType restricted = null;",
+      "info" : "VariableDeclarationStatement[11906-11931]:VariableDeclarationStatement[11906-11931]"
+    }, {
+      "left" : "for (JSType alternate : type.getAlternates())",
+      "right" : "for (JSType alternate : type.getAlternates())",
+      "info" : "EnhancedForStatement[11938-12295]:EnhancedForStatement[11938-12295]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11984-12295]:Block[11984-12295]"
+    }, {
+      "left" : "JSType restrictedAlternate = alternate.visit(this);",
+      "right" : "JSType restrictedAlternate = alternate.visit(this);",
+      "info" : "VariableDeclarationStatement[11994-12045]:VariableDeclarationStatement[11994-12045]"
+    }, {
+      "left" : "if (restrictedAlternate != null)",
+      "right" : "if (restrictedAlternate != null)",
+      "info" : "IfStatement[12054-12287]:IfStatement[12054-12287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12087-12287]:Block[12087-12287]"
+    }, {
+      "left" : "if (restricted == null)",
+      "right" : "if (restricted == null)",
+      "info" : "IfStatement[12099-12277]:IfStatement[12099-12277]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12123-12182]:Block[12123-12182]"
+    }, {
+      "left" : "restricted = restrictedAlternate;",
+      "right" : "restricted = restrictedAlternate;",
+      "info" : "ExpressionStatement[12137-12170]:ExpressionStatement[12137-12170]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12188-12277]:Block[12188-12277]"
+    }, {
+      "left" : "restricted = restrictedAlternate.getLeastSupertype(restricted);",
+      "right" : "restricted = restrictedAlternate.getLeastSupertype(restricted);",
+      "info" : "ExpressionStatement[12202-12265]:ExpressionStatement[12202-12265]"
+    }, {
+      "left" : "return restricted;",
+      "right" : "return restricted;",
+      "info" : "ReturnStatement[12302-12320]:ReturnStatement[12302-12320]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12373-12417]:Block[12373-12417]"
+    }, {
+      "left" : "return getNativeType(NO_TYPE);",
+      "right" : "return getNativeType(NO_TYPE);",
+      "info" : "ReturnStatement[12381-12411]:ReturnStatement[12381-12411]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12504-13241]:Block[12504-13241]"
+    }, {
+      "left" : "JSType type = enumElementType.getPrimitiveType().visit(this);",
+      "right" : "JSType type = enumElementType.getPrimitiveType().visit(this);",
+      "info" : "VariableDeclarationStatement[13003-13064]:VariableDeclarationStatement[13003-13064]"
+    }, {
+      "left" : "if (type != null &&\n          enumElementType.getPrimitiveType().isEquivalentTo(type))",
+      "right" : "if (type != null &&\n          enumElementType.getPrimitiveType().isEquivalentTo(type))",
+      "info" : "IfStatement[13071-13235]:IfStatement[13071-13235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13158-13199]:Block[13158-13199]"
+    }, {
+      "left" : "return enumElementType;",
+      "right" : "return enumElementType;",
+      "info" : "ReturnStatement[13168-13191]:ReturnStatement[13168-13191]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13205-13235]:Block[13205-13235]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[13215-13227]:ReturnStatement[13215-13227]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13321-13363]:Block[13321-13363]"
+    }, {
+      "left" : "return caseObjectType(type);",
+      "right" : "return caseObjectType(type);",
+      "info" : "ReturnStatement[13329-13357]:ReturnStatement[13329-13357]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13441-13491]:Block[13441-13491]"
+    }, {
+      "left" : "return caseObjectType(templateType);",
+      "right" : "return caseObjectType(templateType);",
+      "info" : "ReturnStatement[13449-13485]:ReturnStatement[13449-13485]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13887-13913]:Block[13887-13913]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[13895-13907]:ReturnStatement[13895-13907]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13965-13991]:Block[13965-13991]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[13973-13985]:ReturnStatement[13973-13985]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14061-14087]:Block[14061-14087]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14069-14081]:ReturnStatement[14069-14081]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14136-14162]:Block[14136-14162]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14144-14156]:ReturnStatement[14144-14156]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14213-14239]:Block[14213-14239]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14221-14233]:ReturnStatement[14221-14233]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14305-14331]:Block[14305-14331]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14313-14325]:ReturnStatement[14313-14325]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14382-14408]:Block[14382-14408]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14390-14402]:ReturnStatement[14390-14402]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14457-14483]:Block[14457-14483]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14465-14477]:ReturnStatement[14465-14477]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14891-14920]:Block[14891-14920]"
+    }, {
+      "left" : "return topType;",
+      "right" : "return topType;",
+      "info" : "ReturnStatement[14899-14914]:ReturnStatement[14899-14914]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14973-15024]:Block[14973-15024]"
+    }, {
+      "left" : "return getNativeType(NO_OBJECT_TYPE);",
+      "right" : "return getNativeType(NO_OBJECT_TYPE);",
+      "info" : "ReturnStatement[14981-15018]:ReturnStatement[14981-15018]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15076-15125]:Block[15076-15125]"
+    }, {
+      "left" : "return getNativeType(BOOLEAN_TYPE);",
+      "right" : "return getNativeType(BOOLEAN_TYPE);",
+      "info" : "ReturnStatement[15084-15119]:ReturnStatement[15084-15119]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15195-15221]:Block[15195-15221]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[15203-15215]:ReturnStatement[15203-15215]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15270-15316]:Block[15270-15316]"
+    }, {
+      "left" : "return getNativeType(NULL_TYPE);",
+      "right" : "return getNativeType(NULL_TYPE);",
+      "info" : "ReturnStatement[15278-15310]:ReturnStatement[15278-15310]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15367-15415]:Block[15367-15415]"
+    }, {
+      "left" : "return getNativeType(NUMBER_TYPE);",
+      "right" : "return getNativeType(NUMBER_TYPE);",
+      "info" : "ReturnStatement[15375-15409]:ReturnStatement[15375-15409]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15481-15507]:Block[15481-15507]"
+    }, {
+      "left" : "return type;",
+      "right" : "return type;",
+      "info" : "ReturnStatement[15489-15501]:ReturnStatement[15489-15501]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15558-15606]:Block[15558-15606]"
+    }, {
+      "left" : "return getNativeType(STRING_TYPE);",
+      "right" : "return getNativeType(STRING_TYPE);",
+      "info" : "ReturnStatement[15566-15600]:ReturnStatement[15566-15600]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15655-15701]:Block[15655-15701]"
+    }, {
+      "left" : "return getNativeType(VOID_TYPE);",
+      "right" : "return getNativeType(VOID_TYPE);",
+      "info" : "ReturnStatement[15663-15695]:ReturnStatement[15663-15695]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16339-16422]:Block[16339-16422]"
+    }, {
+      "left" : "this.value = value;",
+      "right" : "this.value = value;",
+      "info" : "ExpressionStatement[16347-16366]:ExpressionStatement[16347-16366]"
+    }, {
+      "left" : "this.resultEqualsValue = resultEqualsValue;",
+      "right" : "this.resultEqualsValue = resultEqualsValue;",
+      "info" : "ExpressionStatement[16373-16416]:ExpressionStatement[16373-16416]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16661-16724]:Block[16661-16724]"
+    }, {
+      "left" : "return result.equals(value) == resultEqualsValue;",
+      "right" : "return result.equals(value) == resultEqualsValue;",
+      "info" : "ReturnStatement[16669-16718]:ReturnStatement[16669-16718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16789-17021]:Block[16789-17021]"
+    }, {
+      "left" : "JSType result = topType;",
+      "right" : "JSType result = topType;",
+      "info" : "VariableDeclarationStatement[16797-16821]:VariableDeclarationStatement[16797-16821]"
+    }, {
+      "left" : "if (resultEqualsValue)",
+      "right" : "if (resultEqualsValue)",
+      "info" : "IfStatement[16828-16994]:IfStatement[16828-16994]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16851-16994]:Block[16851-16994]"
+    }, {
+      "left" : "JSType typeByName = getNativeTypeForTypeOf(value);",
+      "right" : "JSType typeByName = getNativeTypeForTypeOf(value);",
+      "info" : "VariableDeclarationStatement[16861-16911]:VariableDeclarationStatement[16861-16911]"
+    }, {
+      "left" : "if (typeByName != null)",
+      "right" : "if (typeByName != null)",
+      "info" : "IfStatement[16920-16986]:IfStatement[16920-16986]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16944-16986]:Block[16944-16986]"
+    }, {
+      "left" : "result = typeByName;",
+      "right" : "result = typeByName;",
+      "info" : "ExpressionStatement[16956-16976]:ExpressionStatement[16956-16976]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[17001-17015]:ReturnStatement[17001-17015]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17074-17218]:Block[17074-17218]"
+    }, {
+      "left" : "return (value.equals(\"object\") || value.equals(\"function\")) ==\n          resultEqualsValue ? getNativeType(NO_OBJECT_TYPE) : null;",
+      "right" : "return (value.equals(\"object\") || value.equals(\"function\")) ==\n          resultEqualsValue ? getNativeType(NO_OBJECT_TYPE) : null;",
+      "info" : "ReturnStatement[17082-17212]:ReturnStatement[17082-17212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17270-17358]:Block[17270-17358]"
+    }, {
+      "left" : "return matchesExpectation(\"boolean\") ? getNativeType(BOOLEAN_TYPE) : null;",
+      "right" : "return matchesExpectation(\"boolean\") ? getNativeType(BOOLEAN_TYPE) : null;",
+      "info" : "ReturnStatement[17278-17352]:ReturnStatement[17278-17352]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17428-17494]:Block[17428-17494]"
+    }, {
+      "left" : "return matchesExpectation(\"function\") ? type : null;",
+      "right" : "return matchesExpectation(\"function\") ? type : null;",
+      "info" : "ReturnStatement[17436-17488]:ReturnStatement[17436-17488]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17543-17627]:Block[17543-17627]"
+    }, {
+      "left" : "return matchesExpectation(\"object\") ? getNativeType(NULL_TYPE) : null;",
+      "right" : "return matchesExpectation(\"object\") ? getNativeType(NULL_TYPE) : null;",
+      "info" : "ReturnStatement[17551-17621]:ReturnStatement[17551-17621]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17678-17764]:Block[17678-17764]"
+    }, {
+      "left" : "return matchesExpectation(\"number\") ? getNativeType(NUMBER_TYPE) : null;",
+      "right" : "return matchesExpectation(\"number\") ? getNativeType(NUMBER_TYPE) : null;",
+      "info" : "ReturnStatement[17686-17758]:ReturnStatement[17686-17758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17830-18204]:Block[17830-18293]"
+    }, {
+      "left" : "if (value.equals(\"function\"))",
+      "right" : "if (value.equals(\"function\"))",
+      "info" : "IfStatement[17838-18141]:IfStatement[17838-18230]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17868-18141]:Block[17868-18230]"
+    }, {
+      "left" : "JSType ctorType = getNativeType(U2U_CONSTRUCTOR_TYPE);",
+      "right" : "JSType ctorType = getNativeType(U2U_CONSTRUCTOR_TYPE);",
+      "info" : "VariableDeclarationStatement[17878-17932]:VariableDeclarationStatement[17878-17932]"
+    }, {
+      "left" : "return resultEqualsValue && ctorType.isSubtype(type) ? ctorType : null;",
+      "right" : "return type.isSubtype(ctorType) ? null : type;",
+      "info" : "ReturnStatement[17941-18012]:ReturnStatement[18166-18212]"
+    }, {
+      "left" : "return matchesExpectation(\"object\") ? type : null;",
+      "right" : "return matchesExpectation(\"object\") ? type : null;",
+      "info" : "ReturnStatement[18148-18198]:ReturnStatement[18237-18287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18255-18341]:Block[18344-18430]"
+    }, {
+      "left" : "return matchesExpectation(\"string\") ? getNativeType(STRING_TYPE) : null;",
+      "right" : "return matchesExpectation(\"string\") ? getNativeType(STRING_TYPE) : null;",
+      "info" : "ReturnStatement[18263-18335]:ReturnStatement[18352-18424]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18390-18477]:Block[18479-18566]"
+    }, {
+      "left" : "return matchesExpectation(\"undefined\") ? getNativeType(VOID_TYPE) : null;",
+      "right" : "return matchesExpectation(\"undefined\") ? getNativeType(VOID_TYPE) : null;",
+      "info" : "ReturnStatement[18398-18471]:ReturnStatement[18487-18560]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18626-18702]:Block[18715-18791]"
+    }, {
+      "left" : "return type == null ? null : type.visit(restrictUndefinedVisitor);",
+      "right" : "return type == null ? null : type.visit(restrictUndefinedVisitor);",
+      "info" : "ReturnStatement[18632-18698]:ReturnStatement[18721-18787]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18837-18908]:Block[18926-18997]"
+    }, {
+      "left" : "return type == null ? null : type.visit(restrictNullVisitor);",
+      "right" : "return type == null ? null : type.visit(restrictNullVisitor);",
+      "info" : "ReturnStatement[18843-18904]:ReturnStatement[18932-18993]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20283-20622]:Block[20372-20711]"
+    }, {
+      "left" : "if (type == null)",
+      "right" : "if (type == null)",
+      "info" : "IfStatement[20289-20522]:IfStatement[20378-20611]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20307-20522]:Block[20396-20611]"
+    }, {
+      "left" : "if (resultEqualsValue)",
+      "right" : "if (resultEqualsValue)",
+      "info" : "IfStatement[20315-20516]:IfStatement[20404-20605]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20338-20480]:Block[20427-20569]"
+    }, {
+      "left" : "JSType result = getNativeTypeForTypeOf(value);",
+      "right" : "JSType result = getNativeTypeForTypeOf(value);",
+      "info" : "VariableDeclarationStatement[20348-20394]:VariableDeclarationStatement[20437-20483]"
+    }, {
+      "left" : "return result == null ? getNativeType(CHECKED_UNKNOWN_TYPE) : result;",
+      "right" : "return result == null ? getNativeType(CHECKED_UNKNOWN_TYPE) : result;",
+      "info" : "ReturnStatement[20403-20472]:ReturnStatement[20492-20561]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20486-20516]:Block[20575-20605]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[20496-20508]:ReturnStatement[20585-20597]"
+    }, {
+      "left" : "return type.visit(\n        new RestrictByOneTypeOfResultVisitor(value, resultEqualsValue));",
+      "right" : "return type.visit(\n        new RestrictByOneTypeOfResultVisitor(value, resultEqualsValue));",
+      "info" : "ReturnStatement[20527-20618]:ReturnStatement[20616-20707]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20668-20720]:Block[20757-20809]"
+    }, {
+      "left" : "return typeRegistry.getNativeType(typeId);",
+      "right" : "return typeRegistry.getNativeType(typeId);",
+      "info" : "ReturnStatement[20674-20716]:ReturnStatement[20763-20805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21154-21614]:Block[21243-21703]"
+    }, {
+      "left" : "if (value.equals(\"number\"))",
+      "right" : "if (value.equals(\"number\"))",
+      "info" : "IfStatement[21160-21610]:IfStatement[21249-21699]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21188-21236]:Block[21277-21325]"
+    }, {
+      "left" : "return getNativeType(NUMBER_TYPE);",
+      "right" : "return getNativeType(NUMBER_TYPE);",
+      "info" : "ReturnStatement[21196-21230]:ReturnStatement[21285-21319]"
+    }, {
+      "left" : "if (value.equals(\"boolean\"))",
+      "right" : "if (value.equals(\"boolean\"))",
+      "info" : "IfStatement[21242-21610]:IfStatement[21331-21699]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21271-21320]:Block[21360-21409]"
+    }, {
+      "left" : "return getNativeType(BOOLEAN_TYPE);",
+      "right" : "return getNativeType(BOOLEAN_TYPE);",
+      "info" : "ReturnStatement[21279-21314]:ReturnStatement[21368-21403]"
+    }, {
+      "left" : "if (value.equals(\"string\"))",
+      "right" : "if (value.equals(\"string\"))",
+      "info" : "IfStatement[21326-21610]:IfStatement[21415-21699]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21354-21402]:Block[21443-21491]"
+    }, {
+      "left" : "return getNativeType(STRING_TYPE);",
+      "right" : "return getNativeType(STRING_TYPE);",
+      "info" : "ReturnStatement[21362-21396]:ReturnStatement[21451-21485]"
+    }, {
+      "left" : "if (value.equals(\"undefined\"))",
+      "right" : "if (value.equals(\"undefined\"))",
+      "info" : "IfStatement[21408-21610]:IfStatement[21497-21699]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21439-21485]:Block[21528-21574]"
+    }, {
+      "left" : "return getNativeType(VOID_TYPE);",
+      "right" : "return getNativeType(VOID_TYPE);",
+      "info" : "ReturnStatement[21447-21479]:ReturnStatement[21536-21568]"
+    }, {
+      "left" : "if (value.equals(\"function\"))",
+      "right" : "if (value.equals(\"function\"))",
+      "info" : "IfStatement[21491-21610]:IfStatement[21580-21699]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21521-21578]:Block[21610-21667]"
+    }, {
+      "left" : "return getNativeType(U2U_CONSTRUCTOR_TYPE);",
+      "right" : "return getNativeType(U2U_CONSTRUCTOR_TYPE);",
+      "info" : "ReturnStatement[21529-21572]:ReturnStatement[21618-21661]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21584-21610]:Block[21673-21699]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[21592-21604]:ReturnStatement[21681-21693]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

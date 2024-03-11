@@ -1,0 +1,65 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ResourcePermissionModelListener",
+      "right" : "ResourcePermissionModelListener",
+      "info" : "TypeDeclaration[1111-2328]:TypeDeclaration[1195-2565]"
+    }, {
+      "left" : "public void onAfterUpdate(ResourcePermission resourcePermission)\n\t\tthrows ModelListenerException",
+      "right" : "protected void updateSyncDLObject(SyncDLObject syncDLObject)\n\t\tthrows SystemException",
+      "info" : "MethodDeclaration[1236-2325]:MethodDeclaration[2014-2562]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1344-2325]:Block[1428-2011]"
+    }, {
+      "left" : "String modelName = resourcePermission.getName();",
+      "right" : "String modelName = resourcePermission.getName();",
+      "info" : "VariableDeclarationStatement[1349-1397]:VariableDeclarationStatement[1433-1481]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[1401-2322]:TryStatement[1485-2008]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1405-2254]:Block[1489-1940]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1461-1826]:Block[1569-1611]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[1677-1684]:ReturnStatement[2323-2330]"
+    }, {
+      "left" : "if (modelName.equals(DLFolder.class.getName()))",
+      "right" : "if (syncDLObject != null)",
+      "info" : "IfStatement[1835-2250]:IfStatement[1866-1936]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1883-2250]:Block[1892-1936]"
+    }, {
+      "left" : "SyncDLObject syncDLObject =\n\t\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\t\tSyncConstants.TYPE_FOLDER,\n\t\t\t\t\t\tGetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "right" : "SyncDLObject syncDLObject =\n\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\ttype, GetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "info" : "VariableDeclarationStatement[1889-2062]:VariableDeclarationStatement[1717-1861]"
+    }, {
+      "left" : "syncDLObject.setModifiedTime(System.currentTimeMillis());",
+      "right" : "updateSyncDLObject(syncDLObject);",
+      "info" : "ExpressionStatement[2120-2177]:ExpressionStatement[1898-1931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2277-2322]:Block[1963-2008]"
+    }, {
+      "left" : "throw new ModelListenerException(e);",
+      "right" : "throw new ModelListenerException(e);",
+      "info" : "ThrowStatement[2282-2318]:ThrowStatement[1968-2004]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

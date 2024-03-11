@@ -1,0 +1,413 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "EntityScanRegistrar",
+      "right" : "EntityScanRegistrar",
+      "info" : "TypeDeclaration[1612-5001]:TypeDeclaration[1701-6007]"
+    }, {
+      "left" : "private static final String BEAN_NAME = \"entityScanBeanPostProcessor\";",
+      "right" : "private static final String BEAN_NAME = \"entityScanBeanPostProcessor\";",
+      "info" : "FieldDeclaration[1787-1857]:FieldDeclaration[1901-1971]"
+    }, {
+      "left" : "public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata,\n\t\t\tBeanDefinitionRegistry registry)",
+      "right" : "public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata,\n\t\t\tBeanDefinitionRegistry registry)",
+      "info" : "MethodDeclaration[1860-2611]:MethodDeclaration[1974-2373]"
+    }, {
+      "left" : "private String[] getPackagesToScan(AnnotationMetadata metadata)",
+      "right" : "private Set<String> getPackagesToScan(AnnotationMetadata metadata)",
+      "info" : "MethodDeclaration[2614-3696]:MethodDeclaration[2376-3400]"
+    }, {
+      "left" : "EntityScanBeanPostProcessor",
+      "right" : "EntityScanBeanPostProcessor",
+      "info" : "TypeDeclaration[3699-4998]:TypeDeclaration[4705-6004]"
+    }, {
+      "left" : "private final String[] packagesToScan;",
+      "right" : "private final String[] packagesToScan;",
+      "info" : "FieldDeclaration[3988-4026]:FieldDeclaration[4994-5032]"
+    }, {
+      "left" : "private boolean processed;",
+      "right" : "private boolean processed;",
+      "info" : "FieldDeclaration[4030-4056]:FieldDeclaration[5036-5062]"
+    }, {
+      "left" : "public EntityScanBeanPostProcessor(String[] packagesToScan)",
+      "right" : "public EntityScanBeanPostProcessor(String[] packagesToScan)",
+      "info" : "MethodDeclaration[4060-4166]:MethodDeclaration[5066-5172]"
+    }, {
+      "left" : "public Object postProcessBeforeInitialization(Object bean, String beanName)\n\t\t\t\tthrows BeansException",
+      "right" : "public Object postProcessBeforeInitialization(Object bean, String beanName)\n\t\t\t\tthrows BeansException",
+      "info" : "MethodDeclaration[4170-4562]:MethodDeclaration[5176-5568]"
+    }, {
+      "left" : "public Object postProcessAfterInitialization(Object bean, String beanName)\n\t\t\t\tthrows BeansException",
+      "right" : "public Object postProcessAfterInitialization(Object bean, String beanName)\n\t\t\t\tthrows BeansException",
+      "info" : "MethodDeclaration[4566-4700]:MethodDeclaration[5572-5706]"
+    }, {
+      "left" : "public void afterSingletonsInstantiated()",
+      "right" : "public void afterSingletonsInstantiated()",
+      "info" : "MethodDeclaration[4704-4938]:MethodDeclaration[5710-5944]"
+    }, {
+      "left" : "public int getOrder()",
+      "right" : "public int getOrder()",
+      "info" : "MethodDeclaration[4942-4994]:MethodDeclaration[5948-6000]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1716-1721]:TYPE_DECLARATION_KIND[1830-1835]"
+    }, {
+      "left" : "EntityScanRegistrar",
+      "right" : "EntityScanRegistrar",
+      "info" : "SimpleName[1722-1741]:SimpleName[1836-1855]"
+    }, {
+      "left" : "ImportBeanDefinitionRegistrar",
+      "right" : "ImportBeanDefinitionRegistrar",
+      "info" : "SimpleType[1753-1782]:SimpleType[1867-1896]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[1860-1869]:MarkerAnnotation[1974-1983]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1871-1877]:Modifier[1985-1991]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[1878-1882]:PrimitiveType[1992-1996]"
+    }, {
+      "left" : "registerBeanDefinitions",
+      "right" : "registerBeanDefinitions",
+      "info" : "SimpleName[1883-1906]:SimpleName[1997-2020]"
+    }, {
+      "left" : "AnnotationMetadata importingClassMetadata",
+      "right" : "AnnotationMetadata importingClassMetadata",
+      "info" : "SingleVariableDeclaration[1907-1948]:SingleVariableDeclaration[2021-2062]"
+    }, {
+      "left" : "BeanDefinitionRegistry registry",
+      "right" : "BeanDefinitionRegistry registry",
+      "info" : "SingleVariableDeclaration[1953-1984]:SingleVariableDeclaration[2067-2098]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1986-2611]:Block[2100-2373]"
+    }, {
+      "left" : "if (!registry.containsBeanDefinition(BEAN_NAME))",
+      "right" : "if (!registry.containsBeanDefinition(BEAN_NAME))",
+      "info" : "IfStatement[1990-2608]:IfStatement[2178-2370]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2039-2608]:Block[2227-2293]"
+    }, {
+      "left" : "GenericBeanDefinition beanDefinition = new GenericBeanDefinition();",
+      "right" : "GenericBeanDefinition beanDefinition = new GenericBeanDefinition();",
+      "info" : "VariableDeclarationStatement[2044-2111]:VariableDeclarationStatement[3515-3582]"
+    }, {
+      "left" : "beanDefinition.setBeanClass(EntityScanBeanPostProcessor.class);",
+      "right" : "beanDefinition.setBeanClass(EntityScanBeanPostProcessor.class);",
+      "info" : "ExpressionStatement[2115-2178]:ExpressionStatement[3585-3648]"
+    }, {
+      "left" : "beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(\n\t\t\t\t\tgetPackagesToScan(importingClassMetadata));",
+      "right" : "beanDefinition.getConstructorArgumentValues().addGenericArgumentValue(\n\t\t\t\ttoArray(packagesToScan));",
+      "info" : "ExpressionStatement[2182-2301]:ExpressionStatement[3651-3751]"
+    }, {
+      "left" : "getPackagesToScan(importingClassMetadata)",
+      "right" : "getPackagesToScan(importingClassMetadata)",
+      "info" : "MethodInvocation[2258-2299]:MethodInvocation[2133-2174]"
+    }, {
+      "left" : "beanDefinition.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);",
+      "right" : "beanDefinition.setRole(BeanDefinition.ROLE_INFRASTRUCTURE);",
+      "info" : "ExpressionStatement[2305-2364]:ExpressionStatement[3754-3813]"
+    }, {
+      "left" : "beanDefinition.setSynthetic(true);",
+      "right" : "beanDefinition.setSynthetic(true);",
+      "info" : "ExpressionStatement[2507-2541]:ExpressionStatement[3953-3987]"
+    }, {
+      "left" : "registry.registerBeanDefinition(BEAN_NAME, beanDefinition);",
+      "right" : "registry.registerBeanDefinition(BEAN_NAME, beanDefinition);",
+      "info" : "ExpressionStatement[2545-2604]:ExpressionStatement[3990-4049]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2614-2621]:Modifier[2376-2383]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[2622-2628]:SimpleType[2388-2394]"
+    }, {
+      "left" : "getPackagesToScan",
+      "right" : "getPackagesToScan",
+      "info" : "SimpleName[2631-2648]:SimpleName[2396-2413]"
+    }, {
+      "left" : "AnnotationMetadata metadata",
+      "right" : "AnnotationMetadata metadata",
+      "info" : "SingleVariableDeclaration[2649-2676]:SingleVariableDeclaration[2414-2441]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2678-3696]:Block[2443-3400]"
+    }, {
+      "left" : "AnnotationAttributes attributes = AnnotationAttributes.fromMap(metadata\n\t\t\t\t.getAnnotationAttributes(EntityScan.class.getName()));",
+      "right" : "AnnotationAttributes attributes = AnnotationAttributes.fromMap(metadata\n\t\t\t\t.getAnnotationAttributes(EntityScan.class.getName()));",
+      "info" : "VariableDeclarationStatement[2682-2812]:VariableDeclarationStatement[2447-2577]"
+    }, {
+      "left" : "String[] value = attributes.getStringArray(\"value\");",
+      "right" : "String[] value = attributes.getStringArray(\"value\");",
+      "info" : "VariableDeclarationStatement[2815-2867]:VariableDeclarationStatement[2580-2632]"
+    }, {
+      "left" : "String[] basePackages = attributes.getStringArray(\"basePackages\");",
+      "right" : "String[] basePackages = attributes.getStringArray(\"basePackages\");",
+      "info" : "VariableDeclarationStatement[2870-2936]:VariableDeclarationStatement[2635-2701]"
+    }, {
+      "left" : "Class<?>[] basePackageClasses = attributes.getClassArray(\"basePackageClasses\");",
+      "right" : "Class<?>[] basePackageClasses = attributes.getClassArray(\"basePackageClasses\");",
+      "info" : "VariableDeclarationStatement[2939-3018]:VariableDeclarationStatement[2704-2783]"
+    }, {
+      "left" : "if (!ObjectUtils.isEmpty(value))",
+      "right" : "if (!ObjectUtils.isEmpty(value))",
+      "info" : "IfStatement[3022-3189]:IfStatement[2786-2953]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3055-3189]:Block[2819-2953]"
+    }, {
+      "left" : "Assert.state(ObjectUtils.isEmpty(basePackages),\n\t\t\t\t\t\"@EntityScan basePackages and value attributes are mutually exclusive\");",
+      "right" : "Assert.state(ObjectUtils.isEmpty(basePackages),\n\t\t\t\t\t\"@EntityScan basePackages and value attributes are mutually exclusive\");",
+      "info" : "ExpressionStatement[3060-3185]:ExpressionStatement[2824-2949]"
+    }, {
+      "left" : "Set<String> packagesToScan = new LinkedHashSet<String>();",
+      "right" : "Set<String> packagesToScan = new LinkedHashSet<String>();",
+      "info" : "VariableDeclarationStatement[3193-3250]:VariableDeclarationStatement[2956-3013]"
+    }, {
+      "left" : "packagesToScan.addAll(Arrays.asList(value));",
+      "right" : "packagesToScan.addAll(Arrays.asList(value));",
+      "info" : "ExpressionStatement[3253-3297]:ExpressionStatement[3016-3060]"
+    }, {
+      "left" : "packagesToScan.addAll(Arrays.asList(basePackages));",
+      "right" : "packagesToScan.addAll(Arrays.asList(basePackages));",
+      "info" : "ExpressionStatement[3300-3351]:ExpressionStatement[3063-3114]"
+    }, {
+      "left" : "for (Class<?> basePackageClass : basePackageClasses)",
+      "right" : "for (Class<?> basePackageClass : basePackageClasses)",
+      "info" : "EnhancedForStatement[3354-3480]:EnhancedForStatement[3117-3243]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3407-3480]:Block[3170-3243]"
+    }, {
+      "left" : "packagesToScan.add(ClassUtils.getPackageName(basePackageClass));",
+      "right" : "packagesToScan.add(ClassUtils.getPackageName(basePackageClass));",
+      "info" : "ExpressionStatement[3412-3476]:ExpressionStatement[3175-3239]"
+    }, {
+      "left" : "if (packagesToScan.isEmpty())",
+      "right" : "if (packagesToScan.isEmpty())",
+      "info" : "IfStatement[3483-3597]:IfStatement[3246-3372]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3513-3597]:Block[3276-3372]"
+    }, {
+      "left" : "return new String[] { ClassUtils.getPackageName(metadata.getClassName()) };",
+      "right" : "return Collections.singleton(ClassUtils.getPackageName(metadata\n\t\t\t\t\t.getClassName()));",
+      "info" : "ReturnStatement[3518-3593]:ReturnStatement[3281-3368]"
+    }, {
+      "left" : "ClassUtils.getPackageName(metadata.getClassName())",
+      "right" : "ClassUtils.getPackageName(metadata\n\t\t\t\t\t.getClassName())",
+      "info" : "MethodInvocation[3540-3590]:MethodInvocation[3310-3366]"
+    }, {
+      "left" : "return new ArrayList<String>(packagesToScan).toArray(new String[packagesToScan\n\t\t\t\t.size()]);",
+      "right" : "return packagesToScan;",
+      "info" : "ReturnStatement[3600-3693]:ReturnStatement[3375-3397]"
+    }, {
+      "left" : "packagesToScan",
+      "right" : "packagesToScan",
+      "info" : "SimpleName[3629-3643]:SimpleName[3382-3396]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[3873-3879]:Modifier[4879-4885]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[3880-3885]:TYPE_DECLARATION_KIND[4886-4891]"
+    }, {
+      "left" : "EntityScanBeanPostProcessor",
+      "right" : "EntityScanBeanPostProcessor",
+      "info" : "SimpleName[3886-3913]:SimpleName[4892-4919]"
+    }, {
+      "left" : "BeanPostProcessor",
+      "right" : "BeanPostProcessor",
+      "info" : "SimpleType[3925-3942]:SimpleType[4931-4948]"
+    }, {
+      "left" : "SmartInitializingSingleton",
+      "right" : "SmartInitializingSingleton",
+      "info" : "SimpleType[3947-3973]:SimpleType[4953-4979]"
+    }, {
+      "left" : "Ordered",
+      "right" : "Ordered",
+      "info" : "SimpleType[3975-3982]:SimpleType[4981-4988]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4060-4066]:Modifier[5066-5072]"
+    }, {
+      "left" : "EntityScanBeanPostProcessor",
+      "right" : "EntityScanBeanPostProcessor",
+      "info" : "SimpleName[4067-4094]:SimpleName[5073-5100]"
+    }, {
+      "left" : "String[] packagesToScan",
+      "right" : "String[] packagesToScan",
+      "info" : "SingleVariableDeclaration[4095-4118]:SingleVariableDeclaration[5101-5124]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4120-4166]:Block[5126-5172]"
+    }, {
+      "left" : "this.packagesToScan = packagesToScan;",
+      "right" : "this.packagesToScan = packagesToScan;",
+      "info" : "ExpressionStatement[4125-4162]:ExpressionStatement[5131-5168]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4170-4179]:MarkerAnnotation[5176-5185]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4182-4188]:Modifier[5188-5194]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[4189-4195]:SimpleType[5195-5201]"
+    }, {
+      "left" : "postProcessBeforeInitialization",
+      "right" : "postProcessBeforeInitialization",
+      "info" : "SimpleName[4196-4227]:SimpleName[5202-5233]"
+    }, {
+      "left" : "Object bean",
+      "right" : "Object bean",
+      "info" : "SingleVariableDeclaration[4228-4239]:SingleVariableDeclaration[5234-5245]"
+    }, {
+      "left" : "String beanName",
+      "right" : "String beanName",
+      "info" : "SingleVariableDeclaration[4241-4256]:SingleVariableDeclaration[5247-5262]"
+    }, {
+      "left" : "BeansException",
+      "right" : "BeansException",
+      "info" : "SimpleType[4269-4283]:SimpleType[5275-5289]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4284-4562]:Block[5290-5568]"
+    }, {
+      "left" : "if (bean instanceof LocalContainerEntityManagerFactoryBean)",
+      "right" : "if (bean instanceof LocalContainerEntityManagerFactoryBean)",
+      "info" : "IfStatement[4289-4542]:IfStatement[5295-5548]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4349-4542]:Block[5355-5548]"
+    }, {
+      "left" : "LocalContainerEntityManagerFactoryBean factoryBean = (LocalContainerEntityManagerFactoryBean) bean;",
+      "right" : "LocalContainerEntityManagerFactoryBean factoryBean = (LocalContainerEntityManagerFactoryBean) bean;",
+      "info" : "VariableDeclarationStatement[4355-4454]:VariableDeclarationStatement[5361-5460]"
+    }, {
+      "left" : "factoryBean.setPackagesToScan(this.packagesToScan);",
+      "right" : "factoryBean.setPackagesToScan(this.packagesToScan);",
+      "info" : "ExpressionStatement[4459-4510]:ExpressionStatement[5465-5516]"
+    }, {
+      "left" : "this.processed = true;",
+      "right" : "this.processed = true;",
+      "info" : "ExpressionStatement[4515-4537]:ExpressionStatement[5521-5543]"
+    }, {
+      "left" : "return bean;",
+      "right" : "return bean;",
+      "info" : "ReturnStatement[4546-4558]:ReturnStatement[5552-5564]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4566-4575]:MarkerAnnotation[5572-5581]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4578-4584]:Modifier[5584-5590]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[4585-4591]:SimpleType[5591-5597]"
+    }, {
+      "left" : "postProcessAfterInitialization",
+      "right" : "postProcessAfterInitialization",
+      "info" : "SimpleName[4592-4622]:SimpleName[5598-5628]"
+    }, {
+      "left" : "Object bean",
+      "right" : "Object bean",
+      "info" : "SingleVariableDeclaration[4623-4634]:SingleVariableDeclaration[5629-5640]"
+    }, {
+      "left" : "String beanName",
+      "right" : "String beanName",
+      "info" : "SingleVariableDeclaration[4636-4651]:SingleVariableDeclaration[5642-5657]"
+    }, {
+      "left" : "BeansException",
+      "right" : "BeansException",
+      "info" : "SimpleType[4664-4678]:SimpleType[5670-5684]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4679-4700]:Block[5685-5706]"
+    }, {
+      "left" : "return bean;",
+      "right" : "return bean;",
+      "info" : "ReturnStatement[4684-4696]:ReturnStatement[5690-5702]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4704-4713]:MarkerAnnotation[5710-5719]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4716-4722]:Modifier[5722-5728]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4723-4727]:PrimitiveType[5729-5733]"
+    }, {
+      "left" : "afterSingletonsInstantiated",
+      "right" : "afterSingletonsInstantiated",
+      "info" : "SimpleName[4728-4755]:SimpleName[5734-5761]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4758-4938]:Block[5764-5944]"
+    }, {
+      "left" : "Assert.state(this.processed, \"Unable to configure \"\n\t\t\t\t\t+ \"LocalContainerEntityManagerFactoryBean from @EntityScan, \"\n\t\t\t\t\t+ \"ensure an appropriate bean is registered.\");",
+      "right" : "Assert.state(this.processed, \"Unable to configure \"\n\t\t\t\t\t+ \"LocalContainerEntityManagerFactoryBean from @EntityScan, \"\n\t\t\t\t\t+ \"ensure an appropriate bean is registered.\");",
+      "info" : "ExpressionStatement[4763-4934]:ExpressionStatement[5769-5940]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4942-4951]:MarkerAnnotation[5948-5957]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4954-4960]:Modifier[5960-5966]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[4961-4964]:PrimitiveType[5967-5970]"
+    }, {
+      "left" : "getOrder",
+      "right" : "getOrder",
+      "info" : "SimpleName[4965-4973]:SimpleName[5971-5979]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4976-4994]:Block[5982-6000]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[4981-4990]:ReturnStatement[5987-5996]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

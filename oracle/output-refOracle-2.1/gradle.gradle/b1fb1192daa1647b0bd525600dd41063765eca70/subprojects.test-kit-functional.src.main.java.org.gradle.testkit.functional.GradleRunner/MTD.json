@@ -1,0 +1,93 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "GradleRunner",
+      "right" : "GradleRunner",
+      "info" : "TypeDeclaration[1211-5041]:TypeDeclaration[1183-4525]"
+    }, {
+      "left" : "public File getGradleUserHomeDir()",
+      "right" : "public abstract File getGradleUserHomeDir();",
+      "info" : "MethodDeclaration[1543-1786]:MethodDeclaration[1319-1530]"
+    }, {
+      "left" : "public void setGradleUserHomeDir(File gradleUserHomeDir)",
+      "right" : "public abstract void setGradleUserHomeDir(File gradleUserHomeDir);",
+      "info" : "MethodDeclaration[1792-2034]:MethodDeclaration[1536-1728]"
+    }, {
+      "left" : "public File getWorkingDir()",
+      "right" : "public abstract File getWorkingDir();",
+      "info" : "MethodDeclaration[2040-2234]:MethodDeclaration[1734-1897]"
+    }, {
+      "left" : "public void setWorkingDir(File workingDirectory)",
+      "right" : "public abstract void setWorkingDir(File workingDirectory);",
+      "info" : "MethodDeclaration[2240-2485]:MethodDeclaration[1903-2100]"
+    }, {
+      "left" : "public List<String> getArguments()",
+      "right" : "public abstract List<String> getArguments();",
+      "info" : "MethodDeclaration[2491-2713]:MethodDeclaration[2106-2304]"
+    }, {
+      "left" : "public void setArguments(List<String> arguments)",
+      "right" : "public abstract List<String> getTasks();",
+      "info" : "MethodDeclaration[2719-2940]:MethodDeclaration[2503-2679]"
+    }, {
+      "left" : "public void setTasks(List<String> taskNames)",
+      "right" : "public abstract void setTasks(List<String> taskNames);",
+      "info" : "MethodDeclaration[2946-3139]:MethodDeclaration[2685-2844]"
+    }, {
+      "left" : "public abstract BuildResult succeeds();",
+      "right" : "public abstract BuildResult succeeds();",
+      "info" : "MethodDeclaration[3351-3591]:MethodDeclaration[2850-3090]"
+    }, {
+      "left" : "public abstract BuildResult fails();",
+      "right" : "public abstract BuildResult fails();",
+      "info" : "MethodDeclaration[3597-3822]:MethodDeclaration[3096-3321]"
+    }, {
+      "left" : "public static GradleRunner create()",
+      "right" : "public static GradleRunner create()",
+      "info" : "MethodDeclaration[3828-4520]:MethodDeclaration[3327-4004]"
+    }, {
+      "left" : "static GradleRunner create(GradleDistribution gradleDistribution)",
+      "right" : "static GradleRunner create(GradleDistribution gradleDistribution)",
+      "info" : "MethodDeclaration[4526-5039]:MethodDeclaration[4010-4523]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4305-4520]:Block[3789-4004]"
+    }, {
+      "left" : "DefaultModuleRegistry registry = new DefaultModuleRegistry(GradleRunner.class);",
+      "right" : "DefaultModuleRegistry registry = new DefaultModuleRegistry(GradleRunner.class);",
+      "info" : "VariableDeclarationStatement[4315-4394]:VariableDeclarationStatement[3799-3878]"
+    }, {
+      "left" : "File gradleHome = registry.getGradleHome();",
+      "right" : "File gradleHome = registry.getGradleHome();",
+      "info" : "VariableDeclarationStatement[4403-4446]:VariableDeclarationStatement[3887-3930]"
+    }, {
+      "left" : "return create(new InstalledGradleDistribution(gradleHome));",
+      "right" : "return create(new InstalledGradleDistribution(gradleHome));",
+      "info" : "ReturnStatement[4455-4514]:ReturnStatement[3939-3998]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4592-5039]:Block[4076-4523]"
+    }, {
+      "left" : "if(!(gradleDistribution instanceof VersionBasedGradleDistribution\n            || gradleDistribution instanceof InstalledGradleDistribution\n            || gradleDistribution instanceof URILocatedGradleDistribution))",
+      "right" : "if(!(gradleDistribution instanceof VersionBasedGradleDistribution\n            || gradleDistribution instanceof InstalledGradleDistribution\n            || gradleDistribution instanceof URILocatedGradleDistribution))",
+      "info" : "IfStatement[4602-4972]:IfStatement[4086-4456]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4817-4972]:Block[4301-4456]"
+    }, {
+      "left" : "throw new IllegalArgumentException(String.format(\"Invalid Gradle distribution type: %s\", gradleDistribution.getClass().getName()));",
+      "right" : "throw new IllegalArgumentException(String.format(\"Invalid Gradle distribution type: %s\", gradleDistribution.getClass().getName()));",
+      "info" : "ThrowStatement[4831-4962]:ThrowStatement[4315-4446]"
+    }, {
+      "left" : "return new DefaultGradleRunner(gradleDistribution);",
+      "right" : "return new DefaultGradleRunner(gradleDistribution);",
+      "info" : "ReturnStatement[4982-5033]:ReturnStatement[4466-4517]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

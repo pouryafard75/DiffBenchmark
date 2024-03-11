@@ -1,0 +1,177 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private static final long serialVersionUID = -7589512013334920693L;",
+      "right" : "private static final long serialVersionUID = -7589512013334920693L;",
+      "info" : "FieldDeclaration[740-807]:FieldDeclaration[740-807]"
+    }, {
+      "left" : "public final static StringArrayDeserializer instance = new StringArrayDeserializer();",
+      "right" : "public final static StringArrayDeserializer instance = new StringArrayDeserializer();",
+      "info" : "FieldDeclaration[813-898]:FieldDeclaration[813-898]"
+    }, {
+      "left" : "protected JsonDeserializer<String> _elementDeserializer;",
+      "right" : "protected JsonDeserializer<String> _elementDeserializer;",
+      "info" : "FieldDeclaration[908-1055]:FieldDeclaration[908-1055]"
+    }, {
+      "left" : "public StringArrayDeserializer()",
+      "right" : "public StringArrayDeserializer()",
+      "info" : "MethodDeclaration[1061-1169]:MethodDeclaration[1061-1169]"
+    }, {
+      "left" : "protected StringArrayDeserializer(JsonDeserializer<?> deser)",
+      "right" : "protected StringArrayDeserializer(JsonDeserializer<?> deser)",
+      "info" : "MethodDeclaration[1175-1374]:MethodDeclaration[1175-1374]"
+    }, {
+      "left" : "public Object deserializeWithType(JsonParser jp, DeserializationContext ctxt, TypeDeserializer typeDeserializer) throws IOException",
+      "right" : "public Object deserializeWithType(JsonParser jp, DeserializationContext ctxt, TypeDeserializer typeDeserializer) throws IOException",
+      "info" : "MethodDeclaration[3723-3945]:MethodDeclaration[3781-4003]"
+    }, {
+      "left" : "private final String[] handleNonArray(JsonParser jp, DeserializationContext ctxt) throws IOException",
+      "right" : "private final String[] handleNonArray(JsonParser jp, DeserializationContext ctxt) throws IOException",
+      "info" : "MethodDeclaration[3951-4760]:MethodDeclaration[4009-4818]"
+    }, {
+      "left" : "public JsonDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) throws JsonMappingException",
+      "right" : "public JsonDeserializer<?> createContextual(DeserializationContext ctxt, BeanProperty property) throws JsonMappingException",
+      "info" : "MethodDeclaration[4766-5884]:MethodDeclaration[4824-5942]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1094-1169]:Block[1094-1169]"
+    }, {
+      "left" : "super(String[].class);",
+      "right" : "super(String[].class);",
+      "info" : "SuperConstructorInvocation[1104-1126]:SuperConstructorInvocation[1104-1126]"
+    }, {
+      "left" : "_elementDeserializer = null;",
+      "right" : "_elementDeserializer = null;",
+      "info" : "ExpressionStatement[1135-1163]:ExpressionStatement[1135-1163]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1271-1374]:Block[1271-1374]"
+    }, {
+      "left" : "super(String[].class);",
+      "right" : "super(String[].class);",
+      "info" : "SuperConstructorInvocation[1281-1303]:SuperConstructorInvocation[1281-1303]"
+    }, {
+      "left" : "_elementDeserializer = (JsonDeserializer<String>) deser;",
+      "right" : "_elementDeserializer = (JsonDeserializer<String>) deser;",
+      "info" : "ExpressionStatement[1312-1368]:ExpressionStatement[1312-1368]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3869-3945]:Block[3927-4003]"
+    }, {
+      "left" : "return typeDeserializer.deserializeTypedFromArray(jp, ctxt);",
+      "right" : "return typeDeserializer.deserializeTypedFromArray(jp, ctxt);",
+      "info" : "ReturnStatement[3879-3939]:ReturnStatement[3937-3997]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4056-4760]:Block[4114-4818]"
+    }, {
+      "left" : "if (!ctxt.isEnabled(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY))",
+      "right" : "if (!ctxt.isEnabled(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY))",
+      "info" : "IfStatement[4128-4642]:IfStatement[4186-4700]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4202-4642]:Block[4260-4700]"
+    }, {
+      "left" : "if ((jp.getCurrentToken() == JsonToken.VALUE_STRING)\n                    && ctxt.isEnabled(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT))",
+      "right" : "if ((jp.getCurrentToken() == JsonToken.VALUE_STRING)\n                    && ctxt.isEnabled(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT))",
+      "info" : "IfStatement[4277-4578]:IfStatement[4335-4636]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4428-4578]:Block[4486-4636]"
+    }, {
+      "left" : "String str = jp.getText();",
+      "right" : "String str = jp.getText();",
+      "info" : "VariableDeclarationStatement[4446-4472]:VariableDeclarationStatement[4504-4530]"
+    }, {
+      "left" : "if (str.length() == 0)",
+      "right" : "if (str.length() == 0)",
+      "info" : "IfStatement[4489-4564]:IfStatement[4547-4622]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4512-4564]:Block[4570-4622]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[4534-4546]:ReturnStatement[4592-4604]"
+    }, {
+      "left" : "throw ctxt.mappingException(_valueClass);",
+      "right" : "throw ctxt.mappingException(_valueClass);",
+      "info" : "ThrowStatement[4591-4632]:ThrowStatement[4649-4690]"
+    }, {
+      "left" : "return new String[] { (jp.getCurrentToken() == JsonToken.VALUE_NULL) ? null : _parseString(jp, ctxt) };",
+      "right" : "return new String[] { (jp.getCurrentToken() == JsonToken.VALUE_NULL) ? null : _parseString(jp, ctxt) };",
+      "info" : "ReturnStatement[4651-4754]:ReturnStatement[4709-4812]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5081-5884]:Block[5139-5942]"
+    }, {
+      "left" : "JsonDeserializer<?> deser = _elementDeserializer;",
+      "right" : "JsonDeserializer<?> deser = _elementDeserializer;",
+      "info" : "VariableDeclarationStatement[5091-5140]:VariableDeclarationStatement[5149-5198]"
+    }, {
+      "left" : "deser = findConvertingContentDeserializer(ctxt, property, deser);",
+      "right" : "deser = findConvertingContentDeserializer(ctxt, property, deser);",
+      "info" : "ExpressionStatement[5195-5260]:ExpressionStatement[5253-5318]"
+    }, {
+      "left" : "if (deser == null)",
+      "right" : "if (deser == null)",
+      "info" : "IfStatement[5269-5552]:IfStatement[5327-5610]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5288-5401]:Block[5346-5459]"
+    }, {
+      "left" : "deser = ctxt.findContextualValueDeserializer(ctxt.constructType(String.class), property);",
+      "right" : "deser = ctxt.findContextualValueDeserializer(ctxt.constructType(String.class), property);",
+      "info" : "ExpressionStatement[5302-5391]:ExpressionStatement[5360-5449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5407-5552]:Block[5465-5610]"
+    }, {
+      "left" : "deser = ctxt.handleSecondaryContextualization(deser, property);",
+      "right" : "deser = ctxt.handleSecondaryContextualization(deser, property);",
+      "info" : "ExpressionStatement[5479-5542]:ExpressionStatement[5537-5600]"
+    }, {
+      "left" : "if (deser != null && this.isDefaultDeserializer(deser))",
+      "right" : "if (deser != null && this.isDefaultDeserializer(deser))",
+      "info" : "IfStatement[5654-5747]:IfStatement[5712-5805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5710-5747]:Block[5768-5805]"
+    }, {
+      "left" : "deser = null;",
+      "right" : "deser = null;",
+      "info" : "ExpressionStatement[5724-5737]:ExpressionStatement[5782-5795]"
+    }, {
+      "left" : "if (_elementDeserializer != deser)",
+      "right" : "if (_elementDeserializer != deser)",
+      "info" : "IfStatement[5756-5857]:IfStatement[5814-5915]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5791-5857]:Block[5849-5915]"
+    }, {
+      "left" : "return new StringArrayDeserializer(deser);",
+      "right" : "return new StringArrayDeserializer(deser);",
+      "info" : "ReturnStatement[5805-5847]:ReturnStatement[5863-5905]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[5866-5878]:ReturnStatement[5924-5936]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

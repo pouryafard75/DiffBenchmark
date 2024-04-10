@@ -11,6 +11,7 @@ import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.utils.ExportUtils;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
@@ -19,6 +20,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import static org.refactoringminer.astDiff.utils.ExportUtils.getFileNameFromSrcDiff;
+import static org.refactoringminer.astDiff.utils.ExportUtils.repoToFolder;
 
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff extends ASTDiffConvertor{
@@ -59,15 +63,4 @@ public class PerfectDiff extends ASTDiffConvertor{
         File file = new File(p);
         return p;
     }
-    public static String repoToFolder(String repo) {
-        String folderName = repo.replace("https://github.com/", "").replace(".git","");
-        return folderName.replace("/","_") + "/";
-    }
-    public static String getFileNameFromSrcDiff(String astSrcName)
-    {
-        String exportName1 = astSrcName.replace("/",".").replace(".java","");
-        return exportName1 + JSON_SUFFIX;
-    }
-
-
 }

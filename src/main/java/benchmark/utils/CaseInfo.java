@@ -3,12 +3,22 @@ package benchmark.utils;
 import org.refactoringminer.astDiff.utils.URLHelper;
 
 import java.io.Serializable;
+import java.util.Set;
 
 public class CaseInfo implements Serializable {
     String repo;
     String commit;
     String srcPath;
     String dstPath;
+    Set<String> src_files;
+
+    public void setSrc_files(Set<String> src_files) {
+        this.src_files = src_files;
+    }
+
+    public Set<String> getSrc_files() {
+        return src_files;
+    }
 
     public static CaseInfo fromDirs(String srcPath, String dstPath){
         CaseInfo info = new CaseInfo();

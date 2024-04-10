@@ -2,6 +2,7 @@ package benchmark.utils.Configuration;
 
 import benchmark.oracle.generators.diff.HRDGen2;
 import benchmark.oracle.generators.diff.HRDGen3;
+import benchmark.oracle.generators.diff.HRDGenExperimental;
 import benchmark.oracle.generators.diff.HumanReadableDiffGenerator;
 import benchmark.utils.CaseInfo;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -21,6 +22,13 @@ public enum GenerationStrategy {
         @Override
         public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, CaseInfo info, Configuration configuration) {
             return new HRDGen2(projectASTDiff, generated, info, configuration);
+        }
+    },
+
+    Experimental{
+        @Override
+        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, CaseInfo info, Configuration configuration) {
+            return new HRDGen3(projectASTDiff, generated, info, configuration);
         }
     };
 

@@ -95,7 +95,7 @@ public class BenchmarkWebDiff {
             return "";
         });
         get("/list", (request, response) -> {
-            Renderable view = new BenchmarkDirectoryDiffView(comperator,godDiff.size() > 0);
+            Renderable view = new BenchmarkDirectoryDiffView(comperator, !godDiff.isEmpty(), !trvDiff.isEmpty(), !rm2.isEmpty());
             return render(view);
         });
         get("/RMD/:id", (request, response) -> {

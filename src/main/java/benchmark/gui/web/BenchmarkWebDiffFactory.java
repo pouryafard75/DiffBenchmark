@@ -27,7 +27,7 @@ public class BenchmarkWebDiffFactory {
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
-        return makeDiffs(projectASTDiff,new CaseInfo(repo,commit));
+        return makeDiffs(projectASTDiff,null);
     }
     public static BenchmarkWebDiff withLocallyClonedRepo(Repository repository, String commit) throws Exception {
         ProjectASTDiff rmDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
@@ -68,17 +68,14 @@ public class BenchmarkWebDiffFactory {
             MTD_astDiff.add(new MTDiff(projectASTDiffByRM,astDiff, info, conf).diff());
             GT2_astDiff.add(new GT2(projectASTDiffByRM,astDiff, info, conf).diff());
             iAST_diff.add(new iASTMapper(projectASTDiffByRM,astDiff).diff());
-            if (info != null)
-                RM2_astDiff.add(new RM2(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
-            TRV_astDiff.add(new TrivialDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
-            ASTDiff perfectDiff;
-            try {
-                perfectDiff = new PerfectDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff();
-                GOD_astDiff.add(perfectDiff);
-            }
-            catch (Exception e)
-            {
-                System.out.println("Error in loading perfect diff for " + astDiff.getSrcPath());
+            if (info != null) {
+                try {
+                    GOD_astDiff.add(new PerfectDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
+                    RM2_astDiff.add(new RM2(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
+                    TRV_astDiff.add(new TrivialDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
+                } catch (Exception e) {
+                    System.out.println("Error in loading perfect diff for " + astDiff.getSrcPath());
+                }
             }
         }
         return new BenchmarkWebDiff(projectASTDiffByRM,

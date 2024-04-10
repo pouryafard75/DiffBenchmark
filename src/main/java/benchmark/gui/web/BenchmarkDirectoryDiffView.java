@@ -15,10 +15,14 @@ import static org.rendersnake.HtmlAttributesFactory.*;
 public class BenchmarkDirectoryDiffView implements Renderable {
     private final DirComparator comperator;
     private final boolean perfectExists;
+    private final boolean trivialExists;
+    private final boolean rm2Exists;
 
-    public BenchmarkDirectoryDiffView(DirComparator comperator, boolean perfectExists) {
+    public BenchmarkDirectoryDiffView(DirComparator comperator, boolean perfectExists, boolean trivialExists, boolean RM2Exists) {
         this.comperator = comperator;
         this.perfectExists = perfectExists;
+        this.trivialExists = trivialExists;
+        this.rm2Exists = RM2Exists;
     }
 
     @Override
@@ -41,7 +45,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                         .span(class_("badge badge-secondary").style("color:black")).content(comperator.getModifiedFilesName().size())
                                     ._h4()
                                 ._div()
-                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(),perfectExists), comperator.getModifiedFilesName().size() > 0)
+                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(),perfectExists, trivialExists, rm2Exists), comperator.getModifiedFilesName().size() > 0)
                             ._div()
                         ._div()
                     ._div()
@@ -81,10 +85,14 @@ public class BenchmarkDirectoryDiffView implements Renderable {
 
         private Map<String,String> diffInfos;
         private final boolean perfectExistence;
+        private final boolean trivialExistence;
+        private final boolean rm2Existence;
 
-        private ModifiedFiles(Map<String,String> diffInfos, boolean perfectExists) {
+        private ModifiedFiles(Map<String,String> diffInfos, boolean perfectExists, boolean trivialExists, boolean rm2Exists) {
             this.diffInfos = diffInfos;
-            perfectExistence = perfectExists;
+            this.perfectExistence = perfectExists;
+            this.trivialExistence = trivialExists;
+            this.rm2Existence = rm2Exists;
         }
 
         @Override
@@ -126,10 +134,14 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                     .a(class_("btn btn-primary btn-sm").href("/GT2-monaco/" + id)).content("GT2-monaco")
                                     .a(class_("btn btn-primary btn-sm").href("/iAST/" + id)).content("iAST")
                                     .a(class_("btn btn-primary btn-sm").href("/iAST-monaco/" + id)).content("iAST-monaco")
+                                    .if_(rm2Existence)
                                     .a(class_("btn btn-primary btn-sm").href("/RM2/" + id)).content("RM2")
                                     .a(class_("btn btn-primary btn-sm").href("/RM2-monaco/" + id)).content("RM2-monaco")
+                                    ._if()
+                                    .if_(trivialExistence)
                                     .a(class_("btn btn-primary btn-sm").href("/TRV/" + id)).content("TRV")
                                     .a(class_("btn btn-primary btn-sm").href("/TRV-monaco/" + id)).content("TRV-monaco")
+                                    ._if()
 
 //
                             ._div()

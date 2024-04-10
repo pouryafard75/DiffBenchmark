@@ -59,7 +59,7 @@ public abstract class HumanReadableDiffGenerator {
             if (mappingMetaInformation == null) continue;
             makeForEachMapping(mappingMetaInformation);
         }
-        extractMultiCollection();
+        extractMultiCollection(); //TODO: the result of this call?
 
     }
 

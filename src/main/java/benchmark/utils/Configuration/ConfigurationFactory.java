@@ -20,9 +20,10 @@ public class ConfigurationFactory {
 
     private static final String perfectInfoName = "cases.json";
     private static final String problematicInfoName = "cases-problematic.json";
-//    private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
+    private static final String miscInfoName = "cases-miscellaneous.json";
+    private static final String TEST_URL = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
 //    private static final String TEST_URL = "https://github.com/eclipse/jetty.project/commit/837d1a74bb7d694220644a2539c4440ce55462cf";
-    private static final String TEST_URL = "https://github.com/libgdx/libgdx/commit/2bd1557bc293cb8c2348374771aad832befbe26f";
+//    private static final String TEST_URL = "https://github.com/libgdx/libgdx/commit/2bd1557bc293cb8c2348374771aad832befbe26f";
     private static final Set<CaseInfo> dummySet = Set.of(
 new CaseInfo("https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1f9540c809d7a12d3fb")
             , new CaseInfo("https://github.com/Activiti/Activiti/commit/ca7d0c3b33a0863bed04c77932b9ef6b1317f34e")
@@ -59,6 +60,15 @@ new CaseInfo("https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1
                 Compatibility.ThreePointZero,
                 GenerationStrategy.NonFiltered);
     }
+    public static Configuration misc() {
+        String confName = "refOracle-3.0";
+        ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
+                .setPerfectDiffDir(REFACTORING_MAPPINGS_DIR)
+                .setAllCases(new String[]{ REFACTORING_MAPPINGS_DIR + miscInfoName })
+                .setCompatibility(Compatibility.ThreePointZero)
+                .setGenerationStrategy(GenerationStrategy.NonFiltered);
+        return setOutputPaths(confName, configurationBuilder);
+    }
     public static Configuration refOracleTwoPointOne() {
         String confName = "refOracle-2.1";
         return getConfTemplate(confName,
@@ -92,6 +102,20 @@ new CaseInfo("https://github.com/Activiti/Activiti/commit/a70ca1d9ad2ea07b19c5e1
                 .setCompatibility(Compatibility.ThreePointZero)
 //                .setTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.DAT))
                 .setGenerationStrategy(GenerationStrategy.NonFiltered);
+        return setOutputPaths(confName, configurationBuilder);
+    }
+
+    public static Configuration dummyExperimental() {
+        String confName = "dummyExp";
+        ConfigurationBuilder configurationBuilder = new ConfigurationBuilder()
+                .setPerfectDiffDir(REFACTORING_MAPPINGS_DIR)
+//                .setPerfectDiffDir(REF_ORACLE_DIR)
+                .setAllCases(Set.of(new CaseInfo(TEST_URL)))
+//                .setAllCases(dummySet)
+//                .setAllCases(Set.of(new CaseInfo("Chart", "1"), new CaseInfo("Chart", "2")))
+                .setCompatibility(Compatibility.TwoPointOne)
+//                .setTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.DAT))
+                .setGenerationStrategy(GenerationStrategy.Experimental);
         return setOutputPaths(confName, configurationBuilder);
     }
 

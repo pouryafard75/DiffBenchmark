@@ -51,16 +51,7 @@ public class PerfectDiff extends ASTDiffConvertor{
 
     }
 
-    @Override
-    public ASTDiff makeASTDiff() {
-        ASTDiff result = make(getExportedMappings());
-        result.computeEditScript(ptc, ctc);
-        return result;
-    }
-
     private String getFileNameBasedOnAST() {
-        String p = configuration.getPerfectDiffDir() + "/" + repoToFolder(repo) + "/" + commit + "/" + getFileNameFromSrcDiff(rm_astDiff.getSrcPath());
-        File file = new File(p);
-        return p;
+        return configuration.getPerfectDiffDir() + "/" + repoToFolder(repo) + "/" + commit + "/" + getFileNameFromSrcDiff(rm_astDiff.getSrcPath());
     }
 }

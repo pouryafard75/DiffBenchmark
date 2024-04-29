@@ -33,7 +33,7 @@ public class CommitLevelGumTreeASTDiff extends ASTDiffConvertor{
         MappingStore match = getCommitLevelFullMatch();
         Collection<Mapping> mappings = new LinkedHashSet<>();
         for (Mapping mapping : match) {
-            if (belongsTo(mapping.first, srcEQV) || belongsTo(mapping.second, dstEQV))
+            if (belongsTo(mapping.first, ptc.get(rm_astDiff.getSrcPath()).getRoot()) || belongsTo(mapping.second, ctc.get(rm_astDiff.getDstPath()).getRoot()))
                 mappings.add(mapping);
         }
         return MappingExportModel.exportModelList(mappings);

@@ -32,6 +32,7 @@ public abstract class ASTDiffConvertor {
                 this.rm_astDiff = astDiff;
             }
         });
+        populateTCs();
     }
 
     protected abstract List<MappingExportModel> getExportedMappings();
@@ -44,6 +45,11 @@ public abstract class ASTDiffConvertor {
 
     protected ASTDiff make(List<MappingExportModel> exportedMappings){
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(rm_astDiff.src.getRoot(),rm_astDiff.dst.getRoot());
+        populateMappingsFromJson(mappings, rm_astDiff, exportedMappings, ptc, ctc);
+        return new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), rm_astDiff.src, rm_astDiff.dst, mappings);
+    }
+
+    private void populateTCs() {
         ptc = new HashMap<>();
         ctc = new HashMap<>();
         for (Map.Entry<String, String> stringStringEntry : projectASTDiff.getFileContentsBefore().entrySet()) {
@@ -64,8 +70,6 @@ public abstract class ASTDiffConvertor {
                 throw new RuntimeException(e);
             }
         }
-        populateMappingsFromJson(mappings, rm_astDiff, exportedMappings, ptc, ctc);
-        return new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), rm_astDiff.src, rm_astDiff.dst, mappings);
     }
 
     protected static void populateMappingsFromJson(ExtendedMultiMappingStore mappings, ASTDiff rmAstDiff, List<MappingExportModel> exportedMappings, Map<String, TreeContext> ptc, Map<String, TreeContext> ctc) {

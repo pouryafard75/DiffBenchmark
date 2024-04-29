@@ -4,18 +4,16 @@ package benchmark.oracle.generators;
 import benchmark.oracle.generators.diff.HumanReadableDiffGenerator;
 import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.oracle.generators.tools.models.DiffToolFactory;
-import benchmark.utils.*;
+import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.GenerationStrategy;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.astDiff.matchers.ProjectASTDiffer;
 
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-
-import java.util.*;
 
 import static benchmark.utils.Helpers.runWhatever;
 
@@ -23,8 +21,6 @@ import static benchmark.utils.Helpers.runWhatever;
 public class BenchmarkHumanReadableDiffGenerator {
 
     private final Configuration configuration;
-    private Map<String, String> fileContentsBefore;
-    private Map<String, String> fileContentsCurrent;
 
     public BenchmarkHumanReadableDiffGenerator(Configuration current){
         this.configuration = current;
@@ -60,7 +56,6 @@ public class BenchmarkHumanReadableDiffGenerator {
 
     public void generateSingleThreaded() throws Exception {
         for (CaseInfo info : configuration.getAllCases()) {
-//            if (info.makeURL().equals(TEST_URL)) continue;
             writeActiveTools(info, configuration.getOutputFolder());
         }
         System.out.println("Finished generating human readable diffs...");
@@ -70,8 +65,6 @@ public class BenchmarkHumanReadableDiffGenerator {
         String commit = info.getCommit();
         System.out.println("Started for " + repo + " " + commit);
         ProjectASTDiff projectASTDiff = runWhatever(repo, commit);
-        this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
-        this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
         Set<ASTDiff> astDiffs = projectASTDiff.getDiffSet();
         for (ASTDiff astDiff : astDiffs) {
             //----------------------------------\\

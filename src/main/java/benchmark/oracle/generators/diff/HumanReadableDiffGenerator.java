@@ -94,6 +94,7 @@ public abstract class HumanReadableDiffGenerator {
                 String currDst;
                 if (e instanceof MoveOut && actionBelongsToMapping(mapping, e)) {
                     String key = e.toString();
+                    key = key.replace("moved to file", "Moved to File");
                     getResult().getInterFileMappings().putIfAbsent(key, new NecessaryMappings());
                     target = getResult().getInterFileMappings().get(key);
                     currSrc = getAstDiff().getSrcPath();
@@ -103,6 +104,7 @@ public abstract class HumanReadableDiffGenerator {
                 else if (e instanceof MoveIn && actionBelongsToMapping(mapping, e))
                 {
                     String key = e.toString();
+                    key = key.replace("moved from file", "Moved from File");
                     getResult().getInterFileMappings().putIfAbsent(key, new NecessaryMappings());
                     target = getResult().getInterFileMappings().get(key);
                     currSrc = ((MoveIn) e).getSrcFile();

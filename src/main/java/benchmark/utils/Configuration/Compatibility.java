@@ -50,6 +50,7 @@ public enum Compatibility {
                     ASTDiffTool.RMD,
                     ASTDiffTool.GTG,
                     ASTDiffTool.GTS,
+                    ASTDiffTool.OBV,
 //                    ASTDiffTool.IAM,
             };
         }

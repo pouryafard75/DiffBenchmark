@@ -34,7 +34,7 @@ public class CsvWriter {
                         throw new RuntimeException("Could not create directory" + destin.getAbsolutePath());
                 ASTDiffTool tool = item.getKey();
                 Collection<SemanticViolationRecord> records = item.getValue();
-                Path finalPath = destin.toPath().resolve(Configuration.geMergedNames(benchmarkViolationComputer.getConfigurations()) + "-" + tool.name() + ".csv");
+                Path finalPath = destin.toPath().resolve(Configuration.getMergedNames(benchmarkViolationComputer.getConfigurations()) + "-" + tool.name() + ".csv");
                 writeToolOutput(records, finalPath.toString());
             }
         }

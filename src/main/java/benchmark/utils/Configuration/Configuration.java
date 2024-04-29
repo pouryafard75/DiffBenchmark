@@ -3,7 +3,6 @@ package benchmark.utils.Configuration;
 import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 
-import java.io.IOException;
 import java.util.*;
 
 /* Created by pourya on 2023-04-17 9:27 p.m. */
@@ -94,7 +93,7 @@ public class Configuration {
         return csvDestinationFile;
     }
 
-    public static String geMergedNames(Configuration[] configurations) {
+    public static String getMergedNames(Configuration[] configurations) {
         StringBuilder configNames = new StringBuilder();
         for (Configuration configuration : configurations) {
             configNames.append(configuration.getName()).append("-");

@@ -29,11 +29,9 @@ public class BenchmarkHumanReadableDiffGenerator {
     public BenchmarkHumanReadableDiffGenerator(Configuration current){
         this.configuration = current;
     }
-    public void generate() throws Exception {
-        int numThreads = Runtime.getRuntime().availableProcessors();
+    public void generateMultiThreaded(int numThreads) {
         ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
         CountDownLatch latch = new CountDownLatch(configuration.getAllCases().size());
-        int i = 0;
         for (CaseInfo info : configuration.getAllCases()) {
             executorService.submit(() -> {
                 try {
@@ -57,6 +55,14 @@ public class BenchmarkHumanReadableDiffGenerator {
             Thread.currentThread().interrupt();
         }
 
+        System.out.println("Finished generating human readable diffs...");
+    }
+
+    public void generateSingleThreaded() throws Exception {
+        for (CaseInfo info : configuration.getAllCases()) {
+//            if (info.makeURL().equals(TEST_URL)) continue;
+            writeActiveTools(info, configuration.getOutputFolder());
+        }
         System.out.println("Finished generating human readable diffs...");
     }
     private void writeActiveTools(CaseInfo info, String output_folder) throws Exception {

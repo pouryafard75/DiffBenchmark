@@ -1,15 +1,11 @@
 package benchmark;
 
-import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
-import benchmark.metrics.models.BaseDiffComparisonResult;
-import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.oracle.generators.BenchmarkHumanReadableDiffGenerator;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
-import org.eclipse.jgit.annotations.Nullable;
 
 import java.util.*;
+
+import static benchmark.Runner.run;
 
 /* Created by pourya on 2023-04-17 7:45 p.m. */
 public class CmdRunner {
@@ -26,13 +22,13 @@ public class CmdRunner {
                 rm_only = true;
             }
             else  confs = argsToConfs(args);
-            for (Configuration configuration : confs) {
-                if (rm_only) configuration.setActiveTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.RM2));
-                new BenchmarkHumanReadableDiffGenerator(configuration).generate();
-                VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration);
-                Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-                MetricsCsvWriter.exportToCSV(stats, configuration.getOutputFolder() + configuration.getName() + ".csv", true);
-            }
+            run(confs, rm_only, benchmarkHumanReadableDiffGenerator -> {
+                try {
+                    benchmarkHumanReadableDiffGenerator.generateMultiThreaded(Runtime.getRuntime().availableProcessors());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
         }
     }
 

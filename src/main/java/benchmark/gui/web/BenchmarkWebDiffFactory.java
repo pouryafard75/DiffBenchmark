@@ -1,5 +1,6 @@
 package benchmark.gui.web;
 
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.oracle.generators.tools.runners.*;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
@@ -27,7 +28,7 @@ public class BenchmarkWebDiffFactory {
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
-        return makeDiffs(projectASTDiff,null);
+        return makeDiffs(projectASTDiff,new CaseInfo(url));
     }
     public static BenchmarkWebDiff withLocallyClonedRepo(Repository repository, String commit) throws Exception {
         ProjectASTDiff rmDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
@@ -61,6 +62,8 @@ public class BenchmarkWebDiffFactory {
         Set<Diff> iAST_diff = new LinkedHashSet<>();
         Set<ASTDiff> TRV_astDiff = new LinkedHashSet<>();
         Set<ASTDiff> RM2_astDiff = new LinkedHashSet<>();
+        Set<ASTDiff> OBV_astDiff  = new LinkedHashSet<>();
+
         for (ASTDiff astDiff : RM_astDiff) {
             GTG_astDiff.add(diffByGumTree(astDiff,new CompositeMatchers.ClassicGumtree()));
             GTS_astDiff.add(diffByGumTree(astDiff, new CompositeMatchers.SimpleGumtree()));
@@ -73,6 +76,7 @@ public class BenchmarkWebDiffFactory {
                     GOD_astDiff.add(new PerfectDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
                     RM2_astDiff.add(new RM2(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
                     TRV_astDiff.add(new TrivialDiff(projectASTDiffByRM, astDiff, info, conf).makeASTDiff());
+                    OBV_astDiff.add(ASTDiffTool.OBV.getFactory().getASTDiff(projectASTDiffByRM, astDiff, info, conf));
                 } catch (Exception e) {
                     System.out.println("Error in loading perfect diff for " + astDiff.getSrcPath());
                 }
@@ -88,6 +92,7 @@ public class BenchmarkWebDiffFactory {
                 iAST_diff,
                 RM2_astDiff,
                 TRV_astDiff,
+                OBV_astDiff,
                 GOD_astDiff);
     }
 

@@ -53,7 +53,11 @@ public enum ASTDiffTool {
 
     RM2((projectASTDiff, rm_astDiff, info, configuration) ->  new RM2(projectASTDiff, rm_astDiff,info, configuration).makeASTDiff()),
 
-    TRV ((projectASTDiff, rm_astDiff, info, configuration) -> new TrivialDiff(projectASTDiff, rm_astDiff, info, configuration).makeASTDiff()) ;
+    TRV ((projectASTDiff, rm_astDiff, info, configuration) -> new TrivialDiff(projectASTDiff, rm_astDiff, info, configuration).makeASTDiff()),
+
+    OBV ((projectASTDiff, rm_astDiff, info, configuration) -> new EfficentCommitLevelGumTreeASTDiff(projectASTDiff, rm_astDiff, info, configuration, new CompositeMatchers.ClassicGumtree()).makeASTDiff());
+
+    ;
 
 
     private final DiffToolFactory factory;

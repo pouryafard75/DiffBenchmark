@@ -1,7 +1,6 @@
 package benchmark.oracle.generators.tools.runners;
 
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
-import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -32,52 +31,34 @@ public abstract class ASTDiffConvertor {
                 this.rm_astDiff = astDiff;
             }
         });
-        populateTCs();
+        ptc = projectASTDiff.getParentContextMap();
+        ctc = projectASTDiff.getChildContextMap();
     }
 
     protected abstract List<MappingExportModel> getExportedMappings();
 
     public ASTDiff makeASTDiff() {
-        ASTDiff astDiff = make(getExportedMappings());
-        astDiff.computeEditScript(ptc, ctc);
-        return astDiff;
+        ASTDiff result = make(getExportedMappings());
+        result.computeEditScript(ptc, ctc);
+        return result;
     }
 
     protected ASTDiff make(List<MappingExportModel> exportedMappings){
-        ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(rm_astDiff.src.getRoot(),rm_astDiff.dst.getRoot());
-        populateMappingsFromJson(mappings, rm_astDiff, exportedMappings, ptc, ctc);
-        return new ASTDiff(this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath(), rm_astDiff.src, rm_astDiff.dst, mappings);
+        return new ASTDiff(this.rm_astDiff.getSrcPath(),
+                           this.rm_astDiff.getDstPath(),
+                            rm_astDiff.src,
+                            rm_astDiff.dst,
+                            populateMappingStore(exportedMappings, ptc, ctc)
+        );
     }
 
-    private void populateTCs() {
-        ptc = new HashMap<>();
-        ctc = new HashMap<>();
-        for (Map.Entry<String, String> stringStringEntry : projectASTDiff.getFileContentsBefore().entrySet()) {
-            String key = stringStringEntry.getKey();
-            String content = stringStringEntry.getValue();
-            try {
-                ptc.put(key, new JdtTreeGenerator().generateFrom().string(content));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        for (Map.Entry<String, String> stringStringEntry : projectASTDiff.getFileContentsAfter().entrySet()) {
-            String key = stringStringEntry.getKey();
-            String content = stringStringEntry.getValue();
-            try {
-                ctc.put(key, new JdtTreeGenerator().generateFrom().string(content));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
-    protected static void populateMappingsFromJson(ExtendedMultiMappingStore mappings, ASTDiff rmAstDiff, List<MappingExportModel> exportedMappings, Map<String, TreeContext> ptc, Map<String, TreeContext> ctc) {
-        Tree src = rmAstDiff.src.getRoot();
-        Tree dst = rmAstDiff.dst.getRoot();
-        for (MappingExportModel perfectMapping : exportedMappings) {
-            Tree srcNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(src, perfectMapping.getFirstPos(), perfectMapping.getFirstEndPos(),perfectMapping.getFirstType(), perfectMapping.getFirstParentType(), perfectMapping.getFirstLabel());
-            Tree dstNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(dst, perfectMapping.getSecondPos(), perfectMapping.getSecondEndPos(),perfectMapping.getSecondType(), perfectMapping.getSecondParentType(), perfectMapping.getSecondLabel());
+    protected ExtendedMultiMappingStore populateMappingStore(List<MappingExportModel> exportedMappings, Map<String, TreeContext> ptc, Map<String, TreeContext> ctc) {
+        Tree src = ptc.get(rm_astDiff.getSrcPath()).getRoot();
+        Tree dst = ctc.get(rm_astDiff.getDstPath()).getRoot();
+        ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(src, dst);
+        for (MappingExportModel mapping : exportedMappings) {
+            Tree srcNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(src, mapping.getFirstPos(), mapping.getFirstEndPos(),mapping.getFirstType(), mapping.getFirstParentType(), mapping.getFirstLabel());
+            Tree dstNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(dst, mapping.getSecondPos(), mapping.getSecondEndPos(),mapping.getSecondType(), mapping.getSecondParentType(), mapping.getSecondLabel());
             if (srcNode == null || dstNode == null)
             {
                 if (srcNode != null || dstNode != null)
@@ -86,9 +67,9 @@ public abstract class ASTDiffConvertor {
                     if (srcNode == null) {
                         for (Map.Entry<String, TreeContext> stringTreeContextEntry : ptc.entrySet()) {
                             TreeContext value = stringTreeContextEntry.getValue();
-                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), perfectMapping.getFirstPos(), perfectMapping.getFirstEndPos(), perfectMapping.getFirstType(), perfectMapping.getFirstParentType(), perfectMapping.getFirstLabel());
+                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), mapping.getFirstPos(), mapping.getFirstEndPos(), mapping.getFirstType(), mapping.getFirstParentType(), mapping.getFirstLabel());
                             if (treeBetweenPositionsSecure != null &&
-                                    treeBetweenPositionsSecure.getLabel().equals(perfectMapping.getFirstLabel())) {
+                                    treeBetweenPositionsSecure.getLabel().equals(mapping.getFirstLabel())) {
                                 srcNode = treeBetweenPositionsSecure;
                                 break;
                             }
@@ -97,9 +78,9 @@ public abstract class ASTDiffConvertor {
                     else {
                         for (Map.Entry<String, TreeContext> stringTreeContextEntry : ctc.entrySet()) {
                             TreeContext value = stringTreeContextEntry.getValue();
-                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), perfectMapping.getSecondPos(), perfectMapping.getSecondEndPos(), perfectMapping.getSecondType(), perfectMapping.getSecondParentType(), perfectMapping.getSecondLabel());
+                            Tree treeBetweenPositionsSecure = TreeUtilFunctions.getTreeBetweenPositionsSecure(value.getRoot(), mapping.getSecondPos(), mapping.getSecondEndPos(), mapping.getSecondType(), mapping.getSecondParentType(), mapping.getSecondLabel());
                             if (treeBetweenPositionsSecure != null &&
-                                    treeBetweenPositionsSecure.getLabel().equals(perfectMapping.getSecondLabel())) {
+                                    treeBetweenPositionsSecure.getLabel().equals(mapping.getSecondLabel())) {
                                 dstNode = treeBetweenPositionsSecure;
                                 break;
                             }
@@ -107,11 +88,12 @@ public abstract class ASTDiffConvertor {
                     }
                 }
                 else{
-                    throw new RuntimeException(String.valueOf(perfectMapping));
+                    throw new RuntimeException(String.valueOf(mapping));
 //                    continue;
                 }
             }
             mappings.addMapping(srcNode, dstNode);
         }
+        return mappings;
     }
 }

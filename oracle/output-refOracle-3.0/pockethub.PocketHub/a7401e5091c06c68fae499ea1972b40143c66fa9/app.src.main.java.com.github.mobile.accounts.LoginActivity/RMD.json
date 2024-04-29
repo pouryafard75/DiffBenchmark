@@ -564,6 +564,14 @@
       "right" : "HttpUrl.Builder url = new HttpUrl.Builder()\n                .scheme(\"https\")\n                .host(OAUTH_HOST)\n                .addPathSegment(\"login\")\n                .addPathSegment(\"oauth\")\n                .addPathSegment(\"authorize\")\n                .addQueryParameter(\"client_id\", client.getApiClient())\n                .addQueryParameter(\"scope\", initialScope);",
       "info" : "VariableDeclarationStatement[6549-6916]:VariableDeclarationStatement[6231-6598]"
     }, {
+      "left" : "final Intent newIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url.build().toString()));",
+      "right" : "Intent intent = new Intent(this, LoginWebViewActivity.class);",
+      "info" : "VariableDeclarationStatement[7122-7213]:VariableDeclarationStatement[6608-6669]"
+    }, {
+      "left" : "newIntent",
+      "right" : "intent",
+      "info" : "SimpleName[7135-7144]:SimpleName[6615-6621]"
+    }, {
       "left" : "chooser",
       "right" : "intent",
       "info" : "SimpleName[7775-7782]:SimpleName[6678-6684]"

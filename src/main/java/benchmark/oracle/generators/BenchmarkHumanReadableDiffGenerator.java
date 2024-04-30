@@ -53,6 +53,9 @@ public class BenchmarkHumanReadableDiffGenerator {
 
         System.out.println("Finished generating human readable diffs...");
     }
+    public void generateMultiThreaded(){
+        generateMultiThreaded(Runtime.getRuntime().availableProcessors());
+    }
 
     public void generateSingleThreaded() throws Exception {
         for (CaseInfo info : configuration.getAllCases()) {

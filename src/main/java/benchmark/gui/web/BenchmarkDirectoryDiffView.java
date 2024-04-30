@@ -1,7 +1,9 @@
 package benchmark.gui.web;
 
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import gui.webdiff.DirComparator;
 import gui.webdiff.WebDiff;
+import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.rendersnake.DocType;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
@@ -14,15 +16,11 @@ import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class BenchmarkDirectoryDiffView implements Renderable {
     private final DirComparator comperator;
-    private final boolean perfectExists;
-    private final boolean trivialExists;
-    private final boolean rm2Exists;
+    private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
 
-    public BenchmarkDirectoryDiffView(DirComparator comperator, boolean perfectExists, boolean trivialExists, boolean RM2Exists) {
+    public BenchmarkDirectoryDiffView(DirComparator comperator, Map<ASTDiffTool, Set<ASTDiff>> diffs) {
         this.comperator = comperator;
-        this.perfectExists = perfectExists;
-        this.trivialExists = trivialExists;
-        this.rm2Exists = RM2Exists;
+        this.diffs = diffs;
     }
 
     @Override
@@ -45,7 +43,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                         .span(class_("badge badge-secondary").style("color:black")).content(comperator.getModifiedFilesName().size())
                                     ._h4()
                                 ._div()
-                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(),perfectExists, trivialExists, rm2Exists), comperator.getModifiedFilesName().size() > 0)
+                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(), diffs), comperator.getModifiedFilesName().size() > 0)
                             ._div()
                         ._div()
                     ._div()
@@ -59,7 +57,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                     ._h4()
                                 ._div()
                                 .render_if(new AddedOrDeletedFiles(comperator.getRemovedFilesName()),
-                                        comperator.getRemovedFilesName().size() > 0)
+                                        !comperator.getRemovedFilesName().isEmpty())
                             ._div()
                         ._div()
                         .div(class_("col"))
@@ -71,7 +69,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                     ._h4()
                                 ._div()
                                 .render_if(new AddedOrDeletedFiles(comperator.getAddedFilesName()),
-                                        comperator.getAddedFilesName().size() > 0)
+                                        !comperator.getAddedFilesName().isEmpty())
                             ._div()
                         ._div()
                     ._div()
@@ -83,16 +81,13 @@ public class BenchmarkDirectoryDiffView implements Renderable {
     private static class ModifiedFiles implements Renderable {
 //        private List<Pair<File, File>> files;
 
-        private Map<String,String> diffInfos;
-        private final boolean perfectExistence;
-        private final boolean trivialExistence;
-        private final boolean rm2Existence;
+        private final Map<String,String> diffInfos;
+        private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
 
-        private ModifiedFiles(Map<String,String> diffInfos, boolean perfectExists, boolean trivialExists, boolean rm2Exists) {
+
+        private ModifiedFiles(Map<String,String> diffInfos, Map<ASTDiffTool, Set<ASTDiff>> diffs) {
             this.diffInfos = diffInfos;
-            this.perfectExistence = perfectExists;
-            this.trivialExistence = trivialExists;
-            this.rm2Existence = rm2Exists;
+            this.diffs = diffs;
         }
 
         @Override
@@ -106,45 +101,19 @@ public class BenchmarkDirectoryDiffView implements Renderable {
             {
                 String nameBefore = entry.getKey();
                 String nameAfter = entry.getValue();
-                tbody
-                .tr()
+                HtmlCanvas div = tbody
+                        .tr()
 //                    .td().content(comparator.getSrc().toAbsolutePath().relativize(file.first.toPath().toAbsolutePath()).toString())
-                    .td().content(properText(nameBefore,nameAfter))
-                    .td()
+                        .td().content(properText(nameBefore, nameAfter))
+                        .td()
                         .div(class_("btn-toolbar justify-content-end"))
-                            .div(class_("btn-group"))
-                                //TODO: integrate this with the -g option
-//                                .if_(TreeGenerators.getInstance().hasGeneratorForFile(file.first.getAbsolutePath()))
-
-                                    .if_(perfectExistence)
-                                    .a(class_("btn btn-primary btn-sm").href("/GOD/" + id)).content("Perfect")
-                                    .a(class_("btn btn-primary btn-sm").href("/GOD-monaco/" + id)).content("Perfect-monaco")
-                                    ._if()
-                                    .a(class_("btn btn-primary btn-sm").href("/RMD/" + id)).content("RMDiff")
-                                    .a(class_("btn btn-primary btn-sm").href("/RMD-monaco/" + id)).content("RMD-monaco")
-                                    .a(class_("btn btn-primary btn-sm").href("/GTG/" + id)).content("GTGreedy")
-                                    .a(class_("btn btn-primary btn-sm").href("/GTG-monaco/" + id)).content("GTGreedy-monaco")
-                                    .a(class_("btn btn-primary btn-sm").href("/GTS/" + id)).content("GTSimple")
-                                    .a(class_("btn btn-primary btn-sm").href("/GTS-monaco/" + id)).content("GTSimple-monaco")
-                                    .a(class_("btn btn-primary btn-sm").href("/IJM/" + id)).content("IJM")
-                                    .a(class_("btn btn-primary btn-sm").href("/IJM-monaco/" + id)).content("IJM-monaco")
-                                    .a(class_("btn btn-primary btn-sm").href("/MTD/" + id)).content("MTD")
-                                    .a(class_("btn btn-primary btn-sm").href("/MTD-monaco/" + id)).content("MTD-monaco")
-                                    .a(class_("btn btn-primary btn-sm").href("/GT2/" + id)).content("GT2")
-                                    .a(class_("btn btn-primary btn-sm").href("/GT2-monaco/" + id)).content("GT2-monaco")
-                                    .a(class_("btn btn-primary btn-sm").href("/iAST/" + id)).content("iAST")
-                                    .a(class_("btn btn-primary btn-sm").href("/iAST-monaco/" + id)).content("iAST-monaco")
-                                    .if_(rm2Existence)
-                                    .a(class_("btn btn-primary btn-sm").href("/RM2/" + id)).content("RM2")
-                                    .a(class_("btn btn-primary btn-sm").href("/RM2-monaco/" + id)).content("RM2-monaco")
-                                    ._if()
-                                    .if_(trivialExistence)
-                                    .a(class_("btn btn-primary btn-sm").href("/TRV/" + id)).content("TRV")
-                                    .a(class_("btn btn-primary btn-sm").href("/TRV-monaco/" + id)).content("TRV-monaco")
-                                    ._if()
-
-//
-                            ._div()
+                        .div(class_("btn-group"));
+                            for (ASTDiffTool tool : diffs.keySet()) {
+                                div = div
+                                        .a(class_("btn btn-primary btn-sm").href("/" + tool + "/" + id)).content(tool.name())
+                                        .a(class_("btn btn-primary btn-sm").href("/" + tool + "-monaco/" + id)).content(tool.name() + "-monaco");
+                            }
+                            div._div()
                         ._div()
                     ._td()
                 ._tr();

@@ -1,5 +1,6 @@
 package benchmark.gui.web;
 
+import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.utils.Pair;
 import gui.webdiff.DirComparator;
@@ -16,6 +17,7 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import static spark.Spark.*;
@@ -29,43 +31,12 @@ public class BenchmarkWebDiff {
     public static final int port = 6868;
 
     private final ProjectASTDiff projectASTDiff;
-    public Set<ASTDiff> rmDiff;
-    public Set<ASTDiff> rm2;
-    public Set<Diff> gtgDiff;
-    public Set<Diff> gtsDiff;
-    public Set<Diff> ijmDiff;
-    public Set<Diff> mtdiff;
-    public Set<Diff> gt2diff;
-    public Set<Diff> iastdiff;
-    private final Set<ASTDiff> trvDiff;
-    private final Set<ASTDiff> obvDiff;
-    private final Set<ASTDiff> godDiff;
+    private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
 
 
-    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM,
-                            Set<ASTDiff> rm,
-                            Set<Diff> gtg,
-                            Set<Diff> gts,
-                            Set<Diff> ijm,
-                            Set<Diff> mtd,
-                            Set<Diff> gt2,
-                            Set<Diff> iast,
-                            Set<ASTDiff> rm2,
-                            Set<ASTDiff> TRV_astDiff,
-                            Set<ASTDiff> OBV_astDiff,
-                            Set<ASTDiff> GOD_astDiff) {
+    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Map<ASTDiffTool, Set<ASTDiff>> diffs){
         this.projectASTDiff = projectASTDiffByRM;
-        this.rmDiff = rm;
-        this.gtgDiff = gtg;
-        this.gtsDiff = gts;
-        this.ijmDiff = ijm;
-        this.mtdiff = mtd;
-        this.gt2diff = gt2;
-        this.iastdiff = iast;
-        this.rm2 = rm2;
-        this.trvDiff = TRV_astDiff;
-        this.obvDiff = OBV_astDiff;
-        this.godDiff = GOD_astDiff;
+        this.diffs = diffs;
     }
 
     public static boolean isWindows() {
@@ -98,380 +69,32 @@ public class BenchmarkWebDiff {
             return "";
         });
         get("/list", (request, response) -> {
-            Renderable view = new BenchmarkDirectoryDiffView(comperator, !godDiff.isEmpty(), !trvDiff.isEmpty(), !rm2.isEmpty());
-            return render(view);
-        });
-        get("/RMD/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("RefactoringMiner", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    astDiff, false);
-            return render(view);
-        });
-        get("/RMD-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("RefactoringMiner", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    astDiff, id,false);
+            Renderable view = new BenchmarkDirectoryDiffView(comperator, diffs);
             return render(view);
         });
 
-        get("/RM2/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = rm2.iterator();
-            ASTDiff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("RM2", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-        get("/RM2-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = rm2.iterator();
-            ASTDiff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("RM2", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-        get("/OBV/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = obvDiff.iterator();
-            ASTDiff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("OBV", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-        get("/OBV-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = obvDiff.iterator();
-            ASTDiff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("OBV", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-        get("/TRV/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = trvDiff.iterator();
-            ASTDiff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("TRV", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-        get("/TRV-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = trvDiff.iterator();
-            ASTDiff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("TRV", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-
-
-
-        get("/GTG/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = gtgDiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("GumTree-Greedy", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-        get("/GTG-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = gtgDiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("GumTree-Greedy", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-        get("/GTS/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = gtsDiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("GumTree-Simple", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-
-        get("/GTS-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = gtsDiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("GumTree-Simple", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-        get("/IJM/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = ijmDiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("IJM", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-
-        get("/IJM-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = ijmDiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("IJM", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-
-        get("/MTD/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = mtdiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("MtDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-
-        get("/MTD-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = mtdiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("MTDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-
-        get("/iAST/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = iastdiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("iASTMapper", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-
-        get("/iAST-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = iastdiff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("iASTMapper", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-
-        get("/GT2/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = gt2diff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new VanillaDiffView("GT2", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, false);
-            return render(view);
-        });
-
-        get("/GT2-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<Diff> iterator = gt2diff.iterator();
-            Diff diff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                diff = iterator.next();
-            }
-            ASTDiff astDiff = comperator.getASTDiff(id);
-            Renderable view = new MonacoDiffView("GT2", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    diff, id,false);
-            return render(view);
-        });
-
-        get("/GOD/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = godDiff.iterator();
-            ASTDiff astDiff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                astDiff = iterator.next();
-            }
-            Renderable view = new VanillaDiffView("PerfectDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    astDiff, false);
-            return render(view);
-        });
-        get("/GOD-monaco/:id", (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            int i = id;
-            Iterator<ASTDiff> iterator = godDiff.iterator();
-            ASTDiff astDiff = iterator.next();
-            while (i > 0)
-            {
-                i = i-1;
-                astDiff = iterator.next();
-            }
-            Renderable view = new MonacoDiffView("PerfectDiff", astDiff.getSrcPath(),astDiff.getDstPath(),
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                    astDiff, id,false);
-            return render(view);
-        });
-
-
+        for (Map.Entry<ASTDiffTool, Set<ASTDiff>> astDiffToolSetEntry : diffs.entrySet()) {
+            ASTDiffTool tool = astDiffToolSetEntry.getKey();
+            Set<ASTDiff> astDiffs = astDiffToolSetEntry.getValue();
+            get("/" + tool + "/:id" , (request, response) -> {
+                int id = Integer.parseInt(request.params(":id"));
+                ASTDiff astDiff = astDiffs.stream().toList().get(id);
+                Renderable view = new VanillaDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                        astDiff, false);
+                return render(view);
+            });
+            get("/" + tool + "-monaco/:id" , (request, response) -> {
+                int id = Integer.parseInt(request.params(":id"));
+                ASTDiff astDiff = astDiffs.stream().toList().get(id);
+                Renderable view = new MonacoDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                        astDiff, id, false);
+                return render(view);
+            });
+        }
 
 
         get("/left/:id", (request, response) -> {

@@ -128,7 +128,6 @@ public abstract class APIChanger {
         MappingStore match = matcher.match(srcRoot, dstRoot);
         ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(srcRoot, dstRoot);
         mappingStore.add(match);
-        System.out.println(mappingStore.size());
         EditScript actions = new SimplifiedChawatheScriptGenerator().computeActions(match);
         ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, mappingStore, actions);
         if (diff.getAllMappings().size() != match.size())

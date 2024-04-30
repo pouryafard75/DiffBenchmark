@@ -73,7 +73,9 @@ public class CommitLevelGumTreeASTDiff extends ASTDiffConvertor{
         private Tree makeVirtualNode(Collection<TreeContext> treeContextCollection) {
             FakeTree root = new FakeTree();
             for (TreeContext treeContext : treeContextCollection) {
-                root.addChild(treeContext.getRoot());
+                Tree thisRoot = treeContext.getRoot();
+                thisRoot.setParent(null);
+                root.addChild(thisRoot);
             }
             return root;
         }

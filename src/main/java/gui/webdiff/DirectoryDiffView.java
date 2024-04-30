@@ -52,7 +52,7 @@ public class DirectoryDiffView implements Renderable {
                                     ._h4()
                                 ._div()
                                 .render_if(new AddedOrDeletedFiles(comperator.getRemovedFilesName()),
-                                        comperator.getRemovedFilesName().size() > 0)
+                                        !comperator.getRemovedFilesName().isEmpty())
                             ._div()
                         ._div()
                         .div(class_("col"))
@@ -64,7 +64,7 @@ public class DirectoryDiffView implements Renderable {
                                     ._h4()
                                 ._div()
                                 .render_if(new AddedOrDeletedFiles(comperator.getAddedFilesName()),
-                                        comperator.getAddedFilesName().size() > 0)
+                                        !comperator.getAddedFilesName().isEmpty())
                             ._div()
                         ._div()
                     ._div()

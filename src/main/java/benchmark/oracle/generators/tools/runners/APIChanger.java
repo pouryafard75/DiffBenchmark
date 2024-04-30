@@ -121,10 +121,16 @@ public abstract class APIChanger {
     }
 
     public static ASTDiff makeASTDiffFromMatcher(CompositeMatchers.CompositeMatcher matcher, ASTDiff astDiff) {
-        MappingStore match = matcher.match(astDiff.src.getRoot(), astDiff.dst.getRoot());
-        ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(astDiff.src.getRoot(), astDiff.dst.getRoot());
+        Tree srcRoot = astDiff.src.getRoot();
+        Tree dstRoot = astDiff.dst.getRoot();
+        srcRoot.setParent(null);
+        dstRoot.setParent(null);
+        MappingStore match = matcher.match(srcRoot, dstRoot);
+        ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(srcRoot, dstRoot);
         mappingStore.add(match);
-        ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, mappingStore);
+        System.out.println(mappingStore.size());
+        EditScript actions = new SimplifiedChawatheScriptGenerator().computeActions(match);
+        ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, mappingStore, actions);
         if (diff.getAllMappings().size() != match.size())
             if (!astDiff.getSrcPath().equals("src_java_org_apache_commons_lang_math_NumberUtils.java"))
                 throw new RuntimeException("Mapping has been lost!");

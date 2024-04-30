@@ -19,12 +19,6 @@ import static benchmark.utils.PathResolver.getBeforeDir;
 
 /* Created by pourya on 2023-04-17 8:53 p.m. */
 public class Helpers {
-
-    public static Diff diffByGumTree(ASTDiff astDiff, CompositeMatchers.CompositeMatcher matcher) {
-        MappingStore match = matcher.match(astDiff.src.getRoot(), astDiff.dst.getRoot());
-        EditScript actions = new SimplifiedChawatheScriptGenerator().computeActions(match);
-        return new Diff(astDiff.src, astDiff.dst, match, actions);
-    }
     public static ProjectASTDiff runWhatever(String repo, String commit) {
         ProjectASTDiff projectASTDiff;
         if (repo.contains("github")) {

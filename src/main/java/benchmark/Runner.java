@@ -29,7 +29,7 @@ public class Runner {
         run(Set.of(ConfigurationFactory.refOracle()), false,
                 benchmarkHumanReadableDiffGenerator -> {
                     try {
-                        benchmarkHumanReadableDiffGenerator.generateSingleThreaded();
+                        benchmarkHumanReadableDiffGenerator.generateMultiThreaded();
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }

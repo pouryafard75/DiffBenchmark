@@ -1,7 +1,7 @@
 package benchmark.metrics.computers.violation.models;
 
 import benchmark.metrics.computers.violation.modifier.ModifierKind;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.actions.ASTDiff;

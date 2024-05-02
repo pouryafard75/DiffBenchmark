@@ -2,8 +2,7 @@ package benchmark.oracle.generators;
 
 
 import benchmark.oracle.generators.diff.HumanReadableDiffGenerator;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
-import benchmark.oracle.generators.tools.models.DiffToolFactory;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.GenerationStrategy;
@@ -74,8 +73,7 @@ public class BenchmarkHumanReadableDiffGenerator {
             for (ASTDiffTool tool : configuration.getActiveTools()) {
                 String toolName = tool.name(); //In case we later introduce a map from tool's name to tool's path
                 String toolPath = tool.name(); //In case we later introduce a map from tool's name to tool's path
-                DiffToolFactory factory = tool.getFactory();
-                ASTDiff generated = factory.getASTDiff(projectASTDiff, astDiff, info, configuration);
+                ASTDiff generated = tool.diff(projectASTDiff, astDiff, info, configuration);
                 GenerationStrategy generationStrategy = configuration.getGenerationStrategy();
                 HumanReadableDiffGenerator humanReadableDiffGenerator = generationStrategy.getGenerator(projectASTDiff, generated, info, configuration);
                 humanReadableDiffGenerator.write(output_folder,astDiff.getSrcPath(),toolPath);

@@ -1,15 +1,5 @@
 package benchmark.oracle.generators.tools.adaptation;
 
-import benchmark.oracle.generators.tools.runners.APIChanger;
-import benchmark.oracle.generators.tools.runners.GT2;
-import com.github.gumtreediff.matchers.Mapping;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
-
-import static benchmark.metrics.computers.violation.simplename.GT2Helpers.getEqv;
-import static benchmark.utils.Helpers.runWhatever;
-
 /* Created by pourya on 2023-12-20*/
 public class Helper {
 //    public static void main(String[] args) throws Exception {

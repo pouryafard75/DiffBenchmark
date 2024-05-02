@@ -3,7 +3,7 @@ package benchmark.metrics.computers.violation.writer;
 import benchmark.metrics.computers.violation.BenchmarkViolationComputer;
 import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.metrics.computers.violation.models.ViolationReport;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.utils.Configuration.Configuration;
 import com.opencsv.CSVWriter;
 

@@ -1,13 +1,10 @@
 package benchmark.metrics.models;
 
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
 import benchmark.oracle.models.AbstractMapping;
 import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.oracle.models.NecessaryMappings;
 import benchmark.utils.CaseInfo;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

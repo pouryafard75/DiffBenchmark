@@ -7,7 +7,7 @@ import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.RefactoringSpecificComparisonResult;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;

@@ -1,7 +1,7 @@
 package benchmark.gui.web;
 
 import benchmark.gui.GuiConf;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
@@ -58,7 +58,7 @@ public class BenchmarkWebDiffFactory {
                 if (astDiffToolBooleanEntry.getValue()) {
                     diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
                     try {
-                        diffs.get(tool).add(tool.getFactory().getASTDiff(projectASTDiffByRM, astDiff, info, conf));
+                        diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info, conf));
                     }
                     catch (Exception e) {
                         e.printStackTrace();

@@ -3,7 +3,7 @@ package benchmark.metrics.computers.violation;
 import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.models.ViolationReport;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
@@ -17,7 +17,7 @@ import java.util.Collection;
 
 import static benchmark.metrics.computers.violation.Helpers.contains;
 import static benchmark.metrics.computers.violation.Helpers.makeKey;
-import static benchmark.oracle.generators.tools.models.ASTDiffTool.GOD;
+import static benchmark.oracle.generators.tools.ASTDiffTool.GOD;
 
 /* Created by pourya on 2023-12-10 9:02 p.m. */
 public class BenchmarkViolationComputer {
@@ -86,12 +86,12 @@ public class BenchmarkViolationComputer {
     public void compute(ProjectASTDiff projectASTDiff, CaseInfo info, Configuration configuration) throws Exception {
         for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet())
         {
-            ASTDiff perfect = GOD.getFactory().getASTDiff(projectASTDiff, rm_astDiff, info, configuration);
+            ASTDiff perfect = GOD.diff(projectASTDiff, rm_astDiff, info, configuration);
             for (ASTDiffTool tool : configuration.getActiveTools())
             {
                 if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV)) continue; // GOD and TRV are not considered
 //                logger.info("Generating " + tool.name());
-                ASTDiff generated = tool.getFactory().getASTDiff(projectASTDiff, rm_astDiff, info, configuration);
+                ASTDiff generated = tool.diff(projectASTDiff, rm_astDiff, info, configuration);
 //                logger.info("Comparing " + tool.name());
                 populateAllReports(perfect, generated, tool, info, reports);
             }

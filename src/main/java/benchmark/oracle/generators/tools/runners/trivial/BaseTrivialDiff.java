@@ -1,12 +1,12 @@
-package benchmark.oracle.generators.tools.runners;
+package benchmark.oracle.generators.tools.runners.trivial;
 
+import benchmark.oracle.generators.tools.models.BaseASTDiffProvider;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.MultiMappingStore;
 import com.github.gumtreediff.matchers.heuristic.gt.GreedySubtreeMatcher;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.matchers.Constants;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 
 import java.util.HashSet;
@@ -14,12 +14,17 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 
-import static benchmark.oracle.generators.diff.HumanReadableDiffGenerator.isProgramElement;
-
 /* Created by pourya on 2023-04-16 5:07 a.m. */
-public class BaseTrivialDiff {
-    private final ASTDiff rm_astDiff;
+public class BaseTrivialDiff extends BaseASTDiffProvider {
     private Predicate<Mapping> condition;
+    public BaseTrivialDiff(ASTDiff rm_astDiff){
+        super(rm_astDiff);
+    }
+
+    public BaseTrivialDiff(ASTDiff rm_astDiff, Predicate<Mapping> condition){
+        super(rm_astDiff);
+        this.condition = condition;
+    }
 
     public ASTDiff makeASTDiff() {
         MappingStore mappings = new GreedySubtreeMatcher() {
@@ -41,24 +46,15 @@ public class BaseTrivialDiff {
             protected void retainBestMapping(List<Mapping> mappingList, Set<Tree> srcIgnored, Set<Tree> dstIgnored) {
                 //Do nothing in case of multiple candidates
             }
-        }.match(rm_astDiff.src.getRoot(),rm_astDiff.dst.getRoot());
-        ExtendedMultiMappingStore extendedMultiMappingStore = new ExtendedMultiMappingStore(rm_astDiff.src.getRoot(), rm_astDiff.dst.getRoot());
+        }.match(input.src.getRoot(), input.dst.getRoot());
+        ExtendedMultiMappingStore extendedMultiMappingStore = new ExtendedMultiMappingStore(input.src.getRoot(), input.dst.getRoot());
         extendedMultiMappingStore.add(mappings);
-        ASTDiff astDiff = new ASTDiff(rm_astDiff.getSrcPath(), rm_astDiff.getDstPath(), rm_astDiff.src, rm_astDiff.dst, extendedMultiMappingStore);
+        ASTDiff astDiff = new ASTDiff(input.getSrcPath(), input.getDstPath(), input.src, input.dst, extendedMultiMappingStore);
         astDiff.computeVanillaEditScript();
         return astDiff;
     }
 
     public void setCondition(Predicate<Mapping> condition) {
-        this.condition = condition;
-    }
-
-    public BaseTrivialDiff(ASTDiff rm_astDiff){
-        this.rm_astDiff = rm_astDiff;
-    }
-
-    public BaseTrivialDiff(ASTDiff rm_astDiff, Predicate<Mapping> condition){
-        this.rm_astDiff = rm_astDiff;
         this.condition = condition;
     }
 

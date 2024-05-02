@@ -1,6 +1,6 @@
 package benchmark.utils.Configuration;
 
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 
 /* Created by pourya on 2023-09-15 5:04 p.m. */
 public enum Compatibility {
@@ -50,7 +50,7 @@ public enum Compatibility {
                     ASTDiffTool.RMD,
                     ASTDiffTool.GTG,
                     ASTDiffTool.GTS,
-                    ASTDiffTool.OBV,
+//                    ASTDiffTool.SVN,
 //                    ASTDiffTool.IAM,
             };
         }

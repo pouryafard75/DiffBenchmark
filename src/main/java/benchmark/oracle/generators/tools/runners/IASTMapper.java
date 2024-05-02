@@ -1,5 +1,6 @@
 package benchmark.oracle.generators.tools.runners;
 
+import benchmark.oracle.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
@@ -17,23 +18,26 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-import static benchmark.oracle.generators.tools.Utils.getTreesExactPosition;
-import static benchmark.oracle.generators.tools.runners.APIChanger.diffToASTDiffWithActions;
+import static benchmark.oracle.generators.tools.runners.Utils.getTreesExactPosition;
+import static benchmark.oracle.generators.tools.runners.shaded.AbstractASTDiffProviderFromIncompatibleTree.diffToASTDiffWithActions;
 
 /* Created by pourya on 2024-01-10*/
-public class iASTMapper {
+public class IASTMapper extends ASTDiffProviderFromProjectASTDiff {
     private final String srcContents;
     private final String dstContents;
-    private final ASTDiff rmAstDiff;
-    private final static Logger logger = LoggerFactory.getLogger(iASTMapper.class);
-    public iASTMapper(ProjectASTDiff projectASTDiff, ASTDiff rmAstDiff) {
-        this.srcContents = projectASTDiff.getFileContentsBefore().get(rmAstDiff.getSrcPath());
-        this.dstContents = projectASTDiff.getFileContentsAfter().get(rmAstDiff.getDstPath());
-        this.rmAstDiff = rmAstDiff;
+
+    private final static Logger logger = LoggerFactory.getLogger(IASTMapper.class);
+
+
+    public IASTMapper(ProjectASTDiff projectASTDiff, ASTDiff input) {
+        super(projectASTDiff, input);
+        this.srcContents = projectASTDiff.getFileContentsBefore().get(input.getSrcPath());
+        this.dstContents = projectASTDiff.getFileContentsAfter().get(input.getDstPath());
     }
 
+
     public ASTDiff makeASTDiff() throws Exception {
-        return diffToASTDiffWithActions(diff(), rmAstDiff.getSrcPath(), rmAstDiff.getDstPath());
+        return diffToASTDiffWithActions(diff(), input.getSrcPath(), input.getDstPath());
     }
     public Diff diff() throws Exception {
         cs.model.algorithm.iASTMapper m = new cs.model.algorithm.iASTMapper(srcContents, dstContents);

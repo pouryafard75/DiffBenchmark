@@ -1,4 +1,4 @@
-package benchmark.oracle.generators.tools;
+package benchmark.oracle.generators.tools.runners;
 
 import com.github.gumtreediff.tree.DefaultTree;
 import com.github.gumtreediff.tree.Tree;

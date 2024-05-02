@@ -2,7 +2,7 @@ package benchmark.metrics.computers.vanilla;
 
 import benchmark.metrics.computers.BaseBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 

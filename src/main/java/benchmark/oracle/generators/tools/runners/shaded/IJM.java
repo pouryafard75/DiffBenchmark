@@ -1,4 +1,4 @@
-package benchmark.oracle.generators.tools.runners;
+package benchmark.oracle.generators.tools.runners.shaded;
 
 
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
@@ -7,7 +7,7 @@ import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
 
 /* Created by pourya on 2023-04-17 7:58 p.m. */
-public class IJM extends APIChanger {
+public class IJM extends AbstractASTDiffProviderFromIncompatibleTree {
     public IJM(ProjectASTDiff projectASTDiff, ASTDiff astDiff) {
         super(projectASTDiff, astDiff);
     }

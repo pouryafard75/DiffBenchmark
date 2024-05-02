@@ -1,5 +1,6 @@
-package benchmark.oracle.generators.tools.runners;
+package benchmark.oracle.generators.tools.runners.converter;
 
+import benchmark.oracle.generators.tools.runners.trivial.TrivialDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
@@ -12,22 +13,17 @@ import java.util.List;
 import static benchmark.utils.Helpers.runWhateverForRM2;
 
 /* Created by pourya on 2024-02-19*/
-public class RM2 extends ASTDiffConvertor {
-    private final CaseInfo info;
-    private final Configuration configuration;
+public class RM2 extends AbstractASTDiffProviderFromExportedMappings {
 
-    public RM2(ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, CaseInfo caseInfo, Configuration configuration) {
-        super(rm_astDiff.getSrcPath(), projectASTDiff);
-        this.info = caseInfo;
-        this.rm_astDiff = rm_astDiff;
-        this.configuration = configuration;
+    public RM2(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
+        super(projectASTDiff, input, info, conf);
     }
 
     @Override
     protected List<MappingExportModel> getExportedMappings() {
         rm2.refactoringminer.astDiff.actions.ProjectASTDiff proj = runWhateverForRM2(info);
         for (rm2.refactoringminer.astDiff.actions.ASTDiff astDiff : proj.getDiffSet()) {
-            if (astDiff.getSrcPath().equals(rm_astDiff.getSrcPath()))
+            if (astDiff.getSrcPath().equals(input.getSrcPath()))
                 return MappingExportModel.exportModelList(astDiff.getAllMappings().getMappings());
         }
         return null;
@@ -40,7 +36,7 @@ public class RM2 extends ASTDiffConvertor {
         return astDiff;
     }
     private void postPopulation(ASTDiff astDiff) {
-        ASTDiff trivialDiff = new TrivialDiff(projectASTDiff, rm_astDiff, info, configuration).makeASTDiff();
+        ASTDiff trivialDiff = new TrivialDiff(projectASTDiff, input, info, conf).makeASTDiff();
         for (Mapping m : trivialDiff.getAllMappings())  astDiff.getAllMappings().addMapping(m.first, m.second);
     }
 }

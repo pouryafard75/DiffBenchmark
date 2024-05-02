@@ -1,4 +1,4 @@
-package benchmark.oracle.generators.tools.runners;
+package benchmark.oracle.generators.tools.runners.shaded;
 
 
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
@@ -11,7 +11,7 @@ import shaded.com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 
 
 /* Created by pourya on 2023-04-17 7:59 p.m. */
-public class MTDiff extends APIChanger {
+public class MTDiff extends AbstractASTDiffProviderFromIncompatibleTree {
 
     private final CaseInfo info;
     private final Configuration configuration;

@@ -1,6 +1,6 @@
 package benchmark.metrics;
 
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
@@ -12,7 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-import static benchmark.oracle.generators.tools.models.ASTDiffTool.*;
+import static benchmark.oracle.generators.tools.ASTDiffTool.*;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-09-19 6:18 p.m. */
@@ -30,7 +30,7 @@ public class mm {
             System.out.println("Working on " + info.getRepo() + " " + info.getCommit());
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet()) {
-                ASTDiff perfect = GOD.getFactory().getASTDiff(projectASTDiff, rm_astDiff, info, configuration);
+                ASTDiff perfect = GOD.diff(projectASTDiff, rm_astDiff, info, configuration);
                 if (!perfect.getAllMappings().dstToSrcMultis().isEmpty() ||
                         !perfect.getAllMappings().srcToDstMultis().isEmpty())
                 {

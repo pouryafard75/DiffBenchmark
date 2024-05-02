@@ -1,6 +1,6 @@
 package benchmark.gui;
 
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 
 import java.util.EnumMap;
 import java.util.Map;

@@ -1,6 +1,8 @@
-package benchmark.oracle.generators.tools.runners;
+package benchmark.oracle.generators.tools.runners.converter;
 
-import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
+import benchmark.oracle.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
+import benchmark.utils.CaseInfo;
+import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -9,30 +11,13 @@ import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /* Created by pourya on 2024-02-20*/
-public abstract class ASTDiffConvertor {
-    protected final String srcPath;
-    protected final ProjectASTDiff projectASTDiff;
-    protected ASTDiff rm_astDiff;
-    protected Map<String, TreeContext> ptc;
-    protected Map<String, TreeContext> ctc;
-
-    public ASTDiffConvertor(String srcPath, ProjectASTDiff projectASTDiff) {
-        this.srcPath = srcPath;
-        this.projectASTDiff = projectASTDiff;
-        projectASTDiff.getDiffSet().forEach(astDiff -> {
-            if (astDiff.getSrcPath().equals(srcPath))
-            {
-                this.rm_astDiff = astDiff;
-            }
-        });
-        ptc = projectASTDiff.getParentContextMap();
-        ctc = projectASTDiff.getChildContextMap();
+public abstract class AbstractASTDiffProviderFromExportedMappings extends ASTDiffProviderFromProjectASTDiff {
+    public AbstractASTDiffProviderFromExportedMappings(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
+        super(projectASTDiff, input, info, conf);
     }
 
     protected abstract List<MappingExportModel> getExportedMappings();
@@ -44,17 +29,17 @@ public abstract class ASTDiffConvertor {
     }
 
     protected ASTDiff make(List<MappingExportModel> exportedMappings){
-        return new ASTDiff(this.rm_astDiff.getSrcPath(),
-                           this.rm_astDiff.getDstPath(),
-                            rm_astDiff.src,
-                            rm_astDiff.dst,
+        return new ASTDiff(this.input.getSrcPath(),
+                           this.input.getDstPath(),
+                            input.src,
+                            input.dst,
                             populateMappingStore(exportedMappings, ptc, ctc)
         );
     }
 
     protected ExtendedMultiMappingStore populateMappingStore(List<MappingExportModel> exportedMappings, Map<String, TreeContext> ptc, Map<String, TreeContext> ctc) {
-        Tree src = ptc.get(rm_astDiff.getSrcPath()).getRoot();
-        Tree dst = ctc.get(rm_astDiff.getDstPath()).getRoot();
+        Tree src = ptc.get(input.getSrcPath()).getRoot();
+        Tree dst = ctc.get(input.getDstPath()).getRoot();
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(src, dst);
         for (MappingExportModel mapping : exportedMappings) {
             Tree srcNode = TreeUtilFunctions.getTreeBetweenPositionsSecure(src, mapping.getFirstPos(), mapping.getFirstEndPos(),mapping.getFirstType(), mapping.getFirstParentType(), mapping.getFirstLabel());

@@ -1,7 +1,6 @@
 package benchmark.gui.web;
 
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
-import com.github.gumtreediff.actions.Diff;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import com.github.gumtreediff.utils.Pair;
 import gui.webdiff.DirComparator;
 import gui.webdiff.MonacoDiffView;
@@ -16,7 +15,6 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 

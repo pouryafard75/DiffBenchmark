@@ -8,7 +8,7 @@ import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
-import static benchmark.oracle.generators.tools.models.ASTDiffTool.GOD;
+import static benchmark.oracle.generators.tools.ASTDiffTool.GOD;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-12-05 9:52 p.m. */
@@ -38,7 +38,7 @@ public class Characteristics {
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             boolean hasMultiMappings = false;
             for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
-                ASTDiff diff = GOD.getFactory().getASTDiff(projectASTDiff, astDiff, info, configuration);
+                ASTDiff diff = GOD.diff(projectASTDiff, astDiff, info, configuration);
                 if (!diff.getAllMappings().srcToDstMultis().isEmpty() || !diff.getAllMappings().dstToSrcMultis().isEmpty()) {
                     hasMultiMappings = true;
                     break;

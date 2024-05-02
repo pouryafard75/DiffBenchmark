@@ -6,19 +6,11 @@ import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
-import benchmark.metrics.models.FileDiffComparisonResult;
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
-
-import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
-import static benchmark.utils.PathResolver.getPaths;
 
 /* Created by pourya on 2024-01-27*/
 public class HRDBenchmarkComputer {

@@ -1,12 +1,13 @@
-package benchmark.oracle.generators.tools.runners;
+package benchmark.oracle.generators.tools.runners.shaded;
 
 import at.aau.softwaredynamics.matchers.MatcherFactory;
+import benchmark.oracle.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
+import benchmark.oracle.generators.tools.runners.trivial.TrivialDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
-import com.github.gumtreediff.matchers.CompositeMatchers;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
@@ -20,17 +21,22 @@ import shaded.com.github.gumtreediff.tree.ITree;
 
 import java.io.IOException;
 
-import static benchmark.oracle.generators.tools.Utils.findMirror;
-import static benchmark.oracle.generators.tools.Utils.mirrorTree;
+import static benchmark.oracle.generators.tools.runners.Utils.findMirror;
+import static benchmark.oracle.generators.tools.runners.Utils.mirrorTree;
 
 /* Created by pourya on 2023-04-17 8:10 p.m. */
-public abstract class APIChanger {
-    final ProjectASTDiff projectASTDiff;
-    final ASTDiff rm_astDiff;
-    APIChanger(ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff){
-        this.projectASTDiff = projectASTDiff;
-        this.rm_astDiff = rm_astDiff;
+public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDiffProviderFromProjectASTDiff {
+    protected AbstractASTDiffProviderFromIncompatibleTree(ProjectASTDiff projectASTDiff, ASTDiff rmAstDiff) {
+        super(projectASTDiff, rmAstDiff);
     }
+
+    public AbstractASTDiffProviderFromIncompatibleTree(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
+        super(projectASTDiff, input, info, conf);
+    }
+
+    public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();
+    public abstract shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType();
+
     public Matcher makeMappings() throws IOException {
         shaded.com.github.gumtreediff.matchers.Matcher m = new MatcherFactory(
                 getMatcherType()).createMatcher(
@@ -42,19 +48,16 @@ public abstract class APIChanger {
     }
 
     public ITree getSrcRoot() throws IOException {
-        String srcContents = projectASTDiff.getFileContentsBefore().get(rm_astDiff.getSrcPath());
+        String srcContents = projectASTDiff.getFileContentsBefore().get(input.getSrcPath());
         return getTreeRoot(getGeneratorType(), srcContents);
     }
     public ITree getDstRoot() throws IOException {
-        String dstContents = projectASTDiff.getFileContentsAfter().get(rm_astDiff.getDstPath());
+        String dstContents = projectASTDiff.getFileContentsAfter().get(input.getDstPath());
         return getTreeRoot(getGeneratorType(), dstContents);
     }
     public static ITree getTreeRoot(TreeGenerator gen, String srcContents) throws IOException {
         return gen.generateFromString(srcContents).getRoot();
     }
-
-    public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();
-    public abstract shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType();
     public Diff diff() throws Exception {
         Matcher m = makeMappings();
         return getDiff(m);
@@ -103,8 +106,7 @@ public abstract class APIChanger {
 
     public ASTDiff makeASTDiff() throws Exception {
         Diff diff = this.diff();
-        ASTDiff astDiff = diffToASTDiffWithActions(diff, this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath());
-        return astDiff;
+        return diffToASTDiffWithActions(diff, this.input.getSrcPath(), this.input.getDstPath());
     }
 
     public static ASTDiff diffToASTDiffWithActions(Diff diff, String srcPath, String dstPath) {
@@ -116,30 +118,12 @@ public abstract class APIChanger {
     public static ASTDiff diffToASTDiffNoAction(Diff diff, String srcPath, String dstPath) {
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(diff.src.getRoot(), diff.dst.getRoot());
         mappings.add(diff.mappings);
-        ASTDiff astDiff = new ASTDiff(srcPath, dstPath, diff.src, diff.dst, mappings);
-        return astDiff;
+        return new ASTDiff(srcPath, dstPath, diff.src, diff.dst, mappings);
     }
-
-    public static ASTDiff makeASTDiffFromMatcher(CompositeMatchers.CompositeMatcher matcher, ASTDiff astDiff) {
-        Tree srcRoot = astDiff.src.getRoot();
-        Tree dstRoot = astDiff.dst.getRoot();
-        srcRoot.setParent(null);
-        dstRoot.setParent(null);
-        MappingStore match = matcher.match(srcRoot, dstRoot);
-        ExtendedMultiMappingStore mappingStore = new ExtendedMultiMappingStore(srcRoot, dstRoot);
-        mappingStore.add(match);
-        EditScript actions = new SimplifiedChawatheScriptGenerator().computeActions(match);
-        ASTDiff diff = new ASTDiff(astDiff.getSrcPath(), astDiff.getDstPath(), astDiff.src, astDiff.dst, mappingStore, actions);
-        if (diff.getAllMappings().size() != match.size())
-            if (!astDiff.getSrcPath().equals("src_java_org_apache_commons_lang_math_NumberUtils.java"))
-                throw new RuntimeException("Mapping has been lost!");
-        return diff;
-    }
-
     ASTDiff diffWithTrivialAddition(CaseInfo info, Configuration configuration) throws Exception {
         Diff diff = this.diff();
-        ASTDiff astDiff = diffToASTDiffNoAction(diff, this.rm_astDiff.getSrcPath(), this.rm_astDiff.getDstPath());
-        ExtendedMultiMappingStore trv = new TrivialDiff(this.projectASTDiff, this.rm_astDiff, info, configuration).makeASTDiff().getAllMappings();
+        ASTDiff astDiff = diffToASTDiffNoAction(diff, this.input.getSrcPath(), this.input.getDstPath());
+        ExtendedMultiMappingStore trv = new TrivialDiff(this.projectASTDiff, this.input, info, configuration).makeASTDiff().getAllMappings();
         for (com.github.gumtreediff.matchers.Mapping mapping : trv) {
             astDiff.getAllMappings().addMapping(mapping.first, mapping.second);
         }

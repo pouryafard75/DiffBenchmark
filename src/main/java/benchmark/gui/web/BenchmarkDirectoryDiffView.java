@@ -1,6 +1,6 @@
 package benchmark.gui.web;
 
-import benchmark.oracle.generators.tools.models.ASTDiffTool;
+import benchmark.oracle.generators.tools.ASTDiffTool;
 import gui.webdiff.DirComparator;
 import gui.webdiff.WebDiff;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -43,7 +43,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                         .span(class_("badge badge-secondary").style("color:black")).content(comperator.getModifiedFilesName().size())
                                     ._h4()
                                 ._div()
-                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(), diffs), comperator.getModifiedFilesName().size() > 0)
+                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(), diffs), !comperator.getModifiedFilesName().isEmpty())
                             ._div()
                         ._div()
                     ._div()

@@ -1,8 +1,8 @@
 package benchmark.metrics.computers.filters;
 
-import benchmark.oracle.models.AbstractMapping;
-import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.oracle.models.NecessaryMappings;
+import benchmark.models.AbstractMapping;
+import benchmark.models.HumanReadableDiff;
+import benchmark.models.NecessaryMappings;
 
 import java.util.Collection;
 import java.util.HashSet;

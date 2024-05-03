@@ -1,6 +1,6 @@
 package benchmark.metrics.models;
 
-import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;

@@ -1,8 +1,8 @@
 package benchmark.metrics.models;
 
-import benchmark.oracle.models.AbstractMapping;
-import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.oracle.models.NecessaryMappings;
+import benchmark.models.AbstractMapping;
+import benchmark.models.HumanReadableDiff;
+import benchmark.models.NecessaryMappings;
 import benchmark.utils.CaseInfo;
 
 import java.util.ArrayList;

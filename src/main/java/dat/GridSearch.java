@@ -5,10 +5,10 @@ import benchmark.metrics.computers.vanilla.HRDBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
-import benchmark.oracle.generators.diff.HRDGen3;
-import benchmark.oracle.generators.diff.HumanReadableDiffGenerator;
-import benchmark.oracle.generators.tools.ASTDiffTool;
-import benchmark.oracle.models.NecessaryMappings;
+import benchmark.generators.hrd.HRDGen3;
+import benchmark.generators.hrd.HumanReadableDiffGenerator;
+import benchmark.generators.tools.ASTDiffTool;
+import benchmark.models.NecessaryMappings;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.PathResolver;
@@ -35,8 +35,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import static benchmark.oracle.generators.diff.HumanReadableDiffGenerator.isPartOfJavadoc;
-import static benchmark.oracle.generators.tools.runners.shaded.AbstractASTDiffProviderFromIncompatibleTree.diffToASTDiffWithActions;
+import static benchmark.generators.hrd.HumanReadableDiffGenerator.isPartOfJavadoc;
+import static benchmark.generators.tools.runners.shaded.AbstractASTDiffProviderFromIncompatibleTree.diffToASTDiffWithActions;
 
 /* Created by pourya on 2024-02-01*/
 public class GridSearch {

@@ -1,6 +1,6 @@
 package benchmark.metrics.computers.filters;
 
-import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.models.HumanReadableDiff;
 
 public interface HumanReadableDiffFilter {
     HumanReadableDiff make(HumanReadableDiff original, HumanReadableDiff slack);

@@ -1,7 +1,7 @@
 package benchmark.metrics.computers.vanilla;
 
-import benchmark.oracle.generators.tools.ASTDiffTool;
-import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.generators.tools.ASTDiffTool;
+import benchmark.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.fasterxml.jackson.core.JsonParser;

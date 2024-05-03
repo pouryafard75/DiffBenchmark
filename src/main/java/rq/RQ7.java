@@ -3,7 +3,7 @@ package rq;
 /* Created by pourya on 2023-12-04 2:15 p.m. */
 
 import benchmark.metrics.computers.vanilla.CommitPerfectRatioBenchmarkComputer;
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 

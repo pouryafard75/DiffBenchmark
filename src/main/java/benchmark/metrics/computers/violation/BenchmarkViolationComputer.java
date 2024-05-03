@@ -3,7 +3,7 @@ package benchmark.metrics.computers.violation;
 import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.models.ViolationReport;
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
@@ -17,7 +17,7 @@ import java.util.Collection;
 
 import static benchmark.metrics.computers.violation.Helpers.contains;
 import static benchmark.metrics.computers.violation.Helpers.makeKey;
-import static benchmark.oracle.generators.tools.ASTDiffTool.GOD;
+import static benchmark.generators.tools.ASTDiffTool.GOD;
 
 /* Created by pourya on 2023-12-10 9:02 p.m. */
 public class BenchmarkViolationComputer {

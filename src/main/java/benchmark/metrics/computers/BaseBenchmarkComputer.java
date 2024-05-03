@@ -1,11 +1,6 @@
 package benchmark.metrics.computers;
 
 
-import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
-import benchmark.metrics.computers.filters.MappingsLocationFilter;
-import benchmark.metrics.computers.filters.MappingsTypeFilter;
-import benchmark.metrics.models.DiffStats;
-import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.Configuration.Configuration;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;

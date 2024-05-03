@@ -1,7 +1,7 @@
 package benchmark.gui.web;
 
 import benchmark.gui.GuiConf;
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;

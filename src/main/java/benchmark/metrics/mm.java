@@ -1,6 +1,6 @@
 package benchmark.metrics;
 
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
@@ -12,7 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-import static benchmark.oracle.generators.tools.ASTDiffTool.*;
+import static benchmark.generators.tools.ASTDiffTool.*;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-09-19 6:18 p.m. */

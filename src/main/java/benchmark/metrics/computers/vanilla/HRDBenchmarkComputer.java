@@ -6,8 +6,8 @@ import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
-import benchmark.oracle.generators.tools.ASTDiffTool;
-import benchmark.oracle.models.HumanReadableDiff;
+import benchmark.generators.tools.ASTDiffTool;
+import benchmark.models.HumanReadableDiff;
 
 import java.io.IOException;
 import java.util.*;

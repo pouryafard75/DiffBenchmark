@@ -1,6 +1,6 @@
 package benchmark.metrics.computers.violation.models;
 
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.Configuration.Configuration;
 
 import java.util.*;

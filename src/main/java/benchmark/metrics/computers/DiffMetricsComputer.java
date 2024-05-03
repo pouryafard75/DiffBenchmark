@@ -1,14 +1,11 @@
 package benchmark.metrics.computers;
-import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
-import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.Stats;
-import benchmark.oracle.models.AbstractMapping;
-import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.oracle.models.NecessaryMappings;
+import benchmark.models.AbstractMapping;
+import benchmark.models.HumanReadableDiff;
+import benchmark.models.NecessaryMappings;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.function.Function;
 

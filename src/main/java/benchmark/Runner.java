@@ -3,8 +3,8 @@ package benchmark;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.oracle.generators.BenchmarkHumanReadableDiffGenerator;
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.BenchmarkHumanReadableDiffGenerator;
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 

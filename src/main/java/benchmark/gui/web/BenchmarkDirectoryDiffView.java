@@ -1,6 +1,6 @@
 package benchmark.gui.web;
 
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffTool;
 import gui.webdiff.DirComparator;
 import gui.webdiff.WebDiff;
 import org.refactoringminer.astDiff.actions.ASTDiff;

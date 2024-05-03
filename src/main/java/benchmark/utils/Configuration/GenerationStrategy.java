@@ -1,9 +1,8 @@
 package benchmark.utils.Configuration;
 
-import benchmark.oracle.generators.diff.HRDGen2;
-import benchmark.oracle.generators.diff.HRDGen3;
-import benchmark.oracle.generators.diff.HRDGenExperimental;
-import benchmark.oracle.generators.diff.HumanReadableDiffGenerator;
+import benchmark.generators.hrd.HRDGen2;
+import benchmark.generators.hrd.HRDGen3;
+import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.utils.CaseInfo;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;

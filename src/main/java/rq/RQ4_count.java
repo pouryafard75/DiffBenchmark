@@ -9,7 +9,6 @@ import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.CommitRefactoringCountComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.oracle.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;

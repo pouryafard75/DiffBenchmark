@@ -1,15 +1,12 @@
 package rq;
 
 import benchmark.metrics.models.BaseDiffComparisonResult;
-import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
-import benchmark.oracle.models.AbstractMapping;
-import benchmark.oracle.models.HumanReadableDiff;
-import benchmark.oracle.models.NecessaryMappings;
+import benchmark.models.HumanReadableDiff;
+import benchmark.models.NecessaryMappings;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 import com.opencsv.CSVWriter;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;

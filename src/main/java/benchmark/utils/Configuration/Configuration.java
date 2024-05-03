@@ -1,6 +1,6 @@
 package benchmark.utils.Configuration;
 
-import benchmark.oracle.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 
 import java.util.*;

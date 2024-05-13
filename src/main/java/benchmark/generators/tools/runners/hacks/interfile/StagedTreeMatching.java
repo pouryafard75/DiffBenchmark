@@ -5,14 +5,31 @@ import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.FakeTree;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+
+import java.util.function.BiConsumer;
 
 /* Created by pourya on 2024-04-30*/
 public class StagedTreeMatching implements GumTreeProjectMatcher {
 
+    private final int numOfFiles;
+
+    public StagedTreeMatching(ProjectASTDiff projectASTDiff) {
+        numOfFiles = projectASTDiff.getDiffSet().size();
+    }
+
+    public int getNumOfFiles() {
+        return numOfFiles;
+    }
+
     @Override
     public Iterable<Mapping> getCommitLevelFullMatch(Tree srcPT, Tree dstPT, Matcher matcher) {
-        MappingStore match = iterativeRound(srcPT, dstPT, matcher);
+        MappingStore match = new MappingStore(srcPT, dstPT);
+        iterativeRound(srcPT, dstPT,
+                (srcChild, dstChild) -> {
+                    matcher.match(srcChild, dstChild, match);
+                    match.addMapping(srcChild, dstChild); //For the compilation units
+        });
         Tree srcPTRoot = srcPT.getParent(); Tree dstPTRoot = dstPT.getParent();
         srcPT.setParent(null); dstPT.setParent(null);
         //Full Matcher
@@ -24,21 +41,16 @@ public class StagedTreeMatching implements GumTreeProjectMatcher {
         return result;
     }
 
-    public static MappingStore iterativeRound(Tree srcPT, Tree dstPT, Matcher matcher) {
-        MappingStore match = new MappingStore(srcPT, dstPT);
-        int sideWithMinSize = Math.min(srcPT.getChildren().size(), dstPT.getChildren().size());
-        for (int i = 0; i < sideWithMinSize; i++) {
+    public void iterativeRound(Tree srcPT, Tree dstPT, BiConsumer<Tree, Tree> function) {
+        for (int i = 0; i < numOfFiles; i++) {
             Tree srcChild = srcPT.getChild(i);
             Tree dstChild = dstPT.getChild(i);
-
             Tree srcParent = srcChild.getParent(); Tree dstParent = dstChild.getParent();
             srcChild.setParent(null); dstChild.setParent(null);
-
-            //Iterative Matcher
-            match = matcher.match(srcChild, dstChild, match);
-            match.addMapping(srcChild, dstChild); //For the compilation units
+            function.accept(srcChild, dstChild);
             srcChild.setParent(srcParent); dstChild.setParent(dstParent);
         }
-        return match;
     }
+
 }
+

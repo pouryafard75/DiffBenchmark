@@ -6,6 +6,7 @@ import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
+import benchmark.generators.tools.runners.hacks.all.ModifierInterConservativeMulti;
 import benchmark.generators.tools.runners.hacks.all.ModifierInterMulti;
 import benchmark.generators.tools.runners.hacks.interfile.ProjectGumTreeOptimizer;
 import benchmark.generators.tools.runners.hacks.interfile.*;
@@ -65,7 +66,7 @@ public enum ASTDiffTool {
     SMG ("StagedTreeMatchingGreedy", (projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
-                        new StagedTreeMatching(),
+                        new StagedTreeMatching(projectASTDiff),
                         projectASTDiff, input, info, configuration,
                         new CompositeMatchers.ClassicGumtree())))
 
@@ -73,7 +74,7 @@ public enum ASTDiffTool {
     SMS ("StagedTreeMatchingSimple", (projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
-                        new StagedTreeMatching(),
+                        new StagedTreeMatching(projectASTDiff),
                         projectASTDiff, input, info, configuration,
                         new CompositeMatchers.SimpleGumtree())))
     ,
@@ -130,6 +131,24 @@ public enum ASTDiffTool {
     ALS ("AllHacksWithSimple", ((projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(
                 new ModifierInterMulti(
+                    new LeafTypeMerger(),
+                    new SingleVirtualNodeMatching(),
+                    new CopyPaste(),
+                    projectASTDiff, input, info, configuration,
+                    new CompositeMatchers.SimpleGumtree()))))
+    ,
+    ALG2 ("AllHacksWithGreedy2", ((projectASTDiff, input, info, configuration) ->
+            new ProjectGumTreeOptimizer(
+                new ModifierInterConservativeMulti(
+                    new LeafTypeMerger(),
+                    new SingleVirtualNodeMatching(),
+                    new CopyPaste(),
+                    projectASTDiff, input, info, configuration,
+                    new CompositeMatchers.ClassicGumtree()))))
+    ,
+    ALS2 ("AllHacksWithSimple2", ((projectASTDiff, input, info, configuration) ->
+            new ProjectGumTreeOptimizer(
+                new ModifierInterConservativeMulti(
                     new LeafTypeMerger(),
                     new SingleVirtualNodeMatching(),
                     new CopyPaste(),

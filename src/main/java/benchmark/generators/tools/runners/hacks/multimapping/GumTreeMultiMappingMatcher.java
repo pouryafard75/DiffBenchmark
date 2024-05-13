@@ -7,4 +7,8 @@ import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 
 public interface GumTreeMultiMappingMatcher {
     ExtendedMultiMappingStore multimatch(Tree src, Tree dst, Matcher matcher, MappingStore mappings);
+
+//    This method just returns the multi-mappings found by the implementation
+//    Collection<Mapping> findMultiMappings(Tree src, Tree dst, Matcher matcher, MappingStore mappings);
+
 }

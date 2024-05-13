@@ -1,7 +1,8 @@
-package benchmark.generators.tools.runners.hacks.all;
+package benchmark.generators.tools.runners.hacks.interfile;
 
 import benchmark.generators.tools.runners.hacks.interfile.ProjectGumTreeASTDiffProvider;
 import com.github.gumtreediff.matchers.Mapping;
+import com.github.gumtreediff.tree.Tree;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,12 +23,12 @@ public class ProjectGumTreeOptimizer extends ProjectGumTreeASTDiffProvider
                 + "@" + info.makeURL() +
                 "@" + conf.getName();
     }
-    public Iterable<Mapping> getFullMatch() {
+    public Iterable<Mapping> getFullMatch(Tree srcPT, Tree dstPT) {
         String key = getKey();
         if (cache.containsKey(key)) {
             return cache.get(key);
         }
-        Iterable<Mapping> commitLevelFullMatch = projectGumTreeASTDiff.getFullMatch();
+        Iterable<Mapping> commitLevelFullMatch = projectGumTreeASTDiff.getFullMatch(srcPT, dstPT);
         cache.put(key, commitLevelFullMatch);
         return commitLevelFullMatch;
     }

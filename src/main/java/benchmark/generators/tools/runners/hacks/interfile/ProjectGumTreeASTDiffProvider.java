@@ -43,7 +43,9 @@ public class ProjectGumTreeASTDiffProvider extends AbstractASTDiffProviderFromEx
 
     @Override
     protected List<MappingExportModel> getExportedMappings() {
-        Iterable<Mapping> match = getFullMatch();
+        Tree srcPT = makeVirtualNode(ptc, projectASTDiff.getDiffSet(), ASTDiff::getSrcPath);
+        Tree dstPT = makeVirtualNode(ctc, projectASTDiff.getDiffSet(), ASTDiff::getDstPath);
+        Iterable<Mapping> match = getFullMatch(srcPT, dstPT);
         revertRoots(ptc.values());
         revertRoots(ctc.values());
         Collection<Mapping> mappings = new LinkedHashSet<>();
@@ -74,14 +76,13 @@ public class ProjectGumTreeASTDiffProvider extends AbstractASTDiffProviderFromEx
         //TODO Must be tested but seems pretty damn right
         return root;
     }
+
     void revertRoots(Collection<TreeContext> treeContextCollection) {
         for (TreeContext treeContext : treeContextCollection) {
             treeContext.getRoot().setParent(null);
         }
     }
-    public Iterable<Mapping> getFullMatch(){
-        Tree srcPT = makeVirtualNode(ptc, projectASTDiff.getDiffSet(), ASTDiff::getSrcPath);
-        Tree dstPT = makeVirtualNode(ctc, projectASTDiff.getDiffSet(), ASTDiff::getDstPath);
+    public Iterable<Mapping> getFullMatch(Tree srcPT, Tree dstPT) {
         Iterable<Mapping> result = projectMatcher.getCommitLevelFullMatch(srcPT, dstPT, matcher);
         revertRoots(ptc.values());
         revertRoots(ctc.values());

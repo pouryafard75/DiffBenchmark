@@ -6,8 +6,8 @@ import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
-import benchmark.generators.tools.runners.hacks.all.AllHacksWithGumTreeASTDiffProvider;
-import benchmark.generators.tools.runners.hacks.all.ProjectGumTreeOptimizer;
+import benchmark.generators.tools.runners.hacks.all.ModifierInterMulti;
+import benchmark.generators.tools.runners.hacks.interfile.ProjectGumTreeOptimizer;
 import benchmark.generators.tools.runners.hacks.interfile.*;
 import benchmark.generators.tools.runners.hacks.labels.GumTreeWithTreeModifier;
 import benchmark.generators.tools.runners.hacks.labels.LeafLabelMerger;
@@ -120,22 +120,22 @@ public enum ASTDiffTool {
     ,
     ALG ("AllHacksWithGreedy", ((projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(
-                new AllHacksWithGumTreeASTDiffProvider(
-                        new LeafTypeMerger(),
-                        new SingleVirtualNodeMatching(),
-                        new CopyPaste(),
-                        projectASTDiff, input, info, configuration,
-                        new CompositeMatchers.ClassicGumtree()))))
+                new ModifierInterMulti(
+                    new LeafTypeMerger(),
+                    new SingleVirtualNodeMatching(),
+                    new CopyPaste(),
+                    projectASTDiff, input, info, configuration,
+                    new CompositeMatchers.ClassicGumtree()))))
     ,
     ALS ("AllHacksWithSimple", ((projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(
-                    new AllHacksWithGumTreeASTDiffProvider(
-                        new LeafTypeMerger(),
-                        new SingleVirtualNodeMatching(),
-                        new CopyPaste(),
-                        projectASTDiff, input, info, configuration,
-                        new CompositeMatchers.SimpleGumtree()))))
-    ,
+                new ModifierInterMulti(
+                    new LeafTypeMerger(),
+                    new SingleVirtualNodeMatching(),
+                    new CopyPaste(),
+                    projectASTDiff, input, info, configuration,
+                    new CompositeMatchers.SimpleGumtree()))))
+,
 
     ;
 

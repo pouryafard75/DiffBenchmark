@@ -1,11 +1,13 @@
 package benchmark.gui.web;
 
+import benchmark.generators.tools.runners.converter.NoPerfectDiffException;
 import benchmark.gui.GuiConf;
 import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import org.eclipse.jgit.lib.Repository;
+import org.jgrapht.Graph;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
@@ -13,10 +15,7 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.EnumMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
 
@@ -51,18 +50,20 @@ public class BenchmarkWebDiffFactory {
         }
 
         Set<ASTDiff> RM_astDiff = projectASTDiffByRM.getDiffSet();
-        Map<ASTDiffTool, Set<ASTDiff>> diffs = new EnumMap<>(ASTDiffTool.class);
+        Map<ASTDiffTool, Set<ASTDiff>> diffs = new LinkedHashMap<>();
+
         for (ASTDiff astDiff : RM_astDiff) {
-            for (Map.Entry<ASTDiffTool, Boolean> astDiffToolBooleanEntry : GuiConf.enabled.entrySet()) {
-                ASTDiffTool tool = astDiffToolBooleanEntry.getKey();
-                if (astDiffToolBooleanEntry.getValue()) {
-                    diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
-                    try {
-                        diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info, conf));
-                    }
-                    catch (Exception e) {
-                        e.printStackTrace();
-                    }
+            for (ASTDiffTool tool : GuiConf.enabled_tools) {
+                diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
+                try {
+                    diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info, conf));
+                }
+                catch (NoPerfectDiffException noPerfectDiffException)
+                {
+                    System.out.println(noPerfectDiffException.getMessage());
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         }

@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.gt.hacks.labels;
+package benchmark.generators.tools.runners.hacks.labels;
 
 import com.github.gumtreediff.matchers.CompositeMatchers;
 import com.github.gumtreediff.tree.Tree;
@@ -9,10 +9,10 @@ import java.util.function.BiConsumer;
 import java.util.function.Function;
 
 /* Created by pourya on 2024-05-02*/
-public class MergedTypesGumTreeASTDiff extends BaseMergedNodesGumTreeASTDiffProvider {
+public class LeafTypeMerger extends AbstractLeafMergerTreeModifier {
     private static final Function<Tree, String> getType = (tree) -> tree.getType().name;
     private static final BiConsumer<Tree, String> setType = (tree, input) -> tree.setType(TypeSet.type(input));
-    public MergedTypesGumTreeASTDiff(CompositeMatchers.CompositeMatcher matcher, ASTDiff input) {
-        super(matcher, input, getType, setType);
+    public LeafTypeMerger() {
+        super(getType, setType);
     }
 }

@@ -1,8 +1,11 @@
 package benchmark.gui.web;
 
 import benchmark.generators.tools.ASTDiffTool;
+import benchmark.gui.DiffViewers;
+import benchmark.gui.BenchmarkDirComparator;
+import benchmark.gui.GuiConf;
 import com.github.gumtreediff.utils.Pair;
-import gui.webdiff.DirComparator;
+
 import gui.webdiff.MonacoDiffView;
 import gui.webdiff.VanillaDiffView;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -50,13 +53,13 @@ public class BenchmarkWebDiff {
             }
         }
 
-        DirComparator comperator = new DirComparator(projectASTDiff);
+        BenchmarkDirComparator comperator = new BenchmarkDirComparator(projectASTDiff);
         configureSpark(comperator, this.port);
         Spark.awaitInitialization();
         System.out.println(String.format("Starting server: %s:%d.", "http://127.0.0.1", this.port));
     }
 
-    public void configureSpark(final DirComparator comperator, int port) {
+    public void configureSpark(final BenchmarkDirComparator comperator, int port) {
         port(port);
         staticFiles.location("/web/");
         get("/", (request, response) -> {
@@ -68,30 +71,19 @@ public class BenchmarkWebDiff {
         });
         get("/list", (request, response) -> {
             Renderable view = new BenchmarkDirectoryDiffView(comperator, diffs);
-            return render(view);
+            return renderToString(view);
         });
 
         for (Map.Entry<ASTDiffTool, Set<ASTDiff>> astDiffToolSetEntry : diffs.entrySet()) {
             ASTDiffTool tool = astDiffToolSetEntry.getKey();
             Set<ASTDiff> astDiffs = astDiffToolSetEntry.getValue();
-            get("/" + tool + "/:id" , (request, response) -> {
-                int id = Integer.parseInt(request.params(":id"));
-                ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new VanillaDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                        astDiff, false);
-                return render(view);
-            });
-            get("/" + tool + "-monaco/:id" , (request, response) -> {
-                int id = Integer.parseInt(request.params(":id"));
-                ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new MonacoDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                        astDiff, id, false);
-                return render(view);
-            });
+            for (DiffViewers enabledViewer : GuiConf.enabled_viewers) {
+                try {
+                    enabledViewer.configure(tool, astDiffs, projectASTDiff);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
         }
 
 
@@ -111,9 +103,32 @@ public class BenchmarkWebDiff {
         });
     }
 
+    private void getMonaco(ASTDiffTool tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
+        get("/" + tool + "-monaco/:id" , (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            ASTDiff astDiff = astDiffs.stream().toList().get(id);
+            Renderable view = new MonacoDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, id, false);
+            return renderToString(view);
+        });
+    }
+
+    private static void getVanilla(ASTDiffTool tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
+        get("/" + tool + "/:id" , (request, response) -> {
+            int id = Integer.parseInt(request.params(":id"));
+            ASTDiff astDiff = astDiffs.stream().toList().get(id);
+            Renderable view = new VanillaDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
+                    astDiff, false);
+            return renderToString(view);
+        });
+    }
 
 
-    private static String render(Renderable r) throws IOException {
+    public static String renderToString(Renderable r) throws IOException {
         HtmlCanvas c = new HtmlCanvas();
         r.renderOn(c);
         return c.toHtml();

@@ -1,7 +1,10 @@
 package benchmark.gui.web;
 
 import benchmark.generators.tools.ASTDiffTool;
-import gui.webdiff.DirComparator;
+import benchmark.gui.DiffViewers;
+import benchmark.gui.BenchmarkDirComparator;
+import benchmark.gui.GuiConf;
+
 import gui.webdiff.WebDiff;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.rendersnake.DocType;
@@ -11,20 +14,22 @@ import org.rendersnake.Renderable;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
+import java.lang.String;
 
 import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class BenchmarkDirectoryDiffView implements Renderable {
-    private final DirComparator comperator;
+    private final BenchmarkDirComparator comperator;
     private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
 
-    public BenchmarkDirectoryDiffView(DirComparator comperator, Map<ASTDiffTool, Set<ASTDiff>> diffs) {
+    public BenchmarkDirectoryDiffView(BenchmarkDirComparator comperator, Map<ASTDiffTool, Set<ASTDiff>> diffs) {
         this.comperator = comperator;
         this.diffs = diffs;
     }
 
     @Override
     public void renderOn(HtmlCanvas html) throws IOException {
+        Map<String, String> modifiedFilesName = comperator.getModifiedFilesName();
         html
         .render(DocType.HTML5)
         .html(lang("en"))
@@ -43,7 +48,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                         .span(class_("badge badge-secondary").style("color:black")).content(comperator.getModifiedFilesName().size())
                                     ._h4()
                                 ._div()
-                                .render_if(new ModifiedFiles(comperator.getModifiedFilesName(), diffs), !comperator.getModifiedFilesName().isEmpty())
+                                .render_if(new ModifiedFiles(modifiedFilesName, diffs), !modifiedFilesName.isEmpty())
                             ._div()
                         ._div()
                     ._div()
@@ -109,9 +114,13 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                         .div(class_("btn-toolbar justify-content-end"))
                         .div(class_("btn-group"));
                             for (ASTDiffTool tool : diffs.keySet()) {
-                                div = div
-                                        .a(class_("btn btn-primary btn-sm").href("/" + tool + "/" + id)).content(tool.name())
-                                        .a(class_("btn btn-primary btn-sm").href("/" + tool + "-monaco/" + id)).content(tool.name() + "-monaco");
+                                for (DiffViewers enabledViewer : GuiConf.enabled_viewers) {
+                                    try {
+                                        div = enabledViewer.render(div, tool, id);
+                                    } catch (Exception e) {
+                                        throw new RuntimeException(e);
+                                    }
+                                }
                             }
                             div._div()
                         ._div()
@@ -186,3 +195,5 @@ public class BenchmarkDirectoryDiffView implements Renderable {
         }
     }
 }
+
+

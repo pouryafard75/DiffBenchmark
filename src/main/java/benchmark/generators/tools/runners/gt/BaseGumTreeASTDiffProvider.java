@@ -4,7 +4,9 @@ import benchmark.generators.tools.models.BaseASTDiffProvider;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.matchers.CompositeMatchers;
+import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
+import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
@@ -27,7 +29,7 @@ public class BaseGumTreeASTDiffProvider extends BaseASTDiffProvider {
         ASTDiff astDiff = input;
         Tree srcRoot = astDiff.src.getRoot();
         Tree dstRoot = astDiff.dst.getRoot();
-        MappingStore match = match(srcRoot, dstRoot);
+        MappingStore match = match(srcRoot, dstRoot, matcher);
         return mappingStoreToASTDiffWithActions(srcRoot, dstRoot, match);
     }
 
@@ -47,14 +49,17 @@ public class BaseGumTreeASTDiffProvider extends BaseASTDiffProvider {
         return diff;
     }
 
-    public MappingStore match(Tree srcRoot, Tree dstRoot){
-        Tree srcParent = srcRoot.getParent();
-        Tree dstParent = dstRoot.getParent();
-        srcRoot.setParent(null);
-        dstRoot.setParent(null);
-        MappingStore match = matcher.match(srcRoot, dstRoot);
-        srcRoot.setParent(srcParent);
-        dstRoot.setParent(dstParent);
-        return match;
+    public static MappingStore match(Tree srcRoot, Tree dstRoot, Matcher matcher){
+        return matcher.match(srcRoot, dstRoot);
+    }
+    public static void safeAdd(ExtendedMultiMappingStore extendedMultiMappingStore, Iterable<Mapping> match) {
+        for (Mapping mapping : match) {
+            safeAdd(extendedMultiMappingStore, mapping);
+        }
+    }
+
+    protected static void safeAdd(ExtendedMultiMappingStore extendedMultiMappingStore, Mapping mapping) {
+        if (!mapping.first.getType().name.equals(mapping.second.getType().name)) return;
+        extendedMultiMappingStore.addMapping(mapping.first, mapping.second);
     }
 }

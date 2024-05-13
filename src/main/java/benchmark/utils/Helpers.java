@@ -1,11 +1,5 @@
 package benchmark.utils;
 
-import com.github.gumtreediff.actions.Diff;
-import com.github.gumtreediff.actions.EditScript;
-import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
-import com.github.gumtreediff.matchers.CompositeMatchers;
-import com.github.gumtreediff.matchers.MappingStore;
-import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
@@ -31,6 +25,9 @@ public class Helpers {
                     beforePath, afterPath);
         }
         return projectASTDiff;
+    }
+    public static ProjectASTDiff runWhatever(CaseInfo info) {
+        return runWhatever(info.repo, info.commit);
     }
 
     public static rm2.refactoringminer.astDiff.actions.ProjectASTDiff runWhateverForRM2(CaseInfo caseInfo) {

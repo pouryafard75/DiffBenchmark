@@ -1,4 +1,4 @@
-package gui.webdiff;
+package benchmark.gui;
 
 import com.github.gumtreediff.utils.Pair;
 import org.refactoringminer.astDiff.actions.ASTDiff;
@@ -6,12 +6,12 @@ import org.refactoringminer.astDiff.actions.ProjectASTDiff;
 
 import java.util.*;
 
-public class DirComparator {
+public class BenchmarkDirComparator {
     private final List<ASTDiff> diffs;
     private final ProjectASTDiff projectASTDiff;
+    private final Map<String,String> modifiedFilesName;
     private Set<String> removedFilesName;
     private Set<String> addedFilesName;
-    private Map<String,String> modifiedFilesName;
 
     public Set<String> getRemovedFilesName() {
         return removedFilesName;
@@ -24,6 +24,7 @@ public class DirComparator {
     public Map<String,String> getModifiedFilesName() {
         return modifiedFilesName;
     }
+
     public Pair<String,String> getFileContentsPair(int id)
     {
         return new Pair<>(
@@ -32,12 +33,11 @@ public class DirComparator {
         );
     }
 
-    public DirComparator(ProjectASTDiff projectASTDiff)
+    public BenchmarkDirComparator(ProjectASTDiff projectASTDiff)
     {
         this.projectASTDiff = projectASTDiff;
         this.diffs = new ArrayList<>(projectASTDiff.getDiffSet());
         modifiedFilesName = new LinkedHashMap<>();
-
         compare();
     }
 
@@ -56,8 +56,5 @@ public class DirComparator {
         Set<String> removedBackup = new HashSet<>(removedFilesName);
         removedFilesName.removeAll(addedFilesName);
         addedFilesName.removeAll(removedBackup);
-    }
-    public ASTDiff getASTDiff(int id) {
-        return diffs.get(id);
     }
 }

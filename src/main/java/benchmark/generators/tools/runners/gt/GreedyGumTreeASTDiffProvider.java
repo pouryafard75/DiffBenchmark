@@ -5,7 +5,7 @@ import org.refactoringminer.astDiff.actions.ASTDiff;
 
 /* Created by pourya on 2024-05-02*/
 public class GreedyGumTreeASTDiffProvider extends BaseGumTreeASTDiffProvider {
-    public GreedyGumTreeASTDiffProvider(ASTDiff rmAstDiff) {
-        super(new CompositeMatchers.ClassicGumtree(), rmAstDiff);
+    public GreedyGumTreeASTDiffProvider(ASTDiff input) {
+        super(new CompositeMatchers.ClassicGumtree(), input);
     }
 }

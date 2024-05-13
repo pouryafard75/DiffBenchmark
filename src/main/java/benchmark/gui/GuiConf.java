@@ -2,19 +2,21 @@ package benchmark.gui;
 
 import benchmark.generators.tools.ASTDiffTool;
 
-import java.util.EnumMap;
-import java.util.Map;
+import java.util.*;
 
 /* Created by pourya on 2024-04-29*/
 public class GuiConf {
-    public static Map<ASTDiffTool, Boolean> enabled = new EnumMap<>(ASTDiffTool.class);
+    public static Set<ASTDiffTool> enabled_tools = new LinkedHashSet<>();
+    public static Set<DiffViewers> enabled_viewers = new LinkedHashSet<>();
     static {
-//        enabled.put(ASTDiffTool.GOD, true);
-//        enabled.put(ASTDiffTool.TRV, true);
-        enabled.put(ASTDiffTool.RMD, true);
-        enabled.put(ASTDiffTool.GTG, true);
-        enabled.put(ASTDiffTool.GTS, true);
-//        enabled.put(ASTDiffTool.OBV, true);
+        enabled_tools.add(ASTDiffTool.GOD);
+        enabled_tools.add(ASTDiffTool.RMD);
+
+    }
+
+    static {
+        enabled_viewers.add(DiffViewers.MONACO);
+        enabled_viewers.add(DiffViewers.VANILLA);
     }
 
 }

@@ -30,7 +30,7 @@ public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
             exportedMappings = new ObjectMapper().readValue(new File(getFileNameBasedOnAST()), new TypeReference<List<MappingExportModel>>() {
             });
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new NoPerfectDiffException(e);
         }
         return exportedMappings;
 

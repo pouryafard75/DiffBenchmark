@@ -178,10 +178,7 @@ public abstract class HumanReadableDiffGenerator {
     }
 
     public static void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
-        if (abstractMapping.getLeftType().equals(Constants.COMPILATION_UNIT)) return;
-        if (!abstractMapping.getLeftType().equals(abstractMapping.getRightType()))
-            target.getMappings().add(abstractMapping);
-        else
+//        if (abstractMapping.getLeftType().equals(Constants.COMPILATION_UNIT)) return;
         if (isProgramElement(abstractMapping.getLeftType()))
             target.getMatchedElements().add(abstractMapping);
         else

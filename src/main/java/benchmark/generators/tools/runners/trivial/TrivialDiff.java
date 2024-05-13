@@ -18,10 +18,10 @@ public class TrivialDiff extends BaseTrivialDiff {
 
     private ExtendedMultiMappingStore perfectMappings = null;
 
-    public TrivialDiff(ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, CaseInfo info, Configuration conf) {
-        super(rm_astDiff);
+    public TrivialDiff(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
+        super(input);
         try {
-            perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, rm_astDiff, info, conf).getAllMappings();
+            perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, input, info, conf).getAllMappings();
         } catch (Exception e) {
             e.printStackTrace();
         }

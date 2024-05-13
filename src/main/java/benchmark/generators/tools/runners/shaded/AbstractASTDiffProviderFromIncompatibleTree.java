@@ -127,6 +127,7 @@ public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDif
         for (com.github.gumtreediff.matchers.Mapping mapping : trv) {
             astDiff.getAllMappings().addMapping(mapping.first, mapping.second);
         }
+        astDiff.computeVanillaEditScript();
         return astDiff;
     }
 }

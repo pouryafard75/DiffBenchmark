@@ -74,7 +74,7 @@ public class AllHacksWithGumTreeASTDiffProvider extends ProjectGumTreeASTDiffPro
 
 
     @Override
-    protected String  matcherID() {
+    public String  matcherID() {
         return treeModifier.getClass().getSimpleName() + "_" + projectMatcher.getClass().getSimpleName() + "_" + multiMappingMatcher.getClass().getSimpleName();
     }
 }

@@ -7,6 +7,7 @@ import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.hacks.all.AllHacksWithGumTreeASTDiffProvider;
+import benchmark.generators.tools.runners.hacks.all.ProjectGumTreeOptimizer;
 import benchmark.generators.tools.runners.hacks.interfile.*;
 import benchmark.generators.tools.runners.hacks.labels.GumTreeWithTreeModifier;
 import benchmark.generators.tools.runners.hacks.labels.LeafLabelMerger;

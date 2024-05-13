@@ -4,7 +4,6 @@ import benchmark.generators.tools.runners.converter.AbstractASTDiffProviderFromE
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
-import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.FakeTree;
 import com.github.gumtreediff.tree.Tree;
@@ -88,7 +87,7 @@ public class ProjectGumTreeASTDiffProvider extends AbstractASTDiffProviderFromEx
         revertRoots(ctc.values());
         return result;
     }
-    protected String matcherID() {
+    public String matcherID() {
         return matcher.getClass().getSimpleName() + "_" + projectMatcher.getClass().getSimpleName();
     }
 }

@@ -1,5 +1,6 @@
-package benchmark.generators.tools.runners.hacks.interfile;
+package benchmark.generators.tools.runners.hacks.all;
 
+import benchmark.generators.tools.runners.hacks.interfile.ProjectGumTreeASTDiffProvider;
 import com.github.gumtreediff.matchers.Mapping;
 
 import java.util.HashMap;

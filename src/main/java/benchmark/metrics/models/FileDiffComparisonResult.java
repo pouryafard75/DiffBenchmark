@@ -8,10 +8,20 @@ import java.util.Map;
 /* Created by pourya on 2023-04-03 4:47 a.m. */
 public class FileDiffComparisonResult extends BaseDiffComparisonResult {
     final String srcFileName;
+    boolean onFly = false;
 
     public FileDiffComparisonResult(CaseInfo caseInfo, String srcFileName) {
         super(caseInfo);
         this.srcFileName = srcFileName;
+    }
+    public FileDiffComparisonResult(CaseInfo caseInfo, String srcFileName, boolean onFly) {
+        super(caseInfo);
+        this.srcFileName = srcFileName;
+        this.onFly = onFly;
+    }
+
+    public void setOnFly(boolean onFly) {
+        this.onFly = onFly;
     }
 
     public String getSrcFileName() {
@@ -24,7 +34,6 @@ public class FileDiffComparisonResult extends BaseDiffComparisonResult {
         StringBuilder row = new StringBuilder();
             row.append(this.getCaseInfo().makeURL()).append(",")
                     .append(this.getSrcFileName()).append(",");
-        boolean onFly = false;
         writeToolsData(row, onFly);
         row.append("\n");
         writer.append(row.toString());

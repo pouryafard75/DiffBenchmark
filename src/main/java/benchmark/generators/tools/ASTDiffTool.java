@@ -71,10 +71,11 @@ public enum ASTDiffTool {
 
     ,
     SMS ("StagedTreeMatchingSimple", (projectASTDiff, input, info, configuration) ->
-            new ProjectGumTreeASTDiffProvider(
-                    new StagedTreeMatching(),
-                    projectASTDiff, input, info, configuration,
-                    new CompositeMatchers.SimpleGumtree()))
+            new ProjectGumTreeOptimizer(
+                new ProjectGumTreeASTDiffProvider(
+                        new StagedTreeMatching(),
+                        projectASTDiff, input, info, configuration,
+                        new CompositeMatchers.SimpleGumtree())))
     ,
     NMG ("NonMappedSubTreesWithGreedy", (projectASTDiff, input, info, configuration) ->
             new GumTreeWithMultiMappingASTDiffProvider(

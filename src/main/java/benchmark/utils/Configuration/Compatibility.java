@@ -50,8 +50,19 @@ public enum Compatibility {
                     ASTDiffTool.RMD,
                     ASTDiffTool.GTG,
                     ASTDiffTool.GTS,
-//                    ASTDiffTool.SVN,
 //                    ASTDiffTool.IAM,
+                    ASTDiffTool.VNG,
+                    ASTDiffTool.VNS,
+                    ASTDiffTool.SMG,
+                    ASTDiffTool.SMS,
+                    ASTDiffTool.NMG,
+                    ASTDiffTool.NMS,
+                    ASTDiffTool.CPG,
+                    ASTDiffTool.CPS,
+                    ASTDiffTool.FTG,
+                    ASTDiffTool.FTS,
+                    ASTDiffTool.ALG,
+                    ASTDiffTool.ALS
             };
         }
 

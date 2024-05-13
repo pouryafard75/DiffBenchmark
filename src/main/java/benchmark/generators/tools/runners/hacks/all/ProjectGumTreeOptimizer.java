@@ -9,7 +9,7 @@ import java.util.Map;
 ///* Created by pourya on 2024-04-28*/
 public class ProjectGumTreeOptimizer extends ProjectGumTreeASTDiffProvider
 {
-    static Map<String, Iterable<Mapping>> cache = new HashMap<>();
+    public static Map<String, Iterable<Mapping>> cache = new HashMap<>();
     private final ProjectGumTreeASTDiffProvider projectGumTreeASTDiff;
 
     public ProjectGumTreeOptimizer(ProjectGumTreeASTDiffProvider projectGumTreeASTDiff) {
@@ -18,7 +18,9 @@ public class ProjectGumTreeOptimizer extends ProjectGumTreeASTDiffProvider
     }
 
     private String getKey(){
-        return projectGumTreeASTDiff.matcherID();
+        return projectGumTreeASTDiff.matcherID()
+                + "@" + info.makeURL() +
+                "@" + conf.getName();
     }
     public Iterable<Mapping> getFullMatch() {
         String key = getKey();

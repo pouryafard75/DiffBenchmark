@@ -61,9 +61,12 @@ public class AllHacksWithGumTreeASTDiffProvider extends ProjectGumTreeASTDiffPro
         //multimatch contains all the mapping, but we have to find the eqv in the original trees
         Collection<Mapping> result = new ArrayList<>();
         for (Mapping mapping : multimatch) {
+            if (mapping.first instanceof FakeTree || mapping.second instanceof FakeTree)
+                continue;
             Tree a = srcCopy.get(mapping.first);
             Tree b = dstCopy.get(mapping.second);
-            if (a == null || b == null) throw new RuntimeException("Mapping not found in the original trees");
+            if (a == null || b == null)
+                throw new RuntimeException("Mapping not found in the original trees");
             result.add(new Mapping(a, b));
         }
         return result;
@@ -75,6 +78,6 @@ public class AllHacksWithGumTreeASTDiffProvider extends ProjectGumTreeASTDiffPro
 
     @Override
     public String  matcherID() {
-        return treeModifier.getClass().getSimpleName() + "_" + projectMatcher.getClass().getSimpleName() + "_" + multiMappingMatcher.getClass().getSimpleName();
+        return super.matcherID() + "_" + treeModifier.getClass().getSimpleName() + "_" + multiMappingMatcher.getClass().getSimpleName();
     }
 }

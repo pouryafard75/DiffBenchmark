@@ -24,6 +24,11 @@ import static benchmark.utils.PathResolver.*;
 public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
     private final HumanReadableDiffFilter humanReadableDiffFilter;
     private final MappingsTypeFilter mappingsTypeFilter;
+    private boolean onFly = false;
+
+    public void setOnFly(boolean onFly) {
+        this.onFly = onFly;
+    }
 
     public VanillaBenchmarkComputer(Configuration configuration,
                                     HumanReadableDiffFilter humanReadableDiffFilter,
@@ -70,7 +75,7 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
     }
 
     private BaseDiffComparisonResult getBaseDiffComparisonResult(CaseInfo info, Path dirPath) throws IOException {
-        BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
+        BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString(), onFly);
         new HRDBenchmarkComputer(getHumanReadableDiffFilter(), getMappingsTypeFilter(),
                 BenchmarkComparisonInput.read(this.getConfiguration(), info, dirPath.getFileName().toString()))
                 .compute(baseDiffComparisonResult);

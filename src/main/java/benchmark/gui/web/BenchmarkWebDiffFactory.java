@@ -63,6 +63,7 @@ public class BenchmarkWebDiffFactory {
                     System.out.println(noPerfectDiffException.getMessage());
                 }
                 catch (Exception e) {
+                    System.out.println("Error in " + tool + " for " + astDiff.getSrcPath() + " and " + astDiff.getDstPath());
                     e.printStackTrace();
                 }
             }

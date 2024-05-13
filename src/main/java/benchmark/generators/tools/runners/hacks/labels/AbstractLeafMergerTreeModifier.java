@@ -1,5 +1,6 @@
 package benchmark.generators.tools.runners.hacks.labels;
 
+import com.github.gumtreediff.tree.FakeTree;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeUtils;
 
@@ -20,6 +21,7 @@ public abstract class AbstractLeafMergerTreeModifier implements TreeModifier {
     }
     protected void mergeLeavesAndSingleChildInnersWithFunctions(Tree baseTree, Function<Tree, String> getFunction, BiConsumer<Tree, String> setFunction) {
         for (Tree tree : TreeUtils.breadthFirst(baseTree)) {
+            if (tree instanceof FakeTree) continue;
             if (tree.isLeaf()){
                 setFunction.accept(tree, getFunction.apply(tree.getParent()) + "_" + getFunction.apply(tree));
             }

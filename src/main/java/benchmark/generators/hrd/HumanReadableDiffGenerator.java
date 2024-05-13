@@ -193,6 +193,17 @@ public abstract class HumanReadableDiffGenerator {
     public static boolean isBetweenDifferentTypes(Mapping mapping) {
         return !mapping.first.getType().name.equals(mapping.second.getType().name);
     }
+    public static boolean isPartOfImports(Mapping mapping) {
+        if (isPartOfImports(mapping.first) || isPartOfImports(mapping.second))
+            return true;
+        return false;
+    }
+    public static boolean isPartOfImports(Tree srcSubTree) {
+        if (srcSubTree.getType().name.equals(Constants.IMPORT_DECLARATION))
+            return true;
+        if (srcSubTree.getParent() == null) return false;
+        return isPartOfImports(srcSubTree.getParent());
+    }
     public static boolean isPartOfJavadoc(Mapping mapping) {
         if (isPartOfJavadoc(mapping.first) || isPartOfJavadoc(mapping.second))
             return true;

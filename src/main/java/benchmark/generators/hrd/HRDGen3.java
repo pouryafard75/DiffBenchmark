@@ -72,7 +72,12 @@ public class HRDGen3 extends HumanReadableDiffGenerator {
     public void handleNonProgramElements(MappingMetaInformation mappingMetaInformation) {
         Mapping mapping = mappingMetaInformation.mapping;
         handleStatement(mapping, mappingMetaInformation.target, mappingMetaInformation.currSrc, mappingMetaInformation.currDst);
-        if (!mappingMetaInformation._inter) {
+        if (mappingMetaInformation._inter) {
+            // ignore if its part of import statements for inter-file mappings;
+            if (isPartOfImports(mapping)) return;
+        }
+        if (!mappingMetaInformation._inter) //TODO: We have to remove this condition and test
+        {
             handleMove(mapping, mappingMetaInformation.target, mappingMetaInformation.currSrc, mappingMetaInformation.currDst);
             handleUpdate(mapping, mappingMetaInformation.target, mappingMetaInformation.currSrc, mappingMetaInformation.currDst);
         }

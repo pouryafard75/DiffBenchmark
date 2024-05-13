@@ -25,6 +25,7 @@ import fr.gumtree.autotuning.domain.ParameterDomain;
 import fr.gumtree.autotuning.gumtree.ParametersResolvers;
 import org.refactoringminer.astDiff.actions.ASTDiff;
 import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.matchers.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,7 +36,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import static benchmark.generators.hrd.HumanReadableDiffGenerator.isPartOfJavadoc;
+import static benchmark.generators.hrd.HumanReadableDiffGenerator.isPartOf;
 import static benchmark.generators.tools.runners.shaded.AbstractASTDiffProviderFromIncompatibleTree.diffToASTDiffWithActions;
 
 /* Created by pourya on 2024-02-01*/
@@ -138,7 +139,7 @@ public class GridSearch {
             int edSize = diff.editScript.asList().size();
 
             int edSizeNonJavaDocs = diff.editScript.asList().stream().filter(x ->
-                    !isPartOfJavadoc(x.getNode())).toList().size();
+                    !isPartOf(x.getNode(), Constants.JAVA_DOC)).toList().size();
 //        logger.debug("About to add the intel for " + matcher + " " + properties);
             add(matcher, properties, edSize, edSizeNonJavaDocs, ignore, dat);
         }

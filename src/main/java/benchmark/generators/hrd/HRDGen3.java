@@ -74,7 +74,7 @@ public class HRDGen3 extends HumanReadableDiffGenerator {
         handleStatement(mapping, mappingMetaInformation.target, mappingMetaInformation.currSrc, mappingMetaInformation.currDst);
         if (mappingMetaInformation._inter) {
             // ignore if its part of import statements for inter-file mappings;
-            if (isPartOfImports(mapping)) return;
+            if (isPartOf(mapping, Constants.IMPORT_DECLARATION)) return;
         }
         if (!mappingMetaInformation._inter) //TODO: We have to remove this condition and test
         {
@@ -118,7 +118,7 @@ public class HRDGen3 extends HumanReadableDiffGenerator {
         Set<Mapping> abstractMappingSet = new LinkedHashSet<>();
         boolean _met = false;
         for (Tree child : mapping.first.getChildren()) {
-            if (isPartOfJavadoc(child)) continue;
+            if (isPartOf(child, Constants.JAVA_DOC)) continue;
             if (child.getType().name.equals(Constants.SIMPLE_NAME))
                 _met = true;
             else if (_met && !child.getType().name.equals(Constants.SIMPLE_TYPE))
@@ -136,7 +136,7 @@ public class HRDGen3 extends HumanReadableDiffGenerator {
         Set<Mapping> abstractMappingSet = new LinkedHashSet<>();
         for (Tree child : mapping.first.getChildren()) {
             if (child.getType().name.equals(Constants.BLOCK)) continue;
-            if (isPartOfJavadoc(child)) continue;
+            if (isPartOf(child, Constants.JAVA_DOC)) continue;
             Set<Tree> dsts = mappings.getDsts(child);
             if (dsts == null) continue;
             for (Tree mappedDst : dsts) {

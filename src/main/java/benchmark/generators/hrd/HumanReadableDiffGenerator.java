@@ -50,7 +50,7 @@ public abstract class HumanReadableDiffGenerator {
         List<Mapping> mappings = new ArrayList<>(getAstDiff().getAllMappings().getMappings());
         mappings.sort(Comparator.comparingInt(o -> o.first.getPos()));
         for (Mapping mapping : mappings ) {
-            if (isPartOfJavadoc(mapping)) continue;
+            if (isPartOf(mapping, Constants.JAVA_DOC)) continue;
             if (isBetweenDifferentTypes(mapping)) {
 //                throw new RuntimeException();
 //                System.out.println("");
@@ -193,27 +193,16 @@ public abstract class HumanReadableDiffGenerator {
     public static boolean isBetweenDifferentTypes(Mapping mapping) {
         return !mapping.first.getType().name.equals(mapping.second.getType().name);
     }
-    public static boolean isPartOfImports(Mapping mapping) {
-        if (isPartOfImports(mapping.first) || isPartOfImports(mapping.second))
+    public static boolean isPartOf(Mapping mapping, String type) {
+        if (isPartOf(mapping.first, type) || isPartOf(mapping.second, type))
             return true;
         return false;
     }
-    public static boolean isPartOfImports(Tree srcSubTree) {
-        if (srcSubTree.getType().name.equals(Constants.IMPORT_DECLARATION))
+    public static boolean isPartOf(Tree srcSubTree, String type) {
+        if (srcSubTree.getType().name.equals(type))
             return true;
         if (srcSubTree.getParent() == null) return false;
-        return isPartOfImports(srcSubTree.getParent());
-    }
-    public static boolean isPartOfJavadoc(Mapping mapping) {
-        if (isPartOfJavadoc(mapping.first) || isPartOfJavadoc(mapping.second))
-            return true;
-        return false;
-    }
-    public static boolean isPartOfJavadoc(Tree srcSubTree) {
-        if (srcSubTree.getType().name.equals(Constants.JAVA_DOC))
-            return true;
-        if (srcSubTree.getParent() == null) return false;
-        return isPartOfJavadoc(srcSubTree.getParent());
+        return isPartOf(srcSubTree.getParent(), type);
     }
     public static boolean isInterFileMapping(Mapping mapping, Tree src, Tree dst) {
         if (mapping.first.getParent() != null & mapping.second.getParents() != null)

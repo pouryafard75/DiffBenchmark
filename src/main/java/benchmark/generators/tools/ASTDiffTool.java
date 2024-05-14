@@ -119,42 +119,25 @@ public enum ASTDiffTool {
                     new LeafTypeMerger(),
                     new CompositeMatchers.SimpleGumtree(), input))
     ,
-    ALG ("AllHacksWithGreedy", ((projectASTDiff, input, info, configuration) ->
+    X_TYPE_STAGED_NONMATCHED_GREEDY ("MERGED_STAGED_NONMATCHED_GREEDY", ((projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(
-                new ModifierInterMulti(
-                    new LeafTypeMerger(),
-                    new SingleVirtualNodeMatching(),
-                    new CopyPaste(),
-                    projectASTDiff, input, info, configuration,
-                    new CompositeMatchers.ClassicGumtree()))))
+                    new ModifierInterConservativeMulti(
+                            new LeafTypeMerger(),
+                            new StagedTreeMatching(projectASTDiff),
+                            new NonMatchedSubtreesAdditionalRound(),
+                            projectASTDiff, input, info, configuration,
+                            new CompositeMatchers.ClassicGumtree()))))
     ,
-    ALS ("AllHacksWithSimple", ((projectASTDiff, input, info, configuration) ->
+    X_TYPE_STAGED_NONMATCHED_SIMPLE ("MERGED_STAGED_NONMATCHED_SIMPLE", ((projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(
-                new ModifierInterMulti(
-                    new LeafTypeMerger(),
-                    new SingleVirtualNodeMatching(),
-                    new CopyPaste(),
-                    projectASTDiff, input, info, configuration,
-                    new CompositeMatchers.SimpleGumtree()))))
+                    new ModifierInterConservativeMulti(
+                            new LeafTypeMerger(),
+                            new StagedTreeMatching(projectASTDiff),
+                            new NonMatchedSubtreesAdditionalRound(),
+                            projectASTDiff, input, info, configuration,
+                            new CompositeMatchers.SimpleGumtree()))))
     ,
-    ALG2 ("AllHacksWithGreedy2", ((projectASTDiff, input, info, configuration) ->
-            new ProjectGumTreeOptimizer(
-                new ModifierInterConservativeMulti(
-                    new LeafTypeMerger(),
-                    new SingleVirtualNodeMatching(),
-                    new CopyPaste(),
-                    projectASTDiff, input, info, configuration,
-                    new CompositeMatchers.ClassicGumtree()))))
-    ,
-    ALS2 ("AllHacksWithSimple2", ((projectASTDiff, input, info, configuration) ->
-            new ProjectGumTreeOptimizer(
-                new ModifierInterConservativeMulti(
-                    new LeafTypeMerger(),
-                    new SingleVirtualNodeMatching(),
-                    new CopyPaste(),
-                    projectASTDiff, input, info, configuration,
-                    new CompositeMatchers.SimpleGumtree()))))
-,
+
 
     ;
 

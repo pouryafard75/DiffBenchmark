@@ -1,6 +1,5 @@
 package benchmark.generators.tools.runners.hacks.interfile;
 
-import benchmark.generators.tools.runners.hacks.interfile.ProjectGumTreeASTDiffProvider;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 

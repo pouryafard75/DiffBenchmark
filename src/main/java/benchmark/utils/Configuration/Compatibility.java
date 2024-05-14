@@ -43,7 +43,7 @@ public enum Compatibility {
             return "2.1";
         }
     },
-    ThreePointZero {
+    HackyExperiment {
         @Override
         ASTDiffTool[] getTools() {
             return new ASTDiffTool[]{
@@ -64,7 +64,20 @@ public enum Compatibility {
                     ASTDiffTool.X_TYPE_STAGED_NONMATCHED_SIMPLE,
             };
         }
-
+        @Override
+        String getVersion() {
+            return "HackyExperiment";
+        }
+    },
+    ThreePointZero {
+        @Override
+        ASTDiffTool[] getTools() {
+            return new ASTDiffTool[]{
+                    ASTDiffTool.RMD,
+                    ASTDiffTool.GTG,
+                    ASTDiffTool.GTS,
+            };
+        }
         @Override
         String getVersion() {
             return "3.0";

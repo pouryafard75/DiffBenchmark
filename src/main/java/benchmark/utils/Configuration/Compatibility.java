@@ -43,6 +43,7 @@ public enum Compatibility {
             return "2.1";
         }
     },
+
     HackyExperiment {
         @Override
         ASTDiffTool[] getTools() {
@@ -69,6 +70,7 @@ public enum Compatibility {
             return "HackyExperiment";
         }
     },
+
     ThreePointZero {
         @Override
         ASTDiffTool[] getTools() {
@@ -83,6 +85,7 @@ public enum Compatibility {
             return "3.0";
         }
     };
+
     abstract ASTDiffTool[] getTools();
     abstract String getVersion();
 }

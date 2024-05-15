@@ -2,7 +2,6 @@ package benchmark.utils.Configuration;
 
 import benchmark.utils.CaseInfo;
 
-import java.io.IOException;
 import java.util.Set;
 
 /* Created by pourya on 2023-09-18 1:39 a.m. */
@@ -107,7 +106,7 @@ public class ConfigurationFactory {
 //                .setAllCases(Set.of(new CaseInfo(TEST_URL)))
                 .setAllCases(dummySet)
 //                .setAllCases(Set.of(new CaseInfo("Chart", "1"), new CaseInfo("Chart", "2")))
-                .setCompatibility(Compatibility.ThreePointZero)
+                .setCompatibility(Compatibility.HackyExperiment)
 //                .setTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.DAT))
                 .setGenerationStrategy(GenerationStrategy.NonFiltered);
         return setOutputPaths(confName, configurationBuilder);

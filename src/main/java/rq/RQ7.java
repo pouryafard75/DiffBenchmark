@@ -20,47 +20,17 @@ import java.util.Map;
 public class RQ7 implements RQ  {
     @Override
     public void run(Configuration[] conf) {
-        if (conf.length > 1) {
-            throw new RuntimeException("RQ7 accepts only one configuration");
-        }
-        Configuration configuration = conf[0];
         try {
-            rq7(configuration);
+            rq7(conf);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static void rq7(Configuration configuration) throws IOException {
-        Map<ASTDiffTool, Integer> astDiffToolIntegerMap = new CommitPerfectRatioBenchmarkComputer(configuration).perfectRatio();
-        writeToFile(astDiffToolIntegerMap, "out/rq7-" + configuration.getName() + ".txt");
-    }
-    static void writeToFile(Map<ASTDiffTool, Integer> astDiffToolIntegerMap, String outputFilePath) {
-        File file = new File(outputFilePath);
-
-        BufferedWriter bf = null;
-        try {
-            bf = new BufferedWriter(new FileWriter(file));
-            // iterate map entries
-            for (Map.Entry<ASTDiffTool, Integer> entry :
-                    astDiffToolIntegerMap.entrySet()) {
-                // put key and value separated by a colon
-                bf.write(entry.getKey().getToolName() + ":"
-                        + entry.getValue());
-                // new line
-                bf.newLine();
-            }
-            bf.flush();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        finally {
-            try {
-                bf.close();
-            }
-            catch (Exception e) {
-            }
+    private static void rq7(Configuration[] confs) throws IOException {
+        for (Configuration configuration : confs) {
+            Map<ASTDiffTool, Integer> astDiffToolIntegerMap = new CommitPerfectRatioBenchmarkComputer(configuration).perfectRatio();
+            RQ.writeToFile(astDiffToolIntegerMap, "out/rq7-" + configuration.getName() + ".txt");
         }
     }
 }

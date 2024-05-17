@@ -6,12 +6,14 @@ import benchmark.metrics.computers.violation.models.ViolationReport;
 import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.Configuration.Configuration;
 import com.opencsv.CSVWriter;
+import rq.RQ;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /* Created by pourya on 2023-12-11 3:26 p.m. */
@@ -38,6 +40,17 @@ public class CsvWriter {
                 writeToolOutput(records, finalPath.toString());
             }
         }
+        Map<ASTDiffTool, Integer> mergedViolations = new LinkedHashMap<>();
+        for (ViolationReport report : benchmarkViolationComputer.getReports()) {
+            Map<ASTDiffTool, Collection<SemanticViolationRecord>> violations = report.getViolations();
+            for (Map.Entry<ASTDiffTool, Collection<SemanticViolationRecord>> entry : violations.entrySet()) {
+                ASTDiffTool tool = entry.getKey();
+                int count = entry.getValue().size();
+                mergedViolations.merge(tool, count, Integer::sum);
+            }
+        }
+        RQ.writeToFile(mergedViolations, dir.toPath().resolve("merged.csv").toString());
+
     }
 
     private void writeToolOutput(Collection<SemanticViolationRecord> records, String filePath) throws IOException {

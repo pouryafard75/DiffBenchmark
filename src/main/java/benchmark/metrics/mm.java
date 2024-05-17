@@ -40,10 +40,10 @@ public class mm {
                 }
             }
         }
-        writeToFile(urls, "mm-commits.csv");
+        writeListToFile(urls, "mm-commits.csv");
         System.out.println(mm);
     }
-    public static void writeToFile(List<String> input, String filePath){
+    public static void writeListToFile(List<String> input, String filePath){
         // Write the strings to the file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             for (String str : input) {

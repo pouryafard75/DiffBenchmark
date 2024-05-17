@@ -10,7 +10,6 @@ import benchmark.metrics.writers.MetricsCsvWriter;
 import benchmark.models.HumanReadableDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,8 +22,7 @@ import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 
-
-import static benchmark.metrics.mm.writeToFile;
+import static benchmark.metrics.mm.writeListToFile;
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 import static benchmark.utils.PathResolver.getPaths;
 
@@ -84,7 +82,7 @@ public class RQ1 implements RQ{
                 }
             }
         }
-        writeToFile(urls, "rq1-mm.txt");
+        writeListToFile(urls, "rq1-mm.txt");
         System.out.println(mm);
     }
 }

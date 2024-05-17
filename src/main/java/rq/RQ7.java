@@ -30,7 +30,7 @@ public class RQ7 implements RQ  {
     private static void rq7(Configuration[] confs) throws IOException {
         for (Configuration configuration : confs) {
             Map<ASTDiffTool, Integer> astDiffToolIntegerMap = new CommitPerfectRatioBenchmarkComputer(configuration).perfectRatio();
-            RQ.writeToFile(astDiffToolIntegerMap, "out/rq7-" + configuration.getName() + ".txt");
+            RQ.writeToFile(astDiffToolIntegerMap, "out/rq7-" + configuration.getName() + ".csv");
         }
     }
 }

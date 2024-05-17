@@ -49,7 +49,7 @@ public class CsvWriter {
                 mergedViolations.merge(tool, count, Integer::sum);
             }
         }
-        RQ.writeToFile(mergedViolations, dir.toPath().resolve("merged.csv").toString());
+        RQ.writeToFile(mergedViolations, "out/rq2-merged.csv");
 
     }
 

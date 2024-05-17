@@ -33,13 +33,19 @@ import static benchmark.utils.PathResolver.getPaths;
 /***
  * How many multi-mappings are missed by each tool?
  */
-public class RQ1 {
-    private final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.MULTI_ONLY;
-    private final MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
+public class RQ1 implements RQ{
+    private MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.MULTI_ONLY;
+    private MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
 
-    public RQ1() {
+    public void setMappingsTypeFilter(MappingsTypeFilter mappingsTypeFilter) {
+        this.mappingsTypeFilter = mappingsTypeFilter;
     }
 
+    public void setMappingsLocationFilter(MappingsLocationFilter mappingsLocationFilter) {
+        this.mappingsLocationFilter = mappingsLocationFilter;
+    }
+
+    @Override
     public void run(Configuration[] confs) {
         Collection<BaseDiffComparisonResult> stats = new LinkedHashSet<>();
         StringBuilder name = new StringBuilder();
@@ -80,15 +86,6 @@ public class RQ1 {
         }
         writeToFile(urls, "rq1-mm.txt");
         System.out.println(mm);
-    }
-
-    public static void main(String[] args) throws IOException {
-        try {
-            new RQ1().run(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne(), ConfigurationFactory.defects4jTwoPointOne()});
-            new RQ1().run(new Configuration[]{ConfigurationFactory.refOracle(), ConfigurationFactory.defects4j()});
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 }
 

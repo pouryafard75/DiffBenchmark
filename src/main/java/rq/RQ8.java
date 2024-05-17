@@ -5,7 +5,6 @@ import at.aau.softwaredynamics.matchers.JavaMatchers;
 import at.aau.softwaredynamics.matchers.MatcherFactory;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import com.github.gumtreediff.matchers.CompositeMatchers;
@@ -41,20 +40,20 @@ import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createMode
 /***
  * What is the execution time of each tool?
  */
-public class RQ8 {
-    private static final int numberOfExecutions = 5;
+public class RQ8 implements RQ{
+    private int numberOfExecutions = 5;
     static Map<CaseInfo, ProjectASTDiff> resourceMap = new HashMap<>();
-    private final String filePath;
 
-    public static void main(String[] args) throws Exception {
-        new RQ8("ref-exe.csv").rq8(ConfigurationFactory.refOracle());
-        new RQ8("d4j-exe.csv").rq8(ConfigurationFactory.defects4j());
+    public void setNumberOfExecutions(int numberOfExecutions) {
+        this.numberOfExecutions = numberOfExecutions;
     }
 
-    public RQ8(String filePath) {
-        this.filePath = filePath;
+    @Override
+    public void run(Configuration[] confs) throws Exception {
+        for (Configuration conf : confs) {
+            rq8(conf, conf.getName() + "-exe.csv", numberOfExecutions);
+        }
     }
-
     public static ProjectASTDiff customAPI(Map<String, String> fileContentsBefore, Map<String, String> fileContentsCurrent) throws Exception {
         UMLModel parentUMLModel = createModelForASTDiff(fileContentsBefore, populateDirectories(fileContentsBefore));
         UMLModel currentUMLModel = createModelForASTDiff(fileContentsCurrent, populateDirectories(fileContentsCurrent));
@@ -74,7 +73,7 @@ public class RQ8 {
         }
         return repositoryDirectories;
     }
-    public void rq8(Configuration config) throws Exception {
+    public static void rq8(Configuration config, String destinPath, int numOfExe) throws Exception {
         System.out.println("Configuration loaded.");
         populateResourceMap(config);
         System.out.println("Resource map populated.");
@@ -82,11 +81,11 @@ public class RQ8 {
         int completed = 0;
         for (CaseInfo info : config.getAllCases()) {
             System.out.println("Working on: " + info.makeURL());
-            result.add(executionTimeForEachCase(info));
+            result.add(executionTimeForEachCase(info, numOfExe));
             completed++;
             System.out.println("Completed: " + completed + " out of " + config.getAllCases().size());
         }
-        writeResults(result, filePath);
+        writeResults(result, destinPath);
     }
 
     private static void writeResults(List<ExeTimeRecord> result, String filePath) {
@@ -105,7 +104,7 @@ public class RQ8 {
     }
 
 
-    private static ExeTimeRecord executionTimeForEachCase(CaseInfo info) throws Exception {
+    private static ExeTimeRecord executionTimeForEachCase(CaseInfo info, int numOfExe) throws Exception {
         ProjectASTDiff projectASTDiff = resourceMap.get(info);
         float RMD_time = 0;
         float GTG_time = 0;
@@ -113,7 +112,7 @@ public class RQ8 {
         float IJM_time = 0;
         float MTD_time = 0;
         float GT2_time = 0;
-        for (int i = 0; i < numberOfExecutions; i++)
+        for (int i = 0; i < numOfExe; i++)
         {
             if (i == 0) {
                 for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
@@ -146,12 +145,12 @@ public class RQ8 {
                 RMD_time += diffTime(info);
             }
         }
-        RMD_time = RMD_time / (numberOfExecutions - 1);
-        GTG_time = GTG_time / (numberOfExecutions - 1);
-        GTS_time = GTS_time / (numberOfExecutions - 1);
-        IJM_time = IJM_time / (numberOfExecutions - 1);
-        MTD_time = MTD_time / (numberOfExecutions - 1);
-        GT2_time = GT2_time / (numberOfExecutions - 1);
+        RMD_time = RMD_time / (numOfExe - 1);
+        GTG_time = GTG_time / (numOfExe - 1);
+        GTS_time = GTS_time / (numOfExe - 1);
+        IJM_time = IJM_time / (numOfExe - 1);
+        MTD_time = MTD_time / (numOfExe - 1);
+        GT2_time = GT2_time / (numOfExe - 1);
 
         return new ExeTimeRecord(info.makeURL(),
                 RMD_time,
@@ -219,6 +218,8 @@ public class RQ8 {
         else
             return diffTimeDefects4j(info.getRepo(), info.getCommit());
     }
+
+
     record ExeTimeRecord
             (String url,
              float RMD,

@@ -13,29 +13,22 @@ import java.util.Map;
 /***
  * What's the perfection ratio for each tool
  */
-public class RQ7 {
-
+public class RQ7 implements RQ  {
+    @Override
     public void run(Configuration[] conf) {
         if (conf.length > 1) {
-            throw new RuntimeException("RQ8 accepts only one configuration");
+            throw new RuntimeException("RQ7 accepts only one configuration");
         }
         Configuration configuration = conf[0];
         try {
-            rq8(configuration);
+            rq7(configuration);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void rq8(Configuration configuration) throws IOException {
+    private static void rq7(Configuration configuration) throws IOException {
         Map<ASTDiffTool, Integer> astDiffToolIntegerMap = new CommitPerfectRatioBenchmarkComputer(configuration).perfectRatio();
         System.out.println(astDiffToolIntegerMap);
-    }
-
-    public static void main(String[] args){
-        new RQ7().run(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne()});
-        new RQ7().run(new Configuration[]{ConfigurationFactory.refOracle()});
-        new RQ7().run(new Configuration[]{ConfigurationFactory.defects4jTwoPointOne()});
-        new RQ7().run(new Configuration[]{ConfigurationFactory.defects4j()});
     }
 }

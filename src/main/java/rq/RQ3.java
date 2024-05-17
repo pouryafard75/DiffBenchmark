@@ -16,23 +16,14 @@ import java.util.LinkedHashSet;
 /***
  * What is the accuracy of each tool in matching program elements (i.e., method, field declarations)?
  */
-public class RQ3{
-
+public class RQ3 implements RQ{
     private static final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.NO_FILTER;
-
-
-    public void run(Configuration configuration) {
-        throw new RuntimeException("Not implemented yet");
+    private final MappingsTypeFilter typeFilter;
+    public RQ3(MappingsTypeFilter typeFilter) {
+        this.typeFilter = typeFilter;
     }
 
-    private void rq3(Configuration configuration, MappingsTypeFilter mappingsTypeFilter) throws Exception {
-        VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration, mappingsLocationFilter.getFilter(), mappingsTypeFilter);
-        Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-        MetricsCsvWriter.exportToCSV(stats, "rq3.csv", true);
-//            new MetricsCsvWriter(computer, stats).write(false);
-    }
-
-    public void rq3(Configuration[] confs, MappingsTypeFilter typeFilter) throws Exception {
+    private static void rq3(Configuration[] confs, MappingsTypeFilter typeFilter) throws Exception {
         Collection<BaseDiffComparisonResult> stats = new LinkedHashSet<>();
         StringBuilder name = new StringBuilder();
         for (Configuration conf : confs) {
@@ -42,13 +33,8 @@ public class RQ3{
         }
         MetricsCsvWriter.exportToCSV(stats, "rq3-" + name + "-" + typeFilter.name() + ".csv", false);
     }
-
-    public static void main(String[] args) throws Exception {
-        RQ3 rq3 = new RQ3();
-        rq3.rq3(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne(), ConfigurationFactory.defects4jTwoPointOne()}, MappingsTypeFilter.PROGRAM_ELEMENTS);
-        rq3.rq3(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne(), ConfigurationFactory.defects4jTwoPointOne()}, MappingsTypeFilter.FIELD_DECL_ONLY);
-        rq3.rq3(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne(), ConfigurationFactory.defects4jTwoPointOne()}, MappingsTypeFilter.METHOD_DECL_ONLY);
-        rq3.rq3(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne(), ConfigurationFactory.defects4jTwoPointOne()}, MappingsTypeFilter.TYPE_DECL_ONLY);
-        rq3.rq3(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne(), ConfigurationFactory.defects4jTwoPointOne()}, MappingsTypeFilter.ENUM_DECL_ONLY);
+    @Override
+    public void run(Configuration[] confs) throws Exception {
+        rq3(confs, typeFilter);
     }
 }

@@ -21,17 +21,13 @@ import java.util.stream.Collectors;
 /***
  * How do refactorings affect the accuracy of each tool?
  */
-public class RQ4 {
-    private final int minFreq = 10;
-    public void run() {
-        try {
-            rq4(new Configuration[]{ConfigurationFactory.refOracle() , ConfigurationFactory.defects4j()}, minFreq);
-            rq4(new Configuration[]{ConfigurationFactory.refOracleTwoPointOne() , ConfigurationFactory.defects4jTwoPointOne()}, minFreq);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+public class RQ4 implements RQ{
+    private int minFreq = 10;
+    public RQ4(int minFreq) {
+        this.minFreq = minFreq;
     }
-    public void rq4(Configuration[] configs, int minFreq) throws Exception {
+    public RQ4(){}
+    private static void rq4(Configuration[] configs, int minFreq) throws Exception {
         // Create a map to store the data
         Map<RefactoringType, Integer> dist = readCsvFromFile("merged-Distribution.csv");
         Map<RefactoringType, Integer> workingDist = dist.entrySet()
@@ -54,8 +50,6 @@ public class RQ4 {
         }
         MetricsCsvWriter.exportToCSV(result, "rq4-uniqueTypeAndMappings-" + name + ".csv", false);
     }
-
-
 
     private static Map<RefactoringType, Integer> readCsvFromFile(String name) {
         Map<RefactoringType, Integer> resultMap = new LinkedHashMap<>();
@@ -100,10 +94,9 @@ public class RQ4 {
         }
         return resultMap;
     }
-
-    public static void main(String[] args) throws IOException {
-        new RQ4().run();
+    @Override
+    public void run(Configuration[] confs) throws Exception {
+        rq4(confs, minFreq);
     }
-
 }
 

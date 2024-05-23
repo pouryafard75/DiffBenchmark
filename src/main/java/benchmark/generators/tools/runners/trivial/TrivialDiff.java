@@ -5,9 +5,9 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import java.util.Set;
 import java.util.function.Predicate;

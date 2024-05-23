@@ -3,7 +3,7 @@ package benchmark.metrics.computers.filters;
 import benchmark.models.AbstractMapping;
 import benchmark.models.HumanReadableDiff;
 import benchmark.models.NecessaryMappings;
-import org.refactoringminer.astDiff.matchers.Constants;
+import org.refactoringminer.astDiff.utils.Constants;
 
 import java.util.Collection;
 import java.util.HashMap;

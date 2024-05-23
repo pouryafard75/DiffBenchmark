@@ -7,9 +7,11 @@ import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.hacks.all.ModifierInterConservativeMulti;
-import benchmark.generators.tools.runners.hacks.all.ModifierInterMulti;
+import benchmark.generators.tools.runners.hacks.all.ModifierInterNoMulti;
+import benchmark.generators.tools.runners.hacks.interfile.ProjectGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.hacks.interfile.ProjectGumTreeOptimizer;
-import benchmark.generators.tools.runners.hacks.interfile.*;
+import benchmark.generators.tools.runners.hacks.interfile.SingleVirtualNodeMatching;
+import benchmark.generators.tools.runners.hacks.interfile.StagedTreeMatching;
 import benchmark.generators.tools.runners.hacks.labels.GumTreeWithTreeModifier;
 import benchmark.generators.tools.runners.hacks.labels.LeafLabelMerger;
 import benchmark.generators.tools.runners.hacks.labels.LeafTypeMerger;
@@ -22,8 +24,8 @@ import benchmark.generators.tools.runners.trivial.TrivialDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.CompositeMatchers;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 
 public enum ASTDiffTool {
@@ -118,6 +120,36 @@ public enum ASTDiffTool {
             new GumTreeWithTreeModifier(
                     new LeafTypeMerger(),
                     new CompositeMatchers.SimpleGumtree(), input))
+    ,
+    COMBINED_TYPE_STAGED_GREEDY ("COMBINED_TYPE_STAGED_GREEDY", ((projectASTDiff, input, info, configuration) ->
+            new ProjectGumTreeOptimizer(
+                    new ModifierInterNoMulti(
+                            new LeafTypeMerger(),
+                            new StagedTreeMatching(projectASTDiff),
+                            projectASTDiff, input, info, configuration,
+                            new CompositeMatchers.ClassicGumtree())))),
+    COMBINED_TYPE_STAGED_SIMPLE ("COMBINED_TYPE_STAGED_SIMPLE", ((projectASTDiff, input, info, configuration) ->
+            new ProjectGumTreeOptimizer(
+                    new ModifierInterNoMulti(
+                            new LeafTypeMerger(),
+                            new StagedTreeMatching(projectASTDiff),
+                            projectASTDiff, input, info, configuration,
+                            new CompositeMatchers.SimpleGumtree()))))
+    ,
+    COMBINED_TYPE_VN_GREEDY ("COMBINED_TYPE_SVN_GREEDY", ((projectASTDiff, input, info, configuration) ->
+            new ProjectGumTreeOptimizer(
+                    new ModifierInterNoMulti(
+                            new LeafTypeMerger(),
+                            new SingleVirtualNodeMatching(),
+                            projectASTDiff, input, info, configuration,
+                            new CompositeMatchers.ClassicGumtree())))),
+    COMBINED_TYPE_VN_SIMPLE ("COMBINED_TYPE_SVN_SIMPLE", ((projectASTDiff, input, info, configuration) ->
+            new ProjectGumTreeOptimizer(
+                    new ModifierInterNoMulti(
+                            new LeafTypeMerger(),
+                            new SingleVirtualNodeMatching(),
+                            projectASTDiff, input, info, configuration,
+                            new CompositeMatchers.SimpleGumtree()))))
     ,
     X_TYPE_STAGED_NONMATCHED_GREEDY ("MERGED_STAGED_NONMATCHED_GREEDY", ((projectASTDiff, input, info, configuration) ->
             new ProjectGumTreeOptimizer(

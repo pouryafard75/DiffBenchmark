@@ -5,8 +5,8 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import org.apache.commons.lang3.tuple.Pair;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import static benchmark.generators.tools.ASTDiffTool.GOD;
 import static benchmark.utils.Helpers.runWhatever;

@@ -6,7 +6,7 @@ import com.github.gumtreediff.matchers.MultiMappingStore;
 import com.github.gumtreediff.matchers.heuristic.gt.DefaultPriorityTreeQueue;
 import com.github.gumtreediff.matchers.heuristic.gt.PriorityTreeQueue;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import java.util.Set;
 import java.util.function.Function;

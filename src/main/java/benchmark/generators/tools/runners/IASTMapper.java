@@ -11,8 +11,8 @@ import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.tree.TypeSet;
 import iast.com.github.gumtreediff.matchers.Mapping;
 import iast.com.github.gumtreediff.tree.ITree;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

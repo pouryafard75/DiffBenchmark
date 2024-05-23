@@ -1,6 +1,7 @@
 package benchmark.utils.Configuration;
 
 import benchmark.generators.tools.ASTDiffTool;
+import org.eclipse.jdt.core.dom.AST;
 
 /* Created by pourya on 2023-09-15 5:04 p.m. */
 public enum Compatibility {
@@ -55,14 +56,19 @@ public enum Compatibility {
                     ASTDiffTool.VNS,
                     ASTDiffTool.SMG,
                     ASTDiffTool.SMS,
-                    ASTDiffTool.NMG,
-                    ASTDiffTool.NMS,
-                    ASTDiffTool.CPG,
-                    ASTDiffTool.CPS,
+//                    ASTDiffTool.NMG,
+//                    ASTDiffTool.NMS,
+//                    ASTDiffTool.CPG,
+//                    ASTDiffTool.CPS,
                     ASTDiffTool.FTG,
                     ASTDiffTool.FTS,
-                    ASTDiffTool.X_TYPE_STAGED_NONMATCHED_GREEDY,
-                    ASTDiffTool.X_TYPE_STAGED_NONMATCHED_SIMPLE,
+//                    ASTDiffTool.X_TYPE_STAGED_NONMATCHED_GREEDY,
+//                    ASTDiffTool.X_TYPE_STAGED_NONMATCHED_SIMPLE,
+                    ASTDiffTool.COMBINED_TYPE_VN_GREEDY,
+                    ASTDiffTool.COMBINED_TYPE_VN_SIMPLE,
+                    ASTDiffTool.COMBINED_TYPE_STAGED_GREEDY,
+                    ASTDiffTool.COMBINED_TYPE_STAGED_SIMPLE,
+
             };
         }
         @Override

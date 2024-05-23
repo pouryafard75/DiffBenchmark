@@ -11,11 +11,11 @@ import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.actions.model.TreeAddition;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.actions.model.MoveIn;
 import org.refactoringminer.astDiff.actions.model.MoveOut;
-import org.refactoringminer.astDiff.matchers.Constants;
+import org.refactoringminer.astDiff.utils.Constants;
 
 
 import java.io.File;

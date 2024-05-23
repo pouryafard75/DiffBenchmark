@@ -10,7 +10,7 @@ import benchmark.utils.Configuration.Configuration;
 import com.opencsv.CSVWriter;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.io.FileWriter;
 import java.io.IOException;

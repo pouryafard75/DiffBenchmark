@@ -4,8 +4,8 @@ package benchmark.generators.tools.runners.shaded;
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import shaded.com.github.gumtreediff.gen.TreeGenerator;
 import shaded.com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 

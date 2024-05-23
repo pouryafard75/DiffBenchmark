@@ -4,8 +4,8 @@ import benchmark.generators.hrd.HRDGen2;
 import benchmark.generators.hrd.HRDGen3;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.utils.CaseInfo;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 public enum GenerationStrategy {
     NonFiltered {

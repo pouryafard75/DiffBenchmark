@@ -6,7 +6,7 @@ import benchmark.gui.BenchmarkDirComparator;
 import benchmark.gui.GuiConf;
 
 import gui.webdiff.WebDiff;
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 import org.rendersnake.DocType;
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;

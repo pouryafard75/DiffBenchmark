@@ -1,7 +1,7 @@
 package benchmark.generators.tools.runners.gt;
 
 import com.github.gumtreediff.matchers.CompositeMatchers;
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 
 /* Created by pourya on 2024-05-02*/
 public class GreedyGumTreeASTDiffProvider extends BaseGumTreeASTDiffProvider {

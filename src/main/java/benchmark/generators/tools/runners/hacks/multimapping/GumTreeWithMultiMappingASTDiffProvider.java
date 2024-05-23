@@ -4,9 +4,9 @@ import benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.matchers.*;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.SimplifiedExtendedChawatheScriptGenerator;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
+import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 /* Created by pourya on 2024-05-07*/
 public class GumTreeWithMultiMappingASTDiffProvider extends BaseGumTreeASTDiffProvider {

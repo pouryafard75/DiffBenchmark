@@ -1,8 +1,8 @@
 package benchmark.gui;
 
 import com.github.gumtreediff.utils.Pair;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.*;
 

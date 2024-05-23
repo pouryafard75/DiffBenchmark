@@ -17,8 +17,8 @@
 //import fr.gumtree.autotuning.entity.SingleDiffResult;
 //import fr.gumtree.autotuning.fitness.Fitness;
 //import fr.gumtree.autotuning.gumtree.ExecutionConfiguration;
-//import org.refactoringminer.astDiff.actions.ASTDiff;
-//import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+//import org.refactoringminer.astDiff.models.ASTDiff;
+//import org.refactoringminer.astDiff.models.ProjectASTDiff;
 //
 //import java.io.IOException;
 //import java.util.ArrayList;

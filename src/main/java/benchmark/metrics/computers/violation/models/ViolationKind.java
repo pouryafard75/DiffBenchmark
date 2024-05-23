@@ -4,8 +4,8 @@ import benchmark.metrics.computers.violation.modifier.ModifierKind;
 import benchmark.generators.tools.ASTDiffTool;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.matchers.Constants;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.utils.Constants;
 
 import java.util.function.Predicate;
 

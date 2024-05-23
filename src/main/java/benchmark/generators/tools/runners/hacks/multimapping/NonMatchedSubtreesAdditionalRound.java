@@ -5,7 +5,7 @@ import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.matchers.heuristic.gt.GreedySubtreeMatcher;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeUtils;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import static benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider.match;
 import static benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider.safeAdd;

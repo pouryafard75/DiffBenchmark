@@ -3,7 +3,6 @@ package benchmark.generators.tools.runners.hacks.interfile;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 
 public interface GumTreeProjectMatcher {
     /**

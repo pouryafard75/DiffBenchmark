@@ -1,9 +1,7 @@
 package benchmark.generators.tools.runners.hacks.labels;
 
-import com.github.gumtreediff.matchers.CompositeMatchers;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TypeSet;
-import org.refactoringminer.astDiff.actions.ASTDiff;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;

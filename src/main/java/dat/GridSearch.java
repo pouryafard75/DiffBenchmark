@@ -23,9 +23,9 @@ import fr.gumtree.autotuning.domain.DoubleParameterDomain;
 import fr.gumtree.autotuning.domain.IntParameterDomain;
 import fr.gumtree.autotuning.domain.ParameterDomain;
 import fr.gumtree.autotuning.gumtree.ParametersResolvers;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
-import org.refactoringminer.astDiff.matchers.Constants;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
+import org.refactoringminer.astDiff.utils.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

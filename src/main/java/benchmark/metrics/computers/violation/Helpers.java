@@ -1,7 +1,7 @@
 package benchmark.metrics.computers.violation;
 
 import com.github.gumtreediff.matchers.Mapping;
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.util.Arrays;
 

@@ -2,8 +2,8 @@ package benchmark.generators.hrd;
 
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 /* Created by pourya on 2024-04-06*/
 public class HRDGenExperimental extends HumanReadableDiffGenerator {

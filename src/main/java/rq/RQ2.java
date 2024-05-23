@@ -6,7 +6,7 @@ import benchmark.metrics.computers.violation.writer.CsvWriter;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import static benchmark.utils.Helpers.runWhatever;
 

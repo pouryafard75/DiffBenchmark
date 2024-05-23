@@ -12,7 +12,7 @@ import benchmark.metrics.writers.MetricsCsvWriter;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.*;
 import java.util.Map.Entry;

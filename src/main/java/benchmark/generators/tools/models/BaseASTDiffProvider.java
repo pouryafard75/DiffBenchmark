@@ -1,6 +1,6 @@
 package benchmark.generators.tools.models;
 
-import org.refactoringminer.astDiff.actions.ASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
 
 /* Created by pourya on 2024-05-02*/
 

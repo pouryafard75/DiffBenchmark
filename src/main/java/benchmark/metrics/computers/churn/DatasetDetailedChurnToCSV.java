@@ -6,8 +6,8 @@ import benchmark.utils.Configuration.ConfigurationFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gui.webdiff.DirComparator;
 import org.apache.commons.lang3.tuple.Pair;
-import org.refactoringminer.astDiff.actions.ASTDiff;
-import org.refactoringminer.astDiff.actions.ProjectASTDiff;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

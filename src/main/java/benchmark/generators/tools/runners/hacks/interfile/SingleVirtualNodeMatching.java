@@ -5,7 +5,6 @@ import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.FakeTree;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.matchers.ExtendedMultiMappingStore;
 
 /* Created by pourya on 2024-05-12*/
 public class SingleVirtualNodeMatching implements GumTreeProjectMatcher {

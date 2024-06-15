@@ -1,5 +1,6 @@
 package rq;
 
+import benchmark.generators.tools.ASTDiffTool;
 import benchmark.metrics.computers.violation.BenchmarkViolationComputer;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.writer.CsvWriter;
@@ -7,6 +8,8 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
+
+import java.util.Set;
 
 import static benchmark.utils.Helpers.runWhatever;
 
@@ -39,6 +42,29 @@ public class RQ2 implements RQ{
     @Override
     public void run(Configuration[] confs) throws Exception {
         rq2(confs, violationKinds);
+    }
+
+    public static void main(String[] args) throws Exception {
+        Configuration c1 = ConfigurationFactory.hack_refOracle_3();
+        Configuration c2 = ConfigurationFactory.hack_defects4j_3();
+        Set<ASTDiffTool> tools = Set.of(
+                ASTDiffTool.GOD,
+                ASTDiffTool.RMD,
+                ASTDiffTool.GTG,
+                ASTDiffTool.GTS,
+                ASTDiffTool.IJM,
+                ASTDiffTool.MTD,
+                ASTDiffTool.FTG,
+                ASTDiffTool.FTS
+        );
+        c1.setActiveTools(tools);
+        c2.setActiveTools(tools);
+        new RQ2().run(
+                new Configuration[]{
+                        c1,
+                        c2
+                }
+        );
     }
 }
 

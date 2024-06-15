@@ -7,7 +7,7 @@ import benchmark.utils.Configuration.ConfigurationFactory;
 /* Created by pourya on 2024-05-17*/
 public class RQDriver {
     public static void main(String[] args) {
-        Configuration[] confs = {ConfigurationFactory.hack()};
+        Configuration[] confs = {ConfigurationFactory.hack_defects4j_3()};
         RQ[] rqs = {
                 new RQ1(),
                 new RQ2(),

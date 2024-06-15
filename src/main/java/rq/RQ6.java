@@ -6,6 +6,7 @@ import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
 import benchmark.utils.Configuration.Configuration;
+import benchmark.utils.Configuration.ConfigurationFactory;
 
 import java.util.Collection;
 
@@ -32,5 +33,15 @@ public class RQ6 implements RQ{
     @Override
     public void run(Configuration[] confs) throws Exception {
         rq6(confs, mappingsTypeFilter);
+    }
+
+    public static void main(String[] args) {
+        Configuration c1 = ConfigurationFactory.hack_refOracle_3();
+        Configuration c2 = ConfigurationFactory.hack_defects4j_3();
+        try {
+            new RQ6().run(new Configuration[]{c1, c2});
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

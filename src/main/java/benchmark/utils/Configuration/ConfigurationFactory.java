@@ -60,10 +60,17 @@ public class ConfigurationFactory {
                 GenerationStrategy.NonFiltered);
     }
 
-    public static Configuration hack() {
-        String confName = "hack-3.0";
+    public static Configuration hack_refOracle_3() {
+        String confName = "hack-refOracle-3.0";
         return getConfTemplate(confName,
                 REFACTORING_MAPPINGS_DIR,
+                Compatibility.HackyExperiment,
+                GenerationStrategy.NonFiltered);
+    }
+    public static Configuration hack_defects4j_3() {
+        String confName = "hack-defects4j-3.0";
+        return getConfTemplate(confName,
+                DEFECTS4J_MAPPING_DIR,
                 Compatibility.HackyExperiment,
                 GenerationStrategy.NonFiltered);
     }

@@ -6,14 +6,11 @@ import benchmark.utils.Configuration.ConfigurationFactory;
 public class MakeToolsOutput {
 
     public static void main(String[] args) throws Exception {
-        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.hack()).generateMultiThreaded();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.dummyTwoPointOne()).generate();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.defects4jTwoPointOne()).generate();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.refOracle()).generate();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.refOracleTwoPointOne()).generate();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.defects4j()).generate();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.defects4jTwoPointOne()).generate();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.dummy()).generate();
-//        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.dummyTwoPointOne()).generate();
+        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.hack_defects4j_3()).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.hack_refOracle_3()).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.refOracle()).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.refOracleTwoPointOne()).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.defects4j()).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.defects4jTwoPointOne()).generateMultiThreaded();
     }
 }

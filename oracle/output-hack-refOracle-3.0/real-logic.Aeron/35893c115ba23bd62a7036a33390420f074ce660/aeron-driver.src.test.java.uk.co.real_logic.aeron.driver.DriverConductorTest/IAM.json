@@ -1,0 +1,1609 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "DriverConductorTest",
+      "right" : "DriverConductorTest",
+      "info" : "TypeDeclaration[2253-21121]:TypeDeclaration[2102-21229]"
+    }, {
+      "left" : "private static final String CHANNEL_URI = \"udp://localhost:\";",
+      "right" : "private static final String CHANNEL_URI = \"udp://localhost:\";",
+      "info" : "FieldDeclaration[2292-2353]:FieldDeclaration[2141-2202]"
+    }, {
+      "left" : "private static final String INVALID_URI = \"udp://\";",
+      "right" : "private static final String INVALID_URI = \"udp://\";",
+      "info" : "FieldDeclaration[2358-2409]:FieldDeclaration[2207-2258]"
+    }, {
+      "left" : "private static final int STREAM_ID_1 = 10;",
+      "right" : "private static final int STREAM_ID_1 = 10;",
+      "info" : "FieldDeclaration[2414-2456]:FieldDeclaration[2263-2305]"
+    }, {
+      "left" : "private static final int STREAM_ID_2 = 20;",
+      "right" : "private static final int STREAM_ID_2 = 20;",
+      "info" : "FieldDeclaration[2461-2503]:FieldDeclaration[2310-2352]"
+    }, {
+      "left" : "private static final int STREAM_ID_3 = 30;",
+      "right" : "private static final int STREAM_ID_3 = 30;",
+      "info" : "FieldDeclaration[2508-2550]:FieldDeclaration[2357-2399]"
+    }, {
+      "left" : "private static final int TERM_BUFFER_SZ = Configuration.TERM_BUFFER_LENGTH_DEFAULT;",
+      "right" : "private static final int TERM_BUFFER_SZ = Configuration.TERM_BUFFER_LENGTH_DEFAULT;",
+      "info" : "FieldDeclaration[2555-2638]:FieldDeclaration[2404-2487]"
+    }, {
+      "left" : "private static final long CORRELATION_ID_1 = 1429;",
+      "right" : "private static final long CORRELATION_ID_1 = 1429;",
+      "info" : "FieldDeclaration[2643-2693]:FieldDeclaration[2492-2542]"
+    }, {
+      "left" : "private static final long CORRELATION_ID_2 = 1430;",
+      "right" : "private static final long CORRELATION_ID_2 = 1430;",
+      "info" : "FieldDeclaration[2698-2748]:FieldDeclaration[2547-2597]"
+    }, {
+      "left" : "private static final long CORRELATION_ID_3 = 1431;",
+      "right" : "private static final long CORRELATION_ID_3 = 1431;",
+      "info" : "FieldDeclaration[2753-2803]:FieldDeclaration[2602-2652]"
+    }, {
+      "left" : "private static final long CORRELATION_ID_4 = 1432;",
+      "right" : "private static final long CORRELATION_ID_4 = 1432;",
+      "info" : "FieldDeclaration[2808-2858]:FieldDeclaration[2657-2707]"
+    }, {
+      "left" : "private static final long CLIENT_ID = 1433;",
+      "right" : "private static final long CLIENT_ID = 1433;",
+      "info" : "FieldDeclaration[2863-2906]:FieldDeclaration[2712-2755]"
+    }, {
+      "left" : "private static final int BUFFER_LENGTH = 1024 * 1024;",
+      "right" : "private static final int BUFFER_LENGTH = 1024 * 1024;",
+      "info" : "FieldDeclaration[2911-2964]:FieldDeclaration[2760-2813]"
+    }, {
+      "left" : "private final ByteBuffer toDriverBuffer = ByteBuffer.allocateDirect(Configuration.CONDUCTOR_BUFFER_LENGTH);",
+      "right" : "private final ByteBuffer toDriverBuffer = ByteBuffer.allocateDirect(Configuration.CONDUCTOR_BUFFER_LENGTH);",
+      "info" : "FieldDeclaration[2970-3077]:FieldDeclaration[2819-2926]"
+    }, {
+      "left" : "private final ByteBuffer toEventBuffer = ByteBuffer.allocateDirect(\n        EventConfiguration.BUFFER_LENGTH_DEFAULT + RingBufferDescriptor.TRAILER_LENGTH);",
+      "right" : "private final ByteBuffer toEventBuffer = ByteBuffer.allocateDirect(\n        EventConfiguration.BUFFER_LENGTH_DEFAULT + RingBufferDescriptor.TRAILER_LENGTH);",
+      "info" : "FieldDeclaration[3082-3238]:FieldDeclaration[2931-3087]"
+    }, {
+      "left" : "private final TransportPoller transportPoller = mock(TransportPoller.class);",
+      "right" : "private final TransportPoller transportPoller = mock(TransportPoller.class);",
+      "info" : "FieldDeclaration[3244-3320]:FieldDeclaration[3093-3169]"
+    }, {
+      "left" : "private final RawLogFactory mockRawLogFactory = mock(RawLogFactory.class);",
+      "right" : "private final RawLogFactory mockRawLogFactory = mock(RawLogFactory.class);",
+      "info" : "FieldDeclaration[3325-3399]:FieldDeclaration[3174-3248]"
+    }, {
+      "left" : "private final RingBuffer fromClientCommands = new ManyToOneRingBuffer(new UnsafeBuffer(toDriverBuffer));",
+      "right" : "private final RingBuffer fromClientCommands = new ManyToOneRingBuffer(new UnsafeBuffer(toDriverBuffer));",
+      "info" : "FieldDeclaration[3405-3509]:FieldDeclaration[3254-3358]"
+    }, {
+      "left" : "private final RingBuffer toEventReader = new ManyToOneRingBuffer(new UnsafeBuffer(toEventBuffer));",
+      "right" : "private final RingBuffer toEventReader = new ManyToOneRingBuffer(new UnsafeBuffer(toEventBuffer));",
+      "info" : "FieldDeclaration[3514-3612]:FieldDeclaration[3363-3461]"
+    }, {
+      "left" : "private final ClientProxy mockClientProxy = mock(ClientProxy.class);",
+      "right" : "private final ClientProxy mockClientProxy = mock(ClientProxy.class);",
+      "info" : "FieldDeclaration[3617-3685]:FieldDeclaration[3466-3534]"
+    }, {
+      "left" : "private final PublicationMessageFlyweight publicationMessage = new PublicationMessageFlyweight();",
+      "right" : "private final PublicationMessageFlyweight publicationMessage = new PublicationMessageFlyweight();",
+      "info" : "FieldDeclaration[3691-3788]:FieldDeclaration[3540-3637]"
+    }, {
+      "left" : "private final SubscriptionMessageFlyweight subscriptionMessage = new SubscriptionMessageFlyweight();",
+      "right" : "private final SubscriptionMessageFlyweight subscriptionMessage = new SubscriptionMessageFlyweight();",
+      "info" : "FieldDeclaration[3793-3893]:FieldDeclaration[3642-3742]"
+    }, {
+      "left" : "private final RemoveMessageFlyweight removeMessage = new RemoveMessageFlyweight();",
+      "right" : "private final RemoveMessageFlyweight removeMessage = new RemoveMessageFlyweight();",
+      "info" : "FieldDeclaration[3898-3980]:FieldDeclaration[3747-3829]"
+    }, {
+      "left" : "private final CorrelatedMessageFlyweight correlatedMessage = new CorrelatedMessageFlyweight();",
+      "right" : "private final CorrelatedMessageFlyweight correlatedMessage = new CorrelatedMessageFlyweight();",
+      "info" : "FieldDeclaration[3985-4079]:FieldDeclaration[3834-3928]"
+    }, {
+      "left" : "private final UnsafeBuffer writeBuffer = new UnsafeBuffer(ByteBuffer.allocateDirect(256));",
+      "right" : "private final UnsafeBuffer writeBuffer = new UnsafeBuffer(ByteBuffer.allocateDirect(256));",
+      "info" : "FieldDeclaration[4084-4174]:FieldDeclaration[3933-4023]"
+    }, {
+      "left" : "private final EventLogger mockConductorLogger = mock(EventLogger.class);",
+      "right" : "private final EventLogger mockConductorLogger = mock(EventLogger.class);",
+      "info" : "FieldDeclaration[4180-4252]:FieldDeclaration[4029-4101]"
+    }, {
+      "left" : "private final SenderProxy senderProxy = mock(SenderProxy.class);",
+      "right" : "private final SenderProxy senderProxy = mock(SenderProxy.class);",
+      "info" : "FieldDeclaration[4258-4322]:FieldDeclaration[4107-4171]"
+    }, {
+      "left" : "private final ReceiverProxy receiverProxy = mock(ReceiverProxy.class);",
+      "right" : "private final ReceiverProxy receiverProxy = mock(ReceiverProxy.class);",
+      "info" : "FieldDeclaration[4327-4397]:FieldDeclaration[4176-4246]"
+    }, {
+      "left" : "private final DriverConductorProxy fromSenderConductorProxy = mock(DriverConductorProxy.class);",
+      "right" : "private final DriverConductorProxy fromSenderConductorProxy = mock(DriverConductorProxy.class);",
+      "info" : "FieldDeclaration[4402-4497]:FieldDeclaration[4251-4346]"
+    }, {
+      "left" : "private final DriverConductorProxy fromReceiverConductorProxy = mock(DriverConductorProxy.class);",
+      "right" : "private final DriverConductorProxy fromReceiverConductorProxy = mock(DriverConductorProxy.class);",
+      "info" : "FieldDeclaration[4502-4599]:FieldDeclaration[4351-4448]"
+    }, {
+      "left" : "private long currentTime;",
+      "right" : "private long currentTime;",
+      "info" : "FieldDeclaration[4605-4630]:FieldDeclaration[4454-4479]"
+    }, {
+      "left" : "private final TimerWheel wheel = new TimerWheel(\n        () -> currentTime, CONDUCTOR_TICK_DURATION_US, TimeUnit.MICROSECONDS, CONDUCTOR_TICKS_PER_WHEEL);",
+      "right" : "private final TimerWheel wheel = new TimerWheel(\n        () -> currentTime, CONDUCTOR_TICK_DURATION_US, TimeUnit.MICROSECONDS, CONDUCTOR_TICKS_PER_WHEEL);",
+      "info" : "FieldDeclaration[4635-4789]:FieldDeclaration[4484-4638]"
+    }, {
+      "left" : "private DriverConductor driverConductor;",
+      "right" : "private DriverConductor driverConductor;",
+      "info" : "FieldDeclaration[4795-4835]:FieldDeclaration[4644-4684]"
+    }, {
+      "left" : "private final Answer<Void> closeChannelEndpointAnswer =\n        (invocation) ->\n        {\n            final Object args[] = invocation.getArguments();\n            final ReceiveChannelEndpoint channelEndpoint = (ReceiveChannelEndpoint)args[0];\n            channelEndpoint.close();\n\n            return null;\n        };",
+      "right" : "private final Answer<Void> closeChannelEndpointAnswer =\n        (invocation) ->\n        {\n            final Object args[] = invocation.getArguments();\n            final ReceiveChannelEndpoint channelEndpoint = (ReceiveChannelEndpoint)args[0];\n            channelEndpoint.close();\n\n            return null;\n        };",
+      "info" : "FieldDeclaration[4841-5157]:FieldDeclaration[4690-5006]"
+    }, {
+      "left" : "public void setUp() throws Exception",
+      "right" : "public void setUp() throws Exception",
+      "info" : "MethodDeclaration[5163-7303]:MethodDeclaration[5012-7152]"
+    }, {
+      "left" : "public void tearDown() throws Exception",
+      "right" : "public void tearDown() throws Exception",
+      "info" : "MethodDeclaration[7309-7406]:MethodDeclaration[7158-7255]"
+    }, {
+      "left" : "public void shouldBeAbleToAddSinglePublication() throws Exception",
+      "right" : "public void shouldBeAbleToAddSinglePublication() throws Exception",
+      "info" : "MethodDeclaration[7412-7774]:MethodDeclaration[7261-7927]"
+    }, {
+      "left" : "public void shouldBeAbleToAddSingleSubscription() throws Exception",
+      "right" : "public void shouldBeAbleToAddSingleSubscription() throws Exception",
+      "info" : "MethodDeclaration[7780-8202]:MethodDeclaration[7933-8355]"
+    }, {
+      "left" : "public void shouldBeAbleToAddAndRemoveSingleSubscription() throws Exception",
+      "right" : "public void shouldBeAbleToAddAndRemoveSingleSubscription() throws Exception",
+      "info" : "MethodDeclaration[8208-8693]:MethodDeclaration[8361-8846]"
+    }, {
+      "left" : "public void shouldBeAbleToAddMultipleStreams() throws Exception",
+      "right" : "public void shouldBeAbleToAddMultipleStreams() throws Exception",
+      "info" : "MethodDeclaration[8699-9215]:MethodDeclaration[8852-9368]"
+    }, {
+      "left" : "public void shouldBeAbleToRemoveSingleStream() throws Exception",
+      "right" : "public void shouldBeAbleToRemoveSingleStream() throws Exception",
+      "info" : "MethodDeclaration[9221-9775]:MethodDeclaration[9374-9921]"
+    }, {
+      "left" : "public void shouldBeAbleToRemoveMultipleStreams() throws Exception",
+      "right" : "public void shouldBeAbleToRemoveMultipleStreams() throws Exception",
+      "info" : "MethodDeclaration[9781-10621]:MethodDeclaration[9927-10760]"
+    }, {
+      "left" : "private void removePublicationMessage(final long registrationId)",
+      "right" : "private void removePublicationMessage(final long registrationId)",
+      "info" : "MethodDeclaration[10676-10965]:MethodDeclaration[10815-11104]"
+    }, {
+      "left" : "public void shouldKeepSubscriptionMediaEndpointUponRemovalOfAllButOneSubscriber() throws Exception",
+      "right" : "public void shouldKeepSubscriptionMediaEndpointUponRemovalOfAllButOneSubscriber() throws Exception",
+      "info" : "MethodDeclaration[10971-12213]:MethodDeclaration[11110-12352]"
+    }, {
+      "left" : "public void shouldOnlyRemoveSubscriptionMediaEndpointUponRemovalOfAllSubscribers() throws Exception",
+      "right" : "public void shouldOnlyRemoveSubscriptionMediaEndpointUponRemovalOfAllSubscribers() throws Exception",
+      "info" : "MethodDeclaration[12219-13700]:MethodDeclaration[12358-13839]"
+    }, {
+      "left" : "public void shouldErrorOnRemoveChannelOnUnknownSessionId() throws Exception",
+      "right" : "public void shouldErrorOnRemoveChannelOnUnknownSessionId() throws Exception",
+      "info" : "MethodDeclaration[13706-14235]:MethodDeclaration[13845-14455]"
+    }, {
+      "left" : "public void shouldErrorOnRemoveChannelOnUnknownStreamId() throws Exception",
+      "right" : "public void shouldErrorOnRemoveChannelOnUnknownStreamId() throws Exception",
+      "info" : "MethodDeclaration[14241-14762]:MethodDeclaration[14461-15133]"
+    }, {
+      "left" : "public void shouldErrorOnAddSubscriptionWithInvalidUri() throws Exception",
+      "right" : "public void shouldErrorOnAddSubscriptionWithInvalidUri() throws Exception",
+      "info" : "MethodDeclaration[14768-15306]:MethodDeclaration[15139-15720]"
+    }, {
+      "left" : "public void shouldTimeoutPublication() throws Exception",
+      "right" : "public void shouldTimeoutPublication() throws Exception",
+      "info" : "MethodDeclaration[15312-15813]:MethodDeclaration[15726-16455]"
+    }, {
+      "left" : "public void shouldNotTimeoutPublicationOnKeepAlive() throws Exception",
+      "right" : "public void shouldNotTimeoutPublicationOnKeepAlive() throws Exception",
+      "info" : "MethodDeclaration[15819-16485]:MethodDeclaration[16461-17351]"
+    }, {
+      "left" : "public void shouldTimeoutSubscription() throws Exception",
+      "right" : "public void shouldTimeoutSubscription() throws Exception",
+      "info" : "MethodDeclaration[16491-17116]:MethodDeclaration[17357-18183]"
+    }, {
+      "left" : "public void shouldNotTimeoutSubscriptionOnKeepAlive() throws Exception",
+      "right" : "public void shouldNotTimeoutSubscriptionOnKeepAlive() throws Exception",
+      "info" : "MethodDeclaration[17122-18032]:MethodDeclaration[18189-19257]"
+    }, {
+      "left" : "private void writePublicationMessage(\n        final int msgTypeId, final int sessionId, final int streamId, final int port, final long correlationId)",
+      "right" : "private void writePublicationMessage(\n        final int msgTypeId, final int sessionId, final int streamId, final int port, final long correlationId)",
+      "info" : "MethodDeclaration[18714-19272]:MethodDeclaration[19263-19821]"
+    }, {
+      "left" : "private void writeSubscriptionMessage(\n        final int msgTypeId, final String channel, final int streamId, final long registrationCorrelationId)",
+      "right" : "private void writeSubscriptionMessage(\n        final int msgTypeId, final String channel, final int streamId, final long registrationCorrelationId)",
+      "info" : "MethodDeclaration[19712-20304]:MethodDeclaration[19827-20419]"
+    }, {
+      "left" : "private void writeKeepaliveClientMessage()",
+      "right" : "private void writeKeepaliveClientMessage()",
+      "info" : "MethodDeclaration[20310-20629]:MethodDeclaration[20425-20744]"
+    }, {
+      "left" : "private long processTimersUntil(final BooleanSupplier condition) throws Exception",
+      "right" : "private long doWorkUntil(final BooleanSupplier condition) throws Exception",
+      "info" : "MethodDeclaration[20635-21119]:MethodDeclaration[20750-21227]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "uk.co.real_logic.aeron.command.ControlProtocolEvents.ADD_PUBLICATION",
+      "right" : "uk.co.real_logic.aeron.command.ControlProtocolEvents",
+      "info" : "QualifiedName[1944-2012]:QualifiedName[1894-1946]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2253-2259]:Modifier[2102-2108]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2260-2265]:TYPE_DECLARATION_KIND[2109-2114]"
+    }, {
+      "left" : "DriverConductorTest",
+      "right" : "DriverConductorTest",
+      "info" : "SimpleName[2266-2285]:SimpleName[2115-2134]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4929-5156]:Block[4778-5005]"
+    }, {
+      "left" : "final Object args[] = invocation.getArguments();",
+      "right" : "final Object args[] = invocation.getArguments();",
+      "info" : "VariableDeclarationStatement[4943-4991]:VariableDeclarationStatement[4792-4840]"
+    }, {
+      "left" : "final ReceiveChannelEndpoint channelEndpoint = (ReceiveChannelEndpoint)args[0];",
+      "right" : "final ReceiveChannelEndpoint channelEndpoint = (ReceiveChannelEndpoint)args[0];",
+      "info" : "VariableDeclarationStatement[5004-5083]:VariableDeclarationStatement[4853-4932]"
+    }, {
+      "left" : "channelEndpoint.close();",
+      "right" : "channelEndpoint.close();",
+      "info" : "ExpressionStatement[5096-5120]:ExpressionStatement[4945-4969]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5134-5146]:ReturnStatement[4983-4995]"
+    }, {
+      "left" : "@Before",
+      "right" : "@Before",
+      "info" : "MarkerAnnotation[5163-5170]:MarkerAnnotation[5012-5019]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5175-5181]:Modifier[5024-5030]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5182-5186]:PrimitiveType[5031-5035]"
+    }, {
+      "left" : "setUp",
+      "right" : "setUp",
+      "info" : "SimpleName[5187-5192]:SimpleName[5036-5041]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[5202-5211]:SimpleType[5051-5060]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5216-7303]:Block[5065-7152]"
+    }, {
+      "left" : "when(mockRawLogFactory.newPublication(anyObject(), anyInt(), anyInt(), anyInt()))\n            .thenReturn(LogBufferHelper.newTestLogBuffers(TERM_BUFFER_SZ, TERM_META_DATA_LENGTH));",
+      "right" : "when(mockRawLogFactory.newPublication(anyObject(), anyInt(), anyInt(), anyInt()))\n            .thenReturn(LogBufferHelper.newTestLogBuffers(TERM_BUFFER_SZ, TERM_META_DATA_LENGTH));",
+      "info" : "ExpressionStatement[5226-5406]:ExpressionStatement[5075-5255]"
+    }, {
+      "left" : "currentTime = 0;",
+      "right" : "currentTime = 0;",
+      "info" : "ExpressionStatement[5416-5432]:ExpressionStatement[5265-5281]"
+    }, {
+      "left" : "final UnsafeBuffer counterBuffer = new UnsafeBuffer(ByteBuffer.allocateDirect(BUFFER_LENGTH));",
+      "right" : "final UnsafeBuffer counterBuffer = new UnsafeBuffer(ByteBuffer.allocateDirect(BUFFER_LENGTH));",
+      "info" : "VariableDeclarationStatement[5442-5536]:VariableDeclarationStatement[5291-5385]"
+    }, {
+      "left" : "final CountersManager countersManager = new CountersManager(\n            new UnsafeBuffer(ByteBuffer.allocateDirect(BUFFER_LENGTH)), counterBuffer);",
+      "right" : "final CountersManager countersManager = new CountersManager(\n            new UnsafeBuffer(ByteBuffer.allocateDirect(BUFFER_LENGTH)), counterBuffer);",
+      "info" : "VariableDeclarationStatement[5545-5693]:VariableDeclarationStatement[5394-5542]"
+    }, {
+      "left" : "final MediaDriver.Context ctx = new MediaDriver.Context()\n            .receiverNioSelector(transportPoller)\n            .senderNioSelector(transportPoller)\n            .unicastSenderFlowControl(UnicastFlowControl::new)\n            .multicastSenderFlowControl(MaxMulticastFlowControl::new)\n            .conductorTimerWheel(wheel)\n            // TODO: remove\n            .toConductorFromReceiverCommandQueue(new OneToOneConcurrentArrayQueue<>(1024))\n            .toConductorFromSenderCommandQueue(new OneToOneConcurrentArrayQueue<>(1024))\n            .eventLogger(mockConductorLogger)\n            .rawLogBuffersFactory(mockRawLogFactory)\n            .countersManager(countersManager);",
+      "right" : "final MediaDriver.Context ctx = new MediaDriver.Context()\n            .receiverNioSelector(transportPoller)\n            .senderNioSelector(transportPoller)\n            .unicastSenderFlowControl(UnicastFlowControl::new)\n            .multicastSenderFlowControl(MaxMulticastFlowControl::new)\n            .conductorTimerWheel(wheel)\n            // TODO: remove\n            .toConductorFromReceiverCommandQueue(new OneToOneConcurrentArrayQueue<>(1024))\n            .toConductorFromSenderCommandQueue(new OneToOneConcurrentArrayQueue<>(1024))\n            .eventLogger(mockConductorLogger)\n            .rawLogBuffersFactory(mockRawLogFactory)\n            .countersManager(countersManager);",
+      "info" : "VariableDeclarationStatement[5703-6385]:VariableDeclarationStatement[5552-6234]"
+    }, {
+      "left" : "ctx.toEventReader(toEventReader);",
+      "right" : "ctx.toEventReader(toEventReader);",
+      "info" : "ExpressionStatement[6395-6428]:ExpressionStatement[6244-6277]"
+    }, {
+      "left" : "ctx.toDriverCommands(fromClientCommands);",
+      "right" : "ctx.toDriverCommands(fromClientCommands);",
+      "info" : "ExpressionStatement[6437-6478]:ExpressionStatement[6286-6327]"
+    }, {
+      "left" : "ctx.clientProxy(mockClientProxy);",
+      "right" : "ctx.clientProxy(mockClientProxy);",
+      "info" : "ExpressionStatement[6487-6520]:ExpressionStatement[6336-6369]"
+    }, {
+      "left" : "ctx.countersBuffer(counterBuffer);",
+      "right" : "ctx.countersBuffer(counterBuffer);",
+      "info" : "ExpressionStatement[6529-6563]:ExpressionStatement[6378-6412]"
+    }, {
+      "left" : "final SystemCounters mockSystemCounters = mock(SystemCounters.class);",
+      "right" : "final SystemCounters mockSystemCounters = mock(SystemCounters.class);",
+      "info" : "VariableDeclarationStatement[6573-6642]:VariableDeclarationStatement[6422-6491]"
+    }, {
+      "left" : "ctx.systemCounters(mockSystemCounters);",
+      "right" : "ctx.systemCounters(mockSystemCounters);",
+      "info" : "ExpressionStatement[6651-6690]:ExpressionStatement[6500-6539]"
+    }, {
+      "left" : "when(mockSystemCounters.bytesReceived()).thenReturn(mock(AtomicCounter.class));",
+      "right" : "when(mockSystemCounters.bytesReceived()).thenReturn(mock(AtomicCounter.class));",
+      "info" : "ExpressionStatement[6699-6778]:ExpressionStatement[6548-6627]"
+    }, {
+      "left" : "when(mockSystemCounters.clientKeepAlives()).thenReturn(mock(AtomicCounter.class));",
+      "right" : "when(mockSystemCounters.clientKeepAlives()).thenReturn(mock(AtomicCounter.class));",
+      "info" : "ExpressionStatement[6787-6869]:ExpressionStatement[6636-6718]"
+    }, {
+      "left" : "ctx.epochClock(new SystemEpochClock());",
+      "right" : "ctx.epochClock(new SystemEpochClock());",
+      "info" : "ExpressionStatement[6879-6918]:ExpressionStatement[6728-6767]"
+    }, {
+      "left" : "ctx.receiverProxy(receiverProxy);",
+      "right" : "ctx.receiverProxy(receiverProxy);",
+      "info" : "ExpressionStatement[6927-6960]:ExpressionStatement[6776-6809]"
+    }, {
+      "left" : "ctx.senderProxy(senderProxy);",
+      "right" : "ctx.senderProxy(senderProxy);",
+      "info" : "ExpressionStatement[6969-6998]:ExpressionStatement[6818-6847]"
+    }, {
+      "left" : "ctx.fromReceiverDriverConductorProxy(fromReceiverConductorProxy);",
+      "right" : "ctx.fromReceiverDriverConductorProxy(fromReceiverConductorProxy);",
+      "info" : "ExpressionStatement[7007-7072]:ExpressionStatement[6856-6921]"
+    }, {
+      "left" : "ctx.fromSenderDriverConductorProxy(fromSenderConductorProxy);",
+      "right" : "ctx.fromSenderDriverConductorProxy(fromSenderConductorProxy);",
+      "info" : "ExpressionStatement[7081-7142]:ExpressionStatement[6930-6991]"
+    }, {
+      "left" : "driverConductor = new DriverConductor(ctx);",
+      "right" : "driverConductor = new DriverConductor(ctx);",
+      "info" : "ExpressionStatement[7152-7195]:ExpressionStatement[7001-7044]"
+    }, {
+      "left" : "doAnswer(closeChannelEndpointAnswer).when(receiverProxy).closeReceiveChannelEndpoint(any());",
+      "right" : "doAnswer(closeChannelEndpointAnswer).when(receiverProxy).closeReceiveChannelEndpoint(any());",
+      "info" : "ExpressionStatement[7205-7297]:ExpressionStatement[7054-7146]"
+    }, {
+      "left" : "@After",
+      "right" : "@After",
+      "info" : "MarkerAnnotation[7309-7315]:MarkerAnnotation[7158-7164]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7320-7326]:Modifier[7169-7175]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7327-7331]:PrimitiveType[7176-7180]"
+    }, {
+      "left" : "tearDown",
+      "right" : "tearDown",
+      "info" : "SimpleName[7332-7340]:SimpleName[7181-7189]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[7350-7359]:SimpleType[7199-7208]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7364-7406]:Block[7213-7255]"
+    }, {
+      "left" : "driverConductor.onClose();",
+      "right" : "driverConductor.onClose();",
+      "info" : "ExpressionStatement[7374-7400]:ExpressionStatement[7223-7249]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[7412-7417]:MarkerAnnotation[7261-7266]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7422-7428]:Modifier[7271-7277]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7429-7433]:PrimitiveType[7278-7282]"
+    }, {
+      "left" : "shouldBeAbleToAddSinglePublication",
+      "right" : "shouldBeAbleToAddSinglePublication",
+      "info" : "SimpleName[7434-7468]:SimpleName[7283-7317]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[7478-7487]:SimpleType[7327-7336]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7492-7774]:Block[7341-7927]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[7502-7573]:ExpressionStatement[7351-7422]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[7583-7608]:ExpressionStatement[7432-7457]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication();",
+      "right" : "verify(senderProxy, times(1)).newPublication(captor.capture(), any(), any());",
+      "info" : "ExpressionStatement[7618-7657]:ExpressionStatement[7576-7653]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication",
+      "right" : "newPublication",
+      "info" : "SimpleName[7618-7654]:SimpleName[7606-7620]"
+    }, {
+      "left" : "verify(mockClientProxy).onPublicationReady(\n            eq(2), anyInt(), any(), anyLong(), anyInt());",
+      "right" : "verify(mockClientProxy).onPublicationReady(eq(2), anyInt(), any(), anyLong(), anyInt());",
+      "info" : "ExpressionStatement[7667-7768]:ExpressionStatement[7833-7921]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[7780-7785]:MarkerAnnotation[7933-7938]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7790-7796]:Modifier[7943-7949]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7797-7801]:PrimitiveType[7950-7954]"
+    }, {
+      "left" : "shouldBeAbleToAddSingleSubscription",
+      "right" : "shouldBeAbleToAddSingleSubscription",
+      "info" : "SimpleName[7802-7837]:SimpleName[7955-7990]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[7847-7856]:SimpleType[8000-8009]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7861-8202]:Block[8014-8355]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[7871-7987]:ExpressionStatement[8024-8140]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[7997-8022]:ExpressionStatement[8150-8175]"
+    }, {
+      "left" : "verify(mockClientProxy).operationSucceeded(CORRELATION_ID_1);",
+      "right" : "verify(mockClientProxy).operationSucceeded(CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[8032-8093]:ExpressionStatement[8185-8246]"
+    }, {
+      "left" : "assertNotNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "right" : "assertNotNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "info" : "ExpressionStatement[8103-8196]:ExpressionStatement[8256-8349]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[8208-8213]:MarkerAnnotation[8361-8366]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8218-8224]:Modifier[8371-8377]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8225-8229]:PrimitiveType[8378-8382]"
+    }, {
+      "left" : "shouldBeAbleToAddAndRemoveSingleSubscription",
+      "right" : "shouldBeAbleToAddAndRemoveSingleSubscription",
+      "info" : "SimpleName[8230-8274]:SimpleName[8383-8427]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[8284-8293]:SimpleType[8437-8446]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8298-8693]:Block[8451-8846]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[8308-8424]:ExpressionStatement[8461-8577]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[8433-8552]:ExpressionStatement[8586-8705]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[8562-8587]:ExpressionStatement[8715-8740]"
+    }, {
+      "left" : "assertNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "right" : "assertNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "info" : "ExpressionStatement[8597-8687]:ExpressionStatement[8750-8840]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[8699-8704]:MarkerAnnotation[8852-8857]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8709-8715]:Modifier[8862-8868]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8716-8720]:PrimitiveType[8869-8873]"
+    }, {
+      "left" : "shouldBeAbleToAddMultipleStreams",
+      "right" : "shouldBeAbleToAddMultipleStreams",
+      "info" : "SimpleName[8721-8753]:SimpleName[8874-8906]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[8763-8772]:SimpleType[8916-8925]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8777-9215]:Block[8930-9368]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4001, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4001, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[8787-8858]:ExpressionStatement[8940-9011]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 3, 4002, CORRELATION_ID_2);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 3, 4002, CORRELATION_ID_2);",
+      "info" : "ExpressionStatement[8867-8938]:ExpressionStatement[9020-9091]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 3, 2, 4003, CORRELATION_ID_3);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 3, 2, 4003, CORRELATION_ID_3);",
+      "info" : "ExpressionStatement[8947-9018]:ExpressionStatement[9100-9171]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 3, 4, 4004, CORRELATION_ID_4);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 3, 4, 4004, CORRELATION_ID_4);",
+      "info" : "ExpressionStatement[9027-9098]:ExpressionStatement[9180-9251]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[9108-9133]:ExpressionStatement[9261-9286]"
+    }, {
+      "left" : "verify(senderProxy, times(4)).newPublication(any(), any(), any());",
+      "right" : "verify(senderProxy, times(4)).newPublication(any(), any(), any());",
+      "info" : "ExpressionStatement[9143-9209]:ExpressionStatement[9296-9362]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[9221-9226]:MarkerAnnotation[9374-9379]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9231-9237]:Modifier[9384-9390]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9238-9242]:PrimitiveType[9391-9395]"
+    }, {
+      "left" : "shouldBeAbleToRemoveSingleStream",
+      "right" : "shouldBeAbleToRemoveSingleStream",
+      "info" : "SimpleName[9243-9275]:SimpleName[9396-9428]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[9285-9294]:SimpleType[9438-9447]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9299-9775]:Block[9452-9921]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4005, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4005, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[9309-9380]:ExpressionStatement[9462-9533]"
+    }, {
+      "left" : "writePublicationMessage(REMOVE_PUBLICATION, 1, 2, 4005, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(REMOVE_PUBLICATION, 1, 2, 4005, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[9389-9463]:ExpressionStatement[9542-9616]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[9473-9498]:ExpressionStatement[9626-9651]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[9508-9526]:SimpleName[9661-9672]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + PUBLICATION_LINGER_NS * 2);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + PUBLICATION_LINGER_NS * 2);",
+      "info" : "ExpressionStatement[9508-9617]:ExpressionStatement[9661-9763]"
+    }, {
+      "left" : "verify(senderProxy).removePublication(any());",
+      "right" : "verify(senderProxy).removePublication(any());",
+      "info" : "ExpressionStatement[9627-9672]:ExpressionStatement[9773-9818]"
+    }, {
+      "left" : "assertNull(driverConductor.senderChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4005)));",
+      "right" : "assertNull(driverConductor.senderChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4005)));",
+      "info" : "ExpressionStatement[9681-9769]:ExpressionStatement[9827-9915]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[9781-9786]:MarkerAnnotation[9927-9932]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9791-9797]:Modifier[9937-9943]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9798-9802]:PrimitiveType[9944-9948]"
+    }, {
+      "left" : "shouldBeAbleToRemoveMultipleStreams",
+      "right" : "shouldBeAbleToRemoveMultipleStreams",
+      "info" : "SimpleName[9803-9838]:SimpleName[9949-9984]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[9848-9857]:SimpleType[9994-10003]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9862-10621]:Block[10008-10760]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4006, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4006, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[9872-9943]:ExpressionStatement[10018-10089]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 3, 4007, CORRELATION_ID_2);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 3, 4007, CORRELATION_ID_2);",
+      "info" : "ExpressionStatement[9952-10023]:ExpressionStatement[10098-10169]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 3, 2, 4008, CORRELATION_ID_3);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 3, 2, 4008, CORRELATION_ID_3);",
+      "info" : "ExpressionStatement[10032-10103]:ExpressionStatement[10178-10249]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 3, 4, 4008, CORRELATION_ID_4);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 3, 4, 4008, CORRELATION_ID_4);",
+      "info" : "ExpressionStatement[10112-10183]:ExpressionStatement[10258-10329]"
+    }, {
+      "left" : "removePublicationMessage(CORRELATION_ID_1);",
+      "right" : "removePublicationMessage(CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[10193-10236]:ExpressionStatement[10339-10382]"
+    }, {
+      "left" : "removePublicationMessage(CORRELATION_ID_2);",
+      "right" : "removePublicationMessage(CORRELATION_ID_2);",
+      "info" : "ExpressionStatement[10245-10288]:ExpressionStatement[10391-10434]"
+    }, {
+      "left" : "removePublicationMessage(CORRELATION_ID_3);",
+      "right" : "removePublicationMessage(CORRELATION_ID_3);",
+      "info" : "ExpressionStatement[10297-10340]:ExpressionStatement[10443-10486]"
+    }, {
+      "left" : "removePublicationMessage(CORRELATION_ID_4);",
+      "right" : "removePublicationMessage(CORRELATION_ID_4);",
+      "info" : "ExpressionStatement[10349-10392]:ExpressionStatement[10495-10538]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[10402-10427]:ExpressionStatement[10548-10573]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[10437-10455]:SimpleName[10583-10594]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS * 2 + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS * 2 + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "info" : "ExpressionStatement[10437-10550]:ExpressionStatement[10583-10689]"
+    }, {
+      "left" : "verify(senderProxy, times(4)).removePublication(any());",
+      "right" : "verify(senderProxy, times(4)).removePublication(any());",
+      "info" : "ExpressionStatement[10560-10615]:ExpressionStatement[10699-10754]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10676-10683]:Modifier[10815-10822]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10684-10688]:PrimitiveType[10823-10827]"
+    }, {
+      "left" : "removePublicationMessage",
+      "right" : "removePublicationMessage",
+      "info" : "SimpleName[10689-10713]:SimpleName[10828-10852]"
+    }, {
+      "left" : "final long registrationId",
+      "right" : "final long registrationId",
+      "info" : "SingleVariableDeclaration[10714-10739]:SingleVariableDeclaration[10853-10878]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10745-10965]:Block[10884-11104]"
+    }, {
+      "left" : "removeMessage.wrap(writeBuffer, 0);",
+      "right" : "removeMessage.wrap(writeBuffer, 0);",
+      "info" : "ExpressionStatement[10755-10790]:ExpressionStatement[10894-10929]"
+    }, {
+      "left" : "removeMessage.registrationId(registrationId);",
+      "right" : "removeMessage.registrationId(registrationId);",
+      "info" : "ExpressionStatement[10799-10844]:ExpressionStatement[10938-10983]"
+    }, {
+      "left" : "assertTrue(fromClientCommands.write(REMOVE_PUBLICATION, writeBuffer, 0, RemoveMessageFlyweight.length()));",
+      "right" : "assertTrue(fromClientCommands.write(REMOVE_PUBLICATION, writeBuffer, 0, RemoveMessageFlyweight.length()));",
+      "info" : "ExpressionStatement[10853-10959]:ExpressionStatement[10992-11098]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[10971-10976]:MarkerAnnotation[11110-11115]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[10981-10987]:Modifier[11120-11126]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10988-10992]:PrimitiveType[11127-11131]"
+    }, {
+      "left" : "shouldKeepSubscriptionMediaEndpointUponRemovalOfAllButOneSubscriber",
+      "right" : "shouldKeepSubscriptionMediaEndpointUponRemovalOfAllButOneSubscriber",
+      "info" : "SimpleName[10993-11060]:SimpleName[11132-11199]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[11070-11079]:SimpleType[11209-11218]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11084-12213]:Block[11223-12352]"
+    }, {
+      "left" : "final UdpChannel udpChannel = UdpChannel.parse(CHANNEL_URI + 4000);",
+      "right" : "final UdpChannel udpChannel = UdpChannel.parse(CHANNEL_URI + 4000);",
+      "info" : "VariableDeclarationStatement[11094-11161]:VariableDeclarationStatement[11233-11300]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[11171-11287]:ExpressionStatement[11310-11426]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "info" : "ExpressionStatement[11296-11412]:ExpressionStatement[11435-11551]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_3, CORRELATION_ID_3);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_3, CORRELATION_ID_3);",
+      "info" : "ExpressionStatement[11421-11537]:ExpressionStatement[11560-11676]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[11547-11572]:ExpressionStatement[11686-11711]"
+    }, {
+      "left" : "final ReceiveChannelEndpoint channelEndpoint = driverConductor.receiverChannelEndpoint(udpChannel);",
+      "right" : "final ReceiveChannelEndpoint channelEndpoint = driverConductor.receiverChannelEndpoint(udpChannel);",
+      "info" : "VariableDeclarationStatement[11582-11681]:VariableDeclarationStatement[11721-11820]"
+    }, {
+      "left" : "assertNotNull(channelEndpoint);",
+      "right" : "assertNotNull(channelEndpoint);",
+      "info" : "ExpressionStatement[11691-11722]:ExpressionStatement[11830-11861]"
+    }, {
+      "left" : "assertThat(channelEndpoint.streamCount(), is(3));",
+      "right" : "assertThat(channelEndpoint.streamCount(), is(3));",
+      "info" : "ExpressionStatement[11731-11780]:ExpressionStatement[11870-11919]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[11790-11909]:ExpressionStatement[11929-12048]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "info" : "ExpressionStatement[11918-12037]:ExpressionStatement[12057-12176]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[12047-12072]:ExpressionStatement[12186-12211]"
+    }, {
+      "left" : "assertNotNull(driverConductor.receiverChannelEndpoint(udpChannel));",
+      "right" : "assertNotNull(driverConductor.receiverChannelEndpoint(udpChannel));",
+      "info" : "ExpressionStatement[12082-12149]:ExpressionStatement[12221-12288]"
+    }, {
+      "left" : "assertThat(channelEndpoint.streamCount(), is(1));",
+      "right" : "assertThat(channelEndpoint.streamCount(), is(1));",
+      "info" : "ExpressionStatement[12158-12207]:ExpressionStatement[12297-12346]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[12219-12224]:MarkerAnnotation[12358-12363]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[12229-12235]:Modifier[12368-12374]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[12236-12240]:PrimitiveType[12375-12379]"
+    }, {
+      "left" : "shouldOnlyRemoveSubscriptionMediaEndpointUponRemovalOfAllSubscribers",
+      "right" : "shouldOnlyRemoveSubscriptionMediaEndpointUponRemovalOfAllSubscribers",
+      "info" : "SimpleName[12241-12309]:SimpleName[12380-12448]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[12319-12328]:SimpleType[12458-12467]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12333-13700]:Block[12472-13839]"
+    }, {
+      "left" : "final UdpChannel udpChannel = UdpChannel.parse(CHANNEL_URI + 4000);",
+      "right" : "final UdpChannel udpChannel = UdpChannel.parse(CHANNEL_URI + 4000);",
+      "info" : "VariableDeclarationStatement[12343-12410]:VariableDeclarationStatement[12482-12549]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[12420-12536]:ExpressionStatement[12559-12675]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "info" : "ExpressionStatement[12545-12661]:ExpressionStatement[12684-12800]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_3, CORRELATION_ID_3);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_3, CORRELATION_ID_3);",
+      "info" : "ExpressionStatement[12670-12786]:ExpressionStatement[12809-12925]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[12796-12821]:ExpressionStatement[12935-12960]"
+    }, {
+      "left" : "final ReceiveChannelEndpoint channelEndpoint = driverConductor.receiverChannelEndpoint(udpChannel);",
+      "right" : "final ReceiveChannelEndpoint channelEndpoint = driverConductor.receiverChannelEndpoint(udpChannel);",
+      "info" : "VariableDeclarationStatement[12831-12930]:VariableDeclarationStatement[12970-13069]"
+    }, {
+      "left" : "assertNotNull(channelEndpoint);",
+      "right" : "assertNotNull(channelEndpoint);",
+      "info" : "ExpressionStatement[12940-12971]:ExpressionStatement[13079-13110]"
+    }, {
+      "left" : "assertThat(channelEndpoint.streamCount(), is(3));",
+      "right" : "assertThat(channelEndpoint.streamCount(), is(3));",
+      "info" : "ExpressionStatement[12980-13029]:ExpressionStatement[13119-13168]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_2, CORRELATION_ID_2);",
+      "info" : "ExpressionStatement[13039-13158]:ExpressionStatement[13178-13297]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_3, CORRELATION_ID_3);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_3, CORRELATION_ID_3);",
+      "info" : "ExpressionStatement[13167-13286]:ExpressionStatement[13306-13425]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[13296-13321]:ExpressionStatement[13435-13460]"
+    }, {
+      "left" : "assertNotNull(driverConductor.receiverChannelEndpoint(udpChannel));",
+      "right" : "assertNotNull(driverConductor.receiverChannelEndpoint(udpChannel));",
+      "info" : "ExpressionStatement[13331-13398]:ExpressionStatement[13470-13537]"
+    }, {
+      "left" : "assertThat(channelEndpoint.streamCount(), is(1));",
+      "right" : "assertThat(channelEndpoint.streamCount(), is(1));",
+      "info" : "ExpressionStatement[13407-13456]:ExpressionStatement[13546-13595]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.REMOVE_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[13466-13585]:ExpressionStatement[13605-13724]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[13595-13620]:ExpressionStatement[13734-13759]"
+    }, {
+      "left" : "assertNull(driverConductor.receiverChannelEndpoint(udpChannel));",
+      "right" : "assertNull(driverConductor.receiverChannelEndpoint(udpChannel));",
+      "info" : "ExpressionStatement[13630-13694]:ExpressionStatement[13769-13833]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[13706-13711]:MarkerAnnotation[13845-13850]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13716-13722]:Modifier[13855-13861]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13723-13727]:PrimitiveType[13862-13866]"
+    }, {
+      "left" : "shouldErrorOnRemoveChannelOnUnknownSessionId",
+      "right" : "shouldErrorOnRemoveChannelOnUnknownSessionId",
+      "info" : "SimpleName[13728-13772]:SimpleName[13867-13911]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[13782-13791]:SimpleType[13921-13930]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13796-14235]:Block[13935-14455]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[13806-13877]:ExpressionStatement[13945-14016]"
+    }, {
+      "left" : "writePublicationMessage(REMOVE_PUBLICATION, 2, 2, 4000, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(REMOVE_PUBLICATION, 2, 2, 4000, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[13886-13960]:ExpressionStatement[14025-14099]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[13970-13995]:ExpressionStatement[14109-14134]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication();",
+      "right" : "verify(senderProxy).newPublication(any(), any(), any());",
+      "info" : "ExpressionStatement[14005-14044]:ExpressionStatement[14144-14200]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication",
+      "right" : "newPublication",
+      "info" : "SimpleName[14005-14041]:SimpleName[14164-14178]"
+    }, {
+      "left" : "verify(mockClientProxy).onError(eq(UNKNOWN_PUBLICATION), argThat(not(isEmptyOrNullString())), any(), anyInt());",
+      "right" : "verify(mockClientProxy).onError(eq(UNKNOWN_PUBLICATION), argThat(not(isEmptyOrNullString())), any(), anyInt());",
+      "info" : "ExpressionStatement[14054-14165]:ExpressionStatement[14209-14320]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[14241-14246]:MarkerAnnotation[14461-14466]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14251-14257]:Modifier[14471-14477]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14258-14262]:PrimitiveType[14478-14482]"
+    }, {
+      "left" : "shouldErrorOnRemoveChannelOnUnknownStreamId",
+      "right" : "shouldErrorOnRemoveChannelOnUnknownStreamId",
+      "info" : "SimpleName[14263-14306]:SimpleName[14483-14526]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[14316-14325]:SimpleType[14536-14545]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14330-14762]:Block[14550-15133]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[14340-14411]:ExpressionStatement[14560-14631]"
+    }, {
+      "left" : "writePublicationMessage(REMOVE_PUBLICATION, 1, 3, 4000, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(REMOVE_PUBLICATION, 1, 3, 4000, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[14420-14494]:ExpressionStatement[14640-14714]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[14504-14529]:ExpressionStatement[14724-14749]"
+    }, {
+      "left" : "verifyPublicationClosed(never());",
+      "right" : "verify(senderProxy, never()).removePublication(any());",
+      "info" : "ExpressionStatement[14539-14572]:ExpressionStatement[14824-14878]"
+    }, {
+      "left" : "verifyPublicationClosed",
+      "right" : "removePublication",
+      "info" : "SimpleName[14539-14562]:SimpleName[14853-14870]"
+    }, {
+      "left" : "never",
+      "right" : "any",
+      "info" : "SimpleName[14563-14568]:SimpleName[14871-14874]"
+    }, {
+      "left" : "verify(mockClientProxy).onError(eq(UNKNOWN_PUBLICATION), argThat(not(isEmptyOrNullString())), any(), anyInt());",
+      "right" : "verify(mockClientProxy).onError(eq(UNKNOWN_PUBLICATION), argThat(not(isEmptyOrNullString())), any(), anyInt());",
+      "info" : "ExpressionStatement[14581-14692]:ExpressionStatement[14887-14998]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[14768-14773]:MarkerAnnotation[15139-15144]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14778-14784]:Modifier[15149-15155]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14785-14789]:PrimitiveType[15156-15160]"
+    }, {
+      "left" : "shouldErrorOnAddSubscriptionWithInvalidUri",
+      "right" : "shouldErrorOnAddSubscriptionWithInvalidUri",
+      "info" : "SimpleName[14790-14832]:SimpleName[15161-15203]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[14842-14851]:SimpleType[15213-15222]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14856-15306]:Block[15227-15720]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, INVALID_URI, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ADD_SUBSCRIPTION, INVALID_URI, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[14866-14975]:ExpressionStatement[15237-15324]"
+    }, {
+      "left" : "ControlProtocolEvents.ADD_SUBSCRIPTION",
+      "right" : "ADD_SUBSCRIPTION",
+      "info" : "QualifiedName[14891-14929]:SimpleName[15262-15278]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[14985-15010]:ExpressionStatement[15334-15359]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[15019-15044]:ExpressionStatement[15368-15393]"
+    }, {
+      "left" : "verify(senderProxy, never()).newPublication(any(), any(), any());",
+      "right" : "verify(senderProxy, never()).newPublication(any(), any(), any());",
+      "info" : "ExpressionStatement[15054-15119]:ExpressionStatement[15403-15468]"
+    }, {
+      "left" : "verify(mockClientProxy).onError(eq(INVALID_CHANNEL), argThat(not(isEmptyOrNullString())), any(), anyInt());",
+      "right" : "verify(mockClientProxy).onError(eq(INVALID_CHANNEL), argThat(not(isEmptyOrNullString())), any(), anyInt());",
+      "info" : "ExpressionStatement[15129-15236]:ExpressionStatement[15478-15585]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[15312-15317]:MarkerAnnotation[15726-15731]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15322-15328]:Modifier[15736-15742]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15329-15333]:PrimitiveType[15743-15747]"
+    }, {
+      "left" : "shouldTimeoutPublication",
+      "right" : "shouldTimeoutPublication",
+      "info" : "SimpleName[15334-15358]:SimpleName[15748-15772]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[15368-15377]:SimpleType[15782-15791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15382-15813]:Block[15796-16455]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[15392-15463]:ExpressionStatement[15806-15877]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[15473-15498]:ExpressionStatement[15887-15912]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication();",
+      "right" : "verify(senderProxy).newPublication(any(), any(), any());",
+      "info" : "ExpressionStatement[15508-15547]:ExpressionStatement[14759-14815]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication",
+      "right" : "newPublication",
+      "info" : "SimpleName[15508-15544]:SimpleName[14779-14793]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[15557-15575]:SimpleName[16185-16196]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= PUBLICATION_LINGER_NS + CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "info" : "ExpressionStatement[15557-15666]:ExpressionStatement[16185-16287]"
+    }, {
+      "left" : "verifyPublicationClosed(times(1));",
+      "right" : "verify(senderProxy).removePublication(eq(publication));",
+      "info" : "ExpressionStatement[15676-15710]:ExpressionStatement[16297-16352]"
+    }, {
+      "left" : "verifyPublicationClosed",
+      "right" : "removePublication",
+      "info" : "SimpleName[15676-15699]:SimpleName[16317-16334]"
+    }, {
+      "left" : "times",
+      "right" : "times",
+      "info" : "SimpleName[15700-15705]:SimpleName[16800-16805]"
+    }, {
+      "left" : "1",
+      "right" : "1",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[15706-15707]:METHOD_INVOCATION_ARGUMENTS[16806-16807]"
+    }, {
+      "left" : "assertNull(driverConductor.senderChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "right" : "assertNull(driverConductor.senderChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "info" : "ExpressionStatement[15719-15807]:ExpressionStatement[16361-16449]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[15819-15824]:MarkerAnnotation[16461-16466]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15829-15835]:Modifier[16471-16477]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15836-15840]:PrimitiveType[16478-16482]"
+    }, {
+      "left" : "shouldNotTimeoutPublicationOnKeepAlive",
+      "right" : "shouldNotTimeoutPublicationOnKeepAlive",
+      "info" : "SimpleName[15841-15879]:SimpleName[16483-16521]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[15889-15898]:SimpleType[16531-16540]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15903-16485]:Block[16545-17351]"
+    }, {
+      "left" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "right" : "writePublicationMessage(ADD_PUBLICATION, 1, 2, 4000, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[15913-15984]:ExpressionStatement[16555-16626]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[15994-16019]:ExpressionStatement[16636-16661]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication();",
+      "right" : "verify(senderProxy, times(1)).newPublication(captor.capture(), any(), any());",
+      "info" : "ExpressionStatement[16029-16068]:ExpressionStatement[16780-16857]"
+    }, {
+      "left" : "verifySenderNotifiedOfNewPublication",
+      "right" : "newPublication",
+      "info" : "SimpleName[16029-16065]:SimpleName[16810-16824]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[16078-16096]:SimpleName[16934-16945]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS / 2);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS / 2);",
+      "info" : "ExpressionStatement[16078-16163]:ExpressionStatement[16934-17012]"
+    }, {
+      "left" : "writeKeepaliveClientMessage();",
+      "right" : "writeKeepaliveClientMessage();",
+      "info" : "ExpressionStatement[16173-16203]:ExpressionStatement[17022-17052]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[16213-16231]:SimpleName[17062-17073]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
+      "info" : "ExpressionStatement[16213-16301]:ExpressionStatement[17062-17143]"
+    }, {
+      "left" : "writeKeepaliveClientMessage();",
+      "right" : "writeKeepaliveClientMessage();",
+      "info" : "ExpressionStatement[16311-16341]:ExpressionStatement[17153-17183]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[16351-16369]:SimpleName[17193-17204]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "info" : "ExpressionStatement[16351-16436]:ExpressionStatement[17193-17271]"
+    }, {
+      "left" : "verifyPublicationClosed(never());",
+      "right" : "verify(senderProxy, never()).removePublication(eq(publication));",
+      "info" : "ExpressionStatement[16446-16479]:ExpressionStatement[17281-17345]"
+    }, {
+      "left" : "verifyPublicationClosed",
+      "right" : "removePublication",
+      "info" : "SimpleName[16446-16469]:SimpleName[17310-17327]"
+    }, {
+      "left" : "never()",
+      "right" : "senderProxy, never()",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[16470-16477]:METHOD_INVOCATION_ARGUMENTS[17288-17308]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[16491-16496]:MarkerAnnotation[17357-17362]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[16501-16507]:Modifier[17367-17373]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[16508-16512]:PrimitiveType[17374-17378]"
+    }, {
+      "left" : "shouldTimeoutSubscription",
+      "right" : "shouldTimeoutSubscription",
+      "info" : "SimpleName[16513-16538]:SimpleName[17379-17404]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[16548-16557]:SimpleType[17414-17423]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16562-17116]:Block[17428-18183]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[16572-16688]:ExpressionStatement[17438-17554]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[16698-16723]:ExpressionStatement[17564-17589]"
+    }, {
+      "left" : "assertNotNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "right" : "assertNotNull(receiveChannelEndpoint);",
+      "info" : "ExpressionStatement[16769-16862]:ExpressionStatement[17752-17790]"
+    }, {
+      "left" : "driverConductor",
+      "right" : "driverConductor",
+      "info" : "METHOD_INVOCATION_RECEIVER[16783-16798]:METHOD_INVOCATION_RECEIVER[17665-17680]"
+    }, {
+      "left" : "driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000))",
+      "right" : "receiveChannelEndpoint",
+      "info" : "MethodInvocation[16783-16860]:SimpleName[17766-17788]"
+    }, {
+      "left" : "receiverChannelEndpoint",
+      "right" : "receiverChannelEndpoint",
+      "info" : "SimpleName[16799-16822]:SimpleName[17681-17704]"
+    }, {
+      "left" : "UdpChannel.parse(CHANNEL_URI + 4000)",
+      "right" : "UdpChannel.parse(CHANNEL_URI + 4000)",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[16823-16859]:METHOD_INVOCATION_ARGUMENTS[17705-17741]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[16872-16890]:SimpleName[17893-17904]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "info" : "ExpressionStatement[16872-16957]:ExpressionStatement[17893-17971]"
+    }, {
+      "left" : "verifyReceiverRemovesSubscription(times(1));",
+      "right" : "verify(receiverProxy, times(1)).removeSubscription(eq(receiveChannelEndpoint), eq(STREAM_ID_1));",
+      "info" : "ExpressionStatement[16967-17011]:ExpressionStatement[17981-18077]"
+    }, {
+      "left" : "verifyReceiverRemovesSubscription",
+      "right" : "removeSubscription",
+      "info" : "SimpleName[16967-17000]:SimpleName[18013-18031]"
+    }, {
+      "left" : "times(1)",
+      "right" : "receiverProxy, times(1)",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[17001-17009]:METHOD_INVOCATION_ARGUMENTS[17988-18011]"
+    }, {
+      "left" : "assertNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "right" : "assertNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "info" : "ExpressionStatement[17020-17110]:ExpressionStatement[18087-18177]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[17122-17127]:MarkerAnnotation[18189-18194]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[17132-17138]:Modifier[18199-18205]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[17139-17143]:PrimitiveType[18206-18210]"
+    }, {
+      "left" : "shouldNotTimeoutSubscriptionOnKeepAlive",
+      "right" : "shouldNotTimeoutSubscriptionOnKeepAlive",
+      "info" : "SimpleName[17144-17183]:SimpleName[18211-18250]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[17193-17202]:SimpleType[18260-18269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17207-18032]:Block[18274-19257]"
+    }, {
+      "left" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "right" : "writeSubscriptionMessage(ControlProtocolEvents.ADD_SUBSCRIPTION, CHANNEL_URI + 4000, STREAM_ID_1, CORRELATION_ID_1);",
+      "info" : "ExpressionStatement[17217-17333]:ExpressionStatement[18284-18400]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[17343-17368]:ExpressionStatement[18410-18435]"
+    }, {
+      "left" : "assertNotNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "right" : "assertNotNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "info" : "ExpressionStatement[17378-17471]:ExpressionStatement[19158-19251]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[17517-17535]:SimpleName[18739-18750]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS);",
+      "info" : "ExpressionStatement[17517-17598]:ExpressionStatement[18739-18813]"
+    }, {
+      "left" : "writeKeepaliveClientMessage();",
+      "right" : "writeKeepaliveClientMessage();",
+      "info" : "ExpressionStatement[17608-17638]:ExpressionStatement[18823-18853]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[17648-17666]:SimpleName[18863-18874]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS + 1000);",
+      "info" : "ExpressionStatement[17648-17736]:ExpressionStatement[18863-18944]"
+    }, {
+      "left" : "writeKeepaliveClientMessage();",
+      "right" : "writeKeepaliveClientMessage();",
+      "info" : "ExpressionStatement[17746-17776]:ExpressionStatement[18954-18984]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[17786-17804]:SimpleName[18994-19005]"
+    }, {
+      "left" : "processTimersUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "right" : "doWorkUntil(() -> wheel.clock().nanoTime() >= CLIENT_LIVENESS_TIMEOUT_NS * 2);",
+      "info" : "ExpressionStatement[17786-17871]:ExpressionStatement[18994-19072]"
+    }, {
+      "left" : "verifyReceiverRemovesSubscription(never());",
+      "right" : "verify(receiverProxy, never()).removeSubscription(any(), anyInt());",
+      "info" : "ExpressionStatement[17881-17924]:ExpressionStatement[19082-19149]"
+    }, {
+      "left" : "verifyReceiverRemovesSubscription",
+      "right" : "removeSubscription",
+      "info" : "SimpleName[17881-17914]:SimpleName[19113-19131]"
+    }, {
+      "left" : "never",
+      "right" : "any",
+      "info" : "SimpleName[17915-17920]:SimpleName[19132-19135]"
+    }, {
+      "left" : "assertNotNull(driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000)));",
+      "right" : "assertNotNull(receiveChannelEndpoint);",
+      "info" : "ExpressionStatement[17933-18026]:ExpressionStatement[18598-18636]"
+    }, {
+      "left" : "driverConductor",
+      "right" : "driverConductor",
+      "info" : "METHOD_INVOCATION_RECEIVER[17947-17962]:METHOD_INVOCATION_RECEIVER[18511-18526]"
+    }, {
+      "left" : "driverConductor.receiverChannelEndpoint(UdpChannel.parse(CHANNEL_URI + 4000))",
+      "right" : "receiveChannelEndpoint",
+      "info" : "MethodInvocation[17947-18024]:SimpleName[18612-18634]"
+    }, {
+      "left" : "receiverChannelEndpoint",
+      "right" : "receiverChannelEndpoint",
+      "info" : "SimpleName[17963-17986]:SimpleName[18527-18550]"
+    }, {
+      "left" : "UdpChannel.parse(CHANNEL_URI + 4000)",
+      "right" : "UdpChannel.parse(CHANNEL_URI + 4000)",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[17987-18023]:METHOD_INVOCATION_ARGUMENTS[18551-18587]"
+    }, {
+      "left" : "verify(receiverProxy, times)",
+      "right" : "verify(receiverProxy, never())",
+      "info" : "MethodInvocation[18129-18157]:MethodInvocation[19082-19112]"
+    }, {
+      "left" : "anyInt()",
+      "right" : "anyInt()",
+      "info" : "MethodInvocation[18184-18192]:MethodInvocation[19139-19147]"
+    }, {
+      "left" : "verify(receiverProxy).addSubscription(any(), eq(STREAM_ID_1));",
+      "right" : "verify(receiverProxy).addSubscription(eq(receiveChannelEndpoint), eq(STREAM_ID_1));",
+      "info" : "ExpressionStatement[18260-18322]:ExpressionStatement[17800-17883]"
+    }, {
+      "left" : "verify(senderProxy, times)",
+      "right" : "verify(senderProxy, never())",
+      "info" : "MethodInvocation[18415-18441]:MethodInvocation[14824-14852]"
+    }, {
+      "left" : "verify(mockConductorLogger).logException(any());",
+      "right" : "verify(mockConductorLogger).logException(any());",
+      "info" : "ExpressionStatement[18530-18578]:ExpressionStatement[15666-15714]"
+    }, {
+      "left" : "verify(mockClientProxy, never()).operationSucceeded(anyLong());",
+      "right" : "verify(mockClientProxy, never()).operationSucceeded(anyLong());",
+      "info" : "ExpressionStatement[18639-18702]:ExpressionStatement[14329-14392]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18714-18721]:Modifier[19263-19270]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18722-18726]:PrimitiveType[19271-19275]"
+    }, {
+      "left" : "writePublicationMessage",
+      "right" : "writePublicationMessage",
+      "info" : "SimpleName[18727-18750]:SimpleName[19276-19299]"
+    }, {
+      "left" : "final int msgTypeId",
+      "right" : "final int msgTypeId",
+      "info" : "SingleVariableDeclaration[18760-18779]:SingleVariableDeclaration[19309-19328]"
+    }, {
+      "left" : "final int sessionId",
+      "right" : "final int sessionId",
+      "info" : "SingleVariableDeclaration[18781-18800]:SingleVariableDeclaration[19330-19349]"
+    }, {
+      "left" : "final int streamId",
+      "right" : "final int streamId",
+      "info" : "SingleVariableDeclaration[18802-18820]:SingleVariableDeclaration[19351-19369]"
+    }, {
+      "left" : "final int port",
+      "right" : "final int port",
+      "info" : "SingleVariableDeclaration[18822-18836]:SingleVariableDeclaration[19371-19385]"
+    }, {
+      "left" : "final long correlationId",
+      "right" : "final long correlationId",
+      "info" : "SingleVariableDeclaration[18838-18862]:SingleVariableDeclaration[19387-19411]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18868-19272]:Block[19417-19821]"
+    }, {
+      "left" : "publicationMessage.wrap(writeBuffer, 0);",
+      "right" : "publicationMessage.wrap(writeBuffer, 0);",
+      "info" : "ExpressionStatement[18878-18918]:ExpressionStatement[19427-19467]"
+    }, {
+      "left" : "publicationMessage.streamId(streamId);",
+      "right" : "publicationMessage.streamId(streamId);",
+      "info" : "ExpressionStatement[18927-18965]:ExpressionStatement[19476-19514]"
+    }, {
+      "left" : "publicationMessage.sessionId(sessionId);",
+      "right" : "publicationMessage.sessionId(sessionId);",
+      "info" : "ExpressionStatement[18974-19014]:ExpressionStatement[19523-19563]"
+    }, {
+      "left" : "publicationMessage.channel(CHANNEL_URI + port);",
+      "right" : "publicationMessage.channel(CHANNEL_URI + port);",
+      "info" : "ExpressionStatement[19023-19070]:ExpressionStatement[19572-19619]"
+    }, {
+      "left" : "publicationMessage.clientId(CLIENT_ID);",
+      "right" : "publicationMessage.clientId(CLIENT_ID);",
+      "info" : "ExpressionStatement[19079-19118]:ExpressionStatement[19628-19667]"
+    }, {
+      "left" : "publicationMessage.correlationId(correlationId);",
+      "right" : "publicationMessage.correlationId(correlationId);",
+      "info" : "ExpressionStatement[19127-19175]:ExpressionStatement[19676-19724]"
+    }, {
+      "left" : "fromClientCommands.write(msgTypeId, writeBuffer, 0, publicationMessage.length());",
+      "right" : "fromClientCommands.write(msgTypeId, writeBuffer, 0, publicationMessage.length());",
+      "info" : "ExpressionStatement[19185-19266]:ExpressionStatement[19734-19815]"
+    }, {
+      "left" : "final ArgumentCaptor<NetworkPublication> captor = ArgumentCaptor.forClass(NetworkPublication.class);",
+      "right" : "final ArgumentCaptor<NetworkPublication> captor = ArgumentCaptor.forClass(NetworkPublication.class);",
+      "info" : "VariableDeclarationStatement[19344-19444]:VariableDeclarationStatement[15922-16022]"
+    }, {
+      "left" : "verify(senderProxy, times(1)).newPublication(captor.capture(), any(), any());",
+      "right" : "verify(senderProxy, times(1)).newPublication(captor.capture(), any(), any());",
+      "info" : "ExpressionStatement[19453-19530]:ExpressionStatement[16031-16108]"
+    }, {
+      "left" : "final NetworkPublication publication = captor.getValue();",
+      "right" : "final NetworkPublication publication = captor.getValue();",
+      "info" : "VariableDeclarationStatement[19540-19597]:VariableDeclarationStatement[16118-16175]"
+    }, {
+      "left" : "assertThat(publication.sessionId(), is(1));",
+      "right" : "assertThat(publication.sessionId(), is(1));",
+      "info" : "ExpressionStatement[19606-19649]:ExpressionStatement[7729-7772]"
+    }, {
+      "left" : "assertThat(publication.streamId(), is(2));",
+      "right" : "assertThat(publication.streamId(), is(2));",
+      "info" : "ExpressionStatement[19658-19700]:ExpressionStatement[7781-7823]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[19712-19719]:Modifier[19827-19834]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[19720-19724]:PrimitiveType[19835-19839]"
+    }, {
+      "left" : "writeSubscriptionMessage",
+      "right" : "writeSubscriptionMessage",
+      "info" : "SimpleName[19725-19749]:SimpleName[19840-19864]"
+    }, {
+      "left" : "final int msgTypeId",
+      "right" : "final int msgTypeId",
+      "info" : "SingleVariableDeclaration[19759-19778]:SingleVariableDeclaration[19874-19893]"
+    }, {
+      "left" : "final String channel",
+      "right" : "final String channel",
+      "info" : "SingleVariableDeclaration[19780-19800]:SingleVariableDeclaration[19895-19915]"
+    }, {
+      "left" : "final int streamId",
+      "right" : "final int streamId",
+      "info" : "SingleVariableDeclaration[19802-19820]:SingleVariableDeclaration[19917-19935]"
+    }, {
+      "left" : "final long registrationCorrelationId",
+      "right" : "final long registrationCorrelationId",
+      "info" : "SingleVariableDeclaration[19822-19858]:SingleVariableDeclaration[19937-19973]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19864-20304]:Block[19979-20419]"
+    }, {
+      "left" : "subscriptionMessage.wrap(writeBuffer, 0);",
+      "right" : "subscriptionMessage.wrap(writeBuffer, 0);",
+      "info" : "ExpressionStatement[19874-19915]:ExpressionStatement[19989-20030]"
+    }, {
+      "left" : "subscriptionMessage.streamId(streamId)\n                           .channel(channel)\n                           .registrationCorrelationId(registrationCorrelationId)\n                           .correlationId(registrationCorrelationId)\n                           .clientId(CLIENT_ID);",
+      "right" : "subscriptionMessage.streamId(streamId)\n                           .channel(channel)\n                           .registrationCorrelationId(registrationCorrelationId)\n                           .correlationId(registrationCorrelationId)\n                           .clientId(CLIENT_ID);",
+      "info" : "ExpressionStatement[19924-20206]:ExpressionStatement[20039-20321]"
+    }, {
+      "left" : "fromClientCommands.write(msgTypeId, writeBuffer, 0, subscriptionMessage.length());",
+      "right" : "fromClientCommands.write(msgTypeId, writeBuffer, 0, subscriptionMessage.length());",
+      "info" : "ExpressionStatement[20216-20298]:ExpressionStatement[20331-20413]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[20310-20317]:Modifier[20425-20432]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[20318-20322]:PrimitiveType[20433-20437]"
+    }, {
+      "left" : "writeKeepaliveClientMessage",
+      "right" : "writeKeepaliveClientMessage",
+      "info" : "SimpleName[20323-20350]:SimpleName[20438-20465]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20357-20629]:Block[20472-20744]"
+    }, {
+      "left" : "correlatedMessage.wrap(writeBuffer, 0);",
+      "right" : "correlatedMessage.wrap(writeBuffer, 0);",
+      "info" : "ExpressionStatement[20367-20406]:ExpressionStatement[20482-20521]"
+    }, {
+      "left" : "correlatedMessage.clientId(CLIENT_ID);",
+      "right" : "correlatedMessage.clientId(CLIENT_ID);",
+      "info" : "ExpressionStatement[20415-20453]:ExpressionStatement[20530-20568]"
+    }, {
+      "left" : "correlatedMessage.correlationId(0);",
+      "right" : "correlatedMessage.correlationId(0);",
+      "info" : "ExpressionStatement[20462-20497]:ExpressionStatement[20577-20612]"
+    }, {
+      "left" : "fromClientCommands.write(ControlProtocolEvents.CLIENT_KEEPALIVE, writeBuffer, 0, CorrelatedMessageFlyweight.LENGTH);",
+      "right" : "fromClientCommands.write(ControlProtocolEvents.CLIENT_KEEPALIVE, writeBuffer, 0, CorrelatedMessageFlyweight.LENGTH);",
+      "info" : "ExpressionStatement[20507-20623]:ExpressionStatement[20622-20738]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[20635-20642]:Modifier[20750-20757]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[20643-20647]:PrimitiveType[20758-20762]"
+    }, {
+      "left" : "processTimersUntil",
+      "right" : "doWorkUntil",
+      "info" : "SimpleName[20648-20666]:SimpleName[20763-20774]"
+    }, {
+      "left" : "final BooleanSupplier condition",
+      "right" : "final BooleanSupplier condition",
+      "info" : "SingleVariableDeclaration[20667-20698]:SingleVariableDeclaration[20775-20806]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[20707-20716]:SimpleType[20815-20824]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20721-21119]:Block[20829-21227]"
+    }, {
+      "left" : "final long startTime = wheel.clock().nanoTime();",
+      "right" : "final long startTime = wheel.clock().nanoTime();",
+      "info" : "VariableDeclarationStatement[20731-20779]:VariableDeclarationStatement[20839-20887]"
+    }, {
+      "left" : "while (!condition.getAsBoolean())",
+      "right" : "while (!condition.getAsBoolean())",
+      "info" : "WhileStatement[20789-21059]:WhileStatement[20897-21167]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20831-21059]:Block[20939-21167]"
+    }, {
+      "left" : "if (wheel.computeDelayInMs() > 0)",
+      "right" : "if (wheel.computeDelayInMs() > 0)",
+      "info" : "IfStatement[20845-21010]:IfStatement[20953-21118]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20891-21010]:Block[20999-21118]"
+    }, {
+      "left" : "currentTime += TimeUnit.MICROSECONDS.toNanos(Configuration.CONDUCTOR_TICK_DURATION_US);",
+      "right" : "currentTime += TimeUnit.MICROSECONDS.toNanos(Configuration.CONDUCTOR_TICK_DURATION_US);",
+      "info" : "ExpressionStatement[20909-20996]:ExpressionStatement[21017-21104]"
+    }, {
+      "left" : "driverConductor.doWork();",
+      "right" : "driverConductor.doWork();",
+      "info" : "ExpressionStatement[21024-21049]:ExpressionStatement[21132-21157]"
+    }, {
+      "left" : "return wheel.clock().nanoTime() - startTime;",
+      "right" : "return wheel.clock().nanoTime() - startTime;",
+      "info" : "ReturnStatement[21069-21113]:ReturnStatement[21177-21221]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

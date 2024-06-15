@@ -1,0 +1,1669 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "TarUtils",
+      "right" : "TarUtils",
+      "info" : "TypeDeclaration[1239-23691]:TypeDeclaration[1239-23526]"
+    }, {
+      "left" : "private static final int BYTE_MASK = 255;",
+      "right" : "private static final int BYTE_MASK = 255;",
+      "info" : "FieldDeclaration[1422-1463]:FieldDeclaration[1422-1463]"
+    }, {
+      "left" : "static final ZipEncoding DEFAULT_ENCODING =\n        ZipEncodingHelper.getZipEncoding(null);",
+      "right" : "static final ZipEncoding DEFAULT_ENCODING =\n        ZipEncodingHelper.getZipEncoding(null);",
+      "info" : "FieldDeclaration[1469-1560]:FieldDeclaration[1469-1560]"
+    }, {
+      "left" : "static final ZipEncoding FALLBACK_ENCODING = new ZipEncoding() {\n            public boolean canEncode(String name) { return true; }\n\n            public ByteBuffer encode(String name) {\n                final int length = name.length();\n                byte[] buf = new byte[length];\n\n                // copy until end of input or output is reached.\n                for (int i = 0; i < length; ++i) {\n                    buf[i] = (byte) name.charAt(i);\n                }\n                return ByteBuffer.wrap(buf);\n            }\n\n            public String decode(byte[] buffer) {\n                final int length = buffer.length;\n                StringBuilder result = new StringBuilder(length);\n\n                for (byte b : buffer) {\n                    if (b == 0) { // Trailing null\n                        break;\n                    }\n                    result.append((char) (b & 0xFF)); // Allow for sign-extension\n                }\n\n                return result.toString();\n            }\n        };",
+      "right" : "static final ZipEncoding FALLBACK_ENCODING = new ZipEncoding() {\n            public boolean canEncode(String name) { return true; }\n\n            public ByteBuffer encode(String name) {\n                final int length = name.length();\n                byte[] buf = new byte[length];\n\n                // copy until end of input or output is reached.\n                for (int i = 0; i < length; ++i) {\n                    buf[i] = (byte) name.charAt(i);\n                }\n                return ByteBuffer.wrap(buf);\n            }\n\n            public String decode(byte[] buffer) {\n                final int length = buffer.length;\n                StringBuilder result = new StringBuilder(length);\n\n                for (byte b : buffer) {\n                    if (b == 0) { // Trailing null\n                        break;\n                    }\n                    result.append((char) (b & 0xFF)); // Allow for sign-extension\n                }\n\n                return result.toString();\n            }\n        };",
+      "info" : "FieldDeclaration[1566-2679]:FieldDeclaration[1566-2679]"
+    }, {
+      "left" : "public boolean canEncode(String name)",
+      "right" : "public boolean canEncode(String name)",
+      "info" : "MethodDeclaration[1749-1803]:MethodDeclaration[1749-1803]"
+    }, {
+      "left" : "public ByteBuffer encode(String name)",
+      "right" : "public ByteBuffer encode(String name)",
+      "info" : "MethodDeclaration[1817-2199]:MethodDeclaration[1817-2199]"
+    }, {
+      "left" : "public String decode(byte[] buffer)",
+      "right" : "public String decode(byte[] buffer)",
+      "info" : "MethodDeclaration[2213-2668]:MethodDeclaration[2213-2668]"
+    }, {
+      "left" : "private TarUtils(",
+      "right" : "private TarUtils(",
+      "info" : "MethodDeclaration[2685-2789]:MethodDeclaration[2685-2789]"
+    }, {
+      "left" : "public static long parseOctal(final byte[] buffer, final int offset, final int length)",
+      "right" : "public static long parseOctal(final byte[] buffer, final int offset, final int length)",
+      "info" : "MethodDeclaration[2795-5196]:MethodDeclaration[2795-5196]"
+    }, {
+      "left" : "public static long parseOctalOrBinary(final byte[] buffer, final int offset,\n                                          final int length)",
+      "right" : "public static long parseOctalOrBinary(final byte[] buffer, final int offset,\n                                          final int length)",
+      "info" : "MethodDeclaration[5202-6535]:MethodDeclaration[5202-6535]"
+    }, {
+      "left" : "private static long parseBinaryLong(final byte[] buffer, final int offset,\n                                        final int length,\n                                        final boolean negative)",
+      "right" : "private static long parseBinaryLong(final byte[] buffer, final int offset,\n                                        final int length,\n                                        final boolean negative)",
+      "info" : "MethodDeclaration[6541-7395]:MethodDeclaration[6541-7395]"
+    }, {
+      "left" : "private static long parseBinaryBigInteger(final byte[] buffer,\n                                              final int offset,\n                                              final int length,\n                                              final boolean negative)",
+      "right" : "private static long parseBinaryBigInteger(final byte[] buffer,\n                                              final int offset,\n                                              final int length,\n                                              final boolean negative)",
+      "info" : "MethodDeclaration[7401-8367]:MethodDeclaration[7401-8367]"
+    }, {
+      "left" : "public static boolean parseBoolean(final byte[] buffer, final int offset)",
+      "right" : "public static boolean parseBoolean(final byte[] buffer, final int offset)",
+      "info" : "MethodDeclaration[8373-8895]:MethodDeclaration[8373-8895]"
+    }, {
+      "left" : "private static String exceptionMessage(byte[] buffer, final int offset,\n            final int length, int current, final byte currentByte)",
+      "right" : "private static String exceptionMessage(byte[] buffer, final int offset,\n            final int length, int current, final byte currentByte)",
+      "info" : "MethodDeclaration[8956-9794]:MethodDeclaration[8956-9794]"
+    }, {
+      "left" : "public static String parseName(byte[] buffer, final int offset, final int length)",
+      "right" : "public static String parseName(byte[] buffer, final int offset, final int length)",
+      "info" : "MethodDeclaration[9800-10606]:MethodDeclaration[9800-10606]"
+    }, {
+      "left" : "public static String parseName(byte[] buffer, final int offset,\n                                   final int length,\n                                   final ZipEncoding encoding)\n        throws IOException",
+      "right" : "public static String parseName(byte[] buffer, final int offset,\n                                   final int length,\n                                   final ZipEncoding encoding)\n        throws IOException",
+      "info" : "MethodDeclaration[10612-11646]:MethodDeclaration[10612-11646]"
+    }, {
+      "left" : "public static int formatNameBytes(String name, byte[] buf, final int offset, final int length)",
+      "right" : "public static int formatNameBytes(String name, byte[] buf, final int offset, final int length)",
+      "info" : "MethodDeclaration[11652-12805]:MethodDeclaration[11652-12805]"
+    }, {
+      "left" : "public static int formatNameBytes(String name, byte[] buf, final int offset,\n                                      final int length,\n                                      final ZipEncoding encoding)\n        throws IOException",
+      "right" : "public static int formatNameBytes(String name, byte[] buf, final int offset,\n                                      final int length,\n                                      final ZipEncoding encoding)\n        throws IOException",
+      "info" : "MethodDeclaration[12811-14296]:MethodDeclaration[12811-14296]"
+    }, {
+      "left" : "public static void formatUnsignedOctalString(final long value, byte[] buffer,\n            final int offset, final int length)",
+      "right" : "public static void formatUnsignedOctalString(final long value, byte[] buffer,\n            final int offset, final int length)",
+      "info" : "MethodDeclaration[14302-15624]:MethodDeclaration[14302-15624]"
+    }, {
+      "left" : "public static int formatOctalBytes(final long value, byte[] buf, final int offset, final int length)",
+      "right" : "public static int formatOctalBytes(final long value, byte[] buf, final int offset, final int length)",
+      "info" : "MethodDeclaration[15630-16591]:MethodDeclaration[15630-16591]"
+    }, {
+      "left" : "public static int formatLongOctalBytes(final long value, byte[] buf, final int offset, final int length)",
+      "right" : "public static int formatLongOctalBytes(final long value, byte[] buf, final int offset, final int length)",
+      "info" : "MethodDeclaration[16597-17469]:MethodDeclaration[16597-17469]"
+    }, {
+      "left" : "public static int formatLongOctalOrBinaryBytes(\n        final long value, byte[] buf, final int offset, final int length)",
+      "right" : "public static int formatLongOctalOrBinaryBytes(\n        final long value, byte[] buf, final int offset, final int length)",
+      "info" : "MethodDeclaration[17475-18927]:MethodDeclaration[17475-18927]"
+    }, {
+      "left" : "private static void formatLongBinary(final long value, byte[] buf,\n                                         final int offset, final int length,\n                                         final boolean negative)",
+      "right" : "private static void formatLongBinary(final long value, byte[] buf,\n                                         final int offset, final int length,\n                                         final boolean negative)",
+      "info" : "MethodDeclaration[18933-19674]:MethodDeclaration[18933-19674]"
+    }, {
+      "left" : "private static void formatBigIntegerBinary(final long value, byte[] buf,\n                                               final int offset,\n                                               final int length,\n                                               final boolean negative)",
+      "right" : "private static void formatBigIntegerBinary(final long value, byte[] buf,\n                                               final int offset,\n                                               final int length,\n                                               final boolean negative)",
+      "info" : "MethodDeclaration[19680-20327]:MethodDeclaration[19680-20327]"
+    }, {
+      "left" : "public static int formatCheckSumOctalBytes(final long value, byte[] buf, final int offset, final int length)",
+      "right" : "public static int formatCheckSumOctalBytes(final long value, byte[] buf, final int offset, final int length)",
+      "info" : "MethodDeclaration[20333-21298]:MethodDeclaration[20333-21298]"
+    }, {
+      "left" : "public static long computeCheckSum(final byte[] buf)",
+      "right" : "public static long computeCheckSum(final byte[] buf)",
+      "info" : "MethodDeclaration[21304-21654]:MethodDeclaration[21304-21654]"
+    }, {
+      "left" : "public static boolean verifyCheckSum(byte[] header)",
+      "right" : "public static boolean verifyCheckSum(byte[] header)",
+      "info" : "MethodDeclaration[21660-23688]:MethodDeclaration[21660-23523]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1749-1755]:Modifier[1749-1755]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[1756-1763]:PrimitiveType[1756-1763]"
+    }, {
+      "left" : "canEncode",
+      "right" : "canEncode",
+      "info" : "SimpleName[1764-1773]:SimpleName[1764-1773]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[1774-1785]:SingleVariableDeclaration[1774-1785]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1787-1803]:Block[1787-1803]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[1789-1801]:ReturnStatement[1789-1801]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1817-1823]:Modifier[1817-1823]"
+    }, {
+      "left" : "ByteBuffer",
+      "right" : "ByteBuffer",
+      "info" : "SimpleType[1824-1834]:SimpleType[1824-1834]"
+    }, {
+      "left" : "encode",
+      "right" : "encode",
+      "info" : "SimpleName[1835-1841]:SimpleName[1835-1841]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[1842-1853]:SingleVariableDeclaration[1842-1853]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1855-2199]:Block[1855-2199]"
+    }, {
+      "left" : "final int length = name.length();",
+      "right" : "final int length = name.length();",
+      "info" : "VariableDeclarationStatement[1873-1906]:VariableDeclarationStatement[1873-1906]"
+    }, {
+      "left" : "byte[] buf = new byte[length];",
+      "right" : "byte[] buf = new byte[length];",
+      "info" : "VariableDeclarationStatement[1923-1953]:VariableDeclarationStatement[1923-1953]"
+    }, {
+      "left" : "for (int i = 0; i < length; ++i)",
+      "right" : "for (int i = 0; i < length; ++i)",
+      "info" : "ForStatement[2036-2140]:ForStatement[2036-2140]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2069-2140]:Block[2069-2140]"
+    }, {
+      "left" : "buf[i] = (byte) name.charAt(i);",
+      "right" : "buf[i] = (byte) name.charAt(i);",
+      "info" : "ExpressionStatement[2091-2122]:ExpressionStatement[2091-2122]"
+    }, {
+      "left" : "return ByteBuffer.wrap(buf);",
+      "right" : "return ByteBuffer.wrap(buf);",
+      "info" : "ReturnStatement[2157-2185]:ReturnStatement[2157-2185]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2213-2219]:Modifier[2213-2219]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[2220-2226]:SimpleType[2220-2226]"
+    }, {
+      "left" : "decode",
+      "right" : "decode",
+      "info" : "SimpleName[2227-2233]:SimpleName[2227-2233]"
+    }, {
+      "left" : "byte[] buffer",
+      "right" : "byte[] buffer",
+      "info" : "SingleVariableDeclaration[2234-2247]:SingleVariableDeclaration[2234-2247]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2249-2668]:Block[2249-2668]"
+    }, {
+      "left" : "final int length = buffer.length;",
+      "right" : "final int length = buffer.length;",
+      "info" : "VariableDeclarationStatement[2267-2300]:VariableDeclarationStatement[2267-2300]"
+    }, {
+      "left" : "StringBuilder result = new StringBuilder(length);",
+      "right" : "StringBuilder result = new StringBuilder(length);",
+      "info" : "VariableDeclarationStatement[2317-2366]:VariableDeclarationStatement[2317-2366]"
+    }, {
+      "left" : "for (byte b : buffer)",
+      "right" : "for (byte b : buffer)",
+      "info" : "EnhancedForStatement[2384-2611]:EnhancedForStatement[2384-2611]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2406-2611]:Block[2406-2611]"
+    }, {
+      "left" : "if (b == 0)",
+      "right" : "if (b == 0)",
+      "info" : "IfStatement[2428-2511]:IfStatement[2428-2511]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2440-2511]:Block[2440-2511]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[2483-2489]:BreakStatement[2483-2489]"
+    }, {
+      "left" : "result.append((char) (b & 0xFF));",
+      "right" : "result.append((char) (b & 0xFF));",
+      "info" : "ExpressionStatement[2532-2565]:ExpressionStatement[2532-2565]"
+    }, {
+      "left" : "return result.toString();",
+      "right" : "return result.toString();",
+      "info" : "ReturnStatement[2629-2654]:ReturnStatement[2629-2654]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2764-2771]:Modifier[2764-2771]"
+    }, {
+      "left" : "TarUtils",
+      "right" : "TarUtils",
+      "info" : "SimpleName[2772-2780]:SimpleName[2772-2780]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2782-2789]:Block[2782-2789]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3730-3736]:Modifier[3730-3736]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[3737-3743]:Modifier[3737-3743]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[3744-3748]:PrimitiveType[3744-3748]"
+    }, {
+      "left" : "parseOctal",
+      "right" : "parseOctal",
+      "info" : "SimpleName[3749-3759]:SimpleName[3749-3759]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[3760-3779]:SingleVariableDeclaration[3760-3779]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[3781-3797]:SingleVariableDeclaration[3781-3797]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[3799-3815]:SingleVariableDeclaration[3799-3815]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3817-5196]:Block[3817-5196]"
+    }, {
+      "left" : "long    result = 0;",
+      "right" : "long    result = 0;",
+      "info" : "VariableDeclarationStatement[3827-3846]:VariableDeclarationStatement[3827-3846]"
+    }, {
+      "left" : "int     end = offset + length;",
+      "right" : "int     end = offset + length;",
+      "info" : "VariableDeclarationStatement[3855-3885]:VariableDeclarationStatement[3855-3885]"
+    }, {
+      "left" : "int     start = offset;",
+      "right" : "int     start = offset;",
+      "info" : "VariableDeclarationStatement[3894-3917]:VariableDeclarationStatement[3894-3917]"
+    }, {
+      "left" : "if (length < 2)",
+      "right" : "if (length < 2)",
+      "info" : "IfStatement[3927-4041]:IfStatement[3927-4041]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3942-4041]:Block[3942-4041]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Length \"+length+\" must be at least 2\");",
+      "right" : "throw new IllegalArgumentException(\"Length \"+length+\" must be at least 2\");",
+      "info" : "ThrowStatement[3956-4031]:ThrowStatement[3956-4031]"
+    }, {
+      "left" : "if (buffer[start] == 0)",
+      "right" : "if (buffer[start] == 0)",
+      "info" : "IfStatement[4051-4109]:IfStatement[4051-4109]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4075-4109]:Block[4075-4109]"
+    }, {
+      "left" : "return 0L;",
+      "right" : "return 0L;",
+      "info" : "ReturnStatement[4089-4099]:ReturnStatement[4089-4099]"
+    }, {
+      "left" : "while (start < end)",
+      "right" : "while (start < end)",
+      "info" : "WhileStatement[4150-4302]:WhileStatement[4150-4302]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4169-4302]:Block[4169-4302]"
+    }, {
+      "left" : "if (buffer[start] == ' ')",
+      "right" : "if (buffer[start] == ' ')",
+      "info" : "IfStatement[4183-4292]:IfStatement[4183-4292]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4208-4248]:Block[4208-4248]"
+    }, {
+      "left" : "start++;",
+      "right" : "start++;",
+      "info" : "ExpressionStatement[4226-4234]:ExpressionStatement[4226-4234]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4254-4292]:Block[4254-4292]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[4272-4278]:BreakStatement[4272-4278]"
+    }, {
+      "left" : "byte trailer = buffer[end - 1];",
+      "right" : "byte trailer = buffer[end - 1];",
+      "info" : "VariableDeclarationStatement[4526-4557]:VariableDeclarationStatement[4526-4557]"
+    }, {
+      "left" : "while (start < end && (trailer == 0 || trailer == ' '))",
+      "right" : "while (start < end && (trailer == 0 || trailer == ' '))",
+      "info" : "WhileStatement[4566-4691]:WhileStatement[4566-4691]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4622-4691]:Block[4622-4691]"
+    }, {
+      "left" : "end--;",
+      "right" : "end--;",
+      "info" : "ExpressionStatement[4636-4642]:ExpressionStatement[4636-4642]"
+    }, {
+      "left" : "trailer = buffer[end - 1];",
+      "right" : "trailer = buffer[end - 1];",
+      "info" : "ExpressionStatement[4655-4681]:ExpressionStatement[4655-4681]"
+    }, {
+      "left" : "for ( ;start < end; start++)",
+      "right" : "for ( ;start < end; start++)",
+      "info" : "ForStatement[4701-5166]:ForStatement[4701-5166]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4730-5166]:Block[4730-5166]"
+    }, {
+      "left" : "final byte currentByte = buffer[start];",
+      "right" : "final byte currentByte = buffer[start];",
+      "info" : "VariableDeclarationStatement[4744-4783]:VariableDeclarationStatement[4744-4783]"
+    }, {
+      "left" : "if (currentByte < '0' || currentByte > '7')",
+      "right" : "if (currentByte < '0' || currentByte > '7')",
+      "info" : "IfStatement[4838-5035]:IfStatement[4838-5035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4881-5035]:Block[4881-5035]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\n                        exceptionMessage(buffer, offset, length, start, currentByte));",
+      "right" : "throw new IllegalArgumentException(\n                        exceptionMessage(buffer, offset, length, start, currentByte));",
+      "info" : "ThrowStatement[4899-5021]:ThrowStatement[4899-5021]"
+    }, {
+      "left" : "result = (result << 3) + (currentByte - '0');",
+      "right" : "result = (result << 3) + (currentByte - '0');",
+      "info" : "ExpressionStatement[5048-5093]:ExpressionStatement[5048-5093]"
+    }, {
+      "left" : "return result;",
+      "right" : "return result;",
+      "info" : "ReturnStatement[5176-5190]:ReturnStatement[5176-5190]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6039-6045]:Modifier[6039-6045]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[6046-6052]:Modifier[6046-6052]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[6053-6057]:PrimitiveType[6053-6057]"
+    }, {
+      "left" : "parseOctalOrBinary",
+      "right" : "parseOctalOrBinary",
+      "info" : "SimpleName[6058-6076]:SimpleName[6058-6076]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[6077-6096]:SingleVariableDeclaration[6077-6096]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[6098-6114]:SingleVariableDeclaration[6098-6114]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[6158-6174]:SingleVariableDeclaration[6158-6174]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6176-6535]:Block[6176-6535]"
+    }, {
+      "left" : "if ((buffer[offset] & 0x80) == 0)",
+      "right" : "if ((buffer[offset] & 0x80) == 0)",
+      "info" : "IfStatement[6187-6287]:IfStatement[6187-6287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6221-6287]:Block[6221-6287]"
+    }, {
+      "left" : "return parseOctal(buffer, offset, length);",
+      "right" : "return parseOctal(buffer, offset, length);",
+      "info" : "ReturnStatement[6235-6277]:ReturnStatement[6235-6277]"
+    }, {
+      "left" : "final boolean negative = buffer[offset] == (byte) 0xff;",
+      "right" : "final boolean negative = buffer[offset] == (byte) 0xff;",
+      "info" : "VariableDeclarationStatement[6296-6351]:VariableDeclarationStatement[6296-6351]"
+    }, {
+      "left" : "if (length < 9)",
+      "right" : "if (length < 9)",
+      "info" : "IfStatement[6360-6457]:IfStatement[6360-6457]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6376-6457]:Block[6376-6457]"
+    }, {
+      "left" : "return parseBinaryLong(buffer, offset, length, negative);",
+      "right" : "return parseBinaryLong(buffer, offset, length, negative);",
+      "info" : "ReturnStatement[6390-6447]:ReturnStatement[6390-6447]"
+    }, {
+      "left" : "return parseBinaryBigInteger(buffer, offset, length, negative);",
+      "right" : "return parseBinaryBigInteger(buffer, offset, length, negative);",
+      "info" : "ReturnStatement[6466-6529]:ReturnStatement[6466-6529]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6541-6548]:Modifier[6541-6548]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[6549-6555]:Modifier[6549-6555]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[6556-6560]:PrimitiveType[6556-6560]"
+    }, {
+      "left" : "parseBinaryLong",
+      "right" : "parseBinaryLong",
+      "info" : "SimpleName[6561-6576]:SimpleName[6561-6576]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[6577-6596]:SingleVariableDeclaration[6577-6596]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[6598-6614]:SingleVariableDeclaration[6598-6614]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[6656-6672]:SingleVariableDeclaration[6656-6672]"
+    }, {
+      "left" : "final boolean negative",
+      "right" : "final boolean negative",
+      "info" : "SingleVariableDeclaration[6714-6736]:SingleVariableDeclaration[6714-6736]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6738-7395]:Block[6738-7395]"
+    }, {
+      "left" : "if (length >= 9)",
+      "right" : "if (length >= 9)",
+      "info" : "IfStatement[6748-7072]:IfStatement[6748-7072]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6765-7072]:Block[6765-7072]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"At offset \" + offset + \", \"\n                                               + length + \" byte binary number\"\n                                               + \" exceeds maximum signed long\"\n                                               + \" value\");",
+      "right" : "throw new IllegalArgumentException(\"At offset \" + offset + \", \"\n                                               + length + \" byte binary number\"\n                                               + \" exceeds maximum signed long\"\n                                               + \" value\");",
+      "info" : "ThrowStatement[6779-7062]:ThrowStatement[6779-7062]"
+    }, {
+      "left" : "long val = 0;",
+      "right" : "long val = 0;",
+      "info" : "VariableDeclarationStatement[7081-7094]:VariableDeclarationStatement[7081-7094]"
+    }, {
+      "left" : "for (int i = 1; i < length; i++)",
+      "right" : "for (int i = 1; i < length; i++)",
+      "info" : "ForStatement[7103-7207]:ForStatement[7103-7207]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7136-7207]:Block[7136-7207]"
+    }, {
+      "left" : "val = (val << 8) + (buffer[offset + i] & 0xff);",
+      "right" : "val = (val << 8) + (buffer[offset + i] & 0xff);",
+      "info" : "ExpressionStatement[7150-7197]:ExpressionStatement[7150-7197]"
+    }, {
+      "left" : "if (negative)",
+      "right" : "if (negative)",
+      "info" : "IfStatement[7216-7351]:IfStatement[7216-7351]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7230-7351]:Block[7230-7351]"
+    }, {
+      "left" : "val--;",
+      "right" : "val--;",
+      "info" : "ExpressionStatement[7274-7280]:ExpressionStatement[7274-7280]"
+    }, {
+      "left" : "val ^= (long) Math.pow(2, (length - 1) * 8) - 1;",
+      "right" : "val ^= (long) Math.pow(2, (length - 1) * 8) - 1;",
+      "info" : "ExpressionStatement[7293-7341]:ExpressionStatement[7293-7341]"
+    }, {
+      "left" : "return negative ? -val : val;",
+      "right" : "return negative ? -val : val;",
+      "info" : "ReturnStatement[7360-7389]:ReturnStatement[7360-7389]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[7401-7408]:Modifier[7401-7408]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[7409-7415]:Modifier[7409-7415]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[7416-7420]:PrimitiveType[7416-7420]"
+    }, {
+      "left" : "parseBinaryBigInteger",
+      "right" : "parseBinaryBigInteger",
+      "info" : "SimpleName[7421-7442]:SimpleName[7421-7442]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[7443-7462]:SingleVariableDeclaration[7443-7462]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[7510-7526]:SingleVariableDeclaration[7510-7526]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[7574-7590]:SingleVariableDeclaration[7574-7590]"
+    }, {
+      "left" : "final boolean negative",
+      "right" : "final boolean negative",
+      "info" : "SingleVariableDeclaration[7638-7660]:SingleVariableDeclaration[7638-7660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7662-8367]:Block[7662-8367]"
+    }, {
+      "left" : "byte[] remainder = new byte[length - 1];",
+      "right" : "byte[] remainder = new byte[length - 1];",
+      "info" : "VariableDeclarationStatement[7672-7712]:VariableDeclarationStatement[7672-7712]"
+    }, {
+      "left" : "System.arraycopy(buffer, offset + 1, remainder, 0, length - 1);",
+      "right" : "System.arraycopy(buffer, offset + 1, remainder, 0, length - 1);",
+      "info" : "ExpressionStatement[7721-7784]:ExpressionStatement[7721-7784]"
+    }, {
+      "left" : "BigInteger val = new BigInteger(remainder);",
+      "right" : "BigInteger val = new BigInteger(remainder);",
+      "info" : "VariableDeclarationStatement[7793-7836]:VariableDeclarationStatement[7793-7836]"
+    }, {
+      "left" : "if (negative)",
+      "right" : "if (negative)",
+      "info" : "IfStatement[7845-7957]:IfStatement[7845-7957]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7859-7957]:Block[7859-7957]"
+    }, {
+      "left" : "val = val.add(BigInteger.valueOf(-1)).not();",
+      "right" : "val = val.add(BigInteger.valueOf(-1)).not();",
+      "info" : "ExpressionStatement[7903-7947]:ExpressionStatement[7903-7947]"
+    }, {
+      "left" : "if (val.bitLength() > 63)",
+      "right" : "if (val.bitLength() > 63)",
+      "info" : "IfStatement[7966-8299]:IfStatement[7966-8299]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7992-8299]:Block[7992-8299]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"At offset \" + offset + \", \"\n                                               + length + \" byte binary number\"\n                                               + \" exceeds maximum signed long\"\n                                               + \" value\");",
+      "right" : "throw new IllegalArgumentException(\"At offset \" + offset + \", \"\n                                               + length + \" byte binary number\"\n                                               + \" exceeds maximum signed long\"\n                                               + \" value\");",
+      "info" : "ThrowStatement[8006-8289]:ThrowStatement[8006-8289]"
+    }, {
+      "left" : "return negative ? -val.longValue() : val.longValue();",
+      "right" : "return negative ? -val.longValue() : val.longValue();",
+      "info" : "ReturnStatement[8308-8361]:ReturnStatement[8308-8361]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8778-8784]:Modifier[8778-8784]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[8785-8791]:Modifier[8785-8791]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[8792-8799]:PrimitiveType[8792-8799]"
+    }, {
+      "left" : "parseBoolean",
+      "right" : "parseBoolean",
+      "info" : "SimpleName[8800-8812]:SimpleName[8800-8812]"
+    }, {
+      "left" : "final byte[] buffer",
+      "right" : "final byte[] buffer",
+      "info" : "SingleVariableDeclaration[8813-8832]:SingleVariableDeclaration[8813-8832]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[8834-8850]:SingleVariableDeclaration[8834-8850]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8852-8895]:Block[8852-8895]"
+    }, {
+      "left" : "return buffer[offset] == 1;",
+      "right" : "return buffer[offset] == 1;",
+      "info" : "ReturnStatement[8862-8889]:ReturnStatement[8862-8889]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8956-8963]:Modifier[8956-8963]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[8964-8970]:Modifier[8964-8970]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[8971-8977]:SimpleType[8971-8977]"
+    }, {
+      "left" : "exceptionMessage",
+      "right" : "exceptionMessage",
+      "info" : "SimpleName[8978-8994]:SimpleName[8978-8994]"
+    }, {
+      "left" : "byte[] buffer",
+      "right" : "byte[] buffer",
+      "info" : "SingleVariableDeclaration[8995-9008]:SingleVariableDeclaration[8995-9008]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[9010-9026]:SingleVariableDeclaration[9010-9026]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[9040-9056]:SingleVariableDeclaration[9040-9056]"
+    }, {
+      "left" : "int current",
+      "right" : "int current",
+      "info" : "SingleVariableDeclaration[9058-9069]:SingleVariableDeclaration[9058-9069]"
+    }, {
+      "left" : "final byte currentByte",
+      "right" : "final byte currentByte",
+      "info" : "SingleVariableDeclaration[9071-9093]:SingleVariableDeclaration[9071-9093]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9095-9794]:Block[9095-9794]"
+    }, {
+      "left" : "String string = new String(buffer, offset, length);",
+      "right" : "String string = new String(buffer, offset, length);",
+      "info" : "VariableDeclarationStatement[9507-9558]:VariableDeclarationStatement[9507-9558]"
+    }, {
+      "left" : "string=string.replaceAll(\"\\0\", \"{NUL}\");",
+      "right" : "string=string.replaceAll(\"\\0\", \"{NUL}\");",
+      "info" : "ExpressionStatement[9568-9608]:ExpressionStatement[9568-9608]"
+    }, {
+      "left" : "final String s = \"Invalid byte \"+currentByte+\" at offset \"+(current-offset)+\" in '\"+string+\"' len=\"+length;",
+      "right" : "final String s = \"Invalid byte \"+currentByte+\" at offset \"+(current-offset)+\" in '\"+string+\"' len=\"+length;",
+      "info" : "VariableDeclarationStatement[9663-9770]:VariableDeclarationStatement[9663-9770]"
+    }, {
+      "left" : "return s;",
+      "right" : "return s;",
+      "info" : "ReturnStatement[9779-9788]:ReturnStatement[9779-9788]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[10158-10164]:Modifier[10158-10164]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[10165-10171]:Modifier[10165-10171]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[10172-10178]:SimpleType[10172-10178]"
+    }, {
+      "left" : "parseName",
+      "right" : "parseName",
+      "info" : "SimpleName[10179-10188]:SimpleName[10179-10188]"
+    }, {
+      "left" : "byte[] buffer",
+      "right" : "byte[] buffer",
+      "info" : "SingleVariableDeclaration[10189-10202]:SingleVariableDeclaration[10189-10202]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[10204-10220]:SingleVariableDeclaration[10204-10220]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[10222-10238]:SingleVariableDeclaration[10222-10238]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10240-10606]:Block[10240-10606]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[10250-10600]:TryStatement[10250-10600]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10254-10337]:Block[10254-10337]"
+    }, {
+      "left" : "return parseName(buffer, offset, length, DEFAULT_ENCODING);",
+      "right" : "return parseName(buffer, offset, length, DEFAULT_ENCODING);",
+      "info" : "ReturnStatement[10268-10327]:ReturnStatement[10268-10327]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10361-10600]:Block[10361-10600]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[10375-10590]:TryStatement[10375-10590]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10379-10471]:Block[10379-10471]"
+    }, {
+      "left" : "return parseName(buffer, offset, length, FALLBACK_ENCODING);",
+      "right" : "return parseName(buffer, offset, length, FALLBACK_ENCODING);",
+      "info" : "ReturnStatement[10397-10457]:ReturnStatement[10397-10457]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10496-10590]:Block[10496-10590]"
+    }, {
+      "left" : "throw new RuntimeException(ex2);",
+      "right" : "throw new RuntimeException(ex2);",
+      "info" : "ThrowStatement[10544-10576]:ThrowStatement[10544-10576]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11090-11096]:Modifier[11090-11096]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[11097-11103]:Modifier[11097-11103]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[11104-11110]:SimpleType[11104-11110]"
+    }, {
+      "left" : "parseName",
+      "right" : "parseName",
+      "info" : "SimpleName[11111-11120]:SimpleName[11111-11120]"
+    }, {
+      "left" : "byte[] buffer",
+      "right" : "byte[] buffer",
+      "info" : "SingleVariableDeclaration[11121-11134]:SingleVariableDeclaration[11121-11134]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[11136-11152]:SingleVariableDeclaration[11136-11152]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[11189-11205]:SingleVariableDeclaration[11189-11205]"
+    }, {
+      "left" : "final ZipEncoding encoding",
+      "right" : "final ZipEncoding encoding",
+      "info" : "SingleVariableDeclaration[11242-11268]:SingleVariableDeclaration[11242-11268]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[11285-11296]:SimpleType[11285-11296]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11297-11646]:Block[11297-11646]"
+    }, {
+      "left" : "int len = length;",
+      "right" : "int len = length;",
+      "info" : "VariableDeclarationStatement[11308-11325]:VariableDeclarationStatement[11308-11325]"
+    }, {
+      "left" : "for (; len > 0; len--)",
+      "right" : "for (; len > 0; len--)",
+      "info" : "ForStatement[11334-11454]:ForStatement[11334-11454]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11357-11454]:Block[11357-11454]"
+    }, {
+      "left" : "if (buffer[offset + len - 1] != 0)",
+      "right" : "if (buffer[offset + len - 1] != 0)",
+      "info" : "IfStatement[11371-11444]:IfStatement[11371-11444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11406-11444]:Block[11406-11444]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[11424-11430]:BreakStatement[11424-11430]"
+    }, {
+      "left" : "if (len > 0)",
+      "right" : "if (len > 0)",
+      "info" : "IfStatement[11463-11621]:IfStatement[11463-11621]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11476-11621]:Block[11476-11621]"
+    }, {
+      "left" : "byte[] b = new byte[len];",
+      "right" : "byte[] b = new byte[len];",
+      "info" : "VariableDeclarationStatement[11490-11515]:VariableDeclarationStatement[11490-11515]"
+    }, {
+      "left" : "System.arraycopy(buffer, offset, b, 0, len);",
+      "right" : "System.arraycopy(buffer, offset, b, 0, len);",
+      "info" : "ExpressionStatement[11528-11572]:ExpressionStatement[11528-11572]"
+    }, {
+      "left" : "return encoding.decode(b);",
+      "right" : "return encoding.decode(b);",
+      "info" : "ReturnStatement[11585-11611]:ReturnStatement[11585-11611]"
+    }, {
+      "left" : "return \"\";",
+      "right" : "return \"\";",
+      "info" : "ReturnStatement[11630-11640]:ReturnStatement[11630-11640]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[12287-12293]:Modifier[12287-12293]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[12294-12300]:Modifier[12294-12300]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[12301-12304]:PrimitiveType[12301-12304]"
+    }, {
+      "left" : "formatNameBytes",
+      "right" : "formatNameBytes",
+      "info" : "SimpleName[12305-12320]:SimpleName[12305-12320]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[12321-12332]:SingleVariableDeclaration[12321-12332]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[12334-12344]:SingleVariableDeclaration[12334-12344]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[12346-12362]:SingleVariableDeclaration[12346-12362]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[12364-12380]:SingleVariableDeclaration[12364-12380]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12382-12805]:Block[12382-12805]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[12392-12799]:TryStatement[12392-12799]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12396-12488]:Block[12396-12488]"
+    }, {
+      "left" : "return formatNameBytes(name, buf, offset, length, DEFAULT_ENCODING);",
+      "right" : "return formatNameBytes(name, buf, offset, length, DEFAULT_ENCODING);",
+      "info" : "ReturnStatement[12410-12478]:ReturnStatement[12410-12478]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12512-12799]:Block[12512-12799]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[12526-12789]:TryStatement[12526-12789]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12530-12670]:Block[12530-12670]"
+    }, {
+      "left" : "return formatNameBytes(name, buf, offset, length,\n                                       FALLBACK_ENCODING);",
+      "right" : "return formatNameBytes(name, buf, offset, length,\n                                       FALLBACK_ENCODING);",
+      "info" : "ReturnStatement[12548-12656]:ReturnStatement[12548-12656]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12695-12789]:Block[12695-12789]"
+    }, {
+      "left" : "throw new RuntimeException(ex2);",
+      "right" : "throw new RuntimeException(ex2);",
+      "info" : "ThrowStatement[12743-12775]:ThrowStatement[12743-12775]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13566-13572]:Modifier[13566-13572]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[13573-13579]:Modifier[13573-13579]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[13580-13583]:PrimitiveType[13580-13583]"
+    }, {
+      "left" : "formatNameBytes",
+      "right" : "formatNameBytes",
+      "info" : "SimpleName[13584-13599]:SimpleName[13584-13599]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[13600-13611]:SingleVariableDeclaration[13600-13611]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[13613-13623]:SingleVariableDeclaration[13613-13623]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[13625-13641]:SingleVariableDeclaration[13625-13641]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[13681-13697]:SingleVariableDeclaration[13681-13697]"
+    }, {
+      "left" : "final ZipEncoding encoding",
+      "right" : "final ZipEncoding encoding",
+      "info" : "SingleVariableDeclaration[13737-13763]:SingleVariableDeclaration[13737-13763]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[13780-13791]:SimpleType[13780-13791]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13792-14296]:Block[13792-14296]"
+    }, {
+      "left" : "int len = name.length();",
+      "right" : "int len = name.length();",
+      "info" : "VariableDeclarationStatement[13802-13826]:VariableDeclarationStatement[13802-13826]"
+    }, {
+      "left" : "ByteBuffer b = encoding.encode(name);",
+      "right" : "ByteBuffer b = encoding.encode(name);",
+      "info" : "VariableDeclarationStatement[13835-13872]:VariableDeclarationStatement[13835-13872]"
+    }, {
+      "left" : "while (b.limit() > length && len > 0)",
+      "right" : "while (b.limit() > length && len > 0)",
+      "info" : "WhileStatement[13881-13989]:WhileStatement[13881-13989]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13919-13989]:Block[13919-13989]"
+    }, {
+      "left" : "b = encoding.encode(name.substring(0, --len));",
+      "right" : "b = encoding.encode(name.substring(0, --len));",
+      "info" : "ExpressionStatement[13933-13979]:ExpressionStatement[13933-13979]"
+    }, {
+      "left" : "final int limit = b.limit() - b.position();",
+      "right" : "final int limit = b.limit() - b.position();",
+      "info" : "VariableDeclarationStatement[13998-14041]:VariableDeclarationStatement[13998-14041]"
+    }, {
+      "left" : "System.arraycopy(b.array(), b.arrayOffset(), buf, offset, limit);",
+      "right" : "System.arraycopy(b.array(), b.arrayOffset(), buf, offset, limit);",
+      "info" : "ExpressionStatement[14050-14115]:ExpressionStatement[14050-14115]"
+    }, {
+      "left" : "for (int i = limit; i < length; ++i)",
+      "right" : "for (int i = limit; i < length; ++i)",
+      "info" : "ForStatement[14176-14257]:ForStatement[14176-14257]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14213-14257]:Block[14213-14257]"
+    }, {
+      "left" : "buf[offset + i] = 0;",
+      "right" : "buf[offset + i] = 0;",
+      "info" : "ExpressionStatement[14227-14247]:ExpressionStatement[14227-14247]"
+    }, {
+      "left" : "return offset + length;",
+      "right" : "return offset + length;",
+      "info" : "ReturnStatement[14267-14290]:ReturnStatement[14267-14290]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14683-14689]:Modifier[14683-14689]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[14690-14696]:Modifier[14690-14696]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14697-14701]:PrimitiveType[14697-14701]"
+    }, {
+      "left" : "formatUnsignedOctalString",
+      "right" : "formatUnsignedOctalString",
+      "info" : "SimpleName[14702-14727]:SimpleName[14702-14727]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[14728-14744]:SingleVariableDeclaration[14728-14744]"
+    }, {
+      "left" : "byte[] buffer",
+      "right" : "byte[] buffer",
+      "info" : "SingleVariableDeclaration[14746-14759]:SingleVariableDeclaration[14746-14759]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[14773-14789]:SingleVariableDeclaration[14773-14789]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[14791-14807]:SingleVariableDeclaration[14791-14807]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14809-15624]:Block[14809-15624]"
+    }, {
+      "left" : "int remaining = length;",
+      "right" : "int remaining = length;",
+      "info" : "VariableDeclarationStatement[14819-14842]:VariableDeclarationStatement[14819-14842]"
+    }, {
+      "left" : "remaining--;",
+      "right" : "remaining--;",
+      "info" : "ExpressionStatement[14851-14863]:ExpressionStatement[14851-14863]"
+    }, {
+      "left" : "if (value == 0)",
+      "right" : "if (value == 0)",
+      "info" : "IfStatement[14872-15491]:IfStatement[14872-15491]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14888-14954]:Block[14888-14954]"
+    }, {
+      "left" : "buffer[offset + remaining--] = (byte) '0';",
+      "right" : "buffer[offset + remaining--] = (byte) '0';",
+      "info" : "ExpressionStatement[14902-14944]:ExpressionStatement[14902-14944]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14960-15491]:Block[14960-15491]"
+    }, {
+      "left" : "long val = value;",
+      "right" : "long val = value;",
+      "info" : "VariableDeclarationStatement[14974-14991]:VariableDeclarationStatement[14974-14991]"
+    }, {
+      "left" : "for (; remaining >= 0 && val != 0; --remaining)",
+      "right" : "for (; remaining >= 0 && val != 0; --remaining)",
+      "info" : "ForStatement[15004-15276]:ForStatement[15004-15276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15052-15276]:Block[15052-15276]"
+    }, {
+      "left" : "buffer[offset + remaining] = (byte) ((byte) '0' + (byte) (val & 7));",
+      "right" : "buffer[offset + remaining] = (byte) ((byte) '0' + (byte) (val & 7));",
+      "info" : "ExpressionStatement[15116-15184]:ExpressionStatement[15116-15184]"
+    }, {
+      "left" : "val = val >>> 3;",
+      "right" : "val = val >>> 3;",
+      "info" : "ExpressionStatement[15201-15217]:ExpressionStatement[15201-15217]"
+    }, {
+      "left" : "if (val != 0)",
+      "right" : "if (val != 0)",
+      "info" : "IfStatement[15289-15481]:IfStatement[15289-15481]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15302-15481]:Block[15302-15481]"
+    }, {
+      "left" : "throw new IllegalArgumentException\n                (value+\"=\"+Long.toOctalString(value)+ \" will not fit in octal number buffer of length \"+length);",
+      "right" : "throw new IllegalArgumentException\n                (value+\"=\"+Long.toOctalString(value)+ \" will not fit in octal number buffer of length \"+length);",
+      "info" : "ThrowStatement[15320-15467]:ThrowStatement[15320-15467]"
+    }, {
+      "left" : "for (; remaining >= 0; --remaining)",
+      "right" : "for (; remaining >= 0; --remaining)",
+      "info" : "ForStatement[15501-15618]:ForStatement[15501-15618]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15537-15618]:Block[15537-15618]"
+    }, {
+      "left" : "buffer[offset + remaining] = (byte) '0';",
+      "right" : "buffer[offset + remaining] = (byte) '0';",
+      "info" : "ExpressionStatement[15568-15608]:ExpressionStatement[15568-15608]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[16221-16227]:Modifier[16221-16227]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[16228-16234]:Modifier[16228-16234]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[16235-16238]:PrimitiveType[16235-16238]"
+    }, {
+      "left" : "formatOctalBytes",
+      "right" : "formatOctalBytes",
+      "info" : "SimpleName[16239-16255]:SimpleName[16239-16255]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[16256-16272]:SingleVariableDeclaration[16256-16272]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[16274-16284]:SingleVariableDeclaration[16274-16284]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[16286-16302]:SingleVariableDeclaration[16286-16302]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[16304-16320]:SingleVariableDeclaration[16304-16320]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16322-16591]:Block[16322-16591]"
+    }, {
+      "left" : "int idx=length-2;",
+      "right" : "int idx=length-2;",
+      "info" : "VariableDeclarationStatement[16333-16350]:VariableDeclarationStatement[16333-16350]"
+    }, {
+      "left" : "formatUnsignedOctalString(value, buf, offset, idx);",
+      "right" : "formatUnsignedOctalString(value, buf, offset, idx);",
+      "info" : "ExpressionStatement[16390-16441]:ExpressionStatement[16390-16441]"
+    }, {
+      "left" : "buf[offset + idx++] = (byte) ' ';",
+      "right" : "buf[offset + idx++] = (byte) ' ';",
+      "info" : "ExpressionStatement[16451-16484]:ExpressionStatement[16451-16484]"
+    }, {
+      "left" : "buf[offset + idx]   = 0;",
+      "right" : "buf[offset + idx]   = 0;",
+      "info" : "ExpressionStatement[16511-16535]:ExpressionStatement[16511-16535]"
+    }, {
+      "left" : "return offset + length;",
+      "right" : "return offset + length;",
+      "info" : "ReturnStatement[16562-16585]:ReturnStatement[16562-16585]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[17165-17171]:Modifier[17165-17171]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[17172-17178]:Modifier[17172-17178]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[17179-17182]:PrimitiveType[17179-17182]"
+    }, {
+      "left" : "formatLongOctalBytes",
+      "right" : "formatLongOctalBytes",
+      "info" : "SimpleName[17183-17203]:SimpleName[17183-17203]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[17204-17220]:SingleVariableDeclaration[17204-17220]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[17222-17232]:SingleVariableDeclaration[17222-17232]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[17234-17250]:SingleVariableDeclaration[17234-17250]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[17252-17268]:SingleVariableDeclaration[17252-17268]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17270-17469]:Block[17270-17469]"
+    }, {
+      "left" : "int idx=length-1;",
+      "right" : "int idx=length-1;",
+      "info" : "VariableDeclarationStatement[17281-17298]:VariableDeclarationStatement[17281-17298]"
+    }, {
+      "left" : "formatUnsignedOctalString(value, buf, offset, idx);",
+      "right" : "formatUnsignedOctalString(value, buf, offset, idx);",
+      "info" : "ExpressionStatement[17321-17372]:ExpressionStatement[17321-17372]"
+    }, {
+      "left" : "buf[offset + idx] = (byte) ' ';",
+      "right" : "buf[offset + idx] = (byte) ' ';",
+      "info" : "ExpressionStatement[17381-17412]:ExpressionStatement[17381-17412]"
+    }, {
+      "left" : "return offset + length;",
+      "right" : "return offset + length;",
+      "info" : "ReturnStatement[17440-17463]:ReturnStatement[17440-17463]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[18150-18156]:Modifier[18150-18156]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[18157-18163]:Modifier[18157-18163]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[18164-18167]:PrimitiveType[18164-18167]"
+    }, {
+      "left" : "formatLongOctalOrBinaryBytes",
+      "right" : "formatLongOctalOrBinaryBytes",
+      "info" : "SimpleName[18168-18196]:SimpleName[18168-18196]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[18206-18222]:SingleVariableDeclaration[18206-18222]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[18224-18234]:SingleVariableDeclaration[18224-18234]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[18236-18252]:SingleVariableDeclaration[18236-18252]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[18254-18270]:SingleVariableDeclaration[18254-18270]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18272-18927]:Block[18272-18927]"
+    }, {
+      "left" : "final long maxAsOctalChar = length == TarConstants.UIDLEN ? TarConstants.MAXID : TarConstants.MAXSIZE;",
+      "right" : "final long maxAsOctalChar = length == TarConstants.UIDLEN ? TarConstants.MAXID : TarConstants.MAXSIZE;",
+      "info" : "VariableDeclarationStatement[18350-18452]:VariableDeclarationStatement[18350-18452]"
+    }, {
+      "left" : "final boolean negative = value < 0;",
+      "right" : "final boolean negative = value < 0;",
+      "info" : "VariableDeclarationStatement[18462-18497]:VariableDeclarationStatement[18462-18497]"
+    }, {
+      "left" : "if (!negative && value <= maxAsOctalChar)",
+      "right" : "if (!negative && value <= maxAsOctalChar)",
+      "info" : "IfStatement[18506-18658]:IfStatement[18506-18658]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18548-18658]:Block[18548-18658]"
+    }, {
+      "left" : "return formatLongOctalBytes(value, buf, offset, length);",
+      "right" : "return formatLongOctalBytes(value, buf, offset, length);",
+      "info" : "ReturnStatement[18592-18648]:ReturnStatement[18592-18648]"
+    }, {
+      "left" : "if (length < 9)",
+      "right" : "if (length < 9)",
+      "info" : "IfStatement[18668-18763]:IfStatement[18668-18763]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18684-18763]:Block[18684-18763]"
+    }, {
+      "left" : "formatLongBinary(value, buf, offset, length, negative);",
+      "right" : "formatLongBinary(value, buf, offset, length, negative);",
+      "info" : "ExpressionStatement[18698-18753]:ExpressionStatement[18698-18753]"
+    }, {
+      "left" : "formatBigIntegerBinary(value, buf, offset, length, negative);",
+      "right" : "formatBigIntegerBinary(value, buf, offset, length, negative);",
+      "info" : "ExpressionStatement[18772-18833]:ExpressionStatement[18772-18833]"
+    }, {
+      "left" : "buf[offset] = (byte) (negative ? 0xff : 0x80);",
+      "right" : "buf[offset] = (byte) (negative ? 0xff : 0x80);",
+      "info" : "ExpressionStatement[18843-18889]:ExpressionStatement[18843-18889]"
+    }, {
+      "left" : "return offset + length;",
+      "right" : "return offset + length;",
+      "info" : "ReturnStatement[18898-18921]:ReturnStatement[18898-18921]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[18933-18940]:Modifier[18933-18940]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[18941-18947]:Modifier[18941-18947]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18948-18952]:PrimitiveType[18948-18952]"
+    }, {
+      "left" : "formatLongBinary",
+      "right" : "formatLongBinary",
+      "info" : "SimpleName[18953-18969]:SimpleName[18953-18969]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[18970-18986]:SingleVariableDeclaration[18970-18986]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[18988-18998]:SingleVariableDeclaration[18988-18998]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[19041-19057]:SingleVariableDeclaration[19041-19057]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[19059-19075]:SingleVariableDeclaration[19059-19075]"
+    }, {
+      "left" : "final boolean negative",
+      "right" : "final boolean negative",
+      "info" : "SingleVariableDeclaration[19118-19140]:SingleVariableDeclaration[19118-19140]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19142-19674]:Block[19142-19674]"
+    }, {
+      "left" : "final int bits = (length - 1) * 8;",
+      "right" : "final int bits = (length - 1) * 8;",
+      "info" : "VariableDeclarationStatement[19152-19186]:VariableDeclarationStatement[19152-19186]"
+    }, {
+      "left" : "final long max = 1l << bits;",
+      "right" : "final long max = 1l << bits;",
+      "info" : "VariableDeclarationStatement[19195-19223]:VariableDeclarationStatement[19195-19223]"
+    }, {
+      "left" : "long val = Math.abs(value);",
+      "right" : "long val = Math.abs(value);",
+      "info" : "VariableDeclarationStatement[19232-19259]:VariableDeclarationStatement[19232-19259]"
+    }, {
+      "left" : "if (val >= max)",
+      "right" : "if (val >= max)",
+      "info" : "IfStatement[19268-19426]:IfStatement[19268-19426]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19284-19426]:Block[19284-19426]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Value \" + value +\n                \" is too large for \" + length + \" byte field.\");",
+      "right" : "throw new IllegalArgumentException(\"Value \" + value +\n                \" is too large for \" + length + \" byte field.\");",
+      "info" : "ThrowStatement[19298-19416]:ThrowStatement[19298-19416]"
+    }, {
+      "left" : "if (negative)",
+      "right" : "if (negative)",
+      "info" : "IfStatement[19435-19540]:IfStatement[19435-19540]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19449-19540]:Block[19449-19540]"
+    }, {
+      "left" : "val ^= max - 1;",
+      "right" : "val ^= max - 1;",
+      "info" : "ExpressionStatement[19463-19478]:ExpressionStatement[19463-19478]"
+    }, {
+      "left" : "val |= 0xff << bits;",
+      "right" : "val |= 0xff << bits;",
+      "info" : "ExpressionStatement[19491-19511]:ExpressionStatement[19491-19511]"
+    }, {
+      "left" : "val++;",
+      "right" : "val++;",
+      "info" : "ExpressionStatement[19524-19530]:ExpressionStatement[19524-19530]"
+    }, {
+      "left" : "for (int i = offset + length - 1; i >= offset; i--)",
+      "right" : "for (int i = offset + length - 1; i >= offset; i--)",
+      "info" : "ForStatement[19549-19668]:ForStatement[19549-19668]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19601-19668]:Block[19601-19668]"
+    }, {
+      "left" : "buf[i] = (byte) val;",
+      "right" : "buf[i] = (byte) val;",
+      "info" : "ExpressionStatement[19615-19635]:ExpressionStatement[19615-19635]"
+    }, {
+      "left" : "val >>= 8;",
+      "right" : "val >>= 8;",
+      "info" : "ExpressionStatement[19648-19658]:ExpressionStatement[19648-19658]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[19680-19687]:Modifier[19680-19687]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[19688-19694]:Modifier[19688-19694]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[19695-19699]:PrimitiveType[19695-19699]"
+    }, {
+      "left" : "formatBigIntegerBinary",
+      "right" : "formatBigIntegerBinary",
+      "info" : "SimpleName[19700-19722]:SimpleName[19700-19722]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[19723-19739]:SingleVariableDeclaration[19723-19739]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[19741-19751]:SingleVariableDeclaration[19741-19751]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[19800-19816]:SingleVariableDeclaration[19800-19816]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[19865-19881]:SingleVariableDeclaration[19865-19881]"
+    }, {
+      "left" : "final boolean negative",
+      "right" : "final boolean negative",
+      "info" : "SingleVariableDeclaration[19930-19952]:SingleVariableDeclaration[19930-19952]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19954-20327]:Block[19954-20327]"
+    }, {
+      "left" : "BigInteger val = BigInteger.valueOf(value);",
+      "right" : "BigInteger val = BigInteger.valueOf(value);",
+      "info" : "VariableDeclarationStatement[19964-20007]:VariableDeclarationStatement[19964-20007]"
+    }, {
+      "left" : "final byte[] b = val.toByteArray();",
+      "right" : "final byte[] b = val.toByteArray();",
+      "info" : "VariableDeclarationStatement[20016-20051]:VariableDeclarationStatement[20016-20051]"
+    }, {
+      "left" : "final int len = b.length;",
+      "right" : "final int len = b.length;",
+      "info" : "VariableDeclarationStatement[20060-20085]:VariableDeclarationStatement[20060-20085]"
+    }, {
+      "left" : "final int off = offset + length - len;",
+      "right" : "final int off = offset + length - len;",
+      "info" : "VariableDeclarationStatement[20094-20132]:VariableDeclarationStatement[20094-20132]"
+    }, {
+      "left" : "System.arraycopy(b, 0, buf, off, len);",
+      "right" : "System.arraycopy(b, 0, buf, off, len);",
+      "info" : "ExpressionStatement[20141-20179]:ExpressionStatement[20141-20179]"
+    }, {
+      "left" : "final byte fill = (byte) (negative ? 0xff : 0);",
+      "right" : "final byte fill = (byte) (negative ? 0xff : 0);",
+      "info" : "VariableDeclarationStatement[20188-20235]:VariableDeclarationStatement[20188-20235]"
+    }, {
+      "left" : "for (int i = offset + 1; i < off; i++)",
+      "right" : "for (int i = offset + 1; i < off; i++)",
+      "info" : "ForStatement[20244-20321]:ForStatement[20244-20321]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20283-20321]:Block[20283-20321]"
+    }, {
+      "left" : "buf[i] = fill;",
+      "right" : "buf[i] = fill;",
+      "info" : "ExpressionStatement[20297-20311]:ExpressionStatement[20297-20311]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[20926-20932]:Modifier[20926-20932]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[20933-20939]:Modifier[20933-20939]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[20940-20943]:PrimitiveType[20940-20943]"
+    }, {
+      "left" : "formatCheckSumOctalBytes",
+      "right" : "formatCheckSumOctalBytes",
+      "info" : "SimpleName[20944-20968]:SimpleName[20944-20968]"
+    }, {
+      "left" : "final long value",
+      "right" : "final long value",
+      "info" : "SingleVariableDeclaration[20969-20985]:SingleVariableDeclaration[20969-20985]"
+    }, {
+      "left" : "byte[] buf",
+      "right" : "byte[] buf",
+      "info" : "SingleVariableDeclaration[20987-20997]:SingleVariableDeclaration[20987-20997]"
+    }, {
+      "left" : "final int offset",
+      "right" : "final int offset",
+      "info" : "SingleVariableDeclaration[20999-21015]:SingleVariableDeclaration[20999-21015]"
+    }, {
+      "left" : "final int length",
+      "right" : "final int length",
+      "info" : "SingleVariableDeclaration[21017-21033]:SingleVariableDeclaration[21017-21033]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21035-21298]:Block[21035-21298]"
+    }, {
+      "left" : "int idx=length-2;",
+      "right" : "int idx=length-2;",
+      "info" : "VariableDeclarationStatement[21046-21063]:VariableDeclarationStatement[21046-21063]"
+    }, {
+      "left" : "formatUnsignedOctalString(value, buf, offset, idx);",
+      "right" : "formatUnsignedOctalString(value, buf, offset, idx);",
+      "info" : "ExpressionStatement[21093-21144]:ExpressionStatement[21093-21144]"
+    }, {
+      "left" : "buf[offset + idx++]   = 0;",
+      "right" : "buf[offset + idx++]   = 0;",
+      "info" : "ExpressionStatement[21154-21180]:ExpressionStatement[21154-21180]"
+    }, {
+      "left" : "buf[offset + idx]     = (byte) ' ';",
+      "right" : "buf[offset + idx]     = (byte) ' ';",
+      "info" : "ExpressionStatement[21206-21241]:ExpressionStatement[21206-21241]"
+    }, {
+      "left" : "return offset + length;",
+      "right" : "return offset + length;",
+      "info" : "ReturnStatement[21269-21292]:ReturnStatement[21269-21292]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[21465-21471]:Modifier[21465-21471]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[21472-21478]:Modifier[21472-21478]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[21479-21483]:PrimitiveType[21479-21483]"
+    }, {
+      "left" : "computeCheckSum",
+      "right" : "computeCheckSum",
+      "info" : "SimpleName[21484-21499]:SimpleName[21484-21499]"
+    }, {
+      "left" : "final byte[] buf",
+      "right" : "final byte[] buf",
+      "info" : "SingleVariableDeclaration[21500-21516]:SingleVariableDeclaration[21500-21516]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21518-21654]:Block[21518-21654]"
+    }, {
+      "left" : "long sum = 0;",
+      "right" : "long sum = 0;",
+      "info" : "VariableDeclarationStatement[21528-21541]:VariableDeclarationStatement[21528-21541]"
+    }, {
+      "left" : "for (byte element : buf)",
+      "right" : "for (byte element : buf)",
+      "info" : "EnhancedForStatement[21551-21627]:EnhancedForStatement[21551-21627]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21576-21627]:Block[21576-21627]"
+    }, {
+      "left" : "sum += BYTE_MASK & element;",
+      "right" : "sum += BYTE_MASK & element;",
+      "info" : "ExpressionStatement[21590-21617]:ExpressionStatement[21590-21617]"
+    }, {
+      "left" : "return sum;",
+      "right" : "return sum;",
+      "info" : "ReturnStatement[21637-21648]:ReturnStatement[21637-21648]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[22975-22981]:Modifier[22975-22981]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[22982-22988]:Modifier[22982-22988]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[22989-22996]:PrimitiveType[22989-22996]"
+    }, {
+      "left" : "verifyCheckSum",
+      "right" : "verifyCheckSum",
+      "info" : "SimpleName[22997-23011]:SimpleName[22997-23011]"
+    }, {
+      "left" : "byte[] header",
+      "right" : "byte[] header",
+      "info" : "SingleVariableDeclaration[23012-23025]:SingleVariableDeclaration[23012-23025]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23027-23688]:Block[23027-23523]"
+    }, {
+      "left" : "long storedSum = 0;",
+      "right" : "long storedSum = parseOctal(header, CHKSUM_OFFSET, CHKSUMLEN);",
+      "info" : "VariableDeclarationStatement[23037-23056]:VariableDeclarationStatement[23037-23099]"
+    }, {
+      "left" : "long unsignedSum = 0;",
+      "right" : "long unsignedSum = 0;",
+      "info" : "VariableDeclarationStatement[23065-23086]:VariableDeclarationStatement[23108-23129]"
+    }, {
+      "left" : "long signedSum = 0;",
+      "right" : "long signedSum = 0;",
+      "info" : "VariableDeclarationStatement[23095-23114]:VariableDeclarationStatement[23138-23157]"
+    }, {
+      "left" : "int digits = 0;",
+      "right" : "int digits = 0;",
+      "info" : "VariableDeclarationStatement[23124-23139]:VariableDeclarationStatement[23167-23182]"
+    }, {
+      "left" : "for (int i = 0; i < header.length; i++)",
+      "right" : "for (int i = 0; i < header.length; i++)",
+      "info" : "ForStatement[23148-23615]:ForStatement[23191-23450]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23188-23615]:Block[23231-23450]"
+    }, {
+      "left" : "byte b = header[i];",
+      "right" : "byte b = header[i];",
+      "info" : "VariableDeclarationStatement[23202-23221]:VariableDeclarationStatement[23245-23264]"
+    }, {
+      "left" : "if (CHKSUM_OFFSET  <= i && i < CHKSUM_OFFSET + CHKSUMLEN)",
+      "right" : "if (CHKSUM_OFFSET  <= i && i < CHKSUM_OFFSET + CHKSUMLEN)",
+      "info" : "IfStatement[23234-23540]:IfStatement[23277-23375]"
+    }, {
+      "left" : "b = ' ';",
+      "right" : "b = ' ';",
+      "info" : "ExpressionStatement[23518-23526]:ExpressionStatement[23353-23361]"
+    }, {
+      "left" : "unsignedSum += 0xff & b;",
+      "right" : "unsignedSum += 0xff & b;",
+      "info" : "ExpressionStatement[23553-23577]:ExpressionStatement[23388-23412]"
+    }, {
+      "left" : "signedSum += b;",
+      "right" : "signedSum += b;",
+      "info" : "ExpressionStatement[23590-23605]:ExpressionStatement[23425-23440]"
+    }, {
+      "left" : "return storedSum == unsignedSum || storedSum == signedSum;",
+      "right" : "return storedSum == unsignedSum || storedSum == signedSum;",
+      "info" : "ReturnStatement[23624-23682]:ReturnStatement[23459-23517]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

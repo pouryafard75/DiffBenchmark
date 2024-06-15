@@ -1,0 +1,133 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CompactionsCQLTest",
+      "right" : "CompactionsCQLTest",
+      "info" : "TypeDeclaration[1055-2073]:TypeDeclaration[1149-7103]"
+    }, {
+      "left" : "public void testTriggerMinorCompaction() throws Throwable",
+      "right" : "public boolean minorWasTriggered(String keyspace, String cf) throws Throwable",
+      "info" : "MethodDeclaration[1111-2071]:MethodDeclaration[6637-7101]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1055-1061]:Modifier[1149-1155]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1062-1067]:TYPE_DECLARATION_KIND[1156-1161]"
+    }, {
+      "left" : "CompactionsCQLTest",
+      "right" : "CompactionsCQLTest",
+      "info" : "SimpleName[1068-1086]:SimpleName[1162-1180]"
+    }, {
+      "left" : "CQLTester",
+      "right" : "CQLTester",
+      "info" : "SimpleType[1095-1104]:SimpleType[1189-1198]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[1111-1116]:MarkerAnnotation[5689-5694]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1121-1127]:Modifier[6637-6643]"
+    }, {
+      "left" : "void",
+      "right" : "boolean",
+      "info" : "PrimitiveType[1128-1132]:PrimitiveType[6644-6651]"
+    }, {
+      "left" : "testTriggerMinorCompaction",
+      "right" : "minorWasTriggered",
+      "info" : "SimpleName[1133-1159]:SimpleName[6652-6669]"
+    }, {
+      "left" : "Throwable",
+      "right" : "Throwable",
+      "info" : "SimpleType[1169-1178]:SimpleType[6705-6714]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1183-2071]:Block[6719-7101]"
+    }, {
+      "left" : "Keyspace.open(KEYSPACE).getColumnFamilyStore(currentTable())",
+      "right" : "Keyspace.open(KEYSPACE).getColumnFamilyStore(currentTable())",
+      "info" : "MethodInvocation[1267-1327]:MethodInvocation[6564-6624]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1374-1418]:ExpressionStatement[4671-4715]"
+    }, {
+      "left" : "flush();",
+      "right" : "flush();",
+      "info" : "ExpressionStatement[1427-1435]:ExpressionStatement[4724-4732]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1444-1488]:ExpressionStatement[5452-5496]"
+    }, {
+      "left" : "flush();",
+      "right" : "flush();",
+      "info" : "ExpressionStatement[1497-1505]:ExpressionStatement[5505-5513]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1514-1558]:ExpressionStatement[6251-6295]"
+    }, {
+      "left" : "flush();",
+      "right" : "flush();",
+      "info" : "ExpressionStatement[1567-1575]:ExpressionStatement[6304-6312]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1584-1628]:ExpressionStatement[6321-6365]"
+    }, {
+      "left" : "flush();",
+      "right" : "flush();",
+      "info" : "ExpressionStatement[1637-1645]:ExpressionStatement[6374-6382]"
+    }, {
+      "left" : "Thread.sleep(1000);",
+      "right" : "Thread.sleep(1000);",
+      "info" : "ExpressionStatement[1654-1673]:ExpressionStatement[6391-6410]"
+    }, {
+      "left" : "UntypedResultSet res = execute(\"SELECT * FROM system.compaction_history\");",
+      "right" : "UntypedResultSet res = execute(\"SELECT * FROM system.compaction_history\");",
+      "info" : "VariableDeclarationStatement[1682-1756]:VariableDeclarationStatement[6729-6803]"
+    }, {
+      "left" : "boolean minorWasTriggered = false;",
+      "right" : "boolean minorWasTriggered = false;",
+      "info" : "VariableDeclarationStatement[1765-1799]:VariableDeclarationStatement[6812-6846]"
+    }, {
+      "left" : "for (UntypedResultSet.Row r : res)",
+      "right" : "for (UntypedResultSet.Row r : res)",
+      "info" : "EnhancedForStatement[1808-2026]:EnhancedForStatement[6855-7061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1851-2026]:Block[6898-7061]"
+    }, {
+      "left" : "if (r.getString(\"keyspace_name\").equals(KEYSPACE) && r.getString(\"columnfamily_name\").equals(currentTable()))",
+      "right" : "if (r.getString(\"keyspace_name\").equals(keyspace) && r.getString(\"columnfamily_name\").equals(cf))",
+      "info" : "IfStatement[1865-2016]:IfStatement[6912-7051]"
+    }, {
+      "left" : "KEYSPACE",
+      "right" : "keyspace",
+      "info" : "SimpleName[1905-1913]:SimpleName[6952-6960]"
+    }, {
+      "left" : "currentTable()",
+      "right" : "minorWasTriggered(KEYSPACE, currentTable())",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[1958-1972]:METHOD_INVOCATION_ARGUMENTS[6430-6473]"
+    }, {
+      "left" : "currentTable()",
+      "right" : "currentTable()",
+      "info" : "MethodInvocation[1958-1972]:MethodInvocation[6458-6472]"
+    }, {
+      "left" : "minorWasTriggered = true;",
+      "right" : "minorWasTriggered = true;",
+      "info" : "ExpressionStatement[1991-2016]:ExpressionStatement[7026-7051]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

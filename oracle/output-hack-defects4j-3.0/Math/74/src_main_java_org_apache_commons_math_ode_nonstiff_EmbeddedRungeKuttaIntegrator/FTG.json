@@ -1,0 +1,937 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "EmbeddedRungeKuttaIntegrator",
+      "right" : "EmbeddedRungeKuttaIntegrator",
+      "info" : "TypeDeclaration[1291-14313]:TypeDeclaration[1291-14509]"
+    }, {
+      "left" : "private final boolean fsal;",
+      "right" : "private final boolean fsal;",
+      "info" : "FieldDeclaration[2712-2785]:FieldDeclaration[2712-2785]"
+    }, {
+      "left" : "private final double[] c;",
+      "right" : "private final double[] c;",
+      "info" : "FieldDeclaration[2791-2883]:FieldDeclaration[2791-2883]"
+    }, {
+      "left" : "private final double[][] a;",
+      "right" : "private final double[][] a;",
+      "info" : "FieldDeclaration[2889-2994]:FieldDeclaration[2889-2994]"
+    }, {
+      "left" : "private final double[] b;",
+      "right" : "private final double[] b;",
+      "info" : "FieldDeclaration[3000-3099]:FieldDeclaration[3000-3099]"
+    }, {
+      "left" : "private final RungeKuttaStepInterpolator prototype;",
+      "right" : "private final RungeKuttaStepInterpolator prototype;",
+      "info" : "FieldDeclaration[3105-3203]:FieldDeclaration[3105-3203]"
+    }, {
+      "left" : "private final double exp;",
+      "right" : "private final double exp;",
+      "info" : "FieldDeclaration[3209-3272]:FieldDeclaration[3209-3272]"
+    }, {
+      "left" : "private double safety;",
+      "right" : "private double safety;",
+      "info" : "FieldDeclaration[3278-3347]:FieldDeclaration[3278-3347]"
+    }, {
+      "left" : "private double minReduction;",
+      "right" : "private double minReduction;",
+      "info" : "FieldDeclaration[3353-3439]:FieldDeclaration[3353-3439]"
+    }, {
+      "left" : "private double maxGrowth;",
+      "right" : "private double maxGrowth;",
+      "info" : "FieldDeclaration[3445-3525]:FieldDeclaration[3445-3525]"
+    }, {
+      "left" : "protected EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,\n                                         final double[] c, final double[][] a, final double[] b,\n                                         final RungeKuttaStepInterpolator prototype,\n                                         final double minStep, final double maxStep,\n                                         final double scalAbsoluteTolerance,\n                                         final double scalRelativeTolerance)",
+      "right" : "protected EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,\n                                         final double[] c, final double[][] a, final double[] b,\n                                         final RungeKuttaStepInterpolator prototype,\n                                         final double minStep, final double maxStep,\n                                         final double scalAbsoluteTolerance,\n                                         final double scalRelativeTolerance)",
+      "info" : "MethodDeclaration[3529-5204]:MethodDeclaration[3529-5204]"
+    }, {
+      "left" : "protected EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,\n                                         final double[] c, final double[][] a, final double[] b,\n                                         final RungeKuttaStepInterpolator prototype,\n                                         final double   minStep, final double maxStep,\n                                         final double[] vecAbsoluteTolerance,\n                                         final double[] vecRelativeTolerance)",
+      "right" : "protected EmbeddedRungeKuttaIntegrator(final String name, final boolean fsal,\n                                         final double[] c, final double[][] a, final double[] b,\n                                         final RungeKuttaStepInterpolator prototype,\n                                         final double   minStep, final double maxStep,\n                                         final double[] vecAbsoluteTolerance,\n                                         final double[] vecRelativeTolerance)",
+      "info" : "MethodDeclaration[5208-6883]:MethodDeclaration[5208-6883]"
+    }, {
+      "left" : "public abstract int getOrder();",
+      "right" : "public abstract int getOrder();",
+      "info" : "MethodDeclaration[6887-6992]:MethodDeclaration[6887-6992]"
+    }, {
+      "left" : "public double getSafety()",
+      "right" : "public double getSafety()",
+      "info" : "MethodDeclaration[6996-7129]:MethodDeclaration[6996-7129]"
+    }, {
+      "left" : "public void setSafety(final double safety)",
+      "right" : "public void setSafety(final double safety)",
+      "info" : "MethodDeclaration[7133-7296]:MethodDeclaration[7133-7296]"
+    }, {
+      "left" : "public double integrate(final FirstOrderDifferentialEquations equations,\n                          final double t0, final double[] y0,\n                          final double t, final double[] y)\n  throws DerivativeException, IntegratorException",
+      "right" : "public double integrate(final FirstOrderDifferentialEquations equations,\n                          final double t0, final double[] y0,\n                          final double t, final double[] y)\n  throws DerivativeException, IntegratorException",
+      "info" : "MethodDeclaration[7300-13065]:MethodDeclaration[7300-13261]"
+    }, {
+      "left" : "public double getMinReduction()",
+      "right" : "public double getMinReduction()",
+      "info" : "MethodDeclaration[13069-13236]:MethodDeclaration[13265-13432]"
+    }, {
+      "left" : "public void setMinReduction(final double minReduction)",
+      "right" : "public void setMinReduction(final double minReduction)",
+      "info" : "MethodDeclaration[13240-13455]:MethodDeclaration[13436-13651]"
+    }, {
+      "left" : "public double getMaxGrowth()",
+      "right" : "public double getMaxGrowth()",
+      "info" : "MethodDeclaration[13459-13614]:MethodDeclaration[13655-13810]"
+    }, {
+      "left" : "public void setMaxGrowth(final double maxGrowth)",
+      "right" : "public void setMaxGrowth(final double maxGrowth)",
+      "info" : "MethodDeclaration[13618-13812]:MethodDeclaration[13814-14008]"
+    }, {
+      "left" : "protected abstract double estimateError(double[][] yDotK,\n                                          double[] y0, double[] y1,\n                                          double h);",
+      "right" : "protected abstract double estimateError(double[][] yDotK,\n                                          double[] y0, double[] y1,\n                                          double h);",
+      "info" : "MethodDeclaration[13816-14310]:MethodDeclaration[14012-14506]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "AdaptiveStepsizeIntegrator",
+      "right" : "AdaptiveStepsizeIntegrator",
+      "info" : "SimpleType[2678-2704]:SimpleType[2678-2704]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[4318-4327]:Modifier[4318-4327]"
+    }, {
+      "left" : "EmbeddedRungeKuttaIntegrator",
+      "right" : "EmbeddedRungeKuttaIntegrator",
+      "info" : "SimpleName[4328-4356]:SimpleName[4328-4356]"
+    }, {
+      "left" : "final String name",
+      "right" : "final String name",
+      "info" : "SingleVariableDeclaration[4357-4374]:SingleVariableDeclaration[4357-4374]"
+    }, {
+      "left" : "final boolean fsal",
+      "right" : "final boolean fsal",
+      "info" : "SingleVariableDeclaration[4376-4394]:SingleVariableDeclaration[4376-4394]"
+    }, {
+      "left" : "final double[] c",
+      "right" : "final double[] c",
+      "info" : "SingleVariableDeclaration[4437-4453]:SingleVariableDeclaration[4437-4453]"
+    }, {
+      "left" : "final double[][] a",
+      "right" : "final double[][] a",
+      "info" : "SingleVariableDeclaration[4455-4473]:SingleVariableDeclaration[4455-4473]"
+    }, {
+      "left" : "final double[] b",
+      "right" : "final double[] b",
+      "info" : "SingleVariableDeclaration[4475-4491]:SingleVariableDeclaration[4475-4491]"
+    }, {
+      "left" : "final RungeKuttaStepInterpolator prototype",
+      "right" : "final RungeKuttaStepInterpolator prototype",
+      "info" : "SingleVariableDeclaration[4534-4576]:SingleVariableDeclaration[4534-4576]"
+    }, {
+      "left" : "final double minStep",
+      "right" : "final double minStep",
+      "info" : "SingleVariableDeclaration[4619-4639]:SingleVariableDeclaration[4619-4639]"
+    }, {
+      "left" : "final double maxStep",
+      "right" : "final double maxStep",
+      "info" : "SingleVariableDeclaration[4641-4661]:SingleVariableDeclaration[4641-4661]"
+    }, {
+      "left" : "final double scalAbsoluteTolerance",
+      "right" : "final double scalAbsoluteTolerance",
+      "info" : "SingleVariableDeclaration[4704-4738]:SingleVariableDeclaration[4704-4738]"
+    }, {
+      "left" : "final double scalRelativeTolerance",
+      "right" : "final double scalRelativeTolerance",
+      "info" : "SingleVariableDeclaration[4781-4815]:SingleVariableDeclaration[4781-4815]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4817-5204]:Block[4817-5204]"
+    }, {
+      "left" : "super(name, minStep, maxStep, scalAbsoluteTolerance, scalRelativeTolerance);",
+      "right" : "super(name, minStep, maxStep, scalAbsoluteTolerance, scalRelativeTolerance);",
+      "info" : "SuperConstructorInvocation[4824-4900]:SuperConstructorInvocation[4824-4900]"
+    }, {
+      "left" : "this.fsal      = fsal;",
+      "right" : "this.fsal      = fsal;",
+      "info" : "ExpressionStatement[4906-4928]:ExpressionStatement[4906-4928]"
+    }, {
+      "left" : "this.c         = c;",
+      "right" : "this.c         = c;",
+      "info" : "ExpressionStatement[4933-4952]:ExpressionStatement[4933-4952]"
+    }, {
+      "left" : "this.a         = a;",
+      "right" : "this.a         = a;",
+      "info" : "ExpressionStatement[4957-4976]:ExpressionStatement[4957-4976]"
+    }, {
+      "left" : "this.b         = b;",
+      "right" : "this.b         = b;",
+      "info" : "ExpressionStatement[4981-5000]:ExpressionStatement[4981-5000]"
+    }, {
+      "left" : "this.prototype = prototype;",
+      "right" : "this.prototype = prototype;",
+      "info" : "ExpressionStatement[5005-5032]:ExpressionStatement[5005-5032]"
+    }, {
+      "left" : "exp = -1.0 / getOrder();",
+      "right" : "exp = -1.0 / getOrder();",
+      "info" : "ExpressionStatement[5038-5062]:ExpressionStatement[5038-5062]"
+    }, {
+      "left" : "setSafety(0.9);",
+      "right" : "setSafety(0.9);",
+      "info" : "ExpressionStatement[5134-5149]:ExpressionStatement[5134-5149]"
+    }, {
+      "left" : "setMinReduction(0.2);",
+      "right" : "setMinReduction(0.2);",
+      "info" : "ExpressionStatement[5154-5175]:ExpressionStatement[5154-5175]"
+    }, {
+      "left" : "setMaxGrowth(10.0);",
+      "right" : "setMaxGrowth(10.0);",
+      "info" : "ExpressionStatement[5180-5199]:ExpressionStatement[5180-5199]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[5995-6004]:Modifier[5995-6004]"
+    }, {
+      "left" : "EmbeddedRungeKuttaIntegrator",
+      "right" : "EmbeddedRungeKuttaIntegrator",
+      "info" : "SimpleName[6005-6033]:SimpleName[6005-6033]"
+    }, {
+      "left" : "final String name",
+      "right" : "final String name",
+      "info" : "SingleVariableDeclaration[6034-6051]:SingleVariableDeclaration[6034-6051]"
+    }, {
+      "left" : "final boolean fsal",
+      "right" : "final boolean fsal",
+      "info" : "SingleVariableDeclaration[6053-6071]:SingleVariableDeclaration[6053-6071]"
+    }, {
+      "left" : "final double[] c",
+      "right" : "final double[] c",
+      "info" : "SingleVariableDeclaration[6114-6130]:SingleVariableDeclaration[6114-6130]"
+    }, {
+      "left" : "final double[][] a",
+      "right" : "final double[][] a",
+      "info" : "SingleVariableDeclaration[6132-6150]:SingleVariableDeclaration[6132-6150]"
+    }, {
+      "left" : "final double[] b",
+      "right" : "final double[] b",
+      "info" : "SingleVariableDeclaration[6152-6168]:SingleVariableDeclaration[6152-6168]"
+    }, {
+      "left" : "final RungeKuttaStepInterpolator prototype",
+      "right" : "final RungeKuttaStepInterpolator prototype",
+      "info" : "SingleVariableDeclaration[6211-6253]:SingleVariableDeclaration[6211-6253]"
+    }, {
+      "left" : "final double   minStep",
+      "right" : "final double   minStep",
+      "info" : "SingleVariableDeclaration[6296-6318]:SingleVariableDeclaration[6296-6318]"
+    }, {
+      "left" : "final double maxStep",
+      "right" : "final double maxStep",
+      "info" : "SingleVariableDeclaration[6320-6340]:SingleVariableDeclaration[6320-6340]"
+    }, {
+      "left" : "final double[] vecAbsoluteTolerance",
+      "right" : "final double[] vecAbsoluteTolerance",
+      "info" : "SingleVariableDeclaration[6383-6418]:SingleVariableDeclaration[6383-6418]"
+    }, {
+      "left" : "final double[] vecRelativeTolerance",
+      "right" : "final double[] vecRelativeTolerance",
+      "info" : "SingleVariableDeclaration[6461-6496]:SingleVariableDeclaration[6461-6496]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6498-6883]:Block[6498-6883]"
+    }, {
+      "left" : "super(name, minStep, maxStep, vecAbsoluteTolerance, vecRelativeTolerance);",
+      "right" : "super(name, minStep, maxStep, vecAbsoluteTolerance, vecRelativeTolerance);",
+      "info" : "SuperConstructorInvocation[6505-6579]:SuperConstructorInvocation[6505-6579]"
+    }, {
+      "left" : "this.fsal      = fsal;",
+      "right" : "this.fsal      = fsal;",
+      "info" : "ExpressionStatement[6585-6607]:ExpressionStatement[6585-6607]"
+    }, {
+      "left" : "this.c         = c;",
+      "right" : "this.c         = c;",
+      "info" : "ExpressionStatement[6612-6631]:ExpressionStatement[6612-6631]"
+    }, {
+      "left" : "this.a         = a;",
+      "right" : "this.a         = a;",
+      "info" : "ExpressionStatement[6636-6655]:ExpressionStatement[6636-6655]"
+    }, {
+      "left" : "this.b         = b;",
+      "right" : "this.b         = b;",
+      "info" : "ExpressionStatement[6660-6679]:ExpressionStatement[6660-6679]"
+    }, {
+      "left" : "this.prototype = prototype;",
+      "right" : "this.prototype = prototype;",
+      "info" : "ExpressionStatement[6684-6711]:ExpressionStatement[6684-6711]"
+    }, {
+      "left" : "exp = -1.0 / getOrder();",
+      "right" : "exp = -1.0 / getOrder();",
+      "info" : "ExpressionStatement[6717-6741]:ExpressionStatement[6717-6741]"
+    }, {
+      "left" : "setSafety(0.9);",
+      "right" : "setSafety(0.9);",
+      "info" : "ExpressionStatement[6813-6828]:ExpressionStatement[6813-6828]"
+    }, {
+      "left" : "setMinReduction(0.2);",
+      "right" : "setMinReduction(0.2);",
+      "info" : "ExpressionStatement[6833-6854]:ExpressionStatement[6833-6854]"
+    }, {
+      "left" : "setMaxGrowth(10.0);",
+      "right" : "setMaxGrowth(10.0);",
+      "info" : "ExpressionStatement[6859-6878]:ExpressionStatement[6859-6878]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6961-6967]:Modifier[6961-6967]"
+    }, {
+      "left" : "abstract",
+      "right" : "abstract",
+      "info" : "Modifier[6968-6976]:Modifier[6968-6976]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[6977-6980]:PrimitiveType[6977-6980]"
+    }, {
+      "left" : "getOrder",
+      "right" : "getOrder",
+      "info" : "SimpleName[6981-6989]:SimpleName[6981-6989]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7079-7085]:Modifier[7079-7085]"
+    }, {
+      "left" : "double",
+      "right" : "double",
+      "info" : "PrimitiveType[7086-7092]:PrimitiveType[7086-7092]"
+    }, {
+      "left" : "getSafety",
+      "right" : "getSafety",
+      "info" : "SimpleName[7093-7102]:SimpleName[7093-7102]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7105-7129]:Block[7105-7129]"
+    }, {
+      "left" : "return safety;",
+      "right" : "return safety;",
+      "info" : "ReturnStatement[7111-7125]:ReturnStatement[7111-7125]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7222-7228]:Modifier[7222-7228]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7229-7233]:PrimitiveType[7229-7233]"
+    }, {
+      "left" : "setSafety",
+      "right" : "setSafety",
+      "info" : "SimpleName[7234-7243]:SimpleName[7234-7243]"
+    }, {
+      "left" : "final double safety",
+      "right" : "final double safety",
+      "info" : "SingleVariableDeclaration[7244-7263]:SingleVariableDeclaration[7244-7263]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7265-7296]:Block[7265-7296]"
+    }, {
+      "left" : "this.safety = safety;",
+      "right" : "this.safety = safety;",
+      "info" : "ExpressionStatement[7271-7292]:ExpressionStatement[7271-7292]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[7323-7332]:MarkerAnnotation[7323-7332]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7335-7341]:Modifier[7335-7341]"
+    }, {
+      "left" : "double",
+      "right" : "double",
+      "info" : "PrimitiveType[7342-7348]:PrimitiveType[7342-7348]"
+    }, {
+      "left" : "integrate",
+      "right" : "integrate",
+      "info" : "SimpleName[7349-7358]:SimpleName[7349-7358]"
+    }, {
+      "left" : "final FirstOrderDifferentialEquations equations",
+      "right" : "final FirstOrderDifferentialEquations equations",
+      "info" : "SingleVariableDeclaration[7359-7406]:SingleVariableDeclaration[7359-7406]"
+    }, {
+      "left" : "final double t0",
+      "right" : "final double t0",
+      "info" : "SingleVariableDeclaration[7434-7449]:SingleVariableDeclaration[7434-7449]"
+    }, {
+      "left" : "final double[] y0",
+      "right" : "final double[] y0",
+      "info" : "SingleVariableDeclaration[7451-7468]:SingleVariableDeclaration[7451-7468]"
+    }, {
+      "left" : "final double t",
+      "right" : "final double t",
+      "info" : "SingleVariableDeclaration[7496-7510]:SingleVariableDeclaration[7496-7510]"
+    }, {
+      "left" : "final double[] y",
+      "right" : "final double[] y",
+      "info" : "SingleVariableDeclaration[7512-7528]:SingleVariableDeclaration[7512-7528]"
+    }, {
+      "left" : "DerivativeException",
+      "right" : "DerivativeException",
+      "info" : "SimpleType[7539-7558]:SimpleType[7539-7558]"
+    }, {
+      "left" : "IntegratorException",
+      "right" : "IntegratorException",
+      "info" : "SimpleType[7560-7579]:SimpleType[7560-7579]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7580-13065]:Block[7580-13261]"
+    }, {
+      "left" : "sanityChecks(equations, t0, y0, t, y);",
+      "right" : "sanityChecks(equations, t0, y0, t, y);",
+      "info" : "ExpressionStatement[7587-7625]:ExpressionStatement[7587-7625]"
+    }, {
+      "left" : "setEquations(equations);",
+      "right" : "setEquations(equations);",
+      "info" : "ExpressionStatement[7630-7654]:ExpressionStatement[7630-7654]"
+    }, {
+      "left" : "resetEvaluations();",
+      "right" : "resetEvaluations();",
+      "info" : "ExpressionStatement[7659-7678]:ExpressionStatement[7659-7678]"
+    }, {
+      "left" : "final boolean forward = t > t0;",
+      "right" : "final boolean forward = t > t0;",
+      "info" : "VariableDeclarationStatement[7683-7714]:VariableDeclarationStatement[7683-7714]"
+    }, {
+      "left" : "final int stages = c.length + 1;",
+      "right" : "final int stages = c.length + 1;",
+      "info" : "VariableDeclarationStatement[7763-7795]:VariableDeclarationStatement[7763-7795]"
+    }, {
+      "left" : "if (y != y0)",
+      "right" : "if (y != y0)",
+      "info" : "IfStatement[7800-7868]:IfStatement[7800-7868]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7813-7868]:Block[7813-7868]"
+    }, {
+      "left" : "System.arraycopy(y0, 0, y, 0, y0.length);",
+      "right" : "System.arraycopy(y0, 0, y, 0, y0.length);",
+      "info" : "ExpressionStatement[7821-7862]:ExpressionStatement[7821-7862]"
+    }, {
+      "left" : "final double[][] yDotK = new double[stages][y0.length];",
+      "right" : "final double[][] yDotK = new double[stages][y0.length];",
+      "info" : "VariableDeclarationStatement[7873-7928]:VariableDeclarationStatement[7873-7928]"
+    }, {
+      "left" : "final double[] yTmp = new double[y0.length];",
+      "right" : "final double[] yTmp = new double[y0.length];",
+      "info" : "VariableDeclarationStatement[7933-7977]:VariableDeclarationStatement[7933-7977]"
+    }, {
+      "left" : "AbstractStepInterpolator interpolator;",
+      "right" : "AbstractStepInterpolator interpolator;",
+      "info" : "VariableDeclarationStatement[8043-8081]:VariableDeclarationStatement[8043-8081]"
+    }, {
+      "left" : "if (requiresDenseOutput() || (! eventsHandlersManager.isEmpty()))",
+      "right" : "if (requiresDenseOutput() || (! eventsHandlersManager.isEmpty()))",
+      "info" : "IfStatement[8086-8405]:IfStatement[8086-8405]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8152-8329]:Block[8152-8329]"
+    }, {
+      "left" : "final RungeKuttaStepInterpolator rki = (RungeKuttaStepInterpolator) prototype.copy();",
+      "right" : "final RungeKuttaStepInterpolator rki = (RungeKuttaStepInterpolator) prototype.copy();",
+      "info" : "VariableDeclarationStatement[8160-8245]:VariableDeclarationStatement[8160-8245]"
+    }, {
+      "left" : "rki.reinitialize(this, yTmp, yDotK, forward);",
+      "right" : "rki.reinitialize(this, yTmp, yDotK, forward);",
+      "info" : "ExpressionStatement[8252-8297]:ExpressionStatement[8252-8297]"
+    }, {
+      "left" : "interpolator = rki;",
+      "right" : "interpolator = rki;",
+      "info" : "ExpressionStatement[8304-8323]:ExpressionStatement[8304-8323]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8335-8405]:Block[8335-8405]"
+    }, {
+      "left" : "interpolator = new DummyStepInterpolator(yTmp, forward);",
+      "right" : "interpolator = new DummyStepInterpolator(yTmp, forward);",
+      "info" : "ExpressionStatement[8343-8399]:ExpressionStatement[8343-8399]"
+    }, {
+      "left" : "interpolator.storeTime(t0);",
+      "right" : "interpolator.storeTime(t0);",
+      "info" : "ExpressionStatement[8410-8437]:ExpressionStatement[8410-8437]"
+    }, {
+      "left" : "stepStart         = t0;",
+      "right" : "stepStart         = t0;",
+      "info" : "ExpressionStatement[8485-8508]:ExpressionStatement[8485-8508]"
+    }, {
+      "left" : "double  hNew      = 0;",
+      "right" : "double  hNew      = 0;",
+      "info" : "VariableDeclarationStatement[8513-8535]:VariableDeclarationStatement[8513-8535]"
+    }, {
+      "left" : "boolean firstTime = true;",
+      "right" : "boolean firstTime = true;",
+      "info" : "VariableDeclarationStatement[8540-8565]:VariableDeclarationStatement[8540-8565]"
+    }, {
+      "left" : "for (StepHandler handler : stepHandlers)",
+      "right" : "for (StepHandler handler : stepHandlers)",
+      "info" : "EnhancedForStatement[8570-8643]:EnhancedForStatement[8570-8643]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8611-8643]:Block[8611-8643]"
+    }, {
+      "left" : "handler.reset();",
+      "right" : "handler.reset();",
+      "info" : "ExpressionStatement[8621-8637]:ExpressionStatement[8621-8637]"
+    }, {
+      "left" : "CombinedEventsManager manager = addEndTimeChecker(t0, t, eventsHandlersManager);",
+      "right" : "CombinedEventsManager manager = addEndTimeChecker(t0, t, eventsHandlersManager);",
+      "info" : "VariableDeclarationStatement[8648-8728]:VariableDeclarationStatement[8648-8728]"
+    }, {
+      "left" : "boolean lastStep = false;",
+      "right" : "boolean lastStep = false;",
+      "info" : "VariableDeclarationStatement[8733-8758]:VariableDeclarationStatement[8733-8758]"
+    }, {
+      "left" : "while (!lastStep)",
+      "right" : "while (!lastStep)",
+      "info" : "WhileStatement[8793-12973]:WhileStatement[8793-13169]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8811-12973]:Block[8811-13169]"
+    }, {
+      "left" : "interpolator.shift();",
+      "right" : "interpolator.shift();",
+      "info" : "ExpressionStatement[8820-8841]:ExpressionStatement[8820-8841]"
+    }, {
+      "left" : "double error = 0;",
+      "right" : "double error = 0;",
+      "info" : "VariableDeclarationStatement[8849-8866]:VariableDeclarationStatement[8849-8866]"
+    }, {
+      "left" : "for (boolean loop = true; loop)",
+      "right" : "for (boolean loop = true; loop)",
+      "info" : "ForStatement[8873-11334]:ForStatement[8873-11530]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8906-11334]:Block[8906-11530]"
+    }, {
+      "left" : "if (firstTime || !fsal)",
+      "right" : "if (firstTime || !fsal)",
+      "info" : "IfStatement[8917-9031]:IfStatement[8917-9031]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8941-9031]:Block[8941-9031]"
+    }, {
+      "left" : "computeDerivatives(stepStart, y, yDotK[0]);",
+      "right" : "computeDerivatives(stepStart, y, yDotK[0]);",
+      "info" : "ExpressionStatement[8978-9021]:ExpressionStatement[8978-9021]"
+    }, {
+      "left" : "if (firstTime)",
+      "right" : "if (firstTime)",
+      "info" : "IfStatement[9041-9509]:IfStatement[9041-9705]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9056-9509]:Block[9056-9705]"
+    }, {
+      "left" : "final double[] scale;",
+      "right" : "final double[] scale = new double[y0.length];",
+      "info" : "VariableDeclarationStatement[9068-9089]:VariableDeclarationStatement[9068-9113]"
+    }, {
+      "left" : "if (vecAbsoluteTolerance == null)",
+      "right" : "if (vecAbsoluteTolerance == null)",
+      "info" : "IfStatement[9100-9326]:IfStatement[9124-9522]"
+    }, {
+      "left" : "scale = new double[y0.length];",
+      "right" : "scale[i] = scalAbsoluteTolerance + scalRelativeTolerance * Math.abs(y[i]);",
+      "info" : "ExpressionStatement[9150-9180]:ExpressionStatement[9231-9305]"
+    }, {
+      "left" : "new double[y0.length]",
+      "right" : "new double[y0.length]",
+      "info" : "ArrayCreation[9158-9179]:ArrayCreation[9091-9112]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9267-9326]:Block[9396-9508]"
+    }, {
+      "left" : "scale = vecAbsoluteTolerance;",
+      "right" : "scale[i] = vecAbsoluteTolerance[i] + vecRelativeTolerance[i] * Math.abs(y[i]);",
+      "info" : "ExpressionStatement[9283-9312]:ExpressionStatement[9414-9492]"
+    }, {
+      "left" : "hNew = initializeStep(equations, forward, getOrder(), scale,\n                                stepStart, y, yDotK[0], yTmp, yDotK[1]);",
+      "right" : "hNew = initializeStep(equations, forward, getOrder(), scale,\n                                stepStart, y, yDotK[0], yTmp, yDotK[1]);",
+      "info" : "ExpressionStatement[9337-9470]:ExpressionStatement[9533-9666]"
+    }, {
+      "left" : "firstTime = false;",
+      "right" : "firstTime = false;",
+      "info" : "ExpressionStatement[9481-9499]:ExpressionStatement[9677-9695]"
+    }, {
+      "left" : "stepSize = hNew;",
+      "right" : "stepSize = hNew;",
+      "info" : "ExpressionStatement[9519-9535]:ExpressionStatement[9715-9731]"
+    }, {
+      "left" : "for (int k = 1; k < stages; ++k)",
+      "right" : "for (int k = 1; k < stages; ++k)",
+      "info" : "ForStatement[9568-9949]:ForStatement[9764-10145]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9601-9949]:Block[9797-10145]"
+    }, {
+      "left" : "for (int j = 0; j < y0.length; ++j)",
+      "right" : "for (int j = 0; j < y0.length; ++j)",
+      "info" : "ForStatement[9614-9860]:ForStatement[9810-10056]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9650-9860]:Block[9846-10056]"
+    }, {
+      "left" : "double sum = a[k-1][0] * yDotK[0][j];",
+      "right" : "double sum = a[k-1][0] * yDotK[0][j];",
+      "info" : "VariableDeclarationStatement[9664-9701]:VariableDeclarationStatement[9860-9897]"
+    }, {
+      "left" : "for (int l = 1; l < k; ++l)",
+      "right" : "for (int l = 1; l < k; ++l)",
+      "info" : "ForStatement[9714-9803]:ForStatement[9910-9999]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9742-9803]:Block[9938-9999]"
+    }, {
+      "left" : "sum += a[k-1][l] * yDotK[l][j];",
+      "right" : "sum += a[k-1][l] * yDotK[l][j];",
+      "info" : "ExpressionStatement[9758-9789]:ExpressionStatement[9954-9985]"
+    }, {
+      "left" : "yTmp[j] = y[j] + stepSize * sum;",
+      "right" : "yTmp[j] = y[j] + stepSize * sum;",
+      "info" : "ExpressionStatement[9816-9848]:ExpressionStatement[10012-10044]"
+    }, {
+      "left" : "computeDerivatives(stepStart + c[k-1] * stepSize, yTmp, yDotK[k]);",
+      "right" : "computeDerivatives(stepStart + c[k-1] * stepSize, yTmp, yDotK[k]);",
+      "info" : "ExpressionStatement[9872-9938]:ExpressionStatement[10068-10134]"
+    }, {
+      "left" : "for (int j = 0; j < y0.length; ++j)",
+      "right" : "for (int j = 0; j < y0.length; ++j)",
+      "info" : "ForStatement[10012-10247]:ForStatement[10208-10443]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10048-10247]:Block[10244-10443]"
+    }, {
+      "left" : "double sum    = b[0] * yDotK[0][j];",
+      "right" : "double sum    = b[0] * yDotK[0][j];",
+      "info" : "VariableDeclarationStatement[10060-10095]:VariableDeclarationStatement[10256-10291]"
+    }, {
+      "left" : "for (int l = 1; l < stages; ++l)",
+      "right" : "for (int l = 1; l < stages; ++l)",
+      "info" : "ForStatement[10106-10194]:ForStatement[10302-10390]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10139-10194]:Block[10335-10390]"
+    }, {
+      "left" : "sum    += b[l] * yDotK[l][j];",
+      "right" : "sum    += b[l] * yDotK[l][j];",
+      "info" : "ExpressionStatement[10153-10182]:ExpressionStatement[10349-10378]"
+    }, {
+      "left" : "yTmp[j] = y[j] + stepSize * sum;",
+      "right" : "yTmp[j] = y[j] + stepSize * sum;",
+      "info" : "ExpressionStatement[10205-10237]:ExpressionStatement[10401-10433]"
+    }, {
+      "left" : "error = estimateError(yDotK, y, yTmp, stepSize);",
+      "right" : "error = estimateError(yDotK, y, yTmp, stepSize);",
+      "info" : "ExpressionStatement[10310-10358]:ExpressionStatement[10506-10554]"
+    }, {
+      "left" : "if (error <= 1.0)",
+      "right" : "if (error <= 1.0)",
+      "info" : "IfStatement[10367-11325]:IfStatement[10563-11521]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10385-11022]:Block[10581-11218]"
+    }, {
+      "left" : "interpolator.storeTime(stepStart + stepSize);",
+      "right" : "interpolator.storeTime(stepStart + stepSize);",
+      "info" : "ExpressionStatement[10436-10481]:ExpressionStatement[10632-10677]"
+    }, {
+      "left" : "if (manager.evaluateStep(interpolator))",
+      "right" : "if (manager.evaluateStep(interpolator))",
+      "info" : "IfStatement[10492-11011]:IfStatement[10688-11207]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10532-10935]:Block[10728-11131]"
+    }, {
+      "left" : "final double dt = manager.getEventTime() - stepStart;",
+      "right" : "final double dt = manager.getEventTime() - stepStart;",
+      "info" : "VariableDeclarationStatement[10548-10601]:VariableDeclarationStatement[10744-10797]"
+    }, {
+      "left" : "if (Math.abs(dt) <= Math.ulp(stepStart))",
+      "right" : "if (Math.abs(dt) <= Math.ulp(stepStart))",
+      "info" : "IfStatement[10616-10923]:IfStatement[10812-11119]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10657-10796]:Block[10853-10992]"
+    }, {
+      "left" : "loop = false;",
+      "right" : "loop = false;",
+      "info" : "ExpressionStatement[10767-10780]:ExpressionStatement[10963-10976]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10802-10923]:Block[10998-11119]"
+    }, {
+      "left" : "hNew = dt;",
+      "right" : "hNew = dt;",
+      "info" : "ExpressionStatement[10897-10907]:ExpressionStatement[11093-11103]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10941-11011]:Block[11137-11207]"
+    }, {
+      "left" : "loop = false;",
+      "right" : "loop = false;",
+      "info" : "ExpressionStatement[10986-10999]:ExpressionStatement[11182-11195]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11028-11325]:Block[11224-11521]"
+    }, {
+      "left" : "final double factor =\n              Math.min(maxGrowth,\n                       Math.max(minReduction, safety * Math.pow(error, exp)));",
+      "right" : "final double factor =\n              Math.min(maxGrowth,\n                       Math.max(minReduction, safety * Math.pow(error, exp)));",
+      "info" : "VariableDeclarationStatement[11117-11251]:VariableDeclarationStatement[11313-11447]"
+    }, {
+      "left" : "hNew = filterStep(stepSize * factor, forward, false);",
+      "right" : "hNew = filterStep(stepSize * factor, forward, false);",
+      "info" : "ExpressionStatement[11262-11315]:ExpressionStatement[11458-11511]"
+    }, {
+      "left" : "final double nextStep = stepStart + stepSize;",
+      "right" : "final double nextStep = stepStart + stepSize;",
+      "info" : "VariableDeclarationStatement[11378-11423]:VariableDeclarationStatement[11574-11619]"
+    }, {
+      "left" : "System.arraycopy(yTmp, 0, y, 0, y0.length);",
+      "right" : "System.arraycopy(yTmp, 0, y, 0, y0.length);",
+      "info" : "ExpressionStatement[11430-11473]:ExpressionStatement[11626-11669]"
+    }, {
+      "left" : "manager.stepAccepted(nextStep, y);",
+      "right" : "manager.stepAccepted(nextStep, y);",
+      "info" : "ExpressionStatement[11480-11514]:ExpressionStatement[11676-11710]"
+    }, {
+      "left" : "lastStep = manager.stop();",
+      "right" : "lastStep = manager.stop();",
+      "info" : "ExpressionStatement[11521-11547]:ExpressionStatement[11717-11743]"
+    }, {
+      "left" : "interpolator.storeTime(nextStep);",
+      "right" : "interpolator.storeTime(nextStep);",
+      "info" : "ExpressionStatement[11606-11639]:ExpressionStatement[11802-11835]"
+    }, {
+      "left" : "for (StepHandler handler : stepHandlers)",
+      "right" : "for (StepHandler handler : stepHandlers)",
+      "info" : "EnhancedForStatement[11646-11750]:EnhancedForStatement[11842-11946]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11687-11750]:Block[11883-11946]"
+    }, {
+      "left" : "handler.handleStep(interpolator, lastStep);",
+      "right" : "handler.handleStep(interpolator, lastStep);",
+      "info" : "ExpressionStatement[11699-11742]:ExpressionStatement[11895-11938]"
+    }, {
+      "left" : "stepStart = nextStep;",
+      "right" : "stepStart = nextStep;",
+      "info" : "ExpressionStatement[11757-11778]:ExpressionStatement[11953-11974]"
+    }, {
+      "left" : "if (fsal)",
+      "right" : "if (fsal)",
+      "info" : "IfStatement[11786-11931]:IfStatement[11982-12127]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11796-11931]:Block[11992-12127]"
+    }, {
+      "left" : "System.arraycopy(yDotK[stages - 1], 0, yDotK[0], 0, y0.length);",
+      "right" : "System.arraycopy(yDotK[stages - 1], 0, yDotK[0], 0, y0.length);",
+      "info" : "ExpressionStatement[11860-11923]:ExpressionStatement[12056-12119]"
+    }, {
+      "left" : "if (manager.reset(stepStart, y) && ! lastStep)",
+      "right" : "if (manager.reset(stepStart, y) && ! lastStep)",
+      "info" : "IfStatement[11939-12169]:IfStatement[12135-12365]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11986-12169]:Block[12182-12365]"
+    }, {
+      "left" : "computeDerivatives(stepStart, y, yDotK[0]);",
+      "right" : "computeDerivatives(stepStart, y, yDotK[0]);",
+      "info" : "ExpressionStatement[12118-12161]:ExpressionStatement[12314-12357]"
+    }, {
+      "left" : "if (! lastStep)",
+      "right" : "if (! lastStep)",
+      "info" : "IfStatement[12177-12966]:IfStatement[12373-13162]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12193-12966]:Block[12389-13162]"
+    }, {
+      "left" : "stepSize = filterStep(stepSize, forward, true);",
+      "right" : "stepSize = filterStep(stepSize, forward, true);",
+      "info" : "ExpressionStatement[12434-12481]:ExpressionStatement[12630-12677]"
+    }, {
+      "left" : "final double factor = Math.min(maxGrowth,\n                                       Math.max(minReduction,\n                                                safety * Math.pow(error, exp)));",
+      "right" : "final double factor = Math.min(maxGrowth,\n                                       Math.max(minReduction,\n                                                safety * Math.pow(error, exp)));",
+      "info" : "VariableDeclarationStatement[12533-12717]:VariableDeclarationStatement[12729-12913]"
+    }, {
+      "left" : "final double  scaledH    = stepSize * factor;",
+      "right" : "final double  scaledH    = stepSize * factor;",
+      "info" : "VariableDeclarationStatement[12726-12771]:VariableDeclarationStatement[12922-12967]"
+    }, {
+      "left" : "final double  nextT      = stepStart + scaledH;",
+      "right" : "final double  nextT      = stepStart + scaledH;",
+      "info" : "VariableDeclarationStatement[12780-12827]:VariableDeclarationStatement[12976-13023]"
+    }, {
+      "left" : "final boolean nextIsLast = forward ? (nextT >= t) : (nextT <= t);",
+      "right" : "final boolean nextIsLast = forward ? (nextT >= t) : (nextT <= t);",
+      "info" : "VariableDeclarationStatement[12836-12901]:VariableDeclarationStatement[13032-13097]"
+    }, {
+      "left" : "hNew = filterStep(scaledH, forward, nextIsLast);",
+      "right" : "hNew = filterStep(scaledH, forward, nextIsLast);",
+      "info" : "ExpressionStatement[12910-12958]:ExpressionStatement[13106-13154]"
+    }, {
+      "left" : "final double stopTime = stepStart;",
+      "right" : "final double stopTime = stepStart;",
+      "info" : "VariableDeclarationStatement[12979-13013]:VariableDeclarationStatement[13175-13209]"
+    }, {
+      "left" : "resetInternalState();",
+      "right" : "resetInternalState();",
+      "info" : "ExpressionStatement[13018-13039]:ExpressionStatement[13214-13235]"
+    }, {
+      "left" : "return stopTime;",
+      "right" : "return stopTime;",
+      "info" : "ReturnStatement[13044-13060]:ReturnStatement[13240-13256]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13174-13180]:Modifier[13370-13376]"
+    }, {
+      "left" : "double",
+      "right" : "double",
+      "info" : "PrimitiveType[13181-13187]:PrimitiveType[13377-13383]"
+    }, {
+      "left" : "getMinReduction",
+      "right" : "getMinReduction",
+      "info" : "SimpleName[13188-13203]:SimpleName[13384-13399]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13206-13236]:Block[13402-13432]"
+    }, {
+      "left" : "return minReduction;",
+      "right" : "return minReduction;",
+      "info" : "ReturnStatement[13212-13232]:ReturnStatement[13408-13428]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13357-13363]:Modifier[13553-13559]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13364-13368]:PrimitiveType[13560-13564]"
+    }, {
+      "left" : "setMinReduction",
+      "right" : "setMinReduction",
+      "info" : "SimpleName[13369-13384]:SimpleName[13565-13580]"
+    }, {
+      "left" : "final double minReduction",
+      "right" : "final double minReduction",
+      "info" : "SingleVariableDeclaration[13385-13410]:SingleVariableDeclaration[13581-13606]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13412-13455]:Block[13608-13651]"
+    }, {
+      "left" : "this.minReduction = minReduction;",
+      "right" : "this.minReduction = minReduction;",
+      "info" : "ExpressionStatement[13418-13451]:ExpressionStatement[13614-13647]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13558-13564]:Modifier[13754-13760]"
+    }, {
+      "left" : "double",
+      "right" : "double",
+      "info" : "PrimitiveType[13565-13571]:PrimitiveType[13761-13767]"
+    }, {
+      "left" : "getMaxGrowth",
+      "right" : "getMaxGrowth",
+      "info" : "SimpleName[13572-13584]:SimpleName[13768-13780]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13587-13614]:Block[13783-13810]"
+    }, {
+      "left" : "return maxGrowth;",
+      "right" : "return maxGrowth;",
+      "info" : "ReturnStatement[13593-13610]:ReturnStatement[13789-13806]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13726-13732]:Modifier[13922-13928]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13733-13737]:PrimitiveType[13929-13933]"
+    }, {
+      "left" : "setMaxGrowth",
+      "right" : "setMaxGrowth",
+      "info" : "SimpleName[13738-13750]:SimpleName[13934-13946]"
+    }, {
+      "left" : "final double maxGrowth",
+      "right" : "final double maxGrowth",
+      "info" : "SingleVariableDeclaration[13751-13773]:SingleVariableDeclaration[13947-13969]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13775-13812]:Block[13971-14008]"
+    }, {
+      "left" : "this.maxGrowth = maxGrowth;",
+      "right" : "this.maxGrowth = maxGrowth;",
+      "info" : "ExpressionStatement[13781-13808]:ExpressionStatement[13977-14004]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[14132-14141]:Modifier[14328-14337]"
+    }, {
+      "left" : "abstract",
+      "right" : "abstract",
+      "info" : "Modifier[14142-14150]:Modifier[14338-14346]"
+    }, {
+      "left" : "double",
+      "right" : "double",
+      "info" : "PrimitiveType[14151-14157]:PrimitiveType[14347-14353]"
+    }, {
+      "left" : "estimateError",
+      "right" : "estimateError",
+      "info" : "SimpleName[14158-14171]:SimpleName[14354-14367]"
+    }, {
+      "left" : "double[][] yDotK",
+      "right" : "double[][] yDotK",
+      "info" : "SingleVariableDeclaration[14172-14188]:SingleVariableDeclaration[14368-14384]"
+    }, {
+      "left" : "double[] y0",
+      "right" : "double[] y0",
+      "info" : "SingleVariableDeclaration[14232-14243]:SingleVariableDeclaration[14428-14439]"
+    }, {
+      "left" : "double[] y1",
+      "right" : "double[] y1",
+      "info" : "SingleVariableDeclaration[14245-14256]:SingleVariableDeclaration[14441-14452]"
+    }, {
+      "left" : "double h",
+      "right" : "double h",
+      "info" : "SingleVariableDeclaration[14300-14308]:SingleVariableDeclaration[14496-14504]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

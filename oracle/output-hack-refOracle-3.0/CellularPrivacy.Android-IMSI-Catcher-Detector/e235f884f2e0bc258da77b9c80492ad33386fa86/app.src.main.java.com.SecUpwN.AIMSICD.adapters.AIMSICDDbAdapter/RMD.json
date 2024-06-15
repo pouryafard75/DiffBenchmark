@@ -1,0 +1,2961 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "AIMSICDDbAdapter",
+      "right" : "AIMSICDDbAdapter",
+      "info" : "TypeDeclaration[1236-72917]:TypeDeclaration[1236-73528]"
+    }, {
+      "left" : "public static String FOLDER;",
+      "right" : "public static String FOLDER;",
+      "info" : "FieldDeclaration[3801-3829]:FieldDeclaration[3801-3829]"
+    }, {
+      "left" : "public static final int DATABASE_VERSION = 9;",
+      "right" : "public static final int DATABASE_VERSION = 9;",
+      "info" : "FieldDeclaration[3834-3879]:FieldDeclaration[3834-3879]"
+    }, {
+      "left" : "private final Boolean MONO_DB_DUMP = true;",
+      "right" : "private final Boolean MONO_DB_DUMP = true;",
+      "info" : "FieldDeclaration[3986-4028]:FieldDeclaration[3986-4028]"
+    }, {
+      "left" : "private final String TAG = \"AIMSICD\";",
+      "right" : "private final String TAG = \"AIMSICD\";",
+      "info" : "FieldDeclaration[4084-4121]:FieldDeclaration[4084-4121]"
+    }, {
+      "left" : "private final String mTAG = \"DbAdapter\";",
+      "right" : "private final String mTAG = \"DbAdapter\";",
+      "info" : "FieldDeclaration[4126-4166]:FieldDeclaration[4126-4166]"
+    }, {
+      "left" : "private final String DB_NAME = \"aimsicd.db\";",
+      "right" : "private final String DB_NAME = \"aimsicd.db\";",
+      "info" : "FieldDeclaration[4171-4215]:FieldDeclaration[4171-4215]"
+    }, {
+      "left" : "private static final String COLUMN_ID   = \"_id\";",
+      "right" : "private static final String COLUMN_ID   = \"_id\";",
+      "info" : "FieldDeclaration[4220-4268]:FieldDeclaration[4220-4268]"
+    }, {
+      "left" : "private final String LOCATION_TABLE     = \"locationinfo\";",
+      "right" : "private final String LOCATION_TABLE     = \"locationinfo\";",
+      "info" : "FieldDeclaration[4313-4370]:FieldDeclaration[4313-4370]"
+    }, {
+      "left" : "private final String CELL_TABLE         = \"cellinfo\";",
+      "right" : "private final String CELL_TABLE         = \"cellinfo\";",
+      "info" : "FieldDeclaration[4422-4475]:FieldDeclaration[4422-4475]"
+    }, {
+      "left" : "private final String OPENCELLID_TABLE   = \"opencellid\";",
+      "right" : "private final String OPENCELLID_TABLE   = \"opencellid\";",
+      "info" : "FieldDeclaration[4523-4578]:FieldDeclaration[4523-4578]"
+    }, {
+      "left" : "private final String TABLE_DEFAULT_MCC  = \"defaultlocation\";",
+      "right" : "private final String TABLE_DEFAULT_MCC  = \"defaultlocation\";",
+      "info" : "FieldDeclaration[4619-4679]:FieldDeclaration[4619-4679]"
+    }, {
+      "left" : "private final String SILENT_SMS_TABLE   = \"silentsms\";",
+      "right" : "private final String SILENT_SMS_TABLE   = \"silentsms\";",
+      "info" : "FieldDeclaration[4721-4775]:FieldDeclaration[4721-4775]"
+    }, {
+      "left" : "private final String CELL_SIGNAL_TABLE  = \"cellSignal\";",
+      "right" : "private final String CELL_SIGNAL_TABLE  = \"cellSignal\";",
+      "info" : "FieldDeclaration[4973-5028]:FieldDeclaration[4973-5028]"
+    }, {
+      "left" : "private final String TABLE_EVENTLOG    = \"EventLog\";",
+      "right" : "private final String TABLE_EVENTLOG    = \"EventLog\";",
+      "info" : "FieldDeclaration[5790-5842]:FieldDeclaration[5790-5842]"
+    }, {
+      "left" : "private final String[] mTables;",
+      "right" : "private final String[] mTables;",
+      "info" : "FieldDeclaration[6232-6263]:FieldDeclaration[6232-6263]"
+    }, {
+      "left" : "private final DbHelper mDbHelper;",
+      "right" : "private final DbHelper mDbHelper;",
+      "info" : "FieldDeclaration[6268-6301]:FieldDeclaration[6268-6301]"
+    }, {
+      "left" : "private SQLiteDatabase mDb;",
+      "right" : "private SQLiteDatabase mDb;",
+      "info" : "FieldDeclaration[6306-6333]:FieldDeclaration[6306-6333]"
+    }, {
+      "left" : "private final Context mContext;",
+      "right" : "private final Context mContext;",
+      "info" : "FieldDeclaration[6338-6369]:FieldDeclaration[6338-6369]"
+    }, {
+      "left" : "private Cursor signalStrengthMeasurementDatA;",
+      "right" : "private Cursor signalStrengthMeasurementDatA;",
+      "info" : "FieldDeclaration[6375-6420]:FieldDeclaration[6375-6420]"
+    }, {
+      "left" : "public AIMSICDDbAdapter(Context context)",
+      "right" : "public AIMSICDDbAdapter(Context context)",
+      "info" : "MethodDeclaration[6476-7704]:MethodDeclaration[6476-7704]"
+    }, {
+      "left" : "public AIMSICDDbAdapter open() throws SQLException",
+      "right" : "public AIMSICDDbAdapter open() throws SQLException",
+      "info" : "MethodDeclaration[7710-7836]:MethodDeclaration[7710-7836]"
+    }, {
+      "left" : "public void close()",
+      "right" : "public void close()",
+      "info" : "MethodDeclaration[7842-7896]:MethodDeclaration[7842-7896]"
+    }, {
+      "left" : "public long insertSilentSms(Bundle bundle)",
+      "right" : "public long insertSilentSms(Bundle bundle)",
+      "info" : "MethodDeclaration[8102-8700]:MethodDeclaration[8102-8700]"
+    }, {
+      "left" : "public long insertCell( int lac,\n                            int cellID,\n                            int netType,\n                            double latitude,\n                            double longitude,\n                            int signalInfo,\n                            int mcc,\n                            int mnc,\n                            double accuracy,\n                            double speed,\n                            double direction,\n                            String networkType,\n                            long measurementTaken\n                            )",
+      "right" : "public long insertCell( int lac,\n                            int cellID,\n                            int netType,\n                            double latitude,\n                            double longitude,\n                            int signalInfo,\n                            int mcc,\n                            int mnc,\n                            double accuracy,\n                            double speed,\n                            double direction,\n                            String networkType,\n                            long measurementTaken\n                            )",
+      "info" : "MethodDeclaration[8706-10878]:MethodDeclaration[8706-10878]"
+    }, {
+      "left" : "public long insertCell(Cell cell)",
+      "right" : "public long insertCell(Cell cell)",
+      "info" : "MethodDeclaration[10884-12905]:MethodDeclaration[10884-12905]"
+    }, {
+      "left" : "long insertOpenCell(double latitude,\n                        double longitude,\n                        int mcc,\n                        int mnc,\n                        int lac,\n                        int cellID,\n                        int avgSigStr,\n                        int range,      // new\n                        int samples,\n                        int isGPSexact, // new\n                        String RAT      // new\n                        //int rej_cause // new\n    )",
+      "right" : "long insertOpenCell(double latitude,\n                        double longitude,\n                        int mcc,\n                        int mnc,\n                        int lac,\n                        int cellID,\n                        int avgSigStr,\n                        int range,      // new\n                        int samples,\n                        int isGPSexact, // new\n                        String RAT      // new\n                        //int rej_cause // new\n    )",
+      "info" : "MethodDeclaration[12911-14574]:MethodDeclaration[12911-14574]"
+    }, {
+      "left" : "long insertOpenCell(double latitude,\n                        double longitude,\n                        int mcc,\n                        int mnc,\n                        int lac,\n                        int cellID,\n                        int avgSigStr,\n                        int range,      // new\n                        int samples,\n                        int isGPSexact, // new\n                        String RAT,      // new\n                        //int rej_cause // new\n                        boolean isNeedCheckExists\n                        )",
+      "right" : "long insertOpenCell(double latitude,\n                        double longitude,\n                        int mcc,\n                        int mnc,\n                        int lac,\n                        int cellID,\n                        int avgSigStr,\n                        int range,      // new\n                        int samples,\n                        int isGPSexact, // new\n                        String RAT,      // new\n                        //int rej_cause // new\n                        boolean isNeedCheckExists\n                        )",
+      "info" : "MethodDeclaration[14580-17503]:MethodDeclaration[14580-17503]"
+    }, {
+      "left" : "public long insertLocation( int lac,\n                                int cellID,\n                                int netType,\n                                double latitude,\n                                double longitude,\n                                int signalInfo,\n                                String cellInfo\n                                )",
+      "right" : "public long insertLocation( int lac,\n                                int cellID,\n                                int netType,\n                                double latitude,\n                                double longitude,\n                                int signalInfo,\n                                String cellInfo\n                                )",
+      "info" : "MethodDeclaration[17509-19145]:MethodDeclaration[17509-19145]"
+    }, {
+      "left" : "public int deleteCell(int cellId)",
+      "right" : "public int deleteCell(int cellId)",
+      "info" : "MethodDeclaration[19151-19533]:MethodDeclaration[19151-19533]"
+    }, {
+      "left" : "public long insertDetection(//long Time,\n                                 int LAC,\n                                 int CID,\n                                 int PSC,\n                                 double latitude,\n                                 double longitude,\n                                 double accu,\n                                 int DF_id,\n                                 String DF_description)",
+      "right" : "public long insertDetection(//long Time,\n                                 int LAC,\n                                 int CID,\n                                 int PSC,\n                                 double latitude,\n                                 double longitude,\n                                 double accu,\n                                 int DF_id,\n                                 String DF_description)",
+      "info" : "MethodDeclaration[19539-20980]:MethodDeclaration[19539-20980]"
+    }, {
+      "left" : "public Cursor getEventLogData()",
+      "right" : "public Cursor getEventLogData()",
+      "info" : "MethodDeclaration[22422-22726]:MethodDeclaration[22422-22726]"
+    }, {
+      "left" : "public Cursor getSilentSmsData()",
+      "right" : "public Cursor getSilentSmsData()",
+      "info" : "MethodDeclaration[22833-23158]:MethodDeclaration[22833-23158]"
+    }, {
+      "left" : "public Cursor getCellData()",
+      "right" : "public Cursor getCellData()",
+      "info" : "MethodDeclaration[23164-23519]:MethodDeclaration[23164-23519]"
+    }, {
+      "left" : "public Cursor getOPCIDSubmitData()",
+      "right" : "public Cursor getOPCIDSubmitData()",
+      "info" : "MethodDeclaration[23525-24123]:MethodDeclaration[23525-24123]"
+    }, {
+      "left" : "public Cursor getLocationData()",
+      "right" : "public Cursor getLocationData()",
+      "info" : "MethodDeclaration[24129-24425]:MethodDeclaration[24129-24425]"
+    }, {
+      "left" : "public Cursor getOpenCellIDData()",
+      "right" : "public Cursor getOpenCellIDData()",
+      "info" : "MethodDeclaration[24431-25040]:MethodDeclaration[24431-25040]"
+    }, {
+      "left" : "public Cursor getDefaultMccLocationData()",
+      "right" : "public Cursor getDefaultMccLocationData()",
+      "info" : "MethodDeclaration[25046-25322]:MethodDeclaration[25046-25322]"
+    }, {
+      "left" : "boolean locationExists(int cellID, double lat, double lng, int signal)",
+      "right" : "boolean locationExists(int cellID, double lat, double lng, int signal)",
+      "info" : "MethodDeclaration[25516-26231]:MethodDeclaration[25516-26231]"
+    }, {
+      "left" : "boolean cellExists(int cellID)",
+      "right" : "boolean cellExists(int cellID)",
+      "info" : "MethodDeclaration[26237-26742]:MethodDeclaration[26237-26742]"
+    }, {
+      "left" : "public boolean openCellExists(int cellID)",
+      "right" : "public boolean openCellExists(int cellID)",
+      "info" : "MethodDeclaration[26748-27278]:MethodDeclaration[26748-27278]"
+    }, {
+      "left" : "public boolean checkLAC(Cell cell)",
+      "right" : "public boolean checkLAC(Cell cell)",
+      "info" : "MethodDeclaration[27284-30320]:MethodDeclaration[27284-30320]"
+    }, {
+      "left" : "public void ocidProcessed()",
+      "right" : "public void ocidProcessed()",
+      "info" : "MethodDeclaration[30326-30767]:MethodDeclaration[30326-30767]"
+    }, {
+      "left" : "public double[] getDefaultLocation(int mcc)",
+      "right" : "public double[] getDefaultLocation(int mcc)",
+      "info" : "MethodDeclaration[30773-31259]:MethodDeclaration[30773-31259]"
+    }, {
+      "left" : "public void cleanseCellTable()",
+      "right" : "public void cleanseCellTable()",
+      "info" : "MethodDeclaration[31265-31929]:MethodDeclaration[31265-31929]"
+    }, {
+      "left" : "public boolean prepareOpenCellUploadData()",
+      "right" : "public boolean prepareOpenCellUploadData()",
+      "info" : "MethodDeclaration[31935-34132]:MethodDeclaration[31935-34132]"
+    }, {
+      "left" : "private void populateDefaultMCC(SQLiteDatabase db)",
+      "right" : "private void populateDefaultMCC(SQLiteDatabase db)",
+      "info" : "MethodDeclaration[34138-36001]:MethodDeclaration[34138-36001]"
+    }, {
+      "left" : "public boolean updateOpenCellID()",
+      "right" : "public boolean updateOpenCellID()",
+      "info" : "MethodDeclaration[36007-41971]:MethodDeclaration[36007-41971]"
+    }, {
+      "left" : "public boolean restoreDB()",
+      "right" : "public boolean restoreDB()",
+      "info" : "MethodDeclaration[42213-48607]:MethodDeclaration[42213-48607]"
+    }, {
+      "left" : "private void dumpDB()",
+      "right" : "private void dumpDB()",
+      "info" : "MethodDeclaration[48613-50974]:MethodDeclaration[48613-50974]"
+    }, {
+      "left" : "public boolean backupDB()",
+      "right" : "public boolean backupDB()",
+      "info" : "MethodDeclaration[50981-51720]:MethodDeclaration[50981-51720]"
+    }, {
+      "left" : "private void backup(String tableName)",
+      "right" : "private void backup(String tableName)",
+      "info" : "MethodDeclaration[51726-53482]:MethodDeclaration[51726-53482]"
+    }, {
+      "left" : "//public void checkDBe( String tf_settings, int min_gps_precision ) {\n    public void checkDBe()",
+      "right" : "//public void checkDBe( String tf_settings, int min_gps_precision ) {\n    public void checkDBe()",
+      "info" : "MethodDeclaration[53689-58868]:MethodDeclaration[53689-58868]"
+    }, {
+      "left" : "public void cleanseCellStrengthTables(long maxTime)",
+      "right" : "public void cleanseCellStrengthTables(long maxTime)",
+      "info" : "MethodDeclaration[59101-59347]:MethodDeclaration[59101-59347]"
+    }, {
+      "left" : "public void addSignalStrength( int cellID, int signal, Long timestamp )",
+      "right" : "public void addSignalStrength( int cellID, int signal, Long timestamp )",
+      "info" : "MethodDeclaration[59353-59642]:MethodDeclaration[59353-59642]"
+    }, {
+      "left" : "public int countSignalMeasurements(int cellID)",
+      "right" : "public int countSignalMeasurements(int cellID)",
+      "info" : "MethodDeclaration[59648-59930]:MethodDeclaration[59648-59930]"
+    }, {
+      "left" : "public int getAverageSignalStrength(int cellID)",
+      "right" : "public int getAverageSignalStrength(int cellID)",
+      "info" : "MethodDeclaration[59936-60217]:MethodDeclaration[59936-60217]"
+    }, {
+      "left" : "public Cursor getSignalStrengthMeasurementData()",
+      "right" : "public Cursor getSignalStrengthMeasurementData()",
+      "info" : "MethodDeclaration[60223-60413]:MethodDeclaration[60223-60413]"
+    }, {
+      "left" : "DbHelper",
+      "right" : "DbHelper",
+      "info" : "TypeDeclaration[60646-72914]:TypeDeclaration[60646-73526]"
+    }, {
+      "left" : "DbHelper(Context context)",
+      "right" : "DbHelper(Context context)",
+      "info" : "MethodDeclaration[61276-61374]:MethodDeclaration[61276-61374]"
+    }, {
+      "left" : "public void onCreate(SQLiteDatabase database)",
+      "right" : "public void onCreate(SQLiteDatabase database)",
+      "info" : "MethodDeclaration[61431-71128]:MethodDeclaration[61430-62271]"
+    }, {
+      "left" : "public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)",
+      "right" : "public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)",
+      "info" : "MethodDeclaration[71505-72907]:MethodDeclaration[62647-64049]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3764-3770]:Modifier[3764-3770]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[3771-3776]:TYPE_DECLARATION_KIND[3771-3776]"
+    }, {
+      "left" : "AIMSICDDbAdapter",
+      "right" : "AIMSICDDbAdapter",
+      "info" : "SimpleName[3777-3793]:SimpleName[3777-3793]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7022-7028]:Modifier[7022-7028]"
+    }, {
+      "left" : "AIMSICDDbAdapter",
+      "right" : "AIMSICDDbAdapter",
+      "info" : "SimpleName[7029-7045]:SimpleName[7029-7045]"
+    }, {
+      "left" : "Context context",
+      "right" : "Context context",
+      "info" : "SingleVariableDeclaration[7046-7061]:SingleVariableDeclaration[7046-7061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7063-7704]:Block[7063-7704]"
+    }, {
+      "left" : "mContext = context;",
+      "right" : "mContext = context;",
+      "info" : "ExpressionStatement[7073-7092]:ExpressionStatement[7073-7092]"
+    }, {
+      "left" : "FOLDER = mContext.getExternalFilesDir(null) + File.separator;",
+      "right" : "FOLDER = mContext.getExternalFilesDir(null) + File.separator;",
+      "info" : "ExpressionStatement[7101-7162]:ExpressionStatement[7101-7162]"
+    }, {
+      "left" : "mDbHelper = new DbHelper(context);",
+      "right" : "mDbHelper = new DbHelper(context);",
+      "info" : "ExpressionStatement[7232-7266]:ExpressionStatement[7232-7266]"
+    }, {
+      "left" : "mTables = new String[]{\n                //  Old...\n                LOCATION_TABLE,\n                CELL_TABLE,\n                OPENCELLID_TABLE,\n                SILENT_SMS_TABLE,\n                //  New...\n                //TABLE_DBE_IMPORT,\n                //TABLE_DBI_BTS,\n                //TABLE_DBI_MEASURE,\n                TABLE_EVENTLOG,\n                //TABLE_SILENTSMS,\n                //TABLE_CMEASURES\n        };",
+      "right" : "mTables = new String[]{\n                //  Old...\n                LOCATION_TABLE,\n                CELL_TABLE,\n                OPENCELLID_TABLE,\n                SILENT_SMS_TABLE,\n                //  New...\n                //TABLE_DBE_IMPORT,\n                //TABLE_DBI_BTS,\n                //TABLE_DBI_MEASURE,\n                TABLE_EVENTLOG,\n                //TABLE_SILENTSMS,\n                //TABLE_CMEASURES\n        };",
+      "info" : "ExpressionStatement[7275-7698]:ExpressionStatement[7275-7698]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7710-7716]:Modifier[7710-7716]"
+    }, {
+      "left" : "AIMSICDDbAdapter",
+      "right" : "AIMSICDDbAdapter",
+      "info" : "SimpleType[7717-7733]:SimpleType[7717-7733]"
+    }, {
+      "left" : "open",
+      "right" : "open",
+      "info" : "SimpleName[7734-7738]:SimpleName[7734-7738]"
+    }, {
+      "left" : "SQLException",
+      "right" : "SQLException",
+      "info" : "SimpleType[7748-7760]:SimpleType[7748-7760]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7761-7836]:Block[7761-7836]"
+    }, {
+      "left" : "mDb = mDbHelper.getWritableDatabase();",
+      "right" : "mDb = mDbHelper.getWritableDatabase();",
+      "info" : "ExpressionStatement[7771-7809]:ExpressionStatement[7771-7809]"
+    }, {
+      "left" : "return this;",
+      "right" : "return this;",
+      "info" : "ReturnStatement[7818-7830]:ReturnStatement[7818-7830]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7842-7848]:Modifier[7842-7848]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[7849-7853]:PrimitiveType[7849-7853]"
+    }, {
+      "left" : "close",
+      "right" : "close",
+      "info" : "SimpleName[7854-7859]:SimpleName[7854-7859]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7862-7896]:Block[7862-7896]"
+    }, {
+      "left" : "mDbHelper.close();",
+      "right" : "mDbHelper.close();",
+      "info" : "ExpressionStatement[7872-7890]:ExpressionStatement[7872-7890]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8102-8108]:Modifier[8102-8108]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[8109-8113]:PrimitiveType[8109-8113]"
+    }, {
+      "left" : "insertSilentSms",
+      "right" : "insertSilentSms",
+      "info" : "SimpleName[8114-8129]:SimpleName[8114-8129]"
+    }, {
+      "left" : "Bundle bundle",
+      "right" : "Bundle bundle",
+      "info" : "SingleVariableDeclaration[8130-8143]:SingleVariableDeclaration[8130-8143]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8145-8700]:Block[8145-8700]"
+    }, {
+      "left" : "ContentValues smsValues = new ContentValues();",
+      "right" : "ContentValues smsValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[8155-8201]:VariableDeclarationStatement[8155-8201]"
+    }, {
+      "left" : "smsValues.put(\"Address\",    bundle.getString(\"address\"));",
+      "right" : "smsValues.put(\"Address\",    bundle.getString(\"address\"));",
+      "info" : "ExpressionStatement[8210-8267]:ExpressionStatement[8210-8267]"
+    }, {
+      "left" : "smsValues.put(\"Display\",    bundle.getString(\"display_address\"));",
+      "right" : "smsValues.put(\"Display\",    bundle.getString(\"display_address\"));",
+      "info" : "ExpressionStatement[8297-8362]:ExpressionStatement[8297-8362]"
+    }, {
+      "left" : "smsValues.put(\"Class\",      bundle.getString(\"class\"));",
+      "right" : "smsValues.put(\"Class\",      bundle.getString(\"class\"));",
+      "info" : "ExpressionStatement[8384-8439]:ExpressionStatement[8384-8439]"
+    }, {
+      "left" : "smsValues.put(\"ServiceCtr\", bundle.getString(\"service_centre\"));",
+      "right" : "smsValues.put(\"ServiceCtr\", bundle.getString(\"service_centre\"));",
+      "info" : "ExpressionStatement[8469-8533]:ExpressionStatement[8469-8533]"
+    }, {
+      "left" : "smsValues.put(\"Message\",    bundle.getString(\"message\"));",
+      "right" : "smsValues.put(\"Message\",    bundle.getString(\"message\"));",
+      "info" : "ExpressionStatement[8553-8610]:ExpressionStatement[8553-8610]"
+    }, {
+      "left" : "return mDb.insert(SILENT_SMS_TABLE, null, smsValues);",
+      "right" : "return mDb.insert(SILENT_SMS_TABLE, null, smsValues);",
+      "info" : "ReturnStatement[8641-8694]:ReturnStatement[8641-8694]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8935-8941]:Modifier[8935-8941]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[8942-8946]:PrimitiveType[8942-8946]"
+    }, {
+      "left" : "insertCell",
+      "right" : "insertCell",
+      "info" : "SimpleName[8947-8957]:SimpleName[8947-8957]"
+    }, {
+      "left" : "int lac",
+      "right" : "int lac",
+      "info" : "SingleVariableDeclaration[8959-8966]:SingleVariableDeclaration[8959-8966]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[8996-9006]:SingleVariableDeclaration[8996-9006]"
+    }, {
+      "left" : "int netType",
+      "right" : "int netType",
+      "info" : "SingleVariableDeclaration[9036-9047]:SingleVariableDeclaration[9036-9047]"
+    }, {
+      "left" : "double latitude",
+      "right" : "double latitude",
+      "info" : "SingleVariableDeclaration[9077-9092]:SingleVariableDeclaration[9077-9092]"
+    }, {
+      "left" : "double longitude",
+      "right" : "double longitude",
+      "info" : "SingleVariableDeclaration[9122-9138]:SingleVariableDeclaration[9122-9138]"
+    }, {
+      "left" : "int signalInfo",
+      "right" : "int signalInfo",
+      "info" : "SingleVariableDeclaration[9168-9182]:SingleVariableDeclaration[9168-9182]"
+    }, {
+      "left" : "int mcc",
+      "right" : "int mcc",
+      "info" : "SingleVariableDeclaration[9212-9219]:SingleVariableDeclaration[9212-9219]"
+    }, {
+      "left" : "int mnc",
+      "right" : "int mnc",
+      "info" : "SingleVariableDeclaration[9249-9256]:SingleVariableDeclaration[9249-9256]"
+    }, {
+      "left" : "double accuracy",
+      "right" : "double accuracy",
+      "info" : "SingleVariableDeclaration[9286-9301]:SingleVariableDeclaration[9286-9301]"
+    }, {
+      "left" : "double speed",
+      "right" : "double speed",
+      "info" : "SingleVariableDeclaration[9331-9343]:SingleVariableDeclaration[9331-9343]"
+    }, {
+      "left" : "double direction",
+      "right" : "double direction",
+      "info" : "SingleVariableDeclaration[9373-9389]:SingleVariableDeclaration[9373-9389]"
+    }, {
+      "left" : "String networkType",
+      "right" : "String networkType",
+      "info" : "SingleVariableDeclaration[9419-9437]:SingleVariableDeclaration[9419-9437]"
+    }, {
+      "left" : "long measurementTaken",
+      "right" : "long measurementTaken",
+      "info" : "SingleVariableDeclaration[9467-9488]:SingleVariableDeclaration[9467-9488]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9519-10878]:Block[9519-10878]"
+    }, {
+      "left" : "if (cellID != -1 && (latitude != 0.0 && longitude != 0.0))",
+      "right" : "if (cellID != -1 && (latitude != 0.0 && longitude != 0.0))",
+      "info" : "IfStatement[9530-10854]:IfStatement[9530-10854]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9589-10854]:Block[9589-10854]"
+    }, {
+      "left" : "ContentValues cellValues = new ContentValues();",
+      "right" : "ContentValues cellValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[9662-9709]:VariableDeclarationStatement[9662-9709]"
+    }, {
+      "left" : "cellValues.put(\"Lac\",           lac);",
+      "right" : "cellValues.put(\"Lac\",           lac);",
+      "info" : "ExpressionStatement[9722-9759]:ExpressionStatement[9722-9759]"
+    }, {
+      "left" : "cellValues.put(\"CellID\",        cellID);",
+      "right" : "cellValues.put(\"CellID\",        cellID);",
+      "info" : "ExpressionStatement[9772-9812]:ExpressionStatement[9772-9812]"
+    }, {
+      "left" : "cellValues.put(\"Net\",           netType);",
+      "right" : "cellValues.put(\"Net\",           netType);",
+      "info" : "ExpressionStatement[9825-9866]:ExpressionStatement[9825-9866]"
+    }, {
+      "left" : "cellValues.put(\"Lat\",           latitude);",
+      "right" : "cellValues.put(\"Lat\",           latitude);",
+      "info" : "ExpressionStatement[9879-9921]:ExpressionStatement[9879-9921]"
+    }, {
+      "left" : "cellValues.put(\"Lng\",           longitude);",
+      "right" : "cellValues.put(\"Lng\",           longitude);",
+      "info" : "ExpressionStatement[9934-9977]:ExpressionStatement[9934-9977]"
+    }, {
+      "left" : "cellValues.put(\"Signal\",        signalInfo);",
+      "right" : "cellValues.put(\"Signal\",        signalInfo);",
+      "info" : "ExpressionStatement[9990-10034]:ExpressionStatement[9990-10034]"
+    }, {
+      "left" : "cellValues.put(\"Mcc\",           mcc);",
+      "right" : "cellValues.put(\"Mcc\",           mcc);",
+      "info" : "ExpressionStatement[10047-10084]:ExpressionStatement[10047-10084]"
+    }, {
+      "left" : "cellValues.put(\"Mnc\",           mnc);",
+      "right" : "cellValues.put(\"Mnc\",           mnc);",
+      "info" : "ExpressionStatement[10097-10134]:ExpressionStatement[10097-10134]"
+    }, {
+      "left" : "cellValues.put(\"Accuracy\",      accuracy);",
+      "right" : "cellValues.put(\"Accuracy\",      accuracy);",
+      "info" : "ExpressionStatement[10147-10189]:ExpressionStatement[10147-10189]"
+    }, {
+      "left" : "cellValues.put(\"Speed\",         speed);",
+      "right" : "cellValues.put(\"Speed\",         speed);",
+      "info" : "ExpressionStatement[10202-10241]:ExpressionStatement[10202-10241]"
+    }, {
+      "left" : "cellValues.put(\"Direction\",     direction);",
+      "right" : "cellValues.put(\"Direction\",     direction);",
+      "info" : "ExpressionStatement[10254-10297]:ExpressionStatement[10254-10297]"
+    }, {
+      "left" : "cellValues.put(\"NetworkType\",   networkType);",
+      "right" : "cellValues.put(\"NetworkType\",   networkType);",
+      "info" : "ExpressionStatement[10310-10355]:ExpressionStatement[10310-10355]"
+    }, {
+      "left" : "cellValues.put(\"MeasurementTaken\", measurementTaken);",
+      "right" : "cellValues.put(\"MeasurementTaken\", measurementTaken);",
+      "info" : "ExpressionStatement[10368-10421]:ExpressionStatement[10368-10421]"
+    }, {
+      "left" : "if (cellExists(cellID))",
+      "right" : "if (cellExists(cellID))",
+      "info" : "IfStatement[10435-10844]:IfStatement[10435-10844]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10459-10668]:Block[10459-10668]"
+    }, {
+      "left" : "Log.v(TAG, mTAG + \": Cell info updated in local db: \" + cellID);",
+      "right" : "Log.v(TAG, mTAG + \": Cell info updated in local db: \" + cellID);",
+      "info" : "ExpressionStatement[10477-10541]:ExpressionStatement[10477-10541]"
+    }, {
+      "left" : "return mDb.update( CELL_TABLE, cellValues, \"CellID=?\", new String[]{Integer.toString(cellID)} );",
+      "right" : "return mDb.update( CELL_TABLE, cellValues, \"CellID=?\", new String[]{Integer.toString(cellID)} );",
+      "info" : "ReturnStatement[10558-10654]:ReturnStatement[10558-10654]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10674-10844]:Block[10674-10844]"
+    }, {
+      "left" : "Log.v(TAG,  mTAG + \": New Cell found, insert into local db:: \" + cellID);",
+      "right" : "Log.v(TAG,  mTAG + \": New Cell found, insert into local db:: \" + cellID);",
+      "info" : "ExpressionStatement[10692-10765]:ExpressionStatement[10692-10765]"
+    }, {
+      "left" : "return mDb.insert(CELL_TABLE, null, cellValues);",
+      "right" : "return mDb.insert(CELL_TABLE, null, cellValues);",
+      "info" : "ReturnStatement[10782-10830]:ReturnStatement[10782-10830]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[10863-10872]:ReturnStatement[10863-10872]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11263-11269]:Modifier[11263-11269]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[11270-11274]:PrimitiveType[11270-11274]"
+    }, {
+      "left" : "insertCell",
+      "right" : "insertCell",
+      "info" : "SimpleName[11275-11285]:SimpleName[11275-11285]"
+    }, {
+      "left" : "Cell cell",
+      "right" : "Cell cell",
+      "info" : "SingleVariableDeclaration[11286-11295]:SingleVariableDeclaration[11286-11295]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11297-12905]:Block[11297-12905]"
+    }, {
+      "left" : "if (cell.getCID() != Integer.MAX_VALUE && (cell.getLat() != 0.0 && cell.getLon() != 0.0))",
+      "right" : "if (cell.getCID() != Integer.MAX_VALUE && (cell.getLat() != 0.0 && cell.getLon() != 0.0))",
+      "info" : "IfStatement[11485-12881]:IfStatement[11485-12881]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11575-12881]:Block[11575-12881]"
+    }, {
+      "left" : "ContentValues cellValues = new ContentValues();",
+      "right" : "ContentValues cellValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[11665-11712]:VariableDeclarationStatement[11665-11712]"
+    }, {
+      "left" : "cellValues.put(\"Lac\",       cell.getLAC());",
+      "right" : "cellValues.put(\"Lac\",       cell.getLAC());",
+      "info" : "ExpressionStatement[11725-11768]:ExpressionStatement[11725-11768]"
+    }, {
+      "left" : "cellValues.put(\"CellID\",    cell.getCID());",
+      "right" : "cellValues.put(\"CellID\",    cell.getCID());",
+      "info" : "ExpressionStatement[11781-11824]:ExpressionStatement[11781-11824]"
+    }, {
+      "left" : "cellValues.put(\"Net\",       cell.getNetType());",
+      "right" : "cellValues.put(\"Net\",       cell.getNetType());",
+      "info" : "ExpressionStatement[11837-11884]:ExpressionStatement[11837-11884]"
+    }, {
+      "left" : "cellValues.put(\"Lat\",       cell.getLat());",
+      "right" : "cellValues.put(\"Lat\",       cell.getLat());",
+      "info" : "ExpressionStatement[11897-11940]:ExpressionStatement[11897-11940]"
+    }, {
+      "left" : "cellValues.put(\"Lng\",       cell.getLon());",
+      "right" : "cellValues.put(\"Lng\",       cell.getLon());",
+      "info" : "ExpressionStatement[11953-11996]:ExpressionStatement[11953-11996]"
+    }, {
+      "left" : "cellValues.put(\"Signal\",    cell.getDBM());",
+      "right" : "cellValues.put(\"Signal\",    cell.getDBM());",
+      "info" : "ExpressionStatement[12009-12052]:ExpressionStatement[12009-12052]"
+    }, {
+      "left" : "cellValues.put(\"Mcc\",       cell.getMCC());",
+      "right" : "cellValues.put(\"Mcc\",       cell.getMCC());",
+      "info" : "ExpressionStatement[12065-12108]:ExpressionStatement[12065-12108]"
+    }, {
+      "left" : "cellValues.put(\"Mnc\",       cell.getMNC());",
+      "right" : "cellValues.put(\"Mnc\",       cell.getMNC());",
+      "info" : "ExpressionStatement[12121-12164]:ExpressionStatement[12121-12164]"
+    }, {
+      "left" : "cellValues.put(\"Accuracy\",  cell.getAccuracy());",
+      "right" : "cellValues.put(\"Accuracy\",  cell.getAccuracy());",
+      "info" : "ExpressionStatement[12177-12225]:ExpressionStatement[12177-12225]"
+    }, {
+      "left" : "cellValues.put(\"Speed\",     cell.getSpeed());",
+      "right" : "cellValues.put(\"Speed\",     cell.getSpeed());",
+      "info" : "ExpressionStatement[12238-12283]:ExpressionStatement[12238-12283]"
+    }, {
+      "left" : "cellValues.put(\"Direction\", cell.getBearing());",
+      "right" : "cellValues.put(\"Direction\", cell.getBearing());",
+      "info" : "ExpressionStatement[12296-12343]:ExpressionStatement[12296-12343]"
+    }, {
+      "left" : "cellValues.put(\"MeasurementTaken\", cell.getTimestamp());",
+      "right" : "cellValues.put(\"MeasurementTaken\", cell.getTimestamp());",
+      "info" : "ExpressionStatement[12356-12412]:ExpressionStatement[12356-12412]"
+    }, {
+      "left" : "if (cellExists(cell.getCID()))",
+      "right" : "if (cellExists(cell.getCID()))",
+      "info" : "IfStatement[12426-12871]:IfStatement[12426-12871]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12457-12683]:Block[12457-12683]"
+    }, {
+      "left" : "Log.v(TAG,  mTAG + \": CID info updated in local db (DBi): \" + cell.getCID());",
+      "right" : "Log.v(TAG,  mTAG + \": CID info updated in local db (DBi): \" + cell.getCID());",
+      "info" : "ExpressionStatement[12475-12552]:ExpressionStatement[12475-12552]"
+    }, {
+      "left" : "return mDb.update(CELL_TABLE, cellValues,\"CellID=?\", new String[]{Integer.toString(cell.getCID())});",
+      "right" : "return mDb.update(CELL_TABLE, cellValues,\"CellID=?\", new String[]{Integer.toString(cell.getCID())});",
+      "info" : "ReturnStatement[12569-12669]:ReturnStatement[12569-12669]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12689-12871]:Block[12689-12871]"
+    }, {
+      "left" : "Log.v(TAG,  mTAG + \": New CID found, insert into local db (DBi):: \" + cell.getCID());",
+      "right" : "Log.v(TAG,  mTAG + \": New CID found, insert into local db (DBi):: \" + cell.getCID());",
+      "info" : "ExpressionStatement[12707-12792]:ExpressionStatement[12707-12792]"
+    }, {
+      "left" : "return mDb.insert(CELL_TABLE, null, cellValues);",
+      "right" : "return mDb.insert(CELL_TABLE, null, cellValues);",
+      "info" : "ReturnStatement[12809-12857]:ReturnStatement[12809-12857]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[12890-12899]:ReturnStatement[12890-12899]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[13765-13769]:PrimitiveType[13765-13769]"
+    }, {
+      "left" : "insertOpenCell",
+      "right" : "insertOpenCell",
+      "info" : "SimpleName[13770-13784]:SimpleName[13770-13784]"
+    }, {
+      "left" : "double latitude",
+      "right" : "double latitude",
+      "info" : "SingleVariableDeclaration[13785-13800]:SingleVariableDeclaration[13785-13800]"
+    }, {
+      "left" : "double longitude",
+      "right" : "double longitude",
+      "info" : "SingleVariableDeclaration[13826-13842]:SingleVariableDeclaration[13826-13842]"
+    }, {
+      "left" : "int mcc",
+      "right" : "int mcc",
+      "info" : "SingleVariableDeclaration[13868-13875]:SingleVariableDeclaration[13868-13875]"
+    }, {
+      "left" : "int mnc",
+      "right" : "int mnc",
+      "info" : "SingleVariableDeclaration[13901-13908]:SingleVariableDeclaration[13901-13908]"
+    }, {
+      "left" : "int lac",
+      "right" : "int lac",
+      "info" : "SingleVariableDeclaration[13934-13941]:SingleVariableDeclaration[13934-13941]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[13967-13977]:SingleVariableDeclaration[13967-13977]"
+    }, {
+      "left" : "int avgSigStr",
+      "right" : "int avgSigStr",
+      "info" : "SingleVariableDeclaration[14003-14016]:SingleVariableDeclaration[14003-14016]"
+    }, {
+      "left" : "int range",
+      "right" : "int range",
+      "info" : "SingleVariableDeclaration[14042-14051]:SingleVariableDeclaration[14042-14051]"
+    }, {
+      "left" : "int samples",
+      "right" : "int samples",
+      "info" : "SingleVariableDeclaration[14089-14100]:SingleVariableDeclaration[14089-14100]"
+    }, {
+      "left" : "int isGPSexact",
+      "right" : "int isGPSexact",
+      "info" : "SingleVariableDeclaration[14126-14140]:SingleVariableDeclaration[14126-14140]"
+    }, {
+      "left" : "String RAT",
+      "right" : "String RAT",
+      "info" : "SingleVariableDeclaration[14173-14183]:SingleVariableDeclaration[14173-14183]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14249-14574]:Block[14249-14574]"
+    }, {
+      "left" : "return insertOpenCell(\n                latitude,\n                longitude,\n                mcc,\n                mnc,\n                lac,\n                cellID,\n                avgSigStr,\n                range,\n                samples,\n                isGPSexact,\n                RAT,\n                true);",
+      "right" : "return insertOpenCell(\n                latitude,\n                longitude,\n                mcc,\n                mnc,\n                lac,\n                cellID,\n                avgSigStr,\n                range,\n                samples,\n                isGPSexact,\n                RAT,\n                true);",
+      "info" : "ReturnStatement[14259-14568]:ReturnStatement[14259-14568]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[15433-15437]:PrimitiveType[15433-15437]"
+    }, {
+      "left" : "insertOpenCell",
+      "right" : "insertOpenCell",
+      "info" : "SimpleName[15438-15452]:SimpleName[15438-15452]"
+    }, {
+      "left" : "double latitude",
+      "right" : "double latitude",
+      "info" : "SingleVariableDeclaration[15453-15468]:SingleVariableDeclaration[15453-15468]"
+    }, {
+      "left" : "double longitude",
+      "right" : "double longitude",
+      "info" : "SingleVariableDeclaration[15494-15510]:SingleVariableDeclaration[15494-15510]"
+    }, {
+      "left" : "int mcc",
+      "right" : "int mcc",
+      "info" : "SingleVariableDeclaration[15536-15543]:SingleVariableDeclaration[15536-15543]"
+    }, {
+      "left" : "int mnc",
+      "right" : "int mnc",
+      "info" : "SingleVariableDeclaration[15569-15576]:SingleVariableDeclaration[15569-15576]"
+    }, {
+      "left" : "int lac",
+      "right" : "int lac",
+      "info" : "SingleVariableDeclaration[15602-15609]:SingleVariableDeclaration[15602-15609]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[15635-15645]:SingleVariableDeclaration[15635-15645]"
+    }, {
+      "left" : "int avgSigStr",
+      "right" : "int avgSigStr",
+      "info" : "SingleVariableDeclaration[15671-15684]:SingleVariableDeclaration[15671-15684]"
+    }, {
+      "left" : "int range",
+      "right" : "int range",
+      "info" : "SingleVariableDeclaration[15710-15719]:SingleVariableDeclaration[15710-15719]"
+    }, {
+      "left" : "int samples",
+      "right" : "int samples",
+      "info" : "SingleVariableDeclaration[15757-15768]:SingleVariableDeclaration[15757-15768]"
+    }, {
+      "left" : "int isGPSexact",
+      "right" : "int isGPSexact",
+      "info" : "SingleVariableDeclaration[15794-15808]:SingleVariableDeclaration[15794-15808]"
+    }, {
+      "left" : "String RAT",
+      "right" : "String RAT",
+      "info" : "SingleVariableDeclaration[15841-15851]:SingleVariableDeclaration[15841-15851]"
+    }, {
+      "left" : "boolean isNeedCheckExists",
+      "right" : "boolean isNeedCheckExists",
+      "info" : "SingleVariableDeclaration[15936-15961]:SingleVariableDeclaration[15936-15961]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15988-17503]:Block[15988-17503]"
+    }, {
+      "left" : "ContentValues cellIDValues = new ContentValues();",
+      "right" : "ContentValues cellIDValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[16071-16120]:VariableDeclarationStatement[16071-16120]"
+    }, {
+      "left" : "cellIDValues.put(\"Lat\",         latitude);",
+      "right" : "cellIDValues.put(\"Lat\",         latitude);",
+      "info" : "ExpressionStatement[16129-16171]:ExpressionStatement[16129-16171]"
+    }, {
+      "left" : "cellIDValues.put(\"Lng\",         longitude);",
+      "right" : "cellIDValues.put(\"Lng\",         longitude);",
+      "info" : "ExpressionStatement[16180-16223]:ExpressionStatement[16180-16223]"
+    }, {
+      "left" : "cellIDValues.put(\"Mcc\",         mcc);",
+      "right" : "cellIDValues.put(\"Mcc\",         mcc);",
+      "info" : "ExpressionStatement[16232-16269]:ExpressionStatement[16232-16269]"
+    }, {
+      "left" : "cellIDValues.put(\"Mnc\",         mnc);",
+      "right" : "cellIDValues.put(\"Mnc\",         mnc);",
+      "info" : "ExpressionStatement[16278-16315]:ExpressionStatement[16278-16315]"
+    }, {
+      "left" : "cellIDValues.put(\"Lac\",         lac);",
+      "right" : "cellIDValues.put(\"Lac\",         lac);",
+      "info" : "ExpressionStatement[16324-16361]:ExpressionStatement[16324-16361]"
+    }, {
+      "left" : "cellIDValues.put(\"CellID\",      cellID);",
+      "right" : "cellIDValues.put(\"CellID\",      cellID);",
+      "info" : "ExpressionStatement[16370-16410]:ExpressionStatement[16370-16410]"
+    }, {
+      "left" : "cellIDValues.put(\"AvgSigStr\",   avgSigStr);",
+      "right" : "cellIDValues.put(\"AvgSigStr\",   avgSigStr);",
+      "info" : "ExpressionStatement[16469-16512]:ExpressionStatement[16469-16512]"
+    }, {
+      "left" : "cellIDValues.put(\"avg_range\",   range );",
+      "right" : "cellIDValues.put(\"avg_range\",   range );",
+      "info" : "ExpressionStatement[16521-16561]:ExpressionStatement[16521-16561]"
+    }, {
+      "left" : "cellIDValues.put(\"Samples\",     samples);",
+      "right" : "cellIDValues.put(\"Samples\",     samples);",
+      "info" : "ExpressionStatement[16583-16624]:ExpressionStatement[16583-16624]"
+    }, {
+      "left" : "cellIDValues.put(\"isGPSexact\",  isGPSexact );",
+      "right" : "cellIDValues.put(\"isGPSexact\",  isGPSexact );",
+      "info" : "ExpressionStatement[16633-16678]:ExpressionStatement[16633-16678]"
+    }, {
+      "left" : "cellIDValues.put(\"Type\",        RAT );",
+      "right" : "cellIDValues.put(\"Type\",        RAT );",
+      "info" : "ExpressionStatement[16695-16733]:ExpressionStatement[16695-16733]"
+    }, {
+      "left" : "if (isNeedCheckExists && openCellExists(cellID))",
+      "right" : "if (isNeedCheckExists && openCellExists(cellID))",
+      "info" : "IfStatement[16917-17497]:IfStatement[16917-17497]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16966-17411]:Block[16966-17411]"
+    }, {
+      "left" : "Log.v(TAG,  mTAG + \": CID already found in DBe_import! Skipping: \" + cellID );",
+      "right" : "Log.v(TAG,  mTAG + \": CID already found in DBe_import! Skipping: \" + cellID );",
+      "info" : "ExpressionStatement[17091-17169]:ExpressionStatement[17091-17169]"
+    }, {
+      "left" : "return 1;",
+      "right" : "return 1;",
+      "info" : "ReturnStatement[17182-17191]:ReturnStatement[17182-17191]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17417-17497]:Block[17417-17497]"
+    }, {
+      "left" : "return mDb.insert(OPENCELLID_TABLE, null, cellIDValues);",
+      "right" : "return mDb.insert(OPENCELLID_TABLE, null, cellIDValues);",
+      "info" : "ReturnStatement[17431-17487]:ReturnStatement[17431-17487]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[17700-17706]:Modifier[17700-17706]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[17707-17711]:PrimitiveType[17707-17711]"
+    }, {
+      "left" : "insertLocation",
+      "right" : "insertLocation",
+      "info" : "SimpleName[17712-17726]:SimpleName[17712-17726]"
+    }, {
+      "left" : "int lac",
+      "right" : "int lac",
+      "info" : "SingleVariableDeclaration[17728-17735]:SingleVariableDeclaration[17728-17735]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[17769-17779]:SingleVariableDeclaration[17769-17779]"
+    }, {
+      "left" : "int netType",
+      "right" : "int netType",
+      "info" : "SingleVariableDeclaration[17813-17824]:SingleVariableDeclaration[17813-17824]"
+    }, {
+      "left" : "double latitude",
+      "right" : "double latitude",
+      "info" : "SingleVariableDeclaration[17858-17873]:SingleVariableDeclaration[17858-17873]"
+    }, {
+      "left" : "double longitude",
+      "right" : "double longitude",
+      "info" : "SingleVariableDeclaration[17907-17923]:SingleVariableDeclaration[17907-17923]"
+    }, {
+      "left" : "int signalInfo",
+      "right" : "int signalInfo",
+      "info" : "SingleVariableDeclaration[17957-17971]:SingleVariableDeclaration[17957-17971]"
+    }, {
+      "left" : "String cellInfo",
+      "right" : "String cellInfo",
+      "info" : "SingleVariableDeclaration[18005-18020]:SingleVariableDeclaration[18005-18020]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18055-19145]:Block[18055-19145]"
+    }, {
+      "left" : "if (latitude != 0.0 && longitude != 0.0)",
+      "right" : "if (latitude != 0.0 && longitude != 0.0)",
+      "info" : "IfStatement[18066-19120]:IfStatement[18066-19120]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18107-19120]:Block[18107-19120]"
+    }, {
+      "left" : "ContentValues locationValues = new ContentValues();",
+      "right" : "ContentValues locationValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[18180-18231]:VariableDeclarationStatement[18180-18231]"
+    }, {
+      "left" : "locationValues.put(\"Lac\",       lac);",
+      "right" : "locationValues.put(\"Lac\",       lac);",
+      "info" : "ExpressionStatement[18244-18281]:ExpressionStatement[18244-18281]"
+    }, {
+      "left" : "locationValues.put(\"CellID\",    cellID);",
+      "right" : "locationValues.put(\"CellID\",    cellID);",
+      "info" : "ExpressionStatement[18294-18334]:ExpressionStatement[18294-18334]"
+    }, {
+      "left" : "locationValues.put(\"Net\",       netType);",
+      "right" : "locationValues.put(\"Net\",       netType);",
+      "info" : "ExpressionStatement[18347-18388]:ExpressionStatement[18347-18388]"
+    }, {
+      "left" : "locationValues.put(\"Lat\",       latitude);",
+      "right" : "locationValues.put(\"Lat\",       latitude);",
+      "info" : "ExpressionStatement[18401-18443]:ExpressionStatement[18401-18443]"
+    }, {
+      "left" : "locationValues.put(\"Lng\",       longitude);",
+      "right" : "locationValues.put(\"Lng\",       longitude);",
+      "info" : "ExpressionStatement[18456-18499]:ExpressionStatement[18456-18499]"
+    }, {
+      "left" : "locationValues.put(\"Signal\",    signalInfo);",
+      "right" : "locationValues.put(\"Signal\",    signalInfo);",
+      "info" : "ExpressionStatement[18512-18556]:ExpressionStatement[18512-18556]"
+    }, {
+      "left" : "locationValues.put(\"Connection\", cellInfo);",
+      "right" : "locationValues.put(\"Connection\", cellInfo);",
+      "info" : "ExpressionStatement[18569-18612]:ExpressionStatement[18569-18612]"
+    }, {
+      "left" : "if (locationExists(cellID, latitude, longitude, signalInfo))",
+      "right" : "if (locationExists(cellID, latitude, longitude, signalInfo))",
+      "info" : "IfStatement[18797-19110]:IfStatement[18797-19110]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18858-19016]:Block[18858-19016]"
+    }, {
+      "left" : "return mDb.update(LOCATION_TABLE, locationValues, \"CellID=?\",\n                        new String[]{Integer.toString(cellID)});",
+      "right" : "return mDb.update(LOCATION_TABLE, locationValues, \"CellID=?\",\n                        new String[]{Integer.toString(cellID)});",
+      "info" : "ReturnStatement[18876-19002]:ReturnStatement[18876-19002]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19022-19110]:Block[19022-19110]"
+    }, {
+      "left" : "return mDb.insert(LOCATION_TABLE, null, locationValues);",
+      "right" : "return mDb.insert(LOCATION_TABLE, null, locationValues);",
+      "info" : "ReturnStatement[19040-19096]:ReturnStatement[19040-19096]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[19130-19139]:ReturnStatement[19130-19139]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[19343-19349]:Modifier[19343-19349]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[19350-19353]:PrimitiveType[19350-19353]"
+    }, {
+      "left" : "deleteCell",
+      "right" : "deleteCell",
+      "info" : "SimpleName[19354-19364]:SimpleName[19354-19364]"
+    }, {
+      "left" : "int cellId",
+      "right" : "int cellId",
+      "info" : "SingleVariableDeclaration[19365-19375]:SingleVariableDeclaration[19365-19375]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19377-19533]:Block[19377-19533]"
+    }, {
+      "left" : "Log.i(TAG,  mTAG + \": Deleted CID: \" + cellId);",
+      "right" : "Log.i(TAG,  mTAG + \": Deleted CID: \" + cellId);",
+      "info" : "ExpressionStatement[19387-19434]:ExpressionStatement[19387-19434]"
+    }, {
+      "left" : "return mDb.delete(CELL_TABLE, \"CellID = ?\", new String[]{ String.valueOf(cellId) });",
+      "right" : "return mDb.delete(CELL_TABLE, \"CellID = ?\", new String[]{ String.valueOf(cellId) });",
+      "info" : "ReturnStatement[19443-19527]:ReturnStatement[19443-19527]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[19797-19803]:Modifier[19797-19803]"
+    }, {
+      "left" : "long",
+      "right" : "long",
+      "info" : "PrimitiveType[19804-19808]:PrimitiveType[19804-19808]"
+    }, {
+      "left" : "insertDetection",
+      "right" : "insertDetection",
+      "info" : "SimpleName[19809-19824]:SimpleName[19809-19824]"
+    }, {
+      "left" : "int LAC",
+      "right" : "int LAC",
+      "info" : "SingleVariableDeclaration[19871-19878]:SingleVariableDeclaration[19871-19878]"
+    }, {
+      "left" : "int CID",
+      "right" : "int CID",
+      "info" : "SingleVariableDeclaration[19913-19920]:SingleVariableDeclaration[19913-19920]"
+    }, {
+      "left" : "int PSC",
+      "right" : "int PSC",
+      "info" : "SingleVariableDeclaration[19955-19962]:SingleVariableDeclaration[19955-19962]"
+    }, {
+      "left" : "double latitude",
+      "right" : "double latitude",
+      "info" : "SingleVariableDeclaration[19997-20012]:SingleVariableDeclaration[19997-20012]"
+    }, {
+      "left" : "double longitude",
+      "right" : "double longitude",
+      "info" : "SingleVariableDeclaration[20047-20063]:SingleVariableDeclaration[20047-20063]"
+    }, {
+      "left" : "double accu",
+      "right" : "double accu",
+      "info" : "SingleVariableDeclaration[20098-20109]:SingleVariableDeclaration[20098-20109]"
+    }, {
+      "left" : "int DF_id",
+      "right" : "int DF_id",
+      "info" : "SingleVariableDeclaration[20144-20153]:SingleVariableDeclaration[20144-20153]"
+    }, {
+      "left" : "String DF_description",
+      "right" : "String DF_description",
+      "info" : "SingleVariableDeclaration[20188-20209]:SingleVariableDeclaration[20188-20209]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20211-20980]:Block[20211-20980]"
+    }, {
+      "left" : "ContentValues detectionValues = new ContentValues();",
+      "right" : "ContentValues detectionValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[20297-20349]:VariableDeclarationStatement[20297-20349]"
+    }, {
+      "left" : "detectionValues.put(\"LAC\",          LAC);",
+      "right" : "detectionValues.put(\"LAC\",          LAC);",
+      "info" : "ExpressionStatement[20411-20452]:ExpressionStatement[20411-20452]"
+    }, {
+      "left" : "detectionValues.put(\"CID\",          CID);",
+      "right" : "detectionValues.put(\"CID\",          CID);",
+      "info" : "ExpressionStatement[20461-20502]:ExpressionStatement[20461-20502]"
+    }, {
+      "left" : "detectionValues.put(\"PSC\",          PSC);",
+      "right" : "detectionValues.put(\"PSC\",          PSC);",
+      "info" : "ExpressionStatement[20511-20552]:ExpressionStatement[20511-20552]"
+    }, {
+      "left" : "detectionValues.put(\"gpsd_lat\",     latitude);",
+      "right" : "detectionValues.put(\"gpsd_lat\",     latitude);",
+      "info" : "ExpressionStatement[20561-20607]:ExpressionStatement[20561-20607]"
+    }, {
+      "left" : "detectionValues.put(\"gpsd_lon\",     longitude);",
+      "right" : "detectionValues.put(\"gpsd_lon\",     longitude);",
+      "info" : "ExpressionStatement[20616-20663]:ExpressionStatement[20616-20663]"
+    }, {
+      "left" : "detectionValues.put(\"gpsd_accu\",    accu);",
+      "right" : "detectionValues.put(\"gpsd_accu\",    accu);",
+      "info" : "ExpressionStatement[20672-20714]:ExpressionStatement[20672-20714]"
+    }, {
+      "left" : "detectionValues.put(\"DF_id\",        DF_id);",
+      "right" : "detectionValues.put(\"DF_id\",        DF_id);",
+      "info" : "ExpressionStatement[20723-20766]:ExpressionStatement[20723-20766]"
+    }, {
+      "left" : "detectionValues.put(\"DF_description\", DF_description);",
+      "right" : "detectionValues.put(\"DF_description\", DF_description);",
+      "info" : "ExpressionStatement[20775-20829]:ExpressionStatement[20775-20829]"
+    }, {
+      "left" : "Log.v(TAG, mTAG + \": Insert Detection into EventLog Table: \" + CID);",
+      "right" : "Log.v(TAG, mTAG + \": Insert Detection into EventLog Table: \" + CID);",
+      "info" : "ExpressionStatement[20839-20907]:ExpressionStatement[20839-20907]"
+    }, {
+      "left" : "return mDb.insert(TABLE_EVENTLOG, null, detectionValues);",
+      "right" : "return mDb.insert(TABLE_EVENTLOG, null, detectionValues);",
+      "info" : "ReturnStatement[20916-20973]:ReturnStatement[20916-20973]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[22475-22481]:Modifier[22475-22481]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[22482-22488]:SimpleType[22482-22488]"
+    }, {
+      "left" : "getEventLogData",
+      "right" : "getEventLogData",
+      "info" : "SimpleName[22489-22504]:SimpleName[22489-22504]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22507-22726]:Block[22507-22726]"
+    }, {
+      "left" : "return mDb.query(TABLE_EVENTLOG,\n                new String[]{\"time\", \"LAC\", \"CID\", \"PSC\", \"gpsd_lat\",\"gpsd_lon\", \"gpsd_accu\", \"DF_id\", \"DF_desc\"},\n                null, null, null, null, null\n        );",
+      "right" : "return mDb.query(TABLE_EVENTLOG,\n                new String[]{\"time\", \"LAC\", \"CID\", \"PSC\", \"gpsd_lat\",\"gpsd_lon\", \"gpsd_accu\", \"DF_id\", \"DF_desc\"},\n                null, null, null, null, null\n        );",
+      "info" : "ReturnStatement[22517-22720]:ReturnStatement[22517-22720]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[22905-22911]:Modifier[22905-22911]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[22912-22918]:SimpleType[22912-22918]"
+    }, {
+      "left" : "getSilentSmsData",
+      "right" : "getSilentSmsData",
+      "info" : "SimpleName[22919-22935]:SimpleName[22919-22935]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22938-23158]:Block[22938-23158]"
+    }, {
+      "left" : "return mDb.query(SILENT_SMS_TABLE,\n                new String[]{\"Address\", \"Display\", \"Class\", \"ServiceCtr\", \"Message\", \"Timestamp\"},\n                null, null, null, null, COLUMN_ID + \" DESC\"\n        );",
+      "right" : "return mDb.query(SILENT_SMS_TABLE,\n                new String[]{\"Address\", \"Display\", \"Class\", \"ServiceCtr\", \"Message\", \"Timestamp\"},\n                null, null, null, null, COLUMN_ID + \" DESC\"\n        );",
+      "info" : "ReturnStatement[22948-23152]:ReturnStatement[22948-23152]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[23240-23246]:Modifier[23240-23246]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[23247-23253]:SimpleType[23247-23253]"
+    }, {
+      "left" : "getCellData",
+      "right" : "getCellData",
+      "info" : "SimpleName[23254-23265]:SimpleName[23254-23265]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23268-23519]:Block[23268-23519]"
+    }, {
+      "left" : "return mDb.query( CELL_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\", \"Mcc\", \"Mnc\",\n                        \"Accuracy\", \"Speed\", \"Direction\"},\n                null, null, null, null, null\n        );",
+      "right" : "return mDb.query( CELL_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\", \"Mcc\", \"Mnc\",\n                        \"Accuracy\", \"Speed\", \"Direction\"},\n                null, null, null, null, null\n        );",
+      "info" : "ReturnStatement[23278-23513]:ReturnStatement[23278-23513]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[23799-23805]:Modifier[23799-23805]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[23806-23812]:SimpleType[23806-23812]"
+    }, {
+      "left" : "getOPCIDSubmitData",
+      "right" : "getOPCIDSubmitData",
+      "info" : "SimpleName[23813-23831]:SimpleName[23813-23831]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23834-24123]:Block[23834-24123]"
+    }, {
+      "left" : "return mDb.query( CELL_TABLE,\n                new String[]{\"Mcc\", \"Mnc\", \"Lac\", \"CellID\", \"Lng\", \"Lat\", \"Signal\", \"Timestamp\",\n                        \"Accuracy\", \"Speed\", \"Direction\", \"NetworkType\"}, \"OCID_SUBMITTED <> 1\",\n                null, null, null, null\n        );",
+      "right" : "return mDb.query( CELL_TABLE,\n                new String[]{\"Mcc\", \"Mnc\", \"Lac\", \"CellID\", \"Lng\", \"Lat\", \"Signal\", \"Timestamp\",\n                        \"Accuracy\", \"Speed\", \"Direction\", \"NetworkType\"}, \"OCID_SUBMITTED <> 1\",\n                null, null, null, null\n        );",
+      "info" : "ReturnStatement[23844-24117]:ReturnStatement[23844-24117]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[24210-24216]:Modifier[24210-24216]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[24217-24223]:SimpleType[24217-24223]"
+    }, {
+      "left" : "getLocationData",
+      "right" : "getLocationData",
+      "info" : "SimpleName[24224-24239]:SimpleName[24224-24239]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24242-24425]:Block[24242-24425]"
+    }, {
+      "left" : "return mDb.query( LOCATION_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\"},\n                null, null, null, null, null\n        );",
+      "right" : "return mDb.query( LOCATION_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\"},\n                null, null, null, null, null\n        );",
+      "info" : "ReturnStatement[24252-24419]:ReturnStatement[24252-24419]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[24754-24760]:Modifier[24754-24760]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[24761-24767]:SimpleType[24761-24767]"
+    }, {
+      "left" : "getOpenCellIDData",
+      "right" : "getOpenCellIDData",
+      "info" : "SimpleName[24768-24785]:SimpleName[24768-24785]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24788-25040]:Block[24788-25040]"
+    }, {
+      "left" : "return mDb.query( OPENCELLID_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Mcc\", \"Mnc\", \"Lat\", \"Lng\", \"AvgSigStr\", \"Samples\"},\n                // avg_range, rej_cause, Type\n                null, null, null, null, null\n        );",
+      "right" : "return mDb.query( OPENCELLID_TABLE,\n                new String[]{\"CellID\", \"Lac\", \"Mcc\", \"Mnc\", \"Lat\", \"Lng\", \"AvgSigStr\", \"Samples\"},\n                // avg_range, rej_cause, Type\n                null, null, null, null, null\n        );",
+      "info" : "ReturnStatement[24798-25034]:ReturnStatement[24798-25034]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[25135-25141]:Modifier[25135-25141]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[25142-25148]:SimpleType[25142-25148]"
+    }, {
+      "left" : "getDefaultMccLocationData",
+      "right" : "getDefaultMccLocationData",
+      "info" : "SimpleName[25149-25174]:SimpleName[25149-25174]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25177-25322]:Block[25177-25322]"
+    }, {
+      "left" : "return mDb.query( TABLE_DEFAULT_MCC,\n                new String[]{\"Country\", \"Mcc\", \"Lat\", \"Lng\"}, null, null, null, null, null);",
+      "right" : "return mDb.query( TABLE_DEFAULT_MCC,\n                new String[]{\"Country\", \"Mcc\", \"Lat\", \"Lng\"}, null, null, null, null, null);",
+      "info" : "ReturnStatement[25187-25316]:ReturnStatement[25187-25316]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[25829-25836]:PrimitiveType[25829-25836]"
+    }, {
+      "left" : "locationExists",
+      "right" : "locationExists",
+      "info" : "SimpleName[25837-25851]:SimpleName[25837-25851]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[25852-25862]:SingleVariableDeclaration[25852-25862]"
+    }, {
+      "left" : "double lat",
+      "right" : "double lat",
+      "info" : "SingleVariableDeclaration[25864-25874]:SingleVariableDeclaration[25864-25874]"
+    }, {
+      "left" : "double lng",
+      "right" : "double lng",
+      "info" : "SingleVariableDeclaration[25876-25886]:SingleVariableDeclaration[25876-25886]"
+    }, {
+      "left" : "int signal",
+      "right" : "int signal",
+      "info" : "SingleVariableDeclaration[25888-25898]:SingleVariableDeclaration[25888-25898]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25900-26231]:Block[25900-26231]"
+    }, {
+      "left" : "Cursor cursor = mDb.rawQuery(\"SELECT * FROM \" + LOCATION_TABLE +\n                        \" WHERE CellID = \" + cellID +\n                        \" AND Lat = \" + lat + \" AND Lng = \" + lng + \" AND Signal = \" + signal, null);",
+      "right" : "Cursor cursor = mDb.rawQuery(\"SELECT * FROM \" + LOCATION_TABLE +\n                        \" WHERE CellID = \" + cellID +\n                        \" AND Lat = \" + lat + \" AND Lng = \" + lng + \" AND Signal = \" + signal, null);",
+      "info" : "VariableDeclarationStatement[25910-26130]:VariableDeclarationStatement[25910-26130]"
+    }, {
+      "left" : "boolean exists = cursor.getCount() > 0;",
+      "right" : "boolean exists = cursor.getCount() > 0;",
+      "info" : "VariableDeclarationStatement[26139-26178]:VariableDeclarationStatement[26139-26178]"
+    }, {
+      "left" : "cursor.close();",
+      "right" : "cursor.close();",
+      "info" : "ExpressionStatement[26187-26202]:ExpressionStatement[26187-26202]"
+    }, {
+      "left" : "return exists;",
+      "right" : "return exists;",
+      "info" : "ReturnStatement[26211-26225]:ReturnStatement[26211-26225]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[26393-26400]:PrimitiveType[26393-26400]"
+    }, {
+      "left" : "cellExists",
+      "right" : "cellExists",
+      "info" : "SimpleName[26401-26411]:SimpleName[26401-26411]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[26412-26422]:SingleVariableDeclaration[26412-26422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26424-26742]:Block[26424-26742]"
+    }, {
+      "left" : "Cursor cursor = mDb.rawQuery(\"SELECT 1 FROM \" + CELL_TABLE +\n                        \" WHERE CellID = \" + cellID, null);",
+      "right" : "Cursor cursor = mDb.rawQuery(\"SELECT 1 FROM \" + CELL_TABLE +\n                        \" WHERE CellID = \" + cellID, null);",
+      "info" : "VariableDeclarationStatement[26434-26554]:VariableDeclarationStatement[26434-26554]"
+    }, {
+      "left" : "boolean exists = cursor.getCount() > 0;",
+      "right" : "boolean exists = cursor.getCount() > 0;",
+      "info" : "VariableDeclarationStatement[26563-26602]:VariableDeclarationStatement[26563-26602]"
+    }, {
+      "left" : "cursor.close();",
+      "right" : "cursor.close();",
+      "info" : "ExpressionStatement[26698-26713]:ExpressionStatement[26698-26713]"
+    }, {
+      "left" : "return exists;",
+      "right" : "return exists;",
+      "info" : "ReturnStatement[26722-26736]:ReturnStatement[26722-26736]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[26909-26915]:Modifier[26909-26915]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[26916-26923]:PrimitiveType[26916-26923]"
+    }, {
+      "left" : "openCellExists",
+      "right" : "openCellExists",
+      "info" : "SimpleName[26924-26938]:SimpleName[26924-26938]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[26939-26949]:SingleVariableDeclaration[26939-26949]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26951-27278]:Block[26951-27278]"
+    }, {
+      "left" : "Cursor cursor = mDb.rawQuery(\"SELECT * FROM \" + OPENCELLID_TABLE +\n                        \" WHERE CellID = \" + cellID, null);",
+      "right" : "Cursor cursor = mDb.rawQuery(\"SELECT * FROM \" + OPENCELLID_TABLE +\n                        \" WHERE CellID = \" + cellID, null);",
+      "info" : "VariableDeclarationStatement[26961-27087]:VariableDeclarationStatement[26961-27087]"
+    }, {
+      "left" : "boolean exists = cursor.getCount() > 0;",
+      "right" : "boolean exists = cursor.getCount() > 0;",
+      "info" : "VariableDeclarationStatement[27096-27135]:VariableDeclarationStatement[27096-27135]"
+    }, {
+      "left" : "cursor.close();",
+      "right" : "cursor.close();",
+      "info" : "ExpressionStatement[27234-27249]:ExpressionStatement[27234-27249]"
+    }, {
+      "left" : "return exists;",
+      "right" : "return exists;",
+      "info" : "ReturnStatement[27258-27272]:ReturnStatement[27258-27272]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[28613-28619]:Modifier[28613-28619]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[28620-28627]:PrimitiveType[28620-28627]"
+    }, {
+      "left" : "checkLAC",
+      "right" : "checkLAC",
+      "info" : "SimpleName[28628-28636]:SimpleName[28628-28636]"
+    }, {
+      "left" : "Cell cell",
+      "right" : "Cell cell",
+      "info" : "SingleVariableDeclaration[28637-28646]:SingleVariableDeclaration[28637-28646]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28648-30320]:Block[28648-30320]"
+    }, {
+      "left" : "Cursor cursor = mDb.query(CELL_TABLE,\n                        // TODO: We only need:  Lac,Lat,Lng,Accuracy,Timestamp\n                        new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\", \"Mcc\", \"Mnc\",\n                        \"Accuracy\", \"Speed\", \"Direction\", \"Timestamp\"},\n                        \"CellID=\" + cell.getCID(),\n                        null, null, null, null);",
+      "right" : "Cursor cursor = mDb.query(CELL_TABLE,\n                        // TODO: We only need:  Lac,Lat,Lng,Accuracy,Timestamp\n                        new String[]{\"CellID\", \"Lac\", \"Net\", \"Lat\", \"Lng\", \"Signal\", \"Mcc\", \"Mnc\",\n                        \"Accuracy\", \"Speed\", \"Direction\", \"Timestamp\"},\n                        \"CellID=\" + cell.getCID(),\n                        null, null, null, null);",
+      "info" : "VariableDeclarationStatement[28658-29045]:VariableDeclarationStatement[28658-29045]"
+    }, {
+      "left" : "while (cursor.moveToNext())",
+      "right" : "while (cursor.moveToNext())",
+      "info" : "WhileStatement[29055-30269]:WhileStatement[29055-30269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29083-30269]:Block[29083-30269]"
+    }, {
+      "left" : "if (cell.getLAC() != cursor.getInt(1))",
+      "right" : "if (cell.getLAC() != cursor.getInt(1))",
+      "info" : "IfStatement[29139-30259]:IfStatement[29139-30259]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29178-30035]:Block[29178-30035]"
+    }, {
+      "left" : "Log.i(TAG, \"ALERT: Changing LAC on CID: \" + cell.getCID()\n                            + \" LAC(API): \" + cell.getLAC()\n                            + \" LAC(DBi): \" + cursor.getInt(1) );",
+      "right" : "Log.i(TAG, \"ALERT: Changing LAC on CID: \" + cell.getCID()\n                            + \" LAC(API): \" + cell.getLAC()\n                            + \" LAC(DBi): \" + cursor.getInt(1) );",
+      "info" : "ExpressionStatement[29410-29593]:ExpressionStatement[29410-29593]"
+    }, {
+      "left" : "insertDetection(cell.getLAC(), cell.getCID(), cell.getPSC(),\n                                cursor.getDouble(3), cursor.getDouble(4), cursor.getInt(8),\n                                1, \"Changing LAC\");",
+      "right" : "insertDetection(cell.getLAC(), cell.getCID(), cell.getPSC(),\n                                cursor.getDouble(3), cursor.getDouble(4), cursor.getInt(8),\n                                1, \"Changing LAC\");",
+      "info" : "ExpressionStatement[29754-29958]:ExpressionStatement[29754-29958]"
+    }, {
+      "left" : "cursor.close();",
+      "right" : "cursor.close();",
+      "info" : "ExpressionStatement[29976-29991]:ExpressionStatement[29976-29991]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[30008-30021]:ReturnStatement[30008-30021]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30041-30259]:Block[30041-30259]"
+    }, {
+      "left" : "Log.v(TAG, \"LAC checked - no change on CID:\" + cell.getCID()\n                            + \" LAC(API): \" + cell.getLAC()\n                            + \" LAC(DBi): \" + cursor.getInt(1) );",
+      "right" : "Log.v(TAG, \"LAC checked - no change on CID:\" + cell.getCID()\n                            + \" LAC(API): \" + cell.getLAC()\n                            + \" LAC(DBi): \" + cursor.getInt(1) );",
+      "info" : "ExpressionStatement[30059-30245]:ExpressionStatement[30059-30245]"
+    }, {
+      "left" : "cursor.close();",
+      "right" : "cursor.close();",
+      "info" : "ExpressionStatement[30278-30293]:ExpressionStatement[30278-30293]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[30302-30314]:ReturnStatement[30302-30314]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[30517-30523]:Modifier[30517-30523]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[30524-30528]:PrimitiveType[30524-30528]"
+    }, {
+      "left" : "ocidProcessed",
+      "right" : "ocidProcessed",
+      "info" : "SimpleName[30529-30542]:SimpleName[30529-30542]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30545-30767]:Block[30545-30767]"
+    }, {
+      "left" : "ContentValues ocidValues = new ContentValues();",
+      "right" : "ContentValues ocidValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[30555-30602]:VariableDeclarationStatement[30555-30602]"
+    }, {
+      "left" : "ocidValues.put(\"OCID_SUBMITTED\", 1);",
+      "right" : "ocidValues.put(\"OCID_SUBMITTED\", 1);",
+      "info" : "ExpressionStatement[30611-30647]:ExpressionStatement[30611-30647]"
+    }, {
+      "left" : "mDb.update(CELL_TABLE, ocidValues, \"OCID_SUBMITTED<>?\", new String[]{\"1\"});",
+      "right" : "mDb.update(CELL_TABLE, ocidValues, \"OCID_SUBMITTED<>?\", new String[]{\"1\"});",
+      "info" : "ExpressionStatement[30671-30746]:ExpressionStatement[30671-30746]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[30773-30779]:Modifier[30773-30779]"
+    }, {
+      "left" : "double[]",
+      "right" : "double[]",
+      "info" : "ArrayType[30780-30788]:ArrayType[30780-30788]"
+    }, {
+      "left" : "getDefaultLocation",
+      "right" : "getDefaultLocation",
+      "info" : "SimpleName[30789-30807]:SimpleName[30789-30807]"
+    }, {
+      "left" : "int mcc",
+      "right" : "int mcc",
+      "info" : "SingleVariableDeclaration[30808-30815]:SingleVariableDeclaration[30808-30815]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30817-31259]:Block[30817-31259]"
+    }, {
+      "left" : "double[] loc = new double[2];",
+      "right" : "double[] loc = new double[2];",
+      "info" : "VariableDeclarationStatement[30827-30856]:VariableDeclarationStatement[30827-30856]"
+    }, {
+      "left" : "Cursor cursor = mDb.rawQuery(\"SELECT Lat, Lng FROM \" + TABLE_DEFAULT_MCC + \" WHERE Mcc = \" + mcc, null);",
+      "right" : "Cursor cursor = mDb.rawQuery(\"SELECT Lat, Lng FROM \" + TABLE_DEFAULT_MCC + \" WHERE Mcc = \" + mcc, null);",
+      "info" : "VariableDeclarationStatement[30865-30969]:VariableDeclarationStatement[30865-30969]"
+    }, {
+      "left" : "if (cursor.moveToFirst())",
+      "right" : "if (cursor.moveToFirst())",
+      "info" : "IfStatement[30979-31209]:IfStatement[30979-31209]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31005-31140]:Block[31005-31140]"
+    }, {
+      "left" : "loc[0] = Double.parseDouble(cursor.getString(0));",
+      "right" : "loc[0] = Double.parseDouble(cursor.getString(0));",
+      "info" : "ExpressionStatement[31019-31068]:ExpressionStatement[31019-31068]"
+    }, {
+      "left" : "loc[1] = Double.parseDouble(cursor.getString(1));",
+      "right" : "loc[1] = Double.parseDouble(cursor.getString(1));",
+      "info" : "ExpressionStatement[31081-31130]:ExpressionStatement[31081-31130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31146-31209]:Block[31146-31209]"
+    }, {
+      "left" : "loc[0] = 0.0;",
+      "right" : "loc[0] = 0.0;",
+      "info" : "ExpressionStatement[31160-31173]:ExpressionStatement[31160-31173]"
+    }, {
+      "left" : "loc[1] = 0.0;",
+      "right" : "loc[1] = 0.0;",
+      "info" : "ExpressionStatement[31186-31199]:ExpressionStatement[31186-31199]"
+    }, {
+      "left" : "cursor.close();",
+      "right" : "cursor.close();",
+      "info" : "ExpressionStatement[31218-31233]:ExpressionStatement[31218-31233]"
+    }, {
+      "left" : "return loc;",
+      "right" : "return loc;",
+      "info" : "ReturnStatement[31242-31253]:ReturnStatement[31242-31253]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[31484-31490]:Modifier[31484-31490]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[31491-31495]:PrimitiveType[31491-31495]"
+    }, {
+      "left" : "cleanseCellTable",
+      "right" : "cleanseCellTable",
+      "info" : "SimpleName[31496-31512]:SimpleName[31496-31512]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31515-31929]:Block[31515-31929]"
+    }, {
+      "left" : "mDb.execSQL(\"DELETE FROM \" + CELL_TABLE + \" WHERE \" + COLUMN_ID + \" NOT IN (SELECT MAX(\" + COLUMN_ID + \") FROM \" + CELL_TABLE + \" GROUP BY CellID)\");",
+      "right" : "mDb.execSQL(\"DELETE FROM \" + CELL_TABLE + \" WHERE \" + COLUMN_ID + \" NOT IN (SELECT MAX(\" + COLUMN_ID + \") FROM \" + CELL_TABLE + \" GROUP BY CellID)\");",
+      "info" : "ExpressionStatement[31594-31743]:ExpressionStatement[31594-31743]"
+    }, {
+      "left" : "mDb.execSQL(\"DELETE FROM \" + CELL_TABLE + \" WHERE CellID = \" + Integer.MAX_VALUE + \" OR CellID = -1\");",
+      "right" : "mDb.execSQL(\"DELETE FROM \" + CELL_TABLE + \" WHERE CellID = \" + Integer.MAX_VALUE + \" OR CellID = -1\");",
+      "info" : "ExpressionStatement[31821-31923]:ExpressionStatement[31821-31923]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[32246-32252]:Modifier[32246-32252]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[32253-32260]:PrimitiveType[32253-32260]"
+    }, {
+      "left" : "prepareOpenCellUploadData",
+      "right" : "prepareOpenCellUploadData",
+      "info" : "SimpleName[32261-32286]:SimpleName[32261-32286]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32289-34132]:Block[32289-34132]"
+    }, {
+      "left" : "boolean result;",
+      "right" : "boolean result;",
+      "info" : "VariableDeclarationStatement[32299-32314]:VariableDeclarationStatement[32299-32314]"
+    }, {
+      "left" : "File dir = new File(FOLDER + \"OpenCellID/\");",
+      "right" : "File dir = new File(FOLDER + \"OpenCellID/\");",
+      "info" : "VariableDeclarationStatement[32324-32368]:VariableDeclarationStatement[32324-32368]"
+    }, {
+      "left" : "if (!dir.exists())",
+      "right" : "if (!dir.exists())",
+      "info" : "IfStatement[32377-32513]:IfStatement[32377-32513]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32396-32513]:Block[32396-32513]"
+    }, {
+      "left" : "result = dir.mkdirs();",
+      "right" : "result = dir.mkdirs();",
+      "info" : "ExpressionStatement[32410-32432]:ExpressionStatement[32410-32432]"
+    }, {
+      "left" : "if (!result)",
+      "right" : "if (!result)",
+      "info" : "IfStatement[32445-32503]:IfStatement[32445-32503]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32458-32503]:Block[32458-32503]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[32476-32489]:ReturnStatement[32476-32489]"
+    }, {
+      "left" : "File file = new File(dir, \"aimsicd-ocid-data.csv\");",
+      "right" : "File file = new File(dir, \"aimsicd-ocid-data.csv\");",
+      "info" : "VariableDeclarationStatement[32522-32573]:VariableDeclarationStatement[32522-32573]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[32583-34126]:TryStatement[32583-34126]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32587-33919]:Block[32587-33919]"
+    }, {
+      "left" : "open();",
+      "right" : "open();",
+      "info" : "ExpressionStatement[32601-32608]:ExpressionStatement[32601-32608]"
+    }, {
+      "left" : "Cursor c = getOPCIDSubmitData();",
+      "right" : "Cursor c = getOPCIDSubmitData();",
+      "info" : "VariableDeclarationStatement[32638-32670]:VariableDeclarationStatement[32638-32670]"
+    }, {
+      "left" : "if(c.getCount() > 0)",
+      "right" : "if(c.getCount() > 0)",
+      "info" : "IfStatement[32714-33882]:IfStatement[32714-33882]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32735-33882]:Block[32735-33882]"
+    }, {
+      "left" : "if (!file.exists())",
+      "right" : "if (!file.exists())",
+      "info" : "IfStatement[32793-33838]:IfStatement[32793-33838]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32813-33838]:Block[32813-33838]"
+    }, {
+      "left" : "result = file.createNewFile();",
+      "right" : "result = file.createNewFile();",
+      "info" : "ExpressionStatement[32835-32865]:ExpressionStatement[32835-32865]"
+    }, {
+      "left" : "if (!result)",
+      "right" : "if (!result)",
+      "info" : "IfStatement[32886-32995]:IfStatement[32886-32995]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32899-32995]:Block[32899-32995]"
+    }, {
+      "left" : "c.close();",
+      "right" : "c.close();",
+      "info" : "ExpressionStatement[32925-32935]:ExpressionStatement[32925-32935]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[32960-32973]:ReturnStatement[32960-32973]"
+    }, {
+      "left" : "CSVWriter csvWrite = new CSVWriter(new FileWriter(file));",
+      "right" : "CSVWriter csvWrite = new CSVWriter(new FileWriter(file));",
+      "info" : "VariableDeclarationStatement[33017-33074]:VariableDeclarationStatement[33017-33074]"
+    }, {
+      "left" : "csvWrite.writeNext(\"mcc,mnc,lac,cellid,lon,lat,signal,measured_at,rating,speed,direction,act\");",
+      "right" : "csvWrite.writeNext(\"mcc,mnc,lac,cellid,lon,lat,signal,measured_at,rating,speed,direction,act\");",
+      "info" : "ExpressionStatement[33096-33191]:ExpressionStatement[33096-33191]"
+    }, {
+      "left" : "String[] rowData = new String[c.getColumnCount()];",
+      "right" : "String[] rowData = new String[c.getColumnCount()];",
+      "info" : "VariableDeclarationStatement[33212-33262]:VariableDeclarationStatement[33212-33262]"
+    }, {
+      "left" : "int size = c.getColumnCount();",
+      "right" : "int size = c.getColumnCount();",
+      "info" : "VariableDeclarationStatement[33283-33313]:VariableDeclarationStatement[33283-33313]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[33334-33370]:ExpressionStatement[33334-33370]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setMax(size);",
+      "right" : "AIMSICD.mProgressBar.setMax(size);",
+      "info" : "ExpressionStatement[33391-33425]:ExpressionStatement[33391-33425]"
+    }, {
+      "left" : "while (c.moveToNext())",
+      "right" : "while (c.moveToNext())",
+      "info" : "WhileStatement[33446-33750]:WhileStatement[33446-33750]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33469-33750]:Block[33469-33750]"
+    }, {
+      "left" : "for (int i = 0; i < size; i++)",
+      "right" : "for (int i = 0; i < size; i++)",
+      "info" : "ForStatement[33495-33675]:ForStatement[33495-33675]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33526-33675]:Block[33526-33675]"
+    }, {
+      "left" : "rowData[i] = c.getString(i);",
+      "right" : "rowData[i] = c.getString(i);",
+      "info" : "ExpressionStatement[33556-33584]:ExpressionStatement[33556-33584]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(i);",
+      "right" : "AIMSICD.mProgressBar.setProgress(i);",
+      "info" : "ExpressionStatement[33613-33649]:ExpressionStatement[33613-33649]"
+    }, {
+      "left" : "csvWrite.writeNext(rowData);",
+      "right" : "csvWrite.writeNext(rowData);",
+      "info" : "ExpressionStatement[33700-33728]:ExpressionStatement[33700-33728]"
+    }, {
+      "left" : "csvWrite.close();",
+      "right" : "csvWrite.close();",
+      "info" : "ExpressionStatement[33772-33789]:ExpressionStatement[33772-33789]"
+    }, {
+      "left" : "c.close();",
+      "right" : "c.close();",
+      "info" : "ExpressionStatement[33810-33820]:ExpressionStatement[33810-33820]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[33855-33867]:ReturnStatement[33855-33867]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[33896-33909]:ReturnStatement[33896-33909]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33940-34057]:Block[33940-34057]"
+    }, {
+      "left" : "Log.e(TAG, mTAG + \": Error creating OpenCellID Upload Data: \" + e);",
+      "right" : "Log.e(TAG, mTAG + \": Error creating OpenCellID Upload Data: \" + e);",
+      "info" : "ExpressionStatement[33954-34021]:ExpressionStatement[33954-34021]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[34034-34047]:ReturnStatement[34034-34047]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34066-34126]:Block[34066-34126]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[34080-34116]:ExpressionStatement[34080-34116]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[34503-34510]:Modifier[34503-34510]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[34511-34515]:PrimitiveType[34511-34515]"
+    }, {
+      "left" : "populateDefaultMCC",
+      "right" : "populateDefaultMCC",
+      "info" : "SimpleName[34516-34534]:SimpleName[34516-34534]"
+    }, {
+      "left" : "SQLiteDatabase db",
+      "right" : "SQLiteDatabase db",
+      "info" : "SingleVariableDeclaration[34535-34552]:SingleVariableDeclaration[34535-34552]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34554-36001]:Block[34554-36001]"
+    }, {
+      "left" : "AssetManager mngr = mContext.getAssets();",
+      "right" : "AssetManager mngr = mContext.getAssets();",
+      "info" : "VariableDeclarationStatement[34564-34605]:VariableDeclarationStatement[34564-34605]"
+    }, {
+      "left" : "InputStream csvDefaultMcc;",
+      "right" : "InputStream csvDefaultMcc;",
+      "info" : "VariableDeclarationStatement[34614-34640]:VariableDeclarationStatement[34614-34640]"
+    }, {
+      "left" : "FileOutputStream fout;",
+      "right" : "FileOutputStream fout;",
+      "info" : "VariableDeclarationStatement[34649-34671]:VariableDeclarationStatement[34649-34671]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[34681-35995]:TryStatement[34681-35995]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34685-35887]:Block[34685-35887]"
+    }, {
+      "left" : "csvDefaultMcc = mngr.open(\"default_mcc_locations.csv\");",
+      "right" : "csvDefaultMcc = mngr.open(\"default_mcc_locations.csv\");",
+      "info" : "ExpressionStatement[34699-34754]:ExpressionStatement[34699-34754]"
+    }, {
+      "left" : "File tempfile = File.createTempFile(\"tempFile\", \".tmp\");",
+      "right" : "File tempfile = File.createTempFile(\"tempFile\", \".tmp\");",
+      "info" : "VariableDeclarationStatement[34767-34823]:VariableDeclarationStatement[34767-34823]"
+    }, {
+      "left" : "tempfile.deleteOnExit();",
+      "right" : "tempfile.deleteOnExit();",
+      "info" : "ExpressionStatement[34836-34860]:ExpressionStatement[34836-34860]"
+    }, {
+      "left" : "fout = new FileOutputStream(tempfile);",
+      "right" : "fout = new FileOutputStream(tempfile);",
+      "info" : "ExpressionStatement[34874-34912]:ExpressionStatement[34874-34912]"
+    }, {
+      "left" : "byte[] buf = new byte[1024];",
+      "right" : "byte[] buf = new byte[1024];",
+      "info" : "VariableDeclarationStatement[34925-34953]:VariableDeclarationStatement[34925-34953]"
+    }, {
+      "left" : "int len;",
+      "right" : "int len;",
+      "info" : "VariableDeclarationStatement[34966-34974]:VariableDeclarationStatement[34966-34974]"
+    }, {
+      "left" : "while ((len = csvDefaultMcc.read(buf)) != -1)",
+      "right" : "while ((len = csvDefaultMcc.read(buf)) != -1)",
+      "info" : "WhileStatement[34987-35089]:WhileStatement[34987-35089]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35033-35089]:Block[35033-35089]"
+    }, {
+      "left" : "fout.write(buf, 0, len);",
+      "right" : "fout.write(buf, 0, len);",
+      "info" : "ExpressionStatement[35051-35075]:ExpressionStatement[35051-35075]"
+    }, {
+      "left" : "fout.close();",
+      "right" : "fout.close();",
+      "info" : "ExpressionStatement[35102-35115]:ExpressionStatement[35102-35115]"
+    }, {
+      "left" : "csvDefaultMcc.close();",
+      "right" : "csvDefaultMcc.close();",
+      "info" : "ExpressionStatement[35128-35150]:ExpressionStatement[35128-35150]"
+    }, {
+      "left" : "CSVReader csvReader = new CSVReader(new FileReader(tempfile));",
+      "right" : "CSVReader csvReader = new CSVReader(new FileReader(tempfile));",
+      "info" : "VariableDeclarationStatement[35164-35226]:VariableDeclarationStatement[35164-35226]"
+    }, {
+      "left" : "List<String[]> csvMcc = csvReader.readAll();",
+      "right" : "List<String[]> csvMcc = csvReader.readAll();",
+      "info" : "VariableDeclarationStatement[35239-35283]:VariableDeclarationStatement[35239-35283]"
+    }, {
+      "left" : "ContentValues defaultMccValues = new ContentValues();",
+      "right" : "ContentValues defaultMccValues = new ContentValues();",
+      "info" : "VariableDeclarationStatement[35355-35408]:VariableDeclarationStatement[35355-35408]"
+    }, {
+      "left" : "for (int i = 1; i < csvMcc.size(); i++)",
+      "right" : "for (int i = 1; i < csvMcc.size(); i++)",
+      "info" : "ForStatement[35422-35876]:ForStatement[35422-35876]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35462-35876]:Block[35462-35876]"
+    }, {
+      "left" : "defaultMccValues.put(\"Country\", csvMcc.get(i)[0]);",
+      "right" : "defaultMccValues.put(\"Country\", csvMcc.get(i)[0]);",
+      "info" : "ExpressionStatement[35553-35603]:ExpressionStatement[35553-35603]"
+    }, {
+      "left" : "defaultMccValues.put(\"Mcc\", csvMcc.get(i)[1]);",
+      "right" : "defaultMccValues.put(\"Mcc\", csvMcc.get(i)[1]);",
+      "info" : "ExpressionStatement[35620-35666]:ExpressionStatement[35620-35666]"
+    }, {
+      "left" : "defaultMccValues.put(\"Lng\", csvMcc.get(i)[2]);",
+      "right" : "defaultMccValues.put(\"Lng\", csvMcc.get(i)[2]);",
+      "info" : "ExpressionStatement[35683-35729]:ExpressionStatement[35683-35729]"
+    }, {
+      "left" : "defaultMccValues.put(\"Lat\", csvMcc.get(i)[3]);",
+      "right" : "defaultMccValues.put(\"Lat\", csvMcc.get(i)[3]);",
+      "info" : "ExpressionStatement[35746-35792]:ExpressionStatement[35746-35792]"
+    }, {
+      "left" : "db.insert(TABLE_DEFAULT_MCC, null, defaultMccValues);",
+      "right" : "db.insert(TABLE_DEFAULT_MCC, null, defaultMccValues);",
+      "info" : "ExpressionStatement[35809-35862]:ExpressionStatement[35809-35862]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35908-35995]:Block[35908-35995]"
+    }, {
+      "left" : "Log.e(TAG, mTAG + \": Error populating Default MCC Data: \" + e);",
+      "right" : "Log.e(TAG, mTAG + \": Error populating Default MCC Data: \" + e);",
+      "info" : "ExpressionStatement[35922-35985]:ExpressionStatement[35922-35985]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[37307-37313]:Modifier[37307-37313]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[37314-37321]:PrimitiveType[37314-37321]"
+    }, {
+      "left" : "updateOpenCellID",
+      "right" : "updateOpenCellID",
+      "info" : "SimpleName[37322-37338]:SimpleName[37322-37338]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37341-41971]:Block[37341-41971]"
+    }, {
+      "left" : "String fileName = Environment.getExternalStorageDirectory()\n                                        + \"/AIMSICD/OpenCellID/opencellid.csv\";",
+      "right" : "String fileName = Environment.getExternalStorageDirectory()\n                                        + \"/AIMSICD/OpenCellID/opencellid.csv\";",
+      "info" : "VariableDeclarationStatement[37351-37490]:VariableDeclarationStatement[37351-37490]"
+    }, {
+      "left" : "File file = new File(fileName);",
+      "right" : "File file = new File(fileName);",
+      "info" : "VariableDeclarationStatement[37499-37530]:VariableDeclarationStatement[37499-37530]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[37539-41965]:TryStatement[37539-41965]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37543-41753]:Block[37543-41753]"
+    }, {
+      "left" : "if (file.exists())",
+      "right" : "if (file.exists())",
+      "info" : "IfStatement[37557-41718]:IfStatement[37557-41718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37576-41718]:Block[37576-41718]"
+    }, {
+      "left" : "CSVReader csvReader = new CSVReader(new FileReader(file));",
+      "right" : "CSVReader csvReader = new CSVReader(new FileReader(file));",
+      "info" : "VariableDeclarationStatement[37594-37652]:VariableDeclarationStatement[37594-37652]"
+    }, {
+      "left" : "List<String[]> csvCellID = new ArrayList<>();",
+      "right" : "List<String[]> csvCellID = new ArrayList<>();",
+      "info" : "VariableDeclarationStatement[37669-37714]:VariableDeclarationStatement[37669-37714]"
+    }, {
+      "left" : "String next[];",
+      "right" : "String next[];",
+      "info" : "VariableDeclarationStatement[37731-37745]:VariableDeclarationStatement[37731-37745]"
+    }, {
+      "left" : "while ((next = csvReader.readNext()) != null)",
+      "right" : "while ((next = csvReader.readNext()) != null)",
+      "info" : "WhileStatement[38216-38387]:WhileStatement[38216-38387]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38262-38387]:Block[38262-38387]"
+    }, {
+      "left" : "csvCellID.add(next);",
+      "right" : "csvCellID.add(next);",
+      "info" : "ExpressionStatement[38284-38304]:ExpressionStatement[38284-38304]"
+    }, {
+      "left" : "if (!csvCellID.isEmpty())",
+      "right" : "if (!csvCellID.isEmpty())",
+      "info" : "IfStatement[38405-41704]:IfStatement[38405-41704]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38431-41704]:Block[38431-41704]"
+    }, {
+      "left" : "int lines = csvCellID.size();",
+      "right" : "int lines = csvCellID.size();",
+      "info" : "VariableDeclarationStatement[38453-38482]:VariableDeclarationStatement[38453-38482]"
+    }, {
+      "left" : "Log.i(TAG, mTAG + \":updateOpenCellID: OCID CSV size (lines): \" + lines );",
+      "right" : "Log.i(TAG, mTAG + \":updateOpenCellID: OCID CSV size (lines): \" + lines );",
+      "info" : "ExpressionStatement[38503-38576]:ExpressionStatement[38503-38576]"
+    }, {
+      "left" : "String lQuery = \"SELECT CellID, COUNT(CellID) FROM \"+OPENCELLID_TABLE+\" GROUP BY CellID;\";",
+      "right" : "String lQuery = \"SELECT CellID, COUNT(CellID) FROM \"+OPENCELLID_TABLE+\" GROUP BY CellID;\";",
+      "info" : "VariableDeclarationStatement[38598-38688]:VariableDeclarationStatement[38598-38688]"
+    }, {
+      "left" : "Cursor lCursor = mDb.rawQuery(lQuery, null);",
+      "right" : "Cursor lCursor = mDb.rawQuery(lQuery, null);",
+      "info" : "VariableDeclarationStatement[38709-38753]:VariableDeclarationStatement[38709-38753]"
+    }, {
+      "left" : "SparseArray<Boolean> lPresentCellID = new SparseArray<>();",
+      "right" : "SparseArray<Boolean> lPresentCellID = new SparseArray<>();",
+      "info" : "VariableDeclarationStatement[38774-38832]:VariableDeclarationStatement[38774-38832]"
+    }, {
+      "left" : "if(lCursor.getCount() > 0)",
+      "right" : "if(lCursor.getCount() > 0)",
+      "info" : "IfStatement[38853-39057]:IfStatement[38853-39057]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38880-39057]:Block[38880-39057]"
+    }, {
+      "left" : "while(lCursor.moveToNext())",
+      "right" : "while(lCursor.moveToNext())",
+      "info" : "WhileStatement[38906-39035]:WhileStatement[38906-39035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38934-39035]:Block[38934-39035]"
+    }, {
+      "left" : "lPresentCellID.put(lCursor.getInt(0), true );",
+      "right" : "lPresentCellID.put(lCursor.getInt(0), true );",
+      "info" : "ExpressionStatement[38964-39009]:ExpressionStatement[38964-39009]"
+    }, {
+      "left" : "lCursor.close();",
+      "right" : "lCursor.close();",
+      "info" : "ExpressionStatement[39078-39094]:ExpressionStatement[39078-39094]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[39116-39152]:ExpressionStatement[39116-39152]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setMax(lines);",
+      "right" : "AIMSICD.mProgressBar.setMax(lines);",
+      "info" : "ExpressionStatement[39173-39208]:ExpressionStatement[39173-39208]"
+    }, {
+      "left" : "for (int i = 1; i < lines; i++)",
+      "right" : "for (int i = 1; i < lines; i++)",
+      "info" : "ForStatement[39229-41686]:ForStatement[39229-41686]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39261-41686]:Block[39261-41686]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(i);",
+      "right" : "AIMSICD.mProgressBar.setProgress(i);",
+      "info" : "ExpressionStatement[39287-39323]:ExpressionStatement[39287-39323]"
+    }, {
+      "left" : "if(lPresentCellID.get(Integer.parseInt(csvCellID.get(i)[5]), false))",
+      "right" : "if(lPresentCellID.get(Integer.parseInt(csvCellID.get(i)[5]), false))",
+      "info" : "IfStatement[39514-39648]:IfStatement[39514-39648]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39583-39648]:Block[39583-39648]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[39613-39622]:ContinueStatement[39613-39622]"
+    }, {
+      "left" : "insertOpenCell( Double.parseDouble(csvCellID.get(i)[0]), // gps_lat\n                                        Double.parseDouble(csvCellID.get(i)[1]), // gps_lon\n                                        Integer.parseInt(csvCellID.get(i)[2]),   // MCC\n                                        Integer.parseInt(csvCellID.get(i)[3]),   // MNC\n                                        Integer.parseInt(csvCellID.get(i)[4]),   // LAC\n                                        Integer.parseInt(csvCellID.get(i)[5]),   // CID (cellid) ?\n                                        Integer.parseInt(csvCellID.get(i)[6]),   // avg_signal [dBm]\n                                        Integer.parseInt(csvCellID.get(i)[7]),   // avg_range [m]\n                                        Integer.parseInt(csvCellID.get(i)[8]),   // samples\n                                        Integer.parseInt(csvCellID.get(i)[9]),   // isGPSexact\n                                        String.valueOf(csvCellID.get(i)[10]),     // RAT\n                                        false\n                                        //Integer.parseInt(csvCellID.get(i)[11]), // --- RNC\n                                        //Integer.parseInt(csvCellID.get(i)[12]), // --- (cid) ?\n                                        //Integer.parseInt(csvCellID.get(i)[13]), // --- PSC\n                                        //Integer.parseInt(csvCellID.get(i)[14]), // --- TAC\n                                        //Integer.parseInt(csvCellID.get(i)[15]), // --- PCI\n                                        //Integer.parseInt(csvCellID.get(i)[16]), // --- SID\n                                        //Integer.parseInt(csvCellID.get(i)[17]), // --- NID\n                                        //Integer.parseInt(csvCellID.get(i)[18]), // --- BID\n\n                        );",
+      "right" : "insertOpenCell( Double.parseDouble(csvCellID.get(i)[0]), // gps_lat\n                                        Double.parseDouble(csvCellID.get(i)[1]), // gps_lon\n                                        Integer.parseInt(csvCellID.get(i)[2]),   // MCC\n                                        Integer.parseInt(csvCellID.get(i)[3]),   // MNC\n                                        Integer.parseInt(csvCellID.get(i)[4]),   // LAC\n                                        Integer.parseInt(csvCellID.get(i)[5]),   // CID (cellid) ?\n                                        Integer.parseInt(csvCellID.get(i)[6]),   // avg_signal [dBm]\n                                        Integer.parseInt(csvCellID.get(i)[7]),   // avg_range [m]\n                                        Integer.parseInt(csvCellID.get(i)[8]),   // samples\n                                        Integer.parseInt(csvCellID.get(i)[9]),   // isGPSexact\n                                        String.valueOf(csvCellID.get(i)[10]),     // RAT\n                                        false\n                                        //Integer.parseInt(csvCellID.get(i)[11]), // --- RNC\n                                        //Integer.parseInt(csvCellID.get(i)[12]), // --- (cid) ?\n                                        //Integer.parseInt(csvCellID.get(i)[13]), // --- PSC\n                                        //Integer.parseInt(csvCellID.get(i)[14]), // --- TAC\n                                        //Integer.parseInt(csvCellID.get(i)[15]), // --- PCI\n                                        //Integer.parseInt(csvCellID.get(i)[16]), // --- SID\n                                        //Integer.parseInt(csvCellID.get(i)[17]), // --- NID\n                                        //Integer.parseInt(csvCellID.get(i)[18]), // --- BID\n\n                        );",
+      "info" : "ExpressionStatement[39845-41664]:ExpressionStatement[39845-41664]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[41731-41743]:ReturnStatement[41731-41743]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41774-41896]:Block[41774-41896]"
+    }, {
+      "left" : "Log.e(TAG, mTAG + \": Error parsing OpenCellID data: \" + e.getMessage());",
+      "right" : "Log.e(TAG, mTAG + \": Error parsing OpenCellID data: \" + e.getMessage());",
+      "info" : "ExpressionStatement[41788-41860]:ExpressionStatement[41788-41860]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[41873-41886]:ReturnStatement[41873-41886]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[41905-41965]:Block[41905-41965]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[41919-41955]:ExpressionStatement[41919-41955]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[42671-42677]:Modifier[42671-42677]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[42678-42685]:PrimitiveType[42678-42685]"
+    }, {
+      "left" : "restoreDB",
+      "right" : "restoreDB",
+      "info" : "SimpleName[42686-42695]:SimpleName[42686-42695]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42698-48607]:Block[42698-48607]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[42708-48600]:TryStatement[42708-48600]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42712-48420]:Block[42712-48420]"
+    }, {
+      "left" : "for (String table : mTables)",
+      "right" : "for (String table : mTables)",
+      "info" : "EnhancedForStatement[42726-48385]:EnhancedForStatement[42726-48385]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42755-48385]:Block[42755-48385]"
+    }, {
+      "left" : "File file = new File(FOLDER + \"aimsicd-\" + table + \".csv\");",
+      "right" : "File file = new File(FOLDER + \"aimsicd-\" + table + \".csv\");",
+      "info" : "VariableDeclarationStatement[42773-42832]:VariableDeclarationStatement[42773-42832]"
+    }, {
+      "left" : "if (file.exists())",
+      "right" : "if (file.exists())",
+      "info" : "IfStatement[42849-48371]:IfStatement[42849-48371]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[42868-48371]:Block[42868-48371]"
+    }, {
+      "left" : "List<String[]> records = new ArrayList<>();",
+      "right" : "List<String[]> records = new ArrayList<>();",
+      "info" : "VariableDeclarationStatement[42890-42933]:VariableDeclarationStatement[42890-42933]"
+    }, {
+      "left" : "String next[];",
+      "right" : "String next[];",
+      "info" : "VariableDeclarationStatement[42954-42968]:VariableDeclarationStatement[42954-42968]"
+    }, {
+      "left" : "CSVReader csvReader = new CSVReader(new FileReader(file));",
+      "right" : "CSVReader csvReader = new CSVReader(new FileReader(file));",
+      "info" : "VariableDeclarationStatement[42989-43047]:VariableDeclarationStatement[42989-43047]"
+    }, {
+      "left" : "while ((next = csvReader.readNext()) != null)",
+      "right" : "while ((next = csvReader.readNext()) != null)",
+      "info" : "WhileStatement[43068-43180]:WhileStatement[43068-43180]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[43114-43180]:Block[43114-43180]"
+    }, {
+      "left" : "records.add(next);",
+      "right" : "records.add(next);",
+      "info" : "ExpressionStatement[43140-43158]:ExpressionStatement[43140-43158]"
+    }, {
+      "left" : "if (!records.isEmpty())",
+      "right" : "if (!records.isEmpty())",
+      "info" : "IfStatement[43202-48353]:IfStatement[43202-48353]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[43226-48353]:Block[43226-48353]"
+    }, {
+      "left" : "int lines = records.size();",
+      "right" : "int lines = records.size();",
+      "info" : "VariableDeclarationStatement[43252-43279]:VariableDeclarationStatement[43252-43279]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setMax(lines);",
+      "right" : "AIMSICD.mProgressBar.setMax(lines);",
+      "info" : "ExpressionStatement[43304-43339]:ExpressionStatement[43304-43339]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[43364-43400]:ExpressionStatement[43364-43400]"
+    }, {
+      "left" : "for (int i = 1; i < lines; i++)",
+      "right" : "for (int i = 1; i < lines; i++)",
+      "info" : "ForStatement[43425-48331]:ForStatement[43425-48331]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[43457-48331]:Block[43457-48331]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(i);",
+      "right" : "AIMSICD.mProgressBar.setProgress(i);",
+      "info" : "ExpressionStatement[43487-43523]:ExpressionStatement[43487-43523]"
+    }, {
+      "left" : "switch (table) {\n\n                                case CELL_TABLE:\n                                    insertCell(\n                                            // Bug here? (10,11,12,13)?\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            Integer.valueOf(records.get(i)[7]),     // Mcc\n                                            Integer.valueOf(records.get(i)[8]),     // Mnc\n                                            Double.valueOf(records.get(i)[9]),      // Accuracy (REAL)\n                                            Double.valueOf(records.get(i)[10]),     // Speed (REAL)\n                                            Double.valueOf(records.get(i)[11]),     // Direction (REAL)\n                                            String.valueOf(records.get(i)[12]),     // NetworkType\n                                            Long.valueOf(records.get(i)[13])        // ? MeasurementTaken (VARCHAR??)\n                                            //Integer.valueOf(records.get(i)[14]));   // ? OCID_SUBMITTED\n                                            // ? Timestamp\n                                    );\n                                    break;\n\n                                case LOCATION_TABLE:\n                                    insertLocation(\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            String.valueOf(records.get(i)[7])       // Connection\n                                    );\n                                    break;\n\n                                case OPENCELLID_TABLE:\n                                    insertOpenCell(\n                                            // not sure about the naming of these, need CHECK!\n                                            Double.parseDouble(records.get(i)[1]),  // lat\n                                            Double.parseDouble(records.get(i)[2]),  // lng\n                                            Integer.parseInt(records.get(i)[3]),    // mcc\n                                            Integer.parseInt(records.get(i)[4]),    // mnc\n                                            Integer.parseInt(records.get(i)[5]),    // lac\n                                            Integer.parseInt(records.get(i)[6]),    // cid\n                                            Integer.parseInt(records.get(i)[7]),    // avg_sig..\n                                            Integer.parseInt(records.get(i)[8]),    // ); range\n                                            Integer.parseInt(records.get(i)[9]),    // new  samples\n                                            Integer.parseInt(records.get(i)[10]),   // new  isGPSexact\n                                            String.valueOf(records.get(i)[11])      // new  RAT\n                                            //Integer.parseInt(records.get(i)[12]),   // new  rej_cause\n                                    );\n                                    break;\n\n                                case SILENT_SMS_TABLE:\n                                    Bundle bundle = new Bundle();\n                                    bundle.putString(\"address\",         String.valueOf(records.get(i)[1]));\n                                    bundle.putString(\"display_address\", String.valueOf(records.get(i)[2]));\n                                    bundle.putString(\"message_class\",   String.valueOf(records.get(i)[3]));\n                                    bundle.putString(\"service_centre\",  String.valueOf(records.get(i)[4]));\n                                    bundle.putString(\"message\",         String.valueOf(records.get(i)[5]));\n                                    insertSilentSms(bundle);\n                                    break;\n                            }",
+      "right" : "switch (table) {\n\n                                case CELL_TABLE:\n                                    insertCell(\n                                            // Bug here? (10,11,12,13)?\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            Integer.valueOf(records.get(i)[7]),     // Mcc\n                                            Integer.valueOf(records.get(i)[8]),     // Mnc\n                                            Double.valueOf(records.get(i)[9]),      // Accuracy (REAL)\n                                            Double.valueOf(records.get(i)[10]),     // Speed (REAL)\n                                            Double.valueOf(records.get(i)[11]),     // Direction (REAL)\n                                            String.valueOf(records.get(i)[12]),     // NetworkType\n                                            Long.valueOf(records.get(i)[13])        // ? MeasurementTaken (VARCHAR??)\n                                            //Integer.valueOf(records.get(i)[14]));   // ? OCID_SUBMITTED\n                                            // ? Timestamp\n                                    );\n                                    break;\n\n                                case LOCATION_TABLE:\n                                    insertLocation(\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            String.valueOf(records.get(i)[7])       // Connection\n                                    );\n                                    break;\n\n                                case OPENCELLID_TABLE:\n                                    insertOpenCell(\n                                            // not sure about the naming of these, need CHECK!\n                                            Double.parseDouble(records.get(i)[1]),  // lat\n                                            Double.parseDouble(records.get(i)[2]),  // lng\n                                            Integer.parseInt(records.get(i)[3]),    // mcc\n                                            Integer.parseInt(records.get(i)[4]),    // mnc\n                                            Integer.parseInt(records.get(i)[5]),    // lac\n                                            Integer.parseInt(records.get(i)[6]),    // cid\n                                            Integer.parseInt(records.get(i)[7]),    // avg_sig..\n                                            Integer.parseInt(records.get(i)[8]),    // ); range\n                                            Integer.parseInt(records.get(i)[9]),    // new  samples\n                                            Integer.parseInt(records.get(i)[10]),   // new  isGPSexact\n                                            String.valueOf(records.get(i)[11])      // new  RAT\n                                            //Integer.parseInt(records.get(i)[12]),   // new  rej_cause\n                                    );\n                                    break;\n\n                                case SILENT_SMS_TABLE:\n                                    Bundle bundle = new Bundle();\n                                    bundle.putString(\"address\",         String.valueOf(records.get(i)[1]));\n                                    bundle.putString(\"display_address\", String.valueOf(records.get(i)[2]));\n                                    bundle.putString(\"message_class\",   String.valueOf(records.get(i)[3]));\n                                    bundle.putString(\"service_centre\",  String.valueOf(records.get(i)[4]));\n                                    bundle.putString(\"message\",         String.valueOf(records.get(i)[5]));\n                                    insertSilentSms(bundle);\n                                    break;\n                            }",
+      "info" : "SwitchStatement[43552-48304]:SwitchStatement[43552-48304]"
+    }, {
+      "left" : "case CELL_TABLE:",
+      "right" : "case CELL_TABLE:",
+      "info" : "SwitchCase[43602-43618]:SwitchCase[43602-43618]"
+    }, {
+      "left" : "insertCell(\n                                            // Bug here? (10,11,12,13)?\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            Integer.valueOf(records.get(i)[7]),     // Mcc\n                                            Integer.valueOf(records.get(i)[8]),     // Mnc\n                                            Double.valueOf(records.get(i)[9]),      // Accuracy (REAL)\n                                            Double.valueOf(records.get(i)[10]),     // Speed (REAL)\n                                            Double.valueOf(records.get(i)[11]),     // Direction (REAL)\n                                            String.valueOf(records.get(i)[12]),     // NetworkType\n                                            Long.valueOf(records.get(i)[13])        // ? MeasurementTaken (VARCHAR??)\n                                            //Integer.valueOf(records.get(i)[14]));   // ? OCID_SUBMITTED\n                                            // ? Timestamp\n                                    );",
+      "right" : "insertCell(\n                                            // Bug here? (10,11,12,13)?\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            Integer.valueOf(records.get(i)[7]),     // Mcc\n                                            Integer.valueOf(records.get(i)[8]),     // Mnc\n                                            Double.valueOf(records.get(i)[9]),      // Accuracy (REAL)\n                                            Double.valueOf(records.get(i)[10]),     // Speed (REAL)\n                                            Double.valueOf(records.get(i)[11]),     // Direction (REAL)\n                                            String.valueOf(records.get(i)[12]),     // NetworkType\n                                            Long.valueOf(records.get(i)[13])        // ? MeasurementTaken (VARCHAR??)\n                                            //Integer.valueOf(records.get(i)[14]));   // ? OCID_SUBMITTED\n                                            // ? Timestamp\n                                    );",
+      "info" : "ExpressionStatement[43655-45200]:ExpressionStatement[43655-45200]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[45237-45243]:BreakStatement[45237-45243]"
+    }, {
+      "left" : "case LOCATION_TABLE:",
+      "right" : "case LOCATION_TABLE:",
+      "info" : "SwitchCase[45277-45297]:SwitchCase[45277-45297]"
+    }, {
+      "left" : "insertLocation(\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            String.valueOf(records.get(i)[7])       // Connection\n                                    );",
+      "right" : "insertLocation(\n                                            Integer.parseInt(records.get(i)[1]),    // Lac\n                                            Integer.parseInt(records.get(i)[2]),    // CellID\n                                            Integer.parseInt(records.get(i)[3]),    // Net\n                                            Double.parseDouble(records.get(i)[4]),  // Lat\n                                            Double.parseDouble(records.get(i)[5]),  // Lng\n                                            Integer.parseInt(records.get(i)[6]),    // Signal\n                                            String.valueOf(records.get(i)[7])       // Connection\n                                    );",
+      "info" : "ExpressionStatement[45334-46038]:ExpressionStatement[45334-46038]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[46075-46081]:BreakStatement[46075-46081]"
+    }, {
+      "left" : "case OPENCELLID_TABLE:",
+      "right" : "case OPENCELLID_TABLE:",
+      "info" : "SwitchCase[46115-46137]:SwitchCase[46115-46137]"
+    }, {
+      "left" : "insertOpenCell(\n                                            // not sure about the naming of these, need CHECK!\n                                            Double.parseDouble(records.get(i)[1]),  // lat\n                                            Double.parseDouble(records.get(i)[2]),  // lng\n                                            Integer.parseInt(records.get(i)[3]),    // mcc\n                                            Integer.parseInt(records.get(i)[4]),    // mnc\n                                            Integer.parseInt(records.get(i)[5]),    // lac\n                                            Integer.parseInt(records.get(i)[6]),    // cid\n                                            Integer.parseInt(records.get(i)[7]),    // avg_sig..\n                                            Integer.parseInt(records.get(i)[8]),    // ); range\n                                            Integer.parseInt(records.get(i)[9]),    // new  samples\n                                            Integer.parseInt(records.get(i)[10]),   // new  isGPSexact\n                                            String.valueOf(records.get(i)[11])      // new  RAT\n                                            //Integer.parseInt(records.get(i)[12]),   // new  rej_cause\n                                    );",
+      "right" : "insertOpenCell(\n                                            // not sure about the naming of these, need CHECK!\n                                            Double.parseDouble(records.get(i)[1]),  // lat\n                                            Double.parseDouble(records.get(i)[2]),  // lng\n                                            Integer.parseInt(records.get(i)[3]),    // mcc\n                                            Integer.parseInt(records.get(i)[4]),    // mnc\n                                            Integer.parseInt(records.get(i)[5]),    // lac\n                                            Integer.parseInt(records.get(i)[6]),    // cid\n                                            Integer.parseInt(records.get(i)[7]),    // avg_sig..\n                                            Integer.parseInt(records.get(i)[8]),    // ); range\n                                            Integer.parseInt(records.get(i)[9]),    // new  samples\n                                            Integer.parseInt(records.get(i)[10]),   // new  isGPSexact\n                                            String.valueOf(records.get(i)[11])      // new  RAT\n                                            //Integer.parseInt(records.get(i)[12]),   // new  rej_cause\n                                    );",
+      "info" : "ExpressionStatement[46174-47465]:ExpressionStatement[46174-47465]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[47502-47508]:BreakStatement[47502-47508]"
+    }, {
+      "left" : "case SILENT_SMS_TABLE:",
+      "right" : "case SILENT_SMS_TABLE:",
+      "info" : "SwitchCase[47542-47564]:SwitchCase[47542-47564]"
+    }, {
+      "left" : "Bundle bundle = new Bundle();",
+      "right" : "Bundle bundle = new Bundle();",
+      "info" : "VariableDeclarationStatement[47601-47630]:VariableDeclarationStatement[47601-47630]"
+    }, {
+      "left" : "bundle.putString(\"address\",         String.valueOf(records.get(i)[1]));",
+      "right" : "bundle.putString(\"address\",         String.valueOf(records.get(i)[1]));",
+      "info" : "ExpressionStatement[47667-47738]:ExpressionStatement[47667-47738]"
+    }, {
+      "left" : "bundle.putString(\"display_address\", String.valueOf(records.get(i)[2]));",
+      "right" : "bundle.putString(\"display_address\", String.valueOf(records.get(i)[2]));",
+      "info" : "ExpressionStatement[47775-47846]:ExpressionStatement[47775-47846]"
+    }, {
+      "left" : "bundle.putString(\"message_class\",   String.valueOf(records.get(i)[3]));",
+      "right" : "bundle.putString(\"message_class\",   String.valueOf(records.get(i)[3]));",
+      "info" : "ExpressionStatement[47883-47954]:ExpressionStatement[47883-47954]"
+    }, {
+      "left" : "bundle.putString(\"service_centre\",  String.valueOf(records.get(i)[4]));",
+      "right" : "bundle.putString(\"service_centre\",  String.valueOf(records.get(i)[4]));",
+      "info" : "ExpressionStatement[47991-48062]:ExpressionStatement[47991-48062]"
+    }, {
+      "left" : "bundle.putString(\"message\",         String.valueOf(records.get(i)[5]));",
+      "right" : "bundle.putString(\"message\",         String.valueOf(records.get(i)[5]));",
+      "info" : "ExpressionStatement[48099-48170]:ExpressionStatement[48099-48170]"
+    }, {
+      "left" : "insertSilentSms(bundle);",
+      "right" : "insertSilentSms(bundle);",
+      "info" : "ExpressionStatement[48207-48231]:ExpressionStatement[48207-48231]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[48268-48274]:BreakStatement[48268-48274]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[48398-48410]:ReturnStatement[48398-48410]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[48441-48531]:Block[48441-48531]"
+    }, {
+      "left" : "Log.e(TAG, mTAG + \": restoreDB() \" + e);",
+      "right" : "Log.e(TAG, mTAG + \": restoreDB() \" + e);",
+      "info" : "ExpressionStatement[48455-48495]:ExpressionStatement[48455-48495]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[48508-48521]:ReturnStatement[48508-48521]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[48540-48600]:Block[48540-48600]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[48554-48590]:ExpressionStatement[48554-48590]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[49961-49968]:Modifier[49961-49968]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[49969-49973]:PrimitiveType[49969-49973]"
+    }, {
+      "left" : "dumpDB",
+      "right" : "dumpDB",
+      "info" : "SimpleName[49974-49980]:SimpleName[49974-49980]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[49984-50974]:Block[49984-50974]"
+    }, {
+      "left" : "File dumpdir = new File(FOLDER);",
+      "right" : "File dumpdir = new File(FOLDER);",
+      "info" : "VariableDeclarationStatement[49994-50026]:VariableDeclarationStatement[49994-50026]"
+    }, {
+      "left" : "File file = new File(dumpdir, \"aimsicd_dump.db\");",
+      "right" : "File file = new File(dumpdir, \"aimsicd_dump.db\");",
+      "info" : "VariableDeclarationStatement[50082-50131]:VariableDeclarationStatement[50082-50131]"
+    }, {
+      "left" : "String aimdir = \"/data/data/com.SecUpwN.AIMSICD/databases/\";",
+      "right" : "String aimdir = \"/data/data/com.SecUpwN.AIMSICD/databases/\";",
+      "info" : "VariableDeclarationStatement[50162-50222]:VariableDeclarationStatement[50162-50222]"
+    }, {
+      "left" : "String execString = \"/system/xbin/sqlite3 \" + aimdir + \"aimsicd.db '.backup \" + file + \"'\";",
+      "right" : "String execString = \"/system/xbin/sqlite3 \" + aimdir + \"aimsicd.db '.backup \" + file + \"'\";",
+      "info" : "VariableDeclarationStatement[50310-50401]:VariableDeclarationStatement[50310-50401]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[50411-50899]:TryStatement[50411-50899]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[50415-50787]:Block[50415-50787]"
+    }, {
+      "left" : "Log.i(TAG, mTAG + \":dumpDB() Attempting to dump DB to: \" + file + \"\\nUsing: \\\"\" + execString + \"\\\"\\n\");",
+      "right" : "Log.i(TAG, mTAG + \":dumpDB() Attempting to dump DB to: \" + file + \"\\nUsing: \\\"\" + execString + \"\\\"\\n\");",
+      "info" : "ExpressionStatement[50429-50532]:ExpressionStatement[50429-50532]"
+    }, {
+      "left" : "CMDProcessor.runSuCommand(execString);",
+      "right" : "CMDProcessor.runSuCommand(execString);",
+      "info" : "ExpressionStatement[50586-50624]:ExpressionStatement[50586-50624]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[50808-50899]:Block[50808-50899]"
+    }, {
+      "left" : "Log.e(TAG, mTAG + \":dumpDB() Failed to export DB dump file: \" + e);",
+      "right" : "Log.e(TAG, mTAG + \":dumpDB() Failed to export DB dump file: \" + e);",
+      "info" : "ExpressionStatement[50822-50889]:ExpressionStatement[50822-50889]"
+    }, {
+      "left" : "Log.i(TAG, mTAG + \":dumpDB() Database dumped to: \" + file);",
+      "right" : "Log.i(TAG, mTAG + \":dumpDB() Database dumped to: \" + file);",
+      "info" : "ExpressionStatement[50908-50967]:ExpressionStatement[50908-50967]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[51358-51364]:Modifier[51358-51364]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[51365-51372]:PrimitiveType[51365-51372]"
+    }, {
+      "left" : "backupDB",
+      "right" : "backupDB",
+      "info" : "SimpleName[51373-51381]:SimpleName[51373-51381]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[51384-51720]:Block[51384-51720]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[51394-51714]:TryStatement[51394-51714]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[51398-51594]:Block[51398-51594]"
+    }, {
+      "left" : "for (String table : mTables)",
+      "right" : "for (String table : mTables)",
+      "info" : "EnhancedForStatement[51412-51487]:EnhancedForStatement[51412-51487]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[51441-51487]:Block[51441-51487]"
+    }, {
+      "left" : "backup(table);",
+      "right" : "backup(table);",
+      "info" : "ExpressionStatement[51459-51473]:ExpressionStatement[51459-51473]"
+    }, {
+      "left" : "if (MONO_DB_DUMP)",
+      "right" : "if (MONO_DB_DUMP)",
+      "info" : "IfStatement[51500-51559]:IfStatement[51500-51559]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[51518-51559]:Block[51518-51559]"
+    }, {
+      "left" : "dumpDB();",
+      "right" : "dumpDB();",
+      "info" : "ExpressionStatement[51536-51545]:ExpressionStatement[51536-51545]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[51572-51584]:ReturnStatement[51572-51584]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[51617-51714]:Block[51617-51714]"
+    }, {
+      "left" : "Log.e(TAG, mTAG + \":backupDB() Error: \" + ioe);",
+      "right" : "Log.e(TAG, mTAG + \":backupDB() Error: \" + ioe);",
+      "info" : "ExpressionStatement[51631-51678]:ExpressionStatement[51631-51678]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[51691-51704]:ReturnStatement[51691-51704]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[52056-52063]:Modifier[52056-52063]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[52064-52068]:PrimitiveType[52064-52068]"
+    }, {
+      "left" : "backup",
+      "right" : "backup",
+      "info" : "SimpleName[52069-52075]:SimpleName[52069-52075]"
+    }, {
+      "left" : "String tableName",
+      "right" : "String tableName",
+      "info" : "SingleVariableDeclaration[52076-52092]:SingleVariableDeclaration[52076-52092]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[52094-53482]:Block[52094-53482]"
+    }, {
+      "left" : "Log.i(TAG, mTAG + \": Database Backup: \" + DB_NAME);",
+      "right" : "Log.i(TAG, mTAG + \": Database Backup: \" + DB_NAME);",
+      "info" : "ExpressionStatement[52104-52155]:ExpressionStatement[52104-52155]"
+    }, {
+      "left" : "File dir = new File(FOLDER);",
+      "right" : "File dir = new File(FOLDER);",
+      "info" : "VariableDeclarationStatement[52165-52193]:VariableDeclarationStatement[52165-52193]"
+    }, {
+      "left" : "if (!dir.exists())",
+      "right" : "if (!dir.exists())",
+      "info" : "IfStatement[52202-52238]:IfStatement[52202-52238]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[52221-52238]:Block[52221-52238]"
+    }, {
+      "left" : "dir.mkdirs();",
+      "right" : "dir.mkdirs();",
+      "info" : "ExpressionStatement[52223-52236]:ExpressionStatement[52223-52236]"
+    }, {
+      "left" : "File file = new File(dir, \"aimsicd-\" + tableName + \".csv\");",
+      "right" : "File file = new File(dir, \"aimsicd-\" + tableName + \".csv\");",
+      "info" : "VariableDeclarationStatement[52305-52364]:VariableDeclarationStatement[52305-52364]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[52374-53417]:TryStatement[52374-53417]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[52378-53234]:Block[52378-53234]"
+    }, {
+      "left" : "file.createNewFile();",
+      "right" : "file.createNewFile();",
+      "info" : "ExpressionStatement[52392-52413]:ExpressionStatement[52392-52413]"
+    }, {
+      "left" : "CSVWriter csvWrite = new CSVWriter(new FileWriter(file));",
+      "right" : "CSVWriter csvWrite = new CSVWriter(new FileWriter(file));",
+      "info" : "VariableDeclarationStatement[52426-52483]:VariableDeclarationStatement[52426-52483]"
+    }, {
+      "left" : "Log.d(TAG, mTAG + \": table name \" + tableName);",
+      "right" : "Log.d(TAG, mTAG + \": table name \" + tableName);",
+      "info" : "ExpressionStatement[52496-52543]:ExpressionStatement[52496-52543]"
+    }, {
+      "left" : "open();",
+      "right" : "open();",
+      "info" : "ExpressionStatement[52556-52563]:ExpressionStatement[52556-52563]"
+    }, {
+      "left" : "Cursor c = mDb.rawQuery(\"SELECT * FROM \" + tableName, new String[0]);",
+      "right" : "Cursor c = mDb.rawQuery(\"SELECT * FROM \" + tableName, new String[0]);",
+      "info" : "VariableDeclarationStatement[52576-52645]:VariableDeclarationStatement[52576-52645]"
+    }, {
+      "left" : "csvWrite.writeNext(c.getColumnNames());",
+      "right" : "csvWrite.writeNext(c.getColumnNames());",
+      "info" : "ExpressionStatement[52659-52698]:ExpressionStatement[52659-52698]"
+    }, {
+      "left" : "String[] rowData = new String[c.getColumnCount()];",
+      "right" : "String[] rowData = new String[c.getColumnCount()];",
+      "info" : "VariableDeclarationStatement[52711-52761]:VariableDeclarationStatement[52711-52761]"
+    }, {
+      "left" : "int size = c.getColumnCount();",
+      "right" : "int size = c.getColumnCount();",
+      "info" : "VariableDeclarationStatement[52774-52804]:VariableDeclarationStatement[52774-52804]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[52817-52853]:ExpressionStatement[52817-52853]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setMax(size);",
+      "right" : "AIMSICD.mProgressBar.setMax(size);",
+      "info" : "ExpressionStatement[52866-52900]:ExpressionStatement[52866-52900]"
+    }, {
+      "left" : "while (c.moveToNext())",
+      "right" : "while (c.moveToNext())",
+      "info" : "WhileStatement[52913-53169]:WhileStatement[52913-53169]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[52936-53169]:Block[52936-53169]"
+    }, {
+      "left" : "for (int i = 0; i < size; i++)",
+      "right" : "for (int i = 0; i < size; i++)",
+      "info" : "ForStatement[52954-53110]:ForStatement[52954-53110]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[52985-53110]:Block[52985-53110]"
+    }, {
+      "left" : "rowData[i] = c.getString(i);",
+      "right" : "rowData[i] = c.getString(i);",
+      "info" : "ExpressionStatement[53007-53035]:ExpressionStatement[53007-53035]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(i);",
+      "right" : "AIMSICD.mProgressBar.setProgress(i);",
+      "info" : "ExpressionStatement[53056-53092]:ExpressionStatement[53056-53092]"
+    }, {
+      "left" : "csvWrite.writeNext(rowData);",
+      "right" : "csvWrite.writeNext(rowData);",
+      "info" : "ExpressionStatement[53127-53155]:ExpressionStatement[53127-53155]"
+    }, {
+      "left" : "csvWrite.close();",
+      "right" : "csvWrite.close();",
+      "info" : "ExpressionStatement[53183-53200]:ExpressionStatement[53183-53200]"
+    }, {
+      "left" : "c.close();",
+      "right" : "c.close();",
+      "info" : "ExpressionStatement[53213-53223]:ExpressionStatement[53213-53223]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[53255-53348]:Block[53255-53348]"
+    }, {
+      "left" : "Log.e(TAG, mTAG + \": Error exporting table: \" + tableName + \" \" + e);",
+      "right" : "Log.e(TAG, mTAG + \": Error exporting table: \" + tableName + \" \" + e);",
+      "info" : "ExpressionStatement[53269-53338]:ExpressionStatement[53269-53338]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[53357-53417]:Block[53357-53417]"
+    }, {
+      "left" : "AIMSICD.mProgressBar.setProgress(0);",
+      "right" : "AIMSICD.mProgressBar.setProgress(0);",
+      "info" : "ExpressionStatement[53371-53407]:ExpressionStatement[53371-53407]"
+    }, {
+      "left" : "Log.i(TAG, mTAG + \": Database Export complete.\");",
+      "right" : "Log.i(TAG, mTAG + \": Database Export complete.\");",
+      "info" : "ExpressionStatement[53427-53476]:ExpressionStatement[53427-53476]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[55724-55730]:Modifier[55724-55730]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[55731-55735]:PrimitiveType[55731-55735]"
+    }, {
+      "left" : "checkDBe",
+      "right" : "checkDBe",
+      "info" : "SimpleName[55736-55744]:SimpleName[55736-55744]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[55747-58868]:Block[55747-58868]"
+    }, {
+      "left" : "int tf_settings=30;",
+      "right" : "int tf_settings=30;",
+      "info" : "VariableDeclarationStatement[55837-55856]:VariableDeclarationStatement[55837-55856]"
+    }, {
+      "left" : "int min_gps_precision=50;",
+      "right" : "int min_gps_precision=50;",
+      "info" : "VariableDeclarationStatement[55942-55967]:VariableDeclarationStatement[55942-55967]"
+    }, {
+      "left" : "String sqlq;",
+      "right" : "String sqlq;",
+      "info" : "VariableDeclarationStatement[56032-56044]:VariableDeclarationStatement[56032-56044]"
+    }, {
+      "left" : "Log.d(TAG, mTAG + \":checkDBe() Attempting to delete bad import data from DBe_import table...\");",
+      "right" : "Log.d(TAG, mTAG + \":checkDBe() Attempting to delete bad import data from DBe_import table...\");",
+      "info" : "ExpressionStatement[56280-56375]:ExpressionStatement[56280-56375]"
+    }, {
+      "left" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE Samples < 1\";",
+      "right" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE Samples < 1\";",
+      "info" : "ExpressionStatement[56428-56492]:ExpressionStatement[56428-56492]"
+    }, {
+      "left" : "mDb.execSQL(sqlq);",
+      "right" : "mDb.execSQL(sqlq);",
+      "info" : "ExpressionStatement[56501-56519]:ExpressionStatement[56501-56519]"
+    }, {
+      "left" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE Lac < 1\";",
+      "right" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE Lac < 1\";",
+      "info" : "ExpressionStatement[56838-56898]:ExpressionStatement[56838-56898]"
+    }, {
+      "left" : "mDb.execSQL(sqlq);",
+      "right" : "mDb.execSQL(sqlq);",
+      "info" : "ExpressionStatement[56907-56925]:ExpressionStatement[56907-56925]"
+    }, {
+      "left" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE Lac > 65534\";",
+      "right" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE Lac > 65534\";",
+      "info" : "ExpressionStatement[57089-57153]:ExpressionStatement[57089-57153]"
+    }, {
+      "left" : "mDb.execSQL(sqlq);",
+      "right" : "mDb.execSQL(sqlq);",
+      "info" : "ExpressionStatement[57162-57180]:ExpressionStatement[57162-57180]"
+    }, {
+      "left" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE CellID < 1\";",
+      "right" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE CellID < 1\";",
+      "info" : "ExpressionStatement[57451-57514]:ExpressionStatement[57451-57514]"
+    }, {
+      "left" : "mDb.execSQL(sqlq);",
+      "right" : "mDb.execSQL(sqlq);",
+      "info" : "ExpressionStatement[57523-57541]:ExpressionStatement[57523-57541]"
+    }, {
+      "left" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE CellID > 268435455\";",
+      "right" : "sqlq = \"DELETE FROM \" + OPENCELLID_TABLE + \" WHERE CellID > 268435455\";",
+      "info" : "ExpressionStatement[57744-57815]:ExpressionStatement[57744-57815]"
+    }, {
+      "left" : "mDb.execSQL(sqlq);",
+      "right" : "mDb.execSQL(sqlq);",
+      "info" : "ExpressionStatement[57824-57842]:ExpressionStatement[57824-57842]"
+    }, {
+      "left" : "Log.i(TAG, mTAG + \":checkDBe() Deleted BTS entries from DBe_import table with bad LAC/CID...\");",
+      "right" : "Log.i(TAG, mTAG + \":checkDBe() Deleted BTS entries from DBe_import table with bad LAC/CID...\");",
+      "info" : "ExpressionStatement[58057-58152]:ExpressionStatement[58057-58152]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[59101-59107]:Modifier[59101-59107]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[59108-59112]:PrimitiveType[59108-59112]"
+    }, {
+      "left" : "cleanseCellStrengthTables",
+      "right" : "cleanseCellStrengthTables",
+      "info" : "SimpleName[59113-59138]:SimpleName[59113-59138]"
+    }, {
+      "left" : "long maxTime",
+      "right" : "long maxTime",
+      "info" : "SingleVariableDeclaration[59139-59151]:SingleVariableDeclaration[59139-59151]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[59153-59347]:Block[59153-59347]"
+    }, {
+      "left" : "Log.d(TAG, mTAG + \": Cleaning \" + CELL_SIGNAL_TABLE + \" WHERE timestamp < \" + maxTime);",
+      "right" : "Log.d(TAG, mTAG + \": Cleaning \" + CELL_SIGNAL_TABLE + \" WHERE timestamp < \" + maxTime);",
+      "info" : "ExpressionStatement[59163-59250]:ExpressionStatement[59163-59250]"
+    }, {
+      "left" : "mDb.execSQL(\"DELETE FROM \" + CELL_SIGNAL_TABLE + \" WHERE timestamp < \" + maxTime);",
+      "right" : "mDb.execSQL(\"DELETE FROM \" + CELL_SIGNAL_TABLE + \" WHERE timestamp < \" + maxTime);",
+      "info" : "ExpressionStatement[59259-59341]:ExpressionStatement[59259-59341]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[59353-59359]:Modifier[59353-59359]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[59360-59364]:PrimitiveType[59360-59364]"
+    }, {
+      "left" : "addSignalStrength",
+      "right" : "addSignalStrength",
+      "info" : "SimpleName[59365-59382]:SimpleName[59365-59382]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[59384-59394]:SingleVariableDeclaration[59384-59394]"
+    }, {
+      "left" : "int signal",
+      "right" : "int signal",
+      "info" : "SingleVariableDeclaration[59396-59406]:SingleVariableDeclaration[59396-59406]"
+    }, {
+      "left" : "Long timestamp",
+      "right" : "Long timestamp",
+      "info" : "SingleVariableDeclaration[59408-59422]:SingleVariableDeclaration[59408-59422]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[59425-59642]:Block[59425-59642]"
+    }, {
+      "left" : "ContentValues row = new ContentValues();",
+      "right" : "ContentValues row = new ContentValues();",
+      "info" : "VariableDeclarationStatement[59435-59475]:VariableDeclarationStatement[59435-59475]"
+    }, {
+      "left" : "row.put(\"cellID\", cellID);",
+      "right" : "row.put(\"cellID\", cellID);",
+      "info" : "ExpressionStatement[59484-59510]:ExpressionStatement[59484-59510]"
+    }, {
+      "left" : "row.put(\"signal\", signal);",
+      "right" : "row.put(\"signal\", signal);",
+      "info" : "ExpressionStatement[59519-59545]:ExpressionStatement[59519-59545]"
+    }, {
+      "left" : "row.put(\"timestamp\", timestamp);",
+      "right" : "row.put(\"timestamp\", timestamp);",
+      "info" : "ExpressionStatement[59554-59586]:ExpressionStatement[59554-59586]"
+    }, {
+      "left" : "mDb.insert(CELL_SIGNAL_TABLE, null, row);",
+      "right" : "mDb.insert(CELL_SIGNAL_TABLE, null, row);",
+      "info" : "ExpressionStatement[59595-59636]:ExpressionStatement[59595-59636]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[59648-59654]:Modifier[59648-59654]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[59655-59658]:PrimitiveType[59655-59658]"
+    }, {
+      "left" : "countSignalMeasurements",
+      "right" : "countSignalMeasurements",
+      "info" : "SimpleName[59659-59682]:SimpleName[59659-59682]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[59683-59693]:SingleVariableDeclaration[59683-59693]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[59695-59930]:Block[59695-59930]"
+    }, {
+      "left" : "Cursor c = mDb.rawQuery(\"SELECT COUNT(cellID) FROM \" + CELL_SIGNAL_TABLE +\" WHERE cellID=\" + cellID, new String[0]);",
+      "right" : "Cursor c = mDb.rawQuery(\"SELECT COUNT(cellID) FROM \" + CELL_SIGNAL_TABLE +\" WHERE cellID=\" + cellID, new String[0]);",
+      "info" : "VariableDeclarationStatement[59705-59821]:VariableDeclarationStatement[59705-59821]"
+    }, {
+      "left" : "c.moveToFirst();",
+      "right" : "c.moveToFirst();",
+      "info" : "ExpressionStatement[59830-59846]:ExpressionStatement[59830-59846]"
+    }, {
+      "left" : "int lAnswer = c.getInt(0);",
+      "right" : "int lAnswer = c.getInt(0);",
+      "info" : "VariableDeclarationStatement[59855-59881]:VariableDeclarationStatement[59855-59881]"
+    }, {
+      "left" : "c.close();",
+      "right" : "c.close();",
+      "info" : "ExpressionStatement[59890-59900]:ExpressionStatement[59890-59900]"
+    }, {
+      "left" : "return lAnswer;",
+      "right" : "return lAnswer;",
+      "info" : "ReturnStatement[59909-59924]:ReturnStatement[59909-59924]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[59936-59942]:Modifier[59936-59942]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[59943-59946]:PrimitiveType[59943-59946]"
+    }, {
+      "left" : "getAverageSignalStrength",
+      "right" : "getAverageSignalStrength",
+      "info" : "SimpleName[59947-59971]:SimpleName[59947-59971]"
+    }, {
+      "left" : "int cellID",
+      "right" : "int cellID",
+      "info" : "SingleVariableDeclaration[59972-59982]:SingleVariableDeclaration[59972-59982]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[59984-60217]:Block[59984-60217]"
+    }, {
+      "left" : "Cursor c = mDb.rawQuery(\"SELECT AVG(signal) FROM \" + CELL_SIGNAL_TABLE +\" WHERE cellID=\" + cellID, new String[0]);",
+      "right" : "Cursor c = mDb.rawQuery(\"SELECT AVG(signal) FROM \" + CELL_SIGNAL_TABLE +\" WHERE cellID=\" + cellID, new String[0]);",
+      "info" : "VariableDeclarationStatement[59994-60108]:VariableDeclarationStatement[59994-60108]"
+    }, {
+      "left" : "c.moveToFirst();",
+      "right" : "c.moveToFirst();",
+      "info" : "ExpressionStatement[60117-60133]:ExpressionStatement[60117-60133]"
+    }, {
+      "left" : "int lAnswer = c.getInt(0);",
+      "right" : "int lAnswer = c.getInt(0);",
+      "info" : "VariableDeclarationStatement[60142-60168]:VariableDeclarationStatement[60142-60168]"
+    }, {
+      "left" : "c.close();",
+      "right" : "c.close();",
+      "info" : "ExpressionStatement[60177-60187]:ExpressionStatement[60177-60187]"
+    }, {
+      "left" : "return lAnswer;",
+      "right" : "return lAnswer;",
+      "info" : "ReturnStatement[60196-60211]:ReturnStatement[60196-60211]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[60223-60229]:Modifier[60223-60229]"
+    }, {
+      "left" : "Cursor",
+      "right" : "Cursor",
+      "info" : "SimpleType[60230-60236]:SimpleType[60230-60236]"
+    }, {
+      "left" : "getSignalStrengthMeasurementData",
+      "right" : "getSignalStrengthMeasurementData",
+      "info" : "SimpleName[60237-60269]:SimpleName[60237-60269]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[60272-60413]:Block[60272-60413]"
+    }, {
+      "left" : "return mDb.rawQuery(\"SELECT cellID, signal, timestamp FROM \" + CELL_SIGNAL_TABLE +\" ORDER BY timestamp DESC\", new String[0]);",
+      "right" : "return mDb.rawQuery(\"SELECT cellID, signal, timestamp FROM \" + CELL_SIGNAL_TABLE +\" ORDER BY timestamp DESC\", new String[0]);",
+      "info" : "ReturnStatement[60282-60407]:ReturnStatement[60282-60407]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[61218-61224]:Modifier[61218-61224]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[61225-61230]:TYPE_DECLARATION_KIND[61225-61230]"
+    }, {
+      "left" : "DbHelper",
+      "right" : "DbHelper",
+      "info" : "SimpleName[61231-61239]:SimpleName[61231-61239]"
+    }, {
+      "left" : "SQLiteOpenHelper",
+      "right" : "SQLiteOpenHelper",
+      "info" : "SimpleType[61248-61264]:SimpleType[61248-61264]"
+    }, {
+      "left" : "DbHelper",
+      "right" : "DbHelper",
+      "info" : "SimpleName[61276-61284]:SimpleName[61276-61284]"
+    }, {
+      "left" : "Context context",
+      "right" : "Context context",
+      "info" : "SingleVariableDeclaration[61285-61300]:SingleVariableDeclaration[61285-61300]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[61302-61374]:Block[61302-61374]"
+    }, {
+      "left" : "super(context, DB_NAME, null, DATABASE_VERSION);",
+      "right" : "super(context, DB_NAME, null, DATABASE_VERSION);",
+      "info" : "SuperConstructorInvocation[61316-61364]:SuperConstructorInvocation[61316-61364]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[61431-61440]:MarkerAnnotation[61430-61439]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[61449-61455]:Modifier[61448-61454]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[61456-61460]:PrimitiveType[61455-61459]"
+    }, {
+      "left" : "onCreate",
+      "right" : "onCreate",
+      "info" : "SimpleName[61461-61469]:SimpleName[61460-61468]"
+    }, {
+      "left" : "SQLiteDatabase database",
+      "right" : "SQLiteDatabase database",
+      "info" : "SingleVariableDeclaration[61470-61493]:SingleVariableDeclaration[61469-61492]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[61495-71128]:Block[61494-62271]"
+    }, {
+      "left" : "database.execSQL(\"CREATE TABLE \" +\n                    CELL_SIGNAL_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"cellID INTEGER, signal INTEGER, \" +\n                    \"timestamp INTEGER);\");",
+      "right" : "database.execSQL(\"CREATE TABLE \" +\n                    CELL_SIGNAL_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"cellID INTEGER, signal INTEGER, \" +\n                    \"timestamp INTEGER);\");",
+      "info" : "ExpressionStatement[61966-62221]:ExpressionStatement[64381-64636]"
+    }, {
+      "left" : "database.execSQL(\"CREATE INDEX cellID_index ON \" + CELL_SIGNAL_TABLE + \" (cellID);\");",
+      "right" : "database.execSQL(\"CREATE INDEX cellID_index ON \" + CELL_SIGNAL_TABLE + \" (cellID);\");",
+      "info" : "ExpressionStatement[62234-62319]:ExpressionStatement[64649-64734]"
+    }, {
+      "left" : "database.execSQL(\"CREATE INDEX cellID_timestamp ON \" + CELL_SIGNAL_TABLE + \" (timestamp);\");",
+      "right" : "database.execSQL(\"CREATE INDEX cellID_timestamp ON \" + CELL_SIGNAL_TABLE + \" (timestamp);\");",
+      "info" : "ExpressionStatement[62332-62424]:ExpressionStatement[64747-64839]"
+    }, {
+      "left" : "String SMS_DATABASE_CREATE = \"CREATE TABLE \" +\n                    SILENT_SMS_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Address VARCHAR, \" +\n                    \"Display VARCHAR, \" +\n                    \"Class VARCHAR, \" +\n                    \"ServiceCtr VARCHAR, \" +\n                    \"Message VARCHAR, \" +\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);\";",
+      "right" : "String SMS_DATABASE_CREATE = \"CREATE TABLE \" +\n                    SILENT_SMS_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Address VARCHAR, \" +\n                    \"Display VARCHAR, \" +\n                    \"Class VARCHAR, \" +\n                    \"ServiceCtr VARCHAR, \" +\n                    \"Message VARCHAR, \" +\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);\";",
+      "info" : "VariableDeclarationStatement[62709-63165]:VariableDeclarationStatement[65175-65631]"
+    }, {
+      "left" : "database.execSQL(SMS_DATABASE_CREATE);",
+      "right" : "database.execSQL(SMS_DATABASE_CREATE);",
+      "info" : "ExpressionStatement[63178-63216]:ExpressionStatement[65644-65682]"
+    }, {
+      "left" : "String ZeroSMS = \"INSERT INTO \" + SILENT_SMS_TABLE +\n                    \" (Address,Display,Class,ServiceCtr,Message) \" +\n                    \"VALUES ('\"+\n                    Examples.SILENT_SMS_CARD_DATA.ADDRESS +\"','\"+\n                    Examples.SILENT_SMS_CARD_DATA.DISPLAY+\"','CLAZZ','SMSC','DaTestMessage');\";",
+      "right" : "String ZeroSMS = \"INSERT INTO \" + SILENT_SMS_TABLE +\n                    \" (Address,Display,Class,ServiceCtr,Message) \" +\n                    \"VALUES ('\"+\n                    Examples.SILENT_SMS_CARD_DATA.ADDRESS +\"','\"+\n                    Examples.SILENT_SMS_CARD_DATA.DISPLAY+\"','CLAZZ','SMSC','DaTestMessage');\";",
+      "info" : "VariableDeclarationStatement[63294-63610]:VariableDeclarationStatement[65760-66076]"
+    }, {
+      "left" : "database.execSQL(ZeroSMS);",
+      "right" : "database.execSQL(ZeroSMS);",
+      "info" : "ExpressionStatement[63623-63649]:ExpressionStatement[66089-66115]"
+    }, {
+      "left" : "String LOC_DATABASE_CREATE = \"CREATE TABLE \" +\n                    LOCATION_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Lac INTEGER, CellID INTEGER, \" +\n                    \"Net VARCHAR, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR, \" +\n                    \"Signal INTEGER, \" +\n                    \"Connection VARCHAR, \" +\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);\";",
+      "right" : "String LOC_DATABASE_CREATE = \"CREATE TABLE \" +\n                    LOCATION_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Lac INTEGER, CellID INTEGER, \" +\n                    \"Net VARCHAR, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR, \" +\n                    \"Signal INTEGER, \" +\n                    \"Connection VARCHAR, \" +\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);\";",
+      "info" : "VariableDeclarationStatement[63958-64455]:VariableDeclarationStatement[66473-66970]"
+    }, {
+      "left" : "database.execSQL(LOC_DATABASE_CREATE);",
+      "right" : "database.execSQL(LOC_DATABASE_CREATE);",
+      "info" : "ExpressionStatement[64468-64506]:ExpressionStatement[66983-67021]"
+    }, {
+      "left" : "String CELL_DATABASE_CREATE = \"CREATE TABLE \" +\n                    CELL_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Lac INTEGER, \" +\n                    \"CellID INTEGER, \" +\n                    \"Net INTEGER, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR, \" +\n                    \"Signal INTEGER, \" +\n                    \"Mcc INTEGER, \" +\n                    \"Mnc INTEGER, \" +\n                    \"Accuracy REAL, \" +\n                    \"Speed REAL, \" +\n                    \"Direction REAL, \" +\n                    \"NetworkType VARCHAR, \" +\n                    \"MeasurementTaken VARCHAR, \" +\n                    \"OCID_SUBMITTED INTEGER DEFAULT 0, \" +\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);\";",
+      "right" : "String CELL_DATABASE_CREATE = \"CREATE TABLE \" +\n                    CELL_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Lac INTEGER, \" +\n                    \"CellID INTEGER, \" +\n                    \"Net INTEGER, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR, \" +\n                    \"Signal INTEGER, \" +\n                    \"Mcc INTEGER, \" +\n                    \"Mnc INTEGER, \" +\n                    \"Accuracy REAL, \" +\n                    \"Speed REAL, \" +\n                    \"Direction REAL, \" +\n                    \"NetworkType VARCHAR, \" +\n                    \"MeasurementTaken VARCHAR, \" +\n                    \"OCID_SUBMITTED INTEGER DEFAULT 0, \" +\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);\";",
+      "info" : "VariableDeclarationStatement[64875-65699]:VariableDeclarationStatement[67436-68260]"
+    }, {
+      "left" : "database.execSQL(CELL_DATABASE_CREATE);",
+      "right" : "database.execSQL(CELL_DATABASE_CREATE);",
+      "info" : "ExpressionStatement[65712-65751]:ExpressionStatement[68273-68312]"
+    }, {
+      "left" : "String OPENCELLID_DATABASE_CREATE = \"CREATE TABLE \" +\n                    OPENCELLID_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR, \" +\n                    \"Mcc INTEGER, \" +\n                    \"Mnc INTEGER, \" +\n                    \"Lac INTEGER, \" +\n                    \"CellID INTEGER, \" +\n                    \"AvgSigStr INTEGER, \" +\n                    \"avg_range INTEGER, \" +     // new\n                    \"Samples INTEGER, \" +\n                    \"isGPSexact INTEGER, \" +    // new\n                    \"Type TEXT, \" +             // new\n                    //\"rej_cause INTEGER\"        // new\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP\" +\n                    //\"Timestamp TIMESTAMP NOT NULL DEFAULT current_timestamp, \" +\n                    \");\";",
+      "right" : "String OPENCELLID_DATABASE_CREATE = \"CREATE TABLE \" +\n                    OPENCELLID_TABLE + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR, \" +\n                    \"Mcc INTEGER, \" +\n                    \"Mnc INTEGER, \" +\n                    \"Lac INTEGER, \" +\n                    \"CellID INTEGER, \" +\n                    \"AvgSigStr INTEGER, \" +\n                    \"avg_range INTEGER, \" +     // new\n                    \"Samples INTEGER, \" +\n                    \"isGPSexact INTEGER, \" +    // new\n                    \"Type TEXT, \" +             // new\n                    //\"rej_cause INTEGER\"        // new\n                    \"Timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP\" +\n                    //\"Timestamp TIMESTAMP NOT NULL DEFAULT current_timestamp, \" +\n                    \");\";",
+      "info" : "VariableDeclarationStatement[66820-67718]:VariableDeclarationStatement[69376-70274]"
+    }, {
+      "left" : "database.execSQL(OPENCELLID_DATABASE_CREATE);",
+      "right" : "database.execSQL(OPENCELLID_DATABASE_CREATE);",
+      "info" : "ExpressionStatement[67731-67776]:ExpressionStatement[70287-70332]"
+    }, {
+      "left" : "String DEFAULT_MCC_DATABASE_CREATE = \"CREATE TABLE \" +\n                    TABLE_DEFAULT_MCC + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Country VARCHAR, \" +\n                    \"Mcc INTEGER, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR);\";",
+      "right" : "String DEFAULT_MCC_DATABASE_CREATE = \"CREATE TABLE \" +\n                    TABLE_DEFAULT_MCC + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT, \" +\n                    \"Country VARCHAR, \" +\n                    \"Mcc INTEGER, \" +\n                    \"Lat VARCHAR, \" +\n                    \"Lng VARCHAR);\";",
+      "info" : "VariableDeclarationStatement[67970-68299]:VariableDeclarationStatement[70586-70915]"
+    }, {
+      "left" : "database.execSQL(DEFAULT_MCC_DATABASE_CREATE);",
+      "right" : "database.execSQL(DEFAULT_MCC_DATABASE_CREATE);",
+      "info" : "ExpressionStatement[68312-68358]:ExpressionStatement[70928-70974]"
+    }, {
+      "left" : "String TABLE_EVENTLOG_CREATE = \"CREATE TABLE \" +\n                    TABLE_EVENTLOG + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT,\" +\n                    \"time     \t\tTIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\"  +\n                    \"LAC           \tINTEGER NOT NULL,\" +\n                    \"CID           \tINTEGER NOT NULL,\" +\n                    \"PSC           \tINTEGER,\" +\n                    \"gpsd_lat      \tREAL,\" +\n                    \"gpsd_lon      \tREAL,\" +\n                    \"gpsd_accu     \tINTEGER,\" +\n                    \"DF_id         \tINTEGER,\" +\n                    \"DF_desc    \tTEXT\" + \");\";",
+      "right" : "String TABLE_EVENTLOG_CREATE = \"CREATE TABLE \" +\n                    TABLE_EVENTLOG + \" (\" + COLUMN_ID +\n                    \" INTEGER PRIMARY KEY AUTOINCREMENT,\" +\n                    \"time     \t\tTIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,\"  +\n                    \"LAC           \tINTEGER NOT NULL,\" +\n                    \"CID           \tINTEGER NOT NULL,\" +\n                    \"PSC           \tINTEGER,\" +\n                    \"gpsd_lat      \tREAL,\" +\n                    \"gpsd_lon      \tREAL,\" +\n                    \"gpsd_accu     \tINTEGER,\" +\n                    \"DF_id         \tINTEGER,\" +\n                    \"DF_desc    \tTEXT\" + \");\";",
+      "info" : "VariableDeclarationStatement[69499-70140]:VariableDeclarationStatement[71993-72634]"
+    }, {
+      "left" : "database.execSQL(TABLE_EVENTLOG_CREATE);",
+      "right" : "database.execSQL(TABLE_EVENTLOG_CREATE);",
+      "info" : "ExpressionStatement[70153-70193]:ExpressionStatement[72647-72687]"
+    }, {
+      "left" : "String ZeroEvent = \"INSERT INTO \" + TABLE_EVENTLOG +\n                    \" (LAC,CID,PSC, gpsd_lat,gpsd_lon,gpsd_accu, DF_id,DF_desc) \" +\n                    \"VALUES (\"+\n                    EVENT_LOG_DATA.LAC+\",\"+\n                    EVENT_LOG_DATA.CID+\",\"+\n                    EVENT_LOG_DATA.PSC+\",\"+\n                    EVENT_LOG_DATA.GPSD_LAT+\",\"+\n                    EVENT_LOG_DATA.GPSD_LON+\",\"+\n                    EVENT_LOG_DATA.GPSD_ACCU+\",\"+\n                    EVENT_LOG_DATA.DF_ID+\",'CellID not found in OCID Database');\";",
+      "right" : "String ZeroEvent = \"INSERT INTO \" + TABLE_EVENTLOG +\n                    \" (LAC,CID,PSC, gpsd_lat,gpsd_lon,gpsd_accu, DF_id,DF_desc) \" +\n                    \"VALUES (\"+\n                    EVENT_LOG_DATA.LAC+\",\"+\n                    EVENT_LOG_DATA.CID+\",\"+\n                    EVENT_LOG_DATA.PSC+\",\"+\n                    EVENT_LOG_DATA.GPSD_LAT+\",\"+\n                    EVENT_LOG_DATA.GPSD_LON+\",\"+\n                    EVENT_LOG_DATA.GPSD_ACCU+\",\"+\n                    EVENT_LOG_DATA.DF_ID+\",'CellID not found in OCID Database');\";",
+      "info" : "VariableDeclarationStatement[70444-70975]:VariableDeclarationStatement[72938-73469]"
+    }, {
+      "left" : "database.execSQL(ZeroEvent);",
+      "right" : "database.execSQL(ZeroEvent);",
+      "info" : "ExpressionStatement[70988-71016]:ExpressionStatement[73482-73510]"
+    }, {
+      "left" : "populateDefaultMCC(database);",
+      "right" : "populateDefaultMCC(database);",
+      "info" : "ExpressionStatement[71088-71117]:ExpressionStatement[62231-62260]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[71505-71514]:MarkerAnnotation[62647-62656]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[71523-71529]:Modifier[62665-62671]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[71530-71534]:PrimitiveType[62672-62676]"
+    }, {
+      "left" : "onUpgrade",
+      "right" : "onUpgrade",
+      "info" : "SimpleName[71535-71544]:SimpleName[62677-62686]"
+    }, {
+      "left" : "SQLiteDatabase db",
+      "right" : "SQLiteDatabase db",
+      "info" : "SingleVariableDeclaration[71545-71562]:SingleVariableDeclaration[62687-62704]"
+    }, {
+      "left" : "int oldVersion",
+      "right" : "int oldVersion",
+      "info" : "SingleVariableDeclaration[71564-71578]:SingleVariableDeclaration[62706-62720]"
+    }, {
+      "left" : "int newVersion",
+      "right" : "int newVersion",
+      "info" : "SingleVariableDeclaration[71580-71594]:SingleVariableDeclaration[62722-62736]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[71596-72907]:Block[62738-64049]"
+    }, {
+      "left" : "Log.w(TAG, mTAG + \": Upgrading database from version \" + oldVersion + \" to \" + newVersion\n                        + \", and destroy all old data.\");",
+      "right" : "Log.w(TAG, mTAG + \": Upgrading database from version \" + oldVersion + \" to \" + newVersion\n                        + \", and destroy all old data.\");",
+      "info" : "ExpressionStatement[71610-71757]:ExpressionStatement[62752-62899]"
+    }, {
+      "left" : "db.execSQL(\"DROP TABLE IF EXISTS \" + LOCATION_TABLE);",
+      "right" : "db.execSQL(\"DROP TABLE IF EXISTS \" + LOCATION_TABLE);",
+      "info" : "ExpressionStatement[71771-71824]:ExpressionStatement[62913-62966]"
+    }, {
+      "left" : "db.execSQL(\"DROP TABLE IF EXISTS \" + CELL_TABLE);",
+      "right" : "db.execSQL(\"DROP TABLE IF EXISTS \" + CELL_TABLE);",
+      "info" : "ExpressionStatement[71837-71886]:ExpressionStatement[62979-63028]"
+    }, {
+      "left" : "db.execSQL(\"DROP TABLE IF EXISTS \" + OPENCELLID_TABLE);",
+      "right" : "db.execSQL(\"DROP TABLE IF EXISTS \" + OPENCELLID_TABLE);",
+      "info" : "ExpressionStatement[71899-71954]:ExpressionStatement[63041-63096]"
+    }, {
+      "left" : "db.execSQL(\"DROP TABLE IF EXISTS \" + SILENT_SMS_TABLE);",
+      "right" : "db.execSQL(\"DROP TABLE IF EXISTS \" + SILENT_SMS_TABLE);",
+      "info" : "ExpressionStatement[71967-72022]:ExpressionStatement[63109-63164]"
+    }, {
+      "left" : "db.execSQL(\"DROP TABLE IF EXISTS \" + TABLE_DEFAULT_MCC);",
+      "right" : "db.execSQL(\"DROP TABLE IF EXISTS \" + TABLE_DEFAULT_MCC);",
+      "info" : "ExpressionStatement[72035-72091]:ExpressionStatement[63177-63233]"
+    }, {
+      "left" : "db.execSQL(\"DROP TABLE IF EXISTS \" + CELL_SIGNAL_TABLE);",
+      "right" : "db.execSQL(\"DROP TABLE IF EXISTS \" + CELL_SIGNAL_TABLE);",
+      "info" : "ExpressionStatement[72104-72160]:ExpressionStatement[63246-63302]"
+    }, {
+      "left" : "db.execSQL(\"DROP TABLE IF EXISTS \" + TABLE_EVENTLOG);",
+      "right" : "db.execSQL(\"DROP TABLE IF EXISTS \" + TABLE_EVENTLOG);",
+      "info" : "ExpressionStatement[72603-72656]:ExpressionStatement[63745-63798]"
+    }, {
+      "left" : "onCreate(db);",
+      "right" : "onCreate(db);",
+      "info" : "ExpressionStatement[72884-72897]:ExpressionStatement[64026-64039]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

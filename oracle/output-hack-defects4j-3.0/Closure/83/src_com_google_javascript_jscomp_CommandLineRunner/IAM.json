@@ -1,0 +1,1045 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CommandLineRunner",
+      "right" : "CommandLineRunner",
+      "info" : "TypeDeclaration[1542-23025]:TypeDeclaration[1542-23103]"
+    }, {
+      "left" : "Flags",
+      "right" : "Flags",
+      "info" : "TypeDeclaration[2706-14738]:TypeDeclaration[2706-14816]"
+    }, {
+      "left" : "@Option(name = \"--help\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Displays this message\")\n    private boolean display_help = false;",
+      "right" : "@Option(name = \"--help\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Displays this message\")\n    private boolean display_help = false;",
+      "info" : "FieldDeclaration[2739-2892]:FieldDeclaration[2739-2892]"
+    }, {
+      "left" : "@Option(name = \"--print_tree\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints out the parse tree and exits\")\n    private boolean print_tree = false;",
+      "right" : "@Option(name = \"--print_tree\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints out the parse tree and exits\")\n    private boolean print_tree = false;",
+      "info" : "FieldDeclaration[2898-3069]:FieldDeclaration[2898-3069]"
+    }, {
+      "left" : "@Option(name = \"--compute_phase_ordering\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Runs the compile job many times, then prints out the \" +\n        \"best phase ordering from this run\")\n    private boolean compute_phase_ordering = false;",
+      "right" : "@Option(name = \"--compute_phase_ordering\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Runs the compile job many times, then prints out the \" +\n        \"best phase ordering from this run\")\n    private boolean compute_phase_ordering = false;",
+      "info" : "FieldDeclaration[3075-3334]:FieldDeclaration[3075-3334]"
+    }, {
+      "left" : "@Option(name = \"--print_ast\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints a dot file describing the internal abstract syntax\"\n        + \" tree and exits\")\n    private boolean print_ast = false;",
+      "right" : "@Option(name = \"--print_ast\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints a dot file describing the internal abstract syntax\"\n        + \" tree and exits\")\n    private boolean print_ast = false;",
+      "info" : "FieldDeclaration[3340-3559]:FieldDeclaration[3340-3559]"
+    }, {
+      "left" : "@Option(name = \"--print_pass_graph\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints a dot file describing the passes that will get run\"\n        + \" and exits\")\n    private boolean print_pass_graph = false;",
+      "right" : "@Option(name = \"--print_pass_graph\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints a dot file describing the passes that will get run\"\n        + \" and exits\")\n    private boolean print_pass_graph = false;",
+      "info" : "FieldDeclaration[3565-3793]:FieldDeclaration[3565-3793]"
+    }, {
+      "left" : "@Option(name = \"--jscomp_dev_mode\",\n        usage = \"Turns on extra sanity checks\",\n        aliases = {\"--dev_mode\"})\n    private CompilerOptions.DevMode jscomp_dev_mode =\n        CompilerOptions.DevMode.OFF;",
+      "right" : "@Option(name = \"--jscomp_dev_mode\",\n        usage = \"Turns on extra sanity checks\",\n        aliases = {\"--dev_mode\"})\n    private CompilerOptions.DevMode jscomp_dev_mode =\n        CompilerOptions.DevMode.OFF;",
+      "info" : "FieldDeclaration[3799-4007]:FieldDeclaration[3799-4007]"
+    }, {
+      "left" : "@Option(name = \"--logging_level\",\n        usage = \"The logging level (standard java.util.logging.Level\"\n        + \" values) for Compiler progress. Does not control errors or\"\n        + \" warnings for the JavaScript code under compilation\")\n    private String logging_level = Level.WARNING.getName();",
+      "right" : "@Option(name = \"--logging_level\",\n        usage = \"The logging level (standard java.util.logging.Level\"\n        + \" values) for Compiler progress. Does not control errors or\"\n        + \" warnings for the JavaScript code under compilation\")\n    private String logging_level = Level.WARNING.getName();",
+      "info" : "FieldDeclaration[4077-4376]:FieldDeclaration[4077-4376]"
+    }, {
+      "left" : "@Option(name = \"--externs\",\n        usage = \"The file containing javascript externs. You may specify\"\n        + \" multiple\")\n    private List<String> externs = Lists.newArrayList();",
+      "right" : "@Option(name = \"--externs\",\n        usage = \"The file containing javascript externs. You may specify\"\n        + \" multiple\")\n    private List<String> externs = Lists.newArrayList();",
+      "info" : "FieldDeclaration[4382-4563]:FieldDeclaration[4382-4563]"
+    }, {
+      "left" : "@Option(name = \"--js\",\n        usage = \"The javascript filename. You may specify multiple\")\n    private List<String> js = Lists.newArrayList();",
+      "right" : "@Option(name = \"--js\",\n        usage = \"The javascript filename. You may specify multiple\")\n    private List<String> js = Lists.newArrayList();",
+      "info" : "FieldDeclaration[4569-4712]:FieldDeclaration[4569-4712]"
+    }, {
+      "left" : "@Option(name = \"--js_output_file\",\n        usage = \"Primary output filename. If not specified, output is \" +\n        \"written to stdout\")\n    private String js_output_file = \"\";",
+      "right" : "@Option(name = \"--js_output_file\",\n        usage = \"Primary output filename. If not specified, output is \" +\n        \"written to stdout\")\n    private String js_output_file = \"\";",
+      "info" : "FieldDeclaration[4718-4895]:FieldDeclaration[4718-4895]"
+    }, {
+      "left" : "@Option(name = \"--module\",\n        usage = \"A javascript module specification. The format is \"\n        + \"<name>:<num-js-files>[:[<dep>,...][:]]]. Module names must be \"\n        + \"unique. Each dep is the name of a module that this module \"\n        + \"depends on. Modules must be listed in dependency order, and js \"\n        + \"source files must be listed in the corresponding order. Where \"\n        + \"--module flags occur in relation to --js flags is unimportant\")\n    private List<String> module = Lists.newArrayList();",
+      "right" : "@Option(name = \"--module\",\n        usage = \"A javascript module specification. The format is \"\n        + \"<name>:<num-js-files>[:[<dep>,...][:]]]. Module names must be \"\n        + \"unique. Each dep is the name of a module that this module \"\n        + \"depends on. Modules must be listed in dependency order, and js \"\n        + \"source files must be listed in the corresponding order. Where \"\n        + \"--module flags occur in relation to --js flags is unimportant\")\n    private List<String> module = Lists.newArrayList();",
+      "info" : "FieldDeclaration[4901-5423]:FieldDeclaration[4901-5423]"
+    }, {
+      "left" : "@Option(name = \"--variable_map_input_file\",\n        usage = \"File containing the serialized version of the variable \"\n        + \"renaming map produced by a previous compilation\")\n    private String variable_map_input_file = \"\";",
+      "right" : "@Option(name = \"--variable_map_input_file\",\n        usage = \"File containing the serialized version of the variable \"\n        + \"renaming map produced by a previous compilation\")\n    private String variable_map_input_file = \"\";",
+      "info" : "FieldDeclaration[5429-5656]:FieldDeclaration[5429-5656]"
+    }, {
+      "left" : "@Option(name = \"--property_map_input_file\",\n        usage = \"File containing the serialized version of the property \"\n        + \"renaming map produced by a previous compilation\")\n    private String property_map_input_file = \"\";",
+      "right" : "@Option(name = \"--property_map_input_file\",\n        usage = \"File containing the serialized version of the property \"\n        + \"renaming map produced by a previous compilation\")\n    private String property_map_input_file = \"\";",
+      "info" : "FieldDeclaration[5662-5889]:FieldDeclaration[5662-5889]"
+    }, {
+      "left" : "@Option(name = \"--variable_map_output_file\",\n        usage = \"File where the serialized version of the variable \"\n        + \"renaming map produced should be saved\")\n    private String variable_map_output_file = \"\";",
+      "right" : "@Option(name = \"--variable_map_output_file\",\n        usage = \"File where the serialized version of the variable \"\n        + \"renaming map produced should be saved\")\n    private String variable_map_output_file = \"\";",
+      "info" : "FieldDeclaration[5895-6109]:FieldDeclaration[5895-6109]"
+    }, {
+      "left" : "@Option(name = \"--create_name_map_files\",\n        handler = BooleanOptionHandler.class,\n        usage = \"If true, variable renaming and property renaming map \"\n        + \"files will be produced as {binary name}_vars_map.out and \"\n        + \"{binary name}_props_map.out. Note that this flag cannot be used \"\n        + \"in conjunction with either variable_map_output_file or \"\n        + \"property_map_output_file\")\n    private boolean create_name_map_files = false;",
+      "right" : "@Option(name = \"--create_name_map_files\",\n        handler = BooleanOptionHandler.class,\n        usage = \"If true, variable renaming and property renaming map \"\n        + \"files will be produced as {binary name}_vars_map.out and \"\n        + \"{binary name}_props_map.out. Note that this flag cannot be used \"\n        + \"in conjunction with either variable_map_output_file or \"\n        + \"property_map_output_file\")\n    private boolean create_name_map_files = false;",
+      "info" : "FieldDeclaration[6115-6578]:FieldDeclaration[6115-6578]"
+    }, {
+      "left" : "@Option(name = \"--property_map_output_file\",\n        usage = \"File where the serialized version of the property \"\n        + \"renaming map produced should be saved\")\n    private String property_map_output_file = \"\";",
+      "right" : "@Option(name = \"--property_map_output_file\",\n        usage = \"File where the serialized version of the property \"\n        + \"renaming map produced should be saved\")\n    private String property_map_output_file = \"\";",
+      "info" : "FieldDeclaration[6584-6798]:FieldDeclaration[6584-6798]"
+    }, {
+      "left" : "@Option(name = \"--third_party\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Check source validity but do not enforce Closure style \"\n        + \"rules and conventions\")\n    private boolean third_party = false;",
+      "right" : "@Option(name = \"--third_party\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Check source validity but do not enforce Closure style \"\n        + \"rules and conventions\")\n    private boolean third_party = false;",
+      "info" : "FieldDeclaration[6804-7031]:FieldDeclaration[6804-7031]"
+    }, {
+      "left" : "@Option(name = \"--summary_detail_level\",\n        usage = \"Controls how detailed the compilation summary is. Values:\"\n        + \" 0 (never print summary), 1 (print summary only if there are \"\n        + \"errors or warnings), 2 (print summary if type checking is on, \"\n        + \"see --check_types), 3 (always print summary). The default level \"\n        + \"is 1\")\n    private int summary_detail_level = 1;",
+      "right" : "@Option(name = \"--summary_detail_level\",\n        usage = \"Controls how detailed the compilation summary is. Values:\"\n        + \" 0 (never print summary), 1 (print summary only if there are \"\n        + \"errors or warnings), 2 (print summary if type checking is on, \"\n        + \"see --check_types), 3 (always print summary). The default level \"\n        + \"is 1\")\n    private int summary_detail_level = 1;",
+      "info" : "FieldDeclaration[7038-7440]:FieldDeclaration[7038-7440]"
+    }, {
+      "left" : "@Option(name = \"--output_wrapper\",\n        usage = \"Interpolate output into this string at the place denoted\"\n        + \" by the marker token %output%. See --output_wrapper_marker\")\n    private String output_wrapper = \"\";",
+      "right" : "@Option(name = \"--output_wrapper\",\n        usage = \"Interpolate output into this string at the place denoted\"\n        + \" by the marker token %output%. See --output_wrapper_marker\")\n    private String output_wrapper = \"\";",
+      "info" : "FieldDeclaration[7446-7667]:FieldDeclaration[7446-7667]"
+    }, {
+      "left" : "@Option(name = \"--output_wrapper_marker\",\n        usage = \"Use this token as output marker in the value of\"\n        + \" --output_wrapper\")\n    private String output_wrapper_marker = \"%output%\";",
+      "right" : "@Option(name = \"--output_wrapper_marker\",\n        usage = \"Use this token as output marker in the value of\"\n        + \" --output_wrapper\")\n    private String output_wrapper_marker = \"%output%\";",
+      "info" : "FieldDeclaration[7673-7866]:FieldDeclaration[7673-7866]"
+    }, {
+      "left" : "@Option(name = \"--module_wrapper\",\n        usage = \"An output wrapper for a javascript module (optional). \"\n        + \"The format is <name>:<wrapper>. The module name must correspond \"\n        + \"with a module specified using --module. The wrapper must \"\n        + \"contain %s as the code placeholder\")\n    private List<String> module_wrapper = Lists.newArrayList();",
+      "right" : "@Option(name = \"--module_wrapper\",\n        usage = \"An output wrapper for a javascript module (optional). \"\n        + \"The format is <name>:<wrapper>. The module name must correspond \"\n        + \"with a module specified using --module. The wrapper must \"\n        + \"contain %s as the code placeholder\")\n    private List<String> module_wrapper = Lists.newArrayList();",
+      "info" : "FieldDeclaration[7872-8238]:FieldDeclaration[7872-8238]"
+    }, {
+      "left" : "@Option(name = \"--module_output_path_prefix\",\n        usage = \"Prefix for filenames of compiled js modules. \"\n        + \"<module-name>.js will be appended to this prefix. Directories \"\n        + \"will be created as needed. Use with --module\")\n    private String module_output_path_prefix = \"./\";",
+      "right" : "@Option(name = \"--module_output_path_prefix\",\n        usage = \"Prefix for filenames of compiled js modules. \"\n        + \"<module-name>.js will be appended to this prefix. Directories \"\n        + \"will be created as needed. Use with --module\")\n    private String module_output_path_prefix = \"./\";",
+      "info" : "FieldDeclaration[8244-8539]:FieldDeclaration[8244-8539]"
+    }, {
+      "left" : "@Option(name = \"--create_source_map\",\n        usage = \"If specified, a source map file mapping the generated \" +\n        \"source files back to the original source file will be \" +\n        \"output to the specified path. The %outname% placeholder will \" +\n        \"expand to the name of the output file that the source map \" +\n        \"corresponds to.\")\n    private String create_source_map = \"\";",
+      "right" : "@Option(name = \"--create_source_map\",\n        usage = \"If specified, a source map file mapping the generated \" +\n        \"source files back to the original source file will be \" +\n        \"output to the specified path. The %outname% placeholder will \" +\n        \"expand to the name of the output file that the source map \" +\n        \"corresponds to.\")\n    private String create_source_map = \"\";",
+      "info" : "FieldDeclaration[8545-8939]:FieldDeclaration[8545-8939]"
+    }, {
+      "left" : "@Option(name = \"--jscomp_error\",\n        usage = \"Make the named class of warnings an error. Options:\" +\n        DiagnosticGroups.DIAGNOSTIC_GROUP_NAMES)\n    private List<String> jscomp_error = Lists.newArrayList();",
+      "right" : "@Option(name = \"--jscomp_error\",\n        usage = \"Make the named class of warnings an error. Options:\" +\n        DiagnosticGroups.DIAGNOSTIC_GROUP_NAMES)\n    private List<String> jscomp_error = Lists.newArrayList();",
+      "info" : "FieldDeclaration[8945-9160]:FieldDeclaration[8945-9160]"
+    }, {
+      "left" : "@Option(name = \"--jscomp_warning\",\n        usage = \"Make the named class of warnings a normal warning. \" +\n        \"Options:\" + DiagnosticGroups.DIAGNOSTIC_GROUP_NAMES)\n    private List<String> jscomp_warning =  Lists.newArrayList();",
+      "right" : "@Option(name = \"--jscomp_warning\",\n        usage = \"Make the named class of warnings a normal warning. \" +\n        \"Options:\" + DiagnosticGroups.DIAGNOSTIC_GROUP_NAMES)\n    private List<String> jscomp_warning =  Lists.newArrayList();",
+      "info" : "FieldDeclaration[9166-9399]:FieldDeclaration[9166-9399]"
+    }, {
+      "left" : "@Option(name = \"--jscomp_off\",\n        usage = \"Turn off the named class of warnings. Options:\" +\n        DiagnosticGroups.DIAGNOSTIC_GROUP_NAMES)\n    private List<String> jscomp_off = Lists.newArrayList();",
+      "right" : "@Option(name = \"--jscomp_off\",\n        usage = \"Turn off the named class of warnings. Options:\" +\n        DiagnosticGroups.DIAGNOSTIC_GROUP_NAMES)\n    private List<String> jscomp_off = Lists.newArrayList();",
+      "info" : "FieldDeclaration[9405-9611]:FieldDeclaration[9405-9611]"
+    }, {
+      "left" : "@Option(name = \"--define\",\n        aliases = {\"--D\", \"-D\"},\n        usage = \"Override the value of a variable annotated @define. \" +\n        \"The format is <name>[=<val>], where <name> is the name of a @define \" +\n        \"variable and <val> is a boolean, number, or a single-quoted string \" +\n        \"that contains no single quotes. If [=<val>] is omitted, \" +\n        \"the variable is marked true\")\n    private List<String> define = Lists.newArrayList();",
+      "right" : "@Option(name = \"--define\",\n        aliases = {\"--D\", \"-D\"},\n        usage = \"Override the value of a variable annotated @define. \" +\n        \"The format is <name>[=<val>], where <name> is the name of a @define \" +\n        \"variable and <val> is a boolean, number, or a single-quoted string \" +\n        \"that contains no single quotes. If [=<val>] is omitted, \" +\n        \"the variable is marked true\")\n    private List<String> define = Lists.newArrayList();",
+      "info" : "FieldDeclaration[9617-10074]:FieldDeclaration[9617-10074]"
+    }, {
+      "left" : "@Option(name = \"--charset\",\n        usage = \"Input and output charset for all files. By default, we \" +\n                \"accept UTF-8 as input and output US_ASCII\")\n    private String charset = \"\";",
+      "right" : "@Option(name = \"--charset\",\n        usage = \"Input and output charset for all files. By default, we \" +\n                \"accept UTF-8 as input and output US_ASCII\")\n    private String charset = \"\";",
+      "info" : "FieldDeclaration[10080-10277]:FieldDeclaration[10080-10277]"
+    }, {
+      "left" : "@Option(name = \"--compilation_level\",\n        usage = \"Specifies the compilation level to use. Options: \" +\n        \"WHITESPACE_ONLY, SIMPLE_OPTIMIZATIONS, ADVANCED_OPTIMIZATIONS\")\n    private CompilationLevel compilation_level =\n        CompilationLevel.SIMPLE_OPTIMIZATIONS;",
+      "right" : "@Option(name = \"--compilation_level\",\n        usage = \"Specifies the compilation level to use. Options: \" +\n        \"WHITESPACE_ONLY, SIMPLE_OPTIMIZATIONS, ADVANCED_OPTIMIZATIONS\")\n    private CompilationLevel compilation_level =\n        CompilationLevel.SIMPLE_OPTIMIZATIONS;",
+      "info" : "FieldDeclaration[10283-10559]:FieldDeclaration[10283-10559]"
+    }, {
+      "left" : "@Option(name = \"--warning_level\",\n        usage = \"Specifies the warning level to use. Options: \" +\n        \"QUIET, DEFAULT, VERBOSE\")\n    private WarningLevel warning_level = WarningLevel.DEFAULT;",
+      "right" : "@Option(name = \"--warning_level\",\n        usage = \"Specifies the warning level to use. Options: \" +\n        \"QUIET, DEFAULT, VERBOSE\")\n    private WarningLevel warning_level = WarningLevel.DEFAULT;",
+      "info" : "FieldDeclaration[10565-10762]:FieldDeclaration[10565-10762]"
+    }, {
+      "left" : "@Option(name = \"--use_only_custom_externs\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Specifies whether the default externs should be excluded\")\n    private boolean use_only_custom_externs = false;",
+      "right" : "@Option(name = \"--use_only_custom_externs\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Specifies whether the default externs should be excluded\")\n    private boolean use_only_custom_externs = false;",
+      "info" : "FieldDeclaration[10768-10986]:FieldDeclaration[10768-10986]"
+    }, {
+      "left" : "@Option(name = \"--debug\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Enable debugging options\")\n    private boolean debug = false;",
+      "right" : "@Option(name = \"--debug\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Enable debugging options\")\n    private boolean debug = false;",
+      "info" : "FieldDeclaration[10992-11142]:FieldDeclaration[10992-11142]"
+    }, {
+      "left" : "@Option(name = \"--formatting\",\n        usage = \"Specifies which formatting options, if any, should be \"\n        + \"applied to the output JS. Options: \"\n        + \"PRETTY_PRINT, PRINT_INPUT_DELIMITER\")\n    private List<FormattingOption> formatting = Lists.newArrayList();",
+      "right" : "@Option(name = \"--formatting\",\n        usage = \"Specifies which formatting options, if any, should be \"\n        + \"applied to the output JS. Options: \"\n        + \"PRETTY_PRINT, PRINT_INPUT_DELIMITER\")\n    private List<FormattingOption> formatting = Lists.newArrayList();",
+      "info" : "FieldDeclaration[11148-11418]:FieldDeclaration[11148-11418]"
+    }, {
+      "left" : "@Option(name = \"--process_closure_primitives\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Processes built-ins from the Closure library, such as \"\n        + \"goog.require(), goog.provide(), and goog.exportSymbol()\")\n    private boolean process_closure_primitives = true;",
+      "right" : "@Option(name = \"--process_closure_primitives\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Processes built-ins from the Closure library, such as \"\n        + \"goog.require(), goog.provide(), and goog.exportSymbol()\")\n    private boolean process_closure_primitives = true;",
+      "info" : "FieldDeclaration[11424-11713]:FieldDeclaration[11424-11713]"
+    }, {
+      "left" : "@Option(name = \"--manage_closure_dependencies\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Automatically sort dependencies so that a file that \"\n        + \"goog.provides symbol X will always come before a file that \"\n        + \"goog.requires symbol X. If an input provides symbols, and \"\n        + \"those symbols are never required, then that input will not \"\n        + \"be included in the compilation.\")\n    private boolean manage_closure_dependencies = false;",
+      "right" : "@Option(name = \"--manage_closure_dependencies\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Automatically sort dependencies so that a file that \"\n        + \"goog.provides symbol X will always come before a file that \"\n        + \"goog.requires symbol X. If an input provides symbols, and \"\n        + \"those symbols are never required, then that input will not \"\n        + \"be included in the compilation.\")\n    private boolean manage_closure_dependencies = false;",
+      "info" : "FieldDeclaration[11719-12200]:FieldDeclaration[11719-12200]"
+    }, {
+      "left" : "@Option(name = \"--closure_entry_point\",\n        usage = \"Entry points to the program. Must be goog.provide'd \"\n        + \"symbols. Any goog.provide'd symbols that are not a transitive \"\n        + \"dependency of the entry points will be removed. Files without \"\n        + \"goog.provides, and their dependencies, will always be left in. \"\n        + \"If any entry points are specified, then the \"\n        + \"manage_closure_dependencies option will be set to true and \"\n        + \"all files will be sorted in dependency order.\")\n    private List<String> closure_entry_point = Lists.newArrayList();",
+      "right" : "@Option(name = \"--closure_entry_point\",\n        usage = \"Entry points to the program. Must be goog.provide'd \"\n        + \"symbols. Any goog.provide'd symbols that are not a transitive \"\n        + \"dependency of the entry points will be removed. Files without \"\n        + \"goog.provides, and their dependencies, will always be left in. \"\n        + \"If any entry points are specified, then the \"\n        + \"manage_closure_dependencies option will be set to true and \"\n        + \"all files will be sorted in dependency order.\")\n    private List<String> closure_entry_point = Lists.newArrayList();",
+      "info" : "FieldDeclaration[12206-12799]:FieldDeclaration[12206-12799]"
+    }, {
+      "left" : "@Option(name = \"--output_manifest\",\n        usage = \"Prints out a list of all the files in the compilation. \"\n        + \"If --manage_closure_dependencies is on, this will not include \"\n        + \"files that got dropped because they were not required. \"\n        + \"The %outname% placeholder expands to the js output file. \"\n        + \"If you're using modularization, using %outname% will create \"\n        + \"a manifest for each module.\")\n    private String output_manifest = \"\";",
+      "right" : "@Option(name = \"--output_manifest\",\n        usage = \"Prints out a list of all the files in the compilation. \"\n        + \"If --manage_closure_dependencies is on, this will not include \"\n        + \"files that got dropped because they were not required. \"\n        + \"The %outname% placeholder expands to the js output file. \"\n        + \"If you're using modularization, using %outname% will create \"\n        + \"a manifest for each module.\")\n    private String output_manifest = \"\";",
+      "info" : "FieldDeclaration[12805-13282]:FieldDeclaration[12805-13282]"
+    }, {
+      "left" : "@Option(name = \"--version\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints the compiler version to stderr.\")\n    private boolean version = false;",
+      "right" : "@Option(name = \"--version\",\n        handler = BooleanOptionHandler.class,\n        usage = \"Prints the compiler version to stderr.\")\n    private boolean version = false;",
+      "info" : "FieldDeclaration[13288-13456]:FieldDeclaration[13288-13456]"
+    }, {
+      "left" : "BooleanOptionHandler",
+      "right" : "BooleanOptionHandler",
+      "info" : "TypeDeclaration[13598-14734]:TypeDeclaration[13598-14812]"
+    }, {
+      "left" : "private static final Set<String> TRUES =\n          Sets.newHashSet(\"true\", \"on\", \"yes\", \"1\");",
+      "right" : "private static final Set<String> TRUES =\n          Sets.newHashSet(\"true\", \"on\", \"yes\", \"1\");",
+      "info" : "FieldDeclaration[13678-13771]:FieldDeclaration[13678-13771]"
+    }, {
+      "left" : "private static final Set<String> FALSES =\n          Sets.newHashSet(\"false\", \"off\", \"no\", \"0\");",
+      "right" : "private static final Set<String> FALSES =\n          Sets.newHashSet(\"false\", \"off\", \"no\", \"0\");",
+      "info" : "FieldDeclaration[13778-13873]:FieldDeclaration[13778-13873]"
+    }, {
+      "left" : "public BooleanOptionHandler(\n          CmdLineParser parser, OptionDef option,\n          Setter<? super Boolean> setter)",
+      "right" : "public BooleanOptionHandler(\n          CmdLineParser parser, OptionDef option,\n          Setter<? super Boolean> setter)",
+      "info" : "MethodDeclaration[13881-14050]:MethodDeclaration[13881-14050]"
+    }, {
+      "left" : "public int parseArguments(Parameters params) throws CmdLineException",
+      "right" : "public int parseArguments(Parameters params) throws CmdLineException",
+      "info" : "MethodDeclaration[14058-14635]:MethodDeclaration[14058-14713]"
+    }, {
+      "left" : "public String getDefaultMetaVariable()",
+      "right" : "public String getDefaultMetaVariable()",
+      "info" : "MethodDeclaration[14643-14728]:MethodDeclaration[14721-14806]"
+    }, {
+      "left" : "enum : FormattingOption",
+      "right" : "enum : FormattingOption",
+      "info" : "EnumDeclaration[14742-15282]:EnumDeclaration[14820-15360]"
+    }, {
+      "left" : "private void applyToOptions(CompilerOptions options)",
+      "right" : "private void applyToOptions(CompilerOptions options)",
+      "info" : "MethodDeclaration[14914-15278]:MethodDeclaration[14992-15356]"
+    }, {
+      "left" : "private final Flags flags = new Flags();",
+      "right" : "private final Flags flags = new Flags();",
+      "info" : "FieldDeclaration[15286-15326]:FieldDeclaration[15364-15404]"
+    }, {
+      "left" : "private static final String configResource =\n      \"com.google.javascript.jscomp.parsing.ParserConfig\";",
+      "right" : "private static final String configResource =\n      \"com.google.javascript.jscomp.parsing.ParserConfig\";",
+      "info" : "FieldDeclaration[15330-15433]:FieldDeclaration[15408-15511]"
+    }, {
+      "left" : "private boolean isConfigValid = false;",
+      "right" : "private boolean isConfigValid = false;",
+      "info" : "FieldDeclaration[15437-15475]:FieldDeclaration[15515-15553]"
+    }, {
+      "left" : "protected CommandLineRunner(String[] args)",
+      "right" : "protected CommandLineRunner(String[] args)",
+      "info" : "MethodDeclaration[15479-15771]:MethodDeclaration[15557-15849]"
+    }, {
+      "left" : "protected CommandLineRunner(String[] args, PrintStream out, PrintStream err)",
+      "right" : "protected CommandLineRunner(String[] args, PrintStream out, PrintStream err)",
+      "info" : "MethodDeclaration[15775-15914]:MethodDeclaration[15853-15992]"
+    }, {
+      "left" : "private void initConfigFromFlags(String[] args, PrintStream err)",
+      "right" : "private void initConfigFromFlags(String[] args, PrintStream err)",
+      "info" : "MethodDeclaration[15918-19243]:MethodDeclaration[15996-19321]"
+    }, {
+      "left" : "protected CompilerOptions createOptions()",
+      "right" : "protected CompilerOptions createOptions()",
+      "info" : "MethodDeclaration[19247-19908]:MethodDeclaration[19325-19986]"
+    }, {
+      "left" : "protected Compiler createCompiler()",
+      "right" : "protected Compiler createCompiler()",
+      "info" : "MethodDeclaration[19912-20013]:MethodDeclaration[19990-20091]"
+    }, {
+      "left" : "protected List<JSSourceFile> createExterns() throws FlagUsageException,\n      IOException",
+      "right" : "protected List<JSSourceFile> createExterns() throws FlagUsageException,\n      IOException",
+      "info" : "MethodDeclaration[20017-20410]:MethodDeclaration[20095-20488]"
+    }, {
+      "left" : "private static final List<String> DEFAULT_EXTERNS_NAMES = ImmutableList.of(\n    // JS externs\n    \"es3.js\",\n    \"es5.js\",\n\n    // Event APIs\n    \"w3c_event.js\",\n    \"w3c_event3.js\",\n    \"gecko_event.js\",\n    \"ie_event.js\",\n    \"webkit_event.js\",\n\n    // DOM apis\n    \"w3c_dom1.js\",\n    \"w3c_dom2.js\",\n    \"w3c_dom3.js\",\n    \"gecko_dom.js\",\n    \"ie_dom.js\",\n    \"webkit_dom.js\",\n\n    // CSS apis\n    \"w3c_css.js\",\n    \"gecko_css.js\",\n    \"ie_css.js\",\n    \"webkit_css.js\",\n\n    // Top-level namespaces\n    \"google.js\",\n\n    \"deprecated.js\",\n    \"fileapi.js\",\n    \"flash.js\",\n    \"gears_symbols.js\",\n    \"gears_types.js\",\n    \"gecko_xml.js\",\n    \"html5.js\",\n    \"ie_vml.js\",\n    \"iphone.js\",\n    \"webstorage.js\",\n    \"w3c_css3d.js\",\n    \"w3c_elementtraversal.js\",\n    \"w3c_geolocation.js\",\n    \"w3c_range.js\",\n    \"w3c_selectors.js\",\n    \"w3c_xml.js\",\n    \"window.js\",\n    \"webkit_notifications.js\");",
+      "right" : "private static final List<String> DEFAULT_EXTERNS_NAMES = ImmutableList.of(\n    // JS externs\n    \"es3.js\",\n    \"es5.js\",\n\n    // Event APIs\n    \"w3c_event.js\",\n    \"w3c_event3.js\",\n    \"gecko_event.js\",\n    \"ie_event.js\",\n    \"webkit_event.js\",\n\n    // DOM apis\n    \"w3c_dom1.js\",\n    \"w3c_dom2.js\",\n    \"w3c_dom3.js\",\n    \"gecko_dom.js\",\n    \"ie_dom.js\",\n    \"webkit_dom.js\",\n\n    // CSS apis\n    \"w3c_css.js\",\n    \"gecko_css.js\",\n    \"ie_css.js\",\n    \"webkit_css.js\",\n\n    // Top-level namespaces\n    \"google.js\",\n\n    \"deprecated.js\",\n    \"fileapi.js\",\n    \"flash.js\",\n    \"gears_symbols.js\",\n    \"gears_types.js\",\n    \"gecko_xml.js\",\n    \"html5.js\",\n    \"ie_vml.js\",\n    \"iphone.js\",\n    \"webstorage.js\",\n    \"w3c_css3d.js\",\n    \"w3c_elementtraversal.js\",\n    \"w3c_geolocation.js\",\n    \"w3c_range.js\",\n    \"w3c_selectors.js\",\n    \"w3c_xml.js\",\n    \"window.js\",\n    \"webkit_notifications.js\");",
+      "info" : "FieldDeclaration[20473-21370]:FieldDeclaration[20551-21448]"
+    }, {
+      "left" : "public static List<JSSourceFile> getDefaultExterns() throws IOException",
+      "right" : "public static List<JSSourceFile> getDefaultExterns() throws IOException",
+      "info" : "MethodDeclaration[21374-22603]:MethodDeclaration[21452-22681]"
+    }, {
+      "left" : "public boolean shouldRunCompiler()",
+      "right" : "public boolean shouldRunCompiler()",
+      "info" : "MethodDeclaration[22607-22739]:MethodDeclaration[22685-22817]"
+    }, {
+      "left" : "public static void main(String[] args)",
+      "right" : "public static void main(String[] args)",
+      "info" : "MethodDeclaration[22743-23023]:MethodDeclaration[22821-23101]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2605-2611]:Modifier[2605-2611]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2612-2617]:TYPE_DECLARATION_KIND[2612-2617]"
+    }, {
+      "left" : "CommandLineRunner",
+      "right" : "CommandLineRunner",
+      "info" : "SimpleName[2618-2635]:SimpleName[2618-2635]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2706-2713]:Modifier[2706-2713]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2714-2720]:Modifier[2714-2720]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2721-2726]:TYPE_DECLARATION_KIND[2721-2726]"
+    }, {
+      "left" : "Flags",
+      "right" : "Flags",
+      "info" : "SimpleName[2727-2732]:SimpleName[2727-2732]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13598-13604]:Modifier[13598-13604]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[13605-13611]:Modifier[13605-13611]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[13612-13617]:TYPE_DECLARATION_KIND[13612-13617]"
+    }, {
+      "left" : "BooleanOptionHandler",
+      "right" : "BooleanOptionHandler",
+      "info" : "SimpleName[13618-13638]:SimpleName[13618-13638]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13881-13887]:Modifier[13881-13887]"
+    }, {
+      "left" : "BooleanOptionHandler",
+      "right" : "BooleanOptionHandler",
+      "info" : "SimpleName[13888-13908]:SimpleName[13888-13908]"
+    }, {
+      "left" : "CmdLineParser parser",
+      "right" : "CmdLineParser parser",
+      "info" : "SingleVariableDeclaration[13920-13940]:SingleVariableDeclaration[13920-13940]"
+    }, {
+      "left" : "OptionDef option",
+      "right" : "OptionDef option",
+      "info" : "SingleVariableDeclaration[13942-13958]:SingleVariableDeclaration[13942-13958]"
+    }, {
+      "left" : "Setter<? super Boolean> setter",
+      "right" : "Setter<? super Boolean> setter",
+      "info" : "SingleVariableDeclaration[13970-14000]:SingleVariableDeclaration[13970-14000]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14002-14050]:Block[14002-14050]"
+    }, {
+      "left" : "super(parser, option, setter);",
+      "right" : "super(parser, option, setter);",
+      "info" : "SuperConstructorInvocation[14012-14042]:SuperConstructorInvocation[14012-14042]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14058-14067]:MarkerAnnotation[14058-14067]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14074-14080]:Modifier[14074-14080]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[14081-14084]:PrimitiveType[14081-14084]"
+    }, {
+      "left" : "parseArguments",
+      "right" : "parseArguments",
+      "info" : "SimpleName[14085-14099]:SimpleName[14085-14099]"
+    }, {
+      "left" : "Parameters params",
+      "right" : "Parameters params",
+      "info" : "SingleVariableDeclaration[14100-14117]:SingleVariableDeclaration[14100-14117]"
+    }, {
+      "left" : "CmdLineException",
+      "right" : "CmdLineException",
+      "info" : "SimpleType[14126-14142]:SimpleType[14126-14142]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14143-14635]:Block[14143-14713]"
+    }, {
+      "left" : "String param = params.getParameter(0);",
+      "right" : "String param = null;",
+      "info" : "VariableDeclarationStatement[14153-14191]:VariableDeclarationStatement[14153-14173]"
+    }, {
+      "left" : "params",
+      "right" : "params",
+      "info" : "METHOD_INVOCATION_RECEIVER[14168-14174]:METHOD_INVOCATION_RECEIVER[14206-14212]"
+    }, {
+      "left" : "getParameter",
+      "right" : "getParameter",
+      "info" : "SimpleName[14175-14187]:SimpleName[14213-14225]"
+    }, {
+      "left" : "0",
+      "right" : "0",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[14188-14189]:METHOD_INVOCATION_ARGUMENTS[14226-14227]"
+    }, {
+      "left" : "if (param == null)",
+      "right" : "if (param == null)",
+      "info" : "IfStatement[14201-14627]:IfStatement[14279-14705]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14220-14284]:Block[14298-14362]"
+    }, {
+      "left" : "setter.addValue(true);",
+      "right" : "setter.addValue(true);",
+      "info" : "ExpressionStatement[14232-14254]:ExpressionStatement[14310-14332]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[14265-14274]:ReturnStatement[14343-14352]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14290-14627]:Block[14368-14705]"
+    }, {
+      "left" : "String lowerParam = param.toLowerCase();",
+      "right" : "String lowerParam = param.toLowerCase();",
+      "info" : "VariableDeclarationStatement[14302-14342]:VariableDeclarationStatement[14380-14420]"
+    }, {
+      "left" : "if (TRUES.contains(lowerParam))",
+      "right" : "if (TRUES.contains(lowerParam))",
+      "info" : "IfStatement[14353-14597]:IfStatement[14431-14675]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14385-14433]:Block[14463-14511]"
+    }, {
+      "left" : "setter.addValue(true);",
+      "right" : "setter.addValue(true);",
+      "info" : "ExpressionStatement[14399-14421]:ExpressionStatement[14477-14499]"
+    }, {
+      "left" : "if (FALSES.contains(lowerParam))",
+      "right" : "if (FALSES.contains(lowerParam))",
+      "info" : "IfStatement[14439-14597]:IfStatement[14517-14675]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14472-14521]:Block[14550-14599]"
+    }, {
+      "left" : "setter.addValue(false);",
+      "right" : "setter.addValue(false);",
+      "info" : "ExpressionStatement[14486-14509]:ExpressionStatement[14564-14587]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14527-14597]:Block[14605-14675]"
+    }, {
+      "left" : "setter.addValue(true);",
+      "right" : "setter.addValue(true);",
+      "info" : "ExpressionStatement[14541-14563]:ExpressionStatement[14619-14641]"
+    }, {
+      "left" : "return 0;",
+      "right" : "return 0;",
+      "info" : "ReturnStatement[14576-14585]:ReturnStatement[14654-14663]"
+    }, {
+      "left" : "return 1;",
+      "right" : "return 1;",
+      "info" : "ReturnStatement[14608-14617]:ReturnStatement[14686-14695]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14643-14652]:MarkerAnnotation[14721-14730]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14659-14665]:Modifier[14737-14743]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[14666-14672]:SimpleType[14744-14750]"
+    }, {
+      "left" : "getDefaultMetaVariable",
+      "right" : "getDefaultMetaVariable",
+      "info" : "SimpleName[14673-14695]:SimpleName[14751-14773]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14698-14728]:Block[14776-14806]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14708-14720]:ReturnStatement[14786-14798]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[14914-14921]:Modifier[14992-14999]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[14922-14926]:PrimitiveType[15000-15004]"
+    }, {
+      "left" : "applyToOptions",
+      "right" : "applyToOptions",
+      "info" : "SimpleName[14927-14941]:SimpleName[15005-15019]"
+    }, {
+      "left" : "CompilerOptions options",
+      "right" : "CompilerOptions options",
+      "info" : "SingleVariableDeclaration[14942-14965]:SingleVariableDeclaration[15020-15043]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14967-15278]:Block[15045-15356]"
+    }, {
+      "left" : "switch (this) {\n        case PRETTY_PRINT:\n          options.prettyPrint = true;\n          break;\n        case PRINT_INPUT_DELIMITER:\n          options.printInputDelimiter = true;\n          break;\n        default:\n          throw new RuntimeException(\"Unknown formatting option: \" + this);\n      }",
+      "right" : "switch (this) {\n        case PRETTY_PRINT:\n          options.prettyPrint = true;\n          break;\n        case PRINT_INPUT_DELIMITER:\n          options.printInputDelimiter = true;\n          break;\n        default:\n          throw new RuntimeException(\"Unknown formatting option: \" + this);\n      }",
+      "info" : "SwitchStatement[14975-15272]:SwitchStatement[15053-15350]"
+    }, {
+      "left" : "case PRETTY_PRINT:",
+      "right" : "case PRETTY_PRINT:",
+      "info" : "SwitchCase[14999-15017]:SwitchCase[15077-15095]"
+    }, {
+      "left" : "options.prettyPrint = true;",
+      "right" : "options.prettyPrint = true;",
+      "info" : "ExpressionStatement[15028-15055]:ExpressionStatement[15106-15133]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[15066-15072]:BreakStatement[15144-15150]"
+    }, {
+      "left" : "case PRINT_INPUT_DELIMITER:",
+      "right" : "case PRINT_INPUT_DELIMITER:",
+      "info" : "SwitchCase[15081-15108]:SwitchCase[15159-15186]"
+    }, {
+      "left" : "options.printInputDelimiter = true;",
+      "right" : "options.printInputDelimiter = true;",
+      "info" : "ExpressionStatement[15119-15154]:ExpressionStatement[15197-15232]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[15165-15171]:BreakStatement[15243-15249]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[15180-15188]:SwitchCase[15258-15266]"
+    }, {
+      "left" : "throw new RuntimeException(\"Unknown formatting option: \" + this);",
+      "right" : "throw new RuntimeException(\"Unknown formatting option: \" + this);",
+      "info" : "ThrowStatement[15199-15264]:ThrowStatement[15277-15342]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[15667-15676]:Modifier[15745-15754]"
+    }, {
+      "left" : "CommandLineRunner",
+      "right" : "CommandLineRunner",
+      "info" : "SimpleName[15677-15694]:SimpleName[15755-15772]"
+    }, {
+      "left" : "String[] args",
+      "right" : "String[] args",
+      "info" : "SingleVariableDeclaration[15695-15708]:SingleVariableDeclaration[15773-15786]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15710-15771]:Block[15788-15849]"
+    }, {
+      "left" : "super();",
+      "right" : "super();",
+      "info" : "SuperConstructorInvocation[15716-15724]:SuperConstructorInvocation[15794-15802]"
+    }, {
+      "left" : "initConfigFromFlags(args, System.err);",
+      "right" : "initConfigFromFlags(args, System.err);",
+      "info" : "ExpressionStatement[15729-15767]:ExpressionStatement[15807-15845]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[15775-15784]:Modifier[15853-15862]"
+    }, {
+      "left" : "CommandLineRunner",
+      "right" : "CommandLineRunner",
+      "info" : "SimpleName[15785-15802]:SimpleName[15863-15880]"
+    }, {
+      "left" : "String[] args",
+      "right" : "String[] args",
+      "info" : "SingleVariableDeclaration[15803-15816]:SingleVariableDeclaration[15881-15894]"
+    }, {
+      "left" : "PrintStream out",
+      "right" : "PrintStream out",
+      "info" : "SingleVariableDeclaration[15818-15833]:SingleVariableDeclaration[15896-15911]"
+    }, {
+      "left" : "PrintStream err",
+      "right" : "PrintStream err",
+      "info" : "SingleVariableDeclaration[15835-15850]:SingleVariableDeclaration[15913-15928]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15852-15914]:Block[15930-15992]"
+    }, {
+      "left" : "super(out, err);",
+      "right" : "super(out, err);",
+      "info" : "SuperConstructorInvocation[15858-15874]:SuperConstructorInvocation[15936-15952]"
+    }, {
+      "left" : "initConfigFromFlags(args, err);",
+      "right" : "initConfigFromFlags(args, err);",
+      "info" : "ExpressionStatement[15879-15910]:ExpressionStatement[15957-15988]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[15918-15925]:Modifier[15996-16003]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[15926-15930]:PrimitiveType[16004-16008]"
+    }, {
+      "left" : "initConfigFromFlags",
+      "right" : "initConfigFromFlags",
+      "info" : "SimpleName[15931-15950]:SimpleName[16009-16028]"
+    }, {
+      "left" : "String[] args",
+      "right" : "String[] args",
+      "info" : "SingleVariableDeclaration[15951-15964]:SingleVariableDeclaration[16029-16042]"
+    }, {
+      "left" : "PrintStream err",
+      "right" : "PrintStream err",
+      "info" : "SingleVariableDeclaration[15966-15981]:SingleVariableDeclaration[16044-16059]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15983-19243]:Block[16061-19321]"
+    }, {
+      "left" : "Pattern argPattern = Pattern.compile(\"(--[a-zA-Z_]+)=(.*)\");",
+      "right" : "Pattern argPattern = Pattern.compile(\"(--[a-zA-Z_]+)=(.*)\");",
+      "info" : "VariableDeclarationStatement[16149-16209]:VariableDeclarationStatement[16227-16287]"
+    }, {
+      "left" : "Pattern quotesPattern = Pattern.compile(\"^['\\\"](.*)['\\\"]$\");",
+      "right" : "Pattern quotesPattern = Pattern.compile(\"^['\\\"](.*)['\\\"]$\");",
+      "info" : "VariableDeclarationStatement[16214-16274]:VariableDeclarationStatement[16292-16352]"
+    }, {
+      "left" : "List<String> processedArgs = Lists.newArrayList();",
+      "right" : "List<String> processedArgs = Lists.newArrayList();",
+      "info" : "VariableDeclarationStatement[16279-16329]:VariableDeclarationStatement[16357-16407]"
+    }, {
+      "left" : "for (String arg : args)",
+      "right" : "for (String arg : args)",
+      "info" : "EnhancedForStatement[16334-16804]:EnhancedForStatement[16412-16882]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16358-16804]:Block[16436-16882]"
+    }, {
+      "left" : "Matcher matcher = argPattern.matcher(arg);",
+      "right" : "Matcher matcher = argPattern.matcher(arg);",
+      "info" : "VariableDeclarationStatement[16366-16408]:VariableDeclarationStatement[16444-16486]"
+    }, {
+      "left" : "if (matcher.matches())",
+      "right" : "if (matcher.matches())",
+      "info" : "IfStatement[16415-16798]:IfStatement[16493-16876]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16438-16751]:Block[16516-16829]"
+    }, {
+      "left" : "processedArgs.add(matcher.group(1));",
+      "right" : "processedArgs.add(matcher.group(1));",
+      "info" : "ExpressionStatement[16448-16484]:ExpressionStatement[16526-16562]"
+    }, {
+      "left" : "String value = matcher.group(2);",
+      "right" : "String value = matcher.group(2);",
+      "info" : "VariableDeclarationStatement[16494-16526]:VariableDeclarationStatement[16572-16604]"
+    }, {
+      "left" : "Matcher quotesMatcher = quotesPattern.matcher(value);",
+      "right" : "Matcher quotesMatcher = quotesPattern.matcher(value);",
+      "info" : "VariableDeclarationStatement[16535-16588]:VariableDeclarationStatement[16613-16666]"
+    }, {
+      "left" : "if (quotesMatcher.matches())",
+      "right" : "if (quotesMatcher.matches())",
+      "info" : "IfStatement[16597-16743]:IfStatement[16675-16821]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16626-16690]:Block[16704-16768]"
+    }, {
+      "left" : "processedArgs.add(quotesMatcher.group(1));",
+      "right" : "processedArgs.add(quotesMatcher.group(1));",
+      "info" : "ExpressionStatement[16638-16680]:ExpressionStatement[16716-16758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16696-16743]:Block[16774-16821]"
+    }, {
+      "left" : "processedArgs.add(value);",
+      "right" : "processedArgs.add(value);",
+      "info" : "ExpressionStatement[16708-16733]:ExpressionStatement[16786-16811]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16757-16798]:Block[16835-16876]"
+    }, {
+      "left" : "processedArgs.add(arg);",
+      "right" : "processedArgs.add(arg);",
+      "info" : "ExpressionStatement[16767-16790]:ExpressionStatement[16845-16868]"
+    }, {
+      "left" : "CmdLineParser parser = new CmdLineParser(flags);",
+      "right" : "CmdLineParser parser = new CmdLineParser(flags);",
+      "info" : "VariableDeclarationStatement[16810-16858]:VariableDeclarationStatement[16888-16936]"
+    }, {
+      "left" : "isConfigValid = true;",
+      "right" : "isConfigValid = true;",
+      "info" : "ExpressionStatement[16863-16884]:ExpressionStatement[16941-16962]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[16889-17067]:TryStatement[16967-17145]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16893-16968]:Block[16971-17046]"
+    }, {
+      "left" : "parser.parseArgument(processedArgs.toArray(new String[] {}));",
+      "right" : "parser.parseArgument(processedArgs.toArray(new String[] {}));",
+      "info" : "ExpressionStatement[16901-16962]:ExpressionStatement[16979-17040]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16996-17067]:Block[17074-17145]"
+    }, {
+      "left" : "err.println(e.getMessage());",
+      "right" : "err.println(e.getMessage());",
+      "info" : "ExpressionStatement[17004-17032]:ExpressionStatement[17082-17110]"
+    }, {
+      "left" : "isConfigValid = false;",
+      "right" : "isConfigValid = false;",
+      "info" : "ExpressionStatement[17039-17061]:ExpressionStatement[17117-17139]"
+    }, {
+      "left" : "if (flags.version)",
+      "right" : "if (flags.version)",
+      "info" : "IfStatement[17073-17415]:IfStatement[17151-17493]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17092-17415]:Block[17170-17493]"
+    }, {
+      "left" : "ResourceBundle config = ResourceBundle.getBundle(configResource);",
+      "right" : "ResourceBundle config = ResourceBundle.getBundle(configResource);",
+      "info" : "VariableDeclarationStatement[17100-17165]:VariableDeclarationStatement[17178-17243]"
+    }, {
+      "left" : "err.println(\n          \"Closure Compiler (http://code.google.com/closure/compiler)\\n\" +\n          \"Version: \" + config.getString(\"compiler.version\") + \"\\n\" +\n          \"Built on: \" + config.getString(\"compiler.date\"));",
+      "right" : "err.println(\n          \"Closure Compiler (http://code.google.com/closure/compiler)\\n\" +\n          \"Version: \" + config.getString(\"compiler.version\") + \"\\n\" +\n          \"Built on: \" + config.getString(\"compiler.date\"));",
+      "info" : "ExpressionStatement[17172-17390]:ExpressionStatement[17250-17468]"
+    }, {
+      "left" : "err.flush();",
+      "right" : "err.flush();",
+      "info" : "ExpressionStatement[17397-17409]:ExpressionStatement[17475-17487]"
+    }, {
+      "left" : "if (!isConfigValid || flags.display_help)",
+      "right" : "if (!isConfigValid || flags.display_help)",
+      "info" : "IfStatement[17421-19239]:IfStatement[17499-19317]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17463-17529]:Block[17541-17607]"
+    }, {
+      "left" : "isConfigValid = false;",
+      "right" : "isConfigValid = false;",
+      "info" : "ExpressionStatement[17471-17493]:ExpressionStatement[17549-17571]"
+    }, {
+      "left" : "parser.printUsage(err);",
+      "right" : "parser.printUsage(err);",
+      "info" : "ExpressionStatement[17500-17523]:ExpressionStatement[17578-17601]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17535-19239]:Block[17613-19317]"
+    }, {
+      "left" : "getCommandLineConfig()\n          .setPrintTree(flags.print_tree)\n          .setComputePhaseOrdering(flags.compute_phase_ordering)\n          .setPrintAst(flags.print_ast)\n          .setPrintPassGraph(flags.print_pass_graph)\n          .setJscompDevMode(flags.jscomp_dev_mode)\n          .setLoggingLevel(flags.logging_level)\n          .setExterns(flags.externs)\n          .setJs(flags.js)\n          .setJsOutputFile(flags.js_output_file)\n          .setModule(flags.module)\n          .setVariableMapInputFile(flags.variable_map_input_file)\n          .setPropertyMapInputFile(flags.property_map_input_file)\n          .setVariableMapOutputFile(flags.variable_map_output_file)\n          .setCreateNameMapFiles(flags.create_name_map_files)\n          .setPropertyMapOutputFile(flags.property_map_output_file)\n          .setCodingConvention(flags.third_party ?\n               new DefaultCodingConvention() :\n               new ClosureCodingConvention())\n          .setSummaryDetailLevel(flags.summary_detail_level)\n          .setOutputWrapper(flags.output_wrapper)\n          .setOutputWrapperMarker(flags.output_wrapper_marker)\n          .setModuleWrapper(flags.module_wrapper)\n          .setModuleOutputPathPrefix(flags.module_output_path_prefix)\n          .setCreateSourceMap(flags.create_source_map)\n          .setJscompError(flags.jscomp_error)\n          .setJscompWarning(flags.jscomp_warning)\n          .setJscompOff(flags.jscomp_off)\n          .setDefine(flags.define)\n          .setCharset(flags.charset)\n          .setManageClosureDependencies(flags.manage_closure_dependencies)\n          .setClosureEntryPoints(flags.closure_entry_point)\n          .setOutputManifest(flags.output_manifest);",
+      "right" : "getCommandLineConfig()\n          .setPrintTree(flags.print_tree)\n          .setComputePhaseOrdering(flags.compute_phase_ordering)\n          .setPrintAst(flags.print_ast)\n          .setPrintPassGraph(flags.print_pass_graph)\n          .setJscompDevMode(flags.jscomp_dev_mode)\n          .setLoggingLevel(flags.logging_level)\n          .setExterns(flags.externs)\n          .setJs(flags.js)\n          .setJsOutputFile(flags.js_output_file)\n          .setModule(flags.module)\n          .setVariableMapInputFile(flags.variable_map_input_file)\n          .setPropertyMapInputFile(flags.property_map_input_file)\n          .setVariableMapOutputFile(flags.variable_map_output_file)\n          .setCreateNameMapFiles(flags.create_name_map_files)\n          .setPropertyMapOutputFile(flags.property_map_output_file)\n          .setCodingConvention(flags.third_party ?\n               new DefaultCodingConvention() :\n               new ClosureCodingConvention())\n          .setSummaryDetailLevel(flags.summary_detail_level)\n          .setOutputWrapper(flags.output_wrapper)\n          .setOutputWrapperMarker(flags.output_wrapper_marker)\n          .setModuleWrapper(flags.module_wrapper)\n          .setModuleOutputPathPrefix(flags.module_output_path_prefix)\n          .setCreateSourceMap(flags.create_source_map)\n          .setJscompError(flags.jscomp_error)\n          .setJscompWarning(flags.jscomp_warning)\n          .setJscompOff(flags.jscomp_off)\n          .setDefine(flags.define)\n          .setCharset(flags.charset)\n          .setManageClosureDependencies(flags.manage_closure_dependencies)\n          .setClosureEntryPoints(flags.closure_entry_point)\n          .setOutputManifest(flags.output_manifest);",
+      "info" : "ExpressionStatement[17543-19233]:ExpressionStatement[17621-19311]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[19247-19256]:MarkerAnnotation[19325-19334]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[19259-19268]:Modifier[19337-19346]"
+    }, {
+      "left" : "CompilerOptions",
+      "right" : "CompilerOptions",
+      "info" : "SimpleType[19269-19284]:SimpleType[19347-19362]"
+    }, {
+      "left" : "createOptions",
+      "right" : "createOptions",
+      "info" : "SimpleName[19285-19298]:SimpleName[19363-19376]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19301-19908]:Block[19379-19986]"
+    }, {
+      "left" : "CompilerOptions options = new CompilerOptions();",
+      "right" : "CompilerOptions options = new CompilerOptions();",
+      "info" : "VariableDeclarationStatement[19307-19355]:VariableDeclarationStatement[19385-19433]"
+    }, {
+      "left" : "options.setCodingConvention(new ClosureCodingConvention());",
+      "right" : "options.setCodingConvention(new ClosureCodingConvention());",
+      "info" : "ExpressionStatement[19360-19419]:ExpressionStatement[19438-19497]"
+    }, {
+      "left" : "CompilationLevel level = flags.compilation_level;",
+      "right" : "CompilationLevel level = flags.compilation_level;",
+      "info" : "VariableDeclarationStatement[19424-19473]:VariableDeclarationStatement[19502-19551]"
+    }, {
+      "left" : "level.setOptionsForCompilationLevel(options);",
+      "right" : "level.setOptionsForCompilationLevel(options);",
+      "info" : "ExpressionStatement[19478-19523]:ExpressionStatement[19556-19601]"
+    }, {
+      "left" : "if (flags.debug)",
+      "right" : "if (flags.debug)",
+      "info" : "IfStatement[19528-19609]:IfStatement[19606-19687]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19545-19609]:Block[19623-19687]"
+    }, {
+      "left" : "level.setDebugOptionsForCompilationLevel(options);",
+      "right" : "level.setDebugOptionsForCompilationLevel(options);",
+      "info" : "ExpressionStatement[19553-19603]:ExpressionStatement[19631-19681]"
+    }, {
+      "left" : "WarningLevel wLevel = flags.warning_level;",
+      "right" : "WarningLevel wLevel = flags.warning_level;",
+      "info" : "VariableDeclarationStatement[19615-19657]:VariableDeclarationStatement[19693-19735]"
+    }, {
+      "left" : "wLevel.setOptionsForWarningLevel(options);",
+      "right" : "wLevel.setOptionsForWarningLevel(options);",
+      "info" : "ExpressionStatement[19662-19704]:ExpressionStatement[19740-19782]"
+    }, {
+      "left" : "for (FormattingOption formattingOption : flags.formatting)",
+      "right" : "for (FormattingOption formattingOption : flags.formatting)",
+      "info" : "EnhancedForStatement[19709-19823]:EnhancedForStatement[19787-19901]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19768-19823]:Block[19846-19901]"
+    }, {
+      "left" : "formattingOption.applyToOptions(options);",
+      "right" : "formattingOption.applyToOptions(options);",
+      "info" : "ExpressionStatement[19776-19817]:ExpressionStatement[19854-19895]"
+    }, {
+      "left" : "options.closurePass = flags.process_closure_primitives;",
+      "right" : "options.closurePass = flags.process_closure_primitives;",
+      "info" : "ExpressionStatement[19829-19884]:ExpressionStatement[19907-19962]"
+    }, {
+      "left" : "return options;",
+      "right" : "return options;",
+      "info" : "ReturnStatement[19889-19904]:ReturnStatement[19967-19982]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[19912-19921]:MarkerAnnotation[19990-19999]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[19924-19933]:Modifier[20002-20011]"
+    }, {
+      "left" : "Compiler",
+      "right" : "Compiler",
+      "info" : "SimpleType[19934-19942]:SimpleType[20012-20020]"
+    }, {
+      "left" : "createCompiler",
+      "right" : "createCompiler",
+      "info" : "SimpleName[19943-19957]:SimpleName[20021-20035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19960-20013]:Block[20038-20091]"
+    }, {
+      "left" : "return new Compiler(getErrorPrintStream());",
+      "right" : "return new Compiler(getErrorPrintStream());",
+      "info" : "ReturnStatement[19966-20009]:ReturnStatement[20044-20087]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[20017-20026]:MarkerAnnotation[20095-20104]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[20029-20038]:Modifier[20107-20116]"
+    }, {
+      "left" : "List<JSSourceFile>",
+      "right" : "List<JSSourceFile>",
+      "info" : "ParameterizedType[20039-20057]:ParameterizedType[20117-20135]"
+    }, {
+      "left" : "createExterns",
+      "right" : "createExterns",
+      "info" : "SimpleName[20058-20071]:SimpleName[20136-20149]"
+    }, {
+      "left" : "FlagUsageException",
+      "right" : "FlagUsageException",
+      "info" : "SimpleType[20081-20099]:SimpleType[20159-20177]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[20107-20118]:SimpleType[20185-20196]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20119-20410]:Block[20197-20488]"
+    }, {
+      "left" : "List<JSSourceFile> externs = super.createExterns();",
+      "right" : "List<JSSourceFile> externs = super.createExterns();",
+      "info" : "VariableDeclarationStatement[20125-20176]:VariableDeclarationStatement[20203-20254]"
+    }, {
+      "left" : "if (flags.use_only_custom_externs || isInTestMode())",
+      "right" : "if (flags.use_only_custom_externs || isInTestMode())",
+      "info" : "IfStatement[20181-20406]:IfStatement[20259-20484]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20234-20263]:Block[20312-20341]"
+    }, {
+      "left" : "return externs;",
+      "right" : "return externs;",
+      "info" : "ReturnStatement[20242-20257]:ReturnStatement[20320-20335]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20269-20406]:Block[20347-20484]"
+    }, {
+      "left" : "List<JSSourceFile> defaultExterns = getDefaultExterns();",
+      "right" : "List<JSSourceFile> defaultExterns = getDefaultExterns();",
+      "info" : "VariableDeclarationStatement[20277-20333]:VariableDeclarationStatement[20355-20411]"
+    }, {
+      "left" : "defaultExterns.addAll(externs);",
+      "right" : "defaultExterns.addAll(externs);",
+      "info" : "ExpressionStatement[20340-20371]:ExpressionStatement[20418-20449]"
+    }, {
+      "left" : "return defaultExterns;",
+      "right" : "return defaultExterns;",
+      "info" : "ReturnStatement[20378-20400]:ReturnStatement[20456-20478]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[21439-21445]:Modifier[21517-21523]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[21446-21452]:Modifier[21524-21530]"
+    }, {
+      "left" : "List<JSSourceFile>",
+      "right" : "List<JSSourceFile>",
+      "info" : "ParameterizedType[21453-21471]:ParameterizedType[21531-21549]"
+    }, {
+      "left" : "getDefaultExterns",
+      "right" : "getDefaultExterns",
+      "info" : "SimpleName[21472-21489]:SimpleName[21550-21567]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[21499-21510]:SimpleType[21577-21588]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21511-22603]:Block[21589-22681]"
+    }, {
+      "left" : "InputStream input = CommandLineRunner.class.getResourceAsStream(\n        \"/externs.zip\");",
+      "right" : "InputStream input = CommandLineRunner.class.getResourceAsStream(\n        \"/externs.zip\");",
+      "info" : "VariableDeclarationStatement[21517-21606]:VariableDeclarationStatement[21595-21684]"
+    }, {
+      "left" : "ZipInputStream zip = new ZipInputStream(input);",
+      "right" : "ZipInputStream zip = new ZipInputStream(input);",
+      "info" : "VariableDeclarationStatement[21611-21658]:VariableDeclarationStatement[21689-21736]"
+    }, {
+      "left" : "Map<String, JSSourceFile> externsMap = Maps.newHashMap();",
+      "right" : "Map<String, JSSourceFile> externsMap = Maps.newHashMap();",
+      "info" : "VariableDeclarationStatement[21663-21720]:VariableDeclarationStatement[21741-21798]"
+    }, {
+      "left" : "for (ZipEntry entry = null; (entry = zip.getNextEntry()) != null)",
+      "right" : "for (ZipEntry entry = null; (entry = zip.getNextEntry()) != null)",
+      "info" : "ForStatement[21725-22153]:ForStatement[21803-22231]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21793-22153]:Block[21871-22231]"
+    }, {
+      "left" : "LimitInputStream entryStream = new LimitInputStream(zip, entry.getSize());",
+      "right" : "LimitInputStream entryStream = new LimitInputStream(zip, entry.getSize());",
+      "info" : "VariableDeclarationStatement[21801-21875]:VariableDeclarationStatement[21879-21953]"
+    }, {
+      "left" : "externsMap.put(entry.getName(),\n          JSSourceFile.fromInputStream(\n              // Give the files an odd prefix, so that they do not conflict\n              // with the user's files.\n              \"externs.zip//\" + entry.getName(),\n              entryStream));",
+      "right" : "externsMap.put(entry.getName(),\n          JSSourceFile.fromInputStream(\n              // Give the files an odd prefix, so that they do not conflict\n              // with the user's files.\n              \"externs.zip//\" + entry.getName(),\n              entryStream));",
+      "info" : "ExpressionStatement[21882-22147]:ExpressionStatement[21960-22225]"
+    }, {
+      "left" : "Preconditions.checkState(\n        externsMap.keySet().equals(Sets.newHashSet(DEFAULT_EXTERNS_NAMES)),\n        \"Externs zip must match our hard-coded list of externs.\");",
+      "right" : "Preconditions.checkState(\n        externsMap.keySet().equals(Sets.newHashSet(DEFAULT_EXTERNS_NAMES)),\n        \"Externs zip must match our hard-coded list of externs.\");",
+      "info" : "ExpressionStatement[22159-22327]:ExpressionStatement[22237-22405]"
+    }, {
+      "left" : "List<JSSourceFile> externs = Lists.newArrayList();",
+      "right" : "List<JSSourceFile> externs = Lists.newArrayList();",
+      "info" : "VariableDeclarationStatement[22435-22485]:VariableDeclarationStatement[22513-22563]"
+    }, {
+      "left" : "for (String key : DEFAULT_EXTERNS_NAMES)",
+      "right" : "for (String key : DEFAULT_EXTERNS_NAMES)",
+      "info" : "EnhancedForStatement[22490-22578]:EnhancedForStatement[22568-22656]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22531-22578]:Block[22609-22656]"
+    }, {
+      "left" : "externs.add(externsMap.get(key));",
+      "right" : "externs.add(externsMap.get(key));",
+      "info" : "ExpressionStatement[22539-22572]:ExpressionStatement[22617-22650]"
+    }, {
+      "left" : "return externs;",
+      "right" : "return externs;",
+      "info" : "ReturnStatement[22584-22599]:ReturnStatement[22662-22677]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[22668-22674]:Modifier[22746-22752]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[22675-22682]:PrimitiveType[22753-22760]"
+    }, {
+      "left" : "shouldRunCompiler",
+      "right" : "shouldRunCompiler",
+      "info" : "SimpleName[22683-22700]:SimpleName[22761-22778]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22703-22739]:Block[22781-22817]"
+    }, {
+      "left" : "return this.isConfigValid;",
+      "right" : "return this.isConfigValid;",
+      "info" : "ReturnStatement[22709-22735]:ReturnStatement[22787-22813]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[22819-22825]:Modifier[22897-22903]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[22826-22832]:Modifier[22904-22910]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[22833-22837]:PrimitiveType[22911-22915]"
+    }, {
+      "left" : "main",
+      "right" : "main",
+      "info" : "SimpleName[22838-22842]:SimpleName[22916-22920]"
+    }, {
+      "left" : "String[] args",
+      "right" : "String[] args",
+      "info" : "SingleVariableDeclaration[22843-22856]:SingleVariableDeclaration[22921-22934]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22858-23023]:Block[22936-23101]"
+    }, {
+      "left" : "CommandLineRunner runner = new CommandLineRunner(args);",
+      "right" : "CommandLineRunner runner = new CommandLineRunner(args);",
+      "info" : "VariableDeclarationStatement[22864-22919]:VariableDeclarationStatement[22942-22997]"
+    }, {
+      "left" : "if (runner.shouldRunCompiler())",
+      "right" : "if (runner.shouldRunCompiler())",
+      "info" : "IfStatement[22924-23019]:IfStatement[23002-23097]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22956-22983]:Block[23034-23061]"
+    }, {
+      "left" : "runner.run();",
+      "right" : "runner.run();",
+      "info" : "ExpressionStatement[22964-22977]:ExpressionStatement[23042-23055]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22989-23019]:Block[23067-23097]"
+    }, {
+      "left" : "System.exit(-1);",
+      "right" : "System.exit(-1);",
+      "info" : "ExpressionStatement[22997-23013]:ExpressionStatement[23075-23091]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

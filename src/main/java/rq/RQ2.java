@@ -45,8 +45,8 @@ public class RQ2 implements RQ{
     }
 
     public static void main(String[] args) throws Exception {
-        Configuration c1 = ConfigurationFactory.hack_refOracle_3();
-        Configuration c2 = ConfigurationFactory.hack_defects4j_3();
+        Configuration c1 = ConfigurationFactory.extendedTools_refOracle_3();
+        Configuration c2 = ConfigurationFactory.extendedTools_defects4j_3();
         Set<ASTDiffTool> tools = Set.of(
                 ASTDiffTool.GOD,
                 ASTDiffTool.RMD,

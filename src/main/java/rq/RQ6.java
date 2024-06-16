@@ -36,8 +36,8 @@ public class RQ6 implements RQ{
     }
 
     public static void main(String[] args) {
-        Configuration c1 = ConfigurationFactory.hack_refOracle_3();
-        Configuration c2 = ConfigurationFactory.hack_defects4j_3();
+        Configuration c1 = ConfigurationFactory.extendedTools_refOracle_3();
+        Configuration c2 = ConfigurationFactory.extendedTools_defects4j_3();
         try {
             new RQ6().run(new Configuration[]{c1, c2});
         } catch (Exception e) {

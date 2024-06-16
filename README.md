@@ -4,7 +4,8 @@ Pouria Alikhanifard and Nikolaos Tsantalis, "[A Novel Refactoring and Semantic A
 
 #### All the oracle files are available at [**oracle**](https://github.com/pouryafard75/DiffBenchmark/tree/master/oracle) folder and the EXPERIMENTS RESULTS are avialable at [**out**](https://github.com/pouryafard75/DiffBenchmark/tree/master/out) folder.
 
-Please check the [Wiki](https://github.com/pouryafard75/DiffBenchmark/wiki) for the detailed explanation.
+Please check the [Wiki](https://github.com/pouryafard75/DiffBenchmark/wiki) for the detailed explanation. You can find the list of all supported ASTDiffTools [here](
+https://github.com/pouryafard75/DiffBenchmark/wiki/Supported-ASTDiff-Tools).
 
 Table of Contents
 =================

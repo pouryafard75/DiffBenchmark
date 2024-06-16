@@ -7,10 +7,10 @@ import benchmark.utils.Configuration.ConfigurationFactory;
 /* Created by pourya on 2024-05-17*/
 public class RQDriver {
     public static void main(String[] args) {
-        Configuration[] confs = {ConfigurationFactory.extendedTools_defects4j_3()};
+        Configuration[] confs = {ConfigurationFactory.defects4jTwoPointOne()};
         RQ[] rqs = {
                 new RQ1(),
-                new RQ2(),
+//                new RQ2(), //Execution time is too long, so execute it separately withing RQ2.main method.
                 new RQ3(MappingsTypeFilter.PROGRAM_ELEMENTS),
                 new RQ3(MappingsTypeFilter.FIELD_DECL_ONLY),
                 new RQ3(MappingsTypeFilter.METHOD_DECL_ONLY),

@@ -7,4 +7,7 @@ public class NoPerfectDiffException extends RuntimeException {
     public NoPerfectDiffException(IOException e) {
         super(e);
     }
+    NoPerfectDiffException(String message) {
+        super(message);
+    }
 }

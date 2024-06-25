@@ -4,6 +4,7 @@ plugins {
 }
 application {
     mainClassName = project.hasProperty("mainClass") ? project.getProperty("mainClass") : "gui.CmdRunner"
+    applicationDefaultJvmArgs = ['--add-opens', 'java.base/java.lang=ALL-UNNAMED']
 }
 group 'ca.concordia'
 version '1.0-SNAPSHOT'
@@ -51,6 +52,11 @@ dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.32'
     implementation 'ch.qos.logback:logback-classic:1.4.12'
 
+
+    implementation 'org.hibernate:hibernate-core:5.3.20.Final' // Replace with the latest Hibernate version
+    implementation 'org.hibernate:hibernate-entitymanager:5.3.20.Final' // For JPA support
+    // PostgreSQL JDBC driver
+    implementation 'org.postgresql:postgresql:42.4.1' // Replace with the latest PostgreSQL JDBC driver version
 
 
 }

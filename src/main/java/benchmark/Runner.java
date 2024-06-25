@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 public class Runner {
     public static void run(Set<Configuration> confs, boolean rm_only, Consumer<BenchmarkHumanReadableDiffGenerator> consumer) throws Exception {
         for (Configuration configuration : confs) {
-            if (rm_only) configuration.setActiveTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD, ASTDiffTool.RM2));
+            if (rm_only) configuration.setActiveTools(Set.of(ASTDiffTool.GOD, ASTDiffTool.TRV, ASTDiffTool.RMD/*, ASTDiffTool.RM2*/));
             consumer.accept(new BenchmarkHumanReadableDiffGenerator(configuration));
             VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration);
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();

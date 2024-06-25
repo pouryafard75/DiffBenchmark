@@ -21,12 +21,12 @@ def refactoringMinerVersion = project.hasProperty('refactoringMinerVersion') ?
 dependencies {
     implementation('com.google.code.gson:gson:2.8.9')
 
-    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.35.0'
+    implementation 'org.eclipse.jdt:org.eclipse.jdt.core:3.38.0'
     implementation ("com.github.tsantalis:refactoring-miner:$refactoringMinerVersion") {
         exclude group: 'org.slf4j', module: 'slf4j-simple'
         exclude group: 'org.slf4j', module: 'log4j-over-slf4j'
     }
-    implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:6.10.0.202406032230-r'
     implementation 'com.github.gumtreediff:core:3.0.0'
     implementation 'com.github.gumtreediff:gen.jdt:3.0.0'
     implementation 'it.unimi.dsi:fastutil:8.3.1'
@@ -36,7 +36,7 @@ dependencies {
     }
     implementation files('libs/IJM-1.0-SNAPSHOT-customized2.jar')
     implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
-    implementation files('libs/RM-2.2.0-customized.jar')
+//    implementation files('libs/RM-2.2.0-customized.jar')
     implementation files('libs/iAST-1.0-SNAPSHOT-customized.jar')
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'

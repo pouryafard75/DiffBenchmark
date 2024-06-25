@@ -151,7 +151,7 @@ public class GridSearch {
 
     private synchronized void add(Matcher matcher, GumtreeProperties properties, int edSize, int edSizeNonJavaDocs, NecessaryMappings ignore, DiffStats dat) {
         Intel intel = new Intel(info.getRepo(), info.getCommit(), rmDiff.getSrcPath(),
-                matcher.getClass().getCanonicalName(), properties.toString(),
+                matcher.getClass().getCanonicalName().replace("com.github.gumtreediff.matchers.CompositeMatchers.", ""), properties.toString(),
                 edSize, edSizeNonJavaDocs,
                 ignore, dat);
         logger.debug("Intel #" + (intels.size() + 1) + " is added");

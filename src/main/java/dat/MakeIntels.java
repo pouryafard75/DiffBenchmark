@@ -12,18 +12,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static benchmark.utils.Helpers.runWhatever;
-import static dat.Intel.writeIntelListToCsv;
 
 /* Created by pourya on 2024-01-18*/
-public class Make {
-    private final static Logger logger = LoggerFactory.getLogger(Make.class);
+public class MakeIntels {
+    private final static Logger logger = LoggerFactory.getLogger(MakeIntels.class);
     private static final Configuration configuration = ConfigurationFactory.refOracle();
     private static final String destination = "intel.csv";
     private static int numThreads = Runtime.getRuntime().availableProcessors();
 
+
     public static void main(String[] args) throws Exception {
         logger.info("Start running DAT");
         int case_count = 0;
+        IntelDao intelDao = new IntelDao();
         List<Intel> intels = new ArrayList<>();
         try {
             for (CaseInfo info : configuration.getAllCases()) {
@@ -36,7 +37,7 @@ public class Make {
                     intels.addAll(dat.run(numThreads));
                 }
                 if (case_count == 5) break;
-                writeIntelListToCsv(intels, destination);
+                intelDao.insertIntels(intels);
                 logger.info("Intel written to csv");
             }
         }
@@ -45,8 +46,11 @@ public class Make {
             logger.debug("Error in DAT", e);
             throw new RuntimeException(e);
         }
-        writeIntelListToCsv(intels, destination);
+        finally {
+            HibernateUtil.shutdown();
+        }
         logger.info("DAT finished");
+
     }
 }
 

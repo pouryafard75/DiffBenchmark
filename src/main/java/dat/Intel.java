@@ -9,31 +9,63 @@ import com.opencsv.CSVWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import javax.persistence.*;
+
 
 /* Created by pourya on 2024-01-22*/
 
 
+@Entity
+@Table(name = "Intel")
 public class Intel {
 
-    String repo, commit;
-    String srcPath;
-    String matcher;
-    String conf;
-    int edSize, edSizeNonJavaDoc;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    int trv_mappings, trv_programElements;
+    @Column(name = "repo")
+    String repo;
+    @Column(name = "commit")
+    String commit;
+    @Column(name = "srcPath")
+    String srcPath;
+    @Column(name = "matcher")
+    String matcher;
+    @Column(name = "conf")
+    String conf;
+    @Column(name = "edSize")
+    int edSize;
+    @Column(name = "edSizeNonJavaDoc")
+    int edSizeNonJavaDoc;
+    @Column(name = "trv_mappings")
+    int trv_mappings;
+    @Column(name = "trv_programElements")
+    int trv_programElements;
 
     @JsonIgnore
     int tp_raw_mappings;
 
-    int tp_mappings, fp_mappings, fn_mappings;
+    @Column(name = "tp_mappings")
+    int tp_mappings;
+    @Column(name = "fp_mappings")
+    int fp_mappings;
+    @Column(name = "fn_mappings")
+    int fn_mappings;
 
     @JsonIgnore
     int tp_raw_programElements;
-
-    int tp_programElements, fp_programElements, fn_programElements;
-
-    double precision; double recall; double f1;
+    @Column(name = "tp_programElements")
+    int tp_programElements;
+    @Column(name = "fp_programElements")
+    int fp_programElements;
+    @Column(name = "fn_programElements")
+    int fn_programElements;
+    @Column(name = "precision")
+    double precision;
+    @Column(name = "recall")
+    double recall;
+    @Column(name = "f1")
+    double f1;
 
     public Intel(String repo, String commit, String srcPath,
                  String matcher, String conf,
@@ -257,5 +289,11 @@ public class Intel {
         this.f1 = f1;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/DAT</property>
+        <property name="hibernate.connection.username">${db.username}</property>
+        <property name="hibernate.connection.password">${db.password}</property>
+
+
+        <!-- Specify dialect for PostgreSQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Enable Hibernate's automatic schema creation (only for development!) -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <!-- Mapping files or annotated classes -->
+        <!-- Mapping files or annotated classes -->
+        <mapping class="dat.Intel"/> <!-- Replace with your actual package name -->
+        <!-- Add your entity classes here -->
+    </session-factory>
+</hibernate-configuration>

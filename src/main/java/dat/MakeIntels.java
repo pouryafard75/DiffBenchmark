@@ -36,9 +36,10 @@ public class MakeIntels {
                     GridSearch dat = new GridSearch(info, projectASTDiff, rm_astDiff, configuration);
                     intels.addAll(dat.run(numThreads));
                 }
-                if (case_count == 5) break;
                 intelDao.insertIntels(intels);
-            }
+                // if (case_count == 2) break;
+
+}
         }
         catch (Exception e) {
             logger.error("Error in DAT", e);

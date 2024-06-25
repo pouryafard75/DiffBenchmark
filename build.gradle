@@ -124,9 +124,30 @@ test {
     useJUnitPlatform()
 }
 
+def loadEnvFile() {
+    def envFile = file('.env')
+    if (envFile.exists()) {
+        envFile.eachLine { line ->
+            if (!line.startsWith("#") && line.contains("=")) {
+                def (key, value) = line.split("=")
+                project.ext.set(key.trim(), value.trim())
+            }
+        }
+    }
+}
+
+// Load the .env file
+loadEnvFile()
 run {
     def refactoringMinerPathValue = System.properties['refactoringMinerPath']
     if (refactoringMinerPathValue && !refactoringMinerPathValue.isEmpty()) {
         systemProperty("refactoringMinerPath", refactoringMinerPathValue)
+    }
+    doFirst {
+        project.ext.properties.each { key, value ->
+            if (key != 'ext') {
+                systemProperty(key, value)
+            }
+        }
     }
 }

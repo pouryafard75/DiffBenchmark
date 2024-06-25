@@ -4,6 +4,7 @@ import benchmark.generators.tools.runners.trivial.TrivialDiff;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
+import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
@@ -32,7 +33,7 @@ public class RM2 extends AbstractASTDiffProviderFromExportedMappings {
     public ASTDiff makeASTDiff() {
         ASTDiff astDiff = make(getExportedMappings());
         postPopulation(astDiff);
-        astDiff.computeEditScript(ptc, ctc);
+        astDiff.computeEditScript(ptc, ctc, new SimplifiedExtendedChawatheScriptGenerator());
         return astDiff;
     }
     private void postPopulation(ASTDiff astDiff) {

@@ -21,10 +21,10 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new VanillaDiffView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                Renderable view = new VanillaDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                        astDiff, id, projectASTDiff.getDiffSet().size(), "-vanilla/", false,
                         projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                        astDiff, false);
+                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()), false);
                 return renderToString(view);
             })
     ),
@@ -33,10 +33,8 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "-monaco/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new MonacoDiffView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()),
-                        astDiff, id, false);
+                Renderable view = new MonacoDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                        astDiff, id, projectASTDiff.getDiffSet().size(), "-monaco/", false);
                 return renderToString(view);
             })
     )

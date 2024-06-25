@@ -5,6 +5,7 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
+import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
@@ -24,7 +25,7 @@ public abstract class AbstractASTDiffProviderFromExportedMappings extends ASTDif
 
     public ASTDiff makeASTDiff() {
         ASTDiff result = make(getExportedMappings());
-        result.computeEditScript(ptc, ctc);
+        result.computeEditScript(ptc, ctc, new SimplifiedExtendedChawatheScriptGenerator());
         return result;
     }
 

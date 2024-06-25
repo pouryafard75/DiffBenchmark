@@ -23,7 +23,11 @@ public class TrivialDiff extends BaseTrivialDiff {
         try {
             perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, input, info, conf).getAllMappings();
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
+        }
+        if (perfectMappings == null) {
+            System.out.println("Perfect mappings are not available. Trivial diff will be performed without perfect mappings.");
+            this.setCondition(mapping -> true);
         }
         Predicate<Mapping> predicate = mapping -> {
             if (!IdenticalProgramElementsDiffBaseTrivialDiff.mappingPredicate.test(mapping)) return false;

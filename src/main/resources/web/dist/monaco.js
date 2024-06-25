@@ -18,6 +18,7 @@
  * Copyright 2011-2015 Floréal Morandat <florealm@gmail.com>
  */
 
+let margin = 2;
 function getEditorOptions(text) {
     return {
         value: text,
@@ -30,38 +31,23 @@ function getEditorOptions(text) {
         minimap: {
             enabled: false,
         },
+        wordWrap: 'on' // Enables word wrap
     };
 }
 
 function getLanguage() {
     let extension = config.file.split('.').pop().toLowerCase();
-    if (extension == "java")
+    if (extension === "java")
         return "java";
-    else if (extension == "js")
-        return "javascript";
-    else if (extension == "rb")
-        return "ruby";
-    else if (extension == "css")
-        return "css";
-    else if (extension == "py")
-        return "python";
-    else if (extension == "cs")
-        return "csharp";
-    else if (extension == "r")
-        return "r";
-    else if (extension == "php")
-        return "php";
-    else if (extension == "c" || extension == "h" || extension == "cpp")
-        return "cpp";
     else
         return undefined;
 }
-
 function getEditColor(edit) {
-    if (edit == "inserted") return 'green';
-    else if (edit == "deleted") return 'red';
-    else if (edit == "updated") return 'yellow';
-    else if (edit == "moved") return 'blue';
+    if (edit === "inserted") return 'green';
+    else if (edit === "deleted") return 'red';
+    else if (edit === "updated") return 'yellow';
+    else if (edit === "moved") return 'blue';
+    else if (edit === "mm" || "mm updOnTop") return 'purple';
     else return "black";
 }
 
@@ -80,7 +66,6 @@ function getDecoration(range, pos, endPos) {
         },
     };
 }
-
 require.config({ paths: { 'vs': '/monaco/min/vs' }});
 require(['vs/editor/editor.main'], function() {
     Promise.all(
@@ -98,52 +83,134 @@ require(['vs/editor/editor.main'], function() {
                 monaco.Range.fromPositions(leftEditor.getModel().getPositionAt(mapping[0]), leftEditor.getModel().getPositionAt(mapping[1])),
                 monaco.Range.fromPositions(rightEditor.getModel().getPositionAt(mapping[2]), rightEditor.getModel().getPositionAt(mapping[3])),
             ]);
-
         const leftDecorations = config.left.ranges.map(range => getDecoration(
-             range,
-             leftEditor.getModel().getPositionAt(range.from),
-             leftEditor.getModel().getPositionAt(range.to)
+            range,
+            leftEditor.getModel().getPositionAt(range.from),
+            leftEditor.getModel().getPositionAt(range.to)
         ));
+        leftEditor.getModel().decorations = leftDecorations;
         leftEditor.deltaDecorations([], leftDecorations);
-
         leftEditor.onMouseDown((event) => {
-            const allDecorations = leftEditor.getModel().getDecorationsInRange(event.target.range, leftEditor.id, true)
-                .filter(decoration => decoration.options.className == "updated" || decoration.options.className == "moved");
-            if (allDecorations.length >= 1) {
-                let activatedRange = allDecorations[0].range;
-                if (allDecorations.length > 1)  {
-                    for (let i = 1; i < allDecorations.length; i = i + 1) {
-                        const candidateRange = allDecorations[i].range;
-                        if (activatedRange.containsRange(candidateRange))
-                            activatedRange = candidateRange;
+            if (event.target.range) {
+                const allDecorations = leftEditor.getModel().getDecorationsInRange(event.target.range, leftEditor.id, true)
+                    // .filter(decoration => decoration.options.className == "updated" || decoration.options.className == "moved");
+                if (allDecorations.length >= 1) {
+                    let activatedRange = allDecorations[0].range;
+                    if (allDecorations.length > 1) {
+                        for (let i = 1; i < allDecorations.length; i = i + 1) {
+                            const candidateRange = allDecorations[i].range;
+                            if (activatedRange.containsRange(candidateRange))
+                                activatedRange = candidateRange;
+                        }
                     }
+                    const mapping = config.mappings.find(mapping => mapping[0].equalsRange(activatedRange))
+                    if (mapping)
+                        if (mapping.length > 1)
+                            rightEditor.revealRangeInCenter(mapping[1]);
                 }
-                const mapping = config.mappings.find(mapping => mapping[0].equalsRange(activatedRange))
-                rightEditor.revealRangeInCenter(mapping[1]);
             }
         });
-
         const rightDecorations = config.right.ranges.map(range => getDecoration(
             range,
             rightEditor.getModel().getPositionAt(range.from),
             rightEditor.getModel().getPositionAt(range.to)
         ));
+        rightEditor.getModel().decorations = rightDecorations;
         rightEditor.deltaDecorations([], rightDecorations);
-
         rightEditor.onMouseDown((event) => {
-            const allDecorations = rightEditor.getModel().getDecorationsInRange(event.target.range, rightEditor.id, true)
-                .filter(decoration => decoration.options.className == "updated" || decoration.options.className == "moved");
-            if (allDecorations.length >= 1) {
-                let activatedRange = allDecorations[0].range;
-                if (allDecorations.length > 1)  {
-                    for (let i = 1; i < allDecorations.length; i = i + 1) {
-                        const candidateRange = allDecorations[i].range;
-                        if (activatedRange.containsRange(candidateRange)) activatedRange = candidateRange;
+            if (event.target.range) {
+                const allDecorations = rightEditor.getModel().getDecorationsInRange(event.target.range, rightEditor.id, true)
+                    // .filter(decoration => decoration.options.className == "updated" || decoration.options.className == "moved");
+                if (allDecorations.length >= 1) {
+                    let activatedRange = allDecorations[0].range;
+                    if (allDecorations.length > 1) {
+                        for (let i = 1; i < allDecorations.length; i = i + 1) {
+                            const candidateRange = allDecorations[i].range;
+                            if (activatedRange.containsRange(candidateRange)) activatedRange = candidateRange;
+                        }
                     }
+                    const mapping = config.mappings.find(mapping => mapping[1].equalsRange(activatedRange))
+                    if (mapping)
+                        if (mapping.length > 1)
+                            leftEditor.revealRangeInCenter(mapping[0]);
                 }
-                const mapping = config.mappings.find(mapping => mapping[1].equalsRange(activatedRange))
-                leftEditor.revealRangeInCenter(mapping[0]);
             }
         });
+        setAllFoldings(leftEditor, rightEditor);
+        leftEditor.getAction('editor.foldAll').run();
+        rightEditor.getAction('editor.foldAll').run();
+        window.leftEditor = leftEditor;
+        window.rightEditor = rightEditor;
     });
 });
+
+function getLinesToFold(model, margin = 5) {
+
+    decorations = model.decorations;
+    const lineCount = model.getLineCount();
+    const linesToKeepVisible = new Set();
+
+    decorations.forEach(decoration => {
+        if (config.moved){
+            if (decoration.options.className === "inserted" || decoration.options.className === "deleted")
+            {
+                return;
+            }
+        }
+        for (let line = Math.max(1, decoration.range.startLineNumber - margin);
+             line <= Math.min(lineCount, decoration.range.endLineNumber + margin);
+             line++) {
+            linesToKeepVisible.add(line);
+        }
+    });
+
+    const linesToFold = [];
+    for (let line = 1; line <= lineCount; line++) {
+        if (!linesToKeepVisible.has(line)) {
+            linesToFold.push(line);
+        }
+    }
+    return linesToFold;
+}
+function createFoldingRanges(linesToFold) {
+    // Ensure linesToFold is sorted
+    linesToFold.sort((a, b) => a - b);
+
+    const ranges = [];
+    let start = linesToFold[0];
+    let end = linesToFold[0];
+
+    for (let i = 1; i < linesToFold.length; i++) {
+        if (linesToFold[i] === end + 1) {
+            // Continue the current range
+            end = linesToFold[i];
+        } else {
+            // Push the completed range
+            ranges.push(new monaco.Range(start, 1, end, 1));
+            // Start a new range
+            start = linesToFold[i];
+            end = linesToFold[i];
+        }
+    }
+    // Push the last range
+    ranges.push(new monaco.Range(start, 1, end, 1));
+    return ranges;
+}
+
+function setAllFoldings(leftEditor, rightEditor) {
+    const foldingRangeProvider = {
+        provideFoldingRanges: (model, context, token) => {
+            let rangesToFold = createFoldingRanges(getLinesToFold(model, margin));
+            return rangesToFold.map(range => ({
+                start: range.startLineNumber,
+                end: range.endLineNumber,
+                kind: monaco.languages.FoldingRangeKind.Region,
+            }));
+        },
+    };
+    //Assume both languages are the same
+    var languageId = rightEditor.getModel().getLanguageId();
+    if (!monaco.languages.getLanguages().some(lang => lang.id === languageId && lang.foldingRangeProvider)) {
+        monaco.languages.registerFoldingRangeProvider(languageId, foldingRangeProvider);
+    }
+}

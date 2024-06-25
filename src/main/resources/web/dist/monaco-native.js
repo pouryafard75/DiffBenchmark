@@ -27,12 +27,10 @@ require(['vs/editor/editor.main'], function() {
             .then(result => result.text())
     ])
         .then(([left, right]) => {
-            var originalModel = monaco.editor.createModel(left, "plain/text");
-            var modifiedModel = monaco.editor.createModel(right, "plain/text");
+            var originalModel = monaco.editor.createModel(left);
+            var modifiedModel = monaco.editor.createModel(right);
 
-            var diffEditor = monaco.editor.createDiffEditor(document.getElementById("container"), {
-                quickSuggestions: false
-            });
+            var diffEditor = monaco.editor.createDiffEditor(document.getElementById("container"));
             diffEditor.setModel({
             	original: originalModel,
             	modified: modifiedModel

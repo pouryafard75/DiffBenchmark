@@ -60,6 +60,17 @@ dependencies {
 
 
 }
+task rm2p3_jar(type: Jar) {
+    archiveFileName = 'RM-2.2.0-c2.jar' //Second customization (c2)
+    destinationDir = file('libs/')
+    from zipTree('libs/RM-2.2.0-customized.jar')
+    exclude 'org/slf4j/*'
+    exclude 'org/slf4j/**'
+    exclude 'org/eclipse/jgit/*'
+    exclude 'org/eclipse/jgit/**'
+    exclude 'org/eclipse/jdt/*'
+    exclude 'org/eclipse/jdt/**'
+}
 task rm2p2_jar(type: Jar) {
     archiveFileName = 'RM-2.2.0-customized.jar'
     // Include all contents from the original JAR

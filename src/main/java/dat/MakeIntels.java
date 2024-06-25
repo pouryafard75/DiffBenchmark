@@ -38,7 +38,6 @@ public class MakeIntels {
                 }
                 if (case_count == 5) break;
                 intelDao.insertIntels(intels);
-                logger.info("Intel written to csv");
             }
         }
         catch (Exception e) {

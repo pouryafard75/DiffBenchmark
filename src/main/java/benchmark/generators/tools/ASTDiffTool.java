@@ -47,8 +47,8 @@ public enum ASTDiffTool {
     ,
     DAT ("Diff Auto Tuning", null)
     ,
-//    RM2 ("RefactoringMiner 2.0", benchmark.generators.tools.runners.converter.RM2::new)
-//    ,
+    RM2 ("RefactoringMiner 2.0", benchmark.generators.tools.runners.converter.RM2::new)
+    ,
     TRV ("TrivialDiff", TrivialDiff::new)
     ,
     VNG ("VirtualNodeWithGreedy", (projectASTDiff, input, info, configuration) ->

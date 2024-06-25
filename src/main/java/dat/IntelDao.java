@@ -11,7 +11,7 @@ import java.util.List;
 public class IntelDao {
     private final static Logger logger = LoggerFactory.getLogger(IntelDao.class);
 
-    public void insertIntels(List<Intel> intels) {
+    public synchronized void insertIntels(List<Intel> intels) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
 

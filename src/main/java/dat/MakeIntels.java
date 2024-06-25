@@ -25,10 +25,10 @@ public class MakeIntels {
         logger.info("Start running DAT");
         int case_count = 0;
         IntelDao intelDao = new IntelDao();
-        List<Intel> intels = new ArrayList<>();
         try {
             for (CaseInfo info : configuration.getAllCases()) {
                 case_count++;
+                List<Intel> intels = new ArrayList<>();
                 ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
                 for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet()) {
 //                    logger.info("Working on " + info.makeURL() + " " + rm_astDiff.getSrcPath());
@@ -38,8 +38,7 @@ public class MakeIntels {
                 }
                 intelDao.insertIntels(intels);
                 // if (case_count == 2) break;
-
-}
+            }
         }
         catch (Exception e) {
             logger.error("Error in DAT", e);

@@ -197,7 +197,11 @@ public class GridSearch {
             return new Diff(leftContext, rightContext, mappings, actions);
         }
         catch (Exception e) {
-            System.out.println("bug3");
+            logger.error("bug3");
+            logger.error(properties.toString());
+            logger.error(info.makeURL());
+            logger.error(rmDiff.getSrcPath());
+            logger.error(e.getMessage());
             logger.error("Error in makeDiff", e);
             throw new RuntimeException(e);
         }

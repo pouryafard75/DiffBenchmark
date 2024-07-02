@@ -36,7 +36,7 @@ dependencies {
     }
     implementation files('libs/IJM-1.0-SNAPSHOT-customized2.jar')
     implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
-    implementation files('libs/RM-2.2.0-c2.jar')
+    implementation files('libs/RM-2.2.0-c3.jar')
     implementation files('libs/iAST-1.0-SNAPSHOT-customized.jar')
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
@@ -59,6 +59,19 @@ dependencies {
     implementation 'org.postgresql:postgresql:42.4.1' // Replace with the latest PostgreSQL JDBC driver version
 
 
+}
+task rm2p4_jar(type: Jar) {
+    archiveFileName = 'RM-2.2.0-c3.jar' //Third customization (c3)
+    destinationDir = file('libs/')
+    from zipTree('libs/RM-2.2.0-c2.jar')
+    exclude 'org/slf4j/*'
+    exclude 'org/slf4j/**'
+    exclude 'org/eclipse/jgit/*'
+    exclude 'org/eclipse/jgit/**'
+    exclude 'org/eclipse/jdt/*'
+    exclude 'org/eclipse/jdt/**'
+    exclude 'com/github/gumtreediff/*'
+    exclude 'com/github/gumtreediff/**'
 }
 task rm2p3_jar(type: Jar) {
     archiveFileName = 'RM-2.2.0-c2.jar' //Second customization (c2)

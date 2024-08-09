@@ -7,24 +7,11 @@ import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.models.HumanReadableDiff;
-import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
-import java.util.List;
-
-import static benchmark.metrics.mm.writeListToFile;
-import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
-import static benchmark.utils.PathResolver.getPaths;
 
 /* Created by pourya on 2023-09-19 6:18 p.m. */
 
@@ -57,33 +44,6 @@ public class RQ1 implements RQ{
         }
         MetricsCsvWriter.exportToCSV(stats, "rq1-" + name + ".csv", false);
 
-    }
-    public void verifyMultiMappings(Configuration configuration) throws IOException {
-        int mm = 0 ;
-        List<String > urls = new ArrayList<>();
-        for (CaseInfo info : configuration.getAllCases()) {
-            String folderPath = exportedFolderPathByCaseInfo(info);
-            Path dir = Paths.get(configuration.getOutputFolder() + folderPath  + "/");
-            List<Path> paths = getPaths(dir, 1);
-            for (Path path : paths) {
-                if (path.getFileName().toString().equals("mm")) continue;
-                File mmFolder = new File(path.toString(), "mm");
-                File GodMM = new File(mmFolder, "GOD-MM.csv");
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
-                HumanReadableDiff godMMHRD = mapper.readValue(GodMM, HumanReadableDiff.class);
-                if (!godMMHRD.getIntraFileMappings().getMappings().isEmpty()
-                ||
-                    !godMMHRD.getIntraFileMappings().getMatchedElements().isEmpty())
-                {
-                    mm++;
-                    urls.add(info.makeURL());
-                    break;
-                }
-            }
-        }
-        writeListToFile(urls, "rq1-mm.txt");
-        System.out.println(mm);
     }
 }
 

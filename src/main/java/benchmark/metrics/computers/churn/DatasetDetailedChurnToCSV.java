@@ -4,7 +4,7 @@ import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import gui.webdiff.DirComparator;
+import gui.webdiff.dir.DirComparator;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;

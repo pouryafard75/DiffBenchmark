@@ -6,8 +6,8 @@ import benchmark.gui.BenchmarkDirComparator;
 import benchmark.gui.GuiConf;
 import com.github.gumtreediff.utils.Pair;
 
-import gui.webdiff.MonacoDiffView;
-import gui.webdiff.VanillaDiffView;
+import gui.webdiff.viewers.monaco.MonacoView;
+import gui.webdiff.viewers.vanilla.VanillaDiffView;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.rendersnake.HtmlCanvas;
@@ -107,7 +107,7 @@ public class BenchmarkWebDiff {
         get("/" + tool + "-monaco/:id" , (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = astDiffs.stream().toList().get(id);
-            Renderable view = new MonacoDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+            Renderable view = new MonacoView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
                     astDiff, id, projectASTDiff.getDiffSet().size(), "-monaco/", false);
             return renderToString(view);
         });

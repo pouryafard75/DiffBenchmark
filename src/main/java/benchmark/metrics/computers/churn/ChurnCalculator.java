@@ -4,7 +4,7 @@ package benchmark.metrics.computers.churn;
 import com.github.difflib.DiffUtils;
 import com.github.difflib.UnifiedDiffUtils;
 import com.github.difflib.patch.*;
-import gui.webdiff.DirComparator;
+import gui.webdiff.dir.DirComparator;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;

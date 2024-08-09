@@ -11,27 +11,11 @@ import java.io.IOException;
 
 /* Created by pourya on 2023-05-02 5:15 p.m. */
 public class CompareWithLocallyClonedRepository {
-    public static void main(String[] args) throws IOException {
-
-        String url = "https://github.com/JetBrains/intellij-community/commit/7ed3f273ab0caf0337c22f0b721d51829bb0c877";
-        String repo = URLHelper.getRepo(url);
-        String commit = URLHelper.getCommit(url);
-        BenchmarkWebDiff benchmarkWebDiff = null;
-        GitService gitService = new GitServiceImpl();
-        String projectName = repo.substring(repo.lastIndexOf("/") + 1, repo.length() - 4);
-        String pathToClonedRepository = "tmp/" + projectName;
-
-        try {
-            Repository repository = gitService.cloneIfNotExists(pathToClonedRepository, repo);
-            benchmarkWebDiff = new BenchmarkWebDiffFactory().withLocallyClonedRepo(repository, commit);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-        benchmarkWebDiff.run();
+    public static void main(String[] args) throws Exception {
+        String repo = "https://github.com/Alluxio/alluxio.git";
+        String commit = "9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
+        String pathToClonedRepository = "tmp/" + "Alluxio/Alluxio";
+        Repository repository = new GitServiceImpl().cloneIfNotExists(pathToClonedRepository, repo);
+        new BenchmarkWebDiffFactory().withLocallyClonedRepo(repository, commit).run();
     }
-
-
-
 }

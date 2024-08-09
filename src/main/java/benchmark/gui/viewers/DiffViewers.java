@@ -21,7 +21,7 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new VanillaDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                Renderable view = new VanillaDiffView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
                         astDiff, id, projectASTDiff.getDiffSet().size(),  "", false,
                         projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
                         projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()), false);
@@ -33,7 +33,7 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "-monaco/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new MonacoView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                Renderable view = new MonacoView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
                         astDiff, id, projectASTDiff.getDiffSet().size(), "", false);
                 return renderToString(view);
             })

@@ -1,4 +1,4 @@
-package benchmark.gui;
+package benchmark.gui.web;
 
 import com.github.gumtreediff.utils.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;

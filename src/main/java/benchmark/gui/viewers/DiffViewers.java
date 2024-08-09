@@ -1,4 +1,4 @@
-package benchmark.gui;
+package benchmark.gui.viewers;
 
 import benchmark.generators.tools.ASTDiffTool;
 import gui.webdiff.viewers.monaco.MonacoView;
@@ -53,9 +53,4 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
         sparkConfigurator.configure(tool, astDiffs, projectASTDiff);
     }
 }
-interface DirViewRenderer {
-    HtmlCanvas render(HtmlCanvas div, ASTDiffTool tool, int id) throws Exception;
-}
-interface SparkConfigurator {
-    void configure(ASTDiffTool tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) throws Exception;
-}
+

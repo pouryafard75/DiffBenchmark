@@ -1,9 +1,8 @@
 package benchmark.gui.web;
 
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.gui.DiffViewers;
-import benchmark.gui.BenchmarkDirComparator;
-import benchmark.gui.GuiConf;
+import benchmark.gui.viewers.DiffViewers;
+import benchmark.gui.conf.GuiConf;
 import com.github.gumtreediff.utils.Pair;
 
 import gui.webdiff.viewers.monaco.MonacoView;

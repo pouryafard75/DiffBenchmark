@@ -1,13 +1,12 @@
 package benchmark.gui.web;
 
 import benchmark.generators.tools.runners.converter.NoPerfectDiffException;
-import benchmark.gui.GuiConf;
+import benchmark.gui.conf.GuiConf;
 import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
 import org.eclipse.jgit.lib.Repository;
-import org.jgrapht.Graph;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;

@@ -1,8 +1,8 @@
-package benchmark.gui;
+package benchmark.gui.conf;
 
 import benchmark.generators.tools.ASTDiffTool;
+import benchmark.gui.viewers.DiffViewers;
 
-import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 

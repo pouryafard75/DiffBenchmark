@@ -1,4 +1,4 @@
-package benchmark.gui;
+package benchmark.gui.drivers;
 
 import benchmark.gui.web.BenchmarkWebDiff;
 import benchmark.gui.web.BenchmarkWebDiffFactory;

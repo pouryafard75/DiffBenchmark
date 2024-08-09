@@ -6,7 +6,7 @@ import benchmark.utils.CaseInfo;
 
 import java.io.IOException;
 
-public class CompareTwoDirectories {
+public class CompareWithTwoDirectories {
     public static void main(String[] args) throws IOException {
         final String projectRoot = System.getProperty("user.dir");
         String folder1 = projectRoot + "/tmp/v1/";

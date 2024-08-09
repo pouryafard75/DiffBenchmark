@@ -152,9 +152,9 @@ def loadEnvFile() {
 // Load the .env file
 loadEnvFile()
 run {
-    def refactoringMinerPathValue = System.properties['refactoringMinerPath']
+    def refactoringMinerPathValue = System.properties['REFACTORINGMINER_PATH']
     if (refactoringMinerPathValue && !refactoringMinerPathValue.isEmpty()) {
-        systemProperty("refactoringMinerPath", refactoringMinerPathValue)
+        systemProperty("REFACTORINGMINER_PATH", refactoringMinerPathValue)
     }
     doFirst {
         project.ext.properties.each { key, value ->

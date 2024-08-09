@@ -117,6 +117,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                         .div(class_("btn-toolbar justify-content-end"))
                         .div(class_("btn-group"));
                             for (ASTDiffTool tool : diffs.keySet()) {
+                                if (diffs.get(tool).isEmpty()) continue;
                                 for (DiffViewers enabledViewer : conf.enabled_viewers) {
                                     try {
                                         div = enabledViewer.render(div, tool, id);

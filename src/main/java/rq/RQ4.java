@@ -48,7 +48,7 @@ public class RQ4 implements RQ{
             }
             name.append(config.getName()).append("-");
         }
-        MetricsCsvWriter.exportToCSV(result, "rq4-uniqueTypeAndMappings-" + name + ".csv", false);
+        MetricsCsvWriter.exportToCSV(result, "rq4-uniqueTypeAndMappings-" + name + ".csv", true);
     }
 
     private static Map<RefactoringType, Integer> readCsvFromFile(String name) {

@@ -24,7 +24,9 @@ It is based on the Diff viewers provided by [GumTreeDiff](https://github.com/Gum
 
 First, clone the [RefactoringMiner](https://github.com/tsantalis/RefactoringMiner.git) repository.
 
-Then, go to file `benchmark.utils.Configuration.ConfigurationFactory` and update field `REFACTORING_MINER_PATH` to the RefactoringMiner cloned repository path in your hard drive.
+Then, you have to update the `REFACTORING_MINER_PATH` in **one** of the following ways:
+
+Update the field `REFACTORING_MINER_PATH` in the `benchmark.utils.Configuration.ConfigurationFactory` class to the RefactoringMiner cloned repository path in your hard drive **or** you can have it as env variable _REFACTORING_MINER_PATH_
 
 Import DiffBenchmark as a gradle project in your IDE, or run `./gradlew jar` to build.
 

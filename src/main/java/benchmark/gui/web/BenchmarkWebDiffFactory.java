@@ -6,6 +6,7 @@ import benchmark.generators.tools.ASTDiffTool;
 import benchmark.utils.CaseInfo;
 import benchmark.utils.Configuration.Configuration;
 import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.utils.Helpers;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -44,6 +45,11 @@ public class BenchmarkWebDiffFactory {
     public BenchmarkWebDiff withTwoDirectories(String before, String after) throws Exception {
         return makeDiffs(getRMASTDiff(before, after), null);
     }
+    public BenchmarkWebDiff withCaseInfo(CaseInfo info) throws Exception {
+        ProjectASTDiff projectASTDiff = Helpers.runWhatever(info);
+        return makeDiffs(projectASTDiff,info);
+    }
+
 
     private ProjectASTDiff getRMASTDiff(String before, String after) {
         return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
@@ -71,7 +77,7 @@ public class BenchmarkWebDiffFactory {
                 }
                 catch (Exception e) {
                     System.out.println("Error in " + tool + " for " + astDiff.getSrcPath() + " and " + astDiff.getDstPath());
-                    e.printStackTrace();
+//                    e.printStackTrace();
                 }
             }
         }

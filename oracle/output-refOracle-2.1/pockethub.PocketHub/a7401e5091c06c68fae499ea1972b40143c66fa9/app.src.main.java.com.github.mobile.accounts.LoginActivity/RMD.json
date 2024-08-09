@@ -336,6 +336,10 @@
       "right" : "HttpUrl.Builder url = new HttpUrl.Builder()\n                .scheme(\"https\")\n                .host(OAUTH_HOST)\n                .addPathSegment(\"login\")\n                .addPathSegment(\"oauth\")\n                .addPathSegment(\"authorize\")\n                .addQueryParameter(\"client_id\", client.getApiClient())\n                .addQueryParameter(\"scope\", initialScope);",
       "info" : "VariableDeclarationStatement[6549-6916]:VariableDeclarationStatement[6231-6598]"
     }, {
+      "left" : "final Intent newIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url.build().toString()));",
+      "right" : "Intent intent = new Intent(this, LoginWebViewActivity.class);",
+      "info" : "VariableDeclarationStatement[7122-7213]:VariableDeclarationStatement[6608-6669]"
+    }, {
       "left" : "chooser.putExtra(Intent.EXTRA_INITIAL_INTENTS, extraIntents);",
       "right" : "intent.putExtra(INTENT_EXTRA_URL, url.toString());",
       "info" : "ExpressionStatement[7775-7836]:ExpressionStatement[6678-6728]"

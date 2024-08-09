@@ -1,0 +1,957 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "DeadAssignmentsElimination",
+      "right" : "DeadAssignmentsElimination",
+      "info" : "TypeDeclaration[1322-12229]:TypeDeclaration[1322-12490]"
+    }, {
+      "left" : "private final AbstractCompiler compiler;",
+      "right" : "private final AbstractCompiler compiler;",
+      "info" : "FieldDeclaration[1758-1798]:FieldDeclaration[1758-1798]"
+    }, {
+      "left" : "private LiveVariablesAnalysis liveness;",
+      "right" : "private LiveVariablesAnalysis liveness;",
+      "info" : "FieldDeclaration[1801-1840]:FieldDeclaration[1801-1840]"
+    }, {
+      "left" : "private static final Predicate<Node> matchRemovableAssigns =\n      new Predicate<Node>() {\n    @Override\n    public boolean apply(Node n) {\n      return (NodeUtil.isAssignmentOp(n) &&\n              n.getFirstChild().getType() == Token.NAME) ||\n          n.getType() == Token.INC || n.getType() == Token.DEC;\n    }\n  };",
+      "right" : "private static final Predicate<Node> matchRemovableAssigns =\n      new Predicate<Node>() {\n    @Override\n    public boolean apply(Node n) {\n      return (NodeUtil.isAssignmentOp(n) &&\n              n.getFirstChild().getType() == Token.NAME) ||\n          n.getType() == Token.INC || n.getType() == Token.DEC;\n    }\n  };",
+      "info" : "FieldDeclaration[2055-2373]:FieldDeclaration[2055-2373]"
+    }, {
+      "left" : "public boolean apply(Node n)",
+      "right" : "public boolean apply(Node n)",
+      "info" : "MethodDeclaration[2150-2368]:MethodDeclaration[2150-2368]"
+    }, {
+      "left" : "public DeadAssignmentsElimination(AbstractCompiler compiler)",
+      "right" : "public DeadAssignmentsElimination(AbstractCompiler compiler)",
+      "info" : "MethodDeclaration[2377-2473]:MethodDeclaration[2377-2473]"
+    }, {
+      "left" : "public void process(Node externs, Node root)",
+      "right" : "public void process(Node externs, Node root)",
+      "info" : "MethodDeclaration[2477-2668]:MethodDeclaration[2477-2668]"
+    }, {
+      "left" : "public void enterScope(NodeTraversal t)",
+      "right" : "public void enterScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[2672-3773]:MethodDeclaration[2672-3773]"
+    }, {
+      "left" : "public void exitScope(NodeTraversal t)",
+      "right" : "public void exitScope(NodeTraversal t)",
+      "info" : "MethodDeclaration[3777-3833]:MethodDeclaration[3777-3833]"
+    }, {
+      "left" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "right" : "public void visit(NodeTraversal t, Node n, Node parent)",
+      "info" : "MethodDeclaration[3837-3910]:MethodDeclaration[3837-3910]"
+    }, {
+      "left" : "private void tryRemoveDeadAssignments(NodeTraversal t,\n      ControlFlowGraph<Node> cfg)",
+      "right" : "private void tryRemoveDeadAssignments(NodeTraversal t,\n      ControlFlowGraph<Node> cfg)",
+      "info" : "MethodDeclaration[3914-5292]:MethodDeclaration[3914-5292]"
+    }, {
+      "left" : "private void tryRemoveAssignment(NodeTraversal t, Node n,\n      FlowState<LiveVariableLattice> state)",
+      "right" : "private void tryRemoveAssignment(NodeTraversal t, Node n,\n      FlowState<LiveVariableLattice> state)",
+      "info" : "MethodDeclaration[5296-5444]:MethodDeclaration[5296-5444]"
+    }, {
+      "left" : "private void tryRemoveAssignment(NodeTraversal t, Node n, Node exprRoot,\n      FlowState<LiveVariableLattice> state)",
+      "right" : "private void tryRemoveAssignment(NodeTraversal t, Node n, Node exprRoot,\n      FlowState<LiveVariableLattice> state)",
+      "info" : "MethodDeclaration[5448-9474]:MethodDeclaration[5448-9474]"
+    }, {
+      "left" : "private boolean isVariableStillLiveWithinExpression(\n      Node n, Node exprRoot, String variable)",
+      "right" : "private boolean isVariableStillLiveWithinExpression(\n      Node n, Node exprRoot, String variable)",
+      "info" : "MethodDeclaration[9478-10789]:MethodDeclaration[9478-10789]"
+    }, {
+      "left" : "enum : VariableLiveness",
+      "right" : "enum : VariableLiveness",
+      "info" : "EnumDeclaration[10835-11039]:EnumDeclaration[10835-11039]"
+    }, {
+      "left" : "private VariableLiveness isVariableReadBeforeKill(\n      Node n, String variable)",
+      "right" : "private VariableLiveness isVariableReadBeforeKill(\n      Node n, String variable)",
+      "info" : "MethodDeclaration[11043-12227]:MethodDeclaration[11043-12488]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1642-1647]:TYPE_DECLARATION_KIND[1642-1647]"
+    }, {
+      "left" : "DeadAssignmentsElimination",
+      "right" : "DeadAssignmentsElimination",
+      "info" : "SimpleName[1648-1674]:SimpleName[1648-1674]"
+    }, {
+      "left" : "AbstractPostOrderCallback",
+      "right" : "AbstractPostOrderCallback",
+      "info" : "SimpleType[1683-1708]:SimpleType[1683-1708]"
+    }, {
+      "left" : "CompilerPass",
+      "right" : "CompilerPass",
+      "info" : "SimpleType[1724-1736]:SimpleType[1724-1736]"
+    }, {
+      "left" : "ScopedCallback",
+      "right" : "ScopedCallback",
+      "info" : "SimpleType[1738-1752]:SimpleType[1738-1752]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2150-2159]:MarkerAnnotation[2150-2159]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2164-2170]:Modifier[2164-2170]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[2171-2178]:PrimitiveType[2171-2178]"
+    }, {
+      "left" : "apply",
+      "right" : "apply",
+      "info" : "SimpleName[2179-2184]:SimpleName[2179-2184]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[2185-2191]:SingleVariableDeclaration[2185-2191]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2193-2368]:Block[2193-2368]"
+    }, {
+      "left" : "return (NodeUtil.isAssignmentOp(n) &&\n              n.getFirstChild().getType() == Token.NAME) ||\n          n.getType() == Token.INC || n.getType() == Token.DEC;",
+      "right" : "return (NodeUtil.isAssignmentOp(n) &&\n              n.getFirstChild().getType() == Token.NAME) ||\n          n.getType() == Token.INC || n.getType() == Token.DEC;",
+      "info" : "ReturnStatement[2201-2362]:ReturnStatement[2201-2362]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2377-2383]:Modifier[2377-2383]"
+    }, {
+      "left" : "DeadAssignmentsElimination",
+      "right" : "DeadAssignmentsElimination",
+      "info" : "SimpleName[2384-2410]:SimpleName[2384-2410]"
+    }, {
+      "left" : "AbstractCompiler compiler",
+      "right" : "AbstractCompiler compiler",
+      "info" : "SingleVariableDeclaration[2411-2436]:SingleVariableDeclaration[2411-2436]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2438-2473]:Block[2438-2473]"
+    }, {
+      "left" : "this.compiler = compiler;",
+      "right" : "this.compiler = compiler;",
+      "info" : "ExpressionStatement[2444-2469]:ExpressionStatement[2444-2469]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2477-2486]:MarkerAnnotation[2477-2486]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2489-2495]:Modifier[2489-2495]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2496-2500]:PrimitiveType[2496-2500]"
+    }, {
+      "left" : "process",
+      "right" : "process",
+      "info" : "SimpleName[2501-2508]:SimpleName[2501-2508]"
+    }, {
+      "left" : "Node externs",
+      "right" : "Node externs",
+      "info" : "SingleVariableDeclaration[2509-2521]:SingleVariableDeclaration[2509-2521]"
+    }, {
+      "left" : "Node root",
+      "right" : "Node root",
+      "info" : "SingleVariableDeclaration[2523-2532]:SingleVariableDeclaration[2523-2532]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2534-2668]:Block[2534-2668]"
+    }, {
+      "left" : "Preconditions.checkNotNull(externs);",
+      "right" : "Preconditions.checkNotNull(externs);",
+      "info" : "ExpressionStatement[2540-2576]:ExpressionStatement[2540-2576]"
+    }, {
+      "left" : "Preconditions.checkNotNull(root);",
+      "right" : "Preconditions.checkNotNull(root);",
+      "info" : "ExpressionStatement[2581-2614]:ExpressionStatement[2581-2614]"
+    }, {
+      "left" : "NodeTraversal.traverse(compiler, root, this);",
+      "right" : "NodeTraversal.traverse(compiler, root, this);",
+      "info" : "ExpressionStatement[2619-2664]:ExpressionStatement[2619-2664]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2672-2681]:MarkerAnnotation[2672-2681]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2684-2690]:Modifier[2684-2690]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2691-2695]:PrimitiveType[2691-2695]"
+    }, {
+      "left" : "enterScope",
+      "right" : "enterScope",
+      "info" : "SimpleName[2696-2706]:SimpleName[2696-2706]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[2707-2722]:SingleVariableDeclaration[2707-2722]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2724-3773]:Block[2724-3773]"
+    }, {
+      "left" : "Scope scope = t.getScope();",
+      "right" : "Scope scope = t.getScope();",
+      "info" : "VariableDeclarationStatement[2730-2757]:VariableDeclarationStatement[2730-2757]"
+    }, {
+      "left" : "if (scope.isGlobal())",
+      "right" : "if (scope.isGlobal())",
+      "info" : "IfStatement[2947-2990]:IfStatement[2947-2990]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2969-2990]:Block[2969-2990]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[2977-2984]:ReturnStatement[2977-2984]"
+    }, {
+      "left" : "Node fnBlock = t.getScopeRoot().getLastChild();",
+      "right" : "Node fnBlock = t.getScopeRoot().getLastChild();",
+      "info" : "VariableDeclarationStatement[3207-3254]:VariableDeclarationStatement[3207-3254]"
+    }, {
+      "left" : "if (NodeUtil.containsFunction(fnBlock))",
+      "right" : "if (NodeUtil.containsFunction(fnBlock))",
+      "info" : "IfStatement[3259-3320]:IfStatement[3259-3320]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3299-3320]:Block[3299-3320]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3307-3314]:ReturnStatement[3307-3314]"
+    }, {
+      "left" : "if (!NodeUtil.has(fnBlock, matchRemovableAssigns,\n            Predicates.<Node>alwaysTrue()))",
+      "right" : "if (!NodeUtil.has(fnBlock, matchRemovableAssigns,\n            Predicates.<Node>alwaysTrue()))",
+      "info" : "IfStatement[3425-3540]:IfStatement[3425-3540]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3519-3540]:Block[3519-3540]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3527-3534]:ReturnStatement[3527-3534]"
+    }, {
+      "left" : "ControlFlowGraph<Node> cfg = t.getControlFlowGraph();",
+      "right" : "ControlFlowGraph<Node> cfg = t.getControlFlowGraph();",
+      "info" : "VariableDeclarationStatement[3590-3643]:VariableDeclarationStatement[3590-3643]"
+    }, {
+      "left" : "liveness = new LiveVariablesAnalysis(cfg, scope, compiler);",
+      "right" : "liveness = new LiveVariablesAnalysis(cfg, scope, compiler);",
+      "info" : "ExpressionStatement[3648-3707]:ExpressionStatement[3648-3707]"
+    }, {
+      "left" : "liveness.analyze();",
+      "right" : "liveness.analyze();",
+      "info" : "ExpressionStatement[3712-3731]:ExpressionStatement[3712-3731]"
+    }, {
+      "left" : "tryRemoveDeadAssignments(t, cfg);",
+      "right" : "tryRemoveDeadAssignments(t, cfg);",
+      "info" : "ExpressionStatement[3736-3769]:ExpressionStatement[3736-3769]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[3777-3786]:MarkerAnnotation[3777-3786]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3789-3795]:Modifier[3789-3795]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3796-3800]:PrimitiveType[3796-3800]"
+    }, {
+      "left" : "exitScope",
+      "right" : "exitScope",
+      "info" : "SimpleName[3801-3810]:SimpleName[3801-3810]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[3811-3826]:SingleVariableDeclaration[3811-3826]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3828-3833]:Block[3828-3833]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[3837-3846]:MarkerAnnotation[3837-3846]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3849-3855]:Modifier[3849-3855]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3856-3860]:PrimitiveType[3856-3860]"
+    }, {
+      "left" : "visit",
+      "right" : "visit",
+      "info" : "SimpleName[3861-3866]:SimpleName[3861-3866]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[3867-3882]:SingleVariableDeclaration[3867-3882]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[3884-3890]:SingleVariableDeclaration[3884-3890]"
+    }, {
+      "left" : "Node parent",
+      "right" : "Node parent",
+      "info" : "SingleVariableDeclaration[3892-3903]:SingleVariableDeclaration[3892-3903]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3905-3910]:Block[3905-3910]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4189-4196]:Modifier[4189-4196]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4197-4201]:PrimitiveType[4197-4201]"
+    }, {
+      "left" : "tryRemoveDeadAssignments",
+      "right" : "tryRemoveDeadAssignments",
+      "info" : "SimpleName[4202-4226]:SimpleName[4202-4226]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[4227-4242]:SingleVariableDeclaration[4227-4242]"
+    }, {
+      "left" : "ControlFlowGraph<Node> cfg",
+      "right" : "ControlFlowGraph<Node> cfg",
+      "info" : "SingleVariableDeclaration[4250-4276]:SingleVariableDeclaration[4250-4276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4278-5292]:Block[4278-5292]"
+    }, {
+      "left" : "Iterable<DiGraphNode<Node, Branch>> nodes = cfg.getDirectedGraphNodes();",
+      "right" : "Iterable<DiGraphNode<Node, Branch>> nodes = cfg.getDirectedGraphNodes();",
+      "info" : "VariableDeclarationStatement[4284-4356]:VariableDeclarationStatement[4284-4356]"
+    }, {
+      "left" : "for (DiGraphNode<Node, Branch> cfgNode : nodes)",
+      "right" : "for (DiGraphNode<Node, Branch> cfgNode : nodes)",
+      "info" : "EnhancedForStatement[4362-5288]:EnhancedForStatement[4362-5288]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4410-5288]:Block[4410-5288]"
+    }, {
+      "left" : "FlowState<LiveVariableLattice> state =\n          cfgNode.getAnnotation();",
+      "right" : "FlowState<LiveVariableLattice> state =\n          cfgNode.getAnnotation();",
+      "info" : "VariableDeclarationStatement[4418-4491]:VariableDeclarationStatement[4418-4491]"
+    }, {
+      "left" : "Node n = cfgNode.getValue();",
+      "right" : "Node n = cfgNode.getValue();",
+      "info" : "VariableDeclarationStatement[4498-4526]:VariableDeclarationStatement[4498-4526]"
+    }, {
+      "left" : "if (n == null)",
+      "right" : "if (n == null)",
+      "info" : "IfStatement[4533-4575]:IfStatement[4533-4575]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4548-4575]:Block[4548-4575]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[4558-4567]:ContinueStatement[4558-4567]"
+    }, {
+      "left" : "switch (n.getType()) {\n        case Token.IF:\n        case Token.WHILE:\n        case Token.DO:\n          tryRemoveAssignment(t, NodeUtil.getConditionExpression(n), state);\n          continue;\n        case Token.FOR:\n          if (!NodeUtil.isForIn(n)) {\n            tryRemoveAssignment(\n                t, NodeUtil.getConditionExpression(n), state);\n          }\n          continue;\n        case Token.SWITCH:\n        case Token.CASE:\n        case Token.RETURN:\n          if (n.hasChildren()) {\n            tryRemoveAssignment(t, n.getFirstChild(), state);\n          }\n          continue;\n        // TODO(user): case Token.VAR: Remove var a=1;a=2;.....\n      }",
+      "right" : "switch (n.getType()) {\n        case Token.IF:\n        case Token.WHILE:\n        case Token.DO:\n          tryRemoveAssignment(t, NodeUtil.getConditionExpression(n), state);\n          continue;\n        case Token.FOR:\n          if (!NodeUtil.isForIn(n)) {\n            tryRemoveAssignment(\n                t, NodeUtil.getConditionExpression(n), state);\n          }\n          continue;\n        case Token.SWITCH:\n        case Token.CASE:\n        case Token.RETURN:\n          if (n.hasChildren()) {\n            tryRemoveAssignment(t, n.getFirstChild(), state);\n          }\n          continue;\n        // TODO(user): case Token.VAR: Remove var a=1;a=2;.....\n      }",
+      "info" : "SwitchStatement[4582-5241]:SwitchStatement[4582-5241]"
+    }, {
+      "left" : "case Token.IF:",
+      "right" : "case Token.IF:",
+      "info" : "SwitchCase[4613-4627]:SwitchCase[4613-4627]"
+    }, {
+      "left" : "case Token.WHILE:",
+      "right" : "case Token.WHILE:",
+      "info" : "SwitchCase[4636-4653]:SwitchCase[4636-4653]"
+    }, {
+      "left" : "case Token.DO:",
+      "right" : "case Token.DO:",
+      "info" : "SwitchCase[4662-4676]:SwitchCase[4662-4676]"
+    }, {
+      "left" : "tryRemoveAssignment(t, NodeUtil.getConditionExpression(n), state);",
+      "right" : "tryRemoveAssignment(t, NodeUtil.getConditionExpression(n), state);",
+      "info" : "ExpressionStatement[4687-4753]:ExpressionStatement[4687-4753]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[4764-4773]:ContinueStatement[4764-4773]"
+    }, {
+      "left" : "case Token.FOR:",
+      "right" : "case Token.FOR:",
+      "info" : "SwitchCase[4782-4797]:SwitchCase[4782-4797]"
+    }, {
+      "left" : "if (!NodeUtil.isForIn(n))",
+      "right" : "if (!NodeUtil.isForIn(n))",
+      "info" : "IfStatement[4808-4943]:IfStatement[4808-4943]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4834-4943]:Block[4834-4943]"
+    }, {
+      "left" : "tryRemoveAssignment(\n                t, NodeUtil.getConditionExpression(n), state);",
+      "right" : "tryRemoveAssignment(\n                t, NodeUtil.getConditionExpression(n), state);",
+      "info" : "ExpressionStatement[4848-4931]:ExpressionStatement[4848-4931]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[4954-4963]:ContinueStatement[4954-4963]"
+    }, {
+      "left" : "case Token.SWITCH:",
+      "right" : "case Token.SWITCH:",
+      "info" : "SwitchCase[4972-4990]:SwitchCase[4972-4990]"
+    }, {
+      "left" : "case Token.CASE:",
+      "right" : "case Token.CASE:",
+      "info" : "SwitchCase[4999-5015]:SwitchCase[4999-5015]"
+    }, {
+      "left" : "case Token.RETURN:",
+      "right" : "case Token.RETURN:",
+      "info" : "SwitchCase[5024-5042]:SwitchCase[5024-5042]"
+    }, {
+      "left" : "if (n.hasChildren())",
+      "right" : "if (n.hasChildren())",
+      "info" : "IfStatement[5053-5149]:IfStatement[5053-5149]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5074-5149]:Block[5074-5149]"
+    }, {
+      "left" : "tryRemoveAssignment(t, n.getFirstChild(), state);",
+      "right" : "tryRemoveAssignment(t, n.getFirstChild(), state);",
+      "info" : "ExpressionStatement[5088-5137]:ExpressionStatement[5088-5137]"
+    }, {
+      "left" : "continue;",
+      "right" : "continue;",
+      "info" : "ContinueStatement[5160-5169]:ContinueStatement[5160-5169]"
+    }, {
+      "left" : "tryRemoveAssignment(t, n, state);",
+      "right" : "tryRemoveAssignment(t, n, state);",
+      "info" : "ExpressionStatement[5249-5282]:ExpressionStatement[5249-5282]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5296-5303]:Modifier[5296-5303]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5304-5308]:PrimitiveType[5304-5308]"
+    }, {
+      "left" : "tryRemoveAssignment",
+      "right" : "tryRemoveAssignment",
+      "info" : "SimpleName[5309-5328]:SimpleName[5309-5328]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[5329-5344]:SingleVariableDeclaration[5329-5344]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[5346-5352]:SingleVariableDeclaration[5346-5352]"
+    }, {
+      "left" : "FlowState<LiveVariableLattice> state",
+      "right" : "FlowState<LiveVariableLattice> state",
+      "info" : "SingleVariableDeclaration[5360-5396]:SingleVariableDeclaration[5360-5396]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5398-5444]:Block[5398-5444]"
+    }, {
+      "left" : "tryRemoveAssignment(t, n, n, state);",
+      "right" : "tryRemoveAssignment(t, n, n, state);",
+      "info" : "ExpressionStatement[5404-5440]:ExpressionStatement[5404-5440]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5841-5848]:Modifier[5841-5848]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5849-5853]:PrimitiveType[5849-5853]"
+    }, {
+      "left" : "tryRemoveAssignment",
+      "right" : "tryRemoveAssignment",
+      "info" : "SimpleName[5854-5873]:SimpleName[5854-5873]"
+    }, {
+      "left" : "NodeTraversal t",
+      "right" : "NodeTraversal t",
+      "info" : "SingleVariableDeclaration[5874-5889]:SingleVariableDeclaration[5874-5889]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[5891-5897]:SingleVariableDeclaration[5891-5897]"
+    }, {
+      "left" : "Node exprRoot",
+      "right" : "Node exprRoot",
+      "info" : "SingleVariableDeclaration[5899-5912]:SingleVariableDeclaration[5899-5912]"
+    }, {
+      "left" : "FlowState<LiveVariableLattice> state",
+      "right" : "FlowState<LiveVariableLattice> state",
+      "info" : "SingleVariableDeclaration[5920-5956]:SingleVariableDeclaration[5920-5956]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5958-9474]:Block[5958-9474]"
+    }, {
+      "left" : "Node parent = n.getParent();",
+      "right" : "Node parent = n.getParent();",
+      "info" : "VariableDeclarationStatement[5965-5993]:VariableDeclarationStatement[5965-5993]"
+    }, {
+      "left" : "if (NodeUtil.isAssignmentOp(n) ||\n        n.getType() == Token.INC || n.getType() == Token.DEC)",
+      "right" : "if (NodeUtil.isAssignmentOp(n) ||\n        n.getType() == Token.INC || n.getType() == Token.DEC)",
+      "info" : "IfStatement[5999-9470]:IfStatement[5999-9470]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6095-9210]:Block[6095-9210]"
+    }, {
+      "left" : "Node lhs = n.getFirstChild();",
+      "right" : "Node lhs = n.getFirstChild();",
+      "info" : "VariableDeclarationStatement[6104-6133]:VariableDeclarationStatement[6104-6133]"
+    }, {
+      "left" : "Node rhs = lhs.getNext();",
+      "right" : "Node rhs = lhs.getNext();",
+      "info" : "VariableDeclarationStatement[6140-6165]:VariableDeclarationStatement[6140-6165]"
+    }, {
+      "left" : "if (rhs != null)",
+      "right" : "if (rhs != null)",
+      "info" : "IfStatement[6269-6378]:IfStatement[6269-6378]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6286-6378]:Block[6286-6378]"
+    }, {
+      "left" : "tryRemoveAssignment(t, rhs, exprRoot, state);",
+      "right" : "tryRemoveAssignment(t, rhs, exprRoot, state);",
+      "info" : "ExpressionStatement[6296-6341]:ExpressionStatement[6296-6341]"
+    }, {
+      "left" : "rhs = lhs.getNext();",
+      "right" : "rhs = lhs.getNext();",
+      "info" : "ExpressionStatement[6350-6370]:ExpressionStatement[6350-6370]"
+    }, {
+      "left" : "Scope scope = t.getScope();",
+      "right" : "Scope scope = t.getScope();",
+      "info" : "VariableDeclarationStatement[6386-6413]:VariableDeclarationStatement[6386-6413]"
+    }, {
+      "left" : "if (!NodeUtil.isName(lhs))",
+      "right" : "if (!NodeUtil.isName(lhs))",
+      "info" : "IfStatement[6420-6508]:IfStatement[6420-6508]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6447-6508]:Block[6447-6508]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[6457-6464]:ReturnStatement[6457-6464]"
+    }, {
+      "left" : "String name = lhs.getString();",
+      "right" : "String name = lhs.getString();",
+      "info" : "VariableDeclarationStatement[6515-6545]:VariableDeclarationStatement[6515-6545]"
+    }, {
+      "left" : "if (!scope.isDeclared(name, false))",
+      "right" : "if (!scope.isDeclared(name, false))",
+      "info" : "IfStatement[6552-6613]:IfStatement[6552-6613]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6588-6613]:Block[6588-6613]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[6598-6605]:ReturnStatement[6598-6605]"
+    }, {
+      "left" : "Var var = scope.getVar(name);",
+      "right" : "Var var = scope.getVar(name);",
+      "info" : "VariableDeclarationStatement[6620-6649]:VariableDeclarationStatement[6620-6649]"
+    }, {
+      "left" : "if (liveness.getEscapedLocals().contains(var))",
+      "right" : "if (liveness.getEscapedLocals().contains(var))",
+      "info" : "IfStatement[6657-6786]:IfStatement[6657-6786]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6704-6786]:Block[6704-6786]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[6714-6721]:ReturnStatement[6714-6721]"
+    }, {
+      "left" : "if (rhs != null &&\n          NodeUtil.isName(rhs) &&\n          rhs.getString().equals(var.name) &&\n          NodeUtil.isAssign(n))",
+      "right" : "if (rhs != null &&\n          NodeUtil.isName(rhs) &&\n          rhs.getString().equals(var.name) &&\n          NodeUtil.isAssign(n))",
+      "info" : "IfStatement[6974-7239]:IfStatement[6974-7239]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7105-7239]:Block[7105-7239]"
+    }, {
+      "left" : "n.removeChild(rhs);",
+      "right" : "n.removeChild(rhs);",
+      "info" : "ExpressionStatement[7115-7134]:ExpressionStatement[7115-7134]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, rhs);",
+      "right" : "n.getParent().replaceChild(n, rhs);",
+      "info" : "ExpressionStatement[7143-7178]:ExpressionStatement[7143-7178]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[7187-7215]:ExpressionStatement[7187-7215]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7224-7231]:ReturnStatement[7224-7231]"
+    }, {
+      "left" : "if (state.getOut().isLive(var))",
+      "right" : "if (state.getOut().isLive(var))",
+      "info" : "IfStatement[7247-7326]:IfStatement[7247-7326]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7279-7326]:Block[7279-7326]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[7289-7296]:ReturnStatement[7289-7296]"
+    }, {
+      "left" : "if (state.getIn().isLive(var) &&\n          isVariableStillLiveWithinExpression(n, exprRoot, var.name))",
+      "right" : "if (state.getIn().isLive(var) &&\n          isVariableStillLiveWithinExpression(n, exprRoot, var.name))",
+      "info" : "IfStatement[7334-8026]:IfStatement[7334-8026]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7437-8026]:Block[7437-8026]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[8011-8018]:ReturnStatement[8011-8018]"
+    }, {
+      "left" : "if (NodeUtil.isAssign(n))",
+      "right" : "if (NodeUtil.isAssign(n))",
+      "info" : "IfStatement[8034-9153]:IfStatement[8034-9153]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8060-8141]:Block[8060-8141]"
+    }, {
+      "left" : "n.removeChild(rhs);",
+      "right" : "n.removeChild(rhs);",
+      "info" : "ExpressionStatement[8070-8089]:ExpressionStatement[8070-8089]"
+    }, {
+      "left" : "n.getParent().replaceChild(n, rhs);",
+      "right" : "n.getParent().replaceChild(n, rhs);",
+      "info" : "ExpressionStatement[8098-8133]:ExpressionStatement[8098-8133]"
+    }, {
+      "left" : "if (NodeUtil.isAssignmentOp(n))",
+      "right" : "if (NodeUtil.isAssignmentOp(n))",
+      "info" : "IfStatement[8147-9153]:IfStatement[8147-9153]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8179-8353]:Block[8179-8353]"
+    }, {
+      "left" : "n.removeChild(rhs);",
+      "right" : "n.removeChild(rhs);",
+      "info" : "ExpressionStatement[8189-8208]:ExpressionStatement[8189-8208]"
+    }, {
+      "left" : "n.removeChild(lhs);",
+      "right" : "n.removeChild(lhs);",
+      "info" : "ExpressionStatement[8217-8236]:ExpressionStatement[8217-8236]"
+    }, {
+      "left" : "Node op = new Node(NodeUtil.getOpFromAssignmentOp(n), lhs, rhs);",
+      "right" : "Node op = new Node(NodeUtil.getOpFromAssignmentOp(n), lhs, rhs);",
+      "info" : "VariableDeclarationStatement[8245-8309]:VariableDeclarationStatement[8245-8309]"
+    }, {
+      "left" : "parent.replaceChild(n, op);",
+      "right" : "parent.replaceChild(n, op);",
+      "info" : "ExpressionStatement[8318-8345]:ExpressionStatement[8318-8345]"
+    }, {
+      "left" : "if (n.getType() == Token.INC || n.getType() == Token.DEC)",
+      "right" : "if (n.getType() == Token.INC || n.getType() == Token.DEC)",
+      "info" : "IfStatement[8359-9153]:IfStatement[8359-9153]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8417-9050]:Block[8417-9050]"
+    }, {
+      "left" : "if (NodeUtil.isExpressionNode(parent))",
+      "right" : "if (NodeUtil.isExpressionNode(parent))",
+      "info" : "IfStatement[8427-9042]:IfStatement[8427-9042]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8466-8589]:Block[8466-8589]"
+    }, {
+      "left" : "parent.replaceChild(n,\n              new Node(Token.VOID, Node.newNumber(0).copyInformationFrom(n)));",
+      "right" : "parent.replaceChild(n,\n              new Node(Token.VOID, Node.newNumber(0).copyInformationFrom(n)));",
+      "info" : "ExpressionStatement[8478-8579]:ExpressionStatement[8478-8579]"
+    }, {
+      "left" : "if(n.getType() == Token.COMMA && n != parent.getLastChild())",
+      "right" : "if(n.getType() == Token.COMMA && n != parent.getLastChild())",
+      "info" : "IfStatement[8595-9042]:IfStatement[8595-9042]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8656-8700]:Block[8656-8700]"
+    }, {
+      "left" : "parent.removeChild(n);",
+      "right" : "parent.removeChild(n);",
+      "info" : "ExpressionStatement[8668-8690]:ExpressionStatement[8668-8690]"
+    }, {
+      "left" : "if (parent.getType() == Token.FOR && !NodeUtil.isForIn(parent) &&\n            NodeUtil.getConditionExpression(parent) != n)",
+      "right" : "if (parent.getType() == Token.FOR && !NodeUtil.isForIn(parent) &&\n            NodeUtil.getConditionExpression(parent) != n)",
+      "info" : "IfStatement[8706-9042]:IfStatement[8706-9042]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8830-8898]:Block[8830-8898]"
+    }, {
+      "left" : "parent.replaceChild(n, new Node(Token.EMPTY));",
+      "right" : "parent.replaceChild(n, new Node(Token.EMPTY));",
+      "info" : "ExpressionStatement[8842-8888]:ExpressionStatement[8842-8888]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8904-9042]:Block[8904-9042]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[9025-9032]:ReturnStatement[9025-9032]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9056-9153]:Block[9056-9153]"
+    }, {
+      "left" : "Preconditions.checkState(false, \"Unknown statement\");",
+      "right" : "Preconditions.checkState(false, \"Unknown statement\");",
+      "info" : "ExpressionStatement[9092-9145]:ExpressionStatement[9092-9145]"
+    }, {
+      "left" : "compiler.reportCodeChange();",
+      "right" : "compiler.reportCodeChange();",
+      "info" : "ExpressionStatement[9161-9189]:ExpressionStatement[9161-9189]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[9196-9203]:ReturnStatement[9196-9203]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9216-9470]:Block[9216-9470]"
+    }, {
+      "left" : "for (Node c = n.getFirstChild(); c != null)",
+      "right" : "for (Node c = n.getFirstChild(); c != null)",
+      "info" : "ForStatement[9224-9450]:ForStatement[9224-9450]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9269-9450]:Block[9269-9450]"
+    }, {
+      "left" : "Node next = c.getNext();",
+      "right" : "Node next = c.getNext();",
+      "info" : "VariableDeclarationStatement[9279-9303]:VariableDeclarationStatement[9279-9303]"
+    }, {
+      "left" : "if (!ControlFlowGraph.isEnteringNewCfgNode(c))",
+      "right" : "if (!ControlFlowGraph.isEnteringNewCfgNode(c))",
+      "info" : "IfStatement[9312-9424]:IfStatement[9312-9424]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9359-9424]:Block[9359-9424]"
+    }, {
+      "left" : "tryRemoveAssignment(t, c, exprRoot, state);",
+      "right" : "tryRemoveAssignment(t, c, exprRoot, state);",
+      "info" : "ExpressionStatement[9371-9414]:ExpressionStatement[9371-9414]"
+    }, {
+      "left" : "c = next;",
+      "right" : "c = next;",
+      "info" : "ExpressionStatement[9433-9442]:ExpressionStatement[9433-9442]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[9457-9464]:ReturnStatement[9457-9464]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10116-10123]:Modifier[10116-10123]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[10124-10131]:PrimitiveType[10124-10131]"
+    }, {
+      "left" : "isVariableStillLiveWithinExpression",
+      "right" : "isVariableStillLiveWithinExpression",
+      "info" : "SimpleName[10132-10167]:SimpleName[10132-10167]"
+    }, {
+      "left" : "Node n",
+      "right" : "Node n",
+      "info" : "SingleVariableDeclaration[10175-10181]:SingleVariableDeclaration[10175-10181]"
+    }, {
+      "left" : "Node exprRoot",
+      "right" : "Node exprRoot",
+      "info" : "SingleVariableDeclaration[10183-10196]:SingleVariableDeclaration[10183-10196]"
+    }, {
+      "left" : "String variable",
+      "right" : "String variable",
+      "info" : "SingleVariableDeclaration[10198-10213]:SingleVariableDeclaration[10198-10213]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10215-10789]:Block[10215-10789]"
+    }, {
+      "left" : "while (n != exprRoot)",
+      "right" : "while (n != exprRoot)",
+      "info" : "WhileStatement[10221-10767]:WhileStatement[10221-10767]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10243-10767]:Block[10243-10767]"
+    }, {
+      "left" : "for(Node sibling = n.getNext(); sibling != null;\n          sibling = sibling.getNext())",
+      "right" : "for(Node sibling = n.getNext(); sibling != null;\n          sibling = sibling.getNext())",
+      "info" : "ForStatement[10251-10736]:ForStatement[10251-10736]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10339-10736]:Block[10339-10736]"
+    }, {
+      "left" : "if (!ControlFlowGraph.isEnteringNewCfgNode(sibling))",
+      "right" : "if (!ControlFlowGraph.isEnteringNewCfgNode(sibling))",
+      "info" : "IfStatement[10349-10728]:IfStatement[10349-10728]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10402-10728]:Block[10402-10728]"
+    }, {
+      "left" : "VariableLiveness state = isVariableReadBeforeKill(sibling, variable);",
+      "right" : "VariableLiveness state = isVariableReadBeforeKill(sibling, variable);",
+      "info" : "VariableDeclarationStatement[10414-10483]:VariableDeclarationStatement[10414-10483]"
+    }, {
+      "left" : "if (state == VariableLiveness.READ)",
+      "right" : "if (state == VariableLiveness.READ)",
+      "info" : "IfStatement[10563-10718]:IfStatement[10563-10718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10599-10637]:Block[10599-10637]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[10613-10625]:ReturnStatement[10613-10625]"
+    }, {
+      "left" : "if (state == VariableLiveness.KILL)",
+      "right" : "if (state == VariableLiveness.KILL)",
+      "info" : "IfStatement[10643-10718]:IfStatement[10643-10718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10679-10718]:Block[10679-10718]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10693-10706]:ReturnStatement[10693-10706]"
+    }, {
+      "left" : "n = n.getParent();",
+      "right" : "n = n.getParent();",
+      "info" : "ExpressionStatement[10743-10761]:ExpressionStatement[10743-10761]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10772-10785]:ReturnStatement[10772-10785]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11279-11286]:Modifier[11279-11286]"
+    }, {
+      "left" : "isVariableReadBeforeKill",
+      "right" : "isVariableReadBeforeKill",
+      "info" : "SimpleName[11304-11328]:SimpleName[11304-11328]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11361-12227]:Block[11361-12488]"
+    }, {
+      "left" : "if (NodeUtil.isName(n) && variable.equals(n.getString()))",
+      "right" : "if (NodeUtil.isName(n) && variable.equals(n.getString()))",
+      "info" : "IfStatement[11367-11780]:IfStatement[11367-12041]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11425-11780]:Block[11425-12041]"
+    }, {
+      "left" : "if (NodeUtil.isLhs(n, n.getParent()))",
+      "right" : "if (NodeUtil.isLhs(n, n.getParent()))",
+      "info" : "IfStatement[11433-11774]:IfStatement[11433-12035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11471-11721]:Block[11471-11982]"
+    }, {
+      "left" : "return VariableLiveness.KILL;",
+      "right" : "return VariableLiveness.KILL;",
+      "info" : "ReturnStatement[11684-11713]:ReturnStatement[11945-11974]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11727-11774]:Block[11988-12035]"
+    }, {
+      "left" : "return VariableLiveness.READ;",
+      "right" : "return VariableLiveness.READ;",
+      "info" : "ReturnStatement[11737-11766]:ReturnStatement[11998-12027]"
+    }, {
+      "left" : "for (Node child = n.getFirstChild();\n        child != null; child = child.getNext())",
+      "right" : "for (Node child = n.getFirstChild();\n        child != null; child = child.getNext())",
+      "info" : "ForStatement[11844-12183]:ForStatement[12105-12444]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11929-12183]:Block[12190-12444]"
+    }, {
+      "left" : "if (!ControlFlowGraph.isEnteringNewCfgNode(child))",
+      "right" : "if (!ControlFlowGraph.isEnteringNewCfgNode(child))",
+      "info" : "IfStatement[11937-12177]:IfStatement[12198-12438]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11988-12177]:Block[12249-12438]"
+    }, {
+      "left" : "VariableLiveness state = isVariableReadBeforeKill(child, variable);",
+      "right" : "VariableLiveness state = isVariableReadBeforeKill(child, variable);",
+      "info" : "VariableDeclarationStatement[12016-12083]:VariableDeclarationStatement[12277-12344]"
+    }, {
+      "left" : "if (state != VariableLiveness.MAYBE_LIVE)",
+      "right" : "if (state != VariableLiveness.MAYBE_LIVE)",
+      "info" : "IfStatement[12092-12169]:IfStatement[12353-12430]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12134-12169]:Block[12395-12430]"
+    }, {
+      "left" : "return state;",
+      "right" : "return state;",
+      "info" : "ReturnStatement[12146-12159]:ReturnStatement[12407-12420]"
+    }, {
+      "left" : "return VariableLiveness.MAYBE_LIVE;",
+      "right" : "return VariableLiveness.MAYBE_LIVE;",
+      "info" : "ReturnStatement[12188-12223]:ReturnStatement[12449-12484]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,2169 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "JmsMessageHelper",
+      "right" : "JmsMessageHelper",
+      "info" : "TypeDeclaration[1893-25605]:TypeDeclaration[1893-26283]"
+    }, {
+      "left" : "private static final Logger LOGGER = LoggerFactory.getLogger(JmsMessageHelper.class);",
+      "right" : "private static final Logger LOGGER = LoggerFactory.getLogger(JmsMessageHelper.class);",
+      "info" : "FieldDeclaration[2016-2101]:FieldDeclaration[2016-2101]"
+    }, {
+      "left" : "private JmsMessageHelper()",
+      "right" : "private JmsMessageHelper()",
+      "info" : "MethodDeclaration[2107-2141]:MethodDeclaration[2107-2141]"
+    }, {
+      "left" : "public static Exchange createExchange(Message message, Endpoint endpoint)",
+      "right" : "public static Exchange createExchange(Message message, Endpoint endpoint)",
+      "info" : "MethodDeclaration[2147-2394]:MethodDeclaration[2147-2284]"
+    }, {
+      "left" : "public static Exchange populateExchange(Message message, Exchange exchange, boolean out, KeyFormatStrategy keyFormatStrategy)",
+      "right" : "public static Exchange populateExchange(Message message, Exchange exchange, boolean out, KeyFormatStrategy keyFormatStrategy)",
+      "info" : "MethodDeclaration[2400-5805]:MethodDeclaration[3171-6576]"
+    }, {
+      "left" : "public static Message createMessage(Exchange exchange, Session session, SjmsEndpoint endpoint) throws Exception",
+      "right" : "public static Message createMessage(Exchange exchange, Session session, SjmsEndpoint endpoint) throws Exception",
+      "info" : "MethodDeclaration[5811-6457]:MethodDeclaration[6582-7228]"
+    }, {
+      "left" : "public static Message createMessage(Session session, Object payload, Map<String, Object> messageHeaders, SjmsEndpoint endpoint) throws Exception",
+      "right" : "public static Message createMessage(Session session, Object payload, Map<String, Object> messageHeaders, SjmsEndpoint endpoint) throws Exception",
+      "info" : "MethodDeclaration[6463-6790]:MethodDeclaration[7234-7561]"
+    }, {
+      "left" : "private static Message createMessage(Session session, Object payload, Map<String, Object> messageHeaders, boolean allowNullBody,\n                                         KeyFormatStrategy keyFormatStrategy, TypeConverter typeConverter) throws Exception",
+      "right" : "private static Message createMessage(Session session, Object payload, Map<String, Object> messageHeaders, boolean allowNullBody,\n                                         KeyFormatStrategy keyFormatStrategy, TypeConverter typeConverter) throws Exception",
+      "info" : "MethodDeclaration[6796-9293]:MethodDeclaration[7567-10064]"
+    }, {
+      "left" : "private static Message setJmsMessageHeaders(final Message jmsMessage, Map<String, Object> messageHeaders, KeyFormatStrategy keyFormatStrategy) throws IllegalHeaderException",
+      "right" : "private static Message setJmsMessageHeaders(final Message jmsMessage, Map<String, Object> messageHeaders, KeyFormatStrategy keyFormatStrategy) throws IllegalHeaderException",
+      "info" : "MethodDeclaration[9299-15319]:MethodDeclaration[10070-15997]"
+    }, {
+      "left" : "public static Exchange setJmsMessageHeaders(final Message jmsMessage, final Exchange exchange, boolean out, KeyFormatStrategy keyFormatStrategy) throws JMSException",
+      "right" : "public static Exchange setJmsMessageHeaders(final Message jmsMessage, final Exchange exchange, boolean out, KeyFormatStrategy keyFormatStrategy) throws JMSException",
+      "info" : "MethodDeclaration[15325-17477]:MethodDeclaration[16003-18155]"
+    }, {
+      "left" : "public static String getJMSType(Message message)",
+      "right" : "public static String getJMSType(Message message)",
+      "info" : "MethodDeclaration[17483-17873]:MethodDeclaration[18161-18551]"
+    }, {
+      "left" : "public static void setJMSDeliveryMode(Message message, Object deliveryMode) throws JMSException",
+      "right" : "public static void setJMSDeliveryMode(Message message, Object deliveryMode) throws JMSException",
+      "info" : "MethodDeclaration[17879-19579]:MethodDeclaration[18557-20257]"
+    }, {
+      "left" : "public static void setMessageType(Message message, String type)",
+      "right" : "public static void setMessageType(Message message, String type)",
+      "info" : "MethodDeclaration[19585-20027]:MethodDeclaration[20263-20705]"
+    }, {
+      "left" : "public static void setCorrelationId(Message message, String correlationId)",
+      "right" : "public static void setCorrelationId(Message message, String correlationId)",
+      "info" : "MethodDeclaration[20033-20526]:MethodDeclaration[20711-21204]"
+    }, {
+      "left" : "public static void setJMSReplyTo(Message message, Destination replyTo)",
+      "right" : "public static void setJMSReplyTo(Message message, Destination replyTo)",
+      "info" : "MethodDeclaration[20532-20942]:MethodDeclaration[21210-21620]"
+    }, {
+      "left" : "public static Destination getJMSReplyTo(Message message)",
+      "right" : "public static Destination getJMSReplyTo(Message message)",
+      "info" : "MethodDeclaration[20948-21358]:MethodDeclaration[21626-22036]"
+    }, {
+      "left" : "public static void setProperty(Message jmsMessage, String name, Object value) throws JMSException",
+      "right" : "public static void setProperty(Message jmsMessage, String name, Object value) throws JMSException",
+      "info" : "MethodDeclaration[21364-22777]:MethodDeclaration[22042-23455]"
+    }, {
+      "left" : "public static JmsMessageType discoverMessageTypeFromPayload(final Object payload)",
+      "right" : "public static JmsMessageType discoverMessageTypeFromPayload(final Object payload)",
+      "info" : "MethodDeclaration[22783-24573]:MethodDeclaration[23461-25251]"
+    }, {
+      "left" : "public static JmsMessageType discoverJmsMessageType(Message message)",
+      "right" : "public static JmsMessageType discoverJmsMessageType(Message message)",
+      "info" : "MethodDeclaration[24579-25447]:MethodDeclaration[25257-26125]"
+    }, {
+      "left" : "private static boolean hasIllegalHeaderKey(String key)",
+      "right" : "private static boolean hasIllegalHeaderKey(String key)",
+      "info" : "MethodDeclaration[25453-25602]:MethodDeclaration[26131-26280]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1949-1955]:Modifier[1949-1955]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1962-1967]:TYPE_DECLARATION_KIND[1962-1967]"
+    }, {
+      "left" : "JmsMessageHelper",
+      "right" : "JmsMessageHelper",
+      "info" : "SimpleName[1968-1984]:SimpleName[1968-1984]"
+    }, {
+      "left" : "JmsConstants",
+      "right" : "JmsConstants",
+      "info" : "SimpleType[1996-2008]:SimpleType[1996-2008]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2107-2114]:Modifier[2107-2114]"
+    }, {
+      "left" : "JmsMessageHelper",
+      "right" : "JmsMessageHelper",
+      "info" : "SimpleName[2115-2131]:SimpleName[2115-2131]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2134-2141]:Block[2134-2141]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2147-2153]:Modifier[2147-2153]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2154-2160]:Modifier[2154-2160]"
+    }, {
+      "left" : "createExchange",
+      "right" : "createExchange",
+      "info" : "SimpleName[2170-2184]:SimpleName[2170-2184]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2221-2394]:Block[2221-2284]"
+    }, {
+      "left" : "Exchange exchange = endpoint.createExchange();",
+      "right" : "Exchange exchange = endpoint.createExchange();",
+      "info" : "VariableDeclarationStatement[2231-2277]:VariableDeclarationStatement[2866-2912]"
+    }, {
+      "left" : "return populateExchange(message, exchange, false, ((SjmsEndpoint)endpoint).getJmsKeyFormatStrategy());",
+      "right" : "return populateExchange(message, exchange, false, initialisedKeyFormatStrategy);",
+      "info" : "ReturnStatement[2286-2388]:ReturnStatement[3079-3159]"
+    }, {
+      "left" : "@SuppressWarnings(\"unchecked\")",
+      "right" : "@SuppressWarnings(\"unchecked\")",
+      "info" : "SingleMemberAnnotation[2400-2430]:SingleMemberAnnotation[3171-3201]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2435-2441]:Modifier[3206-3212]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2442-2448]:Modifier[3213-3219]"
+    }, {
+      "left" : "Exchange",
+      "right" : "Exchange",
+      "info" : "SimpleType[2449-2457]:SimpleType[3220-3228]"
+    }, {
+      "left" : "populateExchange",
+      "right" : "populateExchange",
+      "info" : "SimpleName[2458-2474]:SimpleName[3229-3245]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[2475-2490]:SingleVariableDeclaration[3246-3261]"
+    }, {
+      "left" : "Exchange exchange",
+      "right" : "Exchange exchange",
+      "info" : "SingleVariableDeclaration[2492-2509]:SingleVariableDeclaration[3263-3280]"
+    }, {
+      "left" : "boolean out",
+      "right" : "boolean out",
+      "info" : "SingleVariableDeclaration[2511-2522]:SingleVariableDeclaration[3282-3293]"
+    }, {
+      "left" : "KeyFormatStrategy keyFormatStrategy",
+      "right" : "KeyFormatStrategy keyFormatStrategy",
+      "info" : "SingleVariableDeclaration[2524-2559]:SingleVariableDeclaration[3295-3330]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2561-5805]:Block[3332-6576]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[2571-5774]:TryStatement[3342-6545]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2575-5704]:Block[3346-6475]"
+    }, {
+      "left" : "setJmsMessageHeaders(message, exchange, out, keyFormatStrategy);",
+      "right" : "setJmsMessageHeaders(message, exchange, out, keyFormatStrategy);",
+      "info" : "ExpressionStatement[2589-2653]:ExpressionStatement[3360-3424]"
+    }, {
+      "left" : "if (message != null)",
+      "right" : "if (message != null)",
+      "info" : "IfStatement[2666-5694]:IfStatement[3437-6465]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2687-5694]:Block[3458-6465]"
+    }, {
+      "left" : "DefaultMessage bodyMessage;",
+      "right" : "DefaultMessage bodyMessage;",
+      "info" : "VariableDeclarationStatement[2766-2793]:VariableDeclarationStatement[3537-3564]"
+    }, {
+      "left" : "if (out)",
+      "right" : "if (out)",
+      "info" : "IfStatement[2810-3002]:IfStatement[3581-3773]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2819-2908]:Block[3590-3679]"
+    }, {
+      "left" : "bodyMessage = (DefaultMessage) exchange.getOut();",
+      "right" : "bodyMessage = (DefaultMessage) exchange.getOut();",
+      "info" : "ExpressionStatement[2841-2890]:ExpressionStatement[3612-3661]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2914-3002]:Block[3685-3773]"
+    }, {
+      "left" : "bodyMessage = (DefaultMessage) exchange.getIn();",
+      "right" : "bodyMessage = (DefaultMessage) exchange.getIn();",
+      "info" : "ExpressionStatement[2936-2984]:ExpressionStatement[3707-3755]"
+    }, {
+      "left" : "switch (JmsMessageHelper.discoverJmsMessageType(message)) {\n                case Bytes:\n                    BytesMessage bytesMessage = (BytesMessage) message;\n                    if (bytesMessage.getBodyLength() > Integer.MAX_VALUE) {\n                        LOGGER.warn(\"Length of BytesMessage is too long: {}\", bytesMessage.getBodyLength());\n                        return null;\n                    }\n                    byte[] result = new byte[(int) bytesMessage.getBodyLength()];\n                    bytesMessage.readBytes(result);\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Bytes);\n                    bodyMessage.setBody(result);\n                    break;\n                case Map:\n                    Map<String, Object> body = new HashMap<String, Object>();\n                    MapMessage mapMessage = (MapMessage) message;\n                    Enumeration<String> names = mapMessage.getMapNames();\n                    while (names.hasMoreElements()) {\n                        String key = names.nextElement();\n                        Object value = mapMessage.getObject(key);\n                        body.put(key, value);\n                    }\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Map);\n                    bodyMessage.setBody(body);\n                    break;\n                case Object:\n                    ObjectMessage objMsg = (ObjectMessage) message;\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Object);\n                    bodyMessage.setBody(objMsg.getObject());\n                    break;\n                case Text:\n                    TextMessage textMsg = (TextMessage) message;\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Text);\n                    bodyMessage.setBody(textMsg.getText());\n                    break;\n                case Stream:\n                    StreamMessage streamMessage = (StreamMessage) message;\n                    List<Object> list = new ArrayList<Object>();\n                    Object obj;\n                    while ((obj = streamMessage.readObject()) != null) {\n                        list.add(obj);\n                    }\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Stream);\n                    bodyMessage.setBody(list);\n                    break;\n                case Message:\n                default:\n                    // Do nothing. Only set the headers for an empty message\n                    bodyMessage.setBody(message);\n                    break;\n                }",
+      "right" : "switch (JmsMessageHelper.discoverJmsMessageType(message)) {\n                case Bytes:\n                    BytesMessage bytesMessage = (BytesMessage) message;\n                    if (bytesMessage.getBodyLength() > Integer.MAX_VALUE) {\n                        LOGGER.warn(\"Length of BytesMessage is too long: {}\", bytesMessage.getBodyLength());\n                        return null;\n                    }\n                    byte[] result = new byte[(int) bytesMessage.getBodyLength()];\n                    bytesMessage.readBytes(result);\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Bytes);\n                    bodyMessage.setBody(result);\n                    break;\n                case Map:\n                    Map<String, Object> body = new HashMap<String, Object>();\n                    MapMessage mapMessage = (MapMessage) message;\n                    Enumeration<String> names = mapMessage.getMapNames();\n                    while (names.hasMoreElements()) {\n                        String key = names.nextElement();\n                        Object value = mapMessage.getObject(key);\n                        body.put(key, value);\n                    }\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Map);\n                    bodyMessage.setBody(body);\n                    break;\n                case Object:\n                    ObjectMessage objMsg = (ObjectMessage) message;\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Object);\n                    bodyMessage.setBody(objMsg.getObject());\n                    break;\n                case Text:\n                    TextMessage textMsg = (TextMessage) message;\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Text);\n                    bodyMessage.setBody(textMsg.getText());\n                    break;\n                case Stream:\n                    StreamMessage streamMessage = (StreamMessage) message;\n                    List<Object> list = new ArrayList<Object>();\n                    Object obj;\n                    while ((obj = streamMessage.readObject()) != null) {\n                        list.add(obj);\n                    }\n                    bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Stream);\n                    bodyMessage.setBody(list);\n                    break;\n                case Message:\n                default:\n                    // Do nothing. Only set the headers for an empty message\n                    bodyMessage.setBody(message);\n                    break;\n                }",
+      "info" : "SwitchStatement[3019-5680]:SwitchStatement[3790-6451]"
+    }, {
+      "left" : "case Bytes:",
+      "right" : "case Bytes:",
+      "info" : "SwitchCase[3095-3106]:SwitchCase[3866-3877]"
+    }, {
+      "left" : "BytesMessage bytesMessage = (BytesMessage) message;",
+      "right" : "BytesMessage bytesMessage = (BytesMessage) message;",
+      "info" : "VariableDeclarationStatement[3127-3178]:VariableDeclarationStatement[3898-3949]"
+    }, {
+      "left" : "if (bytesMessage.getBodyLength() > Integer.MAX_VALUE)",
+      "right" : "if (bytesMessage.getBodyLength() > Integer.MAX_VALUE)",
+      "info" : "IfStatement[3199-3422]:IfStatement[3970-4193]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3253-3422]:Block[4024-4193]"
+    }, {
+      "left" : "LOGGER.warn(\"Length of BytesMessage is too long: {}\", bytesMessage.getBodyLength());",
+      "right" : "LOGGER.warn(\"Length of BytesMessage is too long: {}\", bytesMessage.getBodyLength());",
+      "info" : "ExpressionStatement[3279-3363]:ExpressionStatement[4050-4134]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[3388-3400]:ReturnStatement[4159-4171]"
+    }, {
+      "left" : "byte[] result = new byte[(int) bytesMessage.getBodyLength()];",
+      "right" : "byte[] result = new byte[(int) bytesMessage.getBodyLength()];",
+      "info" : "VariableDeclarationStatement[3443-3504]:VariableDeclarationStatement[4214-4275]"
+    }, {
+      "left" : "bytesMessage.readBytes(result);",
+      "right" : "bytesMessage.readBytes(result);",
+      "info" : "ExpressionStatement[3525-3556]:ExpressionStatement[4296-4327]"
+    }, {
+      "left" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Bytes);",
+      "right" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Bytes);",
+      "info" : "ExpressionStatement[3577-3653]:ExpressionStatement[4348-4424]"
+    }, {
+      "left" : "bodyMessage.setBody(result);",
+      "right" : "bodyMessage.setBody(result);",
+      "info" : "ExpressionStatement[3674-3702]:ExpressionStatement[4445-4473]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[3723-3729]:BreakStatement[4494-4500]"
+    }, {
+      "left" : "case Map:",
+      "right" : "case Map:",
+      "info" : "SwitchCase[3746-3755]:SwitchCase[4517-4526]"
+    }, {
+      "left" : "Map<String, Object> body = new HashMap<String, Object>();",
+      "right" : "Map<String, Object> body = new HashMap<String, Object>();",
+      "info" : "VariableDeclarationStatement[3776-3833]:VariableDeclarationStatement[4547-4604]"
+    }, {
+      "left" : "MapMessage mapMessage = (MapMessage) message;",
+      "right" : "MapMessage mapMessage = (MapMessage) message;",
+      "info" : "VariableDeclarationStatement[3854-3899]:VariableDeclarationStatement[4625-4670]"
+    }, {
+      "left" : "Enumeration<String> names = mapMessage.getMapNames();",
+      "right" : "Enumeration<String> names = mapMessage.getMapNames();",
+      "info" : "VariableDeclarationStatement[3920-3973]:VariableDeclarationStatement[4691-4744]"
+    }, {
+      "left" : "while (names.hasMoreElements())",
+      "right" : "while (names.hasMoreElements())",
+      "info" : "WhileStatement[3994-4219]:WhileStatement[4765-4990]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4026-4219]:Block[4797-4990]"
+    }, {
+      "left" : "String key = names.nextElement();",
+      "right" : "String key = names.nextElement();",
+      "info" : "VariableDeclarationStatement[4052-4085]:VariableDeclarationStatement[4823-4856]"
+    }, {
+      "left" : "Object value = mapMessage.getObject(key);",
+      "right" : "Object value = mapMessage.getObject(key);",
+      "info" : "VariableDeclarationStatement[4110-4151]:VariableDeclarationStatement[4881-4922]"
+    }, {
+      "left" : "body.put(key, value);",
+      "right" : "body.put(key, value);",
+      "info" : "ExpressionStatement[4176-4197]:ExpressionStatement[4947-4968]"
+    }, {
+      "left" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Map);",
+      "right" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Map);",
+      "info" : "ExpressionStatement[4240-4314]:ExpressionStatement[5011-5085]"
+    }, {
+      "left" : "bodyMessage.setBody(body);",
+      "right" : "bodyMessage.setBody(body);",
+      "info" : "ExpressionStatement[4335-4361]:ExpressionStatement[5106-5132]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[4382-4388]:BreakStatement[5153-5159]"
+    }, {
+      "left" : "case Object:",
+      "right" : "case Object:",
+      "info" : "SwitchCase[4405-4417]:SwitchCase[5176-5188]"
+    }, {
+      "left" : "ObjectMessage objMsg = (ObjectMessage) message;",
+      "right" : "ObjectMessage objMsg = (ObjectMessage) message;",
+      "info" : "VariableDeclarationStatement[4438-4485]:VariableDeclarationStatement[5209-5256]"
+    }, {
+      "left" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Object);",
+      "right" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Object);",
+      "info" : "ExpressionStatement[4506-4583]:ExpressionStatement[5277-5354]"
+    }, {
+      "left" : "bodyMessage.setBody(objMsg.getObject());",
+      "right" : "bodyMessage.setBody(objMsg.getObject());",
+      "info" : "ExpressionStatement[4604-4644]:ExpressionStatement[5375-5415]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[4665-4671]:BreakStatement[5436-5442]"
+    }, {
+      "left" : "case Text:",
+      "right" : "case Text:",
+      "info" : "SwitchCase[4688-4698]:SwitchCase[5459-5469]"
+    }, {
+      "left" : "TextMessage textMsg = (TextMessage) message;",
+      "right" : "TextMessage textMsg = (TextMessage) message;",
+      "info" : "VariableDeclarationStatement[4719-4763]:VariableDeclarationStatement[5490-5534]"
+    }, {
+      "left" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Text);",
+      "right" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Text);",
+      "info" : "ExpressionStatement[4784-4859]:ExpressionStatement[5555-5630]"
+    }, {
+      "left" : "bodyMessage.setBody(textMsg.getText());",
+      "right" : "bodyMessage.setBody(textMsg.getText());",
+      "info" : "ExpressionStatement[4880-4919]:ExpressionStatement[5651-5690]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[4940-4946]:BreakStatement[5711-5717]"
+    }, {
+      "left" : "case Stream:",
+      "right" : "case Stream:",
+      "info" : "SwitchCase[4963-4975]:SwitchCase[5734-5746]"
+    }, {
+      "left" : "StreamMessage streamMessage = (StreamMessage) message;",
+      "right" : "StreamMessage streamMessage = (StreamMessage) message;",
+      "info" : "VariableDeclarationStatement[4996-5050]:VariableDeclarationStatement[5767-5821]"
+    }, {
+      "left" : "List<Object> list = new ArrayList<Object>();",
+      "right" : "List<Object> list = new ArrayList<Object>();",
+      "info" : "VariableDeclarationStatement[5071-5115]:VariableDeclarationStatement[5842-5886]"
+    }, {
+      "left" : "Object obj;",
+      "right" : "Object obj;",
+      "info" : "VariableDeclarationStatement[5136-5147]:VariableDeclarationStatement[5907-5918]"
+    }, {
+      "left" : "while ((obj = streamMessage.readObject()) != null)",
+      "right" : "while ((obj = streamMessage.readObject()) != null)",
+      "info" : "WhileStatement[5168-5281]:WhileStatement[5939-6052]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5219-5281]:Block[5990-6052]"
+    }, {
+      "left" : "list.add(obj);",
+      "right" : "list.add(obj);",
+      "info" : "ExpressionStatement[5245-5259]:ExpressionStatement[6016-6030]"
+    }, {
+      "left" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Stream);",
+      "right" : "bodyMessage.setHeader(SjmsConstants.JMS_MESSAGE_TYPE, JmsMessageType.Stream);",
+      "info" : "ExpressionStatement[5302-5379]:ExpressionStatement[6073-6150]"
+    }, {
+      "left" : "bodyMessage.setBody(list);",
+      "right" : "bodyMessage.setBody(list);",
+      "info" : "ExpressionStatement[5400-5426]:ExpressionStatement[6171-6197]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[5447-5453]:BreakStatement[6218-6224]"
+    }, {
+      "left" : "case Message:",
+      "right" : "case Message:",
+      "info" : "SwitchCase[5470-5483]:SwitchCase[6241-6254]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[5500-5508]:SwitchCase[6271-6279]"
+    }, {
+      "left" : "bodyMessage.setBody(message);",
+      "right" : "bodyMessage.setBody(message);",
+      "info" : "ExpressionStatement[5606-5635]:ExpressionStatement[6377-6406]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[5656-5662]:BreakStatement[6427-6433]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5725-5774]:Block[6496-6545]"
+    }, {
+      "left" : "exchange.setException(e);",
+      "right" : "exchange.setException(e);",
+      "info" : "ExpressionStatement[5739-5764]:ExpressionStatement[6510-6535]"
+    }, {
+      "left" : "return exchange;",
+      "right" : "return exchange;",
+      "info" : "ReturnStatement[5783-5799]:ReturnStatement[6554-6570]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5811-5817]:Modifier[6582-6588]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[5818-5824]:Modifier[6589-6595]"
+    }, {
+      "left" : "Message",
+      "right" : "Message",
+      "info" : "SimpleType[5825-5832]:SimpleType[6596-6603]"
+    }, {
+      "left" : "createMessage",
+      "right" : "createMessage",
+      "info" : "SimpleName[5833-5846]:SimpleName[6604-6617]"
+    }, {
+      "left" : "Exchange exchange",
+      "right" : "Exchange exchange",
+      "info" : "SingleVariableDeclaration[5847-5864]:SingleVariableDeclaration[6618-6635]"
+    }, {
+      "left" : "Session session",
+      "right" : "Session session",
+      "info" : "SingleVariableDeclaration[5866-5881]:SingleVariableDeclaration[6637-6652]"
+    }, {
+      "left" : "SjmsEndpoint endpoint",
+      "right" : "SjmsEndpoint endpoint",
+      "info" : "SingleVariableDeclaration[5883-5904]:SingleVariableDeclaration[6654-6675]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[5913-5922]:SimpleType[6684-6693]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5923-6457]:Block[6694-7228]"
+    }, {
+      "left" : "Message answer;",
+      "right" : "Message answer;",
+      "info" : "VariableDeclarationStatement[5933-5948]:VariableDeclarationStatement[6704-6719]"
+    }, {
+      "left" : "Object body;",
+      "right" : "Object body;",
+      "info" : "VariableDeclarationStatement[5957-5969]:VariableDeclarationStatement[6728-6740]"
+    }, {
+      "left" : "Map<String, Object> bodyHeaders;",
+      "right" : "Map<String, Object> bodyHeaders;",
+      "info" : "VariableDeclarationStatement[5978-6010]:VariableDeclarationStatement[6749-6781]"
+    }, {
+      "left" : "if (exchange.getOut().getBody() != null)",
+      "right" : "if (exchange.getOut().getBody() != null)",
+      "info" : "IfStatement[6020-6357]:IfStatement[6791-7128]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6061-6207]:Block[6832-6978]"
+    }, {
+      "left" : "body = exchange.getOut().getBody();",
+      "right" : "body = exchange.getOut().getBody();",
+      "info" : "ExpressionStatement[6075-6110]:ExpressionStatement[6846-6881]"
+    }, {
+      "left" : "bodyHeaders = new HashMap<String, Object>(exchange.getOut().getHeaders());",
+      "right" : "bodyHeaders = new HashMap<String, Object>(exchange.getOut().getHeaders());",
+      "info" : "ExpressionStatement[6123-6197]:ExpressionStatement[6894-6968]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6213-6357]:Block[6984-7128]"
+    }, {
+      "left" : "body = exchange.getIn().getBody();",
+      "right" : "body = exchange.getIn().getBody();",
+      "info" : "ExpressionStatement[6227-6261]:ExpressionStatement[6998-7032]"
+    }, {
+      "left" : "bodyHeaders = new HashMap<String, Object>(exchange.getIn().getHeaders());",
+      "right" : "bodyHeaders = new HashMap<String, Object>(exchange.getIn().getHeaders());",
+      "info" : "ExpressionStatement[6274-6347]:ExpressionStatement[7045-7118]"
+    }, {
+      "left" : "answer = createMessage(session, body, bodyHeaders, endpoint);",
+      "right" : "answer = createMessage(session, body, bodyHeaders, endpoint);",
+      "info" : "ExpressionStatement[6367-6428]:ExpressionStatement[7138-7199]"
+    }, {
+      "left" : "return answer;",
+      "right" : "return answer;",
+      "info" : "ReturnStatement[6437-6451]:ReturnStatement[7208-7222]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6463-6469]:Modifier[7234-7240]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[6470-6476]:Modifier[7241-7247]"
+    }, {
+      "left" : "Message",
+      "right" : "Message",
+      "info" : "SimpleType[6477-6484]:SimpleType[7248-7255]"
+    }, {
+      "left" : "createMessage",
+      "right" : "createMessage",
+      "info" : "SimpleName[6485-6498]:SimpleName[7256-7269]"
+    }, {
+      "left" : "Session session",
+      "right" : "Session session",
+      "info" : "SingleVariableDeclaration[6499-6514]:SingleVariableDeclaration[7270-7285]"
+    }, {
+      "left" : "Object payload",
+      "right" : "Object payload",
+      "info" : "SingleVariableDeclaration[6516-6530]:SingleVariableDeclaration[7287-7301]"
+    }, {
+      "left" : "Map<String, Object> messageHeaders",
+      "right" : "Map<String, Object> messageHeaders",
+      "info" : "SingleVariableDeclaration[6532-6566]:SingleVariableDeclaration[7303-7337]"
+    }, {
+      "left" : "SjmsEndpoint endpoint",
+      "right" : "SjmsEndpoint endpoint",
+      "info" : "SingleVariableDeclaration[6568-6589]:SingleVariableDeclaration[7339-7360]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[6598-6607]:SimpleType[7369-7378]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6608-6790]:Block[7379-7561]"
+    }, {
+      "left" : "return createMessage(session, payload, messageHeaders, endpoint.isAllowNullBody(), endpoint.getJmsKeyFormatStrategy(), endpoint.getCamelContext().getTypeConverter());",
+      "right" : "return createMessage(session, payload, messageHeaders, endpoint.isAllowNullBody(), endpoint.getJmsKeyFormatStrategy(), endpoint.getCamelContext().getTypeConverter());",
+      "info" : "ReturnStatement[6618-6784]:ReturnStatement[7389-7555]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6796-6803]:Modifier[7567-7574]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[6804-6810]:Modifier[7575-7581]"
+    }, {
+      "left" : "Message",
+      "right" : "Message",
+      "info" : "SimpleType[6811-6818]:SimpleType[7582-7589]"
+    }, {
+      "left" : "createMessage",
+      "right" : "createMessage",
+      "info" : "SimpleName[6819-6832]:SimpleName[7590-7603]"
+    }, {
+      "left" : "Session session",
+      "right" : "Session session",
+      "info" : "SingleVariableDeclaration[6833-6848]:SingleVariableDeclaration[7604-7619]"
+    }, {
+      "left" : "Object payload",
+      "right" : "Object payload",
+      "info" : "SingleVariableDeclaration[6850-6864]:SingleVariableDeclaration[7621-7635]"
+    }, {
+      "left" : "Map<String, Object> messageHeaders",
+      "right" : "Map<String, Object> messageHeaders",
+      "info" : "SingleVariableDeclaration[6866-6900]:SingleVariableDeclaration[7637-7671]"
+    }, {
+      "left" : "boolean allowNullBody",
+      "right" : "boolean allowNullBody",
+      "info" : "SingleVariableDeclaration[6902-6923]:SingleVariableDeclaration[7673-7694]"
+    }, {
+      "left" : "KeyFormatStrategy keyFormatStrategy",
+      "right" : "KeyFormatStrategy keyFormatStrategy",
+      "info" : "SingleVariableDeclaration[6966-7001]:SingleVariableDeclaration[7737-7772]"
+    }, {
+      "left" : "TypeConverter typeConverter",
+      "right" : "TypeConverter typeConverter",
+      "info" : "SingleVariableDeclaration[7003-7030]:SingleVariableDeclaration[7774-7801]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[7039-7048]:SimpleType[7810-7819]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7049-9293]:Block[7820-10064]"
+    }, {
+      "left" : "Message answer = null;",
+      "right" : "Message answer = null;",
+      "info" : "VariableDeclarationStatement[7059-7081]:VariableDeclarationStatement[7830-7852]"
+    }, {
+      "left" : "JmsMessageType messageType = JmsMessageHelper.discoverMessageTypeFromPayload(payload);",
+      "right" : "JmsMessageType messageType = JmsMessageHelper.discoverMessageTypeFromPayload(payload);",
+      "info" : "VariableDeclarationStatement[7090-7176]:VariableDeclarationStatement[7861-7947]"
+    }, {
+      "left" : "switch (messageType) {\n        case Bytes:\n            BytesMessage bytesMessage = session.createBytesMessage();\n            byte[] bytesToWrite = typeConverter.convertTo(byte[].class, payload);\n            bytesMessage.writeBytes(bytesToWrite);\n            answer = bytesMessage;\n            break;\n        case Map:\n            MapMessage mapMessage = session.createMapMessage();\n            Map objMap = (Map) payload;\n            for (final Map.Entry entry : (Set<Map.Entry>)objMap.entrySet()) {\n                mapMessage.setObject(entry.getKey().toString(), entry.getValue());\n            }\n            answer = mapMessage;\n            break;\n        case Object:\n            ObjectMessage objectMessage = session.createObjectMessage();\n            objectMessage.setObject((Serializable) payload);\n            answer = objectMessage;\n            break;\n        case Text:\n            TextMessage textMessage = session.createTextMessage();\n            String convertedText = typeConverter.convertTo(String.class, payload);\n            textMessage.setText(convertedText);\n            answer = textMessage;\n            break;\n        case Stream:\n            StreamMessage streamMessage = session.createStreamMessage();\n            Collection collection = (Collection)payload;\n            for (final Object obj : collection) {\n                streamMessage.writeObject(obj);\n            }\n            answer = streamMessage;\n            break;\n        case Message:\n            if (allowNullBody && payload == null) {\n                answer = session.createMessage();\n            } else if (payload != null) {\n                throw new JMSException(\"Unsupported message body type \" + ObjectHelper.classCanonicalName(payload));\n            } else {\n                throw new JMSException(\"Null body is not allowed\");\n            }\n            break;\n        default:\n            break;\n        }",
+      "right" : "switch (messageType) {\n        case Bytes:\n            BytesMessage bytesMessage = session.createBytesMessage();\n            byte[] bytesToWrite = typeConverter.convertTo(byte[].class, payload);\n            bytesMessage.writeBytes(bytesToWrite);\n            answer = bytesMessage;\n            break;\n        case Map:\n            MapMessage mapMessage = session.createMapMessage();\n            Map objMap = (Map) payload;\n            for (final Map.Entry entry : (Set<Map.Entry>)objMap.entrySet()) {\n                mapMessage.setObject(entry.getKey().toString(), entry.getValue());\n            }\n            answer = mapMessage;\n            break;\n        case Object:\n            ObjectMessage objectMessage = session.createObjectMessage();\n            objectMessage.setObject((Serializable) payload);\n            answer = objectMessage;\n            break;\n        case Text:\n            TextMessage textMessage = session.createTextMessage();\n            String convertedText = typeConverter.convertTo(String.class, payload);\n            textMessage.setText(convertedText);\n            answer = textMessage;\n            break;\n        case Stream:\n            StreamMessage streamMessage = session.createStreamMessage();\n            Collection collection = (Collection)payload;\n            for (final Object obj : collection) {\n                streamMessage.writeObject(obj);\n            }\n            answer = streamMessage;\n            break;\n        case Message:\n            if (allowNullBody && payload == null) {\n                answer = session.createMessage();\n            } else if (payload != null) {\n                throw new JMSException(\"Unsupported message body type \" + ObjectHelper.classCanonicalName(payload));\n            } else {\n                throw new JMSException(\"Null body is not allowed\");\n            }\n            break;\n        default:\n            break;\n        }",
+      "info" : "SwitchStatement[7186-9083]:SwitchStatement[7957-9854]"
+    }, {
+      "left" : "case Bytes:",
+      "right" : "case Bytes:",
+      "info" : "SwitchCase[7217-7228]:SwitchCase[7988-7999]"
+    }, {
+      "left" : "BytesMessage bytesMessage = session.createBytesMessage();",
+      "right" : "BytesMessage bytesMessage = session.createBytesMessage();",
+      "info" : "VariableDeclarationStatement[7241-7298]:VariableDeclarationStatement[8012-8069]"
+    }, {
+      "left" : "byte[] bytesToWrite = typeConverter.convertTo(byte[].class, payload);",
+      "right" : "byte[] bytesToWrite = typeConverter.convertTo(byte[].class, payload);",
+      "info" : "VariableDeclarationStatement[7311-7380]:VariableDeclarationStatement[8082-8151]"
+    }, {
+      "left" : "bytesMessage.writeBytes(bytesToWrite);",
+      "right" : "bytesMessage.writeBytes(bytesToWrite);",
+      "info" : "ExpressionStatement[7393-7431]:ExpressionStatement[8164-8202]"
+    }, {
+      "left" : "answer = bytesMessage;",
+      "right" : "answer = bytesMessage;",
+      "info" : "ExpressionStatement[7444-7466]:ExpressionStatement[8215-8237]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[7479-7485]:BreakStatement[8250-8256]"
+    }, {
+      "left" : "case Map:",
+      "right" : "case Map:",
+      "info" : "SwitchCase[7494-7503]:SwitchCase[8265-8274]"
+    }, {
+      "left" : "MapMessage mapMessage = session.createMapMessage();",
+      "right" : "MapMessage mapMessage = session.createMapMessage();",
+      "info" : "VariableDeclarationStatement[7516-7567]:VariableDeclarationStatement[8287-8338]"
+    }, {
+      "left" : "Map objMap = (Map) payload;",
+      "right" : "Map objMap = (Map) payload;",
+      "info" : "VariableDeclarationStatement[7580-7607]:VariableDeclarationStatement[8351-8378]"
+    }, {
+      "left" : "for (final Map.Entry entry : (Set<Map.Entry>)objMap.entrySet())",
+      "right" : "for (final Map.Entry entry : (Set<Map.Entry>)objMap.entrySet())",
+      "info" : "EnhancedForStatement[7620-7782]:EnhancedForStatement[8391-8553]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7684-7782]:Block[8455-8553]"
+    }, {
+      "left" : "mapMessage.setObject(entry.getKey().toString(), entry.getValue());",
+      "right" : "mapMessage.setObject(entry.getKey().toString(), entry.getValue());",
+      "info" : "ExpressionStatement[7702-7768]:ExpressionStatement[8473-8539]"
+    }, {
+      "left" : "answer = mapMessage;",
+      "right" : "answer = mapMessage;",
+      "info" : "ExpressionStatement[7795-7815]:ExpressionStatement[8566-8586]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[7828-7834]:BreakStatement[8599-8605]"
+    }, {
+      "left" : "case Object:",
+      "right" : "case Object:",
+      "info" : "SwitchCase[7843-7855]:SwitchCase[8614-8626]"
+    }, {
+      "left" : "ObjectMessage objectMessage = session.createObjectMessage();",
+      "right" : "ObjectMessage objectMessage = session.createObjectMessage();",
+      "info" : "VariableDeclarationStatement[7868-7928]:VariableDeclarationStatement[8639-8699]"
+    }, {
+      "left" : "objectMessage.setObject((Serializable) payload);",
+      "right" : "objectMessage.setObject((Serializable) payload);",
+      "info" : "ExpressionStatement[7941-7989]:ExpressionStatement[8712-8760]"
+    }, {
+      "left" : "answer = objectMessage;",
+      "right" : "answer = objectMessage;",
+      "info" : "ExpressionStatement[8002-8025]:ExpressionStatement[8773-8796]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[8038-8044]:BreakStatement[8809-8815]"
+    }, {
+      "left" : "case Text:",
+      "right" : "case Text:",
+      "info" : "SwitchCase[8053-8063]:SwitchCase[8824-8834]"
+    }, {
+      "left" : "TextMessage textMessage = session.createTextMessage();",
+      "right" : "TextMessage textMessage = session.createTextMessage();",
+      "info" : "VariableDeclarationStatement[8076-8130]:VariableDeclarationStatement[8847-8901]"
+    }, {
+      "left" : "String convertedText = typeConverter.convertTo(String.class, payload);",
+      "right" : "String convertedText = typeConverter.convertTo(String.class, payload);",
+      "info" : "VariableDeclarationStatement[8143-8213]:VariableDeclarationStatement[8914-8984]"
+    }, {
+      "left" : "textMessage.setText(convertedText);",
+      "right" : "textMessage.setText(convertedText);",
+      "info" : "ExpressionStatement[8226-8261]:ExpressionStatement[8997-9032]"
+    }, {
+      "left" : "answer = textMessage;",
+      "right" : "answer = textMessage;",
+      "info" : "ExpressionStatement[8274-8295]:ExpressionStatement[9045-9066]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[8308-8314]:BreakStatement[9079-9085]"
+    }, {
+      "left" : "case Stream:",
+      "right" : "case Stream:",
+      "info" : "SwitchCase[8323-8335]:SwitchCase[9094-9106]"
+    }, {
+      "left" : "StreamMessage streamMessage = session.createStreamMessage();",
+      "right" : "StreamMessage streamMessage = session.createStreamMessage();",
+      "info" : "VariableDeclarationStatement[8348-8408]:VariableDeclarationStatement[9119-9179]"
+    }, {
+      "left" : "Collection collection = (Collection)payload;",
+      "right" : "Collection collection = (Collection)payload;",
+      "info" : "VariableDeclarationStatement[8421-8465]:VariableDeclarationStatement[9192-9236]"
+    }, {
+      "left" : "for (final Object obj : collection)",
+      "right" : "for (final Object obj : collection)",
+      "info" : "EnhancedForStatement[8478-8577]:EnhancedForStatement[9249-9348]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8514-8577]:Block[9285-9348]"
+    }, {
+      "left" : "streamMessage.writeObject(obj);",
+      "right" : "streamMessage.writeObject(obj);",
+      "info" : "ExpressionStatement[8532-8563]:ExpressionStatement[9303-9334]"
+    }, {
+      "left" : "answer = streamMessage;",
+      "right" : "answer = streamMessage;",
+      "info" : "ExpressionStatement[8590-8613]:ExpressionStatement[9361-9384]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[8626-8632]:BreakStatement[9397-9403]"
+    }, {
+      "left" : "case Message:",
+      "right" : "case Message:",
+      "info" : "SwitchCase[8641-8654]:SwitchCase[9412-9425]"
+    }, {
+      "left" : "if (allowNullBody && payload == null)",
+      "right" : "if (allowNullBody && payload == null)",
+      "info" : "IfStatement[8667-9018]:IfStatement[9438-9789]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8705-8770]:Block[9476-9541]"
+    }, {
+      "left" : "answer = session.createMessage();",
+      "right" : "answer = session.createMessage();",
+      "info" : "ExpressionStatement[8723-8756]:ExpressionStatement[9494-9527]"
+    }, {
+      "left" : "if (payload != null)",
+      "right" : "if (payload != null)",
+      "info" : "IfStatement[8776-9018]:IfStatement[9547-9789]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8797-8929]:Block[9568-9700]"
+    }, {
+      "left" : "throw new JMSException(\"Unsupported message body type \" + ObjectHelper.classCanonicalName(payload));",
+      "right" : "throw new JMSException(\"Unsupported message body type \" + ObjectHelper.classCanonicalName(payload));",
+      "info" : "ThrowStatement[8815-8915]:ThrowStatement[9586-9686]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8935-9018]:Block[9706-9789]"
+    }, {
+      "left" : "throw new JMSException(\"Null body is not allowed\");",
+      "right" : "throw new JMSException(\"Null body is not allowed\");",
+      "info" : "ThrowStatement[8953-9004]:ThrowStatement[9724-9775]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[9031-9037]:BreakStatement[9802-9808]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[9046-9054]:SwitchCase[9817-9825]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[9067-9073]:BreakStatement[9838-9844]"
+    }, {
+      "left" : "if (messageHeaders != null && !messageHeaders.isEmpty())",
+      "right" : "if (messageHeaders != null && !messageHeaders.isEmpty())",
+      "info" : "IfStatement[9093-9264]:IfStatement[9864-10035]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9150-9264]:Block[9921-10035]"
+    }, {
+      "left" : "answer = JmsMessageHelper.setJmsMessageHeaders(answer, messageHeaders, keyFormatStrategy);",
+      "right" : "answer = JmsMessageHelper.setJmsMessageHeaders(answer, messageHeaders, keyFormatStrategy);",
+      "info" : "ExpressionStatement[9164-9254]:ExpressionStatement[9935-10025]"
+    }, {
+      "left" : "return answer;",
+      "right" : "return answer;",
+      "info" : "ReturnStatement[9273-9287]:ReturnStatement[10044-10058]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[9869-9876]:Modifier[10546-10553]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[9877-9883]:Modifier[10554-10560]"
+    }, {
+      "left" : "setJmsMessageHeaders",
+      "right" : "setJmsMessageHeaders",
+      "info" : "SimpleName[9892-9912]:SimpleName[10569-10589]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10042-15319]:Block[10719-15997]"
+    }, {
+      "left" : "Map<String, Object> headers = new HashMap<String, Object>(messageHeaders);",
+      "right" : "Map<String, Object> headers = new HashMap<String, Object>(messageHeaders);",
+      "info" : "VariableDeclarationStatement[10052-10126]:VariableDeclarationStatement[10730-10804]"
+    }, {
+      "left" : "for (final Map.Entry<String, Object> entry : headers.entrySet())",
+      "right" : "for (final Map.Entry<String, Object> entry : headers.entrySet())",
+      "info" : "EnhancedForStatement[10135-15286]:EnhancedForStatement[10813-15964]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10200-15286]:Block[10878-15964]"
+    }, {
+      "left" : "String headerName = entry.getKey();",
+      "right" : "String headerName = entry.getKey();",
+      "info" : "VariableDeclarationStatement[10214-10249]:VariableDeclarationStatement[10892-10927]"
+    }, {
+      "left" : "Object headerValue = entry.getValue();",
+      "right" : "Object headerValue = entry.getValue();",
+      "info" : "VariableDeclarationStatement[10262-10300]:VariableDeclarationStatement[10940-10978]"
+    }, {
+      "left" : "if (headerName.equalsIgnoreCase(JMS_CORRELATION_ID))",
+      "right" : "if (headerName.equalsIgnoreCase(JMS_CORRELATION_ID))",
+      "info" : "IfStatement[10314-15276]:IfStatement[10992-15954]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10367-10949]:Block[11045-11627]"
+    }, {
+      "left" : "if (headerValue == null)",
+      "right" : "if (headerValue == null)",
+      "info" : "IfStatement[10385-10935]:IfStatement[11063-11613]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10410-10613]:Block[11088-11291]"
+    }, {
+      "left" : "setCorrelationId(jmsMessage, null);",
+      "right" : "setCorrelationId(jmsMessage, null);",
+      "info" : "ExpressionStatement[10560-10595]:ExpressionStatement[11238-11273]"
+    }, {
+      "left" : "if (headerValue instanceof String)",
+      "right" : "if (headerValue instanceof String)",
+      "info" : "IfStatement[10619-10935]:IfStatement[11297-11613]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10654-10745]:Block[11332-11423]"
+    }, {
+      "left" : "setCorrelationId(jmsMessage, (String) headerValue);",
+      "right" : "setCorrelationId(jmsMessage, (String) headerValue);",
+      "info" : "ExpressionStatement[10676-10727]:ExpressionStatement[11354-11405]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10751-10935]:Block[11429-11613]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"The \" + JMS_CORRELATION_ID + \" must either be a String or null.  Found: \" + headerValue.getClass().getName());",
+      "right" : "throw new IllegalHeaderException(\"The \" + JMS_CORRELATION_ID + \" must either be a String or null.  Found: \" + headerValue.getClass().getName());",
+      "info" : "ThrowStatement[10773-10917]:ThrowStatement[11451-11595]"
+    }, {
+      "left" : "if (headerName.equalsIgnoreCase(JMS_REPLY_TO))",
+      "right" : "if (headerName.equalsIgnoreCase(JMS_REPLY_TO))",
+      "info" : "IfStatement[10955-15276]:IfStatement[11633-15954]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11002-11599]:Block[11680-12277]"
+    }, {
+      "left" : "if (headerValue instanceof String)",
+      "right" : "if (headerValue instanceof String)",
+      "info" : "IfStatement[11020-11585]:IfStatement[11698-12263]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11055-11260]:Block[11733-11938]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11266-11585]:Block[11944-12263]"
+    }, {
+      "left" : "if (headerName.equalsIgnoreCase(JMS_TYPE))",
+      "right" : "if (headerName.equalsIgnoreCase(JMS_TYPE))",
+      "info" : "IfStatement[11605-15276]:IfStatement[12283-15954]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11648-12264]:Block[12326-12942]"
+    }, {
+      "left" : "if (headerValue == null)",
+      "right" : "if (headerValue == null)",
+      "info" : "IfStatement[11666-12250]:IfStatement[12344-12928]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11691-11892]:Block[12369-12570]"
+    }, {
+      "left" : "setMessageType(jmsMessage, null);",
+      "right" : "setMessageType(jmsMessage, null);",
+      "info" : "ExpressionStatement[11841-11874]:ExpressionStatement[12519-12552]"
+    }, {
+      "left" : "if (headerValue instanceof String)",
+      "right" : "if (headerValue instanceof String)",
+      "info" : "IfStatement[11898-12250]:IfStatement[12576-12928]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11933-12070]:Block[12611-12748]"
+    }, {
+      "left" : "setMessageType(jmsMessage, (String) headerValue);",
+      "right" : "setMessageType(jmsMessage, (String) headerValue);",
+      "info" : "ExpressionStatement[12003-12052]:ExpressionStatement[12681-12730]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12076-12250]:Block[12754-12928]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"The \" + JMS_TYPE + \" must either be a String or null.  Found: \" + headerValue.getClass().getName());",
+      "right" : "throw new IllegalHeaderException(\"The \" + JMS_TYPE + \" must either be a String or null.  Found: \" + headerValue.getClass().getName());",
+      "info" : "ThrowStatement[12098-12232]:ThrowStatement[12776-12910]"
+    }, {
+      "left" : "if (headerName.equalsIgnoreCase(JMS_PRIORITY))",
+      "right" : "if (headerName.equalsIgnoreCase(JMS_PRIORITY))",
+      "info" : "IfStatement[12270-15276]:IfStatement[12948-15954]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12317-12893]:Block[12995-13571]"
+    }, {
+      "left" : "if (headerValue instanceof Integer)",
+      "right" : "if (headerValue instanceof Integer)",
+      "info" : "IfStatement[12335-12879]:IfStatement[13013-13557]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12371-12704]:Block[13049-13382]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[12393-12686]:TryStatement[13071-13364]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12397-12494]:Block[13075-13172]"
+    }, {
+      "left" : "jmsMessage.setJMSPriority((Integer) headerValue);",
+      "right" : "jmsMessage.setJMSPriority((Integer) headerValue);",
+      "info" : "ExpressionStatement[12423-12472]:ExpressionStatement[13101-13150]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12518-12686]:Block[13196-13364]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"Failed to set the \" + JMS_PRIORITY + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "right" : "throw new IllegalHeaderException(\"Failed to set the \" + JMS_PRIORITY + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "info" : "ThrowStatement[12544-12664]:ThrowStatement[13222-13342]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12710-12879]:Block[13388-13557]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"The \" + JMS_PRIORITY + \" must be a Integer.  Type found: \" + headerValue.getClass().getName());",
+      "right" : "throw new IllegalHeaderException(\"The \" + JMS_PRIORITY + \" must be a Integer.  Type found: \" + headerValue.getClass().getName());",
+      "info" : "ThrowStatement[12732-12861]:ThrowStatement[13410-13539]"
+    }, {
+      "left" : "if (headerName.equalsIgnoreCase(JMS_DELIVERY_MODE))",
+      "right" : "if (headerName.equalsIgnoreCase(JMS_DELIVERY_MODE))",
+      "info" : "IfStatement[12899-15276]:IfStatement[13577-15954]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12951-13277]:Block[13629-13955]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[12969-13263]:TryStatement[13647-13941]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12973-13074]:Block[13651-13752]"
+    }, {
+      "left" : "JmsMessageHelper.setJMSDeliveryMode(jmsMessage, headerValue);",
+      "right" : "JmsMessageHelper.setJMSDeliveryMode(jmsMessage, headerValue);",
+      "info" : "ExpressionStatement[12995-13056]:ExpressionStatement[13673-13734]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13098-13263]:Block[13776-13941]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"Failed to set the \" + JMS_DELIVERY_MODE + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "right" : "throw new IllegalHeaderException(\"Failed to set the \" + JMS_DELIVERY_MODE + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "info" : "ThrowStatement[13120-13245]:ThrowStatement[13798-13923]"
+    }, {
+      "left" : "if (headerName.equalsIgnoreCase(JMS_EXPIRATION))",
+      "right" : "if (headerName.equalsIgnoreCase(JMS_EXPIRATION))",
+      "info" : "IfStatement[13283-15276]:IfStatement[13961-15954]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13332-13905]:Block[14010-14583]"
+    }, {
+      "left" : "if (headerValue instanceof Long)",
+      "right" : "if (headerValue instanceof Long)",
+      "info" : "IfStatement[13350-13891]:IfStatement[14028-14569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13383-13717]:Block[14061-14395]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[13405-13699]:TryStatement[14083-14377]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13409-13505]:Block[14087-14183]"
+    }, {
+      "left" : "jmsMessage.setJMSExpiration((Long) headerValue);",
+      "right" : "jmsMessage.setJMSExpiration((Long) headerValue);",
+      "info" : "ExpressionStatement[13435-13483]:ExpressionStatement[14113-14161]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13529-13699]:Block[14207-14377]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"Failed to set the \" + JMS_EXPIRATION + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "right" : "throw new IllegalHeaderException(\"Failed to set the \" + JMS_EXPIRATION + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "info" : "ThrowStatement[13555-13677]:ThrowStatement[14233-14355]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13723-13891]:Block[14401-14569]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"The \" + JMS_EXPIRATION + \" must be a Long.  Type found: \" + headerValue.getClass().getName());",
+      "right" : "throw new IllegalHeaderException(\"The \" + JMS_EXPIRATION + \" must be a Long.  Type found: \" + headerValue.getClass().getName());",
+      "info" : "ThrowStatement[13745-13873]:ThrowStatement[14423-14551]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13911-15276]:Block[14589-15954]"
+    }, {
+      "left" : "LOGGER.trace(\"Ignoring JMS header: {} with value: {}\", headerName, headerValue);",
+      "right" : "LOGGER.trace(\"Ignoring JMS header: {} with value: {}\", headerName, headerValue);",
+      "info" : "ExpressionStatement[13929-14009]:ExpressionStatement[14607-14687]"
+    }, {
+      "left" : "if (headerName.equalsIgnoreCase(JMS_DESTINATION) || headerName.equalsIgnoreCase(JMS_MESSAGE_ID) || headerName.equalsIgnoreCase(JMS_TIMESTAMP)\n                        || headerName.equalsIgnoreCase(JMS_REDELIVERED))",
+      "right" : "if (headerName.equalsIgnoreCase(JMS_DESTINATION) || headerName.equalsIgnoreCase(JMS_MESSAGE_ID) || headerName.equalsIgnoreCase(JMS_TIMESTAMP)\n                        || headerName.equalsIgnoreCase(JMS_REDELIVERED))",
+      "info" : "IfStatement[14026-15262]:IfStatement[14704-15940]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14241-14703]:Block[14919-15381]"
+    }, {
+      "left" : "LOGGER.trace(\"Ignoring JMS header: {} with value: {}\", headerName, headerValue);",
+      "right" : "LOGGER.trace(\"Ignoring JMS header: {} with value: {}\", headerName, headerValue);",
+      "info" : "ExpressionStatement[14605-14685]:ExpressionStatement[15283-15363]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14709-15262]:Block[15387-15940]"
+    }, {
+      "left" : "if (!(headerValue instanceof JmsMessageType))",
+      "right" : "if (!(headerValue instanceof JmsMessageType))",
+      "info" : "IfStatement[14731-15244]:IfStatement[15409-15922]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14777-15244]:Block[15455-15922]"
+    }, {
+      "left" : "String encodedName = keyFormatStrategy.encodeKey(headerName);",
+      "right" : "String encodedName = keyFormatStrategy.encodeKey(headerName);",
+      "info" : "VariableDeclarationStatement[14803-14864]:VariableDeclarationStatement[15481-15542]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[14889-15222]:TryStatement[15567-15900]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14893-15016]:Block[15571-15694]"
+    }, {
+      "left" : "JmsMessageHelper.setProperty(jmsMessage, encodedName, headerValue);",
+      "right" : "JmsMessageHelper.setProperty(jmsMessage, encodedName, headerValue);",
+      "info" : "ExpressionStatement[14923-14990]:ExpressionStatement[15601-15668]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15040-15222]:Block[15718-15900]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"Failed to set the header \" + encodedName + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "right" : "throw new IllegalHeaderException(\"Failed to set the header \" + encodedName + \" header. Cause: \" + e.getLocalizedMessage(), e);",
+      "info" : "ThrowStatement[15070-15196]:ThrowStatement[15748-15874]"
+    }, {
+      "left" : "return jmsMessage;",
+      "right" : "return jmsMessage;",
+      "info" : "ReturnStatement[15295-15313]:ReturnStatement[15973-15991]"
+    }, {
+      "left" : "@SuppressWarnings(\"unchecked\")",
+      "right" : "@SuppressWarnings(\"unchecked\")",
+      "info" : "SingleMemberAnnotation[15325-15355]:SingleMemberAnnotation[16003-16033]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15360-15366]:Modifier[16038-16044]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[15367-15373]:Modifier[16045-16051]"
+    }, {
+      "left" : "Exchange",
+      "right" : "Exchange",
+      "info" : "SimpleType[15374-15382]:SimpleType[16052-16060]"
+    }, {
+      "left" : "setJmsMessageHeaders",
+      "right" : "setJmsMessageHeaders",
+      "info" : "SimpleName[15383-15403]:SimpleName[16061-16081]"
+    }, {
+      "left" : "final Message jmsMessage",
+      "right" : "final Message jmsMessage",
+      "info" : "SingleVariableDeclaration[15404-15428]:SingleVariableDeclaration[16082-16106]"
+    }, {
+      "left" : "final Exchange exchange",
+      "right" : "final Exchange exchange",
+      "info" : "SingleVariableDeclaration[15430-15453]:SingleVariableDeclaration[16108-16131]"
+    }, {
+      "left" : "boolean out",
+      "right" : "boolean out",
+      "info" : "SingleVariableDeclaration[15455-15466]:SingleVariableDeclaration[16133-16144]"
+    }, {
+      "left" : "KeyFormatStrategy keyFormatStrategy",
+      "right" : "KeyFormatStrategy keyFormatStrategy",
+      "info" : "SingleVariableDeclaration[15468-15503]:SingleVariableDeclaration[16146-16181]"
+    }, {
+      "left" : "JMSException",
+      "right" : "JMSException",
+      "info" : "SimpleType[15512-15524]:SimpleType[16190-16202]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15525-17477]:Block[16203-18155]"
+    }, {
+      "left" : "Map<String, Object> headers = new HashMap<String, Object>();",
+      "right" : "Map<String, Object> headers = new HashMap<String, Object>();",
+      "info" : "VariableDeclarationStatement[15535-15595]:VariableDeclarationStatement[16213-16273]"
+    }, {
+      "left" : "if (jmsMessage != null)",
+      "right" : "if (jmsMessage != null)",
+      "info" : "IfStatement[15604-17299]:IfStatement[16282-17977]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15628-17299]:Block[16306-17977]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[15704-16731]:TryStatement[16382-17409]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15708-16640]:Block[16386-17318]"
+    }, {
+      "left" : "headers.put(JMS_CORRELATION_ID, jmsMessage.getJMSCorrelationID());",
+      "right" : "headers.put(JMS_CORRELATION_ID, jmsMessage.getJMSCorrelationID());",
+      "info" : "ExpressionStatement[15726-15792]:ExpressionStatement[16404-16470]"
+    }, {
+      "left" : "headers.put(JMS_DELIVERY_MODE, jmsMessage.getJMSDeliveryMode());",
+      "right" : "headers.put(JMS_DELIVERY_MODE, jmsMessage.getJMSDeliveryMode());",
+      "info" : "ExpressionStatement[15809-15873]:ExpressionStatement[16487-16551]"
+    }, {
+      "left" : "headers.put(JMS_DESTINATION, jmsMessage.getJMSDestination());",
+      "right" : "headers.put(JMS_DESTINATION, jmsMessage.getJMSDestination());",
+      "info" : "ExpressionStatement[15890-15951]:ExpressionStatement[16568-16629]"
+    }, {
+      "left" : "headers.put(JMS_EXPIRATION, jmsMessage.getJMSExpiration());",
+      "right" : "headers.put(JMS_EXPIRATION, jmsMessage.getJMSExpiration());",
+      "info" : "ExpressionStatement[15968-16027]:ExpressionStatement[16646-16705]"
+    }, {
+      "left" : "headers.put(JMS_MESSAGE_ID, jmsMessage.getJMSMessageID());",
+      "right" : "headers.put(JMS_MESSAGE_ID, jmsMessage.getJMSMessageID());",
+      "info" : "ExpressionStatement[16044-16102]:ExpressionStatement[16722-16780]"
+    }, {
+      "left" : "headers.put(JMS_PRIORITY, jmsMessage.getJMSPriority());",
+      "right" : "headers.put(JMS_PRIORITY, jmsMessage.getJMSPriority());",
+      "info" : "ExpressionStatement[16119-16174]:ExpressionStatement[16797-16852]"
+    }, {
+      "left" : "headers.put(JMS_REDELIVERED, jmsMessage.getJMSRedelivered());",
+      "right" : "headers.put(JMS_REDELIVERED, jmsMessage.getJMSRedelivered());",
+      "info" : "ExpressionStatement[16191-16252]:ExpressionStatement[16869-16930]"
+    }, {
+      "left" : "headers.put(JMS_TIMESTAMP, jmsMessage.getJMSTimestamp());",
+      "right" : "headers.put(JMS_TIMESTAMP, jmsMessage.getJMSTimestamp());",
+      "info" : "ExpressionStatement[16269-16326]:ExpressionStatement[16947-17004]"
+    }, {
+      "left" : "headers.put(JMS_REPLY_TO, getJMSReplyTo(jmsMessage));",
+      "right" : "headers.put(JMS_REPLY_TO, getJMSReplyTo(jmsMessage));",
+      "info" : "ExpressionStatement[16343-16396]:ExpressionStatement[17021-17074]"
+    }, {
+      "left" : "headers.put(JMS_TYPE, getJMSType(jmsMessage));",
+      "right" : "headers.put(JMS_TYPE, getJMSType(jmsMessage));",
+      "info" : "ExpressionStatement[16413-16459]:ExpressionStatement[17091-17137]"
+    }, {
+      "left" : "headers.put(JMSX_GROUP_ID, jmsMessage.getStringProperty(JMSX_GROUP_ID));",
+      "right" : "headers.put(JMSX_GROUP_ID, jmsMessage.getStringProperty(JMSX_GROUP_ID));",
+      "info" : "ExpressionStatement[16554-16626]:ExpressionStatement[17232-17304]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16664-16731]:Block[17342-17409]"
+    }, {
+      "left" : "throw new RuntimeCamelException(e);",
+      "right" : "throw new RuntimeCamelException(e);",
+      "info" : "ThrowStatement[16682-16717]:ThrowStatement[17360-17395]"
+    }, {
+      "left" : "for (final Enumeration<String> enumeration = jmsMessage.getPropertyNames(); enumeration.hasMoreElements())",
+      "right" : "for (final Enumeration<String> enumeration = jmsMessage.getPropertyNames(); enumeration.hasMoreElements())",
+      "info" : "ForStatement[16745-17289]:ForStatement[17423-17967]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16853-17289]:Block[17531-17967]"
+    }, {
+      "left" : "String key = enumeration.nextElement();",
+      "right" : "String key = enumeration.nextElement();",
+      "info" : "VariableDeclarationStatement[16871-16910]:VariableDeclarationStatement[17549-17588]"
+    }, {
+      "left" : "if (hasIllegalHeaderKey(key))",
+      "right" : "if (hasIllegalHeaderKey(key))",
+      "info" : "IfStatement[16927-17089]:IfStatement[17605-17767]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16957-17089]:Block[17635-17767]"
+    }, {
+      "left" : "throw new IllegalHeaderException(\"Header \" + key + \" is not a legal JMS header name value\");",
+      "right" : "throw new IllegalHeaderException(\"Header \" + key + \" is not a legal JMS header name value\");",
+      "info" : "ThrowStatement[16979-17071]:ThrowStatement[17657-17749]"
+    }, {
+      "left" : "Object value = jmsMessage.getObjectProperty(key);",
+      "right" : "Object value = jmsMessage.getObjectProperty(key);",
+      "info" : "VariableDeclarationStatement[17106-17155]:VariableDeclarationStatement[17784-17833]"
+    }, {
+      "left" : "String decodedName = keyFormatStrategy.decodeKey(key);",
+      "right" : "String decodedName = keyFormatStrategy.decodeKey(key);",
+      "info" : "VariableDeclarationStatement[17172-17226]:VariableDeclarationStatement[17850-17904]"
+    }, {
+      "left" : "headers.put(decodedName, value);",
+      "right" : "headers.put(decodedName, value);",
+      "info" : "ExpressionStatement[17243-17275]:ExpressionStatement[17921-17953]"
+    }, {
+      "left" : "if (out)",
+      "right" : "if (out)",
+      "info" : "IfStatement[17308-17446]:IfStatement[17986-18124]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17317-17379]:Block[17995-18057]"
+    }, {
+      "left" : "exchange.getOut().setHeaders(headers);",
+      "right" : "exchange.getOut().setHeaders(headers);",
+      "info" : "ExpressionStatement[17331-17369]:ExpressionStatement[18009-18047]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17385-17446]:Block[18063-18124]"
+    }, {
+      "left" : "exchange.getIn().setHeaders(headers);",
+      "right" : "exchange.getIn().setHeaders(headers);",
+      "info" : "ExpressionStatement[17399-17436]:ExpressionStatement[18077-18114]"
+    }, {
+      "left" : "return exchange;",
+      "right" : "return exchange;",
+      "info" : "ReturnStatement[17455-17471]:ReturnStatement[18133-18149]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[17628-17634]:Modifier[18306-18312]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[17635-17641]:Modifier[18313-18319]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[17642-17648]:SimpleType[18320-18326]"
+    }, {
+      "left" : "getJMSType",
+      "right" : "getJMSType",
+      "info" : "SimpleName[17649-17659]:SimpleName[18327-18337]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[17660-17675]:SingleVariableDeclaration[18338-18353]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17677-17873]:Block[18355-18551]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[17687-17845]:TryStatement[18365-18523]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17691-17743]:Block[18369-18421]"
+    }, {
+      "left" : "return message.getJMSType();",
+      "right" : "return message.getJMSType();",
+      "info" : "ReturnStatement[17705-17733]:ReturnStatement[18383-18411]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17764-17845]:Block[18442-18523]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[17855-17867]:ReturnStatement[18533-18545]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[18148-18154]:Modifier[18826-18832]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[18155-18161]:Modifier[18833-18839]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[18162-18166]:PrimitiveType[18840-18844]"
+    }, {
+      "left" : "setJMSDeliveryMode",
+      "right" : "setJMSDeliveryMode",
+      "info" : "SimpleName[18167-18185]:SimpleName[18845-18863]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[18186-18201]:SingleVariableDeclaration[18864-18879]"
+    }, {
+      "left" : "Object deliveryMode",
+      "right" : "Object deliveryMode",
+      "info" : "SingleVariableDeclaration[18203-18222]:SingleVariableDeclaration[18881-18900]"
+    }, {
+      "left" : "JMSException",
+      "right" : "JMSException",
+      "info" : "SimpleType[18231-18243]:SimpleType[18909-18921]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18244-19579]:Block[18922-20257]"
+    }, {
+      "left" : "Integer mode;",
+      "right" : "Integer mode;",
+      "info" : "VariableDeclarationStatement[18254-18267]:VariableDeclarationStatement[18932-18945]"
+    }, {
+      "left" : "if (deliveryMode instanceof String)",
+      "right" : "if (deliveryMode instanceof String)",
+      "info" : "IfStatement[18277-19530]:IfStatement[18955-20208]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18313-19190]:Block[18991-19868]"
+    }, {
+      "left" : "String s = (String) deliveryMode;",
+      "right" : "String s = (String) deliveryMode;",
+      "info" : "VariableDeclarationStatement[18327-18360]:VariableDeclarationStatement[19005-19038]"
+    }, {
+      "left" : "if (JMS_DELIVERY_MODE_PERSISTENT.equalsIgnoreCase(s))",
+      "right" : "if (JMS_DELIVERY_MODE_PERSISTENT.equalsIgnoreCase(s))",
+      "info" : "IfStatement[18373-19180]:IfStatement[19051-19858]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18427-18490]:Block[19105-19168]"
+    }, {
+      "left" : "mode = DeliveryMode.PERSISTENT;",
+      "right" : "mode = DeliveryMode.PERSISTENT;",
+      "info" : "ExpressionStatement[18445-18476]:ExpressionStatement[19123-19154]"
+    }, {
+      "left" : "if (JMS_DELIVERY_MODE_NON_PERSISTENT.equalsIgnoreCase(s))",
+      "right" : "if (JMS_DELIVERY_MODE_NON_PERSISTENT.equalsIgnoreCase(s))",
+      "info" : "IfStatement[18496-19180]:IfStatement[19174-19858]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18554-18621]:Block[19232-19299]"
+    }, {
+      "left" : "mode = DeliveryMode.NON_PERSISTENT;",
+      "right" : "mode = DeliveryMode.NON_PERSISTENT;",
+      "info" : "ExpressionStatement[18572-18607]:ExpressionStatement[19250-19285]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18627-19180]:Block[19305-19858]"
+    }, {
+      "left" : "Integer value = null;",
+      "right" : "Integer value = null;",
+      "info" : "VariableDeclarationStatement[18709-18730]:VariableDeclarationStatement[19387-19408]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[18747-18943]:TryStatement[19425-19621]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18751-18818]:Block[19429-19496]"
+    }, {
+      "left" : "value = Integer.valueOf(s);",
+      "right" : "value = Integer.valueOf(s);",
+      "info" : "ExpressionStatement[18773-18800]:ExpressionStatement[19451-19478]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18851-18943]:Block[19529-19621]"
+    }, {
+      "left" : "if (value != null)",
+      "right" : "if (value != null)",
+      "info" : "IfStatement[18960-19166]:IfStatement[19638-19844]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18979-19032]:Block[19657-19710]"
+    }, {
+      "left" : "mode = value;",
+      "right" : "mode = value;",
+      "info" : "ExpressionStatement[19001-19014]:ExpressionStatement[19679-19692]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19038-19166]:Block[19716-19844]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Unknown delivery mode with value: \" + deliveryMode);",
+      "right" : "throw new IllegalArgumentException(\"Unknown delivery mode with value: \" + deliveryMode);",
+      "info" : "ThrowStatement[19060-19148]:ThrowStatement[19738-19826]"
+    }, {
+      "left" : "if (deliveryMode instanceof Integer)",
+      "right" : "if (deliveryMode instanceof Integer)",
+      "info" : "IfStatement[19196-19530]:IfStatement[19874-20208]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19233-19342]:Block[19911-20020]"
+    }, {
+      "left" : "mode = (Integer) deliveryMode;",
+      "right" : "mode = (Integer) deliveryMode;",
+      "info" : "ExpressionStatement[19302-19332]:ExpressionStatement[19980-20010]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19348-19530]:Block[20026-20208]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Unable to convert the given delivery mode of type \" + deliveryMode.getClass().getName() + \" with value: \" + deliveryMode);",
+      "right" : "throw new IllegalArgumentException(\"Unable to convert the given delivery mode of type \" + deliveryMode.getClass().getName() + \" with value: \" + deliveryMode);",
+      "info" : "ThrowStatement[19362-19520]:ThrowStatement[20040-20198]"
+    }, {
+      "left" : "message.setJMSDeliveryMode(mode);",
+      "right" : "message.setJMSDeliveryMode(mode);",
+      "info" : "ExpressionStatement[19540-19573]:ExpressionStatement[20218-20251]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[19786-19792]:Modifier[20464-20470]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[19793-19799]:Modifier[20471-20477]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[19800-19804]:PrimitiveType[20478-20482]"
+    }, {
+      "left" : "setMessageType",
+      "right" : "setMessageType",
+      "info" : "SimpleName[19805-19819]:SimpleName[20483-20497]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[19820-19835]:SingleVariableDeclaration[20498-20513]"
+    }, {
+      "left" : "String type",
+      "right" : "String type",
+      "info" : "SingleVariableDeclaration[19837-19848]:SingleVariableDeclaration[20515-20526]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19850-20027]:Block[20528-20705]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[19860-20021]:TryStatement[20538-20699]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19864-19913]:Block[20542-20591]"
+    }, {
+      "left" : "message.setJMSType(type);",
+      "right" : "message.setJMSType(type);",
+      "info" : "ExpressionStatement[19878-19903]:ExpressionStatement[20556-20581]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19937-20021]:Block[20615-20699]"
+    }, {
+      "left" : "LOGGER.debug(\"Error setting the message type: {}\", type, e);",
+      "right" : "LOGGER.debug(\"Error setting the message type: {}\", type, e);",
+      "info" : "ExpressionStatement[19951-20011]:ExpressionStatement[20629-20689]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[20246-20252]:Modifier[20924-20930]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[20253-20259]:Modifier[20931-20937]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[20260-20264]:PrimitiveType[20938-20942]"
+    }, {
+      "left" : "setCorrelationId",
+      "right" : "setCorrelationId",
+      "info" : "SimpleName[20265-20281]:SimpleName[20943-20959]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[20282-20297]:SingleVariableDeclaration[20960-20975]"
+    }, {
+      "left" : "String correlationId",
+      "right" : "String correlationId",
+      "info" : "SingleVariableDeclaration[20299-20319]:SingleVariableDeclaration[20977-20997]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20321-20526]:Block[20999-21204]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[20331-20520]:TryStatement[21009-21198]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20335-20402]:Block[21013-21080]"
+    }, {
+      "left" : "message.setJMSCorrelationID(correlationId);",
+      "right" : "message.setJMSCorrelationID(correlationId);",
+      "info" : "ExpressionStatement[20349-20392]:ExpressionStatement[21027-21070]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20426-20520]:Block[21104-21198]"
+    }, {
+      "left" : "LOGGER.debug(\"Error setting the correlationId: {}\", correlationId, e);",
+      "right" : "LOGGER.debug(\"Error setting the correlationId: {}\", correlationId, e);",
+      "info" : "ExpressionStatement[20440-20510]:ExpressionStatement[21118-21188]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[20679-20685]:Modifier[21357-21363]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[20686-20692]:Modifier[21364-21370]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[20693-20697]:PrimitiveType[21371-21375]"
+    }, {
+      "left" : "setJMSReplyTo",
+      "right" : "setJMSReplyTo",
+      "info" : "SimpleName[20698-20711]:SimpleName[21376-21389]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[20712-20727]:SingleVariableDeclaration[21390-21405]"
+    }, {
+      "left" : "Destination replyTo",
+      "right" : "Destination replyTo",
+      "info" : "SingleVariableDeclaration[20729-20748]:SingleVariableDeclaration[21407-21426]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20750-20942]:Block[21428-21620]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[20760-20936]:TryStatement[21438-21614]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20764-20819]:Block[21442-21497]"
+    }, {
+      "left" : "message.setJMSReplyTo(replyTo);",
+      "right" : "message.setJMSReplyTo(replyTo);",
+      "info" : "ExpressionStatement[20778-20809]:ExpressionStatement[21456-21487]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20840-20936]:Block[21518-21614]"
+    }, {
+      "left" : "LOGGER.debug(\"Error setting the correlationId: {}\", replyTo.toString());",
+      "right" : "LOGGER.debug(\"Error setting the correlationId: {}\", replyTo.toString());",
+      "info" : "ExpressionStatement[20854-20926]:ExpressionStatement[21532-21604]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[21100-21106]:Modifier[21778-21784]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[21107-21113]:Modifier[21785-21791]"
+    }, {
+      "left" : "Destination",
+      "right" : "Destination",
+      "info" : "SimpleType[21114-21125]:SimpleType[21792-21803]"
+    }, {
+      "left" : "getJMSReplyTo",
+      "right" : "getJMSReplyTo",
+      "info" : "SimpleName[21126-21139]:SimpleName[21804-21817]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[21140-21155]:SingleVariableDeclaration[21818-21833]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21157-21358]:Block[21835-22036]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[21167-21331]:TryStatement[21845-22009]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21171-21226]:Block[21849-21904]"
+    }, {
+      "left" : "return message.getJMSReplyTo();",
+      "right" : "return message.getJMSReplyTo();",
+      "info" : "ReturnStatement[21185-21216]:ReturnStatement[21863-21894]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21247-21331]:Block[21925-22009]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[21340-21352]:ReturnStatement[22018-22030]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[21609-21615]:Modifier[22287-22293]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[21616-21622]:Modifier[22294-22300]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[21623-21627]:PrimitiveType[22301-22305]"
+    }, {
+      "left" : "setProperty",
+      "right" : "setProperty",
+      "info" : "SimpleName[21628-21639]:SimpleName[22306-22317]"
+    }, {
+      "left" : "Message jmsMessage",
+      "right" : "Message jmsMessage",
+      "info" : "SingleVariableDeclaration[21640-21658]:SingleVariableDeclaration[22318-22336]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[21660-21671]:SingleVariableDeclaration[22338-22349]"
+    }, {
+      "left" : "Object value",
+      "right" : "Object value",
+      "info" : "SingleVariableDeclaration[21673-21685]:SingleVariableDeclaration[22351-22363]"
+    }, {
+      "left" : "JMSException",
+      "right" : "JMSException",
+      "info" : "SimpleType[21694-21706]:SimpleType[22372-22384]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21707-22777]:Block[22385-23455]"
+    }, {
+      "left" : "if (value == null)",
+      "right" : "if (value == null)",
+      "info" : "IfStatement[21717-22771]:IfStatement[22395-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21736-21801]:Block[22414-22479]"
+    }, {
+      "left" : "jmsMessage.setObjectProperty(name, null);",
+      "right" : "jmsMessage.setObjectProperty(name, null);",
+      "info" : "ExpressionStatement[21750-21791]:ExpressionStatement[22428-22469]"
+    }, {
+      "left" : "if (value instanceof Byte)",
+      "right" : "if (value instanceof Byte)",
+      "info" : "IfStatement[21807-22771]:IfStatement[22485-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21834-21905]:Block[22512-22583]"
+    }, {
+      "left" : "jmsMessage.setByteProperty(name, (Byte) value);",
+      "right" : "jmsMessage.setByteProperty(name, (Byte) value);",
+      "info" : "ExpressionStatement[21848-21895]:ExpressionStatement[22526-22573]"
+    }, {
+      "left" : "if (value instanceof Boolean)",
+      "right" : "if (value instanceof Boolean)",
+      "info" : "IfStatement[21911-22771]:IfStatement[22589-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21941-22018]:Block[22619-22696]"
+    }, {
+      "left" : "jmsMessage.setBooleanProperty(name, (Boolean) value);",
+      "right" : "jmsMessage.setBooleanProperty(name, (Boolean) value);",
+      "info" : "ExpressionStatement[21955-22008]:ExpressionStatement[22633-22686]"
+    }, {
+      "left" : "if (value instanceof Double)",
+      "right" : "if (value instanceof Double)",
+      "info" : "IfStatement[22024-22771]:IfStatement[22702-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22053-22128]:Block[22731-22806]"
+    }, {
+      "left" : "jmsMessage.setDoubleProperty(name, (Double) value);",
+      "right" : "jmsMessage.setDoubleProperty(name, (Double) value);",
+      "info" : "ExpressionStatement[22067-22118]:ExpressionStatement[22745-22796]"
+    }, {
+      "left" : "if (value instanceof Float)",
+      "right" : "if (value instanceof Float)",
+      "info" : "IfStatement[22134-22771]:IfStatement[22812-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22162-22235]:Block[22840-22913]"
+    }, {
+      "left" : "jmsMessage.setFloatProperty(name, (Float) value);",
+      "right" : "jmsMessage.setFloatProperty(name, (Float) value);",
+      "info" : "ExpressionStatement[22176-22225]:ExpressionStatement[22854-22903]"
+    }, {
+      "left" : "if (value instanceof Integer)",
+      "right" : "if (value instanceof Integer)",
+      "info" : "IfStatement[22241-22771]:IfStatement[22919-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22271-22344]:Block[22949-23022]"
+    }, {
+      "left" : "jmsMessage.setIntProperty(name, (Integer) value);",
+      "right" : "jmsMessage.setIntProperty(name, (Integer) value);",
+      "info" : "ExpressionStatement[22285-22334]:ExpressionStatement[22963-23012]"
+    }, {
+      "left" : "if (value instanceof Long)",
+      "right" : "if (value instanceof Long)",
+      "info" : "IfStatement[22350-22771]:IfStatement[23028-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22377-22448]:Block[23055-23126]"
+    }, {
+      "left" : "jmsMessage.setLongProperty(name, (Long) value);",
+      "right" : "jmsMessage.setLongProperty(name, (Long) value);",
+      "info" : "ExpressionStatement[22391-22438]:ExpressionStatement[23069-23116]"
+    }, {
+      "left" : "if (value instanceof Short)",
+      "right" : "if (value instanceof Short)",
+      "info" : "IfStatement[22454-22771]:IfStatement[23132-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22482-22555]:Block[23160-23233]"
+    }, {
+      "left" : "jmsMessage.setShortProperty(name, (Short) value);",
+      "right" : "jmsMessage.setShortProperty(name, (Short) value);",
+      "info" : "ExpressionStatement[22496-22545]:ExpressionStatement[23174-23223]"
+    }, {
+      "left" : "if (value instanceof String)",
+      "right" : "if (value instanceof String)",
+      "info" : "IfStatement[22561-22771]:IfStatement[23239-23449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22590-22665]:Block[23268-23343]"
+    }, {
+      "left" : "jmsMessage.setStringProperty(name, (String) value);",
+      "right" : "jmsMessage.setStringProperty(name, (String) value);",
+      "info" : "ExpressionStatement[22604-22655]:ExpressionStatement[23282-23333]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22671-22771]:Block[23349-23449]"
+    }, {
+      "left" : "jmsMessage.setObjectProperty(name, value);",
+      "right" : "jmsMessage.setObjectProperty(name, value);",
+      "info" : "ExpressionStatement[22719-22761]:ExpressionStatement[23397-23439]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[22783-22789]:Modifier[23461-23467]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[22790-22796]:Modifier[23468-23474]"
+    }, {
+      "left" : "JmsMessageType",
+      "right" : "JmsMessageType",
+      "info" : "SimpleType[22797-22811]:SimpleType[23475-23489]"
+    }, {
+      "left" : "discoverMessageTypeFromPayload",
+      "right" : "discoverMessageTypeFromPayload",
+      "info" : "SimpleName[22812-22842]:SimpleName[23490-23520]"
+    }, {
+      "left" : "final Object payload",
+      "right" : "final Object payload",
+      "info" : "SingleVariableDeclaration[22843-22863]:SingleVariableDeclaration[23521-23541]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22865-24573]:Block[23543-25251]"
+    }, {
+      "left" : "JmsMessageType answer;",
+      "right" : "JmsMessageType answer;",
+      "info" : "VariableDeclarationStatement[22875-22897]:VariableDeclarationStatement[23553-23575]"
+    }, {
+      "left" : "if (payload == null)",
+      "right" : "if (payload == null)",
+      "info" : "IfStatement[22971-24544]:IfStatement[23649-25222]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22992-23048]:Block[23670-23726]"
+    }, {
+      "left" : "answer = JmsMessageType.Message;",
+      "right" : "answer = JmsMessageType.Message;",
+      "info" : "ExpressionStatement[23006-23038]:ExpressionStatement[23684-23716]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23054-24544]:Block[23732-25222]"
+    }, {
+      "left" : "if (byte[].class.isInstance(payload))",
+      "right" : "if (byte[].class.isInstance(payload))",
+      "info" : "IfStatement[23182-24534]:IfStatement[23860-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23220-23282]:Block[23898-23960]"
+    }, {
+      "left" : "answer = JmsMessageType.Bytes;",
+      "right" : "answer = JmsMessageType.Bytes;",
+      "info" : "ExpressionStatement[23238-23268]:ExpressionStatement[23916-23946]"
+    }, {
+      "left" : "if (Map.class.isInstance(payload))",
+      "right" : "if (Map.class.isInstance(payload))",
+      "info" : "IfStatement[23288-24534]:IfStatement[23966-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23323-23383]:Block[24001-24061]"
+    }, {
+      "left" : "answer = JmsMessageType.Map;",
+      "right" : "answer = JmsMessageType.Map;",
+      "info" : "ExpressionStatement[23341-23369]:ExpressionStatement[24019-24047]"
+    }, {
+      "left" : "if (Collection.class.isInstance(payload))",
+      "right" : "if (Collection.class.isInstance(payload))",
+      "info" : "IfStatement[23389-24534]:IfStatement[24067-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23431-23494]:Block[24109-24172]"
+    }, {
+      "left" : "answer = JmsMessageType.Stream;",
+      "right" : "answer = JmsMessageType.Stream;",
+      "info" : "ExpressionStatement[23449-23480]:ExpressionStatement[24127-24158]"
+    }, {
+      "left" : "if (InputStream.class.isInstance(payload))",
+      "right" : "if (InputStream.class.isInstance(payload))",
+      "info" : "IfStatement[23500-24534]:IfStatement[24178-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23543-23605]:Block[24221-24283]"
+    }, {
+      "left" : "answer = JmsMessageType.Bytes;",
+      "right" : "answer = JmsMessageType.Bytes;",
+      "info" : "ExpressionStatement[23561-23591]:ExpressionStatement[24239-24269]"
+    }, {
+      "left" : "if (ByteBuffer.class.isInstance(payload))",
+      "right" : "if (ByteBuffer.class.isInstance(payload))",
+      "info" : "IfStatement[23611-24534]:IfStatement[24289-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23653-23715]:Block[24331-24393]"
+    }, {
+      "left" : "answer = JmsMessageType.Bytes;",
+      "right" : "answer = JmsMessageType.Bytes;",
+      "info" : "ExpressionStatement[23671-23701]:ExpressionStatement[24349-24379]"
+    }, {
+      "left" : "if (File.class.isInstance(payload))",
+      "right" : "if (File.class.isInstance(payload))",
+      "info" : "IfStatement[23721-24534]:IfStatement[24399-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23757-23819]:Block[24435-24497]"
+    }, {
+      "left" : "answer = JmsMessageType.Bytes;",
+      "right" : "answer = JmsMessageType.Bytes;",
+      "info" : "ExpressionStatement[23775-23805]:ExpressionStatement[24453-24483]"
+    }, {
+      "left" : "if (Reader.class.isInstance(payload))",
+      "right" : "if (Reader.class.isInstance(payload))",
+      "info" : "IfStatement[23825-24534]:IfStatement[24503-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23863-23924]:Block[24541-24602]"
+    }, {
+      "left" : "answer = JmsMessageType.Text;",
+      "right" : "answer = JmsMessageType.Text;",
+      "info" : "ExpressionStatement[23881-23910]:ExpressionStatement[24559-24588]"
+    }, {
+      "left" : "if (String.class.isInstance(payload))",
+      "right" : "if (String.class.isInstance(payload))",
+      "info" : "IfStatement[23930-24534]:IfStatement[24608-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23968-24029]:Block[24646-24707]"
+    }, {
+      "left" : "answer = JmsMessageType.Text;",
+      "right" : "answer = JmsMessageType.Text;",
+      "info" : "ExpressionStatement[23986-24015]:ExpressionStatement[24664-24693]"
+    }, {
+      "left" : "if (CharBuffer.class.isInstance(payload))",
+      "right" : "if (CharBuffer.class.isInstance(payload))",
+      "info" : "IfStatement[24035-24534]:IfStatement[24713-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24077-24138]:Block[24755-24816]"
+    }, {
+      "left" : "answer = JmsMessageType.Text;",
+      "right" : "answer = JmsMessageType.Text;",
+      "info" : "ExpressionStatement[24095-24124]:ExpressionStatement[24773-24802]"
+    }, {
+      "left" : "if (char[].class.isInstance(payload))",
+      "right" : "if (char[].class.isInstance(payload))",
+      "info" : "IfStatement[24144-24534]:IfStatement[24822-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24182-24243]:Block[24860-24921]"
+    }, {
+      "left" : "answer = JmsMessageType.Text;",
+      "right" : "answer = JmsMessageType.Text;",
+      "info" : "ExpressionStatement[24200-24229]:ExpressionStatement[24878-24907]"
+    }, {
+      "left" : "if (Character.class.isInstance(payload))",
+      "right" : "if (Character.class.isInstance(payload))",
+      "info" : "IfStatement[24249-24534]:IfStatement[24927-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24290-24351]:Block[24968-25029]"
+    }, {
+      "left" : "answer = JmsMessageType.Text;",
+      "right" : "answer = JmsMessageType.Text;",
+      "info" : "ExpressionStatement[24308-24337]:ExpressionStatement[24986-25015]"
+    }, {
+      "left" : "if (Serializable.class.isInstance(payload))",
+      "right" : "if (Serializable.class.isInstance(payload))",
+      "info" : "IfStatement[24357-24534]:IfStatement[25035-25212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24401-24464]:Block[25079-25142]"
+    }, {
+      "left" : "answer = JmsMessageType.Object;",
+      "right" : "answer = JmsMessageType.Object;",
+      "info" : "ExpressionStatement[24419-24450]:ExpressionStatement[25097-25128]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24470-24534]:Block[25148-25212]"
+    }, {
+      "left" : "answer = JmsMessageType.Message;",
+      "right" : "answer = JmsMessageType.Message;",
+      "info" : "ExpressionStatement[24488-24520]:ExpressionStatement[25166-25198]"
+    }, {
+      "left" : "return answer;",
+      "right" : "return answer;",
+      "info" : "ReturnStatement[24553-24567]:ReturnStatement[25231-25245]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[24579-24585]:Modifier[25257-25263]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[24586-24592]:Modifier[25264-25270]"
+    }, {
+      "left" : "JmsMessageType",
+      "right" : "JmsMessageType",
+      "info" : "SimpleType[24593-24607]:SimpleType[25271-25285]"
+    }, {
+      "left" : "discoverJmsMessageType",
+      "right" : "discoverJmsMessageType",
+      "info" : "SimpleName[24608-24630]:SimpleName[25286-25308]"
+    }, {
+      "left" : "Message message",
+      "right" : "Message message",
+      "info" : "SingleVariableDeclaration[24631-24646]:SingleVariableDeclaration[25309-25324]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24648-25447]:Block[25326-26125]"
+    }, {
+      "left" : "JmsMessageType answer;",
+      "right" : "JmsMessageType answer;",
+      "info" : "VariableDeclarationStatement[24658-24680]:VariableDeclarationStatement[25336-25358]"
+    }, {
+      "left" : "if (message != null)",
+      "right" : "if (message != null)",
+      "info" : "IfStatement[24689-25418]:IfStatement[25367-26096]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24710-25356]:Block[25388-26034]"
+    }, {
+      "left" : "if (BytesMessage.class.isInstance(message))",
+      "right" : "if (BytesMessage.class.isInstance(message))",
+      "info" : "IfStatement[24724-25346]:IfStatement[25402-26024]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24768-24830]:Block[25446-25508]"
+    }, {
+      "left" : "answer = JmsMessageType.Bytes;",
+      "right" : "answer = JmsMessageType.Bytes;",
+      "info" : "ExpressionStatement[24786-24816]:ExpressionStatement[25464-25494]"
+    }, {
+      "left" : "if (MapMessage.class.isInstance(message))",
+      "right" : "if (MapMessage.class.isInstance(message))",
+      "info" : "IfStatement[24836-25346]:IfStatement[25514-26024]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24878-24938]:Block[25556-25616]"
+    }, {
+      "left" : "answer = JmsMessageType.Map;",
+      "right" : "answer = JmsMessageType.Map;",
+      "info" : "ExpressionStatement[24896-24924]:ExpressionStatement[25574-25602]"
+    }, {
+      "left" : "if (TextMessage.class.isInstance(message))",
+      "right" : "if (TextMessage.class.isInstance(message))",
+      "info" : "IfStatement[24944-25346]:IfStatement[25622-26024]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24987-25048]:Block[25665-25726]"
+    }, {
+      "left" : "answer = JmsMessageType.Text;",
+      "right" : "answer = JmsMessageType.Text;",
+      "info" : "ExpressionStatement[25005-25034]:ExpressionStatement[25683-25712]"
+    }, {
+      "left" : "if (StreamMessage.class.isInstance(message))",
+      "right" : "if (StreamMessage.class.isInstance(message))",
+      "info" : "IfStatement[25054-25346]:IfStatement[25732-26024]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25099-25162]:Block[25777-25840]"
+    }, {
+      "left" : "answer = JmsMessageType.Stream;",
+      "right" : "answer = JmsMessageType.Stream;",
+      "info" : "ExpressionStatement[25117-25148]:ExpressionStatement[25795-25826]"
+    }, {
+      "left" : "if (ObjectMessage.class.isInstance(message))",
+      "right" : "if (ObjectMessage.class.isInstance(message))",
+      "info" : "IfStatement[25168-25346]:IfStatement[25846-26024]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25213-25276]:Block[25891-25954]"
+    }, {
+      "left" : "answer = JmsMessageType.Object;",
+      "right" : "answer = JmsMessageType.Object;",
+      "info" : "ExpressionStatement[25231-25262]:ExpressionStatement[25909-25940]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25282-25346]:Block[25960-26024]"
+    }, {
+      "left" : "answer = JmsMessageType.Message;",
+      "right" : "answer = JmsMessageType.Message;",
+      "info" : "ExpressionStatement[25300-25332]:ExpressionStatement[25978-26010]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25362-25418]:Block[26040-26096]"
+    }, {
+      "left" : "answer = JmsMessageType.Message;",
+      "right" : "answer = JmsMessageType.Message;",
+      "info" : "ExpressionStatement[25376-25408]:ExpressionStatement[26054-26086]"
+    }, {
+      "left" : "return answer;",
+      "right" : "return answer;",
+      "info" : "ReturnStatement[25427-25441]:ReturnStatement[26105-26119]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[25453-25460]:Modifier[26131-26138]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[25461-25467]:Modifier[26139-26145]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[25468-25475]:PrimitiveType[26146-26153]"
+    }, {
+      "left" : "hasIllegalHeaderKey",
+      "right" : "hasIllegalHeaderKey",
+      "info" : "SimpleName[25476-25495]:SimpleName[26154-26173]"
+    }, {
+      "left" : "String key",
+      "right" : "String key",
+      "info" : "SingleVariableDeclaration[25496-25506]:SingleVariableDeclaration[26174-26184]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25508-25602]:Block[26186-26280]"
+    }, {
+      "left" : "return key == null || key.isEmpty() || key.contains(\".\") || key.contains(\"-\");",
+      "right" : "return key == null || key.isEmpty() || key.contains(\".\") || key.contains(\"-\");",
+      "info" : "ReturnStatement[25518-25596]:ReturnStatement[26196-26274]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

@@ -1,0 +1,134 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "BlockMeta",
+      "right" : "BlockMeta",
+      "info" : "TypeDeclaration[909-1855]:TypeDeclaration[865-1341]"
+    }, {
+      "left" : "public BlockMeta(long blockId, long blockSize, StorageDir dir)",
+      "right" : "public BlockMeta(long blockId, long blockSize, StorageDir dir)",
+      "info" : "MethodDeclaration[1134-1298]:MethodDeclaration[989-1093]"
+    }, {
+      "left" : "public String getPath()",
+      "right" : "public String getPath()",
+      "info" : "MethodDeclaration[1416-1509]:MethodDeclaration[1234-1339]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[983-989]:Modifier[939-945]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[990-995]:TYPE_DECLARATION_KIND[946-951]"
+    }, {
+      "left" : "BlockMeta",
+      "right" : "BlockMeta",
+      "info" : "SimpleName[996-1005]:SimpleName[952-961]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1134-1140]:Modifier[989-995]"
+    }, {
+      "left" : "BlockMeta",
+      "right" : "BlockMeta",
+      "info" : "SimpleName[1141-1150]:SimpleName[996-1005]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1197-1298]:Block[1052-1093]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1416-1422]:Modifier[1246-1252]"
+    }, {
+      "left" : "getPath",
+      "right" : "getPath",
+      "info" : "SimpleName[1430-1437]:SimpleName[1260-1267]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1440-1509]:Block[1270-1339]"
+    }, {
+      "left" : "return CommonUtils.concatPath(mDir.getDirPath(), mBlockId);",
+      "right" : "return CommonUtils.concatPath(mDir.getDirPath(), mBlockId);",
+      "info" : "ReturnStatement[1446-1505]:ReturnStatement[1276-1335]"
+    } ]
+  },
+  "interFileMappings" : {
+    "Moved to File: servers/src/main/java/tachyon/worker/block/meta/BlockMetaBase.java" : {
+      "matchedElements" : [
+ {
+        "left" : "private final long mBlockId;",
+        "right" : "protected final long mBlockId;",
+        "info" : "FieldDeclaration[1010-1038]:FieldDeclaration[1037-1067]"
+      }, {
+        "left" : "private long mBlockSize;",
+        "right" : "protected long mBlockSize;",
+        "info" : "FieldDeclaration[1041-1065]:FieldDeclaration[1070-1096]"
+      }, {
+        "left" : "private StorageDir mDir;",
+        "right" : "protected StorageDir mDir;",
+        "info" : "FieldDeclaration[1068-1092]:FieldDeclaration[1099-1125]"
+      }, {
+        "left" : "public long getBlockId()",
+        "right" : "public long getBlockId()",
+        "info" : "MethodDeclaration[1302-1353]:MethodDeclaration[1301-1352]"
+      }, {
+        "left" : "public long getBlockSize()",
+        "right" : "public long getBlockSize()",
+        "info" : "MethodDeclaration[1357-1412]:MethodDeclaration[1356-1411]"
+      }, {
+        "left" : "public StorageDir getParentDir()",
+        "right" : "public StorageDir getParentDir()",
+        "info" : "MethodDeclaration[1632-1687]:MethodDeclaration[1638-1693]"
+      } ],
+      "mappings" : [
+ {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[1327-1353]:Block[1326-1352]"
+      }, {
+        "left" : "return mBlockId;",
+        "right" : "return mBlockId;",
+        "info" : "ReturnStatement[1333-1349]:ReturnStatement[1332-1348]"
+      }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[1384-1412]:Block[1383-1411]"
+      }, {
+        "left" : "return mBlockSize;",
+        "right" : "return mBlockSize;",
+        "info" : "ReturnStatement[1390-1408]:ReturnStatement[1389-1407]"
+      }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[1665-1687]:Block[1671-1693]"
+      }, {
+        "left" : "return mDir;",
+        "right" : "return mDir;",
+        "info" : "ReturnStatement[1671-1683]:ReturnStatement[1677-1689]"
+      } ]
+    },
+    "Moved to File: servers/src/main/java/tachyon/worker/block/meta/TempBlockMeta.java" : {
+      "matchedElements" : [
+ {
+        "left" : "public String getTmpPath(long userId)",
+        "right" : "public String getPath()",
+        "info" : "MethodDeclaration[1513-1628]:MethodDeclaration[1182-1296]"
+      } ],
+      "mappings" : [
+ {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[1551-1628]:Block[1218-1296]"
+      }, {
+        "left" : "return CommonUtils.concatPath(mDir.getDirPath(), userId, mBlockId);",
+        "right" : "return CommonUtils.concatPath(mDir.getDirPath(), mUserId, mBlockId);",
+        "info" : "ReturnStatement[1557-1624]:ReturnStatement[1224-1292]"
+      } ]
+    }
+  }
+}

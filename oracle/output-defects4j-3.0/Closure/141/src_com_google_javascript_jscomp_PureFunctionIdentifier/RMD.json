@@ -504,9 +504,17 @@
       "right" : "List<Definition> result = Lists.newArrayList();",
       "info" : "VariableDeclarationStatement[6294-6341]:VariableDeclarationStatement[6355-6402]"
     }, {
+      "left" : "if (!NodeUtil.isGetProp(name) && !NodeUtil.isName(name))",
+      "right" : "if (NodeUtil.isGetProp(name) || NodeUtil.isName(name))",
+      "info" : "IfStatement[6349-6436]:IfStatement[6292-7563]"
+    }, {
       "left" : "NodeUtil.isGetProp(name)",
       "right" : "NodeUtil.isGetProp(name)",
       "info" : "MethodInvocation[6354-6378]:MethodInvocation[6296-6320]"
+    }, {
+      "left" : "&&",
+      "right" : "||",
+      "info" : "INFIX_EXPRESSION_OPERATOR[6379-6381]:INFIX_EXPRESSION_OPERATOR[6321-6323]"
     }, {
       "left" : "NodeUtil.isName(name)",
       "right" : "NodeUtil.isName(name)",

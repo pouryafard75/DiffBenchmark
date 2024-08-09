@@ -1841,12 +1841,16 @@
       "info" : "VariableDeclarationStatement[21762-21810]:VariableDeclarationStatement[21762-21810]"
     }, {
       "left" : "if (var != null &&\n          !(var.isTypeInferred() && unflowableVarNames.contains(varName)))",
-      "right" : "if (!unflowable && !nonLocalInferredSlot)",
-      "info" : "IfStatement[21817-22443]:IfStatement[22570-22745]"
+      "right" : "if (var != null)",
+      "info" : "IfStatement[21817-22443]:IfStatement[21817-22753]"
     }, {
       "left" : "var != null",
       "right" : "var != null",
       "info" : "InfixExpression[21821-21832]:InfixExpression[21821-21832]"
+    }, {
+      "left" : "!(var.isTypeInferred() && unflowableVarNames.contains(varName))",
+      "right" : "!unflowable",
+      "info" : "PrefixExpression[21846-21909]:PrefixExpression[22574-22585]"
     }, {
       "left" : "var.isTypeInferred()",
       "right" : "var.isTypeInferred()",
@@ -1858,7 +1862,7 @@
     }, {
       "left" : "{}",
       "right" : "{}",
-      "info" : "Block[21911-22443]:Block[22612-22745]"
+      "info" : "Block[21911-22443]:Block[21834-22753]"
     }, {
       "left" : "type = var.getType();",
       "right" : "type = var.getType();",

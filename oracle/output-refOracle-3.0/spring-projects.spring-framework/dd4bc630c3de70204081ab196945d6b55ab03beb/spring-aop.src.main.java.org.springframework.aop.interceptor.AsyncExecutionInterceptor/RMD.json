@@ -292,6 +292,18 @@
         "left" : "private static final boolean completableFuturePresent = ClassUtils.isPresent(\n\t\t\t\"java.util.concurrent.CompletableFuture\", AsyncExecutionInterceptor.class.getClassLoader());",
         "right" : "private static final boolean completableFuturePresent = ClassUtils.isPresent(\n\t\t\t\"java.util.concurrent.CompletableFuture\", AsyncExecutionInterceptor.class.getClassLoader());",
         "info" : "FieldDeclaration[3485-3658]:FieldDeclaration[2578-2751]"
+      }, {
+        "left" : "CompletableFutureDelegate",
+        "right" : "CompletableFutureDelegate",
+        "info" : "TypeDeclaration[6783-7360]:TypeDeclaration[8805-9382]"
+      }, {
+        "left" : "public static <T> Future<T> processCompletableFuture(Class<?> returnType, final Callable<T> task, Executor executor)",
+        "right" : "public static <T> Future<T> processCompletableFuture(Class<?> returnType, final Callable<T> task, Executor executor)",
+        "info" : "MethodDeclaration[6911-7357]:MethodDeclaration[8933-9379]"
+      }, {
+        "left" : "public T get()",
+        "right" : "public T get()",
+        "info" : "MethodDeclaration[7180-7336]:MethodDeclaration[9202-9358]"
       } ],
       "mappings" : [
  {
@@ -355,6 +367,18 @@
         "right" : "return null;",
         "info" : "ReturnStatement[6294-6306]:ReturnStatement[7622-7634]"
       }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[7028-7357]:Block[9050-9379]"
+      }, {
+        "left" : "if (!CompletableFuture.class.isAssignableFrom(returnType))",
+        "right" : "if (!CompletableFuture.class.isAssignableFrom(returnType))",
+        "info" : "IfStatement[7033-7115]:IfStatement[9055-9137]"
+      }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[7092-7115]:Block[9114-9137]"
+      }, {
         "left" : "return null;",
         "right" : "return null;",
         "info" : "ReturnStatement[7098-7110]:ReturnStatement[9120-9132]"
@@ -363,9 +387,29 @@
         "right" : "return CompletableFuture.supplyAsync(new Supplier<T>() {\n\t\t\t\t@Override\n\t\t\t\tpublic T get() {\n\t\t\t\t\ttry {\n\t\t\t\t\t\treturn task.call();\n\t\t\t\t\t}\n\t\t\t\t\tcatch (Throwable ex) {\n\t\t\t\t\t\tthrow new CompletionException(ex);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}, executor);",
         "info" : "ReturnStatement[7119-7353]:ReturnStatement[9141-9375]"
       }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[7209-7336]:Block[9231-9358]"
+      }, {
+        "left" : "try{...}",
+        "right" : "try{...}",
+        "info" : "TryStatement[7216-7330]:TryStatement[9238-9352]"
+      }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[7220-7254]:Block[9242-9276]"
+      }, {
         "left" : "return task.call();",
         "right" : "return task.call();",
         "info" : "ReturnStatement[7228-7247]:ReturnStatement[9250-9269]"
+      }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[7281-7330]:Block[9303-9352]"
+      }, {
+        "left" : "throw new CompletionException(ex);",
+        "right" : "throw new CompletionException(ex);",
+        "info" : "ThrowStatement[7289-7323]:ThrowStatement[9311-9345]"
       } ]
     }
   }

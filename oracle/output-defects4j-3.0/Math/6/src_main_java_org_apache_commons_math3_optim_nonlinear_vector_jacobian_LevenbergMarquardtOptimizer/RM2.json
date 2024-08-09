@@ -1,0 +1,2201 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "LevenbergMarquardtOptimizer",
+      "right" : "LevenbergMarquardtOptimizer",
+      "info" : "TypeDeclaration[1367-40512]:TypeDeclaration[1367-40521]"
+    }, {
+      "left" : "private int solvedCols;",
+      "right" : "private int solvedCols;",
+      "info" : "FieldDeclaration[5703-5761]:FieldDeclaration[5703-5761]"
+    }, {
+      "left" : "private double[] diagR;",
+      "right" : "private double[] diagR;",
+      "info" : "FieldDeclaration[5766-5861]:FieldDeclaration[5766-5861]"
+    }, {
+      "left" : "private double[] jacNorm;",
+      "right" : "private double[] jacNorm;",
+      "info" : "FieldDeclaration[5866-5947]:FieldDeclaration[5866-5947]"
+    }, {
+      "left" : "private double[] beta;",
+      "right" : "private double[] beta;",
+      "info" : "FieldDeclaration[5952-6037]:FieldDeclaration[5952-6037]"
+    }, {
+      "left" : "private int[] permutation;",
+      "right" : "private int[] permutation;",
+      "info" : "FieldDeclaration[6042-6106]:FieldDeclaration[6042-6106]"
+    }, {
+      "left" : "private int rank;",
+      "right" : "private int rank;",
+      "info" : "FieldDeclaration[6111-6168]:FieldDeclaration[6111-6168]"
+    }, {
+      "left" : "private double lmPar;",
+      "right" : "private double lmPar;",
+      "info" : "FieldDeclaration[6173-6236]:FieldDeclaration[6173-6236]"
+    }, {
+      "left" : "private double[] lmDir;",
+      "right" : "private double[] lmDir;",
+      "info" : "FieldDeclaration[6241-6329]:FieldDeclaration[6241-6329]"
+    }, {
+      "left" : "private final double initialStepBoundFactor;",
+      "right" : "private final double initialStepBoundFactor;",
+      "info" : "FieldDeclaration[6334-6457]:FieldDeclaration[6334-6457]"
+    }, {
+      "left" : "private final double costRelativeTolerance;",
+      "right" : "private final double costRelativeTolerance;",
+      "info" : "FieldDeclaration[6462-6562]:FieldDeclaration[6462-6562]"
+    }, {
+      "left" : "private final double parRelativeTolerance;",
+      "right" : "private final double parRelativeTolerance;",
+      "info" : "FieldDeclaration[6567-6684]:FieldDeclaration[6567-6684]"
+    }, {
+      "left" : "private final double orthoTolerance;",
+      "right" : "private final double orthoTolerance;",
+      "info" : "FieldDeclaration[6689-6844]:FieldDeclaration[6689-6844]"
+    }, {
+      "left" : "private final double qrRankingThreshold;",
+      "right" : "private final double qrRankingThreshold;",
+      "info" : "FieldDeclaration[6849-6926]:FieldDeclaration[6849-6926]"
+    }, {
+      "left" : "private double[] weightedResidual;",
+      "right" : "private double[] weightedResidual;",
+      "info" : "FieldDeclaration[6931-6996]:FieldDeclaration[6931-6996]"
+    }, {
+      "left" : "private double[][] weightedJacobian;",
+      "right" : "private double[][] weightedJacobian;",
+      "info" : "FieldDeclaration[7001-7067]:FieldDeclaration[7001-7067]"
+    }, {
+      "left" : "public LevenbergMarquardtOptimizer()",
+      "right" : "public LevenbergMarquardtOptimizer()",
+      "info" : "MethodDeclaration[7073-7764]:MethodDeclaration[7073-7764]"
+    }, {
+      "left" : "public LevenbergMarquardtOptimizer(ConvergenceChecker<PointVectorValuePair> checker)",
+      "right" : "public LevenbergMarquardtOptimizer(ConvergenceChecker<PointVectorValuePair> checker)",
+      "info" : "MethodDeclaration[7770-8510]:MethodDeclaration[7770-8510]"
+    }, {
+      "left" : "public LevenbergMarquardtOptimizer(double initialStepBoundFactor,\n                                       ConvergenceChecker<PointVectorValuePair> checker,\n                                       double costRelativeTolerance,\n                                       double parRelativeTolerance,\n                                       double orthoTolerance,\n                                       double threshold)",
+      "right" : "public LevenbergMarquardtOptimizer(double initialStepBoundFactor,\n                                       ConvergenceChecker<PointVectorValuePair> checker,\n                                       double costRelativeTolerance,\n                                       double parRelativeTolerance,\n                                       double orthoTolerance,\n                                       double threshold)",
+      "info" : "MethodDeclaration[8516-10433]:MethodDeclaration[8516-10433]"
+    }, {
+      "left" : "public LevenbergMarquardtOptimizer(double costRelativeTolerance,\n                                       double parRelativeTolerance,\n                                       double orthoTolerance)",
+      "right" : "public LevenbergMarquardtOptimizer(double costRelativeTolerance,\n                                       double parRelativeTolerance,\n                                       double orthoTolerance)",
+      "info" : "MethodDeclaration[10439-11548]:MethodDeclaration[10439-11548]"
+    }, {
+      "left" : "public LevenbergMarquardtOptimizer(double initialStepBoundFactor,\n                                       double costRelativeTolerance,\n                                       double parRelativeTolerance,\n                                       double orthoTolerance,\n                                       double threshold)",
+      "right" : "public LevenbergMarquardtOptimizer(double initialStepBoundFactor,\n                                       double costRelativeTolerance,\n                                       double parRelativeTolerance,\n                                       double orthoTolerance,\n                                       double threshold)",
+      "info" : "MethodDeclaration[11554-13445]:MethodDeclaration[11554-13445]"
+    }, {
+      "left" : "protected PointVectorValuePair doOptimize()",
+      "right" : "protected PointVectorValuePair doOptimize()",
+      "info" : "MethodDeclaration[13451-24134]:MethodDeclaration[13451-24143]"
+    }, {
+      "left" : "private void determineLMParameter(double[] qy, double delta, double[] diag,\n                                      double[] work1, double[] work2, double[] work3)",
+      "right" : "private void determineLMParameter(double[] qy, double delta, double[] diag,\n                                      double[] work1, double[] work2, double[] work3)",
+      "info" : "MethodDeclaration[24140-30428]:MethodDeclaration[24149-30437]"
+    }, {
+      "left" : "private void determineLMDirection(double[] qy, double[] diag,\n                                      double[] lmDiag, double[] work)",
+      "right" : "private void determineLMDirection(double[] qy, double[] diag,\n                                      double[] lmDiag, double[] work)",
+      "info" : "MethodDeclaration[30434-35317]:MethodDeclaration[30443-35326]"
+    }, {
+      "left" : "private void qrDecomposition(RealMatrix jacobian) throws ConvergenceException",
+      "right" : "private void qrDecomposition(RealMatrix jacobian) throws ConvergenceException",
+      "info" : "MethodDeclaration[35323-39462]:MethodDeclaration[35332-39471]"
+    }, {
+      "left" : "private void qTy(double[] y)",
+      "right" : "private void qTy(double[] y)",
+      "info" : "MethodDeclaration[39468-40136]:MethodDeclaration[39477-40145]"
+    }, {
+      "left" : "private void checkParameters()",
+      "right" : "private void checkParameters()",
+      "info" : "MethodDeclaration[40142-40510]:MethodDeclaration[40151-40519]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5614-5620]:Modifier[5614-5620]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[5621-5626]:TYPE_DECLARATION_KIND[5621-5626]"
+    }, {
+      "left" : "LevenbergMarquardtOptimizer",
+      "right" : "LevenbergMarquardtOptimizer",
+      "info" : "SimpleName[5627-5654]:SimpleName[5627-5654]"
+    }, {
+      "left" : "AbstractLeastSquaresOptimizer",
+      "right" : "AbstractLeastSquaresOptimizer",
+      "info" : "SimpleType[5667-5696]:SimpleType[5667-5696]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7660-7666]:Modifier[7660-7666]"
+    }, {
+      "left" : "LevenbergMarquardtOptimizer",
+      "right" : "LevenbergMarquardtOptimizer",
+      "info" : "SimpleName[7667-7694]:SimpleName[7667-7694]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7697-7764]:Block[7697-7764]"
+    }, {
+      "left" : "this(100, 1e-10, 1e-10, 1e-10, Precision.SAFE_MIN);",
+      "right" : "this(100, 1e-10, 1e-10, 1e-10, Precision.SAFE_MIN);",
+      "info" : "ConstructorInvocation[7707-7758]:ConstructorInvocation[7707-7758]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8349-8355]:Modifier[8349-8355]"
+    }, {
+      "left" : "LevenbergMarquardtOptimizer",
+      "right" : "LevenbergMarquardtOptimizer",
+      "info" : "SimpleName[8356-8383]:SimpleName[8356-8383]"
+    }, {
+      "left" : "ConvergenceChecker<PointVectorValuePair> checker",
+      "right" : "ConvergenceChecker<PointVectorValuePair> checker",
+      "info" : "SingleVariableDeclaration[8384-8432]:SingleVariableDeclaration[8384-8432]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8434-8510]:Block[8434-8510]"
+    }, {
+      "left" : "this(100, checker, 1e-10, 1e-10, 1e-10, Precision.SAFE_MIN);",
+      "right" : "this(100, checker, 1e-10, 1e-10, 1e-10, Precision.SAFE_MIN);",
+      "info" : "ConstructorInvocation[8444-8504]:ConstructorInvocation[8444-8504]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9720-9726]:Modifier[9720-9726]"
+    }, {
+      "left" : "LevenbergMarquardtOptimizer",
+      "right" : "LevenbergMarquardtOptimizer",
+      "info" : "SimpleName[9727-9754]:SimpleName[9727-9754]"
+    }, {
+      "left" : "double initialStepBoundFactor",
+      "right" : "double initialStepBoundFactor",
+      "info" : "SingleVariableDeclaration[9755-9784]:SingleVariableDeclaration[9755-9784]"
+    }, {
+      "left" : "ConvergenceChecker<PointVectorValuePair> checker",
+      "right" : "ConvergenceChecker<PointVectorValuePair> checker",
+      "info" : "SingleVariableDeclaration[9825-9873]:SingleVariableDeclaration[9825-9873]"
+    }, {
+      "left" : "double costRelativeTolerance",
+      "right" : "double costRelativeTolerance",
+      "info" : "SingleVariableDeclaration[9914-9942]:SingleVariableDeclaration[9914-9942]"
+    }, {
+      "left" : "double parRelativeTolerance",
+      "right" : "double parRelativeTolerance",
+      "info" : "SingleVariableDeclaration[9983-10010]:SingleVariableDeclaration[9983-10010]"
+    }, {
+      "left" : "double orthoTolerance",
+      "right" : "double orthoTolerance",
+      "info" : "SingleVariableDeclaration[10051-10072]:SingleVariableDeclaration[10051-10072]"
+    }, {
+      "left" : "double threshold",
+      "right" : "double threshold",
+      "info" : "SingleVariableDeclaration[10113-10129]:SingleVariableDeclaration[10113-10129]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10131-10433]:Block[10131-10433]"
+    }, {
+      "left" : "super(checker);",
+      "right" : "super(checker);",
+      "info" : "SuperConstructorInvocation[10141-10156]:SuperConstructorInvocation[10141-10156]"
+    }, {
+      "left" : "this.initialStepBoundFactor = initialStepBoundFactor;",
+      "right" : "this.initialStepBoundFactor = initialStepBoundFactor;",
+      "info" : "ExpressionStatement[10165-10218]:ExpressionStatement[10165-10218]"
+    }, {
+      "left" : "this.costRelativeTolerance = costRelativeTolerance;",
+      "right" : "this.costRelativeTolerance = costRelativeTolerance;",
+      "info" : "ExpressionStatement[10227-10278]:ExpressionStatement[10227-10278]"
+    }, {
+      "left" : "this.parRelativeTolerance = parRelativeTolerance;",
+      "right" : "this.parRelativeTolerance = parRelativeTolerance;",
+      "info" : "ExpressionStatement[10287-10336]:ExpressionStatement[10287-10336]"
+    }, {
+      "left" : "this.orthoTolerance = orthoTolerance;",
+      "right" : "this.orthoTolerance = orthoTolerance;",
+      "info" : "ExpressionStatement[10345-10382]:ExpressionStatement[10345-10382]"
+    }, {
+      "left" : "this.qrRankingThreshold = threshold;",
+      "right" : "this.qrRankingThreshold = threshold;",
+      "info" : "ExpressionStatement[10391-10427]:ExpressionStatement[10391-10427]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11220-11226]:Modifier[11220-11226]"
+    }, {
+      "left" : "LevenbergMarquardtOptimizer",
+      "right" : "LevenbergMarquardtOptimizer",
+      "info" : "SimpleName[11227-11254]:SimpleName[11227-11254]"
+    }, {
+      "left" : "double costRelativeTolerance",
+      "right" : "double costRelativeTolerance",
+      "info" : "SingleVariableDeclaration[11255-11283]:SingleVariableDeclaration[11255-11283]"
+    }, {
+      "left" : "double parRelativeTolerance",
+      "right" : "double parRelativeTolerance",
+      "info" : "SingleVariableDeclaration[11324-11351]:SingleVariableDeclaration[11324-11351]"
+    }, {
+      "left" : "double orthoTolerance",
+      "right" : "double orthoTolerance",
+      "info" : "SingleVariableDeclaration[11392-11413]:SingleVariableDeclaration[11392-11413]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11415-11548]:Block[11415-11548]"
+    }, {
+      "left" : "this(100,\n             costRelativeTolerance, parRelativeTolerance, orthoTolerance,\n             Precision.SAFE_MIN);",
+      "right" : "this(100,\n             costRelativeTolerance, parRelativeTolerance, orthoTolerance,\n             Precision.SAFE_MIN);",
+      "info" : "ConstructorInvocation[11425-11542]:ConstructorInvocation[11425-11542]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[12788-12794]:Modifier[12788-12794]"
+    }, {
+      "left" : "LevenbergMarquardtOptimizer",
+      "right" : "LevenbergMarquardtOptimizer",
+      "info" : "SimpleName[12795-12822]:SimpleName[12795-12822]"
+    }, {
+      "left" : "double initialStepBoundFactor",
+      "right" : "double initialStepBoundFactor",
+      "info" : "SingleVariableDeclaration[12823-12852]:SingleVariableDeclaration[12823-12852]"
+    }, {
+      "left" : "double costRelativeTolerance",
+      "right" : "double costRelativeTolerance",
+      "info" : "SingleVariableDeclaration[12893-12921]:SingleVariableDeclaration[12893-12921]"
+    }, {
+      "left" : "double parRelativeTolerance",
+      "right" : "double parRelativeTolerance",
+      "info" : "SingleVariableDeclaration[12962-12989]:SingleVariableDeclaration[12962-12989]"
+    }, {
+      "left" : "double orthoTolerance",
+      "right" : "double orthoTolerance",
+      "info" : "SingleVariableDeclaration[13030-13051]:SingleVariableDeclaration[13030-13051]"
+    }, {
+      "left" : "double threshold",
+      "right" : "double threshold",
+      "info" : "SingleVariableDeclaration[13092-13108]:SingleVariableDeclaration[13092-13108]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13110-13445]:Block[13110-13445]"
+    }, {
+      "left" : "super(null);",
+      "right" : "super(null);",
+      "info" : "SuperConstructorInvocation[13120-13132]:SuperConstructorInvocation[13120-13132]"
+    }, {
+      "left" : "this.initialStepBoundFactor = initialStepBoundFactor;",
+      "right" : "this.initialStepBoundFactor = initialStepBoundFactor;",
+      "info" : "ExpressionStatement[13177-13230]:ExpressionStatement[13177-13230]"
+    }, {
+      "left" : "this.costRelativeTolerance = costRelativeTolerance;",
+      "right" : "this.costRelativeTolerance = costRelativeTolerance;",
+      "info" : "ExpressionStatement[13239-13290]:ExpressionStatement[13239-13290]"
+    }, {
+      "left" : "this.parRelativeTolerance = parRelativeTolerance;",
+      "right" : "this.parRelativeTolerance = parRelativeTolerance;",
+      "info" : "ExpressionStatement[13299-13348]:ExpressionStatement[13299-13348]"
+    }, {
+      "left" : "this.orthoTolerance = orthoTolerance;",
+      "right" : "this.orthoTolerance = orthoTolerance;",
+      "info" : "ExpressionStatement[13357-13394]:ExpressionStatement[13357-13394]"
+    }, {
+      "left" : "this.qrRankingThreshold = threshold;",
+      "right" : "this.qrRankingThreshold = threshold;",
+      "info" : "ExpressionStatement[13403-13439]:ExpressionStatement[13403-13439]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[13490-13499]:Modifier[13490-13499]"
+    }, {
+      "left" : "doOptimize",
+      "right" : "doOptimize",
+      "info" : "SimpleName[13521-13531]:SimpleName[13521-13531]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13534-24134]:Block[13534-24143]"
+    }, {
+      "left" : "checkParameters();",
+      "right" : "checkParameters();",
+      "info" : "ExpressionStatement[13544-13562]:ExpressionStatement[13544-13562]"
+    }, {
+      "left" : "final int nR = getTarget().length;",
+      "right" : "final int nR = getTarget().length;",
+      "info" : "VariableDeclarationStatement[13572-13606]:VariableDeclarationStatement[13572-13606]"
+    }, {
+      "left" : "final double[] currentPoint = getStartPoint();",
+      "right" : "final double[] currentPoint = getStartPoint();",
+      "info" : "VariableDeclarationStatement[13643-13689]:VariableDeclarationStatement[13643-13689]"
+    }, {
+      "left" : "final int nC = currentPoint.length;",
+      "right" : "final int nC = currentPoint.length;",
+      "info" : "VariableDeclarationStatement[13698-13733]:VariableDeclarationStatement[13698-13733]"
+    }, {
+      "left" : "solvedCols  = FastMath.min(nR, nC);",
+      "right" : "solvedCols  = FastMath.min(nR, nC);",
+      "info" : "ExpressionStatement[13824-13859]:ExpressionStatement[13824-13859]"
+    }, {
+      "left" : "diagR       = new double[nC];",
+      "right" : "diagR       = new double[nC];",
+      "info" : "ExpressionStatement[13868-13897]:ExpressionStatement[13868-13897]"
+    }, {
+      "left" : "jacNorm     = new double[nC];",
+      "right" : "jacNorm     = new double[nC];",
+      "info" : "ExpressionStatement[13906-13935]:ExpressionStatement[13906-13935]"
+    }, {
+      "left" : "beta        = new double[nC];",
+      "right" : "beta        = new double[nC];",
+      "info" : "ExpressionStatement[13944-13973]:ExpressionStatement[13944-13973]"
+    }, {
+      "left" : "permutation = new int[nC];",
+      "right" : "permutation = new int[nC];",
+      "info" : "ExpressionStatement[13982-14008]:ExpressionStatement[13982-14008]"
+    }, {
+      "left" : "lmDir       = new double[nC];",
+      "right" : "lmDir       = new double[nC];",
+      "info" : "ExpressionStatement[14017-14046]:ExpressionStatement[14017-14046]"
+    }, {
+      "left" : "double   delta   = 0;",
+      "right" : "double   delta   = 0;",
+      "info" : "VariableDeclarationStatement[14079-14100]:VariableDeclarationStatement[14079-14100]"
+    }, {
+      "left" : "double   xNorm   = 0;",
+      "right" : "double   xNorm   = 0;",
+      "info" : "VariableDeclarationStatement[14109-14130]:VariableDeclarationStatement[14109-14130]"
+    }, {
+      "left" : "double[] diag    = new double[nC];",
+      "right" : "double[] diag    = new double[nC];",
+      "info" : "VariableDeclarationStatement[14139-14173]:VariableDeclarationStatement[14139-14173]"
+    }, {
+      "left" : "double[] oldX    = new double[nC];",
+      "right" : "double[] oldX    = new double[nC];",
+      "info" : "VariableDeclarationStatement[14182-14216]:VariableDeclarationStatement[14182-14216]"
+    }, {
+      "left" : "double[] oldRes  = new double[nR];",
+      "right" : "double[] oldRes  = new double[nR];",
+      "info" : "VariableDeclarationStatement[14225-14259]:VariableDeclarationStatement[14225-14259]"
+    }, {
+      "left" : "double[] oldObj  = new double[nR];",
+      "right" : "double[] oldObj  = new double[nR];",
+      "info" : "VariableDeclarationStatement[14268-14302]:VariableDeclarationStatement[14268-14302]"
+    }, {
+      "left" : "double[] qtf     = new double[nR];",
+      "right" : "double[] qtf     = new double[nR];",
+      "info" : "VariableDeclarationStatement[14311-14345]:VariableDeclarationStatement[14311-14345]"
+    }, {
+      "left" : "double[] work1   = new double[nC];",
+      "right" : "double[] work1   = new double[nC];",
+      "info" : "VariableDeclarationStatement[14354-14388]:VariableDeclarationStatement[14354-14388]"
+    }, {
+      "left" : "double[] work2   = new double[nC];",
+      "right" : "double[] work2   = new double[nC];",
+      "info" : "VariableDeclarationStatement[14397-14431]:VariableDeclarationStatement[14397-14431]"
+    }, {
+      "left" : "double[] work3   = new double[nC];",
+      "right" : "double[] work3   = new double[nC];",
+      "info" : "VariableDeclarationStatement[14440-14474]:VariableDeclarationStatement[14440-14474]"
+    }, {
+      "left" : "final RealMatrix weightMatrixSqrt = getWeightSquareRoot();",
+      "right" : "final RealMatrix weightMatrixSqrt = getWeightSquareRoot();",
+      "info" : "VariableDeclarationStatement[14484-14542]:VariableDeclarationStatement[14484-14542]"
+    }, {
+      "left" : "double[] currentObjective = computeObjectiveValue(currentPoint);",
+      "right" : "double[] currentObjective = computeObjectiveValue(currentPoint);",
+      "info" : "VariableDeclarationStatement[14631-14695]:VariableDeclarationStatement[14631-14695]"
+    }, {
+      "left" : "double[] currentResiduals = computeResiduals(currentObjective);",
+      "right" : "double[] currentResiduals = computeResiduals(currentObjective);",
+      "info" : "VariableDeclarationStatement[14704-14767]:VariableDeclarationStatement[14704-14767]"
+    }, {
+      "left" : "PointVectorValuePair current = new PointVectorValuePair(currentPoint, currentObjective);",
+      "right" : "PointVectorValuePair current = new PointVectorValuePair(currentPoint, currentObjective);",
+      "info" : "VariableDeclarationStatement[14776-14864]:VariableDeclarationStatement[14776-14864]"
+    }, {
+      "left" : "double currentCost = computeCost(currentResiduals);",
+      "right" : "double currentCost = computeCost(currentResiduals);",
+      "info" : "VariableDeclarationStatement[14873-14924]:VariableDeclarationStatement[14873-14924]"
+    }, {
+      "left" : "lmPar = 0;",
+      "right" : "lmPar = 0;",
+      "info" : "ExpressionStatement[14957-14967]:ExpressionStatement[14957-14967]"
+    }, {
+      "left" : "boolean firstIteration = true;",
+      "right" : "boolean firstIteration = true;",
+      "info" : "VariableDeclarationStatement[14976-15006]:VariableDeclarationStatement[14976-15006]"
+    }, {
+      "left" : "final ConvergenceChecker<PointVectorValuePair> checker = getConvergenceChecker();",
+      "right" : "final ConvergenceChecker<PointVectorValuePair> checker = getConvergenceChecker();",
+      "info" : "VariableDeclarationStatement[15037-15118]:VariableDeclarationStatement[15015-15096]"
+    }, {
+      "left" : "while (true)",
+      "right" : "while (true)",
+      "info" : "WhileStatement[15127-24128]:WhileStatement[15105-24137]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15140-24128]:Block[15118-24137]"
+    }, {
+      "left" : "final PointVectorValuePair previous = current;",
+      "right" : "final PointVectorValuePair previous = current;",
+      "info" : "VariableDeclarationStatement[15174-15220]:VariableDeclarationStatement[15172-15218]"
+    }, {
+      "left" : "qrDecomposition(computeWeightedJacobian(currentPoint));",
+      "right" : "qrDecomposition(computeWeightedJacobian(currentPoint));",
+      "info" : "ExpressionStatement[15289-15344]:ExpressionStatement[15287-15342]"
+    }, {
+      "left" : "weightedResidual = weightMatrixSqrt.operate(currentResiduals);",
+      "right" : "weightedResidual = weightMatrixSqrt.operate(currentResiduals);",
+      "info" : "ExpressionStatement[15358-15420]:ExpressionStatement[15356-15418]"
+    }, {
+      "left" : "for (int i = 0; i < nR; i++)",
+      "right" : "for (int i = 0; i < nR; i++)",
+      "info" : "ForStatement[15433-15523]:ForStatement[15431-15521]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15462-15523]:Block[15460-15521]"
+    }, {
+      "left" : "qtf[i] = weightedResidual[i];",
+      "right" : "qtf[i] = weightedResidual[i];",
+      "info" : "ExpressionStatement[15480-15509]:ExpressionStatement[15478-15507]"
+    }, {
+      "left" : "qTy(qtf);",
+      "right" : "qTy(qtf);",
+      "info" : "ExpressionStatement[15567-15576]:ExpressionStatement[15565-15574]"
+    }, {
+      "left" : "for (int k = 0; k < solvedCols; ++k)",
+      "right" : "for (int k = 0; k < solvedCols; ++k)",
+      "info" : "ForStatement[15713-15859]:ForStatement[15711-15857]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15750-15859]:Block[15748-15857]"
+    }, {
+      "left" : "int pk = permutation[k];",
+      "right" : "int pk = permutation[k];",
+      "info" : "VariableDeclarationStatement[15768-15792]:VariableDeclarationStatement[15766-15790]"
+    }, {
+      "left" : "weightedJacobian[k][pk] = diagR[pk];",
+      "right" : "weightedJacobian[k][pk] = diagR[pk];",
+      "info" : "ExpressionStatement[15809-15845]:ExpressionStatement[15807-15843]"
+    }, {
+      "left" : "if (firstIteration)",
+      "right" : "if (firstIteration)",
+      "info" : "IfStatement[15873-16574]:IfStatement[15871-16572]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15893-16574]:Block[15891-16572]"
+    }, {
+      "left" : "xNorm = 0;",
+      "right" : "xNorm = 0;",
+      "info" : "ExpressionStatement[16027-16037]:ExpressionStatement[16025-16035]"
+    }, {
+      "left" : "for (int k = 0; k < nC; ++k)",
+      "right" : "for (int k = 0; k < nC; ++k)",
+      "info" : "ForStatement[16054-16364]:ForStatement[16052-16362]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16083-16364]:Block[16081-16362]"
+    }, {
+      "left" : "double dk = jacNorm[k];",
+      "right" : "double dk = jacNorm[k];",
+      "info" : "VariableDeclarationStatement[16105-16128]:VariableDeclarationStatement[16103-16126]"
+    }, {
+      "left" : "if (dk == 0)",
+      "right" : "if (dk == 0)",
+      "info" : "IfStatement[16149-16219]:IfStatement[16147-16217]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16162-16219]:Block[16160-16217]"
+    }, {
+      "left" : "dk = 1.0;",
+      "right" : "dk = 1.0;",
+      "info" : "ExpressionStatement[16188-16197]:ExpressionStatement[16186-16195]"
+    }, {
+      "left" : "double xk = dk * currentPoint[k];",
+      "right" : "double xk = dk * currentPoint[k];",
+      "info" : "VariableDeclarationStatement[16240-16273]:VariableDeclarationStatement[16238-16271]"
+    }, {
+      "left" : "xNorm  += xk * xk;",
+      "right" : "xNorm  += xk * xk;",
+      "info" : "ExpressionStatement[16294-16312]:ExpressionStatement[16292-16310]"
+    }, {
+      "left" : "diag[k] = dk;",
+      "right" : "diag[k] = dk;",
+      "info" : "ExpressionStatement[16333-16346]:ExpressionStatement[16331-16344]"
+    }, {
+      "left" : "xNorm = FastMath.sqrt(xNorm);",
+      "right" : "xNorm = FastMath.sqrt(xNorm);",
+      "info" : "ExpressionStatement[16381-16410]:ExpressionStatement[16379-16408]"
+    }, {
+      "left" : "delta = (xNorm == 0) ? initialStepBoundFactor : (initialStepBoundFactor * xNorm);",
+      "right" : "delta = (xNorm == 0) ? initialStepBoundFactor : (initialStepBoundFactor * xNorm);",
+      "info" : "ExpressionStatement[16479-16560]:ExpressionStatement[16477-16558]"
+    }, {
+      "left" : "double maxCosine = 0;",
+      "right" : "double maxCosine = 0;",
+      "info" : "VariableDeclarationStatement[16668-16689]:VariableDeclarationStatement[16666-16687]"
+    }, {
+      "left" : "if (currentCost != 0)",
+      "right" : "if (currentCost != 0)",
+      "info" : "IfStatement[16702-17251]:IfStatement[16700-17249]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16724-17251]:Block[16722-17249]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[16742-17237]:ForStatement[16740-17235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16779-17237]:Block[16777-17235]"
+    }, {
+      "left" : "int    pj = permutation[j];",
+      "right" : "int    pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[16801-16828]:VariableDeclarationStatement[16799-16826]"
+    }, {
+      "left" : "double s  = jacNorm[pj];",
+      "right" : "double s  = jacNorm[pj];",
+      "info" : "VariableDeclarationStatement[16849-16873]:VariableDeclarationStatement[16847-16871]"
+    }, {
+      "left" : "if (s != 0)",
+      "right" : "if (s != 0)",
+      "info" : "IfStatement[16894-17219]:IfStatement[16892-17217]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16906-17219]:Block[16904-17217]"
+    }, {
+      "left" : "double sum = 0;",
+      "right" : "double sum = 0;",
+      "info" : "VariableDeclarationStatement[16932-16947]:VariableDeclarationStatement[16930-16945]"
+    }, {
+      "left" : "for (int i = 0; i <= j; ++i)",
+      "right" : "for (int i = 0; i <= j; ++i)",
+      "info" : "ForStatement[16972-17097]:ForStatement[16970-17095]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17001-17097]:Block[16999-17095]"
+    }, {
+      "left" : "sum += weightedJacobian[i][pj] * qtf[i];",
+      "right" : "sum += weightedJacobian[i][pj] * qtf[i];",
+      "info" : "ExpressionStatement[17031-17071]:ExpressionStatement[17029-17069]"
+    }, {
+      "left" : "maxCosine = FastMath.max(maxCosine, FastMath.abs(sum) / (s * currentCost));",
+      "right" : "maxCosine = FastMath.max(maxCosine, FastMath.abs(sum) / (s * currentCost));",
+      "info" : "ExpressionStatement[17122-17197]:ExpressionStatement[17120-17195]"
+    }, {
+      "left" : "if (maxCosine <= orthoTolerance)",
+      "right" : "if (maxCosine <= orthoTolerance)",
+      "info" : "IfStatement[17264-17431]:IfStatement[17262-17429]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17297-17431]:Block[17295-17429]"
+    }, {
+      "left" : "setCost(currentCost);",
+      "right" : "setCost(currentCost);",
+      "info" : "ExpressionStatement[17364-17385]:ExpressionStatement[17362-17383]"
+    }, {
+      "left" : "return current;",
+      "right" : "return current;",
+      "info" : "ReturnStatement[17402-17417]:ReturnStatement[17400-17415]"
+    }, {
+      "left" : "for (int j = 0; j < nC; ++j)",
+      "right" : "for (int j = 0; j < nC; ++j)",
+      "info" : "ForStatement[17481-17586]:ForStatement[17479-17584]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17510-17586]:Block[17508-17584]"
+    }, {
+      "left" : "diag[j] = FastMath.max(diag[j], jacNorm[j]);",
+      "right" : "diag[j] = FastMath.max(diag[j], jacNorm[j]);",
+      "info" : "ExpressionStatement[17528-17572]:ExpressionStatement[17526-17570]"
+    }, {
+      "left" : "for (double ratio = 0; ratio < 1.0e-4)",
+      "right" : "for (double ratio = 0; ratio < 1.0e-4)",
+      "info" : "ForStatement[17627-24118]:ForStatement[17625-24127]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17667-24118]:Block[17665-24127]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[17720-17870]:ForStatement[17718-17868]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17757-17870]:Block[17755-17868]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[17779-17803]:VariableDeclarationStatement[17777-17801]"
+    }, {
+      "left" : "oldX[pj] = currentPoint[pj];",
+      "right" : "oldX[pj] = currentPoint[pj];",
+      "info" : "ExpressionStatement[17824-17852]:ExpressionStatement[17822-17850]"
+    }, {
+      "left" : "final double previousCost = currentCost;",
+      "right" : "final double previousCost = currentCost;",
+      "info" : "VariableDeclarationStatement[17887-17927]:VariableDeclarationStatement[17885-17925]"
+    }, {
+      "left" : "double[] tmpVec = weightedResidual;",
+      "right" : "double[] tmpVec = weightedResidual;",
+      "info" : "VariableDeclarationStatement[17944-17979]:VariableDeclarationStatement[17942-17977]"
+    }, {
+      "left" : "weightedResidual = oldRes;",
+      "right" : "weightedResidual = oldRes;",
+      "info" : "ExpressionStatement[17996-18022]:ExpressionStatement[17994-18020]"
+    }, {
+      "left" : "oldRes    = tmpVec;",
+      "right" : "oldRes    = tmpVec;",
+      "info" : "ExpressionStatement[18039-18058]:ExpressionStatement[18037-18056]"
+    }, {
+      "left" : "tmpVec    = currentObjective;",
+      "right" : "tmpVec    = currentObjective;",
+      "info" : "ExpressionStatement[18075-18104]:ExpressionStatement[18073-18102]"
+    }, {
+      "left" : "currentObjective = oldObj;",
+      "right" : "currentObjective = oldObj;",
+      "info" : "ExpressionStatement[18121-18147]:ExpressionStatement[18119-18145]"
+    }, {
+      "left" : "oldObj    = tmpVec;",
+      "right" : "oldObj    = tmpVec;",
+      "info" : "ExpressionStatement[18164-18183]:ExpressionStatement[18162-18181]"
+    }, {
+      "left" : "determineLMParameter(qtf, delta, diag, work1, work2, work3);",
+      "right" : "determineLMParameter(qtf, delta, diag, work1, work2, work3);",
+      "info" : "ExpressionStatement[18264-18324]:ExpressionStatement[18262-18322]"
+    }, {
+      "left" : "double lmNorm = 0;",
+      "right" : "double lmNorm = 0;",
+      "info" : "VariableDeclarationStatement[18423-18441]:VariableDeclarationStatement[18421-18439]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[18458-18755]:ForStatement[18456-18753]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18495-18755]:Block[18493-18753]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[18517-18541]:VariableDeclarationStatement[18515-18539]"
+    }, {
+      "left" : "lmDir[pj] = -lmDir[pj];",
+      "right" : "lmDir[pj] = -lmDir[pj];",
+      "info" : "ExpressionStatement[18562-18585]:ExpressionStatement[18560-18583]"
+    }, {
+      "left" : "currentPoint[pj] = oldX[pj] + lmDir[pj];",
+      "right" : "currentPoint[pj] = oldX[pj] + lmDir[pj];",
+      "info" : "ExpressionStatement[18606-18646]:ExpressionStatement[18604-18644]"
+    }, {
+      "left" : "double s = diag[pj] * lmDir[pj];",
+      "right" : "double s = diag[pj] * lmDir[pj];",
+      "info" : "VariableDeclarationStatement[18667-18699]:VariableDeclarationStatement[18665-18697]"
+    }, {
+      "left" : "lmNorm  += s * s;",
+      "right" : "lmNorm  += s * s;",
+      "info" : "ExpressionStatement[18720-18737]:ExpressionStatement[18718-18735]"
+    }, {
+      "left" : "lmNorm = FastMath.sqrt(lmNorm);",
+      "right" : "lmNorm = FastMath.sqrt(lmNorm);",
+      "info" : "ExpressionStatement[18772-18803]:ExpressionStatement[18770-18801]"
+    }, {
+      "left" : "if (firstIteration)",
+      "right" : "if (firstIteration)",
+      "info" : "IfStatement[18894-18990]:IfStatement[18892-18988]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18914-18990]:Block[18912-18988]"
+    }, {
+      "left" : "delta = FastMath.min(delta, lmNorm);",
+      "right" : "delta = FastMath.min(delta, lmNorm);",
+      "info" : "ExpressionStatement[18936-18972]:ExpressionStatement[18934-18970]"
+    }, {
+      "left" : "currentObjective = computeObjectiveValue(currentPoint);",
+      "right" : "currentObjective = computeObjectiveValue(currentPoint);",
+      "info" : "ExpressionStatement[19082-19137]:ExpressionStatement[19080-19135]"
+    }, {
+      "left" : "currentResiduals = computeResiduals(currentObjective);",
+      "right" : "currentResiduals = computeResiduals(currentObjective);",
+      "info" : "ExpressionStatement[19154-19208]:ExpressionStatement[19152-19206]"
+    }, {
+      "left" : "current = new PointVectorValuePair(currentPoint, currentObjective);",
+      "right" : "current = new PointVectorValuePair(currentPoint, currentObjective);",
+      "info" : "ExpressionStatement[19225-19292]:ExpressionStatement[19223-19290]"
+    }, {
+      "left" : "currentCost = computeCost(currentResiduals);",
+      "right" : "currentCost = computeCost(currentResiduals);",
+      "info" : "ExpressionStatement[19309-19353]:ExpressionStatement[19307-19351]"
+    }, {
+      "left" : "double actRed = -1.0;",
+      "right" : "double actRed = -1.0;",
+      "info" : "VariableDeclarationStatement[19426-19447]:VariableDeclarationStatement[19424-19445]"
+    }, {
+      "left" : "if (0.1 * currentCost < previousCost)",
+      "right" : "if (0.1 * currentCost < previousCost)",
+      "info" : "IfStatement[19464-19622]:IfStatement[19462-19620]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19502-19622]:Block[19500-19620]"
+    }, {
+      "left" : "double r = currentCost / previousCost;",
+      "right" : "double r = currentCost / previousCost;",
+      "info" : "VariableDeclarationStatement[19524-19562]:VariableDeclarationStatement[19522-19560]"
+    }, {
+      "left" : "actRed = 1.0 - r * r;",
+      "right" : "actRed = 1.0 - r * r;",
+      "info" : "ExpressionStatement[19583-19604]:ExpressionStatement[19581-19602]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[19755-20076]:ForStatement[19753-20074]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19792-20076]:Block[19790-20074]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[19814-19838]:VariableDeclarationStatement[19812-19836]"
+    }, {
+      "left" : "double dirJ = lmDir[pj];",
+      "right" : "double dirJ = lmDir[pj];",
+      "info" : "VariableDeclarationStatement[19859-19883]:VariableDeclarationStatement[19857-19881]"
+    }, {
+      "left" : "work1[j] = 0;",
+      "right" : "work1[j] = 0;",
+      "info" : "ExpressionStatement[19904-19917]:ExpressionStatement[19902-19915]"
+    }, {
+      "left" : "for (int i = 0; i <= j; ++i)",
+      "right" : "for (int i = 0; i <= j; ++i)",
+      "info" : "ForStatement[19938-20058]:ForStatement[19936-20056]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19967-20058]:Block[19965-20056]"
+    }, {
+      "left" : "work1[i] += weightedJacobian[i][pj] * dirJ;",
+      "right" : "work1[i] += weightedJacobian[i][pj] * dirJ;",
+      "info" : "ExpressionStatement[19993-20036]:ExpressionStatement[19991-20034]"
+    }, {
+      "left" : "double coeff1 = 0;",
+      "right" : "double coeff1 = 0;",
+      "info" : "VariableDeclarationStatement[20093-20111]:VariableDeclarationStatement[20091-20109]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[20128-20235]:ForStatement[20126-20233]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20165-20235]:Block[20163-20233]"
+    }, {
+      "left" : "coeff1 += work1[j] * work1[j];",
+      "right" : "coeff1 += work1[j] * work1[j];",
+      "info" : "ExpressionStatement[20187-20217]:ExpressionStatement[20185-20215]"
+    }, {
+      "left" : "double pc2 = previousCost * previousCost;",
+      "right" : "double pc2 = previousCost * previousCost;",
+      "info" : "VariableDeclarationStatement[20252-20293]:VariableDeclarationStatement[20250-20291]"
+    }, {
+      "left" : "coeff1 = coeff1 / pc2;",
+      "right" : "coeff1 = coeff1 / pc2;",
+      "info" : "ExpressionStatement[20310-20332]:ExpressionStatement[20308-20330]"
+    }, {
+      "left" : "double coeff2 = lmPar * lmNorm * lmNorm / pc2;",
+      "right" : "double coeff2 = lmPar * lmNorm * lmNorm / pc2;",
+      "info" : "VariableDeclarationStatement[20349-20395]:VariableDeclarationStatement[20347-20393]"
+    }, {
+      "left" : "double preRed = coeff1 + 2 * coeff2;",
+      "right" : "double preRed = coeff1 + 2 * coeff2;",
+      "info" : "VariableDeclarationStatement[20412-20448]:VariableDeclarationStatement[20410-20446]"
+    }, {
+      "left" : "double dirDer = -(coeff1 + coeff2);",
+      "right" : "double dirDer = -(coeff1 + coeff2);",
+      "info" : "VariableDeclarationStatement[20465-20500]:VariableDeclarationStatement[20463-20498]"
+    }, {
+      "left" : "ratio = (preRed == 0) ? 0 : (actRed / preRed);",
+      "right" : "ratio = (preRed == 0) ? 0 : (actRed / preRed);",
+      "info" : "ExpressionStatement[20584-20630]:ExpressionStatement[20582-20628]"
+    }, {
+      "left" : "if (ratio <= 0.25)",
+      "right" : "if (ratio <= 0.25)",
+      "info" : "IfStatement[20689-21242]:IfStatement[20687-21240]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20708-21106]:Block[20706-21104]"
+    }, {
+      "left" : "double tmp =\n                        (actRed < 0) ? (0.5 * dirDer / (dirDer + 0.5 * actRed)) : 0.5;",
+      "right" : "double tmp =\n                        (actRed < 0) ? (0.5 * dirDer / (dirDer + 0.5 * actRed)) : 0.5;",
+      "info" : "VariableDeclarationStatement[20730-20829]:VariableDeclarationStatement[20728-20827]"
+    }, {
+      "left" : "if ((0.1 * currentCost >= previousCost) || (tmp < 0.1))",
+      "right" : "if ((0.1 * currentCost >= previousCost) || (tmp < 0.1))",
+      "info" : "IfStatement[20854-20976]:IfStatement[20852-20974]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20910-20976]:Block[20908-20974]"
+    }, {
+      "left" : "tmp = 0.1;",
+      "right" : "tmp = 0.1;",
+      "info" : "ExpressionStatement[20940-20950]:ExpressionStatement[20938-20948]"
+    }, {
+      "left" : "delta = tmp * FastMath.min(delta, 10.0 * lmNorm);",
+      "right" : "delta = tmp * FastMath.min(delta, 10.0 * lmNorm);",
+      "info" : "ExpressionStatement[21001-21050]:ExpressionStatement[20999-21048]"
+    }, {
+      "left" : "lmPar /= tmp;",
+      "right" : "lmPar /= tmp;",
+      "info" : "ExpressionStatement[21075-21088]:ExpressionStatement[21073-21086]"
+    }, {
+      "left" : "if ((lmPar == 0) || (ratio >= 0.75))",
+      "right" : "if ((lmPar == 0) || (ratio >= 0.75))",
+      "info" : "IfStatement[21112-21242]:IfStatement[21110-21240]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21149-21242]:Block[21147-21240]"
+    }, {
+      "left" : "delta = 2 * lmNorm;",
+      "right" : "delta = 2 * lmNorm;",
+      "info" : "ExpressionStatement[21171-21190]:ExpressionStatement[21169-21188]"
+    }, {
+      "left" : "lmPar *= 0.5;",
+      "right" : "lmPar *= 0.5;",
+      "info" : "ExpressionStatement[21211-21224]:ExpressionStatement[21209-21222]"
+    }, {
+      "left" : "if (ratio >= 1.0e-4)",
+      "right" : "if (ratio >= 1.0e-4)",
+      "info" : "IfStatement[21310-22832]:IfStatement[21308-22841]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21331-22088]:Block[21329-22097]"
+    }, {
+      "left" : "firstIteration = false;",
+      "right" : "firstIteration = false;",
+      "info" : "ExpressionStatement[21414-21437]:ExpressionStatement[21412-21435]"
+    }, {
+      "left" : "xNorm = 0;",
+      "right" : "xNorm = 0;",
+      "info" : "ExpressionStatement[21458-21468]:ExpressionStatement[21456-21466]"
+    }, {
+      "left" : "for (int k = 0; k < nC; ++k)",
+      "right" : "for (int k = 0; k < nC; ++k)",
+      "info" : "ForStatement[21489-21646]:ForStatement[21487-21644]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21518-21646]:Block[21516-21644]"
+    }, {
+      "left" : "double xK = diag[k] * currentPoint[k];",
+      "right" : "double xK = diag[k] * currentPoint[k];",
+      "info" : "VariableDeclarationStatement[21544-21582]:VariableDeclarationStatement[21542-21580]"
+    }, {
+      "left" : "xNorm += xK * xK;",
+      "right" : "xNorm += xK * xK;",
+      "info" : "ExpressionStatement[21607-21624]:ExpressionStatement[21605-21622]"
+    }, {
+      "left" : "xNorm = FastMath.sqrt(xNorm);",
+      "right" : "xNorm = FastMath.sqrt(xNorm);",
+      "info" : "ExpressionStatement[21667-21696]:ExpressionStatement[21665-21694]"
+    }, {
+      "left" : "if (checker != null)",
+      "right" : "if (checker != null)",
+      "info" : "IfStatement[21764-22070]:IfStatement[21762-22079]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21785-22070]:Block[21783-22079]"
+    }, {
+      "left" : "if (checker.converged(iter, previous, current))",
+      "right" : "if (checker.converged(getIterations(), previous, current))",
+      "info" : "IfStatement[21879-22048]:IfStatement[21877-22057]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[21927-22048]:Block[21936-22057]"
+    }, {
+      "left" : "setCost(currentCost);",
+      "right" : "setCost(currentCost);",
+      "info" : "ExpressionStatement[21957-21978]:ExpressionStatement[21966-21987]"
+    }, {
+      "left" : "return current;",
+      "right" : "return current;",
+      "info" : "ReturnStatement[22007-22022]:ReturnStatement[22016-22031]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22094-22832]:Block[22103-22841]"
+    }, {
+      "left" : "currentCost = previousCost;",
+      "right" : "currentCost = previousCost;",
+      "info" : "ExpressionStatement[22183-22210]:ExpressionStatement[22192-22219]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[22231-22393]:ForStatement[22240-22402]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[22268-22393]:Block[22277-22402]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[22294-22318]:VariableDeclarationStatement[22303-22327]"
+    }, {
+      "left" : "currentPoint[pj] = oldX[pj];",
+      "right" : "currentPoint[pj] = oldX[pj];",
+      "info" : "ExpressionStatement[22343-22371]:ExpressionStatement[22352-22380]"
+    }, {
+      "left" : "tmpVec    = weightedResidual;",
+      "right" : "tmpVec    = weightedResidual;",
+      "info" : "ExpressionStatement[22414-22443]:ExpressionStatement[22423-22452]"
+    }, {
+      "left" : "weightedResidual = oldRes;",
+      "right" : "weightedResidual = oldRes;",
+      "info" : "ExpressionStatement[22464-22490]:ExpressionStatement[22473-22499]"
+    }, {
+      "left" : "oldRes    = tmpVec;",
+      "right" : "oldRes    = tmpVec;",
+      "info" : "ExpressionStatement[22511-22530]:ExpressionStatement[22520-22539]"
+    }, {
+      "left" : "tmpVec    = currentObjective;",
+      "right" : "tmpVec    = currentObjective;",
+      "info" : "ExpressionStatement[22551-22580]:ExpressionStatement[22560-22589]"
+    }, {
+      "left" : "currentObjective = oldObj;",
+      "right" : "currentObjective = oldObj;",
+      "info" : "ExpressionStatement[22601-22627]:ExpressionStatement[22610-22636]"
+    }, {
+      "left" : "oldObj    = tmpVec;",
+      "right" : "oldObj    = tmpVec;",
+      "info" : "ExpressionStatement[22648-22667]:ExpressionStatement[22657-22676]"
+    }, {
+      "left" : "current = new PointVectorValuePair(currentPoint, currentObjective);",
+      "right" : "current = new PointVectorValuePair(currentPoint, currentObjective);",
+      "info" : "ExpressionStatement[22747-22814]:ExpressionStatement[22756-22823]"
+    }, {
+      "left" : "if ((FastMath.abs(actRed) <= costRelativeTolerance &&\n                     preRed <= costRelativeTolerance &&\n                     ratio <= 2.0) ||\n                    delta <= parRelativeTolerance * xNorm)",
+      "right" : "if ((FastMath.abs(actRed) <= costRelativeTolerance &&\n                     preRed <= costRelativeTolerance &&\n                     ratio <= 2.0) ||\n                    delta <= parRelativeTolerance * xNorm)",
+      "info" : "IfStatement[22899-23203]:IfStatement[22908-23212]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23106-23203]:Block[23115-23212]"
+    }, {
+      "left" : "setCost(currentCost);",
+      "right" : "setCost(currentCost);",
+      "info" : "ExpressionStatement[23128-23149]:ExpressionStatement[23137-23158]"
+    }, {
+      "left" : "return current;",
+      "right" : "return current;",
+      "info" : "ReturnStatement[23170-23185]:ReturnStatement[23179-23194]"
+    }, {
+      "left" : "if ((FastMath.abs(actRed) <= 2.2204e-16) && (preRed <= 2.2204e-16) && (ratio <= 2.0))",
+      "right" : "if ((FastMath.abs(actRed) <= 2.2204e-16) && (preRed <= 2.2204e-16) && (ratio <= 2.0))",
+      "info" : "IfStatement[23354-24104]:IfStatement[23363-24113]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23440-23637]:Block[23449-23646]"
+    }, {
+      "left" : "throw new ConvergenceException(LocalizedFormats.TOO_SMALL_COST_RELATIVE_TOLERANCE,\n                                                   costRelativeTolerance);",
+      "right" : "throw new ConvergenceException(LocalizedFormats.TOO_SMALL_COST_RELATIVE_TOLERANCE,\n                                                   costRelativeTolerance);",
+      "info" : "ThrowStatement[23462-23619]:ThrowStatement[23471-23628]"
+    }, {
+      "left" : "if (delta <= 2.2204e-16 * xNorm)",
+      "right" : "if (delta <= 2.2204e-16 * xNorm)",
+      "info" : "IfStatement[23643-24104]:IfStatement[23652-24113]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23676-23878]:Block[23685-23887]"
+    }, {
+      "left" : "throw new ConvergenceException(LocalizedFormats.TOO_SMALL_PARAMETERS_RELATIVE_TOLERANCE,\n                                                   parRelativeTolerance);",
+      "right" : "throw new ConvergenceException(LocalizedFormats.TOO_SMALL_PARAMETERS_RELATIVE_TOLERANCE,\n                                                   parRelativeTolerance);",
+      "info" : "ThrowStatement[23698-23860]:ThrowStatement[23707-23869]"
+    }, {
+      "left" : "if (maxCosine <= 2.2204e-16)",
+      "right" : "if (maxCosine <= 2.2204e-16)",
+      "info" : "IfStatement[23884-24104]:IfStatement[23893-24113]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23914-24104]:Block[23923-24113]"
+    }, {
+      "left" : "throw new ConvergenceException(LocalizedFormats.TOO_SMALL_ORTHOGONALITY_TOLERANCE,\n                                                   orthoTolerance);",
+      "right" : "throw new ConvergenceException(LocalizedFormats.TOO_SMALL_ORTHOGONALITY_TOLERANCE,\n                                                   orthoTolerance);",
+      "info" : "ThrowStatement[23936-24086]:ThrowStatement[23945-24095]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[24997-25004]:Modifier[25006-25013]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[25005-25009]:PrimitiveType[25014-25018]"
+    }, {
+      "left" : "determineLMParameter",
+      "right" : "determineLMParameter",
+      "info" : "SimpleName[25010-25030]:SimpleName[25019-25039]"
+    }, {
+      "left" : "double[] qy",
+      "right" : "double[] qy",
+      "info" : "SingleVariableDeclaration[25031-25042]:SingleVariableDeclaration[25040-25051]"
+    }, {
+      "left" : "double delta",
+      "right" : "double delta",
+      "info" : "SingleVariableDeclaration[25044-25056]:SingleVariableDeclaration[25053-25065]"
+    }, {
+      "left" : "double[] diag",
+      "right" : "double[] diag",
+      "info" : "SingleVariableDeclaration[25058-25071]:SingleVariableDeclaration[25067-25080]"
+    }, {
+      "left" : "double[] work1",
+      "right" : "double[] work1",
+      "info" : "SingleVariableDeclaration[25111-25125]:SingleVariableDeclaration[25120-25134]"
+    }, {
+      "left" : "double[] work2",
+      "right" : "double[] work2",
+      "info" : "SingleVariableDeclaration[25127-25141]:SingleVariableDeclaration[25136-25150]"
+    }, {
+      "left" : "double[] work3",
+      "right" : "double[] work3",
+      "info" : "SingleVariableDeclaration[25143-25157]:SingleVariableDeclaration[25152-25166]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25159-30428]:Block[25168-30437]"
+    }, {
+      "left" : "final int nC = weightedJacobian[0].length;",
+      "right" : "final int nC = weightedJacobian[0].length;",
+      "info" : "VariableDeclarationStatement[25169-25211]:VariableDeclarationStatement[25178-25220]"
+    }, {
+      "left" : "for (int j = 0; j < rank; ++j)",
+      "right" : "for (int j = 0; j < rank; ++j)",
+      "info" : "ForStatement[25361-25446]:ForStatement[25370-25455]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25392-25446]:Block[25401-25455]"
+    }, {
+      "left" : "lmDir[permutation[j]] = qy[j];",
+      "right" : "lmDir[permutation[j]] = qy[j];",
+      "info" : "ExpressionStatement[25406-25436]:ExpressionStatement[25415-25445]"
+    }, {
+      "left" : "for (int j = rank; j < nC; ++j)",
+      "right" : "for (int j = rank; j < nC; ++j)",
+      "info" : "ForStatement[25455-25537]:ForStatement[25464-25546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25487-25537]:Block[25496-25546]"
+    }, {
+      "left" : "lmDir[permutation[j]] = 0;",
+      "right" : "lmDir[permutation[j]] = 0;",
+      "info" : "ExpressionStatement[25501-25527]:ExpressionStatement[25510-25536]"
+    }, {
+      "left" : "for (int k = rank - 1; k >= 0; --k)",
+      "right" : "for (int k = rank - 1; k >= 0; --k)",
+      "info" : "ForStatement[25546-25835]:ForStatement[25555-25844]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25582-25835]:Block[25591-25844]"
+    }, {
+      "left" : "int pk = permutation[k];",
+      "right" : "int pk = permutation[k];",
+      "info" : "VariableDeclarationStatement[25596-25620]:VariableDeclarationStatement[25605-25629]"
+    }, {
+      "left" : "double ypk = lmDir[pk] / diagR[pk];",
+      "right" : "double ypk = lmDir[pk] / diagR[pk];",
+      "info" : "VariableDeclarationStatement[25633-25668]:VariableDeclarationStatement[25642-25677]"
+    }, {
+      "left" : "for (int i = 0; i < k; ++i)",
+      "right" : "for (int i = 0; i < k; ++i)",
+      "info" : "ForStatement[25681-25796]:ForStatement[25690-25805]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[25709-25796]:Block[25718-25805]"
+    }, {
+      "left" : "lmDir[permutation[i]] -= ypk * weightedJacobian[i][pk];",
+      "right" : "lmDir[permutation[i]] -= ypk * weightedJacobian[i][pk];",
+      "info" : "ExpressionStatement[25727-25782]:ExpressionStatement[25736-25791]"
+    }, {
+      "left" : "lmDir[pk] = ypk;",
+      "right" : "lmDir[pk] = ypk;",
+      "info" : "ExpressionStatement[25809-25825]:ExpressionStatement[25818-25834]"
+    }, {
+      "left" : "double dxNorm = 0;",
+      "right" : "double dxNorm = 0;",
+      "info" : "VariableDeclarationStatement[25958-25976]:VariableDeclarationStatement[25967-25985]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[25985-26171]:ForStatement[25994-26180]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26022-26171]:Block[26031-26180]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[26036-26060]:VariableDeclarationStatement[26045-26069]"
+    }, {
+      "left" : "double s = diag[pj] * lmDir[pj];",
+      "right" : "double s = diag[pj] * lmDir[pj];",
+      "info" : "VariableDeclarationStatement[26073-26105]:VariableDeclarationStatement[26082-26114]"
+    }, {
+      "left" : "work1[pj] = s;",
+      "right" : "work1[pj] = s;",
+      "info" : "ExpressionStatement[26118-26132]:ExpressionStatement[26127-26141]"
+    }, {
+      "left" : "dxNorm += s * s;",
+      "right" : "dxNorm += s * s;",
+      "info" : "ExpressionStatement[26145-26161]:ExpressionStatement[26154-26170]"
+    }, {
+      "left" : "dxNorm = FastMath.sqrt(dxNorm);",
+      "right" : "dxNorm = FastMath.sqrt(dxNorm);",
+      "info" : "ExpressionStatement[26180-26211]:ExpressionStatement[26189-26220]"
+    }, {
+      "left" : "double fp = dxNorm - delta;",
+      "right" : "double fp = dxNorm - delta;",
+      "info" : "VariableDeclarationStatement[26220-26247]:VariableDeclarationStatement[26229-26256]"
+    }, {
+      "left" : "if (fp <= 0.1 * delta)",
+      "right" : "if (fp <= 0.1 * delta)",
+      "info" : "IfStatement[26256-26333]:IfStatement[26265-26342]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26279-26333]:Block[26288-26342]"
+    }, {
+      "left" : "lmPar = 0;",
+      "right" : "lmPar = 0;",
+      "info" : "ExpressionStatement[26293-26303]:ExpressionStatement[26302-26312]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[26316-26323]:ReturnStatement[26325-26332]"
+    }, {
+      "left" : "double sum2;",
+      "right" : "double sum2;",
+      "info" : "VariableDeclarationStatement[26524-26536]:VariableDeclarationStatement[26533-26545]"
+    }, {
+      "left" : "double parl = 0;",
+      "right" : "double parl = 0;",
+      "info" : "VariableDeclarationStatement[26545-26561]:VariableDeclarationStatement[26554-26570]"
+    }, {
+      "left" : "if (rank == solvedCols)",
+      "right" : "if (rank == solvedCols)",
+      "info" : "IfStatement[26570-27219]:IfStatement[26579-27228]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26594-27219]:Block[26603-27228]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[26608-26749]:ForStatement[26617-26758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26645-26749]:Block[26654-26758]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[26663-26687]:VariableDeclarationStatement[26672-26696]"
+    }, {
+      "left" : "work1[pj] *= diag[pj] / dxNorm;",
+      "right" : "work1[pj] *= diag[pj] / dxNorm;",
+      "info" : "ExpressionStatement[26704-26735]:ExpressionStatement[26713-26744]"
+    }, {
+      "left" : "sum2 = 0;",
+      "right" : "sum2 = 0;",
+      "info" : "ExpressionStatement[26762-26771]:ExpressionStatement[26771-26780]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[26784-27169]:ForStatement[26793-27178]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26821-27169]:Block[26830-27178]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[26839-26863]:VariableDeclarationStatement[26848-26872]"
+    }, {
+      "left" : "double sum = 0;",
+      "right" : "double sum = 0;",
+      "info" : "VariableDeclarationStatement[26880-26895]:VariableDeclarationStatement[26889-26904]"
+    }, {
+      "left" : "for (int i = 0; i < j; ++i)",
+      "right" : "for (int i = 0; i < j; ++i)",
+      "info" : "ForStatement[26912-27035]:ForStatement[26921-27044]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[26940-27035]:Block[26949-27044]"
+    }, {
+      "left" : "sum += weightedJacobian[i][pj] * work1[permutation[i]];",
+      "right" : "sum += weightedJacobian[i][pj] * work1[permutation[i]];",
+      "info" : "ExpressionStatement[26962-27017]:ExpressionStatement[26971-27026]"
+    }, {
+      "left" : "double s = (work1[pj] - sum) / diagR[pj];",
+      "right" : "double s = (work1[pj] - sum) / diagR[pj];",
+      "info" : "VariableDeclarationStatement[27052-27093]:VariableDeclarationStatement[27061-27102]"
+    }, {
+      "left" : "work1[pj] = s;",
+      "right" : "work1[pj] = s;",
+      "info" : "ExpressionStatement[27110-27124]:ExpressionStatement[27119-27133]"
+    }, {
+      "left" : "sum2 += s * s;",
+      "right" : "sum2 += s * s;",
+      "info" : "ExpressionStatement[27141-27155]:ExpressionStatement[27150-27164]"
+    }, {
+      "left" : "parl = fp / (delta * sum2);",
+      "right" : "parl = fp / (delta * sum2);",
+      "info" : "ExpressionStatement[27182-27209]:ExpressionStatement[27191-27218]"
+    }, {
+      "left" : "sum2 = 0;",
+      "right" : "sum2 = 0;",
+      "info" : "ExpressionStatement[27301-27310]:ExpressionStatement[27310-27319]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[27319-27605]:ForStatement[27328-27614]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27356-27605]:Block[27365-27614]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[27370-27394]:VariableDeclarationStatement[27379-27403]"
+    }, {
+      "left" : "double sum = 0;",
+      "right" : "double sum = 0;",
+      "info" : "VariableDeclarationStatement[27407-27422]:VariableDeclarationStatement[27416-27431]"
+    }, {
+      "left" : "for (int i = 0; i <= j; ++i)",
+      "right" : "for (int i = 0; i <= j; ++i)",
+      "info" : "ForStatement[27435-27535]:ForStatement[27444-27544]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27464-27535]:Block[27473-27544]"
+    }, {
+      "left" : "sum += weightedJacobian[i][pj] * qy[i];",
+      "right" : "sum += weightedJacobian[i][pj] * qy[i];",
+      "info" : "ExpressionStatement[27482-27521]:ExpressionStatement[27491-27530]"
+    }, {
+      "left" : "sum /= diag[pj];",
+      "right" : "sum /= diag[pj];",
+      "info" : "ExpressionStatement[27548-27564]:ExpressionStatement[27557-27573]"
+    }, {
+      "left" : "sum2 += sum * sum;",
+      "right" : "sum2 += sum * sum;",
+      "info" : "ExpressionStatement[27577-27595]:ExpressionStatement[27586-27604]"
+    }, {
+      "left" : "double gNorm = FastMath.sqrt(sum2);",
+      "right" : "double gNorm = FastMath.sqrt(sum2);",
+      "info" : "VariableDeclarationStatement[27614-27649]:VariableDeclarationStatement[27623-27658]"
+    }, {
+      "left" : "double paru = gNorm / delta;",
+      "right" : "double paru = gNorm / delta;",
+      "info" : "VariableDeclarationStatement[27658-27686]:VariableDeclarationStatement[27667-27695]"
+    }, {
+      "left" : "if (paru == 0)",
+      "right" : "if (paru == 0)",
+      "info" : "IfStatement[27695-27848]:IfStatement[27704-27857]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[27710-27848]:Block[27719-27857]"
+    }, {
+      "left" : "paru = 2.2251e-308 / FastMath.min(delta, 0.1);",
+      "right" : "paru = 2.2251e-308 / FastMath.min(delta, 0.1);",
+      "info" : "ExpressionStatement[27792-27838]:ExpressionStatement[27801-27847]"
+    }, {
+      "left" : "lmPar = FastMath.min(paru, FastMath.max(lmPar, parl));",
+      "right" : "lmPar = FastMath.min(paru, FastMath.max(lmPar, parl));",
+      "info" : "ExpressionStatement[27970-28024]:ExpressionStatement[27979-28033]"
+    }, {
+      "left" : "if (lmPar == 0)",
+      "right" : "if (lmPar == 0)",
+      "info" : "IfStatement[28033-28096]:IfStatement[28042-28105]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28049-28096]:Block[28058-28105]"
+    }, {
+      "left" : "lmPar = gNorm / dxNorm;",
+      "right" : "lmPar = gNorm / dxNorm;",
+      "info" : "ExpressionStatement[28063-28086]:ExpressionStatement[28072-28095]"
+    }, {
+      "left" : "for (int countdown = 10; countdown >= 0; --countdown)",
+      "right" : "for (int countdown = 10; countdown >= 0; --countdown)",
+      "info" : "ForStatement[28106-30422]:ForStatement[28115-30431]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28160-30422]:Block[28169-30431]"
+    }, {
+      "left" : "if (lmPar == 0)",
+      "right" : "if (lmPar == 0)",
+      "info" : "IfStatement[28242-28338]:IfStatement[28251-28347]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28258-28338]:Block[28267-28347]"
+    }, {
+      "left" : "lmPar = FastMath.max(2.2251e-308, 0.001 * paru);",
+      "right" : "lmPar = FastMath.max(2.2251e-308, 0.001 * paru);",
+      "info" : "ExpressionStatement[28276-28324]:ExpressionStatement[28285-28333]"
+    }, {
+      "left" : "double sPar = FastMath.sqrt(lmPar);",
+      "right" : "double sPar = FastMath.sqrt(lmPar);",
+      "info" : "VariableDeclarationStatement[28351-28386]:VariableDeclarationStatement[28360-28395]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[28399-28537]:ForStatement[28408-28546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28436-28537]:Block[28445-28546]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[28454-28478]:VariableDeclarationStatement[28463-28487]"
+    }, {
+      "left" : "work1[pj] = sPar * diag[pj];",
+      "right" : "work1[pj] = sPar * diag[pj];",
+      "info" : "ExpressionStatement[28495-28523]:ExpressionStatement[28504-28532]"
+    }, {
+      "left" : "determineLMDirection(qy, work1, work2, work3);",
+      "right" : "determineLMDirection(qy, work1, work2, work3);",
+      "info" : "ExpressionStatement[28550-28596]:ExpressionStatement[28559-28605]"
+    }, {
+      "left" : "dxNorm = 0;",
+      "right" : "dxNorm = 0;",
+      "info" : "ExpressionStatement[28610-28621]:ExpressionStatement[28619-28630]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[28634-28840]:ForStatement[28643-28849]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[28671-28840]:Block[28680-28849]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[28689-28713]:VariableDeclarationStatement[28698-28722]"
+    }, {
+      "left" : "double s = diag[pj] * lmDir[pj];",
+      "right" : "double s = diag[pj] * lmDir[pj];",
+      "info" : "VariableDeclarationStatement[28730-28762]:VariableDeclarationStatement[28739-28771]"
+    }, {
+      "left" : "work3[pj] = s;",
+      "right" : "work3[pj] = s;",
+      "info" : "ExpressionStatement[28779-28793]:ExpressionStatement[28788-28802]"
+    }, {
+      "left" : "dxNorm += s * s;",
+      "right" : "dxNorm += s * s;",
+      "info" : "ExpressionStatement[28810-28826]:ExpressionStatement[28819-28835]"
+    }, {
+      "left" : "dxNorm = FastMath.sqrt(dxNorm);",
+      "right" : "dxNorm = FastMath.sqrt(dxNorm);",
+      "info" : "ExpressionStatement[28853-28884]:ExpressionStatement[28862-28893]"
+    }, {
+      "left" : "double previousFP = fp;",
+      "right" : "double previousFP = fp;",
+      "info" : "VariableDeclarationStatement[28897-28920]:VariableDeclarationStatement[28906-28929]"
+    }, {
+      "left" : "fp = dxNorm - delta;",
+      "right" : "fp = dxNorm - delta;",
+      "info" : "ExpressionStatement[28933-28953]:ExpressionStatement[28942-28962]"
+    }, {
+      "left" : "if ((FastMath.abs(fp) <= 0.1 * delta) ||\n                    ((parl == 0) && (fp <= previousFP) && (previousFP < 0)))",
+      "right" : "if ((FastMath.abs(fp) <= 0.1 * delta) ||\n                    ((parl == 0) && (fp <= previousFP) && (previousFP < 0)))",
+      "info" : "IfStatement[29120-29277]:IfStatement[29129-29286]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29238-29277]:Block[29247-29286]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[29256-29263]:ReturnStatement[29265-29272]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[29336-29488]:ForStatement[29345-29497]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29373-29488]:Block[29382-29497]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[29391-29415]:VariableDeclarationStatement[29400-29424]"
+    }, {
+      "left" : "work1[pj] = work3[pj] * diag[pj] / dxNorm;",
+      "right" : "work1[pj] = work3[pj] * diag[pj] / dxNorm;",
+      "info" : "ExpressionStatement[29432-29474]:ExpressionStatement[29441-29483]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[29501-29826]:ForStatement[29510-29835]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29538-29826]:Block[29547-29835]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[29556-29580]:VariableDeclarationStatement[29565-29589]"
+    }, {
+      "left" : "work1[pj] /= work2[j];",
+      "right" : "work1[pj] /= work2[j];",
+      "info" : "ExpressionStatement[29597-29619]:ExpressionStatement[29606-29628]"
+    }, {
+      "left" : "double tmp = work1[pj];",
+      "right" : "double tmp = work1[pj];",
+      "info" : "VariableDeclarationStatement[29636-29659]:VariableDeclarationStatement[29645-29668]"
+    }, {
+      "left" : "for (int i = j + 1; i < solvedCols; ++i)",
+      "right" : "for (int i = j + 1; i < solvedCols; ++i)",
+      "info" : "ForStatement[29676-29812]:ForStatement[29685-29821]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29717-29812]:Block[29726-29821]"
+    }, {
+      "left" : "work1[permutation[i]] -= weightedJacobian[i][pj] * tmp;",
+      "right" : "work1[permutation[i]] -= weightedJacobian[i][pj] * tmp;",
+      "info" : "ExpressionStatement[29739-29794]:ExpressionStatement[29748-29803]"
+    }, {
+      "left" : "sum2 = 0;",
+      "right" : "sum2 = 0;",
+      "info" : "ExpressionStatement[29839-29848]:ExpressionStatement[29848-29857]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[29861-29994]:ForStatement[29870-30003]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[29898-29994]:Block[29907-30003]"
+    }, {
+      "left" : "double s = work1[permutation[j]];",
+      "right" : "double s = work1[permutation[j]];",
+      "info" : "VariableDeclarationStatement[29916-29949]:VariableDeclarationStatement[29925-29958]"
+    }, {
+      "left" : "sum2 += s * s;",
+      "right" : "sum2 += s * s;",
+      "info" : "ExpressionStatement[29966-29980]:ExpressionStatement[29975-29989]"
+    }, {
+      "left" : "double correction = fp / (delta * sum2);",
+      "right" : "double correction = fp / (delta * sum2);",
+      "info" : "VariableDeclarationStatement[30007-30047]:VariableDeclarationStatement[30016-30056]"
+    }, {
+      "left" : "if (fp > 0)",
+      "right" : "if (fp > 0)",
+      "info" : "IfStatement[30136-30296]:IfStatement[30145-30305]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30148-30213]:Block[30157-30222]"
+    }, {
+      "left" : "parl = FastMath.max(parl, lmPar);",
+      "right" : "parl = FastMath.max(parl, lmPar);",
+      "info" : "ExpressionStatement[30166-30199]:ExpressionStatement[30175-30208]"
+    }, {
+      "left" : "if (fp < 0)",
+      "right" : "if (fp < 0)",
+      "info" : "IfStatement[30219-30296]:IfStatement[30228-30305]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[30231-30296]:Block[30240-30305]"
+    }, {
+      "left" : "paru = FastMath.min(paru, lmPar);",
+      "right" : "paru = FastMath.min(paru, lmPar);",
+      "info" : "ExpressionStatement[30249-30282]:ExpressionStatement[30258-30291]"
+    }, {
+      "left" : "lmPar = FastMath.max(parl, lmPar + correction);",
+      "right" : "lmPar = FastMath.max(parl, lmPar + correction);",
+      "info" : "ExpressionStatement[30364-30411]:ExpressionStatement[30373-30420]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[31230-31237]:Modifier[31239-31246]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[31238-31242]:PrimitiveType[31247-31251]"
+    }, {
+      "left" : "determineLMDirection",
+      "right" : "determineLMDirection",
+      "info" : "SimpleName[31243-31263]:SimpleName[31252-31272]"
+    }, {
+      "left" : "double[] qy",
+      "right" : "double[] qy",
+      "info" : "SingleVariableDeclaration[31264-31275]:SingleVariableDeclaration[31273-31284]"
+    }, {
+      "left" : "double[] diag",
+      "right" : "double[] diag",
+      "info" : "SingleVariableDeclaration[31277-31290]:SingleVariableDeclaration[31286-31299]"
+    }, {
+      "left" : "double[] lmDiag",
+      "right" : "double[] lmDiag",
+      "info" : "SingleVariableDeclaration[31330-31345]:SingleVariableDeclaration[31339-31354]"
+    }, {
+      "left" : "double[] work",
+      "right" : "double[] work",
+      "info" : "SingleVariableDeclaration[31347-31360]:SingleVariableDeclaration[31356-31369]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31362-35317]:Block[31371-35326]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[31502-31799]:ForStatement[31511-31808]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31539-31799]:Block[31548-31808]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[31553-31577]:VariableDeclarationStatement[31562-31586]"
+    }, {
+      "left" : "for (int i = j + 1; i < solvedCols; ++i)",
+      "right" : "for (int i = j + 1; i < solvedCols; ++i)",
+      "info" : "ForStatement[31590-31725]:ForStatement[31599-31734]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31631-31725]:Block[31640-31734]"
+    }, {
+      "left" : "weightedJacobian[i][pj] = weightedJacobian[j][permutation[i]];",
+      "right" : "weightedJacobian[i][pj] = weightedJacobian[j][permutation[i]];",
+      "info" : "ExpressionStatement[31649-31711]:ExpressionStatement[31658-31720]"
+    }, {
+      "left" : "lmDir[j] = diagR[pj];",
+      "right" : "lmDir[j] = diagR[pj];",
+      "info" : "ExpressionStatement[31738-31759]:ExpressionStatement[31747-31768]"
+    }, {
+      "left" : "work[j]  = qy[j];",
+      "right" : "work[j]  = qy[j];",
+      "info" : "ExpressionStatement[31772-31789]:ExpressionStatement[31781-31798]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[31876-34383]:ForStatement[31885-34392]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[31913-34383]:Block[31922-34392]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[32063-32087]:VariableDeclarationStatement[32072-32096]"
+    }, {
+      "left" : "double dpj = diag[pj];",
+      "right" : "double dpj = diag[pj];",
+      "info" : "VariableDeclarationStatement[32100-32122]:VariableDeclarationStatement[32109-32131]"
+    }, {
+      "left" : "if (dpj != 0)",
+      "right" : "if (dpj != 0)",
+      "info" : "IfStatement[32135-32226]:IfStatement[32144-32235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32149-32226]:Block[32158-32235]"
+    }, {
+      "left" : "Arrays.fill(lmDiag, j + 1, lmDiag.length, 0);",
+      "right" : "Arrays.fill(lmDiag, j + 1, lmDiag.length, 0);",
+      "info" : "ExpressionStatement[32167-32212]:ExpressionStatement[32176-32221]"
+    }, {
+      "left" : "lmDiag[j] = dpj;",
+      "right" : "lmDiag[j] = dpj;",
+      "info" : "ExpressionStatement[32239-32255]:ExpressionStatement[32248-32264]"
+    }, {
+      "left" : "double qtbpj = 0;",
+      "right" : "double qtbpj = 0;",
+      "info" : "VariableDeclarationStatement[32442-32459]:VariableDeclarationStatement[32451-32468]"
+    }, {
+      "left" : "for (int k = j; k < solvedCols; ++k)",
+      "right" : "for (int k = j; k < solvedCols; ++k)",
+      "info" : "ForStatement[32472-34137]:ForStatement[32481-34146]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32509-34137]:Block[32518-34146]"
+    }, {
+      "left" : "int pk = permutation[k];",
+      "right" : "int pk = permutation[k];",
+      "info" : "VariableDeclarationStatement[32527-32551]:VariableDeclarationStatement[32536-32560]"
+    }, {
+      "left" : "if (lmDiag[k] != 0)",
+      "right" : "if (lmDiag[k] != 0)",
+      "info" : "IfStatement[32700-34123]:IfStatement[32709-34132]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32720-34123]:Block[32729-34132]"
+    }, {
+      "left" : "final double sin;",
+      "right" : "final double sin;",
+      "info" : "VariableDeclarationStatement[32743-32760]:VariableDeclarationStatement[32752-32769]"
+    }, {
+      "left" : "final double cos;",
+      "right" : "final double cos;",
+      "info" : "VariableDeclarationStatement[32781-32798]:VariableDeclarationStatement[32790-32807]"
+    }, {
+      "left" : "double rkk = weightedJacobian[k][pk];",
+      "right" : "double rkk = weightedJacobian[k][pk];",
+      "info" : "VariableDeclarationStatement[32819-32856]:VariableDeclarationStatement[32828-32865]"
+    }, {
+      "left" : "if (FastMath.abs(rkk) < FastMath.abs(lmDiag[k]))",
+      "right" : "if (FastMath.abs(rkk) < FastMath.abs(lmDiag[k]))",
+      "info" : "IfStatement[32877-33328]:IfStatement[32886-33337]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[32926-33130]:Block[32935-33139]"
+    }, {
+      "left" : "final double cotan = rkk / lmDiag[k];",
+      "right" : "final double cotan = rkk / lmDiag[k];",
+      "info" : "VariableDeclarationStatement[32952-32989]:VariableDeclarationStatement[32961-32998]"
+    }, {
+      "left" : "sin   = 1.0 / FastMath.sqrt(1.0 + cotan * cotan);",
+      "right" : "sin   = 1.0 / FastMath.sqrt(1.0 + cotan * cotan);",
+      "info" : "ExpressionStatement[33014-33063]:ExpressionStatement[33023-33072]"
+    }, {
+      "left" : "cos   = sin * cotan;",
+      "right" : "cos   = sin * cotan;",
+      "info" : "ExpressionStatement[33088-33108]:ExpressionStatement[33097-33117]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33136-33328]:Block[33145-33337]"
+    }, {
+      "left" : "final double tan = lmDiag[k] / rkk;",
+      "right" : "final double tan = lmDiag[k] / rkk;",
+      "info" : "VariableDeclarationStatement[33162-33197]:VariableDeclarationStatement[33171-33206]"
+    }, {
+      "left" : "cos = 1.0 / FastMath.sqrt(1.0 + tan * tan);",
+      "right" : "cos = 1.0 / FastMath.sqrt(1.0 + tan * tan);",
+      "info" : "ExpressionStatement[33222-33265]:ExpressionStatement[33231-33274]"
+    }, {
+      "left" : "sin = cos * tan;",
+      "right" : "sin = cos * tan;",
+      "info" : "ExpressionStatement[33290-33306]:ExpressionStatement[33299-33315]"
+    }, {
+      "left" : "weightedJacobian[k][pk] = cos * rkk + sin * lmDiag[k];",
+      "right" : "weightedJacobian[k][pk] = cos * rkk + sin * lmDiag[k];",
+      "info" : "ExpressionStatement[33475-33529]:ExpressionStatement[33484-33538]"
+    }, {
+      "left" : "final double temp = cos * work[k] + sin * qtbpj;",
+      "right" : "final double temp = cos * work[k] + sin * qtbpj;",
+      "info" : "VariableDeclarationStatement[33550-33598]:VariableDeclarationStatement[33559-33607]"
+    }, {
+      "left" : "qtbpj = -sin * work[k] + cos * qtbpj;",
+      "right" : "qtbpj = -sin * work[k] + cos * qtbpj;",
+      "info" : "ExpressionStatement[33619-33656]:ExpressionStatement[33628-33665]"
+    }, {
+      "left" : "work[k] = temp;",
+      "right" : "work[k] = temp;",
+      "info" : "ExpressionStatement[33677-33692]:ExpressionStatement[33686-33701]"
+    }, {
+      "left" : "for (int i = k + 1; i < solvedCols; ++i)",
+      "right" : "for (int i = k + 1; i < solvedCols; ++i)",
+      "info" : "ForStatement[33782-34105]:ForStatement[33791-34114]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[33823-34105]:Block[33832-34114]"
+    }, {
+      "left" : "double rik = weightedJacobian[i][pk];",
+      "right" : "double rik = weightedJacobian[i][pk];",
+      "info" : "VariableDeclarationStatement[33849-33886]:VariableDeclarationStatement[33858-33895]"
+    }, {
+      "left" : "final double temp2 = cos * rik + sin * lmDiag[i];",
+      "right" : "final double temp2 = cos * rik + sin * lmDiag[i];",
+      "info" : "VariableDeclarationStatement[33911-33960]:VariableDeclarationStatement[33920-33969]"
+    }, {
+      "left" : "lmDiag[i] = -sin * rik + cos * lmDiag[i];",
+      "right" : "lmDiag[i] = -sin * rik + cos * lmDiag[i];",
+      "info" : "ExpressionStatement[33985-34026]:ExpressionStatement[33994-34035]"
+    }, {
+      "left" : "weightedJacobian[i][pk] = temp2;",
+      "right" : "weightedJacobian[i][pk] = temp2;",
+      "info" : "ExpressionStatement[34051-34083]:ExpressionStatement[34060-34092]"
+    }, {
+      "left" : "lmDiag[j] = weightedJacobian[j][permutation[j]];",
+      "right" : "lmDiag[j] = weightedJacobian[j][permutation[j]];",
+      "info" : "ExpressionStatement[34265-34313]:ExpressionStatement[34274-34322]"
+    }, {
+      "left" : "weightedJacobian[j][permutation[j]] = lmDir[j];",
+      "right" : "weightedJacobian[j][permutation[j]] = lmDir[j];",
+      "info" : "ExpressionStatement[34326-34373]:ExpressionStatement[34335-34382]"
+    }, {
+      "left" : "int nSing = solvedCols;",
+      "right" : "int nSing = solvedCols;",
+      "info" : "VariableDeclarationStatement[34514-34537]:VariableDeclarationStatement[34523-34546]"
+    }, {
+      "left" : "for (int j = 0; j < solvedCols; ++j)",
+      "right" : "for (int j = 0; j < solvedCols; ++j)",
+      "info" : "ForStatement[34546-34777]:ForStatement[34555-34786]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34583-34777]:Block[34592-34786]"
+    }, {
+      "left" : "if ((lmDiag[j] == 0) && (nSing == solvedCols))",
+      "right" : "if ((lmDiag[j] == 0) && (nSing == solvedCols))",
+      "info" : "IfStatement[34597-34686]:IfStatement[34606-34695]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34644-34686]:Block[34653-34695]"
+    }, {
+      "left" : "nSing = j;",
+      "right" : "nSing = j;",
+      "info" : "ExpressionStatement[34662-34672]:ExpressionStatement[34671-34681]"
+    }, {
+      "left" : "if (nSing < solvedCols)",
+      "right" : "if (nSing < solvedCols)",
+      "info" : "IfStatement[34699-34767]:IfStatement[34708-34776]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34723-34767]:Block[34732-34776]"
+    }, {
+      "left" : "work[j] = 0;",
+      "right" : "work[j] = 0;",
+      "info" : "ExpressionStatement[34741-34753]:ExpressionStatement[34750-34762]"
+    }, {
+      "left" : "if (nSing > 0)",
+      "right" : "if (nSing > 0)",
+      "info" : "IfStatement[34786-35139]:IfStatement[34795-35148]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34801-35139]:Block[34810-35148]"
+    }, {
+      "left" : "for (int j = nSing - 1; j >= 0; --j)",
+      "right" : "for (int j = nSing - 1; j >= 0; --j)",
+      "info" : "ForStatement[34815-35129]:ForStatement[34824-35138]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34852-35129]:Block[34861-35138]"
+    }, {
+      "left" : "int pj = permutation[j];",
+      "right" : "int pj = permutation[j];",
+      "info" : "VariableDeclarationStatement[34870-34894]:VariableDeclarationStatement[34879-34903]"
+    }, {
+      "left" : "double sum = 0;",
+      "right" : "double sum = 0;",
+      "info" : "VariableDeclarationStatement[34911-34926]:VariableDeclarationStatement[34920-34935]"
+    }, {
+      "left" : "for (int i = j + 1; i < nSing; ++i)",
+      "right" : "for (int i = j + 1; i < nSing; ++i)",
+      "info" : "ForStatement[34943-35060]:ForStatement[34952-35069]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[34979-35060]:Block[34988-35069]"
+    }, {
+      "left" : "sum += weightedJacobian[i][pj] * work[i];",
+      "right" : "sum += weightedJacobian[i][pj] * work[i];",
+      "info" : "ExpressionStatement[35001-35042]:ExpressionStatement[35010-35051]"
+    }, {
+      "left" : "work[j] = (work[j] - sum) / lmDiag[j];",
+      "right" : "work[j] = (work[j] - sum) / lmDiag[j];",
+      "info" : "ExpressionStatement[35077-35115]:ExpressionStatement[35086-35124]"
+    }, {
+      "left" : "for (int j = 0; j < lmDir.length; ++j)",
+      "right" : "for (int j = 0; j < lmDir.length; ++j)",
+      "info" : "ForStatement[35216-35311]:ForStatement[35225-35320]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[35255-35311]:Block[35264-35320]"
+    }, {
+      "left" : "lmDir[permutation[j]] = work[j];",
+      "right" : "lmDir[permutation[j]] = work[j];",
+      "info" : "ExpressionStatement[35269-35301]:ExpressionStatement[35278-35310]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[36624-36631]:Modifier[36633-36640]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[36632-36636]:PrimitiveType[36641-36645]"
+    }, {
+      "left" : "qrDecomposition",
+      "right" : "qrDecomposition",
+      "info" : "SimpleName[36637-36652]:SimpleName[36646-36661]"
+    }, {
+      "left" : "RealMatrix jacobian",
+      "right" : "RealMatrix jacobian",
+      "info" : "SingleVariableDeclaration[36653-36672]:SingleVariableDeclaration[36662-36681]"
+    }, {
+      "left" : "ConvergenceException",
+      "right" : "ConvergenceException",
+      "info" : "SimpleType[36681-36701]:SimpleType[36690-36710]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[36702-39462]:Block[36711-39471]"
+    }, {
+      "left" : "weightedJacobian = jacobian.scalarMultiply(-1).getData();",
+      "right" : "weightedJacobian = jacobian.scalarMultiply(-1).getData();",
+      "info" : "ExpressionStatement[36837-36894]:ExpressionStatement[36846-36903]"
+    }, {
+      "left" : "final int nR = weightedJacobian.length;",
+      "right" : "final int nR = weightedJacobian.length;",
+      "info" : "VariableDeclarationStatement[36904-36943]:VariableDeclarationStatement[36913-36952]"
+    }, {
+      "left" : "final int nC = weightedJacobian[0].length;",
+      "right" : "final int nC = weightedJacobian[0].length;",
+      "info" : "VariableDeclarationStatement[36952-36994]:VariableDeclarationStatement[36961-37003]"
+    }, {
+      "left" : "for (int k = 0; k < nC; ++k)",
+      "right" : "for (int k = 0; k < nC; ++k)",
+      "info" : "ForStatement[37031-37326]:ForStatement[37040-37335]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37060-37326]:Block[37069-37335]"
+    }, {
+      "left" : "permutation[k] = k;",
+      "right" : "permutation[k] = k;",
+      "info" : "ExpressionStatement[37074-37093]:ExpressionStatement[37083-37102]"
+    }, {
+      "left" : "double norm2 = 0;",
+      "right" : "double norm2 = 0;",
+      "info" : "VariableDeclarationStatement[37106-37123]:VariableDeclarationStatement[37115-37132]"
+    }, {
+      "left" : "for (int i = 0; i < nR; ++i)",
+      "right" : "for (int i = 0; i < nR; ++i)",
+      "info" : "ForStatement[37136-37269]:ForStatement[37145-37278]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37165-37269]:Block[37174-37278]"
+    }, {
+      "left" : "double akk = weightedJacobian[i][k];",
+      "right" : "double akk = weightedJacobian[i][k];",
+      "info" : "VariableDeclarationStatement[37183-37219]:VariableDeclarationStatement[37192-37228]"
+    }, {
+      "left" : "norm2 += akk * akk;",
+      "right" : "norm2 += akk * akk;",
+      "info" : "ExpressionStatement[37236-37255]:ExpressionStatement[37245-37264]"
+    }, {
+      "left" : "jacNorm[k] = FastMath.sqrt(norm2);",
+      "right" : "jacNorm[k] = FastMath.sqrt(norm2);",
+      "info" : "ExpressionStatement[37282-37316]:ExpressionStatement[37291-37325]"
+    }, {
+      "left" : "for (int k = 0; k < nC; ++k)",
+      "right" : "for (int k = 0; k < nC; ++k)",
+      "info" : "ForStatement[37388-39429]:ForStatement[37397-39438]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37417-39429]:Block[37426-39438]"
+    }, {
+      "left" : "int nextColumn = -1;",
+      "right" : "int nextColumn = -1;",
+      "info" : "VariableDeclarationStatement[37509-37529]:VariableDeclarationStatement[37518-37538]"
+    }, {
+      "left" : "double ak2 = Double.NEGATIVE_INFINITY;",
+      "right" : "double ak2 = Double.NEGATIVE_INFINITY;",
+      "info" : "VariableDeclarationStatement[37542-37580]:VariableDeclarationStatement[37551-37589]"
+    }, {
+      "left" : "for (int i = k; i < nC; ++i)",
+      "right" : "for (int i = k; i < nC; ++i)",
+      "info" : "ForStatement[37593-38240]:ForStatement[37602-38249]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37622-38240]:Block[37631-38249]"
+    }, {
+      "left" : "double norm2 = 0;",
+      "right" : "double norm2 = 0;",
+      "info" : "VariableDeclarationStatement[37640-37657]:VariableDeclarationStatement[37649-37666]"
+    }, {
+      "left" : "for (int j = k; j < nR; ++j)",
+      "right" : "for (int j = k; j < nR; ++j)",
+      "info" : "ForStatement[37674-37832]:ForStatement[37683-37841]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37703-37832]:Block[37712-37841]"
+    }, {
+      "left" : "double aki = weightedJacobian[j][permutation[i]];",
+      "right" : "double aki = weightedJacobian[j][permutation[i]];",
+      "info" : "VariableDeclarationStatement[37725-37774]:VariableDeclarationStatement[37734-37783]"
+    }, {
+      "left" : "norm2 += aki * aki;",
+      "right" : "norm2 += aki * aki;",
+      "info" : "ExpressionStatement[37795-37814]:ExpressionStatement[37804-37823]"
+    }, {
+      "left" : "if (Double.isInfinite(norm2) || Double.isNaN(norm2))",
+      "right" : "if (Double.isInfinite(norm2) || Double.isNaN(norm2))",
+      "info" : "IfStatement[37849-38097]:IfStatement[37858-38106]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[37902-38097]:Block[37911-38106]"
+    }, {
+      "left" : "throw new ConvergenceException(LocalizedFormats.UNABLE_TO_PERFORM_QR_DECOMPOSITION_ON_JACOBIAN,\n                                                   nR, nC);",
+      "right" : "throw new ConvergenceException(LocalizedFormats.UNABLE_TO_PERFORM_QR_DECOMPOSITION_ON_JACOBIAN,\n                                                   nR, nC);",
+      "info" : "ThrowStatement[37924-38079]:ThrowStatement[37933-38088]"
+    }, {
+      "left" : "if (norm2 > ak2)",
+      "right" : "if (norm2 > ak2)",
+      "info" : "IfStatement[38114-38226]:IfStatement[38123-38235]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38131-38226]:Block[38140-38235]"
+    }, {
+      "left" : "nextColumn = i;",
+      "right" : "nextColumn = i;",
+      "info" : "ExpressionStatement[38153-38168]:ExpressionStatement[38162-38177]"
+    }, {
+      "left" : "ak2        = norm2;",
+      "right" : "ak2        = norm2;",
+      "info" : "ExpressionStatement[38189-38208]:ExpressionStatement[38198-38217]"
+    }, {
+      "left" : "if (ak2 <= qrRankingThreshold)",
+      "right" : "if (ak2 <= qrRankingThreshold)",
+      "info" : "IfStatement[38253-38349]:IfStatement[38262-38358]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[38284-38349]:Block[38293-38358]"
+    }, {
+      "left" : "rank = k;",
+      "right" : "rank = k;",
+      "info" : "ExpressionStatement[38302-38311]:ExpressionStatement[38311-38320]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[38328-38335]:ReturnStatement[38337-38344]"
+    }, {
+      "left" : "int pk                  = permutation[nextColumn];",
+      "right" : "int pk                  = permutation[nextColumn];",
+      "info" : "VariableDeclarationStatement[38362-38412]:VariableDeclarationStatement[38371-38421]"
+    }, {
+      "left" : "permutation[nextColumn] = permutation[k];",
+      "right" : "permutation[nextColumn] = permutation[k];",
+      "info" : "ExpressionStatement[38425-38466]:ExpressionStatement[38434-38475]"
+    }, {
+      "left" : "permutation[k]          = pk;",
+      "right" : "permutation[k]          = pk;",
+      "info" : "ExpressionStatement[38479-38508]:ExpressionStatement[38488-38517]"
+    }, {
+      "left" : "double akk   = weightedJacobian[k][pk];",
+      "right" : "double akk   = weightedJacobian[k][pk];",
+      "info" : "VariableDeclarationStatement[38576-38615]:VariableDeclarationStatement[38585-38624]"
+    }, {
+      "left" : "double alpha = (akk > 0) ? -FastMath.sqrt(ak2) : FastMath.sqrt(ak2);",
+      "right" : "double alpha = (akk > 0) ? -FastMath.sqrt(ak2) : FastMath.sqrt(ak2);",
+      "info" : "VariableDeclarationStatement[38628-38696]:VariableDeclarationStatement[38637-38705]"
+    }, {
+      "left" : "double betak = 1.0 / (ak2 - akk * alpha);",
+      "right" : "double betak = 1.0 / (ak2 - akk * alpha);",
+      "info" : "VariableDeclarationStatement[38709-38750]:VariableDeclarationStatement[38718-38759]"
+    }, {
+      "left" : "beta[pk]     = betak;",
+      "right" : "beta[pk]     = betak;",
+      "info" : "ExpressionStatement[38763-38784]:ExpressionStatement[38772-38793]"
+    }, {
+      "left" : "diagR[pk]        = alpha;",
+      "right" : "diagR[pk]        = alpha;",
+      "info" : "ExpressionStatement[38842-38867]:ExpressionStatement[38851-38876]"
+    }, {
+      "left" : "weightedJacobian[k][pk] -= alpha;",
+      "right" : "weightedJacobian[k][pk] -= alpha;",
+      "info" : "ExpressionStatement[38880-38913]:ExpressionStatement[38889-38922]"
+    }, {
+      "left" : "for (int dk = nC - 1 - k; dk > 0; --dk)",
+      "right" : "for (int dk = nC - 1 - k; dk > 0; --dk)",
+      "info" : "ForStatement[38974-39419]:ForStatement[38983-39428]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39014-39419]:Block[39023-39428]"
+    }, {
+      "left" : "double gamma = 0;",
+      "right" : "double gamma = 0;",
+      "info" : "VariableDeclarationStatement[39032-39049]:VariableDeclarationStatement[39041-39058]"
+    }, {
+      "left" : "for (int j = k; j < nR; ++j)",
+      "right" : "for (int j = k; j < nR; ++j)",
+      "info" : "ForStatement[39066-39211]:ForStatement[39075-39220]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39095-39211]:Block[39104-39220]"
+    }, {
+      "left" : "gamma += weightedJacobian[j][pk] * weightedJacobian[j][permutation[k + dk]];",
+      "right" : "gamma += weightedJacobian[j][pk] * weightedJacobian[j][permutation[k + dk]];",
+      "info" : "ExpressionStatement[39117-39193]:ExpressionStatement[39126-39202]"
+    }, {
+      "left" : "gamma *= betak;",
+      "right" : "gamma *= betak;",
+      "info" : "ExpressionStatement[39228-39243]:ExpressionStatement[39237-39252]"
+    }, {
+      "left" : "for (int j = k; j < nR; ++j)",
+      "right" : "for (int j = k; j < nR; ++j)",
+      "info" : "ForStatement[39260-39405]:ForStatement[39269-39414]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39289-39405]:Block[39298-39414]"
+    }, {
+      "left" : "weightedJacobian[j][permutation[k + dk]] -= gamma * weightedJacobian[j][pk];",
+      "right" : "weightedJacobian[j][permutation[k + dk]] -= gamma * weightedJacobian[j][pk];",
+      "info" : "ExpressionStatement[39311-39387]:ExpressionStatement[39320-39396]"
+    }, {
+      "left" : "rank = solvedCols;",
+      "right" : "rank = solvedCols;",
+      "info" : "ExpressionStatement[39438-39456]:ExpressionStatement[39447-39465]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[39625-39632]:Modifier[39634-39641]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[39633-39637]:PrimitiveType[39642-39646]"
+    }, {
+      "left" : "qTy",
+      "right" : "qTy",
+      "info" : "SimpleName[39638-39641]:SimpleName[39647-39650]"
+    }, {
+      "left" : "double[] y",
+      "right" : "double[] y",
+      "info" : "SingleVariableDeclaration[39642-39652]:SingleVariableDeclaration[39651-39661]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39654-40136]:Block[39663-40145]"
+    }, {
+      "left" : "final int nR = weightedJacobian.length;",
+      "right" : "final int nR = weightedJacobian.length;",
+      "info" : "VariableDeclarationStatement[39664-39703]:VariableDeclarationStatement[39673-39712]"
+    }, {
+      "left" : "final int nC = weightedJacobian[0].length;",
+      "right" : "final int nC = weightedJacobian[0].length;",
+      "info" : "VariableDeclarationStatement[39712-39754]:VariableDeclarationStatement[39721-39763]"
+    }, {
+      "left" : "for (int k = 0; k < nC; ++k)",
+      "right" : "for (int k = 0; k < nC; ++k)",
+      "info" : "ForStatement[39764-40130]:ForStatement[39773-40139]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39793-40130]:Block[39802-40139]"
+    }, {
+      "left" : "int pk = permutation[k];",
+      "right" : "int pk = permutation[k];",
+      "info" : "VariableDeclarationStatement[39807-39831]:VariableDeclarationStatement[39816-39840]"
+    }, {
+      "left" : "double gamma = 0;",
+      "right" : "double gamma = 0;",
+      "info" : "VariableDeclarationStatement[39844-39861]:VariableDeclarationStatement[39853-39870]"
+    }, {
+      "left" : "for (int i = k; i < nR; ++i)",
+      "right" : "for (int i = k; i < nR; ++i)",
+      "info" : "ForStatement[39874-39975]:ForStatement[39883-39984]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[39903-39975]:Block[39912-39984]"
+    }, {
+      "left" : "gamma += weightedJacobian[i][pk] * y[i];",
+      "right" : "gamma += weightedJacobian[i][pk] * y[i];",
+      "info" : "ExpressionStatement[39921-39961]:ExpressionStatement[39930-39970]"
+    }, {
+      "left" : "gamma *= beta[pk];",
+      "right" : "gamma *= beta[pk];",
+      "info" : "ExpressionStatement[39988-40006]:ExpressionStatement[39997-40015]"
+    }, {
+      "left" : "for (int i = k; i < nR; ++i)",
+      "right" : "for (int i = k; i < nR; ++i)",
+      "info" : "ForStatement[40019-40120]:ForStatement[40028-40129]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40048-40120]:Block[40057-40129]"
+    }, {
+      "left" : "y[i] -= gamma * weightedJacobian[i][pk];",
+      "right" : "y[i] -= gamma * weightedJacobian[i][pk];",
+      "info" : "ExpressionStatement[40066-40106]:ExpressionStatement[40075-40115]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[40298-40305]:Modifier[40307-40314]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[40306-40310]:PrimitiveType[40315-40319]"
+    }, {
+      "left" : "checkParameters",
+      "right" : "checkParameters",
+      "info" : "SimpleName[40311-40326]:SimpleName[40320-40335]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40329-40510]:Block[40338-40519]"
+    }, {
+      "left" : "if (getLowerBound() != null ||\n            getUpperBound() != null)",
+      "right" : "if (getLowerBound() != null ||\n            getUpperBound() != null)",
+      "info" : "IfStatement[40339-40504]:IfStatement[40348-40513]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[40407-40504]:Block[40416-40513]"
+    }, {
+      "left" : "throw new MathUnsupportedOperationException(LocalizedFormats.CONSTRAINT);",
+      "right" : "throw new MathUnsupportedOperationException(LocalizedFormats.CONSTRAINT);",
+      "info" : "ThrowStatement[40421-40494]:ThrowStatement[40430-40503]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

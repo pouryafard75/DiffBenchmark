@@ -569,5 +569,32 @@
       "info" : "ReturnStatement[8502-8523]:ReturnStatement[8874-8895]"
     } ]
   },
-  "interFileMappings" : { }
+  "interFileMappings" : {
+    "Moved from File: modules/sdk/gradle-plugins-poshi-runner/src/com/liferay/gradle/plugins/poshi/runner/util/GradleUtil.java" : {
+      "matchedElements" : [
+ {
+        "left" : "public static Dependency addDependency(\n\t\tProject project, String configurationName, String group, String name,\n\t\tString version, String classifier)",
+        "right" : "public static Dependency addDependency(\n\t\tProject project, String configurationName, String group, String name,\n\t\tString version, String classifier, boolean transitive)",
+        "info" : "MethodDeclaration[1327-1909]:MethodDeclaration[2993-3581]"
+      } ],
+      "mappings" : [
+ {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[1476-1909]:Block[3162-3581]"
+      }, {
+        "left" : "if (Validator.isNotNull(classifier))",
+        "right" : "if (Validator.isNotNull(classifier))",
+        "info" : "IfStatement[1739-1834]:IfStatement[3228-3323]"
+      }, {
+        "left" : "{}",
+        "right" : "{}",
+        "info" : "Block[1776-1834]:Block[3265-3323]"
+      }, {
+        "left" : "dependencyNotation.put(\"classifier\", classifier);",
+        "right" : "dependencyNotation.put(\"classifier\", classifier);",
+        "info" : "ExpressionStatement[1781-1830]:ExpressionStatement[3270-3319]"
+      } ]
+    }
+  }
 }

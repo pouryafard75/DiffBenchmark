@@ -33,11 +33,13 @@ public class BenchmarkWebDiff {
 
     private final ProjectASTDiff projectASTDiff;
     private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
+    private final GuiConf guiConf;
 
 
-    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Map<ASTDiffTool, Set<ASTDiff>> diffs){
+    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Map<ASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
         this.projectASTDiff = projectASTDiffByRM;
         this.diffs = diffs;
+        this.guiConf = guiConf;
     }
 
     public static boolean isWindows() {
@@ -70,14 +72,14 @@ public class BenchmarkWebDiff {
             return "";
         });
         get("/list", (request, response) -> {
-            Renderable view = new BenchmarkDirectoryDiffView(comperator, diffs);
+            Renderable view = new BenchmarkDirectoryDiffView(comperator, diffs, guiConf);
             return renderToString(view);
         });
 
         for (Map.Entry<ASTDiffTool, Set<ASTDiff>> astDiffToolSetEntry : diffs.entrySet()) {
             ASTDiffTool tool = astDiffToolSetEntry.getKey();
             Set<ASTDiff> astDiffs = astDiffToolSetEntry.getValue();
-            for (DiffViewers enabledViewer : GuiConf.enabled_viewers) {
+            for (DiffViewers enabledViewer : guiConf.enabled_viewers) {
                 try {
                     enabledViewer.configure(tool, astDiffs, projectASTDiff);
                 } catch (Exception e) {

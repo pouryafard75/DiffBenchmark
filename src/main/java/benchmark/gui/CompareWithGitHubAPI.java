@@ -13,7 +13,7 @@ public class CompareWithGitHubAPI {
 //        url = "https://github.com/facebook/buck/commit/84b7b3974ae8171a4de2f804eb94fcd1d6cd6647";
 
 
-        BenchmarkWebDiff benchmarkWebDiff = BenchmarkWebDiffFactory.withURL(url);
+        BenchmarkWebDiff benchmarkWebDiff = new BenchmarkWebDiffFactory().withURL(url);
 //        benchmarkWebDiff
         benchmarkWebDiff.run();
     }

@@ -21,28 +21,36 @@ import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
 
 /* Created by pourya on 2023-04-17 8:58 p.m. */
 public class BenchmarkWebDiffFactory {
-    public static BenchmarkWebDiff withURL(String url) throws Exception {
+
+    private final GuiConf guiConf;
+    public BenchmarkWebDiffFactory() {
+        guiConf = GuiConf.defaultConf();
+    }
+    public BenchmarkWebDiffFactory(GuiConf guiConf) {
+        this.guiConf = guiConf;
+    }
+    public BenchmarkWebDiff withURL(String url) throws Exception {
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
         return makeDiffs(projectASTDiff,new CaseInfo(url));
     }
-    public static BenchmarkWebDiff withLocallyClonedRepo(Repository repository, String commit) throws Exception {
+    public BenchmarkWebDiff withLocallyClonedRepo(Repository repository, String commit) throws Exception {
         ProjectASTDiff rmDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
         return makeDiffs(rmDiff,null);
     }
-    public static BenchmarkWebDiff withTwoDirectories(String before, String after, CaseInfo info) throws Exception {
+    public BenchmarkWebDiff withTwoDirectories(String before, String after, CaseInfo info) throws Exception {
         return makeDiffs(getRMASTDiff(before, after), info);
     }
-    public static BenchmarkWebDiff withTwoDirectories(String before, String after) throws Exception {
+    public BenchmarkWebDiff withTwoDirectories(String before, String after) throws Exception {
         return makeDiffs(getRMASTDiff(before, after), null);
     }
 
-    private static ProjectASTDiff getRMASTDiff(String before, String after) {
+    private ProjectASTDiff getRMASTDiff(String before, String after) {
         return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
     }
 
-    private static BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, CaseInfo info) throws Exception {
+    private BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, CaseInfo info) throws Exception {
         Configuration conf = null;
         if (info != null && info.getRepo() != null) {
             String repo = info.getRepo();
@@ -53,7 +61,7 @@ public class BenchmarkWebDiffFactory {
         Map<ASTDiffTool, Set<ASTDiff>> diffs = new LinkedHashMap<>();
 
         for (ASTDiff astDiff : RM_astDiff) {
-            for (ASTDiffTool tool : GuiConf.enabled_tools) {
+            for (ASTDiffTool tool : guiConf.enabled_tools) {
                 diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
                 try {
                     diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info, conf));
@@ -68,7 +76,7 @@ public class BenchmarkWebDiffFactory {
                 }
             }
         }
-        return new BenchmarkWebDiff(projectASTDiffByRM,diffs);
+        return new BenchmarkWebDiff(projectASTDiffByRM,diffs, guiConf);
     }
 
 }

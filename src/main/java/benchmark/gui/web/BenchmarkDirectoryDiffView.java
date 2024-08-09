@@ -21,10 +21,12 @@ import static org.rendersnake.HtmlAttributesFactory.*;
 public class BenchmarkDirectoryDiffView implements Renderable {
     private final BenchmarkDirComparator comperator;
     private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
+    private final GuiConf guiConf;
 
-    public BenchmarkDirectoryDiffView(BenchmarkDirComparator comperator, Map<ASTDiffTool, Set<ASTDiff>> diffs) {
+    public BenchmarkDirectoryDiffView(BenchmarkDirComparator comperator, Map<ASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
         this.comperator = comperator;
         this.diffs = diffs;
+        this.guiConf = guiConf;
     }
 
     @Override
@@ -48,7 +50,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                         .span(class_("badge badge-secondary").style("color:black")).content(comperator.getModifiedFilesName().size())
                                     ._h4()
                                 ._div()
-                                .render_if(new ModifiedFiles(modifiedFilesName, diffs), !modifiedFilesName.isEmpty())
+                                .render_if(new ModifiedFiles(modifiedFilesName, diffs, guiConf), !modifiedFilesName.isEmpty())
                             ._div()
                         ._div()
                     ._div()
@@ -88,11 +90,13 @@ public class BenchmarkDirectoryDiffView implements Renderable {
 
         private final Map<String,String> diffInfos;
         private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
+        private final GuiConf conf;
 
 
-        private ModifiedFiles(Map<String,String> diffInfos, Map<ASTDiffTool, Set<ASTDiff>> diffs) {
+        private ModifiedFiles(Map<String,String> diffInfos, Map<ASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
             this.diffInfos = diffInfos;
             this.diffs = diffs;
+            conf = guiConf;
         }
 
         @Override
@@ -114,7 +118,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                         .div(class_("btn-toolbar justify-content-end"))
                         .div(class_("btn-group"));
                             for (ASTDiffTool tool : diffs.keySet()) {
-                                for (DiffViewers enabledViewer : GuiConf.enabled_viewers) {
+                                for (DiffViewers enabledViewer : conf.enabled_viewers) {
                                     try {
                                         div = enabledViewer.render(div, tool, id);
                                     } catch (Exception e) {

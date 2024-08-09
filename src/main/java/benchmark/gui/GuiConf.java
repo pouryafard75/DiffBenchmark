@@ -8,23 +8,20 @@ import java.util.Set;
 
 /* Created by pourya on 2024-04-29*/
 public class GuiConf {
-    public static Set<ASTDiffTool> enabled_tools = new LinkedHashSet<>();
-    public static Set<DiffViewers> enabled_viewers = new LinkedHashSet<>();
-    static {
-        enabled_tools.add(ASTDiffTool.GOD);
-        enabled_tools.add(ASTDiffTool.RMD);
-        enabled_tools.add(ASTDiffTool.GTG);
-        enabled_tools.add(ASTDiffTool.GTS);
-        enabled_tools.add(ASTDiffTool.TRV);
+    public Set<ASTDiffTool> enabled_tools = new LinkedHashSet<>();
+    public Set<DiffViewers> enabled_viewers = new LinkedHashSet<>();
 
-//        enabled_tools.addAll(Arrays.asList(ASTDiffTool.values()));
-//        enabled_tools.remove(ASTDiffTool.DAT);
-
+    public static GuiConf defaultConf() {
+        GuiConf conf = new GuiConf();
+        // Tools
+        conf.enabled_tools.add(ASTDiffTool.GOD);
+        conf.enabled_tools.add(ASTDiffTool.RMD);
+        conf.enabled_tools.add(ASTDiffTool.GTG);
+        conf.enabled_tools.add(ASTDiffTool.GTS);
+        conf.enabled_tools.add(ASTDiffTool.TRV);
+        // Viewers
+        conf.enabled_viewers.add(DiffViewers.MONACO);
+        conf.enabled_viewers.add(DiffViewers.VANILLA);
+        return conf;
     }
-
-    static {
-        enabled_viewers.add(DiffViewers.MONACO);
-        enabled_viewers.add(DiffViewers.VANILLA);
-    }
-
 }

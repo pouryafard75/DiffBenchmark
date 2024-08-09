@@ -23,7 +23,7 @@ public class CompareWithLocallyClonedRepository {
 
         try {
             Repository repository = gitService.cloneIfNotExists(pathToClonedRepository, repo);
-            benchmarkWebDiff = BenchmarkWebDiffFactory.withLocallyClonedRepo(repository, commit);
+            benchmarkWebDiff = new BenchmarkWebDiffFactory().withLocallyClonedRepo(repository, commit);
 
         } catch (Exception e) {
             e.printStackTrace();

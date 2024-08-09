@@ -62,7 +62,7 @@ dependencies {
 }
 task rm2p4_jar(type: Jar) {
     archiveFileName = 'RM-2.2.0-c3.jar' //Third customization (c3)
-    destinationDir = file('libs/')
+    //destinationDir = file('libs/')
     from zipTree('libs/RM-2.2.0-c2.jar')
     exclude 'org/slf4j/*'
     exclude 'org/slf4j/**'
@@ -75,7 +75,7 @@ task rm2p4_jar(type: Jar) {
 }
 task rm2p3_jar(type: Jar) {
     archiveFileName = 'RM-2.2.0-c2.jar' //Second customization (c2)
-    destinationDir = file('libs/')
+    //destinationDir = file('libs/')
     from zipTree('libs/RM-2.2.0-customized.jar')
     exclude 'org/slf4j/*'
     exclude 'org/slf4j/**'
@@ -87,7 +87,7 @@ task rm2p3_jar(type: Jar) {
 task rm2p2_jar(type: Jar) {
     archiveFileName = 'RM-2.2.0-customized.jar'
     // Include all contents from the original JAR
-    destinationDir = file('libs/')
+    //destinationDir = file('libs/')
     from zipTree('libs/RM-2.2.0.jar')
     exclude 'org/slf4j/*'
     exclude 'org/slf4j/**'
@@ -95,7 +95,7 @@ task rm2p2_jar(type: Jar) {
 task rm2p0_jar(type: Jar) {
     archiveFileName = 'RM-2.0.0-customized.jar'
     // Include all contents from the original JAR
-    destinationDir = file('libs/')
+    //destinationDir = file('libs/')
     from zipTree('libs/RM-2.0.0.jar')
     exclude 'org/slf4j/*'
     exclude 'org/slf4j/**'
@@ -105,7 +105,7 @@ task rm2p0_jar(type: Jar) {
 task ijm_jar(type: Jar) {
     archiveFileName = 'IJM-1.0-SNAPSHOT-customized2.jar'
     // Include all contents from the original JAR
-    destinationDir = file('libs/')
+    //destinationDir = file('libs/')
     from zipTree('libs/IJM-1.0-SNAPSHOT-customized.jar')
     exclude 'com/google/gson/*'
     exclude 'com/google/gson/**'
@@ -116,7 +116,7 @@ task ijm_jar(type: Jar) {
 task iast_jar(type: Jar) {
     archiveFileName = 'iAST-1.0-SNAPSHOT-customized.jar'
     // Include all contents from the original JAR
-    destinationDir = file('libs/')
+    //destinationDir = file('libs/')
     from zipTree('libs/iAST-1.0-SNAPSHOT-shaded.jar')
     exclude 'com/google/gson/*'
     exclude 'com/google/gson/**'

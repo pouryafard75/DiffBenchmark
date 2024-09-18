@@ -1,6 +1,6 @@
 This repository contains all the source-code and experiments related to the following paper:
 
-Pouria Alikhanifard and Nikolaos Tsantalis, "[A Novel Refactoring and Semantic Aware Abstract Syntax Tree Differencing Tool and a Benchmark for Evaluating the Accuracy of Diff Tools](https://arxiv.org/pdf/2403.05939)," *ACM Transactions on Software Engineering and Methodology*, 2024.
+Pouria Alikhanifard and Nikolaos Tsantalis, "[A Novel Refactoring and Semantic Aware Abstract Syntax Tree Differencing Tool and a Benchmark for Evaluating the Accuracy of Diff Tools](https://dl.acm.org/doi/10.1145/3696002)," *ACM Transactions on Software Engineering and Methodology*, 2024.
 
 The oracle files are located in the [oracle](https://github.com/pouryafard75/DiffBenchmark/tree/master/oracle) folder and the **Experiment Results** are located in the [out](https://github.com/pouryafard75/DiffBenchmark/tree/master/out) folder.
 

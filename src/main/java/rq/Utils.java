@@ -7,7 +7,6 @@ import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
 import benchmark.models.HumanReadableDiff;
 import benchmark.models.NecessaryMappings;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.opencsv.CSVWriter;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
@@ -63,8 +62,8 @@ public class Utils {
         );
     }
 
-    static Map<RefactoringType, Integer> refactoringTypeDist(ExperimentConfiguration experimentConfiguration) throws IOException {
-        return refDistribution(experimentConfiguration, null, Refactoring::getRefactoringType);
+    static Map<RefactoringType, Integer> refactoringTypeDist(IExperiment experiment) throws IOException {
+        return refDistribution(experiment, null, Refactoring::getRefactoringType);
     }
     static Map<Integer, Integer> refactoringCountDist(IExperiment experiment) throws IOException {
         return refDistribution(experiment, List::size, null);

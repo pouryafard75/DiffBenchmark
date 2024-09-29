@@ -65,10 +65,10 @@ public class BenchmarkViolationComputer {
     }
     /**
      * This constructor is used when all violation kinds must be considered
-     * @param experimentConfigurations This must be used to make sure all the configurations are working with the same set of tools
+     * @param experiments This must be used to make sure all the configurations are working with the same set of tools
      */
-    public BenchmarkViolationComputer(ExperimentConfiguration[] experimentConfigurations) {
-        this(experimentConfigurations, ViolationKind.values());
+    public BenchmarkViolationComputer(IExperiment[] experiments) {
+        this(experiments, ViolationKind.values());
     }
 
     private void populateAllReports(ASTDiff perfect, ASTDiff generated, IASTDiffTool tool, BenchmarkCase info, Collection<ViolationReport> reports) {

@@ -46,14 +46,14 @@ public class RQ4_count{
         this.minFreq = minFreq;
     }
 
-    public void run(ExperimentConfiguration experimentConfiguration) {
+    public void run(IExperiment experiment) {
         try {
-            rq4(experimentConfiguration, maxRefCount, minFreq);
+            rq4(experiment, maxRefCount, minFreq);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
-    public void rq4(ExperimentConfiguration experiment, int maxRefCount, int minFreq) throws Exception {
+    public void rq4(IExperiment experiment, int maxRefCount, int minFreq) throws Exception {
         Map<Integer, Integer> countDist = Utils.refactoringCountDist(EExperiment.REF_EXP_2_1);
         Map<Integer, CommitRefactoringCountComparisonResult> refCountStats = new HashMap<>();
         populateRefCountStats(experiment, maxRefCount, minFreq, countDist, refCountStats);

@@ -1,7 +1,6 @@
 package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -14,7 +13,7 @@ import java.util.Set;
 /* Created by pourya on 2024-09-06*/
 public class IAST extends AbstractASTDiffProviderFromMappingSet {
 
-    public IAST(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, ExperimentConfiguration conf) {
+    public IAST(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
         super(projectASTDiff, input, info);
     }
 

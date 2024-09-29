@@ -41,9 +41,9 @@ public enum ASTDiffTool implements IASTDiffTool {
 
     IJM ("Iterative Java Matcher", (projectASTDiff, input, info) -> new IJM(projectASTDiff,input))
     ,
-    MTD ("MoveOptimized Tree Differencing", (projectASTDiff, astDiff, info) -> new MTDiff(projectASTDiff, astDiff, info))
+    MTD ("MoveOptimized Tree Differencing", MTDiff::new)
     ,
-    GT2 ("GumTree 2.0", (projectASTDiff, astDiff, info) -> new GT2(projectASTDiff, astDiff, info))
+    GT2 ("GumTree 2.0", benchmark.generators.tools.runners.shaded.GT2::new)
     ,
     IAM ("IASTMapper", (projectASTDiff, input, info) -> new IASTMapper(projectASTDiff,input))
     ,

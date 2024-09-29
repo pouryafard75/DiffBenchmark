@@ -1,9 +1,7 @@
 package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.github.gumtreediff.tree.DefaultTree;
 import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.tree.TypeSet;
@@ -24,8 +22,8 @@ import static benchmark.generators.tools.runners.Utils.getTreesExactPosition;
 
 /* Created by pourya on 2024-09-09*/
 public class Spoon extends ASTDiffProviderFromProjectASTDiff {
-    public Spoon(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
-        super(projectASTDiff, input, info, experiment);
+    public Spoon(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
+        super(projectASTDiff, input, info);
     }
 
     @Override

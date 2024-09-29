@@ -19,8 +19,8 @@ import static org.refactoringminer.astDiff.utils.ExportUtils.repoToFolder;
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
 
-    public PerfectDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
-        super(projectASTDiff, input, info, experiment);
+    public PerfectDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
+        super(projectASTDiff, input, info);
     }
 
     @Override
@@ -37,6 +37,6 @@ public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
     }
 
     private String getFileNameBasedOnAST() {
-        return experiment.getDataset().getPerfectDirPath() + "/" + repoToFolder(info.getRepo()) + "/" + info.getCommit() + "/" + getFileNameFromSrcDiff(input.getSrcPath());
+        return info.getDataset().getPerfectDirPath() + "/" + repoToFolder(info.getRepo()) + "/" + info.getCommit() + "/" + getFileNameFromSrcDiff(input.getSrcPath());
     }
 }

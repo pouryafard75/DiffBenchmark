@@ -71,7 +71,7 @@ public class BenchmarkWebDiffFactory {
             for (ASTDiffTool tool : guiConf.enabled_tools) {
                 diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
                 try {
-                    diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info, exp));
+                    diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info));
                 }
                 catch (NoPerfectDiffException noPerfectDiffException)
                 {

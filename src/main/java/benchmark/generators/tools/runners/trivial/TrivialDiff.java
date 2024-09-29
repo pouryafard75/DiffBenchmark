@@ -19,10 +19,10 @@ public class TrivialDiff extends BaseTrivialDiff {
 
     private ExtendedMultiMappingStore perfectMappings = null;
 
-    public TrivialDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
+    public TrivialDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
         super(input);
         try {
-            perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, input, info, experiment).getAllMappings();
+            perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, input, info).getAllMappings();
         } catch (Exception e) {
 //            e.printStackTrace();
         }

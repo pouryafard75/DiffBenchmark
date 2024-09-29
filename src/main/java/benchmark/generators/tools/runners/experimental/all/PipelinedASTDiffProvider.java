@@ -1,12 +1,10 @@
 package benchmark.generators.tools.runners.experimental.all;
 
 import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.runners.experimental.interfile.GumTreeProjectMatcher;
 import benchmark.generators.tools.runners.experimental.interfile.ProjectGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.experimental.labels.TreeModifier;
 import benchmark.generators.tools.runners.experimental.multimapping.GumTreeMultiMappingMatcher;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;
@@ -27,8 +25,8 @@ public abstract class PipelinedASTDiffProvider extends ProjectGumTreeASTDiffProv
     protected final TreeModifier treeModifier;
     protected final GumTreeMultiMappingMatcher multiMappingMatcher;
 
-    public PipelinedASTDiffProvider(TreeModifier treeModifier, GumTreeProjectMatcher projectMatcher, GumTreeMultiMappingMatcher multiMappingMatcher, ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase caseInfo, IExperiment experiment, Matcher matcher) {
-        super(projectMatcher, projectASTDiff, input, caseInfo, experiment, matcher);
+    public PipelinedASTDiffProvider(TreeModifier treeModifier, GumTreeProjectMatcher projectMatcher, GumTreeMultiMappingMatcher multiMappingMatcher, ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase caseInfo, Matcher matcher) {
+        super(projectMatcher, projectASTDiff, input, caseInfo, matcher);
         this.treeModifier = treeModifier;
         this.multiMappingMatcher = multiMappingMatcher;
     }

@@ -4,10 +4,7 @@ package benchmark.generators;
 import benchmark.data.diffcase.BenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.data.exp.ExperimentConfiguration;
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.utils.Experiments.GenerationStrategy;
 import benchmark.utils.Experiments.IGenerationStrategy;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -77,7 +74,7 @@ public class BenchmarkHumanReadableDiffGenerator {
             for (IASTDiffTool tool : experiment.getTools()) {
                 String toolName = tool.getToolName(); //In case we later introduce a map from tool's name to tool's path
                 String toolPath = tool.getToolName(); //In case we later introduce a map from tool's name to tool's path
-                ASTDiff generated = tool.getASTDiffer(projectASTDiff, astDiff, info, experiment).makeASTDiff();
+                ASTDiff generated = tool.getASTDiffer(projectASTDiff, astDiff, info).makeASTDiff();
                 IGenerationStrategy generationStrategy = experiment.getGenerationStrategy();
                 HumanReadableDiffGenerator humanReadableDiffGenerator = generationStrategy.getGenerator(projectASTDiff, generated, info, experiment);
                 humanReadableDiffGenerator.write(output_folder,astDiff.getSrcPath(),toolPath);

@@ -20,7 +20,8 @@ public class ProjectGumTreeOptimizer extends ProjectGumTreeASTDiffProvider
     private String getKey(){
         return projectGumTreeASTDiff.matcherID()
                 + "@" + info.getID() +
-                "@" + experiment.getName();
+                "@";
+//                +experiment.getName();
     }
     @Override
     public Iterable<Mapping> getFullMatch(Tree srcPT, Tree dstPT) {

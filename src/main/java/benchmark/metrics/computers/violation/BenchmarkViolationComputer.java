@@ -89,12 +89,12 @@ public class BenchmarkViolationComputer {
     public void compute(ProjectASTDiff projectASTDiff, BenchmarkCase info, IExperiment experiment) throws Exception {
         for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet())
         {
-            ASTDiff perfect = GOD.diff(projectASTDiff, rm_astDiff, info, experiment);
+            ASTDiff perfect = GOD.diff(projectASTDiff, rm_astDiff, info);
             for (IASTDiffTool tool : experiment.getTools())
             {
                 if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV)) continue; // GOD and TRV are not considered
 //                logger.info("Generating " + tool.name());
-                ASTDiff generated = tool.getASTDiffer(projectASTDiff, rm_astDiff, info, experiment).makeASTDiff();
+                ASTDiff generated = tool.getASTDiffer(projectASTDiff, rm_astDiff, info).makeASTDiff();
 //                logger.info("Comparing " + tool.name());
                 populateAllReports(perfect, generated, tool, info, reports);
             }

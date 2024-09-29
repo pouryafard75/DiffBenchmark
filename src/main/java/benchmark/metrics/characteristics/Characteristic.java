@@ -30,7 +30,7 @@ public enum Characteristic {
                         for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
                             ASTDiff diff = null;
                             try {
-                                diff = GOD.diff(projectASTDiff, astDiff, info, configuration);
+                                diff = GOD.diff(projectASTDiff, astDiff, info);
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }

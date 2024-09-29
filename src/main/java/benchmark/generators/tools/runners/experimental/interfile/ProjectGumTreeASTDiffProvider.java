@@ -1,9 +1,7 @@
 package benchmark.generators.tools.runners.experimental.interfile;
 
 import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.runners.converter.AbstractASTDiffProviderFromExportedMappings;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.FakeTree;
@@ -20,14 +18,14 @@ import java.util.function.Function;
 public class ProjectGumTreeASTDiffProvider extends AbstractASTDiffProviderFromExportedMappings {
     protected final Matcher matcher;
     protected final GumTreeProjectMatcher projectMatcher;
-    public ProjectGumTreeASTDiffProvider(GumTreeProjectMatcher projectMatcher, ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase caseInfo, IExperiment experiment, Matcher matcher) {
-        super(projectASTDiff, input, caseInfo, experiment);
+    public ProjectGumTreeASTDiffProvider(GumTreeProjectMatcher projectMatcher, ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase caseInfo, Matcher matcher) {
+        super(projectASTDiff, input, caseInfo);
         this.matcher = matcher;
         this.projectMatcher = projectMatcher;
     }
 
     public ProjectGumTreeASTDiffProvider(ProjectGumTreeASTDiffProvider projectGumTreeASTDiff) {
-        super(projectGumTreeASTDiff.projectASTDiff, projectGumTreeASTDiff.input, projectGumTreeASTDiff.info, projectGumTreeASTDiff.experiment);
+        super(projectGumTreeASTDiff.projectASTDiff, projectGumTreeASTDiff.input, projectGumTreeASTDiff.info);
         this.matcher = projectGumTreeASTDiff.matcher;
         this.projectMatcher = projectGumTreeASTDiff.projectMatcher;
     }

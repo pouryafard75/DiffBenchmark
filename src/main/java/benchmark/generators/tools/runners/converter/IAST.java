@@ -15,7 +15,7 @@ import java.util.Set;
 public class IAST extends AbstractASTDiffProviderFromMappingSet {
 
     public IAST(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, ExperimentConfiguration conf) {
-        super(projectASTDiff, input, info, conf);
+        super(projectASTDiff, input, info);
     }
 
     @Override

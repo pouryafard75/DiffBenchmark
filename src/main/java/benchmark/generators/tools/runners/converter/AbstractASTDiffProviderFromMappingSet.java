@@ -1,8 +1,6 @@
 package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.ExperimentConfiguration;
-import benchmark.data.exp.IExperiment;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -18,8 +16,8 @@ public abstract class AbstractASTDiffProviderFromMappingSet extends AbstractASTD
     protected final String srcContents;
     protected final String dstContents;
 
-    public AbstractASTDiffProviderFromMappingSet(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
-        super(projectASTDiff, input, info, experiment);
+    public AbstractASTDiffProviderFromMappingSet(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
+        super(projectASTDiff, input, info);
         this.srcContents = projectASTDiff.getFileContentsBefore().get(input.getSrcPath());
         this.dstContents = projectASTDiff.getFileContentsAfter().get(input.getDstPath());
     }

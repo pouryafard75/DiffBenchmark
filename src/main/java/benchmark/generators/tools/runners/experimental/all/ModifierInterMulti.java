@@ -15,7 +15,7 @@ import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 /* Created by pourya on 2024-05-10*/
 public class ModifierInterMulti extends PipelinedASTDiffProvider {
     public ModifierInterMulti(TreeModifier treeModifier, GumTreeProjectMatcher projectMatcher, GumTreeMultiMappingMatcher multiMappingMatcher, ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase caseInfo, ExperimentConfiguration experimentConfiguration, Matcher matcher) {
-        super(treeModifier, projectMatcher, multiMappingMatcher, projectASTDiff, input, caseInfo, experimentConfiguration, matcher);
+        super(treeModifier, projectMatcher, multiMappingMatcher, projectASTDiff, input, caseInfo, matcher);
     }
 
     @Override

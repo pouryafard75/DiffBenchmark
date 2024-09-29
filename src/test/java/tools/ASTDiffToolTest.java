@@ -64,7 +64,7 @@ public class ASTDiffToolTest {
     public void testNumOfMappings(ASTDiffTool diffTool, int numOfMappings) {
         ASTDiff result = null;
         try {
-            result = diffTool.diff(projectASTDiff, target, info, conf);
+            result = diffTool.diff(projectASTDiff, target, info);
         } catch (Exception e) {
             fail();
         }

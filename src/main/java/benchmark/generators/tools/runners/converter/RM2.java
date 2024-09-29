@@ -17,8 +17,8 @@ import static benchmark.conf.Paths.ORACLE_DIR;
 /* Created by pourya on 2024-02-19*/
 public class RM2 extends AbstractASTDiffProviderFromMappingSet {
 
-    public RM2(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
-        super(projectASTDiff, input, info, experiment);
+    public RM2(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
+        super(projectASTDiff, input, info);
     }
     @Override
     protected Set<Mapping> getMappings() {
@@ -34,7 +34,7 @@ public class RM2 extends AbstractASTDiffProviderFromMappingSet {
 
     @Override
     protected void postPopulation(ASTDiff astDiff) {
-        ASTDiff trivialDiff = new TrivialDiff(projectASTDiff, input, info, experiment).makeASTDiff();
+        ASTDiff trivialDiff = new TrivialDiff(projectASTDiff, input, info).makeASTDiff();
         for (Mapping m : trivialDiff.getAllMappings())  astDiff.getAllMappings().addMapping(m.first, m.second);
     }
 

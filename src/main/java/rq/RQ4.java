@@ -2,12 +2,12 @@ package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.refactoring.RefactoringWiseBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.data.exp.ExperimentConfiguration;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import org.refactoringminer.api.RefactoringType;
@@ -27,7 +27,7 @@ public class RQ4 implements RQ{
         this.minFreq = minFreq;
     }
     public RQ4(){}
-    private static void rq4(Configuration[] configs, int minFreq) throws Exception {
+    private static void rq4(IExperiment[] exps, int minFreq) throws Exception {
         // Create a map to store the data
         Map<RefactoringType, Integer> dist = readCsvFromFile("merged-Distribution.csv");
         Map<RefactoringType, Integer> workingDist = dist.entrySet()
@@ -41,12 +41,12 @@ public class RQ4 implements RQ{
                         LinkedHashMap::new));
         Collection<BaseDiffComparisonResult> result = new ArrayList<>();
         StringBuilder name = new StringBuilder();
-        for (Configuration config : configs) {
-            for (CaseInfo info : config.getAllCases()) {
-                System.out.println("Running " + info.makeURL());
-                result.addAll(new RefactoringWiseBenchmarkComputer(config, workingDist.keySet()).compute(info));
+        for (IExperiment exp : exps) {
+            for (BenchmarkCase info : exp.getDataset().getCases()) {
+                System.out.println("Running " + info.getID());
+                result.addAll(new RefactoringWiseBenchmarkComputer(exp, workingDist.keySet()).compute(info));
             }
-            name.append(config.getName()).append("-");
+            name.append(exp.getName()).append("-");
         }
         MetricsCsvWriter.exportToCSV(result, "rq4-uniqueTypeAndMappings-" + name + ".csv", true);
     }
@@ -95,8 +95,8 @@ public class RQ4 implements RQ{
         return resultMap;
     }
     @Override
-    public void run(Configuration[] confs) throws Exception {
-        rq4(confs, minFreq);
+    public void run(IExperiment[] exps) throws Exception {
+        rq4(exps, minFreq);
     }
 }
 

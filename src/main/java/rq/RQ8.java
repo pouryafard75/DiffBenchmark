@@ -3,8 +3,8 @@ package rq;
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import at.aau.softwaredynamics.matchers.JavaMatchers;
 import at.aau.softwaredynamics.matchers.MatcherFactory;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import com.github.gumtreediff.matchers.CompositeMatchers;
@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.*;
 
-import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
+import static benchmark.conf.Paths.ORACLE_DIR;
 import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
@@ -42,16 +42,16 @@ import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createMode
  */
 public class RQ8 implements RQ{
     private int numberOfExecutions = 5;
-    static Map<CaseInfo, ProjectASTDiff> resourceMap = new HashMap<>();
+    static Map<BenchmarkCase, ProjectASTDiff> resourceMap = new HashMap<>();
 
     public void setNumberOfExecutions(int numberOfExecutions) {
         this.numberOfExecutions = numberOfExecutions;
     }
 
     @Override
-    public void run(Configuration[] confs) throws Exception {
-        for (Configuration conf : confs) {
-            rq8(conf, conf.getName() + "-exe.csv", numberOfExecutions);
+    public void run(IExperiment[] experiments) throws Exception {
+        for (IExperiment exp : experiments) {
+            rq8(exp, exp.getName() + "-exe.csv", numberOfExecutions);
         }
     }
     public static ProjectASTDiff customAPI(Map<String, String> fileContentsBefore, Map<String, String> fileContentsCurrent) throws Exception {
@@ -73,17 +73,18 @@ public class RQ8 implements RQ{
         }
         return repositoryDirectories;
     }
-    public static void rq8(Configuration config, String destinPath, int numOfExe) throws Exception {
+    public static void rq8(IExperiment experiment, String destinPath, int numOfExe) throws Exception {
         System.out.println("Configuration loaded.");
-        populateResourceMap(config);
+        populateResourceMap(experiment);
         System.out.println("Resource map populated.");
         List<ExeTimeRecord> result = new ArrayList<>();
         int completed = 0;
-        for (CaseInfo info : config.getAllCases()) {
-            System.out.println("Working on: " + info.makeURL());
+        Set<? extends BenchmarkCase> cases = experiment.getDataset().getCases();
+        for (BenchmarkCase info : cases) {
+            System.out.println("Working on: " + info.getID());
             result.add(executionTimeForEachCase(info, numOfExe));
             completed++;
-            System.out.println("Completed: " + completed + " out of " + config.getAllCases().size());
+            System.out.println("Completed: " + completed + " out of " + cases.size());
         }
         writeResults(result, destinPath);
     }
@@ -104,7 +105,7 @@ public class RQ8 implements RQ{
     }
 
 
-    private static ExeTimeRecord executionTimeForEachCase(CaseInfo info, int numOfExe) throws Exception {
+    private static ExeTimeRecord executionTimeForEachCase(BenchmarkCase info, int numOfExe) throws Exception {
         ProjectASTDiff projectASTDiff = resourceMap.get(info);
         float RMD_time = 0;
         float GTG_time = 0;
@@ -152,7 +153,7 @@ public class RQ8 implements RQ{
         MTD_time = MTD_time / (numOfExe - 1);
         GT2_time = GT2_time / (numOfExe - 1);
 
-        return new ExeTimeRecord(info.makeURL(),
+        return new ExeTimeRecord(info.getID(),
                 RMD_time,
                 GTG_time,
                 GTS_time,
@@ -187,13 +188,14 @@ public class RQ8 implements RQ{
         return finish - start;
     }
 
-    private static void populateResourceMap(Configuration config) throws Exception {
+    private static void populateResourceMap(IExperiment experiment) throws Exception {
         int loaded = 0;
-        for (CaseInfo caseInfo : config.getAllCases())
+        Set<? extends BenchmarkCase> cases = experiment.getDataset().getCases();
+        for (BenchmarkCase caseInfo : cases)
         {
             resourceMap.put(caseInfo, runWhatever(caseInfo.getRepo(), caseInfo.getCommit()));
             loaded++;
-            System.out.println(loaded + " out of " + config.getAllCases().size() + " loaded.");
+            System.out.println(loaded + " out of " + cases.size() + " loaded.");
         }
     }
     public static long diffTimeDefects4j(String projectDir, String bugID) throws Exception {
@@ -212,7 +214,7 @@ public class RQ8 implements RQ{
         long end = System.currentTimeMillis();
         return end - start;
     }
-    public static long diffTime(CaseInfo info) throws Exception {
+    public static long diffTime(BenchmarkCase info) throws Exception {
         if (info.getRepo().contains(".git"))
             return diffTimeCommits(info.getRepo(), info.getCommit());
         else

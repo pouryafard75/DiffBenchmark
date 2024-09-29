@@ -1,12 +1,13 @@
 package rq;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
 import benchmark.models.HumanReadableDiff;
 import benchmark.models.NecessaryMappings;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 import com.opencsv.CSVWriter;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
@@ -62,16 +63,16 @@ public class Utils {
         );
     }
 
-    static Map<RefactoringType, Integer> refactoringTypeDist(Configuration configuration) throws IOException {
-        return refDistribution(configuration, null, Refactoring::getRefactoringType);
+    static Map<RefactoringType, Integer> refactoringTypeDist(ExperimentConfiguration experimentConfiguration) throws IOException {
+        return refDistribution(experimentConfiguration, null, Refactoring::getRefactoringType);
     }
-    static Map<Integer, Integer> refactoringCountDist(Configuration configuration) throws IOException {
-        return refDistribution(configuration, List::size, null);
+    static Map<Integer, Integer> refactoringCountDist(IExperiment experiment) throws IOException {
+        return refDistribution(experiment, List::size, null);
     }
 
-    private static <T> Map<T, Integer> refDistribution(Configuration configuration, Function<List<Refactoring>, T> perCollectionFunction, Function<Refactoring, T> perEachFunction) throws IOException {
+    private static <T> Map<T, Integer> refDistribution(IExperiment experiment, Function<List<Refactoring>, T> perCollectionFunction, Function<Refactoring, T> perEachFunction) throws IOException {
         Map<T, Integer> countMap = new HashMap<>();
-        for (CaseInfo info : configuration.getAllCases()) {
+        for (BenchmarkCase info : experiment.getDataset().getCases()) {
             System.out.println("Working on " + info.getRepo() + " " + info.getCommit());
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             List<Refactoring> refactorings = projectASTDiff.getRefactorings();

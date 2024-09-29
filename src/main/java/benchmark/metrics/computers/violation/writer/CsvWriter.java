@@ -1,13 +1,13 @@
 package benchmark.metrics.computers.violation.writer;
 
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.violation.BenchmarkViolationComputer;
 import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.models.ViolationReport;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 import com.opencsv.CSVWriter;
-import rq.RQ;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -28,24 +28,24 @@ public class CsvWriter {
         if (!dir.exists())
             if (!dir.mkdir()) throw new RuntimeException("Could not create directory" + dir.getAbsolutePath());
         for (ViolationReport report : benchmarkViolationComputer.getReports()) {
-            for (Map.Entry<ASTDiffTool, Collection<SemanticViolationRecord>> item : report.getViolations().entrySet()) {
+            for (Map.Entry<IASTDiffTool, Collection<SemanticViolationRecord>> item : report.getViolations().entrySet()) {
                 File destin = dir.toPath().resolve(report.getViolationKind().name()).toFile();
                 if (!destin.exists())
                     if (!destin.mkdir())
                         throw new RuntimeException("Could not create directory" + destin.getAbsolutePath());
-                ASTDiffTool tool = item.getKey();
+                IASTDiffTool tool = item.getKey();
                 Collection<SemanticViolationRecord> records = item.getValue();
-                Path finalPath = destin.toPath().resolve(Configuration.getMergedNames(benchmarkViolationComputer.getConfigurations()) + "-" + tool.name() + ".csv");
+                Path finalPath = destin.toPath().resolve(ExperimentConfiguration.getMergedNames(benchmarkViolationComputer.getExperiments()) + "-" + tool.getToolName() + ".csv");
                 writeToolOutput(records, finalPath.toString());
             }
         }
 
-        Map<ASTDiffTool, Map<ViolationKind, Integer>> mergedViolations = new LinkedHashMap<>();
+        Map<IASTDiffTool, Map<ViolationKind, Integer>> mergedViolations = new LinkedHashMap<>();
 
         for (ViolationReport report : benchmarkViolationComputer.getReports()) {
-            Map<ASTDiffTool, Collection<SemanticViolationRecord>> violations = report.getViolations();
-            for (Map.Entry<ASTDiffTool, Collection<SemanticViolationRecord>> entry : violations.entrySet()) {
-                ASTDiffTool tool = entry.getKey();
+            Map<IASTDiffTool, Collection<SemanticViolationRecord>> violations = report.getViolations();
+            for (Map.Entry<IASTDiffTool, Collection<SemanticViolationRecord>> entry : violations.entrySet()) {
+                IASTDiffTool tool = entry.getKey();
                 Collection<SemanticViolationRecord> violationRecords = entry.getValue();
                 mergedViolations.putIfAbsent(tool, new LinkedHashMap<>());
                 Map<ViolationKind, Integer> violationKindIntegerMap = mergedViolations.get(tool);
@@ -57,7 +57,7 @@ public class CsvWriter {
         writeViolationsToCSV(mergedViolations, "out/rq2-merged.csv");
 
     }
-    private static void writeViolationsToCSV(Map<ASTDiffTool, Map<ViolationKind, Integer>> mergedViolations, String filePath) throws IOException {
+    private static void writeViolationsToCSV(Map<IASTDiffTool, Map<ViolationKind, Integer>> mergedViolations, String filePath) throws IOException {
         Set<ViolationKind> allViolationTypes = new TreeSet<>();
         for (Map<ViolationKind, Integer> toolViolations : mergedViolations.values()) {
             allViolationTypes.addAll(toolViolations.keySet());
@@ -72,8 +72,8 @@ public class CsvWriter {
             writer.append("\n");
 
             // Write data rows
-            for (Map.Entry<ASTDiffTool, Map<ViolationKind, Integer>> entry : mergedViolations.entrySet()) {
-                ASTDiffTool tool = entry.getKey();
+            for (Map.Entry<IASTDiffTool, Map<ViolationKind, Integer>> entry : mergedViolations.entrySet()) {
+                IASTDiffTool tool = entry.getKey();
                 Map<ViolationKind, Integer> toolViolations = entry.getValue();
 
                 writer.append(tool.getToolName()); // Assuming ASTDiffTool has a getName method

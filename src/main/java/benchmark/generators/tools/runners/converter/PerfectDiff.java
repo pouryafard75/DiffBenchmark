@@ -1,7 +1,7 @@
 package benchmark.generators.tools.runners.converter;
 
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -19,8 +19,8 @@ import static org.refactoringminer.astDiff.utils.ExportUtils.repoToFolder;
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
 
-    public PerfectDiff(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
-        super(projectASTDiff, input, info, conf);
+    public PerfectDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
+        super(projectASTDiff, input, info, experiment);
     }
 
     @Override
@@ -37,6 +37,6 @@ public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
     }
 
     private String getFileNameBasedOnAST() {
-        return conf.getPerfectDiffDir() + "/" + repoToFolder(info.getRepo()) + "/" + info.getCommit() + "/" + getFileNameFromSrcDiff(input.getSrcPath());
+        return experiment.getDataset().getPerfectDirPath() + "/" + repoToFolder(info.getRepo()) + "/" + info.getCommit() + "/" + getFileNameFromSrcDiff(input.getSrcPath());
     }
 }

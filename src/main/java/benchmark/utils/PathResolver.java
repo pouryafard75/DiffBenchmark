@@ -1,5 +1,7 @@
 package benchmark.utils;
 
+import benchmark.data.diffcase.BenchmarkCase;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,7 +9,8 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
+import static benchmark.conf.Paths.ORACLE_DIR;
+
 
 /* Created by pourya on 2023-04-17 7:29 p.m. */
 public class PathResolver {
@@ -66,7 +69,7 @@ public class PathResolver {
                 .filter(path -> path.getNameCount() - dir.getNameCount() >= minDepth)
                 .collect(Collectors.toList());
     }
-    public static String exportedFolderPathByCaseInfo(CaseInfo info) {
+    public static String exportedFolderPathByCaseInfo(BenchmarkCase info) {
         return repoFolder(info.getRepo()) +  "/" + info.getCommit();
     }
 }

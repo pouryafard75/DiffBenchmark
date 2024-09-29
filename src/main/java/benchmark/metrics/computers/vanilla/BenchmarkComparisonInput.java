@@ -1,9 +1,10 @@
 package benchmark.metrics.computers.vanilla;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.ASTDiffTool;
 import benchmark.models.HumanReadableDiff;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -18,7 +19,8 @@ import java.util.Map;
 
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 
-public class BenchmarkComparisonInput {
+public class
+BenchmarkComparisonInput {
     private Map<ASTDiffTool, HumanReadableDiff> rawHRDMap;
     private HumanReadableDiff originalGODHRD;
     private HumanReadableDiff originalTRVHRD;
@@ -43,12 +45,12 @@ public class BenchmarkComparisonInput {
         removeUnnecessaryHRDs();
     }
 
-    public static BenchmarkComparisonInput read(Configuration configuration, CaseInfo info, String fileName) throws IOException {
+    public static BenchmarkComparisonInput read(IExperiment experiment, BenchmarkCase info, String fileName) throws IOException {
         String folderPath = exportedFolderPathByCaseInfo(info);
-        Path dir = Paths.get(configuration.getOutputFolder() + folderPath + "/");
-        return readDir(dir.resolve(fileName), configuration);
+        Path dir = Paths.get(experiment.getOutputFolder() + folderPath + "/");
+        return readDir(dir.resolve(fileName), experiment);
     }
-    public static BenchmarkComparisonInput readDir(Path finalPath, Configuration configuration) throws IOException {
+    public static BenchmarkComparisonInput readDir(Path finalPath, IExperiment experiment) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
 
@@ -69,7 +71,7 @@ public class BenchmarkComparisonInput {
                         break;
                     default:
                         ASTDiffTool astDiffTool = ASTDiffTool.valueOf(toolName);
-                        if (java.util.Arrays.stream(configuration.getActiveTools()).toList().contains(astDiffTool))
+                        if (experiment.getTools().stream().toList().contains(astDiffTool))
                             hrds.put(astDiffTool, hrd);
                 }
             }

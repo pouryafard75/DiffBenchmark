@@ -1,16 +1,17 @@
 package benchmark.generators;
 
-import benchmark.utils.Configuration.ConfigurationFactory;
+
+import benchmark.data.exp.EExperiment;
 
 /* Created by pourya on 2023-04-17 7:45 p.m. */
 public class MakeToolsOutput {
 
     public static void main(String[] args) throws Exception {
-        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.extendedTools_defects4j_3()).generateMultiThreaded();
-        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.extendedTools_refOracle_3()).generateMultiThreaded();
-        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.refOracle()).generateMultiThreaded();
-        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.refOracleTwoPointOne()).generateMultiThreaded();
-        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.defects4j()).generateMultiThreaded();
-        new BenchmarkHumanReadableDiffGenerator(ConfigurationFactory.defects4jTwoPointOne()).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(EExperiment.REF_EXP_3_0).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(EExperiment.REF_EXP_2_1).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(EExperiment.D4J_EXP_3_0).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(EExperiment.D4J_EXP_2_1).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(EExperiment.DUM_EXP_3_0).generateMultiThreaded();
+        new BenchmarkHumanReadableDiffGenerator(EExperiment.D4J_EXP_2_1).generateMultiThreaded();
     }
 }

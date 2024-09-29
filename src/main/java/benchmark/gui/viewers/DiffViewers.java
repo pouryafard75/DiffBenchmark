@@ -1,6 +1,7 @@
 package benchmark.gui.viewers;
 
-import benchmark.generators.tools.ASTDiffTool;
+
+import benchmark.generators.tools.models.IASTDiffTool;
 import gui.webdiff.viewers.monaco.MonacoView;
 import gui.webdiff.viewers.vanilla.VanillaDiffView;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -17,7 +18,7 @@ import static spark.Spark.get;
 /* Created by pourya on 2024-05-03*/
 public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
     VANILLA(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool + "/" + id)).content(tool.name()),
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getNameInURL() + "/" + id)).content(tool.getToolName()),
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
@@ -29,7 +30,7 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             })
     ),
     MONACO(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool + "-monaco/" + id)).content(tool.name() + "-monaco"),
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getNameInURL() + "-monaco/" + id)).content(tool.getToolName() + "-monaco"),
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "-monaco/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
@@ -45,11 +46,11 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
         this.dirView = dirView;
         this.sparkConfigurator = sparkConfigurator;
     }
-    public HtmlCanvas render(HtmlCanvas div, ASTDiffTool tool, int id) throws Exception {
+    public HtmlCanvas render(HtmlCanvas div, IASTDiffTool tool, int id) throws Exception {
         return dirView.render(div, tool, id);
     }
 
-    public void configure(ASTDiffTool tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) throws Exception {
+    public void configure(IASTDiffTool tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) throws Exception {
         sparkConfigurator.configure(tool, astDiffs, projectASTDiff);
     }
 }

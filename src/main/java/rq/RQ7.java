@@ -2,16 +2,13 @@ package rq;
 
 /* Created by pourya on 2023-12-04 2:15 p.m. */
 
+import benchmark.data.exp.IExperiment;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.vanilla.CommitPerfectRatioBenchmarkComputer;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.data.exp.ExperimentConfiguration;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 /***
@@ -19,18 +16,18 @@ import java.util.Map;
  */
 public class RQ7 implements RQ  {
     @Override
-    public void run(Configuration[] conf) {
+    public void run(IExperiment[] experiments) {
         try {
-            rq7(conf);
+            rq7(experiments);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static void rq7(Configuration[] confs) throws IOException {
-        for (Configuration configuration : confs) {
-            Map<ASTDiffTool, Integer> astDiffToolIntegerMap = new CommitPerfectRatioBenchmarkComputer(configuration).perfectRatio();
-            RQ.writeToFile(astDiffToolIntegerMap, "out/rq7-" + configuration.getName() + ".csv");
+    private static void rq7(IExperiment[] confs) throws IOException {
+        for (IExperiment experiment : confs) {
+            Map<IASTDiffTool, Integer> astDiffToolIntegerMap = new CommitPerfectRatioBenchmarkComputer(experiment).perfectRatio();
+            RQ.writeToFile(astDiffToolIntegerMap, "out/rq7-" + experiment.getName() + ".csv");
         }
     }
 }

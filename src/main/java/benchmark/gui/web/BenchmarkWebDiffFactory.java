@@ -1,11 +1,13 @@
 package benchmark.gui.web;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.GithubCase;
+import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.IExperiment;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.converter.NoPerfectDiffException;
 import benchmark.gui.conf.GuiConf;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 import benchmark.utils.Helpers;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -17,7 +19,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.*;
 
-import static benchmark.utils.Configuration.ConfigurationFactory.ORACLE_DIR;
+import static benchmark.conf.Paths.ORACLE_DIR;
 
 /* Created by pourya on 2023-04-17 8:58 p.m. */
 public class BenchmarkWebDiffFactory {
@@ -33,19 +35,19 @@ public class BenchmarkWebDiffFactory {
         String repo = URLHelper.getRepo(url);
         String commit = URLHelper.getCommit(url);
         ProjectASTDiff projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
-        return makeDiffs(projectASTDiff,new CaseInfo(url));
+        return makeDiffs(projectASTDiff,new GithubCase(url));
     }
     public BenchmarkWebDiff withLocallyClonedRepo(Repository repository, String commit) throws Exception {
         ProjectASTDiff rmDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
         return makeDiffs(rmDiff,null);
     }
-    public BenchmarkWebDiff withTwoDirectories(String before, String after, CaseInfo info) throws Exception {
+    public BenchmarkWebDiff withTwoDirectories(String before, String after, BenchmarkCase info) throws Exception {
         return makeDiffs(getRMASTDiff(before, after), info);
     }
     public BenchmarkWebDiff withTwoDirectories(String before, String after) throws Exception {
         return makeDiffs(getRMASTDiff(before, after), null);
     }
-    public BenchmarkWebDiff withCaseInfo(CaseInfo info) throws Exception {
+    public BenchmarkWebDiff withCaseInfo(BenchmarkCase info) throws Exception {
         ProjectASTDiff projectASTDiff = Helpers.runWhatever(info);
         return makeDiffs(projectASTDiff,info);
     }
@@ -55,21 +57,21 @@ public class BenchmarkWebDiffFactory {
         return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
     }
 
-    private BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, CaseInfo info) throws Exception {
-        Configuration conf = null;
+    private BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, BenchmarkCase info) throws Exception {
+        IExperiment exp = null;
         if (info != null && info.getRepo() != null) {
             String repo = info.getRepo();
-            conf = (repo.contains(".git")) ? ConfigurationFactory.refOracle() : ConfigurationFactory.defects4j();
+            exp = (repo.contains(".git")) ? EExperiment.REF_EXP_3_0 : EExperiment.D4J_EXP_3_0;
         }
 
         Set<ASTDiff> RM_astDiff = projectASTDiffByRM.getDiffSet();
-        Map<ASTDiffTool, Set<ASTDiff>> diffs = new LinkedHashMap<>();
+        Map<IASTDiffTool, Set<ASTDiff>> diffs = new LinkedHashMap<>();
 
         for (ASTDiff astDiff : RM_astDiff) {
             for (ASTDiffTool tool : guiConf.enabled_tools) {
                 diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
                 try {
-                    diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info, conf));
+                    diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info, exp));
                 }
                 catch (NoPerfectDiffException noPerfectDiffException)
                 {

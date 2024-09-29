@@ -1,11 +1,10 @@
 package benchmark.metrics;
 
+import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
-import benchmark.metrics.models.CsvWritable;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 
 import java.util.Collection;
 
@@ -14,11 +13,11 @@ public class MetricsToCSV {
     public static void main(String[] args) throws Exception {
 //        for (Boolean aBoolean : Set.of(true, false))
         {
-            Configuration configuration = ConfigurationFactory.dummy();
+            IExperiment experiment = EExperiment.DUM_EXP_3_0;
 
-            VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(configuration);
+            VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(experiment);
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-            MetricsCsvWriter.exportToCSV(stats, configuration.getOutputFolder() + configuration.getName() + ".csv", true);
+            MetricsCsvWriter.exportToCSV(stats, experiment.getOutputFolder() + experiment.getName() + ".csv", true);
 //            new MetricsCsvWriter(computer, stats).writeStatsToCSV(false);
         }
     }

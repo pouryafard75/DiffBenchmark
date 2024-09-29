@@ -1,7 +1,7 @@
 package benchmark.metrics.models;
 
+import benchmark.data.diffcase.BenchmarkCase;
 import benchmark.models.HumanReadableDiff;
-import benchmark.utils.CaseInfo;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
 
@@ -14,7 +14,7 @@ public class RefactoringSpecificComparisonResult extends BaseDiffComparisonResul
     final RefactoringType refactoringType;
     private HumanReadableDiff godFinalizedHRD;
 
-    public RefactoringSpecificComparisonResult(CaseInfo caseInfo, Refactoring refactoring) {
+    public RefactoringSpecificComparisonResult(BenchmarkCase caseInfo, Refactoring refactoring) {
         super(caseInfo);
         this.refactoring = refactoring;
         this.refactoringType = refactoring.getRefactoringType();
@@ -41,7 +41,7 @@ public class RefactoringSpecificComparisonResult extends BaseDiffComparisonResul
         if (this.getIgnore() == null)
             throw new RuntimeException("Ignore is null");
         StringBuilder row = new StringBuilder();
-        row.append(this.getCaseInfo().makeURL()).append(",")
+        row.append(this.getCaseInfo().getID()).append(",")
                 .append(this.refactoring.toString().replace(","," ")).append(",")
                 .append(this.refactoring.getRefactoringType().name())
                 .append(",");

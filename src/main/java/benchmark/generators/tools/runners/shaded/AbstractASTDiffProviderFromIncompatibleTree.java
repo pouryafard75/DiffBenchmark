@@ -1,10 +1,11 @@
 package benchmark.generators.tools.runners.shaded;
 
 import at.aau.softwaredynamics.matchers.MatcherFactory;
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.runners.trivial.TrivialDiff;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
@@ -30,8 +31,8 @@ public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDif
         super(projectASTDiff, rmAstDiff);
     }
 
-    public AbstractASTDiffProviderFromIncompatibleTree(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
-        super(projectASTDiff, input, info, conf);
+    public AbstractASTDiffProviderFromIncompatibleTree(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
+        super(projectASTDiff, input, info, experiment);
     }
 
     public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();
@@ -120,10 +121,10 @@ public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDif
         mappings.add(diff.mappings);
         return new ASTDiff(srcPath, dstPath, diff.src, diff.dst, mappings);
     }
-    ASTDiff diffWithTrivialAddition(CaseInfo info, Configuration configuration) throws Exception {
+    ASTDiff diffWithTrivialAddition(BenchmarkCase info, IExperiment experiment) throws Exception {
         Diff diff = this.diff();
         ASTDiff astDiff = diffToASTDiffNoAction(diff, this.input.getSrcPath(), this.input.getDstPath());
-        ExtendedMultiMappingStore trv = new TrivialDiff(this.projectASTDiff, this.input, info, configuration).makeASTDiff().getAllMappings();
+        ExtendedMultiMappingStore trv = new TrivialDiff(this.projectASTDiff, this.input, info, experiment).makeASTDiff().getAllMappings();
         for (com.github.gumtreediff.matchers.Mapping mapping : trv) {
             astDiff.getAllMappings().addMapping(mapping.first, mapping.second);
         }

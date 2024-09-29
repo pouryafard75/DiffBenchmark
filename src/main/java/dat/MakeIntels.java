@@ -1,8 +1,9 @@
 package dat;
 
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.data.exp.IExperiment;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.slf4j.Logger;
@@ -16,7 +17,7 @@ import static benchmark.utils.Helpers.runWhatever;
 /* Created by pourya on 2024-01-18*/
 public class MakeIntels {
     private final static Logger logger = LoggerFactory.getLogger(MakeIntels.class);
-    private static final Configuration configuration = ConfigurationFactory.refOracle();
+    private static final IExperiment experiment = EExperiment.REF_EXP_3_0;
     private static final String destination = "intel.csv";
     private static int numThreads = Runtime.getRuntime().availableProcessors();
 
@@ -26,14 +27,14 @@ public class MakeIntels {
         int case_count = 0;
         IntelDao intelDao = new IntelDao();
         try {
-            for (CaseInfo info : configuration.getAllCases()) {
+            for (BenchmarkCase info : experiment.getDataset().getCases()) {
                 case_count++;
                 List<Intel> intels = new ArrayList<>();
                 ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
                 for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet()) {
 //                    logger.info("Working on " + info.makeURL() + " " + rm_astDiff.getSrcPath());
-                    logger.info("Case " + case_count + "/" + configuration.getAllCases().size());
-                    GridSearch dat = new GridSearch(info, projectASTDiff, rm_astDiff, configuration);
+                    logger.info("Case " + case_count + "/" + experiment.getDataset().getCases().size());
+                    GridSearch dat = new GridSearch(info, projectASTDiff, rm_astDiff, experiment);
                     intels.addAll(dat.run(numThreads));
                 }
                 intelDao.insertIntels(intels);

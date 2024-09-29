@@ -1,11 +1,14 @@
 package benchmark.generators;
 
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.GenerationStrategy;
+import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.generators.tools.models.IASTDiffTool;
+import benchmark.utils.Experiments.GenerationStrategy;
+import benchmark.utils.Experiments.IGenerationStrategy;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
@@ -19,18 +22,19 @@ import static benchmark.utils.Helpers.runWhatever;
 /* Created by pourya on 2023-02-08 3:00 a.m. */
 public class BenchmarkHumanReadableDiffGenerator {
 
-    private final Configuration configuration;
+    private final IExperiment experiment;
 
-    public BenchmarkHumanReadableDiffGenerator(Configuration current){
-        this.configuration = current;
+    public BenchmarkHumanReadableDiffGenerator(IExperiment experiment){
+        this.experiment = experiment;
     }
     public void generateMultiThreaded(int numThreads) {
         ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
-        CountDownLatch latch = new CountDownLatch(configuration.getAllCases().size());
-        for (CaseInfo info : configuration.getAllCases()) {
+        Set<? extends BenchmarkCase> cases = experiment.getDataset().getCases();
+        CountDownLatch latch = new CountDownLatch(cases.size());
+        for (BenchmarkCase info : cases) {
             executorService.submit(() -> {
                 try {
-                    writeActiveTools(info, configuration.getOutputFolder());
+                    writeActiveTools(info, experiment.getOutputFolder());
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                     System.exit(1); // Terminate execution with status code 1
@@ -57,12 +61,12 @@ public class BenchmarkHumanReadableDiffGenerator {
     }
 
     public void generateSingleThreaded() throws Exception {
-        for (CaseInfo info : configuration.getAllCases()) {
-            writeActiveTools(info, configuration.getOutputFolder());
+        for (BenchmarkCase info : experiment.getDataset().getCases()) {
+            writeActiveTools(info, experiment.getOutputFolder());
         }
         System.out.println("Finished generating human readable diffs...");
     }
-    private void writeActiveTools(CaseInfo info, String output_folder) throws Exception {
+    private void writeActiveTools(BenchmarkCase info, String output_folder) throws Exception {
         String repo = info.getRepo();
         String commit = info.getCommit();
         System.out.println("Started for " + repo + " " + commit);
@@ -70,12 +74,12 @@ public class BenchmarkHumanReadableDiffGenerator {
         Set<ASTDiff> astDiffs = projectASTDiff.getDiffSet();
         for (ASTDiff astDiff : astDiffs) {
             //----------------------------------\\
-            for (ASTDiffTool tool : configuration.getActiveTools()) {
-                String toolName = tool.name(); //In case we later introduce a map from tool's name to tool's path
-                String toolPath = tool.name(); //In case we later introduce a map from tool's name to tool's path
-                ASTDiff generated = tool.diff(projectASTDiff, astDiff, info, configuration);
-                GenerationStrategy generationStrategy = configuration.getGenerationStrategy();
-                HumanReadableDiffGenerator humanReadableDiffGenerator = generationStrategy.getGenerator(projectASTDiff, generated, info, configuration);
+            for (IASTDiffTool tool : experiment.getTools()) {
+                String toolName = tool.getToolName(); //In case we later introduce a map from tool's name to tool's path
+                String toolPath = tool.getToolName(); //In case we later introduce a map from tool's name to tool's path
+                ASTDiff generated = tool.getASTDiffer(projectASTDiff, astDiff, info, experiment).makeASTDiff();
+                IGenerationStrategy generationStrategy = experiment.getGenerationStrategy();
+                HumanReadableDiffGenerator humanReadableDiffGenerator = generationStrategy.getGenerator(projectASTDiff, generated, info, experiment);
                 humanReadableDiffGenerator.write(output_folder,astDiff.getSrcPath(),toolPath);
             }
         }

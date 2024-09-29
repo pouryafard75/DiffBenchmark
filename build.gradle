@@ -38,6 +38,7 @@ dependencies {
     implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
     implementation files('libs/RM-2.2.0-c3.jar')
     implementation files('libs/iAST-1.0-SNAPSHOT-customized.jar')
+
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
@@ -58,6 +59,8 @@ dependencies {
     // PostgreSQL JDBC driver
     implementation 'org.postgresql:postgresql:42.4.1' // Replace with the latest PostgreSQL JDBC driver version
 
+//    implementation 'fr.inria.gforge.spoon.labs:gumtree-spoon-ast-diff:1.73'
+    implementation files('libs/gumtree-spoon-ast-diff-SNAPSHOT-0.6.jar')
 
 }
 task rm2p4_jar(type: Jar) {

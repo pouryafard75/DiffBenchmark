@@ -1,10 +1,6 @@
 package benchmark.gui.drivers;
 
-import benchmark.gui.web.BenchmarkWebDiff;
 import benchmark.gui.web.BenchmarkWebDiffFactory;
-import benchmark.utils.CaseInfo;
-
-import java.io.IOException;
 
 public class CompareWithTwoDirectories {
     public static void main(String[] args) throws Exception {

@@ -1,43 +1,53 @@
 package benchmark.generators.tools.runners.converter;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.LocalCase;
+import benchmark.data.diffcase.RemoteCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.runners.trivial.TrivialDiff;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
 import com.github.gumtreediff.matchers.Mapping;
-import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
-import org.refactoringminer.astDiff.utils.MappingExportModel;
 
-import java.util.List;
+import java.io.File;
+import java.util.Set;
 
-import static benchmark.utils.Helpers.runWhateverForRM2;
+import static benchmark.conf.Paths.ORACLE_DIR;
 
 /* Created by pourya on 2024-02-19*/
-public class RM2 extends AbstractASTDiffProviderFromExportedMappings {
+public class RM2 extends AbstractASTDiffProviderFromMappingSet {
 
-    public RM2(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
-        super(projectASTDiff, input, info, conf);
+    public RM2(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
+        super(projectASTDiff, input, info, experiment);
     }
-
     @Override
-    protected List<MappingExportModel> getExportedMappings() {
-        rm2.refactoringminer.astDiff.actions.ProjectASTDiff proj = runWhateverForRM2(info);
-        for (rm2.refactoringminer.astDiff.actions.ASTDiff astDiff : proj.getDiffSet()) {
-            if (astDiff.getSrcPath().equals(input.getSrcPath()))
-                return MappingExportModel.exportModelList(astDiff.getAllMappings().getMappings());
+    protected Set<Mapping> getMappings() {
+        Set<Mapping> mappings = null;
+        for (rm2.refactoringminer.astDiff.actions.ASTDiff astDiff : runWhateverForRM2(info).getDiffSet()) {
+            if (astDiff.getSrcPath().equals(input.getSrcPath())) {
+                mappings = astDiff.getAllMappings().getMappings();
+                break;
+            }
         }
-        return null;
+        return mappings;
     }
+
     @Override
-    public ASTDiff makeASTDiff() {
-        ASTDiff astDiff = make(getExportedMappings());
-        postPopulation(astDiff);
-        astDiff.computeEditScript(ptc, ctc, new SimplifiedExtendedChawatheScriptGenerator());
-        return astDiff;
-    }
-    private void postPopulation(ASTDiff astDiff) {
-        ASTDiff trivialDiff = new TrivialDiff(projectASTDiff, input, info, conf).makeASTDiff();
+    protected void postPopulation(ASTDiff astDiff) {
+        ASTDiff trivialDiff = new TrivialDiff(projectASTDiff, input, info, experiment).makeASTDiff();
         for (Mapping m : trivialDiff.getAllMappings())  astDiff.getAllMappings().addMapping(m.first, m.second);
+    }
+
+    public static rm2.refactoringminer.astDiff.actions.ProjectASTDiff runWhateverForRM2(BenchmarkCase caseInfo) {
+        String repo = caseInfo.getRepo();
+        String commit = caseInfo.getCommit();
+        if (caseInfo instanceof LocalCase)
+            return new rm2.refactoringminer.rm1.GitHistoryRefactoringMinerImpl().diffAtDirectories(((LocalCase) caseInfo).getSrcPath(), ((LocalCase) caseInfo).getDstPath());
+        else if (caseInfo instanceof RemoteCase)
+        {
+            return new rm2.refactoringminer.rm1.GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
+        }
+        else
+            throw new IllegalArgumentException("Unknown case type");
     }
 }

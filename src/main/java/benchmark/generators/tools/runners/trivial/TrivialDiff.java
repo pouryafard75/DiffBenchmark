@@ -1,8 +1,9 @@
 package benchmark.generators.tools.runners.trivial;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -18,10 +19,10 @@ public class TrivialDiff extends BaseTrivialDiff {
 
     private ExtendedMultiMappingStore perfectMappings = null;
 
-    public TrivialDiff(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
+    public TrivialDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
         super(input);
         try {
-            perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, input, info, conf).getAllMappings();
+            perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, input, info, experiment).getAllMappings();
         } catch (Exception e) {
 //            e.printStackTrace();
         }

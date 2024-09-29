@@ -1,6 +1,6 @@
 package benchmark.gui.web;
 
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.gui.viewers.DiffViewers;
 import benchmark.gui.conf.GuiConf;
 
@@ -19,10 +19,10 @@ import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class BenchmarkDirectoryDiffView implements Renderable {
     private final BenchmarkDirComparator comperator;
-    private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
+    private final Map<IASTDiffTool, Set<ASTDiff>> diffs;
     private final GuiConf guiConf;
 
-    public BenchmarkDirectoryDiffView(BenchmarkDirComparator comperator, Map<ASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
+    public BenchmarkDirectoryDiffView(BenchmarkDirComparator comperator, Map<IASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
         this.comperator = comperator;
         this.diffs = diffs;
         this.guiConf = guiConf;
@@ -88,11 +88,11 @@ public class BenchmarkDirectoryDiffView implements Renderable {
 //        private List<Pair<File, File>> files;
 
         private final Map<String,String> diffInfos;
-        private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
+        private final Map<IASTDiffTool, Set<ASTDiff>> diffs;
         private final GuiConf conf;
 
 
-        private ModifiedFiles(Map<String,String> diffInfos, Map<ASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
+        private ModifiedFiles(Map<String,String> diffInfos, Map<IASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
             this.diffInfos = diffInfos;
             this.diffs = diffs;
             conf = guiConf;
@@ -116,7 +116,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                         .td()
                         .div(class_("btn-toolbar justify-content-end"))
                         .div(class_("btn-group"));
-                            for (ASTDiffTool tool : diffs.keySet()) {
+                            for (IASTDiffTool tool : diffs.keySet()) {
                                 if (diffs.get(tool).isEmpty()) continue;
                                 for (DiffViewers enabledViewer : conf.enabled_viewers) {
                                     try {

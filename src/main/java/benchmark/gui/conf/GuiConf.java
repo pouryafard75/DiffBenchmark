@@ -14,11 +14,11 @@ public class GuiConf {
     public static GuiConf defaultConf() {
         GuiConf conf = new GuiConf();
         // Tools
-        conf.enabled_tools.add(ASTDiffTool.GOD);
         conf.enabled_tools.add(ASTDiffTool.RMD);
         conf.enabled_tools.add(ASTDiffTool.GTG);
         conf.enabled_tools.add(ASTDiffTool.GTS);
-        conf.enabled_tools.add(ASTDiffTool.TRV);
+        conf.enabled_tools.add(ASTDiffTool.GOD);
+        conf.enabled_tools.add(ASTDiffTool.SPN);
         // Viewers
         conf.enabled_viewers.add(DiffViewers.MONACO);
         conf.enabled_viewers.add(DiffViewers.VANILLA);

@@ -1,7 +1,8 @@
 package benchmark.generators.tools.models;
 
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.data.exp.IExperiment;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -13,16 +14,16 @@ public abstract class ASTDiffProviderFromProjectASTDiff extends BaseASTDiffProvi
     protected final ProjectASTDiff projectASTDiff;
     protected final Map<String, TreeContext> ptc;
     protected final Map<String, TreeContext> ctc;
-    protected final CaseInfo info;
-    protected final Configuration conf;
+    protected final BenchmarkCase info;
+    protected final IExperiment experiment;
 
-    protected ASTDiffProviderFromProjectASTDiff(ProjectASTDiff projectASTDiff, ASTDiff input, CaseInfo info, Configuration conf) {
+    protected ASTDiffProviderFromProjectASTDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info, IExperiment experiment) {
         super(input);
         this.projectASTDiff = projectASTDiff;
         this.ptc = projectASTDiff.getParentContextMap();
         this.ctc = projectASTDiff.getChildContextMap();
         this.info = info;
-        this.conf = conf;
+        this.experiment = experiment;
     }
     protected ASTDiffProviderFromProjectASTDiff(ProjectASTDiff projectASTDiff, ASTDiff input) {
         this(projectASTDiff, input, null, null);

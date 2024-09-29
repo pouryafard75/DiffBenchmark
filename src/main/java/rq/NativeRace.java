@@ -1,23 +1,21 @@
 package rq;
 
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
-import weka.Run;
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.IExperiment;
 
 import java.io.*;
-import java.util.Arrays;
 
 public class NativeRace {
     public static void main(String[] args) throws IOException {
-        Configuration configuration = ConfigurationFactory.refOracle();
+        IExperiment experimentConfiguration = EExperiment.REF_EXP_3_0;
         BufferedWriter writer = new BufferedWriter(new FileWriter("nativeRace.csv"));
         writer.write("CaseInfo, JVMBinariesTime, NativeBinariesTime\n");
-        for (CaseInfo caseInfo : configuration.getAllCases()) {
-            System.out.println("Working on "  + caseInfo.makeURL());
+        for (BenchmarkCase caseInfo : experimentConfiguration.getDataset().getCases()) {
+            System.out.println("Working on "  + caseInfo.getID());
             long jvmTime = new JVMBinariesCMDRunner().exeTime(caseInfo);
             long nativeTime = new NativeBinariesCMDRunner().exeTime(caseInfo);
-            writer.write(String.format("%s, %d, %d\n", caseInfo.makeURL(), jvmTime, nativeTime));
+            writer.write(String.format("%s, %d, %d\n", caseInfo.getID(), jvmTime, nativeTime));
             writer.flush(); // Ensure data is written to the file immediately
         };
     }
@@ -34,11 +32,12 @@ interface CMDRunner{
             throw new RuntimeException(e);
         }
     }
-    default void exe(CaseInfo caseInfo) {
+    default void exe(BenchmarkCase caseInfo) {
         Process run = null;
 
         try {
-            String command = String.format("%s diff --url %s --silent", getBinariesPath(), caseInfo.makeURL());
+            //Fix it for the D4J case (local cases to be more precise)
+            String command = String.format("%s diff --url %s --silent", getBinariesPath(), caseInfo.getID());
             run = Runtime.getRuntime().exec(command);
             run.waitFor();
         } catch (IOException | InterruptedException e) {
@@ -50,7 +49,7 @@ interface CMDRunner{
         }
 
     }
-    default long exeTime(CaseInfo caseInfo){
+    default long exeTime(BenchmarkCase caseInfo){
         kill();
         long start = System.currentTimeMillis();
         exe(caseInfo);

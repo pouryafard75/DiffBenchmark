@@ -1,7 +1,6 @@
 package benchmark.metrics.characteristics;
 
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.data.exp.ExperimentConfiguration;
 
 import java.util.EnumSet;
 import java.util.Set;
@@ -16,13 +15,13 @@ public class CharacteristicsRunner {
 //            Characteristic.AVG_CHURN
     );
     public static void main(String[] args) throws Exception {
-        printCharacteristics(ConfigurationFactory.refOracle());
+//        printCharacteristics(ExperimentFactory.refOracle());
 //        printCharacteristics(ConfigurationFactory.defects4j());
     }
 
-    private static void printCharacteristics(Configuration configuration) {
+    private static void printCharacteristics(ExperimentConfiguration experimentConfiguration) {
         for (Characteristic characteristic : CharacteristicsRunner.conf) {
-                System.out.println(characteristic + ": " + characteristic.getNumber(configuration));
+                System.out.println(characteristic + ": " + characteristic.getNumber(experimentConfiguration));
         }
     }
 }

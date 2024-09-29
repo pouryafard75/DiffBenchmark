@@ -2,12 +2,13 @@ package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -31,16 +32,16 @@ public class RQ1 implements RQ{
     }
 
     @Override
-    public void run(Configuration[] confs) {
+    public void run(IExperiment[] experiments) {
         Collection<BaseDiffComparisonResult> stats = new LinkedHashSet<>();
         StringBuilder name = new StringBuilder();
-        for (Configuration configuration : confs) {
+        for (IExperiment experiment : experiments) {
             try {
-                stats.addAll(new VanillaBenchmarkComputer(configuration, mappingsLocationFilter.getFilter(), mappingsTypeFilter).compute());
+                stats.addAll(new VanillaBenchmarkComputer(experiment, mappingsLocationFilter.getFilter(), mappingsTypeFilter).compute());
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            name.append(configuration.getName()).append("-");
+            name.append(experiment.getName()).append("-");
         }
         MetricsCsvWriter.exportToCSV(stats, "rq1-" + name + ".csv", false);
 

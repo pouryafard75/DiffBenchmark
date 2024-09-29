@@ -1,6 +1,7 @@
 package benchmark.metrics.models;
 
-import benchmark.utils.CaseInfo;
+
+import benchmark.data.diffcase.BenchmarkCase;
 
 import java.io.FileWriter;
 import java.util.Map;
@@ -10,11 +11,11 @@ public class FileDiffComparisonResult extends BaseDiffComparisonResult {
     final String srcFileName;
     boolean onFly = false;
 
-    public FileDiffComparisonResult(CaseInfo caseInfo, String srcFileName) {
+    public FileDiffComparisonResult(BenchmarkCase caseInfo, String srcFileName) {
         super(caseInfo);
         this.srcFileName = srcFileName;
     }
-    public FileDiffComparisonResult(CaseInfo caseInfo, String srcFileName, boolean onFly) {
+    public FileDiffComparisonResult(BenchmarkCase caseInfo, String srcFileName, boolean onFly) {
         super(caseInfo);
         this.srcFileName = srcFileName;
         this.onFly = onFly;
@@ -32,7 +33,7 @@ public class FileDiffComparisonResult extends BaseDiffComparisonResult {
     public void writeData(FileWriter writer) throws Exception {
 
         StringBuilder row = new StringBuilder();
-            row.append(this.getCaseInfo().makeURL()).append(",")
+            row.append(this.getCaseInfo().getID()).append(",")
                     .append(this.getSrcFileName()).append(",");
         writeToolsData(row, onFly);
         row.append("\n");

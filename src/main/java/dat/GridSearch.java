@@ -1,5 +1,7 @@
 package dat;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.vanilla.BenchmarkComparisonInput;
 import benchmark.metrics.computers.vanilla.HRDBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
@@ -9,8 +11,7 @@ import benchmark.generators.hrd.HRDGen3;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.generators.tools.ASTDiffTool;
 import benchmark.models.NecessaryMappings;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 import benchmark.utils.PathResolver;
 import com.github.gumtreediff.actions.ChawatheScriptGenerator;
 import com.github.gumtreediff.actions.Diff;
@@ -51,12 +52,12 @@ public class GridSearch {
     private static final int nrthreads = 50;
     private static final long timeout = 1000;
     private static final String PARALLEL_LEVEL = "PROPERTY_LEVEL";
-    private final CaseInfo info;
+    private final BenchmarkCase info;
     private final ProjectASTDiff projectASTDiff;
     private final Tree src;
     private final Tree dst;
     private final ASTDiff rmDiff;
-    private final Configuration configuration;
+    private final IExperiment experiment;
     private static Map<String, List<GumtreeProperties>> cacheCombinations = new HashMap<>();
 
 
@@ -70,12 +71,12 @@ public class GridSearch {
         }
     }
 
-    public GridSearch(CaseInfo info, ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, Configuration configuration)
+    public GridSearch(BenchmarkCase info, ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, IExperiment experiment)
     {
         this.info = info;
         this.projectASTDiff = projectASTDiff;
         rmDiff = rm_astDiff;
-        this.configuration = configuration;
+        this.experiment = experiment;
         src = rm_astDiff.src.getRoot();
         dst = rm_astDiff.dst.getRoot();
         intels = new ArrayList<>();
@@ -163,11 +164,11 @@ public class GridSearch {
                 projectASTDiff,
                 generated,
                 info,
-                configuration
+                experiment
         );
         BenchmarkComparisonInput input;
         try {
-            input = BenchmarkComparisonInput.read(configuration, info, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()));
+            input = BenchmarkComparisonInput.read(experiment, info, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -199,7 +200,7 @@ public class GridSearch {
         catch (Exception e) {
             logger.error("bug3");
             logger.error(properties.toString());
-            logger.error(info.makeURL());
+            logger.error(info.getID());
             logger.error(rmDiff.getSrcPath());
             logger.error(e.getMessage());
             logger.error("Error in makeDiff", e);

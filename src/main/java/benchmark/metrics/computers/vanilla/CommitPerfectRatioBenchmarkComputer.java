@@ -1,10 +1,11 @@
 package benchmark.metrics.computers.vanilla;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.IExperiment;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.BaseBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,24 +20,24 @@ import static benchmark.utils.PathResolver.getPaths;
 public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
 
 
-    public CommitPerfectRatioBenchmarkComputer(Configuration configuration) {
-        super(configuration);
+    public CommitPerfectRatioBenchmarkComputer(IExperiment experiment) {
+        super(experiment);
     }
 
-    public Map<ASTDiffTool, Integer> perfectRatio() throws IOException {
-        Map<ASTDiffTool, Integer> result = new LinkedHashMap<>();
-        for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
+    public Map<IASTDiffTool, Integer> perfectRatio() throws IOException {
+        Map<IASTDiffTool, Integer> result = new LinkedHashMap<>();
+        for (IASTDiffTool tool : getExperiment().getTools()) {
             result.put(tool, 0);
         }
-        for (CaseInfo info : getConfiguration().getAllCases()) {
+        for (BenchmarkCase info : getExperiment().getDataset().getCases()) {
             String folderPath = exportedFolderPathByCaseInfo(info);
-            Path dir = Paths.get(getConfiguration().getOutputFolder() + folderPath  + "/");
+            Path dir = Paths.get(getExperiment().getOutputFolder() + folderPath  + "/");
 //            System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
             List<Path> paths = getPaths(dir, 1);
-            for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
+            for (IASTDiffTool tool : getExperiment().getTools()) {
                 boolean miss = false;
                 for (Path dirPath : paths) {
-                    String toolPath = tool.name();
+                    String toolPath = tool.getToolName();
                     String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
                     String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
                     if (!areFileContentsEqual(Paths.get(godFullPath), Paths.get(toolFullPath))) {
@@ -62,7 +63,7 @@ public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
     }
 
     @Override
-    public Collection<? extends BaseDiffComparisonResult> compute(CaseInfo info) throws IOException {
+    public Collection<? extends BaseDiffComparisonResult> compute(BenchmarkCase info) throws IOException {
         throw new UnsupportedOperationException();
     }
 }

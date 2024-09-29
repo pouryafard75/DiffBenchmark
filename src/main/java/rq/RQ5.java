@@ -1,12 +1,12 @@
 package rq;
 
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.data.exp.ExperimentConfiguration;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -32,19 +32,19 @@ public class RQ5 implements RQ{
         this.typeFilter = typeFilter;
     }
 
-    private static void rq5(Configuration[] confs, MappingsLocationFilter locationFilter, MappingsTypeFilter typeFilter) throws IOException {
+    private static void rq5(IExperiment[] experiments, MappingsLocationFilter locationFilter, MappingsTypeFilter typeFilter) throws IOException {
 
         Collection<BaseDiffComparisonResult> stats = new LinkedHashSet<>();
         StringBuilder name = new StringBuilder();
-        for (Configuration conf : confs) {
-            VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(conf, locationFilter.getFilter(), typeFilter);
+        for (IExperiment experiment : experiments) {
+            VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(experiment, locationFilter.getFilter(), typeFilter);
             stats.addAll(computer.compute());
-            name.append(conf.getName()).append("-");
+            name.append(experiment.getName()).append("-");
         }
         MetricsCsvWriter.exportToCSV(stats, "rq5-" + name + "-" + typeFilter.name() + ".csv", false);
     }
     @Override
-    public void run(Configuration[] confs) throws Exception {
-        rq5(confs, locationFilter, typeFilter);
+    public void run(IExperiment[] experiments) throws Exception {
+        rq5(experiments, locationFilter, typeFilter);
     }
 }

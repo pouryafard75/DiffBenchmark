@@ -1,6 +1,7 @@
 package benchmark.gui.web;
 
 import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.gui.viewers.DiffViewers;
 import benchmark.gui.conf.GuiConf;
 import com.github.gumtreediff.utils.Pair;
@@ -31,11 +32,11 @@ public class BenchmarkWebDiff {
     public static final int port = 6868;
 
     private final ProjectASTDiff projectASTDiff;
-    private final Map<ASTDiffTool, Set<ASTDiff>> diffs;
+    private final Map<IASTDiffTool, Set<ASTDiff>> diffs;
     private final GuiConf guiConf;
 
 
-    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Map<ASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
+    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Map<IASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
         this.projectASTDiff = projectASTDiffByRM;
         this.diffs = diffs;
         this.guiConf = guiConf;
@@ -75,8 +76,8 @@ public class BenchmarkWebDiff {
             return renderToString(view);
         });
 
-        for (Map.Entry<ASTDiffTool, Set<ASTDiff>> astDiffToolSetEntry : diffs.entrySet()) {
-            ASTDiffTool tool = astDiffToolSetEntry.getKey();
+        for (Map.Entry<IASTDiffTool, Set<ASTDiff>> astDiffToolSetEntry : diffs.entrySet()) {
+            IASTDiffTool tool = astDiffToolSetEntry.getKey();
             Set<ASTDiff> astDiffs = astDiffToolSetEntry.getValue();
             for (DiffViewers enabledViewer : guiConf.enabled_viewers) {
                 try {

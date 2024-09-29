@@ -1,13 +1,13 @@
 package rq;
 
+import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
 
 /* Created by pourya on 2024-05-17*/
 public class RQDriver {
     public static void main(String[] args) {
-        Configuration[] confs = {ConfigurationFactory.defects4jTwoPointOne()};
+        IExperiment[] confs = {EExperiment.D4J_EXP_2_1};
         RQ[] rqs = {
                 new RQ1(),
 //                new RQ2(), //Execution time is too long, so execute it separately withing RQ2.main method.

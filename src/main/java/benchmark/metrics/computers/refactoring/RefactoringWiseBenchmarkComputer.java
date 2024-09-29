@@ -1,5 +1,9 @@
 package benchmark.metrics.computers.refactoring;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.GithubCase;
+import benchmark.data.exp.IExperiment;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import benchmark.metrics.computers.filters.QueryBasedHumanReadableDiffFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
@@ -9,8 +13,6 @@ import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.RefactoringSpecificComparisonResult;
 import benchmark.generators.tools.ASTDiffTool;
 import benchmark.models.HumanReadableDiff;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
 import com.fasterxml.jackson.databind.JsonNode;
 import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
 import gr.uom.java.xmi.diff.*;
@@ -27,8 +29,8 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static benchmark.conf.Paths.FINALIZED_REFACTORING_MINER_PATH;
 import static benchmark.metrics.computers.vanilla.HRDBenchmarkComputer.compareHumanReadableDiffs;
-import static benchmark.utils.Configuration.ConfigurationFactory.FINALIZED_REFACTORING_MINER_PATH;
 import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 import static benchmark.utils.PathResolver.fileNameAsFolder;
@@ -42,8 +44,8 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     private static final String dataPath = FINALIZED_REFACTORING_MINER_PATH + "/src/test/resources/oracle/data.json";
     private final JsonNode refactoringValidationJsonNode;
 
-    public RefactoringWiseBenchmarkComputer(Configuration configuration, Set<RefactoringType> acceptedRefactoringTypes) {
-        super(configuration);
+    public RefactoringWiseBenchmarkComputer(IExperiment exp, Set<RefactoringType> acceptedRefactoringTypes) {
+        super(exp);
         this.acceptedRefactoringTypes = acceptedRefactoringTypes;
         forbiddenTypes = Set.of(
                 MoveOperationRefactoring.class,
@@ -96,14 +98,14 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     public Collection<? extends BaseDiffComparisonResult> compute() throws IOException {
         //todo:
         Collection<RefactoringSpecificComparisonResult> result = new ArrayList<>();
-        for (CaseInfo info : this.getConfiguration().getAllCases()) {
+        for (BenchmarkCase info : this.getExperiment().getDataset().getCases()) {
             result.addAll(compute(info));
         }
         return result;
     }
 
     @Override
-    public Collection<RefactoringSpecificComparisonResult> compute(CaseInfo info) throws IOException {
+    public Collection<RefactoringSpecificComparisonResult> compute(BenchmarkCase info) throws IOException {
         logger.info("Computing for " + info.getRepo() + " " + info.getCommit());
         Collection<RefactoringSpecificComparisonResult> result = new ArrayList<>();
         ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
@@ -124,16 +126,16 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             RefactoringRanges ranges = makeCodeRangesAssociatedWithRefactoring(refactoring);
 
             //Validate the refactoring with data.json in case it comes from refactoring oracle
-            if (info.isGitHub()) {
+            if (info instanceof GithubCase) {
                 JsonNode refactoringFromJson = findRefactoringByRepoSha1AndDescription(info.getRepo(), info.getCommit(), refactoringSpecificComparisonResult.getRefactoring().toString());
                 if (refactoringFromJson == null) {
-                    logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " because it does not exist in data.json!");
-                    throw new RuntimeException("Refactoring not found in data.json! " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL());
+                    logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().getID() + " because it does not exist in data.json!");
+                    throw new RuntimeException("Refactoring not found in data.json! " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().getID());
 //                    continue;
                 }
                 String validationStatus = refactoringFromJson.get("validation").asText();
                 if (!validationStatus.equals("TP") && !validationStatus.equals("CTP")) {
-                    logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " because it is not validated in data.json!");
+                    logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().getID() + " because it is not validated in data.json!");
                     continue;
                 }
             }
@@ -160,12 +162,12 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         Collection<CodeRange> leftRanges = ranges.leftRanges();
         Collection<CodeRange> rightRanges = ranges.rightRanges();
         Collection<BaseDiffComparisonResult> benchmarkStats = new ArrayList<>();
-        CaseInfo info = refactoringSpecificComparisonResult.getCaseInfo();
+        BenchmarkCase info = refactoringSpecificComparisonResult.getCaseInfo();
         String folderPath = exportedFolderPathByCaseInfo(info);
-        Path dir = Paths.get(getConfiguration().getOutputFolder() + folderPath  + "/");
+        Path dir = Paths.get(getExperiment().getOutputFolder() + folderPath  + "/");
         //Since the HRD folders, are named based on the srcFile (leftFile), There is nothing to process regarding the rightFileName;
         if (leftRanges == null || leftRanges.isEmpty() || rightRanges == null || rightRanges.isEmpty()) {
-            logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring()  + " @ " +  refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " because it does not have left/right ranges!");
+            logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring()  + " @ " +  refactoringSpecificComparisonResult.getCaseInfo().getID() + " because it does not have left/right ranges!");
             return;
         }
         String leftFile = leftRanges.iterator().next().getFilePath();
@@ -173,7 +175,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         Path dirPath = dir.resolve(fileNameAsFolder(leftFile));
         if (!new File(String.valueOf(dirPath)).exists())
         {
-            logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().makeURL() + " " + dirPath + " because it does not exist!");
+            logger.error("Skipping " + refactoringSpecificComparisonResult.getRefactoring() + " @ " + refactoringSpecificComparisonResult.getCaseInfo().getID() + " " + dirPath + " because it does not exist!");
             return;
         }
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString());
@@ -193,10 +195,10 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
         HumanReadableDiff originalGodHRD = getMapper().readValue(new File(godFullPath), HumanReadableDiff.class);
         HumanReadableDiff godHRDFinalized = filter.make(originalGodHRD, originalGodHRD);
-        for (ASTDiffTool tool : getConfiguration().getActiveTools()) {
+        for (IASTDiffTool tool : getExperiment().getTools()) {
             if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
                 continue;
-            String toolPath = tool.name();
+            String toolPath = tool.getToolName();
             String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
             HumanReadableDiff toolHRD;
             toolHRD = getMapper().readValue(new File(toolFullPath), HumanReadableDiff.class);

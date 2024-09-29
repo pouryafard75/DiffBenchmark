@@ -42,17 +42,20 @@ public class IASTMapper extends ASTDiffProviderFromProjectASTDiff {
     public Diff diff() throws Exception {
         cs.model.algorithm.iASTMapper m = new cs.model.algorithm.iASTMapper(srcContents, dstContents);
         m.buildMappingsOuterLoop();
-        Tree srcMirror = mirrorTree(m.getSrc());
-        Tree dstMirror = mirrorTree(m.getDst());
+        return getDiff(m.getSrc(), m.getDst(), m.getTreeMappings());
+    }
 
+    private static Diff getDiff(ITree src, ITree dst, Iterable<Mapping> treeMappings) throws Exception {
+        Tree srcMirror = mirrorTree(src);
+        Tree dstMirror = mirrorTree(dst);
         TreeContext srcTC = new TreeContext();
         srcTC.setRoot(srcMirror);
         TreeContext dstTC = new TreeContext();
         dstTC.setRoot(dstMirror);
-        com.github.gumtreediff.matchers.MappingStore mappingStore = new MappingStore(srcMirror,dstMirror);
-        EditScript editScript = new EditScript();
+        MappingStore mappingStore = new MappingStore(srcMirror,dstMirror);
+        EditScript editScript;
         try {
-            for (Mapping mapping : m.getTreeMappings()) {
+            for (Mapping mapping : treeMappings) {
                 Tree firstMirror = findMirror(mapping.first, srcMirror);
                 Tree secondMirror = findMirror(mapping.second, dstMirror);
                 assert firstMirror != null;
@@ -72,7 +75,8 @@ public class IASTMapper extends ASTDiffProviderFromProjectASTDiff {
         }
         return new Diff(srcTC, dstTC, mappingStore, editScript);
     }
-    private static Tree findMirror(ITree iTree, Tree fullTree) throws Exception {
+
+    private static Tree findMirror(ITree iTree, Tree fullTree) {
         List<Tree> treesBetweenPositions = getTreesExactPosition(fullTree, iTree.getPos(), iTree.getEndPos());
         for (Tree treeBetweenPosition : treesBetweenPositions) {
             if (treeBetweenPosition.getType().name.equals(iTree.getType().name))
@@ -93,20 +97,5 @@ public class IASTMapper extends ASTDiffProviderFromProjectASTDiff {
 
         }
         return curr;
-    }
-
-
-    private static Tree whichTree(cs.model.algorithm.iASTMapper m, Tree srcMirror, Tree dstMirror, ITree input) throws Exception {
-        ITree tempParent = input;
-        while (tempParent.getParent() != null)
-            tempParent = tempParent.getParent();
-        Tree decision;
-        if (tempParent == m.getSrc())
-            decision = srcMirror;
-        else if (tempParent == m.getDst())
-            decision = dstMirror;
-        else
-            throw new Exception("Must check");
-        return decision;
     }
 }

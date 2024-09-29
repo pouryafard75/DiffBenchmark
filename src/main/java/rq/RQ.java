@@ -1,7 +1,9 @@
 package rq;
 
+import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.generators.tools.models.IASTDiffTool;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -10,15 +12,15 @@ import java.io.IOException;
 import java.util.Map;
 
 public interface RQ {
-    void run(Configuration[] confs) throws Exception;
+    void run(IExperiment[] confs) throws Exception;
 
-    static <V> void writeToFile(Map<ASTDiffTool, V> astDiffToolIntegerMap, String outputFilePath) {
+    static <V> void writeToFile(Map<IASTDiffTool, V> astDiffToolIntegerMap, String outputFilePath) {
         File file = new File(outputFilePath);
         BufferedWriter bf = null;
         try {
             bf = new BufferedWriter(new FileWriter(file));
             // iterate map entries
-            for (Map.Entry<ASTDiffTool, V> entry :
+            for (Map.Entry<IASTDiffTool, V> entry :
                     astDiffToolIntegerMap.entrySet()) {
                 // put key and value separated by a colon
                 bf.write(entry.getKey().getToolName() + ":"

@@ -1,19 +1,17 @@
 package tools;
 
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.GithubCase;
 import benchmark.generators.tools.ASTDiffTool;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.utils.Experiments.ExperimentFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
-import org.refactoringminer.astDiff.utils.MappingExportModel;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.stream.Stream;
 
 import static benchmark.utils.Helpers.runWhatever;
@@ -25,15 +23,15 @@ public class ASTDiffToolTest {
 
     private static ProjectASTDiff projectASTDiff;
     private static ASTDiff target;
-    private static CaseInfo info;
-    private static Configuration conf;
+    private static BenchmarkCase info;
+    private static ExperimentConfiguration conf;
 
     @BeforeAll
     public static void setup() {
-        info = new CaseInfo("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825");
+        info = new GithubCase("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825");
         projectASTDiff = runWhatever(info);
         target = projectASTDiff.getDiffSet().iterator().next();
-        conf = ConfigurationFactory.refOracle();
+        conf = ExperimentFactory.refOracle();
     }
     public static Stream<Arguments> provideData() {
         return Stream.of(

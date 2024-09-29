@@ -1,8 +1,7 @@
 package benchmark.metrics.computers.churn;
 
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
-import benchmark.utils.Configuration.ConfigurationFactory;
+import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.exp.ExperimentConfiguration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gui.webdiff.dir.DirComparator;
 import org.apache.commons.lang3.tuple.Pair;
@@ -20,7 +19,7 @@ import static benchmark.utils.Helpers.runWhatever;
 /* Created by pourya on 2023-08-30 8:54 p.m. */
 public class DatasetDetailedChurnToCSV {
     private static final boolean includeAddedAndRemovedFiles = true;
-    private static final Configuration config = ConfigurationFactory.defects4j();
+    private static final ExperimentConfiguration config = null; //TODO:
 
     //url addedInModifiedFiles deletedFromModifiedFiles sizeOfModifiedFilesNew sizeOfModifiedFilesOld addedFilesSize removedFilesSize
     public static void main(String[] args) throws Exception {
@@ -28,10 +27,10 @@ public class DatasetDetailedChurnToCSV {
         ArrayList<String> lines = new ArrayList<>();
         int i = 0;
         String delimiter = "\t";
-        for (CaseInfo info : config.getAllCases()) {
+        for (BenchmarkCase info : config.getAllCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
 //            if (projectASTDiff.getDiffSet().size() > 2 ) continue;
-            String url = info.makeURL();
+            String url = info.getID();
             int addedInModifiedFiles = 0;
             int deletedFromModifiedFiles = 0;
             int sizeOfModifiedFilesNew = 0;

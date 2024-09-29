@@ -1,8 +1,8 @@
 package benchmark.metrics.characteristics;
 
+import benchmark.data.diffcase.BenchmarkCase;
 import benchmark.metrics.computers.churn.ChurnCalculator;
-import benchmark.utils.CaseInfo;
-import benchmark.utils.Configuration.Configuration;
+import benchmark.data.exp.ExperimentConfiguration;
 import org.apache.commons.lang3.function.TriFunction;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -52,30 +52,30 @@ public enum Characteristic {
     })),
     ;
 
-    private static Number eachCaseIterator(Configuration configuration, TriFunction<ProjectASTDiff, CaseInfo, Number, Number> consumer) {
+    private static Number eachCaseIterator(ExperimentConfiguration experimentConfiguration, TriFunction<ProjectASTDiff, BenchmarkCase, Number, Number> consumer) {
         Number number = 0;
-        for (CaseInfo info : configuration.getAllCases()) {
+        for (BenchmarkCase info : experimentConfiguration.getAllCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             number = consumer.apply(projectASTDiff, info, number);
         }
         return number;
     }
 
-    private final Function<Configuration, Number> executor;
+    private final Function<ExperimentConfiguration, Number> executor;
 
-    Characteristic(Function<Configuration, Number> executor) {
+    Characteristic(Function<ExperimentConfiguration, Number> executor) {
         this.executor = executor;
     }
 
-    public Number getNumber(Configuration configuration) {
-        return executor.apply(configuration);
+    public Number getNumber(ExperimentConfiguration experimentConfiguration) {
+        return executor.apply(experimentConfiguration);
     }
 
-    private static float getAvgChurn(Configuration configuration) {
+    private static float getAvgChurn(ExperimentConfiguration experimentConfiguration) {
         float totalLeft = 0.0f;
         float totalRight = 0.0f;
         int commitCount = 0;
-        for (CaseInfo info : configuration.getAllCases()) {
+        for (BenchmarkCase info : experimentConfiguration.getAllCases()) {
             System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             Pair<Float, Float> floatFloatPair = ChurnCalculator.calculateRelativeAddDeleteChurn

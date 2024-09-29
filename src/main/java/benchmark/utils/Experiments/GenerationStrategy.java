@@ -1,7 +1,6 @@
 package benchmark.utils.Experiments;
 
 import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.ExperimentConfiguration;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.hrd.HRDGen2;
 import benchmark.generators.hrd.HRDGen3;
@@ -14,28 +13,26 @@ public enum GenerationStrategy implements IGenerationStrategy {
         @Override
         public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff,
                                                ASTDiff generated,
-                                               BenchmarkCase info,
-                                               IExperiment experiment) {
-            return new HRDGen3(projectASTDiff, generated, info, experiment);
+                                               BenchmarkCase info) {
+            return new HRDGen3(projectASTDiff, generated, info);
         }
     },
     Filtered {
         @Override
-        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info, IExperiment experiment) {
-            return new HRDGen2(projectASTDiff, generated, info, experiment);
+        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
+            return new HRDGen2(projectASTDiff, generated, info);
         }
     },
 
     Experimental{
         @Override
-        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info, IExperiment experiment) {
-            return new HRDGen3(projectASTDiff, generated, info, experiment);
+        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
+            return new HRDGen3(projectASTDiff, generated, info);
         }
     };
 
     public abstract HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff,
                                                             ASTDiff generated,
-                                                            BenchmarkCase info,
-                                                            IExperiment experiment);
+                                                            BenchmarkCase info);
 
 }

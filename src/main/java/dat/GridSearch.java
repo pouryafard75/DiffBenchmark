@@ -11,7 +11,6 @@ import benchmark.generators.hrd.HRDGen3;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.generators.tools.ASTDiffTool;
 import benchmark.models.NecessaryMappings;
-import benchmark.data.exp.ExperimentConfiguration;
 import benchmark.utils.PathResolver;
 import com.github.gumtreediff.actions.ChawatheScriptGenerator;
 import com.github.gumtreediff.actions.Diff;
@@ -163,8 +162,7 @@ public class GridSearch {
         HumanReadableDiffGenerator datGen = new HRDGen3(
                 projectASTDiff,
                 generated,
-                info,
-                experiment
+                info
         );
         BenchmarkComparisonInput input;
         try {

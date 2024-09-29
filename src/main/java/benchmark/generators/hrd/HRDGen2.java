@@ -1,9 +1,7 @@
 package benchmark.generators.hrd;
 
 import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.IExperiment;
 import benchmark.models.AbstractMapping;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -13,8 +11,8 @@ import static benchmark.generators.hrd.GeneratorUtils.generateClassSignature;
 
 /* Created by pourya on 2023-09-15 4:26 p.m. */
 public class HRDGen2 extends HumanReadableDiffGenerator {
-    public HRDGen2(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info, IExperiment experiment) {
-        super(projectASTDiff, generated, info, experiment);
+    public HRDGen2(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
+        super(projectASTDiff, generated, info);
     }
     @Override
     public void handleTypeDeclaration(MappingMetaInformation mappingMetaInformation) {

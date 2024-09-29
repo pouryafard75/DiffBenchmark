@@ -76,7 +76,7 @@ public class BenchmarkHumanReadableDiffGenerator {
                 String toolPath = tool.getToolName(); //In case we later introduce a map from tool's name to tool's path
                 ASTDiff generated = tool.getASTDiffer(projectASTDiff, astDiff, info).makeASTDiff();
                 IGenerationStrategy generationStrategy = experiment.getGenerationStrategy();
-                HumanReadableDiffGenerator humanReadableDiffGenerator = generationStrategy.getGenerator(projectASTDiff, generated, info, experiment);
+                HumanReadableDiffGenerator humanReadableDiffGenerator = generationStrategy.getGenerator(projectASTDiff, generated, info);
                 humanReadableDiffGenerator.write(output_folder,astDiff.getSrcPath(),toolPath);
             }
         }

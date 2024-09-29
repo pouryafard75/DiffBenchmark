@@ -6,8 +6,6 @@ import benchmark.generators.tools.models.ASTDiffProviderFactory;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
-//import benchmark.generators.tools.runners.converter.Spoon;
-import benchmark.generators.tools.runners.converter.RM2;
 import benchmark.generators.tools.runners.converter.Spoon;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
@@ -173,7 +171,7 @@ public enum ASTDiffTool implements IASTDiffTool {
                             projectASTDiff, input, info,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    SPN ("Spoon", (projectASTDiff, input, info) -> new Spoon(projectASTDiff, input, info))
+    SPN ("Spoon", Spoon::new)
 
     ;
 

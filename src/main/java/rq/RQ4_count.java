@@ -2,9 +2,11 @@ package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 
+import benchmark.data.dataset.IBenchmarkDataset;
 import benchmark.data.diffcase.BenchmarkCase;
 import benchmark.data.diffcase.RefCountCase;
 import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
@@ -51,10 +53,10 @@ public class RQ4_count{
             throw new RuntimeException(e);
         }
     }
-    public void rq4(ExperimentConfiguration experimentConfiguration, int maxRefCount, int minFreq) throws Exception {
+    public void rq4(ExperimentConfiguration experiment, int maxRefCount, int minFreq) throws Exception {
         Map<Integer, Integer> countDist = Utils.refactoringCountDist(EExperiment.REF_EXP_2_1);
         Map<Integer, CommitRefactoringCountComparisonResult> refCountStats = new HashMap<>();
-        populateRefCountStats(experimentConfiguration, maxRefCount, minFreq, countDist, refCountStats);
+        populateRefCountStats(experiment, maxRefCount, minFreq, countDist, refCountStats);
         List<CommitRefactoringCountComparisonResult> stats = new ArrayList<>(refCountStats.values());
         stats.sort(Comparator.comparingInt(CommitRefactoringCountComparisonResult::getNumOfRefactorings));
         //TODO: MUST DEFINE ANOTHER COMPUTER FOR THIS TASK
@@ -63,8 +65,8 @@ public class RQ4_count{
 
     }
 
-    private static void populateRefCountStats(ExperimentConfiguration experimentConfiguration, int maxRefCount, int minFreq, Map<Integer, Integer> countDist, Map<Integer, CommitRefactoringCountComparisonResult> refCountStats) throws Exception {
-        for (BenchmarkCase caseInfo : experimentConfiguration.getAllCases()) {
+    private static void populateRefCountStats(IExperiment experiment, int maxRefCount, int minFreq, Map<Integer, Integer> countDist, Map<Integer, CommitRefactoringCountComparisonResult> refCountStats) throws Exception {
+        for (BenchmarkCase caseInfo : experiment.getDataset().getCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(caseInfo.getRepo(), caseInfo.getCommit());
             int numOfRef = projectASTDiff.getRefactorings().size();
             if (numOfRef > maxRefCount || countDist.get(numOfRef) < minFreq) continue;
@@ -73,7 +75,7 @@ public class RQ4_count{
                     refCountStats.getOrDefault(numOfRef,
                             new CommitRefactoringCountComparisonResult(
                                     new RefCountCase(numOfRef), numOfRef));
-            Collection<? extends BaseDiffComparisonResult> oneCaseStats = new VanillaBenchmarkComputer(experimentConfiguration, mappingsLocationFilter.getFilter(), mappingsTypeFilter).compute(caseInfo);
+            Collection<? extends BaseDiffComparisonResult> oneCaseStats = new VanillaBenchmarkComputer(experiment, mappingsLocationFilter.getFilter(), mappingsTypeFilter).compute(caseInfo);
             if (existing.getDiffStatsList().isEmpty()){
                 for (Entry<String, DiffStats> entry : oneCaseStats.iterator().next().getDiffStatsList().entrySet()) {
                     existing.getDiffStatsList().put(entry.getKey(), new DiffStats());

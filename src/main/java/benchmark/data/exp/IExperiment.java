@@ -13,4 +13,13 @@ public interface IExperiment {
     String getOutputFolder();
     String getCsvDestinationFile();
     String getName();
+
+
+    static String getMergedNames(IExperiment[] experiments) {
+        StringBuilder configNames = new StringBuilder();
+        for (IExperiment experiment : experiments) {
+            configNames.append(experiment.getName()).append("-");
+        }
+        return configNames.toString();
+    }
 }

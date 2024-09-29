@@ -1,5 +1,6 @@
 package benchmark.metrics.characteristics;
 
+import benchmark.data.dataset.IBenchmarkDataset;
 import benchmark.data.diffcase.BenchmarkCase;
 import benchmark.metrics.computers.churn.ChurnCalculator;
 import benchmark.data.exp.ExperimentConfiguration;
@@ -16,15 +17,15 @@ import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2024-07-01*/
 public enum Characteristic {
-    NUM_OF_CASES(configuration -> configuration.getAllCases().size()),
-    NUM_OF_FILES(configuration -> eachCaseIterator(configuration,
+    NUM_OF_CASES(benchmarkDataset -> benchmarkDataset.getCases().size()),
+    NUM_OF_FILES(benchmarkDataset -> eachCaseIterator(benchmarkDataset,
             (projectASTDiff, info, number) -> number.intValue() + projectASTDiff.getDiffSet().size())),
     NUM_OF_CASES_WITH_REFACTORINGS(
-            configuration -> eachCaseIterator(configuration,
+            benchmarkDataset -> eachCaseIterator(benchmarkDataset,
                     (projectASTDiff, info, number) ->
                             (projectASTDiff.getRefactorings().isEmpty()) ? number.intValue() : number.intValue() + 1)),
     NUM_OF_CASES_WITH_MULTI_MAPPINGS(
-            configuration -> eachCaseIterator(configuration,
+            benchmarkDataset -> eachCaseIterator(benchmarkDataset,
                     (projectASTDiff, info, number) -> {
                         boolean hasMultiMappings = false;
                         for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
@@ -52,30 +53,30 @@ public enum Characteristic {
     })),
     ;
 
-    private static Number eachCaseIterator(ExperimentConfiguration experimentConfiguration, TriFunction<ProjectASTDiff, BenchmarkCase, Number, Number> consumer) {
+    private static Number eachCaseIterator(IBenchmarkDataset benchmarkDataset, TriFunction<ProjectASTDiff, BenchmarkCase, Number, Number> consumer) {
         Number number = 0;
-        for (BenchmarkCase info : experimentConfiguration.getAllCases()) {
+        for (BenchmarkCase info : benchmarkDataset.getCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             number = consumer.apply(projectASTDiff, info, number);
         }
         return number;
     }
 
-    private final Function<ExperimentConfiguration, Number> executor;
+    private final Function<IBenchmarkDataset, Number> executor;
 
-    Characteristic(Function<ExperimentConfiguration, Number> executor) {
+    Characteristic(Function<IBenchmarkDataset, Number> executor) {
         this.executor = executor;
     }
 
-    public Number getNumber(ExperimentConfiguration experimentConfiguration) {
+    public Number getNumber(IBenchmarkDataset experimentConfiguration) {
         return executor.apply(experimentConfiguration);
     }
 
-    private static float getAvgChurn(ExperimentConfiguration experimentConfiguration) {
+    private static float getAvgChurn(IBenchmarkDataset benchmarkDataset) {
         float totalLeft = 0.0f;
         float totalRight = 0.0f;
         int commitCount = 0;
-        for (BenchmarkCase info : experimentConfiguration.getAllCases()) {
+        for (BenchmarkCase info : benchmarkDataset.getCases()) {
             System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             Pair<Float, Float> floatFloatPair = ChurnCalculator.calculateRelativeAddDeleteChurn

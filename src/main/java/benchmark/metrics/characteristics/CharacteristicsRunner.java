@@ -1,5 +1,6 @@
 package benchmark.metrics.characteristics;
 
+import benchmark.data.dataset.IBenchmarkDataset;
 import benchmark.data.exp.ExperimentConfiguration;
 
 import java.util.EnumSet;
@@ -19,9 +20,9 @@ public class CharacteristicsRunner {
 //        printCharacteristics(ConfigurationFactory.defects4j());
     }
 
-    private static void printCharacteristics(ExperimentConfiguration experimentConfiguration) {
+    private static void printCharacteristics(IBenchmarkDataset benchmarkDataset) {
         for (Characteristic characteristic : CharacteristicsRunner.conf) {
-                System.out.println(characteristic + ": " + characteristic.getNumber(experimentConfiguration));
+                System.out.println(characteristic + ": " + characteristic.getNumber(benchmarkDataset));
         }
     }
 }

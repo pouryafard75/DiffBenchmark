@@ -1,5 +1,6 @@
 package benchmark.metrics.computers.violation.writer;
 
+import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.violation.BenchmarkViolationComputer;
 import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
@@ -35,7 +36,7 @@ public class CsvWriter {
                         throw new RuntimeException("Could not create directory" + destin.getAbsolutePath());
                 IASTDiffTool tool = item.getKey();
                 Collection<SemanticViolationRecord> records = item.getValue();
-                Path finalPath = destin.toPath().resolve(ExperimentConfiguration.getMergedNames(benchmarkViolationComputer.getExperiments()) + "-" + tool.getToolName() + ".csv");
+                Path finalPath = destin.toPath().resolve(IExperiment.getMergedNames(benchmarkViolationComputer.getExperiments()) + "-" + tool.getToolName() + ".csv");
                 writeToolOutput(records, finalPath.toString());
             }
         }

@@ -1,8 +1,8 @@
 package tools;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.data.exp.ExperimentConfiguration;
 import benchmark.utils.Experiments.ExperimentFactory;
 import org.junit.jupiter.api.BeforeAll;
@@ -19,11 +19,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 /* Created by pourya on 2024-05-03*/
-public class ASTDiffToolTest {
+public class ASTDiffToolEnumTest {
 
     private static ProjectASTDiff projectASTDiff;
     private static ASTDiff target;
-    private static BenchmarkCase info;
+    private static IBenchmarkCase info;
     private static ExperimentConfiguration conf;
 
     @BeforeAll
@@ -35,33 +35,33 @@ public class ASTDiffToolTest {
     }
     public static Stream<Arguments> provideData() {
         return Stream.of(
-                Arguments.of(ASTDiffTool.GOD,255)
-               ,Arguments.of(ASTDiffTool.RMD,255)
-               ,Arguments.of(ASTDiffTool.GTG,234)
-               ,Arguments.of(ASTDiffTool.GTS,220)
-               ,Arguments.of(ASTDiffTool.IJM,126)
-               ,Arguments.of(ASTDiffTool.MTD,216)
-               ,Arguments.of(ASTDiffTool.GT2,218)
-               ,Arguments.of(ASTDiffTool.IAM,228)
-               ,Arguments.of(ASTDiffTool.RM2,219)
-               ,Arguments.of(ASTDiffTool.TRV,25)
-               ,Arguments.of(ASTDiffTool.VNG,234)
-               ,Arguments.of(ASTDiffTool.VNS,220)
-               ,Arguments.of(ASTDiffTool.SMG,235)
-               ,Arguments.of(ASTDiffTool.SMS,220)
-               ,Arguments.of(ASTDiffTool.NMG,243)
-               ,Arguments.of(ASTDiffTool.NMS,273)
-               ,Arguments.of(ASTDiffTool.FLG,234)
-               ,Arguments.of(ASTDiffTool.FLS,220)
-               ,Arguments.of(ASTDiffTool.FTG,224)
-               ,Arguments.of(ASTDiffTool.FTS,217)
+                Arguments.of(ASTDiffToolEnum.GOD,255)
+               ,Arguments.of(ASTDiffToolEnum.RMD,255)
+               ,Arguments.of(ASTDiffToolEnum.GTG,234)
+               ,Arguments.of(ASTDiffToolEnum.GTS,220)
+               ,Arguments.of(ASTDiffToolEnum.IJM,126)
+               ,Arguments.of(ASTDiffToolEnum.MTD,216)
+               ,Arguments.of(ASTDiffToolEnum.GT2,218)
+               ,Arguments.of(ASTDiffToolEnum.IAM,228)
+               ,Arguments.of(ASTDiffToolEnum.RM2,219)
+               ,Arguments.of(ASTDiffToolEnum.TRV,25)
+               ,Arguments.of(ASTDiffToolEnum.VNG,234)
+               ,Arguments.of(ASTDiffToolEnum.VNS,220)
+               ,Arguments.of(ASTDiffToolEnum.SMG,235)
+               ,Arguments.of(ASTDiffToolEnum.SMS,220)
+               ,Arguments.of(ASTDiffToolEnum.NMG,243)
+               ,Arguments.of(ASTDiffToolEnum.NMS,273)
+               ,Arguments.of(ASTDiffToolEnum.FLG,234)
+               ,Arguments.of(ASTDiffToolEnum.FLS,220)
+               ,Arguments.of(ASTDiffToolEnum.FTG,224)
+               ,Arguments.of(ASTDiffToolEnum.FTS,217)
 //               ,Arguments.of(ASTDiffTool.ALG,0)
 //               ,Arguments.of(ASTDiffTool.ALS,0)
         );
     }
     @ParameterizedTest
     @MethodSource("provideData")
-    public void testNumOfMappings(ASTDiffTool diffTool, int numOfMappings) {
+    public void testNumOfMappings(ASTDiffToolEnum diffTool, int numOfMappings) {
         ASTDiff result = null;
         try {
             result = diffTool.diff(projectASTDiff, target, info);

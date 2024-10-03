@@ -1,6 +1,6 @@
 package benchmark.utils;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
@@ -27,7 +27,7 @@ public class Helpers {
         }
         return projectASTDiff;
     }
-    public static ProjectASTDiff runWhatever(BenchmarkCase info) {
+    public static ProjectASTDiff runWhatever(IBenchmarkCase info) {
         return runWhatever(info.getRepo(), info.getCommit());
     }
 }

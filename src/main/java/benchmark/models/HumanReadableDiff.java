@@ -1,5 +1,6 @@
 package benchmark.models;
 
+import benchmark.utils.PathResolver;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.util.DefaultIndenter;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -93,5 +94,10 @@ public class HumanReadableDiff implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(intraFileMappings, interFileMappings);
+    }
+
+    public void write(String outputFolder, String srcPath, String fileName, String commit, String repo) {
+        File file = new File(PathResolver.getCommonPath(outputFolder, srcPath, fileName, commit, repo));
+        HumanReadableDiff.write(file, this);
     }
 }

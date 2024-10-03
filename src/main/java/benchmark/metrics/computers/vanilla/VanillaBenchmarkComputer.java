@@ -1,6 +1,6 @@
 package benchmark.metrics.computers.vanilla;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.BaseBenchmarkComputer;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
@@ -49,14 +49,14 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
     }
     public Collection<? extends BaseDiffComparisonResult> compute() throws IOException {
         Collection<BaseDiffComparisonResult> stats = new ArrayList<>();
-        for (BenchmarkCase info : getExperiment().getDataset().getCases()) {
+        for (IBenchmarkCase info : getExperiment().getDataset().getCases()) {
             stats.addAll(compute(info));
         }
         return stats;
     }
 
     @Override
-    public Collection<? extends BaseDiffComparisonResult> compute(BenchmarkCase info) throws IOException {
+    public Collection<? extends BaseDiffComparisonResult> compute(IBenchmarkCase info) throws IOException {
         Collection<BaseDiffComparisonResult> benchmarkStats = new ArrayList<>();
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(getExperiment().getOutputFolder() + folderPath  + "/");
@@ -73,7 +73,7 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
         return benchmarkStats;
     }
 
-    private BaseDiffComparisonResult getBaseDiffComparisonResult(BenchmarkCase info, Path dirPath) throws IOException {
+    private BaseDiffComparisonResult getBaseDiffComparisonResult(IBenchmarkCase info, Path dirPath) throws IOException {
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString(), onFly);
         new HRDBenchmarkComputer(getHumanReadableDiffFilter(), getMappingsTypeFilter(),
                 BenchmarkComparisonInput.read(this.getExperiment(), info, dirPath.getFileName().toString()))

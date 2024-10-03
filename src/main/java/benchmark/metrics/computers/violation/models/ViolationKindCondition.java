@@ -1,6 +1,5 @@
 package benchmark.metrics.computers.violation.models;
 
-import benchmark.generators.tools.ASTDiffTool;
 import benchmark.generators.tools.models.IASTDiffTool;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;

@@ -6,8 +6,6 @@ import benchmark.metrics.computers.violation.BenchmarkViolationComputer;
 import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.models.ViolationReport;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.opencsv.CSVWriter;
 
 import java.io.File;

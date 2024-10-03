@@ -2,12 +2,11 @@ package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.refactoring.RefactoringWiseBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 import org.refactoringminer.api.RefactoringType;
@@ -42,7 +41,7 @@ public class RQ4 implements RQ{
         Collection<BaseDiffComparisonResult> result = new ArrayList<>();
         StringBuilder name = new StringBuilder();
         for (IExperiment exp : exps) {
-            for (BenchmarkCase info : exp.getDataset().getCases()) {
+            for (IBenchmarkCase info : exp.getDataset().getCases()) {
                 System.out.println("Running " + info.getID());
                 result.addAll(new RefactoringWiseBenchmarkComputer(exp, workingDist.keySet()).compute(info));
             }

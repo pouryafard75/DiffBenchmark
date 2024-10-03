@@ -1,13 +1,12 @@
 package benchmark.metrics.computers.violation;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.violation.models.SemanticViolationRecord;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.models.ViolationReport;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -20,7 +19,7 @@ import java.util.Set;
 
 import static benchmark.metrics.computers.violation.Helpers.contains;
 import static benchmark.metrics.computers.violation.Helpers.makeKey;
-import static benchmark.generators.tools.ASTDiffTool.GOD;
+import static benchmark.generators.tools.ASTDiffToolEnum.GOD;
 
 /* Created by pourya on 2023-12-10 9:02 p.m. */
 public class BenchmarkViolationComputer {
@@ -71,7 +70,7 @@ public class BenchmarkViolationComputer {
         this(experiments, ViolationKind.values());
     }
 
-    private void populateAllReports(ASTDiff perfect, ASTDiff generated, IASTDiffTool tool, BenchmarkCase info, Collection<ViolationReport> reports) {
+    private void populateAllReports(ASTDiff perfect, ASTDiff generated, IASTDiffTool tool, IBenchmarkCase info, Collection<ViolationReport> reports) {
         for (Mapping mapping : generated.getAllMappings()) {
             for (ViolationReport report : reports) {
                 if (report.getViolationKind().getCondition().test(mapping, tool, perfect))
@@ -86,15 +85,16 @@ public class BenchmarkViolationComputer {
                 makeKey(violation), violation.first.toString(), violation.second.toString(), infoURL, filename);
     }
 
-    public void compute(ProjectASTDiff projectASTDiff, BenchmarkCase info, IExperiment experiment) throws Exception {
+    public void compute(IBenchmarkCase info, IExperiment experiment) throws Exception {
+        ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
         for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet())
         {
-            ASTDiff perfect = GOD.diff(projectASTDiff, rm_astDiff, info);
+            ASTDiff perfect = GOD.diff(info, (x -> rm_astDiff));
             for (IASTDiffTool tool : experiment.getTools())
             {
-                if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV)) continue; // GOD and TRV are not considered
+                if (tool.equals(ASTDiffToolEnum.GOD) || tool.equals(ASTDiffToolEnum.TRV)) continue; // GOD and TRV are not considered
 //                logger.info("Generating " + tool.name());
-                ASTDiff generated = tool.getASTDiffer(projectASTDiff, rm_astDiff, info).makeASTDiff();
+                ASTDiff generated = tool.get(info, (x -> rm_astDiff)).getASTDiff();
 //                logger.info("Comparing " + tool.name());
                 populateAllReports(perfect, generated, tool, info, reports);
             }

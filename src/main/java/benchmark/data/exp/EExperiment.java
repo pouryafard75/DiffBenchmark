@@ -13,8 +13,8 @@ public enum EExperiment implements IExperiment {
     REF_EXP_2_1(EBenchmarkDataset.RefOracle, ToolSets.TWO_ONE_COMPATIBLE,GenerationStrategy.Filtered, "output/RefOracle2_1/", "RefOracle3_0.csv"),
     D4J_EXP_3_0(EBenchmarkDataset.Defects4J, ToolSets.THREE_ZERO_COMPATIBLE,GenerationStrategy.NonFiltered, "output/D4JOracle3_0/", "D4JOracle3_0.csv"),
     D4J_EXP_2_1(EBenchmarkDataset.Defects4J, ToolSets.TWO_ONE_COMPATIBLE,GenerationStrategy.Filtered, "output/D4JOracle2_1/", "D4JOracle2_1.csv"),
-    DUM_EXP_3_0(EBenchmarkDataset.DUMMY, ToolSets.THREE_ZERO_COMPATIBLE,GenerationStrategy.NonFiltered, "output/DumOracle3_0/", "DumOracle3_0.csv"),
-    DUM_EXP_2_1(EBenchmarkDataset.DUMMY, ToolSets.TWO_ONE_COMPATIBLE,GenerationStrategy.NonFiltered, "output/DumOracle2_1/", "DumOracle2_1.csv"),
+    DUM_EXP_3_0(EBenchmarkDataset.Dummy, ToolSets.THREE_ZERO_COMPATIBLE,GenerationStrategy.NonFiltered, "output/DumOracle3_0/", "DumOracle3_0.csv"),
+    DUM_EXP_2_1(EBenchmarkDataset.Dummy, ToolSets.TWO_ONE_COMPATIBLE,GenerationStrategy.NonFiltered, "output/DumOracle2_1/", "DumOracle2_1.csv"),
     ;
 
     private final IBenchmarkDataset benchmarkDatasets;

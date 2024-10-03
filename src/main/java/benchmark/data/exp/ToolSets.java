@@ -1,6 +1,6 @@
 package benchmark.data.exp;
 
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 
 import java.util.Collection;
@@ -11,18 +11,18 @@ import java.util.Set;
 public enum ToolSets implements Set<IASTDiffTool> {
     THREE_ZERO_COMPATIBLE(
             Set.of(
-                    ASTDiffTool.RMD,
-                    ASTDiffTool.GTG,
-                    ASTDiffTool.GTS)
+                    ASTDiffToolEnum.RMD,
+                    ASTDiffToolEnum.GTG,
+                    ASTDiffToolEnum.GTS)
     ),
     TWO_ONE_COMPATIBLE(
                 Set.of(
-                        ASTDiffTool.RMD,
-                        ASTDiffTool.GTG,
-                        ASTDiffTool.GTS,
-                        ASTDiffTool.IJM,
-                        ASTDiffTool.MTD,
-                        ASTDiffTool.GT2)
+                        ASTDiffToolEnum.RMD,
+                        ASTDiffToolEnum.GTG,
+                        ASTDiffToolEnum.GTS,
+                        ASTDiffToolEnum.IJM,
+                        ASTDiffToolEnum.MTD,
+                        ASTDiffToolEnum.GT2)
     ),
     ;
 

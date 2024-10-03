@@ -1,7 +1,7 @@
 package benchmark.data.dataset;
 
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.AbstractIBenchmarkCase;
 import benchmark.data.diffcase.D4JCase;
 import com.fasterxml.jackson.core.type.TypeReference;
 
@@ -23,7 +23,7 @@ public class Defects4JBenchmarkDataset extends InspiredFromRMinerTestsBenchmarkD
     }
 
     @Override
-    public TypeReference<? extends Set<? extends BenchmarkCase>> getTypeReference() {
+    public TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference() {
         return new TypeReference<Set<D4JCase>>() {};
     }
 }

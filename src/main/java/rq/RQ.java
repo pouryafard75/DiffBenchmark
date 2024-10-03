@@ -1,8 +1,6 @@
 package rq;
 
 import benchmark.data.exp.IExperiment;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.data.exp.ExperimentConfiguration;
 import benchmark.generators.tools.models.IASTDiffTool;
 
 import java.io.BufferedWriter;

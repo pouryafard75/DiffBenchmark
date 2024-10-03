@@ -1,8 +1,7 @@
 package dat;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.EExperiment;
-import benchmark.data.exp.ExperimentConfiguration;
 import benchmark.data.exp.IExperiment;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -27,7 +26,7 @@ public class MakeIntels {
         int case_count = 0;
         IntelDao intelDao = new IntelDao();
         try {
-            for (BenchmarkCase info : experiment.getDataset().getCases()) {
+            for (IBenchmarkCase info : experiment.getDataset().getCases()) {
                 case_count++;
                 List<Intel> intels = new ArrayList<>();
                 ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());

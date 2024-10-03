@@ -1,14 +1,13 @@
 package rq;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.EExperiment;
 import benchmark.data.exp.IExperiment;
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.violation.BenchmarkViolationComputer;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.writer.CsvWriter;
-import benchmark.data.exp.ExperimentConfiguration;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.Set;
@@ -30,11 +29,10 @@ public class RQ2 implements RQ{
     private static void rq2(IExperiment[] experiments, ViolationKind[] violationKindsToCheck) throws Exception {
         BenchmarkViolationComputer benchmarkViolationComputer = new BenchmarkViolationComputer(experiments, violationKindsToCheck);
         for (IExperiment experiment : experiments) {
-            for (BenchmarkCase info : experiment.getDataset().getCases()) {
+            for (IBenchmarkCase info : experiment.getDataset().getCases()) {
                 {
                     System.out.println("Working on " + info.getRepo() + " " + info.getCommit());
-                    ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
-                    benchmarkViolationComputer.compute(projectASTDiff, info, experiment);
+                    benchmarkViolationComputer.compute(info, experiment);
                 }
             }
         }
@@ -50,14 +48,14 @@ public class RQ2 implements RQ{
         EExperiment e1 = EExperiment.REF_EXP_3_0;
         EExperiment e2 = EExperiment.REF_EXP_2_1;
         Set<IASTDiffTool> tools = Set.of(
-                ASTDiffTool.GOD,
-                ASTDiffTool.RMD,
-                ASTDiffTool.GTG,
-                ASTDiffTool.GTS,
-                ASTDiffTool.IJM,
-                ASTDiffTool.MTD,
-                ASTDiffTool.FTG,
-                ASTDiffTool.FTS
+                ASTDiffToolEnum.GOD,
+                ASTDiffToolEnum.RMD,
+                ASTDiffToolEnum.GTG,
+                ASTDiffToolEnum.GTS,
+                ASTDiffToolEnum.IJM,
+                ASTDiffToolEnum.MTD,
+                ASTDiffToolEnum.FTG,
+                ASTDiffToolEnum.FTS
         );
         e1.setTools(tools);
         e2.setTools(tools);

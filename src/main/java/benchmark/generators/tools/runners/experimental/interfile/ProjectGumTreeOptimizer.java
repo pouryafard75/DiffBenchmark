@@ -19,7 +19,7 @@ public class ProjectGumTreeOptimizer extends ProjectGumTreeASTDiffProvider
 
     private String getKey(){
         return projectGumTreeASTDiff.matcherID()
-                + "@" + info.getID() +
+                + "@" + benchmarkCase.getID() +
                 "@";
 //                +experiment.getName();
     }

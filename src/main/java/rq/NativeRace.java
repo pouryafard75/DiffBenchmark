@@ -1,6 +1,6 @@
 package rq;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.EExperiment;
 import benchmark.data.exp.IExperiment;
 
@@ -11,7 +11,7 @@ public class NativeRace {
         IExperiment experimentConfiguration = EExperiment.REF_EXP_3_0;
         BufferedWriter writer = new BufferedWriter(new FileWriter("nativeRace.csv"));
         writer.write("CaseInfo, JVMBinariesTime, NativeBinariesTime\n");
-        for (BenchmarkCase caseInfo : experimentConfiguration.getDataset().getCases()) {
+        for (IBenchmarkCase caseInfo : experimentConfiguration.getDataset().getCases()) {
             System.out.println("Working on "  + caseInfo.getID());
             long jvmTime = new JVMBinariesCMDRunner().exeTime(caseInfo);
             long nativeTime = new NativeBinariesCMDRunner().exeTime(caseInfo);
@@ -32,7 +32,7 @@ interface CMDRunner{
             throw new RuntimeException(e);
         }
     }
-    default void exe(BenchmarkCase caseInfo) {
+    default void exe(IBenchmarkCase caseInfo) {
         Process run = null;
 
         try {
@@ -49,7 +49,7 @@ interface CMDRunner{
         }
 
     }
-    default long exeTime(BenchmarkCase caseInfo){
+    default long exeTime(IBenchmarkCase caseInfo){
         kill();
         long start = System.currentTimeMillis();
         exe(caseInfo);

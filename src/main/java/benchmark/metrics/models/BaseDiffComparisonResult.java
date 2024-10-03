@@ -1,6 +1,6 @@
 package benchmark.metrics.models;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.models.AbstractMapping;
 import benchmark.models.HumanReadableDiff;
 import benchmark.models.NecessaryMappings;
@@ -13,14 +13,14 @@ import java.util.Map;
 /* Created by pourya on 2023-11-28 10:56 p.m. */
 public abstract class BaseDiffComparisonResult implements CsvWritable{
     final Map<String, DiffStats> diffStatsList = new LinkedHashMap<>();
-    final BenchmarkCase caseInfo;
+    final IBenchmarkCase caseInfo;
     protected HumanReadableDiff ignore = null;
 
     public Map<String, DiffStats> getDiffStatsList() {
         return diffStatsList;
     }
 
-    BaseDiffComparisonResult(BenchmarkCase caseInfo) {
+    BaseDiffComparisonResult(IBenchmarkCase caseInfo) {
         this.caseInfo = caseInfo;
     }
 
@@ -28,7 +28,7 @@ public abstract class BaseDiffComparisonResult implements CsvWritable{
         diffStatsList.put(toolName, diffStats);
     }
 
-    public BenchmarkCase getCaseInfo() {
+    public IBenchmarkCase getCaseInfo() {
         return caseInfo;
     }
 

@@ -3,7 +3,7 @@ package rq;
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import at.aau.softwaredynamics.matchers.JavaMatchers;
 import at.aau.softwaredynamics.matchers.MatcherFactory;
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
@@ -42,7 +42,7 @@ import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createMode
  */
 public class RQ8 implements RQ{
     private int numberOfExecutions = 5;
-    static Map<BenchmarkCase, ProjectASTDiff> resourceMap = new HashMap<>();
+    static Map<IBenchmarkCase, ProjectASTDiff> resourceMap = new HashMap<>();
 
     public void setNumberOfExecutions(int numberOfExecutions) {
         this.numberOfExecutions = numberOfExecutions;
@@ -79,8 +79,8 @@ public class RQ8 implements RQ{
         System.out.println("Resource map populated.");
         List<ExeTimeRecord> result = new ArrayList<>();
         int completed = 0;
-        Set<? extends BenchmarkCase> cases = experiment.getDataset().getCases();
-        for (BenchmarkCase info : cases) {
+        Set<? extends IBenchmarkCase> cases = experiment.getDataset().getCases();
+        for (IBenchmarkCase info : cases) {
             System.out.println("Working on: " + info.getID());
             result.add(executionTimeForEachCase(info, numOfExe));
             completed++;
@@ -105,7 +105,7 @@ public class RQ8 implements RQ{
     }
 
 
-    private static ExeTimeRecord executionTimeForEachCase(BenchmarkCase info, int numOfExe) throws Exception {
+    private static ExeTimeRecord executionTimeForEachCase(IBenchmarkCase info, int numOfExe) throws Exception {
         ProjectASTDiff projectASTDiff = resourceMap.get(info);
         float RMD_time = 0;
         float GTG_time = 0;
@@ -190,8 +190,8 @@ public class RQ8 implements RQ{
 
     private static void populateResourceMap(IExperiment experiment) throws Exception {
         int loaded = 0;
-        Set<? extends BenchmarkCase> cases = experiment.getDataset().getCases();
-        for (BenchmarkCase caseInfo : cases)
+        Set<? extends IBenchmarkCase> cases = experiment.getDataset().getCases();
+        for (IBenchmarkCase caseInfo : cases)
         {
             resourceMap.put(caseInfo, runWhatever(caseInfo.getRepo(), caseInfo.getCommit()));
             loaded++;
@@ -214,7 +214,7 @@ public class RQ8 implements RQ{
         long end = System.currentTimeMillis();
         return end - start;
     }
-    public static long diffTime(BenchmarkCase info) throws Exception {
+    public static long diffTime(IBenchmarkCase info) throws Exception {
         if (info.getRepo().contains(".git"))
             return diffTimeCommits(info.getRepo(), info.getCommit());
         else

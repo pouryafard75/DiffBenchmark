@@ -4,10 +4,10 @@ import benchmark.data.dataset.IBenchmarkDataset;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 /* Created by pourya on 2024-09-28*/
-public class RefCountCase implements BenchmarkCase {
+public class RefCountCaseI implements IBenchmarkCase {
     final int refCount;
 
-    public RefCountCase(int refCount) {
+    public RefCountCaseI(int refCount) {
         this.refCount = refCount;
     }
 
@@ -34,10 +34,5 @@ public class RefCountCase implements BenchmarkCase {
     @Override
     public IBenchmarkDataset getDataset() {
         return null;
-    }
-
-    @Override
-    public void setDataset(IBenchmarkDataset benchmarkDataset) {
-
     }
 }

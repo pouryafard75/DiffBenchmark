@@ -1,13 +1,14 @@
 package benchmark.gui.web;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
 import benchmark.data.exp.EExperiment;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.converter.NoPerfectDiffException;
 import benchmark.gui.conf.GuiConf;
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
+
 import benchmark.utils.Helpers;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -41,13 +42,13 @@ public class BenchmarkWebDiffFactory {
         ProjectASTDiff rmDiff = new GitHistoryRefactoringMinerImpl().diffAtCommit(repository, commit);
         return makeDiffs(rmDiff,null);
     }
-    public BenchmarkWebDiff withTwoDirectories(String before, String after, BenchmarkCase info) throws Exception {
+    public BenchmarkWebDiff withTwoDirectories(String before, String after, IBenchmarkCase info) throws Exception {
         return makeDiffs(getRMASTDiff(before, after), info);
     }
     public BenchmarkWebDiff withTwoDirectories(String before, String after) throws Exception {
         return makeDiffs(getRMASTDiff(before, after), null);
     }
-    public BenchmarkWebDiff withCaseInfo(BenchmarkCase info) throws Exception {
+    public BenchmarkWebDiff withCaseInfo(IBenchmarkCase info) throws Exception {
         ProjectASTDiff projectASTDiff = Helpers.runWhatever(info);
         return makeDiffs(projectASTDiff,info);
     }
@@ -57,7 +58,7 @@ public class BenchmarkWebDiffFactory {
         return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
     }
 
-    private BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, BenchmarkCase info) throws Exception {
+    private BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, IBenchmarkCase info) throws Exception {
         IExperiment exp = null;
         if (info != null && info.getRepo() != null) {
             String repo = info.getRepo();
@@ -68,10 +69,10 @@ public class BenchmarkWebDiffFactory {
         Map<IASTDiffTool, Set<ASTDiff>> diffs = new LinkedHashMap<>();
 
         for (ASTDiff astDiff : RM_astDiff) {
-            for (ASTDiffTool tool : guiConf.enabled_tools) {
+            for (ASTDiffToolEnum tool : guiConf.enabled_tools) {
                 diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
                 try {
-                    diffs.get(tool).add(tool.diff(projectASTDiffByRM, astDiff, info));
+                    diffs.get(tool).add(tool.diff(info, (x) -> astDiff));
                 }
                 catch (NoPerfectDiffException noPerfectDiffException)
                 {

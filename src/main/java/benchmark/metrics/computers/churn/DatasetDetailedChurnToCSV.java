@@ -1,7 +1,6 @@
 package benchmark.metrics.computers.churn;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gui.webdiff.dir.DirComparator;
@@ -28,7 +27,7 @@ public class DatasetDetailedChurnToCSV {
         ArrayList<String> lines = new ArrayList<>();
         int i = 0;
         String delimiter = "\t";
-        for (BenchmarkCase info : experiment.getDataset().getCases()) {
+        for (IBenchmarkCase info : experiment.getDataset().getCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
 //            if (projectASTDiff.getDiffSet().size() > 2 ) continue;
             String url = info.getID();

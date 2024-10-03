@@ -1,6 +1,6 @@
 package benchmark.data.dataset;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 
 import java.nio.file.Path;
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Set;
 public enum EBenchmarkDataset implements IBenchmarkDataset{
     RefOracle(new RefactoringOracleBenchmarkDataset()),
     Defects4J(new Defects4JBenchmarkDataset()),
-    DUMMY(new DummyDataset());
+    Dummy(new DummyDataset());
 
     private final IBenchmarkDataset iBenchmarkDataset;
 
@@ -29,7 +29,7 @@ public enum EBenchmarkDataset implements IBenchmarkDataset{
     }
 
     @Override
-    public Set<? extends BenchmarkCase> getCases() {
+    public Set<? extends IBenchmarkCase> getCases() {
         return iBenchmarkDataset.getCases();
     }
 }

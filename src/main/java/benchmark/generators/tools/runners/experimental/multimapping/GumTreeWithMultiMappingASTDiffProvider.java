@@ -17,7 +17,7 @@ public class GumTreeWithMultiMappingASTDiffProvider extends BaseGumTreeASTDiffPr
     }
 
     @Override
-    public ASTDiff makeASTDiff() throws Exception {
+    public ASTDiff getASTDiff() throws Exception {
         Tree srcRoot = input.src.getRoot();
         Tree dstRoot = input.dst.getRoot();
         MappingStore originalGumTreeMappingStore = match(srcRoot, dstRoot, matcher);

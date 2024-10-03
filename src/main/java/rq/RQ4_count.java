@@ -2,9 +2,8 @@ package rq;
 
 /* Created by pourya on 2023-11-20 11:28 a.m. */
 
-import benchmark.data.dataset.IBenchmarkDataset;
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.diffcase.RefCountCase;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.data.diffcase.RefCountCaseI;
 import benchmark.data.exp.EExperiment;
 import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.filters.MappingsLocationFilter;
@@ -14,7 +13,6 @@ import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.CommitRefactoringCountComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.data.exp.ExperimentConfiguration;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.*;
@@ -66,7 +64,7 @@ public class RQ4_count{
     }
 
     private static void populateRefCountStats(IExperiment experiment, int maxRefCount, int minFreq, Map<Integer, Integer> countDist, Map<Integer, CommitRefactoringCountComparisonResult> refCountStats) throws Exception {
-        for (BenchmarkCase caseInfo : experiment.getDataset().getCases()) {
+        for (IBenchmarkCase caseInfo : experiment.getDataset().getCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(caseInfo.getRepo(), caseInfo.getCommit());
             int numOfRef = projectASTDiff.getRefactorings().size();
             if (numOfRef > maxRefCount || countDist.get(numOfRef) < minFreq) continue;
@@ -74,7 +72,7 @@ public class RQ4_count{
             CommitRefactoringCountComparisonResult existing =
                     refCountStats.getOrDefault(numOfRef,
                             new CommitRefactoringCountComparisonResult(
-                                    new RefCountCase(numOfRef), numOfRef));
+                                    new RefCountCaseI(numOfRef), numOfRef));
             Collection<? extends BaseDiffComparisonResult> oneCaseStats = new VanillaBenchmarkComputer(experiment, mappingsLocationFilter.getFilter(), mappingsTypeFilter).compute(caseInfo);
             if (existing.getDiffStatsList().isEmpty()){
                 for (Entry<String, DiffStats> entry : oneCaseStats.iterator().next().getDiffStatsList().entrySet()) {

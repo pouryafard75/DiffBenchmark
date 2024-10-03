@@ -20,7 +20,7 @@ public class GumTreeWithTreeModifier extends BaseGumTreeASTDiffProvider{
     }
 
     @Override
-    public ASTDiff makeASTDiff() throws Exception {
+    public ASTDiff getASTDiff() throws Exception {
         Map<Tree, Tree> srcMap = new LinkedHashMap<>();
         Map<Tree, Tree> dstMap = new LinkedHashMap<>();
         Tree srcCopy = TreeUtilFunctions.deepCopyWithMap(input.src.getRoot(), srcMap);

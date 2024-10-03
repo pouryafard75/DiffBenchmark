@@ -1,7 +1,9 @@
 package benchmark.generators.tools.runners.converter;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
+
+import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.tree.DefaultTree;
 import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.tree.TypeSet;
@@ -22,12 +24,12 @@ import static benchmark.generators.tools.runners.Utils.getTreesExactPosition;
 
 /* Created by pourya on 2024-09-09*/
 public class Spoon extends ASTDiffProviderFromProjectASTDiff {
-    public Spoon(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
-        super(projectASTDiff, input, info);
+    public Spoon(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+        super(benchmarkCase, querySelector);
     }
 
     @Override
-    public ASTDiff makeASTDiff() throws Exception {
+    public ASTDiff getASTDiff() throws Exception {
         CtElement leftCt = getCtPackageFromContent(projectASTDiff.getFileContentsBefore().get(input.getSrcPath()));
         CtElement rightCt = getCtPackageFromContent(projectASTDiff.getFileContentsAfter().get(input.getDstPath()));
         shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder scanner = new shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder();

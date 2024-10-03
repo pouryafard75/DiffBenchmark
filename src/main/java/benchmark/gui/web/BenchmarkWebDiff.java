@@ -1,6 +1,6 @@
 package benchmark.gui.web;
 
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.gui.viewers.DiffViewers;
 import benchmark.gui.conf.GuiConf;
@@ -105,7 +105,7 @@ public class BenchmarkWebDiff {
         });
     }
 
-    private void getMonaco(ASTDiffTool tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
+    private void getMonaco(ASTDiffToolEnum tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
         get("/" + tool + "-monaco/:id" , (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = astDiffs.stream().toList().get(id);
@@ -115,7 +115,7 @@ public class BenchmarkWebDiff {
         });
     }
 
-    private static void getVanilla(ASTDiffTool tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
+    private static void getVanilla(ASTDiffToolEnum tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
         get("/" + tool + "/:id" , (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));
             ASTDiff astDiff = astDiffs.stream().toList().get(id);

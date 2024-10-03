@@ -1,10 +1,9 @@
 package benchmark.metrics.computers.vanilla;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.models.HumanReadableDiff;
-import benchmark.data.exp.ExperimentConfiguration;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -21,11 +20,11 @@ import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 
 public class
 BenchmarkComparisonInput {
-    private Map<ASTDiffTool, HumanReadableDiff> rawHRDMap;
+    private Map<ASTDiffToolEnum, HumanReadableDiff> rawHRDMap;
     private HumanReadableDiff originalGODHRD;
     private HumanReadableDiff originalTRVHRD;
 
-    public Map<ASTDiffTool, HumanReadableDiff> getRawHRDMap() {
+    public Map<ASTDiffToolEnum, HumanReadableDiff> getRawHRDMap() {
         return rawHRDMap;
     }
 
@@ -37,7 +36,7 @@ BenchmarkComparisonInput {
         return originalTRVHRD;
     }
 
-    BenchmarkComparisonInput(Map<ASTDiffTool, HumanReadableDiff> rawHRDMap, HumanReadableDiff originalGODHRD, HumanReadableDiff originalTRVHRD) {
+    BenchmarkComparisonInput(Map<ASTDiffToolEnum, HumanReadableDiff> rawHRDMap, HumanReadableDiff originalGODHRD, HumanReadableDiff originalTRVHRD) {
         this.rawHRDMap = rawHRDMap;
 
         this.originalGODHRD = originalGODHRD;
@@ -45,7 +44,7 @@ BenchmarkComparisonInput {
         removeUnnecessaryHRDs();
     }
 
-    public static BenchmarkComparisonInput read(IExperiment experiment, BenchmarkCase info, String fileName) throws IOException {
+    public static BenchmarkComparisonInput read(IExperiment experiment, IBenchmarkCase info, String fileName) throws IOException {
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(experiment.getOutputFolder() + folderPath + "/");
         return readDir(dir.resolve(fileName), experiment);
@@ -55,7 +54,7 @@ BenchmarkComparisonInput {
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
 
         HumanReadableDiff god = null, trv = null;
-        Map<ASTDiffTool, HumanReadableDiff> hrds = new EnumMap<>(ASTDiffTool.class);
+        Map<ASTDiffToolEnum, HumanReadableDiff> hrds = new EnumMap<>(ASTDiffToolEnum.class);
 
 
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(finalPath)) {
@@ -70,7 +69,7 @@ BenchmarkComparisonInput {
                         trv = hrd;
                         break;
                     default:
-                        ASTDiffTool astDiffTool = ASTDiffTool.valueOf(toolName);
+                        ASTDiffToolEnum astDiffTool = ASTDiffToolEnum.valueOf(toolName);
                         if (experiment.getTools().stream().toList().contains(astDiffTool))
                             hrds.put(astDiffTool, hrd);
                 }
@@ -84,22 +83,22 @@ BenchmarkComparisonInput {
 
     private void removeUnnecessaryHRDs() {
         if (rawHRDMap == null) throw new RuntimeException("rawHRDMap cannot be null");
-        rawHRDMap.remove(ASTDiffTool.GOD);
-        rawHRDMap.remove(ASTDiffTool.TRV);
+        rawHRDMap.remove(ASTDiffToolEnum.GOD);
+        rawHRDMap.remove(ASTDiffToolEnum.TRV);
         if (rawHRDMap.isEmpty()) throw new RuntimeException("rawHRDMap cannot be empty");
     }
 
-    public void add(ASTDiffTool astDiffTool, HumanReadableDiff result) {
-        rawHRDMap.put(astDiffTool, result);
+    public void add(ASTDiffToolEnum ASTDiffToolEnum, HumanReadableDiff result) {
+        rawHRDMap.put(ASTDiffToolEnum, result);
     }
     public void filterForDat(){
         //Only keep GOD, TRV, RM, and DAT , and remove the rest
         rawHRDMap.keySet().
                 removeIf(
-                        x -> !x.equals(ASTDiffTool.GOD)
-                        && !x.equals(ASTDiffTool.TRV)
-                        && !x.equals(ASTDiffTool.RMD)
-                        && !x.equals(ASTDiffTool.DAT));
+                        x -> !x.equals(ASTDiffToolEnum.GOD)
+                        && !x.equals(ASTDiffToolEnum.TRV)
+                        && !x.equals(ASTDiffToolEnum.RMD)
+                        && !x.equals(ASTDiffToolEnum.DAT));
 
     }
 }

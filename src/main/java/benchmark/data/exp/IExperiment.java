@@ -7,12 +7,25 @@ import benchmark.utils.Experiments.IGenerationStrategy;
 import java.util.Set;
 
 public interface IExperiment {
+    /**
+     * Get the dataset of the experiment
+     */
     IBenchmarkDataset getDataset();
+    /**
+     * Get the tools that are active in the experiment
+     */
     Set<IASTDiffTool> getTools();
+    /**
+     * Get the generation strategy of the experiment
+     */
     IGenerationStrategy getGenerationStrategy();
+    /**
+     * Get the name of the experiment
+     */
+    String getName();
     String getOutputFolder();
     String getCsvDestinationFile();
-    String getName();
+
 
 
     static String getMergedNames(IExperiment[] experiments) {

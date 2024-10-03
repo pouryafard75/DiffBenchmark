@@ -1,6 +1,6 @@
 package rq;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
@@ -71,7 +71,7 @@ public class Utils {
 
     private static <T> Map<T, Integer> refDistribution(IExperiment experiment, Function<List<Refactoring>, T> perCollectionFunction, Function<Refactoring, T> perEachFunction) throws IOException {
         Map<T, Integer> countMap = new HashMap<>();
-        for (BenchmarkCase info : experiment.getDataset().getCases()) {
+        for (IBenchmarkCase info : experiment.getDataset().getCases()) {
             System.out.println("Working on " + info.getRepo() + " " + info.getCommit());
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             List<Refactoring> refactorings = projectASTDiff.getRefactorings();

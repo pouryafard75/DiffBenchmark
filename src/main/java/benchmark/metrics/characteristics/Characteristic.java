@@ -1,9 +1,9 @@
 package benchmark.metrics.characteristics;
 
 import benchmark.data.dataset.IBenchmarkDataset;
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.metrics.computers.churn.ChurnCalculator;
-import benchmark.data.exp.ExperimentConfiguration;
+
 import org.apache.commons.lang3.function.TriFunction;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -12,7 +12,7 @@ import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
-import static benchmark.generators.tools.ASTDiffTool.GOD;
+import static benchmark.generators.tools.ASTDiffToolEnum.GOD;
 import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2024-07-01*/
@@ -26,12 +26,12 @@ public enum Characteristic {
                             (projectASTDiff.getRefactorings().isEmpty()) ? number.intValue() : number.intValue() + 1)),
     NUM_OF_CASES_WITH_MULTI_MAPPINGS(
             benchmarkDataset -> eachCaseIterator(benchmarkDataset,
-                    (projectASTDiff, info, number) -> {
+                    (projectASTDiff, benchmarkCase, number) -> {
                         boolean hasMultiMappings = false;
                         for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
                             ASTDiff diff = null;
                             try {
-                                diff = GOD.diff(projectASTDiff, astDiff, info);
+                                diff = GOD.diff(benchmarkCase, (x) -> astDiff);
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
@@ -53,9 +53,9 @@ public enum Characteristic {
     })),
     ;
 
-    private static Number eachCaseIterator(IBenchmarkDataset benchmarkDataset, TriFunction<ProjectASTDiff, BenchmarkCase, Number, Number> consumer) {
+    private static Number eachCaseIterator(IBenchmarkDataset benchmarkDataset, TriFunction<ProjectASTDiff, IBenchmarkCase, Number, Number> consumer) {
         Number number = 0;
-        for (BenchmarkCase info : benchmarkDataset.getCases()) {
+        for (IBenchmarkCase info : benchmarkDataset.getCases()) {
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             number = consumer.apply(projectASTDiff, info, number);
         }
@@ -76,7 +76,7 @@ public enum Characteristic {
         float totalLeft = 0.0f;
         float totalRight = 0.0f;
         int commitCount = 0;
-        for (BenchmarkCase info : benchmarkDataset.getCases()) {
+        for (IBenchmarkCase info : benchmarkDataset.getCases()) {
             System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
             ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
             Pair<Float, Float> floatFloatPair = ChurnCalculator.calculateRelativeAddDeleteChurn

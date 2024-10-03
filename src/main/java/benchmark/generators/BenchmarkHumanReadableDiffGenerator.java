@@ -1,10 +1,12 @@
 package benchmark.generators;
 
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.generators.tools.models.IASTDiffTool;
+
+import benchmark.models.HumanReadableDiff;
 import benchmark.utils.Experiments.IGenerationStrategy;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -26,9 +28,9 @@ public class BenchmarkHumanReadableDiffGenerator {
     }
     public void generateMultiThreaded(int numThreads) {
         ExecutorService executorService = Executors.newFixedThreadPool(numThreads);
-        Set<? extends BenchmarkCase> cases = experiment.getDataset().getCases();
+        Set<? extends IBenchmarkCase> cases = experiment.getDataset().getCases();
         CountDownLatch latch = new CountDownLatch(cases.size());
-        for (BenchmarkCase info : cases) {
+        for (IBenchmarkCase info : cases) {
             executorService.submit(() -> {
                 try {
                     writeActiveTools(info, experiment.getOutputFolder());
@@ -58,26 +60,24 @@ public class BenchmarkHumanReadableDiffGenerator {
     }
 
     public void generateSingleThreaded() throws Exception {
-        for (BenchmarkCase info : experiment.getDataset().getCases()) {
+        for (IBenchmarkCase info : experiment.getDataset().getCases()) {
             writeActiveTools(info, experiment.getOutputFolder());
         }
         System.out.println("Finished generating human readable diffs...");
     }
-    private void writeActiveTools(BenchmarkCase info, String output_folder) throws Exception {
-        String repo = info.getRepo();
-        String commit = info.getCommit();
+    private void writeActiveTools(IBenchmarkCase benchmarkCase, String output_folder) throws Exception {
+        String repo = benchmarkCase.getRepo();
+        String commit = benchmarkCase.getCommit();
         System.out.println("Started for " + repo + " " + commit);
         ProjectASTDiff projectASTDiff = runWhatever(repo, commit);
         Set<ASTDiff> astDiffs = projectASTDiff.getDiffSet();
         for (ASTDiff astDiff : astDiffs) {
-            //----------------------------------\\
             for (IASTDiffTool tool : experiment.getTools()) {
-                String toolName = tool.getToolName(); //In case we later introduce a map from tool's name to tool's path
-                String toolPath = tool.getToolName(); //In case we later introduce a map from tool's name to tool's path
-                ASTDiff generated = tool.getASTDiffer(projectASTDiff, astDiff, info).makeASTDiff();
+                String toolPath = tool.getToolName();
+                ASTDiff generated = tool.get(benchmarkCase, (x -> astDiff)).getASTDiff();
                 IGenerationStrategy generationStrategy = experiment.getGenerationStrategy();
-                HumanReadableDiffGenerator humanReadableDiffGenerator = generationStrategy.getGenerator(projectASTDiff, generated, info);
-                humanReadableDiffGenerator.write(output_folder,astDiff.getSrcPath(),toolPath);
+                HumanReadableDiff hrd = generationStrategy.get(benchmarkCase, (x -> generated));
+                hrd.write(output_folder,astDiff.getSrcPath(),toolPath,commit, repo); //TODO : verify
             }
         }
         System.out.println("Finished for " + repo + " " + commit);

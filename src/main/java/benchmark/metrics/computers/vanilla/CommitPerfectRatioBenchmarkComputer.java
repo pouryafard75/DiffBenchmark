@@ -1,11 +1,11 @@
 package benchmark.metrics.computers.vanilla;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.BaseBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -29,7 +29,7 @@ public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
         for (IASTDiffTool tool : getExperiment().getTools()) {
             result.put(tool, 0);
         }
-        for (BenchmarkCase info : getExperiment().getDataset().getCases()) {
+        for (IBenchmarkCase info : getExperiment().getDataset().getCases()) {
             String folderPath = exportedFolderPathByCaseInfo(info);
             Path dir = Paths.get(getExperiment().getOutputFolder() + folderPath  + "/");
 //            System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
@@ -38,8 +38,8 @@ public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
                 boolean miss = false;
                 for (Path dirPath : paths) {
                     String toolPath = tool.getToolName();
-                    String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
-                    String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
+                    String godFullPath = dirPath.resolve(ASTDiffToolEnum.GOD.name() + ".json").toString();
+                    String toolFullPath = godFullPath.replace(ASTDiffToolEnum.GOD.name(), toolPath);
                     if (!areFileContentsEqual(Paths.get(godFullPath), Paths.get(toolFullPath))) {
                         miss = true;
                         break;
@@ -63,7 +63,7 @@ public class CommitPerfectRatioBenchmarkComputer extends BaseBenchmarkComputer {
     }
 
     @Override
-    public Collection<? extends BaseDiffComparisonResult> compute(BenchmarkCase info) throws IOException {
+    public Collection<? extends BaseDiffComparisonResult> compute(IBenchmarkCase info) throws IOException {
         throw new UnsupportedOperationException();
     }
 }

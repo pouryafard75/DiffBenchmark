@@ -6,7 +6,7 @@ import benchmark.metrics.computers.filters.MappingsLocationFilter;
 import benchmark.metrics.computers.filters.MappingsTypeFilter;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.models.HumanReadableDiff;
 
 import java.io.IOException;
@@ -33,8 +33,8 @@ public class HRDBenchmarkComputer {
 
     public HumanReadableDiff compute(BaseDiffComparisonResult baseDiffComparisonResult) throws IOException {
         HumanReadableDiff godHRDFinalized = this.humanReadableDiffFilter.make(input.getOriginalGODHRD(), input.getOriginalGODHRD());
-        for (Map.Entry<ASTDiffTool, HumanReadableDiff> astDiffToolHumanReadableDiffEntry : input.getRawHRDMap().entrySet()) {
-            ASTDiffTool tool = astDiffToolHumanReadableDiffEntry.getKey();
+        for (Map.Entry<ASTDiffToolEnum, HumanReadableDiff> astDiffToolHumanReadableDiffEntry : input.getRawHRDMap().entrySet()) {
+            ASTDiffToolEnum tool = astDiffToolHumanReadableDiffEntry.getKey();
             HumanReadableDiff toolHRD = astDiffToolHumanReadableDiffEntry.getValue();
             HumanReadableDiff toolHRDFinalized = this.humanReadableDiffFilter.make(toolHRD, godHRDFinalized);
             DiffStats diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, mappingsTypeFilter);

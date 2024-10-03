@@ -1,6 +1,7 @@
 package benchmark.data.dataset;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.AbstractIBenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,20 +29,20 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
     }
 
     @Override
-    public Set<? extends BenchmarkCase> getCases() {
+    public Set<? extends IBenchmarkCase> getCases() {
         return makeAllCases(getTypeReference(),
                 getPerfectDirPath().resolve(perfectInfoName),
                 getPerfectDirPath().resolve(problematicInfoName)
         );
     }
 
-    public abstract TypeReference<? extends Set<? extends BenchmarkCase>> getTypeReference();
+    public abstract TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference();
 
-    Set<? extends BenchmarkCase> makeAllCases(TypeReference<? extends Set<? extends BenchmarkCase>> valueTypeRef, Path... casesPath) {
+    Set<? extends IBenchmarkCase> makeAllCases(TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> valueTypeRef, Path... casesPath) {
         ObjectMapper mapper = new ObjectMapper();
-        Set<BenchmarkCase> allCases = new TreeSet<>(Comparator.comparing(BenchmarkCase::getID));
+        Set<AbstractIBenchmarkCase> allCases = new TreeSet<>(Comparator.comparing(IBenchmarkCase::getID));
         for (Path path : casesPath) {
-            Set<GithubCase> loaded;
+            Set<? extends AbstractIBenchmarkCase> loaded;
             try {
                 loaded = mapper.readValue(path.toFile(), valueTypeRef);
             } catch (IOException e) {
@@ -49,8 +50,8 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
             }
             allCases.addAll(loaded);
         }
-        for (BenchmarkCase allCase : allCases) {
-            allCase.setDataset(this);
+        for (AbstractIBenchmarkCase aCase : allCases) {
+            aCase.setDataset(this);
         }
         return allCases;
     }

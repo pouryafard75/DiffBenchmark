@@ -1,7 +1,9 @@
 package benchmark.generators.tools.runners.experimental.interfile;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.runners.converter.AbstractASTDiffProviderFromExportedMappings;
+import benchmark.utils.Experiments.IQuerySelector;
+import com.github.gumtreediff.matchers.CompositeMatchers;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.FakeTree;
@@ -18,17 +20,18 @@ import java.util.function.Function;
 public class ProjectGumTreeASTDiffProvider extends AbstractASTDiffProviderFromExportedMappings {
     protected final Matcher matcher;
     protected final GumTreeProjectMatcher projectMatcher;
-    public ProjectGumTreeASTDiffProvider(GumTreeProjectMatcher projectMatcher, ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase caseInfo, Matcher matcher) {
-        super(projectASTDiff, input, caseInfo);
+    public ProjectGumTreeASTDiffProvider(GumTreeProjectMatcher projectMatcher, IBenchmarkCase benchmarkCase, IQuerySelector query, Matcher matcher) {
+        super(benchmarkCase, query);
         this.matcher = matcher;
         this.projectMatcher = projectMatcher;
     }
 
     public ProjectGumTreeASTDiffProvider(ProjectGumTreeASTDiffProvider projectGumTreeASTDiff) {
-        super(projectGumTreeASTDiff.projectASTDiff, projectGumTreeASTDiff.input, projectGumTreeASTDiff.info);
+        super(projectGumTreeASTDiff.benchmarkCase, projectGumTreeASTDiff.querySelector);
         this.matcher = projectGumTreeASTDiff.matcher;
         this.projectMatcher = projectGumTreeASTDiff.projectMatcher;
     }
+
 
     boolean belongsTo(Tree subtree, Tree root) {
         if (subtree == root) return true;

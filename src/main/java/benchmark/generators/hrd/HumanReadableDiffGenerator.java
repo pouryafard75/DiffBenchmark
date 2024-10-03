@@ -1,9 +1,11 @@
 package benchmark.generators.hrd;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.models.AbstractMapping;
 import benchmark.models.HumanReadableDiff;
 import benchmark.models.NecessaryMappings;
+
+import benchmark.utils.Experiments.IQuerySelector;
 import benchmark.utils.PathResolver;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.model.Action;
@@ -31,11 +33,23 @@ public abstract class HumanReadableDiffGenerator {
     private final ASTDiff astDiff;
     private final HumanReadableDiff result;
 
+    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+        //TODO
+        this.repo = benchmarkCase.getRepo();
+        this.commit = benchmarkCase.getCommit();
+        ProjectASTDiff projectASTDiff = benchmarkCase.getProjectASTDiff();
+        this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
+        this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
+        this.astDiff = querySelector.apply(projectASTDiff);
+        result = new HumanReadableDiff();
+        make();
+    }
+
     public HumanReadableDiff getResult() {
         return result;
     }
 
-    public HumanReadableDiffGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
+    public HumanReadableDiffGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, IBenchmarkCase info) {
         this.repo = info.getRepo();
         this.commit = info.getCommit();
         this.fileContentsBefore = projectASTDiff.getFileContentsBefore();

@@ -1,38 +1,21 @@
 package benchmark.utils.Experiments;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.IExperiment;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.hrd.HRDGen2;
 import benchmark.generators.hrd.HRDGen3;
-import benchmark.generators.hrd.HumanReadableDiffGenerator;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
+import benchmark.models.HumanReadableDiff;
 
 public enum GenerationStrategy implements IGenerationStrategy {
     NonFiltered {
         @Override
-        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff,
-                                               ASTDiff generated,
-                                               BenchmarkCase info) {
-            return new HRDGen3(projectASTDiff, generated, info);
+        public HumanReadableDiff get(IBenchmarkCase benchmarkCase, IQuerySelector query) {
+            return new HRDGen3(benchmarkCase, query).getResult();
         }
     },
     Filtered {
         @Override
-        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
-            return new HRDGen2(projectASTDiff, generated, info);
+        public HumanReadableDiff get(IBenchmarkCase benchmarkCase, IQuerySelector query) {
+            return new HRDGen2(benchmarkCase, query).getResult();
         }
     },
-
-    Experimental{
-        @Override
-        public HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
-            return new HRDGen3(projectASTDiff, generated, info);
-        }
-    };
-
-    public abstract HumanReadableDiffGenerator getGenerator(ProjectASTDiff projectASTDiff,
-                                                            ASTDiff generated,
-                                                            BenchmarkCase info);
-
 }

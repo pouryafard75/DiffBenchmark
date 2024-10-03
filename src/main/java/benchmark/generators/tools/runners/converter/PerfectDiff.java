@@ -1,11 +1,10 @@
 package benchmark.generators.tools.runners.converter;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.IExperiment;
+import benchmark.data.diffcase.IBenchmarkCase;
+
+import benchmark.utils.Experiments.IQuerySelector;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 
@@ -18,10 +17,10 @@ import static org.refactoringminer.astDiff.utils.ExportUtils.repoToFolder;
 
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
-
-    public PerfectDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
-        super(projectASTDiff, input, info);
+    public PerfectDiff(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+        super(benchmarkCase, querySelector);
     }
+
 
     @Override
     protected List<MappingExportModel> getExportedMappings() {
@@ -30,13 +29,13 @@ public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
             exportedMappings = new ObjectMapper().readValue(new File(getFileNameBasedOnAST()), new TypeReference<List<MappingExportModel>>() {
             });
         } catch (IOException e) {
-            throw new NoPerfectDiffException("No Perfect Diff found for " + info.getRepo() + " at " + info.getCommit() + " for " + input.getSrcPath() + " " + e.getMessage());
+            throw new NoPerfectDiffException("No Perfect Diff found for " + benchmarkCase.getRepo() + " at " + benchmarkCase.getCommit() + " for " + input.getSrcPath() + " " + e.getMessage());
         }
         return exportedMappings;
 
     }
 
     private String getFileNameBasedOnAST() {
-        return info.getDataset().getPerfectDirPath() + "/" + repoToFolder(info.getRepo()) + "/" + info.getCommit() + "/" + getFileNameFromSrcDiff(input.getSrcPath());
+        return benchmarkCase.getDataset().getPerfectDirPath() + "/" + repoToFolder(benchmarkCase.getRepo()) + "/" + benchmarkCase.getCommit() + "/" + getFileNameFromSrcDiff(input.getSrcPath());
     }
 }

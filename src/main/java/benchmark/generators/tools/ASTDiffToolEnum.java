@@ -1,8 +1,8 @@
 package benchmark.generators.tools;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProvider;
-import benchmark.generators.tools.models.ASTDiffProviderFactory;
+import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
@@ -21,31 +21,30 @@ import benchmark.generators.tools.runners.experimental.labels.LeafTypeMerger;
 import benchmark.generators.tools.runners.experimental.multimapping.CopyPaste;
 import benchmark.generators.tools.runners.experimental.multimapping.GumTreeWithMultiMappingASTDiffProvider;
 import benchmark.generators.tools.runners.experimental.multimapping.NonMatchedSubtreesAdditionalRound;
-import benchmark.generators.tools.runners.shaded.GT2;
 import benchmark.generators.tools.runners.shaded.IJM;
 import benchmark.generators.tools.runners.shaded.MTDiff;
 import benchmark.generators.tools.runners.trivial.TrivialDiff;
+import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.matchers.CompositeMatchers;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 
-public enum ASTDiffTool implements IASTDiffTool {
-    GOD ("PerfectDiff", PerfectDiff::new),
-
-    RMD ("RefactoringMiner", (projectASTDiff, input, info) -> () -> input),
-
-    GTG ("GumTree Greedy 3.0", (projectASTDiff, input, info) -> new GreedyGumTreeASTDiffProvider(input)),
-
-    GTS ("GumTree Simple 3.0", (projectASTDiff, input, info) -> new SimpleGumTreeASTDiffProvider(input)),
-
-    IJM ("Iterative Java Matcher", (projectASTDiff, input, info) -> new IJM(projectASTDiff,input))
+public enum ASTDiffToolEnum implements IASTDiffTool {
+    GOD ("PerfectDiff", PerfectDiff::new)
+    ,
+    RMD ("RefactoringMiner", (benchmarkCase, query) -> () -> query.apply(benchmarkCase.getProjectASTDiff()))
+    ,
+    GTG ("GumTree Greedy 3.0", (benchmarkCase, query) -> new GreedyGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
+    ,
+    GTS ("GumTree Simple 3.0", (benchmarkCase, query) -> new SimpleGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
+    ,
+    IJM ("Iterative Java Matcher", IJM::new)
     ,
     MTD ("MoveOptimized Tree Differencing", MTDiff::new)
     ,
     GT2 ("GumTree 2.0", benchmark.generators.tools.runners.shaded.GT2::new)
     ,
-    IAM ("IASTMapper", (projectASTDiff, input, info) -> new IASTMapper(projectASTDiff,input))
+    IAM ("IASTMapper", IASTMapper::new)
     ,
     DAT ("Diff Auto Tuning", null)
     ,
@@ -53,134 +52,137 @@ public enum ASTDiffTool implements IASTDiffTool {
     ,
     TRV ("TrivialDiff", TrivialDiff::new)
     ,
-    VNG ("VirtualNodeWithGreedy", (projectASTDiff, input, info) ->
+    VNG ("VirtualNodeWithGreedy", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
                         new SingleVirtualNodeMatching(),
-                        projectASTDiff, input, info,
+                        benchmarkCase, query,
                         new CompositeMatchers.ClassicGumtree())))
     ,
-    VNS ("VirtualNodeWithSimple", (projectASTDiff, input, info) ->
+    VNS ("VirtualNodeWithSimple", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
                         new SingleVirtualNodeMatching(),
-                        projectASTDiff, input, info,
+                        benchmarkCase, query,
                         new CompositeMatchers.SimpleGumtree())))
     ,
-    SMG ("StagedTreeMatchingGreedy", (projectASTDiff, input, info) ->
+    SMG ("StagedTreeMatchingGreedy", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
-                        new StagedTreeMatching(projectASTDiff),
-                        projectASTDiff, input, info,
+                        new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
+                        benchmarkCase, query,
                         new CompositeMatchers.ClassicGumtree())))
 
     ,
-    SMS ("StagedTreeMatchingSimple", (projectASTDiff, input, info) ->
+    SMS ("StagedTreeMatchingSimple", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
-                        new StagedTreeMatching(projectASTDiff),
-                        projectASTDiff, input, info,
+                        new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
+                        benchmarkCase, query,
                         new CompositeMatchers.SimpleGumtree())))
     ,
-    NMG ("NonMappedSubTreesWithGreedy", (projectASTDiff, input, info) ->
+    NMG ("NonMappedSubTreesWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new NonMatchedSubtreesAdditionalRound(),
-                    new CompositeMatchers.ClassicGumtree(), input))
+                    new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    NMS ("NonMappedSubTreesWithSimple", (projectASTDiff, input, info) ->
+    NMS ("NonMappedSubTreesWithSimple", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new NonMatchedSubtreesAdditionalRound(),
-                    new CompositeMatchers.SimpleGumtree(), input))
+                    new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    CPG("CopyPasteWithGreedy", (projectASTDiff, input, info) ->
+    CPG("CopyPasteWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new CopyPaste(),
-                    new CompositeMatchers.ClassicGumtree(), input))
+                    new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    CPS ("CopyPasteWithSimple", (projectASTDiff, input, info) ->
+    CPS ("CopyPasteWithSimple", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new CopyPaste(),
-                    new CompositeMatchers.SimpleGumtree(), input))
+                    new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    FLG ("FineGrainedLabelsWithGreedy", (projectASTDiff, input, info) ->
+    FLG ("FineGrainedLabelsWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new LeafLabelMerger(),
-                    new CompositeMatchers.ClassicGumtree(), input
-            ))
+                    new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    FLS ("FineGrainedLabelsWithSimple", (projectASTDiff, input, info) ->
+    FLS ("FineGrainedLabelsWithSimple", (benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new LeafLabelMerger(),
-                    new CompositeMatchers.SimpleGumtree(), input))
+                    new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    FTG ("FineGrainedTypesWithGreedy", (projectASTDiff, input, info) ->
+    FTG ("FineGrainedTypesWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new LeafTypeMerger(),
-                    new CompositeMatchers.ClassicGumtree(), input))
+                    new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    FTS ("FineGrainedTypesWithSimple",(projectASTDiff, input, info) ->
+    FTS ("FineGrainedTypesWithSimple",(benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new LeafTypeMerger(),
-                    new CompositeMatchers.SimpleGumtree(), input))
+                    new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    COMBINED_TYPE_STAGED_GREEDY ("COMBINED_TYPE_STAGED_GREEDY", ((projectASTDiff, input, info) ->
+    COMBINED_TYPE_STAGED_GREEDY ("COMBINED_TYPE_STAGED_GREEDY", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterNoMulti(
                             new LeafTypeMerger(),
-                            new StagedTreeMatching(projectASTDiff),
-                            projectASTDiff, input, info,
+                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
+                            benchmarkCase,
+                            query,
                             new CompositeMatchers.ClassicGumtree())))),
-    COMBINED_TYPE_STAGED_SIMPLE ("COMBINED_TYPE_STAGED_SIMPLE", ((projectASTDiff, input, info) ->
+    COMBINED_TYPE_STAGED_SIMPLE ("COMBINED_TYPE_STAGED_SIMPLE", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterNoMulti(
                             new LeafTypeMerger(),
-                            new StagedTreeMatching(projectASTDiff),
-                            projectASTDiff, input, info,
+                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
+                            benchmarkCase,
+                            query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    COMBINED_TYPE_VN_GREEDY ("COMBINED_TYPE_SVN_GREEDY", ((projectASTDiff, input, info) ->
+    COMBINED_TYPE_VN_GREEDY ("COMBINED_TYPE_SVN_GREEDY", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterNoMulti(
                             new LeafTypeMerger(),
                             new SingleVirtualNodeMatching(),
-                            projectASTDiff, input, info,
+                            benchmarkCase,
+                            query,
                             new CompositeMatchers.ClassicGumtree())))),
-    COMBINED_TYPE_VN_SIMPLE ("COMBINED_TYPE_SVN_SIMPLE", ((projectASTDiff, input, info) ->
+    COMBINED_TYPE_VN_SIMPLE ("COMBINED_TYPE_SVN_SIMPLE",  ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterNoMulti(
                             new LeafTypeMerger(),
                             new SingleVirtualNodeMatching(),
-                            projectASTDiff, input, info,
+                            benchmarkCase,
+                            query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    X_TYPE_STAGED_NONMATCHED_GREEDY ("MERGED_STAGED_NONMATCHED_GREEDY", ((projectASTDiff, input, info) ->
+    X_TYPE_STAGED_NONMATCHED_GREEDY ("MERGED_STAGED_NONMATCHED_GREEDY",  ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new LeafTypeMerger(),
-                            new StagedTreeMatching(projectASTDiff),
+                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
                             new NonMatchedSubtreesAdditionalRound(),
-                            projectASTDiff, input, info,
+                            benchmarkCase,
+                            query,
                             new CompositeMatchers.ClassicGumtree()))))
     ,
-    X_TYPE_STAGED_NONMATCHED_SIMPLE ("MERGED_STAGED_NONMATCHED_SIMPLE", ((projectASTDiff, input, info) ->
+    X_TYPE_STAGED_NONMATCHED_SIMPLE ("MERGED_STAGED_NONMATCHED_SIMPLE", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new LeafTypeMerger(),
-                            new StagedTreeMatching(projectASTDiff),
+                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
                             new NonMatchedSubtreesAdditionalRound(),
-                            projectASTDiff, input, info,
+                            benchmarkCase,
+                            query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
     SPN ("Spoon", Spoon::new)
 
     ;
 
-    private final ASTDiffProviderFactory factory;
+    private final ASTDiffProviderForBenchmark factory;
     private final String toolName;
-    public ASTDiff diff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) throws Exception {
-        return factory.getASTDiffer(projectASTDiff, input, info).makeASTDiff();
-    }
-    ASTDiffTool(String toolName, ASTDiffProviderFactory factory) {
+
+    ASTDiffToolEnum(String toolName, ASTDiffProviderForBenchmark factory) {
         this.factory = factory;
         this.toolName = toolName;
     }
@@ -193,8 +195,12 @@ public enum ASTDiffTool implements IASTDiffTool {
     }
 
     @Override
-    public ASTDiffProvider getASTDiffer(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) throws Exception {
-        return factory.getASTDiffer(projectASTDiff, input, info);
+    public ASTDiffProvider get(IBenchmarkCase benchmarkCase, IQuerySelector query) {
+        return factory.get(benchmarkCase, query);
+    }
+
+    public ASTDiff diff(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) throws Exception {
+        return factory.get(benchmarkCase, querySelector).getASTDiff();
     }
 }
 

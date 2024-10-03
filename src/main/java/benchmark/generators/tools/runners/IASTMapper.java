@@ -1,6 +1,8 @@
 package benchmark.generators.tools.runners;
 
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
+import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
@@ -28,15 +30,14 @@ public class IASTMapper extends ASTDiffProviderFromProjectASTDiff {
 
     private final static Logger logger = LoggerFactory.getLogger(IASTMapper.class);
 
-
-    public IASTMapper(ProjectASTDiff projectASTDiff, ASTDiff input) {
-        super(projectASTDiff, input);
+    public IASTMapper(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+        super(benchmarkCase, querySelector);
         this.srcContents = projectASTDiff.getFileContentsBefore().get(input.getSrcPath());
         this.dstContents = projectASTDiff.getFileContentsAfter().get(input.getDstPath());
     }
 
 
-    public ASTDiff makeASTDiff() throws Exception {
+    public ASTDiff getASTDiff() throws Exception {
         return diffToASTDiffWithActions(diff(), input.getSrcPath(), input.getDstPath());
     }
     public Diff diff() throws Exception {

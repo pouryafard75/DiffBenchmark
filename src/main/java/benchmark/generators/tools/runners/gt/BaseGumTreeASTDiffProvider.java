@@ -21,7 +21,7 @@ public class BaseGumTreeASTDiffProvider extends BaseASTDiffProvider {
     }
 
     @Override
-    public ASTDiff makeASTDiff() throws Exception {
+    public ASTDiff getASTDiff() throws Exception {
         return makeASTDiffFromMatcher();
     }
 

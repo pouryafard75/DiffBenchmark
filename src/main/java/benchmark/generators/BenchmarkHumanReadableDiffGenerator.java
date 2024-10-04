@@ -3,7 +3,6 @@ package benchmark.generators;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
-import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.generators.tools.models.IASTDiffTool;
 
 import benchmark.models.HumanReadableDiff;
@@ -77,7 +76,7 @@ public class BenchmarkHumanReadableDiffGenerator {
                 ASTDiff generated = tool.get(benchmarkCase, (x -> astDiff)).getASTDiff();
                 IGenerationStrategy generationStrategy = experiment.getGenerationStrategy();
                 HumanReadableDiff hrd = generationStrategy.get(benchmarkCase, (x -> generated));
-                hrd.write(output_folder,astDiff.getSrcPath(),toolPath,commit, repo); //TODO : verify
+                hrd.write(output_folder,astDiff.getSrcPath(),tool.getNameInURL(),commit, repo); //TODO : verify
             }
         }
         System.out.println("Finished for " + repo + " " + commit);

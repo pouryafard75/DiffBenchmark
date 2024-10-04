@@ -1,12 +1,11 @@
 package rq;
 
 import benchmark.data.exp.IExperiment;
-import benchmark.metrics.computers.filters.MappingsLocationFilter;
-import benchmark.metrics.computers.filters.MappingsTypeFilter;
+import benchmark.metrics.computers.filters.FilterDuringGeneration;
+import benchmark.metrics.computers.filters.FilterDuringMetricsCalculation;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
-import benchmark.data.exp.ExperimentConfiguration;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -17,17 +16,17 @@ import java.util.LinkedHashSet;
  * What is the accuracy of each tool in matching program elements (i.e., method, field declarations)?
  */
 public class RQ3 implements RQ{
-    private static final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.NO_FILTER;
-    private final MappingsTypeFilter typeFilter;
-    public RQ3(MappingsTypeFilter typeFilter) {
+    private static final FilterDuringGeneration FILTER_DURING_GENERATION = FilterDuringGeneration.NO_FILTER;
+    private final FilterDuringMetricsCalculation typeFilter;
+    public RQ3(FilterDuringMetricsCalculation typeFilter) {
         this.typeFilter = typeFilter;
     }
 
-    private static void rq3(IExperiment[] experiments, MappingsTypeFilter typeFilter) throws Exception {
+    private static void rq3(IExperiment[] experiments, FilterDuringMetricsCalculation typeFilter) throws Exception {
         Collection<BaseDiffComparisonResult> stats = new LinkedHashSet<>();
         StringBuilder name = new StringBuilder();
         for (IExperiment experiment : experiments) {
-            VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(experiment, mappingsLocationFilter.getFilter(), typeFilter);
+            VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(experiment, FILTER_DURING_GENERATION.getFilter(), typeFilter);
             stats.addAll(computer.compute());
             name.append(experiment.getName()).append("-");
         }

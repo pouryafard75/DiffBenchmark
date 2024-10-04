@@ -38,10 +38,9 @@ BenchmarkComparisonInput {
 
     BenchmarkComparisonInput(Map<ASTDiffToolEnum, HumanReadableDiff> rawHRDMap, HumanReadableDiff originalGODHRD, HumanReadableDiff originalTRVHRD) {
         this.rawHRDMap = rawHRDMap;
-
         this.originalGODHRD = originalGODHRD;
         this.originalTRVHRD = originalTRVHRD;
-        removeUnnecessaryHRDs();
+//        removeUnnecessaryHRDs();
     }
 
     public static BenchmarkComparisonInput read(IExperiment experiment, IBenchmarkCase info, String fileName) throws IOException {

@@ -4,10 +4,10 @@ package rq;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.RefCountCaseI;
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
-import benchmark.metrics.computers.filters.MappingsLocationFilter;
-import benchmark.metrics.computers.filters.MappingsTypeFilter;
+import benchmark.metrics.computers.filters.FilterDuringGeneration;
+import benchmark.metrics.computers.filters.FilterDuringMetricsCalculation;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.CommitRefactoringCountComparisonResult;
@@ -26,8 +26,8 @@ import static benchmark.utils.Helpers.runWhatever;
  * How do refactorings affect the accuracy of each tool?
  */
 public class RQ4_count{
-    private static final MappingsLocationFilter mappingsLocationFilter = MappingsLocationFilter.NO_FILTER;
-    private static final MappingsTypeFilter mappingsTypeFilter = MappingsTypeFilter.NO_FILTER;
+    private static final FilterDuringGeneration FILTER_DURING_GENERATION = FilterDuringGeneration.NO_FILTER;
+    private static final FilterDuringMetricsCalculation FILTER_DURING_METRICS_CALCULATION = FilterDuringMetricsCalculation.NO_FILTER;
     private int maxRefCount = 101;
     private int minFreq = 3;
     private String csvDestinationFile = "xyz.csv"; //TODO
@@ -52,7 +52,7 @@ public class RQ4_count{
         }
     }
     public void rq4(IExperiment experiment, int maxRefCount, int minFreq) throws Exception {
-        Map<Integer, Integer> countDist = Utils.refactoringCountDist(EExperiment.REF_EXP_2_1);
+        Map<Integer, Integer> countDist = Utils.refactoringCountDist(ExperimentsEnum.REF_EXP_2_1);
         Map<Integer, CommitRefactoringCountComparisonResult> refCountStats = new HashMap<>();
         populateRefCountStats(experiment, maxRefCount, minFreq, countDist, refCountStats);
         List<CommitRefactoringCountComparisonResult> stats = new ArrayList<>(refCountStats.values());
@@ -73,7 +73,7 @@ public class RQ4_count{
                     refCountStats.getOrDefault(numOfRef,
                             new CommitRefactoringCountComparisonResult(
                                     new RefCountCaseI(numOfRef), numOfRef));
-            Collection<? extends BaseDiffComparisonResult> oneCaseStats = new VanillaBenchmarkComputer(experiment, mappingsLocationFilter.getFilter(), mappingsTypeFilter).compute(caseInfo);
+            Collection<? extends BaseDiffComparisonResult> oneCaseStats = new VanillaBenchmarkComputer(experiment, FILTER_DURING_GENERATION.getFilter(), FILTER_DURING_METRICS_CALCULATION).compute(caseInfo);
             if (existing.getDiffStatsList().isEmpty()){
                 for (Entry<String, DiffStats> entry : oneCaseStats.iterator().next().getDiffStatsList().entrySet()) {
                     existing.getDiffStatsList().put(entry.getKey(), new DiffStats());

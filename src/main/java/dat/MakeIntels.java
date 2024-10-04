@@ -1,7 +1,7 @@
 package dat;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -16,7 +16,7 @@ import static benchmark.utils.Helpers.runWhatever;
 /* Created by pourya on 2024-01-18*/
 public class MakeIntels {
     private final static Logger logger = LoggerFactory.getLogger(MakeIntels.class);
-    private static final IExperiment experiment = EExperiment.REF_EXP_3_0;
+    private static final IExperiment experiment = ExperimentsEnum.REF_EXP_3_0;
     private static final String destination = "intel.csv";
     private static int numThreads = Runtime.getRuntime().availableProcessors();
 

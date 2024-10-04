@@ -1,6 +1,6 @@
 package benchmark.metrics;
 
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
@@ -13,7 +13,7 @@ public class MetricsToCSV {
     public static void main(String[] args) throws Exception {
 //        for (Boolean aBoolean : Set.of(true, false))
         {
-            IExperiment experiment = EExperiment.DUM_EXP_3_0;
+            IExperiment experiment = ExperimentsEnum.DUM_EXP_3_0;
 
             VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(experiment);
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();

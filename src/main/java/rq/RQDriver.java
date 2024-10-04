@@ -1,21 +1,21 @@
 package rq;
 
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
-import benchmark.metrics.computers.filters.MappingsTypeFilter;
+import benchmark.metrics.computers.filters.FilterDuringMetricsCalculation;
 
 /* Created by pourya on 2024-05-17*/
 public class RQDriver {
     public static void main(String[] args) {
-        IExperiment[] confs = {EExperiment.D4J_EXP_2_1};
+        IExperiment[] confs = {ExperimentsEnum.D4J_EXP_2_1};
         RQ[] rqs = {
                 new RQ1(),
 //                new RQ2(), //Execution time is too long, so execute it separately withing RQ2.main method.
-                new RQ3(MappingsTypeFilter.PROGRAM_ELEMENTS),
-                new RQ3(MappingsTypeFilter.FIELD_DECL_ONLY),
-                new RQ3(MappingsTypeFilter.METHOD_DECL_ONLY),
-                new RQ3(MappingsTypeFilter.TYPE_DECL_ONLY),
-                new RQ3(MappingsTypeFilter.ENUM_DECL_ONLY),
+                new RQ3(FilterDuringMetricsCalculation.PROGRAM_ELEMENTS),
+                new RQ3(FilterDuringMetricsCalculation.FIELD_DECL_ONLY),
+                new RQ3(FilterDuringMetricsCalculation.METHOD_DECL_ONLY),
+                new RQ3(FilterDuringMetricsCalculation.TYPE_DECL_ONLY),
+                new RQ3(FilterDuringMetricsCalculation.ENUM_DECL_ONLY),
                 new RQ4(),
                 new RQ5(),
                 new RQ6(),

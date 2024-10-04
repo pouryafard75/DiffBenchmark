@@ -1,16 +1,14 @@
 package benchmark.generators.hrd;
 
 import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import benchmark.models.AbstractMapping;
 import benchmark.models.NecessaryMappings;
-
 import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
-import org.refactoringminer.astDiff.utils.Constants;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.utils.Constants;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -19,8 +17,8 @@ import static benchmark.generators.hrd.GeneratorUtils.*;
 
 /* Created by pourya on 2023-09-15 4:26 p.m. */
 public class HRDGen3 extends HumanReadableDiffGenerator {
-    public HRDGen3(IBenchmarkCase benchmarkCase, IQuerySelector selector) {
-        super(benchmarkCase, selector);
+    public HRDGen3(IBenchmarkCase benchmarkCase, IQuerySelector selector, HumanReadableDiffFilter humanReadableDiffFilter) {
+        super(benchmarkCase, selector, humanReadableDiffFilter);
     }
 
     @Override

@@ -1,18 +1,15 @@
 package rq;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.violation.BenchmarkViolationComputer;
 import benchmark.metrics.computers.violation.models.ViolationKind;
 import benchmark.metrics.computers.violation.writer.CsvWriter;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.Set;
-
-import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-09-19 6:18 p.m. */
 
@@ -45,8 +42,8 @@ public class RQ2 implements RQ{
     }
 
     public static void main(String[] args) throws Exception {
-        EExperiment e1 = EExperiment.REF_EXP_3_0;
-        EExperiment e2 = EExperiment.REF_EXP_2_1;
+        IExperiment e1 = ExperimentsEnum.REF_EXP_3_0;
+        IExperiment e2 = ExperimentsEnum.REF_EXP_2_1;
         Set<IASTDiffTool> tools = Set.of(
                 ASTDiffToolEnum.GOD,
                 ASTDiffToolEnum.RMD,

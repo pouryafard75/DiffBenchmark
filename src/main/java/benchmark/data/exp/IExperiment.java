@@ -35,4 +35,6 @@ public interface IExperiment {
         }
         return configNames.toString();
     }
+
+    void setTools(Set<IASTDiffTool> tools);
 }

@@ -2,7 +2,7 @@ package benchmark.gui.web;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.converter.NoPerfectDiffException;
@@ -62,7 +62,7 @@ public class BenchmarkWebDiffFactory {
         IExperiment exp = null;
         if (info != null && info.getRepo() != null) {
             String repo = info.getRepo();
-            exp = (repo.contains(".git")) ? EExperiment.REF_EXP_3_0 : EExperiment.D4J_EXP_3_0;
+            exp = (repo.contains(".git")) ? ExperimentsEnum.REF_EXP_3_0 : ExperimentsEnum.D4J_EXP_3_0;
         }
 
         Set<ASTDiff> RM_astDiff = projectASTDiffByRM.getDiffSet();

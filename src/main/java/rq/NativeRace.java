@@ -1,14 +1,14 @@
 package rq;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
 
 import java.io.*;
 
 public class NativeRace {
     public static void main(String[] args) throws IOException {
-        IExperiment experimentConfiguration = EExperiment.REF_EXP_3_0;
+        IExperiment experimentConfiguration = ExperimentsEnum.REF_EXP_3_0;
         BufferedWriter writer = new BufferedWriter(new FileWriter("nativeRace.csv"));
         writer.write("CaseInfo, JVMBinariesTime, NativeBinariesTime\n");
         for (IBenchmarkCase caseInfo : experimentConfiguration.getDataset().getCases()) {

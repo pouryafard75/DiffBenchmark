@@ -1,7 +1,6 @@
 package benchmark;
 
-import benchmark.data.exp.ExperimentConfiguration;
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
 
 import java.util.*;
@@ -36,7 +35,7 @@ public class CmdRunner {
     private static Set<IExperiment> argsToConfs(String[] args) {
         Set<IExperiment> confs = new LinkedHashSet<>();
         for (String arg : args) {
-            IExperiment experiment = EExperiment.findExperimentByName(arg);
+            IExperiment experiment = ExperimentsEnum.findExperimentByName(arg);
             if (experiment != null) confs.add(experiment);
             else System.out.println("Configuration not found: " + arg);
         }

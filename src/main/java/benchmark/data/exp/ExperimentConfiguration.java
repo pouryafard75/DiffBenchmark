@@ -12,15 +12,19 @@ public class ExperimentConfiguration implements IExperiment {
     private final IBenchmarkDataset dataset;
     private final GenerationStrategy generationStrategy;
 
-    private String outputFolder = "output/";
-    private String csvDestinationFile = "stats.csv";
-    private String name = "no-name";
+    private final String outputFolder;
+    private final String csvDestinationFile;
+    private final String name;
 
 
-    public ExperimentConfiguration(IBenchmarkDataset iBenchmarkDataset, GenerationStrategy generationStrategy, Set<IASTDiffTool> tools) {
+    public ExperimentConfiguration(IBenchmarkDataset iBenchmarkDataset, Set<IASTDiffTool> tools, GenerationStrategy generationStrategy,
+                                   String outputFolder, String csvDestinationFile, String name) {
         this.dataset = iBenchmarkDataset;
         this.generationStrategy = generationStrategy;
         this.tools = tools;
+        this.outputFolder = outputFolder;
+        this.csvDestinationFile = csvDestinationFile;
+        this.name = name;
     }
 
     @Override
@@ -50,20 +54,7 @@ public class ExperimentConfiguration implements IExperiment {
         return csvDestinationFile;
     }
 
-    public void setOutputFolder(String outputFolder) {
-        this.outputFolder = outputFolder;
-        if (!outputFolder.endsWith("/"))
-            this.outputFolder += "/";
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCsvDestinationFile(String csvDestinationFile) {
-        this.csvDestinationFile = csvDestinationFile;
-    }
-
-
+    @Override
     public void setTools(Set<IASTDiffTool> tools) {
         this.tools = tools;
     }

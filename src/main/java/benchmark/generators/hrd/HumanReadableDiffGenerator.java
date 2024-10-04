@@ -1,6 +1,8 @@
 package benchmark.generators.hrd;
 
 import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
+import benchmark.metrics.computers.filters.NoFilter;
 import benchmark.models.AbstractMapping;
 import benchmark.models.HumanReadableDiff;
 import benchmark.models.NecessaryMappings;
@@ -31,9 +33,14 @@ public abstract class HumanReadableDiffGenerator {
     private final Map<String, String> fileContentsBefore;
     private final Map<String, String> fileContentsCurrent;
     private final ASTDiff astDiff;
-    private final HumanReadableDiff result;
+    private final HumanReadableDiffFilter generationFilter;
+
+    private HumanReadableDiff result;
 
     public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+        this(benchmarkCase, querySelector, new NoFilter());
+    }
+    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, IQuerySelector querySelector, HumanReadableDiffFilter filter) {
         //TODO
         this.repo = benchmarkCase.getRepo();
         this.commit = benchmarkCase.getCommit();
@@ -41,6 +48,7 @@ public abstract class HumanReadableDiffGenerator {
         this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
         this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
         this.astDiff = querySelector.apply(projectASTDiff);
+        this.generationFilter = filter;
         result = new HumanReadableDiff();
         make();
     }
@@ -49,15 +57,6 @@ public abstract class HumanReadableDiffGenerator {
         return result;
     }
 
-    public HumanReadableDiffGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, IBenchmarkCase info) {
-        this.repo = info.getRepo();
-        this.commit = info.getCommit();
-        this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
-        this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
-        this.astDiff = generated;
-        result = new HumanReadableDiff();
-        make();
-    }
 
     private void make(){
         List<Mapping> mappings = new ArrayList<>(getAstDiff().getAllMappings().getMappings());
@@ -73,7 +72,7 @@ public abstract class HumanReadableDiffGenerator {
             makeForEachMapping(mappingMetaInformation);
         }
         extractMultiCollection(); //TODO: the result of this call?
-
+        result = generationFilter.make(result, result);
     }
 
     private Set<Mapping> extractMultiCollection() {
@@ -190,7 +189,7 @@ public abstract class HumanReadableDiffGenerator {
         }
     }
 
-    public static void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
+    public void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
 //        if (abstractMapping.getLeftType().equals(Constants.COMPILATION_UNIT)) return;
         if (isProgramElement(abstractMapping.getLeftType()))
             target.getMatchedElements().add(abstractMapping);

@@ -1,5 +1,7 @@
 package benchmark.metrics.computers;
-import benchmark.metrics.computers.filters.MappingsTypeFilter;
+
+import benchmark.metrics.computers.filters.CalculationFilter;
+import benchmark.metrics.computers.filters.FilterUtils;
 import benchmark.metrics.models.Stats;
 import benchmark.models.AbstractMapping;
 import benchmark.models.HumanReadableDiff;
@@ -14,12 +16,12 @@ public class DiffMetricsComputer {
 
     private final HumanReadableDiff godDiff;
     private final HumanReadableDiff toolDiff;
-    private MappingsTypeFilter mappingsTypeFilter; //Too many delegations, looks smelly
+    private final CalculationFilter filterDuringMetricsCalculation; //Too many delegations, looks smelly
 
-    public DiffMetricsComputer(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, MappingsTypeFilter mappingsTypeFilter) {
+    public DiffMetricsComputer(HumanReadableDiff godDiff, HumanReadableDiff toolDiff, CalculationFilter filterDuringMetricsCalculation) {
         this.godDiff = godDiff;
         this.toolDiff = toolDiff;
-        this.mappingsTypeFilter = mappingsTypeFilter;
+        this.filterDuringMetricsCalculation = filterDuringMetricsCalculation;
     }
     private Stats makeStats(Collection<AbstractMapping> godList, Collection<AbstractMapping> toolList) {
         int TP = 0;
@@ -50,8 +52,8 @@ public class DiffMetricsComputer {
         Collection<AbstractMapping> godFinalized = criteriaSelector.apply(flatten(godDiff).getIntraFileMappings());
         Collection<AbstractMapping> toolFinalized = criteriaSelector.apply(flatten(toolDiff).getIntraFileMappings());
         return makeStats(
-                mappingsTypeFilter.apply(godFinalized),
-                mappingsTypeFilter.apply(toolFinalized)
+                FilterUtils.apply(godFinalized, filterDuringMetricsCalculation),
+                FilterUtils.apply(toolFinalized, filterDuringMetricsCalculation)
         );
     }
 

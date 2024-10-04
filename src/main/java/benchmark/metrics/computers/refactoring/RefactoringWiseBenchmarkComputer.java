@@ -4,6 +4,7 @@ import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.IASTDiffTool;
+import benchmark.metrics.computers.filters.FilterUtils;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import benchmark.metrics.computers.filters.QueryBasedHumanReadableDiffFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
@@ -204,7 +205,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
             toolHRD = getMapper().readValue(new File(toolFullPath), HumanReadableDiff.class);
             DiffStats diffStats;
             HumanReadableDiff toolHRDFinalized = filter.make(toolHRD, godHRDFinalized);
-            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, getMappingsTypeFilter());
+            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, getCalculationFilter());
             baseDiffComparisonResult.putStats(toolPath, diffStats);
         }
         setIgnore(godFullPath, baseDiffComparisonResult, filter);
@@ -215,7 +216,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         String ignorePath = godFullPath.replace(ASTDiffToolEnum.GOD.name(), ASTDiffToolEnum.TRV.name());
         HumanReadableDiff diffIgnore =  getMapper().readValue(new File(ignorePath), HumanReadableDiff.class);
         diffIgnore = filter.make(diffIgnore, HumanReadableDiff.makeEmpty());
-        baseDiffComparisonResult.setIgnore(getMappingsTypeFilter().apply(diffIgnore));
+        baseDiffComparisonResult.setIgnore(FilterUtils.apply(diffIgnore, getCalculationFilter()));
     }
 
     private static RefactoringRanges makeCodeRangesAssociatedWithRefactoring(Refactoring refactoring) {

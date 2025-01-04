@@ -7,6 +7,8 @@ import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.converter.Spoon;
+import benchmark.generators.tools.runners.converter.SpoonWithOffsetTranslation;
+import benchmark.generators.tools.runners.gt.OriginalVisitorGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.experimental.all.ModifierInterConservativeMulti;
@@ -23,6 +25,7 @@ import benchmark.generators.tools.runners.experimental.multimapping.GumTreeWithM
 import benchmark.generators.tools.runners.experimental.multimapping.NonMatchedSubtreesAdditionalRound;
 import benchmark.generators.tools.runners.shaded.IJM;
 import benchmark.generators.tools.runners.shaded.MTDiff;
+import benchmark.generators.tools.runners.trivial.EmptyDiff;
 import benchmark.generators.tools.runners.trivial.TrivialDiff;
 import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.matchers.CompositeMatchers;
@@ -36,7 +39,19 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     GTG ("GumTree Greedy 3.0", (benchmarkCase, query) -> new GreedyGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
     ,
+    GGO("GumTree Greedy 3.0 Original Visitor", (benchmarkCase, query) ->
+            new OriginalVisitorGumTreeASTDiffProvider(
+                    new CompositeMatchers.ClassicGumtree(),
+                    benchmarkCase,
+                    query))
+    ,
     GTS ("GumTree Simple 3.0", (benchmarkCase, query) -> new SimpleGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
+    ,
+    GSO("GumTree Simple 3.0 Original Visitor", (benchmarkCase, query) ->
+            new OriginalVisitorGumTreeASTDiffProvider(
+                    new CompositeMatchers.SimpleGumtree(),
+                    benchmarkCase,
+                    query))
     ,
     IJM ("Iterative Java Matcher", IJM::new)
     ,
@@ -51,6 +66,8 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     RM2 ("RefactoringMiner 2.0", benchmark.generators.tools.runners.converter.RM2::new)
     ,
     TRV ("TrivialDiff", TrivialDiff::new)
+    ,
+    EMP("Empty", (benchmarkCase, query) -> new EmptyDiff(query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     VNG ("VirtualNodeWithGreedy", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
@@ -175,7 +192,12 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    SPN ("Spoon", Spoon::new)
+    SPN ("SpoonIncompatible", Spoon::new),
+
+    SPN_PRV("Spoon Compatible (Before this meeting)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
+
+    SPN_COMP ("Spoon Compatible", SpoonWithOffsetTranslation::new),
+
 
     ;
 
@@ -187,20 +209,21 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
         this.toolName = toolName;
     }
 
+
     public String getToolName() {
         return toolName;
     }
-    public String getNameInURL() {
+    public String getShortName() {
         return this.name();
     }
 
     @Override
-    public ASTDiffProvider get(IBenchmarkCase benchmarkCase, IQuerySelector query) {
-        return factory.get(benchmarkCase, query);
+    public ASTDiffProvider apply(IBenchmarkCase benchmarkCase, IQuerySelector query) {
+        return factory.apply(benchmarkCase, query);
     }
 
     public ASTDiff diff(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) throws Exception {
-        return factory.get(benchmarkCase, querySelector).getASTDiff();
+        return factory.apply(benchmarkCase, querySelector).getASTDiff();
     }
 }
 

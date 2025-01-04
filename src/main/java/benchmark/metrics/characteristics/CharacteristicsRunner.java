@@ -1,7 +1,6 @@
 package benchmark.metrics.characteristics;
 
 import benchmark.data.dataset.IBenchmarkDataset;
-import benchmark.data.exp.ExperimentConfiguration;
 
 import java.util.EnumSet;
 import java.util.Set;

@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2024-01-18*/
 public class MakeIntels {
@@ -29,7 +28,7 @@ public class MakeIntels {
             for (IBenchmarkCase info : experiment.getDataset().getCases()) {
                 case_count++;
                 List<Intel> intels = new ArrayList<>();
-                ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+                ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
                 for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet()) {
 //                    logger.info("Working on " + info.makeURL() + " " + rm_astDiff.getSrcPath());
                     logger.info("Case " + case_count + "/" + experiment.getDataset().getCases().size());

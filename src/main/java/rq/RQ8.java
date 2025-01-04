@@ -30,7 +30,6 @@ import java.nio.file.Path;
 import java.util.*;
 
 import static benchmark.conf.Paths.ORACLE_DIR;
-import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
 import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createModelForASTDiff;
@@ -193,7 +192,7 @@ public class RQ8 implements RQ{
         Set<? extends IBenchmarkCase> cases = experiment.getDataset().getCases();
         for (IBenchmarkCase caseInfo : cases)
         {
-            resourceMap.put(caseInfo, runWhatever(caseInfo.getRepo(), caseInfo.getCommit()));
+            resourceMap.put(caseInfo, caseInfo.getProjectASTDiff());
             loaded++;
             System.out.println(loaded + " out of " + cases.size() + " loaded.");
         }

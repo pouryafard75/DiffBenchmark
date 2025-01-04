@@ -1,6 +1,8 @@
 package benchmark.data.exp;
 
 import benchmark.data.dataset.IBenchmarkDataset;
+import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.utils.Experiments.IGenerationStrategy;
 
@@ -26,6 +28,12 @@ public interface IExperiment {
     String getOutputFolder();
     String getCsvDestinationFile();
 
+    default ASTDiffProviderForBenchmark getTRVProvider(){
+        return ASTDiffToolEnum.TRV;
+    }
+    default ASTDiffProviderForBenchmark getGODProvider(){
+        return ASTDiffToolEnum.GOD;
+    }
 
 
     static String getMergedNames(IExperiment[] experiments) {

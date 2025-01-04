@@ -10,7 +10,9 @@ import java.util.Set;
 public enum EBenchmarkDataset implements IBenchmarkDataset{
     RefOracle(new RefactoringOracleBenchmarkDataset()),
     Defects4J(new Defects4JBenchmarkDataset()),
-    Dummy(new DummyDataset());
+    Dummy(new DummyDataset()),
+    Experiment(new ExperimentDataset())
+    ;
 
     private final IBenchmarkDataset iBenchmarkDataset;
 

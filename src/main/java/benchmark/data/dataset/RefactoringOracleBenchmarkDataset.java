@@ -1,7 +1,6 @@
 package benchmark.data.dataset;
 
 import benchmark.data.diffcase.AbstractIBenchmarkCase;
-import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
 import com.fasterxml.jackson.core.type.TypeReference;
 
@@ -25,15 +24,5 @@ public class RefactoringOracleBenchmarkDataset extends InspiredFromRMinerTestsBe
     @Override
     public TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference() {
         return new TypeReference<Set<GithubCase>>() {};
-    }
-
-
-    public static void main(String[] args) {
-        IBenchmarkDataset dataset;
-        dataset = new RefactoringOracleBenchmarkDataset();
-        System.out.println(dataset.getCases().size());
-//        dataset = new Defects4JBenchmarkDataset();
-//        System.out.println(dataset.getCases().size());
-
     }
 }

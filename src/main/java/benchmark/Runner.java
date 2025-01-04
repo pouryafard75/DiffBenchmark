@@ -19,7 +19,7 @@ public class Runner {
             consumer.accept(new BenchmarkHumanReadableDiffGenerator(exp));
             VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(exp);
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-            MetricsCsvWriter.exportToCSV(stats, exp.getOutputFolder() + exp.getName() + ".csv", true);
+            MetricsCsvWriter.exportToCSV(stats, exp.getOutputFolder() + exp.getName() + ".csv", true, "out/");
         }
     }
 

@@ -13,11 +13,10 @@ public class MetricsToCSV {
     public static void main(String[] args) throws Exception {
 //        for (Boolean aBoolean : Set.of(true, false))
         {
-            IExperiment experiment = ExperimentsEnum.DUM_EXP_3_0;
-
+            IExperiment experiment = ExperimentsEnum.INCOMPATIBLE_TOOLS_TRIAL;
             VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(experiment);
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-            MetricsCsvWriter.exportToCSV(stats, experiment.getOutputFolder() + experiment.getName() + ".csv", true);
+            MetricsCsvWriter.exportToCSV(stats, experiment.getOutputFolder() + experiment.getName() + ".csv", true, "out/");
 //            new MetricsCsvWriter(computer, stats).writeStatsToCSV(false);
         }
     }

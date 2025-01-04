@@ -5,6 +5,7 @@ import benchmark.generators.tools.models.IASTDiffTool;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /* Created by pourya on 2024-09-29*/
@@ -24,12 +25,19 @@ public enum ToolSets implements Set<IASTDiffTool> {
                         ASTDiffToolEnum.MTD,
                         ASTDiffToolEnum.GT2)
     ),
-    ;
+    EXPERIMENT(
+            Set.of(
+                ASTDiffToolEnum.RMD,
+                ASTDiffToolEnum.GTG,
+                ASTDiffToolEnum.GTS,
+                ASTDiffToolEnum.SPN_COMP
+            )
+    );
 
     private final Set<IASTDiffTool> tools;
 
     ToolSets(Set<IASTDiffTool> tools) {
-        this.tools = tools;
+        this.tools = new LinkedHashSet<>(tools);
     }
     ;
 

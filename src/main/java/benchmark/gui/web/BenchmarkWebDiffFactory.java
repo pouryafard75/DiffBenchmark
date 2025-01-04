@@ -1,15 +1,13 @@
 package benchmark.gui.web;
 
-import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.converter.NoPerfectDiffException;
 import benchmark.gui.conf.GuiConf;
-import benchmark.generators.tools.ASTDiffToolEnum;
-
-import benchmark.utils.Helpers;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -18,7 +16,10 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 import static benchmark.conf.Paths.ORACLE_DIR;
 
@@ -49,7 +50,7 @@ public class BenchmarkWebDiffFactory {
         return makeDiffs(getRMASTDiff(before, after), null);
     }
     public BenchmarkWebDiff withCaseInfo(IBenchmarkCase info) throws Exception {
-        ProjectASTDiff projectASTDiff = Helpers.runWhatever(info);
+        ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
         return makeDiffs(projectASTDiff,info);
     }
 
@@ -58,7 +59,7 @@ public class BenchmarkWebDiffFactory {
         return new GitHistoryRefactoringMinerImpl().diffAtDirectories(Path.of(before), Path.of(after));
     }
 
-    private BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, IBenchmarkCase info) throws Exception {
+    private BenchmarkWebDiff makeDiffs(ProjectASTDiff projectASTDiffByRM, IBenchmarkCase info) {
         IExperiment exp = null;
         if (info != null && info.getRepo() != null) {
             String repo = info.getRepo();
@@ -80,7 +81,7 @@ public class BenchmarkWebDiffFactory {
                 }
                 catch (Exception e) {
                     System.out.println("Error in " + tool + " for " + astDiff.getSrcPath() + " and " + astDiff.getDstPath());
-//                    e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
         }

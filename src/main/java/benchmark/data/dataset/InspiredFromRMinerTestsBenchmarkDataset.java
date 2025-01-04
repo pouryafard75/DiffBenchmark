@@ -2,7 +2,6 @@ package benchmark.data.dataset;
 
 import benchmark.data.diffcase.AbstractIBenchmarkCase;
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.data.diffcase.GithubCase;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -31,7 +30,7 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
     @Override
     public Set<? extends IBenchmarkCase> getCases() {
         return makeAllCases(getTypeReference(),
-                getPerfectDirPath().resolve(perfectInfoName),
+//                getPerfectDirPath().resolve(perfectInfoName),
                 getPerfectDirPath().resolve(problematicInfoName)
         );
     }

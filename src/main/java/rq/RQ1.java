@@ -42,7 +42,7 @@ public class RQ1 implements RQ{
             }
             name.append(experiment.getName()).append("-");
         }
-        MetricsCsvWriter.exportToCSV(stats, "rq1-" + name + ".csv", false);
+        MetricsCsvWriter.exportToCSV(stats, "rq1-" + name + ".csv", false, "out/");
 
     }
 }

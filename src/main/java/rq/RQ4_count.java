@@ -18,8 +18,6 @@ import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import java.util.*;
 import java.util.Map.Entry;
 
-import static benchmark.utils.Helpers.runWhatever;
-
 /* Created by pourya on 2023-09-19 6:18 p.m. */
 
 /***
@@ -58,14 +56,14 @@ public class RQ4_count{
         List<CommitRefactoringCountComparisonResult> stats = new ArrayList<>(refCountStats.values());
         stats.sort(Comparator.comparingInt(CommitRefactoringCountComparisonResult::getNumOfRefactorings));
         //TODO: MUST DEFINE ANOTHER COMPUTER FOR THIS TASK
-        MetricsCsvWriter.exportToCSV(stats, "rq4.csv",true);
+        MetricsCsvWriter.exportToCSV(stats, "rq4.csv",true, "out/");
 //        new MetricsCsvWriter(configuration, stats, mappingsLocationFilter, mappingsTypeFilter).writeStatsToCSV(true, this.csvDestinationFile);
 
     }
 
     private static void populateRefCountStats(IExperiment experiment, int maxRefCount, int minFreq, Map<Integer, Integer> countDist, Map<Integer, CommitRefactoringCountComparisonResult> refCountStats) throws Exception {
         for (IBenchmarkCase caseInfo : experiment.getDataset().getCases()) {
-            ProjectASTDiff projectASTDiff = runWhatever(caseInfo.getRepo(), caseInfo.getCommit());
+            ProjectASTDiff projectASTDiff = caseInfo.getProjectASTDiff();
             int numOfRef = projectASTDiff.getRefactorings().size();
             if (numOfRef > maxRefCount || countDist.get(numOfRef) < minFreq) continue;
             System.out.println(caseInfo.getID() + " has " + numOfRef + " refactorings");

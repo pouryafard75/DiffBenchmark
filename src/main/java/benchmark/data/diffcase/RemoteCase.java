@@ -8,6 +8,11 @@ import java.util.Objects;
 public abstract class RemoteCase extends AbstractIBenchmarkCase {
     String repo;
     String commit;
+    String url;
+
+    public String getUrl() {
+        return url;
+    }
 
     public RemoteCase(String repo, String commit) {
         this.repo = repo;

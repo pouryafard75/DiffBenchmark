@@ -22,6 +22,10 @@ public abstract class AbstractIBenchmarkCase implements IBenchmarkCase
     }
     @Override
     public ProjectASTDiff getProjectASTDiff() {
+        if (projectASTDiff == null)
+            updateProjectASTDiff();
         return projectASTDiff;
     }
+
+    abstract void updateProjectASTDiff();
 }

@@ -32,7 +32,6 @@ import java.util.stream.Collectors;
 
 import static benchmark.conf.Paths.FINALIZED_REFACTORING_MINER_PATH;
 import static benchmark.metrics.computers.vanilla.HRDBenchmarkComputer.compareHumanReadableDiffs;
-import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 import static benchmark.utils.PathResolver.fileNameAsFolder;
 import static rq.Utils.mergeStats;
@@ -109,7 +108,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     public Collection<RefactoringSpecificComparisonResult> compute(IBenchmarkCase info) throws IOException {
         logger.info("Computing for " + info.getRepo() + " " + info.getCommit());
         Collection<RefactoringSpecificComparisonResult> result = new ArrayList<>();
-        ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+        ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
         for (Refactoring refactoring : projectASTDiff.getRefactorings()) {
             if (!acceptedRefactoringTypes.contains(refactoring.getRefactoringType())) continue;
             boolean moveRelated = false;

@@ -30,7 +30,7 @@ public class RQ3 implements RQ{
             stats.addAll(computer.compute());
             name.append(experiment.getName()).append("-");
         }
-        MetricsCsvWriter.exportToCSV(stats, "rq3-" + name + "-" + typeFilter.name() + ".csv", false);
+        MetricsCsvWriter.exportToCSV(stats, "rq3-" + name + "-" + typeFilter.name() + ".csv", false, "out/");
     }
     @Override
     public void run(IExperiment[] experiments) throws Exception {

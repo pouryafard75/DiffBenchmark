@@ -13,7 +13,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
 import static benchmark.generators.tools.ASTDiffToolEnum.GOD;
-import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2024-07-01*/
 public enum Characteristic {
@@ -56,7 +55,7 @@ public enum Characteristic {
     private static Number eachCaseIterator(IBenchmarkDataset benchmarkDataset, TriFunction<ProjectASTDiff, IBenchmarkCase, Number, Number> consumer) {
         Number number = 0;
         for (IBenchmarkCase info : benchmarkDataset.getCases()) {
-            ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+            ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
             number = consumer.apply(projectASTDiff, info, number);
         }
         return number;
@@ -78,7 +77,7 @@ public enum Characteristic {
         int commitCount = 0;
         for (IBenchmarkCase info : benchmarkDataset.getCases()) {
             System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
-            ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+            ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
             Pair<Float, Float> floatFloatPair = ChurnCalculator.calculateRelativeAddDeleteChurn
                     (projectASTDiff, false, false);
             float leftChurn = floatFloatPair.getLeft();

@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.nio.file.Path;
 
-import static benchmark.utils.PathResolver.*;
+import static benchmark.data.dataset.EBenchmarkDataset.Defects4J;
+import static benchmark.utils.PathResolver.getAfterDir;
+import static benchmark.utils.PathResolver.getBeforeDir;
 
 /* Created by pourya on 2024-09-28*/
 public class D4JCase extends LocalCase {
@@ -17,6 +19,7 @@ public class D4JCase extends LocalCase {
         super(Path.of(getBeforeDir(project, bugID)), Path.of(getAfterDir(project, bugID)));
         this.project = project;
         this.bugID = bugID;
+        this.dataset = Defects4J;
     }
 
     @Override

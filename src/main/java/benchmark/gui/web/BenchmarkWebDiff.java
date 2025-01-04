@@ -1,13 +1,9 @@
 package benchmark.gui.web;
 
-import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.gui.viewers.DiffViewers;
 import benchmark.gui.conf.GuiConf;
+import benchmark.gui.viewers.DiffViewers;
 import com.github.gumtreediff.utils.Pair;
-
-import gui.webdiff.viewers.monaco.MonacoView;
-import gui.webdiff.viewers.vanilla.VanillaDiffView;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.rendersnake.HtmlCanvas;
@@ -32,7 +28,7 @@ public class BenchmarkWebDiff {
     public static final int port = 6868;
 
     private final ProjectASTDiff projectASTDiff;
-    private final Map<IASTDiffTool, Set<ASTDiff>> diffs;
+    public final Map<IASTDiffTool, Set<ASTDiff>> diffs;
     private final GuiConf guiConf;
 
 
@@ -104,29 +100,6 @@ public class BenchmarkWebDiff {
             return "";
         });
     }
-
-    private void getMonaco(ASTDiffToolEnum tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
-        get("/" + tool + "-monaco/:id" , (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            ASTDiff astDiff = astDiffs.stream().toList().get(id);
-            Renderable view = new MonacoView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                    astDiff, id, projectASTDiff.getDiffSet().size(), "-monaco/", false);
-            return renderToString(view);
-        });
-    }
-
-    private static void getVanilla(ASTDiffToolEnum tool, Set<ASTDiff> astDiffs, ProjectASTDiff projectASTDiff) {
-        get("/" + tool + "/:id" , (request, response) -> {
-            int id = Integer.parseInt(request.params(":id"));
-            ASTDiff astDiff = astDiffs.stream().toList().get(id);
-            Renderable view = new VanillaDiffView(tool.toString(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                    astDiff, id, projectASTDiff.getDiffSet().size(), "-vanilla/", false,
-                    projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                    projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()), false);
-            return renderToString(view);
-        });
-    }
-
 
     public static String renderToString(Renderable r) throws IOException {
         HtmlCanvas c = new HtmlCanvas();

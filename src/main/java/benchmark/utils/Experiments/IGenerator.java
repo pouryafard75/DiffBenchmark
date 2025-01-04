@@ -2,7 +2,8 @@ package benchmark.utils.Experiments;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 
-public interface IGenerator<R>{
-    R get(IBenchmarkCase benchmarkCase, IQuerySelector query);
+import java.util.function.BiFunction;
+
+public interface IGenerator<U,R> extends BiFunction<IBenchmarkCase, U, R> {
 }
 

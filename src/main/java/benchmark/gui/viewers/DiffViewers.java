@@ -18,7 +18,7 @@ import static spark.Spark.get;
 /* Created by pourya on 2024-05-03*/
 public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
     VANILLA(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getNameInURL() + "/" + id)).content(tool.getToolName()),
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "/" + id)).content(tool.getShortName()),
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
@@ -30,7 +30,7 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             })
     ),
     MONACO(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getNameInURL() + "-monaco/" + id)).content(tool.getToolName() + "-monaco"),
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "-monaco/" + id)).content(tool.getShortName() + "-monaco"),
             (tool, astDiffs, projectASTDiff) -> get("/" + tool + "-monaco/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);

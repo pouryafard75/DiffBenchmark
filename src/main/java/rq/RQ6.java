@@ -26,7 +26,7 @@ public class RQ6 implements RQ{
             for (FilterDuringGeneration filterDuringGeneration : new FilterDuringGeneration[]{FilterDuringGeneration.NO_FILTER, FilterDuringGeneration.INTRA_FILE_ONLY}) {
                 VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(experiment, filterDuringGeneration.getFilter(), filterDuringMetricsCalculation1);
                 Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-                MetricsCsvWriter.exportToCSV(stats, "rq6-" + experiment.getName() + "-" + filterDuringGeneration + ".csv", true);
+                MetricsCsvWriter.exportToCSV(stats, "rq6-" + experiment.getName() + "-" + filterDuringGeneration + ".csv", true, "out/");
             }
         }
     }
@@ -37,7 +37,9 @@ public class RQ6 implements RQ{
 
     public static void main(String[] args) {
         try {
-            new RQ6().run(new IExperiment[]{ExperimentsEnum.REF_EXP_3_0, ExperimentsEnum.D4J_EXP_3_0});
+            new RQ6().run(new IExperiment[]{
+                    ExperimentsEnum.REF_COMMENTS_3_0,
+            });
         } catch (Exception e) {
             e.printStackTrace();
         }

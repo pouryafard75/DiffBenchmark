@@ -4,7 +4,6 @@ import benchmark.data.dataset.IBenchmarkDataset;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.nio.file.Path;
-import java.util.Set;
 
 public interface IBenchmarkCase {
     /**
@@ -32,6 +31,10 @@ public interface IBenchmarkCase {
      */
     default Path getRelativePathFromDatasetDir() {
         return Path.of(getRepo(), getCommit()); //repo + "/" (separator) + commit;
+    }
+
+    default void setDataset(IBenchmarkDataset dataset) {
+
     }
 //
 //    public static void main(String[] args) {

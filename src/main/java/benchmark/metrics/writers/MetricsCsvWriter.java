@@ -1,9 +1,7 @@
 package benchmark.metrics.writers;
 
-import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.CsvWritable;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -18,8 +16,8 @@ import java.util.List;
 
 /* Created by pourya on 2023-11-23 8:47 p.m. */
 public class MetricsCsvWriter {
-    public static void exportToCSV(Collection<? extends CsvWritable> compResults, String csvFilePath, boolean withHeader) {
-        csvFilePath = "out/" + csvFilePath;
+    public static void exportToCSV(Collection<? extends CsvWritable> compResults, String csvFilePath, boolean withHeader, String folder) {
+        csvFilePath = folder + csvFilePath;
         if (compResults.isEmpty()) {
             System.out.println("Collection is empty. Nothing to export.");
             return;

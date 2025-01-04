@@ -17,7 +17,6 @@ import java.io.IOException;
 import java.util.*;
 import java.util.function.Function;
 
-import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-11-21 11:55 p.m. */
 public class Utils {
@@ -73,7 +72,7 @@ public class Utils {
         Map<T, Integer> countMap = new HashMap<>();
         for (IBenchmarkCase info : experiment.getDataset().getCases()) {
             System.out.println("Working on " + info.getRepo() + " " + info.getCommit());
-            ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+            ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
             List<Refactoring> refactorings = projectASTDiff.getRefactorings();
             if (perCollectionFunction != null && perEachFunction != null) throw new RuntimeException("One must be null");
             if (perCollectionFunction != null) {

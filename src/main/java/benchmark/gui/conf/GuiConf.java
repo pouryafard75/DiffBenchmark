@@ -18,7 +18,11 @@ public class GuiConf {
         conf.enabled_tools.add(ASTDiffToolEnum.GTG);
         conf.enabled_tools.add(ASTDiffToolEnum.GTS);
         conf.enabled_tools.add(ASTDiffToolEnum.GOD);
-        conf.enabled_tools.add(ASTDiffToolEnum.SPN);
+//        conf.enabled_tools.add(ASTDiffToolEnum.GGO);
+//        conf.enabled_tools.add(ASTDiffToolEnum.GSO);
+//        conf.enabled_tools.add(ASTDiffToolEnum.SPN);
+//        conf.enabled_tools.add(ASTDiffToolEnum.SPN_PRV);
+//        conf.enabled_tools.add(ASTDiffToolEnum.SPN_COMP);
         // Viewers
         conf.enabled_viewers.add(DiffViewers.MONACO);
         conf.enabled_viewers.add(DiffViewers.VANILLA);

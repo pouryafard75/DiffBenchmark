@@ -20,6 +20,10 @@ public abstract class LocalCase extends AbstractIBenchmarkCase {
     public LocalCase(Path srcPath, Path dstPath) {
         this.srcPath = srcPath;
         this.dstPath = dstPath;
+    }
+
+    @Override
+    void updateProjectASTDiff() {
         projectASTDiff = new GitHistoryRefactoringMinerImpl().
                 diffAtDirectories(srcPath, dstPath);
         System.out.println("Finished computing projectASTDiff for " + srcPath + " " + dstPath);

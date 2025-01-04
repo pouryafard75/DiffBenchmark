@@ -94,7 +94,7 @@ public class BenchmarkViolationComputer {
             {
                 if (tool.equals(ASTDiffToolEnum.GOD) || tool.equals(ASTDiffToolEnum.TRV)) continue; // GOD and TRV are not considered
 //                logger.info("Generating " + tool.name());
-                ASTDiff generated = tool.get(info, (x -> rm_astDiff)).getASTDiff();
+                ASTDiff generated = tool.apply(info, (x -> rm_astDiff)).getASTDiff();
 //                logger.info("Comparing " + tool.name());
                 populateAllReports(perfect, generated, tool, info, reports);
             }

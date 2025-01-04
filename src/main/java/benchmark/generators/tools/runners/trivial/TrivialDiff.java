@@ -2,12 +2,10 @@ package benchmark.generators.tools.runners.trivial;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.ASTDiffToolEnum;
-
 import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import java.util.Set;
@@ -34,6 +32,7 @@ public class TrivialDiff extends BaseTrivialDiff {
             if (!IdenticalProgramElementsDiffBaseTrivialDiff.mappingPredicate.test(mapping)) return false;
             if (perfectMappings == null) return true;
             Set<Tree> dsts = perfectMappings.getDsts(mapping.first);
+            if (dsts == null) return true;
             return (dsts.contains(mapping.second));
         };
         this.setCondition(predicate);

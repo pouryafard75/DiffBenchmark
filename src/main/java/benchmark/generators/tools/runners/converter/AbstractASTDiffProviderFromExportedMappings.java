@@ -2,14 +2,11 @@ package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
-import benchmark.generators.tools.runners.experimental.interfile.GumTreeProjectMatcher;
 import benchmark.utils.Experiments.IQuerySelector;
-import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
@@ -35,8 +32,8 @@ public abstract class AbstractASTDiffProviderFromExportedMappings extends ASTDif
     protected ASTDiff make(List<MappingExportModel> exportedMappings){
         return new ASTDiff(this.input.getSrcPath(),
                            this.input.getDstPath(),
-                            input.src,
-                            input.dst,
+                            ptc.get(this.input.getSrcPath()),
+                            ctc.get(this.input.getDstPath()),
                             populateMappingStore(exportedMappings, ptc, ctc)
         );
     }

@@ -161,7 +161,7 @@ public class GridSearch {
     }
 
     private BaseDiffComparisonResult makeStats(ASTDiff generated) {
-        HumanReadableDiffGenerator datGen = new HRDGen3(benchmarkCase, (x) -> generated, new NoFilter());
+        HumanReadableDiffGenerator datGen = new HRDGen3(benchmarkCase, generated, new NoFilter());
         BenchmarkComparisonInput input;
         try {
             input = BenchmarkComparisonInput.read(experiment, benchmarkCase, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()));

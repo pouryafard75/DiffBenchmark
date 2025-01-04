@@ -6,20 +6,17 @@ import benchmark.metrics.computers.filters.NoFilter;
 import benchmark.models.AbstractMapping;
 import benchmark.models.HumanReadableDiff;
 import benchmark.models.NecessaryMappings;
-
-import benchmark.utils.Experiments.IQuerySelector;
 import benchmark.utils.PathResolver;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.actions.model.TreeAddition;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.actions.model.MoveIn;
 import org.refactoringminer.astDiff.actions.model.MoveOut;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.Constants;
-
 
 import java.io.File;
 import java.util.*;
@@ -37,17 +34,17 @@ public abstract class HumanReadableDiffGenerator {
 
     private HumanReadableDiff result;
 
-    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
-        this(benchmarkCase, querySelector, new NoFilter());
+    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, ASTDiff current) {
+        this(benchmarkCase, current, new NoFilter());
     }
-    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, IQuerySelector querySelector, HumanReadableDiffFilter filter) {
+    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, ASTDiff current, HumanReadableDiffFilter filter) {
         //TODO
         this.repo = benchmarkCase.getRepo();
         this.commit = benchmarkCase.getCommit();
         ProjectASTDiff projectASTDiff = benchmarkCase.getProjectASTDiff();
         this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
         this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
-        this.astDiff = querySelector.apply(projectASTDiff);
+        this.astDiff = current;
         this.generationFilter = filter;
         result = new HumanReadableDiff();
         make();
@@ -62,7 +59,7 @@ public abstract class HumanReadableDiffGenerator {
         List<Mapping> mappings = new ArrayList<>(getAstDiff().getAllMappings().getMappings());
         mappings.sort(Comparator.comparingInt(o -> o.first.getPos()));
         for (Mapping mapping : mappings ) {
-            if (isPartOf(mapping, Constants.JAVA_DOC)) continue;
+            if (isPartOf(mapping, Constants.JAVA_DOC)) continue; //TODO: It might be extremely useful to have this information in the future
             if (isBetweenDifferentTypes(mapping)) {
 //                throw new RuntimeException();
 //                System.out.println("");
@@ -221,6 +218,8 @@ public abstract class HumanReadableDiffGenerator {
         {
             Tree srcLast = getParentUntilType(mapping.first,Constants.COMPILATION_UNIT);
             Tree dstLast = getParentUntilType(mapping.second,Constants.COMPILATION_UNIT);
+            if (srcLast == null || dstLast == null)
+                throw new RuntimeException("Something unexpected");
             if (!srcLast.equals(src) || !dstLast.equals(dst))
                 return true;
         }

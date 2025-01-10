@@ -2,7 +2,7 @@ package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -17,7 +17,7 @@ import static org.refactoringminer.astDiff.utils.ExportUtils.repoToFolder;
 
 /* Created by pourya on 2023-07-25 9:54 p.m. */
 public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
-    public PerfectDiff(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public PerfectDiff(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
     }
 

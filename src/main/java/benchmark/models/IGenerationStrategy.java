@@ -1,6 +1,6 @@
-package benchmark.utils.Experiments;
+package benchmark.models;
 
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.hrd.HumanReadableDiff;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
 public interface IGenerationStrategy extends IGenerator<ASTDiff, HumanReadableDiff> {}

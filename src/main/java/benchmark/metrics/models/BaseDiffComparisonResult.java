@@ -1,9 +1,9 @@
 package benchmark.metrics.models;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.models.AbstractMapping;
-import benchmark.models.HumanReadableDiff;
-import benchmark.models.NecessaryMappings;
+import benchmark.models.hrd.AbstractMapping;
+import benchmark.models.hrd.HumanReadableDiff;
+import benchmark.models.hrd.NecessaryMappings;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

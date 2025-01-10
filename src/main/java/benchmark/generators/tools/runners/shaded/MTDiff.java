@@ -4,7 +4,7 @@ package benchmark.generators.tools.runners.shaded;
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import benchmark.data.diffcase.IBenchmarkCase;
 
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import shaded.com.github.gumtreediff.gen.TreeGenerator;
 import shaded.com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
@@ -17,7 +17,7 @@ public class MTDiff extends AbstractASTDiffProviderFromIncompatibleTree {
     private TreeGenerator generator = new JdtTreeGenerator();
 
 
-    public MTDiff(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public MTDiff(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
         this.benchmarkCase = benchmarkCase;
         if (this.input.getSrcPath().equals("core/src/processing/core/PApplet.java")) //Since this case cause the java heap space, we decided to run this case with the OptimizedJDTGenerator

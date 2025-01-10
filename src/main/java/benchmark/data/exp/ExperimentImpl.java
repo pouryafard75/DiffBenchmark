@@ -3,7 +3,7 @@ package benchmark.data.exp;
 import benchmark.data.dataset.IBenchmarkDataset;
 import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.utils.Experiments.IGenerationStrategy;
+import benchmark.models.IGenerationStrategy;
 
 import java.util.Set;
 

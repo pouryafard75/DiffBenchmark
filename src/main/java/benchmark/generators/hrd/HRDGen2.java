@@ -2,7 +2,7 @@ package benchmark.generators.hrd;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.metrics.computers.filters.NoFilter;
-import benchmark.models.AbstractMapping;
+import benchmark.models.hrd.AbstractMapping;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
 

@@ -1,11 +1,10 @@
 package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 
 import java.io.IOException;
@@ -17,7 +16,7 @@ public abstract class AbstractASTDiffProviderFromMappingSet extends AbstractASTD
     protected final String srcContents;
     protected final String dstContents;
 
-    public AbstractASTDiffProviderFromMappingSet(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public AbstractASTDiffProviderFromMappingSet(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
         this.srcContents = projectASTDiff.getFileContentsBefore().get(input.getSrcPath());
         this.dstContents = projectASTDiff.getFileContentsAfter().get(input.getDstPath());

@@ -1,7 +1,7 @@
 package benchmark.metrics.computers.filters;
 
 
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.hrd.HumanReadableDiff;
 import org.refactoringminer.astDiff.utils.Constants;
 
 import static benchmark.metrics.computers.filters.FilterUtils.getFilterByType;

@@ -1,11 +1,9 @@
-package benchmark.utils.Experiments;
+package benchmark.generators.hrd;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.generators.hrd.HRDGen2;
-import benchmark.generators.hrd.HRDGen3;
-import benchmark.generators.hrd.HRDGenOnlyComments;
 import benchmark.metrics.computers.filters.FilterDuringGeneration;
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.IGenerationStrategy;
+import benchmark.models.hrd.HumanReadableDiff;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
 public enum GenerationStrategy implements IGenerationStrategy {

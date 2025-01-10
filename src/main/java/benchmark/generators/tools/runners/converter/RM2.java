@@ -5,7 +5,7 @@ import benchmark.data.diffcase.LocalCase;
 import benchmark.data.diffcase.RemoteCase;
 import benchmark.generators.tools.ASTDiffToolEnum;
 
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
@@ -16,7 +16,7 @@ import static benchmark.conf.Paths.ORACLE_DIR;
 
 /* Created by pourya on 2024-02-19*/
 public class RM2 extends AbstractASTDiffProviderFromMappingSet {
-    public RM2(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public RM2(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
     }
 

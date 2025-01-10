@@ -1,9 +1,7 @@
-package benchmark.manupilator;
+package benchmark.generators.tools.runners.manipulator;
 
-import benchmark.DiffManipulator;
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.generators.tools.runners.manipulator.BaseBenchmarkCaseDiffManipulator;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
@@ -13,16 +11,16 @@ import java.util.function.Consumer;
 public class BenchmarkCaseDiffManipulatorImpl extends BaseBenchmarkCaseDiffManipulator {
     @SafeVarargs
     public BenchmarkCaseDiffManipulatorImpl(IBenchmarkCase benchmarkCase,
-                                            Pair<IQuerySelector, Consumer<DiffManipulator>>... commands) throws Exception
+                                            Pair<DiffSelector, Consumer<DiffManipulator>>... commands) throws Exception
     {
         super(benchmarkCase);
-        for (Pair<IQuerySelector, Consumer<DiffManipulator>> pair : commands) {
-            IQuerySelector selector = pair.getLeft();
+        for (Pair<DiffSelector, Consumer<DiffManipulator>> pair : commands) {
+            DiffSelector selector = pair.getLeft();
             memorize(selector, getManipulated(selector, pair.getRight()));
         }
     }
 
-    private ASTDiff getManipulated(IQuerySelector selector, Consumer<DiffManipulator> consumer) throws Exception {
+    private ASTDiff getManipulated(DiffSelector selector, Consumer<DiffManipulator> consumer) throws Exception {
         DiffManipulator diffManipulator = new DiffManipulator(benchmarkCase, selector);
         consumer.accept(diffManipulator);
         return diffManipulator.getASTDiff();

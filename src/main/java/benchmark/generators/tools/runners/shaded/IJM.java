@@ -3,14 +3,12 @@ package benchmark.generators.tools.runners.shaded;
 
 import at.aau.softwaredynamics.gen.OptimizedJdtTreeGenerator;
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.utils.Experiments.IQuerySelector;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
+import benchmark.models.selector.DiffSelector;
 
 
 /* Created by pourya on 2023-04-17 7:58 p.m. */
 public class IJM extends AbstractASTDiffProviderFromIncompatibleTree {
-    public IJM(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public IJM(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
     }
 

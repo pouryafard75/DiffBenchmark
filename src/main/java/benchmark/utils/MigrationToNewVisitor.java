@@ -1,4 +1,4 @@
-package benchmark;
+package benchmark.utils;
 
 import benchmark.data.dataset.Defects4JBenchmarkDataset;
 import benchmark.data.diffcase.IBenchmarkCase;

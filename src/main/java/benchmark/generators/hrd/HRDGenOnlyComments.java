@@ -1,7 +1,7 @@
 package benchmark.generators.hrd;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.models.NecessaryMappings;
+import benchmark.models.hrd.NecessaryMappings;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.utils.Constants;

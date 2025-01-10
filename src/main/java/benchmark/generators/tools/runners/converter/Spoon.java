@@ -2,7 +2,7 @@ package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.tree.DefaultTree;
 import com.github.gumtreediff.tree.TypeSet;
 import com.google.common.collect.BiMap;
@@ -21,7 +21,7 @@ import static benchmark.generators.tools.runners.Utils.makeASTDiff;
 
 /* Created by pourya on 2024-09-09*/
 public class Spoon extends ASTDiffProviderFromProjectASTDiff {
-    public Spoon(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public Spoon(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
     }
 

@@ -2,7 +2,7 @@ package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 /* Created by pourya on 2024-02-20*/
 public abstract class AbstractASTDiffProviderFromExportedMappings extends ASTDiffProviderFromProjectASTDiff {
-    public AbstractASTDiffProviderFromExportedMappings(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public AbstractASTDiffProviderFromExportedMappings(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
     }
 

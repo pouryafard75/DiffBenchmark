@@ -5,20 +5,18 @@ import benchmark.generators.tools.runners.experimental.interfile.GumTreeProjectM
 import benchmark.generators.tools.runners.experimental.interfile.StagedTreeMatching;
 import benchmark.generators.tools.runners.experimental.labels.TreeModifier;
 import benchmark.generators.tools.runners.experimental.multimapping.GumTreeMultiMappingMatcher;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 /* Created by pourya on 2024-05-13*/
 public class ModifierInterConservativeMulti extends PipelinedASTDiffProvider {
 
 
-    public ModifierInterConservativeMulti(TreeModifier treeModifier, GumTreeProjectMatcher projectMatcher, GumTreeMultiMappingMatcher multiMappingMatcher, IBenchmarkCase benchmarkCase, IQuerySelector query, Matcher simpleGumtree) {
+    public ModifierInterConservativeMulti(TreeModifier treeModifier, GumTreeProjectMatcher projectMatcher, GumTreeMultiMappingMatcher multiMappingMatcher, IBenchmarkCase benchmarkCase, DiffSelector query, Matcher simpleGumtree) {
         super(treeModifier, projectMatcher, multiMappingMatcher, benchmarkCase, query, simpleGumtree);
     }
 

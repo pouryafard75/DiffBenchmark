@@ -5,7 +5,7 @@ import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
 
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
@@ -13,7 +13,6 @@ import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import shaded.com.github.gumtreediff.gen.TreeGenerator;
 import shaded.com.github.gumtreediff.matchers.Mapping;
@@ -27,7 +26,7 @@ import static benchmark.generators.tools.runners.Utils.mirrorTree;
 
 /* Created by pourya on 2023-04-17 8:10 p.m. */
 public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDiffProviderFromProjectASTDiff {
-    public AbstractASTDiffProviderFromIncompatibleTree(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public AbstractASTDiffProviderFromIncompatibleTree(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
     }
 

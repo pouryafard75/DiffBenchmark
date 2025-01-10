@@ -5,9 +5,9 @@ import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.gui.conf.WebDiffConf;
 import benchmark.gui.web.BenchmarkWebDiff;
 import benchmark.gui.web.BenchmarkWebDiffFactory;
-import benchmark.manupilator.BenchmarkCaseDiffManipulatorImpl;
-import benchmark.manupilator.DiffSide;
-import benchmark.utils.Experiments.QueryBySrcPath;
+import benchmark.generators.tools.runners.manipulator.BenchmarkCaseDiffManipulatorImpl;
+import benchmark.models.DiffSide;
+import benchmark.models.selector.QueryBySrcPath;
 import org.apache.commons.lang3.tuple.Pair;
 
 /* Created by pourya on 2022-12-26 9:30 p.m. */

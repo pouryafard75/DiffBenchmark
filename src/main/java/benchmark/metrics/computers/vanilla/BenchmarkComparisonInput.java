@@ -3,7 +3,7 @@ package benchmark.metrics.computers.vanilla;
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.ASTDiffToolEnum;
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.hrd.HumanReadableDiff;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

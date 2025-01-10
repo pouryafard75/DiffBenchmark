@@ -3,9 +3,9 @@ package benchmark.metrics.computers;
 import benchmark.metrics.computers.filters.CalculationFilter;
 import benchmark.metrics.computers.filters.FilterUtils;
 import benchmark.metrics.models.Stats;
-import benchmark.models.AbstractMapping;
-import benchmark.models.HumanReadableDiff;
-import benchmark.models.NecessaryMappings;
+import benchmark.models.hrd.AbstractMapping;
+import benchmark.models.hrd.HumanReadableDiff;
+import benchmark.models.hrd.NecessaryMappings;
 
 import java.util.Collection;
 import java.util.Map;

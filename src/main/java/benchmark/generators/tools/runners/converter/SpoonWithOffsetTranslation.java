@@ -1,7 +1,7 @@
 package benchmark.generators.tools.runners.converter;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.util.List;
@@ -12,12 +12,12 @@ public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRul
     private final MappingOffsetTranslator mappingOffsetTranslator;
 
 
-    public SpoonWithOffsetTranslation(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public SpoonWithOffsetTranslation(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
         mappingOffsetTranslator = new MappingOffsetTranslator(input, this);
     }
 
-    public SpoonWithOffsetTranslation(IBenchmarkCase benchmarkCase, IQuerySelector querySelector, boolean noRules) {
+    public SpoonWithOffsetTranslation(IBenchmarkCase benchmarkCase, DiffSelector querySelector, boolean noRules) {
         super(benchmarkCase, querySelector);
         mappingOffsetTranslator = new MappingOffsetTranslator(input);
     }

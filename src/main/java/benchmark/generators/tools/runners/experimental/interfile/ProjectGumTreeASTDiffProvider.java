@@ -2,15 +2,13 @@ package benchmark.generators.tools.runners.experimental.interfile;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.runners.converter.AbstractASTDiffProviderFromExportedMappings;
-import benchmark.utils.Experiments.IQuerySelector;
-import com.github.gumtreediff.matchers.CompositeMatchers;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.FakeTree;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 
 import java.util.*;
@@ -20,7 +18,7 @@ import java.util.function.Function;
 public class ProjectGumTreeASTDiffProvider extends AbstractASTDiffProviderFromExportedMappings {
     protected final Matcher matcher;
     protected final GumTreeProjectMatcher projectMatcher;
-    public ProjectGumTreeASTDiffProvider(GumTreeProjectMatcher projectMatcher, IBenchmarkCase benchmarkCase, IQuerySelector query, Matcher matcher) {
+    public ProjectGumTreeASTDiffProvider(GumTreeProjectMatcher projectMatcher, IBenchmarkCase benchmarkCase, DiffSelector query, Matcher matcher) {
         super(benchmarkCase, query);
         this.matcher = matcher;
         this.projectMatcher = projectMatcher;

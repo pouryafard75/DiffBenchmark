@@ -1,7 +1,7 @@
 package benchmark.generators.tools.runners.gt;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.Tree;
@@ -23,7 +23,7 @@ public class OriginalVisitorGumTreeASTDiffProvider extends BaseGumTreeASTDiffPro
         setRoots(srcContent, dstContent);
     }
 
-    public OriginalVisitorGumTreeASTDiffProvider(Matcher matcher, IBenchmarkCase benchmarkCase, IQuerySelector query) {
+    public OriginalVisitorGumTreeASTDiffProvider(Matcher matcher, IBenchmarkCase benchmarkCase, DiffSelector query) {
         super(matcher, query.apply(benchmarkCase.getProjectASTDiff()));
         ProjectASTDiff projectASTDiff = benchmarkCase.getProjectASTDiff();
         this.srcContent = projectASTDiff.getFileContentsBefore().get(input.getSrcPath());

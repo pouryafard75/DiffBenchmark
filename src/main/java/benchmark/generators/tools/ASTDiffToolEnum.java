@@ -27,7 +27,7 @@ import benchmark.generators.tools.runners.shaded.IJM;
 import benchmark.generators.tools.runners.shaded.MTDiff;
 import benchmark.generators.tools.runners.trivial.EmptyDiff;
 import benchmark.generators.tools.runners.trivial.TrivialDiff;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.CompositeMatchers;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
@@ -218,11 +218,11 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     }
 
     @Override
-    public ASTDiffProvider apply(IBenchmarkCase benchmarkCase, IQuerySelector query) {
+    public ASTDiffProvider apply(IBenchmarkCase benchmarkCase, DiffSelector query) {
         return factory.apply(benchmarkCase, query);
     }
 
-    public ASTDiff diff(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) throws Exception {
+    public ASTDiff diff(IBenchmarkCase benchmarkCase, DiffSelector querySelector) throws Exception {
         return factory.apply(benchmarkCase, querySelector).getASTDiff();
     }
 }

@@ -1,4 +1,4 @@
-package benchmark.utils.Experiments;
+package benchmark.models;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 

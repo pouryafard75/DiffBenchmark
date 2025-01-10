@@ -5,7 +5,7 @@ import benchmark.metrics.computers.filters.*;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.generators.tools.ASTDiffToolEnum;
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.hrd.HumanReadableDiff;
 
 import java.io.IOException;
 import java.util.*;

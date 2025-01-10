@@ -11,7 +11,7 @@ import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.generators.hrd.HRDGen3;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
 import benchmark.generators.tools.ASTDiffToolEnum;
-import benchmark.models.NecessaryMappings;
+import benchmark.models.hrd.NecessaryMappings;
 
 import benchmark.utils.PathResolver;
 import com.github.gumtreediff.actions.ChawatheScriptGenerator;

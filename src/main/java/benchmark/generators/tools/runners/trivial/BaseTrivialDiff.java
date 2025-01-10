@@ -1,8 +1,6 @@
 package benchmark.generators.tools.runners.trivial;
 
-import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.BaseASTDiffProvider;
-import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.MultiMappingStore;

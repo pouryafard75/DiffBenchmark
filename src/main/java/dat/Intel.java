@@ -2,7 +2,7 @@ package dat;
 
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
-import benchmark.models.NecessaryMappings;
+import benchmark.models.hrd.NecessaryMappings;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.opencsv.CSVWriter;
 

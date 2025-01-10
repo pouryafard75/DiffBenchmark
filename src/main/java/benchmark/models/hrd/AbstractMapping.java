@@ -1,4 +1,4 @@
-package benchmark.models;
+package benchmark.models.hrd;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;

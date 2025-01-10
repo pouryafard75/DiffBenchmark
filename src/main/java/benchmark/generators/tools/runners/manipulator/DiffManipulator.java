@@ -1,11 +1,11 @@
-package benchmark;
+package benchmark.generators.tools.runners.manipulator;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProvider;
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.manupilator.DiffSide;
+import benchmark.models.DiffSide;
 import benchmark.metrics.computers.violation.models.TriPredicate;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
@@ -19,11 +19,11 @@ import static benchmark.generators.tools.runners.Utils.makeASTDiff;
 /* Created by pourya on 2025-01-07*/
 public class DiffManipulator implements ASTDiffProvider {
     private final IBenchmarkCase benchmarkCase;
-    private final IQuerySelector querySelector;
+    private final DiffSelector querySelector;
     private final ExtendedMultiMappingStore mappings;
     private final ASTDiff fromRM;
 
-    public DiffManipulator(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public DiffManipulator(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         this.benchmarkCase = benchmarkCase;
         this.querySelector = querySelector;
         fromRM = querySelector.apply(benchmarkCase.getProjectASTDiff());

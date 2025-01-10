@@ -1,4 +1,4 @@
-package benchmark.manupilator;
+package benchmark.models;
 
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;

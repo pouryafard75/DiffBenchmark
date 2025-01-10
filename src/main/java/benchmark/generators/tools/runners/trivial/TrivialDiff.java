@@ -2,7 +2,7 @@ package benchmark.generators.tools.runners.trivial;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.ASTDiffToolEnum;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -17,7 +17,7 @@ public class TrivialDiff extends BaseTrivialDiff {
 
     private ExtendedMultiMappingStore perfectMappings = null;
 
-    public TrivialDiff(IBenchmarkCase benchmarkCase, IQuerySelector querySelector) {
+    public TrivialDiff(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(querySelector.apply(benchmarkCase.getProjectASTDiff()));
         try {
             perfectMappings = ASTDiffToolEnum.GOD.diff(benchmarkCase, querySelector).getAllMappings();

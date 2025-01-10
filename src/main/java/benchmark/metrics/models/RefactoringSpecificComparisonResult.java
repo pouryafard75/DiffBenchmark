@@ -1,7 +1,7 @@
 package benchmark.metrics.models;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.hrd.HumanReadableDiff;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
 

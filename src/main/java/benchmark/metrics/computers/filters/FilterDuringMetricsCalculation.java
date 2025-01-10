@@ -1,6 +1,6 @@
 package benchmark.metrics.computers.filters;
 
-import benchmark.models.AbstractMapping;
+import benchmark.models.hrd.AbstractMapping;
 import org.refactoringminer.astDiff.utils.Constants;
 
 import java.util.function.Predicate;

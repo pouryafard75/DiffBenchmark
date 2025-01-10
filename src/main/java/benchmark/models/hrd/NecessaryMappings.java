@@ -1,10 +1,10 @@
-package benchmark.models;
+package benchmark.models.hrd;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.*;
 
-import static benchmark.models.HumanReadableDiff.abstractMappingComparator;
+import static benchmark.models.hrd.HumanReadableDiff.abstractMappingComparator;
 
 /* Created by pourya on 2023-08-09 4:58 p.m. */
 public class NecessaryMappings {

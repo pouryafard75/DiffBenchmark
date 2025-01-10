@@ -13,7 +13,7 @@ import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.RefactoringSpecificComparisonResult;
 import benchmark.generators.tools.ASTDiffToolEnum;
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.hrd.HumanReadableDiff;
 import com.fasterxml.jackson.databind.JsonNode;
 import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
 import gr.uom.java.xmi.diff.*;

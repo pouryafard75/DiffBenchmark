@@ -1,7 +1,7 @@
 package benchmark.generators.tools.models;
 
-import benchmark.utils.Experiments.IGenerator;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.IGenerator;
+import benchmark.models.selector.DiffSelector;
 
-public interface ASTDiffProviderForBenchmark extends IGenerator<IQuerySelector, ASTDiffProvider> {
+public interface ASTDiffProviderForBenchmark extends IGenerator<DiffSelector, ASTDiffProvider> {
 }

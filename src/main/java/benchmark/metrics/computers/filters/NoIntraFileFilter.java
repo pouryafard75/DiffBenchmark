@@ -1,7 +1,7 @@
 package benchmark.metrics.computers.filters;
 
-import benchmark.models.HumanReadableDiff;
-import benchmark.models.NecessaryMappings;
+import benchmark.models.hrd.HumanReadableDiff;
+import benchmark.models.hrd.NecessaryMappings;
 
 public class NoIntraFileFilter implements HumanReadableDiffFilter {
     @Override

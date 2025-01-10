@@ -6,9 +6,9 @@ import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.ASTDiffProvider;
 import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.models.HumanReadableDiff;
-import benchmark.utils.Experiments.IGenerationStrategy;
-import benchmark.utils.Experiments.IQuerySelector;
+import benchmark.models.hrd.HumanReadableDiff;
+import benchmark.models.IGenerationStrategy;
+import benchmark.models.selector.DiffSelector;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
@@ -107,7 +107,7 @@ public class BenchmarkHumanReadableDiffGenerator {
             }
 
             @Override
-            public ASTDiffProvider apply(IBenchmarkCase benchmarkCase, IQuerySelector query) {
+            public ASTDiffProvider apply(IBenchmarkCase benchmarkCase, DiffSelector query) {
                 return provider.apply(benchmarkCase, query);
             }
         };

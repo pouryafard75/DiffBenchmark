@@ -1,7 +1,7 @@
 package benchmark.metrics.computers.filters;
 
-import benchmark.models.AbstractMapping;
-import benchmark.models.HumanReadableDiff;
+import benchmark.models.hrd.AbstractMapping;
+import benchmark.models.hrd.HumanReadableDiff;
 
 import java.util.function.Predicate;
 

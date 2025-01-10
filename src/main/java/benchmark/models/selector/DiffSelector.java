@@ -1,8 +1,8 @@
-package benchmark.utils.Experiments;
+package benchmark.models.selector;
 
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
-public interface IQuerySelector {
+public interface DiffSelector {
     ASTDiff apply(ProjectASTDiff projectASTDiff);
 }

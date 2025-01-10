@@ -7,6 +7,7 @@ import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiPredicate;
 
 import static benchmark.generators.hrd.HumanReadableDiffGenerator.isBetweenDifferentTypes;
 
@@ -46,21 +47,45 @@ public class MappingOffsetTranslator extends AbstractOffsetTranslator {
         //Ensure the roots are mapped as well.
         mappings.addMapping(reference.src.getRoot(), reference.dst.getRoot());
         ASTDiff translated = new ASTDiff(reference.getSrcPath(), reference.getDstPath(), reference.src, reference.dst, mappings);
-        translated.computeVanillaEditScript();
+//        translated.computeVanillaEditScript(); //leave the editscript calculation to the caller
         return translated;
     }
 
-    private Tree findEqv(Tree bad, Tree goodRoot) {
-        List<Tree> candidates = new ArrayList<>();
-        for (Tree candidate : goodRoot.preOrder()) {
-            if (candidate.getPos() == bad.getPos() && candidate.getEndPos() == bad.getEndPos()) {
-                candidates.add(candidate);
-            }
-        }
+    protected Tree findEqv(Tree bad, Tree goodRoot) {
+        if (bad.getPos() == 0 && bad.getEndPos() == 0)
+            return null;
+        List<Tree> candidates = getCandidates(bad, goodRoot,
+                (candidate, badNode) -> candidate.getPos() == badNode.getPos(),
+                (candidate, badNode) -> candidate.getEndPos() == badNode.getEndPos()
+        );
+        if (candidates.isEmpty())
+            return investigate(bad, goodRoot);
         return chooseBestCandidate(bad, candidates);
     }
 
-    private Tree chooseBestCandidate(Tree bad, List<Tree> candidates) {
+    @SafeVarargs
+    protected static List<Tree> getCandidates(Tree bad, Tree goodRoot, BiPredicate<Tree, Tree>... predicates) {
+        List<Tree> candidates = new ArrayList<>();
+        for (Tree candidate : goodRoot.preOrder()) {
+            boolean satisfiedAll = true;
+            for (BiPredicate<Tree, Tree> predicate : predicates) {
+                if (!predicate.test(bad, candidate))
+                {
+                    satisfiedAll = false;
+                    break;
+                }
+            }
+            if (satisfiedAll)
+                candidates.add(candidate);
+        }
+        return candidates;
+    }
+
+    protected Tree investigate(Tree bad, Tree goodRoot) {
+        return null;
+    }
+
+    protected Tree chooseBestCandidate(Tree bad, List<Tree> candidates) {
         if (candidates.isEmpty()) return null;
         if (candidates.size() == 1) {
             return candidates.get(0);

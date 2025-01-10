@@ -9,7 +9,7 @@ import java.util.List;
 /* Created by pourya on 2024-10-07*/
 public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRuleProvider {
 
-    private final MappingOffsetTranslator mappingOffsetTranslator;
+    protected MappingOffsetTranslator mappingOffsetTranslator;
 
 
     public SpoonWithOffsetTranslation(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
@@ -24,8 +24,15 @@ public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRul
 
     @Override
     public ASTDiff getASTDiff() throws Exception {
+        ASTDiff translated = getTranslatedASTDiffWithNoActions();
+        translated.computeVanillaEditScript();
+        return translated;
+    }
+
+    protected ASTDiff getTranslatedASTDiffWithNoActions() throws Exception {
         return mappingOffsetTranslator.translate(super.getASTDiff());
     }
+
     @Override
     public List<TranslationRule> getRules() {
         return List.of(
@@ -34,11 +41,6 @@ public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRul
                 new FirstChildOfTypeBlock(),
                 new FirstChildOfTypeKind(),
                 new ParentWithSameOffset()
-
-                //TODO: actually a very dissappinting one
-                //do more favors including the imports
-                //fix the offsets of the mappings in case of having comments
-
         );
     }
 }

@@ -193,11 +193,20 @@ public abstract class HumanReadableDiffGenerator {
         else
             target.getMappings().add(abstractMapping);
     }
-    public static boolean isProgramElement(String leftType) {
-        return leftType.equals(Constants.TYPE_DECLARATION) ||
-                leftType.equals(Constants.METHOD_DECLARATION) ||
-                leftType.equals(Constants.FIELD_DECLARATION) ||
-                leftType.equals(Constants.ENUM_DECLARATION);
+    public static boolean isProgramElement(String type) {
+        return type.equals(Constants.TYPE_DECLARATION) ||
+                type.equals(Constants.METHOD_DECLARATION) ||
+                type.equals(Constants.FIELD_DECLARATION) ||
+                type.equals(Constants.ENUM_DECLARATION);
+    }
+    public static boolean isImport(String type) {
+        return type.equals(Constants.IMPORT_DECLARATION);
+    }
+    public static boolean isPackageDecl(String type) {
+        return type.equals(Constants.PACKAGE_DECLARATION);
+    }
+    public static boolean isComment(String name) {
+        return name.equals(Constants.BLOCK_COMMENT) || name.equals(Constants.LINE_COMMENT);
     }
     public static boolean isBetweenDifferentTypes(Mapping mapping) {
         return !mapping.first.getType().name.equals(mapping.second.getType().name);

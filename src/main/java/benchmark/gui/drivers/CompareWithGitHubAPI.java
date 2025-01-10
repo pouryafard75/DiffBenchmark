@@ -16,8 +16,10 @@ public class CompareWithGitHubAPI {
         String url = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
 //        url = "https://github.com/pouryafard75/TestCases/commit/4e31fb03d9e9d67f3b3dd6ea2c1703551deb54a0";
         String filePath = "servers/src/main/java/tachyon/worker/block/allocator/MaxFreeAllocator.java";
+        url = "https://github.com/pouryafard75/TestCases/commit/0ae8f723a59722694e394300656128f9136ef466";
+//        url = "https://github.com/pouryafard75/TestCases/commit/fc8b9007ace92d3338e88be5e00cb98742c80465";
         WebDiffConf webDiffConf = WebDiffConf.defaultConf();
-        addCustomManipulation(webDiffConf, url, filePath);
+//        addCustomManipulation(webDiffConf, url, filePath);
         BenchmarkWebDiff benchmarkWebDiff = new BenchmarkWebDiffFactory(webDiffConf)
                 .withURL(url) /*Recommended for the cases you have a url to experiment with*/
 

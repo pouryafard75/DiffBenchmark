@@ -5,12 +5,10 @@ import benchmark.generators.tools.models.ASTDiffProvider;
 import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.IASTMapper;
+import benchmark.generators.tools.runners.converter.FinalizedSpoon;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.converter.Spoon;
 import benchmark.generators.tools.runners.converter.SpoonWithOffsetTranslation;
-import benchmark.generators.tools.runners.gt.OriginalVisitorGumTreeASTDiffProvider;
-import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
-import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.experimental.all.ModifierInterConservativeMulti;
 import benchmark.generators.tools.runners.experimental.all.ModifierInterNoMulti;
 import benchmark.generators.tools.runners.experimental.interfile.ProjectGumTreeASTDiffProvider;
@@ -23,6 +21,9 @@ import benchmark.generators.tools.runners.experimental.labels.LeafTypeMerger;
 import benchmark.generators.tools.runners.experimental.multimapping.CopyPaste;
 import benchmark.generators.tools.runners.experimental.multimapping.GumTreeWithMultiMappingASTDiffProvider;
 import benchmark.generators.tools.runners.experimental.multimapping.NonMatchedSubtreesAdditionalRound;
+import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
+import benchmark.generators.tools.runners.gt.OriginalVisitorGumTreeASTDiffProvider;
+import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.shaded.IJM;
 import benchmark.generators.tools.runners.shaded.MTDiff;
 import benchmark.generators.tools.runners.trivial.EmptyDiff;
@@ -197,6 +198,8 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     SPN_OFFSET_TRANSLATED("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
 
     SPN_OFFSET_TRANSLATED_WITH_RULES("Spoon Compatible (After applying translation rules)", SpoonWithOffsetTranslation::new),
+
+    SPN_FINALIZED("Spoon + Imports + Package Decl + Fix Comments Offsets", FinalizedSpoon::new)
 
 
     ;

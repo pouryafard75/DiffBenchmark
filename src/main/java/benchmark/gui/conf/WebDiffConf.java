@@ -48,6 +48,7 @@ public class WebDiffConf {
         conf.enabled_tools.add(ASTDiffToolEnum.SPN);
         conf.enabled_tools.add(ASTDiffToolEnum.SPN_OFFSET_TRANSLATED);
         conf.enabled_tools.add(ASTDiffToolEnum.SPN_OFFSET_TRANSLATED_WITH_RULES);
+        conf.enabled_tools.add(ASTDiffToolEnum.SPN_FINALIZED);
         // Viewers
 //        conf.enabled_viewers.add(DiffViewers.MONACO);
         conf.enabled_viewers.add(DiffViewers.VANILLA);

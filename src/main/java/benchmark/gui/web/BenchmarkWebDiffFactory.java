@@ -4,10 +4,9 @@ import benchmark.data.diffcase.GithubCase;
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
-import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.converter.NoPerfectDiffException;
-import benchmark.gui.conf.GuiConf;
+import benchmark.gui.conf.WebDiffConf;
 import org.eclipse.jgit.lib.Repository;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -26,12 +25,12 @@ import static benchmark.conf.Paths.ORACLE_DIR;
 /* Created by pourya on 2023-04-17 8:58 p.m. */
 public class BenchmarkWebDiffFactory {
 
-    private final GuiConf guiConf;
+    private final WebDiffConf webDiffConf;
     public BenchmarkWebDiffFactory() {
-        guiConf = GuiConf.defaultConf();
+        webDiffConf = WebDiffConf.defaultConf();
     }
-    public BenchmarkWebDiffFactory(GuiConf guiConf) {
-        this.guiConf = guiConf;
+    public BenchmarkWebDiffFactory(WebDiffConf webDiffConf) {
+        this.webDiffConf = webDiffConf;
     }
     public BenchmarkWebDiff withURL(String url) throws Exception {
         String repo = URLHelper.getRepo(url);
@@ -70,10 +69,11 @@ public class BenchmarkWebDiffFactory {
         Map<IASTDiffTool, Set<ASTDiff>> diffs = new LinkedHashMap<>();
 
         for (ASTDiff astDiff : RM_astDiff) {
-            for (ASTDiffToolEnum tool : guiConf.enabled_tools) {
+            for (IASTDiffTool tool : webDiffConf.enabled_tools) {
                 diffs.computeIfAbsent(tool, k -> new LinkedHashSet<>());
                 try {
-                    diffs.get(tool).add(tool.diff(info, (x) -> astDiff));
+                    ASTDiff diff = tool.apply(info, (x) -> astDiff).getASTDiff();
+                    diffs.get(tool).add(diff);
                 }
                 catch (NoPerfectDiffException noPerfectDiffException)
                 {
@@ -85,7 +85,7 @@ public class BenchmarkWebDiffFactory {
                 }
             }
         }
-        return new BenchmarkWebDiff(projectASTDiffByRM,diffs, guiConf);
+        return new BenchmarkWebDiff(projectASTDiffByRM,diffs, webDiffConf);
     }
 
 }

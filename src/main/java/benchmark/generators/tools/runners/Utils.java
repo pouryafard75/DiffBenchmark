@@ -2,7 +2,10 @@ package benchmark.generators.tools.runners;
 
 import com.github.gumtreediff.tree.DefaultTree;
 import com.github.gumtreediff.tree.Tree;
+import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.tree.TypeSet;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import shaded.com.github.gumtreediff.tree.ITree;
 import shaded.org.eclipse.jdt.core.dom.ASTNode;
 
@@ -47,5 +50,13 @@ public class Utils {
         if (replace.equals(""))
             throw new Exception("Cannot find AST-Type");
         return replace;
+    }
+
+    public static ASTDiff makeASTDiff(ASTDiff input, com.github.gumtreediff.tree.Tree src, com.github.gumtreediff.tree.Tree dst, ExtendedMultiMappingStore mappings) {
+        TreeContext srcContext = new TreeContext();
+        srcContext.setRoot(src);
+        TreeContext dstContext = new TreeContext();
+        dstContext.setRoot(dst);
+        return new ASTDiff(input.getSrcPath(), input.getDstPath(), srcContext, dstContext, mappings);
     }
 }

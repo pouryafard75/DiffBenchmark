@@ -4,7 +4,6 @@ import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
 import benchmark.utils.Experiments.IQuerySelector;
 import com.github.gumtreediff.tree.DefaultTree;
-import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.tree.TypeSet;
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
@@ -17,6 +16,8 @@ import shadedspoon.gumtree.spoon.diff.DiffImpl;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtPackage;
 import spoon.support.compiler.VirtualFile;
+
+import static benchmark.generators.tools.runners.Utils.makeASTDiff;
 
 /* Created by pourya on 2024-09-09*/
 public class Spoon extends ASTDiffProviderFromProjectASTDiff {
@@ -37,11 +38,7 @@ public class Spoon extends ASTDiffProviderFromProjectASTDiff {
 
         ExtendedMultiMappingStore mappings = new ExtendedMultiMappingStore(src, dst);
         populate(mappings, diff, src, dst, srcBible, dstBible);
-        TreeContext srcContext = new TreeContext();
-        srcContext.setRoot(src);
-        TreeContext dstContext = new TreeContext();
-        dstContext.setRoot(dst);
-        ASTDiff astDiff = new ASTDiff(input.getSrcPath(), input.getDstPath(), srcContext, dstContext, mappings);
+        ASTDiff astDiff = makeASTDiff(input, src, dst, mappings);
         astDiff.computeVanillaEditScript();
         return astDiff;
     }

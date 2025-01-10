@@ -2,7 +2,7 @@ package benchmark.gui.web;
 
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.gui.viewers.DiffViewers;
-import benchmark.gui.conf.GuiConf;
+import benchmark.gui.conf.WebDiffConf;
 
 import gui.webdiff.WebDiff;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -20,12 +20,12 @@ import static org.rendersnake.HtmlAttributesFactory.*;
 public class BenchmarkDirectoryDiffView implements Renderable {
     private final BenchmarkDirComparator comperator;
     private final Map<IASTDiffTool, Set<ASTDiff>> diffs;
-    private final GuiConf guiConf;
+    private final WebDiffConf webDiffConf;
 
-    public BenchmarkDirectoryDiffView(BenchmarkDirComparator comperator, Map<IASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
+    public BenchmarkDirectoryDiffView(BenchmarkDirComparator comperator, Map<IASTDiffTool, Set<ASTDiff>> diffs, WebDiffConf webDiffConf) {
         this.comperator = comperator;
         this.diffs = diffs;
-        this.guiConf = guiConf;
+        this.webDiffConf = webDiffConf;
     }
 
     @Override
@@ -49,7 +49,7 @@ public class BenchmarkDirectoryDiffView implements Renderable {
                                         .span(class_("badge badge-secondary").style("color:black")).content(comperator.getModifiedFilesName().size())
                                     ._h4()
                                 ._div()
-                                .render_if(new ModifiedFiles(modifiedFilesName, diffs, guiConf), !modifiedFilesName.isEmpty())
+                                .render_if(new ModifiedFiles(modifiedFilesName, diffs, webDiffConf), !modifiedFilesName.isEmpty())
                             ._div()
                         ._div()
                     ._div()
@@ -89,13 +89,13 @@ public class BenchmarkDirectoryDiffView implements Renderable {
 
         private final Map<String,String> diffInfos;
         private final Map<IASTDiffTool, Set<ASTDiff>> diffs;
-        private final GuiConf conf;
+        private final WebDiffConf conf;
 
 
-        private ModifiedFiles(Map<String,String> diffInfos, Map<IASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
+        private ModifiedFiles(Map<String,String> diffInfos, Map<IASTDiffTool, Set<ASTDiff>> diffs, WebDiffConf webDiffConf) {
             this.diffInfos = diffInfos;
             this.diffs = diffs;
-            conf = guiConf;
+            conf = webDiffConf;
         }
 
         @Override

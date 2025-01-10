@@ -30,7 +30,7 @@ public enum ToolSets implements Set<IASTDiffTool> {
                 ASTDiffToolEnum.RMD,
                 ASTDiffToolEnum.GTG,
                 ASTDiffToolEnum.GTS,
-                ASTDiffToolEnum.SPN_COMP
+                ASTDiffToolEnum.SPN_OFFSET_TRANSLATED_WITH_RULES
             )
     );
 

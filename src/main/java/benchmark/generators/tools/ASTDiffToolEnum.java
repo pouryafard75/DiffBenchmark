@@ -192,11 +192,11 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    SPN ("SpoonIncompatible", Spoon::new),
+    SPN ("Original Spoon (Incompatible)", Spoon::new),
 
-    SPN_PRV("Spoon Compatible (Before this meeting)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
+    SPN_OFFSET_TRANSLATED("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
 
-    SPN_COMP ("Spoon Compatible", SpoonWithOffsetTranslation::new),
+    SPN_OFFSET_TRANSLATED_WITH_RULES("Spoon Compatible (After applying translation rules)", SpoonWithOffsetTranslation::new),
 
 
     ;

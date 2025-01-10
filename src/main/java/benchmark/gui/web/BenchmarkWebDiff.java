@@ -1,7 +1,7 @@
 package benchmark.gui.web;
 
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.gui.conf.GuiConf;
+import benchmark.gui.conf.WebDiffConf;
 import benchmark.gui.viewers.DiffViewers;
 import com.github.gumtreediff.utils.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -29,13 +29,13 @@ public class BenchmarkWebDiff {
 
     private final ProjectASTDiff projectASTDiff;
     public final Map<IASTDiffTool, Set<ASTDiff>> diffs;
-    private final GuiConf guiConf;
+    private final WebDiffConf webDiffConf;
 
 
-    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Map<IASTDiffTool, Set<ASTDiff>> diffs, GuiConf guiConf) {
+    public BenchmarkWebDiff(ProjectASTDiff projectASTDiffByRM, Map<IASTDiffTool, Set<ASTDiff>> diffs, WebDiffConf webDiffConf) {
         this.projectASTDiff = projectASTDiffByRM;
         this.diffs = diffs;
-        this.guiConf = guiConf;
+        this.webDiffConf = webDiffConf;
     }
 
     public static boolean isWindows() {
@@ -68,14 +68,14 @@ public class BenchmarkWebDiff {
             return "";
         });
         get("/list", (request, response) -> {
-            Renderable view = new BenchmarkDirectoryDiffView(comperator, diffs, guiConf);
+            Renderable view = new BenchmarkDirectoryDiffView(comperator, diffs, webDiffConf);
             return renderToString(view);
         });
 
         for (Map.Entry<IASTDiffTool, Set<ASTDiff>> astDiffToolSetEntry : diffs.entrySet()) {
             IASTDiffTool tool = astDiffToolSetEntry.getKey();
             Set<ASTDiff> astDiffs = astDiffToolSetEntry.getValue();
-            for (DiffViewers enabledViewer : guiConf.enabled_viewers) {
+            for (DiffViewers enabledViewer : webDiffConf.enabled_viewers) {
                 try {
                     enabledViewer.configure(tool, astDiffs, projectASTDiff);
                 } catch (Exception e) {
@@ -83,7 +83,9 @@ public class BenchmarkWebDiff {
                 }
             }
         }
-
+        get("/MAN/:id", (request, response) -> {
+           return null;
+        });
 
         get("/left/:id", (request, response) -> {
             int id = Integer.parseInt(request.params(":id"));

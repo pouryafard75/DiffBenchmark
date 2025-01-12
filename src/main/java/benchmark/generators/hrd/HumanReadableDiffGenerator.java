@@ -59,7 +59,8 @@ public abstract class HumanReadableDiffGenerator {
         List<Mapping> mappings = new ArrayList<>(getAstDiff().getAllMappings().getMappings());
         mappings.sort(Comparator.comparingInt(o -> o.first.getPos()));
         for (Mapping mapping : mappings ) {
-            if (isPartOf(mapping, Constants.JAVA_DOC)) continue; //TODO: It might be extremely useful to have this information in the future
+            //Note: It might be extremely useful to have this information in the future
+            if (isPartOf(mapping, Constants.JAVA_DOC) || isPartOf(mapping, Constants.LINE_COMMENT) || isPartOf(mapping, Constants.BLOCK_COMMENT)) continue;
             if (isBetweenDifferentTypes(mapping)) {
 //                throw new RuntimeException();
 //                System.out.println("");

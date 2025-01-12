@@ -1,6 +1,7 @@
 package benchmark.utils;
 
-import benchmark.data.dataset.Defects4JBenchmarkDataset;
+import benchmark.data.dataset.IBenchmarkDataset;
+import benchmark.data.dataset.RefactoringOracleBenchmarkDataset;
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.ASTDiffToolEnum;
 import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
@@ -26,15 +27,18 @@ import static org.refactoringminer.astDiff.utils.ExportUtils.getFinalFolderPath;
 /* Created by pourya on 2024-12-09*/
 public class MigrationToNewVisitor {
 
-    static String mappingsPath = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/defects4j/";
-    static Defects4JBenchmarkDataset dataset = new Defects4JBenchmarkDataset();
+    static String mappingsPath = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/commits/";
+    static IBenchmarkDataset dataset = new RefactoringOracleBenchmarkDataset();
 
 
     public static void main(String[] args) throws Exception {
         System.out.println("Started correcting");
         System.out.println(dataset.getCases().size());
         for (IBenchmarkCase aCase : dataset.getCases()) {
-            update(aCase);
+//            https://github.com/glyptodon/guacamole-client/commit/ce1f3d07976de31aed8f8189ec5e1a6453f4b580
+//            https://github.com/spring-projects/spring-security/commit/fcc9a34356817d93c24b5ccf3107ec234a28b136
+//            if (aCase.getCommit().equals("0ba343846f21649e29ffc600f30a7f3e463fb24c"))
+//                update(aCase);
         }
     }
 

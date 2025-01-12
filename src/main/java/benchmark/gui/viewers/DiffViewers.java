@@ -26,7 +26,6 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
                         astDiff, id, projectASTDiff.getDiffSet().size(), "", false,
                         projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
                         projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()), false);
-                vanillaDiffView.setMinimal(true);
                 return renderToString(vanillaDiffView);
             })
     ),

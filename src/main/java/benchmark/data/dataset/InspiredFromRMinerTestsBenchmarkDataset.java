@@ -30,7 +30,7 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
     @Override
     public Set<? extends IBenchmarkCase> getCases() {
         return makeAllCases(getTypeReference(),
-//                getPerfectDirPath().resolve(perfectInfoName),
+                getPerfectDirPath().resolve(perfectInfoName),
                 getPerfectDirPath().resolve(problematicInfoName)
         );
     }

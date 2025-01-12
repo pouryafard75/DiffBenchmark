@@ -21,7 +21,7 @@ public class CompareWithGitHubAPI {
         WebDiffConf webDiffConf = WebDiffConf.defaultConf();
 //        addCustomManipulation(webDiffConf, url, filePath);
         BenchmarkWebDiff benchmarkWebDiff = new BenchmarkWebDiffFactory(webDiffConf)
-                .withURL(url) /*Recommended for the cases you have a url to experiment with*/
+                .withURL(url) /*Recommended for the cases you have url to experiment with*/
 
 //                .withCaseInfo(new D4JCase("Cli", "20")) /*Recommended when you have added the case to benchmark datasets*/
 

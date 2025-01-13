@@ -13,8 +13,8 @@ public enum FilterDuringGeneration implements HumanReadableDiffFilter{
     INTER_FILE_ONLY(new InterFileRelatedFilter()),
     MULTI_ONLY(new MultiMappingsFilter()), /* I know, This is not conceptually as same as the other enum value.
         Probably it was better to model this as boolean variable somewhere,
-        but I couldn't help myself not to go with this solution.
-        However, multi-mappings might be present in multiple locations
+        but I couldn't help myself to not go with this solution.
+        However, multi-mappings might be present in multiple locations,
         thus it's not the worst decision i.m.o. . */
 
     COMMENTS_ONLY(HumanReadableDiffFilter.byPredicate(

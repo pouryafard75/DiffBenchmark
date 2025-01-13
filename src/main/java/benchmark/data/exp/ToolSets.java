@@ -3,10 +3,7 @@ package benchmark.data.exp;
 import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 /* Created by pourya on 2024-09-29*/
 public enum ToolSets implements Set<IASTDiffTool> {
@@ -25,13 +22,17 @@ public enum ToolSets implements Set<IASTDiffTool> {
                         ASTDiffToolEnum.MTD,
                         ASTDiffToolEnum.GT2)
     ),
-    EXPERIMENT(
-            Set.of(
-                ASTDiffToolEnum.RMD,
-                ASTDiffToolEnum.GTG,
-                ASTDiffToolEnum.GTS,
-                ASTDiffToolEnum.SPN_OFFSET_TRANSLATED_WITH_RULES
-            )
+    BIG_GUNS(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.RMD);
+                add(ASTDiffToolEnum.GTG);
+                add(ASTDiffToolEnum.GTS);
+            }}
+    ),
+    SPOON_AND_BIG_GUNS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.SPN_FINALIZED);
+            }}
     );
 
     private final Set<IASTDiffTool> tools;

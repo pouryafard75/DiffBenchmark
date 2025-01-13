@@ -1,11 +1,12 @@
 package benchmark.gui.drivers;
 
 import benchmark.data.diffcase.GithubCase;
+import benchmark.data.exp.ToolSets;
 import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.generators.tools.runners.manipulator.BenchmarkCaseDiffManipulatorImpl;
 import benchmark.gui.conf.WebDiffConf;
 import benchmark.gui.web.BenchmarkWebDiff;
 import benchmark.gui.web.BenchmarkWebDiffFactory;
-import benchmark.generators.tools.runners.manipulator.BenchmarkCaseDiffManipulatorImpl;
 import benchmark.models.DiffSide;
 import benchmark.models.selector.QueryBySrcPath;
 import org.apache.commons.lang3.tuple.Pair;
@@ -14,13 +15,11 @@ import org.apache.commons.lang3.tuple.Pair;
 public class CompareWithGitHubAPI {
     public static void main(String[] args) throws Exception {
         String url = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
-//        url = "https://github.com/pouryafard75/TestCases/commit/4e31fb03d9e9d67f3b3dd6ea2c1703551deb54a0";
-        String filePath = "servers/src/main/java/tachyon/worker/block/allocator/MaxFreeAllocator.java";
-        url = "https://github.com/pouryafard75/TestCases/commit/0ae8f723a59722694e394300656128f9136ef466";
-//        url = "https://github.com/pouryafard75/TestCases/commit/fc8b9007ace92d3338e88be5e00cb98742c80465";
         WebDiffConf webDiffConf = WebDiffConf.defaultConf();
-//        addCustomManipulation(webDiffConf, url, filePath);
+        webDiffConf.setEnabled_tools(ToolSets.SPOON_AND_BIG_GUNS);
+//        webDiffConf.setEnabled_tools(Set.of(ASTDiffToolEnum.SPN_FINALIZED));
         BenchmarkWebDiff benchmarkWebDiff = new BenchmarkWebDiffFactory(webDiffConf)
+
                 .withURL(url) /*Recommended for the cases you have url to experiment with*/
 
 //                .withCaseInfo(new D4JCase("Cli", "20")) /*Recommended when you have added the case to benchmark datasets*/

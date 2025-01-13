@@ -6,6 +6,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 import java.util.List;
 
 import static benchmark.generators.hrd.HumanReadableDiffGenerator.isComment;
+import static benchmark.generators.hrd.HumanReadableDiffGenerator.isProgramElement;
 
 
 /* Created by pourya on 2025-01-10*/
@@ -22,19 +23,40 @@ public class CommentCorrectorMappingOffsetTranslator extends MappingOffsetTransl
                 (candidate, badNode) -> candidate.getPos() == badNode.getPos());
         List<Tree> sameEndCandidates = getCandidates(bad, goodRoot,
                 (candidate, badNode) -> candidate.getEndPos() == badNode.getEndPos());
+
         if (!sameEndCandidates.isEmpty() && !sameStartCandidates.isEmpty()) {
-            if (sameStartCandidates.size() == 1 && sameEndCandidates.size() == 1) {
-                if (isComment(sameStartCandidates.getFirst().getType().name))
-                    return sameEndCandidates.getFirst();
-                if (isComment(sameEndCandidates.getFirst().getType().name))
-                    return sameStartCandidates.getFirst();
+            if (sameStartCandidates.size() == 1 && sameEndCandidates.size() == 1){
+                if (isComment(sameStartCandidates.getFirst().getType().name) && isComment(sameEndCandidates.getFirst().getType().name)){
+                    //program element is between the offsets
+                    return selectProgramElement(goodRoot.getTreesBetweenPositions(bad.getPos(), bad.getEndPos()));
+                }
             }
-            else return null;
+            if (sameStartCandidates.size() == 1){
+                if (isComment(sameStartCandidates.getFirst().getType().name))
+                    return selectProgramElement(sameEndCandidates);
+                else
+                {
+                    //Verified and it's alright
+                }
+            }
+            else if (sameEndCandidates.size() == 1){
+                if (isComment(sameEndCandidates.getFirst().getType().name))
+                    return selectProgramElement(sameStartCandidates);
+                else
+                {
+                    //Verified and it's alright
+                }
+            }
         }
+
         if (!sameStartCandidates.isEmpty())
             return chooseBestCandidate(bad, sameStartCandidates);
         if (!sameEndCandidates.isEmpty())
             return chooseBestCandidate(bad, sameEndCandidates);
         return null;
+    }
+
+    private Tree selectProgramElement(List<Tree> sameEndCandidates) {
+        return sameEndCandidates.stream().filter(candidate -> isProgramElement(candidate.getType().name)).findFirst().orElse(null);
     }
 }

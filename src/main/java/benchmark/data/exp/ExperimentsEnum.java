@@ -13,7 +13,7 @@ import java.util.Set;
 public enum ExperimentsEnum implements IExperiment {
     REF_EXP_3_0(new ExperimentImpl(EBenchmarkDataset.RefOracle,
             ToolSets.THREE_ZERO_COMPATIBLE,
-            GenerationStrategy.NonFiltered,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "output/RefOracle3_0/",
             "RefOracle3_0.csv",
             "ref3.0")),
@@ -25,7 +25,7 @@ public enum ExperimentsEnum implements IExperiment {
             "ref2.1")),
     D4J_EXP_3_0(new ExperimentImpl(EBenchmarkDataset.Defects4J,
             ToolSets.THREE_ZERO_COMPATIBLE,
-            GenerationStrategy.NonFiltered,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "output/D4JOracle3_0/",
             "D4JOracle3_0.csv",
             "d4j3.0")),
@@ -37,13 +37,13 @@ public enum ExperimentsEnum implements IExperiment {
             "d4j2.1")),
     DUM_EXP_3_0(new ExperimentImpl(EBenchmarkDataset.Dummy,
             ToolSets.THREE_ZERO_COMPATIBLE,
-            GenerationStrategy.NonFiltered,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "output/DumOracle3_0/",
             "DumOracle3_0.csv",
             "dum3.0")),
     DUM_EXP_2_1(new ExperimentImpl(EBenchmarkDataset.Dummy,
             ToolSets.TWO_ONE_COMPATIBLE,
-            GenerationStrategy.NonFiltered,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "output/DumOracle2_1/",
             "DumOracle2_1.csv",
             "dum2.1")),
@@ -65,17 +65,17 @@ public enum ExperimentsEnum implements IExperiment {
             ASTDiffToolEnum.EMP,
             ASTDiffToolEnum.RMD))
     ,
-    INCOMPATIBLE_TOOLS_TRIAL(new ExperimentImpl(EBenchmarkDataset.RefOracle,
-            ToolSets.EXPERIMENT,
-            GenerationStrategy.NonFiltered,
-            "output/incompatibles/",
+    VISITOR_BATTLE(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.SPOON_AND_BIG_GUNS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "output/visitor_battles/",
             "out.csv",
-            "incompatibles",
-            ASTDiffToolEnum.EMP,
-            ASTDiffToolEnum.RMD))
+            "VISITOR_BATTLE",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
     ,
     ;
-
 
     private final IExperiment experiment;
 

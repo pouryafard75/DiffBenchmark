@@ -7,7 +7,7 @@ import benchmark.models.hrd.HumanReadableDiff;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
 public enum GenerationStrategy implements IGenerationStrategy {
-    NonFiltered {
+    NO_COMMENTS_AND_JAVADOCS {
         @Override
         public HumanReadableDiff apply(IBenchmarkCase benchmarkCase, ASTDiff current) {
             return new HRDGen3(benchmarkCase, current).getResult();

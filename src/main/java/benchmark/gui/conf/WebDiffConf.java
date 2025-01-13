@@ -1,6 +1,6 @@
 package benchmark.gui.conf;
 
-import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.data.exp.ToolSets;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.gui.viewers.DiffViewers;
 
@@ -39,18 +39,9 @@ public class WebDiffConf {
     public static WebDiffConf defaultConf() {
         WebDiffConf conf = new WebDiffConf();
         // Tools
-//        conf.enabled_tools.add(ASTDiffToolEnum.RMD);
-//        conf.enabled_tools.add(ASTDiffToolEnum.GTG);
-//        conf.enabled_tools.add(ASTDiffToolEnum.GTS);
-//        conf.enabled_tools.add(ASTDiffToolEnum.GOD);
-//        conf.enabled_tools.add(ASTDiffToolEnum.GGO);
-//        conf.enabled_tools.add(ASTDiffToolEnum.GSO);
-        conf.enabled_tools.add(ASTDiffToolEnum.SPN);
-        conf.enabled_tools.add(ASTDiffToolEnum.SPN_OFFSET_TRANSLATED);
-        conf.enabled_tools.add(ASTDiffToolEnum.SPN_OFFSET_TRANSLATED_WITH_RULES);
-        conf.enabled_tools.add(ASTDiffToolEnum.SPN_FINALIZED);
+        conf.setEnabled_tools(ToolSets.BIG_GUNS);
         // Viewers
-//        conf.enabled_viewers.add(DiffViewers.MONACO);
+        conf.enabled_viewers.add(DiffViewers.MONACO);
         conf.enabled_viewers.add(DiffViewers.VANILLA);
         return conf;
     }

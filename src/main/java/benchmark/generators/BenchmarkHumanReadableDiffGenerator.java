@@ -25,8 +25,8 @@ public class BenchmarkHumanReadableDiffGenerator {
     private final IExperiment experiment;
 
     
-    private String TRV_NAME = "TRV";
-    private String GOD_NAME = "GOD";
+    private final String TRV_NAME = "TRV";
+    private final String GOD_NAME = "GOD";
 
 
     public BenchmarkHumanReadableDiffGenerator(IExperiment experiment){

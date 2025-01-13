@@ -29,6 +29,48 @@ public enum ToolSets implements Set<IASTDiffTool> {
                 add(ASTDiffToolEnum.GTS);
             }}
     ),
+
+    LITERATURE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.GT2);
+                add(ASTDiffToolEnum.IJM);
+                add(ASTDiffToolEnum.MTD);
+                add(ASTDiffToolEnum.IAM);
+            }}
+    ),
+    INTERFILE_EXTENSION_BATTLE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.VNG);
+                add(ASTDiffToolEnum.VNS);
+                add(ASTDiffToolEnum.SMG);
+                add(ASTDiffToolEnum.SMS);
+            }}
+    ),
+    MULTIMAPPING_EXTENSION_BATTLE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.CPG);
+                add(ASTDiffToolEnum.CPS);
+                add(ASTDiffToolEnum.NMG);
+                add(ASTDiffToolEnum.NMS);
+            }}
+    ),
+    SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.FLG);
+                add(ASTDiffToolEnum.FLS);
+                add(ASTDiffToolEnum.FTG);
+                add(ASTDiffToolEnum.FTS);
+            }}
+    ),
+    EXTENSION_BATTLE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS)
+            {{
+                this.addAll(INTERFILE_EXTENSION_BATTLE_TOOLS);
+                this.addAll(MULTIMAPPING_EXTENSION_BATTLE_TOOLS);
+                this.addAll(SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS);
+            }}
+    ),
+
     SPOON_AND_BIG_GUNS(
             new LinkedHashSet<>(BIG_GUNS){{
                 add(ASTDiffToolEnum.SPN_FINALIZED);

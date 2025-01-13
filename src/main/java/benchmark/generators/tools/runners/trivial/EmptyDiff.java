@@ -5,6 +5,8 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 /* Created by pourya on 2024-10-04*/
+
+//ASTDiff with no mappings. Zero false positive always
 public class EmptyDiff extends BaseASTDiffProvider {
     public EmptyDiff(ASTDiff rmAstDiff) {
         super(rmAstDiff);

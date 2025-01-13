@@ -34,7 +34,7 @@ import static benchmark.conf.Paths.FINALIZED_REFACTORING_MINER_PATH;
 import static benchmark.metrics.computers.vanilla.HRDBenchmarkComputer.compareHumanReadableDiffs;
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 import static benchmark.utils.PathResolver.fileNameAsFolder;
-import static rq.Utils.mergeStats;
+import static rq.rm3.Utils.mergeStats;
 
 /* Created by pourya on 2023-11-29 9:01 a.m. */
 public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {

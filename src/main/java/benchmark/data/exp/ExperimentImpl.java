@@ -1,6 +1,7 @@
 package benchmark.data.exp;
 
 import benchmark.data.dataset.IBenchmarkDataset;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.models.IGenerationStrategy;
@@ -31,13 +32,9 @@ public class ExperimentImpl implements IExperiment {
 
 
     public ExperimentImpl(IBenchmarkDataset iBenchmarkDataset, Set<IASTDiffTool> tools, IGenerationStrategy generationStrategy,
-                          String outputFolder, String csvDestinationFile, String name) {
-        this.dataset = iBenchmarkDataset;
-        this.generationStrategy = generationStrategy;
-        this.tools = tools;
-        this.outputFolder = outputFolder;
-        this.csvDestinationFile = csvDestinationFile;
-        this.name = name;
+                          String hrdOraclePath, String csvStatsPath, String name) {
+        this(iBenchmarkDataset, tools, generationStrategy, hrdOraclePath, csvStatsPath, name,
+                ASTDiffToolEnum.TRV, ASTDiffToolEnum.GOD);
     }
 
     public ExperimentImpl(IBenchmarkDataset iBenchmarkDataset, Set<IASTDiffTool> tools, IGenerationStrategy generationStrategy,

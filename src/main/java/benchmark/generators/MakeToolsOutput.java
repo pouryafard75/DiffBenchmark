@@ -8,7 +8,7 @@ import benchmark.data.exp.IExperiment;
 public class MakeToolsOutput {
 
     public static void main(String[] args) throws Exception {
-        IExperiment experiment = ExperimentsEnum.VISITOR_BATTLE;
+        IExperiment experiment = ExperimentsEnum.VISITOR_EXP;
         new BenchmarkHumanReadableDiffGenerator(
                 experiment
         ).generateMultiThreaded();

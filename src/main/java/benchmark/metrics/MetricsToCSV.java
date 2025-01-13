@@ -13,25 +13,33 @@ import java.util.Collection;
 
 /* Created by pourya on 2023-04-16 4:16 a.m. */
 public class MetricsToCSV {
+
     public static void main(String[] args) throws Exception {
-        IExperiment experiment = ExperimentsEnum.VISITOR_BATTLE;
+        IExperiment experiment = ExperimentsEnum.VISITOR_EXP;
         HumanReadableDiffFilter[] filters =  new HumanReadableDiffFilter[] {
                 FilterDuringGeneration.NO_FILTER,
                 FilterDuringGeneration.INTRA_FILE_ONLY
         };
         for (HumanReadableDiffFilter filter : filters)
         {
+            FilterDuringMetricsCalculation noFilter = FilterDuringMetricsCalculation.NO_FILTER;
             VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(
                     experiment,
                     filter,
-                    FilterDuringMetricsCalculation.NO_FILTER
+                    noFilter
             );
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-            MetricsCsvWriter.exportToCSV(stats, getCsvFilePath(filter, experiment), true, "out/");
+            MetricsCsvWriter.exportToCSV(stats, getCsvFilePath(filter, noFilter, experiment), true, "out/");
         }
     }
 
-    private static String getCsvFilePath(HumanReadableDiffFilter filter, IExperiment experiment) {
-        return experiment.getOutputFolder() + experiment.getName() + "-" + filter + "-" + experiment.getDataset().getDatasetName() + ".csv";
+    public static String getCsvFilePath(HumanReadableDiffFilter filter, FilterDuringMetricsCalculation filterDuringMetricsCalculation, IExperiment experiment) {
+        String delimiter = "-";
+        return experiment.getName()
+                + delimiter + filter
+                + delimiter + filterDuringMetricsCalculation
+                + delimiter + experiment.getDataset().getDatasetName()
+                + delimiter + experiment.getGenerationStrategy().toString()
+                +  ".csv";
     }
 }

@@ -6,8 +6,8 @@ import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.ASTDiffProvider;
 import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.models.hrd.HumanReadableDiff;
 import benchmark.models.IGenerationStrategy;
+import benchmark.models.hrd.HumanReadableDiff;
 import benchmark.models.selector.DiffSelector;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -21,10 +21,8 @@ import java.util.concurrent.Executors;
 
 /* Created by pourya on 2023-02-08 3:00 a.m. */
 public class BenchmarkHumanReadableDiffGenerator {
-
     private final IExperiment experiment;
 
-    
     private final String TRV_NAME = "TRV";
     private final String GOD_NAME = "GOD";
 

@@ -11,46 +11,47 @@ import benchmark.models.IGenerationStrategy;
 import java.util.Set;
 
 public enum ExperimentsEnum implements IExperiment {
+    // RM 3.0 Experiments
     REF_EXP_3_0(new ExperimentImpl(EBenchmarkDataset.RefOracle,
             ToolSets.THREE_ZERO_COMPATIBLE,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "output/RefOracle3_0/",
+            "RefOracle3_0/",
             "RefOracle3_0.csv",
             "ref3.0")),
     REF_EXP_2_1(new ExperimentImpl(EBenchmarkDataset.RefOracle,
             ToolSets.TWO_ONE_COMPATIBLE,
             GenerationStrategy.Filtered,
-            "output/RefOracle2_1/",
+            "RefOracle2_1/",
             "RefOracle3_0.csv",
             "ref2.1")),
     D4J_EXP_3_0(new ExperimentImpl(EBenchmarkDataset.Defects4J,
             ToolSets.THREE_ZERO_COMPATIBLE,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "output/D4JOracle3_0/",
+            "D4JOracle3_0/",
             "D4JOracle3_0.csv",
             "d4j3.0")),
     D4J_EXP_2_1(new ExperimentImpl(EBenchmarkDataset.Defects4J,
             ToolSets.TWO_ONE_COMPATIBLE,
             GenerationStrategy.Filtered,
-            "output/D4JOracle2_1/",
+            "D4JOracle2_1/",
             "D4JOracle2_1.csv",
             "d4j2.1")),
     DUM_EXP_3_0(new ExperimentImpl(EBenchmarkDataset.Dummy,
             ToolSets.THREE_ZERO_COMPATIBLE,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "output/DumOracle3_0/",
+            "DumOracle3_0/",
             "DumOracle3_0.csv",
             "dum3.0")),
     DUM_EXP_2_1(new ExperimentImpl(EBenchmarkDataset.Dummy,
             ToolSets.TWO_ONE_COMPATIBLE,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "output/DumOracle2_1/",
+            "DumOracle2_1/",
             "DumOracle2_1.csv",
             "dum2.1")),
     REF_COMMENTS_3_0(new ExperimentImpl(EBenchmarkDataset.RefOracle,
             ToolSets.THREE_ZERO_COMPATIBLE,
             GenerationStrategy.NonFiltered_CommentsOnly,
-            "output/comments_ref/",
+            "comments_ref/",
             "out.csv",
             "ref3.0_comments",
             ASTDiffToolEnum.EMP,
@@ -59,22 +60,78 @@ public enum ExperimentsEnum implements IExperiment {
     D4J_COMMENTS_3_0(new ExperimentImpl(EBenchmarkDataset.Defects4J,
             ToolSets.THREE_ZERO_COMPATIBLE,
             GenerationStrategy.NonFiltered_CommentsOnly,
-            "output/comments_d4j/",
+            "comments_d4j/",
             "out.csv",
             "d4j3.0_comments",
             ASTDiffToolEnum.EMP,
             ASTDiffToolEnum.RMD))
     ,
-    VISITOR_BATTLE(new ExperimentImpl(
+
+    //DiffBenchmark paper experiments
+    INTER_FILE_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
-            ToolSets.SPOON_AND_BIG_GUNS,
+            ToolSets.INTERFILE_EXTENSION_BATTLE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "output/visitor_battles/",
+            "hrd-oracle/adb-paper/INTER_FILE_EXP/",
             "out.csv",
-            "VISITOR_BATTLE",
+            "INTER_FILE_EXP",
             ASTDiffToolEnum.TRV,
             ASTDiffToolEnum.GOD))
     ,
+    MULTI_MAPPING_EXP(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/MULTI_MAPPING_EXP/",
+            "out.csv",
+            "MULTI_MAPPING_EXP",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+
+    SEMANTIC_VIOLATION_EXP(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/SEMANTIC_VIOLATION_BATTLE/",
+            "out.csv",
+            "SEMANTIC_VIOLATION_EXP",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+
+    EXTENSION_SKIRMISH_EXP(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.EXTENSION_BATTLE_TOOLS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/EXTENSION_SKIRMISH/",
+            "out.csv",
+            "EXTENSION_SKIRMISH_EXP",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+
+    VISITOR_EXP(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.SPOON_AND_BIG_GUNS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/visitor_battles/",
+            "out.csv",
+            "VISITOR_EXP",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+    LITERATURE_EXP(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.LITERATURE_TOOLS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/LITERATURE_EXP/",
+            "out.csv",
+            "LITERATURE_EXP",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+
     ;
 
     private final IExperiment experiment;

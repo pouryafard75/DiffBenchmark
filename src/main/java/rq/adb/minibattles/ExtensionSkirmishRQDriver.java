@@ -13,6 +13,6 @@ public class ExtensionSkirmishRQDriver {
             FilterDuringGeneration.INTRA_FILE_ONLY
     };
     public static void main(String[] args) throws Exception {
-        new BaseRQDriverRoutine(FILTERS, false).run(new IExperiment[]{ExperimentsEnum.EXTENSION_SKIRMISH_EXP});
+        new BaseRQDriverRoutine(FILTERS).run(new IExperiment[]{ExperimentsEnum.EXTENSION_SKIRMISH_EXP});
     }
 }

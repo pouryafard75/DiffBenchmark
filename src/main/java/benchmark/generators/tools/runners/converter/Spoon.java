@@ -12,6 +12,7 @@ import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import shadedspoon.com.github.gumtreediff.matchers.Mapping;
 import shadedspoon.com.github.gumtreediff.tree.Tree;
 import shadedspoon.gumtree.spoon.AstComparator;
+import shadedspoon.gumtree.spoon.diff.DiffConfiguration;
 import shadedspoon.gumtree.spoon.diff.DiffImpl;
 import spoon.reflect.declaration.CtElement;
 import spoon.reflect.declaration.CtPackage;
@@ -21,8 +22,17 @@ import static benchmark.generators.tools.runners.Utils.makeASTDiff;
 
 /* Created by pourya on 2024-09-09*/
 public class Spoon extends ASTDiffProviderFromProjectASTDiff {
+
+    public final DiffConfiguration configuration;
+
     public Spoon(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
+        configuration = null; // It will be the default configuration of the Spoon
+    }
+
+    public Spoon(IBenchmarkCase benchmarkCase, DiffSelector querySelector, DiffConfiguration configuration) {
+        super(benchmarkCase, querySelector);
+        this.configuration = configuration;
     }
 
     @Override
@@ -30,7 +40,14 @@ public class Spoon extends ASTDiffProviderFromProjectASTDiff {
         CtElement leftCt = getCtPackageFromContent(projectASTDiff.getFileContentsBefore().get(input.getSrcPath()));
         CtElement rightCt = getCtPackageFromContent(projectASTDiff.getFileContentsAfter().get(input.getDstPath()));
         shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder scanner = new shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder();
-        DiffImpl diff = new DiffImpl(scanner.getTreeContext(), scanner.getTree(leftCt), scanner.getTree(rightCt));
+        DiffImpl diff = (configuration == null) ?
+                        new DiffImpl(scanner.getTreeContext(),
+                                scanner.getTree(leftCt),
+                                scanner.getTree(rightCt)) :
+                        new DiffImpl(scanner.getTreeContext(),
+                                scanner.getTree(leftCt),
+                                scanner.getTree(rightCt),
+                                configuration);
         BiMap<Tree, com.github.gumtreediff.tree.Tree> srcBible = HashBiMap.create();
         BiMap<Tree, com.github.gumtreediff.tree.Tree> dstBible = HashBiMap.create();
         com.github.gumtreediff.tree.Tree src = unshaded(diff.getMappingsComp().src, srcBible);

@@ -100,7 +100,7 @@ public class MappingOffsetTranslator extends AbstractOffsetTranslator {
     }
 
     private Tree mostInner(List<Tree> candidates) {
-        Tree mostInner = candidates.getFirst();
+        Tree mostInner = candidates.get(0);
         for (Tree candidate : candidates) {
             if (candidate.getMetrics().depth > mostInner.getMetrics().depth)
                 mostInner = candidate;

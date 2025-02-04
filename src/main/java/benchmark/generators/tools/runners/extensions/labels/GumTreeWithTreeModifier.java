@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.labels;
+package benchmark.generators.tools.runners.extensions.labels;
 
 import benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider;
 import com.github.gumtreediff.matchers.CompositeMatchers;

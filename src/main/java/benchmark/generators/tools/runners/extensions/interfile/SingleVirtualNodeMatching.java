@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.interfile;
+package benchmark.generators.tools.runners.extensions.interfile;
 
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;

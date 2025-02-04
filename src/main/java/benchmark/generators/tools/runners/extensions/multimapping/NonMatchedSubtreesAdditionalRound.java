@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.multimapping;
+package benchmark.generators.tools.runners.extensions.multimapping;
 
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;
@@ -19,12 +19,16 @@ public class NonMatchedSubtreesAdditionalRound implements GumTreeMultiMappingMat
         for (Tree subTree : TreeUtils.breadthFirst(srcRoot)) {
             if (subTree.getMetrics().height > minHeight && !extendedMultiMappingStore.isSrcMappedConsideringSubTrees(subTree)) {
                 MappingStore match = match(subTree, dstRoot, matcher);
+                //TODO: Might need to change this to only iso-structural match, I guess
+                //Instead of relying on a generic subtree matcher, cuz this might cuz massive issues
                 safeAdd(extendedMultiMappingStore, match);
             }
         }
         for (Tree subTree : TreeUtils.breadthFirst(dstRoot)) {
             if (subTree.getMetrics().height > 1 && !extendedMultiMappingStore.isDstMappedConsideringSubTrees(subTree)) {
                 MappingStore match = match(srcRoot, subTree, matcher);
+                //TODO: Might need to change this to only iso-structural match, I guess
+                //Instead of relying on a generic subtree matcher, cuz this might cuz massive issues
                 safeAdd(extendedMultiMappingStore, match);
             }
         }

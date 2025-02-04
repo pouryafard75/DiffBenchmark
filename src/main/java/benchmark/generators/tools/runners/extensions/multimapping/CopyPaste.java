@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.multimapping;
+package benchmark.generators.tools.runners.extensions.multimapping;
 
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;
@@ -32,7 +32,6 @@ public class CopyPaste implements GumTreeMultiMappingMatcher{
                         temp.addMappingRecursively(srcSubTree, dstSubTree);
                         safeAdd(extendedMultiMappingStore, temp);
                     }
-
                 }
             }
         }
@@ -43,11 +42,11 @@ public class CopyPaste implements GumTreeMultiMappingMatcher{
         private static final int DEFAULT_MIN_PRIORITY = 1;
         private static final String DEFAULT_PRIORITY_CALCULATOR = "height";
         private static final Function<Tree, Integer> priorityCalculator = PriorityTreeQueue.getPriorityCalculator(DEFAULT_PRIORITY_CALCULATOR);
-        public boolean isAnySimilarLeaf(Tree src, Tree dst){
+        public boolean areAnySimilarLeave(Tree src, Tree dst){
             if (src.isLeaf() && dst.isLeaf())
                 return src.getLabel().equals(dst.getLabel());
             for (int i = 0; i < src.getChildren().size(); i++)
-                if (isAnySimilarLeaf(src.getChild(i), dst.getChild(i)))
+                if (areAnySimilarLeave(src.getChild(i), dst.getChild(i)))
                     return true;
             return false;
         }
@@ -68,7 +67,7 @@ public class CopyPaste implements GumTreeMultiMappingMatcher{
                     for (var currentDst : currentPriorityDstTrees)
                         if (currentSrc.getMetrics().structureHash == currentDst.getMetrics().structureHash)
                             if (currentSrc.isIsoStructuralTo(currentDst))
-                                if (isAnySimilarLeaf(currentSrc, currentDst))
+                                if (areAnySimilarLeave(currentSrc, currentDst))
                                     multiMappings.addMapping(currentSrc, currentDst);
 
                 for (var t : currentPrioritySrcTrees)

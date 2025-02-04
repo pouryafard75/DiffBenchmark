@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.multimapping;
+package benchmark.generators.tools.runners.extensions.multimapping;
 
 import benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider;
 import com.github.gumtreediff.actions.EditScript;

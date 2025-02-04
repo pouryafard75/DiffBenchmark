@@ -26,13 +26,13 @@ public class CommentCorrectorMappingOffsetTranslator extends MappingOffsetTransl
 
         if (!sameEndCandidates.isEmpty() && !sameStartCandidates.isEmpty()) {
             if (sameStartCandidates.size() == 1 && sameEndCandidates.size() == 1){
-                if (isComment(sameStartCandidates.getFirst().getType().name) && isComment(sameEndCandidates.getFirst().getType().name)){
+                if (isComment(sameStartCandidates.get(0).getType().name) && isComment(sameEndCandidates.get(0).getType().name)){
                     //program element is between the offsets
                     return selectProgramElement(goodRoot.getTreesBetweenPositions(bad.getPos(), bad.getEndPos()));
                 }
             }
             if (sameStartCandidates.size() == 1){
-                if (isComment(sameStartCandidates.getFirst().getType().name))
+                if (isComment(sameStartCandidates.get(0).getType().name))
                     return selectProgramElement(sameEndCandidates);
                 else
                 {
@@ -40,7 +40,7 @@ public class CommentCorrectorMappingOffsetTranslator extends MappingOffsetTransl
                 }
             }
             else if (sameEndCandidates.size() == 1){
-                if (isComment(sameEndCandidates.getFirst().getType().name))
+                if (isComment(sameEndCandidates.get(0).getType().name))
                     return selectProgramElement(sameStartCandidates);
                 else
                 {

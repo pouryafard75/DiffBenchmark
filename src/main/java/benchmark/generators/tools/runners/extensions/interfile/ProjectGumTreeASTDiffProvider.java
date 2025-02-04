@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.interfile;
+package benchmark.generators.tools.runners.extensions.interfile;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.runners.converter.AbstractASTDiffProviderFromExportedMappings;

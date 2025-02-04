@@ -5,6 +5,7 @@ import benchmark.generators.tools.runners.trivial.BaseTrivialDiff;
 import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
+import shadedspoon.gumtree.spoon.diff.DiffConfiguration;
 
 import java.util.function.Predicate;
 
@@ -19,6 +20,11 @@ public class FinalizedSpoon extends SpoonWithOffsetTranslation {
 
     public FinalizedSpoon(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);
+        mappingOffsetTranslator = new CommentCorrectorMappingOffsetTranslator(input, this);
+    }
+
+    public FinalizedSpoon(IBenchmarkCase benchmarkCase, DiffSelector querySelector, DiffConfiguration configuration) {
+        super(benchmarkCase, querySelector, configuration);
         mappingOffsetTranslator = new CommentCorrectorMappingOffsetTranslator(input, this);
     }
 

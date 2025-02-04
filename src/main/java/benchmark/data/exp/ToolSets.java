@@ -73,9 +73,10 @@ public enum ToolSets implements Set<IASTDiffTool> {
 
     SPOON_AND_BIG_GUNS(
             new LinkedHashSet<>(BIG_GUNS){{
-                add(ASTDiffToolEnum.SPN_FINALIZED);
+                add(ASTDiffToolEnum.SPN);
             }}
     );
+
 
     private final Set<IASTDiffTool> tools;
 

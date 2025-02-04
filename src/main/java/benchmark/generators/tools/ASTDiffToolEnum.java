@@ -8,19 +8,18 @@ import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.FinalizedSpoon;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.converter.Spoon;
-import benchmark.generators.tools.runners.converter.SpoonWithOffsetTranslation;
-import benchmark.generators.tools.runners.experimental.all.ModifierInterConservativeMulti;
-import benchmark.generators.tools.runners.experimental.all.ModifierInterNoMulti;
-import benchmark.generators.tools.runners.experimental.interfile.ProjectGumTreeASTDiffProvider;
-import benchmark.generators.tools.runners.experimental.interfile.ProjectGumTreeOptimizer;
-import benchmark.generators.tools.runners.experimental.interfile.SingleVirtualNodeMatching;
-import benchmark.generators.tools.runners.experimental.interfile.StagedTreeMatching;
-import benchmark.generators.tools.runners.experimental.labels.GumTreeWithTreeModifier;
-import benchmark.generators.tools.runners.experimental.labels.LeafLabelMerger;
-import benchmark.generators.tools.runners.experimental.labels.LeafTypeMerger;
-import benchmark.generators.tools.runners.experimental.multimapping.CopyPaste;
-import benchmark.generators.tools.runners.experimental.multimapping.GumTreeWithMultiMappingASTDiffProvider;
-import benchmark.generators.tools.runners.experimental.multimapping.NonMatchedSubtreesAdditionalRound;
+import benchmark.generators.tools.runners.extensions.combined.ModifierInterConservativeMulti;
+import benchmark.generators.tools.runners.extensions.combined.ModifierInterNoMulti;
+import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeASTDiffProvider;
+import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeOptimizer;
+import benchmark.generators.tools.runners.extensions.interfile.SingleVirtualNodeMatching;
+import benchmark.generators.tools.runners.extensions.interfile.StagedTreeMatching;
+import benchmark.generators.tools.runners.extensions.labels.GumTreeWithTreeModifier;
+import benchmark.generators.tools.runners.extensions.labels.LeafLabelMerger;
+import benchmark.generators.tools.runners.extensions.labels.LeafTypeMerger;
+import benchmark.generators.tools.runners.extensions.multimapping.CopyPaste;
+import benchmark.generators.tools.runners.extensions.multimapping.GumTreeWithMultiMappingASTDiffProvider;
+import benchmark.generators.tools.runners.extensions.multimapping.NonMatchedSubtreesAdditionalRound;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.OriginalVisitorGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
@@ -31,6 +30,8 @@ import benchmark.generators.tools.runners.trivial.TrivialDiff;
 import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.CompositeMatchers;
 import org.refactoringminer.astDiff.models.ASTDiff;
+import shadedspoon.com.github.gumtreediff.matchers.GumtreeProperties;
+import shadedspoon.gumtree.spoon.diff.DiffConfiguration;
 
 
 public enum ASTDiffToolEnum implements IASTDiffTool {
@@ -193,16 +194,37 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    SPN ("Original Spoon (Incompatible)", Spoon::new),
+    INCOMPATIBLE_SPOON("Original Spoon (Incompatible)", Spoon::new),
 
-    SPN_OFFSET_TRANSLATED("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
+//    SPN_OFFSET_TRANSLATED("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
 
-    SPN_OFFSET_TRANSLATED_WITH_RULES("Spoon Compatible (After applying translation rules)", SpoonWithOffsetTranslation::new),
+//    SPN_OFFSET_TRANSLATED_WITH_RULES("Spoon Compatible (After applying translation rules)", SpoonWithOffsetTranslation::new),
 
-    SPN_FINALIZED("Spoon + Imports + Package Decl + Fix Comments Offsets", FinalizedSpoon::new)
+    SPN("Spoon + Imports + Package Decl + Fix Comments Offsets", FinalizedSpoon::new),
 
+    SPN_GREEDY_MATCHER("Spoon Greedy Matcher (Same matcher configuration as GumTree Greedy)",
+            (benchmarkCase, query) -> {
+                DiffConfiguration configuration = makeSpoonCopyConfiguration(
+                        new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.ClassicGumtree()
+                );
+                return new FinalizedSpoon(benchmarkCase, query, configuration);
+            }),
 
+    SPN_SIMPLE_MATCHER("Spoon Simple Matcher (Same matcher configuration as GumTree Simple)",
+            (benchmarkCase, query) -> {
+                DiffConfiguration configuration = makeSpoonCopyConfiguration(
+                        new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.SimpleGumtree()
+                );
+                return new FinalizedSpoon(benchmarkCase, query, configuration);
+            }),
     ;
+
+    private static DiffConfiguration makeSpoonCopyConfiguration(shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.CompositeMatcher matcher) {
+        DiffConfiguration configuration = new DiffConfiguration();
+        configuration.setMatcher(matcher);
+        configuration.setGumtreeProperties(new GumtreeProperties());
+        return configuration;
+    }
 
     private final ASTDiffProviderForBenchmark factory;
     private final String toolName;

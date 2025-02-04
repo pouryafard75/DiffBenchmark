@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.labels;
+package benchmark.generators.tools.runners.extensions.labels;
 
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TypeSet;

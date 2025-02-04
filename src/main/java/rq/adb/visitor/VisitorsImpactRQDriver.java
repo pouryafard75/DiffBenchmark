@@ -2,6 +2,7 @@ package rq.adb.visitor;
 
 import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
+import benchmark.generators.BenchmarkHumanReadableDiffGenerator;
 import benchmark.metrics.computers.filters.FilterDuringGeneration;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import rq.adb.BaseRQDriverRoutine;
@@ -12,7 +13,10 @@ public class VisitorsImpactRQDriver {
             FilterDuringGeneration.NO_FILTER,
             FilterDuringGeneration.INTRA_FILE_ONLY
     };
+    public static ExperimentsEnum exp = ExperimentsEnum.VISITOR_EXP;
+
     public static void main(String[] args) throws Exception {
-        new BaseRQDriverRoutine(FILTERS).run(new IExperiment[]{ExperimentsEnum.VISITOR_EXP});
+        new BenchmarkHumanReadableDiffGenerator(exp).generateMultiThreaded();
+        new BaseRQDriverRoutine(FILTERS).run(new IExperiment[]{exp});
     }
 }

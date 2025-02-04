@@ -1,4 +1,4 @@
-package benchmark.generators.tools.runners.experimental.multimapping;
+package benchmark.generators.tools.runners.extensions.multimapping;
 
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;

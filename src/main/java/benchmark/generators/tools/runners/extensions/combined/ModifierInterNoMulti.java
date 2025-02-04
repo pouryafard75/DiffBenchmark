@@ -1,8 +1,8 @@
-package benchmark.generators.tools.runners.experimental.all;
+package benchmark.generators.tools.runners.extensions.combined;
 
 import benchmark.data.diffcase.IBenchmarkCase;
-import benchmark.generators.tools.runners.experimental.interfile.GumTreeProjectMatcher;
-import benchmark.generators.tools.runners.experimental.labels.TreeModifier;
+import benchmark.generators.tools.runners.extensions.interfile.GumTreeProjectMatcher;
+import benchmark.generators.tools.runners.extensions.labels.TreeModifier;
 import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.matchers.Matcher;

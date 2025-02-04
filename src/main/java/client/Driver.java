@@ -1,0 +1,60 @@
+package client;
+
+import benchmark.data.diffcase.GithubCase;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.models.selector.DiffSelector;
+import com.github.gumtreediff.actions.Diff;
+import com.github.gumtreediff.actions.EditScript;
+import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
+import com.github.gumtreediff.io.TreeIoUtils;
+import com.github.gumtreediff.matchers.CompositeMatchers;
+import com.github.gumtreediff.matchers.MappingStore;
+import com.github.gumtreediff.tree.Tree;
+import com.github.gumtreediff.tree.TreeContext;
+import org.refactoringminer.astDiff.models.ASTDiff;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.StringWriter;
+
+/* Created by pourya on 2025-02-01*/
+public class Driver {
+    public static void main(String[] args) throws Exception {
+        fromRM();
+    }
+
+    private static Diff fromFiles(String srcPath, String dstPath) throws IOException {
+        TreeContext srcContext = TreeIoUtils.fromXml().generateFrom().file(srcPath);
+        TreeContext dstContent = TreeIoUtils.fromXml().generateFrom().file(dstPath);
+        Tree srcRoot = srcContext.getRoot();
+        Tree dstRoot = dstContent.getRoot();
+        MappingStore match = new CompositeMatchers.SimpleGumtree().match(srcRoot, dstRoot);
+        EditScript editScript = (new SimplifiedChawatheScriptGenerator()).computeActions(match);
+        Diff diff = new Diff(srcContext, dstContent, match, editScript);
+        srcRoot.setParent(null);
+        dstRoot.setParent(null);
+        return diff;
+    }
+
+    private static void example() throws Exception {
+        Diff diff = fromFiles("dot/src.xml", "dot/dst.xml");
+        writeDot(diff, "dot/output.dot");
+    }
+    private static void fromRM() throws Exception {
+        IBenchmarkCase aCase = new GithubCase("https://github.com/pouryafard75/TestCases/commit/28b4bfebe7afbc43d13798cc827c44c8a587e140");
+        ASTDiff diff = ASTDiffToolEnum.RMD.diff(aCase, DiffSelector.any());
+        writeDot(diff, "dot/comment.dot");
+    }
+
+    private static void writeDot(Diff diff, String file) throws Exception {
+        DotDiff dotDiff = new DotDiff(diff);
+        StringWriter stringWriter = dotDiff.getWriter();
+        try (FileWriter fileWriter = new FileWriter(file)) {
+            fileWriter.write(stringWriter.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}

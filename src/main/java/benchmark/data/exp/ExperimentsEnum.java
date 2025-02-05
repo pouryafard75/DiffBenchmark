@@ -113,7 +113,7 @@ public enum ExperimentsEnum implements IExperiment {
 
     VISITOR_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
-            ToolSets.SPOON_VARIATIONS_AND_BIG_GUNS,
+            ToolSets.SPOON_AND_BIG_GUNS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "hrd-oracle/adb-paper/visitors-exp/",
             "out.csv",

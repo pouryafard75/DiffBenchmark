@@ -22,6 +22,12 @@ public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRul
 
     protected MappingOffsetTranslator mappingOffsetTranslator;
 
+
+    public SpoonWithOffsetTranslation(IBenchmarkCase benchmarkCase, DiffSelector query, boolean rules) {
+        super(benchmarkCase, query);
+        mappingOffsetTranslator = new MappingOffsetTranslator(input);
+    }
+
     @Override
     public ASTDiff getASTDiff() throws Exception {
         ASTDiff translated = getTranslatedASTDiffWithNoActions();

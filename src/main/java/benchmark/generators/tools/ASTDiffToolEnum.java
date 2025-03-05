@@ -8,12 +8,14 @@ import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.FinalizedSpoon;
 import benchmark.generators.tools.runners.converter.PerfectDiff;
 import benchmark.generators.tools.runners.converter.Spoon;
+import benchmark.generators.tools.runners.converter.SpoonWithOffsetTranslation;
 import benchmark.generators.tools.runners.extensions.combined.ModifierInterConservativeMulti;
 import benchmark.generators.tools.runners.extensions.combined.ModifierInterNoMulti;
 import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeOptimizer;
 import benchmark.generators.tools.runners.extensions.interfile.SingleVirtualNodeMatching;
 import benchmark.generators.tools.runners.extensions.interfile.StagedTreeMatching;
+import benchmark.generators.tools.runners.extensions.labels.BlockAndSimpleNameModifier;
 import benchmark.generators.tools.runners.extensions.labels.GumTreeWithTreeModifier;
 import benchmark.generators.tools.runners.extensions.labels.LeafLabelMerger;
 import benchmark.generators.tools.runners.extensions.labels.LeafTypeMerger;
@@ -35,7 +37,7 @@ import shadedspoon.gumtree.spoon.diff.DiffConfiguration;
 
 
 public enum ASTDiffToolEnum implements IASTDiffTool {
-    GOD ("PerfectDiff", PerfectDiff::new)
+    GOD ("Ground Truth", PerfectDiff::new)
     ,
     RMD ("RefactoringMiner", (benchmarkCase, query) -> () -> query.apply(benchmarkCase.getProjectASTDiff()))
     ,
@@ -132,12 +134,12 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     FTG ("FineGrainedTypesWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
-                    new LeafTypeMerger(),
+                    new BlockAndSimpleNameModifier(),
                     new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     FTS ("FineGrainedTypesWithSimple",(benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
-                    new LeafTypeMerger(),
+                    new BlockAndSimpleNameModifier(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     COMBINED_TYPE_STAGED_GREEDY ("COMBINED_TYPE_STAGED_GREEDY", ((benchmarkCase, query) ->
@@ -184,7 +186,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             query,
                             new CompositeMatchers.ClassicGumtree()))))
     ,
-    X_TYPE_STAGED_NONMATCHED_SIMPLE ("MERGED_STAGED_NONMATCHED_SIMPLE", ((benchmarkCase, query) ->
+    P1G ("P1G", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new LeafTypeMerger(),
@@ -192,15 +194,43 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
                             query,
+                            new CompositeMatchers.ClassicGumtree())))),
+    P2G ("P2G", ((benchmarkCase, query) ->
+            new ProjectGumTreeOptimizer(
+                    new ModifierInterConservativeMulti(
+                            new LeafTypeMerger(),
+                            new SingleVirtualNodeMatching(),
+                            new NonMatchedSubtreesAdditionalRound(),
+                            benchmarkCase,
+                            query,
+                            new CompositeMatchers.ClassicGumtree()))))
+    ,
+    P1S ("P1S", ((benchmarkCase, query) ->
+            new ProjectGumTreeOptimizer(
+                    new ModifierInterConservativeMulti(
+                            new LeafTypeMerger(),
+                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
+                            new NonMatchedSubtreesAdditionalRound(),
+                            benchmarkCase,
+                            query,
+                            new CompositeMatchers.SimpleGumtree())))),
+    P2S ("P2S", ((benchmarkCase, query) ->
+            new ProjectGumTreeOptimizer(
+                    new ModifierInterConservativeMulti(
+                            new LeafTypeMerger(),
+                            new SingleVirtualNodeMatching(),
+                            new NonMatchedSubtreesAdditionalRound(),
+                            benchmarkCase,
+                            query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
     INCOMPATIBLE_SPOON("Original Spoon (Incompatible)", Spoon::new),
 
-//    SPN_OFFSET_TRANSLATED("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
+    SPN_OFFSET_TRANSLATED("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
 
 //    SPN_OFFSET_TRANSLATED_WITH_RULES("Spoon Compatible (After applying translation rules)", SpoonWithOffsetTranslation::new),
 
-    SPN("Spoon + Imports + Package Decl + Fix Comments Offsets", FinalizedSpoon::new),
+    SPN("Spoon", FinalizedSpoon::new),
 
     SPN_GREEDY_MATCHER("Spoon Greedy Matcher (Same matcher configuration as GumTree Greedy)",
             (benchmarkCase, query) -> {

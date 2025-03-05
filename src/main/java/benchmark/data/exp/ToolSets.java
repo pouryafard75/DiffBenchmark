@@ -7,6 +7,11 @@ import java.util.*;
 
 /* Created by pourya on 2024-09-29*/
 public enum ToolSets implements Set<IASTDiffTool> {
+    PERFECTION_BATTLE(
+            Set.of(
+                    ASTDiffToolEnum.RMD,
+                    ASTDiffToolEnum.GOD)
+    ),
     THREE_ZERO_COMPATIBLE(
             Set.of(
                     ASTDiffToolEnum.RMD,
@@ -29,7 +34,11 @@ public enum ToolSets implements Set<IASTDiffTool> {
                 add(ASTDiffToolEnum.GTS);
             }}
     ),
-
+    CUSTOM_LITERATURE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.IAM);
+            }}
+    ),
     LITERATURE_TOOLS(
             new LinkedHashSet<>(BIG_GUNS){{
                 add(ASTDiffToolEnum.GT2);
@@ -39,7 +48,9 @@ public enum ToolSets implements Set<IASTDiffTool> {
             }}
     ),
     INTERFILE_EXTENSION_BATTLE_TOOLS(
-            new LinkedHashSet<>(BIG_GUNS){{
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.GTG);
+                add(ASTDiffToolEnum.GTS);
                 add(ASTDiffToolEnum.VNG);
                 add(ASTDiffToolEnum.VNS);
                 add(ASTDiffToolEnum.SMG);
@@ -47,27 +58,28 @@ public enum ToolSets implements Set<IASTDiffTool> {
             }}
     ),
     MULTIMAPPING_EXTENSION_BATTLE_TOOLS(
-            new LinkedHashSet<>(BIG_GUNS){{
-                add(ASTDiffToolEnum.CPG);
-                add(ASTDiffToolEnum.CPS);
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.GTG);
+                add(ASTDiffToolEnum.GTS);
                 add(ASTDiffToolEnum.NMG);
                 add(ASTDiffToolEnum.NMS);
             }}
     ),
     SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS(
-            new LinkedHashSet<>(BIG_GUNS){{
-                add(ASTDiffToolEnum.FLG);
-                add(ASTDiffToolEnum.FLS);
+            new LinkedHashSet<>(){{
                 add(ASTDiffToolEnum.FTG);
                 add(ASTDiffToolEnum.FTS);
+//                add(ASTDiffToolEnum.FTG);
+//                add(ASTDiffToolEnum.FTS);
             }}
     ),
-    EXTENSION_BATTLE_TOOLS(
-            new LinkedHashSet<>(BIG_GUNS)
+    ARTIFICIAL(
+            new LinkedHashSet<>()
             {{
-                this.addAll(INTERFILE_EXTENSION_BATTLE_TOOLS);
-                this.addAll(MULTIMAPPING_EXTENSION_BATTLE_TOOLS);
-                this.addAll(SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS);
+                add(ASTDiffToolEnum.P1G);
+                add(ASTDiffToolEnum.P2G);
+                add(ASTDiffToolEnum.P1S);
+                add(ASTDiffToolEnum.P2S);
             }}
     ),
 
@@ -75,7 +87,19 @@ public enum ToolSets implements Set<IASTDiffTool> {
             new LinkedHashSet<>(BIG_GUNS){{
                 add(ASTDiffToolEnum.SPN);
             }}
+    ),
+
+    VISITOR_EXP_BATTLE_TOOLS(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.SPN);
+                add(ASTDiffToolEnum.SPN_GREEDY_MATCHER);
+                add(ASTDiffToolEnum.SPN_SIMPLE_MATCHER);
+                add(ASTDiffToolEnum.GTG);
+                add(ASTDiffToolEnum.GTS);
+            }}
     );
+
+
 
 
     private final Set<IASTDiffTool> tools;

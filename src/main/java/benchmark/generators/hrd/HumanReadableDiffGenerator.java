@@ -194,6 +194,9 @@ public abstract class HumanReadableDiffGenerator {
         else
             target.getMappings().add(abstractMapping);
     }
+    public static boolean isBlock(String type) {
+        return type.equals(Constants.BLOCK);
+    }
     public static boolean isProgramElement(String type) {
         return type.equals(Constants.TYPE_DECLARATION) ||
                 type.equals(Constants.METHOD_DECLARATION) ||

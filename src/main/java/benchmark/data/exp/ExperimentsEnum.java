@@ -80,7 +80,7 @@ public enum ExperimentsEnum implements IExperiment {
     ,
     MULTI_MAPPING_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
-            ToolSets.SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS,
+            ToolSets.MULTIMAPPING_EXTENSION_BATTLE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "hrd-oracle/adb-paper/multimapping-exp/",
             "out.csv",
@@ -100,11 +100,11 @@ public enum ExperimentsEnum implements IExperiment {
             ASTDiffToolEnum.GOD))
     ,
 
-    EXTENSION_SKIRMISH_EXP(new ExperimentImpl(
+    ARTIFICIAL_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
-            ToolSets.EXTENSION_BATTLE_TOOLS,
+            ToolSets.ARTIFICIAL,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "hrd-oracle/adb-paper/skirmish/",
+            "hrd-oracle/adb-paper/artificial/",
             "out.csv",
             "skirmish",
             ASTDiffToolEnum.TRV,
@@ -113,7 +113,7 @@ public enum ExperimentsEnum implements IExperiment {
 
     VISITOR_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
-            ToolSets.SPOON_AND_BIG_GUNS,
+            ToolSets.VISITOR_EXP_BATTLE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "hrd-oracle/adb-paper/visitors-exp/",
             "out.csv",
@@ -123,7 +123,7 @@ public enum ExperimentsEnum implements IExperiment {
     ,
     LITERATURE_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
-            ToolSets.LITERATURE_TOOLS,
+            ToolSets.CUSTOM_LITERATURE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "hrd-oracle/adb-paper/literature-exp/",
             "out.csv",

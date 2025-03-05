@@ -35,7 +35,7 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
         );
     }
 
-    public abstract TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference();
+    protected abstract TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference();
 
     Set<? extends IBenchmarkCase> makeAllCases(TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> valueTypeRef, Path... casesPath) {
         ObjectMapper mapper = new ObjectMapper();

@@ -22,7 +22,7 @@ public class RefactoringOracleBenchmarkDataset extends InspiredFromRMinerTestsBe
     }
 
     @Override
-    public TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference() {
+    protected TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference() {
         return new TypeReference<Set<GithubCase>>() {};
     }
 }

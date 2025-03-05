@@ -18,7 +18,7 @@ import static spark.Spark.get;
 /* Created by pourya on 2024-05-03*/
 public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
     VANILLA(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "/" + id)).content(tool.getShortName()),
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "/" + id)).content(tool.getToolName()),
             (tool, astDiffs, projectASTDiff) -> get("/" + tool.getShortName() + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
@@ -35,7 +35,9 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
                 Renderable view = new MonacoView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                        astDiff, id, projectASTDiff.getDiffSet().size(), "", false);
+                        astDiff, id, projectASTDiff.getDiffSet().size(), "", false,
+                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()));
                 return renderToString(view);
             })
     )

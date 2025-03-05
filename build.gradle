@@ -29,15 +29,16 @@ dependencies {
     implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
     implementation 'com.github.gumtreediff:core:3.0.0'
     implementation 'com.github.gumtreediff:gen.jdt:3.0.0'
+    implementation 'com.github.gumtreediff:gen.srcml:3.0.0'
     implementation 'it.unimi.dsi:fastutil:8.3.1'
     implementation 'com.sparkjava:spark-core:2.9.1'
     implementation('org.rendersnake:rendersnake:1.9.0') {
         exclude group: 'javax.servlet', module: 'servlet-api'
     }
-    implementation files('libs/IJM-1.0-SNAPSHOT-customized2.jar')
+    implementation files('libs/IJM-1.0-SNAPSHOT-customized3.jar')
     implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
-    implementation files('libs/RM-2.2.0-c3.jar')
-    implementation files('libs/iAST-1.0-SNAPSHOT-customized.jar')
+    implementation files('libs/RM-2.2.0-c5.jar')
+    implementation files('libs/iAST-1.0-SNAPSHOT-customized2.jar')
 
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
@@ -46,9 +47,11 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
 
     implementation 'com.opencsv:opencsv:5.5'
-    implementation 'com.fasterxml.jackson.core:jackson-core:2.5.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.5.2'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.5.2'
+
+
 
     implementation 'org.slf4j:slf4j-api:1.7.32'
     implementation 'ch.qos.logback:logback-classic:1.4.12'
@@ -63,10 +66,11 @@ dependencies {
     implementation files('libs/gumtree-spoon-ast-diff-SNAPSHOT-0.8.jar')
 
 }
-task rm2p4_jar(type: Jar) {
-    archiveFileName = 'RM-2.2.0-c3.jar' //Third customization (c3)
+task rm2p5_jar(type: Jar) {
+    archiveFileName = 'RM-2.2.0-c5.jar'
     //destinationDir = file('libs/')
-    from zipTree('libs/RM-2.2.0-c2.jar')
+    destinationDirectory = file("libs");
+    from zipTree('libs/RM-2.2.0-c3.jar')
     exclude 'org/slf4j/*'
     exclude 'org/slf4j/**'
     exclude 'org/eclipse/jgit/*'
@@ -75,6 +79,8 @@ task rm2p4_jar(type: Jar) {
     exclude 'org/eclipse/jdt/**'
     exclude 'com/github/gumtreediff/*'
     exclude 'com/github/gumtreediff/**'
+    exclude 'spark/*'
+    exclude 'spark/**'
 }
 task rm2p3_jar(type: Jar) {
     archiveFileName = 'RM-2.2.0-c2.jar' //Second customization (c2)
@@ -106,31 +112,38 @@ task rm2p0_jar(type: Jar) {
 
 
 task ijm_jar(type: Jar) {
-    archiveFileName = 'IJM-1.0-SNAPSHOT-customized2.jar'
+    archiveFileName = 'IJM-1.0-SNAPSHOT-customized3.jar'
+    destinationDirectory = file("libs");
     // Include all contents from the original JAR
     //destinationDir = file('libs/')
-    from zipTree('libs/IJM-1.0-SNAPSHOT-customized.jar')
+    from zipTree('libs/IJM-1.0-SNAPSHOT-customized2.jar')
     exclude 'com/google/gson/*'
     exclude 'com/google/gson/**'
     exclude 'org/slf4j/*'
     exclude 'org/slf4j/**'
+    exclude 'com/fasterxml/jackson/*'
+    exclude 'com/fasterxml/jackson/**'
 }
 
 task iast_jar(type: Jar) {
-    archiveFileName = 'iAST-1.0-SNAPSHOT-customized.jar'
+    archiveFileName = 'iAST-1.0-SNAPSHOT-customized2.jar'
+    destinationDirectory = file("libs");
     // Include all contents from the original JAR
     //destinationDir = file('libs/')
-    from zipTree('libs/iAST-1.0-SNAPSHOT-shaded.jar')
+    from zipTree('libs/iAST-1.0-SNAPSHOT-customized.jar')
     exclude 'com/google/gson/*'
     exclude 'com/google/gson/**'
     exclude 'org/slf4j/*'
-    exclude 'org/slf4j/**'
+    exclude 'com/fasterxml/jackson/*'
+    exclude 'com/fasterxml/jackson/**'
 }
 configurations.all {
     resolutionStrategy {
-        force 'com.fasterxml.jackson.core:jackson-databind:2.5.2'
+        force 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
         force 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.5.2'
+        force 'com.fasterxml.jackson.core:jackson-core:2.5.2'
         force 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
+
 
     }
 //    exclude group: 'org.slf4j', module: 'slf4j-simple'

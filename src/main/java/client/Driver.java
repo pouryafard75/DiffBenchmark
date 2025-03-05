@@ -3,25 +3,31 @@ package client;
 import benchmark.data.diffcase.GithubCase;
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.generators.tools.runners.extensions.labels.BlockAndSimpleNameModifier;
+import benchmark.generators.tools.runners.extensions.labels.TreeModifier;
 import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
+import com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import com.github.gumtreediff.io.TreeIoUtils;
 import com.github.gumtreediff.matchers.CompositeMatchers;
 import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /* Created by pourya on 2025-02-01*/
 public class Driver {
     public static void main(String[] args) throws Exception {
-        fromRM();
+        x();
     }
 
     private static Diff fromFiles(String srcPath, String dstPath) throws IOException {
@@ -55,6 +61,29 @@ public class Driver {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+    }
+    static void x() throws Exception {
+        String sourceCode = "class Test {\n" +
+                "String foo(int i) {\n" +
+                "return \"Foo!\";\n" +
+                "}\n" +
+                "}";
+        TreeContext srcContext = new JdtTreeGenerator().generateFrom().string(sourceCode);
+        TreeContext dstContext = new TreeContext();
+        TreeModifier treeModifier = new BlockAndSimpleNameModifier();
+        Map<Tree, Tree> cpyMap = new LinkedHashMap<>();
+        Tree dst = TreeUtilFunctions.deepCopyWithMap(srcContext.getRoot(), cpyMap);
+        treeModifier.modify(dst);
+        dstContext.setRoot(dst);
+        MappingStore match = new MappingStore(srcContext.getRoot(), dstContext.getRoot());
+        for (Map.Entry<Tree, Tree> treeTreeEntry : cpyMap.entrySet()) {
+            match.addMapping(treeTreeEntry.getKey(), treeTreeEntry.getValue());
+        }
+        EditScript editScript = (new SimplifiedChawatheScriptGenerator()).computeActions(match);
+        dstContext.setRoot(dst);
+        Diff diff = new Diff(srcContext, dstContext, match, editScript);
+        writeDot(diff, "dot/tree.dot");
     }
 
 }

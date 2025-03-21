@@ -27,7 +27,7 @@ public class GithubCase extends RemoteCase {
     @Override
     void updateProjectASTDiff() {
         projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
-        System.out.println("Finished computing projectASTDiff for " + repo + " " + commit);
+//        System.out.println("Finished computing projectASTDiff for " + repo + " " + commit);
     }
     private void validate() {
         if (!isGitHub())

@@ -17,12 +17,15 @@ import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
+import spoon.reflect.declaration.CtElement;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import static benchmark.generators.tools.runners.converter.Spoon.getCtPackageFromContent;
 
 /* Created by pourya on 2025-02-01*/
 public class Driver {
@@ -66,10 +69,20 @@ public class Driver {
     static void x() throws Exception {
         String sourceCode = "class Test {\n" +
                 "String foo(int i) {\n" +
+                "   if (a <= b) \n" +
+                "       return \"bar!\"; \n" +
                 "return \"Foo!\";\n" +
                 "}\n" +
                 "}";
+
         TreeContext srcContext = new JdtTreeGenerator().generateFrom().string(sourceCode);
+        System.out.println(srcContext.getRoot().toTreeString());
+
+        shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder scanner = new shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder();
+        CtElement leftCt = getCtPackageFromContent(sourceCode);
+        shadedspoon.com.github.gumtreediff.tree.Tree tree = scanner.getTree(leftCt);
+        System.out.println(tree.toTreeString());
+        if (true) return;
         TreeContext dstContext = new TreeContext();
         TreeModifier treeModifier = new BlockAndSimpleNameModifier();
         Map<Tree, Tree> cpyMap = new LinkedHashMap<>();
@@ -87,3 +100,4 @@ public class Driver {
     }
 
 }
+

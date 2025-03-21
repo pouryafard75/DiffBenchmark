@@ -7,6 +7,7 @@ import shadedspoon.gumtree.spoon.diff.DiffConfiguration;
 
 import java.util.List;
 
+
 /* Created by pourya on 2024-10-07*/
 public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRuleProvider {
 

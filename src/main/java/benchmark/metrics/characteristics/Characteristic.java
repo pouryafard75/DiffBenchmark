@@ -3,9 +3,11 @@ package benchmark.metrics.characteristics;
 import benchmark.data.dataset.IBenchmarkDataset;
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.metrics.computers.churn.ChurnCalculator;
-
+import com.github.gumtreediff.actions.model.Action;
 import org.apache.commons.lang3.function.TriFunction;
 import org.apache.commons.lang3.tuple.Pair;
+import org.refactoringminer.astDiff.actions.model.MoveIn;
+import org.refactoringminer.astDiff.actions.model.MoveOut;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
@@ -50,6 +52,29 @@ public enum Characteristic {
         });
         return result;
     })),
+    NUM_OF_CASES_WITH_INTER_FILE_MAPPINGS(
+            benchmarkDataset -> eachCaseIterator(benchmarkDataset,
+                    (projectASTDiff, benchmarkCase, number) -> {
+                        boolean hasInterFilers = false;
+                        for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
+                            ASTDiff diff = null;
+                            try {
+                                diff = GOD.diff(benchmarkCase, (x) -> astDiff);
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                            for (Action action : diff.editScript) {
+                                if (action instanceof MoveIn || action instanceof MoveOut) {
+                                    hasInterFilers = true;
+                                    break;
+                                }
+                            }
+                            if (hasInterFilers) {
+                                break;
+                            }
+                        }
+                        return hasInterFilers ? number.intValue() + 1 : number.intValue();
+                    })),
     ;
 
     private static Number eachCaseIterator(IBenchmarkDataset benchmarkDataset, TriFunction<ProjectASTDiff, IBenchmarkCase, Number, Number> consumer) {
@@ -61,13 +86,13 @@ public enum Characteristic {
         return number;
     }
 
-    private final Function<IBenchmarkDataset, Number> executor;
+    private final Function<IBenchmarkDataset, Object> executor;
 
-    Characteristic(Function<IBenchmarkDataset, Number> executor) {
+    Characteristic(Function<IBenchmarkDataset, Object> executor) {
         this.executor = executor;
     }
 
-    public Number getNumber(IBenchmarkDataset experimentConfiguration) {
+    public Object getResult(IBenchmarkDataset experimentConfiguration) {
         return executor.apply(experimentConfiguration);
     }
 
@@ -76,7 +101,7 @@ public enum Characteristic {
         float totalRight = 0.0f;
         int commitCount = 0;
         for (IBenchmarkCase info : benchmarkDataset.getCases()) {
-            System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
+//            System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
             ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
             Pair<Float, Float> floatFloatPair = ChurnCalculator.calculateRelativeAddDeleteChurn
                     (projectASTDiff, false, false);

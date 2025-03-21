@@ -11,9 +11,9 @@ import rq.adb.BaseRQDriverRoutine;
 public class MultimappingRQDriver {
     private static final IExperiment experiment = ExperimentsEnum.MULTI_MAPPING_EXP;
     private static final HumanReadableDiffFilter[] FILTERS = new HumanReadableDiffFilter[]{
-            FilterDuringGeneration.MULTI_ONLY,
+//            FilterDuringGeneration.MULTI_ONLY,
             FilterDuringGeneration.NO_FILTER,
-            FilterDuringGeneration.INTER_FILE_ONLY
+//            FilterDuringGeneration.INTER_FILE_ONLY
     };
     public static void main(String[] args) throws Exception {
         new BenchmarkHumanReadableDiffGenerator(experiment).generateMultiThreaded();

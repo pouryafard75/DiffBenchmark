@@ -66,8 +66,11 @@ public class BenchmarkHumanReadableDiffGenerator {
     }
 
     public void generateSingleThreaded() throws Exception {
+        int i = 0;
         for (IBenchmarkCase info : experiment.getDataset().getCases()) {
+            i ++;
             writeActiveTools(info, experiment.getOutputFolder());
+            if (i == 10) break;
         }
         System.out.println("Finished generating human readable diffs...");
     }

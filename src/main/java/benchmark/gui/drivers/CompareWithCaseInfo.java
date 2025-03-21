@@ -15,7 +15,7 @@ public class CompareWithCaseInfo {
 
     public static void main(String[] args) {
         IBenchmarkCase info = new GithubCase("https://github.com/pouryafard75/TestCases/commit/4e31fb03d9e9d67f3b3dd6ea2c1703551deb54a0");
-        info = new D4JCase("Codec", "13");
+        info = new D4JCase("JacksonDatabind", "44");
         webDiffConf.setEnabled_tools(ToolSets.PERFECTION_BATTLE);
 
 //        {"repo":"Closure","commit":"22"}]

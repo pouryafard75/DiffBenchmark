@@ -5,26 +5,21 @@ import benchmark.generators.tools.models.ASTDiffProvider;
 import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.IASTMapper;
-import benchmark.generators.tools.runners.converter.FinalizedSpoon;
-import benchmark.generators.tools.runners.converter.PerfectDiff;
-import benchmark.generators.tools.runners.converter.Spoon;
-import benchmark.generators.tools.runners.converter.SpoonWithOffsetTranslation;
+import benchmark.generators.tools.runners.converter.*;
 import benchmark.generators.tools.runners.extensions.combined.ModifierInterConservativeMulti;
-import benchmark.generators.tools.runners.extensions.combined.ModifierInterNoMulti;
 import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeOptimizer;
 import benchmark.generators.tools.runners.extensions.interfile.SingleVirtualNodeMatching;
 import benchmark.generators.tools.runners.extensions.interfile.StagedTreeMatching;
 import benchmark.generators.tools.runners.extensions.labels.BlockAndSimpleNameModifier;
 import benchmark.generators.tools.runners.extensions.labels.GumTreeWithTreeModifier;
-import benchmark.generators.tools.runners.extensions.labels.LeafLabelMerger;
-import benchmark.generators.tools.runners.extensions.labels.LeafTypeMerger;
 import benchmark.generators.tools.runners.extensions.multimapping.CopyPaste;
 import benchmark.generators.tools.runners.extensions.multimapping.GumTreeWithMultiMappingASTDiffProvider;
 import benchmark.generators.tools.runners.extensions.multimapping.NonMatchedSubtreesAdditionalRound;
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.OriginalVisitorGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
+import benchmark.generators.tools.runners.shaded.GT2;
 import benchmark.generators.tools.runners.shaded.IJM;
 import benchmark.generators.tools.runners.shaded.MTDiff;
 import benchmark.generators.tools.runners.trivial.EmptyDiff;
@@ -59,11 +54,19 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     IJM ("Iterative Java Matcher", IJM::new)
     ,
+    IJM_TRANSLATED("Iterative Java Matcher (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new IJM(benchmarkCase, query)))
+    ,
     MTD ("MoveOptimized Tree Differencing", MTDiff::new)
+    ,
+    MTD_TRANSLATED("MoveOptimized Tree Differencing (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new MTDiff(benchmarkCase, query)))
     ,
     GT2 ("GumTree 2.0", benchmark.generators.tools.runners.shaded.GT2::new)
     ,
+    GT2_TRANSLATED("GumTree 2.0 (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new GT2(benchmarkCase, query)))
+    ,
     IAM ("IASTMapper", IASTMapper::new)
+    ,
+    IAM_TRANSLATED("IASTMapper (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new IASTMapper(benchmarkCase, query)))
     ,
     DAT ("Diff Auto Tuning", null)
     ,
@@ -122,16 +125,16 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                     new CopyPaste(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    FLG ("FineGrainedLabelsWithGreedy", (benchmarkCase, query) ->
-            new GumTreeWithTreeModifier(
-                    new LeafLabelMerger(),
-                    new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
-    ,
-    FLS ("FineGrainedLabelsWithSimple", (benchmarkCase, query) ->
-            new GumTreeWithTreeModifier(
-                    new LeafLabelMerger(),
-                    new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
-    ,
+//    FLG ("FineGrainedLabelsWithGreedy", (benchmarkCase, query) ->
+//            new GumTreeWithTreeModifier(
+//                    new BlockAndSimpleNameModifier(),
+//                    new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
+//    ,
+//    FLS ("FineGrainedLabelsWithSimple", (benchmarkCase, query) ->
+//            new GumTreeWithTreeModifier(
+//                    new BlockAndSimpleNameModifier(),
+//                    new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
+//    ,
     FTG ("FineGrainedTypesWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new BlockAndSimpleNameModifier(),
@@ -142,54 +145,10 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                     new BlockAndSimpleNameModifier(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    COMBINED_TYPE_STAGED_GREEDY ("COMBINED_TYPE_STAGED_GREEDY", ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
-                    new ModifierInterNoMulti(
-                            new LeafTypeMerger(),
-                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
-                            benchmarkCase,
-                            query,
-                            new CompositeMatchers.ClassicGumtree())))),
-    COMBINED_TYPE_STAGED_SIMPLE ("COMBINED_TYPE_STAGED_SIMPLE", ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
-                    new ModifierInterNoMulti(
-                            new LeafTypeMerger(),
-                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
-                            benchmarkCase,
-                            query,
-                            new CompositeMatchers.SimpleGumtree()))))
-    ,
-    COMBINED_TYPE_VN_GREEDY ("COMBINED_TYPE_SVN_GREEDY", ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
-                    new ModifierInterNoMulti(
-                            new LeafTypeMerger(),
-                            new SingleVirtualNodeMatching(),
-                            benchmarkCase,
-                            query,
-                            new CompositeMatchers.ClassicGumtree())))),
-    COMBINED_TYPE_VN_SIMPLE ("COMBINED_TYPE_SVN_SIMPLE",  ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
-                    new ModifierInterNoMulti(
-                            new LeafTypeMerger(),
-                            new SingleVirtualNodeMatching(),
-                            benchmarkCase,
-                            query,
-                            new CompositeMatchers.SimpleGumtree()))))
-    ,
-    X_TYPE_STAGED_NONMATCHED_GREEDY ("MERGED_STAGED_NONMATCHED_GREEDY",  ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
-                    new ModifierInterConservativeMulti(
-                            new LeafTypeMerger(),
-                            new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
-                            new NonMatchedSubtreesAdditionalRound(),
-                            benchmarkCase,
-                            query,
-                            new CompositeMatchers.ClassicGumtree()))))
-    ,
     P1G ("P1G", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
-                            new LeafTypeMerger(),
+                            new BlockAndSimpleNameModifier(),
                             new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
@@ -198,7 +157,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     P2G ("P2G", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
-                            new LeafTypeMerger(),
+                            new BlockAndSimpleNameModifier(),
                             new SingleVirtualNodeMatching(),
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
@@ -208,7 +167,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     P1S ("P1S", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
-                            new LeafTypeMerger(),
+                            new BlockAndSimpleNameModifier(),
                             new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
@@ -217,7 +176,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     P2S ("P2S", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
-                            new LeafTypeMerger(),
+                            new BlockAndSimpleNameModifier(),
                             new SingleVirtualNodeMatching(),
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
@@ -238,6 +197,14 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                         new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.ClassicGumtree()
                 );
                 return new FinalizedSpoon(benchmarkCase, query, configuration);
+            }),
+
+    SPN_GREEDY_INCOMPATIBLE("Spoon Greedy Incompatible (Same matcher configuration as GumTree Greedy)",
+            (benchmarkCase, query) -> {
+                DiffConfiguration configuration = makeSpoonCopyConfiguration(
+                        new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.ClassicGumtree()
+                );
+                return new Spoon(benchmarkCase, query, configuration);
             }),
 
     SPN_SIMPLE_MATCHER("Spoon Simple Matcher (Same matcher configuration as GumTree Simple)",

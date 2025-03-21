@@ -1,4 +1,4 @@
-<experimentConfiguration>
+<configuration>
 
     <appender name="DEBUG_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/debug.log</file>
@@ -9,12 +9,11 @@
     </appender>
 
     <!-- Console Appender -->
-    <appender name="CONSOLE" class="ch.qos.logback.core.FileAppender">
-        <file>logs/console.log</file> <!-- Set the desired file name -->
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
+<!--    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-2level %logger{36} - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
 
     <!-- Info Appender -->
     <appender name="INFO_FILE" class="ch.qos.logback.core.FileAppender">
@@ -28,12 +27,10 @@
         </filter>
     </appender>
 
-
-
-    <root level="all">
+    <root level="INFO">
         <appender-ref ref="INFO_FILE"/>
         <appender-ref ref="DEBUG_FILE"/>
         <appender-ref ref="CONSOLE"/>
     </root>
 
-</experimentConfiguration>
+</configuration>

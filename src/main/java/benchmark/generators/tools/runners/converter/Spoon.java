@@ -39,6 +39,7 @@ public class Spoon extends ASTDiffProviderFromProjectASTDiff {
     public ASTDiff getASTDiff() throws Exception {
         CtElement leftCt = getCtPackageFromContent(projectASTDiff.getFileContentsBefore().get(input.getSrcPath()));
         CtElement rightCt = getCtPackageFromContent(projectASTDiff.getFileContentsAfter().get(input.getDstPath()));
+
         shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder scanner = new shadedspoon.gumtree.spoon.builder.SpoonGumTreeBuilder();
         DiffImpl diff = (configuration == null) ?
                         new DiffImpl(scanner.getTreeContext(),
@@ -88,7 +89,7 @@ public class Spoon extends ASTDiffProviderFromProjectASTDiff {
     }
 
 
-    private static CtPackage getCtPackageFromContent(String content) {
+    public static CtPackage getCtPackageFromContent(String content) {
         VirtualFile resource = new VirtualFile(content, getFilename(content));
         return new AstComparator().getCtPackage(resource);
     }

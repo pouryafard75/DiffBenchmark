@@ -31,26 +31,25 @@ digraph G {
 	}
 	subgraph cluster_dst {
 		n_dst_13 [label="CompilationUnit", color=lightgrey];
-//		n_dst_14 -> n_dst_13;
 		n_dst_12 [label="TypeDeclaration", color=lightgrey];
 		n_dst_13 -> n_dst_12;
 		n_dst_0 [label="TYPE_DECLARATION_KIND: class", color=lightgrey];
 		n_dst_12 -> n_dst_0;
-		n_dst_1 [label="SimpleName_TypeDeclaration", color=yellow];
+		n_dst_1 [label="SimpleName_TypeDeclaration", color=orange];
 		n_dst_12 -> n_dst_1;
 		n_dst_11 [label="MethodDeclaration", color=lightgrey];
 		n_dst_12 -> n_dst_11;
 		n_dst_3 [label="SimpleType", color=lightgrey];
 		n_dst_11 -> n_dst_3;
-		n_dst_2 [label="SimpleName_SimpleType: String", color=yellow];
+		n_dst_2 [label="SimpleName_SimpleType: String", color=orange];
 		n_dst_3 -> n_dst_2;
-		n_dst_4 [label="SimpleName_MethodDec", color=yellow];
+		n_dst_4 [label="SimpleName_MethodDec", color=orange];
 		n_dst_11 -> n_dst_4;
 		n_dst_7 [label="SingleVariableDeclaration", color=lightgrey];
 		n_dst_11 -> n_dst_7;
 		n_dst_5 [label="PrimitiveType: int", color=lightgrey];
 		n_dst_7 -> n_dst_5;
-		n_dst_6 [label="SimpleName_SingleVar", color=yellow];
+		n_dst_6 [label="SimpleName_SingleVariableDeclaration: i", color=orange];
 		n_dst_7 -> n_dst_6;
 		n_dst_10 [label="Block_MethodDeclaration", color=orange];
 		n_dst_11 -> n_dst_10;
@@ -59,18 +58,18 @@ digraph G {
 		n_dst_8 [label="StringLiteral:Foo!", color=lightgrey];
 		n_dst_9 -> n_dst_8;
 	}
-	n_src_11 -> n_dst_11 [style=dashed];
-	n_src_4 -> n_dst_4 [style=dashed];
-	n_src_13 -> n_dst_13 [style=dashed];
-	n_src_2 -> n_dst_2 [style=dashed];
-	n_src_12 -> n_dst_12 [style=dashed];
-	n_src_10 -> n_dst_10 [style=dashed];
-	n_src_7 -> n_dst_7 [style=dashed];
-	n_src_5 -> n_dst_5 [style=dashed];
-	n_src_8 -> n_dst_8 [style=dashed];
-	n_src_3 -> n_dst_3 [style=dashed];
-	n_src_1 -> n_dst_1 [style=dashed];
-	n_src_9 -> n_dst_9 [style=dashed];
-	n_src_6 -> n_dst_6 [style=dashed];
 	n_src_0 -> n_dst_0 [style=dashed];
+	n_src_3 -> n_dst_3 [style=dashed];
+	n_src_11 -> n_dst_11 [style=dashed];
+	n_src_5 -> n_dst_5 [style=dashed];
+	n_src_2 -> n_dst_2 [style=dashed];
+	n_src_4 -> n_dst_4 [style=dashed];
+	n_src_10 -> n_dst_10 [style=dashed];
+	n_src_1 -> n_dst_1 [style=dashed];
+	n_src_12 -> n_dst_12 [style=dashed];
+	n_src_6 -> n_dst_6 [style=dashed];
+	n_src_8 -> n_dst_8 [style=dashed];
+	n_src_9 -> n_dst_9 [style=dashed];
+	n_src_7 -> n_dst_7 [style=dashed];
+	n_src_13 -> n_dst_13 [style=dashed];
 }

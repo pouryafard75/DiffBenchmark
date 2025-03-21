@@ -89,6 +89,17 @@ public enum ExperimentsEnum implements IExperiment {
             ASTDiffToolEnum.GOD))
     ,
 
+    MULTI_MAPPING_SEM_EXP(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.MULTI_MAPPING_SEM_BATTLE_TOOLS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/mm-sem-exp/",
+            "out.csv",
+            "mm-sem-exp",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+
     SEMANTIC_VIOLATION_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
             ToolSets.SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS,
@@ -121,9 +132,10 @@ public enum ExperimentsEnum implements IExperiment {
             ASTDiffToolEnum.TRV,
             ASTDiffToolEnum.GOD))
     ,
+
     LITERATURE_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
-            ToolSets.CUSTOM_LITERATURE_TOOLS,
+            ToolSets.ALL,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "hrd-oracle/adb-paper/literature-exp/",
             "out.csv",

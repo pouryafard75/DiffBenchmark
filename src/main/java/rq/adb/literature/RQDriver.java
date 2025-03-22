@@ -25,7 +25,6 @@ public class RQDriver {
     public static void main(String[] args) throws Exception {
         new BenchmarkHumanReadableDiffGenerator(exp).generateMultiThreaded();
         new BaseRQDriverRoutine(FILTERS).run(new IExperiment[]{exp});
-        new java.util.Scanner(System.in).nextLine();
     }
 
 

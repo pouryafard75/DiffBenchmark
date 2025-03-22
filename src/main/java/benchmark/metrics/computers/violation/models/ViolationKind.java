@@ -32,7 +32,7 @@ public enum ViolationKind
     SIMPLE_NAME((mapping, tool, perfect) -> {
         boolean baseCondition = SimpleNameGeneralLogic(mapping);
         if (!baseCondition) return false;
-        if (tool.equals(ASTDiffToolEnum.GT2) || tool.equals(ASTDiffToolEnum.IJM) || tool.equals(ASTDiffToolEnum.MTD)) {
+        if (tool.equals(ASTDiffToolEnum.GT2_I) || tool.equals(ASTDiffToolEnum.IJM_I) || tool.equals(ASTDiffToolEnum.MTD_I)) {
             return GT2_SIMPLE_NAME_LOGIC(mapping, perfect);
         }
         return !havingSameParentsType().test(mapping);

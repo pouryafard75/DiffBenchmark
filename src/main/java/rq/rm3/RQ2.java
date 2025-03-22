@@ -50,10 +50,10 @@ public class RQ2 implements RQ {
                 ASTDiffToolEnum.RMD,
                 ASTDiffToolEnum.GTG,
                 ASTDiffToolEnum.GTS,
-                ASTDiffToolEnum.IJM,
-                ASTDiffToolEnum.MTD,
-                ASTDiffToolEnum.FTG,
-                ASTDiffToolEnum.FTS
+                ASTDiffToolEnum.IJM_I,
+                ASTDiffToolEnum.MTD_I,
+                ASTDiffToolEnum.EXT_FGT_G,
+                ASTDiffToolEnum.EXT_FGT_S
         );
         e1.setTools(tools);
         e2.setTools(tools);

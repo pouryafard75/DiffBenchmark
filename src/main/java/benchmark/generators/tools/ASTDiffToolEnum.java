@@ -32,13 +32,26 @@ import shadedspoon.gumtree.spoon.diff.DiffConfiguration;
 
 
 public enum ASTDiffToolEnum implements IASTDiffTool {
+    /*
+    On the naming conventions:
+    - The suffix "_T" means that the tool is translated
+    - The suffix "_G" means that the tool uses the greedy matcher
+    - The suffix "_S" means that the tool uses the simple matcher
+    - The suffix "_O" means that the tool uses the original visitor
+    - The suffix "_I" means that the tool is incompatible with the benchmark
+    - The suffix "___" means that the tools is experimental and should be only used for testing/visualization purposes
+    Suffices can be combined to create a more descriptive name such as "SPN_G_T" which means that the tool is Spoon with the greedy matcher and translated
+    Try your best to keep the names short and descriptive... but not too short that it becomes ambiguous,
+    And Please don't use more than 3 letters for the name of the tool/algorithm, but decorate it with the suffixes to make it more descriptive
+    Unless you are working on an extension, which must begin with _EXT and be followed by the name of each extension + the suffixes
+    */
     GOD ("Ground Truth", PerfectDiff::new)
     ,
     RMD ("RefactoringMiner", (benchmarkCase, query) -> () -> query.apply(benchmarkCase.getProjectASTDiff()))
     ,
     GTG ("GumTree Greedy 3.0", (benchmarkCase, query) -> new GreedyGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    GGO("GumTree Greedy 3.0 Original Visitor", (benchmarkCase, query) ->
+    GTG_O("GumTree Greedy 3.0 Original Visitor", (benchmarkCase, query) ->
             new OriginalVisitorGumTreeASTDiffProvider(
                     new CompositeMatchers.ClassicGumtree(),
                     benchmarkCase,
@@ -46,27 +59,27 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     GTS ("GumTree Simple 3.0", (benchmarkCase, query) -> new SimpleGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    GSO("GumTree Simple 3.0 Original Visitor", (benchmarkCase, query) ->
+    GTS_O("GumTree Simple 3.0 Original Visitor", (benchmarkCase, query) ->
             new OriginalVisitorGumTreeASTDiffProvider(
                     new CompositeMatchers.SimpleGumtree(),
                     benchmarkCase,
                     query))
     ,
-    IJM ("Iterative Java Matcher", IJM::new)
+    IJM_I("Iterative Java Matcher", IJM::new)
     ,
-    IJM_TRANSLATED("Iterative Java Matcher (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new IJM(benchmarkCase, query)))
+    IJM_T("Iterative Java Matcher (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new IJM(benchmarkCase, query)))
     ,
-    MTD ("MoveOptimized Tree Differencing", MTDiff::new)
+    MTD_I("MoveOptimized Tree Differencing", MTDiff::new)
     ,
-    MTD_TRANSLATED("MoveOptimized Tree Differencing (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new MTDiff(benchmarkCase, query)))
+    MTD_T("MoveOptimized Tree Differencing (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new MTDiff(benchmarkCase, query)))
     ,
-    GT2 ("GumTree 2.0", benchmark.generators.tools.runners.shaded.GT2::new)
+    GT2_I("GumTree 2.0", benchmark.generators.tools.runners.shaded.GT2::new)
     ,
-    GT2_TRANSLATED("GumTree 2.0 (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new GT2(benchmarkCase, query)))
+    GT2_T("GumTree 2.0 (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new GT2(benchmarkCase, query)))
     ,
-    IAM ("IASTMapper", IASTMapper::new)
+    IAM_("IASTMapper", IASTMapper::new)
     ,
-    IAM_TRANSLATED("IASTMapper (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new IASTMapper(benchmarkCase, query)))
+    IAM_T("IASTMapper (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new IASTMapper(benchmarkCase, query)))
     ,
     DAT ("Diff Auto Tuning", null)
     ,
@@ -76,21 +89,21 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     EMP("Empty", (benchmarkCase, query) -> new EmptyDiff(query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    VNG ("VirtualNodeWithGreedy", (benchmarkCase, query) ->
+    EXT_SVN_G("VirtualNodeWithGreedy", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
                         new SingleVirtualNodeMatching(),
                         benchmarkCase, query,
                         new CompositeMatchers.ClassicGumtree())))
     ,
-    VNS ("VirtualNodeWithSimple", (benchmarkCase, query) ->
+    EXT_SVN_S("VirtualNodeWithSimple", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
                         new SingleVirtualNodeMatching(),
                         benchmarkCase, query,
                         new CompositeMatchers.SimpleGumtree())))
     ,
-    SMG ("StagedTreeMatchingGreedy", (benchmarkCase, query) ->
+    EXT_STM_G("StagedTreeMatchingGreedy", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
                         new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
@@ -98,54 +111,44 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                         new CompositeMatchers.ClassicGumtree())))
 
     ,
-    SMS ("StagedTreeMatchingSimple", (benchmarkCase, query) ->
+    EXT_STM_S("StagedTreeMatchingSimple", (benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                 new ProjectGumTreeASTDiffProvider(
                         new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
                         benchmarkCase, query,
                         new CompositeMatchers.SimpleGumtree())))
     ,
-    NMG ("NonMappedSubTreesWithGreedy", (benchmarkCase, query) ->
+    EXT_NMS_G("NonMappedSubTreesWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new NonMatchedSubtreesAdditionalRound(),
                     new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    NMS ("NonMappedSubTreesWithSimple", (benchmarkCase, query) ->
+    EXT_NMS_S("NonMappedSubTreesWithSimple", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new NonMatchedSubtreesAdditionalRound(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    CPG("CopyPasteWithGreedy", (benchmarkCase, query) ->
+    EXT_COP_G("CopyPasteWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new CopyPaste(),
                     new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    CPS ("CopyPasteWithSimple", (benchmarkCase, query) ->
+    EXT_COP_S("CopyPasteWithSimple", (benchmarkCase, query) ->
             new GumTreeWithMultiMappingASTDiffProvider(
                     new CopyPaste(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-//    FLG ("FineGrainedLabelsWithGreedy", (benchmarkCase, query) ->
-//            new GumTreeWithTreeModifier(
-//                    new BlockAndSimpleNameModifier(),
-//                    new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
-//    ,
-//    FLS ("FineGrainedLabelsWithSimple", (benchmarkCase, query) ->
-//            new GumTreeWithTreeModifier(
-//                    new BlockAndSimpleNameModifier(),
-//                    new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
-//    ,
-    FTG ("FineGrainedTypesWithGreedy", (benchmarkCase, query) ->
+    EXT_FGT_G("FineGrainedTypesWithGreedy", (benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new BlockAndSimpleNameModifier(),
                     new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    FTS ("FineGrainedTypesWithSimple",(benchmarkCase, query) ->
+    EXT_FGT_S("FineGrainedTypesWithSimple",(benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new BlockAndSimpleNameModifier(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    P1G ("P1G", ((benchmarkCase, query) ->
+    EXT_FGT_STM_NMS_G("P1G", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
@@ -154,7 +157,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             benchmarkCase,
                             query,
                             new CompositeMatchers.ClassicGumtree())))),
-    P2G ("P2G", ((benchmarkCase, query) ->
+    EXT_FGT_SVN_NMS_G("P2G", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
@@ -164,7 +167,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             query,
                             new CompositeMatchers.ClassicGumtree()))))
     ,
-    P1S ("P1S", ((benchmarkCase, query) ->
+    EXT_FGT_STM_NMS_S("P1S", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
@@ -173,7 +176,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             benchmarkCase,
                             query,
                             new CompositeMatchers.SimpleGumtree())))),
-    P2S ("P2S", ((benchmarkCase, query) ->
+    EXT_FGT_SVN_NMS_S("P2S", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
@@ -183,15 +186,15 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    INCOMPATIBLE_SPOON("Original Spoon (Incompatible)", Spoon::new),
+    SPN_("Original Spoon (Incompatible)", Spoon::new),
 
-    SPN_OFFSET_TRANSLATED("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
+    SPN___("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
 
 //    SPN_OFFSET_TRANSLATED_WITH_RULES("Spoon Compatible (After applying translation rules)", SpoonWithOffsetTranslation::new),
 
-    SPN("Spoon", FinalizedSpoon::new),
+    SPN_T("Spoon", FinalizedSpoon::new),
 
-    SPN_GREEDY_MATCHER("Spoon Greedy Matcher (Same matcher configuration as GumTree Greedy)",
+    SPN_G_T("Spoon Greedy Matcher (Same matcher configuration as GumTree Greedy)",
             (benchmarkCase, query) -> {
                 DiffConfiguration configuration = makeSpoonCopyConfiguration(
                         new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.ClassicGumtree()
@@ -199,7 +202,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                 return new FinalizedSpoon(benchmarkCase, query, configuration);
             }),
 
-    SPN_GREEDY_INCOMPATIBLE("Spoon Greedy Incompatible (Same matcher configuration as GumTree Greedy)",
+    SPN_G_("Spoon Greedy Incompatible (Same matcher configuration as GumTree Greedy)",
             (benchmarkCase, query) -> {
                 DiffConfiguration configuration = makeSpoonCopyConfiguration(
                         new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.ClassicGumtree()
@@ -207,7 +210,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                 return new Spoon(benchmarkCase, query, configuration);
             }),
 
-    SPN_SIMPLE_MATCHER("Spoon Simple Matcher (Same matcher configuration as GumTree Simple)",
+    SPN_S_T("Spoon Simple Matcher (Same matcher configuration as GumTree Simple)",
             (benchmarkCase, query) -> {
                 DiffConfiguration configuration = makeSpoonCopyConfiguration(
                         new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.SimpleGumtree()

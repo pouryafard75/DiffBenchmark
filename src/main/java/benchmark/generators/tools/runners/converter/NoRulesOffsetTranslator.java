@@ -11,7 +11,7 @@ public class NoRulesOffsetTranslator implements ASTDiffProvider {
     public NoRulesOffsetTranslator(ASTDiffProvider provider) {
         this.provider = provider;
         try {
-            this.mappingOffsetTranslator = new MappingOffsetTranslator(provider.getASTDiff());
+            this.mappingOffsetTranslator = new TypeStrictMappingOffsetTranslator(provider.getASTDiff());
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

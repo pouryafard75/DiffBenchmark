@@ -14,9 +14,15 @@ import static benchmark.generators.hrd.HumanReadableDiffGenerator.isBetweenDiffe
 /* Created by pourya on 2024-10-07*/
 public class MappingOffsetTranslator extends AbstractOffsetTranslator {
     private final ITranslationRuleProvider ruleProvider;
+
+    protected BiPredicate<Tree, Tree>[] predicates;
+
+    @SuppressWarnings("unchecked")
     public MappingOffsetTranslator(ASTDiff ref, ITranslationRuleProvider ruleProvider) {
         super(ref);
+        predicates = new BiPredicate[]{startOffsetMatchPredicate, endOffsetMatchPredicate};
         this.ruleProvider = ruleProvider;
+
     }
     public MappingOffsetTranslator(ASTDiff ref) {
         this(ref, List::of);
@@ -54,10 +60,7 @@ public class MappingOffsetTranslator extends AbstractOffsetTranslator {
     protected Tree findEqv(Tree bad, Tree goodRoot) {
         if (bad.getPos() == 0 && bad.getEndPos() == 0)
             return null;
-        List<Tree> candidates = getCandidates(bad, goodRoot,
-                (candidate, badNode) -> candidate.getPos() == badNode.getPos(),
-                (candidate, badNode) -> candidate.getEndPos() == badNode.getEndPos()
-        );
+        List<Tree> candidates = getCandidates(bad, goodRoot, predicates);
         if (candidates.isEmpty())
             return investigate(bad, goodRoot);
         return chooseBestCandidate(bad, candidates);
@@ -82,6 +85,15 @@ public class MappingOffsetTranslator extends AbstractOffsetTranslator {
     }
 
     protected Tree investigate(Tree bad, Tree goodRoot) {
+        /*
+        Normally if we cant find the exact subtree, it means we should stop this translation;
+        However, subclasses might be able to implement more advanced logic to find the best candidate.
+        For instance, Spoon doesn't perform well in case of having comments in the code.
+        They mess up the offsets, and we can't find the exact subtree.
+        In such cases, we can rely on the subclass
+        e.g. CommentCorrectorMappingOffsetTranslator to find the best candidate.
+        I am not sure if the class hierarchy is the best way to implement this, but it's a start.
+        */
         return null;
     }
 

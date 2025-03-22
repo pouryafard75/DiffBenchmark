@@ -1,6 +1,7 @@
 package benchmark.gui.drivers;
 
 import benchmark.data.diffcase.GithubCase;
+import benchmark.data.exp.ToolSets;
 import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.runners.manipulator.BenchmarkCaseDiffManipulatorImpl;
 import benchmark.gui.conf.WebDiffConf;
@@ -10,21 +11,15 @@ import benchmark.models.DiffSide;
 import benchmark.models.selector.QueryBySrcPath;
 import org.apache.commons.lang3.tuple.Pair;
 
-import java.util.Set;
-
 /* Created by pourya on 2022-12-26 9:30 p.m. */
 public class CompareWithGitHubAPI {
     public static void main(String[] args) throws Exception {
         String url = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
-        url = "https://github.com/Alluxio/alluxio/commit/b0938501f1014cf663e33b44ed5bb9b24d19a358";
-        url = "https://github.com/pouryafard75/TestCases/commit/438c21418f843cadc115f9c01eedd28de2ebd280";
+//        url = "https://github.com/Alluxio/alluxio/commit/b0938501f1014cf663e33b44ed5bb9b24d19a358";
+//        url = "https://github.com/pouryafard75/TestCases/commit/438c21418f843cadc115f9c01eedd28de2ebd280";
 
         WebDiffConf webDiffConf = WebDiffConf.defaultConf();
-        webDiffConf.setEnabled_tools(Set.of(ASTDiffToolEnum.SPN,
-                ASTDiffToolEnum.INCOMPATIBLE_SPOON,
-//                ASTDiffToolEnum.SPN_GREEDY_INCOMPATIBLE,
-//                ASTDiffToolEnum.SPN_GREEDY_MATCHER,
-                ASTDiffToolEnum.RMD));
+        webDiffConf.setEnabled_tools(ToolSets.ALL);
 //        webDiffConf.setEnabled_tools(Set.of(ASTDiffToolEnum.SPN_FINALIZED));
         BenchmarkWebDiff benchmarkWebDiff = new BenchmarkWebDiffFactory(webDiffConf)
 

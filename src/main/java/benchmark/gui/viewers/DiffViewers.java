@@ -18,7 +18,7 @@ import static spark.Spark.get;
 /* Created by pourya on 2024-05-03*/
 public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
     VANILLA(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "/" + id)).content(tool.getToolName()),
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "/" + id)).content(tool.getShortName()),
             (tool, astDiffs, projectASTDiff) -> get("/" + tool.getShortName() + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);

@@ -23,7 +23,6 @@ public class RQDriver {
     public static ExperimentsEnum exp = ExperimentsEnum.LITERATURE_EXP;
 
     public static void main(String[] args) throws Exception {
-        System.out.println(exp.getDataset().getCases().size());
         new BenchmarkHumanReadableDiffGenerator(exp).generateMultiThreaded();
         new BaseRQDriverRoutine(FILTERS).run(new IExperiment[]{exp});
         new java.util.Scanner(System.in).nextLine();

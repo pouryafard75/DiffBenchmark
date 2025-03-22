@@ -36,7 +36,7 @@ public class ASTDiffToolEnumTest {
                ,Arguments.of(ASTDiffToolEnum.IJM_I,126)
                ,Arguments.of(ASTDiffToolEnum.MTD_I,216)
                ,Arguments.of(ASTDiffToolEnum.GT2_I,218)
-               ,Arguments.of(ASTDiffToolEnum.IAM_,228)
+               ,Arguments.of(ASTDiffToolEnum.IAM_I,228)
                ,Arguments.of(ASTDiffToolEnum.RM2,219)
                ,Arguments.of(ASTDiffToolEnum.TRV,25)
                ,Arguments.of(ASTDiffToolEnum.EXT_SVN_G,234)

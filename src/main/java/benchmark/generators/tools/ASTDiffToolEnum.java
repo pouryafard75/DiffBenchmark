@@ -77,7 +77,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     GT2_T("GumTree 2.0 (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new GT2(benchmarkCase, query)))
     ,
-    IAM_("IASTMapper", IASTMapper::new)
+    IAM_I("IASTMapper", IASTMapper::new)
     ,
     IAM_T("IASTMapper (Translated)",(benchmarkCase, query) -> new NoRulesOffsetTranslator(new IASTMapper(benchmarkCase, query)))
     ,
@@ -186,7 +186,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             query,
                             new CompositeMatchers.SimpleGumtree()))))
     ,
-    SPN_("Original Spoon (Incompatible)", Spoon::new),
+    SPN_I("Original Spoon (Incompatible)", Spoon::new),
 
     SPN___("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
 

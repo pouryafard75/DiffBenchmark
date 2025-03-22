@@ -10,10 +10,10 @@ public class TwoPointOneTranslator implements ASTDiffProvider, ITranslationRuleP
     protected final MappingOffsetTranslator mappingOffsetTranslator;
     protected final ASTDiffProvider provider;
 
-    public TwoPointOneTranslator(ASTDiffProvider provider) {
+    public TwoPointOneTranslator(ASTDiffProvider provider, ASTDiff ref) {
         this.provider = provider;
         try {
-            this.mappingOffsetTranslator = new TypeStrictMappingOffsetTranslator(provider.getASTDiff(), this);
+            this.mappingOffsetTranslator = new TypeStrictMappingOffsetTranslator(ref, this);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -32,6 +32,12 @@ public class TwoPointOneTranslator implements ASTDiffProvider, ITranslationRuleP
 
     @Override
     public List<TranslationRule> getRules() {
-        return List.of(new InnerNodeWithLabelTranslation());
+        return List.of(
+                new IsoStructuralParentRecursion(),
+                new InnerNodeWithLabelTranslation(),
+                new FirstChildOfTypeBlock(),
+                new FirstChildOfTypeKind(),
+                new ParentWithSameOffset()
+        );
     }
 }

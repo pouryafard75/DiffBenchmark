@@ -1,13 +1,18 @@
 package benchmark.generators.tools.runners.manipulator;
 
+import benchmark.data.diffcase.GithubCase;
 import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.ASTDiffProvider;
 import benchmark.generators.tools.models.IASTDiffTool;
+import benchmark.gui.conf.WebDiffConf;
 import benchmark.models.DiffSide;
 import benchmark.metrics.computers.violation.models.TriPredicate;
 import benchmark.models.selector.DiffSelector;
+import benchmark.models.selector.QueryBySrcPath;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
+import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
@@ -86,6 +91,28 @@ public class DiffManipulator implements ASTDiffProvider {
                 benchmarkCase.getProjectASTDiff().getChildContextMap(),
                 new SimplifiedExtendedChawatheScriptGenerator());
         return astDiff;
+    }
+
+    public static void addCustomManipulation(WebDiffConf webDiffConf, String url, String filePath) {
+        try {
+            webDiffConf.addTool(
+                    new BenchmarkCaseDiffManipulatorImpl(
+                            new GithubCase(url), Pair.of(
+                            new QueryBySrcPath(filePath),
+                            diffManipulator -> {
+                                try {
+                                    diffManipulator.acceptAll(ASTDiffToolEnum.RMD);
+                                    diffManipulator.discard(DiffSide.LEFT, ASTDiffToolEnum.RMD, 1650, 1680);
+                                    diffManipulator.accept(DiffSide.LEFT, ASTDiffToolEnum.GTG, 1650, 1680);
+                                } catch (Exception e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+                    )
+                    ));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 

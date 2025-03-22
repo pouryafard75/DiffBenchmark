@@ -17,7 +17,7 @@ public class MappingOffsetTranslator extends AbstractOffsetTranslator {
 
     protected BiPredicate<Tree, Tree>[] predicates;
 
-    private static final BiPredicate<Tree, Tree>[] biPredicates = new BiPredicate[]{startOffsetMatchPredicate, endOffsetMatchPredicate};
+    protected static final BiPredicate<Tree, Tree>[] biPredicates = new BiPredicate[]{startOffsetMatchPredicate, endOffsetMatchPredicate};
 
     public MappingOffsetTranslator(ASTDiff ref, ITranslationRuleProvider ruleProvider, BiPredicate<Tree, Tree>[] biPredicates) {
         super(ref);

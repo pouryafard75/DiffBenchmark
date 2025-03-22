@@ -131,8 +131,8 @@ public enum ToolSets implements Set<IASTDiffTool> {
                 add(ASTDiffToolEnum.GT2_I);
                 add(ASTDiffToolEnum.IAM_T);
                 add(ASTDiffToolEnum.IAM_I);
-                add(ASTDiffToolEnum.SPN_T);
                 add(ASTDiffToolEnum.SPN_I);
+                add(ASTDiffToolEnum.SPN_T);
             }}
     ),
 

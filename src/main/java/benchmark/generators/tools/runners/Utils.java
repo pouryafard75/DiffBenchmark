@@ -1,16 +1,21 @@
 package benchmark.generators.tools.runners;
 
+import benchmark.generators.tools.models.IASTDiffTool;
+import benchmark.gui.web.BenchmarkWebDiff;
+import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.DefaultTree;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import com.github.gumtreediff.tree.TypeSet;
+import org.apache.commons.io.FileUtils;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import shaded.com.github.gumtreediff.tree.ITree;
 import shaded.org.eclipse.jdt.core.dom.ASTNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 /* Created by pourya on 2023-04-17 8:01 p.m. */
 public class Utils {
@@ -59,4 +64,35 @@ public class Utils {
         dstContext.setRoot(dst);
         return new ASTDiff(input.getSrcPath(), input.getDstPath(), srcContext, dstContext, mappings);
     }
+
+    public static void writeAll(BenchmarkWebDiff benchmarkWebDiff) throws IOException {
+        for (Map.Entry<IASTDiffTool, Set<ASTDiff>> iastDiffToolSetEntry : benchmarkWebDiff.diffs.entrySet()) {
+            ASTDiff next = iastDiffToolSetEntry.getValue().iterator().next();
+            FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_src.txt"),
+                    next.src.getRoot().toTreeString());
+            FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_dst.txt"),
+                    next.dst.getRoot().toTreeString());
+            FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_diff.txt"),
+                    mappingsToString(next));
+        }
+    }
+
+    public static String mappingsToString(ASTDiff next) {
+        //Sort based on the offsets
+        List<Mapping> all = new ArrayList<>();
+        for (Mapping allMapping : next.getAllMappings()) {
+            all.add(allMapping);
+        }
+        Comparator<Mapping> mappingComparator;
+        mappingComparator = Comparator.comparingInt(o -> o.first.getPos());
+        mappingComparator = mappingComparator.thenComparingInt(o -> o.first.getEndPos());
+        all.sort(mappingComparator);
+        StringBuilder sb = new StringBuilder();
+        for (Mapping mapping : all) {
+            sb.append(mapping.toString());
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
 }

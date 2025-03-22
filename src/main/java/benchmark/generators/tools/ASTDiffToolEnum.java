@@ -67,19 +67,19 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     IJM_I("Iterative Java Matcher", IJM::new)
     ,
-    IJM_T("Iterative Java Matcher (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new IJM(benchmarkCase, query)))
+    IJM_T("Iterative Java Matcher (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new IJM(benchmarkCase, query), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     MTD_I("MoveOptimized Tree Differencing", MTDiff::new)
     ,
-    MTD_T("MoveOptimized Tree Differencing (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new MTDiff(benchmarkCase, query)))
+    MTD_T("MoveOptimized Tree Differencing (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new MTDiff(benchmarkCase, query), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     GT2_I("GumTree 2.0", benchmark.generators.tools.runners.shaded.GT2::new)
     ,
-    GT2_T("GumTree 2.0 (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new GT2(benchmarkCase, query)))
+    GT2_T("GumTree 2.0 (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new GT2(benchmarkCase, query), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     IAM_I("IASTMapper", IASTMapper::new)
     ,
-    IAM_T("IASTMapper (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new IASTMapper(benchmarkCase, query)))
+    IAM_T("IASTMapper (Translated)",(benchmarkCase, query) -> new TwoPointOneTranslator(new IASTMapper(benchmarkCase, query), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     DAT ("Diff Auto Tuning", null)
     ,

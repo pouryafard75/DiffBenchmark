@@ -17,15 +17,19 @@ public class MappingOffsetTranslator extends AbstractOffsetTranslator {
 
     protected BiPredicate<Tree, Tree>[] predicates;
 
-    @SuppressWarnings("unchecked")
-    public MappingOffsetTranslator(ASTDiff ref, ITranslationRuleProvider ruleProvider) {
-        super(ref);
-        predicates = new BiPredicate[]{startOffsetMatchPredicate, endOffsetMatchPredicate};
-        this.ruleProvider = ruleProvider;
+    private static final BiPredicate<Tree, Tree>[] biPredicates = new BiPredicate[]{startOffsetMatchPredicate, endOffsetMatchPredicate};
 
+    public MappingOffsetTranslator(ASTDiff ref, ITranslationRuleProvider ruleProvider, BiPredicate<Tree, Tree>[] biPredicates) {
+        super(ref);
+        this.ruleProvider = ruleProvider;
+        this.predicates = biPredicates;
     }
-    public MappingOffsetTranslator(ASTDiff ref) {
-        this(ref, List::of);
+
+    public MappingOffsetTranslator(ASTDiff ref, ITranslationRuleProvider ruleProvider) {
+        this(ref, ruleProvider, biPredicates);
+    }
+    public static MappingOffsetTranslator noRules(ASTDiff ref) {
+        return new MappingOffsetTranslator(ref, List::of);
     }
 
     public ASTDiff translate(ASTDiff foreign) {

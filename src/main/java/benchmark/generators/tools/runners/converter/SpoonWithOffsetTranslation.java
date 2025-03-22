@@ -26,7 +26,7 @@ public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRul
 
     public SpoonWithOffsetTranslation(IBenchmarkCase benchmarkCase, DiffSelector query, boolean rules) {
         super(benchmarkCase, query);
-        mappingOffsetTranslator = new MappingOffsetTranslator(input);
+        mappingOffsetTranslator = MappingOffsetTranslator.noRules(input);
     }
 
     @Override

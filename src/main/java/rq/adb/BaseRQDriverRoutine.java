@@ -8,8 +8,6 @@ import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.writers.MetricsCsvWriter;
 
 import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import static benchmark.metrics.MetricsToCSV.getCsvFilePath;
 
@@ -20,8 +18,8 @@ public record BaseRQDriverRoutine(HumanReadableDiffFilter[] filters) implements 
     public static final String folder = "csv-outputs/adb-paper/";
 
     @Override
-    public Map<IExperiment, Collection<? extends BaseDiffComparisonResult>> calculate(IExperiment[] confs) throws Exception {
-        Map<IExperiment, Collection<? extends BaseDiffComparisonResult>> results = new LinkedHashMap<>();
+    public void run(IExperiment[] confs) throws Exception {
+//        Map<IExperiment, Collection<? extends BaseDiffComparisonResult>> results = new LinkedHashMap<>();
         for (IExperiment experiment : confs) {
 
             for (HumanReadableDiffFilter filter : filters) {
@@ -31,10 +29,10 @@ public record BaseRQDriverRoutine(HumanReadableDiffFilter[] filters) implements 
                         filterDuringMetricsCalculation
                 );
                 Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-                results.put(experiment, stats);
+//                results.put(experiment, stats);
                 MetricsCsvWriter.exportToCSV(stats, getCsvFilePath(filter, filterDuringMetricsCalculation, experiment), true, folder);
             }
         }
-        return results;
+//        return results;
     }
 }

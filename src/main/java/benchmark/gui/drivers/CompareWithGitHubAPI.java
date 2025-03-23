@@ -1,5 +1,6 @@
 package benchmark.gui.drivers;
 
+import benchmark.data.diffcase.GithubCase;
 import benchmark.data.exp.ToolSets;
 import benchmark.gui.conf.WebDiffConf;
 import benchmark.gui.web.BenchmarkWebDiff;
@@ -13,11 +14,14 @@ public class CompareWithGitHubAPI {
         WebDiffConf webDiffConf = WebDiffConf.defaultConf();
         webDiffConf.setEnabled_tools(ToolSets.ALL);
         webDiffConf.setEnabled_tools(ToolSets.BeforeAndAfterTranslations);
+        webDiffConf.setEnabled_tools(ToolSets.VISITOR_EXP_BATTLE_TOOLS);
         BenchmarkWebDiff benchmarkWebDiff = new BenchmarkWebDiffFactory(webDiffConf)
 
-                .withURL(url) /*Recommended for the cases you have url to experiment with*/
+//                .withURL(url) /*Recommended for the cases you have url to experiment with*/
 
 //                .withCaseInfo(new D4JCase("Cli", "20")) /*Recommended when you have added the case to benchmark datasets*/
+
+                .withCaseInfo(new GithubCase("https://github.com/BroadleafCommerce/BroadleafCommerce/commit/4ef35268bb96bb78b2dc698fa68e7ce763cde32e")) /*Recommended when you have added the case to benchmark datasets*/
 
 //                .withTwoDirectories("dir1", "dir2") /*Recommended when you have two directories/*
         ;

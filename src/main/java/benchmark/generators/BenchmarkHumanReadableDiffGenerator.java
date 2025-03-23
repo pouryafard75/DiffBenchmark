@@ -70,7 +70,6 @@ public class BenchmarkHumanReadableDiffGenerator {
         for (IBenchmarkCase info : experiment.getDataset().getCases()) {
             i ++;
             writeActiveTools(info, experiment.getOutputFolder());
-            if (i == 10) break;
         }
         System.out.println("Finished generating human readable diffs...");
     }

@@ -132,6 +132,16 @@ public enum ExperimentsEnum implements IExperiment {
             ASTDiffToolEnum.TRV,
             ASTDiffToolEnum.GOD))
     ,
+    VISITOR_EXP_SINGLE_CASE(new ExperimentImpl(
+            EBenchmarkDataset.RefOracleSingleCase,
+            ToolSets.VISITOR_EXP_BATTLE_TOOLS,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/visitors-exp-single-case/",
+            "out.csv",
+            "visitor-exp",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
 
     LITERATURE_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,

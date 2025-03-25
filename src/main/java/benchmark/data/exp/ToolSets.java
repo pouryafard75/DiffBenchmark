@@ -99,6 +99,7 @@ public enum ToolSets implements Set<IASTDiffTool> {
 
     VISITOR_EXP_BATTLE_TOOLS(
             new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.RMD);
                 add(ASTDiffToolEnum.SPN_T);
                 add(ASTDiffToolEnum.SPN_G_T);
                 add(ASTDiffToolEnum.SPN_S_T);
@@ -116,6 +117,8 @@ public enum ToolSets implements Set<IASTDiffTool> {
             add(ASTDiffToolEnum.GT2_T);
             add(ASTDiffToolEnum.IAM_T);
             add(ASTDiffToolEnum.SPN_T);
+            add(ASTDiffToolEnum.SPN_G_T);
+            add(ASTDiffToolEnum.SPN_S_T);
         }}
     ),
 

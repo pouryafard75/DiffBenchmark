@@ -10,11 +10,14 @@ import java.nio.file.Path;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /* Created by pourya on 2024-09-28*/
 public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchmarkDataset {
     final String perfectInfoName = "cases.json";
     final String problematicInfoName = "cases-problematic.json";
+    protected Predicate<IBenchmarkCase> filter = c -> true;
 
     private final String perfectDiffDir;
 
@@ -52,6 +55,7 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
         for (AbstractIBenchmarkCase aCase : allCases) {
             aCase.setDataset(this);
         }
+        allCases = allCases.stream().filter(filter).collect(Collectors.toSet());
         return allCases;
     }
 }

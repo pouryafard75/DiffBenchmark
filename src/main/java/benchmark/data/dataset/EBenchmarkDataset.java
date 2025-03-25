@@ -11,7 +11,12 @@ public enum EBenchmarkDataset implements IBenchmarkDataset{
     RefOracle(new RefactoringOracleBenchmarkDataset()),
     Defects4J(new Defects4JBenchmarkDataset()),
     Dummy(new DummyDataset()),
-    Experiment(new ExperimentDataset())
+    Experiment(new ExperimentDataset()),
+    RefOracleSingleCase(new RefactoringOracleBenchmarkDataset(
+            benchmarkCase ->
+                benchmarkCase.getCommit().equals("837d1a74bb7d694220644a2539c4440ce55462cf")
+            )
+    )
     ;
 
     private final IBenchmarkDataset iBenchmarkDataset;

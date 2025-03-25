@@ -198,10 +198,14 @@ public abstract class HumanReadableDiffGenerator {
         return type.equals(Constants.BLOCK);
     }
     public static boolean isProgramElement(String type) {
+        String implicitTypeDeclaration = "ImplicitTypeDeclaration"; //This constant is not defined in the Constants class of the RM project
         return type.equals(Constants.TYPE_DECLARATION) ||
                 type.equals(Constants.METHOD_DECLARATION) ||
                 type.equals(Constants.FIELD_DECLARATION) ||
-                type.equals(Constants.ENUM_DECLARATION);
+                type.equals(Constants.ENUM_DECLARATION) ||
+                type.equals(Constants.RECORD_DECLARATION) ||
+                type.equals(Constants.ANNOTATION_TYPE_DECLARATION) ||
+                type.equals(implicitTypeDeclaration);
     }
     public static boolean isImport(String type) {
         return type.equals(Constants.IMPORT_DECLARATION);

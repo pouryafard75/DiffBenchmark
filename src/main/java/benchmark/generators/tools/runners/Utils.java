@@ -67,14 +67,23 @@ public class Utils {
 
     public static void writeAll(BenchmarkWebDiff benchmarkWebDiff) throws IOException {
         for (Map.Entry<IASTDiffTool, Set<ASTDiff>> iastDiffToolSetEntry : benchmarkWebDiff.diffs.entrySet()) {
-            ASTDiff next = iastDiffToolSetEntry.getValue().iterator().next();
-            FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_src.txt"),
-                    next.src.getRoot().toTreeString());
-            FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_dst.txt"),
-                    next.dst.getRoot().toTreeString());
-            FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_diff.txt"),
-                    mappingsToString(next));
+            Set<ASTDiff> diffs = iastDiffToolSetEntry.getValue();
+            int counter = 0;
+            for (ASTDiff diff : diffs) {
+                counter ++;
+                FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_src.txt"),
+                        removeOffsets(diff.src.getRoot().toTreeString()));
+                FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_dst.txt"),
+                        removeOffsets(diff.dst.getRoot().toTreeString()));
+                FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_diff.txt"),
+                        mappingsToString(diff));
+            }
         }
+    }
+
+    private static String removeOffsets(String treeString) {
+        return treeString.replaceAll("\\[\\d+,\\s*\\d+]", "");
+
     }
 
     public static String mappingsToString(ASTDiff next) {

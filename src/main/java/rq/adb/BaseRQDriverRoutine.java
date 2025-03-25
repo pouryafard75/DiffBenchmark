@@ -19,9 +19,7 @@ public record BaseRQDriverRoutine(HumanReadableDiffFilter[] filters) implements 
 
     @Override
     public void run(IExperiment[] confs) throws Exception {
-//        Map<IExperiment, Collection<? extends BaseDiffComparisonResult>> results = new LinkedHashMap<>();
         for (IExperiment experiment : confs) {
-
             for (HumanReadableDiffFilter filter : filters) {
                 VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(
                         experiment,
@@ -29,10 +27,8 @@ public record BaseRQDriverRoutine(HumanReadableDiffFilter[] filters) implements 
                         filterDuringMetricsCalculation
                 );
                 Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-//                results.put(experiment, stats);
                 MetricsCsvWriter.exportToCSV(stats, getCsvFilePath(filter, filterDuringMetricsCalculation, experiment), true, folder);
             }
         }
-//        return results;
     }
 }

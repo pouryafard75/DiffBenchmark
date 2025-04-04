@@ -44,6 +44,8 @@ public class MappingOffsetTranslator extends AbstractOffsetTranslator {
                 Mapping translated = new Mapping(srcSub, dstSub);
                 if (!isBetweenDifferentTypes(translated)) {
                     mappings.addMapping(translated.first, translated.second);
+                    ExtendedMultiMappingStore tmp = new ExtendedMultiMappingStore(reference.src.getRoot(), reference.dst.getRoot());
+                    ruleProvider.getRules().forEach(rule -> rule.accept(mapping, translated, tmp));
                     ruleProvider.getRules().forEach(rule -> rule.accept(mapping, translated, mappings));
                 }
                 else

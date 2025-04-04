@@ -37,7 +37,8 @@ public class SpoonWithOffsetTranslation extends Spoon implements ITranslationRul
     }
 
     protected ASTDiff getTranslatedASTDiffWithNoActions() throws Exception {
-        return mappingOffsetTranslator.translate(super.getASTDiff());
+        ASTDiff astDiff = super.getASTDiff();
+        return mappingOffsetTranslator.translate(astDiff);
     }
 
     @Override

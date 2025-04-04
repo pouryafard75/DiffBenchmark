@@ -9,6 +9,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.io.IOException;
+import java.util.Collections;
 
 /* Created by pourya on 2024-11-26*/
 public class OriginalVisitorGumTreeASTDiffProvider extends BaseGumTreeASTDiffProvider {
@@ -29,6 +30,7 @@ public class OriginalVisitorGumTreeASTDiffProvider extends BaseGumTreeASTDiffPro
         this.srcContent = projectASTDiff.getFileContentsBefore().get(input.getSrcPath());
         this.dstContent = projectASTDiff.getFileContentsAfter().get(input.getDstPath());
         setRoots(srcContent, dstContent);
+        System.out.println();
     }
 
 
@@ -45,4 +47,16 @@ public class OriginalVisitorGumTreeASTDiffProvider extends BaseGumTreeASTDiffPro
             throw new RuntimeException(e);
         }
     }
+}
+
+/*
+ * @createdBy John
+ * @version 1.0
+ */
+class Example {
+    void run() {
+        if (1 <= 2) //code comment (modified)
+            Collections.<Integer> emptyList();
+    }
+    //newly added comment
 }

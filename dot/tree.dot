@@ -1,75 +1,46 @@
 digraph G {
-	node [style=filled];
-	subgraph cluster_src {
-		n_src_13 [label="CompilationUnit", color=lightgrey];
-		n_src_12 [label="TypeDeclaration", color=lightgrey];
-		n_src_13 -> n_src_12;
-		n_src_0 [label="TYPE_DECLARATION_KIND: class", color=lightgrey];
-		n_src_12 -> n_src_0;
-		n_src_1 [label="SimpleName: Test", color=lightgrey];
-		n_src_12 -> n_src_1;
-		n_src_11 [label="MethodDeclaration", color=lightgrey];
-		n_src_12 -> n_src_11;
-		n_src_3 [label="SimpleType", color=lightgrey];
-		n_src_11 -> n_src_3;
-		n_src_2 [label="SimpleName: String", color=lightgrey];
-		n_src_3 -> n_src_2;
-		n_src_4 [label="SimpleName: foo", color=lightgrey];
-		n_src_11 -> n_src_4;
-		n_src_7 [label="SingleVariableDeclaration", color=lightgrey];
-		n_src_11 -> n_src_7;
-		n_src_5 [label="PrimitiveType: int", color=lightgrey];
-		n_src_7 -> n_src_5;
-		n_src_6 [label="SimpleName: i", color=lightgrey];
-		n_src_7 -> n_src_6;
-		n_src_10 [label="Block", color=lightgrey];
-		n_src_11 -> n_src_10;
-		n_src_9 [label="ReturnStatement", color=lightgrey];
-		n_src_10 -> n_src_9;
-		n_src_8 [label="StringLiteral:Foo!", color=lightgrey];
-		n_src_9 -> n_src_8;
+	rank = TB;
+
+	// Destination cluster (with light gray fill)
+    subgraph cluster_dst {
+	rank = same;
+	n_dst_13 [label="CompilationUnit", style=filled, fillcolor=lightgray];
+	n_dst_12 [label="TypeDeclaration", style=filled, fillcolor=lightgray];
+	n_dst_13 -> n_dst_12;
+	n_dst_0 [label="TYPE_DECLARATION_KIND: class", style=filled, fillcolor=lightgray];
+	n_dst_12 -> n_dst_0;
+
+	n_dst_1 [label="SimpleName_TypeDeclaration: Test", style=filled, fillcolor=orange];
+	n_dst_12 -> n_dst_1;
+
+	n_dst_11 [label="MethodDeclaration", style=filled, fillcolor=lightgray];
+	n_dst_12 -> n_dst_11;
+
+	n_dst_3 [label="SimpleType", style=filled, fillcolor=lightgray];
+	n_dst_11 -> n_dst_3;
+
+	n_dst_2 [label="SimpleName_SimpleType: String", style=filled, fillcolor=orange];
+	n_dst_3 -> n_dst_2;
+
+	n_dst_4 [label="SimpleName_MethodDec: foo", style=filled, fillcolor=orange];
+	n_dst_11 -> n_dst_4;
+
+	n_dst_7 [label="SingleVariableDeclaration", style=filled, fillcolor=lightgray];
+	n_dst_11 -> n_dst_7;
+
+	n_dst_5 [label="PrimitiveType: int", style=filled, fillcolor=lightgray];
+	n_dst_7 -> n_dst_5;
+
+	n_dst_6 [label="SimpleName_SingleVariableDeclaration: i", style=filled, fillcolor=orange];
+	n_dst_7 -> n_dst_6;
+
+	n_dst_10 [label="Block_MethodDeclaration", style=filled, fillcolor=orange];
+	n_dst_11 -> n_dst_10;
+
+	n_dst_9 [label="ReturnStatement", style=filled, fillcolor=lightgray];
+	n_dst_10 -> n_dst_9;
+
+	n_dst_8 [label="StringLiteral:Foo!", style=filled, fillcolor=lightgray];
+	n_dst_9 -> n_dst_8;
 	}
-	subgraph cluster_dst {
-		n_dst_13 [label="CompilationUnit", color=lightgrey];
-		n_dst_12 [label="TypeDeclaration", color=lightgrey];
-		n_dst_13 -> n_dst_12;
-		n_dst_0 [label="TYPE_DECLARATION_KIND: class", color=lightgrey];
-		n_dst_12 -> n_dst_0;
-		n_dst_1 [label="SimpleName_TypeDeclaration", color=orange];
-		n_dst_12 -> n_dst_1;
-		n_dst_11 [label="MethodDeclaration", color=lightgrey];
-		n_dst_12 -> n_dst_11;
-		n_dst_3 [label="SimpleType", color=lightgrey];
-		n_dst_11 -> n_dst_3;
-		n_dst_2 [label="SimpleName_SimpleType: String", color=orange];
-		n_dst_3 -> n_dst_2;
-		n_dst_4 [label="SimpleName_MethodDec", color=orange];
-		n_dst_11 -> n_dst_4;
-		n_dst_7 [label="SingleVariableDeclaration", color=lightgrey];
-		n_dst_11 -> n_dst_7;
-		n_dst_5 [label="PrimitiveType: int", color=lightgrey];
-		n_dst_7 -> n_dst_5;
-		n_dst_6 [label="SimpleName_SingleVariableDeclaration: i", color=orange];
-		n_dst_7 -> n_dst_6;
-		n_dst_10 [label="Block_MethodDeclaration", color=orange];
-		n_dst_11 -> n_dst_10;
-		n_dst_9 [label="ReturnStatement", color=lightgrey];
-		n_dst_10 -> n_dst_9;
-		n_dst_8 [label="StringLiteral:Foo!", color=lightgrey];
-		n_dst_9 -> n_dst_8;
-	}
-	n_src_0 -> n_dst_0 [style=dashed];
-	n_src_3 -> n_dst_3 [style=dashed];
-	n_src_11 -> n_dst_11 [style=dashed];
-	n_src_5 -> n_dst_5 [style=dashed];
-	n_src_2 -> n_dst_2 [style=dashed];
-	n_src_4 -> n_dst_4 [style=dashed];
-	n_src_10 -> n_dst_10 [style=dashed];
-	n_src_1 -> n_dst_1 [style=dashed];
-	n_src_12 -> n_dst_12 [style=dashed];
-	n_src_6 -> n_dst_6 [style=dashed];
-	n_src_8 -> n_dst_8 [style=dashed];
-	n_src_9 -> n_dst_9 [style=dashed];
-	n_src_7 -> n_dst_7 [style=dashed];
-	n_src_13 -> n_dst_13 [style=dashed];
 }

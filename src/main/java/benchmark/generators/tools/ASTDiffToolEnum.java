@@ -217,6 +217,14 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                 );
                 return new FinalizedSpoon(benchmarkCase, query, configuration);
             }),
+    SPN_S_("Spoon Simple Incompatible (Same matcher configuration as GumTree Simple)",
+            (benchmarkCase, query) -> {
+                DiffConfiguration configuration = makeSpoonCopyConfiguration(
+                        new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.SimpleGumtree()
+                );
+                return new Spoon(benchmarkCase, query, configuration);
+            }),
+
     ;
 
     private static DiffConfiguration makeSpoonCopyConfiguration(shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.CompositeMatcher matcher) {

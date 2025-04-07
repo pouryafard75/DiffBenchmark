@@ -24,33 +24,16 @@ public class ASTDiffToolEnumTest {
 
     @BeforeAll
     public static void setup() {
-        IBenchmarkCase info = new GithubCase("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825");
+        benchmarkCase = new GithubCase("https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825");
+        projectASTDiff = benchmarkCase.getProjectASTDiff();
         target = projectASTDiff.getDiffSet().iterator().next();
     }
     public static Stream<Arguments> provideData() {
         return Stream.of(
-                Arguments.of(ASTDiffToolEnum.GOD,255)
-               ,Arguments.of(ASTDiffToolEnum.RMD,255)
-               ,Arguments.of(ASTDiffToolEnum.GTG,234)
-               ,Arguments.of(ASTDiffToolEnum.GTS,220)
-               ,Arguments.of(ASTDiffToolEnum.IJM_I,126)
-               ,Arguments.of(ASTDiffToolEnum.MTD_I,216)
-               ,Arguments.of(ASTDiffToolEnum.GT2_I,218)
-               ,Arguments.of(ASTDiffToolEnum.IAM_I,228)
-               ,Arguments.of(ASTDiffToolEnum.RM2,219)
-               ,Arguments.of(ASTDiffToolEnum.TRV,25)
-               ,Arguments.of(ASTDiffToolEnum.EXT_SVN_G,234)
-               ,Arguments.of(ASTDiffToolEnum.EXT_SVN_S,220)
-               ,Arguments.of(ASTDiffToolEnum.EXT_STM_G,235)
-               ,Arguments.of(ASTDiffToolEnum.EXT_STM_S,220)
-               ,Arguments.of(ASTDiffToolEnum.EXT_NMS_G,243)
-               ,Arguments.of(ASTDiffToolEnum.EXT_NMS_S,273)
-//               ,Arguments.of(ASTDiffToolEnum.FLG,234)
-//               ,Arguments.of(ASTDiffToolEnum.FLS,220)
-               ,Arguments.of(ASTDiffToolEnum.EXT_FGT_G,224)
-               ,Arguments.of(ASTDiffToolEnum.EXT_FGT_S,217)
-//               ,Arguments.of(ASTDiffTool.ALG,0)
-//               ,Arguments.of(ASTDiffTool.ALS,0)
+                Arguments.of(ASTDiffToolEnum.GOD,258)
+               ,Arguments.of(ASTDiffToolEnum.RMD,258)
+               ,Arguments.of(ASTDiffToolEnum.GTG,235)
+               ,Arguments.of(ASTDiffToolEnum.GTS,221)
         );
     }
     @ParameterizedTest

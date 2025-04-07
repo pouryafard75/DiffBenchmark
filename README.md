@@ -30,7 +30,7 @@ First, clone the [RefactoringMiner](https://github.com/tsantalis/RefactoringMine
 
 Then, you have to update the `REFACTORING_MINER_PATH` in **one** of the following ways:
 
-Update the field `REFACTORING_MINER_PATH` in the `benchmark.utils.Configuration.ExperimentFactory` class to the RefactoringMiner cloned repository path in your hard drive **or** you can have it as env variable **REFACTORING_MINER_PATH**.
+Update the field `REFACTORING_MINER_PATH` in the `benchmark.conf.Paths` class to the RefactoringMiner cloned repository path in your hard drive **or** you can have it as env variable **REFACTORING_MINER_PATH**.
 
 Import DiffBenchmark as a gradle project in your IDE, or run `./gradlew jar` to build.
 

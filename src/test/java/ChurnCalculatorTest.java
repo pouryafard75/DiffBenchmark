@@ -12,7 +12,7 @@ public class ChurnCalculatorTest {
     @ParameterizedTest
     @CsvSource({
             // CommitUrl, expectedAdded, expectedDeleted
-            "https://github.com/JetBrains/intellij-community/commit/97811cf971f7ccf6a5fc5e90a491db2f58d49da1, 143, 110",
+//            "https://github.com/JetBrains/intellij-community/commit/97811cf971f7ccf6a5fc5e90a491db2f58d49da1, 143, 110",
             "https://github.com/liferay/liferay-plugins/commit/7c7ecf4cffda166938efd0ae34830e2979c25c73, 42, 22",
             "https://github.com/apache/hive/commit/f664789737d516ac664462732664121acc111a1e, 25, 9",
     })

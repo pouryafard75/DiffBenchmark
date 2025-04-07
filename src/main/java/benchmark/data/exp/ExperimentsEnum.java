@@ -2,10 +2,10 @@ package benchmark.data.exp;
 
 import benchmark.data.dataset.EBenchmarkDataset;
 import benchmark.data.dataset.IBenchmarkDataset;
+import benchmark.generators.hrd.GenerationStrategy;
 import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.ASTDiffProviderForBenchmark;
 import benchmark.generators.tools.models.IASTDiffTool;
-import benchmark.generators.hrd.GenerationStrategy;
 import benchmark.models.IGenerationStrategy;
 
 import java.util.Set;
@@ -150,6 +150,16 @@ public enum ExperimentsEnum implements IExperiment {
             "hrd-oracle/adb-paper/literature-exp/",
             "out.csv",
             "literature-exp",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+    SPOON_EXP(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            Set.of(ASTDiffToolEnum.SPN_T),
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/SPOON-exp/",
+            "out.csv",
+            "spoon-exp",
             ASTDiffToolEnum.TRV,
             ASTDiffToolEnum.GOD))
     ,

@@ -1,9 +1,10 @@
 package benchmark.metrics.computers.refactoring;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.diffcase.GithubCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.models.IASTDiffTool;
+import benchmark.metrics.computers.filters.FilterUtils;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import benchmark.metrics.computers.filters.QueryBasedHumanReadableDiffFilter;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
@@ -11,8 +12,8 @@ import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.metrics.models.RefactoringSpecificComparisonResult;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.models.HumanReadableDiff;
+import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.models.hrd.HumanReadableDiff;
 import com.fasterxml.jackson.databind.JsonNode;
 import gr.uom.java.xmi.decomposition.AbstractCodeMapping;
 import gr.uom.java.xmi.diff.*;
@@ -31,10 +32,9 @@ import java.util.stream.Collectors;
 
 import static benchmark.conf.Paths.FINALIZED_REFACTORING_MINER_PATH;
 import static benchmark.metrics.computers.vanilla.HRDBenchmarkComputer.compareHumanReadableDiffs;
-import static benchmark.utils.Helpers.runWhatever;
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 import static benchmark.utils.PathResolver.fileNameAsFolder;
-import static rq.Utils.mergeStats;
+import static rq.rm3.Utils.mergeStats;
 
 /* Created by pourya on 2023-11-29 9:01 a.m. */
 public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
@@ -98,17 +98,17 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     public Collection<? extends BaseDiffComparisonResult> compute() throws IOException {
         //todo:
         Collection<RefactoringSpecificComparisonResult> result = new ArrayList<>();
-        for (BenchmarkCase info : this.getExperiment().getDataset().getCases()) {
+        for (IBenchmarkCase info : this.getExperiment().getDataset().getCases()) {
             result.addAll(compute(info));
         }
         return result;
     }
 
     @Override
-    public Collection<RefactoringSpecificComparisonResult> compute(BenchmarkCase info) throws IOException {
+    public Collection<RefactoringSpecificComparisonResult> compute(IBenchmarkCase info) throws IOException {
         logger.info("Computing for " + info.getRepo() + " " + info.getCommit());
         Collection<RefactoringSpecificComparisonResult> result = new ArrayList<>();
-        ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+        ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
         for (Refactoring refactoring : projectASTDiff.getRefactorings()) {
             if (!acceptedRefactoringTypes.contains(refactoring.getRefactoringType())) continue;
             boolean moveRelated = false;
@@ -162,7 +162,7 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
         Collection<CodeRange> leftRanges = ranges.leftRanges();
         Collection<CodeRange> rightRanges = ranges.rightRanges();
         Collection<BaseDiffComparisonResult> benchmarkStats = new ArrayList<>();
-        BenchmarkCase info = refactoringSpecificComparisonResult.getCaseInfo();
+        IBenchmarkCase info = refactoringSpecificComparisonResult.getCaseInfo();
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(getExperiment().getOutputFolder() + folderPath  + "/");
         //Since the HRD folders, are named based on the srcFile (leftFile), There is nothing to process regarding the rightFileName;
@@ -192,19 +192,19 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
      * <h> However based on my later experiments, I found out that the godFinalizedHRD can be beneficial in some cases such as {@link RefactoringWiseBenchmarkComputer}. So, I decided to return the god tool's HumanReadableDiff </h>
      */
     protected HumanReadableDiff populateComparisonResults(BaseDiffComparisonResult baseDiffComparisonResult, Path dirPath, HumanReadableDiffFilter filter) throws IOException {
-        String godFullPath = dirPath.resolve(ASTDiffTool.GOD.name() + ".json").toString();
+        String godFullPath = dirPath.resolve(ASTDiffToolEnum.GOD.name() + ".json").toString();
         HumanReadableDiff originalGodHRD = getMapper().readValue(new File(godFullPath), HumanReadableDiff.class);
         HumanReadableDiff godHRDFinalized = filter.make(originalGodHRD, originalGodHRD);
         for (IASTDiffTool tool : getExperiment().getTools()) {
-            if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV))
+            if (tool.equals(ASTDiffToolEnum.GOD) || tool.equals(ASTDiffToolEnum.TRV))
                 continue;
             String toolPath = tool.getToolName();
-            String toolFullPath = godFullPath.replace(ASTDiffTool.GOD.name(), toolPath);
+            String toolFullPath = godFullPath.replace(ASTDiffToolEnum.GOD.name(), toolPath);
             HumanReadableDiff toolHRD;
             toolHRD = getMapper().readValue(new File(toolFullPath), HumanReadableDiff.class);
             DiffStats diffStats;
             HumanReadableDiff toolHRDFinalized = filter.make(toolHRD, godHRDFinalized);
-            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, getMappingsTypeFilter());
+            diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, getCalculationFilter());
             baseDiffComparisonResult.putStats(toolPath, diffStats);
         }
         setIgnore(godFullPath, baseDiffComparisonResult, filter);
@@ -212,10 +212,10 @@ public class RefactoringWiseBenchmarkComputer extends VanillaBenchmarkComputer {
     }
 
     protected void setIgnore(String godFullPath, BaseDiffComparisonResult baseDiffComparisonResult, HumanReadableDiffFilter filter) throws IOException {
-        String ignorePath = godFullPath.replace(ASTDiffTool.GOD.name(), ASTDiffTool.TRV.name());
+        String ignorePath = godFullPath.replace(ASTDiffToolEnum.GOD.name(), ASTDiffToolEnum.TRV.name());
         HumanReadableDiff diffIgnore =  getMapper().readValue(new File(ignorePath), HumanReadableDiff.class);
         diffIgnore = filter.make(diffIgnore, HumanReadableDiff.makeEmpty());
-        baseDiffComparisonResult.setIgnore(getMappingsTypeFilter().apply(diffIgnore));
+        baseDiffComparisonResult.setIgnore(FilterUtils.apply(diffIgnore, getCalculationFilter()));
     }
 
     private static RefactoringRanges makeCodeRangesAssociatedWithRefactoring(Refactoring refactoring) {

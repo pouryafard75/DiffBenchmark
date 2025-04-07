@@ -1,13 +1,13 @@
 package benchmark.metrics.models;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 
 import java.io.FileWriter;
 
 /* Created by pourya on 2023-12-04 2:23 p.m. */
 public class CommitPerfectionComparisonResult extends BaseDiffComparisonResult {
 
-    CommitPerfectionComparisonResult(BenchmarkCase caseInfo) {
+    CommitPerfectionComparisonResult(IBenchmarkCase caseInfo) {
         super(caseInfo);
     }
 

@@ -1,9 +1,11 @@
 package benchmark.generators.tools.runners.shaded;
 
 import at.aau.softwaredynamics.matchers.MatcherFactory;
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.generators.tools.runners.trivial.TrivialDiff;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
+
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.actions.Diff;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
@@ -11,7 +13,6 @@ import com.github.gumtreediff.matchers.MappingStore;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import shaded.com.github.gumtreediff.gen.TreeGenerator;
 import shaded.com.github.gumtreediff.matchers.Mapping;
@@ -25,13 +26,10 @@ import static benchmark.generators.tools.runners.Utils.mirrorTree;
 
 /* Created by pourya on 2023-04-17 8:10 p.m. */
 public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDiffProviderFromProjectASTDiff {
-    protected AbstractASTDiffProviderFromIncompatibleTree(ProjectASTDiff projectASTDiff, ASTDiff rmAstDiff) {
-        super(projectASTDiff, rmAstDiff);
+    public AbstractASTDiffProviderFromIncompatibleTree(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
+        super(benchmarkCase, querySelector);
     }
 
-    public AbstractASTDiffProviderFromIncompatibleTree(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
-        super(projectASTDiff, input, info);
-    }
 
     public abstract Class<? extends shaded.com.github.gumtreediff.matchers.Matcher> getMatcherType();
     public abstract shaded.com.github.gumtreediff.gen.TreeGenerator getGeneratorType();
@@ -103,7 +101,7 @@ public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDif
         return decision;
     }
 
-    public ASTDiff makeASTDiff() throws Exception {
+    public ASTDiff getASTDiff() throws Exception {
         Diff diff = this.diff();
         return diffToASTDiffWithActions(diff, this.input.getSrcPath(), this.input.getDstPath());
     }
@@ -119,10 +117,10 @@ public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDif
         mappings.add(diff.mappings);
         return new ASTDiff(srcPath, dstPath, diff.src, diff.dst, mappings);
     }
-    ASTDiff diffWithTrivialAddition(BenchmarkCase info) throws Exception {
+    ASTDiff diffWithTrivialAddition() throws Exception {
         Diff diff = this.diff();
         ASTDiff astDiff = diffToASTDiffNoAction(diff, this.input.getSrcPath(), this.input.getDstPath());
-        ExtendedMultiMappingStore trv = new TrivialDiff(this.projectASTDiff, this.input, info).makeASTDiff().getAllMappings();
+        ExtendedMultiMappingStore trv = ASTDiffToolEnum.TRV.diff(benchmarkCase,querySelector).getAllMappings();
         for (com.github.gumtreediff.matchers.Mapping mapping : trv) {
             astDiff.getAllMappings().addMapping(mapping.first, mapping.second);
         }

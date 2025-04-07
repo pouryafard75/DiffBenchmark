@@ -1,21 +1,20 @@
 package benchmark.metrics.models;
 
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 
 import java.io.FileWriter;
-import java.util.Map;
 
 /* Created by pourya on 2023-04-03 4:47 a.m. */
 public class FileDiffComparisonResult extends BaseDiffComparisonResult {
     final String srcFileName;
     boolean onFly = false;
 
-    public FileDiffComparisonResult(BenchmarkCase caseInfo, String srcFileName) {
+    public FileDiffComparisonResult(IBenchmarkCase caseInfo, String srcFileName) {
         super(caseInfo);
         this.srcFileName = srcFileName;
     }
-    public FileDiffComparisonResult(BenchmarkCase caseInfo, String srcFileName, boolean onFly) {
+    public FileDiffComparisonResult(IBenchmarkCase caseInfo, String srcFileName, boolean onFly) {
         super(caseInfo);
         this.srcFileName = srcFileName;
         this.onFly = onFly;

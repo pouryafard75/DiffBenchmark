@@ -1,7 +1,7 @@
 package benchmark.metrics.computers.violation.models;
 
 import benchmark.metrics.computers.violation.modifier.ModifierKind;
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ASTDiff;
@@ -32,7 +32,7 @@ public enum ViolationKind
     SIMPLE_NAME((mapping, tool, perfect) -> {
         boolean baseCondition = SimpleNameGeneralLogic(mapping);
         if (!baseCondition) return false;
-        if (tool.equals(ASTDiffTool.GT2) || tool.equals(ASTDiffTool.IJM) || tool.equals(ASTDiffTool.MTD)) {
+        if (tool.equals(ASTDiffToolEnum.GT2_I) || tool.equals(ASTDiffToolEnum.IJM_I) || tool.equals(ASTDiffToolEnum.MTD_I)) {
             return GT2_SIMPLE_NAME_LOGIC(mapping, perfect);
         }
         return !havingSameParentsType().test(mapping);

@@ -1,8 +1,7 @@
 package benchmark.metrics.computers.violation.models;
 
 import benchmark.data.exp.IExperiment;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 
 import java.util.*;
@@ -14,7 +13,7 @@ public class ViolationReport {
     ViolationReport(ViolationKind violationKind, IExperiment experiment) {
         this.violationKind = violationKind;
         for (IASTDiffTool tool : experiment.getTools()) {
-            if (tool.equals(ASTDiffTool.GOD) || tool.equals(ASTDiffTool.TRV)) continue; // GOD and TRV are not considered
+            if (tool.equals(ASTDiffToolEnum.GOD) || tool.equals(ASTDiffToolEnum.TRV)) continue; // GOD and TRV are not considered
             violations.put(tool, new LinkedHashSet<>());
         }
     }

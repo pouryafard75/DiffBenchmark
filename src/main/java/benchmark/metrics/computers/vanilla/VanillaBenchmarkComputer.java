@@ -1,11 +1,12 @@
 package benchmark.metrics.computers.vanilla;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.BaseBenchmarkComputer;
+import benchmark.metrics.computers.filters.CalculationFilter;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
-import benchmark.metrics.computers.filters.MappingsLocationFilter;
-import benchmark.metrics.computers.filters.MappingsTypeFilter;
+import benchmark.metrics.computers.filters.FilterDuringGeneration;
+import benchmark.metrics.computers.filters.FilterDuringMetricsCalculation;
 import benchmark.metrics.models.BaseDiffComparisonResult;
 import benchmark.metrics.models.FileDiffComparisonResult;
 
@@ -22,7 +23,7 @@ import static benchmark.utils.PathResolver.*;
 /* Created by pourya on 2023-11-29 2:05 a.m. */
 public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
     private final HumanReadableDiffFilter humanReadableDiffFilter;
-    private final MappingsTypeFilter mappingsTypeFilter;
+    private final FilterDuringMetricsCalculation filterDuringMetricsCalculation;
     private boolean onFly = false;
 
     public void setOnFly(boolean onFly) {
@@ -31,32 +32,32 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
 
     public VanillaBenchmarkComputer(IExperiment exp,
                                     HumanReadableDiffFilter humanReadableDiffFilter,
-                                    MappingsTypeFilter mappingsTypeFilter)
+                                    FilterDuringMetricsCalculation filterDuringMetricsCalculation)
     {
         super(exp);
         this.humanReadableDiffFilter = humanReadableDiffFilter;
-        this.mappingsTypeFilter = mappingsTypeFilter;
+        this.filterDuringMetricsCalculation = filterDuringMetricsCalculation;
     }
     public VanillaBenchmarkComputer(IExperiment exp)
     {
-        this(exp, MappingsLocationFilter.NO_FILTER.getFilter(), MappingsTypeFilter.NO_FILTER);
+        this(exp, FilterDuringGeneration.NO_FILTER.getFilter(), FilterDuringMetricsCalculation.NO_FILTER);
     }
     public HumanReadableDiffFilter getHumanReadableDiffFilter() {
         return humanReadableDiffFilter;
     }
-    public MappingsTypeFilter getMappingsTypeFilter() {
-        return mappingsTypeFilter;
+    public CalculationFilter getCalculationFilter() {
+        return filterDuringMetricsCalculation;
     }
     public Collection<? extends BaseDiffComparisonResult> compute() throws IOException {
         Collection<BaseDiffComparisonResult> stats = new ArrayList<>();
-        for (BenchmarkCase info : getExperiment().getDataset().getCases()) {
+        for (IBenchmarkCase info : getExperiment().getDataset().getCases()) {
             stats.addAll(compute(info));
         }
         return stats;
     }
 
     @Override
-    public Collection<? extends BaseDiffComparisonResult> compute(BenchmarkCase info) throws IOException {
+    public Collection<? extends BaseDiffComparisonResult> compute(IBenchmarkCase info) throws IOException {
         Collection<BaseDiffComparisonResult> benchmarkStats = new ArrayList<>();
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(getExperiment().getOutputFolder() + folderPath  + "/");
@@ -64,7 +65,7 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
         List<Path> paths = getPaths(dir, 1);
         for (Path dirPath : paths) {
             BenchmarkComparisonInput read = BenchmarkComparisonInput.read(getExperiment(), info, dirPath.getFileName().toString());
-            HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(humanReadableDiffFilter, mappingsTypeFilter, read);
+            HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(humanReadableDiffFilter, filterDuringMetricsCalculation, read);
             BaseDiffComparisonResult baseDiffComparisonResult = getBaseDiffComparisonResult(info, dirPath);
             hrdBenchmarkComputer.compute(baseDiffComparisonResult);
             benchmarkStats.add(baseDiffComparisonResult);
@@ -73,9 +74,9 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
         return benchmarkStats;
     }
 
-    private BaseDiffComparisonResult getBaseDiffComparisonResult(BenchmarkCase info, Path dirPath) throws IOException {
+    private BaseDiffComparisonResult getBaseDiffComparisonResult(IBenchmarkCase info, Path dirPath) throws IOException {
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString(), onFly);
-        new HRDBenchmarkComputer(getHumanReadableDiffFilter(), getMappingsTypeFilter(),
+        new HRDBenchmarkComputer(getHumanReadableDiffFilter(), getCalculationFilter(),
                 BenchmarkComparisonInput.read(this.getExperiment(), info, dirPath.getFileName().toString()))
                 .compute(baseDiffComparisonResult);
         return baseDiffComparisonResult;

@@ -26,33 +26,34 @@ public class BaseTrivialDiff extends BaseASTDiffProvider {
         this.condition = condition;
     }
 
-    public ASTDiff makeASTDiff() {
-        return null; //TODO:
-//        MappingStore mappings = new GreedySubtreeMatcher() {
-//            @Override
-//            public void filterMappings(MultiMappingStore multiMappings) {
-//                Set<Tree> ignored = new HashSet<>();
-//                for (var src : multiMappings.allMappedSrcs()) {
-//                    var isMappingUnique = false;
-//                    if (multiMappings.isSrcUnique(src)) {
-//                        var dst = multiMappings.getDsts(src).stream().findAny().get();
-//                        if (multiMappings.isDstUnique(dst)) {
-//                            addMappingRecursively(mappings, src, dst);
-//                        }
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            protected void retainBestMapping(List<Mapping> mappingList, Set<Tree> srcIgnored, Set<Tree> dstIgnored) {
-//                //Do nothing in case of multiple candidates
-//            }
-//        }.match(input.src.getRoot(), input.dst.getRoot());
-//        ExtendedMultiMappingStore extendedMultiMappingStore = new ExtendedMultiMappingStore(input.src.getRoot(), input.dst.getRoot());
-//        extendedMultiMappingStore.add(mappings);
-//        ASTDiff astDiff = new ASTDiff(input.getSrcPath(), input.getDstPath(), input.src, input.dst, extendedMultiMappingStore);
-//        astDiff.computeVanillaEditScript();
-//        return astDiff;
+
+    @Override
+    public ASTDiff getASTDiff() {
+        MappingStore mappings = new GreedySubtreeMatcher() {
+            @Override
+            public void filterMappings(MultiMappingStore multiMappings) {
+                Set<Tree> ignored = new HashSet<>();
+                for (var src : multiMappings.allMappedSrcs()) {
+                    var isMappingUnique = false;
+                    if (multiMappings.isSrcUnique(src)) {
+                        var dst = multiMappings.getDsts(src).stream().findAny().get();
+                        if (multiMappings.isDstUnique(dst)) {
+                            addMappingRecursively(mappings, src, dst);
+                        }
+                    }
+                }
+            }
+
+            @Override
+            protected void retainBestMapping(List<Mapping> mappingList, Set<Tree> srcIgnored, Set<Tree> dstIgnored) {
+                //Do nothing in case of multiple candidates
+            }
+        }.match(input.src.getRoot(), input.dst.getRoot());
+        ExtendedMultiMappingStore extendedMultiMappingStore = new ExtendedMultiMappingStore(input.src.getRoot(), input.dst.getRoot());
+        extendedMultiMappingStore.add(mappings);
+        ASTDiff astDiff = new ASTDiff(input.getSrcPath(), input.getDstPath(), input.src, input.dst, extendedMultiMappingStore);
+        astDiff.computeVanillaEditScript();
+        return astDiff;
     }
 
     public void setCondition(Predicate<Mapping> condition) {

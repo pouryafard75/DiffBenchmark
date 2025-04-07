@@ -1,21 +1,22 @@
 package benchmark.generators.hrd;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.models.AbstractMapping;
-import benchmark.models.HumanReadableDiff;
-import benchmark.models.NecessaryMappings;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
+import benchmark.metrics.computers.filters.NoFilter;
+import benchmark.models.hrd.AbstractMapping;
+import benchmark.models.hrd.HumanReadableDiff;
+import benchmark.models.hrd.NecessaryMappings;
 import benchmark.utils.PathResolver;
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.actions.model.TreeAddition;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
-import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.actions.model.MoveIn;
 import org.refactoringminer.astDiff.actions.model.MoveOut;
+import org.refactoringminer.astDiff.models.ASTDiff;
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.Constants;
-
 
 import java.io.File;
 import java.util.*;
@@ -29,27 +30,37 @@ public abstract class HumanReadableDiffGenerator {
     private final Map<String, String> fileContentsBefore;
     private final Map<String, String> fileContentsCurrent;
     private final ASTDiff astDiff;
-    private final HumanReadableDiff result;
+    private final HumanReadableDiffFilter generationFilter;
+
+    private HumanReadableDiff result;
+
+    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, ASTDiff current) {
+        this(benchmarkCase, current, new NoFilter());
+    }
+    public HumanReadableDiffGenerator(IBenchmarkCase benchmarkCase, ASTDiff current, HumanReadableDiffFilter filter) {
+        //TODO
+        this.repo = benchmarkCase.getRepo();
+        this.commit = benchmarkCase.getCommit();
+        ProjectASTDiff projectASTDiff = benchmarkCase.getProjectASTDiff();
+        this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
+        this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
+        this.astDiff = current;
+        this.generationFilter = filter;
+        result = new HumanReadableDiff();
+        make();
+    }
 
     public HumanReadableDiff getResult() {
         return result;
     }
 
-    public HumanReadableDiffGenerator(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
-        this.repo = info.getRepo();
-        this.commit = info.getCommit();
-        this.fileContentsBefore = projectASTDiff.getFileContentsBefore();
-        this.fileContentsCurrent = projectASTDiff.getFileContentsAfter();
-        this.astDiff = generated;
-        result = new HumanReadableDiff();
-        make();
-    }
 
     private void make(){
         List<Mapping> mappings = new ArrayList<>(getAstDiff().getAllMappings().getMappings());
         mappings.sort(Comparator.comparingInt(o -> o.first.getPos()));
         for (Mapping mapping : mappings ) {
-            if (isPartOf(mapping, Constants.JAVA_DOC)) continue;
+            //Note: It might be extremely useful to have this information in the future
+            if (isPartOf(mapping, Constants.JAVA_DOC) || isPartOf(mapping, Constants.LINE_COMMENT) || isPartOf(mapping, Constants.BLOCK_COMMENT)) continue;
             if (isBetweenDifferentTypes(mapping)) {
 //                throw new RuntimeException();
 //                System.out.println("");
@@ -59,7 +70,7 @@ public abstract class HumanReadableDiffGenerator {
             makeForEachMapping(mappingMetaInformation);
         }
         extractMultiCollection(); //TODO: the result of this call?
-
+        result = generationFilter.make(result, result);
     }
 
     private Set<Mapping> extractMultiCollection() {
@@ -176,18 +187,34 @@ public abstract class HumanReadableDiffGenerator {
         }
     }
 
-    public static void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
+    public void addAccordingly(AbstractMapping abstractMapping, NecessaryMappings target) {
 //        if (abstractMapping.getLeftType().equals(Constants.COMPILATION_UNIT)) return;
         if (isProgramElement(abstractMapping.getLeftType()))
             target.getMatchedElements().add(abstractMapping);
         else
             target.getMappings().add(abstractMapping);
     }
-    public static boolean isProgramElement(String leftType) {
-        return leftType.equals(Constants.TYPE_DECLARATION) ||
-                leftType.equals(Constants.METHOD_DECLARATION) ||
-                leftType.equals(Constants.FIELD_DECLARATION) ||
-                leftType.equals(Constants.ENUM_DECLARATION);
+    public static boolean isBlock(String type) {
+        return type.equals(Constants.BLOCK);
+    }
+    public static boolean isProgramElement(String type) {
+        String implicitTypeDeclaration = "ImplicitTypeDeclaration"; //This constant is not defined in the Constants class of the RM project
+        return type.equals(Constants.TYPE_DECLARATION) ||
+                type.equals(Constants.METHOD_DECLARATION) ||
+                type.equals(Constants.FIELD_DECLARATION) ||
+                type.equals(Constants.ENUM_DECLARATION) ||
+                type.equals(Constants.RECORD_DECLARATION) ||
+                type.equals(Constants.ANNOTATION_TYPE_DECLARATION) ||
+                type.equals(implicitTypeDeclaration);
+    }
+    public static boolean isImport(String type) {
+        return type.equals(Constants.IMPORT_DECLARATION);
+    }
+    public static boolean isPackageDecl(String type) {
+        return type.equals(Constants.PACKAGE_DECLARATION);
+    }
+    public static boolean isComment(String name) {
+        return name.equals(Constants.BLOCK_COMMENT) || name.equals(Constants.LINE_COMMENT);
     }
     public static boolean isBetweenDifferentTypes(Mapping mapping) {
         return !mapping.first.getType().name.equals(mapping.second.getType().name);
@@ -208,6 +235,8 @@ public abstract class HumanReadableDiffGenerator {
         {
             Tree srcLast = getParentUntilType(mapping.first,Constants.COMPILATION_UNIT);
             Tree dstLast = getParentUntilType(mapping.second,Constants.COMPILATION_UNIT);
+            if (srcLast == null || dstLast == null)
+                throw new RuntimeException("Something unexpected");
             if (!srcLast.equals(src) || !dstLast.equals(dst))
                 return true;
         }

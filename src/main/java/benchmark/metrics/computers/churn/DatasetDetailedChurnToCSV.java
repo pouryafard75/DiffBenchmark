@@ -1,7 +1,6 @@
 package benchmark.metrics.computers.churn;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gui.webdiff.dir.DirComparator;
@@ -15,7 +14,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import static benchmark.metrics.computers.churn.ChurnCalculator.*;
-import static benchmark.utils.Helpers.runWhatever;
 
 /* Created by pourya on 2023-08-30 8:54 p.m. */
 public class DatasetDetailedChurnToCSV {
@@ -28,8 +26,8 @@ public class DatasetDetailedChurnToCSV {
         ArrayList<String> lines = new ArrayList<>();
         int i = 0;
         String delimiter = "\t";
-        for (BenchmarkCase info : experiment.getDataset().getCases()) {
-            ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+        for (IBenchmarkCase info : experiment.getDataset().getCases()) {
+            ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
 //            if (projectASTDiff.getDiffSet().size() > 2 ) continue;
             String url = info.getID();
             int addedInModifiedFiles = 0;

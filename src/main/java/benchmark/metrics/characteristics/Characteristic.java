@@ -1,19 +1,20 @@
 package benchmark.metrics.characteristics;
 
 import benchmark.data.dataset.IBenchmarkDataset;
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.metrics.computers.churn.ChurnCalculator;
-import benchmark.data.exp.ExperimentConfiguration;
+import com.github.gumtreediff.actions.model.Action;
 import org.apache.commons.lang3.function.TriFunction;
 import org.apache.commons.lang3.tuple.Pair;
+import org.refactoringminer.astDiff.actions.model.MoveIn;
+import org.refactoringminer.astDiff.actions.model.MoveOut;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 
-import static benchmark.generators.tools.ASTDiffTool.GOD;
-import static benchmark.utils.Helpers.runWhatever;
+import static benchmark.generators.tools.ASTDiffToolEnum.GOD;
 
 /* Created by pourya on 2024-07-01*/
 public enum Characteristic {
@@ -26,12 +27,12 @@ public enum Characteristic {
                             (projectASTDiff.getRefactorings().isEmpty()) ? number.intValue() : number.intValue() + 1)),
     NUM_OF_CASES_WITH_MULTI_MAPPINGS(
             benchmarkDataset -> eachCaseIterator(benchmarkDataset,
-                    (projectASTDiff, info, number) -> {
+                    (projectASTDiff, benchmarkCase, number) -> {
                         boolean hasMultiMappings = false;
                         for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
                             ASTDiff diff = null;
                             try {
-                                diff = GOD.diff(projectASTDiff, astDiff, info);
+                                diff = GOD.diff(benchmarkCase, (x) -> astDiff);
                             } catch (Exception e) {
                                 throw new RuntimeException(e);
                             }
@@ -51,24 +52,47 @@ public enum Characteristic {
         });
         return result;
     })),
+    NUM_OF_CASES_WITH_INTER_FILE_MAPPINGS(
+            benchmarkDataset -> eachCaseIterator(benchmarkDataset,
+                    (projectASTDiff, benchmarkCase, number) -> {
+                        boolean hasInterFilers = false;
+                        for (ASTDiff astDiff : projectASTDiff.getDiffSet()) {
+                            ASTDiff diff = null;
+                            try {
+                                diff = GOD.diff(benchmarkCase, (x) -> astDiff);
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                            for (Action action : diff.editScript) {
+                                if (action instanceof MoveIn || action instanceof MoveOut) {
+                                    hasInterFilers = true;
+                                    break;
+                                }
+                            }
+                            if (hasInterFilers) {
+                                break;
+                            }
+                        }
+                        return hasInterFilers ? number.intValue() + 1 : number.intValue();
+                    })),
     ;
 
-    private static Number eachCaseIterator(IBenchmarkDataset benchmarkDataset, TriFunction<ProjectASTDiff, BenchmarkCase, Number, Number> consumer) {
+    private static Number eachCaseIterator(IBenchmarkDataset benchmarkDataset, TriFunction<ProjectASTDiff, IBenchmarkCase, Number, Number> consumer) {
         Number number = 0;
-        for (BenchmarkCase info : benchmarkDataset.getCases()) {
-            ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+        for (IBenchmarkCase info : benchmarkDataset.getCases()) {
+            ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
             number = consumer.apply(projectASTDiff, info, number);
         }
         return number;
     }
 
-    private final Function<IBenchmarkDataset, Number> executor;
+    private final Function<IBenchmarkDataset, Object> executor;
 
-    Characteristic(Function<IBenchmarkDataset, Number> executor) {
+    Characteristic(Function<IBenchmarkDataset, Object> executor) {
         this.executor = executor;
     }
 
-    public Number getNumber(IBenchmarkDataset experimentConfiguration) {
+    public Object getResult(IBenchmarkDataset experimentConfiguration) {
         return executor.apply(experimentConfiguration);
     }
 
@@ -76,9 +100,9 @@ public enum Characteristic {
         float totalLeft = 0.0f;
         float totalRight = 0.0f;
         int commitCount = 0;
-        for (BenchmarkCase info : benchmarkDataset.getCases()) {
-            System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
-            ProjectASTDiff projectASTDiff = runWhatever(info.getRepo(), info.getCommit());
+        for (IBenchmarkCase info : benchmarkDataset.getCases()) {
+//            System.out.println("Processing: " + info.getRepo() + " " + info.getCommit());
+            ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
             Pair<Float, Float> floatFloatPair = ChurnCalculator.calculateRelativeAddDeleteChurn
                     (projectASTDiff, false, false);
             float leftChurn = floatFloatPair.getLeft();

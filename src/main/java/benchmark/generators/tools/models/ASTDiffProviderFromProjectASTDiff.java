@@ -1,8 +1,8 @@
 package benchmark.generators.tools.models;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.tree.TreeContext;
-import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.Map;
@@ -12,16 +12,15 @@ public abstract class ASTDiffProviderFromProjectASTDiff extends BaseASTDiffProvi
     protected final ProjectASTDiff projectASTDiff;
     protected final Map<String, TreeContext> ptc;
     protected final Map<String, TreeContext> ctc;
-    protected final BenchmarkCase info;
+    protected final IBenchmarkCase benchmarkCase;
+    protected final DiffSelector querySelector;
 
-    protected ASTDiffProviderFromProjectASTDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
-        super(input);
-        this.projectASTDiff = projectASTDiff;
+    public ASTDiffProviderFromProjectASTDiff(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
+        super(querySelector.apply(benchmarkCase.getProjectASTDiff()));
+        this.projectASTDiff = benchmarkCase.getProjectASTDiff();
         this.ptc = projectASTDiff.getParentContextMap();
         this.ctc = projectASTDiff.getChildContextMap();
-        this.info = info;
-    }
-    protected ASTDiffProviderFromProjectASTDiff(ProjectASTDiff projectASTDiff, ASTDiff input) {
-        this(projectASTDiff, input, null);
+        this.benchmarkCase = benchmarkCase;
+        this.querySelector = querySelector;
     }
 }

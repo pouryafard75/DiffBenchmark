@@ -1,0 +1,46 @@
+digraph G {
+	rank = TB;
+
+	// Destination cluster (with light gray fill)
+    subgraph cluster_dst {
+	rank = same;
+	n_dst_13 [label="CompilationUnit", style=filled, fillcolor=lightgray];
+	n_dst_12 [label="TypeDeclaration", style=filled, fillcolor=lightgray];
+	n_dst_13 -> n_dst_12;
+	n_dst_0 [label="TYPE_DECLARATION_KIND: class", style=filled, fillcolor=lightgray];
+	n_dst_12 -> n_dst_0;
+
+	n_dst_1 [label="SimpleName_TypeDeclaration: Test", style=filled, fillcolor=orange];
+	n_dst_12 -> n_dst_1;
+
+	n_dst_11 [label="MethodDeclaration", style=filled, fillcolor=lightgray];
+	n_dst_12 -> n_dst_11;
+
+	n_dst_3 [label="SimpleType", style=filled, fillcolor=lightgray];
+	n_dst_11 -> n_dst_3;
+
+	n_dst_2 [label="SimpleName_SimpleType: String", style=filled, fillcolor=orange];
+	n_dst_3 -> n_dst_2;
+
+	n_dst_4 [label="SimpleName_MethodDec: foo", style=filled, fillcolor=orange];
+	n_dst_11 -> n_dst_4;
+
+	n_dst_7 [label="SingleVariableDeclaration", style=filled, fillcolor=lightgray];
+	n_dst_11 -> n_dst_7;
+
+	n_dst_5 [label="PrimitiveType: int", style=filled, fillcolor=lightgray];
+	n_dst_7 -> n_dst_5;
+
+	n_dst_6 [label="SimpleName_SingleVariableDeclaration: i", style=filled, fillcolor=orange];
+	n_dst_7 -> n_dst_6;
+
+	n_dst_10 [label="Block_MethodDeclaration", style=filled, fillcolor=orange];
+	n_dst_11 -> n_dst_10;
+
+	n_dst_9 [label="ReturnStatement", style=filled, fillcolor=lightgray];
+	n_dst_10 -> n_dst_9;
+
+	n_dst_8 [label="StringLiteral:Foo!", style=filled, fillcolor=lightgray];
+	n_dst_9 -> n_dst_8;
+	}
+}

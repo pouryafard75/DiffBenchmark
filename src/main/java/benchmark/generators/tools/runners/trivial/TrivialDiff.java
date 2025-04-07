@@ -1,13 +1,11 @@
 package benchmark.generators.tools.runners.trivial;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.exp.IExperiment;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.data.exp.ExperimentConfiguration;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import java.util.Set;
@@ -19,10 +17,10 @@ public class TrivialDiff extends BaseTrivialDiff {
 
     private ExtendedMultiMappingStore perfectMappings = null;
 
-    public TrivialDiff(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
-        super(input);
+    public TrivialDiff(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
+        super(querySelector.apply(benchmarkCase.getProjectASTDiff()));
         try {
-            perfectMappings = ASTDiffTool.GOD.diff(projectASTDiff, input, info).getAllMappings();
+            perfectMappings = ASTDiffToolEnum.GOD.diff(benchmarkCase, querySelector).getAllMappings();
         } catch (Exception e) {
 //            e.printStackTrace();
         }
@@ -34,6 +32,7 @@ public class TrivialDiff extends BaseTrivialDiff {
             if (!IdenticalProgramElementsDiffBaseTrivialDiff.mappingPredicate.test(mapping)) return false;
             if (perfectMappings == null) return true;
             Set<Tree> dsts = perfectMappings.getDsts(mapping.first);
+            if (dsts == null) return true;
             return (dsts.contains(mapping.second));
         };
         this.setCondition(predicate);

@@ -1,7 +1,7 @@
 package benchmark.metrics.models;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.models.HumanReadableDiff;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.models.hrd.HumanReadableDiff;
 import org.refactoringminer.api.Refactoring;
 import org.refactoringminer.api.RefactoringType;
 
@@ -14,7 +14,7 @@ public class RefactoringSpecificComparisonResult extends BaseDiffComparisonResul
     final RefactoringType refactoringType;
     private HumanReadableDiff godFinalizedHRD;
 
-    public RefactoringSpecificComparisonResult(BenchmarkCase caseInfo, Refactoring refactoring) {
+    public RefactoringSpecificComparisonResult(IBenchmarkCase caseInfo, Refactoring refactoring) {
         super(caseInfo);
         this.refactoring = refactoring;
         this.refactoringType = refactoring.getRefactoringType();

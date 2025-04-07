@@ -1,6 +1,6 @@
 package benchmark;
 
-import benchmark.data.exp.EExperiment;
+import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.vanilla.VanillaBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
@@ -19,12 +19,12 @@ public class Runner {
             consumer.accept(new BenchmarkHumanReadableDiffGenerator(exp));
             VanillaBenchmarkComputer computer = new VanillaBenchmarkComputer(exp);
             Collection<? extends BaseDiffComparisonResult> stats = computer.compute();
-            MetricsCsvWriter.exportToCSV(stats, exp.getOutputFolder() + exp.getName() + ".csv", true);
+            MetricsCsvWriter.exportToCSV(stats, exp.getOutputFolder() + exp.getName() + ".csv", true, "out/");
         }
     }
 
     public static void main(String[] args) throws Exception {
-        run(Set.of(EExperiment.REF_EXP_3_0), false,
+        run(Set.of(ExperimentsEnum.REF_EXP_3_0), false,
                 benchmarkHumanReadableDiffGenerator -> {
                     try {
                         benchmarkHumanReadableDiffGenerator.generateMultiThreaded();

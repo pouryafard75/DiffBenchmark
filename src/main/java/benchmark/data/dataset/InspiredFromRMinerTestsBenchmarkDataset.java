@@ -1,7 +1,7 @@
 package benchmark.data.dataset;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.data.diffcase.GithubCase;
+import benchmark.data.diffcase.AbstractIBenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -10,11 +10,14 @@ import java.nio.file.Path;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /* Created by pourya on 2024-09-28*/
 public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchmarkDataset {
     final String perfectInfoName = "cases.json";
     final String problematicInfoName = "cases-problematic.json";
+    protected Predicate<IBenchmarkCase> filter = c -> true;
 
     private final String perfectDiffDir;
 
@@ -28,20 +31,20 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
     }
 
     @Override
-    public Set<? extends BenchmarkCase> getCases() {
+    public Set<? extends IBenchmarkCase> getCases() {
         return makeAllCases(getTypeReference(),
                 getPerfectDirPath().resolve(perfectInfoName),
                 getPerfectDirPath().resolve(problematicInfoName)
         );
     }
 
-    public abstract TypeReference<? extends Set<? extends BenchmarkCase>> getTypeReference();
+    protected abstract TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> getTypeReference();
 
-    Set<? extends BenchmarkCase> makeAllCases(TypeReference<? extends Set<? extends BenchmarkCase>> valueTypeRef, Path... casesPath) {
+    Set<? extends IBenchmarkCase> makeAllCases(TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> valueTypeRef, Path... casesPath) {
         ObjectMapper mapper = new ObjectMapper();
-        Set<BenchmarkCase> allCases = new TreeSet<>(Comparator.comparing(BenchmarkCase::getID));
+        Set<AbstractIBenchmarkCase> allCases = new TreeSet<>(Comparator.comparing(IBenchmarkCase::getID));
         for (Path path : casesPath) {
-            Set<GithubCase> loaded;
+            Set<? extends AbstractIBenchmarkCase> loaded;
             try {
                 loaded = mapper.readValue(path.toFile(), valueTypeRef);
             } catch (IOException e) {
@@ -49,9 +52,10 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
             }
             allCases.addAll(loaded);
         }
-        for (BenchmarkCase allCase : allCases) {
-            allCase.setDataset(this);
+        for (AbstractIBenchmarkCase aCase : allCases) {
+            aCase.setDataset(this);
         }
+        allCases = allCases.stream().filter(filter).collect(Collectors.toSet());
         return allCases;
     }
 }

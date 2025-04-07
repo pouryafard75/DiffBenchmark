@@ -18,24 +18,26 @@ import static spark.Spark.get;
 /* Created by pourya on 2024-05-03*/
 public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
     VANILLA(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getNameInURL() + "/" + id)).content(tool.getToolName()),
-            (tool, astDiffs, projectASTDiff) -> get("/" + tool + "/:id" , (request, response) -> {
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "/" + id)).content(tool.getShortName()),
+            (tool, astDiffs, projectASTDiff) -> get("/" + tool.getShortName() + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new VanillaDiffView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                        astDiff, id, projectASTDiff.getDiffSet().size(),  "", false,
+                VanillaDiffView vanillaDiffView = new VanillaDiffView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                        astDiff, id, projectASTDiff.getDiffSet().size(), "", false,
                         projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
                         projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()), false);
-                return renderToString(view);
+                return renderToString(vanillaDiffView);
             })
     ),
     MONACO(
-            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getNameInURL() + "-monaco/" + id)).content(tool.getToolName() + "-monaco"),
-            (tool, astDiffs, projectASTDiff) -> get("/" + tool + "-monaco/:id" , (request, response) -> {
+            (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "-monaco/" + id)).content(tool.getShortName() + "-monaco"),
+            (tool, astDiffs, projectASTDiff) -> get("/" + tool.getShortName() + "-monaco/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
                 Renderable view = new MonacoView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                        astDiff, id, projectASTDiff.getDiffSet().size(), "", false);
+                        astDiff, id, projectASTDiff.getDiffSet().size(), "", false,
+                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()));
                 return renderToString(view);
             })
     )

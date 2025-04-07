@@ -1,6 +1,6 @@
 package benchmark.utils;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,7 +69,7 @@ public class PathResolver {
                 .filter(path -> path.getNameCount() - dir.getNameCount() >= minDepth)
                 .collect(Collectors.toList());
     }
-    public static String exportedFolderPathByCaseInfo(BenchmarkCase info) {
+    public static String exportedFolderPathByCaseInfo(IBenchmarkCase info) {
         return repoFolder(info.getRepo()) +  "/" + info.getCommit();
     }
 }

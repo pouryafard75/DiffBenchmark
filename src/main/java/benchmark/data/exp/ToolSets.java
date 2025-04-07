@@ -1,35 +1,155 @@
 package benchmark.data.exp;
 
-import benchmark.generators.tools.ASTDiffTool;
+import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.generators.tools.models.IASTDiffTool;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 /* Created by pourya on 2024-09-29*/
 public enum ToolSets implements Set<IASTDiffTool> {
+    PERFECTION_BATTLE(
+            Set.of(
+                    ASTDiffToolEnum.RMD,
+                    ASTDiffToolEnum.GOD)
+    ),
     THREE_ZERO_COMPATIBLE(
             Set.of(
-                    ASTDiffTool.RMD,
-                    ASTDiffTool.GTG,
-                    ASTDiffTool.GTS)
+                    ASTDiffToolEnum.RMD,
+                    ASTDiffToolEnum.GTG,
+                    ASTDiffToolEnum.GTS)
     ),
     TWO_ONE_COMPATIBLE(
                 Set.of(
-                        ASTDiffTool.RMD,
-                        ASTDiffTool.GTG,
-                        ASTDiffTool.GTS,
-                        ASTDiffTool.IJM,
-                        ASTDiffTool.MTD,
-                        ASTDiffTool.GT2)
+                        ASTDiffToolEnum.RMD,
+                        ASTDiffToolEnum.GTG,
+                        ASTDiffToolEnum.GTS,
+                        ASTDiffToolEnum.IJM_I,
+                        ASTDiffToolEnum.MTD_I,
+                        ASTDiffToolEnum.GT2_I)
     ),
+    BIG_GUNS(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.RMD);
+                add(ASTDiffToolEnum.GTG);
+                add(ASTDiffToolEnum.GTS);
+            }}
+    ),
+    CUSTOM_LITERATURE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.IAM_I);
+            }}
+    ),
+    LITERATURE_TOOLS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.GT2_I);
+                add(ASTDiffToolEnum.IJM_I);
+                add(ASTDiffToolEnum.MTD_I);
+                add(ASTDiffToolEnum.IAM_I);
+            }}
+    ),
+    INTERFILE_EXTENSION_BATTLE_TOOLS(
+            new LinkedHashSet<>(){{
+//                add(ASTDiffToolEnum.GTG);
+//                add(ASTDiffToolEnum.GTS);
+                add(ASTDiffToolEnum.EXT_SVN_G);
+                add(ASTDiffToolEnum.EXT_SVN_S);
+                add(ASTDiffToolEnum.EXT_STM_G);
+                add(ASTDiffToolEnum.EXT_STM_S);
+            }}
+    ),
+    MULTI_MAPPING_SEM_BATTLE_TOOLS(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.EXT_NMS_G);
+                add(ASTDiffToolEnum.EXT_NMS_S);
+                add(ASTDiffToolEnum.EXT_FGT_G);
+                add(ASTDiffToolEnum.EXT_FGT_S);
+            }}
+    ),
+    MULTIMAPPING_EXTENSION_BATTLE_TOOLS(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.GTG);
+                add(ASTDiffToolEnum.GTS);
+                add(ASTDiffToolEnum.EXT_NMS_G);
+                add(ASTDiffToolEnum.EXT_NMS_S);
+            }}
+    ),
+    SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.EXT_FGT_G);
+                add(ASTDiffToolEnum.EXT_FGT_S);
+//                add(ASTDiffToolEnum.FTG);
+//                add(ASTDiffToolEnum.FTS);
+            }}
+    ),
+    ARTIFICIAL(
+            new LinkedHashSet<>()
+            {{
+                add(ASTDiffToolEnum.EXT_FGT_STM_NMS_G);
+                add(ASTDiffToolEnum.EXT_FGT_SVN_NMS_G);
+                add(ASTDiffToolEnum.EXT_FGT_STM_NMS_S);
+                add(ASTDiffToolEnum.EXT_FGT_SVN_NMS_S);
+            }}
+    ),
+
+    SPOON_AND_BIG_GUNS(
+            new LinkedHashSet<>(BIG_GUNS){{
+                add(ASTDiffToolEnum.SPN_T);
+            }}
+    ),
+
+    VISITOR_EXP_BATTLE_TOOLS(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.RMD);
+                add(ASTDiffToolEnum.SPN_T);
+                add(ASTDiffToolEnum.SPN_G_T);
+                add(ASTDiffToolEnum.SPN_S_T);
+//                add(ASTDiffToolEnum.GTG);
+//                add(ASTDiffToolEnum.GTS);
+            }}
+    ),
+    ALL(
+        new LinkedHashSet<>(){{
+            add(ASTDiffToolEnum.RMD);
+            add(ASTDiffToolEnum.GTG);
+            add(ASTDiffToolEnum.GTS);
+            add(ASTDiffToolEnum.IJM_T);
+            add(ASTDiffToolEnum.MTD_T);
+            add(ASTDiffToolEnum.GT2_T);
+            add(ASTDiffToolEnum.IAM_T);
+            add(ASTDiffToolEnum.SPN_T);
+            add(ASTDiffToolEnum.SPN_G_T);
+            add(ASTDiffToolEnum.SPN_S_T);
+        }}
+    ),
+
+
+    BeforeAndAfterTranslations(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.IJM_T);
+                add(ASTDiffToolEnum.IJM_I);
+                add(ASTDiffToolEnum.MTD_T);
+                add(ASTDiffToolEnum.MTD_I);
+                add(ASTDiffToolEnum.GT2_T);
+                add(ASTDiffToolEnum.GT2_I);
+                add(ASTDiffToolEnum.IAM_T);
+                add(ASTDiffToolEnum.IAM_I);
+                add(ASTDiffToolEnum.SPN_I);
+                add(ASTDiffToolEnum.SPN_T);
+            }}
+    ),
+
+
+
+
     ;
+
+
+
 
     private final Set<IASTDiffTool> tools;
 
     ToolSets(Set<IASTDiffTool> tools) {
-        this.tools = tools;
+        this.tools = new LinkedHashSet<>(tools);
     }
     ;
 

@@ -1,12 +1,12 @@
 package benchmark.generators.tools.runners.converter;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.generators.tools.models.ASTDiffProviderFromProjectASTDiff;
+import benchmark.models.selector.DiffSelector;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import org.refactoringminer.astDiff.utils.MappingExportModel;
 import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
@@ -16,13 +16,14 @@ import java.util.Map;
 
 /* Created by pourya on 2024-02-20*/
 public abstract class AbstractASTDiffProviderFromExportedMappings extends ASTDiffProviderFromProjectASTDiff {
-    public AbstractASTDiffProviderFromExportedMappings(ProjectASTDiff projectASTDiff, ASTDiff input, BenchmarkCase info) {
-        super(projectASTDiff, input, info);
+    public AbstractASTDiffProviderFromExportedMappings(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
+        super(benchmarkCase, querySelector);
     }
 
     protected abstract List<MappingExportModel> getExportedMappings();
 
-    public ASTDiff makeASTDiff() {
+    @Override
+    public ASTDiff getASTDiff() {
         ASTDiff result = make(getExportedMappings());
         result.computeEditScript(ptc, ctc, new SimplifiedExtendedChawatheScriptGenerator());
         return result;
@@ -31,8 +32,8 @@ public abstract class AbstractASTDiffProviderFromExportedMappings extends ASTDif
     protected ASTDiff make(List<MappingExportModel> exportedMappings){
         return new ASTDiff(this.input.getSrcPath(),
                            this.input.getDstPath(),
-                            input.src,
-                            input.dst,
+                            ptc.get(this.input.getSrcPath()),
+                            ctc.get(this.input.getDstPath()),
                             populateMappingStore(exportedMappings, ptc, ctc)
         );
     }

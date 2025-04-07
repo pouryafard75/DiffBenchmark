@@ -1,14 +1,15 @@
 package benchmark.generators.hrd;
 
-import benchmark.data.diffcase.BenchmarkCase;
-import benchmark.models.AbstractMapping;
-import benchmark.models.NecessaryMappings;
+import benchmark.data.diffcase.IBenchmarkCase;
+import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
+import benchmark.metrics.computers.filters.NoFilter;
+import benchmark.models.hrd.AbstractMapping;
+import benchmark.models.hrd.NecessaryMappings;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ASTDiff;
-import org.refactoringminer.astDiff.models.ProjectASTDiff;
-import org.refactoringminer.astDiff.utils.Constants;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
+import org.refactoringminer.astDiff.utils.Constants;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -17,9 +18,13 @@ import static benchmark.generators.hrd.GeneratorUtils.*;
 
 /* Created by pourya on 2023-09-15 4:26 p.m. */
 public class HRDGen3 extends HumanReadableDiffGenerator {
-    public HRDGen3(ProjectASTDiff projectASTDiff, ASTDiff generated, BenchmarkCase info) {
-        super(projectASTDiff, generated, info);
+    public HRDGen3(IBenchmarkCase benchmarkCase, ASTDiff current) {
+        this(benchmarkCase, current, new NoFilter());
     }
+    public HRDGen3(IBenchmarkCase benchmarkCase, ASTDiff current, HumanReadableDiffFilter humanReadableDiffFilter) {
+        super(benchmarkCase, current, humanReadableDiffFilter);
+    }
+
     @Override
     public void handleTypeDeclaration(MappingMetaInformation mappingMetaInformation) {
         Mapping mapping = mappingMetaInformation.mapping;

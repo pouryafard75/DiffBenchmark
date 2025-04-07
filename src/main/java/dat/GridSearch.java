@@ -1,7 +1,8 @@
 package dat;
 
-import benchmark.data.diffcase.BenchmarkCase;
+import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
+import benchmark.metrics.computers.filters.NoFilter;
 import benchmark.metrics.computers.vanilla.BenchmarkComparisonInput;
 import benchmark.metrics.computers.vanilla.HRDBenchmarkComputer;
 import benchmark.metrics.models.BaseDiffComparisonResult;
@@ -9,8 +10,9 @@ import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
 import benchmark.generators.hrd.HRDGen3;
 import benchmark.generators.hrd.HumanReadableDiffGenerator;
-import benchmark.generators.tools.ASTDiffTool;
-import benchmark.models.NecessaryMappings;
+import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.models.hrd.NecessaryMappings;
+
 import benchmark.utils.PathResolver;
 import com.github.gumtreediff.actions.ChawatheScriptGenerator;
 import com.github.gumtreediff.actions.Diff;
@@ -51,7 +53,7 @@ public class GridSearch {
     private static final int nrthreads = 50;
     private static final long timeout = 1000;
     private static final String PARALLEL_LEVEL = "PROPERTY_LEVEL";
-    private final BenchmarkCase info;
+    private final IBenchmarkCase benchmarkCase;
     private final ProjectASTDiff projectASTDiff;
     private final Tree src;
     private final Tree dst;
@@ -70,9 +72,9 @@ public class GridSearch {
         }
     }
 
-    public GridSearch(BenchmarkCase info, ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, IExperiment experiment)
+    public GridSearch(IBenchmarkCase benchmarkCase, ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, IExperiment experiment)
     {
-        this.info = info;
+        this.benchmarkCase = benchmarkCase;
         this.projectASTDiff = projectASTDiff;
         rmDiff = rm_astDiff;
         this.experiment = experiment;
@@ -132,7 +134,7 @@ public class GridSearch {
             Diff diff = makeDiff(matcher, properties);
             BaseDiffComparisonResult compResult = makeStats(diffToASTDiffWithActions(diff, rmDiff.getSrcPath(), rmDiff.getDstPath()));
 //        logger.debug("Stats has been generated for " + matcher + " " + properties);
-            DiffStats dat = compResult.getDiffStatsList().get(ASTDiffTool.DAT.name());
+            DiffStats dat = compResult.getDiffStatsList().get(ASTDiffToolEnum.DAT.name());
             if (dat == null)
                 throw new RuntimeException("DAT is null");
             NecessaryMappings ignore = compResult.getIgnore().getIntraFileMappings();
@@ -150,7 +152,7 @@ public class GridSearch {
     }
 
     private synchronized void add(Matcher matcher, GumtreeProperties properties, int edSize, int edSizeNonJavaDocs, NecessaryMappings ignore, DiffStats dat) {
-        Intel intel = new Intel(info.getRepo(), info.getCommit(), rmDiff.getSrcPath(),
+        Intel intel = new Intel(benchmarkCase.getRepo(), benchmarkCase.getCommit(), rmDiff.getSrcPath(),
                 matcher.getClass().getCanonicalName().replace("com.github.gumtreediff.matchers.CompositeMatchers.", ""), properties.toString(),
                 edSize, edSizeNonJavaDocs,
                 ignore, dat);
@@ -159,21 +161,17 @@ public class GridSearch {
     }
 
     private BaseDiffComparisonResult makeStats(ASTDiff generated) {
-        HumanReadableDiffGenerator datGen = new HRDGen3(
-                projectASTDiff,
-                generated,
-                info
-        );
+        HumanReadableDiffGenerator datGen = new HRDGen3(benchmarkCase, generated, new NoFilter());
         BenchmarkComparisonInput input;
         try {
-            input = BenchmarkComparisonInput.read(experiment, info, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()));
+            input = BenchmarkComparisonInput.read(experiment, benchmarkCase, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        input.add(ASTDiffTool.DAT, datGen.getResult());
+        input.add(ASTDiffToolEnum.DAT, datGen.getResult());
         input.filterForDat();
         HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(input);
-        BaseDiffComparisonResult fileDiffComparisonResult = new FileDiffComparisonResult(info, rmDiff.getSrcPath());
+        BaseDiffComparisonResult fileDiffComparisonResult = new FileDiffComparisonResult(benchmarkCase, rmDiff.getSrcPath());
         try {
             hrdBenchmarkComputer.compute(fileDiffComparisonResult);
         } catch (IOException e) {
@@ -198,7 +196,7 @@ public class GridSearch {
         catch (Exception e) {
             logger.error("bug3");
             logger.error(properties.toString());
-            logger.error(info.getID());
+            logger.error(benchmarkCase.getID());
             logger.error(rmDiff.getSrcPath());
             logger.error(e.getMessage());
             logger.error("Error in makeDiff", e);

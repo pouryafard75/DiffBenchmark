@@ -5,8 +5,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.util.List;
 
-import static benchmark.generators.hrd.HumanReadableDiffGenerator.isComment;
-import static benchmark.generators.hrd.HumanReadableDiffGenerator.isProgramElement;
+import static benchmark.generators.hrd.HumanReadableDiffGenerator.*;
 
 
 /* Created by pourya on 2025-01-10*/
@@ -26,13 +25,13 @@ public class CommentCorrectorMappingOffsetTranslator extends MappingOffsetTransl
 
         if (!sameEndCandidates.isEmpty() && !sameStartCandidates.isEmpty()) {
             if (sameStartCandidates.size() == 1 && sameEndCandidates.size() == 1){
-                if (isComment(sameStartCandidates.get(0).getType().name) && isComment(sameEndCandidates.get(0).getType().name)){
+                if (isCommentOrJavaDoc(sameStartCandidates.get(0).getType().name) && isCommentOrJavaDoc(sameEndCandidates.get(0).getType().name)){
                     //program element is between the offsets
                     return selectProgramElement(goodRoot.getTreesBetweenPositions(bad.getPos(), bad.getEndPos()));
                 }
             }
             if (sameStartCandidates.size() == 1){
-                if (isComment(sameStartCandidates.get(0).getType().name))
+                if (isCommentOrJavaDoc(sameStartCandidates.get(0).getType().name))
                     return selectProgramElement(sameEndCandidates);
                 else
                 {
@@ -40,7 +39,7 @@ public class CommentCorrectorMappingOffsetTranslator extends MappingOffsetTransl
                 }
             }
             else if (sameEndCandidates.size() == 1){
-                if (isComment(sameEndCandidates.get(0).getType().name))
+                if (isCommentOrJavaDoc(sameEndCandidates.get(0).getType().name))
                     return selectProgramElement(sameStartCandidates);
                 else
                 {

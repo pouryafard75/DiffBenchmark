@@ -216,6 +216,9 @@ public abstract class HumanReadableDiffGenerator {
     public static boolean isComment(String name) {
         return name.equals(Constants.BLOCK_COMMENT) || name.equals(Constants.LINE_COMMENT);
     }
+    public static boolean isCommentOrJavaDoc(String name) {
+        return name.equals(Constants.BLOCK_COMMENT) || name.equals(Constants.LINE_COMMENT) || name.equals(Constants.JAVA_DOC);
+    }
     public static boolean isBetweenDifferentTypes(Mapping mapping) {
         return !mapping.first.getType().name.equals(mapping.second.getType().name);
     }

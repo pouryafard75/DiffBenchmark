@@ -72,7 +72,7 @@ public enum ExperimentsEnum implements IExperiment {
             EBenchmarkDataset.RefOracle,
             ToolSets.INTERFILE_EXTENSION_BATTLE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "hrd-oracle/adb-paper/interfile-exp/",
+            "hrd-oracle/adb-paper/literature-exp/",
             "out.csv",
             "interfile-exp",
             ASTDiffToolEnum.TRV,
@@ -82,7 +82,7 @@ public enum ExperimentsEnum implements IExperiment {
             EBenchmarkDataset.RefOracle,
             ToolSets.MULTIMAPPING_EXTENSION_BATTLE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "hrd-oracle/adb-paper/multimapping-exp/",
+            "hrd-oracle/adb-paper/literature-exp/",
             "out.csv",
             "multimapping-exp",
             ASTDiffToolEnum.TRV,
@@ -104,7 +104,7 @@ public enum ExperimentsEnum implements IExperiment {
             EBenchmarkDataset.RefOracle,
             ToolSets.SEMANTIC_VIOLATION_EXTENSION_BATTLE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "hrd-oracle/adb-paper/semantic-exp/",
+            "hrd-oracle/adb-paper/literature-exp/",
             "out.csv",
             "semantic-exp",
             ASTDiffToolEnum.TRV,
@@ -126,7 +126,7 @@ public enum ExperimentsEnum implements IExperiment {
             EBenchmarkDataset.RefOracle,
             ToolSets.VISITOR_EXP_BATTLE_TOOLS,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
-            "hrd-oracle/adb-paper/visitors-exp/",
+            "hrd-oracle/adb-paper/literature-exp/",
             "out.csv",
             "visitor-exp",
             ASTDiffToolEnum.TRV,
@@ -153,9 +153,32 @@ public enum ExperimentsEnum implements IExperiment {
             ASTDiffToolEnum.TRV,
             ASTDiffToolEnum.GOD))
     ,
+
+    SINGLE_CASE(new ExperimentImpl(
+            EBenchmarkDataset.RefOracleSingleCase,
+                   ToolSets.ALL,
+                   GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/literature-exp/",
+                           "out.csv",
+                           "literature-exp",
+                   ASTDiffToolEnum.TRV,
+                   ASTDiffToolEnum.GOD))
+    ,
+
     SPOON_EXP(new ExperimentImpl(
             EBenchmarkDataset.RefOracle,
             Set.of(ASTDiffToolEnum.SPN_T),
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/SPOON-exp/",
+            "out.csv",
+            "spoon-exp",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
+
+    ADB_PAPER_FULL(new ExperimentImpl(
+            EBenchmarkDataset.RefOracle,
+            ToolSets.ADB_PAPER_FULL,
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "hrd-oracle/adb-paper/SPOON-exp/",
             "out.csv",

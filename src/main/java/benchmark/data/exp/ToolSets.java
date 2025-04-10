@@ -77,8 +77,6 @@ public enum ToolSets implements Set<IASTDiffTool> {
             new LinkedHashSet<>(){{
                 add(ASTDiffToolEnum.EXT_FGT_G);
                 add(ASTDiffToolEnum.EXT_FGT_S);
-//                add(ASTDiffToolEnum.FTG);
-//                add(ASTDiffToolEnum.FTS);
             }}
     ),
     ARTIFICIAL(
@@ -99,12 +97,9 @@ public enum ToolSets implements Set<IASTDiffTool> {
 
     VISITOR_EXP_BATTLE_TOOLS(
             new LinkedHashSet<>(){{
-                add(ASTDiffToolEnum.RMD);
                 add(ASTDiffToolEnum.SPN_T);
                 add(ASTDiffToolEnum.SPN_G_T);
                 add(ASTDiffToolEnum.SPN_S_T);
-//                add(ASTDiffToolEnum.GTG);
-//                add(ASTDiffToolEnum.GTS);
             }}
     ),
     ALL(
@@ -121,7 +116,31 @@ public enum ToolSets implements Set<IASTDiffTool> {
             add(ASTDiffToolEnum.SPN_S_T);
         }}
     ),
-
+    ADB_PAPER_FULL(
+            new LinkedHashSet<>(){{
+                add(ASTDiffToolEnum.RMD);
+                add(ASTDiffToolEnum.GTG);
+                add(ASTDiffToolEnum.GTS);
+                add(ASTDiffToolEnum.IJM_T);
+                add(ASTDiffToolEnum.MTD_T);
+                add(ASTDiffToolEnum.GT2_T);
+                add(ASTDiffToolEnum.IAM_T);
+                add(ASTDiffToolEnum.SPN_G_T);
+                add(ASTDiffToolEnum.SPN_S_T);
+                add(ASTDiffToolEnum.EXT_SVN_G);
+                add(ASTDiffToolEnum.EXT_SVN_S);
+                add(ASTDiffToolEnum.EXT_STM_G);
+                add(ASTDiffToolEnum.EXT_STM_S);
+                add(ASTDiffToolEnum.EXT_NMS_G);
+                add(ASTDiffToolEnum.EXT_NMS_S);
+                add(ASTDiffToolEnum.EXT_FGT_G);
+                add(ASTDiffToolEnum.EXT_FGT_S);
+                add(ASTDiffToolEnum.EXT_FGT_STM_G);
+                add(ASTDiffToolEnum.EXT_FGT_STM_S);
+                add(ASTDiffToolEnum.EXT_FGT_SVN_G);
+                add(ASTDiffToolEnum.EXT_FGT_SVN_S);
+            }}
+    ),
 
     BeforeAndAfterTranslations(
             new LinkedHashSet<>(){{

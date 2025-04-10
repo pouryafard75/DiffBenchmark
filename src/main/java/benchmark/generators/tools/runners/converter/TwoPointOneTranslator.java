@@ -15,6 +15,7 @@ public class TwoPointOneTranslator implements ASTDiffProvider, ITranslationRuleP
         try {
             this.mappingOffsetTranslator = new TypeStrictMappingOffsetTranslator(ref, this);
         } catch (Exception e) {
+            System.err.println(e.getMessage());
             throw new RuntimeException(e);
         }
     }

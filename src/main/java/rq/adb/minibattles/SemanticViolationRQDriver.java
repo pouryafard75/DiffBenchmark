@@ -20,9 +20,10 @@ public class SemanticViolationRQDriver {
 
     public static void main(String[] args) throws Exception {
         new BaseRQDriverRoutine(FILTERS, Set.of(
-                ASTDiffToolEnum.SPN_T,
-                ASTDiffToolEnum.SPN_S_T,
-                ASTDiffToolEnum.SPN_G_T))
+//                ASTDiffToolEnum.SPN_T,
+//                ASTDiffToolEnum.SPN_S_T,
+//                ASTDiffToolEnum.SPN_G_T
+        ))
         .run(new IExperiment[]{exp});
     }
 }

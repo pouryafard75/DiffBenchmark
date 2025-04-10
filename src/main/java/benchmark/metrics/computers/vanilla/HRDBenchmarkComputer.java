@@ -1,6 +1,7 @@
 package benchmark.metrics.computers.vanilla;
 
 import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.DiffMetricsComputer;
 import benchmark.metrics.computers.filters.*;
 import benchmark.metrics.models.BaseDiffComparisonResult;
@@ -12,6 +13,7 @@ import benchmark.models.hrd.NecessaryMappings;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 
 /* Created by pourya on 2024-01-27*/
@@ -33,7 +35,7 @@ public class HRDBenchmarkComputer {
 
 
 
-    public void compute(BaseDiffComparisonResult baseDiffComparisonResult) throws IOException {
+    public void compute(BaseDiffComparisonResult baseDiffComparisonResult, Set<IASTDiffTool> diffIgnoreGuards) throws IOException {
         HumanReadableDiff godHRDFinalized = this.humanReadableDiffFilter.make(benchmarkComparisonInput.getOriginalGODHRD(), benchmarkComparisonInput.getOriginalGODHRD());
         for (Map.Entry<ASTDiffToolEnum, HumanReadableDiff> astDiffToolHumanReadableDiffEntry : benchmarkComparisonInput.getRawHRDMap().entrySet()) {
             ASTDiffToolEnum tool = astDiffToolHumanReadableDiffEntry.getKey();
@@ -42,7 +44,7 @@ public class HRDBenchmarkComputer {
             DiffStats diffStats = compareHumanReadableDiffs(godHRDFinalized, toolHRDFinalized, filterDuringMetricsCalculation);
             baseDiffComparisonResult.putStats(tool.name(), diffStats);
         }
-        setIgnore(baseDiffComparisonResult);
+        setIgnore(baseDiffComparisonResult, diffIgnoreGuards);
 //        return godHRDFinalized;
     }
 
@@ -51,7 +53,7 @@ public class HRDBenchmarkComputer {
         return new DiffStats(diffMetricsComputer.programElementStats(), diffMetricsComputer.mappingStats());
     }
 
-    private void setIgnore(BaseDiffComparisonResult baseDiffComparisonResult) {
+    private void setIgnore(BaseDiffComparisonResult baseDiffComparisonResult, Set<IASTDiffTool> diffIgnoreGuards) {
         HumanReadableDiff diffIgnore = this.humanReadableDiffFilter.make(benchmarkComparisonInput.getOriginalTRVHRD(), HumanReadableDiff.makeEmpty());
         diffIgnore = FilterUtils.apply(diffIgnore, filterDuringMetricsCalculation);
         HumanReadableDiff prune = prune(diffIgnore);

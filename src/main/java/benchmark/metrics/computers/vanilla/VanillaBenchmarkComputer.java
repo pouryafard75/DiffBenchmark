@@ -2,6 +2,7 @@ package benchmark.metrics.computers.vanilla;
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.metrics.computers.BaseBenchmarkComputer;
 import benchmark.metrics.computers.filters.CalculationFilter;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
@@ -16,6 +17,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import static benchmark.utils.PathResolver.*;
 
@@ -25,6 +28,12 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
     private final HumanReadableDiffFilter humanReadableDiffFilter;
     private final FilterDuringMetricsCalculation filterDuringMetricsCalculation;
     private boolean onFly = false;
+
+    public Set<IASTDiffTool> diffIgnoreGuards = Set.of();
+
+    public void setDiffIgnoreGuards(Set<IASTDiffTool> diffIgnoreGuards) {
+        this.diffIgnoreGuards = diffIgnoreGuards;
+    }
 
     public void setOnFly(boolean onFly) {
         this.onFly = onFly;
@@ -61,24 +70,32 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
         Collection<BaseDiffComparisonResult> benchmarkStats = new ArrayList<>();
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(getExperiment().getOutputFolder() + folderPath  + "/");
-//        System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
+        System.out.println("Generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
         List<Path> paths = getPaths(dir, 1);
         for (Path dirPath : paths) {
-            BenchmarkComparisonInput read = BenchmarkComparisonInput.read(getExperiment(), info, dirPath.getFileName().toString());
-            HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(humanReadableDiffFilter, filterDuringMetricsCalculation, read);
+//            BenchmarkComparisonInput read = BenchmarkComparisonInput.read(getExperiment(), info, dirPath.getFileName().toString());
+//            HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(humanReadableDiffFilter, filterDuringMetricsCalculation, read);
             BaseDiffComparisonResult baseDiffComparisonResult = getBaseDiffComparisonResult(info, dirPath);
-            hrdBenchmarkComputer.compute(baseDiffComparisonResult);
+//            hrdBenchmarkComputer.compute(baseDiffComparisonResult);
             benchmarkStats.add(baseDiffComparisonResult);
         }
         System.out.println("Finished generating benchmark stats for " + info.getRepo() + " " + info.getCommit());
+        polishStats(benchmarkStats, getExperiment());
         return benchmarkStats;
+    }
+
+    private void polishStats(Collection<BaseDiffComparisonResult> benchmarkStats, IExperiment experiment) {
+        for (BaseDiffComparisonResult benchmarkStat : benchmarkStats) {
+            Set<String> collect = experiment.getTools().stream().map(IASTDiffTool::getShortName).collect(Collectors.toSet());
+            benchmarkStat.getDiffStatsList().keySet().retainAll(collect);
+        }
     }
 
     private BaseDiffComparisonResult getBaseDiffComparisonResult(IBenchmarkCase info, Path dirPath) throws IOException {
         BaseDiffComparisonResult baseDiffComparisonResult = new FileDiffComparisonResult(info, dirPath.getFileName().toString(), onFly);
         new HRDBenchmarkComputer(getHumanReadableDiffFilter(), getCalculationFilter(),
-                BenchmarkComparisonInput.read(this.getExperiment(), info, dirPath.getFileName().toString()))
-                .compute(baseDiffComparisonResult);
+                BenchmarkComparisonInput.read(this.getExperiment(), info, dirPath.getFileName().toString(), diffIgnoreGuards))
+                .compute(baseDiffComparisonResult, diffIgnoreGuards);
         return baseDiffComparisonResult;
     }
 }

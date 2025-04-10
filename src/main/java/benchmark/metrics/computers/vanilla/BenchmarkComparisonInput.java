@@ -3,6 +3,7 @@ package benchmark.metrics.computers.vanilla;
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import benchmark.generators.tools.ASTDiffToolEnum;
+import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.models.hrd.HumanReadableDiff;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,8 +14,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.EnumMap;
-import java.util.Map;
+import java.util.*;
 
 import static benchmark.utils.PathResolver.exportedFolderPathByCaseInfo;
 
@@ -43,18 +43,19 @@ BenchmarkComparisonInput {
 //        removeUnnecessaryHRDs();
     }
 
-    public static BenchmarkComparisonInput read(IExperiment experiment, IBenchmarkCase info, String fileName) throws IOException {
+    public static BenchmarkComparisonInput read(IExperiment experiment, IBenchmarkCase info, String fileName, Set<IASTDiffTool> diffIgnoreGuards) throws IOException {
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(experiment.getOutputFolder() + folderPath + "/");
-        return readDir(dir.resolve(fileName), experiment);
+        HashSet<IASTDiffTool> withGuard = new HashSet<>(experiment.getTools());
+        withGuard.addAll(diffIgnoreGuards);
+        return readDir(dir.resolve(fileName), withGuard);
     }
-    public static BenchmarkComparisonInput readDir(Path finalPath, IExperiment experiment) throws IOException {
+    public static BenchmarkComparisonInput readDir(Path finalPath, Set<IASTDiffTool> tools) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_CONTROL_CHARS, true);
 
         HumanReadableDiff god = null, trv = null;
         Map<ASTDiffToolEnum, HumanReadableDiff> hrds = new EnumMap<>(ASTDiffToolEnum.class);
-
 
         try (DirectoryStream<Path> directoryStream = Files.newDirectoryStream(finalPath)) {
             for (Path filePath : directoryStream) {
@@ -69,14 +70,15 @@ BenchmarkComparisonInput {
                         break;
                     default:
                         ASTDiffToolEnum astDiffTool = ASTDiffToolEnum.valueOf(toolName);
-                        if (experiment.getTools().stream().toList().contains(astDiffTool))
+                        if (tools.contains(astDiffTool))
                             hrds.put(astDiffTool, hrd);
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (god == null || trv == null) throw new RuntimeException("GOD or TRV cannot be null");
+        if (god == null || trv == null)
+            throw new RuntimeException("GOD or TRV cannot be null");
         return new BenchmarkComparisonInput(hrds, god, trv);
     }
 

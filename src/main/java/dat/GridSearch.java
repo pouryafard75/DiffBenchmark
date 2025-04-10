@@ -164,7 +164,7 @@ public class GridSearch {
         HumanReadableDiffGenerator datGen = new HRDGen3(benchmarkCase, generated, new NoFilter());
         BenchmarkComparisonInput input;
         try {
-            input = BenchmarkComparisonInput.read(experiment, benchmarkCase, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()));
+            input = BenchmarkComparisonInput.read(experiment, benchmarkCase, PathResolver.fileNameAsFolder(rmDiff.getSrcPath()), Set.of());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -173,7 +173,7 @@ public class GridSearch {
         HRDBenchmarkComputer hrdBenchmarkComputer = new HRDBenchmarkComputer(input);
         BaseDiffComparisonResult fileDiffComparisonResult = new FileDiffComparisonResult(benchmarkCase, rmDiff.getSrcPath());
         try {
-            hrdBenchmarkComputer.compute(fileDiffComparisonResult);
+            hrdBenchmarkComputer.compute(fileDiffComparisonResult, Set.of());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

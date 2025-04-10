@@ -7,6 +7,7 @@ import benchmark.generators.tools.models.IASTDiffTool;
 import benchmark.generators.tools.runners.IASTMapper;
 import benchmark.generators.tools.runners.converter.*;
 import benchmark.generators.tools.runners.extensions.combined.ModifierInterConservativeMulti;
+import benchmark.generators.tools.runners.extensions.combined.ModifierInterNoMulti;
 import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.extensions.interfile.ProjectGumTreeOptimizer;
 import benchmark.generators.tools.runners.extensions.interfile.SingleVirtualNodeMatching;
@@ -138,17 +139,17 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                     new CopyPaste(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    EXT_FGT_G("FineGrainedTypesWithGreedy", (benchmarkCase, query) ->
+    EXT_FGT_G("EXT_FGT_G", (benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new BlockAndSimpleNameModifier(),
                     new CompositeMatchers.ClassicGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    EXT_FGT_S("FineGrainedTypesWithSimple",(benchmarkCase, query) ->
+    EXT_FGT_S("EXT_FGT_S",(benchmarkCase, query) ->
             new GumTreeWithTreeModifier(
                     new BlockAndSimpleNameModifier(),
                     new CompositeMatchers.SimpleGumtree(), query.apply(benchmarkCase.getProjectASTDiff())))
     ,
-    EXT_FGT_STM_NMS_G("P1G", ((benchmarkCase, query) ->
+    EXT_FGT_STM_NMS_G("EXT_FGT_STM_NMS_G", ((benchmarkCase, query) ->
             new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
@@ -157,35 +158,81 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                             benchmarkCase,
                             query,
                             new CompositeMatchers.ClassicGumtree())))),
-    EXT_FGT_SVN_NMS_G("P2G", ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
+    EXT_FGT_SVN_NMS_G("EXT_FGT_SVN_NMS_G", ((benchmarkCase, query) ->
+//            new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
                             new SingleVirtualNodeMatching(),
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
                             query,
-                            new CompositeMatchers.ClassicGumtree()))))
-    ,
-    EXT_FGT_STM_NMS_S("P1S", ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
+                            new CompositeMatchers.ClassicGumtree())
+//            )
+    )),
+    EXT_FGT_SVN_G("EXT_FGT_SVN_G", ((benchmarkCase, query) ->
+//            new ProjectGumTreeOptimizer(
+            new ModifierInterNoMulti(
+                    new BlockAndSimpleNameModifier(),
+                    new SingleVirtualNodeMatching(),
+                    benchmarkCase,
+                    query,
+                    new CompositeMatchers.ClassicGumtree())
+//            )
+    )),
+    EXT_FGT_STM_G("EXT_FGT_STM_G", ((benchmarkCase, query) ->
+//            new ProjectGumTreeOptimizer(
+            new ModifierInterNoMulti(
+                    new BlockAndSimpleNameModifier(),
+                    new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
+                    benchmarkCase,
+                    query,
+                    new CompositeMatchers.ClassicGumtree())
+//            )
+    )),
+    EXT_FGT_STM_NMS_S("EXT_FGT_STM_NMS_S", ((benchmarkCase, query) ->
+//            new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
                             new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
                             query,
-                            new CompositeMatchers.SimpleGumtree())))),
-    EXT_FGT_SVN_NMS_S("P2S", ((benchmarkCase, query) ->
-            new ProjectGumTreeOptimizer(
+                            new CompositeMatchers.SimpleGumtree())
+//            )
+    )),
+    EXT_FGT_SVN_NMS_S("EXT_FGT_SVN_NMS_S", ((benchmarkCase, query) ->
+//            new ProjectGumTreeOptimizer(
                     new ModifierInterConservativeMulti(
                             new BlockAndSimpleNameModifier(),
                             new SingleVirtualNodeMatching(),
                             new NonMatchedSubtreesAdditionalRound(),
                             benchmarkCase,
                             query,
-                            new CompositeMatchers.SimpleGumtree()))))
-    ,
+                            new CompositeMatchers.SimpleGumtree())
+//            )
+    )),
+    EXT_FGT_SVN_S("EXT_FGT_SVN_S", ((benchmarkCase, query) ->
+//            new ProjectGumTreeOptimizer(
+            new ModifierInterNoMulti(
+                    new BlockAndSimpleNameModifier(),
+                    new SingleVirtualNodeMatching(),
+                    benchmarkCase,
+                    query,
+                    new CompositeMatchers.SimpleGumtree())
+//            )
+    )),
+    EXT_FGT_STM_S("EXT_FGT_STM_S", ((benchmarkCase, query) ->
+//            new ProjectGumTreeOptimizer(
+            new ModifierInterNoMulti(
+                    new BlockAndSimpleNameModifier(),
+                    new StagedTreeMatching(benchmarkCase.getProjectASTDiff()),
+                    benchmarkCase,
+                    query,
+                    new CompositeMatchers.SimpleGumtree())
+//            )
+    )),
+
+
     SPN_I("Original Spoon (Incompatible)", Spoon::new),
 
     SPN___("Spoon Compatible (Before applying translation rules)", (benchmarkCase, query) -> new SpoonWithOffsetTranslation(benchmarkCase, query, false)),
@@ -202,7 +249,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                 return new FinalizedSpoon(benchmarkCase, query, configuration);
             }),
 
-    SPN_G_("Spoon Greedy Incompatible (Same matcher configuration as GumTree Greedy)",
+    SPN_G_I("Spoon Greedy Incompatible (Same matcher configuration as GumTree Greedy)",
             (benchmarkCase, query) -> {
                 DiffConfiguration configuration = makeSpoonCopyConfiguration(
                         new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.ClassicGumtree()
@@ -217,7 +264,7 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
                 );
                 return new FinalizedSpoon(benchmarkCase, query, configuration);
             }),
-    SPN_S_("Spoon Simple Incompatible (Same matcher configuration as GumTree Simple)",
+    SPN_S_I("Spoon Simple Incompatible (Same matcher configuration as GumTree Simple)",
             (benchmarkCase, query) -> {
                 DiffConfiguration configuration = makeSpoonCopyConfiguration(
                         new shadedspoon.com.github.gumtreediff.matchers.CompositeMatchers.SimpleGumtree()

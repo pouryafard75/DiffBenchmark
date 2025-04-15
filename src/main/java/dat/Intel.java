@@ -64,7 +64,7 @@ public class Intel {
     @Column(name = "ni") int ni;
     @Column(name = "nd") int nd;
     @Column(name = "nu") int nu;
-    @Column(name = "ni") int nm;
+    @Column(name = "nm") int nm;
     @Column(name = "n_sum") int n_sum;
 
 

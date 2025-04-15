@@ -35,7 +35,7 @@ public class MakeIntel {
                     intels.addAll(dat.run(numThreads));
                 }
                 intelDao.insertIntels(intels);
-                 if (case_count == 2) break; //TODO: REMOVE THIS
+//                 if (case_count == 2) break; //TODO: REMOVE THIS
             }
         }
         catch (Exception e) {

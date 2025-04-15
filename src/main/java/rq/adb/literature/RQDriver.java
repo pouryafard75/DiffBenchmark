@@ -2,7 +2,6 @@ package rq.adb.literature;
 
 import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
-import benchmark.generators.BenchmarkHumanReadableDiffGenerator;
 import benchmark.metrics.computers.filters.FilterDuringGeneration;
 import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import rq.adb.BaseRQDriverRoutine;

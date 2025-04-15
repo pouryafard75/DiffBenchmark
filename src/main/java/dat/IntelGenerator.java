@@ -14,9 +14,7 @@ import benchmark.generators.tools.ASTDiffToolEnum;
 import benchmark.models.hrd.NecessaryMappings;
 
 import benchmark.utils.PathResolver;
-import com.github.gumtreediff.actions.ChawatheScriptGenerator;
-import com.github.gumtreediff.actions.Diff;
-import com.github.gumtreediff.actions.EditScript;
+import com.github.gumtreediff.actions.*;
 import com.github.gumtreediff.matchers.*;
 import com.github.gumtreediff.tree.Tree;
 import com.github.gumtreediff.tree.TreeContext;
@@ -27,7 +25,6 @@ import fr.gumtree.autotuning.domain.ParameterDomain;
 import fr.gumtree.autotuning.gumtree.ParametersResolvers;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
-import org.refactoringminer.astDiff.utils.Constants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -42,8 +39,8 @@ import static benchmark.generators.hrd.HumanReadableDiffGenerator.isPartOf;
 import static benchmark.generators.tools.runners.shaded.AbstractASTDiffProviderFromIncompatibleTree.diffToASTDiffWithActions;
 
 /* Created by pourya on 2024-02-01*/
-public class GridSearch {
-    private final static Logger logger = LoggerFactory.getLogger(GridSearch.class);
+public class IntelGenerator {
+    private final static Logger logger = LoggerFactory.getLogger(IntelGenerator.class);
     private static final List<Class<? extends Matcher>> matchers = Arrays.asList(
             CompositeMatchers.SimpleGumtree.class
             ,CompositeMatchers.ClassicGumtree.class
@@ -52,7 +49,6 @@ public class GridSearch {
     private final List<Intel> intels;
     private static final int nrthreads = 50;
     private static final long timeout = 1000;
-    private static final String PARALLEL_LEVEL = "PROPERTY_LEVEL";
     private final IBenchmarkCase benchmarkCase;
     private final ProjectASTDiff projectASTDiff;
     private final Tree src;
@@ -72,7 +68,7 @@ public class GridSearch {
         }
     }
 
-    public GridSearch(IBenchmarkCase benchmarkCase, ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, IExperiment experiment)
+    public IntelGenerator(IBenchmarkCase benchmarkCase, ProjectASTDiff projectASTDiff, ASTDiff rm_astDiff, IExperiment experiment)
     {
         this.benchmarkCase = benchmarkCase;
         this.projectASTDiff = projectASTDiff;
@@ -130,20 +126,16 @@ public class GridSearch {
     }
     private void addIntel(Matcher matcher, GumtreeProperties properties) {
         try {
-//        logger.debug("Working on " + matcher + " " + properties);
-            Diff diff = makeDiff(matcher, properties);
+            logger.debug("Working on {} {}", matcher, properties);
+            Diff diff = makeDiff(matcher, properties, new SimplifiedChawatheScriptGenerator());
             BaseDiffComparisonResult compResult = makeStats(diffToASTDiffWithActions(diff, rmDiff.getSrcPath(), rmDiff.getDstPath()));
-//        logger.debug("Stats has been generated for " + matcher + " " + properties);
+            logger.debug("Stats has been generated for {} {}", matcher, properties);
             DiffStats dat = compResult.getDiffStatsList().get(ASTDiffToolEnum.DAT.name());
-            if (dat == null)
-                throw new RuntimeException("DAT is null");
+            if (dat == null) throw new RuntimeException("DAT is null");
             NecessaryMappings ignore = compResult.getIgnore().getIntraFileMappings();
-            int edSize = diff.editScript.asList().size();
+            logger.debug("About to add the intel for {} {}", matcher, properties);
+            add(matcher, properties, EdFootPrint.make(diff.editScript), ignore, dat);
 
-            int edSizeNonJavaDocs = diff.editScript.asList().stream().filter(x ->
-                    !isPartOf(x.getNode(), Constants.JAVA_DOC)).toList().size();
-//        logger.debug("About to add the intel for " + matcher + " " + properties);
-            add(matcher, properties, edSize, edSizeNonJavaDocs, ignore, dat);
         }
         catch (Exception e) {
             logger.error("Error in addIntel", e);
@@ -151,11 +143,10 @@ public class GridSearch {
         }
     }
 
-    private synchronized void add(Matcher matcher, GumtreeProperties properties, int edSize, int edSizeNonJavaDocs, NecessaryMappings ignore, DiffStats dat) {
+    private synchronized void add(Matcher matcher, GumtreeProperties properties, EdFootPrint edFootPrint, NecessaryMappings ignore, DiffStats dat) {
         Intel intel = new Intel(benchmarkCase.getRepo(), benchmarkCase.getCommit(), rmDiff.getSrcPath(),
                 matcher.getClass().getCanonicalName().replace("com.github.gumtreediff.matchers.CompositeMatchers.", ""), properties.toString(),
-                edSize, edSizeNonJavaDocs,
-                ignore, dat);
+                edFootPrint, ignore, dat);
         logger.debug("Intel #" + (intels.size() + 1) + " is added");
         intels.add(intel);
     }
@@ -179,18 +170,17 @@ public class GridSearch {
         }
         return fileDiffComparisonResult;
     }
-    private Diff makeDiff(Matcher matcher, GumtreeProperties properties) {
+    private Diff makeDiff(Matcher matcher, GumtreeProperties properties, EditScriptGenerator edGenerator) {
         try {
             CompositeMatchers.CompositeMatcher cm = (CompositeMatchers.CompositeMatcher) matcher;
             cm.configure(properties);
             MappingStore mappings = matcher.match(src, dst);
-            ChawatheScriptGenerator edGenerator = new ChawatheScriptGenerator();
             EditScript actions = edGenerator.computeActions(mappings);
             TreeContext leftContext = new TreeContext();
             leftContext.setRoot(src);
             TreeContext rightContext = new TreeContext();
             rightContext.setRoot(dst);
-//        logger.debug("Diff has been created for " + matcher + " " + properties);
+            logger.debug("Diff has been created for " + matcher + " " + properties);
             return new Diff(leftContext, rightContext, mappings, actions);
         }
         catch (Exception e) {
@@ -275,4 +265,3 @@ public class GridSearch {
         return ret;
     }
 }
-

@@ -46,7 +46,7 @@ BenchmarkComparisonInput {
     public static BenchmarkComparisonInput read(IExperiment experiment, IBenchmarkCase info, String fileName, Set<IASTDiffTool> diffIgnoreGuards) throws IOException {
         String folderPath = exportedFolderPathByCaseInfo(info);
         Path dir = Paths.get(experiment.getOutputFolder() + folderPath + "/");
-        HashSet<IASTDiffTool> withGuard = new HashSet<>(experiment.getTools());
+        Set<IASTDiffTool> withGuard = new LinkedHashSet<>(experiment.getTools());
         withGuard.addAll(diffIgnoreGuards);
         return readDir(dir.resolve(fileName), withGuard);
     }

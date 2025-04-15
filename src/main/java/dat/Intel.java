@@ -4,11 +4,7 @@ import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.Stats;
 import benchmark.models.hrd.NecessaryMappings;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.opencsv.CSVWriter;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
 import javax.persistence.*;
 
 
@@ -23,6 +19,11 @@ public class Intel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
+    int tp_raw_mappings;
+    @JsonIgnore
+    int tp_raw_programElements;
+
     @Column(name = "repo")
     String repo;
     @Column(name = "commit")
@@ -33,17 +34,10 @@ public class Intel {
     String matcher;
     @Column(name = "conf")
     String conf;
-    @Column(name = "edSize")
-    int edSize;
-    @Column(name = "edSizeNonJavaDoc")
-    int edSizeNonJavaDoc;
     @Column(name = "trv_mappings")
     int trv_mappings;
     @Column(name = "trv_programElements")
     int trv_programElements;
-
-    @JsonIgnore
-    int tp_raw_mappings;
 
     @Column(name = "tp_mappings")
     int tp_mappings;
@@ -52,8 +46,7 @@ public class Intel {
     @Column(name = "fn_mappings")
     int fn_mappings;
 
-    @JsonIgnore
-    int tp_raw_programElements;
+
     @Column(name = "tp_programElements")
     int tp_programElements;
     @Column(name = "fp_programElements")
@@ -67,15 +60,22 @@ public class Intel {
     @Column(name = "f1")
     double f1;
 
+    @Column(name = "s") int s;
+    @Column(name = "ni") int ni;
+    @Column(name = "nd") int nd;
+    @Column(name = "nu") int nu;
+    @Column(name = "ni") int nm;
+    @Column(name = "n_sum") int n_sum;
+
+
     public Intel(String repo, String commit, String srcPath,
                  String matcher, String conf,
-                 int edSize, int edSizeNonJavaDoc,
+                 EdFootPrint edFootPrint,
                  NecessaryMappings ignore,
                  DiffStats mappingsStats) {
 
         this.repo = repo; this.commit = commit; this.srcPath = srcPath;
         this.matcher = matcher; this.conf = conf;
-        this.edSize = edSize; this.edSizeNonJavaDoc = edSizeNonJavaDoc;
 
         this.trv_mappings = ignore.getMappings().size(); this.trv_programElements = ignore.getMatchedElements().size();
         this.tp_raw_mappings = mappingsStats.getAbstractMappingStats().getTP();
@@ -91,44 +91,15 @@ public class Intel {
         this.f1 = effective_stats.calcF1();
         this.precision = effective_stats.calcPrecision();
         this.recall = effective_stats.calcRecall();
+        this.s = edFootPrint.size;
+        this.ni = edFootPrint.nbIns;
+        this.nd = edFootPrint.nbDel;
+        this.nu = edFootPrint.nbUpd;
+        this.nm = edFootPrint.nbMov;
+        this.n_sum = edFootPrint.nbIns + edFootPrint.nbDel + edFootPrint.nbUpd + edFootPrint.nbMov;
     }
-
     public Intel() {
-
     }
-
-    public static void writeIntelListToCsv(List<Intel> intelList, String filePath) {
-        try (CSVWriter writer = new CSVWriter(new FileWriter(filePath))) {
-            // Writing header
-            String[] header = {
-                    "repo", "commit", "srcFile",
-                    "Matcher", "Name",
-                    "EdSize", "EdSizeNonJavaDoc",
-                    "TRV_mappings","TRV_programElements",
-                    "TP_mappings","FP_mappings","FN_mappings",
-                    "TP_programElements","FP_programElements","FN_programElements",
-                    "Precision","Recall","F1"
-            };
-            writer.writeNext(header);
-
-            // Writing data
-            for (Intel intel : intelList) {
-                String[] data = {
-                        intel.repo, intel.commit,  intel.srcPath,
-                        intel.matcher, intel.conf,
-                        String.valueOf(intel.edSize),  String.valueOf(intel.edSizeNonJavaDoc),
-                        String.valueOf(intel.trv_mappings), String.valueOf(intel.trv_programElements),
-                        String.valueOf(intel.tp_mappings), String.valueOf(intel.fp_mappings), String.valueOf(intel.fn_mappings),
-                        String.valueOf(intel.tp_programElements), String.valueOf(intel.fp_programElements), String.valueOf(intel.fn_programElements),
-                        String.valueOf(intel.precision), String.valueOf(intel.recall), String.valueOf(intel.f1)
-                };
-                writer.writeNext(data);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public String getRepo() {
         return repo;
     }
@@ -167,22 +138,6 @@ public class Intel {
 
     public void setConf(String conf) {
         this.conf = conf;
-    }
-
-    public int getEdSize() {
-        return edSize;
-    }
-
-    public void setEdSize(int edSize) {
-        this.edSize = edSize;
-    }
-
-    public int getEdSizeNonJavaDoc() {
-        return edSizeNonJavaDoc;
-    }
-
-    public void setEdSizeNonJavaDoc(int edSizeNonJavaDoc) {
-        this.edSizeNonJavaDoc = edSizeNonJavaDoc;
     }
 
     public int getTrv_mappings() {
@@ -295,5 +250,53 @@ public class Intel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getS() {
+        return s;
+    }
+
+    public void setS(int s) {
+        this.s = s;
+    }
+
+    public int getNi() {
+        return ni;
+    }
+
+    public void setNi(int ni) {
+        this.ni = ni;
+    }
+
+    public int getNd() {
+        return nd;
+    }
+
+    public void setNd(int nd) {
+        this.nd = nd;
+    }
+
+    public int getNu() {
+        return nu;
+    }
+
+    public void setNu(int nu) {
+        this.nu = nu;
+    }
+
+    public int getNm() {
+        return nm;
+    }
+
+    public void setNm(int nm) {
+        this.nm = nm;
+    }
+
+    public int getN_sum() {
+        return n_sum;
+    }
+
+    public void setN_sum(int n_sum) {
+        this.n_sum = n_sum;
     }
 }

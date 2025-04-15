@@ -49,8 +49,6 @@ public enum ToolSets implements Set<IASTDiffTool> {
     ),
     INTERFILE_EXTENSION_BATTLE_TOOLS(
             new LinkedHashSet<>(){{
-//                add(ASTDiffToolEnum.GTG);
-//                add(ASTDiffToolEnum.GTS);
                 add(ASTDiffToolEnum.EXT_SVN_G);
                 add(ASTDiffToolEnum.EXT_SVN_S);
                 add(ASTDiffToolEnum.EXT_STM_G);
@@ -67,8 +65,6 @@ public enum ToolSets implements Set<IASTDiffTool> {
     ),
     MULTIMAPPING_EXTENSION_BATTLE_TOOLS(
             new LinkedHashSet<>(){{
-                add(ASTDiffToolEnum.GTG);
-                add(ASTDiffToolEnum.GTS);
                 add(ASTDiffToolEnum.EXT_NMS_G);
                 add(ASTDiffToolEnum.EXT_NMS_S);
             }}
@@ -82,10 +78,11 @@ public enum ToolSets implements Set<IASTDiffTool> {
     ARTIFICIAL(
             new LinkedHashSet<>()
             {{
-                add(ASTDiffToolEnum.EXT_FGT_STM_NMS_G);
-                add(ASTDiffToolEnum.EXT_FGT_SVN_NMS_G);
-                add(ASTDiffToolEnum.EXT_FGT_STM_NMS_S);
-                add(ASTDiffToolEnum.EXT_FGT_SVN_NMS_S);
+                add(ASTDiffToolEnum.EXT_FGT_SVN_G);
+                add(ASTDiffToolEnum.EXT_FGT_SVN_S);
+                add(ASTDiffToolEnum.EXT_FGT_STM_G);
+                add(ASTDiffToolEnum.EXT_FGT_STM_S);
+
             }}
     ),
 

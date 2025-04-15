@@ -13,12 +13,12 @@ import java.util.Set;
 public class ExtensionSkirmishRQDriver {
     private static final HumanReadableDiffFilter[] FILTERS = new HumanReadableDiffFilter[]{
             FilterDuringGeneration.NO_FILTER,
-            FilterDuringGeneration.INTRA_FILE_ONLY
+//            FilterDuringGeneration.INTRA_FILE_ONLY
     };
     public static final ExperimentsEnum exp = ExperimentsEnum.ARTIFICIAL_EXP;
 
     public static void main(String[] args) throws Exception {
-        new BenchmarkHumanReadableDiffGenerator(exp).generateMultiThreaded();
+//        new BenchmarkHumanReadableDiffGenerator(exp).generateMultiThreaded();
         new BaseRQDriverRoutine(FILTERS, Set.of()).run(new IExperiment[]{exp});
     }
 }

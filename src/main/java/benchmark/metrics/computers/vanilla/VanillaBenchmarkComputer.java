@@ -9,15 +9,13 @@ import benchmark.metrics.computers.filters.HumanReadableDiffFilter;
 import benchmark.metrics.computers.filters.FilterDuringGeneration;
 import benchmark.metrics.computers.filters.FilterDuringMetricsCalculation;
 import benchmark.metrics.models.BaseDiffComparisonResult;
+import benchmark.metrics.models.DiffStats;
 import benchmark.metrics.models.FileDiffComparisonResult;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static benchmark.utils.PathResolver.*;
@@ -85,9 +83,22 @@ public class VanillaBenchmarkComputer extends BaseBenchmarkComputer {
     }
 
     private void polishStats(Collection<BaseDiffComparisonResult> benchmarkStats, IExperiment experiment) {
+        // Get the ordered list of tool short names
+        List<String> orderedToolNames = experiment.getTools().stream()
+                .map(IASTDiffTool::getShortName)
+                .toList();
         for (BaseDiffComparisonResult benchmarkStat : benchmarkStats) {
-            Set<String> collect = experiment.getTools().stream().map(IASTDiffTool::getShortName).collect(Collectors.toSet());
-            benchmarkStat.getDiffStatsList().keySet().retainAll(collect);
+            Map<String, DiffStats> originalMap = benchmarkStat.getDiffStatsList();
+            Map<String, DiffStats> orderedMap = new LinkedHashMap<>();
+
+            for (String name : orderedToolNames) {
+                if (originalMap.containsKey(name)) {
+                    orderedMap.put(name, originalMap.get(name));
+                }
+            }
+            // Clear and update the map in place, preserving order
+            originalMap.clear();
+            originalMap.putAll(orderedMap);
         }
     }
 

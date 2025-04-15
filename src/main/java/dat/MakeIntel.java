@@ -13,12 +13,11 @@ import java.util.List;
 
 
 /* Created by pourya on 2024-01-18*/
-public class MakeIntels {
-    private final static Logger logger = LoggerFactory.getLogger(MakeIntels.class);
+public class MakeIntel {
+    private final static Logger logger = LoggerFactory.getLogger(MakeIntel.class);
     private static final IExperiment experiment = ExperimentsEnum.REF_EXP_3_0;
     private static final String destination = "intel.csv";
     private static int numThreads = Runtime.getRuntime().availableProcessors();
-
 
     public static void main(String[] args) throws Exception {
         logger.info("Start running DAT");
@@ -30,13 +29,13 @@ public class MakeIntels {
                 List<Intel> intels = new ArrayList<>();
                 ProjectASTDiff projectASTDiff = info.getProjectASTDiff();
                 for (ASTDiff rm_astDiff : projectASTDiff.getDiffSet()) {
-//                    logger.info("Working on " + info.makeURL() + " " + rm_astDiff.getSrcPath());
+                    logger.info("Working on " + info.getID() + " " + rm_astDiff.getSrcPath());
                     logger.info("Case " + case_count + "/" + experiment.getDataset().getCases().size());
-                    GridSearch dat = new GridSearch(info, projectASTDiff, rm_astDiff, experiment);
+                    IntelGenerator dat = new IntelGenerator(info, projectASTDiff, rm_astDiff, experiment);
                     intels.addAll(dat.run(numThreads));
                 }
                 intelDao.insertIntels(intels);
-                // if (case_count == 2) break;
+                 if (case_count == 2) break; //TODO: REMOVE THIS
             }
         }
         catch (Exception e) {

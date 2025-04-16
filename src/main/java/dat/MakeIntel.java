@@ -15,7 +15,7 @@ import java.util.List;
 /* Created by pourya on 2024-01-18*/
 public class MakeIntel {
     private final static Logger logger = LoggerFactory.getLogger(MakeIntel.class);
-    private static final IExperiment experiment = ExperimentsEnum.REF_EXP_3_0;
+    private static final IExperiment experiment = ExperimentsEnum.LITERATURE_EXP;
     private static final String destination = "intel.csv";
     private static int numThreads = Runtime.getRuntime().availableProcessors();
 

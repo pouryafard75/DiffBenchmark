@@ -1,0 +1,257 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "@Rule\n  public TemporaryFolder temp = new TemporaryFolder();",
+      "right" : "@Rule\n  public TemporaryFolder temp = new TemporaryFolder();",
+      "info" : "FieldDeclaration[2529-2589]:FieldDeclaration[2501-2561]"
+    }, {
+      "left" : "private static HttpdForTests httpd;",
+      "right" : "private static HttpdForTests httpd;",
+      "info" : "FieldDeclaration[2593-2628]:FieldDeclaration[2565-2600]"
+    }, {
+      "left" : "private static ProjectBuildFileParser buildFileParser;",
+      "right" : "private static ProjectBuildFileParser buildFileParser;",
+      "info" : "FieldDeclaration[2631-2685]:FieldDeclaration[2603-2657]"
+    }, {
+      "left" : "private static Path repo;",
+      "right" : "private static Path repo;",
+      "info" : "FieldDeclaration[2688-2713]:FieldDeclaration[2660-2685]"
+    }, {
+      "left" : "private Path buckRepoRoot;",
+      "right" : "private Path buckRepoRoot;",
+      "info" : "FieldDeclaration[2716-2742]:FieldDeclaration[2688-2714]"
+    }, {
+      "left" : "private Path thirdParty;",
+      "right" : "private Path thirdParty;",
+      "info" : "FieldDeclaration[2745-2769]:FieldDeclaration[2717-2741]"
+    }, {
+      "left" : "private Path thirdPartyRelative;",
+      "right" : "private Path thirdPartyRelative;",
+      "info" : "FieldDeclaration[2772-2804]:FieldDeclaration[2744-2776]"
+    }, {
+      "left" : "private Path localRepo;",
+      "right" : "private Path localRepo;",
+      "info" : "FieldDeclaration[2807-2830]:FieldDeclaration[2779-2802]"
+    }, {
+      "left" : "public static void setUpFakeMavenRepo() throws Exception",
+      "right" : "public static void setUpFakeMavenRepo() throws Exception",
+      "info" : "MethodDeclaration[2834-3620]:MethodDeclaration[2835-3621]"
+    }, {
+      "left" : "public static void shutDownHttpd() throws Exception",
+      "right" : "public static void shutDownHttpd() throws Exception",
+      "info" : "MethodDeclaration[3624-3714]:MethodDeclaration[3625-3715]"
+    }, {
+      "left" : "public static void createParser()",
+      "right" : "public static void createParser()",
+      "info" : "MethodDeclaration[3718-4731]:MethodDeclaration[3719-4732]"
+    }, {
+      "left" : "public static void closeParser() throws BuildFileParseException, InterruptedException",
+      "right" : "public static void closeParser() throws BuildFileParseException, InterruptedException",
+      "info" : "MethodDeclaration[4735-4869]:MethodDeclaration[4736-4870]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "@BeforeClass",
+      "right" : "@BeforeClass",
+      "info" : "MarkerAnnotation[2834-2846]:MarkerAnnotation[2835-2847]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2849-2855]:Modifier[2850-2856]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2856-2862]:Modifier[2857-2863]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2863-2867]:PrimitiveType[2864-2868]"
+    }, {
+      "left" : "setUpFakeMavenRepo",
+      "right" : "setUpFakeMavenRepo",
+      "info" : "SimpleName[2868-2886]:SimpleName[2869-2887]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[2896-2905]:SimpleType[2897-2906]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2906-3620]:Block[2907-3621]"
+    }, {
+      "left" : "repo = TestDataHelper.getTestDataDirectory(new ResolverIntegrationTest());",
+      "right" : "repo = TestDataHelper.getTestDataDirectory(new ResolverIntegrationTest());",
+      "info" : "ExpressionStatement[2912-2986]:ExpressionStatement[2913-2987]"
+    }, {
+      "left" : "if (!Files.exists(repo))",
+      "right" : "if (!Files.exists(repo))",
+      "info" : "IfStatement[3089-3186]:IfStatement[3090-3187]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3114-3186]:Block[3115-3187]"
+    }, {
+      "left" : "repo = Paths.get(\"test/com/facebook/buck/maven/testdata\");",
+      "right" : "repo = Paths.get(\"test/com/facebook/buck/maven/testdata\");",
+      "info" : "ExpressionStatement[3122-3180]:ExpressionStatement[3123-3181]"
+    }, {
+      "left" : "httpd = new HttpdForTests();",
+      "right" : "httpd = new HttpdForTests();",
+      "info" : "ExpressionStatement[3192-3220]:ExpressionStatement[3193-3221]"
+    }, {
+      "left" : "ResourceHandler resourceHandler = new ResourceHandler();",
+      "right" : "ResourceHandler resourceHandler = new ResourceHandler();",
+      "info" : "VariableDeclarationStatement[3226-3282]:VariableDeclarationStatement[3227-3283]"
+    }, {
+      "left" : "resourceHandler.setDirectoriesListed(true);",
+      "right" : "resourceHandler.setDirectoriesListed(true);",
+      "info" : "ExpressionStatement[3287-3330]:ExpressionStatement[3288-3331]"
+    }, {
+      "left" : "resourceHandler.setResourceBase(repo.toAbsolutePath().toString());",
+      "right" : "resourceHandler.setResourceBase(repo.toAbsolutePath().toString());",
+      "info" : "ExpressionStatement[3335-3401]:ExpressionStatement[3336-3402]"
+    }, {
+      "left" : "ContextHandler contextHandler = new ContextHandler(\"/\");",
+      "right" : "ContextHandler contextHandler = new ContextHandler(\"/\");",
+      "info" : "VariableDeclarationStatement[3407-3463]:VariableDeclarationStatement[3408-3464]"
+    }, {
+      "left" : "contextHandler.setHandler(resourceHandler);",
+      "right" : "contextHandler.setHandler(resourceHandler);",
+      "info" : "ExpressionStatement[3468-3511]:ExpressionStatement[3469-3512]"
+    }, {
+      "left" : "contextHandler.setLogger(new StdErrLog());",
+      "right" : "contextHandler.setLogger(new StdErrLog());",
+      "info" : "ExpressionStatement[3516-3558]:ExpressionStatement[3517-3559]"
+    }, {
+      "left" : "httpd.addHandler(contextHandler);",
+      "right" : "httpd.addHandler(contextHandler);",
+      "info" : "ExpressionStatement[3564-3597]:ExpressionStatement[3565-3598]"
+    }, {
+      "left" : "httpd.start();",
+      "right" : "httpd.start();",
+      "info" : "ExpressionStatement[3602-3616]:ExpressionStatement[3603-3617]"
+    }, {
+      "left" : "@AfterClass",
+      "right" : "@AfterClass",
+      "info" : "MarkerAnnotation[3624-3635]:MarkerAnnotation[3625-3636]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3638-3644]:Modifier[3639-3645]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[3645-3651]:Modifier[3646-3652]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3652-3656]:PrimitiveType[3653-3657]"
+    }, {
+      "left" : "shutDownHttpd",
+      "right" : "shutDownHttpd",
+      "info" : "SimpleName[3657-3670]:SimpleName[3658-3671]"
+    }, {
+      "left" : "Exception",
+      "right" : "Exception",
+      "info" : "SimpleType[3680-3689]:SimpleType[3681-3690]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3690-3714]:Block[3691-3715]"
+    }, {
+      "left" : "httpd.close();",
+      "right" : "httpd.close();",
+      "info" : "ExpressionStatement[3696-3710]:ExpressionStatement[3697-3711]"
+    }, {
+      "left" : "@BeforeClass",
+      "right" : "@BeforeClass",
+      "info" : "MarkerAnnotation[3718-3730]:MarkerAnnotation[3719-3731]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3733-3739]:Modifier[3734-3740]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[3740-3746]:Modifier[3741-3747]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3747-3751]:PrimitiveType[3748-3752]"
+    }, {
+      "left" : "createParser",
+      "right" : "createParser",
+      "info" : "SimpleName[3752-3764]:SimpleName[3753-3765]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3767-4731]:Block[3768-4732]"
+    }, {
+      "left" : "ProjectFilesystem filesystem = new FakeProjectFilesystem();",
+      "right" : "ProjectFilesystem filesystem = new FakeProjectFilesystem();",
+      "info" : "VariableDeclarationStatement[3773-3832]:VariableDeclarationStatement[3774-3833]"
+    }, {
+      "left" : "FakeBuckConfig buckConfig = new FakeBuckConfig();",
+      "right" : "FakeBuckConfig buckConfig = new FakeBuckConfig();",
+      "info" : "VariableDeclarationStatement[3837-3886]:VariableDeclarationStatement[3838-3887]"
+    }, {
+      "left" : "ParserConfig parserConfig = new ParserConfig(buckConfig);",
+      "right" : "ParserConfig parserConfig = new ParserConfig(buckConfig);",
+      "info" : "VariableDeclarationStatement[3891-3948]:VariableDeclarationStatement[3892-3949]"
+    }, {
+      "left" : "PythonBuckConfig pythonBuckConfig = new PythonBuckConfig(\n        buckConfig,\n        new ExecutableFinder());",
+      "right" : "PythonBuckConfig pythonBuckConfig = new PythonBuckConfig(\n        buckConfig,\n        new ExecutableFinder());",
+      "info" : "VariableDeclarationStatement[3953-4063]:VariableDeclarationStatement[3954-4064]"
+    }, {
+      "left" : "ImmutableSet<Description<?>> descriptions = ImmutableSet.of(\n        new RemoteFileDescription(new ExplodingDownloader()),\n        new PrebuiltJarDescription());",
+      "right" : "ImmutableSet<Description<?>> descriptions = ImmutableSet.of(\n        new RemoteFileDescription(new ExplodingDownloader()),\n        new PrebuiltJarDescription());",
+      "info" : "VariableDeclarationStatement[4069-4230]:VariableDeclarationStatement[4070-4231]"
+    }, {
+      "left" : "DefaultProjectBuildFileParserFactory parserFactory = new DefaultProjectBuildFileParserFactory(\n        filesystem.getRootPath(),\n        pythonBuckConfig.getPythonInterpreter(),\n        parserConfig.getAllowEmptyGlobs(),\n        parserConfig.getBuildFileName(),\n        parserConfig.getDefaultIncludes(),\n        descriptions);",
+      "right" : "DefaultProjectBuildFileParserFactory parserFactory = new DefaultProjectBuildFileParserFactory(\n        filesystem.getRootPath(),\n        pythonBuckConfig.getPythonInterpreter(),\n        parserConfig.getAllowEmptyGlobs(),\n        parserConfig.getBuildFileName(),\n        parserConfig.getDefaultIncludes(),\n        descriptions);",
+      "info" : "VariableDeclarationStatement[4236-4563]:VariableDeclarationStatement[4237-4564]"
+    }, {
+      "left" : "buildFileParser = parserFactory.createParser(\n        new TestConsole(),\n        ImmutableMap.<String, String>of(),\n        BuckEventBusFactory.newInstance());",
+      "right" : "buildFileParser = parserFactory.createParser(\n        new TestConsole(),\n        ImmutableMap.<String, String>of(),\n        BuckEventBusFactory.newInstance());",
+      "info" : "ExpressionStatement[4568-4727]:ExpressionStatement[4569-4728]"
+    }, {
+      "left" : "@AfterClass",
+      "right" : "@AfterClass",
+      "info" : "MarkerAnnotation[4735-4746]:MarkerAnnotation[4736-4747]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4749-4755]:Modifier[4750-4756]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[4756-4762]:Modifier[4757-4763]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4763-4767]:PrimitiveType[4764-4768]"
+    }, {
+      "left" : "closeParser",
+      "right" : "closeParser",
+      "info" : "SimpleName[4768-4779]:SimpleName[4769-4780]"
+    }, {
+      "left" : "BuildFileParseException",
+      "right" : "BuildFileParseException",
+      "info" : "SimpleType[4789-4812]:SimpleType[4790-4813]"
+    }, {
+      "left" : "InterruptedException",
+      "right" : "InterruptedException",
+      "info" : "SimpleType[4814-4834]:SimpleType[4815-4835]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4835-4869]:Block[4836-4870]"
+    }, {
+      "left" : "buildFileParser.close();",
+      "right" : "buildFileParser.close();",
+      "info" : "ExpressionStatement[4841-4865]:ExpressionStatement[4842-4866]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

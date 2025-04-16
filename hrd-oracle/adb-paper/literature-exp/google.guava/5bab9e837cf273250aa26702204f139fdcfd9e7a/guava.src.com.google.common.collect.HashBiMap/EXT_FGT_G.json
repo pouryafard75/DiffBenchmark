@@ -1,0 +1,2909 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "HashBiMap",
+      "right" : "HashBiMap",
+      "info" : "TypeDeclaration[1550-18073]:TypeDeclaration[1550-20200]"
+    }, {
+      "left" : "public static <K, V> HashBiMap<K, V> create()",
+      "right" : "public static <K, V> HashBiMap<K, V> create()",
+      "info" : "MethodDeclaration[2089-2259]:MethodDeclaration[2089-2259]"
+    }, {
+      "left" : "public static <K, V> HashBiMap<K, V> create(int expectedSize)",
+      "right" : "public static <K, V> HashBiMap<K, V> create(int expectedSize)",
+      "info" : "MethodDeclaration[2263-2599]:MethodDeclaration[2263-2599]"
+    }, {
+      "left" : "public static <K, V> HashBiMap<K, V> create(Map<? extends K, ? extends V> map)",
+      "right" : "public static <K, V> HashBiMap<K, V> create(Map<? extends K, ? extends V> map)",
+      "info" : "MethodDeclaration[2603-2965]:MethodDeclaration[2603-2965]"
+    }, {
+      "left" : "BiEntry",
+      "right" : "BiEntry",
+      "info" : "TypeDeclaration[2969-3338]:TypeDeclaration[2969-3466]"
+    }, {
+      "left" : "final int keyHash;",
+      "right" : "final int keyHash;",
+      "info" : "FieldDeclaration[3045-3063]:FieldDeclaration[3045-3063]"
+    }, {
+      "left" : "final int valueHash;",
+      "right" : "final int valueHash;",
+      "info" : "FieldDeclaration[3068-3088]:FieldDeclaration[3068-3088]"
+    }, {
+      "left" : "@Nullable BiEntry<K, V> nextInKToVBucket;",
+      "right" : "@Nullable\n    BiEntry<K, V> nextInKToVBucket;",
+      "info" : "FieldDeclaration[3093-3134]:FieldDeclaration[3094-3139]"
+    }, {
+      "left" : "@Nullable BiEntry<K, V> nextInVToKBucket;",
+      "right" : "@Nullable\n    BiEntry<K, V> nextInVToKBucket;",
+      "info" : "FieldDeclaration[3139-3180]:FieldDeclaration[3144-3189]"
+    }, {
+      "left" : "BiEntry(K key, int keyHash, V value, int valueHash)",
+      "right" : "BiEntry(K key, int keyHash, V value, int valueHash)",
+      "info" : "MethodDeclaration[3186-3334]:MethodDeclaration[3314-3462]"
+    }, {
+      "left" : "private static final double LOAD_FACTOR = 1.0;",
+      "right" : "private static final double LOAD_FACTOR = 1.0;",
+      "info" : "FieldDeclaration[3342-3388]:FieldDeclaration[3470-3516]"
+    }, {
+      "left" : "private transient BiEntry<K, V>[] hashTableKToV;",
+      "right" : "private transient BiEntry<K, V>[] hashTableKToV;",
+      "info" : "FieldDeclaration[3392-3440]:FieldDeclaration[3520-3568]"
+    }, {
+      "left" : "private transient BiEntry<K, V>[] hashTableVToK;",
+      "right" : "private transient BiEntry<K, V>[] hashTableVToK;",
+      "info" : "FieldDeclaration[3443-3491]:FieldDeclaration[3571-3619]"
+    }, {
+      "left" : "private transient int size;",
+      "right" : "private transient int size;",
+      "info" : "FieldDeclaration[3494-3521]:FieldDeclaration[3741-3768]"
+    }, {
+      "left" : "private transient int mask;",
+      "right" : "private transient int mask;",
+      "info" : "FieldDeclaration[3524-3551]:FieldDeclaration[3771-3798]"
+    }, {
+      "left" : "private transient int modCount;",
+      "right" : "private transient int modCount;",
+      "info" : "FieldDeclaration[3554-3585]:FieldDeclaration[3801-3832]"
+    }, {
+      "left" : "private HashBiMap(int expectedSize)",
+      "right" : "private HashBiMap(int expectedSize)",
+      "info" : "MethodDeclaration[3589-3654]:MethodDeclaration[3836-3901]"
+    }, {
+      "left" : "private void init(int expectedSize)",
+      "right" : "private void init(int expectedSize)",
+      "info" : "MethodDeclaration[3658-3994]:MethodDeclaration[3905-4324]"
+    }, {
+      "left" : "private void delete(BiEntry<K, V> entry)",
+      "right" : "private void delete(BiEntry<K, V> entry)",
+      "info" : "MethodDeclaration[3998-5240]:MethodDeclaration[4328-6033]"
+    }, {
+      "left" : "private void insert(BiEntry<K, V> entry)",
+      "right" : "private void insert(BiEntry<K, V> entry, @Nullable BiEntry<K, V> oldEntryForKey)",
+      "info" : "MethodDeclaration[5244-5598]:MethodDeclaration[6037-7335]"
+    }, {
+      "left" : "private BiEntry<K, V> seekByKey(@Nullable Object key, int keyHash)",
+      "right" : "private BiEntry<K, V> seekByKey(@Nullable Object key, int keyHash)",
+      "info" : "MethodDeclaration[5602-5925]:MethodDeclaration[7339-7662]"
+    }, {
+      "left" : "private BiEntry<K, V> seekByValue(@Nullable Object value, int valueHash)",
+      "right" : "private BiEntry<K, V> seekByValue(@Nullable Object value, int valueHash)",
+      "info" : "MethodDeclaration[5929-6268]:MethodDeclaration[7666-8005]"
+    }, {
+      "left" : "public boolean containsKey(@Nullable Object key)",
+      "right" : "public boolean containsKey(@Nullable Object key)",
+      "info" : "MethodDeclaration[6272-6391]:MethodDeclaration[8009-8128]"
+    }, {
+      "left" : "public boolean containsValue(@Nullable Object value)",
+      "right" : "public boolean containsValue(@Nullable Object value)",
+      "info" : "MethodDeclaration[6395-6524]:MethodDeclaration[8132-8261]"
+    }, {
+      "left" : "public V get(@Nullable Object key)",
+      "right" : "public V get(@Nullable Object key)",
+      "info" : "MethodDeclaration[6528-6655]:MethodDeclaration[8265-8392]"
+    }, {
+      "left" : "public V put(@Nullable K key, @Nullable V value)",
+      "right" : "public V put(@Nullable K key, @Nullable V value)",
+      "info" : "MethodDeclaration[6659-6760]:MethodDeclaration[8396-8497]"
+    }, {
+      "left" : "public V forcePut(@Nullable K key, @Nullable V value)",
+      "right" : "public V forcePut(@Nullable K key, @Nullable V value)",
+      "info" : "MethodDeclaration[6764-6869]:MethodDeclaration[8501-8606]"
+    }, {
+      "left" : "private V put(@Nullable K key, @Nullable V value, boolean force)",
+      "right" : "private V put(@Nullable K key, @Nullable V value, boolean force)",
+      "info" : "MethodDeclaration[6873-7752]:MethodDeclaration[8610-9694]"
+    }, {
+      "left" : "private K putInverse(@Nullable V value, @Nullable K key, boolean force)",
+      "right" : "private K putInverse(@Nullable V value, @Nullable K key, boolean force)",
+      "info" : "MethodDeclaration[7756-8648]:MethodDeclaration[9698-10752]"
+    }, {
+      "left" : "private void rehashIfNecessary()",
+      "right" : "private void rehashIfNecessary()",
+      "info" : "MethodDeclaration[8652-9319]:MethodDeclaration[10756-11312]"
+    }, {
+      "left" : "private BiEntry<K, V>[] createTable(int length)",
+      "right" : "private BiEntry<K, V>[] createTable(int length)",
+      "info" : "MethodDeclaration[9323-9441]:MethodDeclaration[11316-11434]"
+    }, {
+      "left" : "public V remove(@Nullable Object key)",
+      "right" : "public V remove(@Nullable Object key)",
+      "info" : "MethodDeclaration[9445-9670]:MethodDeclaration[11438-11751]"
+    }, {
+      "left" : "public void clear()",
+      "right" : "public void clear()",
+      "info" : "MethodDeclaration[9674-9817]:MethodDeclaration[11755-11971]"
+    }, {
+      "left" : "public int size()",
+      "right" : "public int size()",
+      "info" : "MethodDeclaration[9821-9873]:MethodDeclaration[11975-12027]"
+    }, {
+      "left" : "Itr",
+      "right" : "Itr",
+      "info" : "TypeDeclaration[9877-11126]:TypeDeclaration[12031-12951]"
+    }, {
+      "left" : "BiEntry<K, V> next = null;",
+      "right" : "BiEntry<K, V> next = firstInKeyInsertionOrder;",
+      "info" : "FieldDeclaration[9952-9978]:FieldDeclaration[12082-12128]"
+    }, {
+      "left" : "BiEntry<K, V> toRemove = null;",
+      "right" : "BiEntry<K, V> toRemove = null;",
+      "info" : "FieldDeclaration[9983-10013]:FieldDeclaration[12133-12163]"
+    }, {
+      "left" : "int expectedModCount = modCount;",
+      "right" : "int expectedModCount = modCount;",
+      "info" : "FieldDeclaration[10018-10050]:FieldDeclaration[12168-12200]"
+    }, {
+      "left" : "private void checkForConcurrentModification()",
+      "right" : "public boolean hasNext()",
+      "info" : "MethodDeclaration[10056-10212]:MethodDeclaration[12206-12382]"
+    }, {
+      "left" : "public T next()",
+      "right" : "public T next()",
+      "info" : "MethodDeclaration[10593-10870]:MethodDeclaration[12388-12632]"
+    }, {
+      "left" : "public void remove()",
+      "right" : "public void remove()",
+      "info" : "MethodDeclaration[10876-11077]:MethodDeclaration[12638-12902]"
+    }, {
+      "left" : "abstract T output(BiEntry<K, V> entry);",
+      "right" : "abstract T output(BiEntry<K, V> entry);",
+      "info" : "MethodDeclaration[11083-11122]:MethodDeclaration[12908-12947]"
+    }, {
+      "left" : "public Set<K> keySet()",
+      "right" : "public Set<K> keySet()",
+      "info" : "MethodDeclaration[11130-11195]:MethodDeclaration[12955-13020]"
+    }, {
+      "left" : "KeySet",
+      "right" : "KeySet",
+      "info" : "TypeDeclaration[11199-11753]:TypeDeclaration[13024-13670]"
+    }, {
+      "left" : "KeySet()",
+      "right" : "KeySet()",
+      "info" : "MethodDeclaration[11271-11316]:MethodDeclaration[13096-13141]"
+    }, {
+      "left" : "public Iterator<K> iterator()",
+      "right" : "public Iterator<K> iterator()",
+      "info" : "MethodDeclaration[11322-11506]:MethodDeclaration[13147-13331]"
+    }, {
+      "left" : "K output(BiEntry<K, V> entry)",
+      "right" : "K output(BiEntry<K, V> entry)",
+      "info" : "MethodDeclaration[11404-11491]:MethodDeclaration[13229-13316]"
+    }, {
+      "left" : "public boolean remove(@Nullable Object o)",
+      "right" : "public boolean remove(@Nullable Object o)",
+      "info" : "MethodDeclaration[11512-11749]:MethodDeclaration[13337-13666]"
+    }, {
+      "left" : "public Set<V> values()",
+      "right" : "public Set<V> values()",
+      "info" : "MethodDeclaration[11757-11828]:MethodDeclaration[13674-13745]"
+    }, {
+      "left" : "Iterator<Entry<K, V>> entryIterator()",
+      "right" : "Iterator<Entry<K, V>> entryIterator()",
+      "info" : "MethodDeclaration[11832-13123]:MethodDeclaration[13749-15152]"
+    }, {
+      "left" : "Entry<K, V> output(BiEntry<K, V> entry)",
+      "right" : "Entry<K, V> output(BiEntry<K, V> entry)",
+      "info" : "MethodDeclaration[11926-12027]:MethodDeclaration[13843-13944]"
+    }, {
+      "left" : "MapEntry",
+      "right" : "MapEntry",
+      "info" : "TypeDeclaration[12035-13112]:TypeDeclaration[13952-15141]"
+    }, {
+      "left" : "BiEntry<K, V> delegate;",
+      "right" : "BiEntry<K, V> delegate;",
+      "info" : "FieldDeclaration[12091-12114]:FieldDeclaration[14008-14031]"
+    }, {
+      "left" : "MapEntry(BiEntry<K, V> entry)",
+      "right" : "MapEntry(BiEntry<K, V> entry)",
+      "info" : "MethodDeclaration[12124-12198]:MethodDeclaration[14041-14115]"
+    }, {
+      "left" : "public K getKey()",
+      "right" : "public K getKey()",
+      "info" : "MethodDeclaration[12208-12286]:MethodDeclaration[14125-14203]"
+    }, {
+      "left" : "public V getValue()",
+      "right" : "public V getValue()",
+      "info" : "MethodDeclaration[12296-12378]:MethodDeclaration[14213-14295]"
+    }, {
+      "left" : "public V setValue(V value)",
+      "right" : "public V setValue(V value)",
+      "info" : "MethodDeclaration[12388-13104]:MethodDeclaration[14305-15133]"
+    }, {
+      "left" : "private transient BiMap<V, K> inverse;",
+      "right" : "private transient BiMap<V, K> inverse;",
+      "info" : "FieldDeclaration[13127-13165]:FieldDeclaration[15156-15194]"
+    }, {
+      "left" : "public BiMap<V, K> inverse()",
+      "right" : "public BiMap<V, K> inverse()",
+      "info" : "MethodDeclaration[13169-13281]:MethodDeclaration[15198-15310]"
+    }, {
+      "left" : "Inverse",
+      "right" : "Inverse",
+      "info" : "TypeDeclaration[13285-17079]:TypeDeclaration[15314-19206]"
+    }, {
+      "left" : "BiMap<K, V> forward()",
+      "right" : "BiMap<K, V> forward()",
+      "info" : "MethodDeclaration[13382-13440]:MethodDeclaration[15411-15469]"
+    }, {
+      "left" : "public int size()",
+      "right" : "public int size()",
+      "info" : "MethodDeclaration[13446-13504]:MethodDeclaration[15475-15533]"
+    }, {
+      "left" : "public void clear()",
+      "right" : "public void clear()",
+      "info" : "MethodDeclaration[13510-13576]:MethodDeclaration[15539-15605]"
+    }, {
+      "left" : "public boolean containsKey(@Nullable Object value)",
+      "right" : "public boolean containsKey(@Nullable Object value)",
+      "info" : "MethodDeclaration[13582-13699]:MethodDeclaration[15611-15728]"
+    }, {
+      "left" : "public K get(@Nullable Object value)",
+      "right" : "public K get(@Nullable Object value)",
+      "info" : "MethodDeclaration[13705-13832]:MethodDeclaration[15734-15861]"
+    }, {
+      "left" : "public K put(@Nullable V value, @Nullable K key)",
+      "right" : "public K put(@Nullable V value, @Nullable K key)",
+      "info" : "MethodDeclaration[13838-13952]:MethodDeclaration[15867-15981]"
+    }, {
+      "left" : "public K forcePut(@Nullable V value, @Nullable K key)",
+      "right" : "public K forcePut(@Nullable V value, @Nullable K key)",
+      "info" : "MethodDeclaration[13958-14076]:MethodDeclaration[15987-16105]"
+    }, {
+      "left" : "public K remove(@Nullable Object value)",
+      "right" : "public K remove(@Nullable Object value)",
+      "info" : "MethodDeclaration[14082-14331]:MethodDeclaration[16111-16452]"
+    }, {
+      "left" : "public BiMap<K, V> inverse()",
+      "right" : "public BiMap<K, V> inverse()",
+      "info" : "MethodDeclaration[14337-14411]:MethodDeclaration[16458-16532]"
+    }, {
+      "left" : "public Set<V> keySet()",
+      "right" : "public Set<V> keySet()",
+      "info" : "MethodDeclaration[14417-14495]:MethodDeclaration[16538-16616]"
+    }, {
+      "left" : "InverseKeySet",
+      "right" : "InverseKeySet",
+      "info" : "TypeDeclaration[14501-15119]:TypeDeclaration[16622-17240]"
+    }, {
+      "left" : "InverseKeySet()",
+      "right" : "InverseKeySet()",
+      "info" : "MethodDeclaration[14584-14638]:MethodDeclaration[16705-16759]"
+    }, {
+      "left" : "public boolean remove(@Nullable Object o)",
+      "right" : "public boolean remove(@Nullable Object o)",
+      "info" : "MethodDeclaration[14646-14903]:MethodDeclaration[16767-17024]"
+    }, {
+      "left" : "public Iterator<V> iterator()",
+      "right" : "public Iterator<V> iterator()",
+      "info" : "MethodDeclaration[14911-15113]:MethodDeclaration[17032-17234]"
+    }, {
+      "left" : "V output(BiEntry<K, V> entry)",
+      "right" : "V output(BiEntry<K, V> entry)",
+      "info" : "MethodDeclaration[14999-15094]:MethodDeclaration[17120-17215]"
+    }, {
+      "left" : "public Set<K> values()",
+      "right" : "public Set<K> values()",
+      "info" : "MethodDeclaration[15125-15202]:MethodDeclaration[17246-17323]"
+    }, {
+      "left" : "public Set<Entry<V, K>> entrySet()",
+      "right" : "public Set<Entry<V, K>> entrySet()",
+      "info" : "MethodDeclaration[15208-16978]:MethodDeclaration[17329-19105]"
+    }, {
+      "left" : "Map<V, K> map()",
+      "right" : "Map<V, K> map()",
+      "info" : "MethodDeclaration[15309-15385]:MethodDeclaration[17430-17506]"
+    }, {
+      "left" : "public Iterator<Entry<V, K>> iterator()",
+      "right" : "public Iterator<Entry<V, K>> iterator()",
+      "info" : "MethodDeclaration[15395-16963]:MethodDeclaration[17516-19090]"
+    }, {
+      "left" : "Entry<V, K> output(BiEntry<K, V> entry)",
+      "right" : "Entry<V, K> output(BiEntry<K, V> entry)",
+      "info" : "MethodDeclaration[15509-15632]:MethodDeclaration[17630-17753]"
+    }, {
+      "left" : "InverseEntry",
+      "right" : "InverseEntry",
+      "info" : "TypeDeclaration[15646-16940]:TypeDeclaration[17767-19067]"
+    }, {
+      "left" : "BiEntry<K, V> delegate;",
+      "right" : "BiEntry<K, V> delegate;",
+      "info" : "FieldDeclaration[15712-15735]:FieldDeclaration[17833-17856]"
+    }, {
+      "left" : "InverseEntry(BiEntry<K, V> entry)",
+      "right" : "InverseEntry(BiEntry<K, V> entry)",
+      "info" : "MethodDeclaration[15751-15841]:MethodDeclaration[17872-17962]"
+    }, {
+      "left" : "public V getKey()",
+      "right" : "public V getKey()",
+      "info" : "MethodDeclaration[15857-15955]:MethodDeclaration[17978-18076]"
+    }, {
+      "left" : "public K getValue()",
+      "right" : "public K getValue()",
+      "info" : "MethodDeclaration[15971-16069]:MethodDeclaration[18092-18190]"
+    }, {
+      "left" : "public K setValue(K key)",
+      "right" : "public K setValue(K key)",
+      "info" : "MethodDeclaration[16085-16926]:MethodDeclaration[18206-19053]"
+    }, {
+      "left" : "Object writeReplace()",
+      "right" : "Object writeReplace()",
+      "info" : "MethodDeclaration[16984-17075]:MethodDeclaration[19111-19202]"
+    }, {
+      "left" : "InverseSerializedForm",
+      "right" : "InverseSerializedForm",
+      "info" : "TypeDeclaration[17083-17356]:TypeDeclaration[19210-19483]"
+    }, {
+      "left" : "private final HashBiMap<K, V> bimap;",
+      "right" : "private final HashBiMap<K, V> bimap;",
+      "info" : "FieldDeclaration[17168-17204]:FieldDeclaration[19295-19331]"
+    }, {
+      "left" : "InverseSerializedForm(HashBiMap<K, V> bimap)",
+      "right" : "InverseSerializedForm(HashBiMap<K, V> bimap)",
+      "info" : "MethodDeclaration[17210-17288]:MethodDeclaration[19337-19415]"
+    }, {
+      "left" : "Object readResolve()",
+      "right" : "Object readResolve()",
+      "info" : "MethodDeclaration[17294-17352]:MethodDeclaration[19421-19479]"
+    }, {
+      "left" : "private void writeObject(ObjectOutputStream stream) throws IOException",
+      "right" : "private void writeObject(ObjectOutputStream stream) throws IOException",
+      "info" : "MethodDeclaration[17360-17673]:MethodDeclaration[19487-19800]"
+    }, {
+      "left" : "private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException",
+      "right" : "private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException",
+      "info" : "MethodDeclaration[17677-17968]:MethodDeclaration[19804-20095]"
+    }, {
+      "left" : "@GwtIncompatible(\"Not needed in emulated source\")\n  private static final long serialVersionUID = 0;",
+      "right" : "@GwtIncompatible(\"Not needed in emulated source\")\n  private static final long serialVersionUID = 0;",
+      "info" : "FieldDeclaration[17972-18071]:FieldDeclaration[20099-20198]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "@GwtCompatible(emulated = true)",
+      "right" : "@GwtCompatible(emulated = true)",
+      "info" : "NormalAnnotation[1937-1968]:NormalAnnotation[1937-1968]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2185-2191]:Modifier[2185-2191]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2192-2198]:Modifier[2192-2198]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "TypeParameter[2200-2201]:TypeParameter[2200-2201]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "TypeParameter[2203-2204]:TypeParameter[2203-2204]"
+    }, {
+      "left" : "HashBiMap<K, V>",
+      "right" : "HashBiMap<K, V>",
+      "info" : "ParameterizedType[2206-2221]:ParameterizedType[2206-2221]"
+    }, {
+      "left" : "create",
+      "right" : "create",
+      "info" : "SimpleName[2222-2228]:SimpleName[2222-2228]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2231-2259]:Block[2231-2259]"
+    }, {
+      "left" : "return create(16);",
+      "right" : "return create(16);",
+      "info" : "ReturnStatement[2237-2255]:ReturnStatement[2237-2255]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2486-2492]:Modifier[2486-2492]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2493-2499]:Modifier[2493-2499]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "TypeParameter[2501-2502]:TypeParameter[2501-2502]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "TypeParameter[2504-2505]:TypeParameter[2504-2505]"
+    }, {
+      "left" : "HashBiMap<K, V>",
+      "right" : "HashBiMap<K, V>",
+      "info" : "ParameterizedType[2507-2522]:ParameterizedType[2507-2522]"
+    }, {
+      "left" : "create",
+      "right" : "create",
+      "info" : "SimpleName[2523-2529]:SimpleName[2523-2529]"
+    }, {
+      "left" : "int expectedSize",
+      "right" : "int expectedSize",
+      "info" : "SingleVariableDeclaration[2530-2546]:SingleVariableDeclaration[2530-2546]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2548-2599]:Block[2548-2599]"
+    }, {
+      "left" : "return new HashBiMap<K, V>(expectedSize);",
+      "right" : "return new HashBiMap<K, V>(expectedSize);",
+      "info" : "ReturnStatement[2554-2595]:ReturnStatement[2554-2595]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2792-2798]:Modifier[2792-2798]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2799-2805]:Modifier[2799-2805]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "TypeParameter[2807-2808]:TypeParameter[2807-2808]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "TypeParameter[2810-2811]:TypeParameter[2810-2811]"
+    }, {
+      "left" : "HashBiMap<K, V>",
+      "right" : "HashBiMap<K, V>",
+      "info" : "ParameterizedType[2813-2828]:ParameterizedType[2813-2828]"
+    }, {
+      "left" : "create",
+      "right" : "create",
+      "info" : "SimpleName[2829-2835]:SimpleName[2829-2835]"
+    }, {
+      "left" : "Map<? extends K, ? extends V> map",
+      "right" : "Map<? extends K, ? extends V> map",
+      "info" : "SingleVariableDeclaration[2836-2869]:SingleVariableDeclaration[2836-2869]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2871-2965]:Block[2871-2965]"
+    }, {
+      "left" : "HashBiMap<K, V> bimap = create(map.size());",
+      "right" : "HashBiMap<K, V> bimap = create(map.size());",
+      "info" : "VariableDeclarationStatement[2877-2920]:VariableDeclarationStatement[2877-2920]"
+    }, {
+      "left" : "bimap.putAll(map);",
+      "right" : "bimap.putAll(map);",
+      "info" : "ExpressionStatement[2925-2943]:ExpressionStatement[2925-2943]"
+    }, {
+      "left" : "return bimap;",
+      "right" : "return bimap;",
+      "info" : "ReturnStatement[2948-2961]:ReturnStatement[2948-2961]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2969-2976]:Modifier[2969-2976]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2977-2983]:Modifier[2977-2983]"
+    }, {
+      "left" : "final",
+      "right" : "final",
+      "info" : "Modifier[2984-2989]:Modifier[2984-2989]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2990-2995]:TYPE_DECLARATION_KIND[2990-2995]"
+    }, {
+      "left" : "BiEntry",
+      "right" : "BiEntry",
+      "info" : "SimpleName[2996-3003]:SimpleName[2996-3003]"
+    }, {
+      "left" : "BiEntry",
+      "right" : "BiEntry",
+      "info" : "SimpleName[3186-3193]:SimpleName[3314-3321]"
+    }, {
+      "left" : "K key",
+      "right" : "K key",
+      "info" : "SingleVariableDeclaration[3194-3199]:SingleVariableDeclaration[3322-3327]"
+    }, {
+      "left" : "int keyHash",
+      "right" : "int keyHash",
+      "info" : "SingleVariableDeclaration[3201-3212]:SingleVariableDeclaration[3329-3340]"
+    }, {
+      "left" : "V value",
+      "right" : "V value",
+      "info" : "SingleVariableDeclaration[3214-3221]:SingleVariableDeclaration[3342-3349]"
+    }, {
+      "left" : "int valueHash",
+      "right" : "int valueHash",
+      "info" : "SingleVariableDeclaration[3223-3236]:SingleVariableDeclaration[3351-3364]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3238-3334]:Block[3366-3462]"
+    }, {
+      "left" : "super(key, value);",
+      "right" : "super(key, value);",
+      "info" : "SuperConstructorInvocation[3246-3264]:SuperConstructorInvocation[3374-3392]"
+    }, {
+      "left" : "this.keyHash = keyHash;",
+      "right" : "this.keyHash = keyHash;",
+      "info" : "ExpressionStatement[3271-3294]:ExpressionStatement[3399-3422]"
+    }, {
+      "left" : "this.valueHash = valueHash;",
+      "right" : "this.valueHash = valueHash;",
+      "info" : "ExpressionStatement[3301-3328]:ExpressionStatement[3429-3456]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3589-3596]:Modifier[3836-3843]"
+    }, {
+      "left" : "HashBiMap",
+      "right" : "HashBiMap",
+      "info" : "SimpleName[3597-3606]:SimpleName[3844-3853]"
+    }, {
+      "left" : "int expectedSize",
+      "right" : "int expectedSize",
+      "info" : "SingleVariableDeclaration[3607-3623]:SingleVariableDeclaration[3854-3870]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3625-3654]:Block[3872-3901]"
+    }, {
+      "left" : "init(expectedSize);",
+      "right" : "init(expectedSize);",
+      "info" : "ExpressionStatement[3631-3650]:ExpressionStatement[3878-3897]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3658-3665]:Modifier[3905-3912]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3666-3670]:PrimitiveType[3913-3917]"
+    }, {
+      "left" : "init",
+      "right" : "init",
+      "info" : "SimpleName[3671-3675]:SimpleName[3918-3922]"
+    }, {
+      "left" : "int expectedSize",
+      "right" : "int expectedSize",
+      "info" : "SingleVariableDeclaration[3676-3692]:SingleVariableDeclaration[3923-3939]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3694-3994]:Block[3941-4324]"
+    }, {
+      "left" : "checkNonnegative(expectedSize, \"expectedSize\");",
+      "right" : "checkNonnegative(expectedSize, \"expectedSize\");",
+      "info" : "ExpressionStatement[3700-3747]:ExpressionStatement[3947-3994]"
+    }, {
+      "left" : "int tableSize = Hashing.closedTableSize(expectedSize, LOAD_FACTOR);",
+      "right" : "int tableSize = Hashing.closedTableSize(expectedSize, LOAD_FACTOR);",
+      "info" : "VariableDeclarationStatement[3752-3819]:VariableDeclarationStatement[3999-4066]"
+    }, {
+      "left" : "this.hashTableKToV = createTable(tableSize);",
+      "right" : "this.hashTableKToV = createTable(tableSize);",
+      "info" : "ExpressionStatement[3824-3868]:ExpressionStatement[4071-4115]"
+    }, {
+      "left" : "this.hashTableVToK = createTable(tableSize);",
+      "right" : "this.hashTableVToK = createTable(tableSize);",
+      "info" : "ExpressionStatement[3873-3917]:ExpressionStatement[4120-4164]"
+    }, {
+      "left" : "this.mask = tableSize - 1;",
+      "right" : "this.mask = tableSize - 1;",
+      "info" : "ExpressionStatement[3922-3948]:ExpressionStatement[4271-4297]"
+    }, {
+      "left" : "this.modCount = 0;",
+      "right" : "this.modCount = 0;",
+      "info" : "ExpressionStatement[3953-3971]:ExpressionStatement[4302-4320]"
+    }, {
+      "left" : "this.size = 0;",
+      "right" : "this.size = 0;",
+      "info" : "ExpressionStatement[3976-3990]:ExpressionStatement[4252-4266]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[4148-4155]:Modifier[4478-4485]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4156-4160]:PrimitiveType[4486-4490]"
+    }, {
+      "left" : "delete",
+      "right" : "delete",
+      "info" : "SimpleName[4161-4167]:SimpleName[4491-4497]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[4168-4187]:SingleVariableDeclaration[4498-4517]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4189-5240]:Block[4519-6033]"
+    }, {
+      "left" : "int keyBucket = entry.keyHash & mask;",
+      "right" : "int keyBucket = entry.keyHash & mask;",
+      "info" : "VariableDeclarationStatement[4195-4232]:VariableDeclarationStatement[4525-4562]"
+    }, {
+      "left" : "BiEntry<K, V> prevBucketEntry = null;",
+      "right" : "BiEntry<K, V> prevBucketEntry = null;",
+      "info" : "VariableDeclarationStatement[4237-4274]:VariableDeclarationStatement[4567-4604]"
+    }, {
+      "left" : "for (BiEntry<K, V> bucketEntry = hashTableKToV[keyBucket];\n        true;\n        bucketEntry = bucketEntry.nextInKToVBucket)",
+      "right" : "for (BiEntry<K, V> bucketEntry = hashTableKToV[keyBucket];\n        true;\n        bucketEntry = bucketEntry.nextInKToVBucket)",
+      "info" : "ForStatement[4279-4701]:ForStatement[4609-5031]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4404-4701]:Block[4734-5031]"
+    }, {
+      "left" : "if (bucketEntry == entry)",
+      "right" : "if (bucketEntry == entry)",
+      "info" : "IfStatement[4412-4658]:IfStatement[4742-4988]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4438-4658]:Block[4768-4988]"
+    }, {
+      "left" : "if (prevBucketEntry == null)",
+      "right" : "if (prevBucketEntry == null)",
+      "info" : "IfStatement[4448-4635]:IfStatement[4778-4965]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4477-4549]:Block[4807-4879]"
+    }, {
+      "left" : "hashTableKToV[keyBucket] = entry.nextInKToVBucket;",
+      "right" : "hashTableKToV[keyBucket] = entry.nextInKToVBucket;",
+      "info" : "ExpressionStatement[4489-4539]:ExpressionStatement[4819-4869]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4555-4635]:Block[4885-4965]"
+    }, {
+      "left" : "prevBucketEntry.nextInKToVBucket = entry.nextInKToVBucket;",
+      "right" : "prevBucketEntry.nextInKToVBucket = entry.nextInKToVBucket;",
+      "info" : "ExpressionStatement[4567-4625]:ExpressionStatement[4897-4955]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[4644-4650]:BreakStatement[4974-4980]"
+    }, {
+      "left" : "prevBucketEntry = bucketEntry;",
+      "right" : "prevBucketEntry = bucketEntry;",
+      "info" : "ExpressionStatement[4665-4695]:ExpressionStatement[4995-5025]"
+    }, {
+      "left" : "int valueBucket = entry.valueHash & mask;",
+      "right" : "int valueBucket = entry.valueHash & mask;",
+      "info" : "VariableDeclarationStatement[4707-4748]:VariableDeclarationStatement[5037-5078]"
+    }, {
+      "left" : "prevBucketEntry = null;",
+      "right" : "prevBucketEntry = null;",
+      "info" : "ExpressionStatement[4753-4776]:ExpressionStatement[5083-5106]"
+    }, {
+      "left" : "for (BiEntry<K, V> bucketEntry = hashTableVToK[valueBucket];\n        true;\n        bucketEntry = bucketEntry.nextInVToKBucket)",
+      "right" : "for (BiEntry<K, V> bucketEntry = hashTableVToK[valueBucket];\n        true;\n        bucketEntry = bucketEntry.nextInVToKBucket)",
+      "info" : "ForStatement[4781-5207]:ForStatement[5111-5537]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4908-5207]:Block[5238-5537]"
+    }, {
+      "left" : "if (bucketEntry == entry)",
+      "right" : "if (bucketEntry == entry)",
+      "info" : "IfStatement[4916-5164]:IfStatement[5246-5494]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4942-5164]:Block[5272-5494]"
+    }, {
+      "left" : "if (prevBucketEntry == null)",
+      "right" : "if (prevBucketEntry == null)",
+      "info" : "IfStatement[4952-5141]:IfStatement[5282-5471]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4981-5055]:Block[5311-5385]"
+    }, {
+      "left" : "hashTableVToK[valueBucket] = entry.nextInVToKBucket;",
+      "right" : "hashTableVToK[valueBucket] = entry.nextInVToKBucket;",
+      "info" : "ExpressionStatement[4993-5045]:ExpressionStatement[5323-5375]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5061-5141]:Block[5391-5471]"
+    }, {
+      "left" : "prevBucketEntry.nextInVToKBucket = entry.nextInVToKBucket;",
+      "right" : "prevBucketEntry.nextInVToKBucket = entry.nextInVToKBucket;",
+      "info" : "ExpressionStatement[5073-5131]:ExpressionStatement[5403-5461]"
+    }, {
+      "left" : "break;",
+      "right" : "break;",
+      "info" : "BreakStatement[5150-5156]:BreakStatement[5480-5486]"
+    }, {
+      "left" : "prevBucketEntry = bucketEntry;",
+      "right" : "prevBucketEntry = bucketEntry;",
+      "info" : "ExpressionStatement[5171-5201]:ExpressionStatement[5501-5531]"
+    }, {
+      "left" : "size--;",
+      "right" : "size--;",
+      "info" : "ExpressionStatement[5213-5220]:ExpressionStatement[6006-6013]"
+    }, {
+      "left" : "modCount++;",
+      "right" : "modCount++;",
+      "info" : "ExpressionStatement[5225-5236]:ExpressionStatement[6018-6029]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5244-5251]:Modifier[6037-6044]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[5252-5256]:PrimitiveType[6045-6049]"
+    }, {
+      "left" : "insert",
+      "right" : "insert",
+      "info" : "SimpleName[5257-5263]:SimpleName[6050-6056]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[5264-5283]:SingleVariableDeclaration[6057-6076]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5285-5598]:Block[6118-7335]"
+    }, {
+      "left" : "int keyBucket = entry.keyHash & mask;",
+      "right" : "int keyBucket = entry.keyHash & mask;",
+      "info" : "VariableDeclarationStatement[5291-5328]:VariableDeclarationStatement[6124-6161]"
+    }, {
+      "left" : "entry.nextInKToVBucket = hashTableKToV[keyBucket];",
+      "right" : "entry.nextInKToVBucket = hashTableKToV[keyBucket];",
+      "info" : "ExpressionStatement[5333-5383]:ExpressionStatement[6166-6216]"
+    }, {
+      "left" : "hashTableKToV[keyBucket] = entry;",
+      "right" : "hashTableKToV[keyBucket] = entry;",
+      "info" : "ExpressionStatement[5388-5421]:ExpressionStatement[6221-6254]"
+    }, {
+      "left" : "int valueBucket = entry.valueHash & mask;",
+      "right" : "int valueBucket = entry.valueHash & mask;",
+      "info" : "VariableDeclarationStatement[5427-5468]:VariableDeclarationStatement[6260-6301]"
+    }, {
+      "left" : "entry.nextInVToKBucket = hashTableVToK[valueBucket];",
+      "right" : "entry.nextInVToKBucket = hashTableVToK[valueBucket];",
+      "info" : "ExpressionStatement[5473-5525]:ExpressionStatement[6306-6358]"
+    }, {
+      "left" : "hashTableVToK[valueBucket] = entry;",
+      "right" : "hashTableVToK[valueBucket] = entry;",
+      "info" : "ExpressionStatement[5530-5565]:ExpressionStatement[6363-6398]"
+    }, {
+      "left" : "size++;",
+      "right" : "size++;",
+      "info" : "ExpressionStatement[5571-5578]:ExpressionStatement[7308-7315]"
+    }, {
+      "left" : "modCount++;",
+      "right" : "modCount++;",
+      "info" : "ExpressionStatement[5583-5594]:ExpressionStatement[7320-7331]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5602-5609]:Modifier[7339-7346]"
+    }, {
+      "left" : "BiEntry<K, V>",
+      "right" : "BiEntry<K, V>",
+      "info" : "ParameterizedType[5610-5623]:ParameterizedType[7347-7360]"
+    }, {
+      "left" : "seekByKey",
+      "right" : "seekByKey",
+      "info" : "SimpleName[5624-5633]:SimpleName[7361-7370]"
+    }, {
+      "left" : "@Nullable Object key",
+      "right" : "@Nullable Object key",
+      "info" : "SingleVariableDeclaration[5634-5654]:SingleVariableDeclaration[7371-7391]"
+    }, {
+      "left" : "int keyHash",
+      "right" : "int keyHash",
+      "info" : "SingleVariableDeclaration[5656-5667]:SingleVariableDeclaration[7393-7404]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5669-5925]:Block[7406-7662]"
+    }, {
+      "left" : "for (BiEntry<K, V> entry = hashTableKToV[keyHash & mask];\n        entry != null;\n        entry = entry.nextInKToVBucket)",
+      "right" : "for (BiEntry<K, V> entry = hashTableKToV[keyHash & mask];\n        entry != null;\n        entry = entry.nextInKToVBucket)",
+      "info" : "ForStatement[5675-5904]:ForStatement[7412-7641]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5796-5904]:Block[7533-7641]"
+    }, {
+      "left" : "if (keyHash == entry.keyHash && Objects.equal(key, entry.key))",
+      "right" : "if (keyHash == entry.keyHash && Objects.equal(key, entry.key))",
+      "info" : "IfStatement[5804-5898]:IfStatement[7541-7635]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5867-5898]:Block[7604-7635]"
+    }, {
+      "left" : "return entry;",
+      "right" : "return entry;",
+      "info" : "ReturnStatement[5877-5890]:ReturnStatement[7614-7627]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[5909-5921]:ReturnStatement[7646-7658]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5929-5936]:Modifier[7666-7673]"
+    }, {
+      "left" : "BiEntry<K, V>",
+      "right" : "BiEntry<K, V>",
+      "info" : "ParameterizedType[5937-5950]:ParameterizedType[7674-7687]"
+    }, {
+      "left" : "seekByValue",
+      "right" : "seekByValue",
+      "info" : "SimpleName[5951-5962]:SimpleName[7688-7699]"
+    }, {
+      "left" : "@Nullable Object value",
+      "right" : "@Nullable Object value",
+      "info" : "SingleVariableDeclaration[5963-5985]:SingleVariableDeclaration[7700-7722]"
+    }, {
+      "left" : "int valueHash",
+      "right" : "int valueHash",
+      "info" : "SingleVariableDeclaration[5987-6000]:SingleVariableDeclaration[7724-7737]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6002-6268]:Block[7739-8005]"
+    }, {
+      "left" : "for (BiEntry<K, V> entry = hashTableVToK[valueHash & mask];\n        entry != null;\n        entry = entry.nextInVToKBucket)",
+      "right" : "for (BiEntry<K, V> entry = hashTableVToK[valueHash & mask];\n        entry != null;\n        entry = entry.nextInVToKBucket)",
+      "info" : "ForStatement[6008-6247]:ForStatement[7745-7984]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6131-6247]:Block[7868-7984]"
+    }, {
+      "left" : "if (valueHash == entry.valueHash && Objects.equal(value, entry.value))",
+      "right" : "if (valueHash == entry.valueHash && Objects.equal(value, entry.value))",
+      "info" : "IfStatement[6139-6241]:IfStatement[7876-7978]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6210-6241]:Block[7947-7978]"
+    }, {
+      "left" : "return entry;",
+      "right" : "return entry;",
+      "info" : "ReturnStatement[6220-6233]:ReturnStatement[7957-7970]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[6252-6264]:ReturnStatement[7989-8001]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6272-6281]:MarkerAnnotation[8009-8018]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6284-6290]:Modifier[8021-8027]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[6291-6298]:PrimitiveType[8028-8035]"
+    }, {
+      "left" : "containsKey",
+      "right" : "containsKey",
+      "info" : "SimpleName[6299-6310]:SimpleName[8036-8047]"
+    }, {
+      "left" : "@Nullable Object key",
+      "right" : "@Nullable Object key",
+      "info" : "SingleVariableDeclaration[6311-6331]:SingleVariableDeclaration[8048-8068]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6333-6391]:Block[8070-8128]"
+    }, {
+      "left" : "return seekByKey(key, smearedHash(key)) != null;",
+      "right" : "return seekByKey(key, smearedHash(key)) != null;",
+      "info" : "ReturnStatement[6339-6387]:ReturnStatement[8076-8124]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6395-6404]:MarkerAnnotation[8132-8141]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6407-6413]:Modifier[8144-8150]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[6414-6421]:PrimitiveType[8151-8158]"
+    }, {
+      "left" : "containsValue",
+      "right" : "containsValue",
+      "info" : "SimpleName[6422-6435]:SimpleName[8159-8172]"
+    }, {
+      "left" : "@Nullable Object value",
+      "right" : "@Nullable Object value",
+      "info" : "SingleVariableDeclaration[6436-6458]:SingleVariableDeclaration[8173-8195]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6460-6524]:Block[8197-8261]"
+    }, {
+      "left" : "return seekByValue(value, smearedHash(value)) != null;",
+      "right" : "return seekByValue(value, smearedHash(value)) != null;",
+      "info" : "ReturnStatement[6466-6520]:ReturnStatement[8203-8257]"
+    }, {
+      "left" : "@Nullable",
+      "right" : "@Nullable",
+      "info" : "MarkerAnnotation[6528-6537]:MarkerAnnotation[8265-8274]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6540-6549]:MarkerAnnotation[8277-8286]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6552-6558]:Modifier[8289-8295]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[6559-6560]:SimpleType[8296-8297]"
+    }, {
+      "left" : "get",
+      "right" : "get",
+      "info" : "SimpleName[6561-6564]:SimpleName[8298-8301]"
+    }, {
+      "left" : "@Nullable Object key",
+      "right" : "@Nullable Object key",
+      "info" : "SingleVariableDeclaration[6565-6585]:SingleVariableDeclaration[8302-8322]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6587-6655]:Block[8324-8392]"
+    }, {
+      "left" : "return Maps.valueOrNull(seekByKey(key, smearedHash(key)));",
+      "right" : "return Maps.valueOrNull(seekByKey(key, smearedHash(key)));",
+      "info" : "ReturnStatement[6593-6651]:ReturnStatement[8330-8388]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6659-6668]:MarkerAnnotation[8396-8405]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6671-6677]:Modifier[8408-8414]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[6678-6679]:SimpleType[8415-8416]"
+    }, {
+      "left" : "put",
+      "right" : "put",
+      "info" : "SimpleName[6680-6683]:SimpleName[8417-8420]"
+    }, {
+      "left" : "@Nullable K key",
+      "right" : "@Nullable K key",
+      "info" : "SingleVariableDeclaration[6684-6699]:SingleVariableDeclaration[8421-8436]"
+    }, {
+      "left" : "@Nullable V value",
+      "right" : "@Nullable V value",
+      "info" : "SingleVariableDeclaration[6701-6718]:SingleVariableDeclaration[8438-8455]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6720-6760]:Block[8457-8497]"
+    }, {
+      "left" : "return put(key, value, false);",
+      "right" : "return put(key, value, false);",
+      "info" : "ReturnStatement[6726-6756]:ReturnStatement[8463-8493]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6764-6773]:MarkerAnnotation[8501-8510]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6776-6782]:Modifier[8513-8519]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[6783-6784]:SimpleType[8520-8521]"
+    }, {
+      "left" : "forcePut",
+      "right" : "forcePut",
+      "info" : "SimpleName[6785-6793]:SimpleName[8522-8530]"
+    }, {
+      "left" : "@Nullable K key",
+      "right" : "@Nullable K key",
+      "info" : "SingleVariableDeclaration[6794-6809]:SingleVariableDeclaration[8531-8546]"
+    }, {
+      "left" : "@Nullable V value",
+      "right" : "@Nullable V value",
+      "info" : "SingleVariableDeclaration[6811-6828]:SingleVariableDeclaration[8548-8565]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6830-6869]:Block[8567-8606]"
+    }, {
+      "left" : "return put(key, value, true);",
+      "right" : "return put(key, value, true);",
+      "info" : "ReturnStatement[6836-6865]:ReturnStatement[8573-8602]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[6873-6880]:Modifier[8610-8617]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[6881-6882]:SimpleType[8618-8619]"
+    }, {
+      "left" : "put",
+      "right" : "put",
+      "info" : "SimpleName[6883-6886]:SimpleName[8620-8623]"
+    }, {
+      "left" : "@Nullable K key",
+      "right" : "@Nullable K key",
+      "info" : "SingleVariableDeclaration[6887-6902]:SingleVariableDeclaration[8624-8639]"
+    }, {
+      "left" : "@Nullable V value",
+      "right" : "@Nullable V value",
+      "info" : "SingleVariableDeclaration[6904-6921]:SingleVariableDeclaration[8641-8658]"
+    }, {
+      "left" : "boolean force",
+      "right" : "boolean force",
+      "info" : "SingleVariableDeclaration[6923-6936]:SingleVariableDeclaration[8660-8673]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6938-7752]:Block[8675-9694]"
+    }, {
+      "left" : "int keyHash = smearedHash(key);",
+      "right" : "int keyHash = smearedHash(key);",
+      "info" : "VariableDeclarationStatement[6944-6975]:VariableDeclarationStatement[8681-8712]"
+    }, {
+      "left" : "int valueHash = smearedHash(value);",
+      "right" : "int valueHash = smearedHash(value);",
+      "info" : "VariableDeclarationStatement[6980-7015]:VariableDeclarationStatement[8717-8752]"
+    }, {
+      "left" : "BiEntry<K, V> oldEntryForKey = seekByKey(key, keyHash);",
+      "right" : "BiEntry<K, V> oldEntryForKey = seekByKey(key, keyHash);",
+      "info" : "VariableDeclarationStatement[7021-7076]:VariableDeclarationStatement[8758-8813]"
+    }, {
+      "left" : "if (oldEntryForKey != null\n        && valueHash == oldEntryForKey.valueHash\n        && Objects.equal(value, oldEntryForKey.value))",
+      "right" : "if (oldEntryForKey != null\n        && valueHash == oldEntryForKey.valueHash\n        && Objects.equal(value, oldEntryForKey.value))",
+      "info" : "IfStatement[7081-7239]:IfStatement[8818-8976]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7212-7239]:Block[8949-8976]"
+    }, {
+      "left" : "return value;",
+      "right" : "return value;",
+      "info" : "ReturnStatement[7220-7233]:ReturnStatement[8957-8970]"
+    }, {
+      "left" : "BiEntry<K, V> oldEntryForValue = seekByValue(value, valueHash);",
+      "right" : "BiEntry<K, V> oldEntryForValue = seekByValue(value, valueHash);",
+      "info" : "VariableDeclarationStatement[7245-7308]:VariableDeclarationStatement[8982-9045]"
+    }, {
+      "left" : "if (oldEntryForValue != null)",
+      "right" : "if (oldEntryForValue != null)",
+      "info" : "IfStatement[7313-7505]:IfStatement[9050-9242]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7343-7505]:Block[9080-9242]"
+    }, {
+      "left" : "if (force)",
+      "right" : "if (force)",
+      "info" : "IfStatement[7351-7499]:IfStatement[9088-9236]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7362-7405]:Block[9099-9142]"
+    }, {
+      "left" : "delete(oldEntryForValue);",
+      "right" : "delete(oldEntryForValue);",
+      "info" : "ExpressionStatement[7372-7397]:ExpressionStatement[9109-9134]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7411-7499]:Block[9148-9236]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"value already present: \" + value);",
+      "right" : "throw new IllegalArgumentException(\"value already present: \" + value);",
+      "info" : "ThrowStatement[7421-7491]:ThrowStatement[9158-9228]"
+    }, {
+      "left" : "oldEntryForKey != null",
+      "right" : "oldEntryForKey != null",
+      "info" : "InfixExpression[7515-7537]:InfixExpression[9332-9354]"
+    }, {
+      "left" : "delete(oldEntryForKey);",
+      "right" : "delete(oldEntryForKey);",
+      "info" : "ExpressionStatement[7547-7570]:ExpressionStatement[9364-9387]"
+    }, {
+      "left" : "BiEntry<K, V> newEntry = new BiEntry<K, V>(key, keyHash, value, valueHash);",
+      "right" : "BiEntry<K, V> newEntry = new BiEntry<K, V>(key, keyHash, value, valueHash);",
+      "info" : "VariableDeclarationStatement[7581-7656]:VariableDeclarationStatement[9248-9323]"
+    }, {
+      "left" : "insert(newEntry);",
+      "right" : "insert(newEntry, oldEntryForKey);",
+      "info" : "ExpressionStatement[7661-7678]:ExpressionStatement[9394-9427]"
+    }, {
+      "left" : "rehashIfNecessary();",
+      "right" : "rehashIfNecessary();",
+      "info" : "ExpressionStatement[7683-7703]:ExpressionStatement[9540-9560]"
+    }, {
+      "left" : "Maps.valueOrNull(oldEntryForKey)",
+      "right" : "insert(newEntry, null)",
+      "info" : "MethodInvocation[7715-7747]:MethodInvocation[9615-9637]"
+    }, {
+      "left" : "valueOrNull",
+      "right" : "insert",
+      "info" : "SimpleName[7720-7731]:SimpleName[9615-9621]"
+    }, {
+      "left" : "oldEntryForKey",
+      "right" : "newEntry",
+      "info" : "SimpleName[7732-7746]:SimpleName[9622-9630]"
+    }, {
+      "left" : "@Nullable",
+      "right" : "@Nullable",
+      "info" : "MarkerAnnotation[7756-7765]:MarkerAnnotation[9698-9707]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[7768-7775]:Modifier[9710-9717]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[7776-7777]:SimpleType[9718-9719]"
+    }, {
+      "left" : "putInverse",
+      "right" : "putInverse",
+      "info" : "SimpleName[7778-7788]:SimpleName[9720-9730]"
+    }, {
+      "left" : "@Nullable V value",
+      "right" : "@Nullable V value",
+      "info" : "SingleVariableDeclaration[7789-7806]:SingleVariableDeclaration[9731-9748]"
+    }, {
+      "left" : "@Nullable K key",
+      "right" : "@Nullable K key",
+      "info" : "SingleVariableDeclaration[7808-7823]:SingleVariableDeclaration[9750-9765]"
+    }, {
+      "left" : "boolean force",
+      "right" : "boolean force",
+      "info" : "SingleVariableDeclaration[7825-7838]:SingleVariableDeclaration[9767-9780]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7840-8648]:Block[9782-10752]"
+    }, {
+      "left" : "int valueHash = smearedHash(value);",
+      "right" : "int valueHash = smearedHash(value);",
+      "info" : "VariableDeclarationStatement[7846-7881]:VariableDeclarationStatement[9788-9823]"
+    }, {
+      "left" : "int keyHash = smearedHash(key);",
+      "right" : "int keyHash = smearedHash(key);",
+      "info" : "VariableDeclarationStatement[7886-7917]:VariableDeclarationStatement[9828-9859]"
+    }, {
+      "left" : "BiEntry<K, V> oldEntryForValue = seekByValue(value, valueHash);",
+      "right" : "BiEntry<K, V> oldEntryForValue = seekByValue(value, valueHash);",
+      "info" : "VariableDeclarationStatement[7923-7986]:VariableDeclarationStatement[9865-9928]"
+    }, {
+      "left" : "if (oldEntryForValue != null\n        && keyHash == oldEntryForValue.keyHash\n        && Objects.equal(key, oldEntryForValue.key))",
+      "right" : "if (oldEntryForValue != null\n        && keyHash == oldEntryForValue.keyHash\n        && Objects.equal(key, oldEntryForValue.key))",
+      "info" : "IfStatement[7991-8145]:IfStatement[9933-10087]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8120-8145]:Block[10062-10087]"
+    }, {
+      "left" : "return key;",
+      "right" : "return key;",
+      "info" : "ReturnStatement[8128-8139]:ReturnStatement[10070-10081]"
+    }, {
+      "left" : "BiEntry<K, V> oldEntryForKey = seekByKey(key, keyHash);",
+      "right" : "BiEntry<K, V> oldEntryForKey = seekByKey(key, keyHash);",
+      "info" : "VariableDeclarationStatement[8151-8206]:VariableDeclarationStatement[10093-10148]"
+    }, {
+      "left" : "if (oldEntryForKey != null)",
+      "right" : "if (oldEntryForKey != null)",
+      "info" : "IfStatement[8211-8397]:IfStatement[10153-10339]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8239-8397]:Block[10181-10339]"
+    }, {
+      "left" : "if (force)",
+      "right" : "if (force)",
+      "info" : "IfStatement[8247-8391]:IfStatement[10189-10333]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8258-8299]:Block[10200-10241]"
+    }, {
+      "left" : "delete(oldEntryForKey);",
+      "right" : "delete(oldEntryForKey);",
+      "info" : "ExpressionStatement[8268-8291]:ExpressionStatement[10210-10233]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8305-8391]:Block[10247-10333]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"value already present: \" + key);",
+      "right" : "throw new IllegalArgumentException(\"value already present: \" + key);",
+      "info" : "ThrowStatement[8315-8383]:ThrowStatement[10257-10325]"
+    }, {
+      "left" : "if (oldEntryForValue != null)",
+      "right" : "if (oldEntryForValue != null)",
+      "info" : "IfStatement[8403-8472]:IfStatement[10345-10414]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8433-8472]:Block[10375-10414]"
+    }, {
+      "left" : "delete(oldEntryForValue);",
+      "right" : "delete(oldEntryForValue);",
+      "info" : "ExpressionStatement[8441-8466]:ExpressionStatement[10383-10408]"
+    }, {
+      "left" : "BiEntry<K, V> newEntry = new BiEntry<K, V>(key, keyHash, value, valueHash);",
+      "right" : "BiEntry<K, V> newEntry = new BiEntry<K, V>(key, keyHash, value, valueHash);",
+      "info" : "VariableDeclarationStatement[8477-8552]:VariableDeclarationStatement[10419-10494]"
+    }, {
+      "left" : "insert(newEntry);",
+      "right" : "insert(newEntry, oldEntryForKey);",
+      "info" : "ExpressionStatement[8557-8574]:ExpressionStatement[10499-10532]"
+    }, {
+      "left" : "rehashIfNecessary();",
+      "right" : "rehashIfNecessary();",
+      "info" : "ExpressionStatement[8579-8599]:ExpressionStatement[10683-10703]"
+    }, {
+      "left" : "return Maps.keyOrNull(oldEntryForValue);",
+      "right" : "return Maps.keyOrNull(oldEntryForValue);",
+      "info" : "ReturnStatement[8604-8644]:ReturnStatement[10708-10748]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[8652-8659]:Modifier[10756-10763]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8660-8664]:PrimitiveType[10764-10768]"
+    }, {
+      "left" : "rehashIfNecessary",
+      "right" : "rehashIfNecessary",
+      "info" : "SimpleName[8665-8682]:SimpleName[10769-10786]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8685-9319]:Block[10789-11312]"
+    }, {
+      "left" : "BiEntry<K, V>[] oldKToV = hashTableKToV;",
+      "right" : "BiEntry<K, V>[] oldKToV = hashTableKToV;",
+      "info" : "VariableDeclarationStatement[8691-8731]:VariableDeclarationStatement[10795-10835]"
+    }, {
+      "left" : "if (Hashing.needsResizing(size, oldKToV.length, LOAD_FACTOR))",
+      "right" : "if (Hashing.needsResizing(size, oldKToV.length, LOAD_FACTOR))",
+      "info" : "IfStatement[8736-9315]:IfStatement[10840-11308]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8798-9315]:Block[10902-11308]"
+    }, {
+      "left" : "int newTableSize = oldKToV.length * 2;",
+      "right" : "int newTableSize = oldKToV.length * 2;",
+      "info" : "VariableDeclarationStatement[8806-8844]:VariableDeclarationStatement[10910-10948]"
+    }, {
+      "left" : "this.hashTableKToV = createTable(newTableSize);",
+      "right" : "this.hashTableKToV = createTable(newTableSize);",
+      "info" : "ExpressionStatement[8852-8899]:ExpressionStatement[10956-11003]"
+    }, {
+      "left" : "this.hashTableVToK = createTable(newTableSize);",
+      "right" : "this.hashTableVToK = createTable(newTableSize);",
+      "info" : "ExpressionStatement[8906-8953]:ExpressionStatement[11010-11057]"
+    }, {
+      "left" : "this.mask = newTableSize - 1;",
+      "right" : "this.mask = newTableSize - 1;",
+      "info" : "ExpressionStatement[8960-8989]:ExpressionStatement[11064-11093]"
+    }, {
+      "left" : "this.size = 0;",
+      "right" : "this.size = 0;",
+      "info" : "ExpressionStatement[8996-9010]:ExpressionStatement[11100-11114]"
+    }, {
+      "left" : "for (int bucket = 0; bucket < oldKToV.length; bucket++)",
+      "right" : "for (BiEntry<K, V> entry = firstInKeyInsertionOrder; entry != null; \n          entry = entry.nextInKeyInsertionOrder)",
+      "info" : "ForStatement[9018-9286]:ForStatement[11122-11279]"
+    }, {
+      "left" : "BiEntry<K, V>",
+      "right" : "BiEntry<K, V>",
+      "info" : "ParameterizedType[9084-9097]:ParameterizedType[11127-11140]"
+    }, {
+      "left" : "entry = oldKToV[bucket]",
+      "right" : "entry = firstInKeyInsertionOrder",
+      "info" : "VariableDeclarationFragment[9098-9121]:VariableDeclarationFragment[11141-11173]"
+    }, {
+      "left" : "entry != null",
+      "right" : "entry != null",
+      "info" : "InfixExpression[9138-9151]:InfixExpression[11175-11188]"
+    }, {
+      "left" : "BiEntry<K, V>",
+      "right" : "BiEntry<K, V>",
+      "info" : "ParameterizedType[9165-9178]:ParameterizedType[6088-6101]"
+    }, {
+      "left" : "entry.nextInKToVBucket",
+      "right" : "entry.nextInKeyInsertionOrder",
+      "info" : "QualifiedName[9191-9213]:QualifiedName[11209-11238]"
+    }, {
+      "left" : "insert(entry);",
+      "right" : "insert(entry, entry);",
+      "info" : "ExpressionStatement[9225-9239]:ExpressionStatement[11250-11271]"
+    }, {
+      "left" : "this.modCount++;",
+      "right" : "this.modCount++;",
+      "info" : "ExpressionStatement[9293-9309]:ExpressionStatement[11286-11302]"
+    }, {
+      "left" : "@SuppressWarnings(\"unchecked\")",
+      "right" : "@SuppressWarnings(\"unchecked\")",
+      "info" : "SingleMemberAnnotation[9323-9353]:SingleMemberAnnotation[11316-11346]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[9356-9363]:Modifier[11349-11356]"
+    }, {
+      "left" : "BiEntry<K, V>[]",
+      "right" : "BiEntry<K, V>[]",
+      "info" : "ArrayType[9364-9379]:ArrayType[11357-11372]"
+    }, {
+      "left" : "createTable",
+      "right" : "createTable",
+      "info" : "SimpleName[9380-9391]:SimpleName[11373-11384]"
+    }, {
+      "left" : "int length",
+      "right" : "int length",
+      "info" : "SingleVariableDeclaration[9392-9402]:SingleVariableDeclaration[11385-11395]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9404-9441]:Block[11397-11434]"
+    }, {
+      "left" : "return new BiEntry[length];",
+      "right" : "return new BiEntry[length];",
+      "info" : "ReturnStatement[9410-9437]:ReturnStatement[11403-11430]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[9445-9454]:MarkerAnnotation[11438-11447]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9457-9463]:Modifier[11450-11456]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[9464-9465]:SimpleType[11457-11458]"
+    }, {
+      "left" : "remove",
+      "right" : "remove",
+      "info" : "SimpleName[9466-9472]:SimpleName[11459-11465]"
+    }, {
+      "left" : "@Nullable Object key",
+      "right" : "@Nullable Object key",
+      "info" : "SingleVariableDeclaration[9473-9493]:SingleVariableDeclaration[11466-11486]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9495-9670]:Block[11488-11751]"
+    }, {
+      "left" : "BiEntry<K, V> entry = seekByKey(key, smearedHash(key));",
+      "right" : "BiEntry<K, V> entry = seekByKey(key, smearedHash(key));",
+      "info" : "VariableDeclarationStatement[9501-9556]:VariableDeclarationStatement[11494-11549]"
+    }, {
+      "left" : "if (entry == null)",
+      "right" : "if (entry == null)",
+      "info" : "IfStatement[9561-9666]:IfStatement[11554-11747]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9580-9606]:Block[11573-11599]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[9588-9600]:ReturnStatement[11581-11593]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9612-9666]:Block[11605-11747]"
+    }, {
+      "left" : "delete(entry);",
+      "right" : "delete(entry);",
+      "info" : "ExpressionStatement[9620-9634]:ExpressionStatement[11613-11627]"
+    }, {
+      "left" : "return entry.value;",
+      "right" : "return entry.value;",
+      "info" : "ReturnStatement[9641-9660]:ReturnStatement[11722-11741]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[9674-9683]:MarkerAnnotation[11755-11764]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9686-9692]:Modifier[11767-11773]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9693-9697]:PrimitiveType[11774-11778]"
+    }, {
+      "left" : "clear",
+      "right" : "clear",
+      "info" : "SimpleName[9698-9703]:SimpleName[11779-11784]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9706-9817]:Block[11787-11971]"
+    }, {
+      "left" : "size = 0;",
+      "right" : "size = 0;",
+      "info" : "ExpressionStatement[9712-9721]:ExpressionStatement[11793-11802]"
+    }, {
+      "left" : "Arrays.fill(hashTableKToV, null);",
+      "right" : "Arrays.fill(hashTableKToV, null);",
+      "info" : "ExpressionStatement[9726-9759]:ExpressionStatement[11807-11840]"
+    }, {
+      "left" : "Arrays.fill(hashTableVToK, null);",
+      "right" : "Arrays.fill(hashTableVToK, null);",
+      "info" : "ExpressionStatement[9764-9797]:ExpressionStatement[11845-11878]"
+    }, {
+      "left" : "modCount++;",
+      "right" : "modCount++;",
+      "info" : "ExpressionStatement[9802-9813]:ExpressionStatement[11956-11967]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[9821-9830]:MarkerAnnotation[11975-11984]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9833-9839]:Modifier[11987-11993]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[9840-9843]:PrimitiveType[11994-11997]"
+    }, {
+      "left" : "size",
+      "right" : "size",
+      "info" : "SimpleName[9844-9848]:SimpleName[11998-12002]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9851-9873]:Block[12005-12027]"
+    }, {
+      "left" : "return size;",
+      "right" : "return size;",
+      "info" : "ReturnStatement[9857-9869]:ReturnStatement[12011-12023]"
+    }, {
+      "left" : "abstract",
+      "right" : "abstract",
+      "info" : "Modifier[9877-9885]:Modifier[12031-12039]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[9886-9891]:TYPE_DECLARATION_KIND[12040-12045]"
+    }, {
+      "left" : "Itr",
+      "right" : "Itr",
+      "info" : "SimpleName[9892-9895]:SimpleName[12046-12049]"
+    }, {
+      "left" : "private",
+      "right" : "public",
+      "info" : "Modifier[10056-10063]:Modifier[12220-12226]"
+    }, {
+      "left" : "void",
+      "right" : "boolean",
+      "info" : "PrimitiveType[10064-10068]:PrimitiveType[12227-12234]"
+    }, {
+      "left" : "checkForConcurrentModification",
+      "right" : "hasNext",
+      "info" : "SimpleName[10069-10099]:SimpleName[12235-12242]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10102-10212]:Block[12245-12382]"
+    }, {
+      "left" : "if (modCount != expectedModCount)",
+      "right" : "if (modCount != expectedModCount)",
+      "info" : "IfStatement[10110-10206]:IfStatement[12253-12349]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10144-10206]:Block[12287-12349]"
+    }, {
+      "left" : "throw new ConcurrentModificationException();",
+      "right" : "throw new ConcurrentModificationException();",
+      "info" : "ThrowStatement[10154-10198]:ThrowStatement[12297-12341]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[10218-10227]:MarkerAnnotation[12206-12215]"
+    }, {
+      "left" : "next != null",
+      "right" : "next != null",
+      "info" : "InfixExpression[10309-10321]:InfixExpression[12363-12375]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[10593-10602]:MarkerAnnotation[12388-12397]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[10607-10613]:Modifier[12402-12408]"
+    }, {
+      "left" : "T",
+      "right" : "T",
+      "info" : "SimpleType[10614-10615]:SimpleType[12409-12410]"
+    }, {
+      "left" : "next",
+      "right" : "next",
+      "info" : "SimpleName[10616-10620]:SimpleName[12411-12415]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10623-10870]:Block[12418-12632]"
+    }, {
+      "left" : "if (!hasNext())",
+      "right" : "if (!hasNext())",
+      "info" : "IfStatement[10671-10740]:IfStatement[12426-12495]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10687-10740]:Block[12442-12495]"
+    }, {
+      "left" : "throw new NoSuchElementException();",
+      "right" : "throw new NoSuchElementException();",
+      "info" : "ThrowStatement[10697-10732]:ThrowStatement[12452-12487]"
+    }, {
+      "left" : "BiEntry<K, V> entry = next;",
+      "right" : "BiEntry<K, V> entry = next;",
+      "info" : "VariableDeclarationStatement[10748-10775]:VariableDeclarationStatement[12503-12530]"
+    }, {
+      "left" : "next = entry.nextInKToVBucket;",
+      "right" : "next = entry.nextInKeyInsertionOrder;",
+      "info" : "ExpressionStatement[10782-10812]:ExpressionStatement[12537-12574]"
+    }, {
+      "left" : "entry.nextInKToVBucket",
+      "right" : "entry.nextInKeyInsertionOrder",
+      "info" : "QualifiedName[10789-10811]:QualifiedName[12544-12573]"
+    }, {
+      "left" : "toRemove = entry;",
+      "right" : "toRemove = entry;",
+      "info" : "ExpressionStatement[10819-10836]:ExpressionStatement[12581-12598]"
+    }, {
+      "left" : "return output(entry);",
+      "right" : "return output(entry);",
+      "info" : "ReturnStatement[10843-10864]:ReturnStatement[12605-12626]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[10876-10885]:MarkerAnnotation[12638-12647]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[10890-10896]:Modifier[12652-12658]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10897-10901]:PrimitiveType[12659-12663]"
+    }, {
+      "left" : "remove",
+      "right" : "remove",
+      "info" : "SimpleName[10902-10908]:SimpleName[12664-12670]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10911-11077]:Block[12673-12902]"
+    }, {
+      "left" : "checkRemove(toRemove != null);",
+      "right" : "checkRemove(toRemove != null);",
+      "info" : "ExpressionStatement[10959-10989]:ExpressionStatement[12784-12814]"
+    }, {
+      "left" : "delete(toRemove);",
+      "right" : "delete(toRemove);",
+      "info" : "ExpressionStatement[10996-11013]:ExpressionStatement[12821-12838]"
+    }, {
+      "left" : "expectedModCount = modCount;",
+      "right" : "expectedModCount = modCount;",
+      "info" : "ExpressionStatement[11020-11048]:ExpressionStatement[12845-12873]"
+    }, {
+      "left" : "toRemove = null;",
+      "right" : "toRemove = null;",
+      "info" : "ExpressionStatement[11055-11071]:ExpressionStatement[12880-12896]"
+    }, {
+      "left" : "abstract",
+      "right" : "abstract",
+      "info" : "Modifier[11083-11091]:Modifier[12908-12916]"
+    }, {
+      "left" : "T",
+      "right" : "T",
+      "info" : "SimpleType[11092-11093]:SimpleType[12917-12918]"
+    }, {
+      "left" : "output",
+      "right" : "output",
+      "info" : "SimpleName[11094-11100]:SimpleName[12919-12925]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[11101-11120]:SingleVariableDeclaration[12926-12945]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11130-11139]:MarkerAnnotation[12955-12964]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11142-11148]:Modifier[12967-12973]"
+    }, {
+      "left" : "Set<K>",
+      "right" : "Set<K>",
+      "info" : "ParameterizedType[11149-11155]:ParameterizedType[12974-12980]"
+    }, {
+      "left" : "keySet",
+      "right" : "keySet",
+      "info" : "SimpleName[11156-11162]:SimpleName[12981-12987]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11165-11195]:Block[12990-13020]"
+    }, {
+      "left" : "return new KeySet();",
+      "right" : "return new KeySet();",
+      "info" : "ReturnStatement[11171-11191]:ReturnStatement[12996-13016]"
+    }, {
+      "left" : "@WeakOuter",
+      "right" : "@WeakOuter",
+      "info" : "MarkerAnnotation[11199-11209]:MarkerAnnotation[13024-13034]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11212-11219]:Modifier[13037-13044]"
+    }, {
+      "left" : "final",
+      "right" : "final",
+      "info" : "Modifier[11220-11225]:Modifier[13045-13050]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[11226-11231]:TYPE_DECLARATION_KIND[13051-13056]"
+    }, {
+      "left" : "KeySet",
+      "right" : "KeySet",
+      "info" : "SimpleName[11232-11238]:SimpleName[13057-13063]"
+    }, {
+      "left" : "KeySet",
+      "right" : "KeySet",
+      "info" : "SimpleName[11271-11277]:SimpleName[13096-13102]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11280-11316]:Block[13105-13141]"
+    }, {
+      "left" : "super(HashBiMap.this);",
+      "right" : "super(HashBiMap.this);",
+      "info" : "SuperConstructorInvocation[11288-11310]:SuperConstructorInvocation[13113-13135]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11322-11331]:MarkerAnnotation[13147-13156]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11336-11342]:Modifier[13161-13167]"
+    }, {
+      "left" : "Iterator<K>",
+      "right" : "Iterator<K>",
+      "info" : "ParameterizedType[11343-11354]:ParameterizedType[13168-13179]"
+    }, {
+      "left" : "iterator",
+      "right" : "iterator",
+      "info" : "SimpleName[11355-11363]:SimpleName[13180-13188]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11366-11506]:Block[13191-13331]"
+    }, {
+      "left" : "return new Itr<K>() {\n        @Override\n        K output(BiEntry<K, V> entry) {\n          return entry.key;\n        }\n      };",
+      "right" : "return new Itr<K>() {\n        @Override\n        K output(BiEntry<K, V> entry) {\n          return entry.key;\n        }\n      };",
+      "info" : "ReturnStatement[11374-11500]:ReturnStatement[13199-13325]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11404-11413]:MarkerAnnotation[13229-13238]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[11422-11423]:SimpleType[13247-13248]"
+    }, {
+      "left" : "output",
+      "right" : "output",
+      "info" : "SimpleName[11424-11430]:SimpleName[13249-13255]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[11431-11450]:SingleVariableDeclaration[13256-13275]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11452-11491]:Block[13277-13316]"
+    }, {
+      "left" : "return entry.key;",
+      "right" : "return entry.key;",
+      "info" : "ReturnStatement[11464-11481]:ReturnStatement[13289-13306]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11512-11521]:MarkerAnnotation[13337-13346]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11526-11532]:Modifier[13351-13357]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[11533-11540]:PrimitiveType[13358-13365]"
+    }, {
+      "left" : "remove",
+      "right" : "remove",
+      "info" : "SimpleName[11541-11547]:SimpleName[13366-13372]"
+    }, {
+      "left" : "@Nullable Object o",
+      "right" : "@Nullable Object o",
+      "info" : "SingleVariableDeclaration[11548-11566]:SingleVariableDeclaration[13373-13391]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11568-11749]:Block[13393-13666]"
+    }, {
+      "left" : "BiEntry<K, V> entry = seekByKey(o, smearedHash(o));",
+      "right" : "BiEntry<K, V> entry = seekByKey(o, smearedHash(o));",
+      "info" : "VariableDeclarationStatement[11576-11627]:VariableDeclarationStatement[13401-13452]"
+    }, {
+      "left" : "if (entry == null)",
+      "right" : "if (entry == null)",
+      "info" : "IfStatement[11634-11743]:IfStatement[13459-13660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11653-11684]:Block[13478-13509]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[11663-11676]:ReturnStatement[13488-13501]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11690-11743]:Block[13515-13660]"
+    }, {
+      "left" : "delete(entry);",
+      "right" : "delete(entry);",
+      "info" : "ExpressionStatement[11700-11714]:ExpressionStatement[13525-13539]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[11723-11735]:ReturnStatement[13640-13652]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11757-11766]:MarkerAnnotation[13674-13683]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11769-11775]:Modifier[13686-13692]"
+    }, {
+      "left" : "Set<V>",
+      "right" : "Set<V>",
+      "info" : "ParameterizedType[11776-11782]:ParameterizedType[13693-13699]"
+    }, {
+      "left" : "values",
+      "right" : "values",
+      "info" : "SimpleName[11783-11789]:SimpleName[13700-13706]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11792-11828]:Block[13709-13745]"
+    }, {
+      "left" : "return inverse().keySet();",
+      "right" : "return inverse().keySet();",
+      "info" : "ReturnStatement[11798-11824]:ReturnStatement[13715-13741]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11832-11841]:MarkerAnnotation[13749-13758]"
+    }, {
+      "left" : "Iterator<Entry<K, V>>",
+      "right" : "Iterator<Entry<K, V>>",
+      "info" : "ParameterizedType[11844-11865]:ParameterizedType[13761-13782]"
+    }, {
+      "left" : "entryIterator",
+      "right" : "entryIterator",
+      "info" : "SimpleName[11866-11879]:SimpleName[13783-13796]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11882-13123]:Block[13799-15152]"
+    }, {
+      "left" : "return new Itr<Entry<K, V>>() {\n      @Override\n      Entry<K, V> output(BiEntry<K, V> entry) {\n        return new MapEntry(entry);\n      }\n\n      class MapEntry extends AbstractMapEntry<K, V> {\n        BiEntry<K, V> delegate;\n\n        MapEntry(BiEntry<K, V> entry) {\n          this.delegate = entry;\n        }\n\n        @Override\n        public K getKey() {\n          return delegate.key;\n        }\n\n        @Override\n        public V getValue() {\n          return delegate.value;\n        }\n\n        @Override\n        public V setValue(V value) {\n          V oldValue = delegate.value;\n          int valueHash = smearedHash(value);\n          if (valueHash == delegate.valueHash && Objects.equal(value, oldValue)) {\n            return value;\n          }\n          checkArgument(seekByValue(value, valueHash) == null, \"value already present: %s\", value);\n          delete(delegate);\n          BiEntry<K, V> newEntry =\n              new BiEntry<K, V>(delegate.key, delegate.keyHash, value, valueHash);\n          insert(newEntry);\n          expectedModCount = modCount;\n          if (toRemove == delegate) {\n            toRemove = newEntry;\n          }\n          delegate = newEntry;\n          return oldValue;\n        }\n      }\n    };",
+      "right" : "return new Itr<Entry<K, V>>() {\n      @Override\n      Entry<K, V> output(BiEntry<K, V> entry) {\n        return new MapEntry(entry);\n      }\n\n      class MapEntry extends AbstractMapEntry<K, V> {\n        BiEntry<K, V> delegate;\n\n        MapEntry(BiEntry<K, V> entry) {\n          this.delegate = entry;\n        }\n\n        @Override\n        public K getKey() {\n          return delegate.key;\n        }\n\n        @Override\n        public V getValue() {\n          return delegate.value;\n        }\n\n        @Override\n        public V setValue(V value) {\n          V oldValue = delegate.value;\n          int valueHash = smearedHash(value);\n          if (valueHash == delegate.valueHash && Objects.equal(value, oldValue)) {\n            return value;\n          }\n          checkArgument(seekByValue(value, valueHash) == null, \"value already present: %s\", value);\n          delete(delegate);\n          BiEntry<K, V> newEntry =\n              new BiEntry<K, V>(delegate.key, delegate.keyHash, value, valueHash);\n          insert(newEntry, delegate);\n          delegate.prevInKeyInsertionOrder = null;\n          delegate.nextInKeyInsertionOrder = null;\n          expectedModCount = modCount;\n          if (toRemove == delegate) {\n            toRemove = newEntry;\n          }\n          delegate = newEntry;\n          return oldValue;\n        }\n      }\n    };",
+      "info" : "ReturnStatement[11888-13119]:ReturnStatement[13805-15148]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11926-11935]:MarkerAnnotation[13843-13852]"
+    }, {
+      "left" : "Entry<K, V>",
+      "right" : "Entry<K, V>",
+      "info" : "ParameterizedType[11942-11953]:ParameterizedType[13859-13870]"
+    }, {
+      "left" : "output",
+      "right" : "output",
+      "info" : "SimpleName[11954-11960]:SimpleName[13871-13877]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[11961-11980]:SingleVariableDeclaration[13878-13897]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11982-12027]:Block[13899-13944]"
+    }, {
+      "left" : "return new MapEntry(entry);",
+      "right" : "return new MapEntry(entry);",
+      "info" : "ReturnStatement[11992-12019]:ReturnStatement[13909-13936]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[12035-12040]:TYPE_DECLARATION_KIND[13952-13957]"
+    }, {
+      "left" : "MapEntry",
+      "right" : "MapEntry",
+      "info" : "SimpleName[12041-12049]:SimpleName[13958-13966]"
+    }, {
+      "left" : "MapEntry",
+      "right" : "MapEntry",
+      "info" : "SimpleName[12124-12132]:SimpleName[14041-14049]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[12133-12152]:SingleVariableDeclaration[14050-14069]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12154-12198]:Block[14071-14115]"
+    }, {
+      "left" : "this.delegate = entry;",
+      "right" : "this.delegate = entry;",
+      "info" : "ExpressionStatement[12166-12188]:ExpressionStatement[14083-14105]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[12208-12217]:MarkerAnnotation[14125-14134]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[12226-12232]:Modifier[14143-14149]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[12233-12234]:SimpleType[14150-14151]"
+    }, {
+      "left" : "getKey",
+      "right" : "getKey",
+      "info" : "SimpleName[12235-12241]:SimpleName[14152-14158]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12244-12286]:Block[14161-14203]"
+    }, {
+      "left" : "return delegate.key;",
+      "right" : "return delegate.key;",
+      "info" : "ReturnStatement[12256-12276]:ReturnStatement[14173-14193]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[12296-12305]:MarkerAnnotation[14213-14222]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[12314-12320]:Modifier[14231-14237]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[12321-12322]:SimpleType[14238-14239]"
+    }, {
+      "left" : "getValue",
+      "right" : "getValue",
+      "info" : "SimpleName[12323-12331]:SimpleName[14240-14248]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12334-12378]:Block[14251-14295]"
+    }, {
+      "left" : "return delegate.value;",
+      "right" : "return delegate.value;",
+      "info" : "ReturnStatement[12346-12368]:ReturnStatement[14263-14285]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[12388-12397]:MarkerAnnotation[14305-14314]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[12406-12412]:Modifier[14323-14329]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[12413-12414]:SimpleType[14330-14331]"
+    }, {
+      "left" : "setValue",
+      "right" : "setValue",
+      "info" : "SimpleName[12415-12423]:SimpleName[14332-14340]"
+    }, {
+      "left" : "V value",
+      "right" : "V value",
+      "info" : "SingleVariableDeclaration[12424-12431]:SingleVariableDeclaration[14341-14348]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12433-13104]:Block[14350-15133]"
+    }, {
+      "left" : "V oldValue = delegate.value;",
+      "right" : "V oldValue = delegate.value;",
+      "info" : "VariableDeclarationStatement[12445-12473]:VariableDeclarationStatement[14362-14390]"
+    }, {
+      "left" : "int valueHash = smearedHash(value);",
+      "right" : "int valueHash = smearedHash(value);",
+      "info" : "VariableDeclarationStatement[12484-12519]:VariableDeclarationStatement[14401-14436]"
+    }, {
+      "left" : "if (valueHash == delegate.valueHash && Objects.equal(value, oldValue))",
+      "right" : "if (valueHash == delegate.valueHash && Objects.equal(value, oldValue))",
+      "info" : "IfStatement[12530-12640]:IfStatement[14447-14557]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12601-12640]:Block[14518-14557]"
+    }, {
+      "left" : "return value;",
+      "right" : "return value;",
+      "info" : "ReturnStatement[12615-12628]:ReturnStatement[14532-14545]"
+    }, {
+      "left" : "checkArgument(seekByValue(value, valueHash) == null, \"value already present: %s\", value);",
+      "right" : "checkArgument(seekByValue(value, valueHash) == null, \"value already present: %s\", value);",
+      "info" : "ExpressionStatement[12651-12740]:ExpressionStatement[14568-14657]"
+    }, {
+      "left" : "delete(delegate);",
+      "right" : "delete(delegate);",
+      "info" : "ExpressionStatement[12751-12768]:ExpressionStatement[14668-14685]"
+    }, {
+      "left" : "BiEntry<K, V> newEntry =\n              new BiEntry<K, V>(delegate.key, delegate.keyHash, value, valueHash);",
+      "right" : "BiEntry<K, V> newEntry =\n              new BiEntry<K, V>(delegate.key, delegate.keyHash, value, valueHash);",
+      "info" : "VariableDeclarationStatement[12779-12886]:VariableDeclarationStatement[14696-14803]"
+    }, {
+      "left" : "insert(newEntry);",
+      "right" : "insert(newEntry, delegate);",
+      "info" : "ExpressionStatement[12897-12914]:ExpressionStatement[14814-14841]"
+    }, {
+      "left" : "expectedModCount = modCount;",
+      "right" : "expectedModCount = modCount;",
+      "info" : "ExpressionStatement[12925-12953]:ExpressionStatement[14954-14982]"
+    }, {
+      "left" : "if (toRemove == delegate)",
+      "right" : "if (toRemove == delegate)",
+      "info" : "IfStatement[12964-13036]:IfStatement[14993-15065]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12990-13036]:Block[15019-15065]"
+    }, {
+      "left" : "toRemove = newEntry;",
+      "right" : "toRemove = newEntry;",
+      "info" : "ExpressionStatement[13004-13024]:ExpressionStatement[15033-15053]"
+    }, {
+      "left" : "delegate = newEntry;",
+      "right" : "delegate = newEntry;",
+      "info" : "ExpressionStatement[13047-13067]:ExpressionStatement[15076-15096]"
+    }, {
+      "left" : "return oldValue;",
+      "right" : "return oldValue;",
+      "info" : "ReturnStatement[13078-13094]:ReturnStatement[15107-15123]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13169-13178]:MarkerAnnotation[15198-15207]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13181-13187]:Modifier[15210-15216]"
+    }, {
+      "left" : "BiMap<V, K>",
+      "right" : "BiMap<V, K>",
+      "info" : "ParameterizedType[13188-13199]:ParameterizedType[15217-15228]"
+    }, {
+      "left" : "inverse",
+      "right" : "inverse",
+      "info" : "SimpleName[13200-13207]:SimpleName[15229-15236]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13210-13281]:Block[15239-15310]"
+    }, {
+      "left" : "return (inverse == null) ? inverse = new Inverse() : inverse;",
+      "right" : "return (inverse == null) ? inverse = new Inverse() : inverse;",
+      "info" : "ReturnStatement[13216-13277]:ReturnStatement[15245-15306]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[13285-13292]:Modifier[15314-15321]"
+    }, {
+      "left" : "final",
+      "right" : "final",
+      "info" : "Modifier[13293-13298]:Modifier[15322-15327]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[13299-13304]:TYPE_DECLARATION_KIND[15328-15333]"
+    }, {
+      "left" : "Inverse",
+      "right" : "Inverse",
+      "info" : "SimpleName[13305-13312]:SimpleName[15334-15341]"
+    }, {
+      "left" : "BiMap<K, V>",
+      "right" : "BiMap<K, V>",
+      "info" : "ParameterizedType[13382-13393]:ParameterizedType[15411-15422]"
+    }, {
+      "left" : "forward",
+      "right" : "forward",
+      "info" : "SimpleName[13394-13401]:SimpleName[15423-15430]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13404-13440]:Block[15433-15469]"
+    }, {
+      "left" : "return HashBiMap.this;",
+      "right" : "return HashBiMap.this;",
+      "info" : "ReturnStatement[13412-13434]:ReturnStatement[15441-15463]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13446-13455]:MarkerAnnotation[15475-15484]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13460-13466]:Modifier[15489-15495]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[13467-13470]:PrimitiveType[15496-15499]"
+    }, {
+      "left" : "size",
+      "right" : "size",
+      "info" : "SimpleName[13471-13475]:SimpleName[15500-15504]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13478-13504]:Block[15507-15533]"
+    }, {
+      "left" : "return size;",
+      "right" : "return size;",
+      "info" : "ReturnStatement[13486-13498]:ReturnStatement[15515-15527]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13510-13519]:MarkerAnnotation[15539-15548]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13524-13530]:Modifier[15553-15559]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[13531-13535]:PrimitiveType[15560-15564]"
+    }, {
+      "left" : "clear",
+      "right" : "clear",
+      "info" : "SimpleName[13536-13541]:SimpleName[15565-15570]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13544-13576]:Block[15573-15605]"
+    }, {
+      "left" : "forward().clear();",
+      "right" : "forward().clear();",
+      "info" : "ExpressionStatement[13552-13570]:ExpressionStatement[15581-15599]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13582-13591]:MarkerAnnotation[15611-15620]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13596-13602]:Modifier[15625-15631]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[13603-13610]:PrimitiveType[15632-15639]"
+    }, {
+      "left" : "containsKey",
+      "right" : "containsKey",
+      "info" : "SimpleName[13611-13622]:SimpleName[15640-15651]"
+    }, {
+      "left" : "@Nullable Object value",
+      "right" : "@Nullable Object value",
+      "info" : "SingleVariableDeclaration[13623-13645]:SingleVariableDeclaration[15652-15674]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13647-13699]:Block[15676-15728]"
+    }, {
+      "left" : "return forward().containsValue(value);",
+      "right" : "return forward().containsValue(value);",
+      "info" : "ReturnStatement[13655-13693]:ReturnStatement[15684-15722]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13705-13714]:MarkerAnnotation[15734-15743]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13719-13725]:Modifier[15748-15754]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[13726-13727]:SimpleType[15755-15756]"
+    }, {
+      "left" : "get",
+      "right" : "get",
+      "info" : "SimpleName[13728-13731]:SimpleName[15757-15760]"
+    }, {
+      "left" : "@Nullable Object value",
+      "right" : "@Nullable Object value",
+      "info" : "SingleVariableDeclaration[13732-13754]:SingleVariableDeclaration[15761-15783]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13756-13832]:Block[15785-15861]"
+    }, {
+      "left" : "return Maps.keyOrNull(seekByValue(value, smearedHash(value)));",
+      "right" : "return Maps.keyOrNull(seekByValue(value, smearedHash(value)));",
+      "info" : "ReturnStatement[13764-13826]:ReturnStatement[15793-15855]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13838-13847]:MarkerAnnotation[15867-15876]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13852-13858]:Modifier[15881-15887]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[13859-13860]:SimpleType[15888-15889]"
+    }, {
+      "left" : "put",
+      "right" : "put",
+      "info" : "SimpleName[13861-13864]:SimpleName[15890-15893]"
+    }, {
+      "left" : "@Nullable V value",
+      "right" : "@Nullable V value",
+      "info" : "SingleVariableDeclaration[13865-13882]:SingleVariableDeclaration[15894-15911]"
+    }, {
+      "left" : "@Nullable K key",
+      "right" : "@Nullable K key",
+      "info" : "SingleVariableDeclaration[13884-13899]:SingleVariableDeclaration[15913-15928]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13901-13952]:Block[15930-15981]"
+    }, {
+      "left" : "return putInverse(value, key, false);",
+      "right" : "return putInverse(value, key, false);",
+      "info" : "ReturnStatement[13909-13946]:ReturnStatement[15938-15975]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[13958-13967]:MarkerAnnotation[15987-15996]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[13972-13978]:Modifier[16001-16007]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[13979-13980]:SimpleType[16008-16009]"
+    }, {
+      "left" : "forcePut",
+      "right" : "forcePut",
+      "info" : "SimpleName[13981-13989]:SimpleName[16010-16018]"
+    }, {
+      "left" : "@Nullable V value",
+      "right" : "@Nullable V value",
+      "info" : "SingleVariableDeclaration[13990-14007]:SingleVariableDeclaration[16019-16036]"
+    }, {
+      "left" : "@Nullable K key",
+      "right" : "@Nullable K key",
+      "info" : "SingleVariableDeclaration[14009-14024]:SingleVariableDeclaration[16038-16053]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14026-14076]:Block[16055-16105]"
+    }, {
+      "left" : "return putInverse(value, key, true);",
+      "right" : "return putInverse(value, key, true);",
+      "info" : "ReturnStatement[14034-14070]:ReturnStatement[16063-16099]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14082-14091]:MarkerAnnotation[16111-16120]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14096-14102]:Modifier[16125-16131]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[14103-14104]:SimpleType[16132-16133]"
+    }, {
+      "left" : "remove",
+      "right" : "remove",
+      "info" : "SimpleName[14105-14111]:SimpleName[16134-16140]"
+    }, {
+      "left" : "@Nullable Object value",
+      "right" : "@Nullable Object value",
+      "info" : "SingleVariableDeclaration[14112-14134]:SingleVariableDeclaration[16141-16163]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14136-14331]:Block[16165-16452]"
+    }, {
+      "left" : "BiEntry<K, V> entry = seekByValue(value, smearedHash(value));",
+      "right" : "BiEntry<K, V> entry = seekByValue(value, smearedHash(value));",
+      "info" : "VariableDeclarationStatement[14144-14205]:VariableDeclarationStatement[16173-16234]"
+    }, {
+      "left" : "if (entry == null)",
+      "right" : "if (entry == null)",
+      "info" : "IfStatement[14212-14325]:IfStatement[16241-16446]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14231-14261]:Block[16260-16290]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[14241-14253]:ReturnStatement[16270-16282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14267-14325]:Block[16296-16446]"
+    }, {
+      "left" : "delete(entry);",
+      "right" : "delete(entry);",
+      "info" : "ExpressionStatement[14277-14291]:ExpressionStatement[16306-16320]"
+    }, {
+      "left" : "return entry.key;",
+      "right" : "return entry.key;",
+      "info" : "ReturnStatement[14300-14317]:ReturnStatement[16421-16438]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14337-14346]:MarkerAnnotation[16458-16467]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14351-14357]:Modifier[16472-16478]"
+    }, {
+      "left" : "BiMap<K, V>",
+      "right" : "BiMap<K, V>",
+      "info" : "ParameterizedType[14358-14369]:ParameterizedType[16479-16490]"
+    }, {
+      "left" : "inverse",
+      "right" : "inverse",
+      "info" : "SimpleName[14370-14377]:SimpleName[16491-16498]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14380-14411]:Block[16501-16532]"
+    }, {
+      "left" : "return forward();",
+      "right" : "return forward();",
+      "info" : "ReturnStatement[14388-14405]:ReturnStatement[16509-16526]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14417-14426]:MarkerAnnotation[16538-16547]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14431-14437]:Modifier[16552-16558]"
+    }, {
+      "left" : "Set<V>",
+      "right" : "Set<V>",
+      "info" : "ParameterizedType[14438-14444]:ParameterizedType[16559-16565]"
+    }, {
+      "left" : "keySet",
+      "right" : "keySet",
+      "info" : "SimpleName[14445-14451]:SimpleName[16566-16572]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14454-14495]:Block[16575-16616]"
+    }, {
+      "left" : "return new InverseKeySet();",
+      "right" : "return new InverseKeySet();",
+      "info" : "ReturnStatement[14462-14489]:ReturnStatement[16583-16610]"
+    }, {
+      "left" : "@WeakOuter",
+      "right" : "@WeakOuter",
+      "info" : "MarkerAnnotation[14501-14511]:MarkerAnnotation[16622-16632]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[14516-14523]:Modifier[16637-16644]"
+    }, {
+      "left" : "final",
+      "right" : "final",
+      "info" : "Modifier[14524-14529]:Modifier[16645-16650]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[14530-14535]:TYPE_DECLARATION_KIND[16651-16656]"
+    }, {
+      "left" : "InverseKeySet",
+      "right" : "InverseKeySet",
+      "info" : "SimpleName[14536-14549]:SimpleName[16657-16670]"
+    }, {
+      "left" : "InverseKeySet",
+      "right" : "InverseKeySet",
+      "info" : "SimpleName[14584-14597]:SimpleName[16705-16718]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14600-14638]:Block[16721-16759]"
+    }, {
+      "left" : "super(Inverse.this);",
+      "right" : "super(Inverse.this);",
+      "info" : "SuperConstructorInvocation[14610-14630]:SuperConstructorInvocation[16731-16751]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14646-14655]:MarkerAnnotation[16767-16776]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14662-14668]:Modifier[16783-16789]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[14669-14676]:PrimitiveType[16790-16797]"
+    }, {
+      "left" : "remove",
+      "right" : "remove",
+      "info" : "SimpleName[14677-14683]:SimpleName[16798-16804]"
+    }, {
+      "left" : "@Nullable Object o",
+      "right" : "@Nullable Object o",
+      "info" : "SingleVariableDeclaration[14684-14702]:SingleVariableDeclaration[16805-16823]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14704-14903]:Block[16825-17024]"
+    }, {
+      "left" : "BiEntry<K, V> entry = seekByValue(o, smearedHash(o));",
+      "right" : "BiEntry<K, V> entry = seekByValue(o, smearedHash(o));",
+      "info" : "VariableDeclarationStatement[14714-14767]:VariableDeclarationStatement[16835-16888]"
+    }, {
+      "left" : "if (entry == null)",
+      "right" : "if (entry == null)",
+      "info" : "IfStatement[14776-14895]:IfStatement[16897-17016]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14795-14830]:Block[16916-16951]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[14807-14820]:ReturnStatement[16928-16941]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14836-14895]:Block[16957-17016]"
+    }, {
+      "left" : "delete(entry);",
+      "right" : "delete(entry);",
+      "info" : "ExpressionStatement[14848-14862]:ExpressionStatement[16969-16983]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[14873-14885]:ReturnStatement[16994-17006]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14911-14920]:MarkerAnnotation[17032-17041]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[14927-14933]:Modifier[17048-17054]"
+    }, {
+      "left" : "Iterator<V>",
+      "right" : "Iterator<V>",
+      "info" : "ParameterizedType[14934-14945]:ParameterizedType[17055-17066]"
+    }, {
+      "left" : "iterator",
+      "right" : "iterator",
+      "info" : "SimpleName[14946-14954]:SimpleName[17067-17075]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14957-15113]:Block[17078-17234]"
+    }, {
+      "left" : "return new Itr<V>() {\n          @Override\n          V output(BiEntry<K, V> entry) {\n            return entry.value;\n          }\n        };",
+      "right" : "return new Itr<V>() {\n          @Override\n          V output(BiEntry<K, V> entry) {\n            return entry.value;\n          }\n        };",
+      "info" : "ReturnStatement[14967-15105]:ReturnStatement[17088-17226]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[14999-15008]:MarkerAnnotation[17120-17129]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[15019-15020]:SimpleType[17140-17141]"
+    }, {
+      "left" : "output",
+      "right" : "output",
+      "info" : "SimpleName[15021-15027]:SimpleName[17142-17148]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[15028-15047]:SingleVariableDeclaration[17149-17168]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15049-15094]:Block[17170-17215]"
+    }, {
+      "left" : "return entry.value;",
+      "right" : "return entry.value;",
+      "info" : "ReturnStatement[15063-15082]:ReturnStatement[17184-17203]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15125-15134]:MarkerAnnotation[17246-17255]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15139-15145]:Modifier[17260-17266]"
+    }, {
+      "left" : "Set<K>",
+      "right" : "Set<K>",
+      "info" : "ParameterizedType[15146-15152]:ParameterizedType[17267-17273]"
+    }, {
+      "left" : "values",
+      "right" : "values",
+      "info" : "SimpleName[15153-15159]:SimpleName[17274-17280]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15162-15202]:Block[17283-17323]"
+    }, {
+      "left" : "return forward().keySet();",
+      "right" : "return forward().keySet();",
+      "info" : "ReturnStatement[15170-15196]:ReturnStatement[17291-17317]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15208-15217]:MarkerAnnotation[17329-17338]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15222-15228]:Modifier[17343-17349]"
+    }, {
+      "left" : "Set<Entry<V, K>>",
+      "right" : "Set<Entry<V, K>>",
+      "info" : "ParameterizedType[15229-15245]:ParameterizedType[17350-17366]"
+    }, {
+      "left" : "entrySet",
+      "right" : "entrySet",
+      "info" : "SimpleName[15246-15254]:SimpleName[17367-17375]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15257-16978]:Block[17378-19105]"
+    }, {
+      "left" : "return new Maps.EntrySet<V, K>() {\n\n        @Override\n        Map<V, K> map() {\n          return Inverse.this;\n        }\n\n        @Override\n        public Iterator<Entry<V, K>> iterator() {\n          return new Itr<Entry<V, K>>() {\n            @Override\n            Entry<V, K> output(BiEntry<K, V> entry) {\n              return new InverseEntry(entry);\n            }\n\n            class InverseEntry extends AbstractMapEntry<V, K> {\n              BiEntry<K, V> delegate;\n\n              InverseEntry(BiEntry<K, V> entry) {\n                this.delegate = entry;\n              }\n\n              @Override\n              public V getKey() {\n                return delegate.value;\n              }\n\n              @Override\n              public K getValue() {\n                return delegate.key;\n              }\n\n              @Override\n              public K setValue(K key) {\n                K oldKey = delegate.key;\n                int keyHash = smearedHash(key);\n                if (keyHash == delegate.keyHash && Objects.equal(key, oldKey)) {\n                  return key;\n                }\n                checkArgument(seekByKey(key, keyHash) == null, \"value already present: %s\", key);\n                delete(delegate);\n                BiEntry<K, V> newEntry =\n                    new BiEntry<K, V>(key, keyHash, delegate.value, delegate.valueHash);\n                delegate = newEntry;\n                insert(newEntry);\n                expectedModCount = modCount;\n                // This is safe because entries can only get bumped up to earlier in the iteration,\n                // so they can't get revisited.\n                return oldKey;\n              }\n            }\n          };\n        }\n      };",
+      "right" : "return new Maps.EntrySet<V, K>() {\n\n        @Override\n        Map<V, K> map() {\n          return Inverse.this;\n        }\n\n        @Override\n        public Iterator<Entry<V, K>> iterator() {\n          return new Itr<Entry<V, K>>() {\n            @Override\n            Entry<V, K> output(BiEntry<K, V> entry) {\n              return new InverseEntry(entry);\n            }\n\n            class InverseEntry extends AbstractMapEntry<V, K> {\n              BiEntry<K, V> delegate;\n\n              InverseEntry(BiEntry<K, V> entry) {\n                this.delegate = entry;\n              }\n\n              @Override\n              public V getKey() {\n                return delegate.value;\n              }\n\n              @Override\n              public K getValue() {\n                return delegate.key;\n              }\n\n              @Override\n              public K setValue(K key) {\n                K oldKey = delegate.key;\n                int keyHash = smearedHash(key);\n                if (keyHash == delegate.keyHash && Objects.equal(key, oldKey)) {\n                  return key;\n                }\n                checkArgument(seekByKey(key, keyHash) == null, \"value already present: %s\", key);\n                delete(delegate);\n                BiEntry<K, V> newEntry =\n                    new BiEntry<K, V>(key, keyHash, delegate.value, delegate.valueHash);\n                delegate = newEntry;\n                insert(newEntry, null);\n                expectedModCount = modCount;\n                // This is safe because entries can only get bumped up to earlier in the iteration,\n                // so they can't get revisited.\n                return oldKey;\n              }\n            }\n          };\n        }\n      };",
+      "info" : "ReturnStatement[15265-16972]:ReturnStatement[17386-19099]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15309-15318]:MarkerAnnotation[17430-17439]"
+    }, {
+      "left" : "Map<V, K>",
+      "right" : "Map<V, K>",
+      "info" : "ParameterizedType[15327-15336]:ParameterizedType[17448-17457]"
+    }, {
+      "left" : "map",
+      "right" : "map",
+      "info" : "SimpleName[15337-15340]:SimpleName[17458-17461]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15343-15385]:Block[17464-17506]"
+    }, {
+      "left" : "return Inverse.this;",
+      "right" : "return Inverse.this;",
+      "info" : "ReturnStatement[15355-15375]:ReturnStatement[17476-17496]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15395-15404]:MarkerAnnotation[17516-17525]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15413-15419]:Modifier[17534-17540]"
+    }, {
+      "left" : "Iterator<Entry<V, K>>",
+      "right" : "Iterator<Entry<V, K>>",
+      "info" : "ParameterizedType[15420-15441]:ParameterizedType[17541-17562]"
+    }, {
+      "left" : "iterator",
+      "right" : "iterator",
+      "info" : "SimpleName[15442-15450]:SimpleName[17563-17571]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15453-16963]:Block[17574-19090]"
+    }, {
+      "left" : "return new Itr<Entry<V, K>>() {\n            @Override\n            Entry<V, K> output(BiEntry<K, V> entry) {\n              return new InverseEntry(entry);\n            }\n\n            class InverseEntry extends AbstractMapEntry<V, K> {\n              BiEntry<K, V> delegate;\n\n              InverseEntry(BiEntry<K, V> entry) {\n                this.delegate = entry;\n              }\n\n              @Override\n              public V getKey() {\n                return delegate.value;\n              }\n\n              @Override\n              public K getValue() {\n                return delegate.key;\n              }\n\n              @Override\n              public K setValue(K key) {\n                K oldKey = delegate.key;\n                int keyHash = smearedHash(key);\n                if (keyHash == delegate.keyHash && Objects.equal(key, oldKey)) {\n                  return key;\n                }\n                checkArgument(seekByKey(key, keyHash) == null, \"value already present: %s\", key);\n                delete(delegate);\n                BiEntry<K, V> newEntry =\n                    new BiEntry<K, V>(key, keyHash, delegate.value, delegate.valueHash);\n                delegate = newEntry;\n                insert(newEntry);\n                expectedModCount = modCount;\n                // This is safe because entries can only get bumped up to earlier in the iteration,\n                // so they can't get revisited.\n                return oldKey;\n              }\n            }\n          };",
+      "right" : "return new Itr<Entry<V, K>>() {\n            @Override\n            Entry<V, K> output(BiEntry<K, V> entry) {\n              return new InverseEntry(entry);\n            }\n\n            class InverseEntry extends AbstractMapEntry<V, K> {\n              BiEntry<K, V> delegate;\n\n              InverseEntry(BiEntry<K, V> entry) {\n                this.delegate = entry;\n              }\n\n              @Override\n              public V getKey() {\n                return delegate.value;\n              }\n\n              @Override\n              public K getValue() {\n                return delegate.key;\n              }\n\n              @Override\n              public K setValue(K key) {\n                K oldKey = delegate.key;\n                int keyHash = smearedHash(key);\n                if (keyHash == delegate.keyHash && Objects.equal(key, oldKey)) {\n                  return key;\n                }\n                checkArgument(seekByKey(key, keyHash) == null, \"value already present: %s\", key);\n                delete(delegate);\n                BiEntry<K, V> newEntry =\n                    new BiEntry<K, V>(key, keyHash, delegate.value, delegate.valueHash);\n                delegate = newEntry;\n                insert(newEntry, null);\n                expectedModCount = modCount;\n                // This is safe because entries can only get bumped up to earlier in the iteration,\n                // so they can't get revisited.\n                return oldKey;\n              }\n            }\n          };",
+      "info" : "ReturnStatement[15465-16953]:ReturnStatement[17586-19080]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15509-15518]:MarkerAnnotation[17630-17639]"
+    }, {
+      "left" : "Entry<V, K>",
+      "right" : "Entry<V, K>",
+      "info" : "ParameterizedType[15531-15542]:ParameterizedType[17652-17663]"
+    }, {
+      "left" : "output",
+      "right" : "output",
+      "info" : "SimpleName[15543-15549]:SimpleName[17664-17670]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[15550-15569]:SingleVariableDeclaration[17671-17690]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15571-15632]:Block[17692-17753]"
+    }, {
+      "left" : "return new InverseEntry(entry);",
+      "right" : "return new InverseEntry(entry);",
+      "info" : "ReturnStatement[15587-15618]:ReturnStatement[17708-17739]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[15646-15651]:TYPE_DECLARATION_KIND[17767-17772]"
+    }, {
+      "left" : "InverseEntry",
+      "right" : "InverseEntry",
+      "info" : "SimpleName[15652-15664]:SimpleName[17773-17785]"
+    }, {
+      "left" : "InverseEntry",
+      "right" : "InverseEntry",
+      "info" : "SimpleName[15751-15763]:SimpleName[17872-17884]"
+    }, {
+      "left" : "BiEntry<K, V> entry",
+      "right" : "BiEntry<K, V> entry",
+      "info" : "SingleVariableDeclaration[15764-15783]:SingleVariableDeclaration[17885-17904]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15785-15841]:Block[17906-17962]"
+    }, {
+      "left" : "this.delegate = entry;",
+      "right" : "this.delegate = entry;",
+      "info" : "ExpressionStatement[15803-15825]:ExpressionStatement[17924-17946]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15857-15866]:MarkerAnnotation[17978-17987]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15881-15887]:Modifier[18002-18008]"
+    }, {
+      "left" : "V",
+      "right" : "V",
+      "info" : "SimpleType[15888-15889]:SimpleType[18009-18010]"
+    }, {
+      "left" : "getKey",
+      "right" : "getKey",
+      "info" : "SimpleName[15890-15896]:SimpleName[18011-18017]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15899-15955]:Block[18020-18076]"
+    }, {
+      "left" : "return delegate.value;",
+      "right" : "return delegate.value;",
+      "info" : "ReturnStatement[15917-15939]:ReturnStatement[18038-18060]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[15971-15980]:MarkerAnnotation[18092-18101]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[15995-16001]:Modifier[18116-18122]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[16002-16003]:SimpleType[18123-18124]"
+    }, {
+      "left" : "getValue",
+      "right" : "getValue",
+      "info" : "SimpleName[16004-16012]:SimpleName[18125-18133]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16015-16069]:Block[18136-18190]"
+    }, {
+      "left" : "return delegate.key;",
+      "right" : "return delegate.key;",
+      "info" : "ReturnStatement[16033-16053]:ReturnStatement[18154-18174]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[16085-16094]:MarkerAnnotation[18206-18215]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[16109-16115]:Modifier[18230-18236]"
+    }, {
+      "left" : "K",
+      "right" : "K",
+      "info" : "SimpleType[16116-16117]:SimpleType[18237-18238]"
+    }, {
+      "left" : "setValue",
+      "right" : "setValue",
+      "info" : "SimpleName[16118-16126]:SimpleName[18239-18247]"
+    }, {
+      "left" : "K key",
+      "right" : "K key",
+      "info" : "SingleVariableDeclaration[16127-16132]:SingleVariableDeclaration[18248-18253]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16134-16926]:Block[18255-19053]"
+    }, {
+      "left" : "K oldKey = delegate.key;",
+      "right" : "K oldKey = delegate.key;",
+      "info" : "VariableDeclarationStatement[16152-16176]:VariableDeclarationStatement[18273-18297]"
+    }, {
+      "left" : "int keyHash = smearedHash(key);",
+      "right" : "int keyHash = smearedHash(key);",
+      "info" : "VariableDeclarationStatement[16193-16224]:VariableDeclarationStatement[18314-18345]"
+    }, {
+      "left" : "if (keyHash == delegate.keyHash && Objects.equal(key, oldKey))",
+      "right" : "if (keyHash == delegate.keyHash && Objects.equal(key, oldKey))",
+      "info" : "IfStatement[16241-16353]:IfStatement[18362-18474]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16304-16353]:Block[18425-18474]"
+    }, {
+      "left" : "return key;",
+      "right" : "return key;",
+      "info" : "ReturnStatement[16324-16335]:ReturnStatement[18445-18456]"
+    }, {
+      "left" : "checkArgument(seekByKey(key, keyHash) == null, \"value already present: %s\", key);",
+      "right" : "checkArgument(seekByKey(key, keyHash) == null, \"value already present: %s\", key);",
+      "info" : "ExpressionStatement[16370-16451]:ExpressionStatement[18491-18572]"
+    }, {
+      "left" : "delete(delegate);",
+      "right" : "delete(delegate);",
+      "info" : "ExpressionStatement[16468-16485]:ExpressionStatement[18589-18606]"
+    }, {
+      "left" : "BiEntry<K, V> newEntry =\n                    new BiEntry<K, V>(key, keyHash, delegate.value, delegate.valueHash);",
+      "right" : "BiEntry<K, V> newEntry =\n                    new BiEntry<K, V>(key, keyHash, delegate.value, delegate.valueHash);",
+      "info" : "VariableDeclarationStatement[16502-16615]:VariableDeclarationStatement[18623-18736]"
+    }, {
+      "left" : "delegate = newEntry;",
+      "right" : "delegate = newEntry;",
+      "info" : "ExpressionStatement[16632-16652]:ExpressionStatement[18753-18773]"
+    }, {
+      "left" : "insert(newEntry);",
+      "right" : "insert(newEntry, null);",
+      "info" : "ExpressionStatement[16669-16686]:ExpressionStatement[18790-18813]"
+    }, {
+      "left" : "expectedModCount = modCount;",
+      "right" : "expectedModCount = modCount;",
+      "info" : "ExpressionStatement[16703-16731]:ExpressionStatement[18830-18858]"
+    }, {
+      "left" : "return oldKey;",
+      "right" : "return oldKey;",
+      "info" : "ReturnStatement[16896-16910]:ReturnStatement[19023-19037]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[16984-16990]:SimpleType[19111-19117]"
+    }, {
+      "left" : "writeReplace",
+      "right" : "writeReplace",
+      "info" : "SimpleName[16991-17003]:SimpleName[19118-19130]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17006-17075]:Block[19133-19202]"
+    }, {
+      "left" : "return new InverseSerializedForm<K, V>(HashBiMap.this);",
+      "right" : "return new InverseSerializedForm<K, V>(HashBiMap.this);",
+      "info" : "ReturnStatement[17014-17069]:ReturnStatement[19141-19196]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17083-17090]:Modifier[19210-19217]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[17091-17097]:Modifier[19218-19224]"
+    }, {
+      "left" : "final",
+      "right" : "final",
+      "info" : "Modifier[17098-17103]:Modifier[19225-19230]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[17104-17109]:TYPE_DECLARATION_KIND[19231-19236]"
+    }, {
+      "left" : "InverseSerializedForm",
+      "right" : "InverseSerializedForm",
+      "info" : "SimpleName[17110-17131]:SimpleName[19237-19258]"
+    }, {
+      "left" : "InverseSerializedForm",
+      "right" : "InverseSerializedForm",
+      "info" : "SimpleName[17210-17231]:SimpleName[19337-19358]"
+    }, {
+      "left" : "HashBiMap<K, V> bimap",
+      "right" : "HashBiMap<K, V> bimap",
+      "info" : "SingleVariableDeclaration[17232-17253]:SingleVariableDeclaration[19359-19380]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17255-17288]:Block[19382-19415]"
+    }, {
+      "left" : "this.bimap = bimap;",
+      "right" : "this.bimap = bimap;",
+      "info" : "ExpressionStatement[17263-17282]:ExpressionStatement[19390-19409]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[17294-17300]:SimpleType[19421-19427]"
+    }, {
+      "left" : "readResolve",
+      "right" : "readResolve",
+      "info" : "SimpleName[17301-17312]:SimpleName[19428-19439]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17315-17352]:Block[19442-19479]"
+    }, {
+      "left" : "return bimap.inverse();",
+      "right" : "return bimap.inverse();",
+      "info" : "ReturnStatement[17323-17346]:ReturnStatement[19450-19473]"
+    }, {
+      "left" : "@GwtIncompatible(\"java.io.ObjectOutputStream\")",
+      "right" : "@GwtIncompatible(\"java.io.ObjectOutputStream\")",
+      "info" : "SingleMemberAnnotation[17473-17519]:SingleMemberAnnotation[19600-19646]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17522-17529]:Modifier[19649-19656]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[17530-17534]:PrimitiveType[19657-19661]"
+    }, {
+      "left" : "writeObject",
+      "right" : "writeObject",
+      "info" : "SimpleName[17535-17546]:SimpleName[19662-19673]"
+    }, {
+      "left" : "ObjectOutputStream stream",
+      "right" : "ObjectOutputStream stream",
+      "info" : "SingleVariableDeclaration[17547-17572]:SingleVariableDeclaration[19674-19699]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[17581-17592]:SimpleType[19708-19719]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17593-17673]:Block[19720-19800]"
+    }, {
+      "left" : "stream.defaultWriteObject();",
+      "right" : "stream.defaultWriteObject();",
+      "info" : "ExpressionStatement[17599-17627]:ExpressionStatement[19726-19754]"
+    }, {
+      "left" : "Serialization.writeMap(this, stream);",
+      "right" : "Serialization.writeMap(this, stream);",
+      "info" : "ExpressionStatement[17632-17669]:ExpressionStatement[19759-19796]"
+    }, {
+      "left" : "@GwtIncompatible(\"java.io.ObjectInputStream\")",
+      "right" : "@GwtIncompatible(\"java.io.ObjectInputStream\")",
+      "info" : "SingleMemberAnnotation[17677-17722]:SingleMemberAnnotation[19804-19849]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17725-17732]:Modifier[19852-19859]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[17733-17737]:PrimitiveType[19860-19864]"
+    }, {
+      "left" : "readObject",
+      "right" : "readObject",
+      "info" : "SimpleName[17738-17748]:SimpleName[19865-19875]"
+    }, {
+      "left" : "ObjectInputStream stream",
+      "right" : "ObjectInputStream stream",
+      "info" : "SingleVariableDeclaration[17749-17773]:SingleVariableDeclaration[19876-19900]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[17782-17793]:SimpleType[19909-19920]"
+    }, {
+      "left" : "ClassNotFoundException",
+      "right" : "ClassNotFoundException",
+      "info" : "SimpleType[17795-17817]:SimpleType[19922-19944]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17818-17968]:Block[19945-20095]"
+    }, {
+      "left" : "stream.defaultReadObject();",
+      "right" : "stream.defaultReadObject();",
+      "info" : "ExpressionStatement[17824-17851]:ExpressionStatement[19951-19978]"
+    }, {
+      "left" : "init(16);",
+      "right" : "init(16);",
+      "info" : "ExpressionStatement[17856-17865]:ExpressionStatement[19983-19992]"
+    }, {
+      "left" : "int size = Serialization.readCount(stream);",
+      "right" : "int size = Serialization.readCount(stream);",
+      "info" : "VariableDeclarationStatement[17870-17913]:VariableDeclarationStatement[19997-20040]"
+    }, {
+      "left" : "Serialization.populateMap(this, stream, size);",
+      "right" : "Serialization.populateMap(this, stream, size);",
+      "info" : "ExpressionStatement[17918-17964]:ExpressionStatement[20045-20091]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

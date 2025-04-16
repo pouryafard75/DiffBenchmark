@@ -1,0 +1,277 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ServerReload",
+      "right" : "ServerReload",
+      "info" : "TypeDeclaration[1907-4179]:TypeDeclaration[1907-4348]"
+    }, {
+      "left" : "public static final int TIMEOUT = 100000;",
+      "right" : "public static final int TIMEOUT = 100000;",
+      "info" : "FieldDeclaration[1974-2015]:FieldDeclaration[1974-2015]"
+    }, {
+      "left" : "public static void executeReloadAndWaitForCompletion(ModelControllerClient client)",
+      "right" : "public static void executeReloadAndWaitForCompletion(ModelControllerClient client, int timeout)",
+      "info" : "MethodDeclaration[2021-2186]:MethodDeclaration[2177-2355]"
+    }, {
+      "left" : "private static void executeReload(ModelControllerClient client)",
+      "right" : "private static void executeReload(ModelControllerClient client)",
+      "info" : "MethodDeclaration[2192-2907]:MethodDeclaration[2361-3076]"
+    }, {
+      "left" : "private static void waitForLiveServerToReload(int timeout)",
+      "right" : "private static void waitForLiveServerToReload(int timeout)",
+      "info" : "MethodDeclaration[2913-4177]:MethodDeclaration[3082-4346]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1941-1947]:Modifier[1941-1947]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1948-1953]:TYPE_DECLARATION_KIND[1948-1953]"
+    }, {
+      "left" : "ServerReload",
+      "right" : "ServerReload",
+      "info" : "SimpleName[1954-1966]:SimpleName[1954-1966]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2021-2027]:Modifier[2177-2183]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2028-2034]:Modifier[2184-2190]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2035-2039]:PrimitiveType[2191-2195]"
+    }, {
+      "left" : "executeReloadAndWaitForCompletion",
+      "right" : "executeReloadAndWaitForCompletion",
+      "info" : "SimpleName[2040-2073]:SimpleName[2196-2229]"
+    }, {
+      "left" : "ModelControllerClient client",
+      "right" : "ModelControllerClient client",
+      "info" : "SingleVariableDeclaration[2074-2102]:SingleVariableDeclaration[2230-2258]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2104-2186]:Block[2273-2355]"
+    }, {
+      "left" : "executeReload(client);",
+      "right" : "executeReload(client);",
+      "info" : "ExpressionStatement[2114-2136]:ExpressionStatement[2283-2305]"
+    }, {
+      "left" : "waitForLiveServerToReload(TIMEOUT);",
+      "right" : "waitForLiveServerToReload(timeout);",
+      "info" : "ExpressionStatement[2145-2180]:ExpressionStatement[2314-2349]"
+    }, {
+      "left" : "TIMEOUT",
+      "right" : "timeout",
+      "info" : "SimpleName[2171-2178]:SimpleName[2340-2347]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2192-2199]:Modifier[2361-2368]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2200-2206]:Modifier[2369-2375]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2207-2211]:PrimitiveType[2376-2380]"
+    }, {
+      "left" : "executeReload",
+      "right" : "executeReload",
+      "info" : "SimpleName[2212-2225]:SimpleName[2381-2394]"
+    }, {
+      "left" : "ModelControllerClient client",
+      "right" : "ModelControllerClient client",
+      "info" : "SingleVariableDeclaration[2226-2254]:SingleVariableDeclaration[2395-2423]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2256-2907]:Block[2425-3076]"
+    }, {
+      "left" : "ModelNode operation = new ModelNode();",
+      "right" : "ModelNode operation = new ModelNode();",
+      "info" : "VariableDeclarationStatement[2266-2304]:VariableDeclarationStatement[2435-2473]"
+    }, {
+      "left" : "operation.get(OP_ADDR).setEmptyList();",
+      "right" : "operation.get(OP_ADDR).setEmptyList();",
+      "info" : "ExpressionStatement[2313-2351]:ExpressionStatement[2482-2520]"
+    }, {
+      "left" : "operation.get(OP).set(\"reload\");",
+      "right" : "operation.get(OP).set(\"reload\");",
+      "info" : "ExpressionStatement[2360-2392]:ExpressionStatement[2529-2561]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[2401-2901]:TryStatement[2570-3070]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2405-2566]:Block[2574-2735]"
+    }, {
+      "left" : "ModelNode result = client.execute(operation);",
+      "right" : "ModelNode result = client.execute(operation);",
+      "info" : "VariableDeclarationStatement[2419-2464]:VariableDeclarationStatement[2588-2633]"
+    }, {
+      "left" : "Assert.assertEquals(\"success\", result.get(ClientConstants.OUTCOME).asString());",
+      "right" : "Assert.assertEquals(\"success\", result.get(ClientConstants.OUTCOME).asString());",
+      "info" : "ExpressionStatement[2477-2556]:ExpressionStatement[2646-2725]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2588-2901]:Block[2757-3070]"
+    }, {
+      "left" : "final Throwable cause = e.getCause();",
+      "right" : "final Throwable cause = e.getCause();",
+      "info" : "VariableDeclarationStatement[2602-2639]:VariableDeclarationStatement[2771-2808]"
+    }, {
+      "left" : "if (!(cause instanceof ExecutionException) && !(cause instanceof CancellationException))",
+      "right" : "if (!(cause instanceof ExecutionException) && !(cause instanceof CancellationException))",
+      "info" : "IfStatement[2652-2803]:IfStatement[2821-2972]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2741-2803]:Block[2910-2972]"
+    }, {
+      "left" : "throw new RuntimeException(e);",
+      "right" : "throw new RuntimeException(e);",
+      "info" : "ThrowStatement[2759-2789]:ThrowStatement[2928-2958]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2913-2920]:Modifier[3082-3089]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2921-2927]:Modifier[3090-3096]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2928-2932]:PrimitiveType[3097-3101]"
+    }, {
+      "left" : "waitForLiveServerToReload",
+      "right" : "waitForLiveServerToReload",
+      "info" : "SimpleName[2933-2958]:SimpleName[3102-3127]"
+    }, {
+      "left" : "int timeout",
+      "right" : "int timeout",
+      "info" : "SingleVariableDeclaration[2959-2970]:SingleVariableDeclaration[3128-3139]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2972-4177]:Block[3141-4346]"
+    }, {
+      "left" : "long start = System.currentTimeMillis();",
+      "right" : "long start = System.currentTimeMillis();",
+      "info" : "VariableDeclarationStatement[2982-3022]:VariableDeclarationStatement[3151-3191]"
+    }, {
+      "left" : "ModelNode operation = new ModelNode();",
+      "right" : "ModelNode operation = new ModelNode();",
+      "info" : "VariableDeclarationStatement[3031-3069]:VariableDeclarationStatement[3200-3238]"
+    }, {
+      "left" : "operation.get(OP_ADDR).setEmptyList();",
+      "right" : "operation.get(OP_ADDR).setEmptyList();",
+      "info" : "ExpressionStatement[3078-3116]:ExpressionStatement[3247-3285]"
+    }, {
+      "left" : "operation.get(OP).set(READ_ATTRIBUTE_OPERATION);",
+      "right" : "operation.get(OP).set(READ_ATTRIBUTE_OPERATION);",
+      "info" : "ExpressionStatement[3125-3173]:ExpressionStatement[3294-3342]"
+    }, {
+      "left" : "operation.get(NAME).set(\"server-state\");",
+      "right" : "operation.get(NAME).set(\"server-state\");",
+      "info" : "ExpressionStatement[3182-3222]:ExpressionStatement[3351-3391]"
+    }, {
+      "left" : "while (System.currentTimeMillis() - start < timeout)",
+      "right" : "while (System.currentTimeMillis() - start < timeout)",
+      "info" : "WhileStatement[3231-4105]:WhileStatement[3400-4274]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3284-4105]:Block[3453-4274]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3298-4095]:TryStatement[3467-4264]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3302-4001]:Block[3471-4170]"
+    }, {
+      "left" : "ModelControllerClient liveClient = ModelControllerClient.Factory.create(\n                        TestSuiteEnvironment.getServerAddress(), TestSuiteEnvironment.getServerPort());",
+      "right" : "ModelControllerClient liveClient = ModelControllerClient.Factory.create(\n                        TestSuiteEnvironment.getServerAddress(), TestSuiteEnvironment.getServerPort());",
+      "info" : "VariableDeclarationStatement[3320-3496]:VariableDeclarationStatement[3489-3665]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3513-3857]:TryStatement[3682-4026]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3517-3736]:Block[3686-3905]"
+    }, {
+      "left" : "ModelNode result = liveClient.execute(operation);",
+      "right" : "ModelNode result = liveClient.execute(operation);",
+      "info" : "VariableDeclarationStatement[3539-3588]:VariableDeclarationStatement[3708-3757]"
+    }, {
+      "left" : "if (\"running\" .equals(result.get(RESULT).asString()))",
+      "right" : "if (\"running\" .equals(result.get(RESULT).asString()))",
+      "info" : "IfStatement[3609-3718]:IfStatement[3778-3887]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3663-3718]:Block[3832-3887]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[3689-3696]:ReturnStatement[3858-3865]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3759-3778]:Block[3928-3947]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3787-3857]:Block[3956-4026]"
+    }, {
+      "left" : "IoUtils.safeClose(liveClient);",
+      "right" : "IoUtils.safeClose(liveClient);",
+      "info" : "ExpressionStatement[3809-3839]:ExpressionStatement[3978-4008]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3874-3987]:TryStatement[4043-4156]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3878-3936]:Block[4047-4105]"
+    }, {
+      "left" : "Thread.sleep(100);",
+      "right" : "Thread.sleep(100);",
+      "info" : "ExpressionStatement[3900-3918]:ExpressionStatement[4069-4087]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3968-3987]:Block[4137-4156]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4033-4095]:Block[4202-4264]"
+    }, {
+      "left" : "throw new RuntimeException(e);",
+      "right" : "throw new RuntimeException(e);",
+      "info" : "ThrowStatement[4051-4081]:ThrowStatement[4220-4250]"
+    }, {
+      "left" : "fail(\"Live Server did not reload in the imparted time.\");",
+      "right" : "fail(\"Live Server did not reload in the imparted time.\");",
+      "info" : "ExpressionStatement[4114-4171]:ExpressionStatement[4283-4340]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

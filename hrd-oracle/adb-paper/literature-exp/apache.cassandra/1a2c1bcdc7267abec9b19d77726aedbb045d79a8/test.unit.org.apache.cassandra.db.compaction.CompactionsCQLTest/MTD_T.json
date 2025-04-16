@@ -1,0 +1,185 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CompactionsCQLTest",
+      "right" : "CompactionsCQLTest",
+      "info" : "TypeDeclaration[1055-2073]:TypeDeclaration[1149-7103]"
+    }, {
+      "left" : "public void testTriggerMinorCompaction() throws Throwable",
+      "right" : "public boolean minorWasTriggered(String keyspace, String cf) throws Throwable",
+      "info" : "MethodDeclaration[1111-2071]:MethodDeclaration[6637-7101]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1055-1061]:Modifier[1149-1155]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1062-1067]:TYPE_DECLARATION_KIND[1156-1161]"
+    }, {
+      "left" : "CompactionsCQLTest",
+      "right" : "CompactionsCQLTest",
+      "info" : "SimpleName[1068-1086]:SimpleName[1162-1180]"
+    }, {
+      "left" : "CQLTester",
+      "right" : "CQLTester",
+      "info" : "SimpleType[1095-1104]:SimpleType[1189-1198]"
+    }, {
+      "left" : "@Test",
+      "right" : "@Test",
+      "info" : "MarkerAnnotation[1111-1116]:MarkerAnnotation[1205-1210]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1121-1127]:Modifier[1215-1221]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[1128-1132]:PrimitiveType[1222-1226]"
+    }, {
+      "left" : "testTriggerMinorCompaction",
+      "right" : "testTriggerMinorCompactionLCS",
+      "info" : "SimpleName[1133-1159]:SimpleName[1778-1807]"
+    }, {
+      "left" : "Throwable",
+      "right" : "Throwable",
+      "info" : "SimpleType[1169-1178]:SimpleType[1267-1276]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1183-2071]:Block[6719-7101]"
+    }, {
+      "left" : "createTable(\"CREATE TABLE %s (id text PRIMARY KEY);\");",
+      "right" : "createTable(\"CREATE TABLE %s (id text PRIMARY KEY)  WITH compaction = {'class':'SizeTieredCompactionStrategy', 'min_threshold':2};\");",
+      "info" : "ExpressionStatement[1193-1247]:ExpressionStatement[1291-1424]"
+    }, {
+      "left" : "\"CREATE TABLE %s (id text PRIMARY KEY);\"",
+      "right" : "\"CREATE TABLE %s (id text PRIMARY KEY)  WITH compaction = {'class':'SizeTieredCompactionStrategy', 'min_threshold':2};\"",
+      "info" : "StringLiteral[1205-1245]:StringLiteral[1303-1422]"
+    }, {
+      "left" : "assertTrue(Keyspace.open(KEYSPACE).getColumnFamilyStore(currentTable()).getCompactionStrategy().isEnabled());",
+      "right" : "assertTrue(getCurrentColumnFamilyStore().getCompactionStrategy().isEnabled());",
+      "info" : "ExpressionStatement[1256-1365]:ExpressionStatement[1433-1511]"
+    }, {
+      "left" : "Keyspace.open(KEYSPACE).getColumnFamilyStore(currentTable())",
+      "right" : "Keyspace.open(KEYSPACE).getColumnFamilyStore(currentTable())",
+      "info" : "MethodInvocation[1267-1327]:MethodInvocation[6564-6624]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1374-1418]:ExpressionStatement[1520-1564]"
+    }, {
+      "left" : "flush();",
+      "right" : "flush();",
+      "info" : "ExpressionStatement[1427-1435]:ExpressionStatement[1573-1581]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1444-1488]:ExpressionStatement[1590-1634]"
+    }, {
+      "left" : "flush()",
+      "right" : "flush()",
+      "info" : "MethodInvocation[1497-1504]:MethodInvocation[1643-1650]"
+    }, {
+      "left" : "flush();",
+      "right" : "assertTrue(getCurrentColumnFamilyStore().getCompactionStrategy().isEnabled());",
+      "info" : "ExpressionStatement[1497-1505]:ExpressionStatement[1984-2062]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1514-1558]:ExpressionStatement[2071-2115]"
+    }, {
+      "left" : "flush();",
+      "right" : "flush();",
+      "info" : "ExpressionStatement[1567-1575]:ExpressionStatement[2124-2132]"
+    }, {
+      "left" : "execute(\"insert into %s (id) values ('1')\");",
+      "right" : "execute(\"insert into %s (id) values ('1')\");",
+      "info" : "ExpressionStatement[1584-1628]:ExpressionStatement[2141-2185]"
+    }, {
+      "left" : "flush();",
+      "right" : "flush();",
+      "info" : "ExpressionStatement[1637-1645]:ExpressionStatement[2194-2202]"
+    }, {
+      "left" : "Thread",
+      "right" : "Thread",
+      "info" : "METHOD_INVOCATION_RECEIVER[1654-1660]:METHOD_INVOCATION_RECEIVER[1660-1666]"
+    }, {
+      "left" : "Thread.sleep(1000)",
+      "right" : "Thread.sleep(1000)",
+      "info" : "MethodInvocation[1654-1672]:MethodInvocation[2211-2229]"
+    }, {
+      "left" : "Thread.sleep(1000);",
+      "right" : "assertTrue(minorWasTriggered(KEYSPACE, currentTable()));",
+      "info" : "ExpressionStatement[1654-1673]:ExpressionStatement[6419-6475]"
+    }, {
+      "left" : "sleep",
+      "right" : "sleep",
+      "info" : "SimpleName[1661-1666]:SimpleName[1667-1672]"
+    }, {
+      "left" : "1000",
+      "right" : "1000",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[1667-1671]:METHOD_INVOCATION_ARGUMENTS[1673-1677]"
+    }, {
+      "left" : "UntypedResultSet res = execute(\"SELECT * FROM system.compaction_history\");",
+      "right" : "UntypedResultSet res = execute(\"SELECT * FROM system.compaction_history\");",
+      "info" : "VariableDeclarationStatement[1682-1756]:VariableDeclarationStatement[6729-6803]"
+    }, {
+      "left" : "boolean minorWasTriggered = false;",
+      "right" : "boolean minorWasTriggered = false;",
+      "info" : "VariableDeclarationStatement[1765-1799]:VariableDeclarationStatement[6812-6846]"
+    }, {
+      "left" : "for (UntypedResultSet.Row r : res)",
+      "right" : "for (UntypedResultSet.Row r : res)",
+      "info" : "EnhancedForStatement[1808-2026]:EnhancedForStatement[6855-7061]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1851-2026]:Block[6898-7061]"
+    }, {
+      "left" : "if (r.getString(\"keyspace_name\").equals(KEYSPACE) && r.getString(\"columnfamily_name\").equals(currentTable()))",
+      "right" : "if (r.getString(\"keyspace_name\").equals(keyspace) && r.getString(\"columnfamily_name\").equals(cf))",
+      "info" : "IfStatement[1865-2016]:IfStatement[6912-7051]"
+    }, {
+      "left" : "KEYSPACE",
+      "right" : "KEYSPACE",
+      "info" : "SimpleName[1905-1913]:SimpleName[2268-2276]"
+    }, {
+      "left" : "KEYSPACE",
+      "right" : "keyspace",
+      "info" : "SimpleName[1905-1913]:SimpleName[6952-6960]"
+    }, {
+      "left" : "r.getString(\"columnfamily_name\")",
+      "right" : "r.getString(\"columnfamily_name\")",
+      "info" : "METHOD_INVOCATION_RECEIVER[1918-1950]:METHOD_INVOCATION_RECEIVER[6965-6997]"
+    }, {
+      "left" : "equals",
+      "right" : "equals",
+      "info" : "SimpleName[1951-1957]:SimpleName[6998-7004]"
+    }, {
+      "left" : "currentTable",
+      "right" : "currentTable",
+      "info" : "SimpleName[1958-1970]:SimpleName[2278-2290]"
+    }, {
+      "left" : "currentTable()",
+      "right" : "r.getString(\"columnfamily_name\").equals(cf)",
+      "info" : "MethodInvocation[1958-1972]:MethodInvocation[6965-7008]"
+    }, {
+      "left" : "minorWasTriggered = true;",
+      "right" : "minorWasTriggered = true;",
+      "info" : "ExpressionStatement[1991-2016]:ExpressionStatement[7026-7051]"
+    }, {
+      "left" : "assertTrue",
+      "right" : "assertTrue",
+      "info" : "SimpleName[2035-2045]:SimpleName[2239-2249]"
+    }, {
+      "left" : "minorWasTriggered",
+      "right" : "minorWasTriggered",
+      "info" : "SimpleName[2046-2063]:SimpleName[2250-2267]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

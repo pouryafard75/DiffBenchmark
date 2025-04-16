@@ -1,0 +1,817 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ActiveState",
+      "right" : "ActiveState",
+      "info" : "TypeDeclaration[1001-20750]:TypeDeclaration[1001-11384]"
+    }, {
+      "left" : "protected ActiveState(RaftStateContext context)",
+      "right" : "protected ActiveState(RaftStateContext context)",
+      "info" : "MethodDeclaration[1189-1262]:MethodDeclaration[1157-1230]"
+    }, {
+      "left" : "protected CompletableFuture<RaftState> transition(RaftState state)",
+      "right" : "protected void transition(RaftState state)",
+      "info" : "MethodDeclaration[1266-1843]:MethodDeclaration[1234-1794]"
+    }, {
+      "left" : "protected CompletableFuture<PollResponse> poll(PollRequest request)",
+      "right" : "protected CompletableFuture<PollResponse> poll(PollRequest request)",
+      "info" : "MethodDeclaration[11164-11368]:MethodDeclaration[1798-2002]"
+    }, {
+      "left" : "protected PollResponse handlePoll(PollRequest request)",
+      "right" : "protected PollResponse handlePoll(PollRequest request)",
+      "info" : "MethodDeclaration[11372-11882]:MethodDeclaration[2006-2516]"
+    }, {
+      "left" : "protected CompletableFuture<VoteResponse> vote(VoteRequest request)",
+      "right" : "protected CompletableFuture<VoteResponse> vote(VoteRequest request)",
+      "info" : "MethodDeclaration[11886-12090]:MethodDeclaration[2520-2724]"
+    }, {
+      "left" : "protected VoteResponse handleVote(VoteRequest request)",
+      "right" : "protected VoteResponse handleVote(VoteRequest request)",
+      "info" : "MethodDeclaration[12094-15215]:MethodDeclaration[2728-5849]"
+    }, {
+      "left" : "private boolean logUpToDate(long index, long term, Request request)",
+      "right" : "private boolean logUpToDate(long index, long term, Request request)",
+      "info" : "MethodDeclaration[15219-16755]:MethodDeclaration[5853-7389]"
+    }, {
+      "left" : "protected CompletableFuture<QueryResponse> query(QueryRequest request)",
+      "right" : "protected CompletableFuture<QueryResponse> query(QueryRequest request)",
+      "info" : "MethodDeclaration[16759-17188]:MethodDeclaration[7393-7822]"
+    }, {
+      "left" : "private CompletableFuture<QueryResponse> queryForward(QueryRequest request)",
+      "right" : "private CompletableFuture<QueryResponse> queryForward(QueryRequest request)",
+      "info" : "MethodDeclaration[17192-17638]:MethodDeclaration[7826-8272]"
+    }, {
+      "left" : "private CompletableFuture<QueryResponse> querySequential(QueryRequest request)",
+      "right" : "private CompletableFuture<QueryResponse> querySequential(QueryRequest request)",
+      "info" : "MethodDeclaration[17642-19213]:MethodDeclaration[8276-9847]"
+    }, {
+      "left" : "private CompletableFuture<QueryResponse> querySerializable(QueryRequest request)",
+      "right" : "private CompletableFuture<QueryResponse> querySerializable(QueryRequest request)",
+      "info" : "MethodDeclaration[19217-20747]:MethodDeclaration[9851-11381]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "abstract",
+      "right" : "abstract",
+      "info" : "Modifier[1104-1112]:Modifier[1104-1112]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1113-1118]:TYPE_DECLARATION_KIND[1113-1118]"
+    }, {
+      "left" : "ActiveState",
+      "right" : "ActiveState",
+      "info" : "SimpleName[1119-1130]:SimpleName[1119-1130]"
+    }, {
+      "left" : "PassiveState",
+      "right" : "PassiveState",
+      "info" : "SimpleType[1139-1151]:SimpleType[1139-1151]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[1189-1198]:Modifier[1157-1166]"
+    }, {
+      "left" : "ActiveState",
+      "right" : "ActiveState",
+      "info" : "SimpleName[1199-1210]:SimpleName[1167-1178]"
+    }, {
+      "left" : "RaftStateContext context",
+      "right" : "RaftStateContext context",
+      "info" : "SingleVariableDeclaration[1211-1235]:SingleVariableDeclaration[1179-1203]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1237-1262]:Block[1205-1230]"
+    }, {
+      "left" : "super(context);",
+      "right" : "super(context);",
+      "info" : "SuperConstructorInvocation[1243-1258]:SuperConstructorInvocation[1211-1226]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[1311-1320]:Modifier[1246-1255]"
+    }, {
+      "left" : "transition",
+      "right" : "transition",
+      "info" : "SimpleName[1350-1360]:SimpleName[1261-1271]"
+    }, {
+      "left" : "RaftState state",
+      "right" : "RaftState state",
+      "info" : "SingleVariableDeclaration[1361-1376]:SingleVariableDeclaration[1272-1287]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1378-1843]:Block[1289-1794]"
+    }, {
+      "left" : "switch (state) {\n      case START:\n        return context.transition(StartState.class);\n      case PASSIVE:\n        return context.transition(PassiveState.class);\n      case FOLLOWER:\n        return context.transition(FollowerState.class);\n      case CANDIDATE:\n        return context.transition(CandidateState.class);\n      case LEADER:\n        return context.transition(LeaderState.class);\n      default:\n        throw new IllegalStateException();\n    }",
+      "right" : "switch (state) {\n      case START:\n        context.transition(StartState.class);\n        break;\n      case PASSIVE:\n        context.transition(PassiveState.class);\n        break;\n      case FOLLOWER:\n        context.transition(FollowerState.class);\n        break;\n      case CANDIDATE:\n        context.transition(CandidateState.class);\n        break;\n      case LEADER:\n        context.transition(LeaderState.class);\n        break;\n      default:\n        throw new IllegalStateException();\n    }",
+      "info" : "SwitchStatement[1384-1839]:SwitchStatement[1295-1790]"
+    }, {
+      "left" : "case START:",
+      "right" : "case START:",
+      "info" : "SwitchCase[1407-1418]:SwitchCase[1318-1329]"
+    }, {
+      "left" : "context",
+      "right" : "context",
+      "info" : "METHOD_INVOCATION_RECEIVER[1434-1441]:METHOD_INVOCATION_RECEIVER[1338-1345]"
+    }, {
+      "left" : "StartState.class",
+      "right" : "StartState.class",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[1453-1469]:METHOD_INVOCATION_ARGUMENTS[1357-1373]"
+    }, {
+      "left" : "case PASSIVE:",
+      "right" : "case PASSIVE:",
+      "info" : "SwitchCase[1478-1491]:SwitchCase[1397-1410]"
+    }, {
+      "left" : "context",
+      "right" : "context",
+      "info" : "METHOD_INVOCATION_RECEIVER[1507-1514]:METHOD_INVOCATION_RECEIVER[1419-1426]"
+    }, {
+      "left" : "PassiveState.class",
+      "right" : "PassiveState.class",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[1526-1544]:METHOD_INVOCATION_ARGUMENTS[1438-1456]"
+    }, {
+      "left" : "case FOLLOWER:",
+      "right" : "case FOLLOWER:",
+      "info" : "SwitchCase[1553-1567]:SwitchCase[1480-1494]"
+    }, {
+      "left" : "context",
+      "right" : "context",
+      "info" : "METHOD_INVOCATION_RECEIVER[1583-1590]:METHOD_INVOCATION_RECEIVER[1503-1510]"
+    }, {
+      "left" : "FollowerState.class",
+      "right" : "FollowerState.class",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[1602-1621]:METHOD_INVOCATION_ARGUMENTS[1522-1541]"
+    }, {
+      "left" : "case CANDIDATE:",
+      "right" : "case CANDIDATE:",
+      "info" : "SwitchCase[1630-1645]:SwitchCase[1565-1580]"
+    }, {
+      "left" : "context",
+      "right" : "context",
+      "info" : "METHOD_INVOCATION_RECEIVER[1661-1668]:METHOD_INVOCATION_RECEIVER[1589-1596]"
+    }, {
+      "left" : "CandidateState.class",
+      "right" : "CandidateState.class",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[1680-1700]:METHOD_INVOCATION_ARGUMENTS[1608-1628]"
+    }, {
+      "left" : "case LEADER:",
+      "right" : "case LEADER:",
+      "info" : "SwitchCase[1709-1721]:SwitchCase[1652-1664]"
+    }, {
+      "left" : "context",
+      "right" : "context",
+      "info" : "METHOD_INVOCATION_RECEIVER[1737-1744]:METHOD_INVOCATION_RECEIVER[1673-1680]"
+    }, {
+      "left" : "LeaderState.class",
+      "right" : "LeaderState.class",
+      "info" : "METHOD_INVOCATION_ARGUMENTS[1756-1773]:METHOD_INVOCATION_ARGUMENTS[1692-1709]"
+    }, {
+      "left" : "default:",
+      "right" : "default:",
+      "info" : "SwitchCase[1782-1790]:SwitchCase[1733-1741]"
+    }, {
+      "left" : "throw new IllegalStateException();",
+      "right" : "throw new IllegalStateException();",
+      "info" : "ThrowStatement[1799-1833]:ThrowStatement[1750-1784]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11164-11173]:MarkerAnnotation[1798-1807]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[11176-11185]:Modifier[1810-1819]"
+    }, {
+      "left" : "CompletableFuture<PollResponse>",
+      "right" : "CompletableFuture<PollResponse>",
+      "info" : "ParameterizedType[11186-11217]:ParameterizedType[1820-1851]"
+    }, {
+      "left" : "poll",
+      "right" : "poll",
+      "info" : "SimpleName[11218-11222]:SimpleName[1852-1856]"
+    }, {
+      "left" : "PollRequest request",
+      "right" : "PollRequest request",
+      "info" : "SingleVariableDeclaration[11223-11242]:SingleVariableDeclaration[1857-1876]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11244-11368]:Block[1878-2002]"
+    }, {
+      "left" : "context.checkThread();",
+      "right" : "context.checkThread();",
+      "info" : "ExpressionStatement[11250-11272]:ExpressionStatement[1884-1906]"
+    }, {
+      "left" : "return CompletableFuture.completedFuture(logResponse(handlePoll(logRequest(request))));",
+      "right" : "return CompletableFuture.completedFuture(logResponse(handlePoll(logRequest(request))));",
+      "info" : "ReturnStatement[11277-11364]:ReturnStatement[1911-1998]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[11413-11422]:Modifier[2047-2056]"
+    }, {
+      "left" : "PollResponse",
+      "right" : "PollResponse",
+      "info" : "SimpleType[11423-11435]:SimpleType[2057-2069]"
+    }, {
+      "left" : "handlePoll",
+      "right" : "handlePoll",
+      "info" : "SimpleName[11436-11446]:SimpleName[2070-2080]"
+    }, {
+      "left" : "PollRequest request",
+      "right" : "PollRequest request",
+      "info" : "SingleVariableDeclaration[11447-11466]:SingleVariableDeclaration[2081-2100]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11468-11882]:Block[2102-2516]"
+    }, {
+      "left" : "if (logUpToDate(request.logIndex(), request.logTerm(), request))",
+      "right" : "if (logUpToDate(request.logIndex(), request.logTerm(), request))",
+      "info" : "IfStatement[11474-11878]:IfStatement[2108-2512]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11539-11705]:Block[2173-2339]"
+    }, {
+      "left" : "return PollResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withAccepted(true)\n        .build();",
+      "right" : "return PollResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withAccepted(true)\n        .build();",
+      "info" : "ReturnStatement[11547-11699]:ReturnStatement[2181-2333]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11711-11878]:Block[2345-2512]"
+    }, {
+      "left" : "return PollResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withAccepted(false)\n        .build();",
+      "right" : "return PollResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withAccepted(false)\n        .build();",
+      "info" : "ReturnStatement[11719-11872]:ReturnStatement[2353-2506]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11886-11895]:MarkerAnnotation[2520-2529]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[11898-11907]:Modifier[2532-2541]"
+    }, {
+      "left" : "CompletableFuture<VoteResponse>",
+      "right" : "CompletableFuture<VoteResponse>",
+      "info" : "ParameterizedType[11908-11939]:ParameterizedType[2542-2573]"
+    }, {
+      "left" : "vote",
+      "right" : "vote",
+      "info" : "SimpleName[11940-11944]:SimpleName[2574-2578]"
+    }, {
+      "left" : "VoteRequest request",
+      "right" : "VoteRequest request",
+      "info" : "SingleVariableDeclaration[11945-11964]:SingleVariableDeclaration[2579-2598]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11966-12090]:Block[2600-2724]"
+    }, {
+      "left" : "context.checkThread();",
+      "right" : "context.checkThread();",
+      "info" : "ExpressionStatement[11972-11994]:ExpressionStatement[2606-2628]"
+    }, {
+      "left" : "return CompletableFuture.completedFuture(logResponse(handleVote(logRequest(request))));",
+      "right" : "return CompletableFuture.completedFuture(logResponse(handleVote(logRequest(request))));",
+      "info" : "ReturnStatement[11999-12086]:ReturnStatement[2633-2720]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[12135-12144]:Modifier[2769-2778]"
+    }, {
+      "left" : "VoteResponse",
+      "right" : "VoteResponse",
+      "info" : "SimpleType[12145-12157]:SimpleType[2779-2791]"
+    }, {
+      "left" : "handleVote",
+      "right" : "handleVote",
+      "info" : "SimpleName[12158-12168]:SimpleName[2792-2802]"
+    }, {
+      "left" : "VoteRequest request",
+      "right" : "VoteRequest request",
+      "info" : "SingleVariableDeclaration[12169-12188]:SingleVariableDeclaration[2803-2822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12190-15215]:Block[2824-5849]"
+    }, {
+      "left" : "if (request.term() > context.getTerm())",
+      "right" : "if (request.term() > context.getTerm())",
+      "info" : "IfStatement[12361-12447]:IfStatement[2995-3081]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12401-12447]:Block[3035-3081]"
+    }, {
+      "left" : "context.setTerm(request.term());",
+      "right" : "context.setTerm(request.term());",
+      "info" : "ExpressionStatement[12409-12441]:ExpressionStatement[3043-3075]"
+    }, {
+      "left" : "if (request.term() < context.getTerm())",
+      "right" : "if (request.term() < context.getTerm())",
+      "info" : "IfStatement[12643-15211]:IfStatement[3277-5845]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12683-12980]:Block[3317-3614]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Rejected {}: candidate's term is less than the current term\", context.getCluster().member().id(), request);",
+      "right" : "LOGGER.debug(\"{} - Rejected {}: candidate's term is less than the current term\", context.getCluster().member().id(), request);",
+      "info" : "ExpressionStatement[12691-12817]:ExpressionStatement[3325-3451]"
+    }, {
+      "left" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(false)\n        .build();",
+      "right" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(false)\n        .build();",
+      "info" : "ReturnStatement[12824-12974]:ReturnStatement[3458-3608]"
+    }, {
+      "left" : "if (request.candidate() == context.getCluster().member().id())",
+      "right" : "if (request.candidate() == context.getCluster().member().id())",
+      "info" : "IfStatement[13191-15211]:IfStatement[3825-5845]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13254-13600]:Block[3888-4234]"
+    }, {
+      "left" : "context.setLastVotedFor(context.getCluster().member().id());",
+      "right" : "context.setLastVotedFor(context.getCluster().member().id());",
+      "info" : "ExpressionStatement[13262-13322]:ExpressionStatement[3896-3956]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Accepted {}: candidate is the local member\", context.getCluster().member().id(), request);",
+      "right" : "LOGGER.debug(\"{} - Accepted {}: candidate is the local member\", context.getCluster().member().id(), request);",
+      "info" : "ExpressionStatement[13329-13438]:ExpressionStatement[3963-4072]"
+    }, {
+      "left" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(true)\n        .build();",
+      "right" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(true)\n        .build();",
+      "info" : "ReturnStatement[13445-13594]:ReturnStatement[4079-4228]"
+    }, {
+      "left" : "if (!context.getCluster().members().stream().map(Member::id).collect(Collectors.toSet()).contains(request.candidate()))",
+      "right" : "if (!context.getCluster().members().stream().map(Member::id).collect(Collectors.toSet()).contains(request.candidate()))",
+      "info" : "IfStatement[13773-15211]:IfStatement[4407-5845]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13893-14186]:Block[4527-4820]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Rejected {}: candidate is not known to the local member\", context.getCluster().member().id(), request);",
+      "right" : "LOGGER.debug(\"{} - Rejected {}: candidate is not known to the local member\", context.getCluster().member().id(), request);",
+      "info" : "ExpressionStatement[13901-14023]:ExpressionStatement[4535-4657]"
+    }, {
+      "left" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(false)\n        .build();",
+      "right" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(false)\n        .build();",
+      "info" : "ReturnStatement[14030-14180]:ReturnStatement[4664-4814]"
+    }, {
+      "left" : "if (context.getLastVotedFor() == 0 || context.getLastVotedFor() == request.candidate())",
+      "right" : "if (context.getLastVotedFor() == 0 || context.getLastVotedFor() == request.candidate())",
+      "info" : "IfStatement[14266-15211]:IfStatement[4900-5845]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14354-14844]:Block[4988-5478]"
+    }, {
+      "left" : "if (logUpToDate(request.logIndex(), request.logTerm(), request))",
+      "right" : "if (logUpToDate(request.logIndex(), request.logTerm(), request))",
+      "info" : "IfStatement[14362-14838]:IfStatement[4996-5472]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14427-14656]:Block[5061-5290]"
+    }, {
+      "left" : "context.setLastVotedFor(request.candidate());",
+      "right" : "context.setLastVotedFor(request.candidate());",
+      "info" : "ExpressionStatement[14437-14482]:ExpressionStatement[5071-5116]"
+    }, {
+      "left" : "return VoteResponse.builder()\n          .withStatus(Response.Status.OK)\n          .withTerm(context.getTerm())\n          .withVoted(true)\n          .build();",
+      "right" : "return VoteResponse.builder()\n          .withStatus(Response.Status.OK)\n          .withTerm(context.getTerm())\n          .withVoted(true)\n          .build();",
+      "info" : "ReturnStatement[14491-14648]:ReturnStatement[5125-5282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14662-14838]:Block[5296-5472]"
+    }, {
+      "left" : "return VoteResponse.builder()\n          .withStatus(Response.Status.OK)\n          .withTerm(context.getTerm())\n          .withVoted(false)\n          .build();",
+      "right" : "return VoteResponse.builder()\n          .withStatus(Response.Status.OK)\n          .withTerm(context.getTerm())\n          .withVoted(false)\n          .build();",
+      "info" : "ReturnStatement[14672-14830]:ReturnStatement[5306-5464]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14913-15211]:Block[5547-5845]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Rejected {}: already voted for {}\", context.getCluster().member().id(), request, context.getLastVotedFor());",
+      "right" : "LOGGER.debug(\"{} - Rejected {}: already voted for {}\", context.getCluster().member().id(), request, context.getLastVotedFor());",
+      "info" : "ExpressionStatement[14921-15048]:ExpressionStatement[5555-5682]"
+    }, {
+      "left" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(false)\n        .build();",
+      "right" : "return VoteResponse.builder()\n        .withStatus(Response.Status.OK)\n        .withTerm(context.getTerm())\n        .withVoted(false)\n        .build();",
+      "info" : "ReturnStatement[15055-15205]:ReturnStatement[5689-5839]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[15320-15327]:Modifier[5954-5961]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[15328-15335]:PrimitiveType[5962-5969]"
+    }, {
+      "left" : "logUpToDate",
+      "right" : "logUpToDate",
+      "info" : "SimpleName[15336-15347]:SimpleName[5970-5981]"
+    }, {
+      "left" : "long index",
+      "right" : "long index",
+      "info" : "SingleVariableDeclaration[15348-15358]:SingleVariableDeclaration[5982-5992]"
+    }, {
+      "left" : "long term",
+      "right" : "long term",
+      "info" : "SingleVariableDeclaration[15360-15369]:SingleVariableDeclaration[5994-6003]"
+    }, {
+      "left" : "Request request",
+      "right" : "Request request",
+      "info" : "SingleVariableDeclaration[15371-15386]:SingleVariableDeclaration[6005-6020]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15388-16755]:Block[6022-7389]"
+    }, {
+      "left" : "if (context.getLog().isEmpty())",
+      "right" : "if (context.getLog().isEmpty())",
+      "info" : "IfStatement[15450-16751]:IfStatement[6084-7385]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15482-15624]:Block[6116-6258]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Accepted {}: candidate's log is up-to-date\", context.getCluster().member().id(), request);",
+      "right" : "LOGGER.debug(\"{} - Accepted {}: candidate's log is up-to-date\", context.getCluster().member().id(), request);",
+      "info" : "ExpressionStatement[15490-15599]:ExpressionStatement[6124-6233]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[15606-15618]:ReturnStatement[6240-6252]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15630-16751]:Block[6264-7385]"
+    }, {
+      "left" : "long lastIndex = context.getLog().lastIndex();",
+      "right" : "long lastIndex = context.getLog().lastIndex();",
+      "info" : "VariableDeclarationStatement[15781-15827]:VariableDeclarationStatement[6415-6461]"
+    }, {
+      "left" : "Entry entry = context.getLog().getEntry(lastIndex);",
+      "right" : "Entry entry = context.getLog().getEntry(lastIndex);",
+      "info" : "VariableDeclarationStatement[15834-15885]:VariableDeclarationStatement[6468-6519]"
+    }, {
+      "left" : "if (entry == null)",
+      "right" : "if (entry == null)",
+      "info" : "IfStatement[15892-16059]:IfStatement[6526-6693]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[15911-16059]:Block[6545-6693]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Accepted {}: candidate's log is up-to-date\", context.getCluster().member().id(), request);",
+      "right" : "LOGGER.debug(\"{} - Accepted {}: candidate's log is up-to-date\", context.getCluster().member().id(), request);",
+      "info" : "ExpressionStatement[15921-16030]:ExpressionStatement[6555-6664]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[16039-16051]:ReturnStatement[6673-6685]"
+    }, {
+      "left" : "if (index != 0 && index >= lastIndex)",
+      "right" : "if (index != 0 && index >= lastIndex)",
+      "info" : "IfStatement[16067-16745]:IfStatement[6701-7379]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16105-16526]:Block[6739-7160]"
+    }, {
+      "left" : "if (term >= entry.getTerm())",
+      "right" : "if (term >= entry.getTerm())",
+      "info" : "IfStatement[16115-16518]:IfStatement[6749-7152]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16144-16298]:Block[6778-6932]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Accepted {}: candidate's log is up-to-date\", context.getCluster().member().id(), request);",
+      "right" : "LOGGER.debug(\"{} - Accepted {}: candidate's log is up-to-date\", context.getCluster().member().id(), request);",
+      "info" : "ExpressionStatement[16156-16265]:ExpressionStatement[6790-6899]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[16276-16288]:ReturnStatement[6910-6922]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16304-16518]:Block[6938-7152]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Rejected {}: candidate's last log term ({}) is in conflict with local log ({})\", context.getCluster().member().id(), request, term, entry.getTerm());",
+      "right" : "LOGGER.debug(\"{} - Rejected {}: candidate's last log term ({}) is in conflict with local log ({})\", context.getCluster().member().id(), request, term, entry.getTerm());",
+      "info" : "ExpressionStatement[16316-16484]:ExpressionStatement[6950-7118]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[16495-16508]:ReturnStatement[7129-7142]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16532-16745]:Block[7166-7379]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - Rejected {}: candidate's last log entry ({}) is at a lower index than the local log ({})\", context.getCluster().member().id(), request, index, lastIndex);",
+      "right" : "LOGGER.debug(\"{} - Rejected {}: candidate's last log entry ({}) is at a lower index than the local log ({})\", context.getCluster().member().id(), request, index, lastIndex);",
+      "info" : "ExpressionStatement[16542-16715]:ExpressionStatement[7176-7349]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[16724-16737]:ReturnStatement[7358-7371]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[16759-16768]:MarkerAnnotation[7393-7402]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[16771-16780]:Modifier[7405-7414]"
+    }, {
+      "left" : "CompletableFuture<QueryResponse>",
+      "right" : "CompletableFuture<QueryResponse>",
+      "info" : "ParameterizedType[16781-16813]:ParameterizedType[7415-7447]"
+    }, {
+      "left" : "query",
+      "right" : "query",
+      "info" : "SimpleName[16814-16819]:SimpleName[7448-7453]"
+    }, {
+      "left" : "QueryRequest request",
+      "right" : "QueryRequest request",
+      "info" : "SingleVariableDeclaration[16820-16840]:SingleVariableDeclaration[7454-7474]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16842-17188]:Block[7476-7822]"
+    }, {
+      "left" : "context.checkThread();",
+      "right" : "context.checkThread();",
+      "info" : "ExpressionStatement[16848-16870]:ExpressionStatement[7482-7504]"
+    }, {
+      "left" : "logRequest(request);",
+      "right" : "logRequest(request);",
+      "info" : "ExpressionStatement[16875-16895]:ExpressionStatement[7509-7529]"
+    }, {
+      "left" : "if (request.query().consistency() == ConsistencyLevel.SEQUENTIAL)",
+      "right" : "if (request.query().consistency() == ConsistencyLevel.SEQUENTIAL)",
+      "info" : "IfStatement[16901-17184]:IfStatement[7535-7818]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16967-17013]:Block[7601-7647]"
+    }, {
+      "left" : "return querySequential(request);",
+      "right" : "return querySequential(request);",
+      "info" : "ReturnStatement[16975-17007]:ReturnStatement[7609-7641]"
+    }, {
+      "left" : "if (request.query().consistency() == ConsistencyLevel.SERIALIZABLE)",
+      "right" : "if (request.query().consistency() == ConsistencyLevel.SERIALIZABLE)",
+      "info" : "IfStatement[17019-17184]:IfStatement[7653-7818]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17087-17135]:Block[7721-7769]"
+    }, {
+      "left" : "return querySerializable(request);",
+      "right" : "return querySerializable(request);",
+      "info" : "ReturnStatement[17095-17129]:ReturnStatement[7729-7763]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17141-17184]:Block[7775-7818]"
+    }, {
+      "left" : "return queryForward(request);",
+      "right" : "return queryForward(request);",
+      "info" : "ReturnStatement[17149-17178]:ReturnStatement[7783-7812]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17243-17250]:Modifier[7877-7884]"
+    }, {
+      "left" : "CompletableFuture<QueryResponse>",
+      "right" : "CompletableFuture<QueryResponse>",
+      "info" : "ParameterizedType[17251-17283]:ParameterizedType[7885-7917]"
+    }, {
+      "left" : "queryForward",
+      "right" : "queryForward",
+      "info" : "SimpleName[17284-17296]:SimpleName[7918-7930]"
+    }, {
+      "left" : "QueryRequest request",
+      "right" : "QueryRequest request",
+      "info" : "SingleVariableDeclaration[17297-17317]:SingleVariableDeclaration[7931-7951]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17319-17638]:Block[7953-8272]"
+    }, {
+      "left" : "if (context.getLeader() == 0)",
+      "right" : "if (context.getLeader() == 0)",
+      "info" : "IfStatement[17325-17559]:IfStatement[7959-8193]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17355-17559]:Block[7989-8193]"
+    }, {
+      "left" : "return CompletableFuture.completedFuture(logResponse(QueryResponse.builder()\n        .withStatus(Response.Status.ERROR)\n        .withError(RaftError.Type.NO_LEADER_ERROR)\n        .build()));",
+      "right" : "return CompletableFuture.completedFuture(logResponse(QueryResponse.builder()\n        .withStatus(Response.Status.ERROR)\n        .withError(RaftError.Type.NO_LEADER_ERROR)\n        .build()));",
+      "info" : "ReturnStatement[17363-17553]:ReturnStatement[7997-8187]"
+    }, {
+      "left" : "return context.getCluster().member(context.getLeader()).send(request);",
+      "right" : "return context.getCluster().member(context.getLeader()).send(request);",
+      "info" : "ReturnStatement[17564-17634]:ReturnStatement[8198-8268]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[17688-17695]:Modifier[8322-8329]"
+    }, {
+      "left" : "CompletableFuture<QueryResponse>",
+      "right" : "CompletableFuture<QueryResponse>",
+      "info" : "ParameterizedType[17696-17728]:ParameterizedType[8330-8362]"
+    }, {
+      "left" : "querySequential",
+      "right" : "querySequential",
+      "info" : "SimpleName[17729-17744]:SimpleName[8363-8378]"
+    }, {
+      "left" : "QueryRequest request",
+      "right" : "QueryRequest request",
+      "info" : "SingleVariableDeclaration[17745-17765]:SingleVariableDeclaration[8379-8399]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17767-19213]:Block[8401-9847]"
+    }, {
+      "left" : "if (context.getLog().lastIndex() < context.getCommitIndex())",
+      "right" : "if (context.getLog().lastIndex() < context.getCommitIndex())",
+      "info" : "IfStatement[17924-18116]:IfStatement[8558-8750]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[17985-18116]:Block[8619-8750]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - State appears to be out of sync, forwarding query to leader\");",
+      "right" : "LOGGER.debug(\"{} - State appears to be out of sync, forwarding query to leader\");",
+      "info" : "ExpressionStatement[17993-18074]:ExpressionStatement[8627-8708]"
+    }, {
+      "left" : "return queryForward(request);",
+      "right" : "return queryForward(request);",
+      "info" : "ReturnStatement[18081-18110]:ReturnStatement[8715-8744]"
+    }, {
+      "left" : "CompletableFuture<QueryResponse> future = new CompletableFuture<>();",
+      "right" : "CompletableFuture<QueryResponse> future = new CompletableFuture<>();",
+      "info" : "VariableDeclarationStatement[18122-18190]:VariableDeclarationStatement[8756-8824]"
+    }, {
+      "left" : "QueryEntry entry = context.getLog().createEntry(QueryEntry.class)\n      .setIndex(context.getCommitIndex())\n      .setTerm(context.getTerm())\n      .setTimestamp(System.currentTimeMillis())\n      .setVersion(request.version())\n      .setSession(request.session())\n      .setQuery(request.query());",
+      "right" : "QueryEntry entry = context.getLog().createEntry(QueryEntry.class)\n      .setIndex(context.getCommitIndex())\n      .setTerm(context.getTerm())\n      .setTimestamp(System.currentTimeMillis())\n      .setVersion(request.version())\n      .setSession(request.session())\n      .setQuery(request.query());",
+      "info" : "VariableDeclarationStatement[18195-18492]:VariableDeclarationStatement[8829-9126]"
+    }, {
+      "left" : "long version = Math.max(context.getStateMachine().getLastApplied(), request.version());",
+      "right" : "long version = Math.max(context.getStateMachine().getLastApplied(), request.version());",
+      "info" : "VariableDeclarationStatement[18498-18585]:VariableDeclarationStatement[9132-9219]"
+    }, {
+      "left" : "context.getStateMachine().apply(entry).whenCompleteAsync((result, error) -> {\n      if (isOpen()) {\n        if (error == null) {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));\n        } else {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));\n        }\n      }\n      entry.close();\n    }, context.getContext());",
+      "right" : "context.getStateMachine().apply(entry).whenCompleteAsync((result, error) -> {\n      if (isOpen()) {\n        if (error == null) {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));\n        } else {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));\n        }\n      }\n      entry.close();\n    }, context.getContext());",
+      "info" : "ExpressionStatement[18590-19190]:ExpressionStatement[9224-9824]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18666-19166]:Block[9300-9800]"
+    }, {
+      "left" : "if (isOpen())",
+      "right" : "if (isOpen())",
+      "info" : "IfStatement[18674-19139]:IfStatement[9308-9773]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18688-19139]:Block[9322-9773]"
+    }, {
+      "left" : "if (error == null)",
+      "right" : "if (error == null)",
+      "info" : "IfStatement[18698-19131]:IfStatement[9332-9765]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18717-18924]:Block[9351-9558]"
+    }, {
+      "left" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));",
+      "right" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));",
+      "info" : "ExpressionStatement[18729-18914]:ExpressionStatement[9363-9548]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[18930-19131]:Block[9564-9765]"
+    }, {
+      "left" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));",
+      "right" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));",
+      "info" : "ExpressionStatement[18942-19121]:ExpressionStatement[9576-9755]"
+    }, {
+      "left" : "entry.close();",
+      "right" : "entry.close();",
+      "info" : "ExpressionStatement[19146-19160]:ExpressionStatement[9780-9794]"
+    }, {
+      "left" : "return future;",
+      "right" : "return future;",
+      "info" : "ReturnStatement[19195-19209]:ReturnStatement[9829-9843]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[19265-19272]:Modifier[9899-9906]"
+    }, {
+      "left" : "CompletableFuture<QueryResponse>",
+      "right" : "CompletableFuture<QueryResponse>",
+      "info" : "ParameterizedType[19273-19305]:ParameterizedType[9907-9939]"
+    }, {
+      "left" : "querySerializable",
+      "right" : "querySerializable",
+      "info" : "SimpleName[19306-19323]:SimpleName[9940-9957]"
+    }, {
+      "left" : "QueryRequest request",
+      "right" : "QueryRequest request",
+      "info" : "SingleVariableDeclaration[19324-19344]:SingleVariableDeclaration[9958-9978]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19346-20747]:Block[9980-11381]"
+    }, {
+      "left" : "if (context.getLog().lastIndex() < context.getCommitIndex())",
+      "right" : "if (context.getLog().lastIndex() < context.getCommitIndex())",
+      "info" : "IfStatement[19503-19695]:IfStatement[10137-10329]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[19564-19695]:Block[10198-10329]"
+    }, {
+      "left" : "LOGGER.debug(\"{} - State appears to be out of sync, forwarding query to leader\");",
+      "right" : "LOGGER.debug(\"{} - State appears to be out of sync, forwarding query to leader\");",
+      "info" : "ExpressionStatement[19572-19653]:ExpressionStatement[10206-10287]"
+    }, {
+      "left" : "return queryForward(request);",
+      "right" : "return queryForward(request);",
+      "info" : "ReturnStatement[19660-19689]:ReturnStatement[10294-10323]"
+    }, {
+      "left" : "CompletableFuture<QueryResponse> future = new CompletableFuture<>();",
+      "right" : "CompletableFuture<QueryResponse> future = new CompletableFuture<>();",
+      "info" : "VariableDeclarationStatement[19701-19769]:VariableDeclarationStatement[10335-10403]"
+    }, {
+      "left" : "QueryEntry entry = context.getLog().createEntry(QueryEntry.class)\n      .setIndex(context.getCommitIndex())\n      .setTerm(context.getTerm())\n      .setTimestamp(System.currentTimeMillis())\n      .setVersion(0)\n      .setSession(request.session())\n      .setQuery(request.query());",
+      "right" : "QueryEntry entry = context.getLog().createEntry(QueryEntry.class)\n      .setIndex(context.getCommitIndex())\n      .setTerm(context.getTerm())\n      .setTimestamp(System.currentTimeMillis())\n      .setVersion(0)\n      .setSession(request.session())\n      .setQuery(request.query());",
+      "info" : "VariableDeclarationStatement[19774-20055]:VariableDeclarationStatement[10408-10689]"
+    }, {
+      "left" : "long version = context.getStateMachine().getLastApplied();",
+      "right" : "long version = context.getStateMachine().getLastApplied();",
+      "info" : "VariableDeclarationStatement[20061-20119]:VariableDeclarationStatement[10695-10753]"
+    }, {
+      "left" : "context.getStateMachine().apply(entry).whenCompleteAsync((result, error) -> {\n      if (isOpen()) {\n        if (error == null) {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));\n        } else {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));\n        }\n      }\n      entry.close();\n    }, context.getContext());",
+      "right" : "context.getStateMachine().apply(entry).whenCompleteAsync((result, error) -> {\n      if (isOpen()) {\n        if (error == null) {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));\n        } else {\n          future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));\n        }\n      }\n      entry.close();\n    }, context.getContext());",
+      "info" : "ExpressionStatement[20124-20724]:ExpressionStatement[10758-11358]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20200-20700]:Block[10834-11334]"
+    }, {
+      "left" : "if (isOpen())",
+      "right" : "if (isOpen())",
+      "info" : "IfStatement[20208-20673]:IfStatement[10842-11307]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20222-20673]:Block[10856-11307]"
+    }, {
+      "left" : "if (error == null)",
+      "right" : "if (error == null)",
+      "info" : "IfStatement[20232-20665]:IfStatement[10866-11299]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20251-20458]:Block[10885-11092]"
+    }, {
+      "left" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));",
+      "right" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.OK)\n            .withVersion(version)\n            .withResult(result)\n            .build()));",
+      "info" : "ExpressionStatement[20263-20448]:ExpressionStatement[10897-11082]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[20464-20665]:Block[11098-11299]"
+    }, {
+      "left" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));",
+      "right" : "future.complete(logResponse(QueryResponse.builder()\n            .withStatus(Response.Status.ERROR)\n            .withError(RaftError.Type.APPLICATION_ERROR)\n            .build()));",
+      "info" : "ExpressionStatement[20476-20655]:ExpressionStatement[11110-11289]"
+    }, {
+      "left" : "entry.close();",
+      "right" : "entry.close();",
+      "info" : "ExpressionStatement[20680-20694]:ExpressionStatement[11314-11328]"
+    }, {
+      "left" : "return future;",
+      "right" : "return future;",
+      "info" : "ReturnStatement[20729-20743]:ReturnStatement[11363-11377]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

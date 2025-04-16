@@ -1,0 +1,1593 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "RemoteChunkProvider",
+      "right" : "RemoteChunkProvider",
+      "info" : "TypeDeclaration[2289-11945]:TypeDeclaration[2244-11796]"
+    }, {
+      "left" : "private static final int LOAD_PER_FRAME = 1;",
+      "right" : "private static final int LOAD_PER_FRAME = 1;",
+      "info" : "FieldDeclaration[2427-2471]:FieldDeclaration[2382-2426]"
+    }, {
+      "left" : "private static final Logger logger = LoggerFactory.getLogger(RemoteChunkProvider.class);",
+      "right" : "private static final Logger logger = LoggerFactory.getLogger(RemoteChunkProvider.class);",
+      "info" : "FieldDeclaration[2476-2564]:FieldDeclaration[2431-2519]"
+    }, {
+      "left" : "private Map<Vector3i, Chunk> chunkCache = Maps.newHashMap();",
+      "right" : "private Map<Vector3i, Chunk> chunkCache = Maps.newHashMap();",
+      "info" : "FieldDeclaration[2569-2629]:FieldDeclaration[2524-2584]"
+    }, {
+      "left" : "private final BlockingQueue<Chunk> readyChunks = Queues.newLinkedBlockingQueue();",
+      "right" : "private final BlockingQueue<Chunk> readyChunks = Queues.newLinkedBlockingQueue();",
+      "info" : "FieldDeclaration[2634-2715]:FieldDeclaration[2589-2670]"
+    }, {
+      "left" : "private List<Chunk> sortedReadyChunks = Lists.newArrayList();",
+      "right" : "private List<Chunk> sortedReadyChunks = Lists.newArrayList();",
+      "info" : "FieldDeclaration[2720-2781]:FieldDeclaration[2675-2736]"
+    }, {
+      "left" : "private ChunkReadyListener listener;",
+      "right" : "private ChunkReadyListener listener;",
+      "info" : "FieldDeclaration[2786-2822]:FieldDeclaration[2741-2777]"
+    }, {
+      "left" : "private EntityRef worldEntity = EntityRef.NULL;",
+      "right" : "private EntityRef worldEntity = EntityRef.NULL;",
+      "info" : "FieldDeclaration[2827-2874]:FieldDeclaration[2782-2829]"
+    }, {
+      "left" : "private BlockManager blockManager;",
+      "right" : "private BlockManager blockManager;",
+      "info" : "FieldDeclaration[2880-2914]:FieldDeclaration[2835-2869]"
+    }, {
+      "left" : "private ChunkGenerationPipeline pipeline;",
+      "right" : "private ChunkGenerationPipeline pipeline;",
+      "info" : "FieldDeclaration[2920-2961]:FieldDeclaration[2875-2916]"
+    }, {
+      "left" : "private LightMerger<Chunk> lightMerger = new LightMerger<>(this);",
+      "right" : "private LightMerger<Chunk> lightMerger = new LightMerger<>(this);",
+      "info" : "FieldDeclaration[2967-3032]:FieldDeclaration[2922-2987]"
+    }, {
+      "left" : "public RemoteChunkProvider(BlockManager blockManager)",
+      "right" : "public RemoteChunkProvider(BlockManager blockManager, LocalPlayer localPlayer)",
+      "info" : "MethodDeclaration[3038-3282]:MethodDeclaration[3031-3300]"
+    }, {
+      "left" : "public void subscribe(ChunkReadyListener chunkReadyListener)",
+      "right" : "public void subscribe(ChunkReadyListener chunkReadyListener)",
+      "info" : "MethodDeclaration[3288-3400]:MethodDeclaration[3306-3418]"
+    }, {
+      "left" : "public void receiveChunk(final Chunk chunk)",
+      "right" : "public void receiveChunk(final Chunk chunk)",
+      "info" : "MethodDeclaration[3406-3877]:MethodDeclaration[3424-3895]"
+    }, {
+      "left" : "public String getName()",
+      "right" : "public String getName()",
+      "info" : "MethodDeclaration[3533-3646]:MethodDeclaration[3551-3664]"
+    }, {
+      "left" : "public void run()",
+      "right" : "public void run()",
+      "info" : "MethodDeclaration[3660-3859]:MethodDeclaration[3678-3877]"
+    }, {
+      "left" : "public void invalidateChunks(Vector3i pos)",
+      "right" : "public void invalidateChunks(Vector3i pos)",
+      "info" : "MethodDeclaration[3883-4092]:MethodDeclaration[3901-4110]"
+    }, {
+      "left" : "public void beginUpdate()",
+      "right" : "public void beginUpdate()",
+      "info" : "MethodDeclaration[4098-5417]:MethodDeclaration[4116-5435]"
+    }, {
+      "left" : "private boolean makeChunkAvailable(final Chunk chunk)",
+      "right" : "private boolean makeChunkAvailable(final Chunk chunk)",
+      "info" : "MethodDeclaration[5423-5741]:MethodDeclaration[5441-5759]"
+    }, {
+      "left" : "public Chunk getChunk(int x, int y, int z)",
+      "right" : "public Chunk getChunk(int x, int y, int z)",
+      "info" : "MethodDeclaration[5748-5860]:MethodDeclaration[5766-5878]"
+    }, {
+      "left" : "public Chunk getChunk(Vector3i chunkPos)",
+      "right" : "public Chunk getChunk(Vector3i chunkPos)",
+      "info" : "MethodDeclaration[5866-6081]:MethodDeclaration[5884-6099]"
+    }, {
+      "left" : "public boolean isChunkReady(Vector3i pos)",
+      "right" : "public boolean isChunkReady(Vector3i pos)",
+      "info" : "MethodDeclaration[6087-6242]:MethodDeclaration[6105-6260]"
+    }, {
+      "left" : "public void dispose()",
+      "right" : "public void dispose()",
+      "info" : "MethodDeclaration[6248-6406]:MethodDeclaration[6266-6424]"
+    }, {
+      "left" : "public boolean reloadChunk(Vector3i pos)",
+      "right" : "public boolean reloadChunk(Vector3i pos)",
+      "info" : "MethodDeclaration[6412-6496]:MethodDeclaration[6430-6514]"
+    }, {
+      "left" : "public void purgeWorld()",
+      "right" : "public void purgeWorld()",
+      "info" : "MethodDeclaration[6502-6548]:MethodDeclaration[6520-6566]"
+    }, {
+      "left" : "public void shutdown()",
+      "right" : "public void shutdown()",
+      "info" : "MethodDeclaration[6554-6649]:MethodDeclaration[6572-6667]"
+    }, {
+      "left" : "public Collection<Chunk> getAllChunks()",
+      "right" : "public Collection<Chunk> getAllChunks()",
+      "info" : "MethodDeclaration[6655-6767]:MethodDeclaration[6673-6785]"
+    }, {
+      "left" : "public void restart()",
+      "right" : "public void restart()",
+      "info" : "MethodDeclaration[6773-6867]:MethodDeclaration[6791-6885]"
+    }, {
+      "left" : "public ChunkViewCore getLocalView(Vector3i centerChunkPos)",
+      "right" : "public ChunkViewCore getLocalView(Vector3i centerChunkPos)",
+      "info" : "MethodDeclaration[6873-7205]:MethodDeclaration[6891-7223]"
+    }, {
+      "left" : "public ChunkViewCore getSubviewAroundBlock(Vector3i blockPos, int extent)",
+      "right" : "public ChunkViewCore getSubviewAroundBlock(Vector3i blockPos, int extent)",
+      "info" : "MethodDeclaration[7211-7495]:MethodDeclaration[7229-7513]"
+    }, {
+      "left" : "public ChunkViewCore getSubviewAroundChunk(Vector3i chunkPos)",
+      "right" : "public ChunkViewCore getSubviewAroundChunk(Vector3i chunkPos)",
+      "info" : "MethodDeclaration[7501-7873]:MethodDeclaration[7519-7891]"
+    }, {
+      "left" : "private ChunkViewCore createWorldView(Region3i region, Vector3i offset)",
+      "right" : "private ChunkViewCore createWorldView(Region3i region, Vector3i offset)",
+      "info" : "MethodDeclaration[7879-8510]:MethodDeclaration[7897-8528]"
+    }, {
+      "left" : "public void setWorldEntity(EntityRef entity)",
+      "right" : "public void setWorldEntity(EntityRef entity)",
+      "info" : "MethodDeclaration[8516-8617]:MethodDeclaration[8534-8635]"
+    }, {
+      "left" : "public void addRelevanceEntity(EntityRef entity, Vector3i distance)",
+      "right" : "public void addRelevanceEntity(EntityRef entity, Vector3i distance)",
+      "info" : "MethodDeclaration[8623-8712]:MethodDeclaration[8641-8730]"
+    }, {
+      "left" : "public void addRelevanceEntity(EntityRef entity, Vector3i distance, ChunkRegionListener chunkRegionListener)",
+      "right" : "public void addRelevanceEntity(EntityRef entity, Vector3i distance, ChunkRegionListener chunkRegionListener)",
+      "info" : "MethodDeclaration[8718-8848]:MethodDeclaration[8736-8866]"
+    }, {
+      "left" : "public void updateRelevanceEntity(EntityRef entity, Vector3i distance)",
+      "right" : "public void updateRelevanceEntity(EntityRef entity, Vector3i distance)",
+      "info" : "MethodDeclaration[8854-8946]:MethodDeclaration[8872-8964]"
+    }, {
+      "left" : "public void removeRelevanceEntity(EntityRef entity)",
+      "right" : "public void removeRelevanceEntity(EntityRef entity)",
+      "info" : "MethodDeclaration[8952-9025]:MethodDeclaration[8970-9043]"
+    }, {
+      "left" : "public void completeUpdate()",
+      "right" : "public void completeUpdate()",
+      "info" : "MethodDeclaration[9031-9443]:MethodDeclaration[9049-9461]"
+    }, {
+      "left" : "public void onChunkIsReady(Chunk chunk)",
+      "right" : "public void onChunkIsReady(Chunk chunk)",
+      "info" : "MethodDeclaration[9449-9679]:MethodDeclaration[9467-9697]"
+    }, {
+      "left" : "public Chunk getChunkUnready(Vector3i pos)",
+      "right" : "public Chunk getChunkUnready(Vector3i pos)",
+      "info" : "MethodDeclaration[9685-9785]:MethodDeclaration[9703-9803]"
+    }, {
+      "left" : "private boolean areAdjacentChunksReady(Chunk chunk)",
+      "right" : "private boolean areAdjacentChunksReady(Chunk chunk)",
+      "info" : "MethodDeclaration[9791-10264]:MethodDeclaration[9809-10282]"
+    }, {
+      "left" : "private void updateAdjacentChunksReadyFieldOf(Chunk chunk)",
+      "right" : "private void updateAdjacentChunksReadyFieldOf(Chunk chunk)",
+      "info" : "MethodDeclaration[10270-10405]:MethodDeclaration[10288-10423]"
+    }, {
+      "left" : "private void updateAdjacentChunksReadyFieldOfAdjChunks(Chunk chunkInCenter)",
+      "right" : "private void updateAdjacentChunksReadyFieldOfAdjChunks(Chunk chunkInCenter)",
+      "info" : "MethodDeclaration[10411-10849]:MethodDeclaration[10429-10867]"
+    }, {
+      "left" : "ChunkTaskRelevanceComparator",
+      "right" : "ChunkTaskRelevanceComparator",
+      "info" : "TypeDeclaration[10855-11397]:TypeDeclaration[10873-11328]"
+    }, {
+      "left" : "public int compare(ChunkTask o1, ChunkTask o2)",
+      "right" : "public int compare(ChunkTask o1, ChunkTask o2)",
+      "info" : "MethodDeclaration[11029-11175]:MethodDeclaration[10960-11106]"
+    }, {
+      "left" : "private int score(Vector3i chunk)",
+      "right" : "private int score(Vector3i chunk)",
+      "info" : "MethodDeclaration[11185-11391]:MethodDeclaration[11116-11322]"
+    }, {
+      "left" : "ReadyChunkRelevanceComparator",
+      "right" : "ReadyChunkRelevanceComparator",
+      "info" : "TypeDeclaration[11403-11943]:TypeDeclaration[11334-11794]"
+    }, {
+      "left" : "public int compare(Chunk o1, Chunk o2)",
+      "right" : "public int compare(Chunk o1, Chunk o2)",
+      "info" : "MethodDeclaration[11567-11739]:MethodDeclaration[11418-11590]"
+    }, {
+      "left" : "private float score(Vector3i chunkPos)",
+      "right" : "private float score(Vector3i chunkPos)",
+      "info" : "MethodDeclaration[11749-11937]:MethodDeclaration[11600-11788]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2337-2343]:Modifier[2292-2298]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2344-2349]:TYPE_DECLARATION_KIND[2299-2304]"
+    }, {
+      "left" : "RemoteChunkProvider",
+      "right" : "RemoteChunkProvider",
+      "info" : "SimpleName[2350-2369]:SimpleName[2305-2324]"
+    }, {
+      "left" : "ChunkProvider",
+      "right" : "ChunkProvider",
+      "info" : "SimpleType[2381-2394]:SimpleType[2336-2349]"
+    }, {
+      "left" : "GeneratingChunkProvider",
+      "right" : "GeneratingChunkProvider",
+      "info" : "SimpleType[2396-2419]:SimpleType[2351-2374]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3038-3044]:Modifier[3031-3037]"
+    }, {
+      "left" : "RemoteChunkProvider",
+      "right" : "RemoteChunkProvider",
+      "info" : "SimpleName[3045-3064]:SimpleName[3038-3057]"
+    }, {
+      "left" : "BlockManager blockManager",
+      "right" : "BlockManager blockManager",
+      "info" : "SingleVariableDeclaration[3065-3090]:SingleVariableDeclaration[3058-3083]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3092-3282]:Block[3110-3300]"
+    }, {
+      "left" : "this.blockManager = blockManager;",
+      "right" : "this.blockManager = blockManager;",
+      "info" : "ExpressionStatement[3102-3135]:ExpressionStatement[3120-3153]"
+    }, {
+      "left" : "pipeline = new ChunkGenerationPipeline(new ChunkTaskRelevanceComparator());",
+      "right" : "pipeline = new ChunkGenerationPipeline(new ChunkTaskRelevanceComparator());",
+      "info" : "ExpressionStatement[3144-3219]:ExpressionStatement[3162-3237]"
+    }, {
+      "left" : "ChunkMonitor.fireChunkProviderInitialized(this);",
+      "right" : "ChunkMonitor.fireChunkProviderInitialized(this);",
+      "info" : "ExpressionStatement[3228-3276]:ExpressionStatement[3246-3294]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3288-3294]:Modifier[3306-3312]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3295-3299]:PrimitiveType[3313-3317]"
+    }, {
+      "left" : "subscribe",
+      "right" : "subscribe",
+      "info" : "SimpleName[3300-3309]:SimpleName[3318-3327]"
+    }, {
+      "left" : "ChunkReadyListener chunkReadyListener",
+      "right" : "ChunkReadyListener chunkReadyListener",
+      "info" : "SingleVariableDeclaration[3310-3347]:SingleVariableDeclaration[3328-3365]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3349-3400]:Block[3367-3418]"
+    }, {
+      "left" : "this.listener = chunkReadyListener;",
+      "right" : "this.listener = chunkReadyListener;",
+      "info" : "ExpressionStatement[3359-3394]:ExpressionStatement[3377-3412]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3406-3412]:Modifier[3424-3430]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3413-3417]:PrimitiveType[3431-3435]"
+    }, {
+      "left" : "receiveChunk",
+      "right" : "receiveChunk",
+      "info" : "SimpleName[3418-3430]:SimpleName[3436-3448]"
+    }, {
+      "left" : "final Chunk chunk",
+      "right" : "final Chunk chunk",
+      "info" : "SingleVariableDeclaration[3431-3448]:SingleVariableDeclaration[3449-3466]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3450-3877]:Block[3468-3895]"
+    }, {
+      "left" : "pipeline.doTask(new AbstractChunkTask(chunk.getPosition()) {\n            @Override\n            public String getName() {\n                return \"Internal Light Generation\";\n            }\n\n            @Override\n            public void run() {\n                InternalLightProcessor.generateInternalLighting(chunk);\n                chunk.deflate();\n                onChunkIsReady(chunk);\n            }\n        });",
+      "right" : "pipeline.doTask(new AbstractChunkTask(chunk.getPosition()) {\n            @Override\n            public String getName() {\n                return \"Internal Light Generation\";\n            }\n\n            @Override\n            public void run() {\n                InternalLightProcessor.generateInternalLighting(chunk);\n                chunk.deflate();\n                onChunkIsReady(chunk);\n            }\n        });",
+      "info" : "ExpressionStatement[3460-3871]:ExpressionStatement[3478-3889]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[3533-3542]:MarkerAnnotation[3551-3560]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3555-3561]:Modifier[3573-3579]"
+    }, {
+      "left" : "String",
+      "right" : "String",
+      "info" : "SimpleType[3562-3568]:SimpleType[3580-3586]"
+    }, {
+      "left" : "getName",
+      "right" : "getName",
+      "info" : "SimpleName[3569-3576]:SimpleName[3587-3594]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3579-3646]:Block[3597-3664]"
+    }, {
+      "left" : "return \"Internal Light Generation\";",
+      "right" : "return \"Internal Light Generation\";",
+      "info" : "ReturnStatement[3597-3632]:ReturnStatement[3615-3650]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[3660-3669]:MarkerAnnotation[3678-3687]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3682-3688]:Modifier[3700-3706]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3689-3693]:PrimitiveType[3707-3711]"
+    }, {
+      "left" : "run",
+      "right" : "run",
+      "info" : "SimpleName[3694-3697]:SimpleName[3712-3715]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3700-3859]:Block[3718-3877]"
+    }, {
+      "left" : "InternalLightProcessor.generateInternalLighting(chunk);",
+      "right" : "InternalLightProcessor.generateInternalLighting(chunk);",
+      "info" : "ExpressionStatement[3718-3773]:ExpressionStatement[3736-3791]"
+    }, {
+      "left" : "chunk.deflate();",
+      "right" : "chunk.deflate();",
+      "info" : "ExpressionStatement[3790-3806]:ExpressionStatement[3808-3824]"
+    }, {
+      "left" : "onChunkIsReady(chunk);",
+      "right" : "onChunkIsReady(chunk);",
+      "info" : "ExpressionStatement[3823-3845]:ExpressionStatement[3841-3863]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3883-3889]:Modifier[3901-3907]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3890-3894]:PrimitiveType[3908-3912]"
+    }, {
+      "left" : "invalidateChunks",
+      "right" : "invalidateChunks",
+      "info" : "SimpleName[3895-3911]:SimpleName[3913-3929]"
+    }, {
+      "left" : "Vector3i pos",
+      "right" : "Vector3i pos",
+      "info" : "SingleVariableDeclaration[3912-3924]:SingleVariableDeclaration[3930-3942]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3926-4092]:Block[3944-4110]"
+    }, {
+      "left" : "Chunk removed = chunkCache.remove(pos);",
+      "right" : "Chunk removed = chunkCache.remove(pos);",
+      "info" : "VariableDeclarationStatement[3936-3975]:VariableDeclarationStatement[3954-3993]"
+    }, {
+      "left" : "if (removed != null && !removed.isReady())",
+      "right" : "if (removed != null && !removed.isReady())",
+      "info" : "IfStatement[3984-4085]:IfStatement[4002-4103]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4027-4085]:Block[4045-4103]"
+    }, {
+      "left" : "sortedReadyChunks.remove(removed);",
+      "right" : "sortedReadyChunks.remove(removed);",
+      "info" : "ExpressionStatement[4041-4075]:ExpressionStatement[4059-4093]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[4098-4107]:MarkerAnnotation[4116-4125]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4112-4118]:Modifier[4130-4136]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4119-4123]:PrimitiveType[4137-4141]"
+    }, {
+      "left" : "beginUpdate",
+      "right" : "beginUpdate",
+      "info" : "SimpleName[4124-4135]:SimpleName[4142-4153]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4138-5417]:Block[4156-5435]"
+    }, {
+      "left" : "if (listener != null)",
+      "right" : "if (listener != null)",
+      "info" : "IfStatement[4148-5411]:IfStatement[4166-5429]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4170-5411]:Block[4188-5429]"
+    }, {
+      "left" : "List<Chunk> newReadyChunks = Lists.newArrayList();",
+      "right" : "List<Chunk> newReadyChunks = Lists.newArrayList();",
+      "info" : "VariableDeclarationStatement[4184-4234]:VariableDeclarationStatement[4202-4252]"
+    }, {
+      "left" : "readyChunks.drainTo(newReadyChunks);",
+      "right" : "readyChunks.drainTo(newReadyChunks);",
+      "info" : "ExpressionStatement[4247-4283]:ExpressionStatement[4265-4301]"
+    }, {
+      "left" : "if (!newReadyChunks.isEmpty())",
+      "right" : "if (!newReadyChunks.isEmpty())",
+      "info" : "IfStatement[4296-4826]:IfStatement[4314-4844]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4327-4826]:Block[4345-4844]"
+    }, {
+      "left" : "sortedReadyChunks.addAll(newReadyChunks);",
+      "right" : "sortedReadyChunks.addAll(newReadyChunks);",
+      "info" : "ExpressionStatement[4345-4386]:ExpressionStatement[4363-4404]"
+    }, {
+      "left" : "Collections.sort(sortedReadyChunks, new ReadyChunkRelevanceComparator());",
+      "right" : "Collections.sort(sortedReadyChunks, new ReadyChunkRelevanceComparator());",
+      "info" : "ExpressionStatement[4403-4476]:ExpressionStatement[4421-4494]"
+    }, {
+      "left" : "for (Chunk chunk : newReadyChunks)",
+      "right" : "for (Chunk chunk : newReadyChunks)",
+      "info" : "EnhancedForStatement[4493-4812]:EnhancedForStatement[4511-4830]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4528-4812]:Block[4546-4830]"
+    }, {
+      "left" : "Chunk oldChunk = chunkCache.put(chunk.getPosition(), chunk);",
+      "right" : "Chunk oldChunk = chunkCache.put(chunk.getPosition(), chunk);",
+      "info" : "VariableDeclarationStatement[4550-4610]:VariableDeclarationStatement[4568-4628]"
+    }, {
+      "left" : "if (oldChunk != null)",
+      "right" : "if (oldChunk != null)",
+      "info" : "IfStatement[4631-4794]:IfStatement[4649-4812]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4653-4794]:Block[4671-4812]"
+    }, {
+      "left" : "oldChunk.dispose();",
+      "right" : "oldChunk.dispose();",
+      "info" : "ExpressionStatement[4679-4698]:ExpressionStatement[4697-4716]"
+    }, {
+      "left" : "updateAdjacentChunksReadyFieldOfAdjChunks(chunk);",
+      "right" : "updateAdjacentChunksReadyFieldOfAdjChunks(chunk);",
+      "info" : "ExpressionStatement[4723-4772]:ExpressionStatement[4741-4790]"
+    }, {
+      "left" : "if (!sortedReadyChunks.isEmpty())",
+      "right" : "if (!sortedReadyChunks.isEmpty())",
+      "info" : "IfStatement[4839-5401]:IfStatement[4857-5419]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4873-5401]:Block[4891-5419]"
+    }, {
+      "left" : "int loaded = 0;",
+      "right" : "int loaded = 0;",
+      "info" : "VariableDeclarationStatement[4891-4906]:VariableDeclarationStatement[4909-4924]"
+    }, {
+      "left" : "for (int i = sortedReadyChunks.size() - 1; i >= 0 && loaded < LOAD_PER_FRAME; i--)",
+      "right" : "for (int i = sortedReadyChunks.size() - 1; i >= 0 && loaded < LOAD_PER_FRAME; i--)",
+      "info" : "ForStatement[4923-5387]:ForStatement[4941-5405]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5006-5387]:Block[5024-5405]"
+    }, {
+      "left" : "Chunk chunkInfo = sortedReadyChunks.get(i);",
+      "right" : "Chunk chunkInfo = sortedReadyChunks.get(i);",
+      "info" : "VariableDeclarationStatement[5028-5071]:VariableDeclarationStatement[5046-5089]"
+    }, {
+      "left" : "PerformanceMonitor.startActivity(\"Make Chunk Available\");",
+      "right" : "PerformanceMonitor.startActivity(\"Make Chunk Available\");",
+      "info" : "ExpressionStatement[5092-5149]:ExpressionStatement[5110-5167]"
+    }, {
+      "left" : "if (makeChunkAvailable(chunkInfo))",
+      "right" : "if (makeChunkAvailable(chunkInfo))",
+      "info" : "IfStatement[5170-5315]:IfStatement[5188-5333]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5205-5315]:Block[5223-5333]"
+    }, {
+      "left" : "sortedReadyChunks.remove(i);",
+      "right" : "sortedReadyChunks.remove(i);",
+      "info" : "ExpressionStatement[5231-5259]:ExpressionStatement[5249-5277]"
+    }, {
+      "left" : "loaded++;",
+      "right" : "loaded++;",
+      "info" : "ExpressionStatement[5284-5293]:ExpressionStatement[5302-5311]"
+    }, {
+      "left" : "PerformanceMonitor.endActivity();",
+      "right" : "PerformanceMonitor.endActivity();",
+      "info" : "ExpressionStatement[5336-5369]:ExpressionStatement[5354-5387]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[5423-5430]:Modifier[5441-5448]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[5431-5438]:PrimitiveType[5449-5456]"
+    }, {
+      "left" : "makeChunkAvailable",
+      "right" : "makeChunkAvailable",
+      "info" : "SimpleName[5439-5457]:SimpleName[5457-5475]"
+    }, {
+      "left" : "final Chunk chunk",
+      "right" : "final Chunk chunk",
+      "info" : "SingleVariableDeclaration[5458-5475]:SingleVariableDeclaration[5476-5493]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5477-5741]:Block[5495-5759]"
+    }, {
+      "left" : "for (Vector3i pos : Region3i.createFromCenterExtents(chunk.getPosition(), 1))",
+      "right" : "for (Vector3i pos : Region3i.createFromCenterExtents(chunk.getPosition(), 1))",
+      "info" : "EnhancedForStatement[5487-5667]:EnhancedForStatement[5505-5685]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5565-5667]:Block[5583-5685]"
+    }, {
+      "left" : "if (chunkCache.get(pos) == null)",
+      "right" : "if (chunkCache.get(pos) == null)",
+      "info" : "IfStatement[5579-5657]:IfStatement[5597-5675]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5612-5657]:Block[5630-5675]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[5630-5643]:ReturnStatement[5648-5661]"
+    }, {
+      "left" : "lightMerger.beginMerge(chunk, chunk);",
+      "right" : "lightMerger.beginMerge(chunk, chunk);",
+      "info" : "ExpressionStatement[5677-5714]:ExpressionStatement[5695-5732]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[5723-5735]:ReturnStatement[5741-5753]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[5748-5757]:MarkerAnnotation[5766-5775]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5762-5768]:Modifier[5780-5786]"
+    }, {
+      "left" : "Chunk",
+      "right" : "Chunk",
+      "info" : "SimpleType[5769-5774]:SimpleType[5787-5792]"
+    }, {
+      "left" : "getChunk",
+      "right" : "getChunk",
+      "info" : "SimpleName[5775-5783]:SimpleName[5793-5801]"
+    }, {
+      "left" : "int x",
+      "right" : "int x",
+      "info" : "SingleVariableDeclaration[5784-5789]:SingleVariableDeclaration[5802-5807]"
+    }, {
+      "left" : "int y",
+      "right" : "int y",
+      "info" : "SingleVariableDeclaration[5791-5796]:SingleVariableDeclaration[5809-5814]"
+    }, {
+      "left" : "int z",
+      "right" : "int z",
+      "info" : "SingleVariableDeclaration[5798-5803]:SingleVariableDeclaration[5816-5821]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5805-5860]:Block[5823-5878]"
+    }, {
+      "left" : "return getChunk(new Vector3i(x, y, z));",
+      "right" : "return getChunk(new Vector3i(x, y, z));",
+      "info" : "ReturnStatement[5815-5854]:ReturnStatement[5833-5872]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[5866-5875]:MarkerAnnotation[5884-5893]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[5880-5886]:Modifier[5898-5904]"
+    }, {
+      "left" : "Chunk",
+      "right" : "Chunk",
+      "info" : "SimpleType[5887-5892]:SimpleType[5905-5910]"
+    }, {
+      "left" : "getChunk",
+      "right" : "getChunk",
+      "info" : "SimpleName[5893-5901]:SimpleName[5911-5919]"
+    }, {
+      "left" : "Vector3i chunkPos",
+      "right" : "Vector3i chunkPos",
+      "info" : "SingleVariableDeclaration[5902-5919]:SingleVariableDeclaration[5920-5937]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5921-6081]:Block[5939-6099]"
+    }, {
+      "left" : "Chunk chunk = chunkCache.get(chunkPos);",
+      "right" : "Chunk chunk = chunkCache.get(chunkPos);",
+      "info" : "VariableDeclarationStatement[5931-5970]:VariableDeclarationStatement[5949-5988]"
+    }, {
+      "left" : "if (chunk != null && chunk.isReady())",
+      "right" : "if (chunk != null && chunk.isReady())",
+      "info" : "IfStatement[5979-6054]:IfStatement[5997-6072]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6017-6054]:Block[6035-6072]"
+    }, {
+      "left" : "return chunk;",
+      "right" : "return chunk;",
+      "info" : "ReturnStatement[6031-6044]:ReturnStatement[6049-6062]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[6063-6075]:ReturnStatement[6081-6093]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6087-6096]:MarkerAnnotation[6105-6114]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6101-6107]:Modifier[6119-6125]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[6108-6115]:PrimitiveType[6126-6133]"
+    }, {
+      "left" : "isChunkReady",
+      "right" : "isChunkReady",
+      "info" : "SimpleName[6116-6128]:SimpleName[6134-6146]"
+    }, {
+      "left" : "Vector3i pos",
+      "right" : "Vector3i pos",
+      "info" : "SingleVariableDeclaration[6129-6141]:SingleVariableDeclaration[6147-6159]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6143-6242]:Block[6161-6260]"
+    }, {
+      "left" : "Chunk chunk = chunkCache.get(pos);",
+      "right" : "Chunk chunk = chunkCache.get(pos);",
+      "info" : "VariableDeclarationStatement[6153-6187]:VariableDeclarationStatement[6171-6205]"
+    }, {
+      "left" : "return chunk != null && chunk.isReady();",
+      "right" : "return chunk != null && chunk.isReady();",
+      "info" : "ReturnStatement[6196-6236]:ReturnStatement[6214-6254]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6248-6257]:MarkerAnnotation[6266-6275]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6262-6268]:Modifier[6280-6286]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6269-6273]:PrimitiveType[6287-6291]"
+    }, {
+      "left" : "dispose",
+      "right" : "dispose",
+      "info" : "SimpleName[6274-6281]:SimpleName[6292-6299]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6284-6406]:Block[6302-6424]"
+    }, {
+      "left" : "ChunkMonitor.fireChunkProviderDisposed(this);",
+      "right" : "ChunkMonitor.fireChunkProviderDisposed(this);",
+      "info" : "ExpressionStatement[6294-6339]:ExpressionStatement[6312-6357]"
+    }, {
+      "left" : "pipeline.shutdown();",
+      "right" : "pipeline.shutdown();",
+      "info" : "ExpressionStatement[6348-6368]:ExpressionStatement[6366-6386]"
+    }, {
+      "left" : "lightMerger.shutdown();",
+      "right" : "lightMerger.shutdown();",
+      "info" : "ExpressionStatement[6377-6400]:ExpressionStatement[6395-6418]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6412-6421]:MarkerAnnotation[6430-6439]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6426-6432]:Modifier[6444-6450]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[6433-6440]:PrimitiveType[6451-6458]"
+    }, {
+      "left" : "reloadChunk",
+      "right" : "reloadChunk",
+      "info" : "SimpleName[6441-6452]:SimpleName[6459-6470]"
+    }, {
+      "left" : "Vector3i pos",
+      "right" : "Vector3i pos",
+      "info" : "SingleVariableDeclaration[6453-6465]:SingleVariableDeclaration[6471-6483]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6467-6496]:Block[6485-6514]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[6477-6490]:ReturnStatement[6495-6508]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6502-6511]:MarkerAnnotation[6520-6529]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6516-6522]:Modifier[6534-6540]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6523-6527]:PrimitiveType[6541-6545]"
+    }, {
+      "left" : "purgeWorld",
+      "right" : "purgeWorld",
+      "info" : "SimpleName[6528-6538]:SimpleName[6546-6556]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6541-6548]:Block[6559-6566]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6554-6563]:MarkerAnnotation[6572-6581]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6568-6574]:Modifier[6586-6592]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6575-6579]:PrimitiveType[6593-6597]"
+    }, {
+      "left" : "shutdown",
+      "right" : "shutdown",
+      "info" : "SimpleName[6580-6588]:SimpleName[6598-6606]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6591-6649]:Block[6609-6667]"
+    }, {
+      "left" : "throw new UnsupportedOperationException();",
+      "right" : "throw new UnsupportedOperationException();",
+      "info" : "ThrowStatement[6601-6643]:ThrowStatement[6619-6661]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6655-6664]:MarkerAnnotation[6673-6682]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6669-6675]:Modifier[6687-6693]"
+    }, {
+      "left" : "Collection<Chunk>",
+      "right" : "Collection<Chunk>",
+      "info" : "ParameterizedType[6676-6693]:ParameterizedType[6694-6711]"
+    }, {
+      "left" : "getAllChunks",
+      "right" : "getAllChunks",
+      "info" : "SimpleName[6694-6706]:SimpleName[6712-6724]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6709-6767]:Block[6727-6785]"
+    }, {
+      "left" : "throw new UnsupportedOperationException();",
+      "right" : "throw new UnsupportedOperationException();",
+      "info" : "ThrowStatement[6719-6761]:ThrowStatement[6737-6779]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6773-6782]:MarkerAnnotation[6791-6800]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6787-6793]:Modifier[6805-6811]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[6794-6798]:PrimitiveType[6812-6816]"
+    }, {
+      "left" : "restart",
+      "right" : "restart",
+      "info" : "SimpleName[6799-6806]:SimpleName[6817-6824]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6809-6867]:Block[6827-6885]"
+    }, {
+      "left" : "throw new UnsupportedOperationException();",
+      "right" : "throw new UnsupportedOperationException();",
+      "info" : "ThrowStatement[6819-6861]:ThrowStatement[6837-6879]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[6873-6882]:MarkerAnnotation[6891-6900]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[6887-6893]:Modifier[6905-6911]"
+    }, {
+      "left" : "ChunkViewCore",
+      "right" : "ChunkViewCore",
+      "info" : "SimpleType[6894-6907]:SimpleType[6912-6925]"
+    }, {
+      "left" : "getLocalView",
+      "right" : "getLocalView",
+      "info" : "SimpleName[6908-6920]:SimpleName[6926-6938]"
+    }, {
+      "left" : "Vector3i centerChunkPos",
+      "right" : "Vector3i centerChunkPos",
+      "info" : "SingleVariableDeclaration[6921-6944]:SingleVariableDeclaration[6939-6962]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[6946-7205]:Block[6964-7223]"
+    }, {
+      "left" : "Region3i region = Region3i.createFromCenterExtents(centerChunkPos, ChunkConstants.LOCAL_REGION_EXTENTS);",
+      "right" : "Region3i region = Region3i.createFromCenterExtents(centerChunkPos, ChunkConstants.LOCAL_REGION_EXTENTS);",
+      "info" : "VariableDeclarationStatement[6956-7060]:VariableDeclarationStatement[6974-7078]"
+    }, {
+      "left" : "if (getChunk(centerChunkPos) != null)",
+      "right" : "if (getChunk(centerChunkPos) != null)",
+      "info" : "IfStatement[7069-7178]:IfStatement[7087-7196]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7107-7178]:Block[7125-7196]"
+    }, {
+      "left" : "return createWorldView(region, Vector3i.one());",
+      "right" : "return createWorldView(region, Vector3i.one());",
+      "info" : "ReturnStatement[7121-7168]:ReturnStatement[7139-7186]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[7187-7199]:ReturnStatement[7205-7217]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[7211-7220]:MarkerAnnotation[7229-7238]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7225-7231]:Modifier[7243-7249]"
+    }, {
+      "left" : "ChunkViewCore",
+      "right" : "ChunkViewCore",
+      "info" : "SimpleType[7232-7245]:SimpleType[7250-7263]"
+    }, {
+      "left" : "getSubviewAroundBlock",
+      "right" : "getSubviewAroundBlock",
+      "info" : "SimpleName[7246-7267]:SimpleName[7264-7285]"
+    }, {
+      "left" : "Vector3i blockPos",
+      "right" : "Vector3i blockPos",
+      "info" : "SingleVariableDeclaration[7268-7285]:SingleVariableDeclaration[7286-7303]"
+    }, {
+      "left" : "int extent",
+      "right" : "int extent",
+      "info" : "SingleVariableDeclaration[7287-7297]:SingleVariableDeclaration[7305-7315]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7299-7495]:Block[7317-7513]"
+    }, {
+      "left" : "Region3i region = ChunkMath.getChunkRegionAroundWorldPos(blockPos, extent);",
+      "right" : "Region3i region = ChunkMath.getChunkRegionAroundWorldPos(blockPos, extent);",
+      "info" : "VariableDeclarationStatement[7309-7384]:VariableDeclarationStatement[7327-7402]"
+    }, {
+      "left" : "return createWorldView(region, new Vector3i(-region.min().x, -region.min().y, -region.min().z));",
+      "right" : "return createWorldView(region, new Vector3i(-region.min().x, -region.min().y, -region.min().z));",
+      "info" : "ReturnStatement[7393-7489]:ReturnStatement[7411-7507]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[7501-7510]:MarkerAnnotation[7519-7528]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[7515-7521]:Modifier[7533-7539]"
+    }, {
+      "left" : "ChunkViewCore",
+      "right" : "ChunkViewCore",
+      "info" : "SimpleType[7522-7535]:SimpleType[7540-7553]"
+    }, {
+      "left" : "getSubviewAroundChunk",
+      "right" : "getSubviewAroundChunk",
+      "info" : "SimpleName[7536-7557]:SimpleName[7554-7575]"
+    }, {
+      "left" : "Vector3i chunkPos",
+      "right" : "Vector3i chunkPos",
+      "info" : "SingleVariableDeclaration[7558-7575]:SingleVariableDeclaration[7576-7593]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7577-7873]:Block[7595-7891]"
+    }, {
+      "left" : "Region3i region = Region3i.createFromCenterExtents(chunkPos, ChunkConstants.LOCAL_REGION_EXTENTS);",
+      "right" : "Region3i region = Region3i.createFromCenterExtents(chunkPos, ChunkConstants.LOCAL_REGION_EXTENTS);",
+      "info" : "VariableDeclarationStatement[7587-7685]:VariableDeclarationStatement[7605-7703]"
+    }, {
+      "left" : "if (getChunk(chunkPos) != null)",
+      "right" : "if (getChunk(chunkPos) != null)",
+      "info" : "IfStatement[7694-7846]:IfStatement[7712-7864]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7726-7846]:Block[7744-7864]"
+    }, {
+      "left" : "return createWorldView(region, new Vector3i(-region.min().x, -region.min().y, -region.min().z));",
+      "right" : "return createWorldView(region, new Vector3i(-region.min().x, -region.min().y, -region.min().z));",
+      "info" : "ReturnStatement[7740-7836]:ReturnStatement[7758-7854]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[7855-7867]:ReturnStatement[7873-7885]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[7879-7886]:Modifier[7897-7904]"
+    }, {
+      "left" : "ChunkViewCore",
+      "right" : "ChunkViewCore",
+      "info" : "SimpleType[7887-7900]:SimpleType[7905-7918]"
+    }, {
+      "left" : "createWorldView",
+      "right" : "createWorldView",
+      "info" : "SimpleName[7901-7916]:SimpleName[7919-7934]"
+    }, {
+      "left" : "Region3i region",
+      "right" : "Region3i region",
+      "info" : "SingleVariableDeclaration[7917-7932]:SingleVariableDeclaration[7935-7950]"
+    }, {
+      "left" : "Vector3i offset",
+      "right" : "Vector3i offset",
+      "info" : "SingleVariableDeclaration[7934-7949]:SingleVariableDeclaration[7952-7967]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[7951-8510]:Block[7969-8528]"
+    }, {
+      "left" : "Chunk[] chunks = new Chunk[region.size().x * region.size().y * region.size().z];",
+      "right" : "Chunk[] chunks = new Chunk[region.size().x * region.size().y * region.size().z];",
+      "info" : "VariableDeclarationStatement[7961-8041]:VariableDeclarationStatement[7979-8059]"
+    }, {
+      "left" : "for (Vector3i chunkPos : region)",
+      "right" : "for (Vector3i chunkPos : region)",
+      "info" : "EnhancedForStatement[8050-8398]:EnhancedForStatement[8068-8416]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8083-8398]:Block[8101-8416]"
+    }, {
+      "left" : "Chunk chunk = chunkCache.get(chunkPos);",
+      "right" : "Chunk chunk = chunkCache.get(chunkPos);",
+      "info" : "VariableDeclarationStatement[8097-8136]:VariableDeclarationStatement[8115-8154]"
+    }, {
+      "left" : "if (chunk == null || !chunk.isReady())",
+      "right" : "if (chunk == null || !chunk.isReady())",
+      "info" : "IfStatement[8149-8232]:IfStatement[8167-8250]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8188-8232]:Block[8206-8250]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[8206-8218]:ReturnStatement[8224-8236]"
+    }, {
+      "left" : "chunkPos.sub(region.min());",
+      "right" : "chunkPos.sub(region.min());",
+      "info" : "ExpressionStatement[8245-8272]:ExpressionStatement[8263-8290]"
+    }, {
+      "left" : "int index = TeraMath.calculate3DArrayIndex(chunkPos, region.size());",
+      "right" : "int index = TeraMath.calculate3DArrayIndex(chunkPos, region.size());",
+      "info" : "VariableDeclarationStatement[8285-8353]:VariableDeclarationStatement[8303-8371]"
+    }, {
+      "left" : "chunks[index] = chunk;",
+      "right" : "chunks[index] = chunk;",
+      "info" : "ExpressionStatement[8366-8388]:ExpressionStatement[8384-8406]"
+    }, {
+      "left" : "return new ChunkViewCoreImpl(chunks, region, offset, blockManager.getBlock(BlockManager.AIR_ID));",
+      "right" : "return new ChunkViewCoreImpl(chunks, region, offset, blockManager.getBlock(BlockManager.AIR_ID));",
+      "info" : "ReturnStatement[8407-8504]:ReturnStatement[8425-8522]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[8516-8525]:MarkerAnnotation[8534-8543]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8530-8536]:Modifier[8548-8554]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8537-8541]:PrimitiveType[8555-8559]"
+    }, {
+      "left" : "setWorldEntity",
+      "right" : "setWorldEntity",
+      "info" : "SimpleName[8542-8556]:SimpleName[8560-8574]"
+    }, {
+      "left" : "EntityRef entity",
+      "right" : "EntityRef entity",
+      "info" : "SingleVariableDeclaration[8557-8573]:SingleVariableDeclaration[8575-8591]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8575-8617]:Block[8593-8635]"
+    }, {
+      "left" : "this.worldEntity = entity;",
+      "right" : "this.worldEntity = entity;",
+      "info" : "ExpressionStatement[8585-8611]:ExpressionStatement[8603-8629]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[8623-8632]:MarkerAnnotation[8641-8650]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8637-8643]:Modifier[8655-8661]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8644-8648]:PrimitiveType[8662-8666]"
+    }, {
+      "left" : "addRelevanceEntity",
+      "right" : "addRelevanceEntity",
+      "info" : "SimpleName[8649-8667]:SimpleName[8667-8685]"
+    }, {
+      "left" : "EntityRef entity",
+      "right" : "EntityRef entity",
+      "info" : "SingleVariableDeclaration[8668-8684]:SingleVariableDeclaration[8686-8702]"
+    }, {
+      "left" : "Vector3i distance",
+      "right" : "Vector3i distance",
+      "info" : "SingleVariableDeclaration[8686-8703]:SingleVariableDeclaration[8704-8721]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8705-8712]:Block[8723-8730]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[8718-8727]:MarkerAnnotation[8736-8745]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8732-8738]:Modifier[8750-8756]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8739-8743]:PrimitiveType[8757-8761]"
+    }, {
+      "left" : "addRelevanceEntity",
+      "right" : "addRelevanceEntity",
+      "info" : "SimpleName[8744-8762]:SimpleName[8762-8780]"
+    }, {
+      "left" : "EntityRef entity",
+      "right" : "EntityRef entity",
+      "info" : "SingleVariableDeclaration[8763-8779]:SingleVariableDeclaration[8781-8797]"
+    }, {
+      "left" : "Vector3i distance",
+      "right" : "Vector3i distance",
+      "info" : "SingleVariableDeclaration[8781-8798]:SingleVariableDeclaration[8799-8816]"
+    }, {
+      "left" : "ChunkRegionListener chunkRegionListener",
+      "right" : "ChunkRegionListener chunkRegionListener",
+      "info" : "SingleVariableDeclaration[8800-8839]:SingleVariableDeclaration[8818-8857]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8841-8848]:Block[8859-8866]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[8854-8863]:MarkerAnnotation[8872-8881]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8868-8874]:Modifier[8886-8892]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8875-8879]:PrimitiveType[8893-8897]"
+    }, {
+      "left" : "updateRelevanceEntity",
+      "right" : "updateRelevanceEntity",
+      "info" : "SimpleName[8880-8901]:SimpleName[8898-8919]"
+    }, {
+      "left" : "EntityRef entity",
+      "right" : "EntityRef entity",
+      "info" : "SingleVariableDeclaration[8902-8918]:SingleVariableDeclaration[8920-8936]"
+    }, {
+      "left" : "Vector3i distance",
+      "right" : "Vector3i distance",
+      "info" : "SingleVariableDeclaration[8920-8937]:SingleVariableDeclaration[8938-8955]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[8939-8946]:Block[8957-8964]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[8952-8961]:MarkerAnnotation[8970-8979]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[8966-8972]:Modifier[8984-8990]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[8973-8977]:PrimitiveType[8991-8995]"
+    }, {
+      "left" : "removeRelevanceEntity",
+      "right" : "removeRelevanceEntity",
+      "info" : "SimpleName[8978-8999]:SimpleName[8996-9017]"
+    }, {
+      "left" : "EntityRef entity",
+      "right" : "EntityRef entity",
+      "info" : "SingleVariableDeclaration[9000-9016]:SingleVariableDeclaration[9018-9034]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9018-9025]:Block[9036-9043]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[9031-9040]:MarkerAnnotation[9049-9058]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9045-9051]:Modifier[9063-9069]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9052-9056]:PrimitiveType[9070-9074]"
+    }, {
+      "left" : "completeUpdate",
+      "right" : "completeUpdate",
+      "info" : "SimpleName[9057-9071]:SimpleName[9075-9089]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9074-9443]:Block[9092-9461]"
+    }, {
+      "left" : "Chunk chunk = lightMerger.completeMerge();",
+      "right" : "Chunk chunk = lightMerger.completeMerge();",
+      "info" : "VariableDeclarationStatement[9084-9126]:VariableDeclarationStatement[9102-9144]"
+    }, {
+      "left" : "if (chunk != null)",
+      "right" : "if (chunk != null)",
+      "info" : "IfStatement[9135-9437]:IfStatement[9153-9455]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9154-9437]:Block[9172-9455]"
+    }, {
+      "left" : "chunk.markReady();",
+      "right" : "chunk.markReady();",
+      "info" : "ExpressionStatement[9168-9186]:ExpressionStatement[9186-9204]"
+    }, {
+      "left" : "updateAdjacentChunksReadyFieldOf(chunk);",
+      "right" : "updateAdjacentChunksReadyFieldOf(chunk);",
+      "info" : "ExpressionStatement[9199-9239]:ExpressionStatement[9217-9257]"
+    }, {
+      "left" : "updateAdjacentChunksReadyFieldOfAdjChunks(chunk);",
+      "right" : "updateAdjacentChunksReadyFieldOfAdjChunks(chunk);",
+      "info" : "ExpressionStatement[9252-9301]:ExpressionStatement[9270-9319]"
+    }, {
+      "left" : "listener.onChunkReady(chunk.getPosition());",
+      "right" : "listener.onChunkReady(chunk.getPosition());",
+      "info" : "ExpressionStatement[9314-9357]:ExpressionStatement[9332-9375]"
+    }, {
+      "left" : "worldEntity.send(new OnChunkLoaded(chunk.getPosition()));",
+      "right" : "worldEntity.send(new OnChunkLoaded(chunk.getPosition()));",
+      "info" : "ExpressionStatement[9370-9427]:ExpressionStatement[9388-9445]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[9449-9458]:MarkerAnnotation[9467-9476]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9463-9469]:Modifier[9481-9487]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[9470-9474]:PrimitiveType[9488-9492]"
+    }, {
+      "left" : "onChunkIsReady",
+      "right" : "onChunkIsReady",
+      "info" : "SimpleName[9475-9489]:SimpleName[9493-9507]"
+    }, {
+      "left" : "Chunk chunk",
+      "right" : "Chunk chunk",
+      "info" : "SingleVariableDeclaration[9490-9501]:SingleVariableDeclaration[9508-9519]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9503-9679]:Block[9521-9697]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[9513-9673]:TryStatement[9531-9691]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9517-9564]:Block[9535-9582]"
+    }, {
+      "left" : "readyChunks.put(chunk);",
+      "right" : "readyChunks.put(chunk);",
+      "info" : "ExpressionStatement[9531-9554]:ExpressionStatement[9549-9572]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9596-9673]:Block[9614-9691]"
+    }, {
+      "left" : "logger.warn(\"Failed to add chunk to ready queue\", e);",
+      "right" : "logger.warn(\"Failed to add chunk to ready queue\", e);",
+      "info" : "ExpressionStatement[9610-9663]:ExpressionStatement[9628-9681]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[9685-9694]:MarkerAnnotation[9703-9712]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[9699-9705]:Modifier[9717-9723]"
+    }, {
+      "left" : "Chunk",
+      "right" : "Chunk",
+      "info" : "SimpleType[9706-9711]:SimpleType[9724-9729]"
+    }, {
+      "left" : "getChunkUnready",
+      "right" : "getChunkUnready",
+      "info" : "SimpleName[9712-9727]:SimpleName[9730-9745]"
+    }, {
+      "left" : "Vector3i pos",
+      "right" : "Vector3i pos",
+      "info" : "SingleVariableDeclaration[9728-9740]:SingleVariableDeclaration[9746-9758]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9742-9785]:Block[9760-9803]"
+    }, {
+      "left" : "return chunkCache.get(pos);",
+      "right" : "return chunkCache.get(pos);",
+      "info" : "ReturnStatement[9752-9779]:ReturnStatement[9770-9797]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[9791-9798]:Modifier[9809-9816]"
+    }, {
+      "left" : "boolean",
+      "right" : "boolean",
+      "info" : "PrimitiveType[9799-9806]:PrimitiveType[9817-9824]"
+    }, {
+      "left" : "areAdjacentChunksReady",
+      "right" : "areAdjacentChunksReady",
+      "info" : "SimpleName[9807-9829]:SimpleName[9825-9847]"
+    }, {
+      "left" : "Chunk chunk",
+      "right" : "Chunk chunk",
+      "info" : "SingleVariableDeclaration[9830-9841]:SingleVariableDeclaration[9848-9859]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9843-10264]:Block[9861-10282]"
+    }, {
+      "left" : "Vector3i centerChunkPos = chunk.getPosition();",
+      "right" : "Vector3i centerChunkPos = chunk.getPosition();",
+      "info" : "VariableDeclarationStatement[9853-9899]:VariableDeclarationStatement[9871-9917]"
+    }, {
+      "left" : "for (Side side : Side.values())",
+      "right" : "for (Side side : Side.values())",
+      "info" : "EnhancedForStatement[9908-10237]:EnhancedForStatement[9926-10255]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[9940-10237]:Block[9958-10255]"
+    }, {
+      "left" : "Vector3i adjChunkPos = side.getAdjacentPos(centerChunkPos);",
+      "right" : "Vector3i adjChunkPos = side.getAdjacentPos(centerChunkPos);",
+      "info" : "VariableDeclarationStatement[9954-10013]:VariableDeclarationStatement[9972-10031]"
+    }, {
+      "left" : "Chunk adjChunk = chunkCache.get(adjChunkPos);",
+      "right" : "Chunk adjChunk = chunkCache.get(adjChunkPos);",
+      "info" : "VariableDeclarationStatement[10026-10071]:VariableDeclarationStatement[10044-10089]"
+    }, {
+      "left" : "boolean adjChunkReady = (adjChunk != null && adjChunk.isReady());",
+      "right" : "boolean adjChunkReady = (adjChunk != null && adjChunk.isReady());",
+      "info" : "VariableDeclarationStatement[10084-10149]:VariableDeclarationStatement[10102-10167]"
+    }, {
+      "left" : "if (!adjChunkReady)",
+      "right" : "if (!adjChunkReady)",
+      "info" : "IfStatement[10162-10227]:IfStatement[10180-10245]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10182-10227]:Block[10200-10245]"
+    }, {
+      "left" : "return false;",
+      "right" : "return false;",
+      "info" : "ReturnStatement[10200-10213]:ReturnStatement[10218-10231]"
+    }, {
+      "left" : "return true;",
+      "right" : "return true;",
+      "info" : "ReturnStatement[10246-10258]:ReturnStatement[10264-10276]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10270-10277]:Modifier[10288-10295]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10278-10282]:PrimitiveType[10296-10300]"
+    }, {
+      "left" : "updateAdjacentChunksReadyFieldOf",
+      "right" : "updateAdjacentChunksReadyFieldOf",
+      "info" : "SimpleName[10283-10315]:SimpleName[10301-10333]"
+    }, {
+      "left" : "Chunk chunk",
+      "right" : "Chunk chunk",
+      "info" : "SingleVariableDeclaration[10316-10327]:SingleVariableDeclaration[10334-10345]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10329-10405]:Block[10347-10423]"
+    }, {
+      "left" : "chunk.setAdjacentChunksReady(areAdjacentChunksReady(chunk));",
+      "right" : "chunk.setAdjacentChunksReady(areAdjacentChunksReady(chunk));",
+      "info" : "ExpressionStatement[10339-10399]:ExpressionStatement[10357-10417]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10411-10418]:Modifier[10429-10436]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[10419-10423]:PrimitiveType[10437-10441]"
+    }, {
+      "left" : "updateAdjacentChunksReadyFieldOfAdjChunks",
+      "right" : "updateAdjacentChunksReadyFieldOfAdjChunks",
+      "info" : "SimpleName[10424-10465]:SimpleName[10442-10483]"
+    }, {
+      "left" : "Chunk chunkInCenter",
+      "right" : "Chunk chunkInCenter",
+      "info" : "SingleVariableDeclaration[10466-10485]:SingleVariableDeclaration[10484-10503]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10487-10849]:Block[10505-10867]"
+    }, {
+      "left" : "Vector3i centerChunkPos = chunkInCenter.getPosition();",
+      "right" : "Vector3i centerChunkPos = chunkInCenter.getPosition();",
+      "info" : "VariableDeclarationStatement[10497-10551]:VariableDeclarationStatement[10515-10569]"
+    }, {
+      "left" : "for (Side side : Side.values())",
+      "right" : "for (Side side : Side.values())",
+      "info" : "EnhancedForStatement[10560-10843]:EnhancedForStatement[10578-10861]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10592-10843]:Block[10610-10861]"
+    }, {
+      "left" : "Vector3i adjChunkPos = side.getAdjacentPos(centerChunkPos);",
+      "right" : "Vector3i adjChunkPos = side.getAdjacentPos(centerChunkPos);",
+      "info" : "VariableDeclarationStatement[10606-10665]:VariableDeclarationStatement[10624-10683]"
+    }, {
+      "left" : "Chunk adjChunk = chunkCache.get(adjChunkPos);",
+      "right" : "Chunk adjChunk = chunkCache.get(adjChunkPos);",
+      "info" : "VariableDeclarationStatement[10678-10723]:VariableDeclarationStatement[10696-10741]"
+    }, {
+      "left" : "if (adjChunk != null)",
+      "right" : "if (adjChunk != null)",
+      "info" : "IfStatement[10736-10833]:IfStatement[10754-10851]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[10758-10833]:Block[10776-10851]"
+    }, {
+      "left" : "updateAdjacentChunksReadyFieldOf(adjChunk);",
+      "right" : "updateAdjacentChunksReadyFieldOf(adjChunk);",
+      "info" : "ExpressionStatement[10776-10819]:ExpressionStatement[10794-10837]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10855-10862]:Modifier[2993-3000]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[10870-10875]:TYPE_DECLARATION_KIND[10881-10886]"
+    }, {
+      "left" : "ChunkTaskRelevanceComparator",
+      "right" : "ChunkTaskRelevanceComparator",
+      "info" : "SimpleName[10876-10904]:SimpleName[10887-10915]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[10949-10956]:Modifier[10873-10880]"
+    }, {
+      "left" : "LocalPlayer",
+      "right" : "LocalPlayer",
+      "info" : "SimpleType[10957-10968]:SimpleType[3085-3096]"
+    }, {
+      "left" : "localPlayer",
+      "right" : "localPlayer",
+      "info" : "SimpleName[10969-10980]:SimpleName[3013-3024]"
+    }, {
+      "left" : "LocalPlayer",
+      "right" : "LocalPlayer",
+      "info" : "SimpleType[11000-11011]:SimpleType[3001-3012]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11029-11038]:MarkerAnnotation[10960-10969]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11047-11053]:Modifier[10978-10984]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[11054-11057]:PrimitiveType[10985-10988]"
+    }, {
+      "left" : "compare",
+      "right" : "compare",
+      "info" : "SimpleName[11058-11065]:SimpleName[10989-10996]"
+    }, {
+      "left" : "ChunkTask o1",
+      "right" : "ChunkTask o1",
+      "info" : "SingleVariableDeclaration[11066-11078]:SingleVariableDeclaration[10997-11009]"
+    }, {
+      "left" : "ChunkTask o2",
+      "right" : "ChunkTask o2",
+      "info" : "SingleVariableDeclaration[11080-11092]:SingleVariableDeclaration[11011-11023]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11094-11175]:Block[11025-11106]"
+    }, {
+      "left" : "return score(o1.getPosition()) - score(o2.getPosition());",
+      "right" : "return score(o1.getPosition()) - score(o2.getPosition());",
+      "info" : "ReturnStatement[11108-11165]:ReturnStatement[11039-11096]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11185-11192]:Modifier[11116-11123]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[11193-11196]:PrimitiveType[11124-11127]"
+    }, {
+      "left" : "score",
+      "right" : "score",
+      "info" : "SimpleName[11197-11202]:SimpleName[11128-11133]"
+    }, {
+      "left" : "Vector3i chunk",
+      "right" : "Vector3i chunk",
+      "info" : "SingleVariableDeclaration[11203-11217]:SingleVariableDeclaration[11134-11148]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11219-11391]:Block[11150-11322]"
+    }, {
+      "left" : "Vector3i playerChunk = ChunkMath.calcChunkPos(new Vector3i(localPlayer.getPosition(), 0.5f));",
+      "right" : "Vector3i playerChunk = ChunkMath.calcChunkPos(new Vector3i(localPlayer.getPosition(), 0.5f));",
+      "info" : "VariableDeclarationStatement[11233-11326]:VariableDeclarationStatement[11164-11257]"
+    }, {
+      "left" : "return playerChunk.distanceSquared(chunk);",
+      "right" : "return playerChunk.distanceSquared(chunk);",
+      "info" : "ReturnStatement[11339-11381]:ReturnStatement[11270-11312]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11403-11410]:Modifier[11334-11341]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[11411-11416]:TYPE_DECLARATION_KIND[11342-11347]"
+    }, {
+      "left" : "ReadyChunkRelevanceComparator",
+      "right" : "ReadyChunkRelevanceComparator",
+      "info" : "SimpleName[11417-11446]:SimpleName[11348-11377]"
+    }, {
+      "left" : "localPlayer",
+      "right" : "localPlayer",
+      "info" : "SimpleName[11507-11518]:SimpleName[3097-3108]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[11567-11576]:MarkerAnnotation[11418-11427]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[11585-11591]:Modifier[11436-11442]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[11592-11595]:PrimitiveType[11443-11446]"
+    }, {
+      "left" : "compare",
+      "right" : "compare",
+      "info" : "SimpleName[11596-11603]:SimpleName[11447-11454]"
+    }, {
+      "left" : "Chunk o1",
+      "right" : "Chunk o1",
+      "info" : "SingleVariableDeclaration[11604-11612]:SingleVariableDeclaration[11455-11463]"
+    }, {
+      "left" : "Chunk o2",
+      "right" : "Chunk o2",
+      "info" : "SingleVariableDeclaration[11614-11622]:SingleVariableDeclaration[11465-11473]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11624-11739]:Block[11475-11590]"
+    }, {
+      "left" : "return TeraMath.floorToInt(Math.signum(score(o2.getPosition())) - score(o1.getPosition()));",
+      "right" : "return TeraMath.floorToInt(Math.signum(score(o2.getPosition())) - score(o1.getPosition()));",
+      "info" : "ReturnStatement[11638-11729]:ReturnStatement[11489-11580]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[11749-11756]:Modifier[11600-11607]"
+    }, {
+      "left" : "float",
+      "right" : "float",
+      "info" : "PrimitiveType[11757-11762]:PrimitiveType[11608-11613]"
+    }, {
+      "left" : "score",
+      "right" : "score",
+      "info" : "SimpleName[11763-11768]:SimpleName[11614-11619]"
+    }, {
+      "left" : "Vector3i chunkPos",
+      "right" : "Vector3i chunkPos",
+      "info" : "SingleVariableDeclaration[11769-11786]:SingleVariableDeclaration[11620-11637]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11788-11937]:Block[11639-11788]"
+    }, {
+      "left" : "Vector3f vec = chunkPos.toVector3f();",
+      "right" : "Vector3f vec = chunkPos.toVector3f();",
+      "info" : "VariableDeclarationStatement[11802-11839]:VariableDeclarationStatement[11653-11690]"
+    }, {
+      "left" : "vec.sub(localPlayer.getPosition());",
+      "right" : "vec.sub(localPlayer.getPosition());",
+      "info" : "ExpressionStatement[11852-11887]:ExpressionStatement[11703-11738]"
+    }, {
+      "left" : "return vec.lengthSquared();",
+      "right" : "return vec.lengthSquared();",
+      "info" : "ReturnStatement[11900-11927]:ReturnStatement[11751-11778]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

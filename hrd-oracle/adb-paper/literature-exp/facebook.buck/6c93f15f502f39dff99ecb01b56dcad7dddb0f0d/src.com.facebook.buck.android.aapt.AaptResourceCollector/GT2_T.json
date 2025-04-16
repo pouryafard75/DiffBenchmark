@@ -1,0 +1,293 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "AaptResourceCollector",
+      "right" : "AaptResourceCollector",
+      "info" : "TypeDeclaration[1023-3001]:TypeDeclaration[1071-3297]"
+    }, {
+      "left" : "private int currentTypeId;",
+      "right" : "private int currentTypeId;",
+      "info" : "FieldDeclaration[1356-1382]:FieldDeclaration[1404-1430]"
+    }, {
+      "left" : "private final Map<RType, ResourceIdEnumerator> enumerators;",
+      "right" : "private final Map<RType, ResourceIdEnumerator> enumerators;",
+      "info" : "FieldDeclaration[1385-1444]:FieldDeclaration[1433-1492]"
+    }, {
+      "left" : "private final Set<RDotTxtEntry> resources;",
+      "right" : "private final Set<RDotTxtEntry> resources;",
+      "info" : "FieldDeclaration[1447-1489]:FieldDeclaration[1495-1537]"
+    }, {
+      "left" : "public AaptResourceCollector()",
+      "right" : "public AaptResourceCollector()",
+      "info" : "MethodDeclaration[1493-1639]:MethodDeclaration[1541-1687]"
+    }, {
+      "left" : "public void addIntResourceIfNotPresent(RType rType, String name)",
+      "right" : "ResourceIdEnumerator getEnumerator(RType rType)",
+      "info" : "MethodDeclaration[1643-2098]:MethodDeclaration[2838-3062]"
+    }, {
+      "left" : "public void addIntArrayResourceIfNotPresent(RType rType, String name, int numValues)",
+      "right" : "public void addIntArrayResourceIfNotPresent(RType rType, String name, int numValues)",
+      "info" : "MethodDeclaration[2102-2509]:MethodDeclaration[2011-2577]"
+    }, {
+      "left" : "public void addResource(RType rType, IdType idType, String name, String idValue)",
+      "right" : "public void addResource(RType rType, IdType idType, String name, String idValue)",
+      "info" : "MethodDeclaration[2513-2666]:MethodDeclaration[2581-2734]"
+    }, {
+      "left" : "public Set<RDotTxtEntry> getResources()",
+      "right" : "public Set<RDotTxtEntry> getResources()",
+      "info" : "MethodDeclaration[2670-2766]:MethodDeclaration[2738-2834]"
+    }, {
+      "left" : "ResourceIdEnumerator",
+      "right" : "ResourceIdEnumerator",
+      "info" : "TypeDeclaration[2770-2999]:TypeDeclaration[3066-3295]"
+    }, {
+      "left" : "private int currentId;",
+      "right" : "private int currentId;",
+      "info" : "FieldDeclaration[2819-2841]:FieldDeclaration[3115-3137]"
+    }, {
+      "left" : "ResourceIdEnumerator(int typeId)",
+      "right" : "ResourceIdEnumerator(int typeId)",
+      "info" : "MethodDeclaration[2847-2945]:MethodDeclaration[3143-3241]"
+    }, {
+      "left" : "int next()",
+      "right" : "int next()",
+      "info" : "MethodDeclaration[2951-2995]:MethodDeclaration[3247-3291]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1316-1322]:Modifier[1364-1370]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1323-1328]:TYPE_DECLARATION_KIND[1371-1376]"
+    }, {
+      "left" : "AaptResourceCollector",
+      "right" : "AaptResourceCollector",
+      "info" : "SimpleName[1329-1350]:SimpleName[1377-1398]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1493-1499]:Modifier[1541-1547]"
+    }, {
+      "left" : "AaptResourceCollector",
+      "right" : "AaptResourceCollector",
+      "info" : "SimpleName[1500-1521]:SimpleName[1548-1569]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1524-1639]:Block[1572-1687]"
+    }, {
+      "left" : "this.enumerators = Maps.newHashMap();",
+      "right" : "this.enumerators = Maps.newHashMap();",
+      "info" : "ExpressionStatement[1530-1567]:ExpressionStatement[1578-1615]"
+    }, {
+      "left" : "this.resources = Sets.newHashSet();",
+      "right" : "this.resources = Sets.newHashSet();",
+      "info" : "ExpressionStatement[1572-1607]:ExpressionStatement[1620-1655]"
+    }, {
+      "left" : "this.currentTypeId = 1;",
+      "right" : "this.currentTypeId = 1;",
+      "info" : "ExpressionStatement[1612-1635]:ExpressionStatement[1660-1683]"
+    }, {
+      "left" : "RType rType",
+      "right" : "RType rType",
+      "info" : "SingleVariableDeclaration[1682-1693]:SingleVariableDeclaration[2873-2884]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[1695-1706]:SingleVariableDeclaration[1743-1754]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1708-2098]:Block[2886-3062]"
+    }, {
+      "left" : "if (!enumerators.containsKey(rType))",
+      "right" : "if (!enumerators.containsKey(rType))",
+      "info" : "IfStatement[1714-1831]:IfStatement[2892-3009]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1751-1831]:Block[2929-3009]"
+    }, {
+      "left" : "enumerators.put(rType, new ResourceIdEnumerator(currentTypeId++));",
+      "right" : "enumerators.put(rType, new ResourceIdEnumerator(currentTypeId++));",
+      "info" : "ExpressionStatement[1759-1825]:ExpressionStatement[2937-3003]"
+    }, {
+      "left" : "RDotTxtEntry entry = new FakeRDotTxtEntry(IdType.INT, rType, name);",
+      "right" : "RDotTxtEntry entry = new FakeRDotTxtEntry(IdType.INT, rType, name);",
+      "info" : "VariableDeclarationStatement[1837-1904]:VariableDeclarationStatement[1762-1829]"
+    }, {
+      "left" : "!resources.contains(entry)",
+      "right" : "!resources.contains(entry)",
+      "info" : "PrefixExpression[1913-1939]:PrefixExpression[1838-1864]"
+    }, {
+      "left" : "checkNotNull(enumerators.get(rType))",
+      "right" : "checkNotNull(enumerators.get(rType))",
+      "info" : "MethodInvocation[1990-2026]:MethodInvocation[3021-3057]"
+    }, {
+      "left" : "addResource(rType, IdType.INT, name, idValue);",
+      "right" : "addResource(rType, IdType.INT, name, idValue);",
+      "info" : "ExpressionStatement[2042-2088]:ExpressionStatement[1951-1997]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2102-2108]:Modifier[2011-2017]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2109-2113]:PrimitiveType[2018-2022]"
+    }, {
+      "left" : "addIntArrayResourceIfNotPresent",
+      "right" : "addIntArrayResourceIfNotPresent",
+      "info" : "SimpleName[2114-2145]:SimpleName[2023-2054]"
+    }, {
+      "left" : "RType rType",
+      "right" : "RType rType",
+      "info" : "SingleVariableDeclaration[2146-2157]:SingleVariableDeclaration[2055-2066]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[2159-2170]:SingleVariableDeclaration[2068-2079]"
+    }, {
+      "left" : "int numValues",
+      "right" : "int numValues",
+      "info" : "SingleVariableDeclaration[2172-2185]:SingleVariableDeclaration[2081-2094]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2187-2509]:Block[2096-2577]"
+    }, {
+      "left" : "String idValue = String.format(\n        \"{ %s }\",\n        Joiner.on(\",\").join(Collections.nCopies(numValues, \"0x7f000000\")));",
+      "right" : "String idValue = String.format(\n        \"{ %s }\",\n        Joiner.on(\",\").join(values.build()));",
+      "info" : "VariableDeclarationStatement[2323-2448]:VariableDeclarationStatement[2421-2516]"
+    }, {
+      "left" : "\"{ %s }\"",
+      "right" : "\"{ %s }\"",
+      "info" : "StringLiteral[2363-2371]:StringLiteral[2461-2469]"
+    }, {
+      "left" : "Joiner.on(\",\").join(Collections.nCopies(numValues, \"0x7f000000\"))",
+      "right" : "Joiner.on(\",\").join(values.build())",
+      "info" : "MethodInvocation[2381-2446]:MethodInvocation[2479-2514]"
+    }, {
+      "left" : "nCopies",
+      "right" : "values",
+      "info" : "SimpleName[2413-2420]:SimpleName[2499-2505]"
+    }, {
+      "left" : "numValues",
+      "right" : "build",
+      "info" : "SimpleName[2421-2430]:SimpleName[2506-2511]"
+    }, {
+      "left" : "addResource(rType, IdType.INT_ARRAY, name, idValue);",
+      "right" : "addResource(rType, IdType.INT_ARRAY, name, idValue);",
+      "info" : "ExpressionStatement[2453-2505]:ExpressionStatement[2521-2573]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2513-2519]:Modifier[2581-2587]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[2520-2524]:PrimitiveType[2588-2592]"
+    }, {
+      "left" : "addResource",
+      "right" : "addResource",
+      "info" : "SimpleName[2525-2536]:SimpleName[2593-2604]"
+    }, {
+      "left" : "RType rType",
+      "right" : "RType rType",
+      "info" : "SingleVariableDeclaration[2537-2548]:SingleVariableDeclaration[2605-2616]"
+    }, {
+      "left" : "IdType idType",
+      "right" : "IdType idType",
+      "info" : "SingleVariableDeclaration[2550-2563]:SingleVariableDeclaration[2618-2631]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[2565-2576]:SingleVariableDeclaration[2633-2644]"
+    }, {
+      "left" : "String idValue",
+      "right" : "String idValue",
+      "info" : "SingleVariableDeclaration[2578-2592]:SingleVariableDeclaration[2646-2660]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2594-2666]:Block[2662-2734]"
+    }, {
+      "left" : "resources.add(new RDotTxtEntry(idType, rType, name, idValue));",
+      "right" : "resources.add(new RDotTxtEntry(idType, rType, name, idValue));",
+      "info" : "ExpressionStatement[2600-2662]:ExpressionStatement[2668-2730]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2670-2676]:Modifier[2738-2744]"
+    }, {
+      "left" : "Set<RDotTxtEntry>",
+      "right" : "Set<RDotTxtEntry>",
+      "info" : "ParameterizedType[2677-2694]:ParameterizedType[2745-2762]"
+    }, {
+      "left" : "getResources",
+      "right" : "getResources",
+      "info" : "SimpleName[2695-2707]:SimpleName[2763-2775]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2710-2766]:Block[2778-2834]"
+    }, {
+      "left" : "return Collections.unmodifiableSet(resources);",
+      "right" : "return Collections.unmodifiableSet(resources);",
+      "info" : "ReturnStatement[2716-2762]:ReturnStatement[2784-2830]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[2770-2777]:Modifier[3066-3073]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[2778-2784]:Modifier[3074-3080]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[2785-2790]:TYPE_DECLARATION_KIND[3081-3086]"
+    }, {
+      "left" : "ResourceIdEnumerator",
+      "right" : "ResourceIdEnumerator",
+      "info" : "SimpleName[2791-2811]:SimpleName[3087-3107]"
+    }, {
+      "left" : "ResourceIdEnumerator",
+      "right" : "ResourceIdEnumerator",
+      "info" : "SimpleName[2847-2867]:SimpleName[3143-3163]"
+    }, {
+      "left" : "int typeId",
+      "right" : "int typeId",
+      "info" : "SingleVariableDeclaration[2868-2878]:SingleVariableDeclaration[3164-3174]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2880-2945]:Block[3176-3241]"
+    }, {
+      "left" : "this.currentId = 0x7f000000 + 0x10000 * typeId + 1;",
+      "right" : "this.currentId = 0x7f000000 + 0x10000 * typeId + 1;",
+      "info" : "ExpressionStatement[2888-2939]:ExpressionStatement[3184-3235]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[2951-2954]:PrimitiveType[3247-3250]"
+    }, {
+      "left" : "next",
+      "right" : "next",
+      "info" : "SimpleName[2955-2959]:SimpleName[3251-3255]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2962-2995]:Block[3258-3291]"
+    }, {
+      "left" : "return currentId++;",
+      "right" : "return currentId++;",
+      "info" : "ReturnStatement[2970-2989]:ReturnStatement[3266-3285]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

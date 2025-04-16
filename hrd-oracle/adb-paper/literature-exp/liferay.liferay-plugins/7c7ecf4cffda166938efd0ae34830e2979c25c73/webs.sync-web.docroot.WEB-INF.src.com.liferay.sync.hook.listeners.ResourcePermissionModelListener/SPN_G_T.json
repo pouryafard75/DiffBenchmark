@@ -1,0 +1,153 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ResourcePermissionModelListener",
+      "right" : "ResourcePermissionModelListener",
+      "info" : "TypeDeclaration[1111-2328]:TypeDeclaration[1195-2565]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1140-1146]:Modifier[1224-1230]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1147-1152]:TYPE_DECLARATION_KIND[1231-1236]"
+    }, {
+      "left" : "ResourcePermissionModelListener",
+      "right" : "ResourcePermissionModelListener",
+      "info" : "SimpleName[1153-1184]:SimpleName[1237-1268]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[1236-1245]:MarkerAnnotation[1320-1329]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1247-1253]:Modifier[1331-1337]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[1254-1258]:PrimitiveType[1338-1342]"
+    }, {
+      "left" : "ResourcePermission resourcePermission",
+      "right" : "ResourcePermission resourcePermission",
+      "info" : "SingleVariableDeclaration[1273-1310]:SingleVariableDeclaration[1357-1394]"
+    }, {
+      "left" : "ModelListenerException",
+      "right" : "ModelListenerException",
+      "info" : "SimpleType[1321-1343]:SimpleType[1405-1427]"
+    }, {
+      "left" : "String modelName = resourcePermission.getName();",
+      "right" : "String modelName = resourcePermission.getName();",
+      "info" : "VariableDeclarationStatement[1349-1397]:VariableDeclarationStatement[1433-1481]"
+    }, {
+      "left" : "modelName.equals(DLFileEntry.class.getName())",
+      "right" : "modelName.equals(DLFileEntry.class.getName())",
+      "info" : "MethodInvocation[1414-1459]:MethodInvocation[1522-1567]"
+    }, {
+      "left" : "SyncDLObject syncDLObject =\n\t\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\t\tSyncConstants.TYPE_FILE,\n\t\t\t\t\t\tGetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "right" : "SyncDLObject syncDLObject =\n\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\ttype, GetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "info" : "VariableDeclarationStatement[1467-1638]:VariableDeclarationStatement[1717-1861]"
+    }, {
+      "left" : "GetterUtil.getLong(resourcePermission.getPrimKey())",
+      "right" : "GetterUtil.getLong(resourcePermission.getPrimKey())",
+      "info" : "MethodInvocation[1585-1636]:MethodInvocation[1808-1859]"
+    }, {
+      "left" : "if (syncDLObject == null)",
+      "right" : "if (syncDLObject != null)",
+      "info" : "IfStatement[1644-1690]:IfStatement[1866-1936]"
+    }, {
+      "left" : "==",
+      "right" : "!=",
+      "info" : "INFIX_EXPRESSION_OPERATOR[1661-1663]:INFIX_EXPRESSION_OPERATOR[1883-1885]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1670-1690]:Block[1892-1936]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1670-1690]:Block[2318-2334]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[1677-1684]:ReturnStatement[2323-2330]"
+    }, {
+      "left" : "syncDLObject.setModifiedTime(System.currentTimeMillis());",
+      "right" : "syncDLObject.setModifiedTime(System.currentTimeMillis());",
+      "info" : "ExpressionStatement[1696-1753]:ExpressionStatement[2105-2162]"
+    }, {
+      "left" : "SyncDLObjectLocalServiceUtil.updateSyncDLObject(syncDLObject);",
+      "right" : "SyncDLObjectLocalServiceUtil.updateSyncDLObject(syncDLObject);",
+      "info" : "ExpressionStatement[1759-1821]:ExpressionStatement[2166-2228]"
+    }, {
+      "left" : "modelName.equals(DLFolder.class.getName())",
+      "right" : "modelName.equals(DLFolder.class.getName())",
+      "info" : "MethodInvocation[1839-1881]:MethodInvocation[1624-1666]"
+    }, {
+      "left" : "SyncDLObject",
+      "right" : "String",
+      "info" : "SimpleName[1889-1901]:SimpleName[2232-2238]"
+    }, {
+      "left" : "SyncDLObject syncDLObject =\n\t\t\t\t\tSyncDLObjectLocalServiceUtil.fetchSyncDLObject(\n\t\t\t\t\t\tSyncConstants.TYPE_FOLDER,\n\t\t\t\t\t\tGetterUtil.getLong(resourcePermission.getPrimKey()));",
+      "right" : "String type = syncDLObject.getType();",
+      "info" : "VariableDeclarationStatement[1889-2062]:VariableDeclarationStatement[2232-2269]"
+    }, {
+      "left" : "syncDLObject",
+      "right" : "type",
+      "info" : "SimpleName[1902-1914]:SimpleName[2239-2243]"
+    }, {
+      "left" : "GetterUtil.getLong(resourcePermission.getPrimKey())",
+      "right" : "syncDLObject.getType()",
+      "info" : "MethodInvocation[2009-2060]:MethodInvocation[2246-2268]"
+    }, {
+      "left" : "getLong",
+      "right" : "getType",
+      "info" : "SimpleName[2020-2027]:SimpleName[2259-2266]"
+    }, {
+      "left" : "resourcePermission",
+      "right" : "syncDLObject",
+      "info" : "METHOD_INVOCATION_RECEIVER[2028-2046]:METHOD_INVOCATION_RECEIVER[2246-2258]"
+    }, {
+      "left" : "if (syncDLObject == null)",
+      "right" : "if (!type.equals(SyncConstants.TYPE_FOLDER))",
+      "info" : "IfStatement[2068-2114]:IfStatement[2273-2334]"
+    }, {
+      "left" : "syncDLObject",
+      "right" : "type",
+      "info" : "SimpleName[2072-2084]:SimpleName[2278-2282]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2094-2114]:Block[2318-2334]"
+    }, {
+      "left" : "syncDLObject",
+      "right" : "syncDLObject",
+      "info" : "METHOD_INVOCATION_RECEIVER[2120-2132]:METHOD_INVOCATION_RECEIVER[2430-2442]"
+    }, {
+      "left" : "SyncDLObjectLocalServiceUtil.updateSyncDLObject(syncDLObject);",
+      "right" : "updateSyncDLObject(curSyncDLObject);",
+      "info" : "ExpressionStatement[2183-2245]:ExpressionStatement[2519-2555]"
+    }, {
+      "left" : "syncDLObject",
+      "right" : "curSyncDLObject",
+      "info" : "SimpleName[2231-2243]:SimpleName[2538-2553]"
+    }, {
+      "left" : "Exception e",
+      "right" : "Exception e",
+      "info" : "SingleVariableDeclaration[2264-2275]:SingleVariableDeclaration[1950-1961]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2277-2322]:Block[1963-2008]"
+    }, {
+      "left" : "throw new ModelListenerException(e);",
+      "right" : "throw new ModelListenerException(e);",
+      "info" : "ThrowStatement[2282-2318]:ThrowStatement[1968-2004]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

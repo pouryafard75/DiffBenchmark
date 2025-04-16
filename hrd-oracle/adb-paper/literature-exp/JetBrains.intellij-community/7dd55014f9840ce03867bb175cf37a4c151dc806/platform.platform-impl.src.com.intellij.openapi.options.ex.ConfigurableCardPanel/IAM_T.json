@@ -1,0 +1,353 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "ConfigurableCardPanel",
+      "right" : "ConfigurableCardPanel",
+      "info" : "TypeDeclaration[1118-4328]:TypeDeclaration[1170-5382]"
+    }, {
+      "left" : "private static final Logger LOG = Logger.getInstance(ConfigurableCardPanel.class);",
+      "right" : "private static final Logger LOG = Logger.getInstance(ConfigurableCardPanel.class);",
+      "info" : "FieldDeclaration[1256-1338]:FieldDeclaration[1308-1390]"
+    }, {
+      "left" : "protected Configurable prepare(Configurable key)",
+      "right" : "protected Configurable prepare(Configurable key)",
+      "info" : "MethodDeclaration[1342-1648]:MethodDeclaration[1394-1798]"
+    }, {
+      "left" : "protected JComponent create(final Configurable configurable)",
+      "right" : "protected JComponent create(final Configurable configurable)",
+      "info" : "MethodDeclaration[1652-3793]:MethodDeclaration[1802-4065]"
+    }, {
+      "left" : "public JComponent compute()",
+      "right" : "public JComponent compute()",
+      "info" : "MethodDeclaration[2417-3781]:MethodDeclaration[2567-4053]"
+    }, {
+      "left" : "protected void dispose(Configurable configurable)",
+      "right" : "protected void dispose(Configurable configurable)",
+      "info" : "MethodDeclaration[3797-4072]:MethodDeclaration[4069-4459]"
+    }, {
+      "left" : "public static void reset(Configurable configurable)",
+      "right" : "public static void reset(Configurable configurable)",
+      "info" : "MethodDeclaration[4076-4326]:MethodDeclaration[4463-4826]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1153-1159]:Modifier[1205-1211]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1160-1165]:TYPE_DECLARATION_KIND[1212-1217]"
+    }, {
+      "left" : "ConfigurableCardPanel",
+      "right" : "ConfigurableCardPanel",
+      "info" : "SimpleName[1166-1187]:SimpleName[1218-1239]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[1342-1351]:MarkerAnnotation[1394-1403]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[1354-1363]:Modifier[1406-1415]"
+    }, {
+      "left" : "Configurable",
+      "right" : "Configurable",
+      "info" : "SimpleType[1364-1376]:SimpleType[1416-1428]"
+    }, {
+      "left" : "prepare",
+      "right" : "prepare",
+      "info" : "SimpleName[1377-1384]:SimpleName[1429-1436]"
+    }, {
+      "left" : "Configurable key",
+      "right" : "Configurable key",
+      "info" : "SingleVariableDeclaration[1385-1401]:SingleVariableDeclaration[1437-1453]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1403-1648]:Block[1455-1798]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[1409-1628]:TryStatement[1505-1778]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1413-1527]:Block[1509-1623]"
+    }, {
+      "left" : "ConfigurableWrapper.cast(Configurable.class, key);",
+      "right" : "ConfigurableWrapper.cast(Configurable.class, key);",
+      "info" : "ExpressionStatement[1421-1471]:ExpressionStatement[1517-1567]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1561-1628]:Block[1657-1724]"
+    }, {
+      "left" : "LOG.error(\"cannot prepare configurable\", unexpected);",
+      "right" : "LOG.error(\"cannot prepare configurable\", unexpected);",
+      "info" : "ExpressionStatement[1569-1622]:ExpressionStatement[1665-1718]"
+    }, {
+      "left" : "return key;",
+      "right" : "return key;",
+      "info" : "ReturnStatement[1633-1644]:ReturnStatement[1783-1794]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2214-2223]:MarkerAnnotation[2364-2373]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[2226-2235]:Modifier[2376-2385]"
+    }, {
+      "left" : "JComponent",
+      "right" : "JComponent",
+      "info" : "SimpleType[2236-2246]:SimpleType[2386-2396]"
+    }, {
+      "left" : "create",
+      "right" : "create",
+      "info" : "SimpleName[2247-2253]:SimpleName[2397-2403]"
+    }, {
+      "left" : "final Configurable configurable",
+      "right" : "final Configurable configurable",
+      "info" : "SingleVariableDeclaration[2254-2285]:SingleVariableDeclaration[2404-2435]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2287-3793]:Block[2437-4065]"
+    }, {
+      "left" : "return configurable == null ? null : ApplicationManager.getApplication().runReadAction(new Computable<JComponent>() {\n      @Override\n      public JComponent compute() {\n        JComponent component = null;\n        try {\n          component = configurable.createComponent();\n        }\n        catch (Exception unexpected) {\n          LOG.error(\"cannot create configurable component\", unexpected);\n        }\n        if (component != null) {\n          reset(configurable);\n          if (ConfigurableWrapper.cast(MasterDetails.class, configurable) == null) {\n            if (ConfigurableWrapper.cast(Configurable.NoMargin.class, configurable) == null) {\n              if (!component.getClass().equals(JPanel.class)) {\n                // some custom components do not support borders\n                JPanel panel = new JPanel(new BorderLayout());\n                panel.add(BorderLayout.CENTER, component);\n                component = panel;\n              }\n              component.setBorder(JBUI.Borders.empty(5, 10, 10, 10));\n            }\n            if (ConfigurableWrapper.cast(Configurable.NoScroll.class, configurable) == null) {\n              JScrollPane scroll = ScrollPaneFactory.createScrollPane(null, true);\n              scroll.setViewport(new GradientViewport(component, JBUI.insetsTop(5), true));\n              scroll.getVerticalScrollBar().setUnitIncrement(JBUI.scale(10));\n              component = scroll;\n            }\n          }\n        }\n        return component;\n      }\n    });",
+      "right" : "return configurable == null ? null : ApplicationManager.getApplication().runReadAction(new Computable<JComponent>() {\n      @Override\n      public JComponent compute() {\n        JComponent component = null;\n        long time = System.currentTimeMillis();\n        try {\n          component = configurable.createComponent();\n        }\n        catch (Exception unexpected) {\n          LOG.error(\"cannot create configurable component\", unexpected);\n        }\n        finally {\n          warn(configurable, \"create\", time);\n        }\n        if (component != null) {\n          reset(configurable);\n          if (ConfigurableWrapper.cast(MasterDetails.class, configurable) == null) {\n            if (ConfigurableWrapper.cast(Configurable.NoMargin.class, configurable) == null) {\n              if (!component.getClass().equals(JPanel.class)) {\n                // some custom components do not support borders\n                JPanel panel = new JPanel(new BorderLayout());\n                panel.add(BorderLayout.CENTER, component);\n                component = panel;\n              }\n              component.setBorder(JBUI.Borders.empty(5, 10, 10, 10));\n            }\n            if (ConfigurableWrapper.cast(Configurable.NoScroll.class, configurable) == null) {\n              JScrollPane scroll = ScrollPaneFactory.createScrollPane(null, true);\n              scroll.setViewport(new GradientViewport(component, JBUI.insetsTop(5), true));\n              scroll.getVerticalScrollBar().setUnitIncrement(JBUI.scale(10));\n              component = scroll;\n            }\n          }\n        }\n        return component;\n      }\n    });",
+      "info" : "ReturnStatement[2293-3789]:ReturnStatement[2443-4061]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[2417-2426]:MarkerAnnotation[2567-2576]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2433-2439]:Modifier[2583-2589]"
+    }, {
+      "left" : "JComponent",
+      "right" : "JComponent",
+      "info" : "SimpleType[2440-2450]:SimpleType[2590-2600]"
+    }, {
+      "left" : "compute",
+      "right" : "compute",
+      "info" : "SimpleName[2451-2458]:SimpleName[2601-2608]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2461-3781]:Block[2611-4053]"
+    }, {
+      "left" : "JComponent component = null;",
+      "right" : "JComponent component = null;",
+      "info" : "VariableDeclarationStatement[2471-2499]:VariableDeclarationStatement[2621-2649]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[2508-2699]:TryStatement[2706-2971]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2512-2577]:Block[2710-2775]"
+    }, {
+      "left" : "component = configurable.createComponent();",
+      "right" : "component = configurable.createComponent();",
+      "info" : "ExpressionStatement[2524-2567]:ExpressionStatement[2722-2765]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2615-2699]:Block[2813-2897]"
+    }, {
+      "left" : "LOG.error(\"cannot create configurable component\", unexpected);",
+      "right" : "LOG.error(\"cannot create configurable component\", unexpected);",
+      "info" : "ExpressionStatement[2627-2689]:ExpressionStatement[2825-2887]"
+    }, {
+      "left" : "if (component != null)",
+      "right" : "if (component != null)",
+      "info" : "IfStatement[2708-3747]:IfStatement[2980-4019]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2731-3747]:Block[3003-4019]"
+    }, {
+      "left" : "reset(configurable);",
+      "right" : "reset(configurable);",
+      "info" : "ExpressionStatement[2743-2763]:ExpressionStatement[3015-3035]"
+    }, {
+      "left" : "if (ConfigurableWrapper.cast(MasterDetails.class, configurable) == null)",
+      "right" : "if (ConfigurableWrapper.cast(MasterDetails.class, configurable) == null)",
+      "info" : "IfStatement[2774-3737]:IfStatement[3046-4009]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2847-3737]:Block[3119-4009]"
+    }, {
+      "left" : "if (ConfigurableWrapper.cast(Configurable.NoMargin.class, configurable) == null)",
+      "right" : "if (ConfigurableWrapper.cast(Configurable.NoMargin.class, configurable) == null)",
+      "info" : "IfStatement[2861-3329]:IfStatement[3133-3601]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2942-3329]:Block[3214-3601]"
+    }, {
+      "left" : "if (!component.getClass().equals(JPanel.class))",
+      "right" : "if (!component.getClass().equals(JPanel.class))",
+      "info" : "IfStatement[2958-3245]:IfStatement[3230-3517]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3006-3245]:Block[3278-3517]"
+    }, {
+      "left" : "JPanel panel = new JPanel(new BorderLayout());",
+      "right" : "JPanel panel = new JPanel(new BorderLayout());",
+      "info" : "VariableDeclarationStatement[3089-3135]:VariableDeclarationStatement[3361-3407]"
+    }, {
+      "left" : "panel.add(BorderLayout.CENTER, component);",
+      "right" : "panel.add(BorderLayout.CENTER, component);",
+      "info" : "ExpressionStatement[3152-3194]:ExpressionStatement[3424-3466]"
+    }, {
+      "left" : "component = panel;",
+      "right" : "component = panel;",
+      "info" : "ExpressionStatement[3211-3229]:ExpressionStatement[3483-3501]"
+    }, {
+      "left" : "component.setBorder(JBUI.Borders.empty(5, 10, 10, 10));",
+      "right" : "component.setBorder(JBUI.Borders.empty(5, 10, 10, 10));",
+      "info" : "ExpressionStatement[3260-3315]:ExpressionStatement[3532-3587]"
+    }, {
+      "left" : "if (ConfigurableWrapper.cast(Configurable.NoScroll.class, configurable) == null)",
+      "right" : "if (ConfigurableWrapper.cast(Configurable.NoScroll.class, configurable) == null)",
+      "info" : "IfStatement[3342-3725]:IfStatement[3614-3997]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3423-3725]:Block[3695-3997]"
+    }, {
+      "left" : "JScrollPane scroll = ScrollPaneFactory.createScrollPane(null, true);",
+      "right" : "JScrollPane scroll = ScrollPaneFactory.createScrollPane(null, true);",
+      "info" : "VariableDeclarationStatement[3439-3507]:VariableDeclarationStatement[3711-3779]"
+    }, {
+      "left" : "scroll.setViewport(new GradientViewport(component, JBUI.insetsTop(5), true));",
+      "right" : "scroll.setViewport(new GradientViewport(component, JBUI.insetsTop(5), true));",
+      "info" : "ExpressionStatement[3522-3599]:ExpressionStatement[3794-3871]"
+    }, {
+      "left" : "scroll.getVerticalScrollBar().setUnitIncrement(JBUI.scale(10));",
+      "right" : "scroll.getVerticalScrollBar().setUnitIncrement(JBUI.scale(10));",
+      "info" : "ExpressionStatement[3614-3677]:ExpressionStatement[3886-3949]"
+    }, {
+      "left" : "component = scroll;",
+      "right" : "component = scroll;",
+      "info" : "ExpressionStatement[3692-3711]:ExpressionStatement[3964-3983]"
+    }, {
+      "left" : "return component;",
+      "right" : "return component;",
+      "info" : "ReturnStatement[3756-3773]:ReturnStatement[4028-4045]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[3797-3806]:MarkerAnnotation[4069-4078]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[3809-3818]:Modifier[4081-4090]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[3819-3823]:PrimitiveType[4091-4095]"
+    }, {
+      "left" : "dispose",
+      "right" : "dispose",
+      "info" : "SimpleName[3824-3831]:SimpleName[4096-4103]"
+    }, {
+      "left" : "Configurable configurable",
+      "right" : "Configurable configurable",
+      "info" : "SingleVariableDeclaration[3832-3857]:SingleVariableDeclaration[4104-4129]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3859-4072]:Block[4131-4459]"
+    }, {
+      "left" : "if (configurable != null)",
+      "right" : "if (configurable != null)",
+      "info" : "IfStatement[3865-4068]:IfStatement[4137-4455]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3891-4068]:Block[4163-4455]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3899-4062]:TryStatement[4217-4449]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3903-3955]:Block[4221-4273]"
+    }, {
+      "left" : "configurable.disposeUIResources();",
+      "right" : "configurable.disposeUIResources();",
+      "info" : "ExpressionStatement[3913-3947]:ExpressionStatement[4231-4265]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3991-4062]:Block[4309-4380]"
+    }, {
+      "left" : "LOG.error(\"cannot dispose configurable\", unexpected);",
+      "right" : "LOG.error(\"cannot dispose configurable\", unexpected);",
+      "info" : "ExpressionStatement[4001-4054]:ExpressionStatement[4319-4372]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4076-4082]:Modifier[4463-4469]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[4083-4089]:Modifier[4470-4476]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4090-4094]:PrimitiveType[4477-4481]"
+    }, {
+      "left" : "reset",
+      "right" : "reset",
+      "info" : "SimpleName[4095-4100]:SimpleName[4482-4487]"
+    }, {
+      "left" : "Configurable configurable",
+      "right" : "Configurable configurable",
+      "info" : "SingleVariableDeclaration[4101-4126]:SingleVariableDeclaration[4488-4513]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4128-4326]:Block[4515-4826]"
+    }, {
+      "left" : "if (configurable != null)",
+      "right" : "if (configurable != null)",
+      "info" : "IfStatement[4134-4322]:IfStatement[4521-4822]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4160-4322]:Block[4547-4822]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[4168-4316]:TryStatement[4601-4816]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4172-4211]:Block[4605-4644]"
+    }, {
+      "left" : "configurable.reset();",
+      "right" : "configurable.reset();",
+      "info" : "ExpressionStatement[4182-4203]:ExpressionStatement[4615-4636]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4247-4316]:Block[4680-4749]"
+    }, {
+      "left" : "LOG.error(\"cannot reset configurable\", unexpected);",
+      "right" : "LOG.error(\"cannot reset configurable\", unexpected);",
+      "info" : "ExpressionStatement[4257-4308]:ExpressionStatement[4690-4741]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

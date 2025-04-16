@@ -1,0 +1,525 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "CachingEnumerator",
+      "right" : "CachingEnumerator",
+      "info" : "TypeDeclaration[825-4537]:TypeDeclaration[825-4452]"
+    }, {
+      "left" : "private static final int STRIPE_POWER = 4;",
+      "right" : "private static final int STRIPE_POWER = 4;",
+      "info" : "FieldDeclaration[923-965]:FieldDeclaration[923-965]"
+    }, {
+      "left" : "private static final int STRIPE_COUNT = 1 << STRIPE_POWER;",
+      "right" : "private static final int STRIPE_COUNT = 1 << STRIPE_POWER;",
+      "info" : "FieldDeclaration[968-1026]:FieldDeclaration[968-1026]"
+    }, {
+      "left" : "private static final int STRIPE_MASK = STRIPE_COUNT - 1;",
+      "right" : "private static final int STRIPE_MASK = STRIPE_COUNT - 1;",
+      "info" : "FieldDeclaration[1029-1085]:FieldDeclaration[1029-1085]"
+    }, {
+      "left" : "@SuppressWarnings(\"unchecked\") private final SLRUMap<Integer, Integer>[] myHashcodeToIdCache = new SLRUMap[STRIPE_COUNT];",
+      "right" : "@SuppressWarnings(\"unchecked\") private final SLRUMap<Integer, Integer>[] myHashcodeToIdCache = new SLRUMap[STRIPE_COUNT];",
+      "info" : "FieldDeclaration[1088-1209]:FieldDeclaration[1088-1209]"
+    }, {
+      "left" : "@SuppressWarnings(\"unchecked\") private final SLRUMap<Integer, Data>[] myIdToStringCache = new SLRUMap[STRIPE_COUNT];",
+      "right" : "@SuppressWarnings(\"unchecked\") private final SLRUMap<Integer, Data>[] myIdToStringCache = new SLRUMap[STRIPE_COUNT];",
+      "info" : "FieldDeclaration[1212-1328]:FieldDeclaration[1212-1328]"
+    }, {
+      "left" : "private final Lock[] myStripeLocks = new Lock[STRIPE_COUNT];",
+      "right" : "private final Lock[] myStripeLocks = new Lock[STRIPE_COUNT];",
+      "info" : "FieldDeclaration[1331-1391]:FieldDeclaration[1331-1391]"
+    }, {
+      "left" : "private final DataEnumerator<Data> myBase;",
+      "right" : "private final DataEnumerator<Data> myBase;",
+      "info" : "FieldDeclaration[1394-1436]:FieldDeclaration[1394-1436]"
+    }, {
+      "left" : "private final KeyDescriptor<Data> myDataDescriptor;",
+      "right" : "private final KeyDescriptor<Data> myDataDescriptor;",
+      "info" : "FieldDeclaration[1439-1490]:FieldDeclaration[1439-1490]"
+    }, {
+      "left" : "public CachingEnumerator(DataEnumerator<Data> base, KeyDescriptor<Data> dataDescriptor)",
+      "right" : "public CachingEnumerator(DataEnumerator<Data> base, KeyDescriptor<Data> dataDescriptor)",
+      "info" : "MethodDeclaration[1494-2047]:MethodDeclaration[1494-2047]"
+    }, {
+      "left" : "public int enumerate(@Nullable Data value) throws IOException",
+      "right" : "public int enumerate(@Nullable Data value) throws IOException",
+      "info" : "MethodDeclaration[2051-3519]:MethodDeclaration[2051-3488]"
+    }, {
+      "left" : "private static int idStripe(int h)",
+      "right" : "private static int idStripe(int h)",
+      "info" : "MethodDeclaration[3523-3659]:MethodDeclaration[3492-3628]"
+    }, {
+      "left" : "public Data valueOf(int idx) throws IOException",
+      "right" : "public Data valueOf(int idx) throws IOException",
+      "info" : "MethodDeclaration[3663-4287]:MethodDeclaration[3632-4179]"
+    }, {
+      "left" : "public void close() throws IOException",
+      "right" : "public void clear()",
+      "info" : "MethodDeclaration[4291-4535]:MethodDeclaration[4225-4450]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[850-856]:Modifier[850-856]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[857-862]:TYPE_DECLARATION_KIND[857-862]"
+    }, {
+      "left" : "CachingEnumerator",
+      "right" : "CachingEnumerator",
+      "info" : "SimpleName[863-880]:SimpleName[863-880]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1494-1500]:Modifier[1494-1500]"
+    }, {
+      "left" : "CachingEnumerator",
+      "right" : "CachingEnumerator",
+      "info" : "SimpleName[1501-1518]:SimpleName[1501-1518]"
+    }, {
+      "left" : "DataEnumerator<Data> base",
+      "right" : "DataEnumerator<Data> base",
+      "info" : "SingleVariableDeclaration[1519-1544]:SingleVariableDeclaration[1519-1544]"
+    }, {
+      "left" : "KeyDescriptor<Data> dataDescriptor",
+      "right" : "KeyDescriptor<Data> dataDescriptor",
+      "info" : "SingleVariableDeclaration[1546-1580]:SingleVariableDeclaration[1546-1580]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1582-2047]:Block[1582-2047]"
+    }, {
+      "left" : "myBase = base;",
+      "right" : "myBase = base;",
+      "info" : "ExpressionStatement[1588-1602]:ExpressionStatement[1588-1602]"
+    }, {
+      "left" : "myDataDescriptor = dataDescriptor;",
+      "right" : "myDataDescriptor = dataDescriptor;",
+      "info" : "ExpressionStatement[1607-1641]:ExpressionStatement[1607-1641]"
+    }, {
+      "left" : "int protectedSize = 8192;",
+      "right" : "int protectedSize = 8192;",
+      "info" : "VariableDeclarationStatement[1646-1671]:VariableDeclarationStatement[1646-1671]"
+    }, {
+      "left" : "int probationalSize = 8192;",
+      "right" : "int probationalSize = 8192;",
+      "info" : "VariableDeclarationStatement[1676-1703]:VariableDeclarationStatement[1676-1703]"
+    }, {
+      "left" : "for(int i = 0; i < STRIPE_COUNT; ++i)",
+      "right" : "for(int i = 0; i < STRIPE_COUNT; ++i)",
+      "info" : "ForStatement[1709-2042]:ForStatement[1709-2042]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1747-2042]:Block[1747-2042]"
+    }, {
+      "left" : "myHashcodeToIdCache[i] = new SLRUMap<Integer, Integer>(protectedSize / STRIPE_COUNT, probationalSize / STRIPE_COUNT);",
+      "right" : "myHashcodeToIdCache[i] = new SLRUMap<Integer, Integer>(protectedSize / STRIPE_COUNT, probationalSize / STRIPE_COUNT);",
+      "info" : "ExpressionStatement[1755-1872]:ExpressionStatement[1755-1872]"
+    }, {
+      "left" : "myIdToStringCache[i] = new SLRUMap<Integer, Data>(protectedSize / STRIPE_COUNT, probationalSize / STRIPE_COUNT);",
+      "right" : "myIdToStringCache[i] = new SLRUMap<Integer, Data>(protectedSize / STRIPE_COUNT, probationalSize / STRIPE_COUNT);",
+      "info" : "ExpressionStatement[1879-1991]:ExpressionStatement[1879-1991]"
+    }, {
+      "left" : "myStripeLocks[i] = new SequenceLock();",
+      "right" : "myStripeLocks[i] = new SequenceLock();",
+      "info" : "ExpressionStatement[1998-2036]:ExpressionStatement[1998-2036]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[2051-2057]:Modifier[2051-2057]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[2058-2061]:PrimitiveType[2058-2061]"
+    }, {
+      "left" : "enumerate",
+      "right" : "enumerate",
+      "info" : "SimpleName[2062-2071]:SimpleName[2062-2071]"
+    }, {
+      "left" : "@Nullable Data value",
+      "right" : "@Nullable Data value",
+      "info" : "SingleVariableDeclaration[2072-2092]:SingleVariableDeclaration[2072-2092]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[2101-2112]:SimpleType[2101-2112]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2113-3519]:Block[2113-3488]"
+    }, {
+      "left" : "int valueHashCode =-1;",
+      "right" : "int valueHashCode =-1;",
+      "info" : "VariableDeclarationStatement[2119-2141]:VariableDeclarationStatement[2119-2141]"
+    }, {
+      "left" : "int stripe = -1;",
+      "right" : "int stripe = -1;",
+      "info" : "VariableDeclarationStatement[2146-2162]:VariableDeclarationStatement[2146-2162]"
+    }, {
+      "left" : "if (myHashcodeToIdCache != null && value != null)",
+      "right" : "if (value != null)",
+      "info" : "IfStatement[2168-2929]:IfStatement[2168-2898]"
+    }, {
+      "left" : "value != null",
+      "right" : "value != null",
+      "info" : "InfixExpression[2203-2216]:InfixExpression[2172-2185]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2218-2929]:Block[2187-2898]"
+    }, {
+      "left" : "valueHashCode = myDataDescriptor.getHashCode(value);",
+      "right" : "valueHashCode = myDataDescriptor.getHashCode(value);",
+      "info" : "ExpressionStatement[2226-2278]:ExpressionStatement[2195-2247]"
+    }, {
+      "left" : "stripe = Math.abs(valueHashCode) & STRIPE_MASK;",
+      "right" : "stripe = Math.abs(valueHashCode) & STRIPE_MASK;",
+      "info" : "ExpressionStatement[2285-2332]:ExpressionStatement[2254-2301]"
+    }, {
+      "left" : "Integer cachedId;",
+      "right" : "Integer cachedId;",
+      "info" : "VariableDeclarationStatement[2340-2357]:VariableDeclarationStatement[2309-2326]"
+    }, {
+      "left" : "myStripeLocks[stripe].lock();",
+      "right" : "myStripeLocks[stripe].lock();",
+      "info" : "ExpressionStatement[2365-2394]:ExpressionStatement[2334-2363]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[2401-2545]:TryStatement[2370-2514]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2405-2481]:Block[2374-2450]"
+    }, {
+      "left" : "cachedId = myHashcodeToIdCache[stripe].get(valueHashCode);",
+      "right" : "cachedId = myHashcodeToIdCache[stripe].get(valueHashCode);",
+      "info" : "ExpressionStatement[2415-2473]:ExpressionStatement[2384-2442]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2496-2545]:Block[2465-2514]"
+    }, {
+      "left" : "myStripeLocks[stripe].unlock();",
+      "right" : "myStripeLocks[stripe].unlock();",
+      "info" : "ExpressionStatement[2506-2537]:ExpressionStatement[2475-2506]"
+    }, {
+      "left" : "if (cachedId != null)",
+      "right" : "if (cachedId != null)",
+      "info" : "IfStatement[2553-2923]:IfStatement[2522-2892]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2575-2923]:Block[2544-2892]"
+    }, {
+      "left" : "int stripe2 = idStripe(cachedId.intValue());",
+      "right" : "int stripe2 = idStripe(cachedId.intValue());",
+      "info" : "VariableDeclarationStatement[2585-2629]:VariableDeclarationStatement[2554-2598]"
+    }, {
+      "left" : "myStripeLocks[stripe2].lock();",
+      "right" : "myStripeLocks[stripe2].lock();",
+      "info" : "ExpressionStatement[2638-2668]:ExpressionStatement[2607-2637]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[2677-2915]:TryStatement[2646-2884]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2681-2844]:Block[2650-2813]"
+    }, {
+      "left" : "Data s = myIdToStringCache[stripe2].get(cachedId);",
+      "right" : "Data s = myIdToStringCache[stripe2].get(cachedId);",
+      "info" : "VariableDeclarationStatement[2693-2743]:VariableDeclarationStatement[2662-2712]"
+    }, {
+      "left" : "if (s != null && myDataDescriptor.isEqual(value, s))",
+      "right" : "if (s != null && myDataDescriptor.isEqual(value, s))",
+      "info" : "IfStatement[2754-2834]:IfStatement[2723-2803]"
+    }, {
+      "left" : "return cachedId.intValue();",
+      "right" : "return cachedId.intValue();",
+      "info" : "ReturnStatement[2807-2834]:ReturnStatement[2776-2803]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2861-2915]:Block[2830-2884]"
+    }, {
+      "left" : "myStripeLocks[stripe2].unlock();",
+      "right" : "myStripeLocks[stripe2].unlock();",
+      "info" : "ExpressionStatement[2873-2905]:ExpressionStatement[2842-2874]"
+    }, {
+      "left" : "int enumerate = myBase.enumerate(value);",
+      "right" : "int enumerate = myBase.enumerate(value);",
+      "info" : "VariableDeclarationStatement[2935-2975]:VariableDeclarationStatement[2904-2944]"
+    }, {
+      "left" : "if (stripe != -1)",
+      "right" : "if (stripe != -1)",
+      "info" : "IfStatement[2981-3492]:IfStatement[2950-3461]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[2999-3492]:Block[2968-3461]"
+    }, {
+      "left" : "Integer enumeratedInteger;",
+      "right" : "Integer enumeratedInteger;",
+      "info" : "VariableDeclarationStatement[3007-3033]:VariableDeclarationStatement[2976-3002]"
+    }, {
+      "left" : "myStripeLocks[stripe].lock();",
+      "right" : "myStripeLocks[stripe].lock();",
+      "info" : "ExpressionStatement[3041-3070]:ExpressionStatement[3010-3039]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3077-3262]:TryStatement[3046-3231]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3081-3204]:Block[3050-3173]"
+    }, {
+      "left" : "enumeratedInteger = enumerate;",
+      "right" : "enumeratedInteger = enumerate;",
+      "info" : "ExpressionStatement[3091-3121]:ExpressionStatement[3060-3090]"
+    }, {
+      "left" : "myHashcodeToIdCache[stripe].put(valueHashCode, enumeratedInteger);",
+      "right" : "myHashcodeToIdCache[stripe].put(valueHashCode, enumeratedInteger);",
+      "info" : "ExpressionStatement[3130-3196]:ExpressionStatement[3099-3165]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3213-3262]:Block[3182-3231]"
+    }, {
+      "left" : "myStripeLocks[stripe].unlock();",
+      "right" : "myStripeLocks[stripe].unlock();",
+      "info" : "ExpressionStatement[3223-3254]:ExpressionStatement[3192-3223]"
+    }, {
+      "left" : "int stripe2 = idStripe(enumerate);",
+      "right" : "int stripe2 = idStripe(enumerate);",
+      "info" : "VariableDeclarationStatement[3270-3304]:VariableDeclarationStatement[3239-3273]"
+    }, {
+      "left" : "myStripeLocks[stripe2].lock();",
+      "right" : "myStripeLocks[stripe2].lock();",
+      "info" : "ExpressionStatement[3311-3341]:ExpressionStatement[3280-3310]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3348-3486]:TryStatement[3317-3455]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3352-3427]:Block[3321-3396]"
+    }, {
+      "left" : "myIdToStringCache[stripe2].put(enumeratedInteger, value);",
+      "right" : "myIdToStringCache[stripe2].put(enumeratedInteger, value);",
+      "info" : "ExpressionStatement[3362-3419]:ExpressionStatement[3331-3388]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3436-3486]:Block[3405-3455]"
+    }, {
+      "left" : "myStripeLocks[stripe2].unlock();",
+      "right" : "myStripeLocks[stripe2].unlock();",
+      "info" : "ExpressionStatement[3446-3478]:ExpressionStatement[3415-3447]"
+    }, {
+      "left" : "return enumerate;",
+      "right" : "return enumerate;",
+      "info" : "ReturnStatement[3498-3515]:ReturnStatement[3467-3484]"
+    }, {
+      "left" : "private",
+      "right" : "private",
+      "info" : "Modifier[3523-3530]:Modifier[3492-3499]"
+    }, {
+      "left" : "static",
+      "right" : "static",
+      "info" : "Modifier[3531-3537]:Modifier[3500-3506]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[3538-3541]:PrimitiveType[3507-3510]"
+    }, {
+      "left" : "idStripe",
+      "right" : "idStripe",
+      "info" : "SimpleName[3542-3550]:SimpleName[3511-3519]"
+    }, {
+      "left" : "int h",
+      "right" : "int h",
+      "info" : "SingleVariableDeclaration[3551-3556]:SingleVariableDeclaration[3520-3525]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3558-3659]:Block[3527-3628]"
+    }, {
+      "left" : "h ^= (h >>> 20) ^ (h >>> 12);",
+      "right" : "h ^= (h >>> 20) ^ (h >>> 12);",
+      "info" : "ExpressionStatement[3564-3593]:ExpressionStatement[3533-3562]"
+    }, {
+      "left" : "return Math.abs(h ^ (h >>> 7) ^ (h >>> 4)) & STRIPE_MASK;",
+      "right" : "return Math.abs(h ^ (h >>> 7) ^ (h >>> 4)) & STRIPE_MASK;",
+      "info" : "ReturnStatement[3598-3655]:ReturnStatement[3567-3624]"
+    }, {
+      "left" : "@Nullable",
+      "right" : "@Nullable",
+      "info" : "MarkerAnnotation[3663-3672]:MarkerAnnotation[3632-3641]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3675-3681]:Modifier[3644-3650]"
+    }, {
+      "left" : "Data",
+      "right" : "Data",
+      "info" : "SimpleType[3682-3686]:SimpleType[3651-3655]"
+    }, {
+      "left" : "valueOf",
+      "right" : "valueOf",
+      "info" : "SimpleName[3687-3694]:SimpleName[3656-3663]"
+    }, {
+      "left" : "int idx",
+      "right" : "int idx",
+      "info" : "SingleVariableDeclaration[3695-3702]:SingleVariableDeclaration[3664-3671]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[3711-3722]:SimpleType[3680-3691]"
+    }, {
+      "left" : "int",
+      "right" : "int",
+      "info" : "PrimitiveType[3729-3732]:PrimitiveType[3698-3701]"
+    }, {
+      "left" : "stripe = -1",
+      "right" : "stripe = -1",
+      "info" : "VariableDeclarationFragment[3733-3744]:VariableDeclarationFragment[2150-2161]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3781-4024]:Block[3692-4179]"
+    }, {
+      "left" : "stripe",
+      "right" : "stripe",
+      "info" : "SimpleName[3789-3795]:SimpleName[3702-3708]"
+    }, {
+      "left" : "idStripe(idx)",
+      "right" : "idStripe(idx)",
+      "info" : "MethodInvocation[3798-3811]:MethodInvocation[3711-3724]"
+    }, {
+      "left" : "myStripeLocks[stripe].lock();",
+      "right" : "myStripeLocks[stripe].lock();",
+      "info" : "ExpressionStatement[3819-3848]:ExpressionStatement[3730-3759]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[3855-4018]:TryStatement[3764-3915]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3859-3954]:Block[3768-3857]"
+    }, {
+      "left" : "Data s = myIdToStringCache[stripe].get(idx);",
+      "right" : "Data s = myIdToStringCache[stripe].get(idx);",
+      "info" : "VariableDeclarationStatement[3869-3913]:VariableDeclarationStatement[3776-3820]"
+    }, {
+      "left" : "if (s != null)",
+      "right" : "if (s != null)",
+      "info" : "IfStatement[3922-3946]:IfStatement[3827-3851]"
+    }, {
+      "left" : "return s;",
+      "right" : "return s;",
+      "info" : "ReturnStatement[3937-3946]:ReturnStatement[3842-3851]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3969-4018]:Block[3870-3915]"
+    }, {
+      "left" : "myStripeLocks[stripe].unlock();",
+      "right" : "myStripeLocks[stripe].unlock();",
+      "info" : "ExpressionStatement[3979-4010]:ExpressionStatement[3878-3909]"
+    }, {
+      "left" : "Data s = myBase.valueOf(idx);",
+      "right" : "Data s = myBase.valueOf(idx);",
+      "info" : "VariableDeclarationStatement[4029-4058]:VariableDeclarationStatement[3921-3950]"
+    }, {
+      "left" : "if (stripe != -1 && s != null)",
+      "right" : "if (stripe != -1 && s != null)",
+      "info" : "IfStatement[4064-4269]:IfStatement[3956-4161]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4095-4269]:Block[3987-4161]"
+    }, {
+      "left" : "myStripeLocks[stripe].lock();",
+      "right" : "myStripeLocks[stripe].lock();",
+      "info" : "ExpressionStatement[4103-4132]:ExpressionStatement[3995-4024]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[4139-4263]:TryStatement[4031-4155]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4143-4199]:Block[4035-4091]"
+    }, {
+      "left" : "myIdToStringCache[stripe].put(idx, s);",
+      "right" : "myIdToStringCache[stripe].put(idx, s);",
+      "info" : "ExpressionStatement[4153-4191]:ExpressionStatement[4045-4083]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4214-4263]:Block[4106-4155]"
+    }, {
+      "left" : "myStripeLocks[stripe].unlock();",
+      "right" : "myStripeLocks[stripe].unlock();",
+      "info" : "ExpressionStatement[4224-4255]:ExpressionStatement[4116-4147]"
+    }, {
+      "left" : "return s;",
+      "right" : "return s;",
+      "info" : "ReturnStatement[4274-4283]:ReturnStatement[4166-4175]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4291-4297]:Modifier[4225-4231]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[4298-4302]:PrimitiveType[4232-4236]"
+    }, {
+      "left" : "close",
+      "right" : "clear",
+      "info" : "SimpleName[4303-4308]:SimpleName[4237-4242]"
+    }, {
+      "left" : "IOException",
+      "right" : "clear",
+      "info" : "SimpleName[4318-4329]:SimpleName[4209-4214]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4330-4535]:Block[4245-4450]"
+    }, {
+      "left" : "for(int i = 0; i < myIdToStringCache.length; ++i)",
+      "right" : "for(int i = 0; i < myIdToStringCache.length; ++i)",
+      "info" : "ForStatement[4336-4531]:ForStatement[4251-4446]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4386-4531]:Block[4301-4446]"
+    }, {
+      "left" : "myStripeLocks[i].lock();",
+      "right" : "myStripeLocks[i].lock();",
+      "info" : "ExpressionStatement[4394-4418]:ExpressionStatement[4309-4333]"
+    }, {
+      "left" : "myIdToStringCache[i].clear();",
+      "right" : "myIdToStringCache[i].clear();",
+      "info" : "ExpressionStatement[4425-4454]:ExpressionStatement[4340-4369]"
+    }, {
+      "left" : "myHashcodeToIdCache[i].clear();",
+      "right" : "myHashcodeToIdCache[i].clear();",
+      "info" : "ExpressionStatement[4461-4492]:ExpressionStatement[4376-4407]"
+    }, {
+      "left" : "myStripeLocks[i].unlock();",
+      "right" : "myStripeLocks[i].unlock();",
+      "info" : "ExpressionStatement[4499-4525]:ExpressionStatement[4414-4440]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

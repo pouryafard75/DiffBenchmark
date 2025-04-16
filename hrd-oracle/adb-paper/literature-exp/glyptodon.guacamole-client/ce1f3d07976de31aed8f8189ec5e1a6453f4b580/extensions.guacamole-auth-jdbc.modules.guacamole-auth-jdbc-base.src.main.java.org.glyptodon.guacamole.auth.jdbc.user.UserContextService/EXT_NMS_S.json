@@ -1,0 +1,173 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "UserContextService",
+      "right" : "UserContextService",
+      "info" : "TypeDeclaration[1823-6658]:TypeDeclaration[1500-3186]"
+    }, {
+      "left" : "@Inject\n    private UserService userService;",
+      "right" : "@Inject\n    private UserService userService;",
+      "info" : "FieldDeclaration[2124-2220]:FieldDeclaration[1669-1765]"
+    }, {
+      "left" : "@Inject\n    private Provider<UserContext> userContextProvider;",
+      "right" : "@Inject\n    private Provider<UserContext> userContextProvider;",
+      "info" : "FieldDeclaration[2226-2358]:FieldDeclaration[1771-1903]"
+    }, {
+      "left" : "public org.glyptodon.guacamole.net.auth.UserContext\n        getUserContext(Credentials credentials)\n                throws GuacamoleException",
+      "right" : "public org.glyptodon.guacamole.net.auth.UserContext\n        getUserContext(Credentials credentials)\n                throws GuacamoleException",
+      "info" : "MethodDeclaration[3755-6655]:MethodDeclaration[1909-3183]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1952-1958]:Modifier[1629-1635]"
+    }, {
+      "left" : "class",
+      "right" : "class",
+      "info" : "TYPE_DECLARATION_KIND[1959-1964]:TYPE_DECLARATION_KIND[1636-1641]"
+    }, {
+      "left" : "UserContextService",
+      "right" : "UserContextService",
+      "info" : "SimpleName[1965-1983]:SimpleName[1642-1660]"
+    }, {
+      "left" : "UserService",
+      "right" : "UserService",
+      "info" : "SimpleType[2099-2110]:SimpleType[1741-1752]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[4390-4396]:Modifier[2544-2550]"
+    }, {
+      "left" : "org.glyptodon.guacamole.net.auth.UserContext",
+      "right" : "org.glyptodon.guacamole.net.auth.UserContext",
+      "info" : "SimpleType[4397-4441]:SimpleType[2551-2595]"
+    }, {
+      "left" : "getUserContext",
+      "right" : "getUserContext",
+      "info" : "SimpleName[4450-4464]:SimpleName[2604-2618]"
+    }, {
+      "left" : "Credentials credentials",
+      "right" : "Credentials credentials",
+      "info" : "SingleVariableDeclaration[4465-4488]:SingleVariableDeclaration[2619-2642]"
+    }, {
+      "left" : "GuacamoleException",
+      "right" : "GuacamoleException",
+      "info" : "SimpleType[4513-4531]:SimpleType[2667-2685]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4532-6655]:Block[2686-3183]"
+    }, {
+      "left" : "ModeledUser user = userService.retrieveUser(credentials);",
+      "right" : "ModeledUser user = userService.retrieveUser(credentials);",
+      "info" : "VariableDeclarationStatement[4572-4629]:VariableDeclarationStatement[2726-2783]"
+    }, {
+      "left" : "if (user != null && !user.getModel().isDisabled())",
+      "right" : "if (user != null)",
+      "info" : "IfStatement[4638-6504]:IfStatement[2792-3032]"
+    }, {
+      "left" : "user != null",
+      "right" : "user != null",
+      "info" : "InfixExpression[4642-4654]:InfixExpression[2796-2808]"
+    }, {
+      "left" : "user.getModel().isDisabled()",
+      "right" : "context.init(user.getCurrentUser())",
+      "info" : "MethodInvocation[4659-4687]:MethodInvocation[2957-2992]"
+    }, {
+      "left" : "user.getModel()",
+      "right" : "user.getCurrentUser()",
+      "info" : "MethodInvocation[4659-4674]:MethodInvocation[2970-2991]"
+    }, {
+      "left" : "getModel",
+      "right" : "getCurrentUser",
+      "info" : "SimpleName[4664-4672]:SimpleName[2975-2989]"
+    }, {
+      "left" : "isDisabled",
+      "right" : "init",
+      "info" : "SimpleName[4675-4685]:SimpleName[2965-2969]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[4689-6504]:Block[2810-3032]"
+    }, {
+      "left" : "user.getModel().isExpired()",
+      "right" : "context.init(user.getCurrentUser())",
+      "info" : "MethodInvocation[4762-4789]:MethodInvocation[2957-2992]"
+    }, {
+      "left" : "user.getModel()",
+      "right" : "user.getCurrentUser()",
+      "info" : "MethodInvocation[4762-4777]:MethodInvocation[2970-2991]"
+    }, {
+      "left" : "getModel",
+      "right" : "getCurrentUser",
+      "info" : "SimpleName[4767-4775]:SimpleName[2975-2989]"
+    }, {
+      "left" : "isExpired",
+      "right" : "init",
+      "info" : "SimpleName[4778-4787]:SimpleName[2965-2969]"
+    }, {
+      "left" : "if (newPassword == null || confirmNewPassword == null)",
+      "right" : "if (user != null)",
+      "info" : "IfStatement[5180-5482]:IfStatement[2792-3032]"
+    }, {
+      "left" : "||",
+      "right" : "!=",
+      "info" : "INFIX_EXPRESSION_OPERATOR[5204-5206]:INFIX_EXPRESSION_OPERATOR[2801-2803]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[5235-5482]:Block[2810-3032]"
+    }, {
+      "left" : "logger",
+      "right" : "context",
+      "info" : "SimpleName[5257-5263]:SimpleName[2957-2964]"
+    }, {
+      "left" : "logger.info(\"The password of user \\\"{}\\\" has expired and must be reset.\", user.getIdentifier());",
+      "right" : "context.init(user.getCurrentUser());",
+      "info" : "ExpressionStatement[5257-5353]:ExpressionStatement[2957-2993]"
+    }, {
+      "left" : "info",
+      "right" : "init",
+      "info" : "SimpleName[5264-5268]:SimpleName[2965-2969]"
+    }, {
+      "left" : "getIdentifier",
+      "right" : "getCurrentUser",
+      "info" : "SimpleName[5336-5349]:SimpleName[2975-2989]"
+    }, {
+      "left" : "logger",
+      "right" : "context",
+      "info" : "SimpleName[6188-6194]:SimpleName[2957-2964]"
+    }, {
+      "left" : "logger.info(\"Resetting expired password of user \\\"{}\\\".\", user.getIdentifier());",
+      "right" : "context.init(user.getCurrentUser());",
+      "info" : "ExpressionStatement[6188-6268]:ExpressionStatement[2957-2993]"
+    }, {
+      "left" : "info",
+      "right" : "init",
+      "info" : "SimpleName[6195-6199]:SimpleName[2965-2969]"
+    }, {
+      "left" : "getIdentifier",
+      "right" : "getCurrentUser",
+      "info" : "SimpleName[6251-6264]:SimpleName[2975-2989]"
+    }, {
+      "left" : "UserContext context = userContextProvider.get();",
+      "right" : "UserContext context = userContextProvider.get();",
+      "info" : "VariableDeclarationStatement[6368-6416]:VariableDeclarationStatement[2896-2944]"
+    }, {
+      "left" : "context.init(user.getCurrentUser());",
+      "right" : "context.init(user.getCurrentUser());",
+      "info" : "ExpressionStatement[6429-6465]:ExpressionStatement[2957-2993]"
+    }, {
+      "left" : "return context;",
+      "right" : "return context;",
+      "info" : "ReturnStatement[6478-6493]:ReturnStatement[3006-3021]"
+    }, {
+      "left" : "throw new GuacamoleInvalidCredentialsException(\"Invalid login\", CredentialsInfo.USERNAME_PASSWORD);",
+      "right" : "throw new GuacamoleInvalidCredentialsException(\"Invalid login\", CredentialsInfo.USERNAME_PASSWORD);",
+      "info" : "ThrowStatement[6549-6648]:ThrowStatement[3077-3176]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

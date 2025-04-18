@@ -153,6 +153,16 @@ public enum ExperimentsEnum implements IExperiment {
             ASTDiffToolEnum.TRV,
             ASTDiffToolEnum.GOD))
     ,
+    D4J_EXP(new ExperimentImpl(
+            EBenchmarkDataset.Defects4J,
+            ToolSets.THREE_ZERO_COMPATIBLE,
+            GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
+            "hrd-oracle/adb-paper/d4j-exp/",
+            "out.csv",
+            "d4j-literature-exp",
+            ASTDiffToolEnum.TRV,
+            ASTDiffToolEnum.GOD))
+    ,
 
     SINGLE_CASE(new ExperimentImpl(
             EBenchmarkDataset.RefOracleSingleCase,

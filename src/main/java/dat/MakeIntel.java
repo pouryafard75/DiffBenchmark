@@ -27,7 +27,6 @@ public class MakeIntel {
         IntelDao intelDao = new IntelDao();
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
-            System.out.println("aaa");
             if (true) return;
             for (IBenchmarkCase info : experiment.getDataset().getCases()) {
                 case_count++;

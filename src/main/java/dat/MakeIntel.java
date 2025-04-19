@@ -26,8 +26,6 @@ public class MakeIntel {
         int case_count = 0;
         IntelDao intelDao = new IntelDao();
         try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            if (true) return;
             for (IBenchmarkCase info : experiment.getDataset().getCases()) {
                 case_count++;
                 List<Intel> intels = new ArrayList<>();
@@ -39,7 +37,6 @@ public class MakeIntel {
                     intels.addAll(dat.run(numThreads));
                 }
                 intelDao.insertIntels(intels);
-                 if (case_count > 2) break; //TODO: REMOVE THIS
             }
         }
         catch (Exception e) {

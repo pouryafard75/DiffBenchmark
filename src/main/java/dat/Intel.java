@@ -66,13 +66,14 @@ public class Intel {
     @Column(name = "nu") int nu;
     @Column(name = "nm") int nm;
     @Column(name = "n_sum") int n_sum;
+    @Column(name="dataset") String dataset;
 
 
     public Intel(String repo, String commit, String srcPath,
                  String matcher, String conf,
                  EdFootPrint edFootPrint,
                  NecessaryMappings ignore,
-                 DiffStats mappingsStats) {
+                 DiffStats mappingsStats, String dataset) {
 
         this.repo = repo; this.commit = commit; this.srcPath = srcPath;
         this.matcher = matcher; this.conf = conf;
@@ -97,6 +98,7 @@ public class Intel {
         this.nu = edFootPrint.nbUpd;
         this.nm = edFootPrint.nbMov;
         this.n_sum = edFootPrint.nbIns + edFootPrint.nbDel + edFootPrint.nbUpd + edFootPrint.nbMov;
+        this.dataset = dataset;
     }
     public Intel() {
     }
@@ -298,5 +300,13 @@ public class Intel {
 
     public void setN_sum(int n_sum) {
         this.n_sum = n_sum;
+    }
+
+    public String getDataset() {
+        return dataset;
+    }
+
+    public void setDataset(String dataset) {
+        this.dataset = dataset;
     }
 }

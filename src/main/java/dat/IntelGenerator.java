@@ -134,7 +134,7 @@ public class IntelGenerator {
             if (dat == null) throw new RuntimeException("DAT is null");
             NecessaryMappings ignore = compResult.getIgnore().getIntraFileMappings();
             logger.debug("About to add the intel for {} {}", matcher, properties);
-            add(matcher, properties, EdFootPrint.make(diff.editScript), ignore, dat);
+            add(matcher, properties, EdFootPrint.make(diff.editScript), ignore, dat, experiment.getDataset().getDatasetName());
 
         }
         catch (Exception e) {
@@ -143,10 +143,10 @@ public class IntelGenerator {
         }
     }
 
-    private synchronized void add(Matcher matcher, GumtreeProperties properties, EdFootPrint edFootPrint, NecessaryMappings ignore, DiffStats dat) {
+    private synchronized void add(Matcher matcher, GumtreeProperties properties, EdFootPrint edFootPrint, NecessaryMappings ignore, DiffStats dat, String datasetName) {
         Intel intel = new Intel(benchmarkCase.getRepo(), benchmarkCase.getCommit(), rmDiff.getSrcPath(),
                 matcher.getClass().getCanonicalName().replace("com.github.gumtreediff.matchers.CompositeMatchers.", ""), properties.toString(),
-                edFootPrint, ignore, dat);
+                edFootPrint, ignore, dat, datasetName);
         logger.debug("Intel #" + (intels.size() + 1) + " is added");
         intels.add(intel);
     }

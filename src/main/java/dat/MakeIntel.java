@@ -3,6 +3,7 @@ package dat;
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.ExperimentsEnum;
 import benchmark.data.exp.IExperiment;
+import org.hibernate.Session;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.slf4j.Logger;
@@ -21,9 +22,13 @@ public class MakeIntel {
 
     public static void main(String[] args) throws Exception {
         logger.info("Start running DAT");
+
         int case_count = 0;
         IntelDao intelDao = new IntelDao();
         try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            System.out.println("aaa");
+            if (true) return;
             for (IBenchmarkCase info : experiment.getDataset().getCases()) {
                 case_count++;
                 List<Intel> intels = new ArrayList<>();

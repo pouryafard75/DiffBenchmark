@@ -24,11 +24,6 @@ public class GithubCase extends RemoteCase {
         validate();
     }
 
-    @Override
-    void updateProjectASTDiff() {
-        projectASTDiff = new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(repo, commit, new File(ORACLE_DIR));
-//        System.out.println("Finished computing projectASTDiff for " + repo + " " + commit);
-    }
     private void validate() {
         if (!isGitHub())
             throw new IllegalArgumentException("Not a GitHub URL");

@@ -155,7 +155,7 @@ public enum ExperimentsEnum implements IExperiment {
     ,
     D4J_EXP(new ExperimentImpl(
             EBenchmarkDataset.Defects4J,
-            ToolSets.THREE_ZERO_COMPATIBLE,
+            Set.of(ASTDiffToolEnum.RMD),
             GenerationStrategy.NO_COMMENTS_AND_JAVADOCS,
             "hrd-oracle/adb-paper/d4j-exp/",
             "out.csv",

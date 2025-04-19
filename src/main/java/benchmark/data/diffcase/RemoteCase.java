@@ -1,8 +1,13 @@
 package benchmark.data.diffcase;
 
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.astDiff.utils.URLHelper;
+import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
+import java.io.File;
 import java.util.Objects;
+
+import static benchmark.conf.Paths.ORACLE_DIR;
 
 /* Created by pourya on 2024-09-28*/
 public abstract class RemoteCase extends AbstractIBenchmarkCase {
@@ -52,5 +57,10 @@ public abstract class RemoteCase extends AbstractIBenchmarkCase {
         int result = Objects.hashCode(repo);
         result = 31 * result + Objects.hashCode(commit);
         return result;
+    }
+
+    @Override
+    public ProjectASTDiff getProjectASTDiff() {
+        return new GitHistoryRefactoringMinerImpl().diffAtCommitWithGitHubAPI(this.getRepo(), this.getCommit(), new File(ORACLE_DIR));
     }
 }

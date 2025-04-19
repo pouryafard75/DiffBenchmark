@@ -1,5 +1,6 @@
 package benchmark.data.diffcase;
 
+import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.nio.file.Path;
@@ -23,9 +24,8 @@ public abstract class LocalCase extends AbstractIBenchmarkCase {
     }
 
     @Override
-    void updateProjectASTDiff() {
-        projectASTDiff = new GitHistoryRefactoringMinerImpl().
+    public ProjectASTDiff getProjectASTDiff() {
+        return new GitHistoryRefactoringMinerImpl().
                 diffAtDirectories(srcPath, dstPath);
-//        System.out.println("Finished computing projectASTDiff for " + srcPath + " " + dstPath);
     }
 }

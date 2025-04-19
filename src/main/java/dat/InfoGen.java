@@ -25,11 +25,13 @@ public class InfoGen {
             this.interFilers = interFilers;
         }
     }
-    static IExperiment exp = ExperimentsEnum.LITERATURE_EXP;
+    static IExperiment exp = ExperimentsEnum.D4J_EXP;
     public static void main(String[] args) throws Exception {
         List<Info> infos = new ArrayList<>();
         for (IBenchmarkCase aCase : exp.getDataset().getCases()) {
-            for (ASTDiff astDiff : aCase.getProjectASTDiff().getDiffSet()) {
+
+            for (ASTDiff astDiff : aCase.getProjectASTDiff().getDiffSet())
+            {
                 System.out.println("Working on " + aCase.getRepo() + " " + aCase.getCommit() + " " + astDiff.getSrcPath() + "");
                 ASTDiff diff = ASTDiffToolEnum.GOD.diff(aCase, (x) -> astDiff);
                 boolean hasMultiMappings = false;
@@ -43,7 +45,7 @@ public class InfoGen {
                         break;
                     }
                 }
-                infos.add(new Info(aCase.getCommit(), diff.getSrcPath(), hasMultiMappings, hasInterFilers));
+                infos.add(new Info(aCase.getID(), diff.getSrcPath(), hasMultiMappings, hasInterFilers));
             }
         }
         writeToCsv(infos);

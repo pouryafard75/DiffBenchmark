@@ -1,0 +1,461 @@
+{
+  "intraFileMappings" : {
+    "matchedElements" : [
+ {
+      "left" : "private final static Object NO_DEFAULT_MARKER = Boolean.FALSE;",
+      "right" : "private final static Object NO_DEFAULT_MARKER = Boolean.FALSE;",
+      "info" : "FieldDeclaration[585-647]:FieldDeclaration[585-647]"
+    }, {
+      "left" : "final protected SerializationConfig _config;",
+      "right" : "final protected SerializationConfig _config;",
+      "info" : "FieldDeclaration[653-697]:FieldDeclaration[653-697]"
+    }, {
+      "left" : "final protected BeanDescription _beanDesc;",
+      "right" : "final protected BeanDescription _beanDesc;",
+      "info" : "FieldDeclaration[702-744]:FieldDeclaration[702-744]"
+    }, {
+      "left" : "final protected AnnotationIntrospector _annotationIntrospector;",
+      "right" : "final protected AnnotationIntrospector _annotationIntrospector;",
+      "info" : "FieldDeclaration[750-813]:FieldDeclaration[750-813]"
+    }, {
+      "left" : "protected Object _defaultBean;",
+      "right" : "protected Object _defaultBean;",
+      "info" : "FieldDeclaration[819-1257]:FieldDeclaration[819-1257]"
+    }, {
+      "left" : "final protected JsonInclude.Value _defaultInclusion;",
+      "right" : "final protected JsonInclude.Value _defaultInclusion;",
+      "info" : "FieldDeclaration[1263-1588]:FieldDeclaration[1263-1588]"
+    }, {
+      "left" : "final protected boolean _useRealPropertyDefaults;",
+      "right" : "final protected boolean _useRealPropertyDefaults;",
+      "info" : "FieldDeclaration[1594-1850]:FieldDeclaration[1594-1850]"
+    }, {
+      "left" : "public PropertyBuilder(SerializationConfig config, BeanDescription beanDesc)",
+      "right" : "public PropertyBuilder(SerializationConfig config, BeanDescription beanDesc)",
+      "info" : "MethodDeclaration[1856-3143]:MethodDeclaration[1856-3143]"
+    }, {
+      "left" : "public Annotations getClassAnnotations()",
+      "right" : "public Annotations getClassAnnotations()",
+      "info" : "MethodDeclaration[3311-3407]:MethodDeclaration[3311-3407]"
+    }, {
+      "left" : "protected JavaType findSerializationType(Annotated a, boolean useStaticTyping, JavaType declaredType)\n        throws JsonMappingException",
+      "right" : "protected JavaType findSerializationType(Annotated a, boolean useStaticTyping, JavaType declaredType)\n        throws JsonMappingException",
+      "info" : "MethodDeclaration[11266-13895]:MethodDeclaration[11296-13925]"
+    }, {
+      "left" : "protected Object getDefaultBean()",
+      "right" : "protected Object getDefaultBean()",
+      "info" : "MethodDeclaration[14094-15080]:MethodDeclaration[14124-15110]"
+    }, {
+      "left" : "// since 2.9\n    protected Object getPropertyDefaultValue(String name, AnnotatedMember member,\n            JavaType type)",
+      "right" : "// since 2.9\n    protected Object getPropertyDefaultValue(String name, AnnotatedMember member,\n            JavaType type)",
+      "info" : "MethodDeclaration[15086-16365]:MethodDeclaration[15116-16395]"
+    }, {
+      "left" : "// since 2.9\n    protected Object getDefaultValue(JavaType type)",
+      "right" : "// since 2.9\n    protected Object getDefaultValue(JavaType type)",
+      "info" : "MethodDeclaration[16371-16547]:MethodDeclaration[16401-16577]"
+    }, {
+      "left" : "protected Object _throwWrapped(Exception e, String propName, Object defaultBean)",
+      "right" : "protected Object _throwWrapped(Exception e, String propName, Object defaultBean)",
+      "info" : "MethodDeclaration[16746-17152]:MethodDeclaration[16776-17182]"
+    } ],
+    "mappings" : [
+ {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[1856-1862]:Modifier[1856-1862]"
+    }, {
+      "left" : "PropertyBuilder",
+      "right" : "PropertyBuilder",
+      "info" : "SimpleName[1863-1878]:SimpleName[1863-1878]"
+    }, {
+      "left" : "SerializationConfig config",
+      "right" : "SerializationConfig config",
+      "info" : "SingleVariableDeclaration[1879-1905]:SingleVariableDeclaration[1879-1905]"
+    }, {
+      "left" : "BeanDescription beanDesc",
+      "right" : "BeanDescription beanDesc",
+      "info" : "SingleVariableDeclaration[1907-1931]:SingleVariableDeclaration[1907-1931]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[1937-3143]:Block[1937-3143]"
+    }, {
+      "left" : "_config = config;",
+      "right" : "_config = config;",
+      "info" : "ExpressionStatement[1947-1964]:ExpressionStatement[1947-1964]"
+    }, {
+      "left" : "_beanDesc = beanDesc;",
+      "right" : "_beanDesc = beanDesc;",
+      "info" : "ExpressionStatement[1973-1994]:ExpressionStatement[1973-1994]"
+    }, {
+      "left" : "JsonInclude.Value inclPerType = JsonInclude.Value.merge(\n                beanDesc.findPropertyInclusion(JsonInclude.Value.empty()),\n                config.getDefaultPropertyInclusion(beanDesc.getBeanClass(),\n                        JsonInclude.Value.empty()));",
+      "right" : "JsonInclude.Value inclPerType = JsonInclude.Value.merge(\n                beanDesc.findPropertyInclusion(JsonInclude.Value.empty()),\n                config.getDefaultPropertyInclusion(beanDesc.getBeanClass(),\n                        JsonInclude.Value.empty()));",
+      "info" : "VariableDeclarationStatement[2583-2843]:VariableDeclarationStatement[2583-2843]"
+    }, {
+      "left" : "_defaultInclusion = JsonInclude.Value.merge(config.getDefaultPropertyInclusion(),\n                inclPerType);",
+      "right" : "_defaultInclusion = JsonInclude.Value.merge(config.getDefaultPropertyInclusion(),\n                inclPerType);",
+      "info" : "ExpressionStatement[2852-2963]:ExpressionStatement[2852-2963]"
+    }, {
+      "left" : "_useRealPropertyDefaults = inclPerType.getValueInclusion() == JsonInclude.Include.NON_DEFAULT;",
+      "right" : "_useRealPropertyDefaults = inclPerType.getValueInclusion() == JsonInclude.Include.NON_DEFAULT;",
+      "info" : "ExpressionStatement[2972-3066]:ExpressionStatement[2972-3066]"
+    }, {
+      "left" : "_annotationIntrospector = _config.getAnnotationIntrospector();",
+      "right" : "_annotationIntrospector = _config.getAnnotationIntrospector();",
+      "info" : "ExpressionStatement[3075-3137]:ExpressionStatement[3075-3137]"
+    }, {
+      "left" : "public",
+      "right" : "public",
+      "info" : "Modifier[3311-3317]:Modifier[3311-3317]"
+    }, {
+      "left" : "Annotations",
+      "right" : "Annotations",
+      "info" : "SimpleType[3318-3329]:SimpleType[3318-3329]"
+    }, {
+      "left" : "getClassAnnotations",
+      "right" : "getClassAnnotations",
+      "info" : "SimpleName[3330-3349]:SimpleName[3330-3349]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[3352-3407]:Block[3352-3407]"
+    }, {
+      "left" : "return _beanDesc.getClassAnnotations();",
+      "right" : "return _beanDesc.getClassAnnotations();",
+      "info" : "ReturnStatement[3362-3401]:ReturnStatement[3362-3401]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[11588-11597]:Modifier[11618-11627]"
+    }, {
+      "left" : "JavaType",
+      "right" : "JavaType",
+      "info" : "SimpleType[11598-11606]:SimpleType[11628-11636]"
+    }, {
+      "left" : "findSerializationType",
+      "right" : "findSerializationType",
+      "info" : "SimpleName[11607-11628]:SimpleName[11637-11658]"
+    }, {
+      "left" : "Annotated a",
+      "right" : "Annotated a",
+      "info" : "SingleVariableDeclaration[11629-11640]:SingleVariableDeclaration[11659-11670]"
+    }, {
+      "left" : "boolean useStaticTyping",
+      "right" : "boolean useStaticTyping",
+      "info" : "SingleVariableDeclaration[11642-11665]:SingleVariableDeclaration[11672-11695]"
+    }, {
+      "left" : "JavaType declaredType",
+      "right" : "JavaType declaredType",
+      "info" : "SingleVariableDeclaration[11667-11688]:SingleVariableDeclaration[11697-11718]"
+    }, {
+      "left" : "JsonMappingException",
+      "right" : "JsonMappingException",
+      "info" : "SimpleType[11705-11725]:SimpleType[11735-11755]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[11730-13895]:Block[11760-13925]"
+    }, {
+      "left" : "JavaType secondary = _annotationIntrospector.refineSerializationType(_config, a, declaredType);",
+      "right" : "JavaType secondary = _annotationIntrospector.refineSerializationType(_config, a, declaredType);",
+      "info" : "VariableDeclarationStatement[11740-11835]:VariableDeclarationStatement[11770-11865]"
+    }, {
+      "left" : "if (secondary != declaredType)",
+      "right" : "if (secondary != declaredType)",
+      "info" : "IfStatement[11977-13351]:IfStatement[12007-13381]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12008-13351]:Block[12038-13381]"
+    }, {
+      "left" : "Class<?> serClass = secondary.getRawClass();",
+      "right" : "Class<?> serClass = secondary.getRawClass();",
+      "info" : "VariableDeclarationStatement[12022-12066]:VariableDeclarationStatement[12052-12096]"
+    }, {
+      "left" : "Class<?> rawDeclared = declaredType.getRawClass();",
+      "right" : "Class<?> rawDeclared = declaredType.getRawClass();",
+      "info" : "VariableDeclarationStatement[12128-12178]:VariableDeclarationStatement[12158-12208]"
+    }, {
+      "left" : "if (serClass.isAssignableFrom(rawDeclared))",
+      "right" : "if (serClass.isAssignableFrom(rawDeclared))",
+      "info" : "IfStatement[12191-13267]:IfStatement[12221-13297]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12235-12282]:Block[12265-12312]"
+    }, {
+      "left" : ";",
+      "right" : ";",
+      "info" : "EmptyStatement[12253-12254]:EmptyStatement[12283-12284]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12288-13267]:Block[12318-13297]"
+    }, {
+      "left" : "if (!rawDeclared.isAssignableFrom(serClass))",
+      "right" : "if (!rawDeclared.isAssignableFrom(serClass))",
+      "info" : "IfStatement[12722-12997]:IfStatement[12752-13027]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[12767-12997]:Block[12797-13027]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Illegal concrete-type annotation for method '\"+a.getName()+\"': class \"+serClass.getName()+\" not a super-type of (declared) class \"+rawDeclared.getName());",
+      "right" : "throw new IllegalArgumentException(\"Illegal concrete-type annotation for method '\"+a.getName()+\"': class \"+serClass.getName()+\" not a super-type of (declared) class \"+rawDeclared.getName());",
+      "info" : "ThrowStatement[12789-12979]:ThrowStatement[12819-13009]"
+    }, {
+      "left" : "useStaticTyping = true;",
+      "right" : "useStaticTyping = true;",
+      "info" : "ExpressionStatement[13280-13303]:ExpressionStatement[13310-13333]"
+    }, {
+      "left" : "declaredType = secondary;",
+      "right" : "declaredType = secondary;",
+      "info" : "ExpressionStatement[13316-13341]:ExpressionStatement[13346-13371]"
+    }, {
+      "left" : "JsonSerialize.Typing typing = _annotationIntrospector.findSerializationTyping(a);",
+      "right" : "JsonSerialize.Typing typing = _annotationIntrospector.findSerializationTyping(a);",
+      "info" : "VariableDeclarationStatement[13436-13517]:VariableDeclarationStatement[13466-13547]"
+    }, {
+      "left" : "if ((typing != null) && (typing != JsonSerialize.Typing.DEFAULT_TYPING))",
+      "right" : "if ((typing != null) && (typing != JsonSerialize.Typing.DEFAULT_TYPING))",
+      "info" : "IfStatement[13526-13681]:IfStatement[13556-13711]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13599-13681]:Block[13629-13711]"
+    }, {
+      "left" : "useStaticTyping = (typing == JsonSerialize.Typing.STATIC);",
+      "right" : "useStaticTyping = (typing == JsonSerialize.Typing.STATIC);",
+      "info" : "ExpressionStatement[13613-13671]:ExpressionStatement[13643-13701]"
+    }, {
+      "left" : "if (useStaticTyping)",
+      "right" : "if (useStaticTyping)",
+      "info" : "IfStatement[13690-13868]:IfStatement[13720-13898]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[13711-13868]:Block[13741-13898]"
+    }, {
+      "left" : "return declaredType.withStaticTyping();",
+      "right" : "return declaredType.withStaticTyping();",
+      "info" : "ReturnStatement[13806-13845]:ReturnStatement[13836-13875]"
+    }, {
+      "left" : "return null;",
+      "right" : "return null;",
+      "info" : "ReturnStatement[13877-13889]:ReturnStatement[13907-13919]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[14094-14103]:Modifier[14124-14133]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[14104-14110]:SimpleType[14134-14140]"
+    }, {
+      "left" : "getDefaultBean",
+      "right" : "getDefaultBean",
+      "info" : "SimpleName[14111-14125]:SimpleName[14141-14155]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14132-15080]:Block[14162-15110]"
+    }, {
+      "left" : "Object def = _defaultBean;",
+      "right" : "Object def = _defaultBean;",
+      "info" : "VariableDeclarationStatement[14142-14168]:VariableDeclarationStatement[14172-14198]"
+    }, {
+      "left" : "if (def == null)",
+      "right" : "if (def == null)",
+      "info" : "IfStatement[14177-15009]:IfStatement[14207-15039]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14194-15009]:Block[14224-15039]"
+    }, {
+      "left" : "def = _beanDesc.instantiateBean(_config.canOverrideAccessModifiers());",
+      "right" : "def = _beanDesc.instantiateBean(_config.canOverrideAccessModifiers());",
+      "info" : "ExpressionStatement[14373-14443]:ExpressionStatement[14403-14473]"
+    }, {
+      "left" : "if (def == null)",
+      "right" : "if (def == null)",
+      "info" : "IfStatement[14456-14967]:IfStatement[14486-14997]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[14473-14967]:Block[14503-14997]"
+    }, {
+      "left" : "def = NO_DEFAULT_MARKER;",
+      "right" : "def = NO_DEFAULT_MARKER;",
+      "info" : "ExpressionStatement[14929-14953]:ExpressionStatement[14959-14983]"
+    }, {
+      "left" : "_defaultBean = def;",
+      "right" : "_defaultBean = def;",
+      "info" : "ExpressionStatement[14980-14999]:ExpressionStatement[15010-15029]"
+    }, {
+      "left" : "return (def == NO_DEFAULT_MARKER) ? null : _defaultBean;",
+      "right" : "return (def == NO_DEFAULT_MARKER) ? null : _defaultBean;",
+      "info" : "ReturnStatement[15018-15074]:ReturnStatement[15048-15104]"
+    }, {
+      "left" : "@Deprecated",
+      "right" : "@Deprecated",
+      "info" : "MarkerAnnotation[15925-15936]:MarkerAnnotation[15955-15966]"
+    }, {
+      "left" : "// since 2.9",
+      "right" : "// since 2.9",
+      "info" : "LineComment[15937-15949]:LineComment[15967-15979]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[15954-15963]:Modifier[15984-15993]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[15964-15970]:SimpleType[15994-16000]"
+    }, {
+      "left" : "getPropertyDefaultValue",
+      "right" : "getPropertyDefaultValue",
+      "info" : "SimpleName[15971-15994]:SimpleName[16001-16024]"
+    }, {
+      "left" : "String name",
+      "right" : "String name",
+      "info" : "SingleVariableDeclaration[15995-16006]:SingleVariableDeclaration[16025-16036]"
+    }, {
+      "left" : "AnnotatedMember member",
+      "right" : "AnnotatedMember member",
+      "info" : "SingleVariableDeclaration[16008-16030]:SingleVariableDeclaration[16038-16060]"
+    }, {
+      "left" : "JavaType type",
+      "right" : "JavaType type",
+      "info" : "SingleVariableDeclaration[16044-16057]:SingleVariableDeclaration[16074-16087]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16063-16365]:Block[16093-16395]"
+    }, {
+      "left" : "Object defaultBean = getDefaultBean();",
+      "right" : "Object defaultBean = getDefaultBean();",
+      "info" : "VariableDeclarationStatement[16073-16111]:VariableDeclarationStatement[16103-16141]"
+    }, {
+      "left" : "if (defaultBean == null)",
+      "right" : "if (defaultBean == null)",
+      "info" : "IfStatement[16120-16198]:IfStatement[16150-16228]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16145-16198]:Block[16175-16228]"
+    }, {
+      "left" : "return getDefaultValue(type);",
+      "right" : "return getDefaultValue(type);",
+      "info" : "ReturnStatement[16159-16188]:ReturnStatement[16189-16218]"
+    }, {
+      "left" : "try{...}",
+      "right" : "try{...}",
+      "info" : "TryStatement[16207-16359]:TryStatement[16237-16389]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16211-16271]:Block[16241-16301]"
+    }, {
+      "left" : "return member.getValue(defaultBean);",
+      "right" : "return member.getValue(defaultBean);",
+      "info" : "ReturnStatement[16225-16261]:ReturnStatement[16255-16291]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16292-16359]:Block[16322-16389]"
+    }, {
+      "left" : "return _throwWrapped(e, name, defaultBean);",
+      "right" : "return _throwWrapped(e, name, defaultBean);",
+      "info" : "ReturnStatement[16306-16349]:ReturnStatement[16336-16379]"
+    }, {
+      "left" : "@Deprecated",
+      "right" : "@Deprecated",
+      "info" : "MarkerAnnotation[16416-16427]:MarkerAnnotation[16446-16457]"
+    }, {
+      "left" : "// since 2.9",
+      "right" : "// since 2.9",
+      "info" : "LineComment[16428-16440]:LineComment[16458-16470]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[16445-16454]:Modifier[16475-16484]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[16455-16461]:SimpleType[16485-16491]"
+    }, {
+      "left" : "getDefaultValue",
+      "right" : "getDefaultValue",
+      "info" : "SimpleName[16462-16477]:SimpleName[16492-16507]"
+    }, {
+      "left" : "JavaType type",
+      "right" : "JavaType type",
+      "info" : "SingleVariableDeclaration[16478-16491]:SingleVariableDeclaration[16508-16521]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16493-16547]:Block[16523-16577]"
+    }, {
+      "left" : "return BeanUtil.getDefaultValue(type);",
+      "right" : "return BeanUtil.getDefaultValue(type);",
+      "info" : "ReturnStatement[16503-16541]:ReturnStatement[16533-16571]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[16746-16755]:Modifier[16776-16785]"
+    }, {
+      "left" : "Object",
+      "right" : "Object",
+      "info" : "SimpleType[16756-16762]:SimpleType[16786-16792]"
+    }, {
+      "left" : "_throwWrapped",
+      "right" : "_throwWrapped",
+      "info" : "SimpleName[16763-16776]:SimpleName[16793-16806]"
+    }, {
+      "left" : "Exception e",
+      "right" : "Exception e",
+      "info" : "SingleVariableDeclaration[16777-16788]:SingleVariableDeclaration[16807-16818]"
+    }, {
+      "left" : "String propName",
+      "right" : "String propName",
+      "info" : "SingleVariableDeclaration[16790-16805]:SingleVariableDeclaration[16820-16835]"
+    }, {
+      "left" : "Object defaultBean",
+      "right" : "Object defaultBean",
+      "info" : "SingleVariableDeclaration[16807-16825]:SingleVariableDeclaration[16837-16855]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16831-17152]:Block[16861-17182]"
+    }, {
+      "left" : "Throwable t = e;",
+      "right" : "Throwable t = e;",
+      "info" : "VariableDeclarationStatement[16841-16857]:VariableDeclarationStatement[16871-16887]"
+    }, {
+      "left" : "while (t.getCause() != null)",
+      "right" : "while (t.getCause() != null)",
+      "info" : "WhileStatement[16866-16936]:WhileStatement[16896-16966]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[16895-16936]:Block[16925-16966]"
+    }, {
+      "left" : "t = t.getCause();",
+      "right" : "t = t.getCause();",
+      "info" : "ExpressionStatement[16909-16926]:ExpressionStatement[16939-16956]"
+    }, {
+      "left" : "ClassUtil.throwIfError(t);",
+      "right" : "ClassUtil.throwIfError(t);",
+      "info" : "ExpressionStatement[16945-16971]:ExpressionStatement[16975-17001]"
+    }, {
+      "left" : "ClassUtil.throwIfRTE(t);",
+      "right" : "ClassUtil.throwIfRTE(t);",
+      "info" : "ExpressionStatement[16980-17004]:ExpressionStatement[17010-17034]"
+    }, {
+      "left" : "throw new IllegalArgumentException(\"Failed to get property '\"+propName+\"' of default \"+defaultBean.getClass().getName()+\" instance\");",
+      "right" : "throw new IllegalArgumentException(\"Failed to get property '\"+propName+\"' of default \"+defaultBean.getClass().getName()+\" instance\");",
+      "info" : "ThrowStatement[17013-17146]:ThrowStatement[17043-17176]"
+    } ]
+  },
+  "interFileMappings" : { }
+}

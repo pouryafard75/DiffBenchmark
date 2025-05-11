@@ -18,7 +18,7 @@ public class ParentWithSameOffset implements TranslationRule {
             {
                 Mapping pMapping = new Mapping(p1, p2);
                 if (!isBetweenDifferentTypes(pMapping)) {
-                    ms.addMapping(pMapping.first, pMapping.second);
+                    add(foreign, local, ms, pMapping);
                     new ParentWithSameOffset().accept(null, pMapping, ms);
                 }
             }

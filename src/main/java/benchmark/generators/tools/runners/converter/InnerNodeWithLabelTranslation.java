@@ -14,7 +14,7 @@ public class InnerNodeWithLabelTranslation implements TranslationRule {
             Tree t1 = translateInnerNodeWithLabel(foreign.first.getLabel(), local.first);
             Tree t2 = translateInnerNodeWithLabel(foreign.second.getLabel(), local.second);
             if (t1 != null && t2 != null) {
-                ms.addMapping(t1, t2);
+                add(foreign, local, ms, new Mapping(t1, t2));
                 //Match as long as their parents are identical
                 while(true){
                     Tree parent1 = t1.getParent();
@@ -22,14 +22,14 @@ public class InnerNodeWithLabelTranslation implements TranslationRule {
                     if (parent1 == null || parent2 == null) break;
                     if (parent1.equals(local.first) || parent2.equals(local.second)) break;
                     if (parent1.isIsomorphicTo(parent2)){
-                        ms.addMapping(parent1, parent2);
+                        add(foreign, local, ms, new Mapping(parent1, parent2));
                         t1 = parent1;
                         t2 = parent2;
                     }
                     else
                     {
                         if (parent1.getType().name.equals(parent2.getType().name))
-                            ms.addMapping(parent1, parent2);
+                            add(foreign, local, ms, new Mapping(parent1, parent2));
                         break;
                     }
                 }

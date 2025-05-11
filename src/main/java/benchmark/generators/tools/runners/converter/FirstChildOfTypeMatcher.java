@@ -21,7 +21,7 @@ public abstract class FirstChildOfTypeMatcher implements TranslationRule {
         Tree secondQ = getFirstQ(second, query);
         //if both firstQ and secondQ exist, add a mapping between them
         if (firstQ != null && secondQ != null) {
-            ms.addMapping(firstQ, secondQ);
+            add(foreign, local, ms, new Mapping(firstQ, secondQ));
         }
     }
 

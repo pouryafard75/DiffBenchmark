@@ -31,11 +31,13 @@ public class CompareWithGitHubAPI {
         webDiffConf.setEnabled_tools(ToolSets.VISITOR_EXP_BATTLE_TOOLS);
         webDiffConf.setEnabled_tools(new LinkedHashSet<>()
              {{
-                 this.add(ASTDiffToolEnum.RMD);
-//                 this.add(ASTDiffToolEnum.GTG);
-//                 this.add(ASTDiffToolEnum.GTS);
-                 this.add(ASTDiffToolEnum.SPN_T);
-                 this.add(ASTDiffToolEnum.SPN_I);
+//                 this.add(ASTDiffToolEnum.RMD);
+                 this.add(ASTDiffToolEnum.GTG);
+                 this.add(ASTDiffToolEnum.GTS);
+//                 this.add(ASTDiffToolEnum.SPN_I);
+//                 this.add(ASTDiffToolEnum.SPN___);
+//                 this.add(ASTDiffToolEnum.SPN_T);
+//                 this.add(ASTDiffToolEnum.SPN_I);
 //                 this.add(ASTDiffToolEnum.SPN_G_T);
 //                 this.add(ASTDiffToolEnum.SPN_G_I);
 //                 this.add(ASTDiffToolEnum.SPN_S_T);

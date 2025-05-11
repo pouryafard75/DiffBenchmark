@@ -202,6 +202,10 @@
       "right" : "protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException",
       "info" : "MethodDeclaration[22285-22632]:MethodDeclaration[22286-22633]"
     }, {
+      "left" : "protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException",
+      "right" : "protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException",
+      "info" : "MethodDeclaration[23643-24221]:MethodDeclaration[26086-26664]"
+    }, {
       "left" : "public void testTransparentProxyWithoutPrefix() throws Exception",
       "right" : "public void testTransparentProxyWithoutPrefix() throws Exception",
       "info" : "MethodDeclaration[25040-26303]:MethodDeclaration[27483-28746]"
@@ -2355,6 +2359,78 @@
       "left" : "Assert.assertTrue(response.getHeaders().containsKey(PROXIED_HEADER));",
       "right" : "Assert.assertTrue(response.getHeaders().containsKey(PROXIED_HEADER));",
       "info" : "ExpressionStatement[23346-23415]:ExpressionStatement[23347-23416]"
+    }, {
+      "left" : "@Override",
+      "right" : "@Override",
+      "info" : "MarkerAnnotation[23643-23652]:MarkerAnnotation[26086-26095]"
+    }, {
+      "left" : "protected",
+      "right" : "protected",
+      "info" : "Modifier[23665-23674]:Modifier[26108-26117]"
+    }, {
+      "left" : "void",
+      "right" : "void",
+      "info" : "PrimitiveType[23675-23679]:PrimitiveType[26118-26122]"
+    }, {
+      "left" : "doGet",
+      "right" : "doGet",
+      "info" : "SimpleName[23680-23685]:SimpleName[26123-26128]"
+    }, {
+      "left" : "HttpServletRequest req",
+      "right" : "HttpServletRequest req",
+      "info" : "SingleVariableDeclaration[23686-23708]:SingleVariableDeclaration[26129-26151]"
+    }, {
+      "left" : "HttpServletResponse resp",
+      "right" : "HttpServletResponse resp",
+      "info" : "SingleVariableDeclaration[23710-23734]:SingleVariableDeclaration[26153-26177]"
+    }, {
+      "left" : "ServletException",
+      "right" : "ServletException",
+      "info" : "SimpleType[23743-23759]:SimpleType[26186-26202]"
+    }, {
+      "left" : "IOException",
+      "right" : "IOException",
+      "info" : "SimpleType[23761-23772]:SimpleType[26204-26215]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23785-24221]:Block[26228-26664]"
+    }, {
+      "left" : "if (req.getHeader(\"Via\") != null)",
+      "right" : "if (req.getHeader(\"Via\") != null)",
+      "info" : "IfStatement[23803-23896]:IfStatement[26246-26339]"
+    }, {
+      "left" : "resp.addHeader(PROXIED_HEADER, \"true\");",
+      "right" : "resp.addHeader(PROXIED_HEADER, \"true\");",
+      "info" : "ExpressionStatement[23857-23896]:ExpressionStatement[26300-26339]"
+    }, {
+      "left" : "if (target.equals(req.getRequestURI()))",
+      "right" : "if (target.equals(req.getRequestURI()))",
+      "info" : "IfStatement[23914-24170]:IfStatement[26357-26613]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[23970-24170]:Block[26413-26613]"
+    }, {
+      "left" : "if (query.equals(req.getQueryString()))",
+      "right" : "if (query.equals(req.getQueryString()))",
+      "info" : "IfStatement[23992-24152]:IfStatement[26435-26595]"
+    }, {
+      "left" : "{}",
+      "right" : "{}",
+      "info" : "Block[24052-24152]:Block[26495-26595]"
+    }, {
+      "left" : "resp.setStatus(200);",
+      "right" : "resp.setStatus(200);",
+      "info" : "ExpressionStatement[24078-24098]:ExpressionStatement[26521-26541]"
+    }, {
+      "left" : "return;",
+      "right" : "return;",
+      "info" : "ReturnStatement[24123-24130]:ReturnStatement[26566-26573]"
+    }, {
+      "left" : "resp.setStatus(404);",
+      "right" : "resp.setStatus(404);",
+      "info" : "ExpressionStatement[24187-24207]:ExpressionStatement[26630-26650]"
     }, {
       "left" : "@Test",
       "right" : "@Test",

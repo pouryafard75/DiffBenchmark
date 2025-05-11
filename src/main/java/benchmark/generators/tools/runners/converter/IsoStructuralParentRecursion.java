@@ -8,7 +8,7 @@ public class IsoStructuralParentRecursion implements TranslationRule {
     @Override
     public void accept(Mapping foreign, Mapping local, ExtendedMultiMappingStore ms) {
         if (local.first.isIsoStructuralTo(local.second)) {
-            ms.addMappingRecursively(local.first, local.second);
+            add(foreign, local, ms, new Mapping(local.first, local.second));
         }
     }
 }

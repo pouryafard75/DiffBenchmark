@@ -20,6 +20,7 @@ import benchmark.generators.tools.runners.extensions.multimapping.NonMatchedSubt
 import benchmark.generators.tools.runners.gt.GreedyGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.OriginalVisitorGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.gt.SimpleGumTreeASTDiffProvider;
+import benchmark.generators.tools.runners.gt.SimpleSizeGumTreeASTDiffProvider;
 import benchmark.generators.tools.runners.shaded.GT2;
 import benchmark.generators.tools.runners.shaded.IJM;
 import benchmark.generators.tools.runners.shaded.MTDiff;
@@ -60,6 +61,8 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     GTS ("GumTree Simple 3.0", (benchmarkCase, query) -> new SimpleGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
     ,
+    GTZ___("GumTree Simple 3.0 (MinSize = 1)", (benchmarkCase, query) -> new SimpleSizeGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff()))),
+
     GTS_O("GumTree Simple 3.0 Original Visitor", (benchmarkCase, query) ->
             new OriginalVisitorGumTreeASTDiffProvider(
                     new CompositeMatchers.SimpleGumtree(),

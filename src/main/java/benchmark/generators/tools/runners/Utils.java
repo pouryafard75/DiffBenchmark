@@ -72,9 +72,9 @@ public class Utils {
             for (ASTDiff diff : diffs) {
                 counter ++;
                 FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_src.txt"),
-                        removeOffsets(diff.src.getRoot().toTreeString()));
+                        (diff.src.getRoot().toTreeString()));
                 FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_dst.txt"),
-                        removeOffsets(diff.dst.getRoot().toTreeString()));
+                        (diff.dst.getRoot().toTreeString()));
                 FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_diff.txt"),
                         mappingsToString(diff));
             }

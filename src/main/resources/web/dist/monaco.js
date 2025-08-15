@@ -1,6 +1,6 @@
-const maxAllowedHeight = 600;
-
+const maxAllowedHeight = 10000;
 function mymonaco(config) {
+    // config.spv = false; // Not a Single Page View
     require.config({paths: {'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.39.0/min/vs'}});
     require(['vs/editor/editor.main'], initializeEditors);
     function initializeEditors() {
@@ -39,43 +39,43 @@ function mymonaco(config) {
             setAllFoldings(config, leftEditor, rightEditor);
 
 
-            if (config.spv === true) {
-                const updateEditorsLayout = () => {
-                    const leftHeight = leftEditor.getContentHeight();
-                    const rightHeight = rightEditor.getContentHeight();
-                    let maxHeight = Math.max(leftHeight, rightHeight);
-                    const editorHeight = maxHeight > maxAllowedHeight ? maxAllowedHeight : maxHeight;
-                    console.log(editorHeight);
-                    leftContainer.style.height = editorHeight + 'px';
-                    rightContainer.style.height = editorHeight + 'px';
-                    leftEditor.layout();
-                    rightEditor.layout();
-                };
-
-                Promise.all([
-                    leftEditor.getAction('editor.foldAll').run(),
-                    rightEditor.getAction('editor.foldAll').run()]
-                ).then(updateEditorsLayout);
-
-                leftEditor.onDidContentSizeChange(updateEditorsLayout);
-                rightEditor.onDidContentSizeChange(updateEditorsLayout);
-
-                const accordion = document.getElementById('accordion');
-                const parent_container = accordion ? accordion : document.body;
-
-                rightContainer.addEventListener('wheel', (e) => {
-                    e.preventDefault();
-                    parent_container.scrollTop += e.deltaY;
-                    parent_container.scrollLeft += e.deltaX;
-                });
-                leftContainer.addEventListener('wheel', (e) => {
-                    e.preventDefault();
-                    parent_container.scrollTop += e.deltaY;
-                    parent_container.scrollLeft += e.deltaX;
-                });
-                window.addEventListener("resize", updateEditorsLayout.bind(this));
-            }
-            else {
+            // if (config.spv === true) {
+            //     const updateEditorsLayout = () => {
+            //         const leftHeight = leftEditor.getContentHeight();
+            //         const rightHeight = rightEditor.getContentHeight();
+            //         let maxHeight = Math.max(leftHeight, rightHeight);
+            //         const editorHeight = maxHeight > maxAllowedHeight ? maxAllowedHeight : maxHeight;
+            //         leftContainer.style.height = editorHeight + 'px';
+            //         rightContainer.style.height = editorHeight + 'px';
+            //         leftEditor.layout();
+            //         rightEditor.layout();
+            //     };
+            //
+            //     Promise.all([
+            //         leftEditor.getAction('editor.foldAll').run(),
+            //         rightEditor.getAction('editor.foldAll').run()]
+            //     ).then(updateEditorsLayout);
+            //
+            //     leftEditor.onDidContentSizeChange(updateEditorsLayout);
+            //     rightEditor.onDidContentSizeChange(updateEditorsLayout);
+            //
+            //     const accordion = document.getElementById('accordion');
+            //     const parent_container = accordion ? accordion : document.body;
+            //
+            //     // rightContainer.addEventListener('wheel', (e) => {
+            //     //     e.preventDefault();
+            //     //     parent_container.scrollTop += e.deltaY;
+            //     //     parent_container.scrollLeft += e.deltaX;
+            //     // });
+            //     // leftContainer.addEventListener('wheel', (e) => {
+            //     //     e.preventDefault();
+            //     //     parent_container.scrollTop += e.deltaY;
+            //     //     parent_container.scrollLeft += e.deltaX;
+            //     // });
+            //     // window.addEventListener("resize", updateEditorsLayout.bind(this));
+            // }
+            // else
+            {
                 leftEditor.getAction('editor.foldAll').run();
                 rightEditor.getAction('editor.foldAll').run();
             }

@@ -3,6 +3,7 @@ package benchmark.data.dataset;
 import benchmark.data.diffcase.AbstractIBenchmarkCase;
 import benchmark.data.diffcase.IBenchmarkCase;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -42,6 +43,7 @@ public abstract class InspiredFromRMinerTestsBenchmarkDataset implements IBenchm
 
     Set<? extends IBenchmarkCase> makeAllCases(TypeReference<? extends Set<? extends AbstractIBenchmarkCase>> valueTypeRef, Path... casesPath) {
         ObjectMapper mapper = new ObjectMapper();
+        mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         Set<AbstractIBenchmarkCase> allCases = new TreeSet<>(Comparator.comparing(IBenchmarkCase::getID));
         for (Path path : casesPath) {
             Set<? extends AbstractIBenchmarkCase> loaded;

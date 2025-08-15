@@ -26,6 +26,7 @@ public abstract class RemoteCase extends AbstractIBenchmarkCase {
     public RemoteCase(String url) {
         this.repo = URLHelper.getRepo(url);
         this.commit = URLHelper.getCommit(url);
+        this.url = url;
     }
 
     public String getRepo() {

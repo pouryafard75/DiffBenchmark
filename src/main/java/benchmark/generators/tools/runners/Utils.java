@@ -71,10 +71,10 @@ public class Utils {
             int counter = 0;
             for (ASTDiff diff : diffs) {
                 counter ++;
-                FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_src.txt"),
-                        (diff.src.getRoot().toTreeString()));
-                FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_dst.txt"),
-                        (diff.dst.getRoot().toTreeString()));
+//                FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_src.txt"),
+//                        (diff.src.getRoot().toTreeString()));
+//                FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_dst.txt"),
+//                        (diff.dst.getRoot().toTreeString()));
                 FileUtils.writeStringToFile(new File(iastDiffToolSetEntry.getKey() + "_" + counter + "_diff.txt"),
                         mappingsToString(diff));
             }
@@ -95,6 +95,7 @@ public class Utils {
         Comparator<Mapping> mappingComparator;
         mappingComparator = Comparator.comparingInt(o -> o.first.getPos());
         mappingComparator = mappingComparator.thenComparingInt(o -> o.first.getEndPos());
+        mappingComparator = mappingComparator.thenComparing((Mapping o) -> o.first.getType().name);
         all.sort(mappingComparator);
         StringBuilder sb = new StringBuilder();
         for (Mapping mapping : all) {

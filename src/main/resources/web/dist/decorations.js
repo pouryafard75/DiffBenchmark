@@ -16,9 +16,13 @@ function getDecorationNoLeadingWhiteSpace(range, pos, endPos, editor) {
             range: new monaco.Range(adjustedPos.lineNumber, adjustedPos.column, endPos.lineNumber, endPos.column),
             options: {
                 className: range.kind,
+                //inlineClassName: range.kind, // Use this instead of className
                 zIndex: range.index,
                 hoverMessage: {
-                    value: range.tooltip,
+                    // value: range.requestPath
+                    //     ? `[${range.tooltip}](${new URL(range.requestPath, window.location.href).href})`
+                    //     : range.tooltip,
+                    // isTrusted: true
                 },
                 overviewRuler: {
                     color: getEditColor(range.kind),
@@ -37,9 +41,13 @@ function getDecorationNoLeadingWhiteSpace(range, pos, endPos, editor) {
             range: new monaco.Range(adjustedStartPos.lineNumber, adjustedStartPos.column, pos.lineNumber, editor.getModel().getLineMaxColumn(pos.lineNumber)),
             options: {
                 className: range.kind,
+                //inlineClassName: range.kind, // Use this instead of className
                 zIndex: range.index,
                 hoverMessage: {
-                    value: range.tooltip,
+                    // value: range.requestPath
+                    //     ? `[${range.tooltip}](${new URL(range.requestPath, window.location.href).href})`
+                    //     : range.tooltip,
+                    // isTrusted: true
                 },
                 overviewRuler: {
                     color: getEditColor(range.kind),
@@ -53,9 +61,13 @@ function getDecorationNoLeadingWhiteSpace(range, pos, endPos, editor) {
                 range: new monaco.Range(line, adjustedColumn, line, editor.getModel().getLineMaxColumn(line)),
                 options: {
                     className: range.kind,
+                    //inlineClassName: range.kind, // Use this instead of className
                     zIndex: range.index,
                     hoverMessage: {
-                        value: range.tooltip,
+                        // value: range.requestPath
+                        //     ? `[${range.tooltip}](${new URL(range.requestPath, window.location.href).href})`
+                        //     : range.tooltip,
+                        // isTrusted: true
                     },
                     overviewRuler: {
                         color: getEditColor(range.kind),
@@ -72,9 +84,13 @@ function getDecorationNoLeadingWhiteSpace(range, pos, endPos, editor) {
             range: new monaco.Range(endPos.lineNumber, adjustedEndPos.column, endPos.lineNumber, endPos.column),
             options: {
                 className: range.kind,
+                //inlineClassName: range.kind, // Use this instead of className
                 zIndex: range.index,
                 hoverMessage: {
-                    value: range.tooltip,
+                    // value: range.requestPath
+                    //     ? `[${range.tooltip}](${new URL(range.requestPath, window.location.href).href})`
+                    //     : range.tooltip,
+                    // isTrusted: true
                 },
                 overviewRuler: {
                     color: getEditColor(range.kind),
@@ -90,9 +106,13 @@ function getDecoration(range, pos, endPos) {
         range: new monaco.Range(pos.lineNumber, pos.column, endPos.lineNumber, endPos.column),
         options: {
             className: range.kind,
+            //inlineClassName: range.kind, // Use this instead of className
             zIndex: range.index,
             hoverMessage: {
-                value: range.tooltip,
+                // value: range.requestPath
+                //     ? `[${range.tooltip}](${new URL(range.requestPath, window.location.href).href})`
+                //     : range.tooltip,
+                // isTrusted: true
             },
             overviewRuler: {
                 color: getEditColor(range.kind),
@@ -100,30 +120,107 @@ function getDecoration(range, pos, endPos) {
         },
     };
 }
-function onClick(ed, mappings, dstIndex) {
-    mapping = mappings[0]
-    ed.revealRangeInCenter(mapping[dstIndex]);
+function onClick(ed, mapping, dstIndex) {
+    const highlightDuration = 1000;
+    const mainMapping = mapping[dstIndex];
 
-    highlightDuration = 1000
+    // Force unfold by setting selection and running the unfold action
+    ed.setSelection(mainMapping);
+    ed.revealRangeInCenterIfOutsideViewport(mainMapping);
 
-    for (let i = 0; i < mappings.length; i++) {
-        currentMapping = mappings[i];
-        mappingElement = currentMapping[dstIndex]
-        const decorationId = ed.deltaDecorations([], [
-            {
-                range: mappingElement,
-                options: {
-                    className: 'highlighted-range',
-                    inlineClassName: 'highlighted-range-inline',
+    // Trigger built-in unfold for the current selection
+    ed.getAction('editor.unfold').run();
+
+    const decorationId = ed.deltaDecorations([], [
+        {
+            range: mainMapping,
+            options: {
+                className: 'highlighted-range',
+                inlineClassName: 'highlighted-range-inline',
+            }
+        }
+    ]);
+    setTimeout(() => {
+        ed.deltaDecorations([decorationId], []);
+    }, highlightDuration);
+}
+
+
+function offsetToLineNumber(text, offset) {
+    if (offset < 0 || offset > text.length) {
+        return -1; // Invalid offset
+    }
+    const lines = text.substring(0, offset).split('\n');
+    return lines.length;
+}
+
+function offsetToLineColumn(text, offset) {
+    let line = 1;
+    let column = 1;
+    for (let i = 0; i < offset; i++) {
+        if (text[i] === '\n') {
+            line++;
+            column = 1;
+        } else {
+            column++;
+        }
+    }
+    return { line, column };
+}
+
+function onClickHelper(config, index, activatedRange, ed, dstIndex) {
+    var exit = [];
+    if(index === 0) {
+        config.left.ranges.forEach(range => {
+            let fromLine = offsetToLineNumber(config.left.content, range.from);
+            let toLine = offsetToLineNumber(config.left.content, range.to);
+            if(fromLine <= activatedRange.startLineNumber && toLine >= activatedRange.startLineNumber) {
+                if(range.kind === "deleted") {
+                    if(fromLine === toLine) {
+                        // the column matters
+                        let fromColumn = offsetToLineColumn(config.left.content, range.from);
+                        let toColumn = offsetToLineColumn(config.left.content, range.to);
+                        if(fromColumn.column <= activatedRange.startColumn && toColumn.column >= activatedRange.startColumn) {
+                            exit.push(true);
+                        }
+                    }
+                    else {
+                        exit.push(true);
+                    }
+                }
+                else if(range.kind === "moved" || range.kind === "updated" || range.kind.startsWith("mm")) {
+                    exit.push(false);
                 }
             }
-        ]);
-        setTimeout(() => {
-            ed.deltaDecorations([decorationId], []);  // Remove the decoration
-        }, highlightDuration);
+        });
     }
-}
-function onClickHelper(config, index, activatedRange, ed, dstIndex) {
+    else if(index === 1) {
+        config.right.ranges.forEach(range => {
+            let fromLine = offsetToLineNumber(config.right.content, range.from);
+            let toLine = offsetToLineNumber(config.right.content, range.to);
+            if(fromLine <= activatedRange.startLineNumber && toLine >= activatedRange.startLineNumber) {
+                if(range.kind === "inserted") {
+                    if(fromLine === toLine) {
+                        // the column matters
+                        let fromColumn = offsetToLineColumn(config.right.content, range.from);
+                        let toColumn = offsetToLineColumn(config.right.content, range.to);
+                        if(fromColumn.column <= activatedRange.startColumn && toColumn.column >= activatedRange.startColumn) {
+                            exit.push(true);
+                        }
+                    }
+                    else {
+                        exit.push(true);
+                    }
+                }
+                else if(range.kind === "moved" || range.kind === "updated" || range.kind.startsWith("mm")) {
+                    exit.push(false);
+                }
+            }
+        });
+    }
+    if(!exit.includes(false) && exit.length > 0) {
+        return;
+    }
     candidates = config.mappings
         .filter(mapping =>
             mapping[index].startColumn <= activatedRange.startColumn
@@ -154,7 +251,12 @@ function onClickHelper(config, index, activatedRange, ed, dstIndex) {
     );
     if (mappings) {
         if (mappings.length >= 1) {
-            onClick(ed, mappings, dstIndex);
+            //select the mappings that span one line in both sides
+            for (var i = 0; i < mappings.length; i++) {
+                if(mappings[i][dstIndex].startLineNumber === mappings[i][dstIndex].endLineNumber && mappings[i][index].startLineNumber === mappings[i][index].endLineNumber) {
+                    onClick(ed, mappings[i], dstIndex);
+                }
+            }
         }
     }
 }

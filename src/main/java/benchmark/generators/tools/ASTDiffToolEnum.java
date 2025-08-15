@@ -51,6 +51,8 @@ public enum ASTDiffToolEnum implements IASTDiffTool {
     ,
     RMD ("RefactoringMiner", (benchmarkCase, query) -> () -> query.apply(benchmarkCase.getProjectASTDiff()))
     ,
+    RMD_FROM_SNAPSHOT ("RefactoringMiner from Snapshot", SnapshotDiff::new)
+    ,
     GTG ("GumTree Greedy 3.0", (benchmarkCase, query) -> new GreedyGumTreeASTDiffProvider(query.apply(benchmarkCase.getProjectASTDiff())))
     ,
     GTG_O("GumTree Greedy 3.0 Original Visitor", (benchmarkCase, query) ->

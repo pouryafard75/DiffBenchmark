@@ -79,6 +79,7 @@ public class BenchmarkWebDiff {
                 try {
                     enabledViewer.configure(tool, astDiffs, projectASTDiff);
                 } catch (Exception e) {
+                    System.out.println(e.getMessage());
                     throw new RuntimeException(e);
                 }
             }
@@ -114,3 +115,52 @@ public class BenchmarkWebDiff {
         return new String(encoded, encoding);
     }
 }
+
+//
+//
+//#toolbar {
+//    background: #222;
+//    color: white;
+//    padding: 10px;
+//    font-family: sans-serif;
+//    display: flex;
+//    align-items: center;
+//    gap: 20px;
+//    flex-wrap: wrap;
+//}
+//        #toolbar button {
+//background: #444;
+//color: white;
+//border: none;
+//padding: 8px 12px;
+//cursor: pointer;
+//font-size: 14px;
+//        }
+//                #toolbar button:hover {
+//    background: #666;
+//}
+//        .radio-group label {
+//margin-right: 10px;
+//        }
+//                #comment-input {
+//    display: flex;
+//    align-items: center;
+//    gap: 10px;
+//    flex: 1;
+//}
+//        #comments {
+//    flex: 1;
+//    min-width: 300px;
+//    font-size: 14px;
+//    padding: 6px;
+//}
+//        #submit-button {
+//    background: #008CBA;
+//    color: white;
+//    padding: 6px 12px;
+//    border: none;
+//    cursor: pointer;
+//}
+//        #submit-button:hover {
+//    background: #006c94;
+//}

@@ -2,7 +2,8 @@ package benchmark.gui.viewers;
 
 
 import benchmark.generators.tools.models.IASTDiffTool;
-import gui.webdiff.viewers.monaco.MonacoView;
+import gui.benchmarkViewers.monaco.BenchmarkMonacoViewBenchmark;
+import gui.benchmarkViewers.vanilla.BenchmarkVanillaView;
 import gui.webdiff.viewers.vanilla.VanillaDiffView;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -22,7 +23,7 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             (tool, astDiffs, projectASTDiff) -> get("/" + tool.getShortName() + "/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                VanillaDiffView vanillaDiffView = new VanillaDiffView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                Renderable vanillaDiffView = new BenchmarkVanillaView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
                         astDiff, id, projectASTDiff.getDiffSet().size(), "", false,
                         projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
                         projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()), false);
@@ -34,10 +35,17 @@ public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
             (tool, astDiffs, projectASTDiff) -> get("/" + tool.getShortName() + "-monaco/:id" , (request, response) -> {
                 int id = Integer.parseInt(request.params(":id"));
                 ASTDiff astDiff = astDiffs.stream().toList().get(id);
-                Renderable view = new MonacoView(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
-                        astDiff, id, projectASTDiff.getDiffSet().size(), "", false,
-                        projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
-                        projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()));
+                Renderable view = null;
+                try {
+                    view = new BenchmarkMonacoViewBenchmark(tool.getToolName(), astDiff.getSrcPath(), astDiff.getDstPath(),
+                            astDiff, id, projectASTDiff.getDiffSet().size(), "", false,
+                            projectASTDiff.getFileContentsBefore().get(astDiff.getSrcPath()),
+                            projectASTDiff.getFileContentsAfter().get(astDiff.getDstPath()));
+                }
+                catch (Exception e)
+                {
+                    System.out.println(e.getMessage());
+                }
                 return renderToString(view);
             })
     )

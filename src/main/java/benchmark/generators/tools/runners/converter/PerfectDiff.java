@@ -35,7 +35,7 @@ public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
 
     }
 
-    private String getFileNameBasedOnAST() {
+    protected String getFileNameBasedOnAST() {
         return benchmarkCase.getDataset().getPerfectDirPath() + "/" + repoToFolder(benchmarkCase.getRepo()) + "/" + benchmarkCase.getCommit() + "/" + getFileNameFromSrcDiff(input.getSrcPath());
     }
 }

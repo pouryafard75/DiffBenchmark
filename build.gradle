@@ -16,7 +16,7 @@ repositories {
 
 def refactoringMinerVersion = project.hasProperty('refactoringMinerVersion') ?
         project.refactoringMinerVersion :
-        '3.0.10-SNAPSHOT'
+        '3.0.11-SNAPSHOT'
 
 dependencies {
     implementation('com.google.code.gson:gson:2.8.9')
@@ -37,8 +37,8 @@ dependencies {
     }
     implementation files('libs/IJM-1.0-SNAPSHOT-customized3.jar')
     implementation files('libs/gpgt-0.0.1-SNAPSHOT.jar')
-    implementation files('libs/RM-2.2.0-c5.jar')
-    implementation files('libs/iAST-1.0-SNAPSHOT-customized2.jar')
+    implementation files('libs/RM-2.2.0-c6.jar')
+    implementation files('libs/iAST-1.0-SNAPSHOT-customized3.jar')
 
     implementation 'io.github.java-diff-utils:java-diff-utils:4.12'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
@@ -65,10 +65,10 @@ dependencies {
 
 }
 task rm2p5_jar(type: Jar) {
-    archiveFileName = 'RM-2.2.0-c5.jar'
+    archiveFileName = 'RM-2.2.0-c6.jar'
     //destinationDir = file('libs/')
     destinationDirectory = file("libs");
-    from zipTree('libs/RM-2.2.0-c3.jar')
+    from zipTree('libs/RM-2.2.0-c5.jar')
     exclude 'org/slf4j/*'
     exclude 'org/slf4j/**'
     exclude 'org/eclipse/jgit/*'
@@ -79,6 +79,8 @@ task rm2p5_jar(type: Jar) {
     exclude 'com/github/gumtreediff/**'
     exclude 'spark/*'
     exclude 'spark/**'
+    exclude 'org/kohsuke/github/*'
+    exclude 'org/kohsuke/github/**'
 }
 task rm2p3_jar(type: Jar) {
     archiveFileName = 'RM-2.2.0-c2.jar' //Second customization (c2)
@@ -124,25 +126,31 @@ task ijm_jar(type: Jar) {
 }
 
 task iast_jar(type: Jar) {
-    archiveFileName = 'iAST-1.0-SNAPSHOT-customized2.jar'
+    archiveFileName = 'iAST-1.0-SNAPSHOT-customized3.jar'
     destinationDirectory = file("libs");
     // Include all contents from the original JAR
     //destinationDir = file('libs/')
-    from zipTree('libs/iAST-1.0-SNAPSHOT-customized.jar')
+    from zipTree('libs/iAST-1.0-SNAPSHOT-customized2.jar')
     exclude 'com/google/gson/*'
     exclude 'com/google/gson/**'
     exclude 'org/slf4j/*'
     exclude 'com/fasterxml/jackson/*'
     exclude 'com/fasterxml/jackson/**'
+    exclude 'org/kohsuke/github/*'
+    exclude 'org/kohsuke/github/**'
 }
 configurations.all {
+    resolutionStrategy {
+        dependencySubstitution {
+            substitute module('org.kohsuke:github-api') using module('org.kohsuke:github-api:1.327')
+        }
+    }
     resolutionStrategy {
         force 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
         force 'com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.5.2'
         force 'com.fasterxml.jackson.core:jackson-core:2.5.2'
         force 'org.junit.jupiter:junit-jupiter-engine:5.9.2'
-
-
+        force 'org.kohsuke:github-api:1.327'
     }
 //    exclude group: 'org.slf4j', module: 'slf4j-simple'
 }

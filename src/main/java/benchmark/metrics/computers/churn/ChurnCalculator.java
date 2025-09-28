@@ -5,6 +5,7 @@ import com.github.difflib.DiffUtils;
 import com.github.difflib.UnifiedDiffUtils;
 import com.github.difflib.patch.*;
 import gui.webdiff.dir.DirComparator;
+import gui.webdiff.dir.filters.DiffFilterKind;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -60,7 +61,7 @@ public class ChurnCalculator {
 
     public static Pair<Integer,Integer> calculateAddDeleteChurn(ProjectASTDiff projectASTDiff, boolean includeAddedFiles, boolean includeRemovedFiles) {
 
-        DirComparator dirComparator = new DirComparator(projectASTDiff);
+        DirComparator dirComparator = new DirComparator(projectASTDiff, DiffFilterKind.NO_FILTER);
         Pair<Integer, Integer> result = Pair.of(0, 0);
         for (ASTDiff diff : projectASTDiff.getDiffSet()) {
             String oldContent = projectASTDiff.getFileContentsBefore().get(diff.getSrcPath());
@@ -95,7 +96,7 @@ public class ChurnCalculator {
     }
 
     public static Pair<Integer, Integer> calculateAfterBeforeSize(ProjectASTDiff projectASTDiff, boolean includeAddedFiles, boolean includeRemovedFiles) {
-        DirComparator dirComparator = new DirComparator(projectASTDiff);
+        DirComparator dirComparator = new DirComparator(projectASTDiff, DiffFilterKind.NO_FILTER);
         Pair<Integer, Integer> result = Pair.of(0, 0);
         for (ASTDiff diff : projectASTDiff.getDiffSet()) {
             String oldContent = projectASTDiff.getFileContentsBefore().get(diff.getSrcPath());
@@ -119,7 +120,7 @@ public class ChurnCalculator {
         return result;
     }
     public static Pair<Integer, Integer> averageRelativeChurns(ProjectASTDiff projectASTDiff) {
-        DirComparator dirComparator = new DirComparator(projectASTDiff);
+        DirComparator dirComparator = new DirComparator(projectASTDiff, DiffFilterKind.NO_FILTER);
         Pair<Integer, Integer> result = Pair.of(0, 0);
         List<Pair<Integer,Integer>> pairs = new ArrayList<>();
         for (ASTDiff diff : projectASTDiff.getDiffSet()) {

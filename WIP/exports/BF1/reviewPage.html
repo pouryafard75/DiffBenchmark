@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unified Monaco Diff View</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+
+        .inserted {
+            /*border: 1px solid black;
+            background-color: MediumSeaGreen;
+            background-color: #dafbe1;*/
+            background-color: #aceebb;
+        }
+
+        .deleted {
+            /*border: 1px solid black;
+            background-color: IndianRed;
+            background-color: #ffebe9;*/
+            background-color: #ffcecb;
+        }
+
+        .moved {
+            /*border: 1px solid black;*/
+            background-color: #edeae0;
+        }
+
+        .updated {
+            /*border: 1px solid black;*/
+            background-color: #ffddf4;
+            font-weight: bold;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 70px); /* account for toolbar and legend */
+            position: relative;
+            min-height: 0;
+        }
+
+        .iframe-header {
+            background-color: #dddad9;
+            font-family: sans-serif;
+            font-weight: bold;
+            padding: 6px 12px;
+            font-size: 14px;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between; /* ✅ pushes legend to the right */
+            align-items: center;
+            width: 100%;
+        }
+        #top-header {
+            background-color: #dddad9;
+        }
+        #bottom-header {
+            background-color: #dddad9;
+        }
+        iframe {
+            pointer-events: auto;
+            height: 50%;      /* ✅ This ensures equal split at start */
+            z-index: 1;
+        }
+        #splitter {
+            height: 8px;
+            background-color: #888;
+            cursor: row-resize;
+            user-select: none;
+            z-index: 2;
+            position: relative;
+        }
+
+        #splitter:hover {
+            background-color: #666;
+        }
+        #toolbar {
+            background: #222;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: nowrap;            /* prevents wrap-on-zoom */
+            height: 60px;                /* ✅ fixed height */
+            padding: 8px 12px;
+            box-sizing: border-box;
+            overflow: hidden;            /* ✅ prevents textarea from spilling out */
+        }
+
+        #toolbar button {
+            background: #444;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        #toolbar button:hover {
+            background: #666;
+        }
+        .radio-group label {
+            margin-right: 10px;
+        }
+        #comment-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+        #comments {
+            flex-grow: 1;
+            min-width: 200px;
+            max-width: 500px;
+            font-family: sans-serif;
+            font-size: 14px;
+            padding: 4px 6px;
+            resize: none;
+            overflow-y: auto;           /* ✅ scroll if more than 2 lines */
+            height: 2.8em;              /* ✅ roughly 2 lines */
+            line-height: 1.4;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        #submit-button {
+            background: #008CBA;
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+        }
+        #submit-button:hover {
+            background: #006c94;
+        }
+        #legend-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #f4f4f4;
+            border-top: 1px solid #ccc;
+            font-family: sans-serif;
+            font-size: 13px;
+            padding: 6px 12px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .legend-inline {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            font-weight: normal;
+            font-size: 12px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .legend-box {
+            width: 14px;
+            height: 14px;
+            border: 1px solid #888;
+        }
+
+    </style>
+</head>
+<body>
+<div id="toast" style="
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #323232;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: sans-serif;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+">
+    No differences found between the tools.
+</div>
+<div id="toolbar">
+    <button id="toggle-button" onclick="toggleDiffHighlights()">🔍 Show Differences Between Tools</button>
+    <div class="radio-group" id="radio-container"></div>
+
+    <div id="comment-input">
+        <label for="comments">💬</label>
+<!--        <input type="text" id="comments" placeholder="Add your comments here...">-->
+        <textarea id="comments" placeholder="Add your comments here..." rows="1"></textarea>
+
+        <button id="submit-button" onclick="submitFeedback()">Next</button>
+        <button id="back-button" onclick="loadPreviousDiff()">Back</button>
+        <button id="home-button" onclick="loadDashboard()">Home</button>
+<!--        <div id="progress-indicator">0 / 0</div>-->
+        <div id="remaining-indicator" title="">Remaining: 0</div>
+
+    </div>
+</div>
+
+<div id="container">
+    <div id="top-header" class="iframe-header">
+        <div class="header-inner">
+            <span class="tool-label">🛠️ Tool 1</span>
+            <div class="legend-inline">
+                <span class="legend-item"><span class="deleted legend-box"></span> deleted</span>
+                <span class="legend-item"><span class="inserted legend-box"></span> inserted</span>
+                <span class="legend-item"><span class="moved legend-box"></span> moved</span>
+                <span class="legend-item"><span class="updated legend-box"></span> updated</span>
+            </div>
+        </div>
+    </div>
+
+    <iframe id="top" name="top"></iframe>
+    <div id="splitter"></div>
+
+    <div id="bottom-header" class="iframe-header">
+        <div class="header-inner">
+            <span class="tool-label">🛠️ Tool 2</span>
+            <div class="legend-inline">
+                <span class="legend-item"><span class="deleted legend-box"></span> deleted</span>
+                <span class="legend-item"><span class="inserted legend-box"></span> inserted</span>
+                <span class="legend-item"><span class="moved legend-box"></span> moved</span>
+                <span class="legend-item"><span class="updated legend-box"></span> updated</span>
+            </div>
+        </div>
+    </div>
+    <iframe id="bottom" name="bottom"></iframe>
+</div>
+
+
+<script>
+
+    let prIds = [];
+    let currentPrIndex = 0;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlPrid = urlParams.get("prid");
+    const urlDiffid = urlParams.get("diffid");
+    let currentDiffId = urlDiffid ? parseInt(urlDiffid, 10) : 0;
+
+    fetch('config.json')
+        .then(res => res.json())
+        .then(data => {
+            diffCounts = data.diffCounts;
+            prIds = Object.keys(diffCounts).sort((a, b) => parseInt(a) - parseInt(b)); // Ensure ascending order
+            toolNames = data.tools;
+
+            // Resolve correct index from the provided PR ID
+            if (urlPrid && prIds.includes(urlPrid)) {
+                currentPrIndex = prIds.indexOf(urlPrid);
+            } else {
+                currentPrIndex = 0; // fallback to first PR
+            }
+
+            loadCurrentDiff();
+        })
+        .catch(err => {
+            console.error("Failed to load config.json:", err);
+            alert("Could not load configuration.");
+        });
+
+
+
+
+
+    let diffCounts = {};
+    let toolNames = [];
+
+    const splitter = document.getElementById('splitter');
+    const topFrame = document.getElementById('top');
+    const bottomFrame = document.getElementById('bottom');
+    const toggleButton = document.querySelector('#toolbar button');
+
+    let isHighlightActive = false;
+
+    let decorationData = {
+        top: null,
+        bottom: null
+    };
+
+    const commentBox = document.getElementById("comments");
+
+    // commentBox.addEventListener("input", () => {
+    //     commentBox.style.height = "auto";
+    //     commentBox.style.height = commentBox.scrollHeight + "px";
+    // });
+
+    // === SESSION STORAGE HELPERS ===
+    function getSessionKey(prId, diffId) {
+        return `feedback_${prId}_${diffId}`;
+    }
+
+    function saveFeedback(prId, diffId, preference, comments) {
+        const key = getSessionKey(prId, diffId);
+        const data = { preference, comments };
+        sessionStorage.setItem(key, JSON.stringify(data));
+    }
+
+    function loadFeedback(prId, diffId) {
+        const key = getSessionKey(prId, diffId);
+        const data = sessionStorage.getItem(key);
+        return data ? JSON.parse(data) : null;
+    }
+
+    // === FETCH CONFIG AND INIT ===
+    fetch('config.json')
+        .then(res => res.json())
+        .then(data => {
+            diffCounts = data.diffCounts;
+            prIds = Object.keys(diffCounts).map(Number).sort((a, b) => a - b);
+            toolNames = data.tools;
+
+            loadCurrentDiff();
+        })
+        .catch(err => {
+            console.error("Failed to load config.json:", err);
+            alert("Could not load configuration.");
+        });
+
+    // === LOAD CURRENT DIFF ===
+    function loadCurrentDiff() {
+        const currentPrId = prIds[currentPrIndex];
+        const currentDiffTotal = diffCounts[currentPrId];
+
+        const [toolA, toolB] = toolNames;
+
+        const topUrl = `${currentPrId}/${toolA}/web/monaco-minimal/${currentDiffId}/index.html`;
+        const bottomUrl = `${currentPrId}/${toolB}/web/monaco-minimal/${currentDiffId}/index.html`;
+
+        topFrame.src = topUrl;
+        bottomFrame.src = bottomUrl;
+
+        document.querySelector("#top-header .tool-label").textContent = `🛠️ ${toolA}`;
+        document.querySelector("#bottom-header .tool-label").textContent = `🛠️ ${toolB}`;
+
+
+        const radioContainer = document.getElementById('radio-container');
+        radioContainer.innerHTML = '';
+        toolNames.forEach(tool => {
+            radioContainer.innerHTML += `<label><input type="radio" name="toolPreference" value="${tool}"> ${tool}</label>`;
+        });
+        radioContainer.innerHTML += `
+            <label><input type="radio" name="toolPreference" value="equal"> Equally Same</label>
+            <label><input type="radio" name="toolPreference" value="none"> None</label>
+        `;
+
+        // Calculate remaining diffs
+        let remaining = 0;
+        for (let i = currentPrIndex; i < prIds.length; i++) {
+            const total = diffCounts[prIds[i]];
+            if (i === currentPrIndex) {
+                remaining += total - (currentDiffId + 1);
+            } else {
+                remaining += total;
+            }
+        }
+
+        // Show remaining + hover title
+        const remainingEl = document.getElementById("remaining-indicator");
+        remainingEl.textContent = `Remaining: ${remaining}`;
+        const progressText = `PR ${currentPrIndex + 1} / ${prIds.length} — Diff ${currentDiffId + 1} / ${currentDiffTotal}`;
+        remainingEl.title = progressText; // ✅ Show progress on hover only
+
+        decorationData.top = null;
+        decorationData.bottom = null;
+        isHighlightActive = false;
+        toggleButton.textContent = "🔍 Show Differences Between Tools";
+
+        // Restore feedback
+        const feedback = loadFeedback(currentPrId, currentDiffId);
+        document.getElementById("comments").value = feedback?.comments || '';
+        if (feedback?.preference) {
+            const radio = document.querySelector(`input[name="toolPreference"][value="${feedback.preference}"]`);
+            if (radio) radio.checked = true;
+        }
+    }
+
+    // === FEEDBACK SUBMISSION ===
+    function submitFeedback() {
+        const preference = document.querySelector('input[name="toolPreference"]:checked')?.value;
+        const comments = document.getElementById("comments").value;
+
+        if (!preference) {
+            showToast("⚠️ Please select a tool preference before submitting.");
+            return;
+        }
+
+        const currentPrId = prIds[currentPrIndex];
+        saveFeedback(currentPrId, currentDiffId, preference, comments);
+
+        loadNextDiff();
+    }
+
+    function loadPreviousDiff() {
+        if (currentDiffId > 0) {
+            currentDiffId--;
+        } else {
+            currentPrIndex--;
+            if (currentPrIndex < 0) {
+                // Already at the first diff of the first PR
+                window.location.href = "index.html";
+                return;
+            }
+            const prevPrId = prIds[currentPrIndex];
+            currentDiffId = diffCounts[prevPrId] - 1;
+        }
+
+        loadCurrentDiff();
+    }
+    function loadDashboard() {
+        window.location.href = "index.html";
+        return;
+    }
+    function loadNextDiff() {
+
+        const currentPrId = prIds[currentPrIndex];
+        const maxDiffId = diffCounts[currentPrId];
+
+        currentDiffId++;
+
+        if (currentDiffId >= maxDiffId) {
+            currentPrIndex++;
+            currentDiffId = 0;
+
+            if (currentPrIndex >= prIds.length) {
+                window.location.href = "index.html";
+                return;
+            }
+        }
+
+        loadCurrentDiff();
+    }
+
+    // === HIGHLIGHT TOGGLE ===
+    function toggleDiffHighlights() {
+        if (isHighlightActive) {
+            isHighlightActive = false;
+            toggleButton.textContent = "🔍 Show Differences Between Tools";
+            topFrame.contentWindow.postMessage({ type: "HIGHLIGHT_LINES", lines: [], target: "both" }, '*');
+            bottomFrame.contentWindow.postMessage({ type: "HIGHLIGHT_LINES", lines: [], target: "both" }, '*');
+        } else {
+            isHighlightActive = true;
+            toggleButton.textContent = "❌ Hide Differences Between Tools";
+            decorationData.top = null;
+            decorationData.bottom = null;
+            topFrame.contentWindow.postMessage({ type: 'GET_DECORATIONS' }, '*');
+            bottomFrame.contentWindow.postMessage({ type: 'GET_DECORATIONS' }, '*');
+        }
+    }
+
+    // === MESSAGE HANDLER ===
+    window.addEventListener("message", (event) => {
+        if (event.data?.type === "DIFF_DECORATIONS") {
+            const { from, original, modified } = event.data;
+
+            if (from === "top") {
+                decorationData.top = { original, modified };
+            } else if (from === "bottom") {
+                decorationData.bottom = { original, modified };
+            }
+
+            if (decorationData.top && decorationData.bottom) {
+                analyzeDecorationDifferences();
+            }
+        }
+    });
+
+    function normalizeDecorations(decorations) {
+        const result = { original: [], modified: [] };
+        for (const d of decorations) {
+            const target = d.options.side === 'original' ? result.original : result.modified;
+            target.push({
+                line: d.range.startLineNumber,
+                className: d.options.className || '',
+                hover: (typeof d.options.hoverMessage === "string")
+                    ? d.options.hoverMessage
+                    : (Array.isArray(d.options.hoverMessage)
+                        ? d.options.hoverMessage.map(h => h.value).join(', ')
+                        : '')
+            });
+        }
+        return result;
+    }
+
+    function analyzeDecorationDifferences() {
+        const topDeco = decorationData.top;
+        const bottomDeco = decorationData.bottom;
+
+        // Only allow decoration classes created by your tool
+        const validClasses = new Set([
+            "inserted", "deleted", "moved", "updated", "mm",
+            "mm updOnTop", "mm updOnTop selected"
+        ]);
+
+        function isToolDecoration(d) {
+            return typeof d.className === 'string' &&
+                Array.from(validClasses).some(cls => d.className.includes(cls));
+        }
+
+        function diffLines(topMap, bottomMap) {
+            const allLines = new Set([
+                ...Object.keys(topMap).map(Number),
+                ...Object.keys(bottomMap).map(Number)
+            ]);
+
+            const diff = [];
+
+            for (const line of allLines) {
+                const topHashes = (topMap[line] || [])
+                    .filter(isToolDecoration)
+                    .map(d => d.hash)
+                    .sort();
+
+                const bottomHashes = (bottomMap[line] || [])
+                    .filter(isToolDecoration)
+                    .map(d => d.hash)
+                    .sort();
+
+                const topJoined = topHashes.join(',');
+                const bottomJoined = bottomHashes.join(',');
+
+                if (topJoined !== bottomJoined) {
+                    diff.push(line - 1);
+                }
+            }
+            return diff;
+        }
+
+        const originalDiffs = diffLines(topDeco.original, bottomDeco.original);
+        const modifiedDiffs = diffLines(topDeco.modified, bottomDeco.modified);
+
+        if (originalDiffs.length === 0 && modifiedDiffs.length === 0) {
+            isHighlightActive = false;
+            toggleButton.textContent = "🔍 Show Differences Between Tools";
+            showToast("No differences found between the tools.");
+            return;
+        }
+
+        topFrame.contentWindow.postMessage({ type: "HIGHLIGHT_LINES", lines: originalDiffs, target: "original" }, '*');
+        topFrame.contentWindow.postMessage({ type: "HIGHLIGHT_LINES", lines: modifiedDiffs, target: "modified" }, '*');
+        bottomFrame.contentWindow.postMessage({ type: "HIGHLIGHT_LINES", lines: originalDiffs, target: "original" }, '*');
+        bottomFrame.contentWindow.postMessage({ type: "HIGHLIGHT_LINES", lines: modifiedDiffs, target: "modified" }, '*');
+    }
+
+
+    // === TOAST HELPER ===
+    function showToast(message, duration = 2000) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.style.opacity = '1';
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+        }, duration);
+    }
+
+
+    (function setupSplitter() {
+        const splitter = document.getElementById('splitter');
+        const topIframe = document.getElementById('top');
+        const bottomIframe = document.getElementById('bottom');
+        const container = document.getElementById('container');
+
+        let isDragging = false;
+
+        splitter.addEventListener('mousedown', () => {
+            isDragging = true;
+            document.body.style.cursor = 'row-resize';
+            document.body.style.userSelect = 'none';
+
+            // ✅ Prevent iframes from eating mouse events
+            topIframe.style.pointerEvents = 'none';
+            bottomIframe.style.pointerEvents = 'none';
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            document.body.style.cursor = '';
+            document.body.style.userSelect = '';
+
+            // ✅ Restore pointer events
+            topIframe.style.pointerEvents = '';
+            bottomIframe.style.pointerEvents = '';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            const containerRect = container.getBoundingClientRect();
+            const y = e.clientY - containerRect.top;
+
+            const topHeaderHeight = document.getElementById('top-header').offsetHeight;
+            const bottomHeaderHeight = document.getElementById('bottom-header').offsetHeight;
+            const splitterHeight = splitter.offsetHeight;
+
+            const maxHeight = container.clientHeight - topHeaderHeight - bottomHeaderHeight - splitterHeight;
+
+            const topHeight = Math.min(Math.max(y - topHeaderHeight, 100), maxHeight - 100);
+            const bottomHeight = maxHeight - topHeight;
+
+            topIframe.style.height = `${topHeight}px`;
+            bottomIframe.style.height = `${bottomHeight}px`;
+        });
+    })();
+
+
+</script>
+</body>
+</html>

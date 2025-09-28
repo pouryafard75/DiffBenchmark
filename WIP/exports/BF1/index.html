@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Join Our AST Diff Experiment to Improve Code Comparison Tools</title>
+    <meta name="description" content="Help researchers improve source code differencing tools by joining our short experiment. It takes just a few minutes and helps advance software engineering research.">
+
+    <!-- Open Graph / LinkedIn -->
+    <meta property="og:title" content="Join Our AST Diff Experiment – Help Improve Code Differencing Tools">
+    <meta property="og:description" content="Participate in our short study to evaluate AST-based code diff tools. Quick, simple, and impactful for software engineering research.">
+    <meta property="og:url" content="https://pouryafard.pythonanywhere.com/exp1/">
+    <meta property="og:image" content="https://dummyimage.com/1200x630/cccccc/000000.png&text=AST%20Diff%20Experiment">
+    <meta name="author" content="Pouria Alikhanifard">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #222;
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 24px 16px;
+            margin: auto;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 16px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-top: 4px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .user-section,
+        .summary-section {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 14px;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .user-section h3,
+        .summary-section h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        .summary-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .summary-item ul {
+            padding-left: 16px;
+            margin: 4px 0 0;
+        }
+
+        .summary-item li {
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .summary-item span {
+            font-weight: bold;
+            color: #0077aa;
+        }
+
+        .info-banner {
+            background: #e9f4ff;
+            border-left: 4px solid #2196F3;
+            padding: 12px 14px;
+            font-size: 14.5px;
+            margin-top: 18px;
+            border-radius: 4px;
+            line-height: 1.5;
+        }
+
+        #reset-btn {
+            background-color: #c62828;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 13px;
+            display: none;
+        }
+
+        #reset-btn:hover {
+            background-color: #a32121;
+        }
+
+        #start-btn,
+        #submit-btn {
+            font-size: 15px;
+            padding: 10px 22px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #start-btn {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        #start-btn:hover {
+            background-color: #0b7dda;
+        }
+
+        #submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            display: none;
+        }
+
+        #submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .start-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #submit-success {
+            display: none;
+            margin-top: 16px;
+            padding: 10px;
+            background-color: #e6ffed;
+            border: 1px solid #2ecc71;
+            color: #2d7d46;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 16px;
+            text-align: center;
+            font-size: 13px;
+            color: #666;
+        }
+
+        footer a {
+            color: #444;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="study-title">Loading...</h1>
+    <p id="study-description"></p>
+
+    <div class="info-banner">
+        <strong>Welcome to the DiffQ Evaluation Study!</strong><br><br>
+        You will be reviewing several pull requests (PRs) / commits, each with a few file-level diffs.
+        For each diff, you’ll compare two visualizations produced by different diff tools and choose the one you prefer.
+        <br><br>
+        🔍 Use the <strong>side-by-side viewer</strong> to compare the two versions.<br>
+        ↕️ <strong>Resize panels</strong> by dragging the bar between top and bottom sections.<br>
+        📝 Select your preferred tool and optionally leave a comment.<br>
+        💾 Selections are <strong>saved automatically</strong>.<br><br>
+        You can return here anytime to check your progress or continue reviewing.<br><br>
+        Optionally, leave your email to be notified which tool you preferred most.
+    </div>
+
+    <div class="user-section">
+        <h3>Participant Information</h3>
+        <label>Email address:
+            <input type="email" id="user-email" placeholder="Your email (optional)">
+        </label>
+        <label>Familiarity with code review:
+            <select id="code-review-familiarity">
+                <option value="">Select...</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Expert">Expert</option>
+            </select>
+        </label>
+        <label>Overall comment about the study:
+            <textarea id="overall-comment" placeholder="Your thoughts, suggestions, or feedback..." rows="4"></textarea>
+        </label>
+    </div>
+
+    <div class="start-container">
+        <button id="start-btn">🚀 Start Reviewing</button>
+        <button id="submit-btn">✅ Submit Your Answers</button>
+        <div id="submit-success">✅ Your feedback was successfully submitted.</div>
+    </div>
+
+    <div class="summary-section">
+        <h3>Your Selections So Far</h3>
+        <div id="summary-container"></div>
+        <button id="reset-btn" onclick="clearProgress()">🗑️ Clear All Progress</button>
+    </div>
+
+    <footer>
+        This experiment was designed by the <strong>Concordia Empirical Software Engineering Labs</strong>.<br>
+        For questions or concerns, contact <a href="mailto:po_alikh@live.concordia.ca">po_alikh@live.concordia.ca</a>.
+    </footer>
+</div>
+
+<script>
+    let prList = [];
+    let qid = null;
+    fetch('config.json')
+        .then(res => res.json())
+        .then(data => {
+            prList = Object.entries(data.diffCounts).map(([prid, count]) => ({
+                prid,
+                diffs: Array.from({ length: count }, (_, i) => i)
+            }));
+            qid = data.qid;
+            urls = data.urls;
+            loadAllSessionData();  // Wait to load summary after config
+        })
+        .catch(err => {
+            console.error("Failed to load config.json:", err);
+            alert("Could not load configuration.");
+        });
+
+    let responses = {};
+
+    function loadAllSessionData() {
+        responses = {};
+        for (let i = 0; i < sessionStorage.length; i++) {
+            const key = sessionStorage.key(i);
+            if (key.startsWith("feedback_")) {
+                const [_, prId, diffId] = key.split("_");
+                const { preference, comments } = JSON.parse(sessionStorage.getItem(key));
+                if (!responses[prId]) responses[prId] = { diffs: {} };
+                responses[prId].diffs[diffId] = { selectedTool: preference, comment: comments };
+            }
+        }
+
+        document.getElementById("user-email").value = sessionStorage.getItem("user_email") || "";
+        document.getElementById("code-review-familiarity").value = sessionStorage.getItem("user_familiarity") || "";
+        document.getElementById("overall-comment").value = sessionStorage.getItem("overall_comment") || "";
+
+        updateSummary();
+        updateButtonState();
+    }
+
+    function updateSummary() {
+        const summary = document.getElementById('summary-container');
+        const resetBtn = document.getElementById('reset-btn');
+        summary.innerHTML = '';
+
+        if (Object.keys(responses).length === 0) {
+            summary.innerHTML = '<p style="color: #777;">No progress yet. Start reviewing diffs to see your selections here.</p>';
+            resetBtn.style.display = 'none';
+            return;
+        }
+
+        Object.entries(responses).forEach(([prId, res]) => {
+            const div = document.createElement('div');
+            div.className = 'summary-item';
+
+            const prLink = document.createElement('a');
+            prLink.href = urls[prId] || `~`
+            prLink.target = '_blank';
+            prLink.textContent = `PR ${prId}`;
+            prLink.style.textDecoration = 'none';
+
+            const span = document.createElement('span');
+            span.appendChild(prLink);
+            div.appendChild(span);
+
+            const ul = document.createElement('ul');
+            Object.entries(res.diffs || {}).forEach(([diffIndex, diff]) => {
+                const li = document.createElement('li');
+                li.style.marginBottom = '10px';
+
+                const link = document.createElement('a');
+                link.href = `reviewPage.html?prid=${prId}&diffid=${diffIndex}`;
+                link.textContent = `Diff ${+diffIndex + 1}: ${diff.selectedTool}`;
+                link.style.textDecoration = 'none';
+                link.style.color = '#0077aa';
+                link.style.display = 'block';
+                link.style.fontWeight = 'bold';
+
+                li.appendChild(link);
+
+                if (diff.comment) {
+                    const commentDiv = document.createElement('div');
+                    commentDiv.textContent = `💬 ${diff.comment}`;
+                    commentDiv.style.marginTop = '4px';
+                    commentDiv.style.marginLeft = '10px';
+                    commentDiv.style.fontStyle = 'italic';
+                    commentDiv.style.color = '#444';
+                    commentDiv.style.fontSize = '0.9em';
+                    commentDiv.style.backgroundColor = '#f0f0f0';
+                    commentDiv.style.padding = '4px 6px';
+                    commentDiv.style.borderRadius = '4px';
+
+                    li.appendChild(commentDiv);
+                }
+
+                ul.appendChild(li);
+            });
+
+            div.appendChild(ul);
+            summary.appendChild(div);
+        });
+
+        resetBtn.style.display = 'inline-block';
+    }
+
+    function clearProgress() {
+        if (confirm("Are you sure you want to clear all your feedback and start over?")) {
+            for (let i = 0; i < sessionStorage.length; i++) {
+                const key = sessionStorage.key(i);
+                if (key.startsWith("feedback_") || key === "user_email" || key === "user_familiarity") {
+                    sessionStorage.removeItem(key);
+                    i--;
+                }
+            }
+            responses = {};
+            updateSummary();
+            updateButtonState();
+        }
+    }
+
+    function findFirstUnanswered() {
+        for (const pr of prList) {
+            for (const diffId of pr.diffs) {
+                const key = `feedback_${String(pr.prid)}_${String(diffId)}`;
+                if (!sessionStorage.getItem(key)) {
+                    return { prid: pr.prid, diffid: diffId };
+                }
+            }
+        }
+        const last = prList[prList.length - 1];
+        return { prid: last.prid, diffid: last.diffs[last.diffs.length - 1] };
+    }
+
+    function checkIfAllAnswered() {
+        for (const pr of prList) {
+            for (const diffId of pr.diffs) {
+                const key = `feedback_${String(pr.prid)}_${String(diffId)}`;
+                if (!sessionStorage.getItem(key)) return false;
+            }
+        }
+        return true;
+    }
+
+    function updateButtonState() {
+        const startBtn = document.getElementById("start-btn");
+        const submitBtn = document.getElementById("submit-btn");
+
+        if (checkIfAllAnswered()) {
+            startBtn.style.display = "none";
+            submitBtn.style.display = "inline-block";
+        } else {
+            let hasProgress = false;
+            for (let i = 0; i < sessionStorage.length; i++) {
+                if (sessionStorage.key(i).startsWith("feedback_")) {
+                    hasProgress = true;
+                    break;
+                }
+            }
+            startBtn.textContent = hasProgress ? "▶️ Continue Reviewing" : "🚀 Start Reviewing";
+            startBtn.style.display = "inline-block";
+            submitBtn.style.display = "none";
+        }
+    }
+
+    function goToFirstUnanswered() {
+        const { prid, diffid } = findFirstUnanswered();
+        location.href = `reviewPage.html?prid=${prid}&diffid=${diffid}`;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        document.getElementById("study-title").textContent = "DiffQ Evaluation Study";
+        // document.getElementById("study-description").textContent = "Welcome to the DiffQ Study. Please complete the diffs and select your preferred tools.";
+
+        document.getElementById("start-btn").onclick = goToFirstUnanswered;
+
+        function getOrCreateSessionId() {
+            let sessionId = localStorage.getItem("session_id");
+            if (!sessionId) {
+                sessionId = crypto.randomUUID(); // or use a simple UUID generator
+                localStorage.setItem("session_id", sessionId);
+            }
+            return sessionId;
+        }
+
+        const sessionId = getOrCreateSessionId();
+        document.getElementById("submit-btn").onclick = () => {
+            const payload = {
+                qid : qid,
+                sessionId: sessionId,
+                email: sessionStorage.getItem("user_email") || null,
+                familiarity: sessionStorage.getItem("user_familiarity") || null,
+                overallComment: sessionStorage.getItem("overall_comment") || null,
+                feedback: responses
+            };
+
+
+            fetch("/submit-feedback", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(payload)
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error("Request failed");
+                    return res.json();
+                })
+                .then(data => {
+                    console.log("✅ Success:", data);
+
+                    // Step 1: show an alert
+                    alert("✅ Your feedback was successfully submitted. Thank you!");
+
+                    // Step 2: show a success panel if it exists
+                    const successPanel = document.getElementById("submit-success");
+                    if (successPanel) {
+                        successPanel.style.display = "block";
+                    }
+
+                    // Step 3: hide or disable the submit button
+                    const submitBtn = document.getElementById("submit-btn");
+                    if (submitBtn) {
+                        submitBtn.style.display = "none";  // or use: submitBtn.disabled = true;
+                    }
+                })
+                .catch(err => {
+                    console.error("⚠️ Submit error:", err);
+                });
+        };
+
+
+        document.getElementById("user-email").addEventListener("input", (e) => {
+            sessionStorage.setItem("user_email", e.target.value);
+        });
+
+        document.getElementById("code-review-familiarity").addEventListener("change", (e) => {
+            sessionStorage.setItem("user_familiarity", e.target.value);
+        });
+
+        document.getElementById("overall-comment").addEventListener("input", (e) => {
+            sessionStorage.setItem("overall_comment", e.target.value);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -4,6 +4,7 @@ import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import gui.webdiff.dir.DirComparator;
+import gui.webdiff.dir.filters.DiffFilterKind;
 import org.apache.commons.lang3.tuple.Pair;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
@@ -36,7 +37,7 @@ public class DatasetDetailedChurnToCSV {
             int sizeOfModifiedFilesOld = 0;
             int addedFilesSize = 0;
             int removedFilesSize = 0;
-            DirComparator dirComparator = new DirComparator(projectASTDiff);
+            DirComparator dirComparator = new DirComparator(projectASTDiff, DiffFilterKind.NO_FILTER);
             Pair<Integer, Integer> churn = Pair.of(0, 0);
             Pair<Integer, Integer> size = Pair.of(0, 0);
             for (ASTDiff diff : projectASTDiff.getDiffSet()) {

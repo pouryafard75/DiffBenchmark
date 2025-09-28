@@ -1,0 +1,40 @@
+ul {
+    list-style: none;
+}
+
+summary {
+  display : block;
+  cursor  : pointer;
+}
+
+summary::marker,
+summary::-webkit-details-marker {
+  display : none;
+}
+
+summary::before {
+	margin-left: 3px;
+    content: url('icons8-file-folder-closed.svg');
+    margin-right: 5px;
+}
+
+details[open] > summary::before {
+	margin-left: 3px;
+	content: url('icons8-file-folder-opened.svg');
+    margin-right: 5px;
+}
+
+ul li {
+  border-left : 2px solid #ddd;
+}
+
+ul li:last-child {
+  border-color : transparent;
+}
+ul
+{
+    padding-inline-start: 3px;
+}
+.row>*{
+    padding-right: 0;
+}

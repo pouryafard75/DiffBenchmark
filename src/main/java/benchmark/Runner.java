@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.function.Consumer;
 
-/* Created by pourya on 2024-04-28*/
+/* Created by anonymous on 2024-04-28*/
 public class Runner {
     public static void run(Set<IExperiment> exps, boolean rm_only, Consumer<BenchmarkHumanReadableDiffGenerator> consumer) throws Exception {
         for (IExperiment exp : exps) {

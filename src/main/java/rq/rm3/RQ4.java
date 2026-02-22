@@ -1,6 +1,6 @@
 package rq.rm3;
 
-/* Created by pourya on 2023-11-20 11:28 a.m. */
+/* Created by anonymous on 2023-11-20 11:28 a.m. */
 
 import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.data.exp.IExperiment;
@@ -16,7 +16,7 @@ import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/* Created by pourya on 2023-09-19 6:18 p.m. */
+/* Created by anonymous on 2023-09-19 6:18 p.m. */
 
 /***
  * How do refactorings affect the accuracy of each tool?

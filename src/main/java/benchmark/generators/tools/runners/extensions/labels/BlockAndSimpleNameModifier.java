@@ -8,7 +8,7 @@ import org.refactoringminer.astDiff.utils.Constants;
 
 import java.util.List;
 
-/* Created by pourya on 2025-02-07*/
+/* Created by anonymous on 2025-02-07*/
 public class BlockAndSimpleNameModifier implements TreeModifier {
 
     List<String> SEARCHING_TYPES = List.of(

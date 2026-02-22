@@ -8,7 +8,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 
 import static benchmark.generators.hrd.GeneratorUtils.*;
 
-/* Created by pourya on 2023-09-15 4:26 p.m. */
+/* Created by anonymous on 2023-09-15 4:26 p.m. */
 public class HRDGen2 extends HumanReadableDiffGenerator {
     public HRDGen2(IBenchmarkCase benchmarkCase, ASTDiff current) {
         this(benchmarkCase, current, new NoFilter());

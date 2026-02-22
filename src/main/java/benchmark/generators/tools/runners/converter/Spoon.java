@@ -20,7 +20,7 @@ import spoon.support.compiler.VirtualFile;
 
 import static benchmark.generators.tools.runners.Utils.makeASTDiff;
 
-/* Created by pourya on 2024-09-09*/
+/* Created by anonymous on 2024-09-09*/
 public class Spoon extends ASTDiffProviderFromProjectASTDiff {
 
     public final DiffConfiguration configuration;

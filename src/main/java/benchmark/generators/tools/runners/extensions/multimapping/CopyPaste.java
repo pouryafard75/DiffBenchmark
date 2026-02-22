@@ -13,7 +13,7 @@ import java.util.function.Function;
 
 import static benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider.safeAdd;
 
-/* Created by pourya on 2024-05-12*/
+/* Created by anonymous on 2024-05-12*/
 public class CopyPaste implements GumTreeMultiMappingMatcher{
 
     @Override

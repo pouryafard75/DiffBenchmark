@@ -11,7 +11,7 @@ import java.util.LinkedHashSet;
 
 import static benchmark.generators.tools.runners.Utils.writeAll;
 
-/* Created by pourya on 2022-12-26 9:30 p.m. */
+/* Created by anonymous on 2022-12-26 9:30 p.m. */
 public class CompareWithGitHubAPI {
     public static void main(String[] args) throws Exception {
         String url = "https://github.com/Alluxio/alluxio/commit/9aeefcd8120bb3b89cdb437d8c32d2ed84b8a825";
@@ -22,7 +22,7 @@ public class CompareWithGitHubAPI {
         url = "https://github.com/fabric8io/fabric8/commit/8127b21a220ca677c4e59961d019e7753da7ea6e";
         url = "https://github.com/eclipse/jetty.project/commit/837d1a74bb7d694220644a2539c4440ce55462cf";
         url = "https://github.com/jetty/jetty.project/commit/837d1a74bb7d694220644a2539c4440ce55462cf";
-//        url = "https://github.com/pouryafard75/TestCases/commit/4383fc88c49244e1ac77309075570e6396ee9e70";
+//        url = "https://github.com/anonymousfard75/TestCases/commit/4383fc88c49244e1ac77309075570e6396ee9e70";
         url = "https://github.com/processing/processing/commit/acf67c8cb58d13827e14bbeeec11a66f9277015f";
 
         WebDiffConf webDiffConf = WebDiffConf.defaultConf();

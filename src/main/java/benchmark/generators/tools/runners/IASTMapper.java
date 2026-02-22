@@ -22,7 +22,7 @@ import java.util.List;
 import static benchmark.generators.tools.runners.Utils.getTreesExactPosition;
 import static benchmark.generators.tools.runners.shaded.AbstractASTDiffProviderFromIncompatibleTree.diffToASTDiffWithActions;
 
-/* Created by pourya on 2024-01-10*/
+/* Created by anonymous on 2024-01-10*/
 public class IASTMapper extends ASTDiffProviderFromProjectASTDiff {
     private final String srcContents;
     private final String dstContents;

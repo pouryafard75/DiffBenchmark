@@ -22,7 +22,7 @@ import java.util.Set;
 
 import static benchmark.conf.Paths.ORACLE_DIR;
 
-/* Created by pourya on 2023-04-17 8:58 p.m. */
+/* Created by anonymous on 2023-04-17 8:58 p.m. */
 public class BenchmarkWebDiffFactory {
 
     private final WebDiffConf webDiffConf;

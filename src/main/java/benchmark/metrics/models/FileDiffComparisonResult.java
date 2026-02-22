@@ -5,7 +5,7 @@ import benchmark.data.diffcase.IBenchmarkCase;
 
 import java.io.FileWriter;
 
-/* Created by pourya on 2023-04-03 4:47 a.m. */
+/* Created by anonymous on 2023-04-03 4:47 a.m. */
 public class FileDiffComparisonResult extends BaseDiffComparisonResult {
     final String srcFileName;
     boolean onFly = false;

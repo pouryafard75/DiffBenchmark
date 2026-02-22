@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 
-/* Created by pourya on 2024-10-03*/
+/* Created by anonymous on 2024-10-03*/
 public class CommentsRQ implements RQ {
     public void run(IExperiment[] experiments) {
         Collection<BaseDiffComparisonResult> stats = new LinkedHashSet<>();

@@ -9,7 +9,7 @@ import static benchmark.data.dataset.EBenchmarkDataset.Defects4J;
 import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
 
-/* Created by pourya on 2024-09-28*/
+/* Created by anonymous on 2024-09-28*/
 public class D4JCase extends LocalCase {
     final String project;
     final String bugID;

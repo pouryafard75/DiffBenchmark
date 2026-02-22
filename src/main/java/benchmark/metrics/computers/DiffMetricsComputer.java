@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.function.Function;
 
-/* Created by pourya on 2023-04-03 3:53 a.m. */
+/* Created by anonymous on 2023-04-03 3:53 a.m. */
 public class DiffMetricsComputer {
 
     private final HumanReadableDiff godDiff;

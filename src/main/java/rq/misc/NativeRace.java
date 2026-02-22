@@ -24,7 +24,7 @@ public class NativeRace {
 interface CMDRunner{
     String getBinariesPath();
     default void kill(){
-        String scriptFile = "/home/pourya/IdeaProjects/DiffBenchmark/kill.sh"; // Replace with the path to your script file
+        String scriptFile = "/home/anonymous/IdeaProjects/DiffBenchmark/kill.sh"; // Replace with the path to your script file
         ProcessBuilder processBuilder = new ProcessBuilder("bash", scriptFile);
         try {
             Process process = processBuilder.start();
@@ -60,14 +60,14 @@ interface CMDRunner{
 class NativeBinariesCMDRunner implements CMDRunner {
     @Override
     public String getBinariesPath() {
-        return "/home/pourya/IdeaProjects/RM-ASTDiff/RM-native";
+        return "/home/anonymous/IdeaProjects/RM-ASTDiff/RM-native";
     }
 }
 
 class JVMBinariesCMDRunner implements CMDRunner {
     @Override
     public String getBinariesPath() {
-        return "/home/pourya/IdeaProjects/RM-ASTDiff/build/distributions/RefactoringMiner-3.0.4/bin/RefactoringMiner";
+        return "/home/anonymous/IdeaProjects/RM-ASTDiff/build/distributions/RefactoringMiner-3.0.4/bin/RefactoringMiner";
     }
 }
 

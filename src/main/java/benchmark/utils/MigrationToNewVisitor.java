@@ -24,10 +24,10 @@ import java.util.function.Function;
 import static org.refactoringminer.astDiff.utils.ExportUtils.getFinalFilePath;
 import static org.refactoringminer.astDiff.utils.ExportUtils.getFinalFolderPath;
 
-/* Created by pourya on 2024-12-09*/
+/* Created by anonymous on 2024-12-09*/
 public class MigrationToNewVisitor {
 
-    static String mappingsPath = "/Users/pourya/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/commits/";
+    static String mappingsPath = "/Users/anonymous/IdeaProjects/RM-ASTDiff/src/test/resources/astDiff/commits/";
     static IBenchmarkDataset dataset = new RefactoringOracleBenchmarkDataset();
 
 

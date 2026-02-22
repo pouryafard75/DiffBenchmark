@@ -6,7 +6,7 @@ import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.FakeTree;
 import com.github.gumtreediff.tree.Tree;
 
-/* Created by pourya on 2024-05-12*/
+/* Created by anonymous on 2024-05-12*/
 public class SingleVirtualNodeMatching implements GumTreeProjectMatcher {
     @Override
     public Iterable<Mapping> getCommitLevelFullMatch(Tree srcPT, Tree dstPT, Matcher matcher) {

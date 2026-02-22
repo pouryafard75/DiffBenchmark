@@ -9,7 +9,7 @@ import java.util.Objects;
 
 import static benchmark.conf.Paths.ORACLE_DIR;
 
-/* Created by pourya on 2024-09-28*/
+/* Created by anonymous on 2024-09-28*/
 public abstract class RemoteCase extends AbstractIBenchmarkCase {
     String repo;
     String commit;

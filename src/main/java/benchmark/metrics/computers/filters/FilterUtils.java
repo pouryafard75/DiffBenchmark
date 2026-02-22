@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-/* Created by pourya on 2024-10-03*/
+/* Created by anonymous on 2024-10-03*/
 public class FilterUtils {
 
     public static Collection<AbstractMapping> apply(Collection<AbstractMapping> input, Predicate<AbstractMapping> typeFilter){

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/* Created by pourya on 2024-01-18*/
+/* Created by anonymous on 2024-01-18*/
 public class MakeIntel {
     private final static Logger logger = LoggerFactory.getLogger(MakeIntel.class);
     private static final IExperiment experiment = ExperimentsEnum.D4J_EXP;

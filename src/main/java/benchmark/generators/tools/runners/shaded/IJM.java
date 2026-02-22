@@ -6,7 +6,7 @@ import benchmark.data.diffcase.IBenchmarkCase;
 import benchmark.models.selector.DiffSelector;
 
 
-/* Created by pourya on 2023-04-17 7:58 p.m. */
+/* Created by anonymous on 2023-04-17 7:58 p.m. */
 public class IJM extends AbstractASTDiffProviderFromIncompatibleTree {
     public IJM(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);

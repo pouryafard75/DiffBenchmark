@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
-/* Created by pourya on 2024-02-19*/
+/* Created by anonymous on 2024-02-19*/
 public abstract class AbstractASTDiffProviderFromMappingSet extends AbstractASTDiffProviderFromExportedMappings {
     protected final String srcContents;
     protected final String dstContents;

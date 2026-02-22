@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Predicate;
 
-/* Created by pourya on 2023-04-16 5:07 a.m. */
+/* Created by anonymous on 2023-04-16 5:07 a.m. */
 public class BaseTrivialDiff extends BaseASTDiffProvider {
     private Predicate<Mapping> condition;
     public BaseTrivialDiff(ASTDiff rm_astDiff){

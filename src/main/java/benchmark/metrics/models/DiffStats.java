@@ -2,7 +2,7 @@ package benchmark.metrics.models;
 
 import java.util.Objects;
 
-/* Created by pourya on 2023-04-16 2:42 a.m. */
+/* Created by anonymous on 2023-04-16 2:42 a.m. */
 public class DiffStats {
     private final Stats programElementStats;
     private final Stats abstractMappingStats;

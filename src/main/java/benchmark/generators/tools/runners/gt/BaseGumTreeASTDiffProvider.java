@@ -11,7 +11,7 @@ import com.github.gumtreediff.tree.TreeContext;
 import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
-/* Created by pourya on 2024-04-30*/
+/* Created by anonymous on 2024-04-30*/
 
 // GumTree is an algorithm to match trees, (it's not an ASTDiff tool!, even if they claim so), in order to make use of with, you need a visitor, though
 // This class basically relies on their own original visitor which might be even buggy in some cases (such as records and ...)

@@ -4,7 +4,7 @@ import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
-/* Created by pourya on 2024-11-29*/
+/* Created by anonymous on 2024-11-29*/
 public abstract class FirstChildOfTypeMatcher implements TranslationRule {
     final String query;
     public FirstChildOfTypeMatcher(String query) {

@@ -6,7 +6,7 @@ import java.util.*;
 
 import static benchmark.models.hrd.HumanReadableDiff.abstractMappingComparator;
 
-/* Created by pourya on 2023-08-09 4:58 p.m. */
+/* Created by anonymous on 2023-08-09 4:58 p.m. */
 public class NecessaryMappings {
     @JsonDeserialize(as = HashSet.class)
     Collection<AbstractMapping> matchedElements;

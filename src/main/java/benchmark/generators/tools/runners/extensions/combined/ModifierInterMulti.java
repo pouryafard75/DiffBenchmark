@@ -10,7 +10,7 @@ import com.github.gumtreediff.matchers.Matcher;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
-/* Created by pourya on 2024-05-10*/
+/* Created by anonymous on 2024-05-10*/
 
 //XXX: This must be verified, I haven't tested this one tbh...
 public class ModifierInterMulti extends PipelinedASTDiffProvider {

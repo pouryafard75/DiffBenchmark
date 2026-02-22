@@ -5,7 +5,7 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.nio.file.Path;
 
-/* Created by pourya on 2024-09-28*/
+/* Created by anonymous on 2024-09-28*/
 public abstract class LocalCase extends AbstractIBenchmarkCase {
     final Path srcPath;
     final Path dstPath;

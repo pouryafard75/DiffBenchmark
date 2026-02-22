@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import static benchmark.conf.Paths.ORACLE_DIR;
 
 
-/* Created by pourya on 2023-04-17 7:29 p.m. */
+/* Created by anonymous on 2023-04-17 7:29 p.m. */
 public class PathResolver {
     public static String getCommonPath(String baseFolder, String fileName, String toolname, String commit, String repo) {
         String replacedFileName = fileNameAsFolder(fileName);

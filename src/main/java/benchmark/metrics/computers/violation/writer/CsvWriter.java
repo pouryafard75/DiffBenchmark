@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.*;
 
-/* Created by pourya on 2023-12-11 3:26 p.m. */
+/* Created by anonymous on 2023-12-11 3:26 p.m. */
 public class CsvWriter {
     private final BenchmarkViolationComputer benchmarkViolationComputer;
 

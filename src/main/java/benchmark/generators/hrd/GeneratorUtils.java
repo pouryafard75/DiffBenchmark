@@ -3,7 +3,7 @@ package benchmark.generators.hrd;
 import com.github.gumtreediff.tree.Tree;
 import org.refactoringminer.astDiff.utils.Constants;
 
-/* Created by pourya on 2023-04-17 6:45 p.m. */
+/* Created by anonymous on 2023-04-17 6:45 p.m. */
 public class GeneratorUtils {
     public static String generateFieldSignature(Tree fieldDeclaration, String content) {
         int end = fieldDeclaration.getEndPos();

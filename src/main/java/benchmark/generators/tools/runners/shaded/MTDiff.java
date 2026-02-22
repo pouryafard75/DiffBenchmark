@@ -10,7 +10,7 @@ import shaded.com.github.gumtreediff.gen.TreeGenerator;
 import shaded.com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 
 
-/* Created by pourya on 2023-04-17 7:59 p.m. */
+/* Created by anonymous on 2023-04-17 7:59 p.m. */
 public class MTDiff extends AbstractASTDiffProviderFromIncompatibleTree {
 
     private final IBenchmarkCase benchmarkCase;

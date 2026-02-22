@@ -15,7 +15,7 @@ import java.util.List;
 import static org.refactoringminer.astDiff.utils.ExportUtils.getFileNameFromSrcDiff;
 import static org.refactoringminer.astDiff.utils.ExportUtils.repoToFolder;
 
-/* Created by pourya on 2023-07-25 9:54 p.m. */
+/* Created by anonymous on 2023-07-25 9:54 p.m. */
 public class PerfectDiff extends AbstractASTDiffProviderFromExportedMappings {
     public PerfectDiff(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);

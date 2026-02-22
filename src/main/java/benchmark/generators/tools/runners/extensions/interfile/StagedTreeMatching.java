@@ -9,7 +9,7 @@ import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.function.BiConsumer;
 
-/* Created by pourya on 2024-04-30*/
+/* Created by anonymous on 2024-04-30*/
 public class StagedTreeMatching implements GumTreeProjectMatcher {
 
     private final int numOfFiles;

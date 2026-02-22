@@ -3,7 +3,7 @@ package benchmark.data.diffcase;
 import benchmark.data.dataset.IBenchmarkDataset;
 import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
-/* Created by pourya on 2024-09-28*/
+/* Created by anonymous on 2024-09-28*/
 public class RefCountCaseI implements IBenchmarkCase {
     final int refCount;
 

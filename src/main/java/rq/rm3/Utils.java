@@ -18,7 +18,7 @@ import java.util.*;
 import java.util.function.Function;
 
 
-/* Created by pourya on 2023-11-21 11:55 p.m. */
+/* Created by anonymous on 2023-11-21 11:55 p.m. */
 public class Utils {
     public static void mergeStats(BaseDiffComparisonResult existing, Collection<? extends BaseDiffComparisonResult> oneCaseStats) {
         if (existing.getIgnore() == null){

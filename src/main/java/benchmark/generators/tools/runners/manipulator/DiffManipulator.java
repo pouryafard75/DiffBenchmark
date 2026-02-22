@@ -21,7 +21,7 @@ import java.util.function.BiConsumer;
 
 import static benchmark.generators.tools.runners.Utils.makeASTDiff;
 
-/* Created by pourya on 2025-01-07*/
+/* Created by anonymous on 2025-01-07*/
 public class DiffManipulator implements ASTDiffProvider {
     private final IBenchmarkCase benchmarkCase;
     private final DiffSelector querySelector;

@@ -35,7 +35,7 @@ import static benchmark.utils.PathResolver.getAfterDir;
 import static benchmark.utils.PathResolver.getBeforeDir;
 import static org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl.createModelForASTDiff;
 
-/* Created by pourya on 2023-11-23 9:53 p.m. */
+/* Created by anonymous on 2023-11-23 9:53 p.m. */
 
 /***
  * What is the execution time of each tool?

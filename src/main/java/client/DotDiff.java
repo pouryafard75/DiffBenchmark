@@ -10,7 +10,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 import java.io.StringWriter;
 import java.io.Writer;
 
-/* Created by pourya on 2025-02-01*/
+/* Created by anonymous on 2025-02-01*/
 public final class DotDiff {
     private final Diff diff;
     private final TreeClassifier classifier;

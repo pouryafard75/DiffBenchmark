@@ -11,7 +11,7 @@ import org.refactoringminer.astDiff.models.ProjectASTDiff;
 import java.io.IOException;
 import java.util.Collections;
 
-/* Created by pourya on 2024-11-26*/
+/* Created by anonymous on 2024-11-26*/
 public class OriginalVisitorGumTreeASTDiffProvider extends BaseGumTreeASTDiffProvider {
     private final String dstContent;
     private final String srcContent;

@@ -7,7 +7,7 @@ import com.github.gumtreediff.tree.TreeUtils;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
 
-/* Created by pourya on 2024-05-12*/
+/* Created by anonymous on 2024-05-12*/
 public abstract class AbstractLeafMergerTreeModifier implements TreeModifier {
     private final BiConsumer<Tree, String> setFunction;
     private final Function<Tree, String> getFunction;

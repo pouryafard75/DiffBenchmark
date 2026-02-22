@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 
-/* Created by pourya on 2024-01-27*/
+/* Created by anonymous on 2024-01-27*/
 public class HRDBenchmarkComputer {
     private final HumanReadableDiffFilter humanReadableDiffFilter;
     private final CalculationFilter filterDuringMetricsCalculation;

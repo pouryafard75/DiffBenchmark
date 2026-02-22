@@ -8,7 +8,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 import org.refactoringminer.astDiff.actions.editscript.SimplifiedExtendedChawatheScriptGenerator;
 import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
-/* Created by pourya on 2024-05-07*/
+/* Created by anonymous on 2024-05-07*/
 public class GumTreeWithMultiMappingASTDiffProvider extends BaseGumTreeASTDiffProvider {
     final GumTreeMultiMappingMatcher gumTreeMultiMappingMatcher;
     public GumTreeWithMultiMappingASTDiffProvider(GumTreeMultiMappingMatcher gumTreeMultiMappingMatcher, CompositeMatchers.CompositeMatcher matcher, ASTDiff rmAstDiff) {

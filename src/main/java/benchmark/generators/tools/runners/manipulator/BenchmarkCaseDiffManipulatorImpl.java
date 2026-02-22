@@ -7,7 +7,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.util.function.Consumer;
 
-/* Created by pourya on 2025-01-07*/
+/* Created by anonymous on 2025-01-07*/
 public class BenchmarkCaseDiffManipulatorImpl extends BaseBenchmarkCaseDiffManipulator {
     @SafeVarargs
     public BenchmarkCaseDiffManipulatorImpl(IBenchmarkCase benchmarkCase,

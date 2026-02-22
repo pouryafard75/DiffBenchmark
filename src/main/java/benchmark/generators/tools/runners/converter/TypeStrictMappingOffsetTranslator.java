@@ -6,7 +6,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 import java.util.List;
 import java.util.function.BiPredicate;
 
-/* Created by pourya on 2025-03-21*/
+/* Created by anonymous on 2025-03-21*/
 public class TypeStrictMappingOffsetTranslator extends MappingOffsetTranslator {
     protected static final BiPredicate<Tree, Tree>[] biPredicates = new BiPredicate[]{startOffsetMatchPredicate, endOffsetMatchPredicate, typeMatchPredicate};
     public TypeStrictMappingOffsetTranslator(ASTDiff ref, ITranslationRuleProvider ruleProvider) {

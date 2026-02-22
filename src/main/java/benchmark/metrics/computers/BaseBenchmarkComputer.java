@@ -5,7 +5,7 @@ import benchmark.data.exp.IExperiment;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-/* Created by pourya on 2023-11-29 9:13 a.m. */
+/* Created by anonymous on 2023-11-29 9:13 a.m. */
 public abstract class BaseBenchmarkComputer implements StatsComputer {
     private final IExperiment experiment;
     private final ObjectMapper mapper;

@@ -14,7 +14,7 @@ import org.refactoringminer.astDiff.utils.TreeUtilFunctions;
 import java.util.List;
 import java.util.Map;
 
-/* Created by pourya on 2024-02-20*/
+/* Created by anonymous on 2024-02-20*/
 public abstract class AbstractASTDiffProviderFromExportedMappings extends ASTDiffProviderFromProjectASTDiff {
     public AbstractASTDiffProviderFromExportedMappings(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);

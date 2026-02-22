@@ -6,7 +6,7 @@ import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import static benchmark.generators.hrd.HumanReadableDiffGenerator.isBetweenDifferentTypes;
 
-/* Created by pourya on 2024-11-29*/
+/* Created by anonymous on 2024-11-29*/
 public class ParentWithSameOffset implements TranslationRule {
     @Override
     public void accept(Mapping foreign, Mapping local, ExtendedMultiMappingStore ms) {

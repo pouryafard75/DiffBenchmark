@@ -8,7 +8,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-/* Created by pourya on 2025-01-07*/
+/* Created by anonymous on 2025-01-07*/
 
 public class BaseBenchmarkCaseDiffManipulator implements IASTDiffTool {
     private final Map<DiffSelector, ASTDiff> memorized = new LinkedHashMap<>();

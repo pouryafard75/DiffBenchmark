@@ -6,7 +6,7 @@ import benchmark.data.dataset.IBenchmarkDataset;
 import java.util.EnumSet;
 import java.util.Set;
 
-/* Created by pourya on 2023-12-05 9:52 p.m. */
+/* Created by anonymous on 2023-12-05 9:52 p.m. */
 public class CharacteristicsRunner {
     private static final Set<Characteristic> conf = EnumSet.of(
             Characteristic.NUM_OF_CASES,

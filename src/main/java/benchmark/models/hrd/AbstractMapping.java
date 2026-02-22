@@ -8,7 +8,7 @@ import com.github.gumtreediff.matchers.Mapping;
 import java.io.Serializable;
 import java.util.Objects;
 
-/* Created by pourya on 2023-02-08 2:48 a.m. */
+/* Created by anonymous on 2023-02-08 2:48 a.m. */
 public class AbstractMapping implements Serializable {
     @JsonIgnore
     int leftOffset,leftEndOffset,rightOffset,rightEndOffset;

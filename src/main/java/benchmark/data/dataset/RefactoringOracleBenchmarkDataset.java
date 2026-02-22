@@ -10,7 +10,7 @@ import java.util.function.Predicate;
 
 import static benchmark.conf.Paths.FINALIZED_REFACTORING_MINER_PATH;
 
-/* Created by pourya on 2024-09-28*/
+/* Created by anonymous on 2024-09-28*/
 public class RefactoringOracleBenchmarkDataset extends InspiredFromRMinerTestsBenchmarkDataset {
     private static final String REFACTORING_MAPPINGS_DIR = FINALIZED_REFACTORING_MINER_PATH + "/src/test/resources/astDiff/commits/";
 

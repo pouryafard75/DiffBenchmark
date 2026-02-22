@@ -1,6 +1,6 @@
 package dat;
 
-/* Created by pourya on 2024-06-24*/
+/* Created by anonymous on 2024-06-24*/
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;

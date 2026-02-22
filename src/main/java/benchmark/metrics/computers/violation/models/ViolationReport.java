@@ -6,7 +6,7 @@ import benchmark.generators.tools.models.IASTDiffTool;
 
 import java.util.*;
 
-/* Created by pourya on 2023-12-11 3:03 p.m. */
+/* Created by anonymous on 2023-12-11 3:03 p.m. */
 public class ViolationReport {
     private final ViolationKind violationKind;
     private final Map<IASTDiffTool, Collection<SemanticViolationRecord>> violations = new LinkedHashMap<>();

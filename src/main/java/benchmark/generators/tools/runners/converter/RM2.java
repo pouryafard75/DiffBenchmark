@@ -14,7 +14,7 @@ import java.util.Set;
 
 import static benchmark.conf.Paths.ORACLE_DIR;
 
-/* Created by pourya on 2024-02-19*/
+/* Created by anonymous on 2024-02-19*/
 public class RM2 extends AbstractASTDiffProviderFromMappingSet {
     public RM2(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);

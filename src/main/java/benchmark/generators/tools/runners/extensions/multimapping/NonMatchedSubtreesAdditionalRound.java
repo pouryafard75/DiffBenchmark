@@ -10,7 +10,7 @@ import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 import static benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider.match;
 import static benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider.safeAdd;
 
-/* Created by pourya on 2024-04-30*/
+/* Created by anonymous on 2024-04-30*/
 public class NonMatchedSubtreesAdditionalRound implements GumTreeMultiMappingMatcher {
 
     private static final int minHeight = new GreedySubtreeMatcher().getMinPriority();

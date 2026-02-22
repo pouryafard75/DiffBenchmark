@@ -8,7 +8,7 @@ import shaded.com.github.gumtreediff.gen.jdt.JdtTreeGenerator;
 import shaded.com.github.gumtreediff.matchers.CompositeMatchers;
 import shaded.com.github.gumtreediff.matchers.Matcher;
 
-/* Created by pourya on 2023-05-17 6:05 p.m. */
+/* Created by anonymous on 2023-05-17 6:05 p.m. */
 public class GT2 extends AbstractASTDiffProviderFromIncompatibleTree {
     public GT2(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);

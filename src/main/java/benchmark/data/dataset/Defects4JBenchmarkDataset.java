@@ -9,7 +9,7 @@ import java.util.Set;
 
 import static benchmark.conf.Paths.FINALIZED_REFACTORING_MINER_PATH;
 
-/* Created by pourya on 2024-09-28*/
+/* Created by anonymous on 2024-09-28*/
 public class Defects4JBenchmarkDataset extends InspiredFromRMinerTestsBenchmarkDataset {
     private static final String DEFECTS4J_MAPPING_DIR = FINALIZED_REFACTORING_MINER_PATH + "/src/test/resources/astDiff/defects4j/";
 

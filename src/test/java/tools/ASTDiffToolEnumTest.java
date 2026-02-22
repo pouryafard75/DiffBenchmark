@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-/* Created by pourya on 2024-05-03*/
+/* Created by anonymous on 2024-05-03*/
 public class ASTDiffToolEnumTest {
 
     private static ProjectASTDiff projectASTDiff;

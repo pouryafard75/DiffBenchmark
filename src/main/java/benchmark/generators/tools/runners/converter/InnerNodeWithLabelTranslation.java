@@ -6,7 +6,7 @@ import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import java.util.Map;
 
-/* Created by pourya on 2024-11-29*/
+/* Created by anonymous on 2024-11-29*/
 public class InnerNodeWithLabelTranslation implements TranslationRule {
     @Override
     public void accept(Mapping foreign, Mapping local, ExtendedMultiMappingStore ms) {

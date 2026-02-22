@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
-/* Created by pourya on 2025-01-09*/
+/* Created by anonymous on 2025-01-09*/
 public class ExportHelpers {
     public static void exportTool(ASTDiffToolEnum tool, Map<IASTDiffTool, Set<ASTDiff>> diffs, String dstFolder) throws IOException {
         ASTDiff next = diffs.get(tool).iterator().next();

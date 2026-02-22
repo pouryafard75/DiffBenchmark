@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Set;
 
-/* Created by pourya on 2024-09-06*/
+/* Created by anonymous on 2024-09-06*/
 public class IAST extends AbstractASTDiffProviderFromMappingSet {
 
     public IAST(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {

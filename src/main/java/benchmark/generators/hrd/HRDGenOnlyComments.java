@@ -5,7 +5,7 @@ import benchmark.models.hrd.NecessaryMappings;
 import com.github.gumtreediff.matchers.Mapping;
 import org.refactoringminer.astDiff.models.ASTDiff;
 
-/* Created by pourya on 2024-10-06*/
+/* Created by anonymous on 2024-10-06*/
 public class HRDGenOnlyComments extends HumanReadableDiffGenerator {
     public HRDGenOnlyComments(IBenchmarkCase benchmarkCase, ASTDiff current) {
         super(benchmarkCase, current);

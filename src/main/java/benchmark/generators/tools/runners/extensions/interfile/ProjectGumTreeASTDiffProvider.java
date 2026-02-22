@@ -14,7 +14,7 @@ import org.refactoringminer.astDiff.utils.MappingExportModel;
 import java.util.*;
 import java.util.function.Function;
 
-/* Created by pourya on 2024-04-30*/
+/* Created by anonymous on 2024-04-30*/
 public class ProjectGumTreeASTDiffProvider extends AbstractASTDiffProviderFromExportedMappings {
     protected final Matcher matcher;
     protected final GumTreeProjectMatcher projectMatcher;

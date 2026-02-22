@@ -8,7 +8,7 @@ import java.util.List;
 import static benchmark.generators.hrd.HumanReadableDiffGenerator.*;
 
 
-/* Created by pourya on 2025-01-10*/
+/* Created by anonymous on 2025-01-10*/
 public class CommentCorrectorMappingOffsetTranslator extends MappingOffsetTranslator {
 
     public CommentCorrectorMappingOffsetTranslator(ASTDiff ref, ITranslationRuleProvider ruleProvider) {

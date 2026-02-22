@@ -5,7 +5,7 @@ import org.refactoringminer.astDiff.models.ASTDiff;
 
 import java.util.function.BiPredicate;
 
-/* Created by pourya on 2024-11-07*/
+/* Created by anonymous on 2024-11-07*/
 public abstract class AbstractOffsetTranslator implements IOffsetTranslator {
     protected static final BiPredicate<Tree, Tree> startOffsetMatchPredicate  = (candidate, badNode) -> candidate.getPos() == badNode.getPos();
     protected static final BiPredicate<Tree, Tree> endOffsetMatchPredicate  = (candidate, badNode) -> candidate.getEndPos() == badNode.getEndPos();

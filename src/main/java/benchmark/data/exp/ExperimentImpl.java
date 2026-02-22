@@ -8,7 +8,7 @@ import benchmark.models.IGenerationStrategy;
 
 import java.util.Set;
 
-/* Created by pourya on 2023-04-17 9:27 p.m. */
+/* Created by anonymous on 2023-04-17 9:27 p.m. */
 public class ExperimentImpl implements IExperiment {
     private Set<IASTDiffTool> tools;
     private final IBenchmarkDataset dataset;

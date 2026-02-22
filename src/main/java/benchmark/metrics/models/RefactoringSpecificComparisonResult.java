@@ -8,7 +8,7 @@ import org.refactoringminer.api.RefactoringType;
 import java.io.FileWriter;
 import java.util.Objects;
 
-/* Created by pourya on 2023-11-28 11:05 p.m. */
+/* Created by anonymous on 2023-11-28 11:05 p.m. */
 public class RefactoringSpecificComparisonResult extends BaseDiffComparisonResult {
     final Refactoring refactoring;
     final RefactoringType refactoringType;

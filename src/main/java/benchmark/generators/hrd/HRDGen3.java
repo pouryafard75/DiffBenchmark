@@ -16,7 +16,7 @@ import java.util.Set;
 
 import static benchmark.generators.hrd.GeneratorUtils.*;
 
-/* Created by pourya on 2023-09-15 4:26 p.m. */
+/* Created by anonymous on 2023-09-15 4:26 p.m. */
 public class HRDGen3 extends HumanReadableDiffGenerator {
     public HRDGen3(IBenchmarkCase benchmarkCase, ASTDiff current) {
         this(benchmarkCase, current, new NoFilter());

@@ -5,7 +5,7 @@ import benchmark.data.exp.IExperiment;
 import benchmark.metrics.computers.filters.FilterDuringMetricsCalculation;
 import rq.RQ;
 
-/* Created by pourya on 2024-05-17*/
+/* Created by anonymous on 2024-05-17*/
 public class RQDriver {
     public static void main(String[] args) {
         IExperiment[] confs = {ExperimentsEnum.D4J_EXP_2_1};

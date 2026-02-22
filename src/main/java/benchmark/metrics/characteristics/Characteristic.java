@@ -16,7 +16,7 @@ import java.util.function.Function;
 
 import static benchmark.generators.tools.ASTDiffToolEnum.GOD;
 
-/* Created by pourya on 2024-07-01*/
+/* Created by anonymous on 2024-07-01*/
 public enum Characteristic {
     NUM_OF_CASES(benchmarkDataset -> benchmarkDataset.getCases().size()),
     NUM_OF_FILES(benchmarkDataset -> eachCaseIterator(benchmarkDataset,

@@ -11,7 +11,7 @@ import java.util.function.BiPredicate;
 
 import static benchmark.generators.hrd.HumanReadableDiffGenerator.isBetweenDifferentTypes;
 
-/* Created by pourya on 2024-10-07*/
+/* Created by anonymous on 2024-10-07*/
 public class MappingOffsetTranslator extends AbstractOffsetTranslator {
     private final ITranslationRuleProvider ruleProvider;
 

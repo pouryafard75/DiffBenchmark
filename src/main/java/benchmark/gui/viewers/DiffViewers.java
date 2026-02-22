@@ -15,7 +15,7 @@ import static benchmark.gui.web.BenchmarkWebDiff.renderToString;
 import static org.rendersnake.HtmlAttributesFactory.class_;
 import static spark.Spark.get;
 
-/* Created by pourya on 2024-05-03*/
+/* Created by anonymous on 2024-05-03*/
 public enum DiffViewers implements DirViewRenderer, SparkConfigurator {
     VANILLA(
             (div, tool, id) -> div.a(class_("btn btn-primary btn-sm").href("/" + tool.getShortName() + "/" + id)).content(tool.getShortName()),

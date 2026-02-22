@@ -7,7 +7,7 @@ import java.util.*;
 
 import static benchmark.Runner.run;
 
-/* Created by pourya on 2023-04-17 7:45 p.m. */
+/* Created by anonymous on 2023-04-17 7:45 p.m. */
 public class CmdRunner {
     //
     public static void main(String[] args) throws Exception {

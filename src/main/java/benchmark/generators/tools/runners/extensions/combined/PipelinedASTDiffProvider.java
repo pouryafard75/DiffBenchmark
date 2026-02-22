@@ -19,7 +19,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* Created by pourya on 2024-05-13*/
+/* Created by anonymous on 2024-05-13*/
 public abstract class PipelinedASTDiffProvider extends ProjectGumTreeASTDiffProvider {
     protected final TreeModifier treeModifier;
     protected final GumTreeMultiMappingMatcher multiMappingMatcher;

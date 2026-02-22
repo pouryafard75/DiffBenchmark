@@ -11,7 +11,7 @@ import java.io.File;
 import static benchmark.conf.Paths.ORACLE_DIR;
 
 
-/* Created by pourya on 2024-09-28*/
+/* Created by anonymous on 2024-09-28*/
 public class GithubCase extends RemoteCase {
     @JsonCreator
     public GithubCase(@JsonProperty("repo") String repo, @JsonProperty("commit") String commit) {

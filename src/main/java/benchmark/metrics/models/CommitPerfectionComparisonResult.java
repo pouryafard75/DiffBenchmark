@@ -4,7 +4,7 @@ import benchmark.data.diffcase.IBenchmarkCase;
 
 import java.io.FileWriter;
 
-/* Created by pourya on 2023-12-04 2:23 p.m. */
+/* Created by anonymous on 2023-12-04 2:23 p.m. */
 public class CommitPerfectionComparisonResult extends BaseDiffComparisonResult {
 
     CommitPerfectionComparisonResult(IBenchmarkCase caseInfo) {

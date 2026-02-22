@@ -7,7 +7,7 @@ import org.refactoringminer.astDiff.models.ProjectASTDiff;
 
 import java.util.Map;
 
-/* Created by pourya on 2024-05-02*/
+/* Created by anonymous on 2024-05-02*/
 public abstract class ASTDiffProviderFromProjectASTDiff extends BaseASTDiffProvider {
     protected final ProjectASTDiff projectASTDiff;
     protected final Map<String, TreeContext> ptc;

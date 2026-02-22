@@ -13,11 +13,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 
-/* Created by pourya on 2025-02-26*/
+/* Created by anonymous on 2025-02-26*/
 public class CompareAny {
     public static void main(String[] args) throws Exception {
-        String parentPath = "/Users/pourya/IdeaProjects/DiffBenchmark/src/test/resources/ExtractMethod/Cpp/current/OrderProcessor.cpp";
-        String currentPath = "/Users/pourya/IdeaProjects/DiffBenchmark/src/test/resources/ExtractMethod/Cpp/parent/OrderProcessor.cpp";
+        String parentPath = "/Users/anonymous/IdeaProjects/DiffBenchmark/src/test/resources/ExtractMethod/Cpp/current/OrderProcessor.cpp";
+        String currentPath = "/Users/anonymous/IdeaProjects/DiffBenchmark/src/test/resources/ExtractMethod/Cpp/parent/OrderProcessor.cpp";
         String parentJson = parentPath + ".json";
         String currentJson = currentPath + ".json";
 

@@ -7,7 +7,7 @@ import benchmark.gui.viewers.DiffViewers;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-/* Created by pourya on 2024-04-29*/
+/* Created by anonymous on 2024-04-29*/
 public class WebDiffConf {
     public Set<IASTDiffTool> enabled_tools = new LinkedHashSet<>();
     public Set<DiffViewers> enabled_viewers = new LinkedHashSet<>();

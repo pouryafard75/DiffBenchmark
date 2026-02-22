@@ -24,7 +24,7 @@ import java.io.IOException;
 import static benchmark.generators.tools.runners.Utils.findMirror;
 import static benchmark.generators.tools.runners.Utils.mirrorTree;
 
-/* Created by pourya on 2023-04-17 8:10 p.m. */
+/* Created by anonymous on 2023-04-17 8:10 p.m. */
 public abstract class AbstractASTDiffProviderFromIncompatibleTree extends ASTDiffProviderFromProjectASTDiff {
     public AbstractASTDiffProviderFromIncompatibleTree(IBenchmarkCase benchmarkCase, DiffSelector querySelector) {
         super(benchmarkCase, querySelector);

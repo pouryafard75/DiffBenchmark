@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 
-/* Created by pourya on 2024-01-22*/
+/* Created by anonymous on 2024-01-22*/
 
 
 @Entity

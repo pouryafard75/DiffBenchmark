@@ -23,7 +23,7 @@ import java.util.*;
 
 import static org.refactoringminer.astDiff.utils.TreeUtilFunctions.*;
 
-/* Created by pourya on 2023-04-02 9:24 p.m. */
+/* Created by anonymous on 2023-04-02 9:24 p.m. */
 public abstract class HumanReadableDiffGenerator {
     private final String repo;
     private final String commit;

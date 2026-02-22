@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-/* Created by pourya on 2023-02-08 3:00 a.m. */
+/* Created by anonymous on 2023-02-08 3:00 a.m. */
 public class BenchmarkHumanReadableDiffGenerator {
     private final IExperiment experiment;
 

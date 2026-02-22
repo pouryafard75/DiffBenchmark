@@ -8,13 +8,13 @@ import benchmark.gui.conf.WebDiffConf;
 import benchmark.gui.web.BenchmarkWebDiff;
 import benchmark.gui.web.BenchmarkWebDiffFactory;
 
-/* Created by pourya on 2024-08-09*/
+/* Created by anonymous on 2024-08-09*/
 public class CompareWithCaseInfo {
 
     public static final WebDiffConf webDiffConf = WebDiffConf.defaultConf();
 
     public static void main(String[] args) {
-        IBenchmarkCase info = new GithubCase("https://github.com/pouryafard75/TestCases/commit/4e31fb03d9e9d67f3b3dd6ea2c1703551deb54a0");
+        IBenchmarkCase info = new GithubCase("https://github.com/anonymousfard75/TestCases/commit/4e31fb03d9e9d67f3b3dd6ea2c1703551deb54a0");
         info = new D4JCase("JacksonDatabind", "44");
         webDiffConf.setEnabled_tools(ToolSets.PERFECTION_BATTLE);
 

@@ -11,7 +11,7 @@ import org.refactoringminer.astDiff.models.ExtendedMultiMappingStore;
 
 import static benchmark.generators.tools.runners.gt.BaseGumTreeASTDiffProvider.safeAdd;
 
-/* Created by pourya on 2024-05-23*/
+/* Created by anonymous on 2024-05-23*/
 public class ModifierInterNoMulti extends PipelinedASTDiffProvider {
 
     public ModifierInterNoMulti(TreeModifier treeModifier, GumTreeProjectMatcher projectMatcher, IBenchmarkCase benchmarkCase, DiffSelector query, Matcher matcher) {

@@ -38,7 +38,7 @@ import java.util.concurrent.TimeUnit;
 import static benchmark.generators.hrd.HumanReadableDiffGenerator.isPartOf;
 import static benchmark.generators.tools.runners.shaded.AbstractASTDiffProviderFromIncompatibleTree.diffToASTDiffWithActions;
 
-/* Created by pourya on 2024-02-01*/
+/* Created by anonymous on 2024-02-01*/
 public class IntelGenerator {
     private final static Logger logger = LoggerFactory.getLogger(IntelGenerator.class);
     private static final List<Class<? extends Matcher>> matchers = Arrays.asList(

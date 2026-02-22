@@ -13,7 +13,7 @@ import org.refactoringminer.rm1.GitHistoryRefactoringMinerImpl;
 
 import java.util.*;
 
-/* Created by pourya on 2023-08-30 12:07 p.m. */
+/* Created by anonymous on 2023-08-30 12:07 p.m. */
 public class ChurnCalculator {
 
     private static final String lineBreak = "\n";

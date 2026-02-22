@@ -4,7 +4,7 @@ This repository contains all the source code and experiments related to the foll
 
 [//]: # (Pouria Alikhanifard and Nikolaos Tsantalis, "[A Novel Refactoring and Semantic Aware Abstract Syntax Tree Differencing Tool and a Benchmark for Evaluating the Accuracy of Diff Tools]&#40;https://dl.acm.org/doi/10.1145/3696002&#41;," *ACM Transactions on Software Engineering and Methodology*, 2024.)
 
-The experiments are available in `src/main/java/rq/adb` and the exeprioment results can be found in `csv-outputs/adb-paper/`.
+The experiments are available in `src/main/java/rq/adb` and the exepriment results can be found in `csv-outputs/adb-paper/`.
 
 
 # How to build DiffBenchmark

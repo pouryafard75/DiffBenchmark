@@ -10,8 +10,9 @@ import rq.adb.BaseRQDriverRoutine;
 import java.util.Set;
 
 
+
 /* Created by pourya on 2025-01-12*/
-public class RQDriver {
+public class LiteratureRQDriver {
     private static final HumanReadableDiffFilter[] FILTERS = {
             FilterDuringGeneration.NO_FILTER,
             FilterDuringGeneration.INTRA_FILE_ONLY

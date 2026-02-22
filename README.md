@@ -6,6 +6,9 @@ This repository contains all the source code and experiments related to the foll
 
 The experiments are available in `src/main/java/rq/adb` and the exepriment results can be found in `csv-outputs/adb-paper/`.
 
+Verify RQ1 by running: [LiteratureRQDriver.java](https://github.com/pouryafard75/DiffBenchmark/blob/8f4a5d613822212a94cb0ffdd22a321eaaf8e924/src/main/java/rq/adb/literature/LiteratureRQDriver.java#L15)
+Verify RQ2 by running: [VisitorsImpactRQDriver.java](https://github.com/pouryafard75/DiffBenchmark/blob/31bf4b2758eac0587ea594baa629522e7175e441/src/main/java/rq/adb/visitor/VisitorsImpactRQDriver.java)
+
 
 # How to build DiffBenchmark
 

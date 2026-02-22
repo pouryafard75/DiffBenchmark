@@ -16,12 +16,10 @@ public class RQDriver {
             FilterDuringGeneration.NO_FILTER,
             FilterDuringGeneration.INTRA_FILE_ONLY
     };
-    public static ExperimentsEnum exp = ExperimentsEnum.D4J_EXP;
+    public static ExperimentsEnum exp = ExperimentsEnum.LITERATURE_EXP;
 
     public static void main(String[] args) throws Exception {
-//        exp = ExperimentsEnum.SINGLE_CASE;
         new BenchmarkHumanReadableDiffGenerator(exp).generateMultiThreaded();
-//        new BaseRQDriverRoutine(FILTERS, Set.of()).run(new IExperiment[]{exp});
     }
 
 
